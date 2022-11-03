@@ -18,6 +18,7 @@ fi
 
 if [ ! -d notes ]
 then
+  git config --global url.https://github.com/.insteadOf git://github.com/
   git clone https://$GITHUB_TOKEN@github.com/AnzenKodo/notes.git
 fi
 
