@@ -1,4 +1,4 @@
-name: PHP Composer
+name: Build Website
 
 on:
   push:
@@ -11,7 +11,7 @@ permissions:
   contents: write
 
 env:
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  GITHUB_TOKEN: ${{ github.token }}
 
 jobs:
   build:
