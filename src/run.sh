@@ -27,7 +27,7 @@ deno run -A home/index.js
 echo "Making blog..."
 cp -r notes/posts blog/posts
 cd blog
-deno run -A https://deno.land/x/dblog
+deno run -A https://deno.land/x/dblog/mod.js
 cd ..
 
 echo "Making blogroll..."
