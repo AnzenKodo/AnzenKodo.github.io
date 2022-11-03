@@ -1,0 +1,78 @@
+@import url("https://cdn.jsdelivr.net/gh/AnzenKodo/punk@0.14/css/punk.min.css");
+
+@font-face {
+  font-family: "Figtree";
+  src: url("Figtree.ttf") format("ttf");
+	font-display: swap;
+}
+
+body{
+  font-family: 'Figtree', system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"PT Sans","Open Sans","Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  letter-spacing: .1em;
+}
+
+body>header p {
+  font-size: 1em;
+  border: var(--border);
+  padding: 1em;
+  margin: 1em 0;
+}
+
+header > h1 a {
+  text-decoration: none
+}
+
+h2 a, h3 a, h4 a, h5 a, h6 a {
+  text-decoration: none;
+  color: initial;
+}
+h2:before, h3:before, h4:before, h5:before, h6:before {
+  content: "#";
+  margin-right: .3em;
+  color: var(--theme)
+}
+
+details {
+  margin: 1em 0;
+  padding: 0;
+}
+details ul {
+  margin: .4em 0;
+}
+details > p {
+  border: var(--border);
+  padding: .5em 1em;
+  margin: 1em 1em;
+}
+details summary {
+  font-weight: normal;
+}
+
+.skip-to-content-link {
+  background: var(--theme);
+  color: var(--fg);
+  padding: .3em;
+  position: absolute;
+  transform: translateY(-200%);
+}
+
+.skip-to-content-link:focus {
+  transform: translateY(0%);
+}
+
+#opml {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  margin: 2em 0;
+}
+#opml a {
+  color: var(--fg);
+  text-decoration: none;
+  background: var(--theme);
+  padding: .5em 1em;
+}
+#opml a:hover {
+  background: var(--fg);
+  color: var(--theme);
+}
