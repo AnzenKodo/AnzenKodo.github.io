@@ -16,7 +16,7 @@ then
   export $(cat ../.env | sed 's/#.*//g' | xargs)
 fi
 
-if [ ! -d "notes" ]
+if [ ! -d notes ]
 then
   git clone https://$GITHUB_TOKEN@github.com/AnzenKodo/notes.git
 fi
@@ -32,6 +32,10 @@ cd ..
 
 echo "Making blogroll..."
 cd blogroll
+if [ ! -d vendor ]
+then
+  composer install
+fi
 php index.php
 cd ..
 
