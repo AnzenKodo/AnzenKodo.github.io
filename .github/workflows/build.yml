@@ -2,12 +2,16 @@ name: PHP Composer
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
+    branches: ["main"]
+  schedule: 
+    - cron: 0 0 * * *
+  workflow_dispatch:
+  
 permissions:
   contents: write
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   build:
