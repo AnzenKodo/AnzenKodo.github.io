@@ -15,10 +15,10 @@ if [ -f ../.env ]
 then
   export $(cat ../.env | sed 's/#.*//g' | xargs)
 fi
-echo $SIMKL_CLIENT_ID
+
 if [ ! -d notes ]
 then
-  git clone https://$@github.com/AnzenKodo/notes.git
+  git clone https://$GITHUB_TOKEN@github.com/AnzenKodo/notes.git
 fi
 
 echo "Making Main website..."
