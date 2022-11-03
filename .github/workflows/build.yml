@@ -25,7 +25,7 @@ jobs:
     
     - shell: bash
       run: |
-        git config --global url."https://${{ secrets.GITHUB_TOKEN }}@github".insteadOf https://github
+        git config --global url."https://${{ secrets.TOKENS }}@github".insteadOf https://github
         git clone https://github.com/AnzenKodo/notes.git src/notes
     - name: Setup Deno
       # uses: denoland/setup-deno@v1
