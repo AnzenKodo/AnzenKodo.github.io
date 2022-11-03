@@ -15,7 +15,7 @@ if [ -f ../.env ]
 then
   export $(cat ../.env | sed 's/#.*//g' | xargs)
 fi
-echo $GITHUB_TOKEN
+echo $SIMKL_CLIENT_ID
 if [ ! -d notes ]
 then
   git clone https://$@github.com/AnzenKodo/notes.git
