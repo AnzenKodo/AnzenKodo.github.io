@@ -103,7 +103,7 @@ export default function writeHtml(
   </header>`;
 
   const footer =
-    `<footer><p><a class="a-no-underline" href="${DATA.start_url}/LICENSE.html">LICENSE</a></p></footer>`;
+    `<footer><p><a class="a-no-underline" href="${DATA.start_url}/license">LICENSE</a></p></footer>`;
 
   const html = `<!DOCTYPE html>
 <html lang="en-US">

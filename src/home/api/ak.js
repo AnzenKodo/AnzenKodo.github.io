@@ -2,6 +2,7 @@ import { DATA } from "../comp/data.js";
 import { getBanner, getWallpaper } from "../comp/ak/pinterest.js";
 import getTodo from "../comp/todo.js";
 import { languages } from "../comp/ak/lang.js";
+import { writeInOutput } from "../comp/utils.js";
 
 const data = {
   "name": DATA.name,
@@ -13,8 +14,8 @@ const data = {
   "hobby": "Making fun stuff.",
   "website": DATA.start_url,
   "color": DATA.style.theme.substring(1),
-  "logo": data.start_url + "assets/ak/logo",
-  "mascot": data.start_url + "assets/ak/mascot",
+  "logo": DATA.start_url + "assets/ak/logo",
+  "mascot": DATA.start_url + "assets/ak/mascot",
   "banner": await getBanner(
     "https://i.pinimg.com/originals/cd/e7/44/cde7443d181a91918d4460eea5f5e2cf.jpg",
   ),
@@ -42,7 +43,4 @@ const data = {
   },
 };
 
-Deno.writeTextFileSync(
-  DATA.output + "/api/ak.json",
-  JSON.stringify(data, null, 2),
-);
+writeInOutput("api/ak.json", JSON.stringify(data, null, 2));
