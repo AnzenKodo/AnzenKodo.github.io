@@ -10,9 +10,9 @@ import { style } from "../comp/db/style.js";
 const name = `db`;
 const theme = "#e97b00";
 const description = "Database of everything I have watched, read, and listened";
-const data = JSON.parse(Deno.readTextFileSync(DATA.output + "/api/db.json"));
-
 console.log([...walkSync(DATA.output)]);
+
+const data = JSON.parse(Deno.readTextFileSync(DATA.output + "/api/db.json"));
 
 writeHtml({
   name,
