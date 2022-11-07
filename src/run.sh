@@ -33,14 +33,14 @@ cd blog
 deno run -A https://deno.land/x/dblog/mod.js --build
 cd ..
 
-echo "Making blogroll..."
-cd blogroll
-if [ ! -d vendor ]
-then
-  composer install
-fi
-php index.php
-cd ..
+# echo "Making blogroll..."
+# cd blogroll
+# if [ ! -d vendor ]
+# then
+#   composer install
+# fi
+# php index.php
+# cd ..
 
 echo "Running"
 if command -v pip &> /dev/null
