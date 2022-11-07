@@ -78,4 +78,4 @@ const data = {
   },
 };
 
-writeInOutput("api/database.json", JSON.stringify(data, null, 2));
+writeInOutput("api/db.json", JSON.stringify(data, null, 2));

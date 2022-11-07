@@ -9,7 +9,7 @@ const name = `db`;
 const theme = "#e97b00";
 const description = "Database of everything I have watched, read, and listened";
 const data = JSON.parse(
-  Deno.readTextFileSync(DATA.output + "/api/database.json"),
+  Deno.readTextFileSync(DATA.output + "/api/db.json"),
 );
 
 writeHtml({

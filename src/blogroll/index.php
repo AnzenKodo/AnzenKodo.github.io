@@ -28,6 +28,4 @@ echo "Making opml file.";
 ob_start();
 require_once 'pages/opml.php';
 file_put_contents("{$output}feed.opml", ob_get_contents());
-
-copy('pages/Figtree.ttf', $output."Figtree.ttf");
 ?>

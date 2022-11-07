@@ -22,7 +22,13 @@ then
 fi
 
 echo "Making Main website..."
-deno run -A home/index.js
+run() {
+  for filename in $1/*; do
+    deno run -A $filename
+  done
+}
+run "home/api"
+run "home/pages"
 
 echo "Coping assests folder..."
 cp -r assets/ ../site/
