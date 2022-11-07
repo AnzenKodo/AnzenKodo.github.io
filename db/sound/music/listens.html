@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+  <title>AK#Db@Sound>Music>Listens</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Database of everything I have watched, read, and listened">
+  <meta property="og:description" content="Database of everything I have watched, read, and listened">
+  <meta property="og:image" content="https://AnzenKodo.github.io/assests/db.png">
+  <meta name="theme-color" content="#e97b00"/>
+  <meta property="og:image:alt" content="db logo">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assests/favicon/db.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/AnzenKodo/punk@0.19.1/css/punk.min.css">
+
+  <style>
+    @font-face {
+      font-family: "Jost";
+      src: url("https://cdn.jsdelivr.net/gh/indestructible-type/Jost@814c58001f052904102a631b9cff92b4e522fb15/fonts/Jost-VF.ttf");
+    }
+    :root {
+      --background: #ffffff;
+      --foreground: #000000;
+      --theme: #e97b00
+    }
+    body {
+      font-family: "Jost",system-ui,-apple-system,Arial,sans-serif;
+      letter-spacing: .1em;
+      font-size: 1rem;
+    }
+    .skip-to-main {
+      background: var(--theme);
+      color: var(--fg);
+      padding: .3em;
+      position: absolute;
+      transform: translateY(-300%);
+    }
+    .skip-to-main:focus { transform: translateY(0%) }
+    .a-no-underline { text-decoration: none }
+    .a-no-underline:hover { text-decoration: underline }
+    body>header p:first-child {
+      font-size: 2em;
+      font-weight: bold;
+      margin-bottom: .2em;
+    }
+    .header-anchor { color: var(--fg) }
+    
+body>header h1 {
+  font-size: 2em;
+}
+body>header h2 {
+  font-size: 1.5em;
+}
+nav ul li {
+  display: inline-table;
+}
+nav li {
+  margin-right: 0em;
+}
+
+.topic {
+  --nav-border: 2px solid var(--fg);
+  display: block;
+  margin-top: 2em;
+  border: var(--nav-border);
+  padding-bottom: 1em;
+}
+
+.topic p {
+  border-style: double;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.cat {
+  margin-top: 1.6em;
+  margin-left: 1em;
+  border: var(--nav-border);
+  position: relative;
+}
+
+ul:has(> .status) {
+  margin: 0.5em 1em 0.5em 1em;
+}
+.status, .status:first-child {
+  display: block;
+}
+
+body>header {
+  margin-bottom: 0em;
+}
+
+main p {
+  margin: 0;
+}
+
+.table {
+  margin-top: 2em;
+  overflow: auto;
+  transform:rotateX(180deg);
+}
+table {
+  white-space: nowrap;
+  width: 100%;
+  margin-top: 3em;
+  transform:rotateX(180deg);
+  -ms-transform:rotateX(180deg);
+}
+
+tr > td:has(img) {
+  padding: 0;
+  text-align: center;
+  padding-top: .5em;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+table td img {
+  max-width: 0.5em;
+  position: relative;
+  color: var(--bg);
+  font-size: 6em;
+}
+
+img[alt]:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg);
+  font-family: 'Helvetica';
+  font-weight: 300;
+  line-height: 2;
+  text-align: center;
+  content: attr(alt);
+}
+
+tr td:nth-child(2) {
+  max-width: 15em;
+  min-width: 15em;
+  white-space: initial;
+}
+
+  </style>
+</head>
+  <body>
+    <a class="skip-to-main" href="#main">Skip to content</a>
+    <header>
+    <h1 class="name"><a class="a-no-underline" href="https://AnzenKodo.github.io/">AK</a>#<a class="a-no-underline" href="https://AnzenKodo.github.io/db">Db</a>@Sound>Music>Listens</h1>
+    <p class="description"><p>Database of everything I have watched, read, and listened</p>
+</p>
+    
+  </header>
+    <main id="main"><div class="table"><table><tr><th>img</th><th>name</th><th>creator</th><th>album</th></tr><tr><td><img src="http://coverartarchive.org/release/3cd73f73-d17e-4f18-ba4a-5da6289e4252/29525011073-250.jpg" alt="My Ordinary Life cover" loading="lazy"></td><td><a href="https://musicbrainz.org/recording/2f7add74-80c0-4702-be39-acadcb216b57">My Ordinary Life</a></td><td><a href="https://musicbrainz.org/artist/3f6ee55e-d523-4dd8-a027-7a6af9909ae1">The Living Tombstone</a></td><td><a href="https://musicbrainz.org/release/3cd73f73-d17e-4f18-ba4a-5da6289e4252">My Ordinary Life</a></td></tr><tr><td><img src="http://coverartarchive.org/release/ca713c8e-11d5-4212-aabf-0a36c3f0e239/33739042261-250.jpg" alt="dumb dumb (sped up) cover" loading="lazy"></td><td><a href="https://musicbrainz.org/recording/3aeee775-7138-4c42-877e-69378b969030">dumb dumb (sped up)</a></td><td><a href="https://musicbrainz.org/artist/8d97d135-4f78-4d3e-b5f5-b8f6fc096f94">mazie</a></td><td><a href="https://musicbrainz.org/release/ca713c8e-11d5-4212-aabf-0a36c3f0e239">the rainbow cassette (bonus)</a></td></tr><tr><td><img src="http://coverartarchive.org/release/07e62a2e-b6d8-4a8b-a183-8d94dd7308be/25657247331-250.jpg" alt="Wannabe cover" loading="lazy"></td><td><a href="https://musicbrainz.org/recording/15496e5e-e7e6-48eb-8a51-5206ebb89854">Wannabe</a></td><td><a href="https://musicbrainz.org/artist/b6c5a2d6-3fb1-4af5-973a-734a57cf8450">why mona</a></td><td><a href="https://musicbrainz.org/release/07e62a2e-b6d8-4a8b-a183-8d94dd7308be">Wannabe</a></td></tr><tr><td><img src="http://coverartarchive.org/release/3cd73f73-d17e-4f18-ba4a-5da6289e4252/29525011073-250.jpg" alt="My Ordinary Life cover" loading="lazy"></td><td><a href="https://musicbrainz.org/recording/2f7add74-80c0-4702-be39-acadcb216b57">My Ordinary Life</a></td><td><a href="https://musicbrainz.org/artist/3f6ee55e-d523-4dd8-a027-7a6af9909ae1">The Living Tombstone</a></td><td><a href="https://musicbrainz.org/release/3cd73f73-d17e-4f18-ba4a-5da6289e4252">My Ordinary Life</a></td></tr><tr><td><img src="" alt="Betty Boop cover" loading="lazy"></td><td><a href="">Betty Boop</a></td><td>Mr Puth</td><td>Betty Boop</td></tr><tr><td><img src="http://coverartarchive.org/release/ca713c8e-11d5-4212-aabf-0a36c3f0e239/33739042261-250.jpg" alt="dumb dumb (sped up) cover" loading="lazy"></td><td><a href="https://musicbrainz.org/recording/3aeee775-7138-4c42-877e-69378b969030">dumb dumb (sped up)</a></td><td><a href="https://musicbrainz.org/artist/8d97d135-4f78-4d3e-b5f5-b8f6fc096f94">Mazie</a></td><td><a href="https://musicbrainz.org/release/ca713c8e-11d5-4212-aabf-0a36c3f0e239">the rainbow cassette (bonus)</a></td></tr><tr><td><img src="" alt="Wrap Me In Plastic cover" loading="lazy"></td><td><a href="">Wrap Me In Plastic</a></td><td>Nightcore</td><td></td></tr><tr><td><img src="" alt="Bad Time Trio Nitro cover" loading="lazy"></td><td><a href="">Bad Time Trio Nitro</a></td><td>Nick Nitro</td><td>Bad Time Trio Nitro</td></tr><tr><td><img src="" alt="Help Me cover" loading="lazy"></td><td><a href="">Help Me</a></td><td>or3o</td><td>Help Me</td></tr><tr><td><img src="" alt="Dance Monkey cover" loading="lazy"></td><td><a href="https://musicbrainz.org/recording/c0f89d6a-d740-4f91-b6e1-d5e8572268c1">Dance Monkey</a></td><td><a href="https://musicbrainz.org/artist/663f33f4-8e5f-4773-93ea-493a1135de9a">Tones and I</a></td><td><a href="https://musicbrainz.org/release/e1607e51-377a-47b4-8064-553f21dfd684">Dance Monkey</a></td></tr><tr><td><img src="" alt="Still Dancing cover" loading="lazy"></td><td><a href="">Still Dancing</a></td><td>or3o</td><td>Still Dancing</td></tr><tr><td><img src="http://coverartarchive.org/release/9d86572b-bc0d-4eb3-855e-461c9257f603/8106552826-250.jpg" alt="Hill Sighed cover" loading="lazy"></td><td><a href="https://musicbrainz.org/recording/22e40455-e7e7-46a3-8245-a1df1db0fc1e">Hill Sighed</a></td><td><a href="https://musicbrainz.org/artist/aa1d4315-5246-42b2-b62b-f997d046d8b2">Emancipator</a></td><td><a href="https://musicbrainz.org/release/9d86572b-bc0d-4eb3-855e-461c9257f603">Safe in the Steep Cliffs</a></td></tr><tr><td><img src="http://coverartarchive.org/release/3f206615-ae00-4299-ae68-cee266033a77/14615513132-250.jpg" alt="Azure Dream cover" loading="lazy"></td><td><a href="https://musicbrainz.org/recording/8b181013-1f49-492d-ad23-b107dd310a07">Azure Dream</a></td><td><a href="https://musicbrainz.org/artist/105ed38e-9493-4bf5-b222-bc8ed5545b7f">Marcus D</a></td><td><a href="https://musicbrainz.org/release/3f206615-ae00-4299-ae68-cee266033a77">Pink Lemonade</a></td></tr><tr><td><img src="http://coverartarchive.org/release/8c4b1ff0-c906-4f3a-ab91-57630e6c525a/16939890276-250.jpg" alt="Cedar Stone cover" loading="lazy"></td><td><a href="https://musicbrainz.org/recording/33e78673-875a-4d7d-a809-f3c393655fe4">Cedar Stone</a></td><td><a href="https://musicbrainz.org/artist/a6d3a76c-cc9e-447b-882d-4838640d95a6">Nym</a></td><td><a href="https://musicbrainz.org/release/8c4b1ff0-c906-4f3a-ab91-57630e6c525a">Lilac Chaser</a></td></tr><tr><td><img src="http://coverartarchive.org/release/e626d707-03ac-4ddf-8c80-d665d881eed2/23291372786-250.jpg" alt="Now The Coast Is Clear cover" loading="lazy"></td><td><a href="https://musicbrainz.org/recording/2451f40a-1c50-4b1c-8f4d-7e9859655a96">Now The Coast Is Clear</a></td><td><a href="https://musicbrainz.org/artist/8b21daf2-e4f1-400b-84d1-d4bd9bcbf7d1">Nicolay, The Hot At Nights</a></td><td><a href="https://musicbrainz.org/release/e626d707-03ac-4ddf-8c80-d665d881eed2">Glaciers</a></td></tr><tr><td><img src="http://coverartarchive.org/release/63112e1f-6615-479a-9395-4b3d8b5ef070/21063838373-250.jpg" alt="Dusk Hymn cover" loading="lazy"></td><td><a href="https://musicbrainz.org/recording/95db412a-96ae-4521-bfe6-8f7d400d6926">Dusk Hymn</a></td><td><a href="https://musicbrainz.org/artist/b048ea5f-c3ae-47ee-8672-f8f1cc647e00">City Girl</a></td><td><a href="https://musicbrainz.org/release/63112e1f-6615-479a-9395-4b3d8b5ef070">Time Falls Like Moonlight</a></td></tr><tr><td><img src="http://coverartarchive.org/release/0a01d88b-ccc3-482d-ba3a-4fd921044689/11979857724-250.jpg" alt="a better tomorrow cover" loading="lazy"></td><td><a href="https://musicbrainz.org/recording/bfaf205f-1b0a-4612-bb44-1bba59bed83f">a better tomorrow</a></td><td><a href="https://musicbrainz.org/artist/26772b25-dde6-4112-aca6-01b31482f441">JinSang</a></td><td><a href="https://musicbrainz.org/release/0a01d88b-ccc3-482d-ba3a-4fd921044689">meditation [.ep]</a></td></tr><tr><td><img src="http://coverartarchive.org/release/185be287-add4-477f-be2d-d444aa93e1d0/32034242683-250.jpg" alt="Meadows (feat. Guillaume Muschalle) cover" loading="lazy"></td><td><a href="https://musicbrainz.org/recording/44e0fc43-dc74-4c08-a3ec-d282ca4e4e25">Meadows (feat. Guillaume Muschalle)</a></td><td><a href="https://musicbrainz.org/artist/e299faf0-5330-47fa-ad31-148a92a551eb">Psalm Trees</a></td><td><a href="https://musicbrainz.org/release/185be287-add4-477f-be2d-d444aa93e1d0">Chillhop Essentials - Spring 2019</a></td></tr><tr><td><img src="http://coverartarchive.org/release/a2e3e786-e5f1-46c4-a03f-43e5d6224d10/21794300900-250.jpg" alt="Night 17 cover" loading="lazy"></td><td><a href="https://musicbrainz.org/recording/6292fe07-dad2-4660-a736-303fd034f621">Night 17</a></td><td><a href="https://musicbrainz.org/artist/81855cde-5030-42de-b1b3-f563dd01e623">Ta-ku</a></td><td><a href="https://musicbrainz.org/release/a2e3e786-e5f1-46c4-a03f-43e5d6224d10">25 Nights For Nujabes</a></td></tr><tr><td><img src="http://coverartarchive.org/release/dc4b78c4-12ff-4570-8e08-f2b23ed89438/32036477392-250.jpg" alt="Prayer cover" loading="lazy"></td><td><a href="https://musicbrainz.org/recording/0e0be262-1fca-466b-87ed-6f0d9047264b">Prayer</a></td><td><a href="https://musicbrainz.org/artist/0cce36d7-bf84-4a99-8d84-18a40de595b5">falcxne x Loupo</a></td><td><a href="https://musicbrainz.org/release/dc4b78c4-12ff-4570-8e08-f2b23ed89438">Chillhop Essentials - Summer 2018</a></td></tr><tr><td><img src="" alt="The 11th Hour cover" loading="lazy"></td><td><a href="https://musicbrainz.org/recording/0a75ecba-5516-46a8-b8f1-52dc69e9ae0e">The 11th Hour</a></td><td><a href="https://musicbrainz.org/artist/55501cc6-c291-4456-a86a-1ef61019ac95">Apollo Brown</a></td><td><a href="https://musicbrainz.org/release/7f500ca3-447c-4f71-b0e2-470f92ae68ac">Clouds</a></td></tr><tr><td><img src="http://coverartarchive.org/release/34fbf14b-1df0-4e5c-9e83-9c76eec4db65/25372320728-250.jpg" alt="Takondwa cover" loading="lazy"></td><td><a href="https://musicbrainz.org/recording/2842c393-684e-4e09-872f-63b1e3f66a2e">Takondwa</a></td><td><a href="https://musicbrainz.org/artist/c0f3b0a2-b2f4-4c30-8271-3116d8165e83">Smoke Trees</a></td><td><a href="https://musicbrainz.org/release/34fbf14b-1df0-4e5c-9e83-9c76eec4db65">Chillhop daydreams</a></td></tr><tr><td><img src="http://coverartarchive.org/release/f1062484-be29-42f8-a3bb-6e0dd662880d/32032443835-250.jpg" alt="Nice and Easy cover" loading="lazy"></td><td><a href="https://musicbrainz.org/recording/18612a02-7e51-4c7d-b4b0-fa34830073e7">Nice and Easy</a></td><td><a href="https://musicbrainz.org/artist/388973f5-04c7-4701-8bf3-2d3ae79e978a">junior state</a></td><td><a href="https://musicbrainz.org/release/f1062484-be29-42f8-a3bb-6e0dd662880d">Chillhop Essentials Summer 2019</a></td></tr><tr><td><img src="http://coverartarchive.org/release/be781df3-b727-49ad-aebd-b5acd1bcdae1/31987762311-250.jpg" alt="OnOurWay cover" loading="lazy"></td><td><a href="https://musicbrainz.org/recording/8ba7601a-f9fd-40da-b9e7-e6d1d45c1b4f">OnOurWay</a></td><td><a href="https://musicbrainz.org/artist/0e620ca7-a47e-45ec-9c20-0ab274db14c1">Ian Ewing</a></td><td><a href="https://musicbrainz.org/release/be781df3-b727-49ad-aebd-b5acd1bcdae1">Boosh Vol. 1</a></td></tr><tr><td><img src="http://coverartarchive.org/release/200a4def-78eb-410a-afc1-b8ff8fc812fb/14649922128-250.jpg" alt="Hall & Oates cover" loading="lazy"></td><td><a href="https://musicbrainz.org/recording/c5b3e138-44cc-4d31-94a7-ef8bee58e9f7">Hall & Oates</a></td><td><a href="https://musicbrainz.org/artist/80b3cf5e-18fe-4c59-98c7-e5bb87210710">The Roots</a></td><td><a href="https://musicbrainz.org/release/200a4def-78eb-410a-afc1-b8ff8fc812fb">Dilla Joints</a></td></tr></table></div></main>
+    <footer><p><a class="a-no-underline" href="https://AnzenKodo.github.io//license">LICENSE</a></p></footer>
+  </body>
+</html>
