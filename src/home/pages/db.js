@@ -4,14 +4,10 @@ import { getNav } from "../comp/db/header.js";
 import { titleCase } from "../comp/utils.js";
 import { DATA } from "../comp/data.js";
 
-import { walkSync } from "https://deno.land/std@0.159.0/fs/mod.ts";
-
 import { style } from "../comp/db/style.js";
 const name = `db`;
 const theme = "#e97b00";
 const description = "Database of everything I have watched, read, and listened";
-console.log([...walkSync(DATA.output)]);
-
 const data = JSON.parse(Deno.readTextFileSync(DATA.output + "/api/db.json"));
 
 writeHtml({
