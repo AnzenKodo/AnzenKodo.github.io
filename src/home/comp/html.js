@@ -48,7 +48,7 @@ export default function writeHtml(
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="${description}">
   <meta property="og:description" content="${description}">
-  <meta property="og:image" content="${DATA.start_url}assests/${
+  <meta property="og:image" content="${DATA.start_url}assets/favicon/${
     nameL + favicon
   }">
   <meta name="theme-color" content="${theme}"/>
@@ -56,7 +56,7 @@ export default function writeHtml(
   ${ogpType}
   <link rel="icon" type="${
     mime.getType(favicon)
-  }" href="${DATA.start_url}assests/favicon/${nameL + favicon}">
+  }" href="${DATA.start_url}assets/favicon/${nameL + favicon}">
   <link rel="stylesheet" href="${styleUrl}">
 
   <style>
