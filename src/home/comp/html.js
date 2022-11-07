@@ -117,4 +117,5 @@ export default function writeHtml(
 </html>`;
 
   writeInOutput(path, html);
+  if (type === "profile") writeInOutput("404.html", html);
 }

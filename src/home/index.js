@@ -28,7 +28,7 @@ async function run(path) {
 
 function runInDir(path) {
   for (const entry of walkSync(path)) {
-    if (entry.isDirectory && entry.name.match(/^\_/)) continue;
+    if (entry.isDirectory || entry.name.match(/^\_/)) continue;
     run(entry.path);
   }
 }

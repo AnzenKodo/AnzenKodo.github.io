@@ -24,10 +24,13 @@ fi
 echo "Making Main website..."
 deno run -A home/index.js
 
+echo "Coping assests folder..."
+cp -r assets/ ../site/
+
 echo "Making blog..."
 cp -r notes/posts blog/posts
 cd blog
-deno run -A https://deno.land/x/dblog/mod.js
+deno run -A https://deno.land/x/dblog/mod.js --build
 cd ..
 
 echo "Making blogroll..."
@@ -39,5 +42,9 @@ fi
 php index.php
 cd ..
 
-echo "Coping assests folder..."
-cp -r assets/ ../site/
+echo "Running"
+if command -v pip &> /dev/null
+then
+    pip install -r run/requirements.txt
+    python run/twitter.py
+fi
