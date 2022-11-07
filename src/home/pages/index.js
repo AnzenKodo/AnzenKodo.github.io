@@ -1,9 +1,5 @@
 import writeMd from "../comp/markdown.js";
-
 import { DATA } from "../comp/data.js";
-import { walkSync } from "https://deno.land/std@0.159.0/fs/mod.ts";
-
-console.log([...walkSync(DATA.output)]);
 
 const content = await fetch(
   "https://raw.githubusercontent.com/AnzenKodo/AnzenKodo/master/README.md",
