@@ -31,7 +31,7 @@ require_once __DIR__.'/manifest.php';
   <body>
     <a class="skip-to-content-link" href="#main">Skip to content</a>
     <header>
-      <h1><a href="<?= $data->start_url ?>"><?= $data->name ?></a></h1>
+      <h1><a href="<?= $data->home ?>">AK</a>#Blogroll</h1>
       <p><?= $data->description ?> Get all the site's feed link in <a href="http://opml.org/">OPML</a> file, <a href="#opml">in bottom of the page</a>.</p>
     </header>
     <main id="#main">
