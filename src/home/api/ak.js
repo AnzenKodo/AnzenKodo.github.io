@@ -37,8 +37,8 @@ const data = {
     "ethereum": "0xE9421ad603651a6ecD56d3C78472E64EDE7Cf43A",
   },
   "api": {
-    "blog": "https://anzenkodo.github.io/dblog/feed.json",
-    "db": DATA.start_url + "/api/db.json",
+    "blog": "https://anzenkodo.github.io/blog/feed.json",
+    "db": DATA.start_url + "api/db.json",
     "github": "https://api.github.com/users/AnzenKodo",
   },
 };
