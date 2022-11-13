@@ -45,7 +45,7 @@ if [ ! -d vendor ]
 then
   composer install
 fi
-# php index.php
+  php index.php
 cd ..
 
 echo "Running"
