@@ -1,0 +1,12 @@
+import setInput from "./_includes/utils/input.js";
+
+// export const url = "./";
+export const templateEngine = ["md", "njk"];
+export const layout = "layouts/base.jsx";
+export const input = "posts";
+
+export function url(page) {
+  const path = page.src.path; // The path name without extension (ex: /blog/2022-05-01_first-post/index)
+  const url = setInput(path);
+  return url + ".html";
+}
