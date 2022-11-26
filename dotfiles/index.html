@@ -122,49 +122,49 @@ sudo nixos-rebuild switch
   <a name="file-structure" class="header-anchor a-no-underline" href="#file-structure">File Structure</a>
 </h3><pre>
 <!--TREE:START-->dotfiles
- ├─> kitty
- │   ├── current-theme.conf
- │   ├── unicode-input-favorites.conf
- │   ├── kitty.conf
- │   ├── settings.conf
- │   ├── unicode-input-favorites.conf.save
- │   ├── kitty.conf.bak
- │   └── shortcuts.conf
- ├─> helix
- │   ├── config.toml
- │   └── languages.toml
  ├─> browser
  │   ├── Extensions.bak
  │   └── Bookmarks.bak
- ├─> nix
- │   ├── theme.nix
- │   ├── packages.nix
- │   ├── fonts.nix
- │   ├── system.nix
- │   ├── configuration.nix
- │   └── home.nix
+ ├─> qtile
+ │   ├── config.py
+ │   └─> modules
+ │       ├── floating_layout.py
+ │       ├── screen.py
+ │       ├── hooks.py
+ │       ├── layout.py
+ │       ├── advance.py
+ │       └── shortcuts.py
  ├── git.init
+ ├─> nix
+ │   ├── packages.nix
+ │   ├── home.nix
+ │   ├── fonts.nix
+ │   ├── configuration.nix
+ │   ├── system.nix
+ │   └── theme.nix
+ ├─> helix
+ │   ├── config.toml
+ │   └── languages.toml
  ├─> shell
- │   ├── export.sh
  │   ├── config.fish
+ │   ├── export.sh
  │   ├── profile.sh
  │   └── alias.sh
- ├─> bin
- │   ├── autostart
- │   ├── backup
- │   ├── wallpaper.js
- │   ├── chrome_extensions_backup.js
- │   ├── setup
- │   └── emoji
- └─> qtile
-     ├── config.py
-     └─> modules
-         ├── hooks.py
-         ├── floating_layout.py
-         ├── advance.py
-         ├── shortcuts.py
-         ├── screen.py
-         └── layout.py<!--TREE:END-->
+ ├─> kitty
+ │   ├── unicode-input-favorites.conf.save
+ │   ├── settings.conf
+ │   ├── current-theme.conf
+ │   ├── unicode-input-favorites.conf
+ │   ├── kitty.conf.bak
+ │   ├── kitty.conf
+ │   └── shortcuts.conf
+ └─> bin
+     ├── backup
+     ├── emoji
+     ├── setup
+     ├── chrome_extensions_backup.js
+     ├── wallpaper.js
+     └── autostart<!--TREE:END-->
 </pre>
 
 <!--BOOKMARKS:START-->
