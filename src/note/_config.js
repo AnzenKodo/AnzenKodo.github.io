@@ -8,13 +8,19 @@ import basePath from "lume/plugins/base_path.ts";
 import slugifyUrls from "lume/plugins/slugify_urls.ts";
 import windi from "lume/plugins/windi_css.ts";
 import toc from "https://deno.land/x/lume_markdown_plugins@v0.1.0/toc/mod.ts";
+import checkbox from "npm:markdown-it-task-checkbox";
+import footnote from "npm:markdown-it-footnote";
+import sitemap from "lume/plugins/sitemap.ts";
+import implicitFigures from "https://esm.sh/markdown-it-image-figures@2.1.0";
+import mk from "https://esm.sh/markdown-it-katex@2.0.2";
+import katex from "lume/plugins/katex.ts";
 
 const data = JSON.parse(Deno.readTextFileSync("../config.json"));
 
 const site = lume({
   location: new URL(data.start_url + "blog"),
   src: "./src",
-  dest: "./site",
+  dest: "../../site/notes",
   port: 8000,
   page404: "/404/",
   open: true,
@@ -31,7 +37,12 @@ const site = lume({
   },
 }, {
   markdown: {
-    plugins: [toc],
+    plugins: [[toc], [checkbox], [footnote], [mk], [implicitFigures, {
+      lazy: true,
+      async: true,
+      dataType: true,
+      figcaption: true,
+    }]],
     keepDefaultPlugins: true,
   },
 });
@@ -40,20 +51,42 @@ site.use(jsx())
   .use(windi({
     minify: true,
     mode: "interpret",
-    config: {
-      theme: {
-        extend: { colors: { theme: "#e879f9", fg: "#18181B", bg: "#cbd5e1" } },
-      },
-    },
   }))
   .use(slugifyUrls())
   .use(basePath())
   .use(metas())
   .use(inline())
   .use(codeHighlight())
+  .use(sitemap())
+  .use(katex())
   .use(minifyHTML({ extensions: [".html", ".css", ".js"] }));
+import { input } from "./src/_includes/utils/input.js";
 
-site.data("websiteName", "AK#Notes");
-site.data("start_url", data.start_url);
+site.copy([".jpg", ".png", ".gif", ".mp3", ".webp", ".webm"]);
 
+const siteData = {
+  name: "AK#Notes",
+  description: Deno.readTextFileSync(`src/${input}/index.md`).match(
+    /^[^\n]+(\n[^\n]+)*/,
+  )[0],
+  lang: "en",
+  author: data.name,
+  email: data.email,
+  theme: "#583fcb",
+  theme_dark: "#bd8bf2",
+  foreground: "#121212",
+  start_url: data.start_url,
+  favicon: "/favicon.png",
+};
+
+site.data("site", siteData);
+
+site.data("metas", {
+  site: siteData.name,
+  lang: siteData.lang,
+  twitter: "@" + data.username,
+  generator: true,
+});
+
+site.data("mergedKeys", { metas: "object" });
 export default site;

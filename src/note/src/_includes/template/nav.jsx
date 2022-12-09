@@ -3,6 +3,7 @@ import { formatName } from "../utils/format.js";
 
 import dirTree from "npm:directory-tree@3.4.0";
 
+let funcUrl;
 let propUrl = "";
 
 function createHtmlList(obj) {
@@ -18,8 +19,8 @@ function createHtmlList(obj) {
       if (key !== "name") continue;
       if (/^_/.test(obj["name"])) continue;
 
-      const url = setInput(obj["path"], "src");
-      const name = formatName(obj["name"]);
+      const url = funcUrl(setInput(obj["path"], "src"), true);
+      const name = formatName(obj["name"], obj["path"]);
       const active = propUrl === url + ".html" ||
           propUrl.replace(/\/$/, "") === url
         ? "active"
@@ -64,16 +65,15 @@ function sortFiles(obj) {
   });
 }
 
-export default function NavBar(props) {
+export default function (props) {
   propUrl = props.url;
+  funcUrl = props.funcUrl;
   const active = propUrl === "/" ? "active" : "not-active";
 
   const files = dirTree(`src/${input}`, { extensions: /\.(md)$/ });
   const sortedFiles = sortFiles(files.children);
   const list =
-    `<summary>≣</summary><ul><li class="${active}"><a href="/">Home</a>` +
+    `<ul><li class="${active}"><a href="${funcUrl("/", true)}">Home</a>` +
     createHtmlList(sortedFiles) + "</ul>";
-  return (
-    <details class={props.class} dangerouslySetInnerHTML={{ __html: list }} />
-  );
+  return <nav class={props.class} dangerouslySetInnerHTML={{ __html: list }} />;
 }

@@ -35,7 +35,9 @@ require_once __DIR__.'/manifest.php';
       <p><?= $data->description ?> Get all the site's feed link in <a href="http://opml.org/">OPML</a> file, <a href="#opml">in bottom of the page</a>.</p>
     </header>
     <main id="#main">
-       <?php require 'components/logic.php' ?>
+       <?php 
+          require 'components/logic.php' 
+        ?>
     </main>
     <footer>
       <p id="opml"><a href="feed.opml">Download OPML</a></p>

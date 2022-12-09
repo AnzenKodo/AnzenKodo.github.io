@@ -7,15 +7,6 @@ function tocGet(toc) {
     tocItem += `<li><a href="#${item.slug}">${item.text}</a>`;
 
     tocItem += tocGet(item.children);
-    // if (item.children.length) {
-    //   tocItem += "<ul>";
-
-    //   for (const child of item.children) {
-    //     tocItem += `<li><a href="#${child.slug}">${child.text}</a></li>`;
-    //   }
-
-    //   tocItem += "</ul>";
-    // }
     tocItem += "</li>";
   }
 
@@ -23,7 +14,7 @@ function tocGet(toc) {
 }
 
 export default function (props) {
-  if (!props.toc.length) return "";
+  if (!props.toc?.length) return "";
 
   return (
     <nav

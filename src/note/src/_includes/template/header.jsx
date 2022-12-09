@@ -1,5 +1,4 @@
 import { formatDate, formatName } from "../utils/format.js";
-import { basename, dirname } from "https://deno.land/std@0.165.0/path/mod.ts";
 
 function readingTime(text) {
   // get entire post content element
@@ -20,19 +19,12 @@ function readingTime(text) {
 }
 
 export default function Header(props) {
-  let title = formatName(props.name);
-  const path = formatName(basename(dirname(props.path)));
   const date = formatDate(props.date);
   const reading = readingTime(props.content);
 
-  if (title === "index") {
-    title = path;
-    if (path === "posts") title = "Home";
-  }
-
   return (
     <div class={props.class}>
-      <h1 class={props.titleClass}>{title}</h1>
+      <h1 class={props.titleClass}>{props.title}</h1>
       <ul class={props.metaClass}>
         <li class={props.dateClass}>
           <span class={props.disClass}>Date:{" "}</span>

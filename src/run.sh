@@ -33,11 +33,18 @@ run "home/pages"
 echo "Coping assests folder..."
 cp -r assets/ ../site/
 
-echo "Making blog..."
-cp -r notes/posts blog/posts
-cd blog
-deno run -A https://deno.land/x/dblog/mod.js --build
+echo "Making notes..."
+cp notes/online/ note/src/online/
+cd note
+deno task build
 cd ..
+
+echo "Running"
+if command -v pip &> /dev/null
+then
+    pip install -r run/requirements.txt
+    python run/twitter.py
+fi
 
 echo "Making blogroll..."
 cd blogroll
@@ -47,10 +54,3 @@ then
 fi
   php index.php
 cd ..
-
-echo "Running"
-if command -v pip &> /dev/null
-then
-    pip install -r run/requirements.txt
-    python run/twitter.py
-fi
