@@ -18,7 +18,7 @@ import katex from "lume/plugins/katex.ts";
 const data = JSON.parse(Deno.readTextFileSync("../config.json"));
 
 const site = lume({
-  location: new URL(data.start_url + "blog"),
+  location: new URL(data.start_url + "notes"),
   src: "./src",
   dest: "../../site/notes",
   port: 8000,
