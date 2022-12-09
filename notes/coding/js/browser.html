@@ -1,0 +1,886 @@
+<!doctype html><title>Browser - AK#Notes</title><link href=https://anzenkodo.github.io/blog/favicon.png rel=icon type=image/png><link href=https://anzenkodo.github.io/blog/manifest.json rel=manifest><link title="AK#Notes RSS Feed"href=https://anzenkodo.github.io/blog/feed.xml rel=alternate type=application/rss+xml><link title="AK#Notes JSON Feed"href=https://anzenkodo.github.io/blog/feed.json rel=alternate type=application/json><link title="AK#Notes Atom Feed"href=https://anzenkodo.github.io/blog/feed.atom rel=alternate type=application/atom+xml><link title="AK#Notes Sitemap"href=https://anzenkodo.github.io/blog/sitemap.xml rel=sitemap type=application/xml><link href="https://fontbit.io/css2?family=Radio+Canada:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"rel=stylesheet><link href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6.0/build/styles/tokyo-night-dark.min.css rel=stylesheet><link href=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css rel=stylesheet><meta charset=utf-8><meta content="width=device-width,initial-scale=1"name=viewport><meta content=Axel name=author><meta content=#bd8bf2 name=theme-color><meta content=Browser property=og:title><meta content="https://ogsupa.com/api/v1?font_style=font-sans&title=Browser&description=Browser:%20Document,%20Events,%20Interfaces%20Document%20document.documentElement%20document.body%20%20%20You%20can%20only%20but%20document.body%20in%20%20%20tag.%20%20&amplt;html&ampgt;%20%20&amplt;head&ampgt;%20%20%20&amplt;script&ampgt;%20%20%20%20%20alert(%20&ampquot;From%20HEAD:%20&ampquot;%20+%20document.body%20);%20//%20null,%20there%27s%20no%20&amplt;body&ampgt;%20yet%20%20%20&amplt;/script&g&right_meta=AK%23Notes&background_color=%23bd8bf2"property=og:image><meta content=Browser name=twitter:title><meta content="Browser: Document, Events, Interfaces Document document.documentElement document.body   You can only but document.body in   tag.  &amplt;html&ampgt;  &amplt;head&ampgt;   &amplt;script&ampgt;     alert( &ampquot;From HEAD: &ampquot; + document.body ); // null, there's no &amplt;body&ampgt; yet   &amplt;/script&g"name=twitter:description><meta content="https://ogsupa.com/api/v1?font_style=font-sans&title=Browser&description=Browser:%20Document,%20Events,%20Interfaces%20Document%20document.documentElement%20document.body%20%20%20You%20can%20only%20but%20document.body%20in%20%20%20tag.%20%20&amplt;html&ampgt;%20%20&amplt;head&ampgt;%20%20%20&amplt;script&ampgt;%20%20%20%20%20alert(%20&ampquot;From%20HEAD:%20&ampquot;%20+%20document.body%20);%20//%20null,%20there%27s%20no%20&amplt;body&ampgt;%20yet%20%20%20&amplt;/script&g&right_meta=AK%23Notes&background_color=%23bd8bf2"name=twitter:image><meta content=Browser itemprop=name><meta content="Browser: Document, Events, Interfaces Document document.documentElement document.body   You can only but document.body in   tag.  &amplt;html&ampgt;  &amplt;head&ampgt;   &amplt;script&ampgt;     alert( &ampquot;From HEAD: &ampquot; + document.body ); // null, there's no &amplt;body&ampgt; yet   &amplt;/script&g"itemprop=description><meta content="https://ogsupa.com/api/v1?font_style=font-sans&title=Browser&description=Browser:%20Document,%20Events,%20Interfaces%20Document%20document.documentElement%20document.body%20%20%20You%20can%20only%20but%20document.body%20in%20%20%20tag.%20%20&amplt;html&ampgt;%20%20&amplt;head&ampgt;%20%20%20&amplt;script&ampgt;%20%20%20%20%20alert(%20&ampquot;From%20HEAD:%20&ampquot;%20+%20document.body%20);%20//%20null,%20there%27s%20no%20&amplt;body&ampgt;%20yet%20%20%20&amplt;/script&g&right_meta=AK%23Notes&background_color=%23bd8bf2"itemprop=image><meta content="Browser: Document, Events, Interfaces Document document.documentElement document.body   You can only but document.body in   tag.  &amplt;html&ampgt;  &amplt;head&ampgt;   &amplt;script&ampgt;     alert( &ampquot;From HEAD: &ampquot; + document.body ); // null, there's no &amplt;body&ampgt; yet   &amplt;/script&g"name=description><script type=module>Array.from(document.querySelectorAll(".files *:has(.active)")).map(x => x.open = true);
+      </script><style>*,::after,::before{-webkit-box-sizing:border-box;box-sizing:border-box;border:0 solid #e5e7eb}*{--tw-ring-inset:var(--tw-empty,/*!*/ /*!*/);--tw-ring-offset-width:0;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000}:root{-moz-tab-size:4;-o-tab-size:4;tab-size:4}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}::moz-focus-inner{border:none;padding:0}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}[type='search']{-webkit-appearance:textfield;outline-offset:-2px}abbr[title]{-webkit-text-decoration:underline dotted;text-decoration:underline dotted}a{color:inherit;text-decoration:inherit}body{margin:0;font-family:inherit;line-height:inherit}html{-webkit-text-size-adjust:100%;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";line-height:1.5}h1,h2,h3{font-size:inherit;font-weight:inherit}input{padding:0;font:100%/inherit inherit;color:inherit;margin:0}input::placeholder{opacity:1;color:#9ca3af}input::webkit-input-placeholder{opacity:1;color:#9ca3af}input::-moz-placeholder{opacity:1;color:#9ca3af}input:-ms-input-placeholder{opacity:1;color:#9ca3af}input::-ms-input-placeholder{opacity:1;color:#9ca3af}code,pre{font:1em ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}h1,h2,h3,p,pre{margin:0}strong{font-weight:bolder}summary{display:list-item}table{text-indent:0;border:inherit;border-collapse:collapse}ol,ul{list-style:none;margin:0;padding:0}.bg-\$theme{background:var(--theme)}.bg-white{--tw-bg-opacity:1;background:rgba(255,255,255,var(--tw-bg-opacity))}.inline-block{display:inline-block}.grid{display:grid}.hidden{display:none}.font-bold{font-weight:700}.font-light{font-weight:300}.before\:font-normal::before{font-weight:400}.text-2xl{font-size:1.5rem;line-height:2rem}.text-xs{font-size:.75rem;line-height:1rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.m-auto{margin:auto}.mx-auto{margin-left:auto;margin-right:auto}.my-5{margin-top:1.25rem;margin-bottom:1.25rem}.mx-3{margin-left:.75rem;margin-right:.75rem}.mb-8{margin-bottom:2rem}.ml-2{margin-left:.5rem}.before\:mr-before\:mr-2::before{margin-right:.5rem}.max-h-screen-sm{max-height:640px}.max-h-2em{max-height:2em}.max-w-screen-lg{max-width:1024px}.min-h-screen{min-height:100vh}.overflow-x-auto{overflow-x:auto}.p-0\.3em{padding:.3em}.p-5{padding:1.25rem}.p-2{padding:.5rem}.p-10{padding:2.5rem}.pt-2{padding-top:.5rem}.fixed{position:fixed}.absolute{position:absolute}.right-4{right:1rem}.top-5{top:1.25rem}.bottom-4{bottom:1rem}.text-center{text-align:center}.text-inherit{color:inherit}.italic{font-style:italic}.not-italic{font-style:normal}.before\:content-\/::before{content:"/"}.select-none{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.hyphens-manual{-webkit-hyphens:manual;-ms-hyphens:manual;hyphens:manual}.gap-x-8{-webkit-column-gap:2rem;-moz-column-gap:2rem;grid-column-gap:2rem;column-gap:2rem}.grid-cols-\[13rem\2c 768px\]{grid-template-columns:13rem 768px}.col-start-2{grid-column-start:2}.transform{--tw-translate-x:0;--tw-translate-y:0;--tw-translate-z:0;--tw-rotate:0;--tw-rotate-x:0;--tw-rotate-y:0;--tw-rotate-z:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-scale-z:1;-webkit-transform:translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) translateZ(var(--tw-translate-z)) rotate(var(--tw-rotate)) rotateX(var(--tw-rotate-x)) rotateY(var(--tw-rotate-y)) rotateZ(var(--tw-rotate-z)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) scaleZ(var(--tw-scale-z));-ms-transform:translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) translateZ(var(--tw-translate-z)) rotate(var(--tw-rotate)) rotateX(var(--tw-rotate-x)) rotateY(var(--tw-rotate-y)) rotateZ(var(--tw-rotate-z)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) scaleZ(var(--tw-scale-z));transform:translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) translateZ(var(--tw-translate-z)) rotate(var(--tw-rotate)) rotateX(var(--tw-rotate-x)) rotateY(var(--tw-rotate-y)) rotateZ(var(--tw-rotate-z)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) scaleZ(var(--tw-scale-z))}.focus\:translate-y-0:focus{--tw-translate-y:0}.-translate-y-20\/10{--tw-translate-y:-200%}@media (prefers-color-scheme:dark){.\@dark\:bg-black{--tw-bg-opacity:1;background:rgba(0,0,0,var(--tw-bg-opacity))}}</style><meta content=website property=og:type><meta content=AK#Notes property=og:site_name><meta content=en property=og:locale><meta content=https://anzenkodo.github.io/blog/coding/js/browser.html property=og:url><meta content=summary name=twitter:card><meta content=@AnzenKodo name=twitter:site><meta content="Lume v1.13.0"name=generator><body><style>:root{--theme:#583fcb;color-scheme:dark light;accent-color:rgba(var(--theme), 1)}::selection{--tw-bg-opacity:1;background-color:rgba(59, 130, 246, var(--tw-bg-opacity));--tw-text-opacity:1;color:rgba(255, 255, 255, var(--tw-text-opacity))}body{font-family:'Radio Canada', sans-serif}a{color:var(--theme)}a:hover,a:focus{-webkit-text-decoration-line:underline;text-decoration-line:underline}a:active{background-color:var(--theme);color:inherit}.footnotes{margin-top:0.75rem}.footnotes li p{margin-bottom:0px}@media (prefers-color-scheme: dark){:root{--theme:#bd8bf2}}.files summary{cursor:pointer}.files li{line-height:1.25;margin-top:0.5rem}.files details{margin-top:0.5rem}.files details details{margin-left:0.75rem}.files details li{margin-left:1rem}.files .active{font-weight:700}.files .not-active{font-weight:400}.toc ol{list-style-type:decimal;counter-reset:item}.toc li{list-style-position:inside;margin-left:0.75rem}.toc ol li::before{content:counters(item, &quot;.&quot;) &quot;counter-increment:item}.content p,.content pre,.content ul,.content ol,.content blockqoute,.content dl,.content table{margin-bottom:1rem}.content h1,.content h2,.content h3,.content h4,.content h5,.content h6{font-weight:700;margin-top:2.5rem;margin-bottom:0.5rem}.content h1:hover::after,.content h2:hover::after,.content h3:hover::after,.content h4:hover::after,.content h5:hover::after,.content h6:hover::after{margin-left:0.25rem;color:var(--theme);content:"#"}.content h1 a,.content h2 a,.content h3 a,.content h4 a,.content h5 a,.content h6 a{color:inherit;text-decoration:none}.content{line-height:1.625;letter-spacing:0.05em;word-spacing:.3em}.content h1{font-size:1.875rem;line-height:2.25rem}.content h2{font-size:1.5rem;line-height:2rem}.content h3{font-size:1.25rem;line-height:1.75rem}.content h4{font-size:1.125rem;line-height:1.75rem}.content h5{font-size:1rem;line-height:1.5rem}.content h6{font-size:0.875rem;line-height:1.25rem}.content ul li,ol li{margin-left:1.25rem;margin-bottom:0.25rem}.content ul li{list-style-type:disc}.content ul li ul li{list-style-type:circle}.content ul li ul li ul li{list-style-position:outside;list-style-type:square}.content ol li{list-style-type:decimal}.content blockquote{border-left-width:5px;margin-left:2.5rem;margin-right:2.5rem;margin-top:0.75rem;margin-bottom:0.25rem;padding-top:1rem;padding-bottom:0.25rem;padding-left:1rem;padding-right:1rem}.content img{border-style:none;display:inline}.content figcaption{margin-top:0.5rem;text-align:center;font-style:italic}][disabled]{cursor:default}.content input ~ label{margin-left:0.75rem}.content .task-list-item{list-style-type:none}.content th,.content td{border-width:1px;padding-left:0.75rem;padding-right:0.75rem}.content table caption{font-style:italic}@media (max-width: 1023.9px){.page{display:block}.menu{display:inline}.menu-items{display:none}.menu input{-webkit-appearance:none;-moz-appearance:none;appearance:none}.menu input::before{font-size:2.25rem;line-height:2.5rem;line-height:1;padding-left:0.075rem;content:"☰"}.menu input:checked::before{padding-left:0.25rem;content:"Χ"}.menu:has(input:checked) + .menu-items{display:block}main{margin-top:1.25rem}}</style><a class="p-0.3em absolute bg-$theme text-inherit transform -translate-y-20/10 focus:translate-y-0"href=#main>Skip to content</a><div class="p-5 mx-auto max-w-screen-lg grid grid-cols-[13rem,768px] gap-x-8 page"><aside><p class="font-bold text-2xl m-auto"><a href=https://AnzenKodo.github.io/>AK</a>#Notes<div class="absolute right-4 top-5 hidden menu"><input type=checkbox><label for="Menu button"></label></div><div class=menu-items><p class=feed>Feeds: <a href=https://anzenkodo.github.io/blog/feed.xml>RSS</a> <a href=https://anzenkodo.github.io/blog/feed.atom>Atom</a> <a href=https://anzenkodo.github.io/blog/feed.json>JSON</a><nav class="my-5 files"><ul><li class=not-active><a href=https://anzenkodo.github.io/blog/>Home</a><details><summary class=not-active>books</summary><li class=not-active><a href=https://anzenkodo.github.io/blog/books/12-rules-of-life>12 Rules of Life</a><li class=not-active><a href=https://anzenkodo.github.io/blog/books/anything-you-want>Anything You Want</a><li class=not-active><a href=https://anzenkodo.github.io/blog/books/enlightenment-now>Enlightenment Now</a><li class=not-active><a href=https://anzenkodo.github.io/blog/books/give-and-take>Give and Take</a><li class=not-active><a href=https://anzenkodo.github.io/blog/books/hell-yeah-or-no>Hell Yeah or No</a><li class=not-active><a href=https://anzenkodo.github.io/blog/books/keep-going>Keep Going</a><li class=not-active><a href=https://anzenkodo.github.io/blog/books/newspaper-blackout>Newspaper Blackout</a><li class=not-active><a href=https://anzenkodo.github.io/blog/books/originals>Originals</a><li class=not-active><a href=https://anzenkodo.github.io/blog/books/personal-values>Personal Values</a><li class=not-active><a href=https://anzenkodo.github.io/blog/books/range>Range</a><li class=not-active><a href=https://anzenkodo.github.io/blog/books/self-discipline>Self Discipline</a><li class=not-active><a href=https://anzenkodo.github.io/blog/books/show-your-work>Show your work</a><li class=not-active><a href=https://anzenkodo.github.io/blog/books/steal-like-an-artist>Steal Like an Artist</a><li class=not-active><a href=https://anzenkodo.github.io/blog/books/your-first-year-in-code>Your First Year in Code</a><li class=not-active><a href=https://anzenkodo.github.io/blog/books/your-music-and-people>Your Music and People</a></details><details><summary class=not-active>coding</summary><li class=not-active><a href=https://anzenkodo.github.io/blog/coding/bash>Bash</a><li class=not-active><a href=https://anzenkodo.github.io/blog/coding/c>C</a><li class=not-active><a href=https://anzenkodo.github.io/blog/coding/coding>Coding</a><li class=not-active><a href=https://anzenkodo.github.io/blog/coding/css>CSS</a><li class=not-active><a href=https://anzenkodo.github.io/blog/coding/java>Java</a></li><details><summary class=not-active>android</summary><li class=not-active><a href=https://anzenkodo.github.io/blog/coding/android/final>Final</a><li class=not-active><a href=https://anzenkodo.github.io/blog/coding/android/notes>Notes</a><li class=not-active><a href=https://anzenkodo.github.io/blog/coding/android/pratical-s6>Pratical S6</a><li class=not-active><a href=https://anzenkodo.github.io/blog/coding/android/ut2-6s>UT2 6S</a><li class=not-active><a href=https://anzenkodo.github.io/blog/coding/android/viva-6s-sort>Viva 6S sort</a><li class=not-active><a href=https://anzenkodo.github.io/blog/coding/android/viva-6s>Viva 6S</a></details><details><summary class=not-active>js</summary><li class=not-active><a href=https://anzenkodo.github.io/blog/coding/js/browser>Browser</a><li class=not-active><a href=https://anzenkodo.github.io/blog/coding/js/js>JS</a><li class=not-active><a href=https://anzenkodo.github.io/blog/coding/js/nodejs>NodeJS</a><li class=not-active><a href=https://anzenkodo.github.io/blog/coding/js/react>React</a></details><details><summary class=not-active>php</summary><li class=not-active><a href=https://anzenkodo.github.io/blog/coding/php/final>Final</a><li class=not-active><a href=https://anzenkodo.github.io/blog/coding/php/notes>Notes</a><li class=not-active><a href="https://anzenkodo.github.io/blog/coding/php/pratical sem6">Pratical Sem6</a><li class=not-active><a href=https://anzenkodo.github.io/blog/coding/php/sample-paper-6s>Sample Paper 6S</a><li class=not-active><a href=https://anzenkodo.github.io/blog/coding/php/ut1-6s>UT1 6S</a><li class=not-active><a href=https://anzenkodo.github.io/blog/coding/php/ut2-6s>UT2 6S</a></details><details><summary class=not-active>python</summary><li class=not-active><a href=https://anzenkodo.github.io/blog/coding/python/finals>Finals</a><li class=not-active><a href=https://anzenkodo.github.io/blog/coding/python/notes>Notes</a><li class=not-active><a href=https://anzenkodo.github.io/blog/coding/python/practical-s6>Practical S6</a><li class=not-active><a href=https://anzenkodo.github.io/blog/coding/python/sample-paper-6s>Sample Paper 6S</a><li class=not-active><a href=https://anzenkodo.github.io/blog/coding/python/ut1-6s>UT1 6S</a><li class=not-active><a href=https://anzenkodo.github.io/blog/coding/python/ut2-6s>UT2 6S</a></details></details><details><summary class=not-active>maths</summary><details><summary class=not-active>Discrete mathematics</summary><li class=not-active><a href=https://anzenkodo.github.io/blog/maths/discrete-mathematics/set>Set</a><li class=not-active><a href=https://anzenkodo.github.io/blog/maths/discrete-mathematics/sets>sets</a></details></details><details><summary class=not-active>study</summary><li class=not-active><a href=https://anzenkodo.github.io/blog/study/grammmar>Grammmar</a><li class=not-active><a href=https://anzenkodo.github.io/blog/study/mgt>MGT</a></details></ul></nav><nav class="fixed bottom-4 right-4 text-xs bg-white @dark:bg-black p-2 max-h-screen-sm overflow-x-auto toc"><details><summary class=text-sm>Table of Content</summary><ol class=pt-2><ol><li><a href=#document.documentelement>document.documentElement</a><li><a href=#document.body>document.body</a><li><a href=#document.head>document.head</a><li><a href=#searching%3A>Searching:</a><ol><li><a href=#getelement*>getElement*</a><li><a href=#queryselector*>querySelector*</a></ol><li><a href=#table>Table</a><li><a href=#methods>Methods</a><li><a href=#childnode>ChildNode</a></ol></ol></details></nav></div></aside><main class=min-h-screen id=main><div class=mb-8><h1 class="text-4xl font-bold">Browser</h1><ul class="font-light text-sm italic"><li class=inline-block><span class="not-italic select-none">Date: </span><time datetime="Fri Dec 09 2022 20:15:14 GMT+0000 (Coordinated Universal Time)">9-12-2022</time><li class="inline-block before:content-/ ml-2 before:mr-before:mr-2 before:font-normal"><span class="not-italic select-none">Reading Time: </span>29min</ul></div><div class="hyphens-manual content"><div><h1>Browser: Document, Events, Interfaces</h1><h1>Document</h1><h2 id=document.documentelement tabindex=-1><a class=header-anchor href=#document.documentelement>document.documentElement</a></h2><h2 id=document.body tabindex=-1><a class=header-anchor href=#document.body>document.body</a></h2><ul><li><p>You can only but document.body in tag.</p> <pre><code class="language-html hljs language-xml"><span class=hljs-tag><<span class=hljs-name>html</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>head</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+    <span class="hljs-title function_">alert</span>( <span class=hljs-string>"From HEAD: "</span> + <span class="hljs-variable language_">document</span>.<span class=hljs-property>body</span> ); <span class=hljs-comment>// null, there's no &LTbody> yet</span>
+  </span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span>
+<span class=hljs-tag>&LT/<span class=hljs-name>head</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>body</span>></span>
+
+  <span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+    <span class="hljs-title function_">alert</span>( <span class=hljs-string>"From BODY: "</span> + <span class="hljs-variable language_">document</span>.<span class=hljs-property>body</span> ); <span class=hljs-comment>// HTMLBodyElement, now it exists</span>
+  </span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span>
+
+<span class=hljs-tag>&LT/<span class=hljs-name>body</span>></span>
+<span class=hljs-tag>&LT/<span class=hljs-name>html</span>></span>
+</code></pre><li><p><code>document.body.style</code></p> <pre><code class="language-jsx hljs language-javascript"><span class=hljs-comment>// change the background color to red</span>
+<span class="hljs-variable language_">document</span>.<span class=hljs-property>body</span>.<span class=hljs-property>style</span>.<span class=hljs-property>background</span> = <span class=hljs-string>"red"</span>;
+
+<span class=hljs-comment>// change it back after 1 second</span>
+<span class=hljs-built_in>setTimeout</span>(<span class=hljs-function>() =></span> <span class="hljs-variable language_">document</span>.<span class=hljs-property>body</span>.<span class=hljs-property>style</span>.<span class=hljs-property>background</span> = <span class=hljs-string>""</span>, <span class=hljs-number>1000</span>);
+</code></pre></ul><h2 id=document.head tabindex=-1><a class=header-anchor href=#document.head>document.head</a></h2><h2 id=searching%3A tabindex=-1><a class=header-anchor href=#searching%3A>Searching:</a></h2><ul><li><p>Live collections of <strong>getElementsBy</strong>* & <strong>querySelector</strong>*</p> <ul><li>All methods "getElementsBy*" return a live collection. Such collections always reflect the current state of the document and “auto-update” when it changes.</ul> <pre><code class="language-html hljs language-xml"><span class=hljs-tag><<span class=hljs-name>div</span>></span>First div<span class=hljs-tag>&LT/<span class=hljs-name>div</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+  <span class=hljs-keyword>let</span> divs = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementsByTagName</span>(<span class=hljs-string>'div'</span>);
+  <span class="hljs-title function_">alert</span>(divs.<span class=hljs-property>length</span>); <span class=hljs-comment>// 1</span>
+</span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>div</span>></span>Second div<span class=hljs-tag>&LT/<span class=hljs-name>div</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+  <span class="hljs-title function_">alert</span>(divs.<span class=hljs-property>length</span>); <span class=hljs-comment>// 2</span>
+</span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span>
+</code></pre> <ul><li>In contrast, querySelectorAll returns a static collection. It’s like a fixed array of elements.</ul> <pre><code class="language-html hljs language-xml"><span class=hljs-tag><<span class=hljs-name>div</span>></span>First div<span class=hljs-tag>&LT/<span class=hljs-name>div</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+  <span class=hljs-keyword>let</span> divs = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelectorAll</span>(<span class=hljs-string>'div'</span>);
+  <span class="hljs-title function_">alert</span>(divs.<span class=hljs-property>length</span>); <span class=hljs-comment>// 1</span>
+</span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>div</span>></span>Second div<span class=hljs-tag>&LT/<span class=hljs-name>div</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+  <span class="hljs-title function_">alert</span>(divs.<span class=hljs-property>length</span>); <span class=hljs-comment>// 1</span>
+</span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span>
+</code></pre><li><p>There are 6 main methods to search for nodes in DOM:</p> <p><a href=Browser%20Document,%20Events,%20Interfaces%205b1ea1234a324530a62e17f0aecee387/Methods%20to%20Search%20bae8734b53c44a51833cba491564ef97.csv>Methods to Search</a></p><li><p>❓ Search for elements</p> <pre><code class="language-jsx hljs language-javascript"><span class=hljs-comment>// 1. The table with `id="age-table"`.</span>
+<span class=hljs-keyword>let</span> table = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class=hljs-string>'age-table'</span>)
+
+<span class=hljs-comment>// 2. All label elements inside that table</span>
+table.<span class="hljs-title function_">getElementsByTagName</span>(<span class=hljs-string>'label'</span>)
+<span class=hljs-comment>// or</span>
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelectorAll</span>(<span class=hljs-string>'#age-table label'</span>)
+
+<span class=hljs-comment>// 3. The first td in that table (with the word "Age")</span>
+table.<span class=hljs-property>rows</span>[<span class=hljs-number>0</span>].<span class=hljs-property>cells</span>[<span class=hljs-number>0</span>]
+<span class=hljs-comment>// or</span>
+table.<span class="hljs-title function_">getElementsByTagName</span>(<span class=hljs-string>'td'</span>)[<span class=hljs-number>0</span>]
+<span class=hljs-comment>// or</span>
+table.<span class="hljs-title function_">querySelector</span>(<span class=hljs-string>'td'</span>)
+
+<span class=hljs-comment>// 4. The form with the name "search"</span>
+<span class=hljs-comment>// assuming there's only one element with name="search" in the document</span>
+<span class=hljs-keyword>let</span> form = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementsByName</span>(<span class=hljs-string>'search'</span>)[<span class=hljs-number>0</span>]
+<span class=hljs-comment>// or, form specifically</span>
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class=hljs-string>'form[name="search"]'</span>)
+
+<span class=hljs-comment>// 5. The first input in that form.</span>
+form.<span class="hljs-title function_">getElementsByTagName</span>(<span class=hljs-string>'input'</span>)[<span class=hljs-number>0</span>]
+<span class=hljs-comment>// or</span>
+form.<span class="hljs-title function_">querySelector</span>(<span class=hljs-string>'input'</span>)
+
+<span class=hljs-comment>// 6. The last input in that form</span>
+<span class=hljs-keyword>let</span> inputs = form.<span class="hljs-title function_">querySelectorAll</span>(<span class=hljs-string>'input'</span>) <span class=hljs-comment>// find all inputs</span>
+inputs[inputs.<span class=hljs-property>length</span>-<span class=hljs-number>1</span>] <span class=hljs-comment>// take the last one</span>
+</code></pre></ul><h3 id=getelement* tabindex=-1><a class=header-anchor href=#getelement*>getElement*</a></h3><ul><li><p>We can get id of the element using the method <code>document.getElementById(id)</code>.</p> <pre><code class="language-html hljs language-xml"><span class=hljs-tag><<span class=hljs-name>div</span> <span class=hljs-attr>id</span>=<span class=hljs-string>"elem"</span>></span>
+	<span class=hljs-tag><<span class=hljs-name>p</span>></span>Hello<span class=hljs-tag>&LT/<span class=hljs-name>p</span>></span>
+	<span class=hljs-tag><<span class=hljs-name>div</span> <span class=hljs-attr>id</span>=<span class=hljs-string>"elem-content"</span>></span>World<span class=hljs-tag>&LT/<span class=hljs-name>div</span>></span>
+<span class=hljs-tag>&LT/<span class=hljs-name>div</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class=hljs-string>"elem"</span>).<span class=hljs-property>style</span>.<span class=hljs-property>background</span> = <span class=hljs-string>"green"</span>;
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class=hljs-string>"elem-content"</span>).<span class=hljs-property>style</span>.<span class=hljs-property>color</span> = <span class=hljs-string>"white"</span>;
+</span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span>
+</code></pre><li><p>The <code>getElementsByTagName</code> method of Document interface returns an HTMLCollection of elements with the given tag name.</p> <pre><code class="language-html hljs language-xml"><span class=hljs-tag><<span class=hljs-name>ul</span> <span class=hljs-attr>id</span>=<span class=hljs-string>"birds"</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>li</span>></span>Orange-winged parrot<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>li</span> <span class=hljs-attr>class</span>=<span class=hljs-string>"endangered"</span>></span>Philippine eagle<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>li</span>></span>Great white pelican<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+<span class=hljs-tag>&LT/<span class=hljs-name>ul</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementsByTagName</span>(<span class=hljs-string>"li"</span>).<span class=hljs-property>length</span>);
+<span class=hljs-comment>// 3</span>
+</span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span>
+</code></pre><li><p><code>getElementsByClassName</code>for finding element with class name.</p> <pre><code class="language-html hljs language-xml"><span class=hljs-tag><<span class=hljs-name>form</span> <span class=hljs-attr>name</span>=<span class=hljs-string>"my-form"</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>div</span> <span class=hljs-attr>class</span>=<span class=hljs-string>"article"</span>></span>Article<span class=hljs-tag>&LT/<span class=hljs-name>div</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>div</span> <span class=hljs-attr>class</span>=<span class=hljs-string>"long article"</span>></span>Long article<span class=hljs-tag>&LT/<span class=hljs-name>div</span>></span>
+<span class=hljs-tag>&LT/<span class=hljs-name>form</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+	<span class=hljs-keyword>let</span> form = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementsByName</span>(<span class=hljs-string>'my-form'</span>)[<span class=hljs-number>0</span>];
+
+	<span class=hljs-keyword>let</span> articles = form.<span class="hljs-title function_">getElementsByClassName</span>(<span class=hljs-string>'article'</span>).<span class=hljs-property>length</span>;
+
+	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(articles);
+</span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span>
+</code></pre></ul><h3 id=queryselector* tabindex=-1><a class=header-anchor href=#queryselector*>querySelector*</a></h3><ul><li><p><code>document.querySelectorAll(css)</code> returns all elements inside matching the given CSS selector.</p> <pre><code class="language-html hljs language-xml"><span class=hljs-tag><<span class=hljs-name>ul</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>li</span>></span>The<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>li</span>></span>test<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+<span class=hljs-tag>&LT/<span class=hljs-name>ul</span>></span>
+<span class=hljs-tag><<span class=hljs-name>ul</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>li</span>></span>has<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>li</span>></span>passed<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+<span class=hljs-tag>&LT/<span class=hljs-name>ul</span>></span>
+<span class=hljs-tag><<span class=hljs-name>p</span>></span>Hello World<span class=hljs-tag>&LT/<span class=hljs-name>p</span>></span>
+<span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+  <span class=hljs-keyword>let</span> elements = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelectorAll</span>(<span class=hljs-string>'li:last-child, p'</span>);
+
+  <span class=hljs-keyword>for</span> (<span class=hljs-keyword>let</span> elem <span class=hljs-keyword>of</span> elements) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(elem.<span class=hljs-property>innerHTML</span>); <span class=hljs-comment>// "test", "passed"</span>
+  }
+</span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span>
+</code></pre><li><p>The call to <code>document.querySelector(css)</code> returns the first element for the given CSS selector.</p> <pre><code class="language-html hljs language-xml"><span class=hljs-tag><<span class=hljs-name>h1</span>></span>Contents<span class=hljs-tag>&LT/<span class=hljs-name>h1</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>div</span> <span class=hljs-attr>class</span>=<span class=hljs-string>"contents"</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>ul</span> <span class=hljs-attr>class</span>=<span class=hljs-string>"book"</span>></span>
+    <span class=hljs-tag><<span class=hljs-name>li</span> <span class=hljs-attr>class</span>=<span class=hljs-string>"chapter"</span>></span>Chapter 1<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+    <span class=hljs-tag><<span class=hljs-name>li</span> <span class=hljs-attr>class</span>=<span class=hljs-string>"chapter"</span>></span>Chapter 1<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+  <span class=hljs-tag>&LT/<span class=hljs-name>ul</span>></span>
+<span class=hljs-tag>&LT/<span class=hljs-name>div</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+  <span class=hljs-keyword>let</span> chapter = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class=hljs-string>'.chapter'</span>); <span class=hljs-comment>// LI</span>
+
+  <span class="hljs-title function_">alert</span>(chapter.<span class="hljs-title function_">closest</span>(<span class=hljs-string>'.book'</span>)); <span class=hljs-comment>// UL</span>
+  <span class="hljs-title function_">alert</span>(chapter.<span class="hljs-title function_">closest</span>(<span class=hljs-string>'.contents'</span>)); <span class=hljs-comment>// DIV</span>
+
+  <span class="hljs-title function_">alert</span>(chapter.<span class="hljs-title function_">closest</span>(<span class=hljs-string>'h1'</span>)); <span class=hljs-comment>// null (because h1 is not an ancestor)</span>
+</span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span>
+</code></pre><li><p>❓ Make external links orange</p> <pre><code class="language-html hljs language-xml"><span class=hljs-tag><<span class=hljs-name>a</span> <span class=hljs-attr>name</span>=<span class=hljs-string>"list"</span>></span>the list<span class=hljs-tag>&LT/<span class=hljs-name>a</span>></span>
+<span class=hljs-tag><<span class=hljs-name>ul</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>li</span>></span><span class=hljs-tag><<span class=hljs-name>a</span> <span class=hljs-attr>href</span>=<span class=hljs-string>"http://google.com"</span>></span>http://google.com<span class=hljs-tag>&LT/<span class=hljs-name>a</span>></span><span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>li</span>></span><span class=hljs-tag><<span class=hljs-name>a</span> <span class=hljs-attr>href</span>=<span class=hljs-string>"/tutorial"</span>></span>/tutorial.html<span class=hljs-tag>&LT/<span class=hljs-name>a</span>></span><span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>li</span>></span><span class=hljs-tag><<span class=hljs-name>a</span> <span class=hljs-attr>href</span>=<span class=hljs-string>"local/path"</span>></span>local/path<span class=hljs-tag>&LT/<span class=hljs-name>a</span>></span><span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>li</span>></span><span class=hljs-tag><<span class=hljs-name>a</span> <span class=hljs-attr>href</span>=<span class=hljs-string>"ftp://ftp.com/my.zip"</span>></span>ftp://ftp.com/my.zip<span class=hljs-tag>&LT/<span class=hljs-name>a</span>></span><span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>li</span>></span><span class=hljs-tag><<span class=hljs-name>a</span> <span class=hljs-attr>href</span>=<span class=hljs-string>"http://nodejs.org"</span>></span>http://nodejs.org<span class=hljs-tag>&LT/<span class=hljs-name>a</span>></span><span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>li</span>></span><span class=hljs-tag><<span class=hljs-name>a</span> <span class=hljs-attr>href</span>=<span class=hljs-string>"http://internal.com/test"</span>></span>http://internal.com/test<span class=hljs-tag>&LT/<span class=hljs-name>a</span>></span><span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+<span class=hljs-tag>&LT/<span class=hljs-name>ul</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+	<span class=hljs-keyword>let</span> link = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelectorAll</span>(<span class=hljs-string>'a'</span>);
+		<span class=hljs-keyword>for</span> ( <span class=hljs-keyword>let</span> links <span class=hljs-keyword>of</span> link ) {
+			<span class=hljs-keyword>if</span>( <span class="hljs-title class_">String</span>(links.<span class="hljs-title function_">getAttribute</span>(<span class=hljs-string>'href'</span>)).<span class="hljs-title function_">includes</span>(<span class=hljs-string>'http'</span>)) {
+			  links.<span class=hljs-property>style</span>.<span class=hljs-property>color</span> = <span class=hljs-string>'orange'</span>;
+			};
+		}
+</span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span>
+</code></pre> <pre><code class="language-html hljs language-xml"><span class=hljs-tag><<span class=hljs-name>a</span> <span class=hljs-attr>name</span>=<span class=hljs-string>"list"</span>></span>the list<span class=hljs-tag>&LT/<span class=hljs-name>a</span>></span>
+<span class=hljs-tag><<span class=hljs-name>ul</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>li</span>></span><span class=hljs-tag><<span class=hljs-name>a</span> <span class=hljs-attr>href</span>=<span class=hljs-string>"http://google.com"</span>></span>http://google.com<span class=hljs-tag>&LT/<span class=hljs-name>a</span>></span><span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>li</span>></span><span class=hljs-tag><<span class=hljs-name>a</span> <span class=hljs-attr>href</span>=<span class=hljs-string>"/tutorial"</span>></span>/tutorial.html<span class=hljs-tag>&LT/<span class=hljs-name>a</span>></span><span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>li</span>></span><span class=hljs-tag><<span class=hljs-name>a</span> <span class=hljs-attr>href</span>=<span class=hljs-string>"local/path"</span>></span>local/path<span class=hljs-tag>&LT/<span class=hljs-name>a</span>></span><span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>li</span>></span><span class=hljs-tag><<span class=hljs-name>a</span> <span class=hljs-attr>href</span>=<span class=hljs-string>"ftp://ftp.com/my.zip"</span>></span>ftp://ftp.com/my.zip<span class=hljs-tag>&LT/<span class=hljs-name>a</span>></span><span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>li</span>></span><span class=hljs-tag><<span class=hljs-name>a</span> <span class=hljs-attr>href</span>=<span class=hljs-string>"http://nodejs.org"</span>></span>http://nodejs.org<span class=hljs-tag>&LT/<span class=hljs-name>a</span>></span><span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>li</span>></span><span class=hljs-tag><<span class=hljs-name>a</span> <span class=hljs-attr>href</span>=<span class=hljs-string>"http://internal.com/test"</span>></span>http://internal.com/test<span class=hljs-tag>&LT/<span class=hljs-name>a</span>></span><span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+<span class=hljs-tag>&LT/<span class=hljs-name>ul</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+	<span class=hljs-keyword>let</span> links = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelectorAll</span>(<span class=hljs-string>'a'</span>);
+
+	<span class=hljs-keyword>for</span> (<span class=hljs-keyword>let</span> link <span class=hljs-keyword>of</span> links) {
+	  <span class=hljs-keyword>let</span> href = link.<span class="hljs-title function_">getAttribute</span>(<span class=hljs-string>'href'</span>);
+	  <span class=hljs-keyword>if</span> (!href) <span class=hljs-keyword>continue</span>; <span class=hljs-comment>// no attribute</span>
+
+	  <span class=hljs-keyword>if</span> (!href.<span class="hljs-title function_">includes</span>(<span class=hljs-string>'://'</span>)) <span class=hljs-keyword>continue</span>; <span class=hljs-comment>// no protocol</span>
+
+	  <span class=hljs-keyword>if</span> (href.<span class="hljs-title function_">startsWith</span>(<span class=hljs-string>'http://internal.com'</span>)) <span class=hljs-keyword>continue</span>; <span class=hljs-comment>// internal</span>
+
+	  link.<span class=hljs-property>style</span>.<span class=hljs-property>color</span> = <span class=hljs-string>'orange'</span>;
+	}
+</span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span>
+</code></pre> <pre><code class="language-html hljs language-xml"><span class=hljs-tag><<span class=hljs-name>a</span> <span class=hljs-attr>name</span>=<span class=hljs-string>"list"</span>></span>the list<span class=hljs-tag>&LT/<span class=hljs-name>a</span>></span>
+<span class=hljs-tag><<span class=hljs-name>ul</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>li</span>></span><span class=hljs-tag><<span class=hljs-name>a</span> <span class=hljs-attr>href</span>=<span class=hljs-string>"http://google.com"</span>></span>http://google.com<span class=hljs-tag>&LT/<span class=hljs-name>a</span>></span><span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>li</span>></span><span class=hljs-tag><<span class=hljs-name>a</span> <span class=hljs-attr>href</span>=<span class=hljs-string>"/tutorial"</span>></span>/tutorial.html<span class=hljs-tag>&LT/<span class=hljs-name>a</span>></span><span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>li</span>></span><span class=hljs-tag><<span class=hljs-name>a</span> <span class=hljs-attr>href</span>=<span class=hljs-string>"local/path"</span>></span>local/path<span class=hljs-tag>&LT/<span class=hljs-name>a</span>></span><span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>li</span>></span><span class=hljs-tag><<span class=hljs-name>a</span> <span class=hljs-attr>href</span>=<span class=hljs-string>"ftp://ftp.com/my.zip"</span>></span>ftp://ftp.com/my.zip<span class=hljs-tag>&LT/<span class=hljs-name>a</span>></span><span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>li</span>></span><span class=hljs-tag><<span class=hljs-name>a</span> <span class=hljs-attr>href</span>=<span class=hljs-string>"http://nodejs.org"</span>></span>http://nodejs.org<span class=hljs-tag>&LT/<span class=hljs-name>a</span>></span><span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>li</span>></span><span class=hljs-tag><<span class=hljs-name>a</span> <span class=hljs-attr>href</span>=<span class=hljs-string>"http://internal.com/test"</span>></span>http://internal.com/test<span class=hljs-tag>&LT/<span class=hljs-name>a</span>></span><span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+<span class=hljs-tag>&LT/<span class=hljs-name>ul</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+	<span class=hljs-keyword>let</span> selector = <span class=hljs-string>'a[href*="://"]:not([href^="http://internal.com"])'</span>;
+	<span class=hljs-keyword>let</span> links = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelectorAll</span>(selector);
+
+	links.<span class="hljs-title function_">forEach</span>(<span class=hljs-function><span class=hljs-params>link</span> =></span> link.<span class=hljs-property>style</span>.<span class=hljs-property>color</span> = <span class=hljs-string>'orange'</span>);
+</span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span>
+</code></pre></ul><h2 id=table tabindex=-1><a class=header-anchor href=#table>Table</a></h2><ul><li><p>The element supports (in addition to the given above) these properties.<p><ul><li><p>An example of usage:</p> <pre><code class="language-html hljs language-xml"><span class=hljs-tag><<span class=hljs-name>table</span> <span class=hljs-attr>id</span>=<span class=hljs-string>"table"</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>tr</span>></span>
+    <span class=hljs-tag><<span class=hljs-name>td</span>></span>one<span class=hljs-tag>&LT/<span class=hljs-name>td</span>></span><span class=hljs-tag><<span class=hljs-name>td</span>></span>two<span class=hljs-tag>&LT/<span class=hljs-name>td</span>></span>
+  <span class=hljs-tag>&LT/<span class=hljs-name>tr</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>tr</span>></span>
+    <span class=hljs-tag><<span class=hljs-name>td</span>></span>three<span class=hljs-tag>&LT/<span class=hljs-name>td</span>></span><span class=hljs-tag><<span class=hljs-name>td</span>></span>four<span class=hljs-tag>&LT/<span class=hljs-name>td</span>></span>
+  <span class=hljs-tag>&LT/<span class=hljs-name>tr</span>></span>
+<span class=hljs-tag>&LT/<span class=hljs-name>table</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+  <span class=hljs-comment>// get td with "two" (first row, second column)</span>
+  <span class=hljs-keyword>let</span> td = table.<span class=hljs-property>rows</span>[<span class=hljs-number>0</span>].<span class=hljs-property>cells</span>[<span class=hljs-number>1</span>];
+  td.<span class=hljs-property>style</span>.<span class=hljs-property>backgroundColor</span> = <span class=hljs-string>"red"</span>; <span class=hljs-comment>// highlight it</span>
+</span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span>
+</code></pre><li><p><code>table.rows</code> – the collection of</ul> elements of the table.<p><li><p><code>table.caption/tHead/tFoot</code> – references to elements</li>, .<p></p><li><p><code>table.tBodies</code> – the collection of</li> elements.<p></p><li><p><code>tr.cells</code> – the collection of</li>.<p></p><li><p><code>tr.sectionRowIndex</code> – the position (index) of the given</li> inside the enclosing //.<p></p><li><p><code>tr.rowIndex</code> – the number of the</li> in the table as a whole (including all table rows).<p></p><li><p><code>td.cellIndex</code> – the number of the cell inside the enclosing</li>.<p></p><li><p>❓ Select all diagonal cells</p> <pre><code class="language-html hljs language-xml"><span class=hljs-meta>&LT!DOCTYPE <span class=hljs-keyword>HTML</span>></span>
+<span class=hljs-tag><<span class=hljs-name>html</span>></span>
+<span class=hljs-tag><<span class=hljs-name>head</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>style</span>></span><span class=language-css>
+    <span class=hljs-selector-tag>table</span> {
+      <span class=hljs-attribute>border-collapse</span>: collapse;
+    }
+
+    <span class=hljs-selector-tag>td</span> {
+      <span class=hljs-attribute>border</span>: <span class=hljs-number>1px</span> solid black;
+      <span class=hljs-attribute>padding</span>: <span class=hljs-number>3px</span> <span class=hljs-number>5px</span>;
+    }
+  </span><span class=hljs-tag>&LT/<span class=hljs-name>style</span>></span>
+<span class=hljs-tag>&LT/<span class=hljs-name>head</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>body</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>table</span>></span>
+    <span class=hljs-tag><<span class=hljs-name>tr</span>></span>
+      <span class=hljs-tag><<span class=hljs-name>td</span>></span>1:1<span class=hljs-tag>&LT/<span class=hljs-name>td</span>></span>
+      <span class=hljs-tag><<span class=hljs-name>td</span>></span>2:1<span class=hljs-tag>&LT/<span class=hljs-name>td</span>></span>
+      <span class=hljs-tag><<span class=hljs-name>td</span>></span>3:1<span class=hljs-tag>&LT/<span class=hljs-name>td</span>></span>
+      <span class=hljs-tag><<span class=hljs-name>td</span>></span>4:1<span class=hljs-tag>&LT/<span class=hljs-name>td</span>></span>
+      <span class=hljs-tag><<span class=hljs-name>td</span>></span>5:1<span class=hljs-tag>&LT/<span class=hljs-name>td</span>></span>
+    <span class=hljs-tag>&LT/<span class=hljs-name>tr</span>></span>
+    <span class=hljs-tag><<span class=hljs-name>tr</span>></span>
+      <span class=hljs-tag><<span class=hljs-name>td</span>></span>1:2<span class=hljs-tag>&LT/<span class=hljs-name>td</span>></span>
+      <span class=hljs-tag><<span class=hljs-name>td</span>></span>2:2<span class=hljs-tag>&LT/<span class=hljs-name>td</span>></span>
+      <span class=hljs-tag><<span class=hljs-name>td</span>></span>3:2<span class=hljs-tag>&LT/<span class=hljs-name>td</span>></span>
+      <span class=hljs-tag><<span class=hljs-name>td</span>></span>4:2<span class=hljs-tag>&LT/<span class=hljs-name>td</span>></span>
+      <span class=hljs-tag><<span class=hljs-name>td</span>></span>5:2<span class=hljs-tag>&LT/<span class=hljs-name>td</span>></span>
+    <span class=hljs-tag>&LT/<span class=hljs-name>tr</span>></span>
+    <span class=hljs-tag><<span class=hljs-name>tr</span>></span>
+      <span class=hljs-tag><<span class=hljs-name>td</span>></span>1:3<span class=hljs-tag>&LT/<span class=hljs-name>td</span>></span>
+      <span class=hljs-tag><<span class=hljs-name>td</span>></span>2:3<span class=hljs-tag>&LT/<span class=hljs-name>td</span>></span>
+      <span class=hljs-tag><<span class=hljs-name>td</span>></span>3:3<span class=hljs-tag>&LT/<span class=hljs-name>td</span>></span>
+      <span class=hljs-tag><<span class=hljs-name>td</span>></span>4:3<span class=hljs-tag>&LT/<span class=hljs-name>td</span>></span>
+      <span class=hljs-tag><<span class=hljs-name>td</span>></span>5:3<span class=hljs-tag>&LT/<span class=hljs-name>td</span>></span>
+    <span class=hljs-tag>&LT/<span class=hljs-name>tr</span>></span>
+    <span class=hljs-tag><<span class=hljs-name>tr</span>></span>
+      <span class=hljs-tag><<span class=hljs-name>td</span>></span>1:4<span class=hljs-tag>&LT/<span class=hljs-name>td</span>></span>
+      <span class=hljs-tag><<span class=hljs-name>td</span>></span>2:4<span class=hljs-tag>&LT/<span class=hljs-name>td</span>></span>
+      <span class=hljs-tag><<span class=hljs-name>td</span>></span>3:4<span class=hljs-tag>&LT/<span class=hljs-name>td</span>></span>
+      <span class=hljs-tag><<span class=hljs-name>td</span>></span>4:4<span class=hljs-tag>&LT/<span class=hljs-name>td</span>></span>
+      <span class=hljs-tag><<span class=hljs-name>td</span>></span>5:4<span class=hljs-tag>&LT/<span class=hljs-name>td</span>></span>
+    <span class=hljs-tag>&LT/<span class=hljs-name>tr</span>></span>
+    <span class=hljs-tag><<span class=hljs-name>tr</span>></span>
+      <span class=hljs-tag><<span class=hljs-name>td</span>></span>1:5<span class=hljs-tag>&LT/<span class=hljs-name>td</span>></span>
+      <span class=hljs-tag><<span class=hljs-name>td</span>></span>2:5<span class=hljs-tag>&LT/<span class=hljs-name>td</span>></span>
+      <span class=hljs-tag><<span class=hljs-name>td</span>></span>3:5<span class=hljs-tag>&LT/<span class=hljs-name>td</span>></span>
+      <span class=hljs-tag><<span class=hljs-name>td</span>></span>4:5<span class=hljs-tag>&LT/<span class=hljs-name>td</span>></span>
+      <span class=hljs-tag><<span class=hljs-name>td</span>></span>5:5<span class=hljs-tag>&LT/<span class=hljs-name>td</span>></span>
+    <span class=hljs-tag>&LT/<span class=hljs-name>tr</span>></span>
+  <span class=hljs-tag>&LT/<span class=hljs-name>table</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+    <span class=hljs-keyword>let</span> table = <span class="hljs-variable language_">document</span>.<span class=hljs-property>body</span>.<span class=hljs-property>firstElementChild</span>;
+    <span class=hljs-keyword>for</span>(<span class=hljs-keyword>let</span> i = <span class=hljs-number>0</span>; i < table.<span class=hljs-property>rows</span>.<span class=hljs-property>length</span>; i++) {
+      table.<span class=hljs-property>rows</span>[i].<span class=hljs-property>cells</span>[i].<span class=hljs-property>style</span>.<span class=hljs-property>background</span> = <span class=hljs-string>'red'</span>
+    }
+    <span class=hljs-comment>// your code</span>
+  </span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span>
+<span class=hljs-tag>&LT/<span class=hljs-name>body</span>></span>
+<span class=hljs-tag>&LT/<span class=hljs-name>html</span>></span>
+</code></pre></li><h2 id=methods tabindex=-1><a class=header-anchor href=#methods>Methods</a></h2><ul><li><p><code>Document.createElement()</code> Creates a new element with the given tag name.</p> <pre><code class="language-html hljs language-xml"><span class=hljs-tag><<span class=hljs-name>style</span>></span><span class=language-css>
+<span class=hljs-selector-class>.alert</span> {
+  <span class=hljs-attribute>padding</span>: <span class=hljs-number>15px</span>;
+  <span class=hljs-attribute>border</span>: <span class=hljs-number>1px</span> solid <span class=hljs-number>#d6e9c6</span>;
+  <span class=hljs-attribute>border-radius</span>: <span class=hljs-number>4px</span>;
+  <span class=hljs-attribute>color</span>: <span class=hljs-number>#3c763d</span>;
+  <span class=hljs-attribute>background-color</span>: <span class=hljs-number>#dff0d8</span>;
+}
+</span><span class=hljs-tag>&LT/<span class=hljs-name>style</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+  <span class=hljs-keyword>let</span> div = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class=hljs-string>'div'</span>);
+  div.<span class=hljs-property>className</span> =<span class=hljs-string>"alert"</span>;
+  div.<span class=hljs-property>innerHTML</span> = <span class=hljs-string>"&LTstrong>Hi there!&LT/strong> You've read an important message."</span>;
+
+  <span class="hljs-variable language_">document</span>.<span class=hljs-property>body</span>.<span class="hljs-title function_">append</span>(div);
+</span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span>
+</code></pre><li><p><code>Document.createTextNode()</code> Creates a new Text node. This method can be used to escape HTML characters.</p> <pre><code class="language-jsx hljs language-javascript"><span class=hljs-keyword>function</span> <span class="hljs-title function_">clicked</span>(<span class=hljs-params>word</span>) {
+	<span class=hljs-keyword>let</span> printWord = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createTextNode</span>(word);
+	<span class="hljs-variable language_">document</span>.<span class=hljs-property>body</span>.<span class="hljs-title function_">append</span>(printWord);
+}
+
+<span class=hljs-keyword>let</span> button = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class=hljs-string>'button'</span>);
+button.<span class="hljs-title function_">setAttribute</span>(<span class=hljs-string>'onclick'</span>, <span class=hljs-string>'clicked("Yes ")'</span>);
+button.<span class=hljs-property>innerHTML</span> = <span class=hljs-string>'Click Me!'</span>
+<span class="hljs-variable language_">document</span>.<span class=hljs-property>body</span>.<span class="hljs-title function_">append</span>(button)
+</code></pre></ul><h1>DocumentFragment</h1><ul><li><p>The <code>DocumentFragment interface</code> represents a minimal document object that has no parent.</p> <pre><code class="language-jsx hljs language-javascript"><span class=hljs-keyword>let</span> ul = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class=hljs-string>"ul"</span>);
+<span class="hljs-variable language_">document</span>.<span class=hljs-property>body</span>.<span class="hljs-title function_">append</span>(ul);
+
+<span class=hljs-keyword>let</span> fargment = <span class=hljs-keyword>new</span> <span class="hljs-title class_">DocumentFragment</span>();
+
+<span class=hljs-keyword>function</span> <span class="hljs-title function_">getListContent</span>(<span class=hljs-params></span>) {
+
+	<span class=hljs-keyword>for</span> ( <span class=hljs-keyword>let</span> i = <span class=hljs-number>1</span>; i <= <span class=hljs-number>5</span>; i++ ) {
+		<span class=hljs-keyword>let</span> li = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class=hljs-string>"li"</span>);
+		li.<span class="hljs-title function_">append</span>(i);
+		fargment.<span class="hljs-title function_">append</span>(li);
+	}
+
+	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(fargment);
+	<span class=hljs-keyword>return</span> fargment;
+}
+
+ul.<span class="hljs-title function_">append</span>(<span class="hljs-title function_">getListContent</span>());
+</code></pre></ul><h1>Node</h1><ul><li><p>Child nodes (or children) – elements that are direct children. In other words, they are nested exactly in the given one. For instance, and are children of element.</p> <ul><li><p><code>childNodes</code> read-only property returns a live NodeList of child nodes of the given element where the first child node is assigned index 0.</p> <pre><code class="language-html hljs language-xml"><span class=hljs-tag><<span class=hljs-name>html</span>></span>
+<span class=hljs-tag><<span class=hljs-name>body</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>div</span>></span>Begin<span class=hljs-tag>&LT/<span class=hljs-name>div</span>></span>
+
+  <span class=hljs-tag><<span class=hljs-name>ul</span>></span>
+    <span class=hljs-tag><<span class=hljs-name>li</span>></span>Information<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+  <span class=hljs-tag>&LT/<span class=hljs-name>ul</span>></span>
+
+  <span class=hljs-tag><<span class=hljs-name>div</span>></span>End<span class=hljs-tag>&LT/<span class=hljs-name>div</span>></span>
+
+  <span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+    <span class=hljs-keyword>for</span> (<span class=hljs-keyword>let</span> i = <span class=hljs-number>0</span>; i < <span class="hljs-variable language_">document</span>.<span class=hljs-property>body</span>.<span class=hljs-property>childNodes</span>.<span class=hljs-property>length</span>; i++) {
+      <span class="hljs-title function_">alert</span>( <span class="hljs-variable language_">document</span>.<span class=hljs-property>body</span>.<span class=hljs-property>childNodes</span>[i] ); <span class=hljs-comment>// Text, DIV, Text, UL, ..., SCRIPT</span>
+    }
+  </span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span>
+  ...more stuff...
+<span class=hljs-tag>&LT/<span class=hljs-name>body</span>></span>
+<span class=hljs-tag>&LT/<span class=hljs-name>html</span>></span>
+</code></pre><li><p><code>firstChild</code> read-only property returns the node's first child in the tree, or null if the node has no children.</p> <pre><code class="language-html hljs language-xml"><span class=hljs-tag><<span class=hljs-name>p</span> <span class=hljs-attr>id</span>=<span class=hljs-string>"para-01"</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>span</span>></span>First span<span class=hljs-tag>&LT/<span class=hljs-name>span</span>></span>
+<span class=hljs-tag>&LT/<span class=hljs-name>p</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+  <span class=hljs-keyword>var</span> p01 = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class=hljs-string>'para-01'</span>);
+  <span class="hljs-title function_">alert</span>(p01.<span class=hljs-property>firstChild</span>.<span class=hljs-property>nodeName</span>);
+</span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span>
+</code></pre><li><p><code>lastChild</code> read-only property returns the last child of the node.</p> <pre><code class="language-html hljs language-xml">var tr = document.getElementById("row1");
+var corner_td = tr.lastChild;
+</code></pre></ul><li><p>Siblings are nodes that are children of the same parent.</p> <ul><li><p>The next sibling is in<code>nextSibling</code>.</p> <pre><code class="language-jsx hljs language-javascript"><span class="hljs-title function_">alert</span>( <span class="hljs-variable language_">document</span>.<span class=hljs-property>body</span>.<span class=hljs-property>parentNode</span> === <span class="hljs-variable language_">document</span>.<span class=hljs-property>documentElement</span> ); <span class=hljs-comment>// true</span>
+</code></pre><li><p>the previous one in<code>previousSibling</code>.</p> <pre><code class="language-jsx hljs language-javascript"><span class="hljs-title function_">alert</span>( <span class="hljs-variable language_">document</span>.<span class=hljs-property>head</span>.<span class=hljs-property>nextSibling</span> ); <span class=hljs-comment>// HTMLBodyElement</span>
+</code></pre><li><p>The parent is available as <code>parentNode</code>.</p> <pre><code class="language-jsx hljs language-javascript"><span class="hljs-title function_">alert</span>( <span class="hljs-variable language_">document</span>.<span class=hljs-property>body</span>.<span class=hljs-property>previousSibling</span> ); <span class=hljs-comment>// HTMLHeadElement</span>
+</code></pre></ul><li><p><code>nodeName</code> to show the element name.</p> <pre><code class="language-jsx hljs language-javascript">&LTp id=<span class=hljs-string>"word"</span>><span class="hljs-title class_">Hello</span> <span class="hljs-title class_">World</span>&LT/p>
+<span class=language-xml><span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+	<span class=hljs-keyword>let</span> elem = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class=hljs-string>'word'</span>);
+	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(elem.<span class=hljs-property>nodeName</span>); <span class=hljs-comment>// P</span>
+</span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span></span>
+</code></pre><li><p><code>Node.textContent</code> Pure text.</p> <pre><code class="language-jsx hljs language-javascript">&LTdiv id=<span class=hljs-string>"elem1"</span>>&LT/div>
+<span class=language-xml><span class=hljs-tag><<span class=hljs-name>div</span> <span class=hljs-attr>id</span>=<span class=hljs-string>"elem2"</span>></span><span class=hljs-tag>&LT/<span class=hljs-name>div</span>></span></span>
+
+<span class=language-xml><span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+  <span class=hljs-keyword>let</span> name = <span class="hljs-title function_">prompt</span>(<span class=hljs-string>"What's your name?"</span>, <span class=hljs-string>"&LTb>Winnie-the-Pooh!&LT/b>"</span>);
+
+  elem1.<span class=hljs-property>innerHTML</span> = name; <span class=hljs-comment>// Winnie-the-Pooh!</span>
+  elem2.<span class=hljs-property>textContent</span> = name; <span class=hljs-comment>// &LTb>Winnie-the-Pooh!&LT/b></span>
+</span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span></span>
+</code></pre><li><p>❓Count descendants</p> <pre><code class="language-html hljs language-xml"><span class=hljs-meta>&LT!DOCTYPE <span class=hljs-keyword>HTML</span>></span>
+<span class=hljs-tag><<span class=hljs-name>html</span>></span>
+<span class=hljs-tag><<span class=hljs-name>body</span>></span>
+
+  <span class=hljs-tag><<span class=hljs-name>ul</span>></span>
+    <span class=hljs-tag><<span class=hljs-name>li</span>></span>Animals
+      <span class=hljs-tag><<span class=hljs-name>ul</span>></span>
+        <span class=hljs-tag><<span class=hljs-name>li</span>></span>Mammals
+          <span class=hljs-tag><<span class=hljs-name>ul</span>></span>
+            <span class=hljs-tag><<span class=hljs-name>li</span>></span>Cows<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+            <span class=hljs-tag><<span class=hljs-name>li</span>></span>Donkeys<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+            <span class=hljs-tag><<span class=hljs-name>li</span>></span>Dogs<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+            <span class=hljs-tag><<span class=hljs-name>li</span>></span>Tigers<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+          <span class=hljs-tag>&LT/<span class=hljs-name>ul</span>></span>
+        <span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+        <span class=hljs-tag><<span class=hljs-name>li</span>></span>Other
+          <span class=hljs-tag><<span class=hljs-name>ul</span>></span>
+            <span class=hljs-tag><<span class=hljs-name>li</span>></span>Snakes<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+            <span class=hljs-tag><<span class=hljs-name>li</span>></span>Birds<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+            <span class=hljs-tag><<span class=hljs-name>li</span>></span>Lizards<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+          <span class=hljs-tag>&LT/<span class=hljs-name>ul</span>></span>
+        <span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+      <span class=hljs-tag>&LT/<span class=hljs-name>ul</span>></span>
+    <span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+    <span class=hljs-tag><<span class=hljs-name>li</span>></span>Fishes
+      <span class=hljs-tag><<span class=hljs-name>ul</span>></span>
+        <span class=hljs-tag><<span class=hljs-name>li</span>></span>Aquarium
+          <span class=hljs-tag><<span class=hljs-name>ul</span>></span>
+            <span class=hljs-tag><<span class=hljs-name>li</span>></span>Guppy<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+            <span class=hljs-tag><<span class=hljs-name>li</span>></span>Angelfish<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+          <span class=hljs-tag>&LT/<span class=hljs-name>ul</span>></span>
+        <span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+        <span class=hljs-tag><<span class=hljs-name>li</span>></span>Sea
+          <span class=hljs-tag><<span class=hljs-name>ul</span>></span>
+            <span class=hljs-tag><<span class=hljs-name>li</span>></span>Sea trout<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+          <span class=hljs-tag>&LT/<span class=hljs-name>ul</span>></span>
+        <span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+      <span class=hljs-tag>&LT/<span class=hljs-name>ul</span>></span>
+    <span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+  <span class=hljs-tag>&LT/<span class=hljs-name>ul</span>></span>
+	<span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+		<span class=hljs-keyword>let</span> lists = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementsByTagName</span>(<span class=hljs-string>'li'</span>);
+		<span class=hljs-keyword>for</span> (<span class=hljs-keyword>let</span> list <span class=hljs-keyword>of</span> lists) {
+			<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(list.<span class=hljs-property>textContent</span>);
+		}
+	</span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span>
+<span class=hljs-tag>&LT/<span class=hljs-name>body</span>></span>
+<span class=hljs-tag>&LT/<span class=hljs-name>html</span>></span>
+</code></pre><li><p><code>node.append(...nodes or strings)</code> – append nodes or strings at the end of node.</p> <pre><code class="language-jsx hljs language-javascript"><span class=hljs-keyword>function</span> <span class="hljs-title function_">clicked</span>(<span class=hljs-params>word</span>) {
+	<span class=hljs-keyword>let</span> printWord = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createTextNode</span>(word);
+	<span class="hljs-variable language_">document</span>.<span class=hljs-property>body</span>.<span class="hljs-title function_">append</span>(printWord);
+}
+
+<span class=hljs-keyword>let</span> button = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class=hljs-string>'button'</span>);
+button.<span class="hljs-title function_">setAttribute</span>(<span class=hljs-string>'onclick'</span>, <span class=hljs-string>'clicked(" Yes")'</span>);
+button.<span class=hljs-property>innerHTML</span> = <span class=hljs-string>'Click Me!'</span>
+<span class="hljs-variable language_">document</span>.<span class=hljs-property>body</span>.<span class="hljs-title function_">append</span>(button)
+</code></pre><li><p><code>node.prepend(...nodes or strings)</code> – insert nodes or strings at the beginning of node.</p> <pre><code class="language-jsx hljs language-javascript"><span class=hljs-keyword>function</span> <span class="hljs-title function_">clicked</span>(<span class=hljs-params>word</span>) {
+	<span class=hljs-keyword>let</span> printWord = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createTextNode</span>(word);
+	<span class=hljs-keyword>let</span> button = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class=hljs-string>'button'</span>);
+	button.<span class="hljs-title function_">prepend</span>(printWord);
+}
+
+<span class=hljs-keyword>let</span> button = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class=hljs-string>'button'</span>);
+button.<span class="hljs-title function_">setAttribute</span>(<span class=hljs-string>'onclick'</span>, <span class=hljs-string>'clicked("---->")'</span>);
+button.<span class=hljs-property>innerHTML</span> = <span class=hljs-string>'Click Me!'</span>
+<span class="hljs-variable language_">document</span>.<span class=hljs-property>body</span>.<span class="hljs-title function_">append</span>(button)
+</code></pre><li><p><code>node.before()</code> & <code>node.after()</code>–- insert nodes or strings before & after node.</p> <pre><code class="language-html hljs language-xml"><span class=hljs-tag><<span class=hljs-name>ol</span> <span class=hljs-attr>id</span>=<span class=hljs-string>"ol"</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>li</span>></span>0<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>li</span>></span>1<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>li</span>></span>2<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+<span class=hljs-tag>&LT/<span class=hljs-name>ol</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-handlebars><span class=language-xml>
+	ol.before("<span class=hljs-tag><<span class=hljs-name>p</span>></span>");
+	ol.after("<span class=hljs-tag>&LT/<span class=hljs-name>p</span>></span>");
+	console.log(document.body.outerHTML);
+	/*
+	<span class=hljs-symbol>&amplt;</span>p<span class=hljs-symbol>&ampgt;</span><span class=hljs-tag><<span class=hljs-name>ol</span> <span class=hljs-attr>id</span>=<span class=hljs-string>"ol"</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>li</span>></span>0<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>li</span>></span>1<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>li</span>></span>2<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+	<span class=hljs-tag>&LT/<span class=hljs-name>ol</span>></span><span class=hljs-symbol>&amplt;</span>/p<span class=hljs-symbol>&ampgt;</span>
+  */
+</span></span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span>
+</code></pre><li><p><code>node.replaceWith(...nodes or strings)</code> –- replaces node with the given nodes or strings.</p> <pre><code class="language-html hljs language-xml"><span class=hljs-tag><<span class=hljs-name>button</span> <span class=hljs-attr>onclick</span>=<span class=hljs-string>"clicked()"</span>></span>ClickMe<span class=hljs-tag>&LT/<span class=hljs-name>button</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>p</span>></span><span class=hljs-tag><<span class=hljs-name>b</span>></span>Hello World<span class=hljs-tag>&LT/<span class=hljs-name>b</span>></span><span class=hljs-tag>&LT/<span class=hljs-name>p</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+	<span class=hljs-keyword>let</span> b = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class=hljs-string>'b'</span>);
+	<span class=hljs-keyword>function</span> <span class="hljs-title function_">clicked</span>(<span class=hljs-params></span>) {
+		b.<span class="hljs-title function_">replaceWith</span>(<span class=hljs-string>"Bye World"</span>);
+	}
+</span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span>
+</code></pre></ul><h1>ParentNode</h1><ul><li><p>❓Show descendants in a tree.</p> <pre><code class="language-html hljs language-xml"><span class=hljs-meta>&LT!DOCTYPE <span class=hljs-keyword>HTML</span>></span>
+<span class=hljs-tag><<span class=hljs-name>html</span>></span>
+<span class=hljs-tag><<span class=hljs-name>body</span>></span>
+
+  <span class=hljs-tag><<span class=hljs-name>ul</span>></span>
+    <span class=hljs-tag><<span class=hljs-name>li</span>></span>Animals
+      <span class=hljs-tag><<span class=hljs-name>ul</span>></span>
+        <span class=hljs-tag><<span class=hljs-name>li</span>></span>Mammals
+          <span class=hljs-tag><<span class=hljs-name>ul</span>></span>
+            <span class=hljs-tag><<span class=hljs-name>li</span>></span>Cows<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+            <span class=hljs-tag><<span class=hljs-name>li</span>></span>Donkeys<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+            <span class=hljs-tag><<span class=hljs-name>li</span>></span>Dogs<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+            <span class=hljs-tag><<span class=hljs-name>li</span>></span>Tigers<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+          <span class=hljs-tag>&LT/<span class=hljs-name>ul</span>></span>
+        <span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+        <span class=hljs-tag><<span class=hljs-name>li</span>></span>Other
+          <span class=hljs-tag><<span class=hljs-name>ul</span>></span>
+            <span class=hljs-tag><<span class=hljs-name>li</span>></span>Snakes<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+            <span class=hljs-tag><<span class=hljs-name>li</span>></span>Birds<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+            <span class=hljs-tag><<span class=hljs-name>li</span>></span>Lizards<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+          <span class=hljs-tag>&LT/<span class=hljs-name>ul</span>></span>
+        <span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+      <span class=hljs-tag>&LT/<span class=hljs-name>ul</span>></span>
+    <span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+    <span class=hljs-tag><<span class=hljs-name>li</span>></span>Fishes
+      <span class=hljs-tag><<span class=hljs-name>ul</span>></span>
+        <span class=hljs-tag><<span class=hljs-name>li</span>></span>Aquarium
+          <span class=hljs-tag><<span class=hljs-name>ul</span>></span>
+            <span class=hljs-tag><<span class=hljs-name>li</span>></span>Guppy<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+            <span class=hljs-tag><<span class=hljs-name>li</span>></span>Angelfish<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+          <span class=hljs-tag>&LT/<span class=hljs-name>ul</span>></span>
+        <span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+        <span class=hljs-tag><<span class=hljs-name>li</span>></span>Sea
+          <span class=hljs-tag><<span class=hljs-name>ul</span>></span>
+            <span class=hljs-tag><<span class=hljs-name>li</span>></span>Sea trout<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+          <span class=hljs-tag>&LT/<span class=hljs-name>ul</span>></span>
+        <span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+      <span class=hljs-tag>&LT/<span class=hljs-name>ul</span>></span>
+    <span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+  <span class=hljs-tag>&LT/<span class=hljs-name>ul</span>></span>
+
+  <span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+		<span class=hljs-keyword>let</span> li = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementsByTagName</span>(<span class=hljs-string>'li'</span>);
+
+		<span class=hljs-keyword>for</span> ( <span class=hljs-keyword>let</span> lis <span class=hljs-keyword>of</span> li ) {
+			<span class=hljs-keyword>let</span> lisLength = lis.<span class="hljs-title function_">getElementsByTagName</span>(<span class=hljs-string>'li'</span>).<span class=hljs-property>length</span>;
+
+			<span class=hljs-keyword>if</span>(!lisLength) <span class=hljs-keyword>continue</span>;
+
+			lis.<span class=hljs-property>firstChild</span>.<span class=hljs-property>data</span> += <span class=hljs-string>`[<span class=hljs-subst>${lisLength}</span>]`</span>;
+		}
+	</span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span>
+
+<span class=hljs-tag>&LT/<span class=hljs-name>body</span>></span>
+<span class=hljs-tag>&LT/<span class=hljs-name>html</span>></span>
+</code></pre><li><p>❓ Colored clock with setInterval</p> <pre><code class="language-html hljs language-xml"><span class=hljs-meta>&LT!DOCTYPE <span class=hljs-keyword>HTML</span>></span>
+<span class=hljs-tag><<span class=hljs-name>html</span>></span>
+<span class=hljs-tag><<span class=hljs-name>body</span>></span>
+
+  <span class=hljs-tag><<span class=hljs-name>div</span> <span class=hljs-attr>id</span>=<span class=hljs-string>"clock"</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>span</span> <span class=hljs-attr>class</span>=<span class=hljs-string>"hour"</span>></span>hh<span class=hljs-tag>&LT/<span class=hljs-name>span</span>></span>:<span class=hljs-tag><<span class=hljs-name>span</span> <span class=hljs-attr>class</span>=<span class=hljs-string>"min"</span>></span>mm<span class=hljs-tag>&LT/<span class=hljs-name>span</span>></span>:<span class=hljs-tag><<span class=hljs-name>span</span> <span class=hljs-attr>class</span>=<span class=hljs-string>"sec"</span>></span>ss<span class=hljs-tag>&LT/<span class=hljs-name>span</span>></span>
+  <span class=hljs-tag>&LT/<span class=hljs-name>div</span>></span>
+
+  <span class=hljs-tag><<span class=hljs-name>input</span> <span class=hljs-attr>type</span>=<span class=hljs-string>"button"</span> <span class=hljs-attr>onclick</span>=<span class=hljs-string>"clockStart()"</span> <span class=hljs-attr>value</span>=<span class=hljs-string>"Start"</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>input</span> <span class=hljs-attr>type</span>=<span class=hljs-string>"button"</span> <span class=hljs-attr>onclick</span>=<span class=hljs-string>"clockStop()"</span> <span class=hljs-attr>value</span>=<span class=hljs-string>"Stop"</span>></span>
+
+	<span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+		<span class=hljs-keyword>function</span> <span class="hljs-title function_">update</span>(<span class=hljs-params></span>) {
+	  <span class=hljs-keyword>let</span> clock = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class=hljs-string>'clock'</span>);
+	  <span class=hljs-keyword>let</span> date = <span class=hljs-keyword>new</span> <span class="hljs-title class_">Date</span>();
+	  <span class=hljs-keyword>let</span> hours = date.<span class="hljs-title function_">getHours</span>();
+	  <span class=hljs-keyword>let</span> minutes = date.<span class="hljs-title function_">getMinutes</span>();
+	  <span class=hljs-keyword>let</span> seconds = date.<span class="hljs-title function_">getSeconds</span>();
+
+	  clock.<span class=hljs-property>children</span>[<span class=hljs-number>0</span>].<span class=hljs-property>innerHTML</span> = hours;
+	  clock.<span class=hljs-property>children</span>[<span class=hljs-number>1</span>].<span class=hljs-property>innerHTML</span> = minutes;
+	  clock.<span class=hljs-property>children</span>[<span class=hljs-number>2</span>].<span class=hljs-property>innerHTML</span> = seconds;
+	}
+
+	<span class=hljs-keyword>let</span> timerId;
+
+	<span class=hljs-keyword>function</span> <span class="hljs-title function_">clockStart</span>(<span class=hljs-params></span>) { <span class=hljs-comment>// run the clock</span>
+	  <span class=hljs-keyword>if</span> (!timerId) { <span class=hljs-comment>// only set a new interval if the clock is not running</span>
+	    timerId = <span class=hljs-built_in>setInterval</span>(update, <span class=hljs-number>1000</span>);
+	  }
+	  <span class="hljs-title function_">update</span>(); <span class=hljs-comment>// (*)</span>
+	}
+
+	<span class=hljs-keyword>function</span> <span class="hljs-title function_">clockStop</span>(<span class=hljs-params></span>) {
+	  <span class=hljs-built_in>clearInterval</span>(timerId);
+	  timerId = <span class=hljs-literal>null</span>; <span class=hljs-comment>// (**)</span>
+	}
+	</span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span>
+<span class=hljs-tag>&LT/<span class=hljs-name>body</span>></span>
+<span class=hljs-tag>&LT/<span class=hljs-name>html</span>></span>
+</code></pre><li><p>Element-only navigation:- Navigation properties listed above refer to all nodes.</p> <ul><li><p><code>children</code> – only those children that are element nodes.</p> <pre><code class="language-html hljs language-xml"><span class=hljs-tag><<span class=hljs-name>html</span>></span>
+<span class=hljs-tag><<span class=hljs-name>body</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>div</span>></span>Begin<span class=hljs-tag>&LT/<span class=hljs-name>div</span>></span>
+
+  <span class=hljs-tag><<span class=hljs-name>ul</span>></span>
+    <span class=hljs-tag><<span class=hljs-name>li</span>></span>Information<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+  <span class=hljs-tag>&LT/<span class=hljs-name>ul</span>></span>
+
+  <span class=hljs-tag><<span class=hljs-name>div</span>></span>End<span class=hljs-tag>&LT/<span class=hljs-name>div</span>></span>
+
+  <span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+    <span class=hljs-keyword>for</span> (<span class=hljs-keyword>let</span> elem <span class=hljs-keyword>of</span> <span class="hljs-variable language_">document</span>.<span class=hljs-property>body</span>.<span class=hljs-property>children</span>) {
+      <span class="hljs-title function_">alert</span>(elem); <span class=hljs-comment>// DIV, UL, DIV, SCRIPT</span>
+    }
+  </span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span>
+  ...
+<span class=hljs-tag>&LT/<span class=hljs-name>body</span>></span>
+<span class=hljs-tag>&LT/<span class=hljs-name>html</span>></span>
+</code></pre><li><p><code>firstElementChild</code>, <code>lastElementChild</code> – first and last element children.</p> <pre><code class="language-jsx hljs language-javascript"><span class="hljs-title function_">alert</span>( <span class="hljs-variable language_">document</span>.<span class=hljs-property>documentElement</span>.<span class=hljs-property>parentNode</span> ); <span class=hljs-comment>// document</span>
+</code></pre><li><p><code>previousElementSibling</code>, <code>nextElementSibling</code> – neighbor elements.</p> <pre><code class="language-html hljs language-xml"><span class=hljs-tag><<span class=hljs-name>div</span> <span class=hljs-attr>id</span>=<span class=hljs-string>"div-01"</span>></span>Here is div-01<span class=hljs-tag>&LT/<span class=hljs-name>div</span>></span>
+<span class=hljs-tag><<span class=hljs-name>div</span> <span class=hljs-attr>id</span>=<span class=hljs-string>"div-02"</span>></span>Here is div-02<span class=hljs-tag>&LT/<span class=hljs-name>div</span>></span>
+<span class=hljs-tag><<span class=hljs-name>li</span>></span>This is a list item<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+<span class=hljs-tag><<span class=hljs-name>li</span>></span>This is another list item<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+<span class=hljs-tag><<span class=hljs-name>div</span> <span class=hljs-attr>id</span>=<span class=hljs-string>"div-03"</span>></span>Here is div-03<span class=hljs-tag>&LT/<span class=hljs-name>div</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+  <span class=hljs-keyword>let</span> el = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class=hljs-string>'div-03'</span>).<span class=hljs-property>previousElementSibling</span>;
+  <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">write</span>(<span class=hljs-string>'&LTp>Siblings of div-03&LT/p>&LTol>'</span>);
+  <span class=hljs-keyword>while</span> (el) {
+    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">write</span>(<span class=hljs-string>'&LTli>'</span> + el.<span class=hljs-property>nodeName</span> + <span class=hljs-string>'&LT/li>'</span>);
+    el = el.<span class=hljs-property>previousElementSibling</span>;
+  }
+  <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">write</span>(<span class=hljs-string>'&LT/ol>'</span>);
+</span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span>
+</code></pre><li><p><code>parentElement</code> – parent element.</p> <pre><code class="language-jsx hljs language-javascript"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">document</span>.<span class=hljs-property>head</span>.<span class=hljs-property>parentElement</span>);
+<span class=hljs-comment>/*
+&LThtml lang="en" class="working-hover">
+&LThead>…&LT/head>
+&LTbody class>…&LT/body>
+&LT/html>
+*/</span>
+</code></pre></ul></ul><h2 id=childnode tabindex=-1><a class=header-anchor href=#childnode>ChildNode</a></h2><ul><li><p><code>ChildNode.remove()</code> method removes the object from the tree it belongs to.</p> <pre><code class="language-html hljs language-xml"><span class=hljs-tag><<span class=hljs-name>button</span> <span class=hljs-attr>onclick</span>=<span class=hljs-string>"clicked()"</span>></span>Destroy !!!<span class=hljs-tag>&LT/<span class=hljs-name>button</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>p</span>></span>Hello World<span class=hljs-tag>&LT/<span class=hljs-name>p</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+	<span class=hljs-keyword>let</span> button = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class=hljs-string>'button'</span>),
+	p = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class=hljs-string>'p'</span>);
+
+	button.<span class=hljs-property>style</span>.<span class=hljs-property>background</span> = <span class=hljs-string>"red"</span>;
+	button.<span class=hljs-property>style</span>.<span class=hljs-property>color</span> = <span class=hljs-string>"white"</span>;
+
+	<span class=hljs-keyword>function</span> <span class="hljs-title function_">clicked</span>(<span class=hljs-params></span>) {
+		p.<span class="hljs-title function_">remove</span>();
+	}
+</span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span>
+</code></pre><li><p>❓ Clear the element</p> <pre><code class="language-html hljs language-xml"><span class=hljs-tag><<span class=hljs-name>ol</span> <span class=hljs-attr>id</span>=<span class=hljs-string>"elem"</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>li</span>></span>Hello<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>li</span>></span>World<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+<span class=hljs-tag>&LT/<span class=hljs-name>ol</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+	<span class=hljs-keyword>function</span> <span class="hljs-title function_">clear</span>(<span class=hljs-params>ele</span>) {
+		<span class=hljs-keyword>while</span> (ele.<span class=hljs-property>firstChild</span>) {
+			ele.<span class=hljs-property>childNodes</span>[<span class=hljs-number>1</span>].<span class="hljs-title function_">remove</span>();
+		}
+	}
+
+	<span class="hljs-title function_">clear</span>(<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class=hljs-string>"ol"</span>));
+</span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span>
+</code></pre><li><p>❓ Add a closing button</p> <p><a href=https://codepen.io/fillyagioro/pen/jOydryr>https://codepen.io/fillyagioro/pen/jOydryr</a></p><li><p>The most deeply nested element that caused the event is called a target element, accessible as <code>event.target</code>.</p> <p><a href=https://codepen.io/fillyagioro/pen/eYgxzBR>https://codepen.io/fillyagioro/pen/eYgxzBR</a></p><li><p>Stopping bubbling</p> <p><a href=https://codepen.io/fillyagioro/pen/eYgxzBR>https://codepen.io/fillyagioro/pen/eYgxzBR</a></p><li><p>❓ Hide messages with delegation</p> <p><a href=https://codepen.io/fillyagioro/pen/vYgPbVe>https://codepen.io/fillyagioro/pen/vYgPbVe</a></p></ul><h1>Element</h1><ul><li><p>The <code>matches(css)</code> method checks to see if the Element would be selected by the provided selectorString.</p> <pre><code class="language-html hljs language-xml"><span class=hljs-tag><<span class=hljs-name>ul</span> <span class=hljs-attr>id</span>=<span class=hljs-string>"birds"</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>li</span>></span>Orange-winged parrot<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>li</span> <span class=hljs-attr>class</span>=<span class=hljs-string>"endangered"</span>></span>Philippine eagle<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>li</span>></span>Great white pelican<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+<span class=hljs-tag>&LT/<span class=hljs-name>ul</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+	<span class=hljs-keyword>let</span> list = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementsByTagName</span>(<span class=hljs-string>'li'</span>);
+  <span class=hljs-keyword>for</span>(<span class=hljs-keyword>let</span> elem <span class=hljs-keyword>of</span> list) {
+    <span class=hljs-keyword>if</span>(elem.<span class="hljs-title function_">matches</span>(<span class=hljs-string>'.endangered'</span>)) {
+      <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(elem.<span class=hljs-property>innerHTML</span>);
+    }
+  }
+</span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span>
+</code></pre><li><p>The <code>closest()</code> method traverses the Element and its parents until it finds a node that matches the provided selector string.</p> <pre><code class="language-html hljs language-xml"><span class=hljs-tag><<span class=hljs-name>h1</span>></span>Contents<span class=hljs-tag>&LT/<span class=hljs-name>h1</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>div</span> <span class=hljs-attr>class</span>=<span class=hljs-string>"contents"</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>ul</span> <span class=hljs-attr>class</span>=<span class=hljs-string>"book"</span>></span>
+    <span class=hljs-tag><<span class=hljs-name>li</span> <span class=hljs-attr>class</span>=<span class=hljs-string>"chapter"</span>></span>Chapter 1<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+    <span class=hljs-tag><<span class=hljs-name>li</span> <span class=hljs-attr>class</span>=<span class=hljs-string>"chapter"</span>></span>Chapter 1<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+  <span class=hljs-tag>&LT/<span class=hljs-name>ul</span>></span>
+<span class=hljs-tag>&LT/<span class=hljs-name>div</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+	<span class=hljs-keyword>let</span> chapter = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class=hljs-string>'.chapter'</span>);
+	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(chapter.<span class="hljs-title function_">closest</span>(<span class=hljs-string>'.book'</span>).<span class=hljs-property>innerHTML</span>);
+</span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span>
+</code></pre><li><p><code>Element.tagName</code> to show the element name.</p> <pre><code class="language-jsx hljs language-javascript">&LTp id=<span class=hljs-string>"word"</span>><span class="hljs-title class_">Hello</span> <span class="hljs-title class_">World</span>&LT/p>
+<span class=language-xml><span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+	<span class=hljs-keyword>let</span> elem = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class=hljs-string>'word'</span>);
+	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(elem.<span class=hljs-property>tagName</span>); <span class=hljs-comment>// P</span>
+</span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span></span>
+</code></pre><li><p>The <code>innerHTML</code> property allows to get the HTML inside the element as a string.</p> <pre><code class="language-jsx hljs language-javascript">&LTbody>
+  <span class=language-xml><span class=hljs-tag><<span class=hljs-name>p</span>></span>A paragraph<span class=hljs-tag>&LT/<span class=hljs-name>p</span>></span></span>
+  <span class=language-xml><span class=hljs-tag><<span class=hljs-name>div</span>></span>A div<span class=hljs-tag>&LT/<span class=hljs-name>div</span>></span></span>
+
+  <span class=language-xml><span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+    <span class="hljs-title function_">alert</span>( <span class="hljs-variable language_">document</span>.<span class=hljs-property>body</span>.<span class=hljs-property>innerHTML</span> ); <span class=hljs-comment>// read the current contents</span>
+    <span class="hljs-variable language_">document</span>.<span class=hljs-property>body</span>.<span class=hljs-property>innerHTML</span> = <span class=hljs-string>'The new BODY!'</span>; <span class=hljs-comment>// replace it</span>
+  </span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span></span>
+
+&LT/body>
+</code></pre><li><p>The <code>outerHTML</code> property contains the full HTML of the element. That’s like innerHTML plus the element itself.</p> <pre><code class="language-jsx hljs language-javascript">&LTdiv id=<span class=hljs-string>"elem"</span>><span class="hljs-title class_">Hello</span> &LTb><span class="hljs-title class_">World</span><<span class=hljs-regexp>/b>&LT/</span>div>
+
+<span class=language-xml><span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-handlebars><span class=language-xml>
+  console.log(elem.outerHTML); // <span class=hljs-tag><<span class=hljs-name>div</span> <span class=hljs-attr>id</span>=<span class=hljs-string>"elem"</span>></span>Hello <span class=hljs-tag><<span class=hljs-name>b</span>></span>World<span class=hljs-tag>&LT/<span class=hljs-name>b</span>></span><span class=hljs-tag>&LT/<span class=hljs-name>div</span>></span>
+	console.log(elem.innerHTML); // Hello <span class=hljs-tag><<span class=hljs-name>b</span>></span>World<span class=hljs-tag>&LT/<span class=hljs-name>b</span>></span>
+</span></span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span></span>
+</code></pre><li><p><code>getAttribute()</code> returns the elements attribute which is called.</p> <pre><code class="language-html hljs language-xml"><span class=hljs-tag><<span class=hljs-name>div</span> <span class=hljs-attr>id</span>=<span class=hljs-string>"elem"</span> <span class=hljs-attr>something-data</span>=<span class=hljs-string>"yes"</span>></span><span class=hljs-tag>&LT/<span class=hljs-name>div</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(elem.<span class="hljs-title function_">getAttribute</span>(<span class=hljs-string>'something-data'</span>));
+</span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span>
+</code></pre><li><p><code>setAttribute()</code> sets the attribute value.</p> <pre><code class="language-html hljs language-xml"><span class=hljs-tag><<span class=hljs-name>input</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+	<span class=hljs-keyword>let</span> input = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class=hljs-string>'input'</span>);
+	input.<span class="hljs-title function_">setAttribute</span>(<span class=hljs-string>'id'</span>, <span class=hljs-string>'into'</span>)
+	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(input.<span class=hljs-property>outerHTML</span>);
+	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(input.<span class=hljs-property>id</span>)
+</span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span>
+</code></pre><li><p>Get attribute and there value with <code>attribute</code>.</p> <pre><code class="language-html hljs language-xml"><span class=hljs-tag><<span class=hljs-name>input</span> <span class=hljs-attr>id</span>=<span class=hljs-string>"hello"</span> <span class=hljs-attr>something</span>=<span class=hljs-string>"yes"</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+	<span class=hljs-keyword>let</span> link = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class=hljs-string>'input'</span>);
+
+	<span class=hljs-keyword>for</span> ( <span class=hljs-keyword>let</span> links <span class=hljs-keyword>of</span> link.<span class=hljs-property>attributes</span> ) {
+		<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(links.<span class=hljs-property>name</span> + <span class=hljs-string>' '</span> + links.<span class=hljs-property>value</span>);
+	}
+	<span class=hljs-comment>// id hello</span>
+	<span class=hljs-comment>// something yes</span>
+</span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span>
+</code></pre><li><p><code>Element.insertAdjacent*</code></p> <ul><li><p><code>Element.insertAdjacentHTML()</code> method inserts a text as HTML, into a specified position.</p> <pre><code class="language-jsx hljs language-javascript"><span class=hljs-keyword>let</span> ulist = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class=hljs-string>'ul'</span>);
+<span class="hljs-variable language_">document</span>.<span class=hljs-property>body</span>.<span class="hljs-title function_">append</span>(ulist);
+
+<span class=hljs-keyword>let</span> list = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class=hljs-string>'li'</span>);
+
+<span class=hljs-keyword>while</span>(<span class=hljs-literal>true</span>) {
+	<span class=hljs-keyword>let</span> ans = <span class="hljs-title class_">String</span>(<span class="hljs-title function_">prompt</span>(<span class=hljs-string>"What you wnat inside the list?"</span>));
+
+	<span class=hljs-keyword>if</span> (!ans) {
+		<span class=hljs-keyword>break</span>;
+	}
+	list.<span class=hljs-property>innerHTML</span> = ans;
+	ulist.<span class="hljs-title function_">insertAdjacentHTML</span>(<span class=hljs-string>"afterBegin"</span>, <span class=hljs-string>`&LTli><span class=hljs-subst>${ans}</span>&LT/li>`</span>);
+}
+</code></pre> <pre><code class="language-jsx hljs language-javascript"><span class=hljs-keyword>let</span> li = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class=hljs-string>"li"</span>);
+<span class=hljs-keyword>let</span> ul = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class=hljs-string>"ul"</span>)
+<span class=hljs-keyword>function</span> <span class="hljs-title function_">getListContent</span>(<span class=hljs-params></span>) {
+	<span class=hljs-keyword>for</span> (<span class=hljs-keyword>let</span> i = <span class=hljs-number>5</span>; i >= <span class=hljs-number>1</span>; i--) {
+	ul.<span class="hljs-title function_">insertAdjacentHTML</span>(<span class=hljs-string>"afterBegin"</span>, <span class=hljs-string>`&LTli><span class=hljs-subst>${i}</span>&LT/li>`</span>);
+	}
+}
+
+<span class="hljs-title function_">getListContent</span>();
+</code></pre><li><p><code>Element.insertAdjacentText()</code> – the same syntax, but a string of text is inserted “as text” instead of HTML.</p> <pre><code class="language-html hljs language-xml"><span class=hljs-tag><<span class=hljs-name>button</span> <span class=hljs-attr>onclick</span>=<span class=hljs-string>"clicked()"</span>></span>ClickMe<span class=hljs-tag>&LT/<span class=hljs-name>button</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>p</span>></span>Hello World<span class=hljs-tag>&LT/<span class=hljs-name>p</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+	<span class=hljs-keyword>let</span> p = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class=hljs-string>'p'</span>);
+	<span class=hljs-keyword>function</span> <span class="hljs-title function_">clicked</span>(<span class=hljs-params></span>) {
+		p.<span class="hljs-title function_">insertAdjacentText</span>(<span class=hljs-string>"beforeend"</span>, <span class=hljs-string>"Bye World"</span>);
+	}
+</span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span>
+</code></pre><li><p><code>Element.insertAdjacentElement()</code> – the same syntax, but inserts an element.</p> <pre><code class="language-html hljs language-xml"><span class=hljs-tag><<span class=hljs-name>button</span> <span class=hljs-attr>onclick</span>=<span class=hljs-string>"clicked()"</span>></span>ClickMe<span class=hljs-tag>&LT/<span class=hljs-name>button</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>p</span>></span><span class=hljs-tag><<span class=hljs-name>b</span>></span>Hello World<span class=hljs-tag>&LT/<span class=hljs-name>b</span>></span><span class=hljs-tag>&LT/<span class=hljs-name>p</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+	<span class=hljs-keyword>let</span> p = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class=hljs-string>'p'</span>);
+	<span class=hljs-keyword>let</span> i = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class=hljs-string>'i'</span>)
+	<span class=hljs-keyword>function</span> <span class="hljs-title function_">clicked</span>(<span class=hljs-params></span>) {
+		p.<span class="hljs-title function_">insertAdjacentElement</span>(<span class=hljs-string>"afterEnd"</span>, i);
+	}
+	i.<span class=hljs-property>innerHTML</span> = <span class=hljs-string>"Bye World"</span>;
+</span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span>
+</code></pre><li><p><code>"beforebegin"</code> – insert <code>html</code> immediately before <code>elem</code>,</p><li><p><code>"afterbegin"</code> – insert <code>html</code> into <code>elem</code>, at the beginning,</p><li><p><code>"beforeend"</code> – insert <code>html</code> into <code>elem</code>, at the end,</p><li><p><code>"afterend"</code> – insert <code>html</code> immediately after <code>elem</code>.</p></ul><li><p>❓ Insert the HTML in the list</p> <pre><code class="language-html hljs language-xml"><span class=hljs-tag><<span class=hljs-name>ul</span> <span class=hljs-attr>id</span>=<span class=hljs-string>"ul"</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>li</span> <span class=hljs-attr>id</span>=<span class=hljs-string>"one"</span>></span>1<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>li</span> <span class=hljs-attr>id</span>=<span class=hljs-string>"two"</span>></span>4<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>
+<span class=hljs-tag>&LT/<span class=hljs-name>ul</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-handlebars><span class=language-xml>
+	one.insertAdjacentHTML("afterend", "<span class=hljs-tag><<span class=hljs-name>li</span>></span>2<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span><span class=hljs-tag><<span class=hljs-name>li</span>></span>3<span class=hljs-tag>&LT/<span class=hljs-name>li</span>></span>");
+</span></span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span>
+</code></pre><li><p>The <code>className</code> property of the Element interface gets and sets the value of the class attribute of the specified element.</p> <pre><code class="language-jsx hljs language-javascript"><span class=hljs-keyword>let</span> div = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class=hljs-string>'div'</span>);
+div.<span class=hljs-property>className</span> =<span class=hljs-string>"hello"</span>;
+div.<span class=hljs-property>innerHTML</span> = div.<span class=hljs-property>className</span>;
+
+<span class="hljs-variable language_">document</span>.<span class=hljs-property>body</span>.<span class="hljs-title function_">append</span>(div);
+</code></pre><li><p>Window sizes</p> <ul><li><p><code>clientWidth</code> / <code>clientHeight</code> Width/height of the window.</p> <pre><code class="language-jsx hljs language-javascript"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">document</span>.<span class=hljs-property>documentElement</span>.<span class=hljs-property>clientWidth</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">document</span>.<span class=hljs-property>documentElement</span>.<span class=hljs-property>clientHeight</span>);
+</code></pre><li><p><code>document.documentElement.scrollWidth/scrollHeight</code> Width/height of the document.</p></ul><li><p>If there are no paddings, then <code>clientWidth/Height</code> is exactly the content area, inside the borders and the scrollbar (if any).</p> <pre><code class="language-jsx hljs language-javascript"><span class=hljs-keyword>let</span> h1 = <span class="hljs-variable language_">document</span>.<span class=hljs-property>body</span>.<span class="hljs-title function_">querySelector</span>(<span class=hljs-string>'h1'</span>);
+h1.<span class=hljs-property>clientHeight</span>;
+</code></pre><li><p><code>Element.scrollIntoView()</code>scroll into the view of line.</p> <pre><code class="language-jsx hljs language-javascript"><span class=hljs-keyword>let</span> h1 = <span class="hljs-variable language_">document</span>.<span class=hljs-property>body</span>.<span class="hljs-title function_">querySelector</span>(<span class=hljs-string>'h1'</span>);
+
+h1.<span class="hljs-title function_">scrollIntoView</span>()
+</code></pre><li><p><code>Element.getBoundingClientRect()</code> returns information about left, top, right, bottom, x, y, width, and height.</p><li><p><code>onmouseover</code> change element when you hover over element & <code>onmouseout</code> change element when hover out over element.</p> <p><a href=https://codepen.io/fillyagioro/pen/RwKzzxg>https://codepen.io/fillyagioro/pen/RwKzzxg</a></p><li><p><code>onmousedown</code> change element when you click over element & <code>onmouseup</code> change element when click done.</p> <p><a href=https://codepen.io/fillyagioro/pen/JjEQgRJ>https://codepen.io/fillyagioro/pen/JjEQgRJ</a></p><li><p>❓ Catch links in the element</p> <p><a href=https://codepen.io/fillyagioro/pen/PoWrMeg>https://codepen.io/fillyagioro/pen/PoWrMeg</a></p></ul><h1>Event</h1><ul><li><p>The <code>preventDefault()</code> method cancels the event if it is cancelable, meaning that the default action that belongs to the event will not occur.</p> <p><a href=https://codepen.io/fillyagioro/pen/GRrbVBe>https://codepen.io/fillyagioro/pen/GRrbVBe</a></p></ul><h1>EventTarget</h1><ul><li><p>The <code>addEventListener()</code> method attaches an event handler to the specified element.</p> <pre><code class="language-html hljs language-xml"><span class=hljs-tag><<span class=hljs-name>table</span> <span class=hljs-attr>id</span>=<span class=hljs-string>"outside"</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>tr</span>></span><span class=hljs-tag><<span class=hljs-name>td</span> <span class=hljs-attr>id</span>=<span class=hljs-string>"t1"</span>></span>one<span class=hljs-tag>&LT/<span class=hljs-name>td</span>></span><span class=hljs-tag>&LT/<span class=hljs-name>tr</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>tr</span>></span><span class=hljs-tag><<span class=hljs-name>td</span> <span class=hljs-attr>id</span>=<span class=hljs-string>"t2"</span>></span>two<span class=hljs-tag>&LT/<span class=hljs-name>td</span>></span><span class=hljs-tag>&LT/<span class=hljs-name>tr</span>></span>
+<span class=hljs-tag>&LT/<span class=hljs-name>table</span>></span>
+<span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+	<span class=hljs-keyword>let</span> elem = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class=hljs-string>'table'</span>);
+
+	<span class=hljs-keyword>function</span> <span class="hljs-title function_">change</span>(<span class=hljs-params></span>) {
+		<span class=hljs-keyword>let</span> td = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementsByTagName</span>(<span class=hljs-string>'td'</span>);
+		<span class=hljs-keyword>if</span> (td[<span class=hljs-number>1</span>].<span class=hljs-property>innerHTML</span> == <span class=hljs-string>"two"</span>) {
+			td[<span class=hljs-number>1</span>].<span class=hljs-property>innerHTML</span> = <span class=hljs-string>"three"</span>;
+		} <span class=hljs-keyword>else</span> {
+			td[<span class=hljs-number>1</span>].<span class=hljs-property>innerHTML</span> = <span class=hljs-string>"two"</span>
+		}
+	}
+
+	elem.<span class="hljs-title function_">addEventListener</span>(<span class=hljs-string>'click'</span>, change, <span class=hljs-literal>false</span>)
+</span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span>
+</code></pre></ul><h1>Window</h1><ul><li><p>The method <code>scrollBy(x,y)</code> scrolls the page relative to its current position. For instance, scrollBy(0,10) scrolls the page 10px down.</p> <pre><code class="language-jsx hljs language-javascript"><span class="hljs-variable language_">window</span>.<span class="hljs-title function_">scrollBy</span>(<span class=hljs-number>0</span>,<span class=hljs-number>10</span>)
+</code></pre><li><p><code>Window.scrollTo()</code> scrolls to a particular set of coordinates in the document.</p> <pre><code class="language-jsx hljs language-javascript"><span class="hljs-variable language_">window</span>.<span class="hljs-title function_">scrollTo</span>()
+</code></pre></ul><h1>CSSStyleDeclaration.cssText</h1><ul><li><p>The <code>cssText</code> property of the CSSStyleDeclaration interface returns or sets the text of the element's inline style declaration only.</p> <pre><code class="language-jsx hljs language-javascript"><span class=hljs-keyword>let</span> message = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class=hljs-string>'div'</span>);
+
+message.<span class=hljs-property>style</span>.<span class=hljs-property>cssText</span> = <span class=hljs-string>"background: red; color: white"</span>;
+
+message.<span class=hljs-property>innerHTML</span> = <span class=hljs-string>"Hello, World"</span>;
+
+<span class="hljs-variable language_">document</span>.<span class=hljs-property>body</span>.<span class="hljs-title function_">append</span>(message);
+</code></pre></ul><h1>HTMLElement</h1><ul><li><p>Hide the element with <code>HTMLElement.hidden</code>.</p> <pre><code class="language-jsx hljs language-javascript">&LTdiv id=<span class=hljs-string>"elem"</span>><span class="hljs-title class_">Hello</span> &LTb><span class="hljs-title class_">World</span><<span class=hljs-regexp>/b>&LT/</span>div>
+<span class=language-xml><span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+	<span class=hljs-keyword>let</span> bold = elem.<span class="hljs-title function_">getElementsByTagName</span>(<span class=hljs-string>'b'</span>)[<span class=hljs-number>0</span>];
+	<span class=hljs-built_in>setInterval</span>(<span class=hljs-function>() =></span> bold.<span class=hljs-property>hidden</span> = !bold.<span class=hljs-property>hidden</span>, <span class=hljs-number>500</span>);
+</span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span></span>
+</code></pre><li><p>❓ Hide on click</p> <pre><code class="language-html hljs language-xml"><span class=hljs-meta>&LT!DOCTYPE <span class=hljs-keyword>HTML</span>></span>
+<span class=hljs-tag><<span class=hljs-name>html</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>head</span>></span>
+  <span class=hljs-tag><<span class=hljs-name>meta</span> <span class=hljs-attr>charset</span>=<span class=hljs-string>"utf-8"</span>></span>
+<span class=hljs-tag>&LT/<span class=hljs-name>head</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>body</span>></span>
+
+  <span class=hljs-tag><<span class=hljs-name>input</span> <span class=hljs-attr>type</span>=<span class=hljs-string>"button"</span> <span class=hljs-attr>id</span>=<span class=hljs-string>"hider"</span> <span class=hljs-attr>value</span>=<span class=hljs-string>"Click to hide the text"</span> /></span>
+
+  <span class=hljs-tag><<span class=hljs-name>div</span> <span class=hljs-attr>id</span>=<span class=hljs-string>"text"</span>></span>Text<span class=hljs-tag>&LT/<span class=hljs-name>div</span>></span>
+
+  <span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+    hider.<span class=hljs-property>onclick</span> = <span class=hljs-function>() =></span> {
+      <span class=hljs-keyword>let</span> text = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class=hljs-string>'text'</span>);
+      text.<span class=hljs-property>hidden</span> = <span class=hljs-literal>true</span>;
+    }
+  </span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span>
+
+<span class=hljs-tag>&LT/<span class=hljs-name>body</span>></span>
+<span class=hljs-tag>&LT/<span class=hljs-name>html</span>></span>
+</code></pre><li><p>The style attribute is a string, but the style property is an object.</p> <pre><code class="language-html hljs language-xml"><span class=hljs-tag><<span class=hljs-name>div</span> <span class=hljs-attr>id</span>=<span class=hljs-string>"div"</span> <span class=hljs-attr>style</span>=<span class=hljs-string>"color:red;font-size:120%,al"</span>></span>Hello<span class=hljs-tag>&LT/<span class=hljs-name>div</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(div.<span class=hljs-property>style</span>.<span class=hljs-property>color</span>);
+	<span class=hljs-comment>// red</span>
+	div.<span class=hljs-property>style</span>.<span class=hljs-property>background</span> = <span class=hljs-string>"green"</span>;
+
+	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(div.<span class=hljs-property>style</span>);
+	<span class=hljs-comment>// empty</span>
+</span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span>
+</code></pre><li><p>The <code>HTMLElement.offsetWidth/Height</code> read-only property returns the layout width of an element as an integer.</p> <pre><code class="language-jsx hljs language-javascript">h1 = <span class="hljs-variable language_">document</span>.<span class=hljs-property>body</span>.<span class="hljs-title function_">querySelector</span>(<span class=hljs-string>'h1'</span>);
+<span class=hljs-comment>// h1.offsetHeight</span>
+</code></pre></ul><h1>HTMLInputElement</h1><ul><li><p>DOM elements also have additional properties, in particular those that depend on the class.</p> <pre><code class="language-jsx hljs language-javascript">&LTinput type=<span class=hljs-string>"text"</span> id=<span class=hljs-string>"elem"</span> value=<span class=hljs-string>"value"</span>>
+
+<span class=language-xml><span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+	<span class=hljs-keyword>let</span> elem = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class=hljs-string>'elem'</span>);
+	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(elem.<span class=hljs-property>value</span>);
+	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(elem.<span class=hljs-property>type</span>);
+</span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span></span>
+</code></pre><li><p>Accessing the element: this</p> <pre><code class="language-html hljs language-xml"><span class=hljs-tag><<span class=hljs-name>button</span> <span class=hljs-attr>onclick</span>=<span class=hljs-string>"alert(this.innerHTML)"</span>></span>Click me<span class=hljs-tag>&LT/<span class=hljs-name>button</span>></span>
+</code></pre></ul><h1>HTMLOrForeignElement</h1><ul><li><p>Non-standard attributes are used to pass custom data from HTML to JavaScript, or to “mark” HTML-elements for JavaScript.</p> <pre><code class="language-html hljs language-xml"><span class=hljs-comment>&LT!-- mark the div to show "name" here --></span>
+<span class=hljs-tag><<span class=hljs-name>div</span> <span class=hljs-attr>show-info</span>=<span class=hljs-string>"name"</span>></span><span class=hljs-tag>&LT/<span class=hljs-name>div</span>></span>
+<span class=hljs-comment>&LT!-- and age here --></span>
+<span class=hljs-tag><<span class=hljs-name>div</span> <span class=hljs-attr>show-info</span>=<span class=hljs-string>"age"</span>></span><span class=hljs-tag>&LT/<span class=hljs-name>div</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+	<span class=hljs-keyword>let</span> user = {
+		<span class=hljs-attr>name</span>: <span class=hljs-string>"Pete"</span>,
+		<span class=hljs-attr>age</span>: <span class=hljs-number>25</span>
+	};
+
+	 <span class=hljs-keyword>for</span>(<span class=hljs-keyword>let</span> div <span class=hljs-keyword>of</span> <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelectorAll</span>(<span class=hljs-string>'[show-info]'</span>)) {
+	 	<span class=hljs-keyword>let</span> text = div.<span class="hljs-title function_">getAttribute</span>(<span class=hljs-string>'show-info'</span>);
+		div.<span class=hljs-property>innerHTML</span> = user[text];
+	}
+</span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span>
+
+</code></pre><li><p>All attributes starting with “data-” are reserved for programmers’ use. They are available in the dataset property.</p> <pre><code class="language-html hljs language-xml"><span class=hljs-tag><<span class=hljs-name>style</span>></span><span class=language-css>
+  <span class=hljs-selector-class>.order</span><span class=hljs-selector-attr>[data-order-state=<span class=hljs-string>"new"</span>]</span> {
+    <span class=hljs-attribute>color</span>: green;
+  }
+
+  <span class=hljs-selector-class>.order</span><span class=hljs-selector-attr>[data-order-state=<span class=hljs-string>"pending"</span>]</span> {
+    <span class=hljs-attribute>color</span>: blue;
+  }
+
+  <span class=hljs-selector-class>.order</span><span class=hljs-selector-attr>[data-order-state=<span class=hljs-string>"canceled"</span>]</span> {
+    <span class=hljs-attribute>color</span>: red;
+  }
+</span><span class=hljs-tag>&LT/<span class=hljs-name>style</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>div</span> <span class=hljs-attr>id</span>=<span class=hljs-string>"order"</span> <span class=hljs-attr>class</span>=<span class=hljs-string>"order"</span> <span class=hljs-attr>data-order-state</span>=<span class=hljs-string>"new"</span>></span>
+  A new order.
+<span class=hljs-tag>&LT/<span class=hljs-name>div</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-handlebars><span class=language-xml>
+	order.dataset.orderState = 'padding';
+
+	console.log(order.outerHTML);
+	// <span class=hljs-tag><<span class=hljs-name>div</span> <span class=hljs-attr>id</span>=<span class=hljs-string>"order"</span> <span class=hljs-attr>class</span>=<span class=hljs-string>"order"</span> <span class=hljs-attr>data-order-state</span>=<span class=hljs-string>"padding"</span>></span>A new order.<span class=hljs-tag>&LT/<span class=hljs-name>div</span>></span>
+</span></span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span>
+</code></pre></ul><h1>GlobalEventHandlers.onclick</h1><ul><li><p>The <code>onclick</code> event occurs when the user clicks on an element.</p> <pre><code class="language-html hljs language-xml"><span class=hljs-tag><<span class=hljs-name>button</span>></span>Click Me<span class=hljs-tag>&LT/<span class=hljs-name>button</span>></span>
+
+<span class=hljs-tag><<span class=hljs-name>script</span>></span><span class=language-javascript>
+  <span class=hljs-keyword>let</span> button = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class=hljs-string>'button'</span>);
+
+  button.<span class=hljs-property>onclick</span> = <span class=hljs-function>() =></span> <span class="hljs-title function_">alert</span>(<span class=hljs-string>"Hello World"</span>)
+</span><span class=hljs-tag>&LT/<span class=hljs-name>script</span>></span>
+</code></pre></ul><h1>Location</h1><ul><li><code>location</code> interface represents the location (URL) of the object it is linked to. <ul><li><p><code>location.href</code> shows URL.</p> <pre><code class="language-jsx hljs language-javascript"><span class="hljs-title function_">alert</span>(location.<span class=hljs-property>href</span>); <span class=hljs-comment>// shows current URL</span>
+<span class=hljs-keyword>if</span> (<span class="hljs-title function_">confirm</span>(<span class=hljs-string>"Go to Wikipedia?"</span>)) {
+  location.<span class=hljs-property>href</span> = <span class=hljs-string>"https://wikipedia.org"</span>; <span class=hljs-comment>// redirect the browser to another URL</span>
+}
+</code></pre></ul></ul><h1>Web Console Helpers</h1><ul><li><code>$0</code> The currently-inspected element in the page. <code>$0.style.background = 'red'</code></ul><footer class="text-center text-sm p-10 max-h-2em col-start-2"><p><a href="[object Object]license">LICENSE</a> <span class=mx-3>|</span> <a href=#main>Back to Top</a></footer><table><tbody><tr></tbody><caption>,</caption><thead><tfoot></tfoot><tbody><tr><td>and<th>cells inside the given<tr><tr></tbody><thead><tbody><tfoot><tr><tr></table></ul></div></div></main></div>

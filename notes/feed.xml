@@ -1,0 +1,2973 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AK#Notes</title>
+    <link>https://anzenkodo.github.io/blog/</link>
+    <description># dblog</description>
+    <language>en-US</language>
+    <lastBuildDate>2022-12-09T20:15:14.186Z</lastBuildDate>
+    <image>
+      <url>https://anzenkodo.github.io/blog/favicon.png</url>
+      <title>AK#Notes</title>
+      <link>https://anzenkodo.github.io/blog/</link>
+      <width>500</width>
+      <height>500</height>
+    </image>
+    <atom:link href="https://anzenkodo.github.io/blog/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://anzenkodo.github.io/blog/feed.xml" rel="alternate" type="application/rss+xml" />
+      <item>
+    <title>Home</title>
+    <link>https://anzenkodo.github.io/blog/</link>
+    <pubDate>2022-12-09T20:15:14.186Z</pubDate>
+    <description><![CDATA[<h1>dblog</h1>
+<p><a href="https://anzenkodo.github.io/dblog/LICENSE.html"><img src="https://img.shields.io/github/license/AnzenKodo/dblog?style=for-the-badge" alt="License: MIT"></a>
+<a href="https://github.com/AnzenKodo/dblog/actions/workflows/setup.yml"><img src="https://img.shields.io/github/workflow/status/AnzenKodo/dblog/setup/main?logo=github&amp;style=for-the-badge" alt="GitHub Workflow Status (branch)"></a></p>
+<p>dblog blog generator, that generates blog from Markdown and JSON file. dblog
+handles technical parts, so you can focus on hard part writing.</p>
+<h2>Features</h2>
+<ul>
+<li>Easy to:
+<ul>
+<li>Setup</li>
+<li>Configure</li>
+<li>Write</li>
+</ul>
+</li>
+<li>Supports:
+<ul>
+<li>Tags</li>
+<li>Search (Power by <a href="https://duckduckgo.com/">DuckDuckGo</a>)</li>
+<li>Canonical</li>
+<li><a href="https://ogp.me/">Open Graph</a></li>
+<li>Analytics</li>
+<li><a href="https://pages.github.com/">GitHub Pages</a></li>
+</ul>
+</li>
+<li>Auto generate:
+<ul>
+<li>GitHub Pages Actions file</li>
+<li>Favicon</li>
+<li>Sitemap</li>
+<li>404 page</li>
+<li>CSS</li>
+<li><code>mainfest.json</code> file</li>
+<li>Feeds
+<ul>
+<li>RSS</li>
+<li>JSON</li>
+<li>Atom</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>No Client side JavaScript</li>
+<li>Minified HTML &amp; Inline CSS</li>
+<li>Lightweight</li>
+</ul>
+<h2>Getting Started</h2>
+<h3>Installing</h3>
+<ul>
+<li>Download deno from https://deno.land/ and install it.</li>
+<li>After installing deno run following commands.</li>
+</ul>
+<pre><code class="language-sh"># Install the dblog
+deno run https://deno.land/x/dblog/install.js # Add deno to path, if you didn't already.
+
+# See all the options that are available
+dblog --help
+
+# Setup the your blog (Skip this if already your blog setup)
+dblog --setup
+
+# Make your blog and Run on localhost
+dblog --serve
+</code></pre>
+<h3>Update</h3>
+<p>To update dblog, rerun the installation command.</p>
+<pre><code class="language-sh">deno run https://deno.land/x/dblog/install.js
+</code></pre>
+<h3>Run dblog without installing dblog</h3>
+<pre><code class="language-sh">deno run -A https://deno.land/x/dblog/mod.js --help
+</code></pre>
+<h2>Live Demo &amp; Folder</h2>
+<ul>
+<li><a href="https://anzenkodo.github.io/dblog">Live Demo</a></li>
+<li><a href="https://github.com/AnzenKodo/dblog/tree/gh-pages">Generated Files</a></li>
+</ul>
+<h2>Configuration</h2>
+<p>Place <code>config.json</code> in root folder to edit default configuration. The
+<code>config.json</code> is optional.</p>
+<p><strong>The <code>config.json</code> with default configuration:</strong></p>
+<pre><code class="language-json">{
+  &quot;name&quot;: &quot;dblog&quot;,
+  &quot;start_url&quot;: &quot;https://AnzenKodo.github.io/dblog/&quot;,
+  &quot;description&quot;: &quot;dblog blog generator, that generates blog from Markdown and JSON file. dblog handles technical parts, so you can focus on hard part writing.&quot;,
+  &quot;email&quot;: &quot;&quot;,
+  &quot;author&quot;: &quot;AnzenKodo&quot;,
+  &quot;posts&quot;: &quot;./posts&quot;,
+  &quot;output&quot;: &quot;./site&quot;,
+  &quot;favicon&quot;: &quot;favicon.svg&quot;,
+  &quot;lang&quot;: &quot;en-US&quot;,
+  &quot;port&quot;: 8000,
+  &quot;background&quot;: &quot;#ffffff&quot;,
+  &quot;foreground&quot;: &quot;#000000&quot;,
+  &quot;theme&quot;: &quot;#01a252&quot;,
+  &quot;footer&quot;: &quot;&lt;p&gt;Made by &lt;a href=\&quot;https://AnzenKodo.github.io/AnzenKodo\&quot;&gt;AnzenKodo&lt;/a&gt; under &lt;a href=\&quot;https://anzenkodo.github.io/dblog/LICENSE\&quot;&gt;MIT&lt;/a&gt;&lt;/p&gt;\n&quot;,
+  &quot;page404&quot;: &quot;404 Page Not Found, Sorry :(&quot;,
+  &quot;backup&quot;: false,
+  &quot;exclude&quot;: [
+    &quot;config.json&quot;,
+    &quot;backup.json&quot;
+  ],
+  &quot;nav&quot;: {},
+  &quot;head&quot;: &quot;&quot;
+}
+</code></pre>
+<p><strong>Note:</strong> Every option is optional.</p>
+<ul>
+<li><strong>name</strong> - Name of your blog.</li>
+<li><strong>start_url</strong> - Start URL of your site. <em>Example:</em> 'https://example.com/',
+'https://blog.example.com/', 'https://example.com/blog/'</li>
+<li><strong>email</strong> - Your email address. This will enable 'Reply with Email' button in
+posts.</li>
+<li><strong>author</strong> - Your name or username.</li>
+<li><strong>posts</strong> - Path of posts.</li>
+<li><strong>output</strong> - Folder where your blog build will be placed. <em>Example:</em> './blog',
+'../site/blog', 'site/blog'.</li>
+<li><strong>favicon</strong> - <em><strong>Recommended 500x500px</strong></em>. Favicon location. <em>If empty,
+generated favicon will be used</em>. <em>Example:</em> './favicon.png',
+'./static/favicon.icon', '../favicon.jpg'.</li>
+<li><strong>lang</strong> - Blog language in 'RFC 5646' format. Example: 'ja' for Japanese,
+'sv' for Swedish, 'it' for Italian. See
+<a href="https://wikipedia.org/wiki/IETF_language_tag#List_of_common_primary_language_subtags">List of common primary language subtags in Wikipedia</a></li>
+<li><strong>footer</strong> - Footer of your website. <em>Supports CommonMark Markdown format</em>.
+<em>Example:</em>
+<code>Made by [AnzenKodo](https://AnzenKodo.github.io/AnzenKodo) uder [MIT License](https://anzenkodo.github.io/dblog/LICENSE.html)</code>.</li>
+<li><strong>port</strong> - Port of your blog on localhost. <em>Example</em>: '8080', '8300', '8400'.</li>
+<li><strong>background</strong> - Background color in light mode. Becomes foreground color in
+light mode. <em>Example:</em> '#000000', &quot;#ffffff', '##FEFBFE'.</li>
+<li><strong>foreground</strong> - Foreground color in light mode. Becomes background color in
+light mode. <em>Example:</em> '#000000', &quot;#ffffff', '##FEFBFE'.</li>
+<li><strong>theme</strong> - Blog theme color. <em>Example:</em> '#0583f2', '#f20544', '#f2b705'.</li>
+<li><strong>page404</strong> - 404 page message. <em>Example:</em> 'Sorry, page not found :('.</li>
+<li><strong>backup</strong> - Backup file location. <em>Example:</em> <code>false</code> to don't generate
+<code>backup.json</code> file, './backup.json', './site/backup.json', '../backup.json'.</li>
+<li><strong>exclude</strong> - Exclude files or folder. <em>Example:</em><pre><code class="language-json">&quot;exclude&quot;: [ &quot;.env&quot;, &quot;todo.md&quot;, &quot;drafts&quot; ],
+</code></pre>
+</li>
+<li><strong>nav</strong> - Nav bar item list. Example:<pre><code class="language-json">&quot;nav&quot;: {
+  &quot;about&quot;: &quot;./about.md&quot;,
+  &quot;stie&quot;: &quot;https://anzenkodo.github.io/AnzenKodo&quot;
+}
+</code></pre>
+</li>
+<li><strong>head</strong> - If you analytics or any other tags you want to put on head tag.
+<em>Example:</em>
+<code>&lt;link rel=&quot;preconnect&quot; href=&quot;//www.google-analytics.com&quot; crossorigin=&quot;&quot;&gt;</code>.</li>
+</ul>
+<h2>CLI Options</h2>
+<pre><code class="language-sh">dblog blog generator, that generates blog from Markdown and JSON file. dblog handles technical parts, so you can focus on hard part writing.
+
+Website: https://anzenkodo.github.io/dblog
+Package: https://deno.land/x/dblog
+Repo: https://github.com/AnzenKodo/dblog
+Docs: https://anzenkodo.github.io/dblog/posts/dblog-Docs.html
+
+USAGE:
+  dblog [OPTIONS]
+
+OPTIONS:
+  --serve   Build blog and Start localhost.
+    --noopen  Don't open browser, when starting localhost.
+  --build   Build blog without starting localhost.
+  --setup   Setup new blog.
+  --backup  Restore blog if 'backup.json' file available.
+  --readme  Generate 'README.md' file.
+  --help    Print help information.
+</code></pre>
+<h2>File Options</h2>
+<pre><code>---
+title: If empty the file name will be used
+description: If empty the first paragraph will be used.
+tags: [ &quot;tag1&quot;, &quot;tag2&quot; ]
+date: 20/08/2020
+canonical:
+---
+</code></pre>
+<ul>
+<li><strong>date</strong> - If empty, the file date will be used. <em>Note:</em> The file <code>date</code> might
+not always right. So always give you own date.</li>
+<li><strong>canonical</strong> - Share content between multiple sites without impacting SEO.
+Just put canonical URL. Know more about
+<a href="https://developers.google.com/search/docs/advanced/crawling/consolidate-duplicate-urls">canonical url</a>.</li>
+</ul>
+<h3>If file name start with underscore &quot;_&quot; it will be consider as draft.</h3>
+<p><strong>Example:</strong> <code>posts/_This is draft.md</code></p>
+<h2>Markdown Guide</h2>
+<h3><a href="https://commonmark.org/help/">CommonMark</a> Syntex</h3>
+<h4>Heading</h4>
+<pre><code class="language-md"># H1
+
+## H2
+
+### H3
+
+#### H4
+
+##### H5
+
+###### H6
+</code></pre>
+<h1>H1</h1>
+<h2>H2</h2>
+<h3>H3</h3>
+<h4>H4</h4>
+<h5>H5</h5>
+<h6>H6</h6>
+<h4>Inline style</h4>
+<pre><code class="language-md">**Bold** _Italic_ ~~Strikethrough~~
+</code></pre>
+<p><strong>Bold</strong> <em>Italic</em> <s>Strikethrough</s></p>
+<h4>Link and Image</h4>
+<pre><code class="language-md">[website](https://anzenkodo.github.io/dblog)
+![Jurassic Deno by Samip Poudel](https://deno.land/images/artwork/jurassicDeno.jpg)
+</code></pre>
+<p><a href="https://anzenkodo.github.io/dblog">website</a>
+<img src="https://deno.land/images/artwork/jurassicDeno.jpg" alt="Jurassic Deno by Samip Poudel"></p>
+<h4>Blockquote</h4>
+<pre><code class="language-md">&gt; 'The road to hell is paved with good intentions' by Abbot Bernard
+</code></pre>
+<blockquote>
+<p>'The road to hell is paved with good intentions' by Abbot Bernard</p>
+</blockquote>
+<h4>List</h4>
+<pre><code class="language-md">- List
+  - List
+- List
+
+1. One
+2. Two
+3. Three
+</code></pre>
+<ul>
+<li>List
+<ul>
+<li>List</li>
+</ul>
+</li>
+<li>List</li>
+</ul>
+<ol>
+<li>One</li>
+<li>Two</li>
+<li>Three</li>
+</ol>
+<h4>Horizontal rule</h4>
+<pre><code class="language-md">---
+</code></pre>
+<hr>
+<h4>Code block</h4>
+<div class="highlight highlight-source-lisp notranslate position-relative overflow-auto">
+<pre>
+`Inline code` with backticks
+```js
+  console.log("Code Blog in JavaScript");
+```
+</pre>
+</div>
+<p><code>Inline code</code> with backticks</p>
+<pre><code class="language-js">console.log(&quot;Code Blog in JavaScript&quot;);
+</code></pre>
+<h3>Additional Markdown syntax</h3>
+<h4>Checkbox</h4>
+<pre><code class="language-md">- [ ] Checkbox
+- [x] Checkbox with tick
+</code></pre>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" id="cbx_0" disabled="true"><label for="cbx_0"> Checkbox</label></li>
+<li class="task-list-item"><input type="checkbox" id="cbx_1" checked="true" disabled="true"><label for="cbx_1"> Checkbox with tick</label></li>
+</ul>
+<h4>Image with caption</h4>
+<pre><code class="language-md">![Deno](https://deno.land/images/artwork/deno_matrix.png &quot;Matrix by bramaudi&quot;)
+</code></pre>
+<figure data-type="image"><img src="https://deno.land/images/artwork/deno_matrix.png" alt="Deno" loading="lazy" decoding="async"><figcaption>Matrix by bramaudi</figcaption></figure>
+<h4>Footer</h4>
+<pre><code class="language-md">Here is a footnote reference[^1]. [^1]: Here is the footnote.
+</code></pre>
+<p>Here is a footnote reference[^1]. [^1]: Here is the footnote.</p>
+<h4>Additional inline syntax</h4>
+<pre><code class="language-md">~sub~ ^sup^ ==mark== [[kbd]] _underline_ ++insert++ ~~delete~~
+</code></pre>
+<p><sub>sub</sub>
+<sup>sup</sup>
+<mark>mark</mark>
+<kbd>kbd</kbd>
+<u>underline</u>
+<ins>insert</ins>
+<del>delete</del></p>
+<h4>Description list</h4>
+<pre><code class="language-md">: Definition 1 Term 2 with _inline markup_ : Definition 2 Third paragraph of
+definition 2.
+</code></pre>
+<dl>
+  <dt>Definition 1</dt>
+  <dd>Term 2 with inline.</dd>
+  <dt>Definition 2</dt>
+  <dd>Third paragraph of definition 2.</dd>
+</dl>
+<h4>Abbreviation</h4>
+<pre><code class="language-md">*[abbr]: Abbreviation
+</code></pre>
+<p><abbr title="Abbreviation">abbr</abbr></p>
+<h4>Table</h4>
+<h5>Normal</h5>
+<pre><code class="language-md">| Syntax    | Description |
+| --------- | ----------- |
+| Header    | Title       |
+| Paragraph | Text        |
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Syntax</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Header</td>
+<td>Title</td>
+</tr>
+<tr>
+<td>Paragraph</td>
+<td>Text</td>
+</tr>
+</tbody>
+</table>
+<h5>Multiline</h5>
+<pre><code class="language-md">| Markdown  | Rendered HTML |
+| --------- | ------------- |
+| _Italic_  | _Italic_      |
+|           |               |
+| - Item 1  | - Item 1      |
+| - Item 2  | - Item 2      |
+| ```python | ```python \   |
+| .1 + .2   | .1 + .2       |
+</code></pre>
+<table><thead><tr><th>Markdown</th><th>Rendered HTML</th></tr></thead> <tbody>
+  <tr> <td> <pre><code>*Italic* </code></pre> </td> <td> <p><em>Italic</em></p>
+  </td> </tr> <tr> <td> <pre><code>- Item 1 - Item 2</code></pre> </td> <td>
+  <ul> <li>Item 1</li> <li>Item 2</li> </ul> </td> </tr> <tr> <td>
+<pre><code>
+```python
+.1 + .2
+```
+</code></pre> </td> <td> <pre><code class="language-python">.1 + .2
+  </code></pre> </td> </tr> </tbody> </table>
+<h5>Rowspan</h5>
+<pre><code class="language-md">|                       Stage | Direct Products | ATP Yields |
+| --------------------------: | --------------: | ---------: |
+|                  Glycolysis |           2 ATP |            |
+|                          ^^ |          2 NADH |   3--5 ATP |
+|          Pyruvaye oxidation |          2 NADH |      5 ATP |
+|           Citric acid cycle |           2 ATP |            |
+|                          ^^ |          6 NADH |     15 ATP |
+|                          ^^ |         2 FADH2 |      3 ATP |
+|              **30--32** ATP |                 |            |
+| [Net ATP yields per hexose] |                 |            |
+</code></pre>
+<table> <caption id="netatpyieldsperhexose">Net ATP yields per hexose</caption>
+  <thead> <tr> <th align="right">Stage</th> <th align="right">Direct
+Products</th> <th align="right">ATP Yields</th> </tr> </thead> <tbody> <tr> <td
+align="right" rowspan="2">Glycolysis</td> <td align="right" colspan="2">2
+ATP</td> </tr> <tr> <td align="right">2 NADH</td> <td align="right">3–5
+ATP</td> </tr> <tr> <td align="right">Pyruvaye oxidation</td> <td
+align="right">2 NADH</td> <td align="right">5 ATP</td> </tr> <tr> <td
+align="right" rowspan="3">Citric acid cycle</td> <td align="right"
+colspan="2">2 ATP</td> </tr> <tr> <td align="right">6 NADH</td> <td
+align="right">15 ATP</td> </tr> <tr> <td align="right">2 FADH2</td> <td
+align="right">3 ATP</td> </tr> <tr> <td align="right"
+colspan="3"><strong>30–32</strong> ATP</td> </tr> </tbody> </table>
+<h4>Headerless</h4>
+<pre><code class="language-md">|--|--|--|--|--|--|--|--| |♜| |♝|♛|♚|♝|♞|♜| | |♟|♟|♟| |♟|♟|♟| |♟| |♞| | | | | |
+| |♗| | |♟| | | | | | | | |♙| | | | | | | | | |♘| | | |♙|♙|♙|♙| |♙|♙|♙|
+|♖|♘|♗|♕|♔| | |♖|
+</code></pre>
+<table> <tbody> <tr> <td>♜</td> <td></td> <td>♝</td> <td>♛</td> <td>♚</td>
+  <td>♝</td> <td>♞</td> <td>♜</td> </tr> <tr> <td></td> <td>♟</td> <td>♟</td>
+  <td>♟</td> <td></td> <td>♟</td> <td>♟</td> <td>♟</td> </tr> <tr> <td>♟</td>
+  <td></td> <td>♞</td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+  <tr> <td></td> <td>♗</td> <td></td> <td></td> <td>♟</td> <td></td> <td></td>
+  <td></td> </tr> <tr> <td></td> <td></td> <td></td> <td></td> <td>♙</td>
+  <td></td> <td></td> <td></td> </tr> <tr> <td></td> <td></td> <td></td>
+  <td></td> <td></td> <td>♘</td> <td></td> <td></td> </tr> <tr> <td>♙</td>
+  <td>♙</td> <td>♙</td> <td>♙</td> <td></td> <td>♙</td> <td>♙</td> <td>♙</td>
+  </tr> <tr> <td>♖</td> <td>♘</td> <td>♗</td> <td>♕</td> <td>♔</td> <td></td>
+  <td></td> <td>♖</td> </tr> </tbody> </table>]]></description>
+  </item>
+  <item>
+    <title>MGT</title>
+    <link>https://anzenkodo.github.io/blog/study/mgt.html</link>
+    <pubDate>2022-12-09T20:15:14.186Z</pubDate>
+    <description><![CDATA[<h1>MGT</h1>
+<ol>
+<li>Who said &quot;Management is the function of executive leadership anywhere&quot;:</li>
+</ol>
+<ul>
+<li>a) Ralph C. Devis</li>
+</ul>
+<ol start="2">
+<li>Universal, goal oriented, multidimensional, continuous process are some
+characteristics of:</li>
+</ol>
+<ul>
+<li>a) Management</li>
+</ul>
+<ol start="3">
+<li>Optimum utilization of resources can be ensured by:</li>
+</ol>
+<ul>
+<li>c) Management</li>
+</ul>
+<ol start="4">
+<li>Motivating the people and building the team spirit to improve the life
+standard of worker is possible due to:</li>
+</ol>
+<ul>
+<li>b) Management</li>
+</ul>
+<ol start="5">
+<li><strong>Management</strong> is the art of getting work done through people</li>
+<li>Management is a creative and <strong>Continuous</strong> process.</li>
+<li>Management is _______</li>
+</ol>
+<ul>
+<li>
+<ol>
+<li>Art of getting things done through people</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>Art of knowing what you want to do in best and cheaper way.</li>
+</ol>
+<ul>
+<li><strong>a) 1&amp;2</strong></li>
+</ul>
+</li>
+</ul>
+<ol start="8">
+<li><strong>Administration</strong> concerned with decision making, policy making.</li>
+<li>The difference between administration and management is that:</li>
+</ol>
+<ul>
+<li>a) Administration is largely determinative while management is essentially
+executive.</li>
+</ul>
+<ol start="10">
+<li>A tool manufacturing firm want to improve its performance from good to best
+suggest the steps they should follow:</li>
+</ol>
+<ul>
+<li>a) 1. Optimum utilisation of resources and reduce wastage. 2. Building team
+spirit to achieve goal.</li>
+</ul>
+<ol start="11">
+<li></li>
+</ol>]]></description>
+  </item>
+  <item>
+    <title>Grammmar</title>
+    <link>https://anzenkodo.github.io/blog/study/grammmar.html</link>
+    <pubDate>2022-12-09T20:15:14.186Z</pubDate>
+    <description><![CDATA[<h1>Grammar in English</h1>
+<h2>Part of Speech</h2>
+<p>Words are divided into different kinds of classes called <strong>Parts of Speech</strong>.
+The parts of speech are eight in number:</p>
+<ol>
+<li><a href="#noun">Noun</a></li>
+<li><a href="#adjective">Adjective</a></li>
+<li><a href="#pronoun">Pronoun</a></li>
+<li><a href="#verb">Verb</a></li>
+<li><a href="#adverb">Adverb</a></li>
+<li><a href="#preposition">Preposition</a></li>
+<li><a href="#conjunction">Conjunction</a></li>
+<li><a href="#interjection">Interjection</a></li>
+<li><a href="#determiners">Determiners</a> (In some modern grammars)</li>
+</ol>
+<h3>Noun</h3>
+<p>A <strong>Noun</strong> is a word used as the name of the person, place, or things as,</p>
+<ol>
+<li>That <em>Mountain</em> look so beautiful from here.</li>
+<li>That <em>tree</em> was so small when we came last year.</li>
+<li>I don't like <em>rain</em>.</li>
+</ol>
+<p><em><strong>Note</strong></em>
+The word <em>Things</em> includes:</p>
+<ol>
+<li>All the objects that we can see, hear, taste, touch, or smell.</li>
+<li>Something that we can <em>think of</em>, but can't perceive by the senses.</li>
+</ol>
+<h3>Adjective</h3>
+<p>An <strong>Adjective</strong> is a word used to add something to the meaning of a noun; as,</p>
+<ol>
+<li>He is <em>playing game</em>.</li>
+<li>She look <strong>beautiful</strong> tonight.</li>
+<li>Sun <strong>set early</strong> today.</li>
+</ol>
+<h3>Pronoun</h3>
+<p>A <strong>Pronoun</strong> is a word used instead of noun; as,</p>
+<ol>
+<li>He is was playing football, but <em>he's</em> broke his leg.</li>
+<li>The books are where you left <em>them</em>.</li>
+</ol>
+<h3>Verb</h3>
+<p>A <strong>Verb</strong> is a word used to express an action or state; as,</p>
+<ol>
+<li>He is <em>sleeping</em>.</li>
+<li>That boy is very <em>playful</em>.</li>
+<li>India is a very <em>diverse</em> country.</li>
+</ol>
+<h3>Adverb</h3>
+<p>An <strong>Adverb</strong> is a word used to <em>add something</em> to the meaning of the verb, an
+adjective, or another adverb; as,</p>
+<ol>
+<li>He is working <em>very</em> hard today.</li>
+<li>That horse is running <em>so</em> fast today.</li>
+<li>New York look <em>so</em> beautiful in the night.</li>
+</ol>
+<h3>Preposition</h3>
+<p>A <strong>Preposition</strong> is a word used with a noun or pronoun to show how the person
+or thing denoted by the noun or pronoun stands in relation to something else; as</p>
+<ol>
+<li><em>Before</em> the dog got the hat.</li>
+<li>The Ice cream is <em>under</em> the fridge.</li>
+<li>He is <em>going</em> to Goa trip.</li>
+</ol>
+<h3>Conjunction</h3>
+<p>A <strong>Conjunction</strong> is a word used to <em>join</em> words or sentences; as,</p>
+<ol>
+<li>He <em>and</em> she are cousins.</li>
+<li>Three <em>and</em> two make five.</li>
+<li>Happy <em>but</em> sad inside.</li>
+</ol>
+<p>Conjunction have <strong>FANBOYS</strong> a which to remember coordinating conjunctions:</p>
+<ul>
+<li><strong>For</strong> - since, because
+<ul>
+<li>I don't eat buttons <em>for</em> they are not food.</li>
+</ul>
+</li>
+<li><strong>And</strong> - combines things
+<ul>
+<li>The kangaroo robbed the band <em>and</em> torched the saloon.</li>
+</ul>
+</li>
+<li><strong>Nor</strong> - combines untrue things
+<ul>
+<li>She won't leave her tree <em>nor</em> will she speak with humans.</li>
+</ul>
+</li>
+<li><strong>But</strong> - express exceptions
+<ul>
+<li>We used every building material <em>but</em> chewing gum.</li>
+</ul>
+</li>
+<li><strong>Or</strong> - choosing between options
+<ul>
+<li>Would you rather have pet bear <em>or</em> a pet giraffe?</li>
+</ul>
+</li>
+<li><strong>Yet</strong> - to the contrary
+<ul>
+<li>I want to leave, <em>yet</em> I cannot.</li>
+</ul>
+</li>
+<li><strong>So</strong> - shows consequences
+<ul>
+<li>He is allergic to sheep, <em>so</em> he skipped the wool festival.</li>
+</ul>
+</li>
+</ul>
+<h3>Interjection</h3>
+<p>An <strong>Interjection</strong> is a word which expresses some sudden feeling; as,</p>
+<ol>
+<li><em>Oh my god</em> ! What have you done.</li>
+<li><em>What</em> ! She is dead.</li>
+<li>Hurrah ! We have won the game.</li>
+</ol>
+<h3>Determiners</h3>
+<p><strong>Determiners</strong> are words that comes at the beginning of the noun, introduces
+noun, determines noun that is whether none is specific or general.
+There's are divided into four types which are:</p>
+<h4>Articles</h4>
+<ul>
+<li><strong>Indefinite articles</strong> - <em>a, an</em> - general version of noun
+<ul>
+<li><em>A</em> book is man's best friend</li>
+</ul>
+</li>
+<li><strong>Definite articles</strong> - <em>the</em> - specific version of noun
+<ul>
+<li><em>The</em> city Mumbai was called Bombay.</li>
+</ul>
+</li>
+</ul>
+<h4>Demonstratives</h4>
+<blockquote>
+<p><em>this, that, these, those</em></p>
+</blockquote>
+<ul>
+<li><strong>Demonstratives</strong> pronouns are also used as determiners. They are used to
+point something specific within a sentence. They focus attention on the nouns
+that they are replacing.
+<ul>
+<li>I want go to <em>that</em> movie.</li>
+<li>He wanted <em>those</em> boys to go away.</li>
+</ul>
+</li>
+</ul>
+<h4>Possessives</h4>
+<blockquote>
+<p><em>my, your, his, her, your their</em></p>
+</blockquote>
+<ul>
+<li><strong>Possessive</strong> pronouns are words that are used to show ownership.
+<ul>
+<li>Where is <em>your</em> bike?</li>
+<li>It's <em>our</em> secret recipe.</li>
+</ul>
+</li>
+</ul>
+<h4>Quantifiers</h4>
+<blockquote>
+<p><em>some, few little many, much, any</em></p>
+</blockquote>
+<ul>
+<li>They indicate how much or how little of the noun is being discussed.
+<ul>
+<li>He took <em>some</em> books of mine.</li>
+<li>He has few apples in the refrigerator.</li>
+</ul>
+</li>
+</ul>]]></description>
+  </item>
+  <item>
+    <title>sets</title>
+    <link>https://anzenkodo.github.io/blog/maths/discrete-mathematics/sets.html</link>
+    <pubDate>2022-12-09T20:15:14.186Z</pubDate>
+    <description><![CDATA[<h2>Natural Numbers</h2>
+<h3>Repecting Integers</h3>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mn>0</mn><mi>x</mi><mo>=</mo><mn>9</mn><mi mathvariant="normal">.</mi><mn>9</mn><mn>9</mn><mn>9</mn><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">10x = 9.999...</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">1</span><span class="mord mathrm">0</span><span class="mord mathit">x</span><span class="mrel">=</span><span class="mord mathrm">9</span><span class="mord mathrm">.</span><span class="mord mathrm">9</span><span class="mord mathrm">9</span><span class="mord mathrm">9</span><span class="mord mathrm">.</span><span class="mord mathrm">.</span><span class="mord mathrm">.</span></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>9</mn><mn>9</mn><mn>9</mn><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">x = 0.999...</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">x</span><span class="mrel">=</span><span class="mord mathrm">0</span><span class="mord mathrm">.</span><span class="mord mathrm">9</span><span class="mord mathrm">9</span><span class="mord mathrm">9</span><span class="mord mathrm">.</span><span class="mord mathrm">.</span><span class="mord mathrm">.</span></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mn>0</mn><mi>x</mi><mo>−</mo><mi>x</mi><mo>=</mo><mn>9</mn><mi>x</mi><mo>=</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">10x - x = 9x = 9</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">1</span><span class="mord mathrm">0</span><span class="mord mathit">x</span><span class="mbin">−</span><span class="mord mathit">x</span><span class="mrel">=</span><span class="mord mathrm">9</span><span class="mord mathit">x</span><span class="mrel">=</span><span class="mord mathrm">9</span></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">x = 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">x</span><span class="mrel">=</span><span class="mord mathrm">1</span></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mn>0</mn><mi>x</mi><mo>=</mo><mn>1</mn><mn>0</mn></mrow><annotation encoding="application/x-tex">10x = 10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">1</span><span class="mord mathrm">0</span><span class="mord mathit">x</span><span class="mrel">=</span><span class="mord mathrm">1</span><span class="mord mathrm">0</span></span></span></span></p>
+<h4>Denote:</h4>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Q</mi><mo>=</mo><mo>{</mo><mrow><mfrac><mrow><mi>a</mi></mrow><mrow><mi>b</mi></mrow></mfrac></mrow><mo>:</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo>∈</mo><mi>Z</mi><mo separator="true">,</mo><mi>b</mi><mo>≠</mo><mn>0</mn><mo>}</mo></mrow><annotation encoding="application/x-tex">Q = \{ {a \over b}: a,b \in Z, b \ne 0 \} 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.10756em;"></span><span class="strut bottom" style="height:1.7935600000000003em;vertical-align:-0.686em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit">Q</span><span class="mrel">=</span><span class="mopen">{</span><span class="mord displaystyle textstyle uncramped"><span class="mord reset-textstyle displaystyle textstyle uncramped"><span class="sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.686em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle textstyle cramped"><span class="mord textstyle cramped"><span class="mord mathit">b</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.677em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathit">a</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span></span><span class="mrel">:</span><span class="mord mathit">a</span><span class="mpunct">,</span><span class="mord mathit">b</span><span class="mrel">∈</span><span class="mord mathit" style="margin-right:0.07153em;">Z</span><span class="mpunct">,</span><span class="mord mathit">b</span><span class="mrel">≠</span><span class="mord mathrm">0</span><span class="mclose">}</span></span></span></span></span></p>
+<h3>Non-Rational Number</h3>
+<h4>Example</h4>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msqrt><mn>2</mn></msqrt><mo>=</mo><mrow><mfrac><mrow><mi>a</mi></mrow><mrow><mi>b</mi></mrow></mfrac></mrow></mrow><annotation encoding="application/x-tex">\sqrt2 = { a \over b}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.9072200000000001em;"></span><span class="strut bottom" style="height:1.25222em;vertical-align:-0.345em;"></span><span class="base textstyle uncramped"><span class="sqrt mord"><span class="sqrt-sign" style="top:-0.06722000000000006em;"><span class="style-wrap reset-textstyle textstyle uncramped">√</span></span><span class="vlist"><span style="top:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span><span class="mord mathrm">2</span></span><span style="top:-0.8272200000000001em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span><span class="reset-textstyle textstyle uncramped sqrt-line"></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span>​</span></span></span><span class="mrel">=</span><span class="mord textstyle uncramped"><span class="mord reset-textstyle textstyle uncramped"><span class="sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.345em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathit">b</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.394em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord scriptstyle uncramped"><span class="mord mathit">a</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span></span></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mo>=</mo><mrow><mfrac><mrow><msup><mi>a</mi><mn>2</mn></msup></mrow><mrow><msup><mi>b</mi><mn>2</mn></msup></mrow></mfrac></mrow></mrow><annotation encoding="application/x-tex">2 = { a^2 \over b^2 }</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.97032em;"></span><span class="strut bottom" style="height:1.3153199999999998em;vertical-align:-0.345em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">2</span><span class="mrel">=</span><span class="mord textstyle uncramped"><span class="mord reset-textstyle textstyle uncramped"><span class="sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.345em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord"><span class="mord mathit">b</span><span class="vlist"><span style="top:-0.289em;margin-right:0.07142857142857144em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-scriptstyle scriptscriptstyle cramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.394em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord scriptstyle uncramped"><span class="mord"><span class="mord mathit">a</span><span class="vlist"><span style="top:-0.363em;margin-right:0.07142857142857144em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-scriptstyle scriptscriptstyle uncramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span></span></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><msup><mi>b</mi><mn>2</mn></msup><mo>=</mo><msup><mi>a</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">2b^2 = a^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">2</span><span class="mord"><span class="mord mathit">b</span><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mrel">=</span><span class="mord"><span class="mord mathit">a</span><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></p>
+<p><strong>a is even</strong></p>]]></description>
+  </item>
+  <item>
+    <title>Set</title>
+    <link>https://anzenkodo.github.io/blog/maths/discrete-mathematics/set.html</link>
+    <pubDate>2022-12-09T20:15:14.186Z</pubDate>
+    <description><![CDATA[<h1>Set</h1>
+<p><strong>Note:</strong></p>
+<ul>
+<li>Info:
+<ul>
+<li>https://en.wikipedia.org/wiki/Set_(mathematics)</li>
+</ul>
+</li>
+<li>Set is denoted by capital letter such as A, B, C, D.</li>
+</ul>
+<h2>Set symbols</h2>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∅</mi></mrow><annotation encoding="application/x-tex">\emptyset</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:0.80556em;vertical-align:-0.05556em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">∅</span></span></span></span> - The empty set.</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="double-struck">N</mi></mrow></mrow><annotation encoding="application/x-tex">\mathbb{N}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68889em;"></span><span class="strut bottom" style="height:0.68889em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathbb">N</span></span></span></span></span> - Set of natural numbers.
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mn>3</mn><mo separator="true">,</mo><mn>4</mn><mo separator="true">,</mo><mn>5</mn><mo separator="true">,</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">1, 2, 3, 4, 5, ...</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">1</span><span class="mpunct">,</span><span class="mord mathrm">2</span><span class="mpunct">,</span><span class="mord mathrm">3</span><span class="mpunct">,</span><span class="mord mathrm">4</span><span class="mpunct">,</span><span class="mord mathrm">5</span><span class="mpunct">,</span><span class="mord mathrm">.</span><span class="mord mathrm">.</span><span class="mord mathrm">.</span></span></span></span></li>
+</ul>
+</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="double-struck">Z</mi></mrow></mrow><annotation encoding="application/x-tex">\mathbb{Z}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68889em;"></span><span class="strut bottom" style="height:0.68889em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathbb">Z</span></span></span></span></span> - Set of integers.
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo separator="true">,</mo><mo>−</mo><mn>5</mn><mo separator="true">,</mo><mo>−</mo><mn>4</mn><mo separator="true">,</mo><mo>−</mo><mn>3</mn><mo separator="true">,</mo><mo>−</mo><mn>2</mn><mo separator="true">,</mo><mo>−</mo><mn>1</mn><mo separator="true">,</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mn>3</mn><mo separator="true">,</mo><mn>4</mn><mo separator="true">,</mo><mn>5</mn><mo separator="true">,</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">..., -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, ...</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">.</span><span class="mord mathrm">.</span><span class="mord mathrm">.</span><span class="mpunct">,</span><span class="mord">−</span><span class="mord mathrm">5</span><span class="mpunct">,</span><span class="mord">−</span><span class="mord mathrm">4</span><span class="mpunct">,</span><span class="mord">−</span><span class="mord mathrm">3</span><span class="mpunct">,</span><span class="mord">−</span><span class="mord mathrm">2</span><span class="mpunct">,</span><span class="mord">−</span><span class="mord mathrm">1</span><span class="mpunct">,</span><span class="mord mathrm">0</span><span class="mpunct">,</span><span class="mord mathrm">1</span><span class="mpunct">,</span><span class="mord mathrm">2</span><span class="mpunct">,</span><span class="mord mathrm">3</span><span class="mpunct">,</span><span class="mord mathrm">4</span><span class="mpunct">,</span><span class="mord mathrm">5</span><span class="mpunct">,</span><span class="mord mathrm">.</span><span class="mord mathrm">.</span><span class="mord mathrm">.</span></span></span></span></li>
+</ul>
+</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="double-struck">Q</mi></mrow></mrow><annotation encoding="application/x-tex">\mathbb{Q}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68889em;"></span><span class="strut bottom" style="height:0.85556em;vertical-align:-0.16667em;"></span><span class="base textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathbb">Q</span></span></span></span></span> - Set of rational numbers.
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mi mathvariant="normal">/</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">a/b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit">a</span><span class="mord mathrm">/</span><span class="mord mathit">b</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi>a</mi></mrow><mrow><mi>b</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">a \over b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.695392em;"></span><span class="strut bottom" style="height:1.040392em;vertical-align:-0.345em;"></span><span class="base textstyle uncramped"><span class="mord reset-textstyle textstyle uncramped"><span class="sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.345em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathit">b</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.394em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord scriptstyle uncramped"><span class="mord mathit">a</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span></span></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mrow><mfrac><mrow><mn>1</mn><mn>2</mn><mn>5</mn></mrow><mrow><mn>3</mn><mn>7</mn></mrow></mfrac></mrow></mrow><annotation encoding="application/x-tex">- { 125 \over 37}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.845108em;"></span><span class="strut bottom" style="height:1.190108em;vertical-align:-0.345em;"></span><span class="base textstyle uncramped"><span class="mord">−</span><span class="mord textstyle uncramped"><span class="mord reset-textstyle textstyle uncramped"><span class="sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.345em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathrm">3</span><span class="mord mathrm">7</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.394em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord scriptstyle uncramped"><span class="mord mathrm">1</span><span class="mord mathrm">2</span><span class="mord mathrm">5</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span></span></span></span></span></li>
+</ul>
+</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="double-struck">A</mi></mrow></mrow><annotation encoding="application/x-tex">\mathbb{A}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68889em;"></span><span class="strut bottom" style="height:0.68889em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathbb">A</span></span></span></span></span> - Set of algebraic numbers.
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mo>−</mo><mn>1</mn><mo>−</mo><msqrt><mrow><mo>−</mo><mn>2</mn><mn>3</mn></mrow></msqrt></mrow><mrow><mn>4</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">-1-\sqrt{-23} \over 4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.05em;"></span><span class="strut bottom" style="height:1.395em;vertical-align:-0.345em;"></span><span class="base textstyle uncramped"><span class="mord reset-textstyle textstyle uncramped"><span class="sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.345em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathrm">4</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.41861149999999997em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord scriptstyle uncramped"><span class="mord">−</span><span class="mord mathrm">1</span><span class="mbin">−</span><span class="sqrt mord"><span class="sqrt-sign" style="top:-0.044840714285714234em;"><span class="style-wrap reset-scriptstyle scriptstyle uncramped">√</span></span><span class="vlist"><span style="top:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1.4285714285714286em;">​</span></span><span class="mord scriptstyle cramped"><span class="mord">−</span><span class="mord mathrm">2</span><span class="mord mathrm">3</span></span></span><span style="top:-0.7876978571428571em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1.4285714285714286em;">​</span></span><span class="reset-scriptstyle textstyle uncramped sqrt-line"></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1.4285714285714286em;">​</span></span>​</span></span></span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span>​</span></span></span><span class="sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span></span></span></span></li>
+</ul>
+</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="double-struck">R</mi></mrow></mrow><annotation encoding="application/x-tex">\mathbb{R}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68889em;"></span><span class="strut bottom" style="height:0.68889em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathbb">R</span></span></span></span></span> - Set of real numbers.
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mo>−</mo><mn>1</mn><mo>−</mo><msqrt><mrow><mo>−</mo><mn>2</mn><mn>3</mn></mrow></msqrt></mrow><mrow><mn>4</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">-1-\sqrt{-23} \over 4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.05em;"></span><span class="strut bottom" style="height:1.395em;vertical-align:-0.345em;"></span><span class="base textstyle uncramped"><span class="mord reset-textstyle textstyle uncramped"><span class="sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.345em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathrm">4</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.41861149999999997em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord scriptstyle uncramped"><span class="mord">−</span><span class="mord mathrm">1</span><span class="mbin">−</span><span class="sqrt mord"><span class="sqrt-sign" style="top:-0.044840714285714234em;"><span class="style-wrap reset-scriptstyle scriptstyle uncramped">√</span></span><span class="vlist"><span style="top:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1.4285714285714286em;">​</span></span><span class="mord scriptstyle cramped"><span class="mord">−</span><span class="mord mathrm">2</span><span class="mord mathrm">3</span></span></span><span style="top:-0.7876978571428571em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1.4285714285714286em;">​</span></span><span class="reset-scriptstyle textstyle uncramped sqrt-line"></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1.4285714285714286em;">​</span></span>​</span></span></span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span>​</span></span></span><span class="sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span></span></span></span></li>
+</ul>
+</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="double-struck">C</mi></mrow></mrow><annotation encoding="application/x-tex">\mathbb{C}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68889em;"></span><span class="strut bottom" style="height:0.68889em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathbb">C</span></span></span></span></span> - Set of complex numbers.
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mi>a</mi><mo>+</mo><mi>b</mi><mi>i</mi></mrow><annotation encoding="application/x-tex">z = a + bi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.04398em;">z</span><span class="mrel">=</span><span class="mord mathit">a</span><span class="mbin">+</span><span class="mord mathit">b</span><span class="mord mathit">i</span></span></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">a</span></span></span></span> and <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">b</span></span></span></span> is real numbers and <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.65952em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span></span></span></span> is the imaginary unit.</li>
+</ul>
+</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="double-struck">H</mi></mrow></mrow><annotation encoding="application/x-tex">\mathbb{H}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68889em;"></span><span class="strut bottom" style="height:0.68889em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathbb">H</span></span></span></span></span> - Set of quaternions.
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi><mo>=</mo><mrow><mo fence="true">[</mo><mtable><mtr><mtd><mrow><mi>z</mi></mrow></mtd><mtd><mrow><mi>w</mi></mrow></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mover accent="true"><mrow><mi>w</mi></mrow><mo stretchy="true">‾</mo></mover></mrow></mtd><mtd><mrow><mover accent="true"><mrow><mi>z</mi></mrow><mo stretchy="true">‾</mo></mover></mrow></mtd></mtr></mtable><mo fence="true">]</mo></mrow><mo>=</mo><mrow><mo fence="true">[</mo><mtable><mtr><mtd><mrow><mi>a</mi><mo>+</mo><mi>i</mi><mi>b</mi></mrow></mtd><mtd><mrow><mi>c</mi><mo>+</mo><mi>i</mi><mi>d</mi></mrow></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mi>c</mi><mo>+</mo><mi>i</mi><mi>d</mi></mrow></mtd><mtd><mrow><mi>a</mi><mo>−</mo><mi>i</mi><mi>b</mi></mrow></mtd></mtr></mtable><mo fence="true">]</mo></mrow></mrow><annotation encoding="application/x-tex">H = \begin{bmatrix} z &amp; w \\ -\overline{w} &amp; \overline{z}\end{bmatrix} = \begin{bmatrix} a + ib &amp; c + id \\ -c + id &amp; a - ib\end{bmatrix}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.45em;"></span><span class="strut bottom" style="height:2.40003em;vertical-align:-0.95003em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.08125em;">H</span><span class="mrel">=</span><span class="minner textstyle uncramped"><span class="style-wrap reset-textstyle textstyle uncramped" style="top:0em;"><span class="delimsizing size3">[</span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist"><span style="top:-0.6099999999999999em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span><span class="mord textstyle uncramped"><span class="mord mathit" style="margin-right:0.04398em;">z</span></span></span><span style="top:0.5900000000000003em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span><span class="mord textstyle uncramped"><span class="mord">−</span><span class="overline mord"><span class="vlist"><span style="top:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span><span class="mord textstyle cramped"><span class="mord mathit" style="margin-right:0.02691em;">w</span></span></span><span style="top:-0.5505599999999999em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span><span class="reset-textstyle textstyle uncramped overline-line"></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span>​</span></span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span>​</span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist"><span style="top:-0.6099999999999999em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span><span class="mord textstyle uncramped"><span class="mord mathit" style="margin-right:0.02691em;">w</span></span></span><span style="top:0.5900000000000003em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span><span class="mord textstyle uncramped"><span class="overline mord"><span class="vlist"><span style="top:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span><span class="mord textstyle cramped"><span class="mord mathit" style="margin-right:0.04398em;">z</span></span></span><span style="top:-0.5505599999999999em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span><span class="reset-textstyle textstyle uncramped overline-line"></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span>​</span></span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span>​</span></span></span></span></span><span class="style-wrap reset-textstyle textstyle uncramped" style="top:0em;"><span class="delimsizing size3">]</span></span></span><span class="mrel">=</span><span class="minner textstyle uncramped"><span class="style-wrap reset-textstyle textstyle uncramped" style="top:0em;"><span class="delimsizing size3">[</span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist"><span style="top:-0.6099999999999999em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="mord textstyle uncramped"><span class="mord mathit">a</span><span class="mbin">+</span><span class="mord mathit">i</span><span class="mord mathit">b</span></span></span><span style="top:0.5900000000000003em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="mord textstyle uncramped"><span class="mord">−</span><span class="mord mathit">c</span><span class="mbin">+</span><span class="mord mathit">i</span><span class="mord mathit">d</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist"><span style="top:-0.6099999999999999em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="mord textstyle uncramped"><span class="mord mathit">c</span><span class="mbin">+</span><span class="mord mathit">i</span><span class="mord mathit">d</span></span></span><span style="top:0.5900000000000003em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="mord textstyle uncramped"><span class="mord mathit">a</span><span class="mbin">−</span><span class="mord mathit">i</span><span class="mord mathit">b</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span><span class="style-wrap reset-textstyle textstyle uncramped" style="top:0em;"><span class="delimsizing size3">]</span></span></span></span></span></span></li>
+</ul>
+</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="double-struck">O</mi></mrow></mrow><annotation encoding="application/x-tex">\mathbb{O}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68889em;"></span><span class="strut bottom" style="height:0.85556em;vertical-align:-0.16667em;"></span><span class="base textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathbb">O</span></span></span></span></span> - Set of octonions.
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><msub><mi>e</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>e</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>e</mi><mn>2</mn></msub><mo separator="true">,</mo><msub><mi>e</mi><mn>4</mn></msub><mo separator="true">,</mo><msub><mi>e</mi><mn>5</mn></msub><mo separator="true">,</mo><msub><mi>e</mi><mn>6</mn></msub><mo separator="true">,</mo><msub><mi>e</mi><mn>7</mn></msub><mo>}</mo></mrow><annotation encoding="application/x-tex">\{e_1, e_1, e_2, e_4, e_5, e_6, e_7\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mopen">{</span><span class="mord"><span class="mord mathit">e</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">1</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit">e</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">1</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit">e</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit">e</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">4</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit">e</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">5</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit">e</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">6</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit">e</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">7</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mclose">}</span></span></span></span></li>
+</ul>
+</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="double-struck">S</mi></mrow></mrow><annotation encoding="application/x-tex">\mathbb{S}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68889em;"></span><span class="strut bottom" style="height:0.68889em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathbb">S</span></span></span></span></span> - Set of sedenions.
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>=</mo><msub><mi>x</mi><mn>0</mn></msub><msub><mi>e</mi><mn>0</mn></msub><mo>+</mo><msub><mi>x</mi><mn>1</mn></msub><msub><mi>e</mi><mn>1</mn></msub><mo>+</mo><msub><mi>x</mi><mn>2</mn></msub><msub><mi>e</mi><mn>2</mn></msub><mo>+</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo>+</mo><msub><mi>x</mi><mrow><mn>1</mn><mn>4</mn></mrow></msub><msub><mi>e</mi><mrow><mn>1</mn><mn>4</mn></mrow></msub><mo>+</mo><msub><mi>x</mi><mrow><mn>1</mn><mn>5</mn></mrow></msub><msub><mi>e</mi><mrow><mn>1</mn><mn>5</mn></mrow></msub></mrow><annotation encoding="application/x-tex">x = x_0 e_0 + x_1 e_1 + x_2 e_2 + ... + x_{14} e_{14} + x_{15} e_{15}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.58333em;"></span><span class="strut bottom" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord mathit">x</span><span class="mrel">=</span><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">0</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mord"><span class="mord mathit">e</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">0</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mbin">+</span><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">1</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mord"><span class="mord mathit">e</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">1</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mbin">+</span><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mord"><span class="mord mathit">e</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mbin">+</span><span class="mord mathrm">.</span><span class="mord mathrm">.</span><span class="mord mathrm">.</span><span class="mbin">+</span><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathrm">1</span><span class="mord mathrm">4</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mord"><span class="mord mathit">e</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathrm">1</span><span class="mord mathrm">4</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mbin">+</span><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathrm">1</span><span class="mord mathrm">5</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mord"><span class="mord mathit">e</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathrm">1</span><span class="mord mathrm">5</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></li>
+</ul>
+</li>
+</ul>
+<h2>Set Logic</h2>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∈</mo></mrow><annotation encoding="application/x-tex">\in</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.5391em;"></span><span class="strut bottom" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="base textstyle uncramped"><span class="mrel">∈</span></span></span></span> - is member of.
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>∈</mo><mo>(</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">x \in (0, 1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit">x</span><span class="mrel">∈</span><span class="mopen">(</span><span class="mord mathrm">0</span><span class="mpunct">,</span><span class="mord mathrm">1</span><span class="mclose">)</span></span></span></span> that means <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>&lt;</mo><mi>x</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0 &lt; x &lt; 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.68354em;vertical-align:-0.0391em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">0</span><span class="mrel">&lt;</span><span class="mord mathit">x</span><span class="mrel">&lt;</span><span class="mord mathrm">1</span></span></span></span>.</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>∈</mo><mo>[</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">x \in [0, 1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit">x</span><span class="mrel">∈</span><span class="mopen">[</span><span class="mord mathrm">0</span><span class="mpunct">,</span><span class="mord mathrm">1</span><span class="mclose">)</span></span></span></span> that means <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>≤</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">0 \leq x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">0</span><span class="mrel">≤</span><span class="mord mathit">x</span></span></span></span>.
+<ul>
+<li>The square bracket (<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo></mrow><annotation encoding="application/x-tex">[</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mopen">[</span></span></span></span>) means <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>≤</mo></mrow><annotation encoding="application/x-tex">\leq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.63597em;"></span><span class="strut bottom" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="base textstyle uncramped"><span class="mrel">≤</span></span></span></span>.</li>
+</ul>
+</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>∈</mo><mo>[</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo>]</mo></mrow><annotation encoding="application/x-tex">x \in [0, 1]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit">x</span><span class="mrel">∈</span><span class="mopen">[</span><span class="mord mathrm">0</span><span class="mpunct">,</span><span class="mord mathrm">1</span><span class="mclose">]</span></span></span></span> that means <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>≤</mo><mi>x</mi><mo>≤</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0 \leq x \leq 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">0</span><span class="mrel">≤</span><span class="mord mathit">x</span><span class="mrel">≤</span><span class="mord mathrm">1</span></span></span></span>.</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>∈</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A \in B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.72243em;vertical-align:-0.0391em;"></span><span class="base textstyle uncramped"><span class="mord mathit">A</span><span class="mrel">∈</span><span class="mord mathit" style="margin-right:0.05017em;">B</span></span></span></span> - is the set of all objects that are a member of <em>A</em>, or <em>B</em>, or both.</li>
+</ul>
+</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∉</mo></mrow><annotation encoding="application/x-tex">\notin</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0em;"></span><span class="strut bottom" style="height:0em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mrel">∉</span></span></span></span> - is not member of</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∋</mo></mrow><annotation encoding="application/x-tex">\ni</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.5391em;"></span><span class="strut bottom" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="base textstyle uncramped"><span class="mrel">∋</span></span></span></span> - owns (has member).</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⊂</mo></mrow><annotation encoding="application/x-tex">\subset</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.5391em;"></span><span class="strut bottom" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="base textstyle uncramped"><span class="mrel">⊂</span></span></span></span> - is proper subset of.</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⊆</mo></mrow><annotation encoding="application/x-tex">\subseteq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.63597em;"></span><span class="strut bottom" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="base textstyle uncramped"><span class="mrel">⊆</span></span></span></span> - is subset of.
+<ul>
+<li>If all the members of set <em>A</em> are also members of set <em>B</em>, then <em>A</em> is a <em><a href="https://en.wikipedia.org/wiki/Subset" title="Subset">subset</a></em> of <em>B</em>, denoted <em>A</em> ⊆ <em>B</em>.</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mn>1</mn><mo separator="true">,</mo><mn>2</mn></mrow></mrow><annotation encoding="application/x-tex">{1, 2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathrm">1</span><span class="mpunct">,</span><span class="mord mathrm">2</span></span></span></span></span> is a subset of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mn>3</mn></mrow></mrow><annotation encoding="application/x-tex">{1, 2, 3}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathrm">1</span><span class="mpunct">,</span><span class="mord mathrm">2</span><span class="mpunct">,</span><span class="mord mathrm">3</span></span></span></span></span>, and so is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mn>2</mn></mrow></mrow><annotation encoding="application/x-tex">{2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathrm">2</span></span></span></span></span> but <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mn>1</mn><mo separator="true">,</mo><mn>4</mn></mrow></mrow><annotation encoding="application/x-tex">{1, 4}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathrm">1</span><span class="mpunct">,</span><span class="mord mathrm">4</span></span></span></span></span> is not.</li>
+</ul>
+</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⊃</mo></mrow><annotation encoding="application/x-tex">\supset</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.5391em;"></span><span class="strut bottom" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="base textstyle uncramped"><span class="mrel">⊃</span></span></span></span> - is proper superset of.</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⊆</mo></mrow><annotation encoding="application/x-tex">\subseteq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.63597em;"></span><span class="strut bottom" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="base textstyle uncramped"><span class="mrel">⊆</span></span></span></span> - is superset of.</li>
+</ul>
+<h2>Operations</h2>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∪</mo></mrow><annotation encoding="application/x-tex">\cup</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.55556em;"></span><span class="strut bottom" style="height:0.55556em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord">∪</span></span></span></span> - set union.
+<ul>
+<li><em>A</em> ∪ <em>B</em>, is the set of all objects that are a member of <em>A</em>, or <em>B</em>, or both.</li>
+<li>The union of {1, 2, 3} and {2, 3, 4} is the set {1, 2, 3, 4}.</li>
+</ul>
+</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∩</mo></mrow><annotation encoding="application/x-tex">\cap</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.55556em;"></span><span class="strut bottom" style="height:0.55556em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord">∩</span></span></span></span> - set intersection.
+<ul>
+<li><em>A</em> ∩ <em>B</em>, is the set of all objects that are members of both <em>A</em> and <em>B</em>.</li>
+<li>The intersection of {1, 2, 3} and {2, 3, 4} is the set {2, 3}.</li>
+</ul>
+</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∖</mo></mrow><annotation encoding="application/x-tex">\setminus</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord">∖</span></span></span></span> - set difference.
+<ul>
+<li><em>U</em> \ <em>A</em>, is the set of all members of <em>U</em> that are not members of <em>A</em>.</li>
+<li>The set difference {1, 2, 3} \ {2, 3, 4} is {1}, while conversely, the set difference {2, 3, 4} \ {1, 2, 3} is {4}.</li>
+</ul>
+</li>
+</ul>]]></description>
+  </item>
+  <item>
+    <title>UT2 6S</title>
+    <link>https://anzenkodo.github.io/blog/coding/php/ut2-6s.html</link>
+    <pubDate>2022-12-09T20:15:14.186Z</pubDate>
+    <description><![CDATA[<h1>PHP Unit 2 AB</h1>
+<h3>1. Write the syntax for creating Cookie.</h3>
+<ul>
+<li>To set cookie in PHP, the <code>setcookie()</code> function is used.</li>
+<li>Syntex:<pre><code class="language-php">setcookie($name, $value, $expire_time, $path, $domain)
+</code></pre>
+</li>
+<li><code>setcookie()</code> function the parameters.
+<ul>
+<li><strong>name</strong> - Name of the cookie, which is used with $_COOKIE function to get
+value.</li>
+<li><strong>value</strong> - Value of the named variable.</li>
+<li><strong>expire time</strong> - Time when cookie will expire.</li>
+<li><strong>path</strong> - Directory where cookie will valied.</li>
+<li><strong>domain</strong> - The default server hostname.</li>
+</ul>
+</li>
+</ul>
+<h3>2. WAP to connect PHP with MySQL.</h3>
+<pre><code class="language-php">&lt;?php
+$conn = mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;, &quot;test&quot;);
+if ($conn) {
+	echo &quot;MySQL connected&quot;;
+} else {
+	echo &quot;MySQL can't connect&quot;;
+}
+</code></pre>
+<p>O/P</p>
+<pre><code>MySQL connected
+</code></pre>
+<h3>3. Differentiate between Session and Cookies.</h3>
+<table>
+<thead>
+<tr>
+<th>SESSION</th>
+<th>COOKIES</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Session are stored in server side</td>
+<td>Cookies are stored in client browser.</td>
+</tr>
+<tr>
+<td>Session is server resource.</td>
+<td>Cookies are client-side resource.</td>
+</tr>
+<tr>
+<td>It stores unlimeted data.</td>
+<td>It stores limited data.</td>
+</tr>
+<tr>
+<td>It holds multiple variables.</td>
+<td>It doen't hold multiple variables.</td>
+</tr>
+<tr>
+<td>Session values can't accessed easily.</td>
+<td>Cookies values can accessed easily.</td>
+</tr>
+<tr>
+<td>It is more secure.</td>
+<td>It is less secure.</td>
+</tr>
+</tbody>
+</table>
+<h3>4. Define session and explain how it works.</h3>
+<ul>
+<li>A session is a way to store information in variables to be used across
+multiple pages.</li>
+<li>Sessions allow us to store data on the web server that associated with a
+session ID.</li>
+<li>Once we create a session, PHP sends a cookie that contains the session ID to
+the web browser.</li>
+<li>A session is started with the session_start() function.</li>
+<li>The session_start() function first checks if a session is already started and
+if none is started then it starts one.</li>
+<li>Example:<pre><code class="language-php">&lt;?php
+session_start();
+
+$_SESSION[&quot;color&quot;] = &quot;Red&quot;;
+$_SESSION[&quot;animal&quot;] = &quot;Cat&quot;;
+echo $_SESSION[&quot;color&quot;].&quot; &quot;.$_SESSION[&quot;animal&quot;];
+?&gt;
+</code></pre>
+</li>
+</ul>
+<h3>5. Write update and delete operations on table.</h3>
+<pre><code class="language-php">UPDATE:
+&lt;?php
+$conn = mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;, &quot;test&quot;);
+if (!$conn) {
+	echo &quot;Can't connect to MySQL&quot;;
+}
+
+$sql = &quot;UPDATE my_table SET name='Jonney' WHERE id=2&quot;;
+if (!mysqli_query($conn, $sql)) {
+	die(&quot;Can't Update Table&quot;);
+}
+echo &quot;Update data&lt;/br&gt;&quot;;
+?&gt;
+DELETE:
+&lt;?php
+$sql = &quot;DELETE my_table WHERE id=1&quot;;
+if (!mysqli_query($conn, $sql)) {
+	die(&quot;Can't Delete data&quot;);
+}
+echo &quot;Deleted data&lt;/br&gt;&quot;;
+
+mysqli_close($conn);
+?&gt;
+</code></pre>
+<p>O/P</p>
+<pre><code>UPDATE:Update data
+DELETE:Deleted data
+</code></pre>
+<h3>6. Answer the following</h3>
+<h4>i) Get session variables</h4>
+<ul>
+<li>The session variables are not passed individually to each new page, instead
+they are retrieved from the session we open at the beginning of each page.</li>
+<li>All session variable values are stored in the global <code>$_SESSION</code> variable.</li>
+</ul>
+<h4>ii) Destroy session.</h4>
+<ul>
+<li>To remove all global session variables and destroy the session, we use
+<code>session_unset()</code> and <code>session_destroy()</code> functions.</li>
+<li>No arguments are needed in <code>session_destroy()</code> function.</li>
+<li>Example:<pre><code class="language-php">&lt;?php
+session_start();
+
+$_SESSION[&quot;color&quot;] = &quot;red&quot;;
+$_SESSION[&quot;animal&quot;] = &quot;Lion&quot;;
+echo $_SESSION[&quot;color&quot;].&quot; &quot;.$_SESSION[&quot;animal&quot;];
+session_unset();
+session_destroy();
+?&gt;
+</code></pre>
+</li>
+</ul>
+<h3>7. Explain inserting and retrieving the query result operations.</h3>
+<ul>
+<li>For inserting a data into the table we use the INSERT query.</li>
+<li>For retrieving the data, we use the SELECT query.</li>
+</ul>
+<pre><code class="language-php">&lt;?php
+$conn = mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;, &quot;test&quot;);
+if (!$conn) {
+	echo &quot;Can't connect to MySQL&quot;;
+}
+
+// Insert the data
+$sql = &quot;INSERT INTO my_table(id, name) VALUES (1, 'Jonney'), (2, 'Jone')&quot;;
+if (!mysqli_query($conn, $sql)) {
+	echo &quot;Can't Insert the data&quot;;
+}
+
+// Retriving
+$sql = &quot;SELECT * FROM my_table&quot;;
+$result = mysqli_connect($conn, $sql);
+
+if ($mysqli_num_rows($result) &gt; 0) {
+	while ($row = mysqli_fetch_array($result)) {
+		echo &quot;Name: &quot;.$row['name'].&quot;, ID: &quot;.$row['id'].&quot;&lt;br/&gt;&quot;;
+	}
+} else {
+	echo &quot;Rows can't be zero.&quot;;
+}
+</code></pre>
+<h3>8. Explain web page validation with example.</h3>
+<ul>
+<li>For validating a web page we use preg_match() function.</li>
+<li>The preg_match() function searches string for pattern, returning true if
+pattern exists, and false otherwise.</li>
+<li>Example:<pre><code class="language-php">&lt;form action=&quot;&lt;?php $_PHP_SELF ?&gt;&quot; method=&quot;post&quot;&gt;
+	Name:&lt;input type=&quot;text&quot; name=&quot;name&quot; required&gt;
+	&lt;input type=&quot;submit&quot;&gt;
+&lt;/form&gt;
+
+&lt;?php
+if (!preg_match(&quot;/^[a-zA-Z_ ]*$/&quot;, $_POST[&quot;name&quot;])) {
+	echo &quot;Only letter and whitespace is allowed&quot;;
+}
+?&gt;
+</code></pre>
+</li>
+</ul>
+<h3>9.  Elaborate the following:</h3>
+<h4>i) <code>mysqli_query()</code></h4>
+<p>This function in php is used to pass a sql query to mysql database.
+This function returns the query handle for SELECT queries, TRUE/FALSE for other
+queries, or FALSE on failure.</p>
+<ul>
+<li>Syntex:<pre><code class="language-php">mysqli_query(string, query, resource link_identifier])
+</code></pre>
+</li>
+</ul>
+<h4>ii) <code>mysqli_connect()</code></h4>
+<ul>
+<li>This function opens a connection to a MySQL server.</li>
+<li>It returns a MySQL link identifier on success, or FALSE on failure.</li>
+<li>Syntax:<pre><code class="language-php">mysqli_connect($server, $username, $password)
+</code></pre>
+</li>
+<li>Example:<pre><code class="language-php">$conn = mysqli_connect(&quot;mydb&quot;, &quot;root&quot;, &quot;root&quot;);
+</code></pre>
+</li>
+</ul>
+<h3>10. Explain the use of mail() function in php.</h3>
+<ul>
+<li><code>mail()</code> function is useful to sending the mail.</li>
+<li>Syntex:<pre><code class="language-php">mail($to, $subject, $message, $header, $parametes);
+</code></pre>
+</li>
+<li><code>mail()</code> function parametes:
+<ul>
+<li><strong>to</strong> - represents the address of receiver.</li>
+<li><strong>subject</strong> - it specifies the subject of mail.</li>
+<li><strong>message</strong> - it defines the message which is to be sent.</li>
+<li><strong>headers</strong> - it is optional and specifies the additional headers like Cc, Bcc.</li>
+<li><strong>parameters</strong> - it is optional and specifies the additional parameters.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-php">&lt;?php
+$sent = mail(&quot;AnzenKodo@altmail.com&quot;, &quot;Title&quot;, &quot;Message&quot;);
+
+if (!$sent) {
+  echo &quot;Message is not sent.&quot;;
+} else {
+  echo &quot;Message is sent.&quot;;
+}
+</code></pre>
+<p>O/P</p>
+<pre><code>Message is sent.
+</code></pre>
+<h3>11. How to use radio button in form? Give suitable example.</h3>
+<ul>
+<li>The radio buttons are for single choice from multiple options.</li>
+<li>All radio buttons in the group have the same name attribute.</li>
+<li>Only one button can be selected per group.</li>
+<li>The value attribute is mandatory for checkboxes and radio buttons.</li>
+<li>Example:<pre><code class="language-php">&lt;form action=&quot;&lt;?php $_PHP_SELF ?&gt;&quot; method=&quot;post&quot;&gt;
+	Color:
+	&lt;input type=&quot;radio&quot; name=&quot;color&quot; value=&quot;White&quot;&gt;White&lt;/input&gt;
+	&lt;input type=&quot;radio&quot; name=&quot;color&quot; value=&quot;Blue&quot;&gt;Blue&lt;/input&gt;
+	&lt;input type=&quot;radio&quot; name=&quot;color&quot; value=&quot;Red&quot;&gt;Red&lt;/input&gt;
+	&lt;input type=&quot;Submit&quot;&gt;
+&lt;/form&gt;
+
+&lt;?php
+if (isset($_POST[&quot;color&quot;])) {
+	echo $_POST[&quot;color&quot;];
+}
+?&gt;
+</code></pre>
+</li>
+</ul>
+<h3>12. WAP in php to counting no. of rows in table.</h3>
+<pre><code class="language-php">&lt;?php
+$conn = mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;, &quot;test&quot;);
+if (!$conn) {
+	die(&quot;Can't connect to MySQL&quot;);
+}
+
+$sql = &quot;SELECT * FROM my_table&quot;;
+if ($result = mysqli_query($conn, $sql)) {
+	echo &quot;No of rows: &quot;.mysqli_num_rows($result);
+} else {
+	echo &quot;Can't connect&quot;;
+}
+
+mysqli_close($conn);
+?&gt;
+</code></pre>
+<h3>13. WAP in php to counting no. of fields in table.</h3>
+<pre><code class="language-php">&lt;?php
+$conn = mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;, &quot;test&quot;);
+if (!$conn) {
+	die(&quot;Can't connect to MySQL&quot;);
+}
+
+$sql = &quot;SELECT * FROM my_table&quot;
+if ($result = mysqli_query($conn, $sql)) {
+	echo &quot;No of fields: &quot;.mysqli_num_fields($result);
+}
+mysqli_close();
+?&gt;
+</code></pre>
+<h3>14. WAP in php to create database and creation of table.</h3>
+<pre><code class="language-php">Creating database:
+&lt;?php
+$conn = mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;);
+if (!$conn) {
+	die(&quot;Can't connect to MySQL&quot;);
+}
+
+$sql = &quot;CREATE DATABASE db&quot;;
+if (!mysqli_query($conn, $sql) {
+	die(&quot;Can't create Database&quot;);
+}
+echo &quot;Created database&lt;/br&gt;&quot;;
+
+mysqli_close($conn);
+?&gt;
+
+Creating Table:
+&lt;?php
+$conn = mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;, &quot;db&quot;);
+if (!$conn) {
+	die(&quot;Can't create Table&quot;);
+}
+
+$sql = &quot;CREATE TABLE my_table(name VARCHAR(22), id INT(4))&quot;;
+if(!mysqli_query($conn, $sql) {
+	die(&quot;Error: &quot;.mysqli_error($conn));
+}
+echo &quot;Created table&lt;br/&gt;&quot;;
+
+mysqli_close($conn);
+?&gt;
+</code></pre>
+<p>O/P</p>
+<pre><code>Created database
+Created table
+</code></pre>
+<h3>15. How to used list and button in form? Give suitable example.</h3>
+<ul>
+<li>List
+<ul>
+<li>The list represents a windows control to display a list of items to a user.</li>
+<li>A user can select an item from the list.</li>
+<li>User can either select one option from a list or multiple options, depending
+on the type of list.</li>
+</ul>
+</li>
+<li>Button
+<ul>
+<li>A button is a control, which is an interactive component that enables users
+to communicate with an application which we click and release to perform
+some actions.</li>
+<li>A button can be clicked by using the mouse, ENTER key, or SPACEBAR if the
+button has focus.</li>
+</ul>
+</li>
+<li>Example:<pre><code class="language-php">&lt;form action=&quot;&lt;?php $_PHP_SELF ?&gt;&quot; method=&quot;post&quot;&gt;
+	&lt;select name=&quot;language&quot;&gt;
+		&lt;option name=&quot;C&quot;&gt;C&lt;/option&gt;
+		&lt;option name=&quot;C++&quot;&gt;C++&lt;/option&gt;
+		&lt;option name=&quot;PHP&quot;&gt;PHP&lt;/option&gt;
+	&lt;/select&gt;
+	&lt;input type=&quot;submit&quot;&gt;
+&lt;/form&gt;
+
+&lt;?php
+if (isset($_POST[&quot;language&quot;])) {
+	echo &quot;Selected: &quot;.$_POST[&quot;language&quot;];
+}
+?&gt;
+</code></pre>
+</li>
+</ul>
+<h3>16. Answer the following</h3>
+<h4>i) Use of cookies</h4>
+<ul>
+<li>Cookie save the data in browser, so next time refresh the browser it will not
+delete from browser.</li>
+<li>Cookie is used to identify the user.</li>
+<li>A cookie is a small file that server embeds to user's computer.</li>
+<li>Each time the same computer requests a page with a browser, it will send the
+cookie too.</li>
+</ul>
+<h4>ii) How to set the cookie?</h4>
+<ul>
+<li>Use <code>setcookie</code> function to create cookie.</li>
+<li>Syntex:<pre><code>setcookie($cookie_name, $cookie_value, $time, $location)
+</code></pre>
+</li>
+</ul>
+<h4>iii) How to modify?</h4>
+<ul>
+<li>Set cookie agien with <code>setcookie</code> function.</li>
+</ul>
+<h4>iv) How to delete the cookies?</h4>
+<ul>
+<li>To delete cookie, we can use <code>setcookie</code> function with expiration date in
+past.</li>
+<li>Example:<pre><code>setcookie($cookie_name, &quot;&quot;, time() - 3600);
+</code></pre>
+</li>
+<li>We can also put <code>null</code> in time section to delete cookie.</li>
+<li>Example<pre><code>setcookie($cookie_name, &quot;&quot;, null);
+</code></pre>
+</li>
+</ul>
+<h3>17. Define GET and POST methods.</h3>
+<h4>GET</h4>
+<ul>
+<li>It sends the encoded user information appended to the page request (to the
+URL).</li>
+<li>The page and the encoded information are separated by the ? character.</li>
+<li>The GET method produces a long string the appears in our server logs, in the
+browser' location box.</li>
+<li>The GET method is restricted to send up to 1024 characters only.</li>
+<li>Never use GET method if we have password or other sensitive information.</li>
+<li>GET cannot be used to send binary data to the server.</li>
+<li>The php provides $_GET assoiative array to a access all the sent information
+using GET method.</li>
+<li>Example:<pre><code class="language-php">&lt;form action=&quot;&lt;?php $_PHP_SELF ?&gt;&quot; method=&quot;GET&quot;&gt;
+	Name: &lt;input type=&quot;text&quot; name=&quot;name&quot;&gt;
+	&lt;input type=&quot;submit&quot;&gt;
+&lt;/form&gt;
+
+&lt;?php
+if ($_GET[&quot;name&quot;]) {
+	echo $_GET[&quot;name&quot;];
+}
+?&gt;
+</code></pre>
+</li>
+<li>Output:<pre><code>Name: Joey
+Submit
+
+Joey
+</code></pre>
+</li>
+</ul>
+<h4>POST</h4>
+<ul>
+<li>It transfers information via HTTP header, not throought the URL.</li>
+<li>The POST method does not have any restriction on data size.</li>
+<li>The POST method can be used to send ASCII as well as binary data.</li>
+<li>The data sent by POST  method goes through HTTP header, so security depends on
+HTTP protocol.</li>
+<li>By using secure HTTP, we can make sure that our information is secure.</li>
+<li>The PHP provides $_POST associative array to access all the sent information
+using POST method.</li>
+<li>Example:<pre><code class="language-php">&lt;form action=&quot;&lt;?php $_PHP_SELF ?&gt;&quot; method=&quot;post&quot;&gt;
+	Name: &lt;input type=&quot;text&quot; name=&quot;name&quot;&gt;
+	&lt;input type=&quot;submit&quot;&gt;
+&lt;/form&gt;
+
+&lt;?php
+if ($_POST[&quot;name&quot;]) {
+	echo $_POST[&quot;name&quot;];
+}
+?&gt;
+</code></pre>
+</li>
+<li>Output<pre><code>Name: Joey
+Submit
+
+Joey
+</code></pre>
+</li>
+</ul>]]></description>
+  </item>
+  <item>
+    <title>UT1 6S</title>
+    <link>https://anzenkodo.github.io/blog/coding/php/ut1-6s.html</link>
+    <pubDate>2022-12-09T20:15:14.186Z</pubDate>
+    <description><![CDATA[<h2>Write a php program to find the largest number among three numbers.</h2>
+<pre><code class="language-php">&lt;?php
+  function largest($x, $y, $z) {
+    if ($x &gt;= $y) {
+      if($x &gt;= $z) {
+        echo $x;
+      } else {
+        echo $z;
+      }
+    }
+    else {
+      if($y &gt;= $z) {
+        echo $y;
+      } else {
+        echo $z;
+      }
+    }
+  }
+
+  largest(100, 50, 25);
+?&gt;
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>100
+</code></pre>
+<h2>Write a php code for creating a basic image.</h2>
+<pre><code class="language-php">&lt;?php
+$image = imagecreatetruecolor(500, 300);
+imagefilledrectangle($image, 20, 20, 480, 280);
+header(&quot;Content-type: image/png&quot;);
+imagepng($image);
+?&gt;
+</code></pre>
+<h2>Explain inheritance with examples.</h2>
+<p>In Inheritance  the new class can inherit the properties and methods from the
+old class.</p>
+<p>The old class is the base class also called a parent class and then the new
+class is a derived  class also called a subclass.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-php">&lt;?php
+  class Person {
+    var $name, $age;
+  }
+  class Employee extends Person {
+    var $salary, $designation;
+  }
+?&gt;
+</code></pre>
+<h2>Explain the concept of introspection in php with an example.</h2>
+<p>PHP Introspection is the ability of a program to examine an object's
+characteristics such as its name, parent class (if any), properties and methods.</p>
+<p>Introspection  in PHP offers a useful Ability  to examine classes' interfaces
+properties methods. With introspection we can write  code that operates on any
+object or class.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-php">&lt;?php
+  if (class_exists('MyClass')) {
+    $myclass = new MyClass();
+  }
+?&gt;
+</code></pre>
+<h2>How to use overloading and overriding functions in php?</h2>
+<h2>Overloading</h2>
+<p>Method overloading is the ability to create a multiple function
+of the same name with a different implementation  depending upon the types of
+arguments.</p>
+<p>How to use overloading in PHP?</p>
+<pre><code class="language-php">&lt;?php
+class First {
+  function func() {
+    echo &quot;Hello World&quot;;
+  }
+}
+
+class Second extends First {
+  function func() {
+    echo &quot;Bye World&quot;;
+  }
+}
+
+$o = new Second;
+$o-&gt;func();
+</code></pre>
+<p>O/P</p>
+<pre><code>Bye World
+</code></pre>
+<h2>Overriding</h2>
+<p>In function overriding, both parent and child classes should have the same
+function name with and number of arguments. It is used to replace the parent
+method in child class.</p>
+<pre><code class="language-php">&lt;?php
+&lt;?php
+class First {
+  function func() {
+    echo &quot;Hello World&quot;;
+  }
+}
+
+class Second extends First {
+  function func() {
+    echo &quot;Bye World&quot;;
+  }
+}
+
+$f = new First;
+$s = new Second;
+$f-&gt;func();
+$s-&gt;func();
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>Hello World
+Bye World
+</code></pre>
+<h2>How to use the flip function in php.</h2>
+<p>The array_flip function flips/All keys with their associated values in array.</p>
+<p>This function is very useful when we have a big/ large array.and we want to
+know if a given value  is in the array.</p>
+<p><strong>Syntax</strong>:</p>
+<pre><code>array_flip(array_name)
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="language-php">&lt;?php
+  $a = array(&quot;a&quot;);
+  print_r(array_flip($a));  //flip function is used
+?&gt;
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>Array( [0]=&gt; a )
+</code></pre>
+<h2>How to define properties and methods of a class? Explain with suitable examples.</h2>
+<ol>
+<li>Objects have access to special variables called. properties.</li>
+<li>A property Can be valued as an array and even another object.</li>
+<li>All properties go inside the curly braces.</li>
+<li>The characteristics of a class are known as its properties.</li>
+</ol>
+<p><strong>Example:</strong></p>
+<pre><code class="language-php">&lt;?php
+  class Student {
+    var $roll_no;
+    var $name;
+    function display() {
+      echo &quot;Roll No: &quot; . $this-&gt;roll_no. &quot;&lt;br&gt;&quot;;
+      echo &quot;Name: &quot; $this-&gt;name;
+    }
+  }
+
+  $s1 = new Student;
+  $s1-&gt;roll_no = 10;
+  $s1-&gt;name = &quot;Amar&quot;;
+  $si-&gt;display();
+?&gt;
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>Roll No: 10
+Name: Amar
+</code></pre>
+<p>A class method is exactly similar to PHP functions.</p>
+<ol>
+<li>Method is a function defined within the class.</li>
+<li>Methods on the other hand are functions that operate on the data.</li>
+<li>Method is also written within the braces {}.</li>
+</ol>
+<p>The method can be accessed from outside the class.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-php">&lt;?php
+class Person {
+	public $age = 25;
+
+	public function printAge() {
+		echo &quot;The age is: $this-&gt;age&quot;;
+	}
+}
+
+$person = new Person;
+$person-&gt;age = 20;
+$person-&gt;printAge();
+?&gt;
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>The age is: 20
+</code></pre>
+<h2>Explain the arithmetic operators that can be used in php with examples.</h2>
+<p>The PHP arithmetic operators are used with numeric values to perform common
+arithmetical operations, such as addition, subtraction, multiplication etc.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-php">&lt;?php
+  $a = 42;
+  $b = 20;
+
+  $c = $a + $b;
+  echo &quot;Addition is: $c &lt;br/&gt;&quot;;
+  $c = $a - $b;
+  echo &quot;Subtraction is: $c &lt;br/&gt;&quot;;
+  $c = $a * $b;
+  echo &quot;Multiplication is: $c &lt;br/&gt;&quot;;
+  $c = $a / $b;
+  echo &quot;Division is: $c &lt;br/&gt;&quot;;
+  $c = $a % $b;
+  echo &quot;Modulus is: $c &lt;br/&gt;&quot;;
+?&gt;
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>Addition is: 62
+Subtraction is: 22
+Multiplication is: 840
+Division is: 2.1
+Modulus is: 2
+</code></pre>
+<h2>What is the use of anonymous functions in php? Explain with examples.</h2>
+<p>Anonymous functions, also known as closures, allow the creation of functions
+which have no specified name. They are most useful as the value of callable
+parameters, but they have many other uses.</p>
+<pre><code class="language-php">&lt;?php
+$func = function () { echo &quot;Hello World&quot;; };
+$func();
+</code></pre>
+<p>O/P</p>
+<pre><code>Hello World
+</code></pre>
+<h2>Explain cloning objects with examples.</h2>
+<p>Object cloning is the process in PHP to create a copy of an object. An object
+copy is created by using the clone keyword when the object is cloned PHP will
+perform Shallow copy  of all the object properties and properties that are
+referenced to their variables will remain references.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-php">&lt;?php
+class Obj {
+  public $name;
+}
+
+$o = new Obj;
+$c = clone $o;
+
+$o-&gt;name = &quot;Jonney&quot;;
+$c-&gt;name = &quot;Jone&quot;;
+
+echo &quot;Origenal: &quot;.$o-&gt;name.&quot;, Clone: &quot;.$c-&gt;name;
+?&gt;
+</code></pre>
+<p>O/P</p>
+<pre><code>Origenal: Jonney, Clone: Jone
+</code></pre>
+<h2>Explain indexed and associative arrays with examples.</h2>
+<p>Indexed array: An array having only integer keys is typically referred to as an
+indexed array and index arrays can store numbers, drinks and any object but
+their index will be represented by number.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-php">&lt;?php
+  $colors = array(&quot;Red&quot;);
+  print_r($colors);
+?&gt;
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>Array ( [0] =&gt; Red )
+</code></pre>
+<p>The associative arrays are very similar to numeric arrays in terms of
+functionality but they are different in terms of their index. Associative arrays
+will have their index as string so that you can establish a strong association
+between key and values.</p>
+<pre><code class="language-php">&lt;?php
+  $ages = array( &quot;Peter&quot;=&gt;22 );
+  print_r($ages);
+?&gt;
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>Array ( [Peter] =&gt; 22 )
+</code></pre>
+<h2>How to define constructor and destructor in php with an example?</h2>
+<ul>
+<li><strong>constructor</strong> - When we create a new object it is useful to initialize its
+properties.</li>
+<li><strong>destructor</strong> - The destructor method will be called as soon as there are no
+other references to a particular object.</li>
+</ul>
+<pre><code class="language-php">&lt;?php
+class Obj {
+  function __construct() {
+    echo &quot;Class created&quot;;
+  }
+
+  function __destruct() {
+    echo &quot;Class destroyed&quot;;
+  }
+}
+
+$o = new Obj;
+?&gt;
+</code></pre>
+<p>O/P</p>
+<pre><code>Class Created
+Class Destroyed
+</code></pre>
+<h2>Explain the following string function with an example.</h2>
+<ol>
+<li>strpos()</li>
+<li>strlen()</li>
+<li>strcmp()</li>
+<li>str_word_count()</li>
+<li>strpos()</li>
+</ol>
+<ul>
+<li><strong>strpos()</strong> - Returns the position of the first occurrence of a string.</li>
+<li><strong>strlen()</strong> - Returns the length of a string.</li>
+<li><strong>strcmp()</strong> - Compares two strings.</li>
+<li><strong>str_word_count()</strong> - Count the number of words in a string.</li>
+<li><strong>strrpos()</strong> - Finds the position of the last occurrence of a string.</li>
+</ul>
+<pre><code class="language-php">&lt;?php
+echo strpos(&quot;Hello World&quot;, &quot;Hello&quot;);
+echo strlen(&quot;Hello World&quot;);
+echo strcmp(&quot;Hello World&quot;, &quot;Hello World&quot;);
+echo str_word_count(&quot;Hello World&quot;);
+echo strrpos(&quot;Hello World&quot;, &quot;Hello&quot;);
+</code></pre>
+<p>O/P</p>
+<pre><code>0
+11
+0
+2
+0
+</code></pre>
+<h2>Write a program using a foreach loop.</h2>
+<p><strong>Example:</strong></p>
+<pre><code class="language-php">&lt;?php
+$a = array(1, 2, 3, 4, 5);
+foreach ($a as $n) {
+  echo $n;
+}
+</code></pre>
+<p>O/P</p>
+<pre><code>12345
+</code></pre>
+<h2>Explain serialization with suitable examples.</h2>
+<p>A string representation of any object in the form of byte-stream is obtained by
+serialize() function in PHP. All property variables of the object are contained
+in the string and methods are not saved. This string can be stored in any file.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-php">&lt;?php
+echo serialize(array(&quot;Red&quot;));
+?&gt;
+</code></pre>
+<p>O/P</p>
+<pre><code>a:1:{i:0;s:3:&quot;Red&quot;;}
+</code></pre>
+<h2>Define <code>imagecolorallocate()</code> function along with suitable examples.</h2>
+<p><code>imagecolorallocate()</code> function is another inbuilt PHP function mainly used to
+implement a new color to an image. It returns the color of an image in an RGB
+format (RED GREEN BLUE).</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-php">&lt;?php
+  $im = imagecreate(100, 100);
+  // sets background to red
+  $background = imagecolorallocate($im, 255, 0, 0);
+  // sets some colors
+  $white = imagecolorallocate($im, 255, 255, 255);
+  $black = imagecolorallocate($im, 0, 0, 0);
+  // hexadecimal way
+  $white = imagecolorallocate($im, 0xFF, 0xFF, 0xFF);
+  $black = imagecolorallocate($im, 0x00, 0x00, 0x00);
+?&gt;
+</code></pre>
+<h2>Write a program to create a filled rectangle.</h2>
+<pre><code class="language-php">&lt;?php
+$image = imagecreatetruecolor(500, 300);
+imagefilledrectangle($image, 20, 20, 480, 280);
+header(&quot;Content-type: image/png&quot;);
+imagepng($image);
+?&gt;
+</code></pre>
+<h2>Explain any three data types used in php.</h2>
+<ol>
+<li><strong>Integer:</strong> integer data type used to specify a numeric value  without a fractional component the range of integers.</li>
+<li><strong>Strings:</strong> a string is a sequence of characters where characters are the same as a byte.</li>
+<li><strong>Boolean:</strong>   boolean  value can be either true or false both are  case-insensitive.</li>
+</ol>
+<h2>Differentiate between implode and explode function.</h2>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>Implode</th>
+<th>Explode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>The implode() function returns a string from the elements of an array.</td>
+<td>explode function breaks a string  into smaller parts and stores it  as an array.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>The implode() function accepts its  parameters in either order.  However, for consistency with explode(),  you should use the documented order of  arguments.</td>
+<td>The explode() function splits  these strings based on a specific  delimiter and returns an array that  contains elements which are sustained  by the splitting operation.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>syntax :-string implode (pieces)</td>
+<td>array explode (delimiter, string, limit)</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Example</strong>:  <code>php &lt;?php $arr = array(&quot;I&quot;, &quot;love&quot;, &quot;PHP.&quot;); $pole = implode(&quot; &quot;, $arr); \ echo &quot;$pole&quot;; ?&gt; </code>  Output: I love PHP.</td>
+<td>Example: <?php  $string = "I love php."; $pole = explode(" ", $string); \ \ print_r($pole); ?>  Output: Array ( [0] =&gt; I [1] =&gt; love [2] =&gt; php. )</td>
+</tr>
+</tbody>
+</table>
+<h2>State the variable function. Explain it with an example.</h2>
+<p>PHP supports the concept of variable function means that we can call a function
+based on a value of a variable if a variable name has a round parentheses
+appended to it PHP will look for a function with the same name as a whatever
+variable Evaluates to and will attempt to execute it.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-php">&lt;?php
+  function add($x, $y){
+    echo $x + $y;
+  }
+  $var =  &quot;add&quot;;
+  $var(10,20);
+?&gt;
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>30
+</code></pre>]]></description>
+  </item>
+  <item>
+    <title>UT2 6S</title>
+    <link>https://anzenkodo.github.io/blog/coding/python/ut2-6s.html</link>
+    <pubDate>2022-12-09T20:15:14.186Z</pubDate>
+    <description><![CDATA[<h1>Python QB UT 2</h1>
+<h2>1. Explain scope of a variable in Python.</h2>
+<ul>
+<li>A variable is only available from inside the region it is created.</li>
+<li>This is called scope.</li>
+<li>There are two types of scopes in Python:</li>
+</ul>
+<h3>Local scope</h3>
+<ul>
+<li>A variable created inside a function belongs to the local scope, and can only
+be used inside that function.</li>
+<li>Example<pre><code class="language-python">def fun()
+  x=10 # X is local variable
+  print(x)
+
+fun()
+</code></pre>
+O/P<pre><code>10
+</code></pre>
+</li>
+</ul>
+<h3>Global scope</h3>
+<ul>
+<li>A variable created in the main body of the code is a global variable and
+belongs to the global scope.</li>
+<li>Global variables are available from within any scope global and local.</li>
+<li>Example:<pre><code class="language-python">a = 50 # a is global variable
+def fun()
+  print(a)
+
+fun()
+print(a)
+</code></pre>
+O/P<pre><code>50
+50
+</code></pre>
+</li>
+</ul>
+<h2>2. Define class, data hiding, method overloading, inheritance, data abstraction, numpy, pandas.</h2>
+<h3>i) <code>class</code></h3>
+<ul>
+<li>Class is a blueprint for the object.</li>
+<li>We define a class by using the keyword class.</li>
+<li>Class objects are used to access different attributes.</li>
+</ul>
+<h3>ii) Data Hiding</h3>
+<ul>
+<li>Data hiding is one of the important features of Object Oriented Programming
+which allows preventing the functions of a program to access directly the
+internal representation of a class type.</li>
+</ul>
+<h3>iii) Method Overloading</h3>
+<ul>
+<li>Overloading is the ability of a function or an operator to behave in different
+ways based on the parameters that are passed to the function, or the operands
+that the operator acts on.</li>
+</ul>
+<h3>iv) Inheritance</h3>
+<ul>
+<li>Inheritance refers to defining a new class with little or no modification to
+an existing class.</li>
+<li>The new class is called as derived or child class and the old class is called
+as base or parent class.</li>
+</ul>
+<h3>v) Data Abstraction</h3>
+<ul>
+<li>Data abstraction refers to providing only essential information about the data
+to the outside world and hiding the background details.</li>
+</ul>
+<h3>vi) Numpy</h3>
+<ul>
+<li>Numpy is a python package which stands for &quot;Numerical Python&quot;.</li>
+</ul>
+<h3>vii) Pandas</h3>
+<ul>
+<li>Pandas is an open source library that allows to perform data manipulation.</li>
+<li>Pandas library is built on the top of Numpy.</li>
+</ul>
+<h2>3. Explain Composition classes with program.</h2>
+<ul>
+<li>Composition class is composed of one of or more instance of other classes.</li>
+<li>In simple words, one class is container and other class is content, if we
+delete the container objects then all of its contents objects are also
+deleted.<pre><code class="language-python">class test:
+  def __init__(self, name, marks):
+    self.name = name
+    self.marks = marks
+
+class addr:
+  def __init__(self, ad, name, marks):
+    self.ad = ad
+    self.ob = test(name, marks)
+
+  def disp(self):
+    print(self.ad, self.ob.name, self.ob.marks)
+
+t = addr(&quot;Virar&quot;, &quot;ABC&quot;, 99)
+t.disp()
+</code></pre>
+O/P<pre><code>Virar ABC 99
+</code></pre>
+</li>
+</ul>
+<h2>4. WAP to create a file, write some contents in it and read the content from file.</h2>
+<pre><code class="language-python">o = open(&quot;name.txt&quot;, &quot;w&quot;)
+o.write(&quot;I am a programmer&quot;)
+o.close()
+o = open(&quot;name.txt&quot;, &quot;r&quot;)
+print(o.read())
+o.close()
+</code></pre>
+<p>O/P</p>
+<pre><code>I am a programmer
+</code></pre>
+<h2>5. WAP to check <code>ZeroDivisionError</code> Exception.</h2>
+<pre><code class="language-python">x = int (input(&quot;x:&quot;))
+y = int(input(&quot;y:&quot;))
+
+try:
+  x/y
+except ZeroDivisionError:
+  print(&quot;Error: Division by Zero&quot;)
+else:
+  print(x/y)
+</code></pre>
+<p>O/P</p>
+<pre><code>x: 0
+y: 0
+
+Error: Divison by Zero
+</code></pre>
+<h2>6. WAP to throw an exception if age&lt;18 (using raise).</h2>
+<pre><code class="language-python">age = int(input(&quot;Age:&quot;))
+try:
+  if age &lt; 18:
+    raise Exception
+except Exception:
+  print(&quot;Too small to vote!!&quot;)
+else:
+  print(&quot;You can vote!!&quot;)
+</code></pre>
+<h2>7. List different modes of opening file.</h2>
+<p>Following are the different modes of opening file:</p>
+<ul>
+<li><code>r</code></li>
+<li><code>rb</code></li>
+<li><code>r+</code></li>
+<li><code>rb+</code></li>
+<li><code>w</code></li>
+<li><code>wb</code></li>
+<li><code>wb</code></li>
+<li><code>w+</code></li>
+<li><code>wb+</code></li>
+</ul>
+<h2>8. WAP to create class animal having method feed that prints 'I eat food'. It has a sub class herbivorous having method feed that prints &quot;I eat only plants&quot;. Call the method by creating an object of each of the classes.</h2>
+<pre><code class="language-python">class animal:
+  def feed(self):
+    print(&quot;I eat food&quot;)
+
+class herbivorous(animal):
+  def feed(self):
+    print(&quot;I eat only plants&quot;)
+
+a = animal()
+a.feed()
+h = herbivorous()
+h.feed()
+</code></pre>
+<h2>9. WAP to create base classes namely add, mul having method addition and multiplication that prints addition and multiplication respectively. Derive a class derived from add and mul that has method divide and returns division. Create object and call methods.</h2>
+<pre><code class="language-python">class add:
+  def addition(self, a, b):
+    self.a = a
+    self.b = b
+    print(self.a + self.b)
+
+class mul:
+  def multiplication(self, a, b):
+    self.a = a
+    self.b = b
+    print(self.a * self.b)
+
+class derived(add, mul):
+  def divide(self, a, b)
+    self.a = a
+    self.b = b
+    return self.a / self.b
+
+d = derived()
+print(d.divide(28, 4))
+d.multiplication(2, 4)
+d.addition(5, 6)
+</code></pre>
+<p>O/P</p>
+<pre><code>7.0
+8
+11
+</code></pre>
+<h2>10. WAP to implement multilevel inheritance.</h2>
+<pre><code class="language-python">class Student:
+  def accept(self):
+    self.roll = 10
+
+class Test(Student):
+  def getdata(self):
+    self.name = &quot;ABC&quot;
+
+class Result(Test):
+  def info(self):
+    self.marks = 99
+  def disp(self):
+    print(self.roll, self.name, self.marks)
+
+r = result()
+r.accept()
+r.getdata()
+r.info()
+r.disp()
+</code></pre>
+<p>O/P</p>
+<pre><code>10 ABC 99
+</code></pre>
+<h2>11. Create a 3x4 matrix of random values using numpy and perform following:</h2>
+<ol>
+<li>print type of array</li>
+<li>print dimension</li>
+<li>print shape</li>
+<li>print size</li>
+<li>print type of elements</li>
+<li>sort row wise</li>
+<li>print min, max, sum, flatten</li>
+</ol>
+<pre><code class="language-python">import numpy as n
+
+p = n.random.randint(30, size = (3, 3))
+print(p)
+print(type(p))
+print(p.ndim)
+print(p.shape)
+print(p.size)
+print(n.dtype)
+print(n.sort(p))
+pritt(p.min())
+print(p.max())
+print(sum(p))
+print(p.flatten())
+</code></pre>
+<p>O/P</p>
+<pre><code>[[10, 20, 21]
+ [14, 15, 13]
+ [23, 24, 29]]
+&lt;class 'numpy.ndarray'&gt;
+2
+(3, 3)
+9
+int64
+[[10, 20, 21]
+ [13, 14, 15]
+ [23, 24, 29]]
+10
+29
+[51 42 76]
+[10 20 21 14 15 13 23 24 29]
+</code></pre>
+<h2>12. WAP that accepts a string and calculate the number of upper and lower case letters (string=&quot;Viva College)</h2>
+<pre><code class="language-python">c = input(&quot;Enter string.&quot;)
+u = 0
+i = 0
+
+for i in c:
+  if (i.isupper()):
+    u += 1
+  if (i.islower()):
+    i += 1
+
+print(&quot;Upper case letters are&quot;, u)
+print(&quot;Lower case letters are&quot;, i)
+</code></pre>
+<h2>13. WAP to generate a random float where the value is between 5 and 50</h2>
+<pre><code class="language-python">import random
+a = random.uiform(5, 50)
+print(a)
+</code></pre>
+<p>O/P</p>
+<pre><code>20.80854522266047
+</code></pre>
+<h2>14. Plot a line from position (10, 33) to position (80, 65) with following:</h2>
+<ol>
+<li>marker - 0</li>
+<li>line-dotted, line color-red</li>
+<li>x-label: student, y-label marks.</li>
+<li>Add grid lines</li>
+</ol>
+<pre><code class="language-python">import matplotlib.pylot as p
+import numpy as n
+
+x = n.array([10, 33])
+y = n.array([80, 64])
+
+p.xlabel(&quot;Student&quot;)
+p.ylable(&quot;Marks&quot;)
+p.plot(x, y, marker = 'o', linestyle = 'dotted', color = 'r')
+p.grid()
+p.show()
+</code></pre>
+<h2>15. WAP to print 3x3 matrix with o at border and I inside.</h2>
+<pre><code class="language-python">import numpy as n
+a = n.zeros((3, 3))
+a[1:-1, 1:-1] = 1
+print(a)
+</code></pre>
+<p>O/P</p>
+<pre><code>[[0. 0. 0.]
+ [0. 1. 0.]
+ [0. 0. 0.]]
+</code></pre>
+<h2>16. WAP to create matrix with values 2-10.</h2>
+<pre><code class="language-python">import numbpy as n
+a = n.arange(2, 11).reshape(3, 3)
+print(a)
+</code></pre>
+<p>O/P</p>
+<pre><code>[[2 3 4]
+ [5 6 7]
+ [8 9 10]]
+</code></pre>
+<h2>17. Explain Exception Handling in python.</h2>
+<ul>
+<li>When we executes a Python program, there may be a few uncertain conditions
+which occur, known as errors. Errors also referred to as bugs that are
+incorrect or inaccurate action that may cause the problems in the running of
+the program of program or may interrupt the execution of program.</li>
+<li>There are three types of error:
+<ul>
+<li>i) Compile Time Errors.</li>
+<li>ii) Run Time Errors.</li>
+<li>iii) Logical Errors.</li>
+</ul>
+</li>
+<li>Errors occured at runtime are known as exception. Exception handling is a
+feature that is used for handling any unreported errors in program.</li>
+<li>By handling the exceptions, we can provide a meaningful message to the user
+about the problem rather than system generated error message, which may not be
+understandable to the user.</li>
+<li>Exception can be either built-in exception or user defined exceptions.</li>
+</ul>]]></description>
+  </item>
+  <item>
+    <title>UT1 6S</title>
+    <link>https://anzenkodo.github.io/blog/coding/python/ut1-6s.html</link>
+    <pubDate>2022-12-09T20:15:14.186Z</pubDate>
+    <description><![CDATA[<p><strong>Note: WAP (write a program)</strong></p>
+<h2>WAP to print Fibonacci Series</h2>
+<pre><code class="language-python">term = int(input(&quot;Enter the term: &quot;))
+
+n1, n2 = 0, 1
+
+if term &lt; 0:
+    print(&quot;Invalid term&quot;)
+else:
+    for i in range(term):
+        print(n1)
+        nth = n1 + n2
+        n1 = n2
+        n2 = nth
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code>Enter the term: 7
+0
+1
+1
+2
+3
+5
+8
+</code></pre>
+<h2>Factorial of a number</h2>
+<pre><code class="language-python">n = int(input(&quot;Enter the number: &quot;))
+f = 1
+
+for i in range(1, n + 1):
+    f = f * i
+
+print(f)
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code>Enter the number: 6
+720
+</code></pre>
+<h2>Perform <code>intersection()</code>, <code>union()</code>, <code>difference()</code>, <code>symmetric_difference()</code> on <code>set</code></h2>
+<pre><code class="language-python">set1 = {1, 5, 8, &quot;Google&quot;, 9, 6}
+set2 = {1, &quot;Google&quot;, 6, 3, 2, 11}
+
+i = set1.intersection(set2)
+u = set1.union(set2);
+d = set1.difference(set2)
+s = set1.symmetric_difference(set2)
+
+set1.clear()
+
+print(&quot;Intersection =&quot;, i);
+print(&quot;Union =&quot;, u);
+print(&quot;Set Difference =&quot;, d);
+print(&quot;Symmetric Difference =&quot;, s);
+print(&quot;Clear Set =&quot;, set1);
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code>Intersection =  {1, 'Google', 6}
+Union =  {1, 2, 3, 5, 6, 8, 9, 11, 'Google'}
+Set Difference =  {8, 9, 5}
+Symmetric Difference =  {2, 3, 5, 8, 9, 11}
+Clear Set =  set()
+</code></pre>
+<h2>WAP that takes the marks of 5 Subjects and displays the grade</h2>
+<pre><code class="language-python">sub1 = int(input(&quot;Enter marks of subject 1: &quot;))
+sub2 = int(input(&quot;Enter marks of subject 2: &quot;))
+sub3 = int(input(&quot;Enter marks of subject 3: &quot;))
+sub4 = int(input(&quot;Enter marks of subject 4: &quot;))
+sub5 = int(input(&quot;Enter marks of subject 5: &quot;))
+
+total = ((sub1 + sub2 + sub3 + sub4 + sub5) / 5)
+print(&quot;\nPercentage is&quot;, total)
+
+if total &gt; 75:
+    print(&quot;Distinction&quot;)
+elif total &gt;= 65 and total &lt; 75:
+    print(&quot;First Class&quot;)
+elif total &gt;= 50 and total &lt; 60:
+    print(&quot;Second Class&quot;)
+elif total &gt;=35 and total &lt; 50:
+    print(&quot;Third Class&quot;);
+else:
+    print(&quot;Fail&quot;)
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code>Enter marks of subject 1: 57
+Enter marks of subject 2: 78
+Enter marks of subject 3: 87
+Enter marks of subject 4: 50
+Enter marks of subject 5: 70
+
+Percentage is 68.4
+First Class
+</code></pre>
+<h2>Explain features of python</h2>
+<ol>
+<li>Python is easy to use and a high level programming language.</li>
+<li>Python is interpreted language</li>
+<li>Interactive mode</li>
+<li>Free and Open Source</li>
+<li>Platform independence</li>
+<li>Portable</li>
+<li>Object oriented language</li>
+</ol>
+<h2>WAP to check whether entered character is vowel or not</h2>
+<pre><code class="language-python">ch = input(&quot;Enter the character: &quot;).lower()
+
+if(ch == 'a' or ch == 'e' or ch == 'i' or ch == 'o' or ch == 'u'):
+    print(&quot;Entered character is vowel.&quot;)
+else:
+    print(&quot;Entered character is not a vowel.&quot;)
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code>Enter character: a
+Entered character is a vowel.
+</code></pre>
+<h2>WAP to check number is prime or not</h2>
+<pre><code class="language-python">num = int(input(&quot;Enter a number: &quot;));
+
+if num &gt; 1:
+    for i in range(2, num):
+        if (num % i) == 0:
+            print(num, &quot;is not a prime number.&quot;)
+            break;
+    else:
+        print(num, &quot;is prime number.&quot;)
+else:
+    print(num, &quot;is not a prime number.&quot;);
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code>Enter the number: 11
+11 is a prime number.
+</code></pre>
+<h2>WAP checks whether the number is palindrome or not.</h2>
+<pre><code class="language-python">n = input(&quot;Enter number: &quot;)
+rev = n[ : :-1]
+
+if rev == n:
+    print(n, &quot;is a palindrome.&quot;)
+else:
+    print(n, &quot;is not a palindrome.&quot;)
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code>Enter number: 33
+33 is a palindrome.
+</code></pre>
+<h2>WAP to perform following operation on list</h2>
+<ol>
+<li><strong>max()</strong> - Find largest number</li>
+<li><strong>reverse()</strong> - Find  Reverse of the list</li>
+<li><strong>i % 2</strong> - Select even item of the list</li>
+<li><strong>sum()</strong> - Sum of all item in a list</li>
+</ol>
+<h3>Find largest number</h3>
+<pre><code class="language-python">a = [8,2,5,1,2,4,6,11]
+print(&quot;Largest number&quot;, max(a))
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code>Largest number 11
+</code></pre>
+<h3>Reverse list</h3>
+<pre><code class="language-python">a = [8,2,5,1,2,4,6,11]
+a.reverse()
+print(&quot;Reverse list&quot;, a)
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code>Reverse list [11, 6, 4, 2, 1, 5, 2, 8]
+</code></pre>
+<h3>Even items</h3>
+<pre><code class="language-python">a = [8,2,5,1,2,4,6,11]
+
+for i in a:
+  if (i % 2) == 0:
+    print(i)
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code>8
+2
+2
+6
+4
+</code></pre>
+<h3>Sum of all items</h3>
+<pre><code class="language-python">a = [8,2,5,1,2,4,6,11]
+print(&quot;Sumof all items:&quot;, sum(a))
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>Sum of all items: 39
+</code></pre>
+<h2>Compare list and sets</h2>
+<table>
+<thead>
+<tr>
+<th>Lists</th>
+<th>Sets</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lists are Ordered.</td>
+<td>Sets are Unordered.</td>
+</tr>
+<tr>
+<td>Lists are Mutable.</td>
+<td>Sets are mutable but only stored immutable elements.</td>
+</tr>
+<tr>
+<td>Elements can be changed or replaced in Lists.</td>
+<td>Elements cannot be changed or replaced.</td>
+</tr>
+</tbody>
+</table>
+<h2>Describe various list functions</h2>
+<ol>
+<li><strong>extend()</strong> - add  all elements of of list to the another list</li>
+<li><strong>insert()</strong> - insert and item from the list</li>
+<li><strong>clear()</strong> - removes all elements from the list</li>
+<li><strong>copy()</strong> - returns a copy of the list</li>
+<li><strong>reverse()</strong> - reverse the order of element in the list</li>
+<li><strong>sort()</strong> - sort the element list</li>
+</ol>
+<p><strong>Note:</strong> <strong>Given below example will not come in exam. This is only for reference.</strong></p>
+<h3>extend()</h3>
+<pre><code class="language-python">list1 = [1, 5, 8, 9, 6]
+list2 = [1, 6, 3, 2, 11]
+
+list1.extend(list2)
+print(&quot;Extend:&quot;, list1)
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>Extend: [1, 5, 8, 9, 6, 1, 6, 3, 2, 11]
+</code></pre>
+<h3>insert()</h3>
+<pre><code class="language-python">list1 = [1, 5, 8, 9, 6]
+
+list1.insert(3, 100)
+print(&quot;Insert:&quot;, list1)
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>Insert: [1, 5, 8, 100, 9, 6]
+</code></pre>
+<h3>clear()</h3>
+<pre><code class="language-python">list1 = [1, 5, 8, 9, 6]
+
+list1.clear()
+print(&quot;Clear:&quot;, list1)
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>Clear: []
+</code></pre>
+<h3>reverse()</h3>
+<pre><code class="language-python">list1 = [1, 5, 8, 9, 6]
+
+list1.reverse()
+print(&quot;Reverse:&quot;, list1)
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>Reverse: [6, 9, 8, 5, 1]
+</code></pre>
+<h3>sort()</h3>
+<pre><code class="language-python">list1 = [1, 5, 8, 9, 6]
+
+list1.sort()
+print(&quot;Sort:&quot;, list1)
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>Sort: [1, 5, 6, 8, 9]
+</code></pre>
+<h2>Write a program convert US Dollars to Indian Rupees.</h2>
+<pre><code class="language-python">usd = float(input(&quot;Enter currency in USD: &quot;))
+inr = usd * 75
+print(&quot;The currency in INR is&quot;, inr)
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code>Enter currency in USD: 2
+The currency in INR: 150.0
+</code></pre>
+<h2>Explain operator in python</h2>
+<p>An operator is Single set of special symbols that performs predefined
+operations  on operators. Python provides a variety of operators, which are
+described as follows.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Operators</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arithmetic operators</td>
+<td>+, -, *, /, %, **, //</td>
+</tr>
+<tr>
+<td>Assignment Operators</td>
+<td>+=, =, -=, /=, //=</td>
+</tr>
+<tr>
+<td>Logical Operators</td>
+<td>and, or, not</td>
+</tr>
+<tr>
+<td>Bitwise Operators</td>
+<td>&amp;, &gt;&gt;, &lt;&lt;, ^</td>
+</tr>
+<tr>
+<td>Membership Operators</td>
+<td>in, not in</td>
+</tr>
+<tr>
+<td>Identity Operators</td>
+<td>is, is not</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong> <strong>Given below example will not come in exam. This is only for reference.</strong></p>
+<h3>Arithmetic operators</h3>
+<pre><code class="language-python">num1 = int(input(&quot;Enter first number: &quot;))
+num2 = int(input(&quot;Enter second number: &quot;))
+
+print(num1, &quot;+&quot;, num2, &quot;=&quot;, num1 + num2)
+print(num1, &quot;-&quot;, num2, &quot;=&quot;, num1 - num2)
+print(num1, &quot;*&quot;, num2, &quot;=&quot;, num1 * num2)
+print(num1, &quot;/&quot;, num2, &quot;=&quot;, num1 / num2)
+print(num1, &quot;%&quot;, num2, &quot;=&quot;, num1 % num2)
+print(num1, &quot;**&quot;, num2, &quot;=&quot;, num1 ** num2)
+print(num1, &quot;//&quot;, num2, &quot;=&quot;, num1 // num2)
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>Enter first number: 10
+Enter second number: 10
+10 + 10 = 20
+10 - 10 = 0
+10 * 10 = 100
+10 / 10 = 1.0
+10 % 10 = 0
+10 ** 10 = 10000000000
+10 // 10 = 1
+</code></pre>
+<h3>Assignment Operators</h3>
+<pre><code class="language-python">a = 3
+b = 5
+
+a += b
+
+print(a)
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>8
+</code></pre>
+<h3>Logical Operators</h3>
+<pre><code class="language-python">num1 = int(input(&quot;Enter first number: &quot;))
+num2 = int(input(&quot;Enter second number: &quot;))
+
+if (num1 &lt; num2 and num1 &lt;= num2):
+    print(num1, &quot;&lt;&quot;, num2, &quot;and&quot;, num1, &quot;&lt;=&quot;, num2)
+elif (num1 &gt; num2 or num1 &gt;= num2):
+    print(num1, &quot;&gt;&quot;, num2, &quot;or&quot;, num1, &quot;&gt;=&quot;, num2)
+elif not(num1 &lt; num2 and num1 &lt;=num2):
+    print(&quot;Not:&quot;, num1, &quot;&lt;&quot;, num2, &quot;and&quot;, num1, &quot;&lt;=&quot;, num2)
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>Enter first number: 10
+Enter second number: 1
+10 &gt; 1 or 10 &gt;= 1
+</code></pre>
+<h3>Bitwise Operators</h3>
+<pre><code class="language-python">num1 = int(input(&quot;Enter first number: &quot;))
+num2 = int(input(&quot;Enter second number: &quot;))
+
+print(num1, &quot;&amp;&quot;, num2, &quot;=&quot;, num1 &amp; num2)
+print(num1, &quot;|&quot;, num2, &quot;=&quot;, num1 | num2)
+print(num1, &quot;^&quot;, num2, &quot;=&quot;, num1 ^ num2)
+print(num1, &quot;&gt;&gt;&quot;, num2, &quot;=&quot;, num1 &gt;&gt; num2)
+print(num1, &quot;&lt;&lt;&quot;, num2, &quot;=&quot;, num1 &lt;&lt; num2)
+print(&quot;~&quot;,num1, &quot;=&quot;, ~num1)
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>Enter first number: 10
+Enter second number: 10
+10 &amp; 10 = 10
+10 | 10 = 10
+10 ^ 10 = 0
+10 &gt;&gt; 10 = 0
+10 &lt;&lt; 10 = 10240
+~ 10 = -11
+</code></pre>
+<h3>Membership Operators</h3>
+<pre><code class="language-python">x = [&quot;apple&quot;, &quot;banana&quot;]
+y = [&quot;pineapple&quot;, &quot;orange&quot;]
+
+print(&quot;apple in x:&quot;, &quot;apple&quot; in x)
+print(&quot;pineapple not in x:&quot;, &quot;pineapple&quot; not in x)
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>apple in x: True
+pineapple not in x: True
+</code></pre>
+<h3>Identity Operators</h3>
+<pre><code class="language-python">x = [&quot;apple&quot;, &quot;banana&quot;]
+y = [&quot;pineapple&quot;, &quot;orange&quot;]
+
+print(&quot;x is y:&quot;, x is y)
+print(&quot;x is not y:&quot;, x is not y)
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>x is y: False
+x is not y: True
+</code></pre>
+<h2>Explain <code>continue</code>, <code>pass</code>, <code>break</code>, <code>else</code> with example.</h2>
+<h3>continue</h3>
+<p>The **continue **statement skips the code that comes after it, and the control
+is passed back to the next iteration.</p>
+<p><strong>Example</strong>:</p>
+<pre><code>for i in range(6):
+    if i == 7:
+        continue
+    print(&quot;The Number is:&quot; , i)
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code>The number is: 0
+The number is: 1
+The number is: 2
+The number is: 3
+The number is: 4
+The number is: 5
+The number is: 6
+</code></pre>
+<h3>pass</h3>
+<p>Python pass statement is used as a placeholder inside loops, functions, class,
+if-statement that is meant to be implemented later.</p>
+<p><strong>Example</strong>:</p>
+<pre><code>a = 10
+b = 20
+if a &lt; b:
+  pass
+else:
+  print(&quot;b &lt; a&quot;)
+</code></pre>
+<p><strong>Output</strong>:
+No output</p>
+<h3>break</h3>
+<p>The <strong>break</strong> statement takes care of terminating the loop in which it is used.
+If the break statement is used inside nested loops, the current loop is
+terminated, and the flow will continue with the code followed that comes after
+the loop.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-python">for i in range(4):
+    for j in range(4):
+        if j==2:
+            break
+        print(&quot;The number is&quot;, i, j)
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code>This number is 0 0
+This number is 0 1
+This number is 1 0
+This number is 1 1
+This number is 2 0
+This number is 2 1
+This number is 3 0
+This number is 3 1
+</code></pre>
+<h3>else</h3>
+<p>**else **statement can be combined with an if statement. An else statement
+contains the block of code that executes if the conditional expression in the
+if statement resolves to 0 or a FALSE value.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-python">num = 3
+if num &gt;= 0:
+    print(&quot;Positive or Zero&quot;)
+else:
+    print(&quot;Negative number&quot;)
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code>Positive or Zero
+</code></pre>
+<h2>Define dictionary explain <code>access</code>, <code>delete</code>, <code>update()</code> dictionary</h2>
+<p>Dictionary in Python is an unordered collection of data values, used to store
+data values like a map, which, unlike other Data Types that hold only a single
+value as an element, Dictionary holds key:value pair.</p>
+<h3>acces</h3>
+<p>You can access the items of a dictionary by referring to its key name</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-python">di = {&quot;Name&quot;: &quot;VIVA&quot;,&quot;Dept&quot;: &quot;TYCO&quot;, &quot;add&quot;:&quot;Virar&quot;, &quot;No&quot;:123}
+x = di[&quot;Name&quot;]
+print(x)
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>VIVA
+</code></pre>
+<h3>update()</h3>
+<p>Updates the dictionary with the specified key-value pairs</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-python">di = {&quot;Name&quot;: &quot;VIVA&quot;,&quot;Dept&quot;: &quot;TYCO&quot;, &quot;add&quot;:&quot;Virar&quot;, &quot;No&quot;: 123}
+di.update({&quot;No&quot;:456})
+print(di)
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>{'Name': 'VIVA', 'Dept': 'TYCO', 'add': 'Virar', 'No': 456}
+</code></pre>
+<h3>del</h3>
+<p>The del keyword is used delete the dictionary completely</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-python">di = {&quot;Name&quot;: &quot;VIVA&quot;, &quot;Dept&quot;: &quot;TYCO&quot;, &quot;add&quot;:&quot;Virar&quot;, &quot;No&quot;: 123}
+del di
+print(di)
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>NameError: name 'di' is not defined
+</code></pre>]]></description>
+  </item>
+  <item>
+    <title>Finals</title>
+    <link>https://anzenkodo.github.io/blog/coding/python/finals.html</link>
+    <pubDate>2022-12-09T20:15:14.186Z</pubDate>
+    <description><![CDATA[<h1>Python</h1>
+<h2>a) Name different modes of Python.</h2>
+<p>Python has two basic modes:</p>
+<ol>
+<li>Script mode (or Normal mode)</li>
+</ol>
+<ul>
+<li>The mode where the scripted and finished .py files are in the Python
+Interpreter.</li>
+</ul>
+<ol start="2">
+<li>Interactive mode</li>
+</ol>
+<ul>
+<li>A command line shell which gives immediate feedback for each statement,
+while running previously fed statements in active memory.</li>
+</ul>
+<h2>b) List identity Operators</h2>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>is</td>
+<td>Returns <code>True</code> if both variables are sames object</td>
+<td>x is y</td>
+</tr>
+<tr>
+<td>is not</td>
+<td>Returns <code>False</code> if both variables are sames object</td>
+<td>x is not y</td>
+</tr>
+</tbody>
+</table>
+<h2>c) Give two differences between list and tuple.</h2>
+<h3>List</h3>
+<ul>
+<li>Lists are mutable.</li>
+<li>The list is better for performing operations.</li>
+<li>Lists consume more memory.</li>
+<li>More likely error will occur.</li>
+</ul>
+<h3>Tuple</h3>
+<ul>
+<li>Tuples are immutable.</li>
+<li>The implication of iterations is faster.</li>
+<li>Tuple consume less memory.</li>
+<li>Less likely error will occur.</li>
+</ul>
+<h2>d) Explain Local and Global variable.</h2>
+<table>
+<thead>
+<tr>
+<th>Local</th>
+<th>Global</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>It is declare  inside a function</td>
+<td>It is declared outside the function</td>
+</tr>
+<tr>
+<td>It is created when the function starts execution and lost when the function terminate.</td>
+<td>It is created before the program's global execution starts and lost when the program terminates.</td>
+</tr>
+<tr>
+<td>Local variables can be accessed with the help of statements, inside a function in which they are declared.</td>
+<td>You can access global variables by any statement in the program.</td>
+</tr>
+<tr>
+<td>Parameters passing is required for local variables to access the value in other function.</td>
+<td>Parameters passing is not necessary for a global variable as it is visible throughout the program</td>
+</tr>
+</tbody>
+</table>
+<h2>e) Define class and object in python.</h2>
+<h3>Class</h3>
+<ul>
+<li>Class is a blueprint for the object.</li>
+<li>We define a class by using the keyword class.</li>
+<li>Class objects are used to access different attributes.</li>
+</ul>
+<h3>Object</h3>
+<ul>
+<li>Classes are the user-defined blueprints that help us create an “object”.</li>
+<li>Objects are the instances of a particular class.</li>
+<li>Every other element in Python will be an object of some class, such as the string, dictionary, number(10,40), etc.</li>
+</ul>
+<h2>f) How to give single and multiline comment in python.</h2>
+<h3>Single-Line</h3>
+<ul>
+<li>Add the hash (#) symbol before the comment:</li>
+</ul>
+<pre><code class="language-python"># This is your comment
+</code></pre>
+<h3>Multiline</h3>
+<p>-Python will ignore string literals that are not assigned to a variable, you can add a multiline string (triple quotes) in your code, and place your comment inside it:</p>
+<pre><code class="language-python">&quot;&quot;&quot;
+This is a comment
+written in
+more than just one line
+&quot;&quot;&quot;
+</code></pre>
+<h2>g) List different modes of opening file in python.</h2>
+<p>There are four different methods modes for opening a file:</p>
+<ul>
+<li><strong>r</strong> - <em>Read</em> - Opens a file for reading. Error if the file does not exist.</li>
+<li><strong>w</strong> - <em>Write</em> - Opens a file for writing. Creates the file if it does not
+exist.</li>
+<li><strong>x</strong> - <em>Create</em> - Creates the specified file. Error if file exist.</li>
+<li><strong>a</strong> - <em>Append</em> - Opens a file for appending. Creates the if it does not
+exist.</li>
+</ul>
+<p>In addition, the file should be handled as binary or text mode:</p>
+<ul>
+<li>t - <strong>Text</strong> - Default value - <em>Text mode</em>.</li>
+<li>b - Binary - Binary mode (e.g. images).</li>
+</ul>
+<h2>a) Write a program to print following:</h2>
+<pre><code class="language-python">rows = int(input(&quot;Enter number of rows: &quot;))
+
+for i in range(rows):
+    for j in range(i+1):
+        print(j+1, end=&quot; &quot;)
+    print(&quot;\n&quot;)
+</code></pre>
+<h2>b) Explain four Buit-in tuple functions python with example.</h2>
+<ul>
+<li><code>len()</code> - Returns the <strong>length</strong> of the tuple.</li>
+<li><code>max()</code> - Highest value will returned.</li>
+<li><code>min()</code> - Lowest value be returned.</li>
+<li><code>count()</code> - Returns the number of times a specified value occurs in tuple.</li>
+</ul>
+<h2>Explain how to use user defined function in python with example.</h2>
+<p>In Python, a user-defined function's declaration begins with the keyword def and followed by the function name.</p>
+<pre><code class="language-python">def printt():
+    print(&quot;This is Python 3.2 Tutorial&quot;)
+    print(&quot;This is Python 3.2 Tutorial&quot;)
+    print(&quot;This is Python 3.2 Tutorial&quot;)
+printt()
+</code></pre>
+<p>Output:</p>
+<pre><code>This is Python 3.2 Tutorial
+This is Python 3.2 Tutorial
+This is Python 3.2 Tutorial
+</code></pre>
+<h2>d) Write a program to create class EMPLOYEE with ID and NAME and display its contents.</h2>
+<pre><code class="language-python">class Employee:
+	name = &quot;&quot;
+	department = &quot;&quot;
+	salary = 0
+
+	def setData(self):
+		self.name = input(&quot;Enter Name: &quot;)
+		self.department = input(&quot;Enter Department: &quot;)
+		self.salary = int(input(&quot;Enter Salary: &quot;))
+
+	def showData(self):
+		print(&quot;Name:&quot;, self.name)
+		print(&quot;Department:&quot;, self.department)
+		print(&quot;Salary:&quot;, self.salary)
+
+e = Employee()
+e.setData()
+e.showData()
+</code></pre>
+<p>Output:</p>
+<pre><code>Enter Name: Jonney
+Enter Department: Testing
+Enter Salary: 20000
+Name: Jonney
+Department: Testing
+Salary: 20000
+</code></pre>
+<h2>List Data types used in python. Explain any two with example.</h2>
+<p>Thare are three data type in python numbers, string &amp; boolean.</p>
+<h3>String</h3>
+<ul>
+<li>String is a collection of group of characters.</li>
+<li>String are identified as a contiguous set of characters enclosed in single quotes(' ') or double quotes(&quot; &quot;).</li>
+<li>String can also can be define with str() function.</li>
+</ul>
+<h3>Boolean</h3>
+<ul>
+<li>Boolean represents the two values namely False and True.</li>
+<li>The true value is represented true as 1 and false as 0.</li>
+</ul>
+<h2>b) Explain membership and assignment operators with example.</h2>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>in</td>
+<td>True if value in list or in sequence</td>
+<td>('H' in x) is True</td>
+</tr>
+<tr>
+<td>not in</td>
+<td>False if value not in list or in sequence</td>
+<td>('H' in x) is False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th style="text-align:center">Description</th>
+<th>Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>=</td>
+<td style="text-align:center">Assign value of right side of expression to left side operand</td>
+<td>x = y + z</td>
+</tr>
+<tr>
+<td>+=</td>
+<td style="text-align:center">Add and Assign: Add right side operand with left side operand and then assign to left operand</td>
+<td>a += b</td>
+</tr>
+<tr>
+<td>-=</td>
+<td style="text-align:center">Subtract AND: Subtract right operand from left operand and then assign to left operand: True if both operands are equal</td>
+<td>a -= b</td>
+</tr>
+<tr>
+<td>*=</td>
+<td style="text-align:center">Multiply AND: Multiply right operand with left operand and then assign to left operand</td>
+<td>a *= b</td>
+</tr>
+</tbody>
+</table>
+<h2>c) Explain indexing and slicing in list with example.</h2>
+<ul>
+<li>“Indexing” means referring to an element of an iterable by its position within the iterable.</li>
+<li>“Slicing” means getting a subset of elements from an iterable based on their indices.</li>
+</ul>
+<h2>d) Write a program for importing module for addition and substraction of two numbers.</h2>
+<pre><code class="language-python">a = int(input(&quot;Enter first number: &quot;))
+b = int( input(&quot;Enter second number: &quot;))
+Sum = a+b; #Add two numbers
+Difference = a-b; #Subtract two numbers
+# To print the result
+print(&quot;Addition of two numbers = &quot;,Sum)
+print(&quot;Subtraction of two numbers = &quot;,Difference)
+</code></pre>
+<p>Output:</p>
+<pre><code>Output:
+Enter first number: 30
+Enter second number: 20
+Addition of two numbers = 50
+Subtraction of two numbers = 10
+</code></pre>
+<h2>a) Write a program to create dictionary of students that includes their ROLL NO. and NAME:</h2>
+<p>i) Add three students in above dictionary
+ii) Update name= 'Shreyas' of ROLL NO = 2
+iii) Delete information of ROLL NO = 1</p>
+<pre><code class="language-python">students = {
+  1: &quot;ronney&quot;,
+  2: &quot;jay&quot;
+}
+
+students[2] = &quot;Shreyas&quot;
+del students[1]
+print(students)
+</code></pre>
+<p>Output:</p>
+<pre><code>{ 2: &quot;Shreyas&quot; }
+</code></pre>
+<h2>b) Explain decision making statements If-else, if-elif-else with example.</h2>
+<p>The if…elif…else statement is used in Python for decision making.</p>
+<pre><code class="language-python">num = 3.4
+
+if num &gt; 0:
+    print(&quot;Positive number&quot;)
+elif num == 0:
+    print(&quot;Zero&quot;)
+else:
+    print(&quot;Negative number&quot;)
+</code></pre>
+<h2>c) Explain use of format () method with example.</h2>
+<p>Python format() function has been introduced for handling complex string formatting more efficiently.</p>
+<pre><code class="language-python">txt = &quot;I have {an:.2f} Ruppes!&quot;
+print(txt.format(an = 4))
+</code></pre>
+<p>Output:</p>
+<pre><code>I have 4.00 Ruppes!
+</code></pre>
+<h2>d) Explain building blocks of python.</h2>
+<ul>
+<li>The core data structures to learn in Python are List (list), Dictionary (dict), Tuple (tuple), and Set (set).</li>
+<li>To indicate a block of code in Python, you must indent each line of the block by the same amount.</li>
+</ul>
+<h2>e) Write a program illustrating use of user defined package in python.</h2>
+<p>Packages are a way of structuring many packages and modules which helps in a well-organized hierarchy of data set, making the directories and modules easy to access.</p>
+<p>file1.py:</p>
+<pre><code class="language-python">class Bmw:
+    # First we create a constructor for this class
+    # and add members to it, here models
+    def __init__(self):
+        self.models = ['i8', 'x1', 'x5', 'x6']
+
+    # A normal print function
+    def outModels(self):
+        print('These are the available models for BMW')
+        for model in self.models:
+            print('\t%s ' % model)
+</code></pre>
+<p>file2.py</p>
+<pre><code class="language-python">from Bmw import Bmw
+</code></pre>
+<h2>Write the output of the following:</h2>
+<pre><code>&gt;&gt;&gt; a = [2, 5, 1, 3, 6, 9, 7]
+&gt;&gt;&gt; a[2:6] = [2, 4, 9, 0]
+&gt;&gt;&gt; print (a)
+</code></pre>
+<p>Ans:</p>
+<pre><code>[2, 5, 2, 4, 9, 0, 7]
+</code></pre>
+<pre><code>b = [&quot;Hello&quot;, &quot;Good&quot;]
+b.append(&quot;python&quot;)
+print (b)
+</code></pre>
+<p>Ans:</p>
+<pre><code>['Hello', 'Good', 'python']
+</code></pre>
+<pre><code>t1 = [3, 5, 6, 7]
+print (t1[2])
+print (t1[-1])
+print (t1[2:])
+print(t1[:])
+</code></pre>
+<p>Ans:</p>
+<pre><code>6
+7
+[6, 7]
+[3, 5, 6, 7]
+</code></pre>
+<h2>Explain method overloading in python with example.</h2>
+<ul>
+<li>overloading is the ability of a function or an operator to behave in different ways based on the parameters that are passed to the function, or the operands that the operator acts on.</li>
+</ul>
+<pre><code class="language-python">class A:
+    def __init__(self, a):
+        self.a = a
+
+    # adding two objects
+    def __add__(self, o):
+        return self.a + o.a
+ob1 = A(1)
+ob2 = A(2)
+ob3 = A(&quot;Geeks&quot;)
+ob4 = A(&quot;For&quot;)
+
+print(ob1 + ob2)
+print(ob3 + ob4)
+</code></pre>
+<h2>Write a program to open a file in write mode and some contents at the end of file.</h2>
+<pre><code class="language-python">o = open(&quot;name.txt&quot;, &quot;w&quot;)
+o.write(&quot;I am a programmer&quot;)
+o.close()
+o = open(&quot;name.txt&quot;, &quot;r&quot;)
+print(o.read())
+o.close()
+</code></pre>
+<p>O/P</p>
+<pre><code>I am a programmer
+</code></pre>
+<h2>a) Explain package Numpy with example.</h2>
+<ul>
+<li>Numpy is a python package which stands for &quot;Numerical Python&quot;.</li>
+</ul>
+<pre><code class="language-python">import numpy as n
+a=n.ones((3, 3))
+a[1:-1,1:-1]=0
+print(a)
+</code></pre>
+<p>Output:</p>
+<pre><code>[[1. 1. 1.]
+ [1. 0. 1.]
+ [1. 1. 1.]]
+</code></pre>
+<h2>6) Write a program to implement the concept of inheritance in python.</h2>
+<pre><code class="language-python">class Parent:
+	parentname = &quot;&quot;
+	childname = &quot;&quot;
+	def show_parent(self):
+		print(self.parentname)
+
+class Child(Parent):
+	def show_child(self):
+		print(self.childname)
+
+c = Child()
+c.parentname = &quot;Arati&quot;
+c.childname = &quot;Purva&quot;
+c.show_parent()
+c.show_child()
+</code></pre>
+<h2>c) Explain Try-except block used in exception handling in python with example.</h2>
+<ul>
+<li>When an exception occurs, Python will normally stop and generate an error message.</li>
+<li>These exceptions can be handled using the try statement.</li>
+<li>The except block lets you handle the error.</li>
+</ul>
+<pre><code class="language-python">try:
+  print(x)
+except NameError:
+  print(&quot;Variable x is not defined&quot;)
+</code></pre>]]></description>
+  </item>
+  </channel>
+</rss>
