@@ -34,7 +34,7 @@ echo "Coping assests folder..."
 cp -r assets/ ../site/
 
 echo "Making notes..."
-cp notes/online/ note/src/online/
+cp -r notes/online note/src/online
 cd note
 deno task build
 cd ..
