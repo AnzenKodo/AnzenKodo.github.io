@@ -44,6 +44,12 @@ const site = lume({
       figcaption: true,
     }]],
     keepDefaultPlugins: true,
+    options: {
+      html: true,
+      linkify: true,
+      typographer: true,
+      xhtmlOut: false,
+    },
   },
 });
 

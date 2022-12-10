@@ -19,9 +19,10 @@ function createHtmlList(obj) {
       if (key !== "name") continue;
       if (/^_/.test(obj["name"])) continue;
 
-      const url = funcUrl(setInput(obj["path"], "src"), true);
+      const ogUrl = setInput(obj["path"], "src");
+      const url = funcUrl(ogUrl, true);
       const name = formatName(obj["name"], obj["path"]);
-      const active = propUrl === url + ".html" ||
+      const active = propUrl === ogUrl + ".html" ||
           propUrl.replace(/\/$/, "") === url
         ? "active"
         : "not-active";

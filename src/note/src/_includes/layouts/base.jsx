@@ -61,17 +61,17 @@ export default function (
                 <a href={func.url("/feed.json", true)}>JSON</a>
               </p>
               <Files funcUrl={func.url} url={url} class="files my-5" />
-              <Toc
-                toc={toc}
-                class="toc fixed bottom-4 right-4 text-xs bg-white @dark:bg-black p-2 max-h-screen-sm overflow-x-auto"
-                sumClass="text-sm"
-                olClass="pt-2"
-              />
             </div>
+            <Toc
+              toc={toc}
+              class="toc fixed bottom-4 right-4 text-xs bg-white @dark:bg-black p-2 max-h-screen-sm overflow-x-auto"
+              sumClass="text-sm"
+              olClass="pt-2"
+            />
           </aside>
           <main
             id="main"
-            class="min-h-screen"
+            class="min-h-screen break-words"
           >
             <Header
               title={title}

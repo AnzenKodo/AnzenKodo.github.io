@@ -66,9 +66,25 @@ export default `.content p, .content pre, .content ul, .content ol, .content blo
 .content .task-list-item {
   @apply list-none;
 }
+.content table {
+  @apply overflow-auto block;
+}
 .content th, .content td {
   @apply border-1 px-3;
 }
 .content table caption {
   @apply italic;
+}
+.content pre {
+  overflow-x: auto;
+  word-spacing: normal;
+  line-height: normal;
+  padding: 1rem;
+  background: #1a1b26;
+}
+.content .katex { 
+  display: inline-flex;
+  max-width: 100%;
+  overflow: auto;
+  padding-bottom: .5em;
 }`;
