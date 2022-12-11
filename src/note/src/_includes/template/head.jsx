@@ -56,6 +56,7 @@ export default ({ site, url, title, description, icon }) => {
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={url(icon, true)} />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta itemprop="name" content={title} />
       <meta itemprop="description" content={description} />
       <meta itemprop="image" content={url(icon, true)} />

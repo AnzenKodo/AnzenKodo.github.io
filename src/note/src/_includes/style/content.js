@@ -77,8 +77,8 @@ export default `.content p, .content pre, .content ul, .content ol, .content blo
 }
 .content pre {
   overflow-x: auto;
-  word-spacing: normal;
-  line-height: normal;
+  word-spacing: 0;
+  line-height: 0;
   padding: 1rem;
   background: #1a1b26;
 }
