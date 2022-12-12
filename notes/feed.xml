@@ -5,7 +5,7 @@
     <link>https://anzenkodo.github.io/notes/</link>
     <description>This my personal website where I post my notes about thing that I have learn.</description>
     <language>en-US</language>
-    <lastBuildDate>2022-12-12T14:33:19.576Z</lastBuildDate>
+    <lastBuildDate>2022-12-12T15:07:43.999Z</lastBuildDate>
     <image>
       <url>https://anzenkodo.github.io/notes/favicon.png</url>
       <title>AK#Notes</title>
@@ -18,7 +18,7 @@
       <item>
     <title>Home</title>
     <link>https://anzenkodo.github.io/notes/</link>
-    <pubDate>2022-12-12T14:33:19.576Z</pubDate>
+    <pubDate>2022-12-12T15:07:43.999Z</pubDate>
     <description><![CDATA[<p>This my personal website where I post my notes about thing that I have learn.</p>
 <h2>Features</h2>
 <ul>
@@ -404,7 +404,7 @@ colspan="3"><strong>30–32</strong> ATP</td> </tr> </tbody> </table>
   <item>
     <title>Grammmar</title>
     <link>https://anzenkodo.github.io/notes/study/grammmar.html</link>
-    <pubDate>2022-12-12T14:33:19.576Z</pubDate>
+    <pubDate>2022-12-12T15:07:43.999Z</pubDate>
     <description><![CDATA[<h1>Grammar in English</h1>
 <h2>Part of Speech</h2>
 <p>Words are divided into different kinds of classes called <strong>Parts of Speech</strong>.
@@ -580,7 +580,7 @@ that they are replacing.
   <item>
     <title>MGT</title>
     <link>https://anzenkodo.github.io/notes/study/mgt.html</link>
-    <pubDate>2022-12-12T14:33:19.576Z</pubDate>
+    <pubDate>2022-12-12T15:07:43.999Z</pubDate>
     <description><![CDATA[<h1>MGT</h1>
 <ol>
 <li>Who said “Management is the function of executive leadership anywhere”:</li>
@@ -651,7 +651,7 @@ spirit to achieve goal.</li>
   <item>
     <title>Set</title>
     <link>https://anzenkodo.github.io/notes/maths/discrete-mathematics/set.html</link>
-    <pubDate>2022-12-12T14:33:19.576Z</pubDate>
+    <pubDate>2022-12-12T15:07:43.999Z</pubDate>
     <description><![CDATA[<h1>Set</h1>
 <p><strong>Note:</strong></p>
 <ul>
@@ -763,7 +763,7 @@ spirit to achieve goal.</li>
   <item>
     <title>sets</title>
     <link>https://anzenkodo.github.io/notes/maths/discrete-mathematics/sets.html</link>
-    <pubDate>2022-12-12T14:33:19.576Z</pubDate>
+    <pubDate>2022-12-12T15:07:43.999Z</pubDate>
     <description><![CDATA[<h2>Natural Numbers</h2>
 <h3>Repecting Integers</h3>
 <p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mn>0</mn><mi>x</mi><mo>=</mo><mn>9</mn><mi mathvariant="normal">.</mi><mn>9</mn><mn>9</mn><mn>9</mn><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">10x = 9.999...</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">1</span><span class="mord mathrm">0</span><span class="mord mathit">x</span><span class="mrel">=</span><span class="mord mathrm">9</span><span class="mord mathrm">.</span><span class="mord mathrm">9</span><span class="mord mathrm">9</span><span class="mord mathrm">9</span><span class="mord mathrm">.</span><span class="mord mathrm">.</span><span class="mord mathrm">.</span></span></span></span></p>
@@ -782,439 +782,9 @@ spirit to achieve goal.</li>
 <p><strong>a is even</strong></p>]]></description>
   </item>
   <item>
-    <title>UT1 6S</title>
-    <link>https://anzenkodo.github.io/notes/coding/php/ut1-6s.html</link>
-    <pubDate>2022-12-12T14:33:19.576Z</pubDate>
-    <description><![CDATA[<h2>Write a php program to find the largest number among three numbers.</h2>
-<pre><code class="language-php">&lt;?php
-  function largest($x, $y, $z) {
-    if ($x &gt;= $y) {
-      if($x &gt;= $z) {
-        echo $x;
-      } else {
-        echo $z;
-      }
-    }
-    else {
-      if($y &gt;= $z) {
-        echo $y;
-      } else {
-        echo $z;
-      }
-    }
-  }
-
-  largest(100, 50, 25);
-?&gt;
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>100
-</code></pre>
-<h2>Write a php code for creating a basic image.</h2>
-<pre><code class="language-php">&lt;?php
-$image = imagecreatetruecolor(500, 300);
-imagefilledrectangle($image, 20, 20, 480, 280);
-header(&quot;Content-type: image/png&quot;);
-imagepng($image);
-?&gt;
-</code></pre>
-<h2>Explain inheritance with examples.</h2>
-<p>In Inheritance  the new class can inherit the properties and methods from the
-old class.</p>
-<p>The old class is the base class also called a parent class and then the new
-class is a derived  class also called a subclass.</p>
-<p><strong>Example</strong>:</p>
-<pre><code class="language-php">&lt;?php
-  class Person {
-    var $name, $age;
-  }
-  class Employee extends Person {
-    var $salary, $designation;
-  }
-?&gt;
-</code></pre>
-<h2>Explain the concept of introspection in php with an example.</h2>
-<p>PHP Introspection is the ability of a program to examine an object’s
-characteristics such as its name, parent class (if any), properties and methods.</p>
-<p>Introspection  in PHP offers a useful Ability  to examine classes’ interfaces
-properties methods. With introspection we can write  code that operates on any
-object or class.</p>
-<p><strong>Example</strong>:</p>
-<pre><code class="language-php">&lt;?php
-  if (class_exists('MyClass')) {
-    $myclass = new MyClass();
-  }
-?&gt;
-</code></pre>
-<h2>How to use overloading and overriding functions in php?</h2>
-<h2>Overloading</h2>
-<p>Method overloading is the ability to create a multiple function
-of the same name with a different implementation  depending upon the types of
-arguments.</p>
-<p>How to use overloading in PHP?</p>
-<pre><code class="language-php">&lt;?php
-class First {
-  function func() {
-    echo &quot;Hello World&quot;;
-  }
-}
-
-class Second extends First {
-  function func() {
-    echo &quot;Bye World&quot;;
-  }
-}
-
-$o = new Second;
-$o-&gt;func();
-</code></pre>
-<p>O/P</p>
-<pre><code>Bye World
-</code></pre>
-<h2>Overriding</h2>
-<p>In function overriding, both parent and child classes should have the same
-function name with and number of arguments. It is used to replace the parent
-method in child class.</p>
-<pre><code class="language-php">&lt;?php
-&lt;?php
-class First {
-  function func() {
-    echo &quot;Hello World&quot;;
-  }
-}
-
-class Second extends First {
-  function func() {
-    echo &quot;Bye World&quot;;
-  }
-}
-
-$f = new First;
-$s = new Second;
-$f-&gt;func();
-$s-&gt;func();
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>Hello World
-Bye World
-</code></pre>
-<h2>How to use the flip function in php.</h2>
-<p>The array_flip function flips/All keys with their associated values in array.</p>
-<p>This function is very useful when we have a big/ large array.and we want to
-know if a given value  is in the array.</p>
-<p><strong>Syntax</strong>:</p>
-<pre><code>array_flip(array_name)
-</code></pre>
-<p><strong>Example:</strong></p>
-<pre><code class="language-php">&lt;?php
-  $a = array(&quot;a&quot;);
-  print_r(array_flip($a));  //flip function is used
-?&gt;
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>Array( [0]=&gt; a )
-</code></pre>
-<h2>How to define properties and methods of a class? Explain with suitable examples.</h2>
-<ol>
-<li>Objects have access to special variables called. properties.</li>
-<li>A property Can be valued as an array and even another object.</li>
-<li>All properties go inside the curly braces.</li>
-<li>The characteristics of a class are known as its properties.</li>
-</ol>
-<p><strong>Example:</strong></p>
-<pre><code class="language-php">&lt;?php
-  class Student {
-    var $roll_no;
-    var $name;
-    function display() {
-      echo &quot;Roll No: &quot; . $this-&gt;roll_no. &quot;&lt;br&gt;&quot;;
-      echo &quot;Name: &quot; $this-&gt;name;
-    }
-  }
-
-  $s1 = new Student;
-  $s1-&gt;roll_no = 10;
-  $s1-&gt;name = &quot;Amar&quot;;
-  $si-&gt;display();
-?&gt;
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>Roll No: 10
-Name: Amar
-</code></pre>
-<p>A class method is exactly similar to PHP functions.</p>
-<ol>
-<li>Method is a function defined within the class.</li>
-<li>Methods on the other hand are functions that operate on the data.</li>
-<li>Method is also written within the braces {}.</li>
-</ol>
-<p>The method can be accessed from outside the class.</p>
-<p><strong>Example:</strong></p>
-<pre><code class="language-php">&lt;?php
-class Person {
-	public $age = 25;
-
-	public function printAge() {
-		echo &quot;The age is: $this-&gt;age&quot;;
-	}
-}
-
-$person = new Person;
-$person-&gt;age = 20;
-$person-&gt;printAge();
-?&gt;
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>The age is: 20
-</code></pre>
-<h2>Explain the arithmetic operators that can be used in php with examples.</h2>
-<p>The PHP arithmetic operators are used with numeric values to perform common
-arithmetical operations, such as addition, subtraction, multiplication etc.</p>
-<p><strong>Example:</strong></p>
-<pre><code class="language-php">&lt;?php
-  $a = 42;
-  $b = 20;
-
-  $c = $a + $b;
-  echo &quot;Addition is: $c &lt;br/&gt;&quot;;
-  $c = $a - $b;
-  echo &quot;Subtraction is: $c &lt;br/&gt;&quot;;
-  $c = $a * $b;
-  echo &quot;Multiplication is: $c &lt;br/&gt;&quot;;
-  $c = $a / $b;
-  echo &quot;Division is: $c &lt;br/&gt;&quot;;
-  $c = $a % $b;
-  echo &quot;Modulus is: $c &lt;br/&gt;&quot;;
-?&gt;
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>Addition is: 62
-Subtraction is: 22
-Multiplication is: 840
-Division is: 2.1
-Modulus is: 2
-</code></pre>
-<h2>What is the use of anonymous functions in php? Explain with examples.</h2>
-<p>Anonymous functions, also known as closures, allow the creation of functions
-which have no specified name. They are most useful as the value of callable
-parameters, but they have many other uses.</p>
-<pre><code class="language-php">&lt;?php
-$func = function () { echo &quot;Hello World&quot;; };
-$func();
-</code></pre>
-<p>O/P</p>
-<pre><code>Hello World
-</code></pre>
-<h2>Explain cloning objects with examples.</h2>
-<p>Object cloning is the process in PHP to create a copy of an object. An object
-copy is created by using the clone keyword when the object is cloned PHP will
-perform Shallow copy  of all the object properties and properties that are
-referenced to their variables will remain references.</p>
-<p><strong>Example:</strong></p>
-<pre><code class="language-php">&lt;?php
-class Obj {
-  public $name;
-}
-
-$o = new Obj;
-$c = clone $o;
-
-$o-&gt;name = &quot;Jonney&quot;;
-$c-&gt;name = &quot;Jone&quot;;
-
-echo &quot;Origenal: &quot;.$o-&gt;name.&quot;, Clone: &quot;.$c-&gt;name;
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>Origenal: Jonney, Clone: Jone
-</code></pre>
-<h2>Explain indexed and associative arrays with examples.</h2>
-<p>Indexed array: An array having only integer keys is typically referred to as an
-indexed array and index arrays can store numbers, drinks and any object but
-their index will be represented by number.</p>
-<p><strong>Example:</strong></p>
-<pre><code class="language-php">&lt;?php
-  $colors = array(&quot;Red&quot;);
-  print_r($colors);
-?&gt;
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>Array ( [0] =&gt; Red )
-</code></pre>
-<p>The associative arrays are very similar to numeric arrays in terms of
-functionality but they are different in terms of their index. Associative arrays
-will have their index as string so that you can establish a strong association
-between key and values.</p>
-<pre><code class="language-php">&lt;?php
-  $ages = array( &quot;Peter&quot;=&gt;22 );
-  print_r($ages);
-?&gt;
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>Array ( [Peter] =&gt; 22 )
-</code></pre>
-<h2>How to define constructor and destructor in php with an example?</h2>
-<ul>
-<li><strong>constructor</strong> - When we create a new object it is useful to initialize its
-properties.</li>
-<li><strong>destructor</strong> - The destructor method will be called as soon as there are no
-other references to a particular object.</li>
-</ul>
-<pre><code class="language-php">&lt;?php
-class Obj {
-  function __construct() {
-    echo &quot;Class created&quot;;
-  }
-
-  function __destruct() {
-    echo &quot;Class destroyed&quot;;
-  }
-}
-
-$o = new Obj;
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>Class Created
-Class Destroyed
-</code></pre>
-<h2>Explain the following string function with an example.</h2>
-<ol>
-<li>strpos()</li>
-<li>strlen()</li>
-<li>strcmp()</li>
-<li>str_word_count()</li>
-<li>strpos()</li>
-</ol>
-<ul>
-<li><strong>strpos()</strong> - Returns the position of the first occurrence of a string.</li>
-<li><strong>strlen()</strong> - Returns the length of a string.</li>
-<li><strong>strcmp()</strong> - Compares two strings.</li>
-<li><strong>str_word_count()</strong> - Count the number of words in a string.</li>
-<li><strong>strrpos()</strong> - Finds the position of the last occurrence of a string.</li>
-</ul>
-<pre><code class="language-php">&lt;?php
-echo strpos(&quot;Hello World&quot;, &quot;Hello&quot;);
-echo strlen(&quot;Hello World&quot;);
-echo strcmp(&quot;Hello World&quot;, &quot;Hello World&quot;);
-echo str_word_count(&quot;Hello World&quot;);
-echo strrpos(&quot;Hello World&quot;, &quot;Hello&quot;);
-</code></pre>
-<p>O/P</p>
-<pre><code>0
-11
-0
-2
-0
-</code></pre>
-<h2>Write a program using a foreach loop.</h2>
-<p><strong>Example:</strong></p>
-<pre><code class="language-php">&lt;?php
-$a = array(1, 2, 3, 4, 5);
-foreach ($a as $n) {
-  echo $n;
-}
-</code></pre>
-<p>O/P</p>
-<pre><code>12345
-</code></pre>
-<h2>Explain serialization with suitable examples.</h2>
-<p>A string representation of any object in the form of byte-stream is obtained by
-serialize() function in PHP. All property variables of the object are contained
-in the string and methods are not saved. This string can be stored in any file.</p>
-<p><strong>Example:</strong></p>
-<pre><code class="language-php">&lt;?php
-echo serialize(array(&quot;Red&quot;));
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>a:1:{i:0;s:3:&quot;Red&quot;;}
-</code></pre>
-<h2>Define <code>imagecolorallocate()</code> function along with suitable examples.</h2>
-<p><code>imagecolorallocate()</code> function is another inbuilt PHP function mainly used to
-implement a new color to an image. It returns the color of an image in an RGB
-format (RED GREEN BLUE).</p>
-<p><strong>Example:</strong></p>
-<pre><code class="language-php">&lt;?php
-  $im = imagecreate(100, 100);
-  // sets background to red
-  $background = imagecolorallocate($im, 255, 0, 0);
-  // sets some colors
-  $white = imagecolorallocate($im, 255, 255, 255);
-  $black = imagecolorallocate($im, 0, 0, 0);
-  // hexadecimal way
-  $white = imagecolorallocate($im, 0xFF, 0xFF, 0xFF);
-  $black = imagecolorallocate($im, 0x00, 0x00, 0x00);
-?&gt;
-</code></pre>
-<h2>Write a program to create a filled rectangle.</h2>
-<pre><code class="language-php">&lt;?php
-$image = imagecreatetruecolor(500, 300);
-imagefilledrectangle($image, 20, 20, 480, 280);
-header(&quot;Content-type: image/png&quot;);
-imagepng($image);
-?&gt;
-</code></pre>
-<h2>Explain any three data types used in php.</h2>
-<ol>
-<li><strong>Integer:</strong> integer data type used to specify a numeric value  without a fractional component the range of integers.</li>
-<li><strong>Strings:</strong> a string is a sequence of characters where characters are the same as a byte.</li>
-<li><strong>Boolean:</strong>   boolean  value can be either true or false both are  case-insensitive.</li>
-</ol>
-<h2>Differentiate between implode and explode function.</h2>
-<table>
-<thead>
-<tr>
-<th>No.</th>
-<th>Implode</th>
-<th>Explode</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>The implode() function returns a string from the elements of an array.</td>
-<td>explode function breaks a string  into smaller parts and stores it  as an array.</td>
-</tr>
-<tr>
-<td>2</td>
-<td>The implode() function accepts its  parameters in either order.  However, for consistency with explode(),  you should use the documented order of  arguments.</td>
-<td>The explode() function splits  these strings based on a specific  delimiter and returns an array that  contains elements which are sustained  by the splitting operation.</td>
-</tr>
-<tr>
-<td>3</td>
-<td>syntax :-string implode (pieces)</td>
-<td>array explode (delimiter, string, limit)</td>
-</tr>
-<tr>
-<td>4</td>
-<td><strong>Example</strong>:  <code>php &lt;?php $arr = array(&quot;I&quot;, &quot;love&quot;, &quot;PHP.&quot;); $pole = implode(&quot; &quot;, $arr); \ echo &quot;$pole&quot;; ?&gt; </code>  Output: I love PHP.</td>
-<td>Example: <?php  $string = "I love php."; $pole = explode(" ", $string); \ \ print_r($pole); ?>  Output: Array ( [0] =&gt; I [1] =&gt; love [2] =&gt; php. )</td>
-</tr>
-</tbody>
-</table>
-<h2>State the variable function. Explain it with an example.</h2>
-<p>PHP supports the concept of variable function means that we can call a function
-based on a value of a variable if a variable name has a round parentheses
-appended to it PHP will look for a function with the same name as a whatever
-variable Evaluates to and will attempt to execute it.</p>
-<p><strong>Example:</strong></p>
-<pre><code class="language-php">&lt;?php
-  function add($x, $y){
-    echo $x + $y;
-  }
-  $var =  &quot;add&quot;;
-  $var(10,20);
-?&gt;
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>30
-</code></pre>]]></description>
-  </item>
-  <item>
     <title>UT2 6S</title>
     <link>https://anzenkodo.github.io/notes/coding/php/ut2-6s.html</link>
-    <pubDate>2022-12-12T14:33:19.576Z</pubDate>
+    <pubDate>2022-12-12T15:07:43.999Z</pubDate>
     <description><![CDATA[<h1>PHP Unit 2 AB</h1>
 <h3>1. Write the syntax for creating Cookie.</h3>
 <ul>
@@ -1672,9 +1242,439 @@ Joey
 </ul>]]></description>
   </item>
   <item>
+    <title>UT1 6S</title>
+    <link>https://anzenkodo.github.io/notes/coding/php/ut1-6s.html</link>
+    <pubDate>2022-12-12T15:07:43.999Z</pubDate>
+    <description><![CDATA[<h2>Write a php program to find the largest number among three numbers.</h2>
+<pre><code class="language-php">&lt;?php
+  function largest($x, $y, $z) {
+    if ($x &gt;= $y) {
+      if($x &gt;= $z) {
+        echo $x;
+      } else {
+        echo $z;
+      }
+    }
+    else {
+      if($y &gt;= $z) {
+        echo $y;
+      } else {
+        echo $z;
+      }
+    }
+  }
+
+  largest(100, 50, 25);
+?&gt;
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>100
+</code></pre>
+<h2>Write a php code for creating a basic image.</h2>
+<pre><code class="language-php">&lt;?php
+$image = imagecreatetruecolor(500, 300);
+imagefilledrectangle($image, 20, 20, 480, 280);
+header(&quot;Content-type: image/png&quot;);
+imagepng($image);
+?&gt;
+</code></pre>
+<h2>Explain inheritance with examples.</h2>
+<p>In Inheritance  the new class can inherit the properties and methods from the
+old class.</p>
+<p>The old class is the base class also called a parent class and then the new
+class is a derived  class also called a subclass.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-php">&lt;?php
+  class Person {
+    var $name, $age;
+  }
+  class Employee extends Person {
+    var $salary, $designation;
+  }
+?&gt;
+</code></pre>
+<h2>Explain the concept of introspection in php with an example.</h2>
+<p>PHP Introspection is the ability of a program to examine an object’s
+characteristics such as its name, parent class (if any), properties and methods.</p>
+<p>Introspection  in PHP offers a useful Ability  to examine classes’ interfaces
+properties methods. With introspection we can write  code that operates on any
+object or class.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-php">&lt;?php
+  if (class_exists('MyClass')) {
+    $myclass = new MyClass();
+  }
+?&gt;
+</code></pre>
+<h2>How to use overloading and overriding functions in php?</h2>
+<h2>Overloading</h2>
+<p>Method overloading is the ability to create a multiple function
+of the same name with a different implementation  depending upon the types of
+arguments.</p>
+<p>How to use overloading in PHP?</p>
+<pre><code class="language-php">&lt;?php
+class First {
+  function func() {
+    echo &quot;Hello World&quot;;
+  }
+}
+
+class Second extends First {
+  function func() {
+    echo &quot;Bye World&quot;;
+  }
+}
+
+$o = new Second;
+$o-&gt;func();
+</code></pre>
+<p>O/P</p>
+<pre><code>Bye World
+</code></pre>
+<h2>Overriding</h2>
+<p>In function overriding, both parent and child classes should have the same
+function name with and number of arguments. It is used to replace the parent
+method in child class.</p>
+<pre><code class="language-php">&lt;?php
+&lt;?php
+class First {
+  function func() {
+    echo &quot;Hello World&quot;;
+  }
+}
+
+class Second extends First {
+  function func() {
+    echo &quot;Bye World&quot;;
+  }
+}
+
+$f = new First;
+$s = new Second;
+$f-&gt;func();
+$s-&gt;func();
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>Hello World
+Bye World
+</code></pre>
+<h2>How to use the flip function in php.</h2>
+<p>The array_flip function flips/All keys with their associated values in array.</p>
+<p>This function is very useful when we have a big/ large array.and we want to
+know if a given value  is in the array.</p>
+<p><strong>Syntax</strong>:</p>
+<pre><code>array_flip(array_name)
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="language-php">&lt;?php
+  $a = array(&quot;a&quot;);
+  print_r(array_flip($a));  //flip function is used
+?&gt;
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>Array( [0]=&gt; a )
+</code></pre>
+<h2>How to define properties and methods of a class? Explain with suitable examples.</h2>
+<ol>
+<li>Objects have access to special variables called. properties.</li>
+<li>A property Can be valued as an array and even another object.</li>
+<li>All properties go inside the curly braces.</li>
+<li>The characteristics of a class are known as its properties.</li>
+</ol>
+<p><strong>Example:</strong></p>
+<pre><code class="language-php">&lt;?php
+  class Student {
+    var $roll_no;
+    var $name;
+    function display() {
+      echo &quot;Roll No: &quot; . $this-&gt;roll_no. &quot;&lt;br&gt;&quot;;
+      echo &quot;Name: &quot; $this-&gt;name;
+    }
+  }
+
+  $s1 = new Student;
+  $s1-&gt;roll_no = 10;
+  $s1-&gt;name = &quot;Amar&quot;;
+  $si-&gt;display();
+?&gt;
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>Roll No: 10
+Name: Amar
+</code></pre>
+<p>A class method is exactly similar to PHP functions.</p>
+<ol>
+<li>Method is a function defined within the class.</li>
+<li>Methods on the other hand are functions that operate on the data.</li>
+<li>Method is also written within the braces {}.</li>
+</ol>
+<p>The method can be accessed from outside the class.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-php">&lt;?php
+class Person {
+	public $age = 25;
+
+	public function printAge() {
+		echo &quot;The age is: $this-&gt;age&quot;;
+	}
+}
+
+$person = new Person;
+$person-&gt;age = 20;
+$person-&gt;printAge();
+?&gt;
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>The age is: 20
+</code></pre>
+<h2>Explain the arithmetic operators that can be used in php with examples.</h2>
+<p>The PHP arithmetic operators are used with numeric values to perform common
+arithmetical operations, such as addition, subtraction, multiplication etc.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-php">&lt;?php
+  $a = 42;
+  $b = 20;
+
+  $c = $a + $b;
+  echo &quot;Addition is: $c &lt;br/&gt;&quot;;
+  $c = $a - $b;
+  echo &quot;Subtraction is: $c &lt;br/&gt;&quot;;
+  $c = $a * $b;
+  echo &quot;Multiplication is: $c &lt;br/&gt;&quot;;
+  $c = $a / $b;
+  echo &quot;Division is: $c &lt;br/&gt;&quot;;
+  $c = $a % $b;
+  echo &quot;Modulus is: $c &lt;br/&gt;&quot;;
+?&gt;
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>Addition is: 62
+Subtraction is: 22
+Multiplication is: 840
+Division is: 2.1
+Modulus is: 2
+</code></pre>
+<h2>What is the use of anonymous functions in php? Explain with examples.</h2>
+<p>Anonymous functions, also known as closures, allow the creation of functions
+which have no specified name. They are most useful as the value of callable
+parameters, but they have many other uses.</p>
+<pre><code class="language-php">&lt;?php
+$func = function () { echo &quot;Hello World&quot;; };
+$func();
+</code></pre>
+<p>O/P</p>
+<pre><code>Hello World
+</code></pre>
+<h2>Explain cloning objects with examples.</h2>
+<p>Object cloning is the process in PHP to create a copy of an object. An object
+copy is created by using the clone keyword when the object is cloned PHP will
+perform Shallow copy  of all the object properties and properties that are
+referenced to their variables will remain references.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-php">&lt;?php
+class Obj {
+  public $name;
+}
+
+$o = new Obj;
+$c = clone $o;
+
+$o-&gt;name = &quot;Jonney&quot;;
+$c-&gt;name = &quot;Jone&quot;;
+
+echo &quot;Origenal: &quot;.$o-&gt;name.&quot;, Clone: &quot;.$c-&gt;name;
+?&gt;
+</code></pre>
+<p>O/P</p>
+<pre><code>Origenal: Jonney, Clone: Jone
+</code></pre>
+<h2>Explain indexed and associative arrays with examples.</h2>
+<p>Indexed array: An array having only integer keys is typically referred to as an
+indexed array and index arrays can store numbers, drinks and any object but
+their index will be represented by number.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-php">&lt;?php
+  $colors = array(&quot;Red&quot;);
+  print_r($colors);
+?&gt;
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>Array ( [0] =&gt; Red )
+</code></pre>
+<p>The associative arrays are very similar to numeric arrays in terms of
+functionality but they are different in terms of their index. Associative arrays
+will have their index as string so that you can establish a strong association
+between key and values.</p>
+<pre><code class="language-php">&lt;?php
+  $ages = array( &quot;Peter&quot;=&gt;22 );
+  print_r($ages);
+?&gt;
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>Array ( [Peter] =&gt; 22 )
+</code></pre>
+<h2>How to define constructor and destructor in php with an example?</h2>
+<ul>
+<li><strong>constructor</strong> - When we create a new object it is useful to initialize its
+properties.</li>
+<li><strong>destructor</strong> - The destructor method will be called as soon as there are no
+other references to a particular object.</li>
+</ul>
+<pre><code class="language-php">&lt;?php
+class Obj {
+  function __construct() {
+    echo &quot;Class created&quot;;
+  }
+
+  function __destruct() {
+    echo &quot;Class destroyed&quot;;
+  }
+}
+
+$o = new Obj;
+?&gt;
+</code></pre>
+<p>O/P</p>
+<pre><code>Class Created
+Class Destroyed
+</code></pre>
+<h2>Explain the following string function with an example.</h2>
+<ol>
+<li>strpos()</li>
+<li>strlen()</li>
+<li>strcmp()</li>
+<li>str_word_count()</li>
+<li>strpos()</li>
+</ol>
+<ul>
+<li><strong>strpos()</strong> - Returns the position of the first occurrence of a string.</li>
+<li><strong>strlen()</strong> - Returns the length of a string.</li>
+<li><strong>strcmp()</strong> - Compares two strings.</li>
+<li><strong>str_word_count()</strong> - Count the number of words in a string.</li>
+<li><strong>strrpos()</strong> - Finds the position of the last occurrence of a string.</li>
+</ul>
+<pre><code class="language-php">&lt;?php
+echo strpos(&quot;Hello World&quot;, &quot;Hello&quot;);
+echo strlen(&quot;Hello World&quot;);
+echo strcmp(&quot;Hello World&quot;, &quot;Hello World&quot;);
+echo str_word_count(&quot;Hello World&quot;);
+echo strrpos(&quot;Hello World&quot;, &quot;Hello&quot;);
+</code></pre>
+<p>O/P</p>
+<pre><code>0
+11
+0
+2
+0
+</code></pre>
+<h2>Write a program using a foreach loop.</h2>
+<p><strong>Example:</strong></p>
+<pre><code class="language-php">&lt;?php
+$a = array(1, 2, 3, 4, 5);
+foreach ($a as $n) {
+  echo $n;
+}
+</code></pre>
+<p>O/P</p>
+<pre><code>12345
+</code></pre>
+<h2>Explain serialization with suitable examples.</h2>
+<p>A string representation of any object in the form of byte-stream is obtained by
+serialize() function in PHP. All property variables of the object are contained
+in the string and methods are not saved. This string can be stored in any file.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-php">&lt;?php
+echo serialize(array(&quot;Red&quot;));
+?&gt;
+</code></pre>
+<p>O/P</p>
+<pre><code>a:1:{i:0;s:3:&quot;Red&quot;;}
+</code></pre>
+<h2>Define <code>imagecolorallocate()</code> function along with suitable examples.</h2>
+<p><code>imagecolorallocate()</code> function is another inbuilt PHP function mainly used to
+implement a new color to an image. It returns the color of an image in an RGB
+format (RED GREEN BLUE).</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-php">&lt;?php
+  $im = imagecreate(100, 100);
+  // sets background to red
+  $background = imagecolorallocate($im, 255, 0, 0);
+  // sets some colors
+  $white = imagecolorallocate($im, 255, 255, 255);
+  $black = imagecolorallocate($im, 0, 0, 0);
+  // hexadecimal way
+  $white = imagecolorallocate($im, 0xFF, 0xFF, 0xFF);
+  $black = imagecolorallocate($im, 0x00, 0x00, 0x00);
+?&gt;
+</code></pre>
+<h2>Write a program to create a filled rectangle.</h2>
+<pre><code class="language-php">&lt;?php
+$image = imagecreatetruecolor(500, 300);
+imagefilledrectangle($image, 20, 20, 480, 280);
+header(&quot;Content-type: image/png&quot;);
+imagepng($image);
+?&gt;
+</code></pre>
+<h2>Explain any three data types used in php.</h2>
+<ol>
+<li><strong>Integer:</strong> integer data type used to specify a numeric value  without a fractional component the range of integers.</li>
+<li><strong>Strings:</strong> a string is a sequence of characters where characters are the same as a byte.</li>
+<li><strong>Boolean:</strong>   boolean  value can be either true or false both are  case-insensitive.</li>
+</ol>
+<h2>Differentiate between implode and explode function.</h2>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>Implode</th>
+<th>Explode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>The implode() function returns a string from the elements of an array.</td>
+<td>explode function breaks a string  into smaller parts and stores it  as an array.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>The implode() function accepts its  parameters in either order.  However, for consistency with explode(),  you should use the documented order of  arguments.</td>
+<td>The explode() function splits  these strings based on a specific  delimiter and returns an array that  contains elements which are sustained  by the splitting operation.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>syntax :-string implode (pieces)</td>
+<td>array explode (delimiter, string, limit)</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Example</strong>:  <code>php &lt;?php $arr = array(&quot;I&quot;, &quot;love&quot;, &quot;PHP.&quot;); $pole = implode(&quot; &quot;, $arr); \ echo &quot;$pole&quot;; ?&gt; </code>  Output: I love PHP.</td>
+<td>Example: <?php  $string = "I love php."; $pole = explode(" ", $string); \ \ print_r($pole); ?>  Output: Array ( [0] =&gt; I [1] =&gt; love [2] =&gt; php. )</td>
+</tr>
+</tbody>
+</table>
+<h2>State the variable function. Explain it with an example.</h2>
+<p>PHP supports the concept of variable function means that we can call a function
+based on a value of a variable if a variable name has a round parentheses
+appended to it PHP will look for a function with the same name as a whatever
+variable Evaluates to and will attempt to execute it.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-php">&lt;?php
+  function add($x, $y){
+    echo $x + $y;
+  }
+  $var =  &quot;add&quot;;
+  $var(10,20);
+?&gt;
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>30
+</code></pre>]]></description>
+  </item>
+  <item>
     <title>Notes</title>
     <link>https://anzenkodo.github.io/notes/coding/php/notes.html</link>
-    <pubDate>2022-12-12T14:33:19.576Z</pubDate>
+    <pubDate>2022-12-12T15:07:43.999Z</pubDate>
     <description><![CDATA[<h1>1. Expressions and Control Statements in PHP</h1>
 <h2>1. What is web application?</h2>
 <ul>
@@ -2874,7 +2874,7 @@ if (mysqli_num_rows($result)) {
   <item>
     <title>Pratical Sem6</title>
     <link>https://anzenkodo.github.io/notes/coding/php/pratical-sem6.html</link>
-    <pubDate>2022-12-12T14:33:19.576Z</pubDate>
+    <pubDate>2022-12-12T15:07:43.999Z</pubDate>
     <description><![CDATA[<h2>1. Write a PHP program using expressions and operator (ternary operator, arithmetic operators and comparison operators)</h2>
 <pre><code class="language-php">&lt;?php
   echo 1 &gt; 2 ? 1 : 2;
@@ -3430,7 +3430,7 @@ mysqli_close();
   <item>
     <title>Final</title>
     <link>https://anzenkodo.github.io/notes/coding/php/final.html</link>
-    <pubDate>2022-12-12T14:33:19.576Z</pubDate>
+    <pubDate>2022-12-12T15:07:43.999Z</pubDate>
     <description><![CDATA[<h1>PHP</h1>
 <h2>Attempt any FIVE :</h2>
 <h3>(a) Describe advantage of PHP.</h3>
