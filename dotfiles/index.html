@@ -124,50 +124,50 @@ sudo nixos-rebuild switch
   <a name="file-structure" class="header-anchor a-no-underline" href="#file-structure">File Structure</a>
 </h3><pre>
 <!--TREE:START-->dotfiles
- ├─> browser
- │   ├── Extensions.bak
- │   └── Bookmarks.bak
- ├─> bin
- │   ├── wallpaper.js
- │   ├── emoji
- │   ├── setup
- │   ├── autostart
- │   ├── backup
- │   ├── note
- │   └── chrome_extensions_backup.js
- ├─> nix
- │   ├── home.nix
- │   ├── packages.nix
- │   ├── system.nix
- │   ├── theme.nix
- │   ├── fonts.nix
- │   └── configuration.nix
  ├─> shell
- │   ├── export.sh
  │   ├── profile.sh
+ │   ├── config.fish
  │   ├── alias.sh
- │   └── config.fish
+ │   └── export.sh
+ ├── git.init
+ ├─> browser
+ │   ├── Bookmarks.bak
+ │   └── Extensions.bak
+ ├─> kitty
+ │   ├── kitty.conf.bak
+ │   ├── kitty.conf
+ │   ├── shortcuts.conf
+ │   ├── unicode-input-favorites.conf
+ │   ├── unicode-input-favorites.conf.save
+ │   ├── settings.conf
+ │   └── current-theme.conf
+ ├─> qtile
+ │   ├─> modules
+ │   │   ├── layout.py
+ │   │   ├── hooks.py
+ │   │   ├── advance.py
+ │   │   ├── shortcuts.py
+ │   │   ├── screen.py
+ │   │   └── floating_layout.py
+ │   └── config.py
  ├─> helix
  │   ├── config.toml
  │   └── languages.toml
- ├─> qtile
- │   ├── config.py
- │   └─> modules
- │       ├── screen.py
- │       ├── hooks.py
- │       ├── shortcuts.py
- │       ├── floating_layout.py
- │       ├── layout.py
- │       └── advance.py
- ├── git.init
- └─> kitty
-     ├── current-theme.conf
-     ├── shortcuts.conf
-     ├── kitty.conf
-     ├── unicode-input-favorites.conf.save
-     ├── settings.conf
-     ├── unicode-input-favorites.conf
-     └── kitty.conf.bak<!--TREE:END-->
+ ├─> nix
+ │   ├── home.nix
+ │   ├── packages.nix
+ │   ├── configuration.nix
+ │   ├── system.nix
+ │   ├── theme.nix
+ │   └── fonts.nix
+ └─> bin
+     ├── note
+     ├── wallpaper.js
+     ├── setup
+     ├── chrome_extensions_backup.js
+     ├── autostart
+     ├── backup
+     └── emoji<!--TREE:END-->
 </pre>
 
 <!--BOOKMARKS:START-->
