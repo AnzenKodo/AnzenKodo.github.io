@@ -5,7 +5,7 @@
     <link>https://anzenkodo.github.io/notes/</link>
     <description>This my personal website where I post my notes about thing that I have learn.</description>
     <language>en-US</language>
-    <lastBuildDate>2022-12-16T23:31:58.669Z</lastBuildDate>
+    <lastBuildDate>2022-12-17T00:30:48.999Z</lastBuildDate>
     <image>
       <url>https://anzenkodo.github.io/notes/favicon.png</url>
       <title>AK#Notes</title>
@@ -18,7 +18,7 @@
       <item>
     <title>Home</title>
     <link>https://anzenkodo.github.io/notes/</link>
-    <pubDate>2022-12-16T23:31:58.669Z</pubDate>
+    <pubDate>2022-12-17T00:30:48.999Z</pubDate>
     <description><![CDATA[<p>This my personal website where I post my notes about thing that I have learn.</p>
 <h2>Features</h2>
 <ul>
@@ -402,9 +402,1467 @@ colspan="3"><strong>30–32</strong> ATP</td> </tr> </tbody> </table>
   <td></td> <td>♖</td> </tr> </tbody> </table>]]></description>
   </item>
   <item>
+    <title>UT1 6S</title>
+    <link>https://anzenkodo.github.io/notes/programming/languages/python/ut1-6s.html</link>
+    <pubDate>2022-12-17T00:30:48.999Z</pubDate>
+    <description><![CDATA[<p><strong>Note: WAP (write a program)</strong></p>
+<h2>WAP to print Fibonacci Series</h2>
+<pre><code class="language-python">term = int(input(&quot;Enter the term: &quot;))
+
+n1, n2 = 0, 1
+
+if term &lt; 0:
+    print(&quot;Invalid term&quot;)
+else:
+    for i in range(term):
+        print(n1)
+        nth = n1 + n2
+        n1 = n2
+        n2 = nth
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code>Enter the term: 7
+0
+1
+1
+2
+3
+5
+8
+</code></pre>
+<h2>Factorial of a number</h2>
+<pre><code class="language-python">n = int(input(&quot;Enter the number: &quot;))
+f = 1
+
+for i in range(1, n + 1):
+    f = f * i
+
+print(f)
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code>Enter the number: 6
+720
+</code></pre>
+<h2>Perform <code>intersection()</code>, <code>union()</code>, <code>difference()</code>, <code>symmetric_difference()</code> on <code>set</code></h2>
+<pre><code class="language-python">set1 = {1, 5, 8, &quot;Google&quot;, 9, 6}
+set2 = {1, &quot;Google&quot;, 6, 3, 2, 11}
+
+i = set1.intersection(set2)
+u = set1.union(set2);
+d = set1.difference(set2)
+s = set1.symmetric_difference(set2)
+
+set1.clear()
+
+print(&quot;Intersection =&quot;, i);
+print(&quot;Union =&quot;, u);
+print(&quot;Set Difference =&quot;, d);
+print(&quot;Symmetric Difference =&quot;, s);
+print(&quot;Clear Set =&quot;, set1);
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code>Intersection =  {1, 'Google', 6}
+Union =  {1, 2, 3, 5, 6, 8, 9, 11, 'Google'}
+Set Difference =  {8, 9, 5}
+Symmetric Difference =  {2, 3, 5, 8, 9, 11}
+Clear Set =  set()
+</code></pre>
+<h2>WAP that takes the marks of 5 Subjects and displays the grade</h2>
+<pre><code class="language-python">sub1 = int(input(&quot;Enter marks of subject 1: &quot;))
+sub2 = int(input(&quot;Enter marks of subject 2: &quot;))
+sub3 = int(input(&quot;Enter marks of subject 3: &quot;))
+sub4 = int(input(&quot;Enter marks of subject 4: &quot;))
+sub5 = int(input(&quot;Enter marks of subject 5: &quot;))
+
+total = ((sub1 + sub2 + sub3 + sub4 + sub5) / 5)
+print(&quot;\nPercentage is&quot;, total)
+
+if total &gt; 75:
+    print(&quot;Distinction&quot;)
+elif total &gt;= 65 and total &lt; 75:
+    print(&quot;First Class&quot;)
+elif total &gt;= 50 and total &lt; 60:
+    print(&quot;Second Class&quot;)
+elif total &gt;=35 and total &lt; 50:
+    print(&quot;Third Class&quot;);
+else:
+    print(&quot;Fail&quot;)
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code>Enter marks of subject 1: 57
+Enter marks of subject 2: 78
+Enter marks of subject 3: 87
+Enter marks of subject 4: 50
+Enter marks of subject 5: 70
+
+Percentage is 68.4
+First Class
+</code></pre>
+<h2>Explain features of python</h2>
+<ol>
+<li>Python is easy to use and a high level programming language.</li>
+<li>Python is interpreted language</li>
+<li>Interactive mode</li>
+<li>Free and Open Source</li>
+<li>Platform independence</li>
+<li>Portable</li>
+<li>Object oriented language</li>
+</ol>
+<h2>WAP to check whether entered character is vowel or not</h2>
+<pre><code class="language-python">ch = input(&quot;Enter the character: &quot;).lower()
+
+if(ch == 'a' or ch == 'e' or ch == 'i' or ch == 'o' or ch == 'u'):
+    print(&quot;Entered character is vowel.&quot;)
+else:
+    print(&quot;Entered character is not a vowel.&quot;)
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code>Enter character: a
+Entered character is a vowel.
+</code></pre>
+<h2>WAP to check number is prime or not</h2>
+<pre><code class="language-python">num = int(input(&quot;Enter a number: &quot;));
+
+if num &gt; 1:
+    for i in range(2, num):
+        if (num % i) == 0:
+            print(num, &quot;is not a prime number.&quot;)
+            break;
+    else:
+        print(num, &quot;is prime number.&quot;)
+else:
+    print(num, &quot;is not a prime number.&quot;);
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code>Enter the number: 11
+11 is a prime number.
+</code></pre>
+<h2>WAP checks whether the number is palindrome or not.</h2>
+<pre><code class="language-python">n = input(&quot;Enter number: &quot;)
+rev = n[ : :-1]
+
+if rev == n:
+    print(n, &quot;is a palindrome.&quot;)
+else:
+    print(n, &quot;is not a palindrome.&quot;)
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code>Enter number: 33
+33 is a palindrome.
+</code></pre>
+<h2>WAP to perform following operation on list</h2>
+<ol>
+<li><strong>max()</strong> - Find largest number</li>
+<li><strong>reverse()</strong> - Find  Reverse of the list</li>
+<li><strong>i % 2</strong> - Select even item of the list</li>
+<li><strong>sum()</strong> - Sum of all item in a list</li>
+</ol>
+<h3>Find largest number</h3>
+<pre><code class="language-python">a = [8,2,5,1,2,4,6,11]
+print(&quot;Largest number&quot;, max(a))
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code>Largest number 11
+</code></pre>
+<h3>Reverse list</h3>
+<pre><code class="language-python">a = [8,2,5,1,2,4,6,11]
+a.reverse()
+print(&quot;Reverse list&quot;, a)
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code>Reverse list [11, 6, 4, 2, 1, 5, 2, 8]
+</code></pre>
+<h3>Even items</h3>
+<pre><code class="language-python">a = [8,2,5,1,2,4,6,11]
+
+for i in a:
+  if (i % 2) == 0:
+    print(i)
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code>8
+2
+2
+6
+4
+</code></pre>
+<h3>Sum of all items</h3>
+<pre><code class="language-python">a = [8,2,5,1,2,4,6,11]
+print(&quot;Sumof all items:&quot;, sum(a))
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>Sum of all items: 39
+</code></pre>
+<h2>Compare list and sets</h2>
+<table>
+<thead>
+<tr>
+<th>Lists</th>
+<th>Sets</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lists are Ordered.</td>
+<td>Sets are Unordered.</td>
+</tr>
+<tr>
+<td>Lists are Mutable.</td>
+<td>Sets are mutable but only stored immutable elements.</td>
+</tr>
+<tr>
+<td>Elements can be changed or replaced in Lists.</td>
+<td>Elements cannot be changed or replaced.</td>
+</tr>
+</tbody>
+</table>
+<h2>Describe various list functions</h2>
+<ol>
+<li><strong>extend()</strong> - add  all elements of of list to the another list</li>
+<li><strong>insert()</strong> - insert and item from the list</li>
+<li><strong>clear()</strong> - removes all elements from the list</li>
+<li><strong>copy()</strong> - returns a copy of the list</li>
+<li><strong>reverse()</strong> - reverse the order of element in the list</li>
+<li><strong>sort()</strong> - sort the element list</li>
+</ol>
+<p><strong>Note:</strong> <strong>Given below example will not come in exam. This is only for reference.</strong></p>
+<h3>extend()</h3>
+<pre><code class="language-python">list1 = [1, 5, 8, 9, 6]
+list2 = [1, 6, 3, 2, 11]
+
+list1.extend(list2)
+print(&quot;Extend:&quot;, list1)
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>Extend: [1, 5, 8, 9, 6, 1, 6, 3, 2, 11]
+</code></pre>
+<h3>insert()</h3>
+<pre><code class="language-python">list1 = [1, 5, 8, 9, 6]
+
+list1.insert(3, 100)
+print(&quot;Insert:&quot;, list1)
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>Insert: [1, 5, 8, 100, 9, 6]
+</code></pre>
+<h3>clear()</h3>
+<pre><code class="language-python">list1 = [1, 5, 8, 9, 6]
+
+list1.clear()
+print(&quot;Clear:&quot;, list1)
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>Clear: []
+</code></pre>
+<h3>reverse()</h3>
+<pre><code class="language-python">list1 = [1, 5, 8, 9, 6]
+
+list1.reverse()
+print(&quot;Reverse:&quot;, list1)
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>Reverse: [6, 9, 8, 5, 1]
+</code></pre>
+<h3>sort()</h3>
+<pre><code class="language-python">list1 = [1, 5, 8, 9, 6]
+
+list1.sort()
+print(&quot;Sort:&quot;, list1)
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>Sort: [1, 5, 6, 8, 9]
+</code></pre>
+<h2>Write a program convert US Dollars to Indian Rupees.</h2>
+<pre><code class="language-python">usd = float(input(&quot;Enter currency in USD: &quot;))
+inr = usd * 75
+print(&quot;The currency in INR is&quot;, inr)
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code>Enter currency in USD: 2
+The currency in INR: 150.0
+</code></pre>
+<h2>Explain operator in python</h2>
+<p>An operator is Single set of special symbols that performs predefined
+operations  on operators. Python provides a variety of operators, which are
+described as follows.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Operators</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arithmetic operators</td>
+<td>+, -, *, /, %, **, //</td>
+</tr>
+<tr>
+<td>Assignment Operators</td>
+<td>+=, =, -=, /=, //=</td>
+</tr>
+<tr>
+<td>Logical Operators</td>
+<td>and, or, not</td>
+</tr>
+<tr>
+<td>Bitwise Operators</td>
+<td>&amp;, &gt;&gt;, &lt;&lt;, ^</td>
+</tr>
+<tr>
+<td>Membership Operators</td>
+<td>in, not in</td>
+</tr>
+<tr>
+<td>Identity Operators</td>
+<td>is, is not</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong> <strong>Given below example will not come in exam. This is only for reference.</strong></p>
+<h3>Arithmetic operators</h3>
+<pre><code class="language-python">num1 = int(input(&quot;Enter first number: &quot;))
+num2 = int(input(&quot;Enter second number: &quot;))
+
+print(num1, &quot;+&quot;, num2, &quot;=&quot;, num1 + num2)
+print(num1, &quot;-&quot;, num2, &quot;=&quot;, num1 - num2)
+print(num1, &quot;*&quot;, num2, &quot;=&quot;, num1 * num2)
+print(num1, &quot;/&quot;, num2, &quot;=&quot;, num1 / num2)
+print(num1, &quot;%&quot;, num2, &quot;=&quot;, num1 % num2)
+print(num1, &quot;**&quot;, num2, &quot;=&quot;, num1 ** num2)
+print(num1, &quot;//&quot;, num2, &quot;=&quot;, num1 // num2)
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>Enter first number: 10
+Enter second number: 10
+10 + 10 = 20
+10 - 10 = 0
+10 * 10 = 100
+10 / 10 = 1.0
+10 % 10 = 0
+10 ** 10 = 10000000000
+10 // 10 = 1
+</code></pre>
+<h3>Assignment Operators</h3>
+<pre><code class="language-python">a = 3
+b = 5
+
+a += b
+
+print(a)
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>8
+</code></pre>
+<h3>Logical Operators</h3>
+<pre><code class="language-python">num1 = int(input(&quot;Enter first number: &quot;))
+num2 = int(input(&quot;Enter second number: &quot;))
+
+if (num1 &lt; num2 and num1 &lt;= num2):
+    print(num1, &quot;&lt;&quot;, num2, &quot;and&quot;, num1, &quot;&lt;=&quot;, num2)
+elif (num1 &gt; num2 or num1 &gt;= num2):
+    print(num1, &quot;&gt;&quot;, num2, &quot;or&quot;, num1, &quot;&gt;=&quot;, num2)
+elif not(num1 &lt; num2 and num1 &lt;=num2):
+    print(&quot;Not:&quot;, num1, &quot;&lt;&quot;, num2, &quot;and&quot;, num1, &quot;&lt;=&quot;, num2)
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>Enter first number: 10
+Enter second number: 1
+10 &gt; 1 or 10 &gt;= 1
+</code></pre>
+<h3>Bitwise Operators</h3>
+<pre><code class="language-python">num1 = int(input(&quot;Enter first number: &quot;))
+num2 = int(input(&quot;Enter second number: &quot;))
+
+print(num1, &quot;&amp;&quot;, num2, &quot;=&quot;, num1 &amp; num2)
+print(num1, &quot;|&quot;, num2, &quot;=&quot;, num1 | num2)
+print(num1, &quot;^&quot;, num2, &quot;=&quot;, num1 ^ num2)
+print(num1, &quot;&gt;&gt;&quot;, num2, &quot;=&quot;, num1 &gt;&gt; num2)
+print(num1, &quot;&lt;&lt;&quot;, num2, &quot;=&quot;, num1 &lt;&lt; num2)
+print(&quot;~&quot;,num1, &quot;=&quot;, ~num1)
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>Enter first number: 10
+Enter second number: 10
+10 &amp; 10 = 10
+10 | 10 = 10
+10 ^ 10 = 0
+10 &gt;&gt; 10 = 0
+10 &lt;&lt; 10 = 10240
+~ 10 = -11
+</code></pre>
+<h3>Membership Operators</h3>
+<pre><code class="language-python">x = [&quot;apple&quot;, &quot;banana&quot;]
+y = [&quot;pineapple&quot;, &quot;orange&quot;]
+
+print(&quot;apple in x:&quot;, &quot;apple&quot; in x)
+print(&quot;pineapple not in x:&quot;, &quot;pineapple&quot; not in x)
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>apple in x: True
+pineapple not in x: True
+</code></pre>
+<h3>Identity Operators</h3>
+<pre><code class="language-python">x = [&quot;apple&quot;, &quot;banana&quot;]
+y = [&quot;pineapple&quot;, &quot;orange&quot;]
+
+print(&quot;x is y:&quot;, x is y)
+print(&quot;x is not y:&quot;, x is not y)
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>x is y: False
+x is not y: True
+</code></pre>
+<h2>Explain <code>continue</code>, <code>pass</code>, <code>break</code>, <code>else</code> with example.</h2>
+<h3>continue</h3>
+<p>The **continue **statement skips the code that comes after it, and the control
+is passed back to the next iteration.</p>
+<p><strong>Example</strong>:</p>
+<pre><code>for i in range(6):
+    if i == 7:
+        continue
+    print(&quot;The Number is:&quot; , i)
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code>The number is: 0
+The number is: 1
+The number is: 2
+The number is: 3
+The number is: 4
+The number is: 5
+The number is: 6
+</code></pre>
+<h3>pass</h3>
+<p>Python pass statement is used as a placeholder inside loops, functions, class,
+if-statement that is meant to be implemented later.</p>
+<p><strong>Example</strong>:</p>
+<pre><code>a = 10
+b = 20
+if a &lt; b:
+  pass
+else:
+  print(&quot;b &lt; a&quot;)
+</code></pre>
+<p><strong>Output</strong>:
+No output</p>
+<h3>break</h3>
+<p>The <strong>break</strong> statement takes care of terminating the loop in which it is used.
+If the break statement is used inside nested loops, the current loop is
+terminated, and the flow will continue with the code followed that comes after
+the loop.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-python">for i in range(4):
+    for j in range(4):
+        if j==2:
+            break
+        print(&quot;The number is&quot;, i, j)
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code>This number is 0 0
+This number is 0 1
+This number is 1 0
+This number is 1 1
+This number is 2 0
+This number is 2 1
+This number is 3 0
+This number is 3 1
+</code></pre>
+<h3>else</h3>
+<p>**else **statement can be combined with an if statement. An else statement
+contains the block of code that executes if the conditional expression in the
+if statement resolves to 0 or a FALSE value.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-python">num = 3
+if num &gt;= 0:
+    print(&quot;Positive or Zero&quot;)
+else:
+    print(&quot;Negative number&quot;)
+</code></pre>
+<p><strong>Output</strong>:</p>
+<pre><code>Positive or Zero
+</code></pre>
+<h2>Define dictionary explain <code>access</code>, <code>delete</code>, <code>update()</code> dictionary</h2>
+<p>Dictionary in Python is an unordered collection of data values, used to store
+data values like a map, which, unlike other Data Types that hold only a single
+value as an element, Dictionary holds key:value pair.</p>
+<h3>acces</h3>
+<p>You can access the items of a dictionary by referring to its key name</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-python">di = {&quot;Name&quot;: &quot;VIVA&quot;,&quot;Dept&quot;: &quot;TYCO&quot;, &quot;add&quot;:&quot;Virar&quot;, &quot;No&quot;:123}
+x = di[&quot;Name&quot;]
+print(x)
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>VIVA
+</code></pre>
+<h3>update()</h3>
+<p>Updates the dictionary with the specified key-value pairs</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-python">di = {&quot;Name&quot;: &quot;VIVA&quot;,&quot;Dept&quot;: &quot;TYCO&quot;, &quot;add&quot;:&quot;Virar&quot;, &quot;No&quot;: 123}
+di.update({&quot;No&quot;:456})
+print(di)
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>{'Name': 'VIVA', 'Dept': 'TYCO', 'add': 'Virar', 'No': 456}
+</code></pre>
+<h3>del</h3>
+<p>The del keyword is used delete the dictionary completely</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-python">di = {&quot;Name&quot;: &quot;VIVA&quot;, &quot;Dept&quot;: &quot;TYCO&quot;, &quot;add&quot;:&quot;Virar&quot;, &quot;No&quot;: 123}
+del di
+print(di)
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>NameError: name 'di' is not defined
+</code></pre>]]></description>
+  </item>
+  <item>
+    <title>UT2 6S</title>
+    <link>https://anzenkodo.github.io/notes/programming/languages/python/ut2-6s.html</link>
+    <pubDate>2022-12-17T00:30:48.999Z</pubDate>
+    <description><![CDATA[<h1>Python QB UT 2</h1>
+<h2>1. Explain scope of a variable in Python.</h2>
+<ul>
+<li>A variable is only available from inside the region it is created.</li>
+<li>This is called scope.</li>
+<li>There are two types of scopes in Python:</li>
+</ul>
+<h3>Local scope</h3>
+<ul>
+<li>A variable created inside a function belongs to the local scope, and can only
+be used inside that function.</li>
+<li>Example<pre><code class="language-python">def fun()
+  x=10 # X is local variable
+  print(x)
+
+fun()
+</code></pre>
+O/P<pre><code>10
+</code></pre>
+</li>
+</ul>
+<h3>Global scope</h3>
+<ul>
+<li>A variable created in the main body of the code is a global variable and
+belongs to the global scope.</li>
+<li>Global variables are available from within any scope global and local.</li>
+<li>Example:<pre><code class="language-python">a = 50 # a is global variable
+def fun()
+  print(a)
+
+fun()
+print(a)
+</code></pre>
+O/P<pre><code>50
+50
+</code></pre>
+</li>
+</ul>
+<h2>2. Define class, data hiding, method overloading, inheritance, data abstraction, numpy, pandas.</h2>
+<h3>i) <code>class</code></h3>
+<ul>
+<li>Class is a blueprint for the object.</li>
+<li>We define a class by using the keyword class.</li>
+<li>Class objects are used to access different attributes.</li>
+</ul>
+<h3>ii) Data Hiding</h3>
+<ul>
+<li>Data hiding is one of the important features of Object Oriented Programming
+which allows preventing the functions of a program to access directly the
+internal representation of a class type.</li>
+</ul>
+<h3>iii) Method Overloading</h3>
+<ul>
+<li>Overloading is the ability of a function or an operator to behave in different
+ways based on the parameters that are passed to the function, or the operands
+that the operator acts on.</li>
+</ul>
+<h3>iv) Inheritance</h3>
+<ul>
+<li>Inheritance refers to defining a new class with little or no modification to
+an existing class.</li>
+<li>The new class is called as derived or child class and the old class is called
+as base or parent class.</li>
+</ul>
+<h3>v) Data Abstraction</h3>
+<ul>
+<li>Data abstraction refers to providing only essential information about the data
+to the outside world and hiding the background details.</li>
+</ul>
+<h3>vi) Numpy</h3>
+<ul>
+<li>Numpy is a python package which stands for “Numerical Python”.</li>
+</ul>
+<h3>vii) Pandas</h3>
+<ul>
+<li>Pandas is an open source library that allows to perform data manipulation.</li>
+<li>Pandas library is built on the top of Numpy.</li>
+</ul>
+<h2>3. Explain Composition classes with program.</h2>
+<ul>
+<li>Composition class is composed of one of or more instance of other classes.</li>
+<li>In simple words, one class is container and other class is content, if we
+delete the container objects then all of its contents objects are also
+deleted.<pre><code class="language-python">class test:
+  def __init__(self, name, marks):
+    self.name = name
+    self.marks = marks
+
+class addr:
+  def __init__(self, ad, name, marks):
+    self.ad = ad
+    self.ob = test(name, marks)
+
+  def disp(self):
+    print(self.ad, self.ob.name, self.ob.marks)
+
+t = addr(&quot;Virar&quot;, &quot;ABC&quot;, 99)
+t.disp()
+</code></pre>
+O/P<pre><code>Virar ABC 99
+</code></pre>
+</li>
+</ul>
+<h2>4. WAP to create a file, write some contents in it and read the content from file.</h2>
+<pre><code class="language-python">o = open(&quot;name.txt&quot;, &quot;w&quot;)
+o.write(&quot;I am a programmer&quot;)
+o.close()
+o = open(&quot;name.txt&quot;, &quot;r&quot;)
+print(o.read())
+o.close()
+</code></pre>
+<p>O/P</p>
+<pre><code>I am a programmer
+</code></pre>
+<h2>5. WAP to check <code>ZeroDivisionError</code> Exception.</h2>
+<pre><code class="language-python">x = int (input(&quot;x:&quot;))
+y = int(input(&quot;y:&quot;))
+
+try:
+  x/y
+except ZeroDivisionError:
+  print(&quot;Error: Division by Zero&quot;)
+else:
+  print(x/y)
+</code></pre>
+<p>O/P</p>
+<pre><code>x: 0
+y: 0
+
+Error: Divison by Zero
+</code></pre>
+<h2>6. WAP to throw an exception if age&lt;18 (using raise).</h2>
+<pre><code class="language-python">age = int(input(&quot;Age:&quot;))
+try:
+  if age &lt; 18:
+    raise Exception
+except Exception:
+  print(&quot;Too small to vote!!&quot;)
+else:
+  print(&quot;You can vote!!&quot;)
+</code></pre>
+<h2>7. List different modes of opening file.</h2>
+<p>Following are the different modes of opening file:</p>
+<ul>
+<li><code>r</code></li>
+<li><code>rb</code></li>
+<li><code>r+</code></li>
+<li><code>rb+</code></li>
+<li><code>w</code></li>
+<li><code>wb</code></li>
+<li><code>wb</code></li>
+<li><code>w+</code></li>
+<li><code>wb+</code></li>
+</ul>
+<h2>8. WAP to create class animal having method feed that prints ‘I eat food’. It has a sub class herbivorous having method feed that prints “I eat only plants”. Call the method by creating an object of each of the classes.</h2>
+<pre><code class="language-python">class animal:
+  def feed(self):
+    print(&quot;I eat food&quot;)
+
+class herbivorous(animal):
+  def feed(self):
+    print(&quot;I eat only plants&quot;)
+
+a = animal()
+a.feed()
+h = herbivorous()
+h.feed()
+</code></pre>
+<h2>9. WAP to create base classes namely add, mul having method addition and multiplication that prints addition and multiplication respectively. Derive a class derived from add and mul that has method divide and returns division. Create object and call methods.</h2>
+<pre><code class="language-python">class add:
+  def addition(self, a, b):
+    self.a = a
+    self.b = b
+    print(self.a + self.b)
+
+class mul:
+  def multiplication(self, a, b):
+    self.a = a
+    self.b = b
+    print(self.a * self.b)
+
+class derived(add, mul):
+  def divide(self, a, b)
+    self.a = a
+    self.b = b
+    return self.a / self.b
+
+d = derived()
+print(d.divide(28, 4))
+d.multiplication(2, 4)
+d.addition(5, 6)
+</code></pre>
+<p>O/P</p>
+<pre><code>7.0
+8
+11
+</code></pre>
+<h2>10. WAP to implement multilevel inheritance.</h2>
+<pre><code class="language-python">class Student:
+  def accept(self):
+    self.roll = 10
+
+class Test(Student):
+  def getdata(self):
+    self.name = &quot;ABC&quot;
+
+class Result(Test):
+  def info(self):
+    self.marks = 99
+  def disp(self):
+    print(self.roll, self.name, self.marks)
+
+r = result()
+r.accept()
+r.getdata()
+r.info()
+r.disp()
+</code></pre>
+<p>O/P</p>
+<pre><code>10 ABC 99
+</code></pre>
+<h2>11. Create a 3x4 matrix of random values using numpy and perform following:</h2>
+<ol>
+<li>print type of array</li>
+<li>print dimension</li>
+<li>print shape</li>
+<li>print size</li>
+<li>print type of elements</li>
+<li>sort row wise</li>
+<li>print min, max, sum, flatten</li>
+</ol>
+<pre><code class="language-python">import numpy as n
+
+p = n.random.randint(30, size = (3, 3))
+print(p)
+print(type(p))
+print(p.ndim)
+print(p.shape)
+print(p.size)
+print(n.dtype)
+print(n.sort(p))
+pritt(p.min())
+print(p.max())
+print(sum(p))
+print(p.flatten())
+</code></pre>
+<p>O/P</p>
+<pre><code>[[10, 20, 21]
+ [14, 15, 13]
+ [23, 24, 29]]
+&lt;class 'numpy.ndarray'&gt;
+2
+(3, 3)
+9
+int64
+[[10, 20, 21]
+ [13, 14, 15]
+ [23, 24, 29]]
+10
+29
+[51 42 76]
+[10 20 21 14 15 13 23 24 29]
+</code></pre>
+<h2>12. WAP that accepts a string and calculate the number of upper and lower case letters (string=&quot;Viva College)</h2>
+<pre><code class="language-python">c = input(&quot;Enter string.&quot;)
+u = 0
+i = 0
+
+for i in c:
+  if (i.isupper()):
+    u += 1
+  if (i.islower()):
+    i += 1
+
+print(&quot;Upper case letters are&quot;, u)
+print(&quot;Lower case letters are&quot;, i)
+</code></pre>
+<h2>13. WAP to generate a random float where the value is between 5 and 50</h2>
+<pre><code class="language-python">import random
+a = random.uiform(5, 50)
+print(a)
+</code></pre>
+<p>O/P</p>
+<pre><code>20.80854522266047
+</code></pre>
+<h2>14. Plot a line from position (10, 33) to position (80, 65) with following:</h2>
+<ol>
+<li>marker - 0</li>
+<li>line-dotted, line color-red</li>
+<li>x-label: student, y-label marks.</li>
+<li>Add grid lines</li>
+</ol>
+<pre><code class="language-python">import matplotlib.pylot as p
+import numpy as n
+
+x = n.array([10, 33])
+y = n.array([80, 64])
+
+p.xlabel(&quot;Student&quot;)
+p.ylable(&quot;Marks&quot;)
+p.plot(x, y, marker = 'o', linestyle = 'dotted', color = 'r')
+p.grid()
+p.show()
+</code></pre>
+<h2>15. WAP to print 3x3 matrix with o at border and I inside.</h2>
+<pre><code class="language-python">import numpy as n
+a = n.zeros((3, 3))
+a[1:-1, 1:-1] = 1
+print(a)
+</code></pre>
+<p>O/P</p>
+<pre><code>[[0. 0. 0.]
+ [0. 1. 0.]
+ [0. 0. 0.]]
+</code></pre>
+<h2>16. WAP to create matrix with values 2-10.</h2>
+<pre><code class="language-python">import numbpy as n
+a = n.arange(2, 11).reshape(3, 3)
+print(a)
+</code></pre>
+<p>O/P</p>
+<pre><code>[[2 3 4]
+ [5 6 7]
+ [8 9 10]]
+</code></pre>
+<h2>17. Explain Exception Handling in python.</h2>
+<ul>
+<li>When we executes a Python program, there may be a few uncertain conditions
+which occur, known as errors. Errors also referred to as bugs that are
+incorrect or inaccurate action that may cause the problems in the running of
+the program of program or may interrupt the execution of program.</li>
+<li>There are three types of error:
+<ul>
+<li>i) Compile Time Errors.</li>
+<li>ii) Run Time Errors.</li>
+<li>iii) Logical Errors.</li>
+</ul>
+</li>
+<li>Errors occured at runtime are known as exception. Exception handling is a
+feature that is used for handling any unreported errors in program.</li>
+<li>By handling the exceptions, we can provide a meaningful message to the user
+about the problem rather than system generated error message, which may not be
+understandable to the user.</li>
+<li>Exception can be either built-in exception or user defined exceptions.</li>
+</ul>]]></description>
+  </item>
+  <item>
+    <title>Final</title>
+    <link>https://anzenkodo.github.io/notes/programming/android/final.html</link>
+    <pubDate>2022-12-17T00:30:48.999Z</pubDate>
+    <description><![CDATA[<h1>1. Attempt any FIVE of the following: 10</h1>
+<h2>a) List any four features of Android operating system.</h2>
+<ul>
+<li>Open Source</li>
+<li>Beautiul UI</li>
+<li>Connectivity</li>
+<li>Storage</li>
+<li>Multi-Touch</li>
+<li>Multi-Tasking</li>
+<li>Multi-Language</li>
+<li>Resizable widgets</li>
+<li>Messaging</li>
+<li>Media Support</li>
+<li>Web Browser</li>
+</ul>
+<h2>b) Define Dalvik Virtual Machine (DVM).</h2>
+<table>
+<thead>
+<tr>
+<th>JVM</th>
+<th>DVM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JVM supports multiple OS</td>
+<td>DVM supports only Android Operating system.</td>
+</tr>
+<tr>
+<td>JVM forms separate classes in separate <code>.class</code> byte code files.</td>
+<td>DVM forms multiple class in <code>.dex</code> byte code file.</td>
+</tr>
+<tr>
+<td>It is based on stack based virtual machine architecture.</td>
+<td>It is based on register based virtual machine architecture.</td>
+</tr>
+<tr>
+<td>JVM runs on more memory</td>
+<td>DVM runs on less memory.</td>
+</tr>
+<tr>
+<td>The executable format of JVM is JAR.</td>
+<td>The executable format of DVM is APK.</td>
+</tr>
+<tr>
+<td>JVM has different constant pools.</td>
+<td>DVM has common constant pool.</td>
+</tr>
+<tr>
+<td>It runs <code>.class</code> byte code directly.</td>
+<td>The <code>.class</code> byte codes are optimize to .odex format before executing in DVM.</td>
+</tr>
+</tbody>
+</table>
+<h2>c) List any four folders from directory structure of Android project and elaborate in one line.</h2>
+<h3>Manifests Folder</h3>
+<ul>
+<li>Manifests folder contains AndroidManifest.xml for creating our android application.</li>
+<li>This file contains information about our application such as the Android version, metadata, states package for Kotlin file, and other application components.</li>
+<li>It acts as an intermediator between android OS and our application.</li>
+</ul>
+<h3>Java folder</h3>
+<ul>
+<li>The Java folder contains all the java and Kotlin source code (.java) files that we create during the app development, including other Test files.</li>
+</ul>
+<h3>Resource (res) folder</h3>
+<ul>
+<li>The resource folder is the most important folder because it contains all the non-code sources like images, XML layouts, and UI strings for our android application.</li>
+</ul>
+<h3>res/drawable folder</h3>
+<ul>
+<li>It contains the different types of images used for the development of the application.</li>
+</ul>
+<h2>d) List any four attributes of check box.</h2>
+<ul>
+<li>text - This is the Text to display.</li>
+<li>id - This supplies an identifier name for this view.</li>
+<li>visibility - This controls the initial visibility of the view.</li>
+<li>editable - If set, specifies that this TextView has an input method.</li>
+</ul>
+<h2>e) Draw diagram of activity life cycle.</h2>
+<pre><code>                             ┌┬────────┬┐
+                             ││Activity││
+                             ││launched││
+                             └┴────┬───┴┘
+                                   │
+                              ┌────▼─────┐
+         ┌────────────────────►onCreate()│
+         │                    └────┬─────┘
+         │                         │
+         │                    ┌────▼────┐                    ┌───────────┐
+         │                    │onStart()◄────────────────────┤onRestart()│
+         │                    └────┬────┘                    └───────▲───┘
+         │                         │                                 │
+User navigates                ┌────▼─────┐                           │
+to the activity               │onResume()◄───────────────┐           │
+         │                    └────┬─────┘               │           │
+         │                         │                     │           │
+  ┌┬─────┴─────┬┐            ┌┬────┴───┬┐                │           │
+  ││App process││            ││Activity││                │           │
+  ││killed     ││            ││Running ││                │           │
+  └┴─────▲─────┴┘            └┴────┬───┴┘                │           │
+         │                         │                     │           │
+         │                         ▼                     │           │
+Apps with higher priority   Another activity comes   User returns    │
+need memory                 into the foreground      to the activity │
+         │                         │                     │           │
+         │                         │                     │           │
+         │                    ┌────▼────┐                │           │
+         │                    │onPause()├────────────────┘           │
+         │                    └────┬────┘                            │
+         │                         │                                 │
+         │                         │                                 │
+         │                  The activity is                          │
+         │                  no longer visible                        │
+         │                         │                        User navigates
+         │                         │                        to the activity
+         │                    ┌────▼───┐                             │
+         └────────────────────┤onStop()├─────────────────────────────┘
+                              └────┬───┘
+                                   │
+                                   │
+                            The activity is finishing or
+                            being destroyed by the system
+                                   │
+                                   │
+                              ┌────▼──────┐
+                              │onDestroy()│
+                              └────┬──────┘
+                                   │
+                             ┌┬────▼────┬┐
+                             ││Activity ││
+                             ││Shut Down││
+                             └┴─────────┴┘
+</code></pre>
+<h2>f) State syntax to display built in zoom control.</h2>
+<p>In Android, Zoom Control is a class that has some set of methods that are used to control the zoom functionality.</p>
+<pre><code class="language-java">ZoomControl zoomControls = (ZoomControls) findViewById(R.id.simpleZoomControl);
+</code></pre>
+<h2>g) Name two classes used to play audio and video in Android.</h2>
+<ul>
+<li>The following classes are used to play sound and video in the Android framework:
+<ul>
+<li>MediaPlayer - This class is the primary API for playing sound and video.</li>
+<li>AudioManager - This class manages audio sources and audio output on a device.</li>
+</ul>
+</li>
+</ul>
+<h1>2. Attempt any THREE of the following: 12</h1>
+<h2>a) Describe Android architecture with diagram.</h2>
+<ul>
+<li>Android architecture contains different number of components to support any android device needs. Android software contains an open-source Linux Kernel having collection of number of C/C++ libraries which are exposed through an application framework services.</li>
+<li>The main components of android architecture are following:</li>
+</ul>
+<ol>
+<li><strong>Applications:</strong> Applications is the top layer of android architecture. The pre-installed applications like home, contacts, camera, etc and third party applications will be installed on this layer only.</li>
+<li><strong>Application framework:</strong> Application Framework provides several important classes which are used to create an Android application.</li>
+<li><strong>Application runtime:</strong> Android Runtime environment contains components like core libraries and the Dalvik virtual machine(DVM).</li>
+<li><strong>Platform libraries:</strong> The Platform Libraries includes various C/C++ core libraries and Java based libraries such as Media, Graphics, OpenGL etc. to provide a support for android development.</li>
+<li><strong>Linux Kernel:</strong> The linux kernel manages all the available drivers such as display drivers, camera drivers, audio drivers, etc. which are required during the runtime.</li>
+</ol>
+<h2>b) Differentiate between DVM and JVM</h2>
+<table>
+<thead>
+<tr>
+<th>JVM</th>
+<th>DVM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JVM supports multiple OS</td>
+<td>DVM supports only Android Operating system.</td>
+</tr>
+<tr>
+<td>JVM forms separate classes in separate <code>.class</code> byte code files.</td>
+<td>DVM forms multiple class in <code>.dex</code> byte code file.</td>
+</tr>
+<tr>
+<td>It is based on stack based virtual machine architecture.</td>
+<td>It is based on register based virtual machine architecture.</td>
+</tr>
+<tr>
+<td>JVM runs on more memory</td>
+<td>DVM runs on less memory.</td>
+</tr>
+<tr>
+<td>The executable format of JVM is JAR.</td>
+<td>The executable format of DVM is APK.</td>
+</tr>
+<tr>
+<td>JVM has different constant pools.</td>
+<td>DVM has common constant pool.</td>
+</tr>
+<tr>
+<td>It runs <code>.class</code> byte code directly.</td>
+<td>The <code>.class</code> byte codes are optimize to .odex format before executing in DVM.</td>
+</tr>
+</tbody>
+</table>
+<h2>c) List and elaborate steps to deploy in Android application on Google play store.</h2>
+<ul>
+<li>Step 1 - First generate signed apk of your Android App to publish it on Play Store.</li>
+<li>Step 2 - Sign up for Google Play Console to publish and manage your Android App.</li>
+<li>Step 3 - Now click on Create Application.</li>
+<li>Step 4 - Now fill store listing details of your App which include Title, Short and Full description.</li>
+<li>Step 5 - Now Click on ready on publish along with save draft and click on Manage release.</li>
+<li>Step 6 - After Manage production click on edit release.</li>
+<li>Step 7 - Now click on review.</li>
+<li>Step 8 - After review click on Start Rollout to production.</li>
+</ul>
+<h2>d) Describe with example, how to create a simple database in SQLite (Assume suitable data).</h2>
+<ul>
+<li>SQLite is a opensource SQL database that stores data to a text file on a device. Android comes in with built in SQLite database implementation.</li>
+<li>SQLite supports all the relational database features.</li>
+</ul>
+<pre><code class="language-java">SQLiteDatabase mydatabase = openOrCreateDatabase(&quot;your database name&quot;,MODE_PRIVATE,null);
+</code></pre>
+<h1>3. Attempt any THREE of the following: 12</h1>
+<h2>a) Write down the steps to install and configure Android studio.</h2>
+<ul>
+<li>Head over to <a href="https://developer.android.com/studio">https://developer.android.com/studio</a> to get the Android Studio executable or zip file.</li>
+<li>Click on the Download Android Studio Button.</li>
+<li>After the downloading has finished, open the file from downloads and run it. It will prompt the following dialog box.</li>
+<li>Once “Finish” is clicked, choose the ‘Don’t import Settings option’.</li>
+<li>This will start the Android Studio.</li>
+<li>After it has found the SDK components, it will redirect to the Welcome dialog box.</li>
+<li>Now it is time to download the SDK components.</li>
+<li>Click on Start a new Android Studio project to build a new app.</li>
+</ul>
+<h2>b) State syntax to create Text View and Image button with any two attributes of each.</h2>
+<h3>TextView</h3>
+<pre><code class="language-xml">&lt;TextView
+    android:id=&quot;@+id/student_name&quot;
+    android:layout_width=&quot;wrap_content&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:text=&quot;Name:&quot; /&gt;
+</code></pre>
+<ul>
+<li>text -  Sets text of the Textview</li>
+<li>id - Gives a unique ID to the Textview</li>
+</ul>
+<h3>ImageButton</h3>
+<pre><code class="language-xml">&lt;ImageButton
+  android:id=&quot;@+id/imageButton&quot;
+  android:src=&quot;@drawable/button&quot;
+  android:layout_height=&quot;wrap_content&quot;
+  android:layout_width=&quot;wrap_content&quot;/&gt;
+</code></pre>
+<ul>
+<li>background - This is a drawable to use as the background.</li>
+<li>id - Gives a unique ID to the Textview</li>
+</ul>
+<h2>c) Describe Android service life cycle along with diagram.</h2>
+<ul>
+<li>A service is an application component which runs withour direst interaction with the user in the background.</li>
+<li>Services are used for repetitive and potentially long running operations:
+<ul>
+<li>Internet downloads</li>
+<li>Checking for new data</li>
+<li>Data processing</li>
+<li>Updating content</li>
+<li>Providers and the like</li>
+</ul>
+</li>
+<li>They typically run in the background to perform long-running operations or work for remote processes.</li>
+</ul>
+<pre><code>                             ┌┬────────┬┐
+                             ││Activity││
+                             ││launched││
+                             └┴────┬───┴┘
+                                   │
+                              ┌────▼─────┐
+         ┌────────────────────►onCreate()│
+         │                    └────┬─────┘
+         │                         │
+         │                    ┌────▼────┐                    ┌───────────┐
+         │                    │onStart()◄────────────────────┤onRestart()│
+         │                    └────┬────┘                    └───────▲───┘
+         │                         │                                 │
+User navigates                ┌────▼─────┐                           │
+to the activity               │onResume()◄───────────────┐           │
+         │                    └────┬─────┘               │           │
+         │                         │                     │           │
+  ┌┬─────┴─────┬┐            ┌┬────┴───┬┐                │           │
+  ││App process││            ││Activity││                │           │
+  ││killed     ││            ││Running ││                │           │
+  └┴─────▲─────┴┘            └┴────┬───┴┘                │           │
+         │                         │                     │           │
+         │                         ▼                     │           │
+Apps with higher priority   Another activity comes   User returns    │
+need memory                 into the foreground      to the activity │
+         │                         │                     │           │
+         │                         │                     │           │
+         │                    ┌────▼────┐                │           │
+         │                    │onPause()├────────────────┘           │
+         │                    └────┬────┘                            │
+         │                         │                                 │
+         │                         │                                 │
+         │                  The activity is                          │
+         │                  no longer visible                        │
+         │                         │                        User navigates
+         │                         │                        to the activity
+         │                    ┌────▼───┐                             │
+         └────────────────────┤onStop()├─────────────────────────────┘
+                              └────┬───┘
+                                   │
+                                   │
+                            The activity is finishing or
+                            being destroyed by the system
+                                   │
+                                   │
+                              ┌────▼──────┐
+                              │onDestroy()│
+                              └────┬──────┘
+                                   │
+                             ┌┬────▼────┬┐
+                             ││Activity ││
+                             ││Shut Down││
+                             └┴─────────┴┘
+</code></pre>
+<h2>d) State and elaborate the syntax of required class and methods for Geocoding.</h2>
+<ul>
+<li>A class for handling geocoding and reverse geocoding.</li>
+<li>Geocoding is the process of transforming a street address or other description of a location into a (latitude, longitude) coordinate.</li>
+</ul>
+<pre><code class="language-java">public final class Geocoder
+extends Object
+</code></pre>
+<h1>4. Attempt any THREE of the following: 12</h1>
+<h2>a) Explain with example, code to create GUI using absolute layout (Assume suitable data).</h2>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;AbsoluteLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:paddingLeft=&quot;16dp&quot;
+    android:paddingTop=&quot;16dp&quot;
+    android:paddingRight=&quot;16dp&quot;
+    tools:context=&quot;.MainActivity&quot;&gt;
+    &lt;TextView
+        android:id=&quot;@+id/student_name&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_x=&quot;125dp&quot;
+        android:layout_y=&quot;280dp&quot;
+        android:text=&quot;Name:&quot;
+        android:textColor=&quot;#86AD33&quot;
+        android:textSize=&quot;20dp&quot;
+        android:textStyle=&quot;bold&quot; /&gt;
+    &lt;TextView
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_x=&quot;125dp&quot;
+        android:layout_y=&quot;304dp&quot;
+        android:text=&quot;Age:&quot;
+        android:textColor=&quot;#86AD33&quot;
+        android:textSize=&quot;20dp&quot;
+        android:textStyle=&quot;bold&quot; /&gt;
+    &lt;TextView
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_x=&quot;125dp&quot;
+        android:layout_y=&quot;328dp&quot;
+        android:text=&quot;Mobile Number:&quot;
+        android:textColor=&quot;#86AD33&quot;
+        android:textSize=&quot;20dp&quot;
+        android:textStyle=&quot;bold&quot; /&gt;
+&lt;/AbsoluteLayout&gt;
+</code></pre>
+<h2>b) Write a program to demonstrate Date and Time picker.</h2>
+<h3>Date Picker</h3>
+<ul>
+<li>Android Date Picker allows you to select the date consisting of day, month and
+year in your custom user interface.</li>
+<li>Methods of DatePicker:
+<ul>
+<li><strong>getDayOfMonth()</strong> - This method gets the selected day of month.</li>
+<li><strong>getMonth()</strong> - This method gets the selected month.</li>
+<li><strong>getYear()</strong> - This method gets the selected year.</li>
+<li><strong>getFirstDayOfWeek()</strong> - This method returns first day of the week.</li>
+<li><strong>getCalendarView()</strong> - This method returns calender View.</li>
+</ul>
+</li>
+</ul>
+<h3>TimePicker</h3>
+<ul>
+<li>Android Time Picker allows us to select the time of day in either 24h or AM/PM
+mode.</li>
+<li>The time consists of hours, minutes and clock format.</li>
+<li>Methods of TimePicker</li>
+</ul>
+<ol>
+<li><strong>setCurrentHour()</strong> - This method sets the current hour.</li>
+<li>setCurrentMinute() - This method sets the current minute.</li>
+<li><strong>is24HoursView()</strong> - This method returns true if this 24 hour view else
+false.</li>
+<li><strong>isEnabled()</strong> - This method returns the enabled status for this view.</li>
+</ol>
+<h2>c) Describe multimedia framework of Android with diagram.</h2>
+<figure data-type="image"><img src="https://source.android.com/static/docs/core/media/images/ape_media_buffer_alloc_n.png" alt="Multimedia framework of Android diagram" loading="lazy" decoding="async"></figure>
+<h2>d) Discuss developer console with at least four features.</h2>
+<ul>
+<li>Multiple User Accounts</li>
+<li>Store Listing Details</li>
+<li>Upload and Instantly Publish</li>
+<li>Alpha and Beta Testing</li>
+<li>Multiple APK Support</li>
+<li>Selling and Pricing Your Products</li>
+<li>In-app Products</li>
+<li>Distribution Controls</li>
+<li>User Reviews and Crash Reports</li>
+<li>App Statistics</li>
+</ul>
+<h2>e) Write a program to demonstrate declaring and using permissions with any relevant example.</h2>
+<p>AndroidManifest.xml</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+    &lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+            package=&quot;org.geeksforgeeks.requestPermission&quot;&gt;
+
+        &lt;!--Declaring the required permissions--&gt;
+        &lt;uses-permission android:name=&quot;android.permission.READ_EXTERNAL_STORAGE&quot; /&gt;
+        &lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot; /&gt;
+        &lt;uses-permission android:name=&quot;android.permission.CAMERA&quot; /&gt;
+
+        &lt;application
+            android:allowBackup=&quot;true&quot;
+            android:icon=&quot;@mipmap/ic_launcher&quot;
+            android:label=&quot;@string/app_name&quot;
+            android:roundIcon=&quot;@mipmap/ic_launcher_round&quot;
+            android:supportsRtl=&quot;true&quot;
+            android:theme=&quot;@style/AppTheme&quot;&gt;
+
+            &lt;activity
+                android:name=&quot;.MainActivity&quot;&gt;
+
+                &lt;intent-filter&gt;
+                    &lt;action
+                        android:name=&quot;android.intent.action.MAIN&quot; /&gt;
+
+                    &lt;category
+                        android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;
+                &lt;/intent-filter&gt;
+
+            &lt;/activity&gt;
+        &lt;/application&gt;
+
+&lt;/manifest&gt;
+</code></pre>
+<p>activity_main.xml</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;RelativeLayout
+    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    tools:context=&quot;.MainActivity&quot;&gt;
+
+    &lt;!-- To show toolbar--&gt;
+    &lt;android.support.v7.widget.Toolbar
+        android:id=&quot;@+id/toolbar&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:background=&quot;@color/colorPrimary&quot;
+        app:title=&quot;GFG | Permission Example&quot;
+        app:titleTextColor=&quot;@android:color/white&quot;
+        android:layout_height=&quot;?android:attr/actionBarSize&quot;/&gt;
+
+    &lt;!--Button to request storage permission--&gt;
+    &lt;Button
+        android:id=&quot;@+id/storage&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:text=&quot;Storage&quot;
+        android:layout_marginTop=&quot;16dp&quot;
+        android:padding=&quot;8dp&quot;
+        android:layout_below=&quot;@id/toolbar&quot;
+        android:layout_centerHorizontal=&quot;true&quot;/&gt;
+
+    &lt;!--Button to request camera permission--&gt;
+    &lt;Button
+        android:id=&quot;@+id/camera&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:text=&quot;Camera&quot;
+        android:layout_marginTop=&quot;16dp&quot;
+        android:padding=&quot;8dp&quot;
+        android:layout_below=&quot;@id/storage&quot;
+        android:layout_centerHorizontal=&quot;true&quot;/&gt;
+
+&lt;/RelativeLayout&gt;
+</code></pre>
+<p>MainActivity.java</p>
+<pre><code class="language-java">import android.Manifest;
+import android.content.pm.PackageManager;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+
+    // Defining Buttons
+    private Button storage, camera;
+
+    // Defining Permission codes.
+    // We can give any value
+    // but unique for each permission.
+    private static final int CAMERA_PERMISSION_CODE = 100;
+    private static final int STORAGE_PERMISSION_CODE = 101;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        storage = findViewById(R.id.storage);
+        camera = findViewById(R.id.camera);
+
+        // Set Buttons on Click Listeners
+        storage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE);
+            }
+        });
+
+        camera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                checkPermission(Manifest.permission.CAMERA, CAMERA_PERMISSION_CODE);
+            }
+        });
+    }
+
+    // Function to check and request permission.
+    public void checkPermission(String permission, int requestCode)
+    {
+        if (ContextCompat.checkSelfPermission(MainActivity.this, permission) == PackageManager.PERMISSION_DENIED) {
+
+            // Requesting the permission
+            ActivityCompat.requestPermissions(MainActivity.this, new String[] { permission }, requestCode);
+        }
+        else {
+            Toast.makeText(MainActivity.this, &quot;Permission already granted&quot;, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    // This function is called when the user accepts or decline the permission.
+    // Request Code is used to check which permission called this function.
+    // This request code is provided when the user is prompt for permission.
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                        @NonNull String[] permissions,
+                                        @NonNull int[] grantResults)
+    {
+        super.onRequestPermissionsResult(requestCode,
+                                        permissions,
+                                        grantResults);
+
+        if (requestCode == CAMERA_PERMISSION_CODE) {
+            if (grantResults.length &gt; 0 &amp;&amp; grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(MainActivity.this, &quot;Camera Permission Granted&quot;, Toast.LENGTH_SHORT) .show();
+            }
+            else {
+                Toast.makeText(MainActivity.this, &quot;Camera Permission Denied&quot;, Toast.LENGTH_SHORT) .show();
+            }
+        }
+        else if (requestCode == STORAGE_PERMISSION_CODE) {
+            if (grantResults.length &gt; 0
+                &amp;&amp; grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(MainActivity.this, &quot;Storage Permission Granted&quot;, Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(MainActivity.this, &quot;Storage Permission Denied&quot;, Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+}
+</code></pre>]]></description>
+  </item>
+  <item>
     <title>UT2 6S</title>
     <link>https://anzenkodo.github.io/notes/programming/android/ut2-6s.html</link>
-    <pubDate>2022-12-16T23:31:58.669Z</pubDate>
+    <pubDate>2022-12-17T00:30:48.999Z</pubDate>
     <description><![CDATA[<h1>MAD QUESTION BANK</h1>
 <h2>1. Write the syntax for Intent-Filter tag.</h2>
 <pre><code class="language-xml">&lt;intent-fliter
@@ -588,7 +2046,7 @@ axes.</li>
   <item>
     <title>Viva 6S</title>
     <link>https://anzenkodo.github.io/notes/programming/android/viva-6s.html</link>
-    <pubDate>2022-12-16T23:31:58.669Z</pubDate>
+    <pubDate>2022-12-17T00:30:48.999Z</pubDate>
     <description><![CDATA[<h1>MAD VIVA QUESTION</h1>
 <p>(thk to SaturoGojoo,AK,NEWBIEN00B)</p>
 <h2>1) What is android?</h2>
@@ -851,7 +2309,7 @@ Progress bars are used to show progress of a task. For example, when you are upl
   <item>
     <title>Viva 6S sort</title>
     <link>https://anzenkodo.github.io/notes/programming/android/viva-6s-sort.html</link>
-    <pubDate>2022-12-16T23:31:58.669Z</pubDate>
+    <pubDate>2022-12-17T00:30:48.999Z</pubDate>
     <description><![CDATA[<h1>MAD VIVA</h1>
 <h2>1) What is Android?</h2>
 <p>Android is mobile OS based on modified version of Linux kernel and other open
@@ -1190,9 +2648,1637 @@ AM/PM mode or 24h mode.</li>
 </ul>]]></description>
   </item>
   <item>
+    <title>Notes</title>
+    <link>https://anzenkodo.github.io/notes/programming/android/notes.html</link>
+    <pubDate>2022-12-17T00:30:48.999Z</pubDate>
+    <description><![CDATA[<h1>Android</h1>
+<h2>1. What is Mobile application?</h2>
+<ul>
+<li>A mobile application, most commonly referred to as an app, is a type of
+application software deigned to run on a mobile device, such as a smart phone
+or tablet computer.</li>
+<li>Mobile app development is the process by which a mobile applications is
+developed for mobile devices like Personal Digital Assistants (PDAs), tablet
+computer or mobile smart phones.</li>
+<li>Android is mobile operating system developed by Google, based on a modified
+version of the Linux kernel and other open source software and designed
+primarily for touchscreen mobile devices such as smart phones and tablets.</li>
+<li>Application developers, Android is an open platform that provides exciting
+opportunities for developing virtually app imaginable.</li>
+</ul>
+<h2>3. What is Android?</h2>
+<ul>
+<li>The android is a powerful Operating System(OS) and it supports large numbers
+of applications(apps) in smart phones.</li>
+<li>The hardware that supports android software is based on ARM architecture
+platform.</li>
+<li>The android is an open source operating system means that it is free and any
+one can use it.</li>
+<li>The android development supports with the full Java programming language.</li>
+</ul>
+<h2>4. Enlist features of Android OS?</h2>
+<ul>
+<li><strong>Storage</strong> - SQLite a lightweight relational database, is used for data
+storage purpose.</li>
+<li><strong>Multitasking</strong> - Multitasking of application, with unique handling of
+memory allocation, will be existing.</li>
+<li><strong>Web Browser</strong> - The web browser available in Android OS is based on the
+open source WebKit layout engine, attached with Chrome’s V8 JavaScript engine.</li>
+<li><strong>Open Source</strong> - Android is open-source operating system.</li>
+<li><strong>Accessibility</strong> - Built in text to speech in Android OS is provided by Talk
+back for people with low or no vision.</li>
+<li><strong>Media Support</strong> - Android supports the many media formats like:
+<ul>
+<li>WenM</li>
+<li>H.263</li>
+<li>H.254</li>
+<li>AAC</li>
+<li>HE-AAC</li>
+<li>MPEG-4</li>
+</ul>
+</li>
+</ul>
+<h2>5. State Advantages and Disadvantages of Android OS?</h2>
+<h3>Advantages</h3>
+<ul>
+<li>Supports 2D and 3D Graphics</li>
+<li>Supports Multiple Languages</li>
+<li>Faster Web Browser</li>
+<li>Video Calling</li>
+<li>Open Source Framework</li>
+<li>Uses of Tools are Very Simple</li>
+<li>Availability of Apps</li>
+<li>Great Social Networking Integration</li>
+<li>Better Notification System</li>
+<li>Update User Interface Design</li>
+<li>At a Time Applications</li>
+<li>Low Chance of Crashing</li>
+<li>Stability</li>
+<li>Multitasking</li>
+</ul>
+<h3>Disadvantages</h3>
+<ul>
+<li>Need Internet Connection</li>
+<li>Advertising</li>
+<li>Wasteful Battery</li>
+<li>Many Applications</li>
+<li>Slow Response</li>
+<li>Heat</li>
+</ul>
+<h2>6. Describe Architecture of Android diagrammatically.</h2>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│ Application                                                                  │
+│ ┌────┐ ┌────────┐ ┌─────┐ ┌───────┐ ┌───┐                                    │
+│ │Home│ │Contacts│ │Phone│ │Browser│ │***│                                    │
+│ └────┘ └────────┘ └─────┘ └───────┘ └───┘                                    │
+│                                                                              │
+│ ┌────┐ ┌──────┐ ┌─────┐ ┌────────┐ ┌───┐                                     │
+│ │SMS │ │E-Mail│ │Clock│ │Calander│ │***│                                     │
+│ └────┘ └──────┘ └─────┘ └────────┘ └───┘                                     │
+│                                                                              │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│ Application Framework                                                        │
+│ ┌────────────────┐ ┌──────────────┐ ┌─────────────────┐ ┌───────────┐        │
+│ │Activity Manager│ │Window Manager│ │Content Providers│ │View System│        │
+│ └────────────────┘ └──────────────┘ └─────────────────┘ └───────────┘        │
+│                                                                              │
+│ ┌───────────────┐ ┌─────────────────┐ ┌────────────────┐ ┌────────────────┐  │
+│ │Package Manager│ │Telephony Manager│ │Resource Manager│ │Location Manager│  │
+│ └───────────────┘ └─────────────────┘ └────────────────┘ └────────────────┘  │
+│                                                                              │
+├──────────────────────────────────────────────┬───────────────────────────────┤
+│ Libraries                                    │ Android Runtime               │
+│ ┌───────────────┐ ┌───────────────┐ ┌──────┐ │ ┌──────────────┐              │
+│ │Surface Manager│ │Media Framework│ │SQLite│ │ │Core Libraries│              │
+│ └───────────────┘ └───────────────┘ └──────┘ │ └──────────────┘              │
+│                                              │                               │
+│ ┌─────────┐ ┌────────┐ ┌──────┐              │ ┌──────────────────────┐      │
+│ │OpenGL/ES│ │FreeType│ │WebKit│              │ │Dalvik Virtual Machine│      │
+│ └─────────┘ └────────┘ └──────┘              │ └──────────────────────┘      │
+│                                              │                               │
+│ ┌───┐ ┌───┐ ┌────┐                           │                               │
+│ │SGL│ │SSL│ │Libc│                           │                               │
+│ └───┘ └───┘ └────┘                           │                               │
+│                                              │                               │
+├──────────────────────────────────────────────┴───────────────────────────────┤
+│ Linux Kernel                                                                 │
+│ ┌──────────────┐ ┌─────────────┐ ┌───────────────────┐ ┌───────────────────┐ │
+│ │Display Driver│ │Camera Driver│ │Flash Memory Driver│ │Binder (IPC) Driver│ │
+│ └──────────────┘ └─────────────┘ └───────────────────┘ └───────────────────┘ │
+│                                                                              │
+│ ┌─────────────┐ ┌───────────┐ ┌────────────┐ ┌────────────────┐              │
+│ │Keypad Driver│ │WiFi Driver│ │Audio Driver│ │Power Management│              │
+│ └─────────────┘ └───────────┘ └────────────┘ └────────────────┘              │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h2>7. What is OHA?</h2>
+<ul>
+<li>The OHA stands for Open Hardware Alliance.</li>
+<li>Google formed OHA in order to develop an open source software platform for use
+in mobile devices.</li>
+<li>The OHA is the group that is in charge of the Android smart phones OS.</li>
+<li>The primary objective of these companies is to developed open standards for
+mobile devices.</li>
+<li>The members of OHA include handset manufactures, chip makers,
+commercialization companies, software companies and mobile operators/users.</li>
+</ul>
+<h2>8. Explain the term Android ecosystem in detail.</h2>
+<ul>
+<li>The learn about Android Operating system and develop Android application, it
+is very important for to understand the entire ecosystem of Android and the
+stakeholders of Android ecosystem.</li>
+<li>The four parts of Android Ecosystem:
+<ul>
+<li><strong>Google</strong> - develops android.</li>
+<li><strong>OEMs</strong> (Original Equipment Manufactures) manufacture the hardware, and as
+well the custom application components.</li>
+<li><strong>Application Development Companies</strong> - are the major contactors to the
+ecosystem and employ developers, and also contract out the product
+development to services companies.</li>
+<li><strong>Freelance Android Developers</strong> have the skill-set to contribute to the
+ecosystem for android development, they are who create their own
+applications and publish them on Google Play Store.</li>
+</ul>
+</li>
+</ul>
+<h2>9. What are the features of Android? Enlist any six of them.</h2>
+<ul>
+<li><strong>Storage</strong> - SQLite a lightweight relational database, is used for data
+storage purpose.</li>
+<li><strong>Multitasking</strong> - Multitasking of application, with unique handling of
+memory allocation, will be existing.</li>
+<li><strong>Web Browser</strong> - The web browser available in Android OS is based on the
+open source WebKit layout engine, attached with Chrome’s V8 JavaScript engine.</li>
+<li><strong>Open Source</strong> - Android is open-source operating system.</li>
+<li><strong>Accessibility</strong> - Built in text to speech in Android OS is provided by Talk
+back for people with low or no vision.</li>
+<li><strong>Media Support</strong> - Android supports the many media formats like:
+<ul>
+<li>WenM</li>
+<li>H.263</li>
+<li>H.254</li>
+<li>AAC</li>
+<li>HE-AAC</li>
+<li>MPEG-4</li>
+</ul>
+</li>
+</ul>
+<h2>10. Explain the term Android ecosystem in detail.</h2>
+<ol>
+<li>Android 13</li>
+<li>Android 12</li>
+<li>Android 11</li>
+<li>Android 10</li>
+<li>Android Pie</li>
+<li>Android Oreo</li>
+<li>Android Nougat</li>
+<li>Android Marshmallow</li>
+<li>Android Lollipop</li>
+<li>Android KitKat</li>
+<li>Android Jelly Bean</li>
+<li>Android Sandwich</li>
+<li>Android Honeycomb</li>
+<li>Android Gingerbread</li>
+<li>Android Froyo</li>
+<li>Android Eclair</li>
+<li>Android Donut</li>
+<li>Android 1.5</li>
+<li>Android 1.1</li>
+<li>Android 1.0</li>
+</ol>
+<h2>11. Explain the need of Android.</h2>
+<ul>
+<li><strong>Desktop</strong> -Android-x86 is an open source project that ports Android to the
+x86 platform, allowing you to run it on your computer instead of an ARM-based
+phone or tablet.</li>
+<li><strong>Connectivity</strong> - On one page/desktop we could be able to have four
+connecting device tool button like, Turn ON/OFF Bluetooth, Turn ON/OFF WiFi,
+Turn ON/OFF mobile network, Turn ON/OFF GPS and so on.</li>
+<li><strong>Browser</strong> - The Android OS browser is one of the best browser on the mobile
+market. It generally loads pages faster then Safari or any other browser.</li>
+<li><strong>Open to carrier</strong> - If we know Java programming language then we are open to
+Android world.</li>
+<li><strong>Market</strong> - Android OS has an android market. The android apps are free and
+work as well.</li>
+<li><strong>Future</strong> - The future mobile phones are basically going to be smartphones.</li>
+<li><strong>Notification</strong> - Android phones have multi notification system.</li>
+<li><strong>Google Integration</strong> - The android has inbuilt Google support. For example:
+Google Map, G-Mail etc.</li>
+<li><strong>Open Source</strong> - The code of Android OS as well as the apps is available.</li>
+<li><strong>Endless Personalization</strong> - The Android cell phone allow to configuration
+their mobile to look and behave exactly like they want.</li>
+</ul>
+<h2>14. Explain the following terms:</h2>
+<h3>(i) Android application</h3>
+<ul>
+<li>The top layer of Android architecture is Applications.</li>
+<li>The native and third party applications like Contacts, Email, Music, Gallery,
+Clock, Games, etc.</li>
+<li>Whatever we will build those will be installed on this layer only.</li>
+<li>The application layer runs within the Android run time using the classes an
+services made available from the application framework.</li>
+</ul>
+<h3>(ii) Android kernel</h3>
+<ul>
+<li>Linux kernel is a bottom layer and heart of the android architecture.</li>
+<li>It exists at the root of android architecture and contains all the low-level
+device drivers fro the various hardware components of an Android device.</li>
+<li>Linux Kernel is responsible for device drivers, power management, memory
+management, device management and resource access.</li>
+</ul>
+<h2>16. Describe OHA with the Help of Digram.</h2>
+<pre><code>┌─────────┐ ┌─────────┐ ┌────────────┐ ┌──────┐ ┌───────────────┐
+│Software │ │Mobile   │ │Handset     │ │Chip  │ │Commercializton│
+│Companies│ │Operators│ │Manufactures│ │Makers│ │Companies      │
+└─────┬───┘ └─────┬───┘ └─────┬──────┘ └───┬──┘ └────────┬──────┘
+      │           │           │            │             │
+      └───────────┴───────────┼────────────┴─────────────┘
+                              │
+                       ┌──────┴───────┐
+                       │Open Handset  │
+                       │Alliance (OHA)│
+                       └──────────────┘
+</code></pre>
+<h2>17. Enlist and explain any 4 features of Android.</h2>
+<ul>
+<li><strong>Storage</strong> - SQLite a lightweight relational database, is used for data
+storage purpose.</li>
+<li><strong>Multitasking</strong> - Multitasking of application, with unique handling of
+memory allocation, will be existing.</li>
+<li><strong>Web Browser</strong> - The web browser available in Android OS is based on the
+open source WebKit layout engine, attached with Chrome’s V8 JavaScript engine.</li>
+<li><strong>Open Source</strong> - Android is open-source operating system.</li>
+</ul>
+<h2>19. Explain the concept of Android Ecosystem.</h2>
+<ul>
+<li>The learn about Android Operating system and develop Android application, it
+is very important for to understand the entire ecosystem of Android and the
+stakeholders of Android ecosystem.</li>
+<li>The four parts of Android Ecosystem:
+<ul>
+<li><strong>Google</strong> - develops android.</li>
+<li><strong>OEMs</strong> (Original Equipment Manufactures) manufacture the hardware, and as
+well the custom application components.</li>
+<li><strong>Application Development Companies</strong> - are the major contactors to the
+ecosystem and employ developers, and also contract out the product
+development to services companies.</li>
+<li><strong>Freelance Android Developers</strong> have the skill-set to contribute to the
+ecosystem for android development, they are who create their own
+applications and publish them on Google Play Store.</li>
+</ul>
+</li>
+</ul>
+<h2>20. Explain any 4 advantages and disadvantages of Android OS.</h2>
+<h3>Advantages</h3>
+<ul>
+<li>Supports 2D and 3D Graphics</li>
+<li>Supports Multiple Languages</li>
+<li>Faster Web Browser</li>
+<li>Video Calling</li>
+<li>Open Source Framework</li>
+<li>Uses of Tools are Very Simple</li>
+<li>Availability of Apps</li>
+<li>Great Social Networking Integration</li>
+<li>Better Notification System</li>
+<li>Update User Interface Design</li>
+<li>At a Time Applications</li>
+<li>Low Chance of Crashing</li>
+<li>Stability</li>
+<li>Multitasking</li>
+</ul>
+<h3>Disadvantages</h3>
+<ul>
+<li>Need Internet Connection</li>
+<li>Advertising</li>
+<li>Wasteful Battery</li>
+<li>Many Applications</li>
+<li>Slow Response</li>
+<li>Heat</li>
+</ul>
+<h2>21. Describe the concept of Anatomy of Android Application.</h2>
+<ul>
+<li><code>java</code> - This contains the <code>.java</code> source filed for our project. By default,
+includes an <code>MainActivity.java</code> source file having an activity class that runs
+when our app is launched using the app icon.</li>
+<li><code>res/drawable-hdpi</code> - This is directory for drawable objects that are designed
+for high-density screens.</li>
+<li><code>res/layout</code> - This is a directory for other various XML files that contain a
+collection of resources, such as strings and colours definitions.</li>
+<li><code>AndroidManifest.xml</code> - This is the manifest file which describes the
+fundamental characteristics of the app and defines each of its components.</li>
+<li><code>Build.gradle</code> - This is an auto generated file which contains
+<code>compileSdkVersion</code>, <code>buildToolsVersion</code>, <code>applicationId</code>, <code>minSdkVersion</code>,
+<code>targetSdkVersion</code>, <code>versionCode</code> and <code>versionName</code>.</li>
+</ul>
+<h2>22. Draw and explain the architecture of Android.</h2>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│ Application                                                                  │
+│ ┌────┐ ┌────────┐ ┌─────┐ ┌───────┐ ┌───┐                                    │
+│ │Home│ │Contacts│ │Phone│ │Browser│ │***│                                    │
+│ └────┘ └────────┘ └─────┘ └───────┘ └───┘                                    │
+│                                                                              │
+│ ┌────┐ ┌──────┐ ┌─────┐ ┌────────┐ ┌───┐                                     │
+│ │SMS │ │E-Mail│ │Clock│ │Calander│ │***│                                     │
+│ └────┘ └──────┘ └─────┘ └────────┘ └───┘                                     │
+│                                                                              │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│ Application Framework                                                        │
+│ ┌────────────────┐ ┌──────────────┐ ┌─────────────────┐ ┌───────────┐        │
+│ │Activity Manager│ │Window Manager│ │Content Providers│ │View System│        │
+│ └────────────────┘ └──────────────┘ └─────────────────┘ └───────────┘        │
+│                                                                              │
+│ ┌───────────────┐ ┌─────────────────┐ ┌────────────────┐ ┌────────────────┐  │
+│ │Package Manager│ │Telephony Manager│ │Resource Manager│ │Location Manager│  │
+│ └───────────────┘ └─────────────────┘ └────────────────┘ └────────────────┘  │
+│                                                                              │
+├──────────────────────────────────────────────┬───────────────────────────────┤
+│ Libraries                                    │ Android Runtime               │
+│ ┌───────────────┐ ┌───────────────┐ ┌──────┐ │ ┌──────────────┐              │
+│ │Surface Manager│ │Media Framework│ │SQLite│ │ │Core Libraries│              │
+│ └───────────────┘ └───────────────┘ └──────┘ │ └──────────────┘              │
+│                                              │                               │
+│ ┌─────────┐ ┌────────┐ ┌──────┐              │ ┌──────────────────────┐      │
+│ │OpenGL/ES│ │FreeType│ │WebKit│              │ │Dalvik Virtual Machine│      │
+│ └─────────┘ └────────┘ └──────┘              │ └──────────────────────┘      │
+│                                              │                               │
+│ ┌───┐ ┌───┐ ┌────┐                           │                               │
+│ │SGL│ │SSL│ │Libc│                           │                               │
+│ └───┘ └───┘ └────┘                           │                               │
+│                                              │                               │
+├──────────────────────────────────────────────┴───────────────────────────────┤
+│ Linux Kernel                                                                 │
+│ ┌──────────────┐ ┌─────────────┐ ┌───────────────────┐ ┌───────────────────┐ │
+│ │Display Driver│ │Camera Driver│ │Flash Memory Driver│ │Binder (IPC) Driver│ │
+│ └──────────────┘ └─────────────┘ └───────────────────┘ └───────────────────┘ │
+│                                                                              │
+│ ┌─────────────┐ ┌───────────┐ ┌────────────┐ ┌────────────────┐              │
+│ │Keypad Driver│ │WiFi Driver│ │Audio Driver│ │Power Management│              │
+│ └─────────────┘ └───────────┘ └────────────┘ └────────────────┘              │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<ul>
+<li>The main components of Android architecture are:
+<ul>
+<li>Application</li>
+<li>Android Framework</li>
+<li>Android Runtime</li>
+<li>Platform Libraries</li>
+<li>Linux Kernel</li>
+</ul>
+</li>
+</ul>
+<h3>Application</h3>
+<ul>
+<li>The top layer of Android architecture is Applications.</li>
+<li>The native and third party applications like Contacts, Email, Music, Gallery,
+Clock, Games, etc.</li>
+<li>Whatever we will build those will be installed on this layer only.</li>
+<li>The application layer runs within the Android run time using the classes an
+services made available from the application framework.</li>
+</ul>
+<h3>Application Framework</h3>
+<ul>
+<li>The Application framework provides the classes used to create an Android
+application.</li>
+<li>It also provides a generic abstraction for hardware access and manages the
+user interface and application resources.</li>
+<li>It basically provides the services through which we can create the particular
+class and make that class helpful for Application creation.</li>
+<li>The application framework includes services like telephony service, location
+services, notification manager, NFC service, View system, etc.</li>
+<li>Which can use for application development as per our requirements.</li>
+</ul>
+<h3>Android Runtime</h3>
+<ul>
+<li>Android Runtime environment is an important part of Android rather then an
+internal part and it contains a components like core libraries and the Dalvik
+Virtual Machine(DVM).</li>
+<li>The Android run time is the engine that powers our applications along with the
+libraries and it forms the basis for the application framework.
+<ul>
+<li><strong>Dalvik Virtual Machine(DVM)</strong> - is register-based virtual machine like
+Java Virtual Machine(JVM). It is specially designed and optimized for
+Android to ensure that a device can run multiple instance efficiently.</li>
+<li>The <strong>core libraries</strong> in Android runtime will enable is to implement an
+Android applications using standard Java programming language.</li>
+</ul>
+</li>
+</ul>
+<h3>Platform Libraries</h3>
+<ul>
+<li>The Platform Libraries includes various C/C++ core libraries and Java based
+libraries such as SSL, libc,Graphics, SQLite, WebKit, Media, Surface Manger,
+OpenGL etc.</li>
+</ul>
+<h3>Linux Kernel</h3>
+<ul>
+<li>Linux kernel is a bottom layer and heart of the android architecture.</li>
+<li>It exists at the root of android architecture and contains all the low-level
+device drivers fro the various hardware components of an Android device.</li>
+<li>Linux Kernel is responsible for device drivers, power management, memory
+management, device management and resource access.</li>
+</ul>
+<h2>Android Application Components</h2>
+<ul>
+<li><strong>Activates</strong> - They dictate the UI and handle the user interaction to the
+smart phone screen.</li>
+<li><strong>Services</strong> - They handle background processing associated with an
+application.</li>
+<li><strong>Broadcast Receivers</strong> - They handle communication between Android OS and
+applications.</li>
+<li><strong>Content Provides</strong> - They handle data and database management issues.</li>
+<li><strong>Fragments</strong> - Represents a portion of user interface in an Activity.</li>
+<li><strong>Views</strong> - UI elements that are drawn on-screen including buttons, lists
+forms etc.</li>
+<li><strong>Layouts</strong> - View hierarchies that control screen format and appearance of
+the views.</li>
+<li><strong>Intents</strong> -Messages wiring components together.</li>
+<li><strong>Resources</strong> - External elements, such as strings, constants and drawable
+pictures.</li>
+<li><strong>Manifest</strong> - Configuration file for the application.</li>
+</ul>
+<h1>2. Installing and Configuration of Android</h1>
+<h2>1. What is OS? Explain OS requirements for Android.</h2>
+<ul>
+<li>To develop an Android program, the necessary supporting OS used in a computer
+can be follows:
+<ul>
+<li>Windows XP, Vista, 7, 8</li>
+<li>Mac OS x</li>
+<li>Linux</li>
+</ul>
+</li>
+</ul>
+<h2>2. What is JDK?</h2>
+<ul>
+<li>An Android operating system program is developed in Java programming language
+we have to install Java Development Kit (JDK) in computer.</li>
+</ul>
+<h2>3. What is SDK?</h2>
+<ul>
+<li>API libraries, and emulator, documentation, sample code, developer tools, and
+tutorials which help us to build, test and debug apps form Android.</li>
+<li>Android SDK is made up of two main parts namely, the tools and the packages.</li>
+<li>Some Android SDK, features include:
+<ul>
+<li>No licensing, distribution, or development fees.</li>
+<li>WiFi hardware access</li>
+<li>IPC message passing</li>
+<li>Shared data stores</li>
+<li>An integrated open source WebKit-based browser.</li>
+<li>Full support for application that integrate Map controls as part of their
+interface.</li>
+<li>Peer-to-Peer(P2P) support using Google Talk.</li>
+</ul>
+</li>
+</ul>
+<h2>5. Describe DVM with diagram.</h2>
+<pre><code>                                 ┌───────────┐
+    ┌───────────┬──────────┬─────┤Android SDK├──────────┬───────────┐
+    │           │          │     └─────┬─────┘          │           │
+    │           │          │           │                │           │
+┌───┴────┐ ┌────┴────┐ ┌───┴────┐ ┌────┴────────┐ ┌─────┴─────┐ ┌───┴─────┐
+│Debugger│ │Libraries│ │Emulator│ │Documentation│ │Sample Code│ │Tutorials│
+└────────┘ └─────────┘ └────────┘ └─────────────┘ └───────────┘ └─────────┘
+</code></pre>
+<h2>What is JVM? Compare JVM and DVM?</h2>
+<ul>
+<li>Dalvik is register-based Virtual Machine(VM) that’s been optimized to ensure
+that a device can run multiple instance efficiently.</li>
+<li>Dalvik VM takes the generated Java class files and combines them into one or
+more Dalvik Executable (<code>.dev</code>) files.</li>
+<li>Android OS uses the Dalvik Virtual Machine (DVM) with just-during-time
+compilation to run Dalvik bytecode, with is frequently translated from
+Java bytecode.</li>
+<li>Google has also fine-tuned the collection in the Dalvik VM, but it has chosen
+to remove Just-In-Time (JIT) compiler, in early releases.</li>
+<li>Dalvik VM use a different kind of assembly-code generation, in which it uses
+registers as the primary units of data storage instead of the stack.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>JVM</th>
+<th>DVM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JVM supports multiple OS</td>
+<td>DVM supports only Android OS</td>
+</tr>
+<tr>
+<td>JVM forms separate classes in separate <code>.class</code> byte code files.</td>
+<td>DVM forms multiple class <code>.dex</code> byte code file.</td>
+</tr>
+<tr>
+<td>It is based on stack based VM architecture.</td>
+<td>It is based on register based VM architecture.</td>
+</tr>
+<tr>
+<td>JVM runs on more memory.</td>
+<td>DVM runs on less memory.</td>
+</tr>
+<tr>
+<td>The executable format of JVM is JAR.</td>
+<td>The executable format of DVM is APK.</td>
+</tr>
+<tr>
+<td>JVM has different content pools.</td>
+<td>DVM has common constant pool.</td>
+</tr>
+<tr>
+<td>It runs <code>.class</code> byte code directly.</td>
+<td>The <code>.class</code> byte codes are optimized to <code>.odex</code> format before executing in DVM.</td>
+</tr>
+</tbody>
+</table>
+<h2>7. Explain the term emulator in detail.</h2>
+<ul>
+<li>Android Emulator is responsible for running, debugging and testing the
+Android application.</li>
+<li>The Android Emulator mimics all the hardware and software features of typical
+mobile devices except that it can’t place annual phone calls.</li>
+</ul>
+<h2>8. What is ADT? Describe in detail.</h2>
+<ul>
+<li>Android Development Tool (ADT) in Android is a plugin for the Eclipse IDE
+which provides a suitable environment to develop an Android application where
+creation, compilation and debugging are possible.</li>
+</ul>
+<h2>10. Differentiate between JDK and SDK.</h2>
+<table>
+<thead>
+<tr>
+<th>SDK</th>
+<th>JDK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Software development kit.</td>
+<td>Java development kit.</td>
+</tr>
+<tr>
+<td>It is a set of software or development tools used to create an application or a program on any platform.</td>
+<td>It is a set of development tools that allows a programmer write a program using Java language.</td>
+</tr>
+<tr>
+<td>Libraries, sample code, supporting documentation etc.</td>
+<td>Consists of the programming tool’s selection components.</td>
+</tr>
+<tr>
+<td>Android SDK</td>
+<td>Java 8, Java 11, etc.</td>
+</tr>
+</tbody>
+</table>
+<h2>11. Define the terms: JDK, SDK, AVD, ADT</h2>
+<ul>
+<li><strong>JDK</strong> - An Android operating system program is developed in Java programming
+language we have to install Java Development Kit (JDK) in computer.</li>
+<li><strong>SDK</strong> - API libraries, and emulator, documentation, sample code, developer
+tools, and tutorials which help us to build, test and debug apps form Android.</li>
+<li><strong>AVD</strong> - And Android Virtual Device (AVD) represents a device configuration.</li>
+<li><strong>ADT</strong> - Android Development Tool (ADT) in Android is a plugin for the
+Eclipse IDE which provides a suitable environment to develop an Android
+application where creation, compilation and debugging are possible.</li>
+</ul>
+<h2>Explain AVD in detail.</h2>
+<ul>
+<li>And Android Virtual Device(AVD) represents a device configuration.</li>
+<li>An AVD is a configuration that defines the characteristics of an Android phone
+, tablet, Wear OS, Android TV, or Automotive OS device that we want to
+simulate in the Android Emulator.</li>
+<li>An AVD contains:
+<ul>
+<li><strong>Hardware profile</strong> - The hardware profile defines the characteristics of a device as shipped from the factory.</li>
+<li><strong>System image</strong> - A system image labeled with Google APIs includes access to Google Play services.</li>
+<li><strong>Storage area</strong> - The AVD has dedicated storage area on our development
+machine.</li>
+<li><strong>Skin</strong> - An emulator skin specifics the appearance of a device.</li>
+</ul>
+</li>
+</ul>
+<h2>18. Differentiate between JVM and DVM.</h2>
+<table>
+<thead>
+<tr>
+<th>JVM</th>
+<th>DVM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JVM supports multiple OS</td>
+<td>DVM supports only Android OS</td>
+</tr>
+<tr>
+<td>JVM forms separate classes in separate <code>.class</code> byte code files.</td>
+<td>DVM forms multiple class <code>.dex</code> byte code file.</td>
+</tr>
+<tr>
+<td>It is based on stack based VM architecture.</td>
+<td>It is based on register based VM architecture.</td>
+</tr>
+<tr>
+<td>JVM runs on more memory.</td>
+<td>DVM runs on less memory.</td>
+</tr>
+<tr>
+<td>The executable format of JVM is JAR.</td>
+<td>The executable format of DVM is APK.</td>
+</tr>
+<tr>
+<td>JVM has different content pools.</td>
+<td>DVM has common constant pool.</td>
+</tr>
+<tr>
+<td>It runs <code>.class</code> byte code directly.</td>
+<td>The <code>.class</code> byte codes are optimized to <code>.odex</code> format before executing in DVM.</td>
+</tr>
+</tbody>
+</table>
+<h1>3. UI Components and Layouts</h1>
+<h2>2. Explain screen elements for Android.</h2>
+<h2>3. What is directory?</h2>
+<h2>4. Describe directory structure in detail.</h2>
+<h2>5. Explain the term fundamentals of UI design in detail.</h2>
+<ul>
+<li>Every item in a User Interfaces (UI) is a subclass of the Android View class
+whic is present inside the package (android.view).</li>
+<li>The android SDK provides a set of pre-built views that can be used to
+construct the UI.</li>
+</ul>
+<h2>6. What is meant by layout?</h2>
+<p>A layout defines the stucture for User Interface in the application. There are
+number of Layouts provided by Android which we will use in almost all the
+Android applicatoins to provide different view, look and feel.</p>
+<h2>7. Explain Linearlayout with example.</h2>
+<ul>
+<li>Android LinearLayout is View group that aligns all children in either
+vertically or horizontally.</li>
+<li>Vertically or Horizontally direction depends on attribute
+<code>android:orientation</code> LinearLayout is simple and easy to use, it creates a
+scroll bar if the length of window exceeds the length of the screen.</li>
+<li>Attributes of LinearLayout: <code>id</code>, <code>orientation</code>, <code>layout_height</code>, <code>layout_weight</code>, <code>gravity</code>,
+<code>weight_sum</code>, <code>divider</code>.</li>
+<li>Example:<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+&lt;LinearLayout
+  xmlns:android=&quot;https://schemas.android.com/apk/res/android&quot;
+  android:layout_height=&quot;match_parent&quot;
+  android:layout_width=&quot;match_parent&quot;
+  android:orientation=&quot;vertical&quot;/&gt;
+  &lt;Button
+    android:id=&quot;@id/buttons&quot;
+    android:layout_width=&quot;wrap_content&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:text=&quot;Button&quot; /&gt;
+&lt;/LinearLayout&gt;
+</code></pre>
+</li>
+</ul>
+<h2>8. Describe FrameLayout with example.</h2>
+<h2>9. Explain the following terms:</h2>
+<h3>(i) TableLayout</h3>
+<h3>(ii) AbsoluteLayout</h3>
+<h2>10. Define the term Layout.</h2>
+<p>A layout defines the stucture for User Interface in the application. There are
+number of Layouts provided by Android which we will use in almost all the
+Android applicatoins to provide different view, look and feel.</p>
+<h2>11. Write down the control flow of an Android application step by step.</h2>
+<h2>13. List the different components of a screen.</h2>
+<h2>14. Explain the term fundamentals of UI design in detail.</h2>
+<h2>15. List various layouts used in Android UI design.</h2>
+<h1>4. Designing User Interface with View</h1>
+<h2>1. What is UI?</h2>
+<ul>
+<li>User interface basic building block are View class.</li>
+<li>View is superclass for all the UI components.</li>
+<li>Input controls are interactive components in the app’s User Interface(UI).</li>
+</ul>
+<h2>2. Enlist elements of UI.</h2>
+<ul>
+<li><strong>View</strong> - View is superclass for all UI compnents.</li>
+<li><strong>TextView</strong> - displays text to the user and optionally allows them to edit
+it.</li>
+<li><strong>EditText</strong> - An editable text entry box that accepts multiline entry.</li>
+<li><strong>Button</strong> -whcih can be pressed, or clicked, by the user to perform an
+action.</li>
+<li><strong>ImageButton</strong> - shows button with an image that can be pressed or clicked by
+the user.</li>
+<li><strong>ToggleButton</strong> - is used to display checked andunchecked state of a button.</li>
+<li><strong>RadioButton</strong> - A radiobutton has two states, either checked or unchecked.</li>
+<li><strong>RadioGroup</strong> - RadioButton are maninly used together in RadioGroup.</li>
+<li><strong>CheckBox</strong> - is an On/Off switch that can be toggled by the user.</li>
+<li><strong>ProgressBar</strong> - is used to show the progress of an operatin.</li>
+<li><strong>ListView</strong> - dispalys a vertically-scrollable collection of views, where
+each view is positioned immediately below the previous viewin the list.</li>
+<li><strong>GridView</strong> - shows items in two-dimensional scrolling grid.</li>
+<li><strong>ImageView</strong> - shows image with help <code>android.widget.imageView</code> class.</li>
+<li><strong>ScrollView</strong> - is a view group that is used to make vertically scrolllable
+views.</li>
+</ul>
+<h2>3. What is TextView? How to create it? Explain with example.</h2>
+<ul>
+<li><strong>TextView</strong> - displays text to the user and optionally allows them to edit</li>
+<li>A standard read-only text label that supports string formatting, multiline
+display and automatic word wrapping.</li>
+<li>Attributes of TextView:
+<ul>
+<li><strong>alpha</strong> - This property of the view as value between 0 and 1.</li>
+<li><strong>auto-link</strong> - controls whether links such as urls and email addresses.</li>
+<li><strong>gravity</strong> - attribute is optional attribute which is used to control the
+alignment of the text left, right, center, top, bottom, center_vertical,
+center_horizontal etc.</li>
+<li><strong>text</strong> - is used to set the text in TextView.</li>
+<li><strong>textColor</strong> - is used to set the text color.</li>
+<li><strong>textSize</strong> - is used to set the size of text.</li>
+<li><strong>textStyle</strong> - is used to set the text style.</li>
+<li><strong>background</strong> - is used to set the background.</li>
+<li><strong>padding</strong> - is used to set hte padding from left, right, top to bottom.</li>
+</ul>
+</li>
+<li>Example:<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout
+  xmlns:android=&quot;https://scemas.android.com/res/apk/android&quot;
+  android:orentation=&quot;vertical&quot;
+  android:layout_height=&quot;match_parent&quot;
+  android:layout_width=&quot;match_parent&quot;&gt;
+  &lt;TextView
+    android:layout_height=&quot;wrap_content&quot;
+    android:layout_width=&quot;wrap_content&quot;
+    android:text=&quot;Hello World&quot;
+    android:gravity=&quot;right&quot;
+    android:textColor=&quot;#2353&quot;
+    android:textSize=&quot;10px&quot;
+    android:background=&quot;#000&quot;
+    android:padding=&quot;10px&quot;/&gt;
+&lt;/LinearLayout&gt;
+</code></pre>
+</li>
+</ul>
+<h2>4. Explain the term Button with example.</h2>
+<ul>
+<li><strong>Button</strong> -whcih can be pressed, or clicked, by the user to perform an
+action.</li>
+<li>There are different types of buttons used in android such as CompoundButton,
+ToggleButton, RadioButton.</li>
+<li>Button is superclass of TextView class and compound button is the subclass of
+button class.</li>
+<li>Properties of Button:
+<ul>
+<li><strong>auto-link</strong> - controls whether links such as urls and email addresses are
+automatically found and converted toclickable links.</li>
+<li><strong>clickable</strong> - defines whether this viewreacts to click events.</li>
+<li><strong>id</strong> - is an attribute used to uniquely identify a text button.</li>
+<li><strong>gravity</strong> - is an optional attribute which is used to control the
+alignement of text like left, right, top, bottom, center_vertical,
+center_horizontal etc.</li>
+<li><strong>text</strong> - is used to set the text in TextView.</li>
+<li><strong>textColor</strong> - is used to set the text color.</li>
+<li><strong>textSize</strong> - is used to set the size of text.</li>
+<li><strong>textStyle</strong> - is used to set the text style.</li>
+<li><strong>background</strong> - is used to set the background.</li>
+<li><strong>padding</strong> - is used to set hte padding from left, right, top to bottom.</li>
+<li><strong>drawableButton</strong>, <strong>drawableTop</strong>, <strong>drawableRight</strong>, <strong>drawableLeft</strong> -
+we draw drawable to the left, right, top or bottom of text.</li>
+</ul>
+</li>
+</ul>
+<h2>5. What is ImageButton? How to create it? Explain with example.</h2>
+<ul>
+<li><strong>ImageButton</strong> - shows button with an image that can be pressed or clicked by
+the user.</li>
+<li>Properties of ImageButton:
+<ul>
+<li><strong>id</strong> - is an attribute used to uniquely identify a text button.</li>
+<li><strong>src</strong> - is used to set a source file of image or we can say image in the
+image button to make layout look attractive.</li>
+<li><strong>background</strong> - is used to set the background.</li>
+<li><strong>padding</strong> is used to set padding left, right, top or bottom</li>
+</ul>
+</li>
+<li>Example:<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout
+  xmlns:android=&quot;https://schemas.android.com/apk/res/android&quot;
+  android:layout_width=&quot;match_parent&quot;
+  android:layout_height=&quot;match_parent&quot;
+  android:orientation=&quot;vertical&quot;/&gt;
+  &lt;ImageButton
+    android:id=&quot;@+id/imageButton&quot;
+    android:src=&quot;@drawable/button&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:layout_width=&quot;wrap_content&quot;/&gt;
+&lt;/LinearLayout&gt;
+</code></pre>
+</li>
+</ul>
+<h2>6. Describe the following UI elements with example.</h2>
+<h3>(i) ListView</h3>
+<ul>
+<li><strong>ListView</strong> - dispalys a vertically-scrollable collection of views, where
+each view is positioned immediately below the previous viewin the list.</li>
+<li>Properties of ListView:
+<ul>
+<li><strong>id</strong> - is an attribute used to uniquely identify a text button.</li>
+<li><strong>divider</strong> - This is a drawable or color draw between different list items.</li>
+<li><strong>dividerHeight</strong> - This specify the height of divider between list items.</li>
+<li><strong>listSelector</strong> - is used to set the selector of the listView.</li>
+</ul>
+</li>
+<li>Example:<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; endcoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout
+  xmlns:android=&quot;https://schemas.android.com/apk/res/android&quot;
+  android:layout_width=&quot;match_parent&quot;
+  android:layout_height=&quot;match_parent&quot;
+  android:orientation=&quot;vertical&quot;&gt;
+  &lt;ListView
+    android:id=&quot;@+id/listView&quot;
+    android:layout_width=&quot;wrap_content&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:divider=&quot;#000&quot;
+    android:dividerHeight=&quot;1dp&quot;/&gt;
+&lt;/LinearLayout&gt;
+</code></pre>
+</li>
+</ul>
+<h3>(ii) ScrollView</h3>
+<ul>
+<li><strong>ScrollView</strong> - is a view group that is used to make vertically scrolllable</li>
+<li>It is a <code>FrameLayout</code> which put one child in it containg the whole contents to
+scroll.</li>
+<li>This is useful when we have too much to fit onto a single screen.</li>
+<li>Example:<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;androidx.constraintlayout.widget.ConstraintLayout
+  xmlns:android=&quot;https://schemas.android.com/apk/res/android&quot;
+  xmlns:app=&quot;https://schemas.android.com/apk/res-auto&quot;
+  xmlns:app=&quot;https://schemas.android.com/tools&quot;
+  android:layout_width=&quot;match_parent&quot;
+  android:layout_height=&quot;match_parent&quot;
+  android:tools=&quot;.MainActivity&quot;&gt;
+  &lt;ScrollView
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;&gt;
+    &lt;TextView
+      android:id=&quot;@+id/textView&quot;
+      android:layout_height=&quot;wrap_content&quot;
+      android:layout_width=&quot;wrap_content&quot;
+      android:text=&quot;Hello World&quot;/&gt;
+  &lt;/ScrollView&gt;
+&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;
+</code></pre>
+</li>
+</ul>
+<h3>(iii) GridView</h3>
+<ul>
+<li>A GridView is type of AdapterView that dispalyas items in two-dimensional
+scrolling grid.</li>
+<li>Example:<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;androidx.contraintlayout.widget.ContraintLayout
+  xmlns:android=&quot;https://schemas.android.com/apk/res/android&quot;
+  xmlns:tools=&quot;https://schemas.android.com/tools&quot;
+  android:tools=&quot;.MainActivity&quot;
+  android:layout_width=&quot;match_parent&quot;
+  android:layout_width=&quot;mathc_parent&quot;&gt;
+  &lt;gridview
+    android:id=&quot;@+id/idgv&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:layout_widht=&quot;wrap_content&quot;
+    android:numcoumns=&quot;2&quot;
+    android:verticalspacing=&quot;6dp&quot;/&gt;
+&lt;/androidx.contraintlayout.widget.contraintlayout&gt;
+</code></pre>
+</li>
+</ul>
+<h3>(iv) imageview.</h3>
+<ul>
+<li><strong>imageview</strong> - shows image with help <code>android.widget.imageview</code> class.</li>
+</ul>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;androidx.contraintlayout.widget.contraintlayout
+  xmlns:android=&quot;https://schemas.android.com/apk/res/android&quot;
+  xmlns:app=&quot;https://schemas.android.com/apk/res-auto&quot;
+  xmlns:tools=&quot;https://schemas.android.com/tools&quot;
+  android:tools=&quot;.mainactivity&quot;
+  android:layout_height=&quot;match_parent&quot;
+  android:layout_width=&quot;match_parent&quot;&gt;
+  &lt;imageview
+    android:id=&quot;@+id/imageview&quot;
+    android:layout_width=&quot;wrap_content&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:src=&quot;@drawable/image&quot;/&gt;
+&lt;/androidx.contraintlayout.widget.contraintlayout&gt;
+</code></pre>
+<h2>7. explain radiogroup with example.</h2>
+<ul>
+<li><strong>radiobutton</strong> - a radiobutton has two states, either checked or unchecked.</li>
+<li><strong>radiogroup</strong> - radiobutton are maninly used together in radiogroup.</li>
+<li>Properties of radiobutton:
+<ul>
+<li><strong>id</strong> - is an attribute used to uniquely identify a text button.</li>
+<li><strong>checked</strong> - in radio button is used to set the current state of radio
+button.</li>
+<li><strong>gravity</strong> - is an optional attribute which is used to control the
+alignement of text like left, right, top, bottom, center_vertical,
+center_horizontal etc.</li>
+<li><strong>text</strong> - is used to set the text in TextView.</li>
+<li><strong>textColor</strong> - is used to set the text color.</li>
+<li><strong>textSize</strong> - is used to set the size of text.</li>
+<li><strong>textStyle</strong> - is used to set the text style.</li>
+<li><strong>background</strong> - is used to set the background.</li>
+<li><strong>padding</strong> - is used to set hte padding from left, right, top to bottom.</li>
+<li><strong>drawableButton</strong>, <strong>drawableTop</strong>, <strong>drawableRight</strong>, <strong>drawableLeft</strong> -
+we draw drawable to the left, right, top or bottom of text.</li>
+</ul>
+</li>
+<li>Example:<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout
+  xmlns:android=&quot;https://schemas.android.com/apk/res/android&quot;
+  xmlns:tools=&quot;https://schemas.android.com/tools&quot;
+  android:tools=&quot;.MainActivity&quot;
+  android:layout_width=&quot;match_parent&quot;
+  android:layout_height=&quot;match_parent&quot;
+  android:orientation=&quot;vertical&quot;&gt;
+  &lt;RadioGroup
+    android:layout_width=&quot;wrap_content&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:id=&quot;@+id/radioGendar&quot;&gt;
+    &lt;RadioButton
+      android:id=&quot;@+id/radioMan&quot;
+      android:text=&quot;Man&quot;
+      android:layout_height=&quot;wrap_content&quot;
+      android:layout_width=&quot;wrap_content&quot;
+      android:checked=&quot;true&quot;/&gt;
+    &lt;RadioButton
+      android:id=&quot;@+id/radioGirl&quot;
+      android:text=&quot;Women&quot;
+      android:layout_height=&quot;wrap_content&quot;
+      android:layout_width=&quot;wrap_content&quot;
+      android:checked=&quot;false&quot;/&gt;
+  &lt;RadioGroup&gt;
+&lt;/LinearLayout&gt;
+</code></pre>
+</li>
+</ul>
+<h2>8. With the help of example describe ToggleButton.</h2>
+<ul>
+<li><strong>ToggleButton</strong> - is used to display checked and unchecked state of a button.</li>
+<li>It is subclass of compound Button.</li>
+<li>Properties of radiobutton:
+<ul>
+<li><strong>id</strong> - is an attribute used to uniquely identify a text button.</li>
+<li><strong>checked</strong> - in radio button is used to set the current state of radio
+button.</li>
+<li><strong>gravity</strong> - is an optional attribute which is used to control the
+alignement of text like left, right, top, bottom, center_vertical,
+center_horizontal etc.</li>
+<li><strong>textOn</strong> and <strong>textOff</strong> - is used to set the text when toggle button is
+in checked state.</li>
+<li><strong>textColor</strong> - is used to set the text color.</li>
+<li><strong>textSize</strong> - is used to set the size of text.</li>
+<li><strong>textStyle</strong> - is used to set the text style.</li>
+<li><strong>background</strong> - is used to set the background.</li>
+<li><strong>padding</strong> - is used to set hte padding from left, right, top to bottom.</li>
+<li><strong>drawableButton</strong>, <strong>drawableTop</strong>, <strong>drawableRight</strong>, <strong>drawableLeft</strong> -
+we draw drawable to the left, right, top or bottom of text.</li>
+</ul>
+</li>
+<li>Example:<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;androidx.contraintlayout.widget.ContraintLayout
+  xmlns:android=&quot;https://schemas.android.com/apk/res/android&quot;
+  xmlns:app=&quot;https://schemas.android.com/apk/res-auto&quot;
+  xmlns:tools=&quot;https://schemas.android.com/tools&quot;
+  android:tools=&quot;.MainActivity&quot;
+  android:layout_width=&quot;match_parent&quot;
+  android:layout_height=&quot;match_parent&quot;&gt;
+  &lt;ToggleButton
+    android:id=&quot;@+id/simpleToggleButton&quot;
+    android:layout_width=&quot;wrap_content&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:layout_gravity=&quot;center_horizontal&quot;
+    android:checked=&quot;false&quot;
+    android:textOn=&quot;On&quot;
+    android:textOff=&quot;Off&quot;/&gt;
+&lt;/android.contraintlayout.wiget.ContraintLayout&gt;
+</code></pre>
+</li>
+</ul>
+<h2>10. How to custom toast alert?</h2>
+<ul>
+<li>Toast is used to display information for a period of time.</li>
+<li>It contains a message to be displayed quickly and disappears after specified
+period of time.</li>
+<li>It does not block the user interaction.</li>
+<li>Tost are not clickable.</li>
+<li>Exmaple:<pre><code class="language-java">Toast.makeText(getApplicationContext(), &quot;Simple Toast in Android&quot;,
+  Toast.LENGTH_LONG);
+</code></pre>
+</li>
+</ul>
+<h2>11. Describe Date and Time picker with example.</h2>
+<h3>DatePicker</h3>
+<ul>
+<li>
+<p>DatePicker is a widget used to select a date.</p>
+</li>
+<li>
+<p>It allows to select date by date, month and year in our custom UI.</p>
+</li>
+<li>
+<p>If we need to show this view as a dialog then wehave to use a DatePickerDialog
+class.</p>
+</li>
+<li>
+<p>Example:</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout
+  xmlns:android=&quot;https://schemas.android.com/apk/res/android&quot;
+  xmlns:app=&quot;https://schemas.android.com/apk/res-auto&quot;
+  xmlns:tools=&quot;https://schemas.android.com/tools&quot;
+  android:tools=&quot;.MainActivity&quot;
+  android:orentation=&quot;vertical&quot;
+  android:layout_height=&quot;match_parent&quot;
+  android:layout_width=&quot;mathc_parent&quot;/&gt;
+  &lt;DatePicker
+    android:id=&quot;@+id/datepicker&quot;
+    android:layout_width=&quot;wrap_content&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:datePickerMode=&quot;spinner&quot;/&gt;
+&lt;/LinearLayout&gt;
+</code></pre>
+</li>
+<li>
+<p>Method of DatePicker:</p>
+<ul>
+<li><code>setSpinnersShow(boolen show)</code> - This method is used to set whether the
+sinner of the TimePicker in shown or not.</li>
+<li><code>getDayOfMonth()</code> - This method is used to get selected day of the month.</li>
+<li><code>getMonth()</code> - This method is used to get the selected month from a date
+picker.</li>
+<li><code>getYear()</code> - This method is used to get the selected year from a date
+picker.</li>
+<li><code>getFirstDayOfWeek()</code> - This method is used to get the first day of the
+week.</li>
+</ul>
+</li>
+<li>
+<p>Attributes of DatePicker:</p>
+<ul>
+<li><strong>id</strong> - is an attribute used to uniquely identify a text button.</li>
+<li><strong>datePickerMode</strong> - This attribute is used to set the DatePicker.</li>
+</ul>
+</li>
+</ul>
+<h3>TimePicker</h3>
+<ul>
+<li>Is a widget used for selecting the time of the day in either AM/PM mode or 24
+hours mode.</li>
+<li>The displayed time consist of hours, minutes and clock format.</li>
+<li>Method of TimePicer:
+<ul>
+<li><code>setCurrentHour(integer currentHour)</code> - This method is used to set the
+current hours in a TimePicker.</li>
+<li><code>setHour(Integer hour)</code> - This method is used to set the current hours in
+TimePicker.</li>
+<li><code>setCurrentMinute(Integer currentMinute)</code> - This method is used to set the
+current minutes in a time.</li>
+<li><code>setMinute(Integer minute)</code> - This method is used to set the current minute
+in time.</li>
+<li><code>setIs24HourView(Boolean is24HourView)</code> - This method is used to set the
+mode of Time picker either 24 hours mode or AM/PM mode.</li>
+<li><code>is24HourView()</code> - This method is used to check the current mode of the
+time picker.</li>
+<li><code>setOnTimeChangedListenar()</code> - This method is used to set the callback that
+indicates the time has been adjusted by the user.</li>
+</ul>
+</li>
+<li>Attributes of TimePicker:
+<ul>
+<li><code>timePickerMode</code> - The time picker mode is attribute of time picker used to
+set the mode either spinner or clock.</li>
+</ul>
+</li>
+</ul>
+<h2>12. What is progress bar? How to create it?</h2>
+<ul>
+<li>ProgressBar is used to show the progress of an operation.</li>
+<li>ProgressBar is a visual indicator of progress in a number of operation.</li>
+<li>Attributes of DatePicker:
+<ul>
+<li><strong>id</strong> - is an attribute used to uniquely identify a text button.</li>
+<li><strong>max</strong> - is an attribute used in android to define maximum value of the
+progress can take.</li>
+<li><strong>progress</strong> - is an attribute used in android to define the default
+progress value between 0 and Max.</li>
+<li><strong>progressBrawable</strong> - is an attribute used to set the custom drawable for
+the progress mode.</li>
+</ul>
+</li>
+<li>Example:<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;RelativeLayout
+  xmlns:android=&quot;https://schemas.android.com/apk/res/android&quot;
+  xmlns:tools=&quot;https://schemas.android.com/tools&quot;
+  xmlns:app=&quot;https://schemas.android.com/apk/res-auto&quot;
+  android:layout_width=&quot;match_parent&quot;
+  android:layout_height=&quot;mathc_parent&quot;/&gt;
+  &lt;ProgressBar
+    android:id=&quot;@+id/progressBar&quot;
+    android:layout_width=&quot;wrap_content&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:max=&quot;100&quot;
+    android:progress=&quot;0&quot;
+    android:progressDrawable=&quot;@drawable/progress&quot;/&gt;
+&lt;/RelativeLayout&gt;
+</code></pre>
+</li>
+</ul>
+<h2>14. Describe the following with example:</h2>
+<h3>(ii) CheckBox.</h3>
+<ul>
+<li>Is an On/Off switch that can be toggled by the user.</li>
+<li>A two-state represented by a checked or unchecked box.</li>
+<li>Example:<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;RelativeLayout
+  xmlns:android=&quot;https://schemas.android.com/apk/res/android&quot;
+  xmlns:tools=&quot;https://schemas.android.com/tools&quot;
+  xmlns:app=&quot;https://schemas.android.com/apk/res-auto&quot;
+  android:layout_width=&quot;match_parent&quot;
+  android:layout_height=&quot;mathc_parent&quot;/&gt;
+  &lt;CheckBox
+    android:id=&quot;@+id/check1&quot;
+    android:layout_width=&quot;wrap_content&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:text=&quot;Android&quot;
+    android:checked=&quot;true&quot;/&gt;
+  &lt;CheckBox
+    android:id=&quot;@+id/check1&quot;
+    android:layout_width=&quot;wrap_content&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:text=&quot;ISO&quot;
+    android:checked=&quot;true&quot;/&gt;
+  &lt;CheckBox
+    android:id=&quot;@+id/check1&quot;
+    android:layout_width=&quot;wrap_content&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:text=&quot;KaiOS&quot;
+    android:checked=&quot;true&quot;/&gt;
+&lt;/RelativeLayout&gt;
+</code></pre>
+</li>
+</ul>
+<h2>15. Draw the hierarchy of designing User Interface (UI) with View.</h2>
+<pre><code>┌────┐
+│View├───────────────────────┐
+└─┬──┤                       │
+  │  └────────┐              │
+  │           │              │
+ ┌┴───────┐ ┌─┴───────┐ ┌────┴────┐
+ │TextView│ │ImageView│ │ViewGroup│
+ └───┬─┬──┘ └────┬────┘ └─────────┘
+     │ │         │
+     │ └──────┐  └──────┐
+     │        │         │
+ ┌───┴────┐ ┌─┴────┐ ┌──┴────────┐
+ │EditText│ │Button│ │ImageButton│
+ └────────┘ └┬──┬─┬┘ └───────────┘
+             │  │ │
+    ┌────────┘  │ └──────────┐
+    │           │            │
+ ┌──┴─────┐ ┌───┴───────┐ ┌──┴─────────┐
+ │CheckBox│ │RadioButton│ │ToggleButton│
+ └────────┘ └───────────┘ └────────────┘
+</code></pre>
+<h2>16. Describe the term “edit text” with example.</h2>
+<ul>
+<li>An editable text enty box that accepts multiline entry, word wrapping and
+hint text.</li>
+<li>A EditText is an overlay over TextView that configures itself to be
+editable.</li>
+<li>Example:<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;RelativeLayout
+  xmlns:android=&quot;https://schemas.android.com/apk/res/android&quot;
+  xmlns:tools=&quot;https://scheams.android.com/tools&quot;
+  xmlns:app=&quot;https://scheams.android.com/apk/res-auto&quot;
+  android:layout_width=&quot;match_parent&quot;
+  android:layout_height=&quot;match_parent&quot;
+  android:tools=&quot;.MainActivity&quot;&gt;
+  &lt;EditText
+    android:id=&quot;@+id/editIt&quot;
+    android:layout_width=&quot;wrap_content&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:hint=&quot;Name:&quot;
+    android:selectAllOnFocus=&quot;true&quot;
+    android:inputType=&quot;textPersonName&quot;/&gt;
+&lt;/RelativeLayout&gt;
+</code></pre>
+</li>
+</ul>
+<h1>5. Activity &amp; Multimedia with Database</h1>
+<h2>Activity</h2>
+<ul>
+<li>An activity represents a single screen with user interface just like window
+or frame of Java.</li>
+<li>Android activity is the subclass of ContextThemeWrapper class.</li>
+<li>In C, C++ or Java programming language you must have seen that your program
+stats from <code>main()</code> function.</li>
+<li>Android sytem iniiates its program with an Activity starting with a call
+<code>onCreate()</code> callback method.</li>
+</ul>
+<h2>Draw the activity life cycle.</h2>
+<pre><code>                             ┌┬────────┬┐
+                             ││Activity││
+                             ││launched││
+                             └┴────┬───┴┘
+                                   │
+                              ┌────▼─────┐
+         ┌────────────────────►onCreate()│
+         │                    └────┬─────┘
+         │                         │
+         │                    ┌────▼────┐                    ┌───────────┐
+         │                    │onStart()◄────────────────────┤onRestart()│
+         │                    └────┬────┘                    └───────▲───┘
+         │                         │                                 │
+User navigates                ┌────▼─────┐                           │
+to the activity               │onResume()◄───────────────┐           │
+         │                    └────┬─────┘               │           │
+         │                         │                     │           │
+  ┌┬─────┴─────┬┐            ┌┬────┴───┬┐                │           │
+  ││App process││            ││Activity││                │           │
+  ││killed     ││            ││Running ││                │           │
+  └┴─────▲─────┴┘            └┴────┬───┴┘                │           │
+         │                         │                     │           │
+         │                         ▼                     │           │
+Apps with higher priority   Another activity comes   User returns    │
+need memory                 into the foreground      to the activity │
+         │                         │                     │           │
+         │                         │                     │           │
+         │                    ┌────▼────┐                │           │
+         │                    │onPause()├────────────────┘           │
+         │                    └────┬────┘                            │
+         │                         │                                 │
+         │                         │                                 │
+         │                  The activity is                          │
+         │                  no longer visible                        │
+         │                         │                        User navigates
+         │                         │                        to the activity
+         │                    ┌────▼───┐                             │
+         └────────────────────┤onStop()├─────────────────────────────┘
+                              └────┬───┘
+                                   │
+                                   │
+                            The activity is finishing or
+                            being destroyed by the system
+                                   │
+                                   │
+                              ┌────▼──────┐
+                              │onDestroy()│
+                              └────┬──────┘
+                                   │
+                             ┌┬────▼────┬┐
+                             ││Activity ││
+                             ││Shut Down││
+                             └┴─────────┴┘
+</code></pre>
+<h2>Explain activity lifecycle?</h2>
+<ul>
+<li>The android Activity is the subclass of ContextThemeWrapper class.</li>
+<li>An activity is the single screen in android. It is like window or frame of
+Java.</li>
+<li>By the help of activity, you can place all your UI components or widgets in a
+single screen.</li>
+<li><strong>7 lifecycle methods of android activity.</strong></li>
+<li><strong>onCreate</strong> - called when activity is first created.</li>
+<li><strong>onStart</strong> - called when activity is becoming visible to the user.</li>
+<li><strong>onResume</strong> - called when activity will start interacting with the user.</li>
+<li><strong>onPause</strong> - called when activity is not visible to the user.</li>
+<li><strong>onStop</strong> - called when activity is no longer visible to the user.</li>
+<li><strong>onRestart</strong> - called after your activity is stopped, prior to start.</li>
+<li><strong>onDestroy</strong> - called before the activity is destroyed.</li>
+</ul>
+<h2>What are intents(<code>Implict</code> and <code>explicit</code> intent)?</h2>
+<ul>
+<li>Android Intent is the message that is passed between components such as
+activities, content providers, broadcast receivers, services etc.</li>
+<li>It is generally used with <code>startActivity()</code> method to invoke activity,
+broadcast receivers etc.  The dictionary meaning of intent is intention or
+purpose.</li>
+<li>So, it can be described as the intention to do action.</li>
+<li>The LabeledIntent is the subclass of android.content.Intent class.</li>
+<li>Android intents are mainly used to:
+<ul>
+<li>Start the service</li>
+<li>Launch an activity</li>
+<li>Display a web page</li>
+<li>Display a list of contacts</li>
+<li>Broadcast a message</li>
+<li>Dial a phone call etc</li>
+</ul>
+</li>
+</ul>
+<h3>Implicit intent</h3>
+<p>The implicit intent is the intent where instead of defining the exact
+components, you define the action that you want to perform for different
+activities.</p>
+<h3>Explicit intent</h3>
+<p>An explicit intent is an intent where you explicitly define the component that
+needs to be called by Android System. An explicit intent is one that you use to
+launch a specific app component, such s a particular activity or service in
+your app.</p>
+<h2>Explain content provider?</h2>
+<ul>
+<li>Android system allows the content provider to store the application data in
+several ways. Users can manage to store the application data like
+<ul>
+<li>Images</li>
+<li>Audio</li>
+<li>Videos</li>
+<li>Personal contact information by storing them in:
+<ul>
+<li>SQLite Database</li>
+<li>Files</li>
+<li>Network.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>In order to share the data, content providers have certain permissions that
+are used to grant or restrict the rights to other applications to interfere
+with the data.</li>
+</ul>
+<h2>List sensors in Android and explain anyone in detail.</h2>
+<p>The Android platform supports following three broad categories of sensors:</p>
+<ul>
+<li>Motion Sensors</li>
+<li>Environmetal Sensors</li>
+<li>Position sensors</li>
+</ul>
+<h3>Motion Sensors:</h3>
+<ul>
+<li>A motion sensor (or motion detector) is an electronic device that is designed
+to detect and measure movement.</li>
+<li>Motion sensors are used primarily in home and business security systems.</li>
+<li>These sensors measure acceleration forces and rotational forces along three
+axes.</li>
+<li>This category includes accelerometers, gravity sensors, gyroscopes, and
+rotational vector sensors.</li>
+</ul>
+<h3>Position Sensors</h3>
+<p>These are used to measure the physical position of device.</p>
+<h3>Environmental Sensors</h3>
+<p>These are used to measure the environmental changes such as temperature, humidity
+etc</p>
+<h2>Define Services in Android OS.</h2>
+<ul>
+<li>A service is an application component which runs withour direst interaction
+with the user in the background.</li>
+<li>Services are used for repetitive and potentially long running operations:
+<ul>
+<li>Internet downloads</li>
+<li>Checking for new data</li>
+<li>Data processing</li>
+<li>Updating content</li>
+<li>Providers and the like</li>
+</ul>
+</li>
+<li>They typically run in the background to perform long-running operations or
+work for remote processes.</li>
+</ul>
+<h2>CONTENT URI</h2>
+<ul>
+<li>Content URI(Uniform Resource Identifier) is the key concept of Content
+providers.</li>
+<li>To access the data from a content provider, URI is used as a query string.</li>
+<li>Structure of a Content URI:
+<ul>
+<li>content:// – Mandatory part of the URI as it represents that the given URI
+is a Content URI.</li>
+<li>authority – Signifies the name of the content provider like contacts,
+browser, etc. This part must be unique for every content provider.</li>
+<li>optionalPath – Specifies the type of data provided by the content provider.
+It is essential as this part helps content providers to support different
+types of data that are not related to each other like audio and video files.</li>
+<li>optionalID – It is a numeric value that is used when there is a need to
+access a particular record.</li>
+</ul>
+</li>
+</ul>
+<h2>WORKING OF THE CONTENT PROVIDER</h2>
+<ul>
+<li>UI components of android applications like Activity and Fragments use an object
+CursorLoader to send query requests to ContentResolver.</li>
+<li>The ContentResolver object sends requests (like create, read, update, and
+delete) to the ContentProvider as a client.</li>
+<li>After receiving a request, ContentProvider process it and returns the desired
+result.</li>
+</ul>
+<h2>CREATE CONTENT PROVIDER</h2>
+<p>This involves number of simple steps to create your own content provider.</p>
+<ul>
+<li>First of all you need to create a Content Provider class that extends the
+ContentProviderbaseclass.</li>
+<li>Second, you need to define your content provider URI address which will be
+used to access the content.</li>
+<li>Next you will need to create your own database to keep the content.</li>
+<li>Next you will have to implement Content Provider queries to perform different
+database specific operations.</li>
+<li>Finally register your Content Provider in your activity file using <provider>
+tag.</li>
+<li>Methods which you need to override in Content Provider class:
+<ol>
+<li>onCreate() This method is called when the provider is started.</li>
+<li>query() This method receives a request from a client. The result
+is returned as a Cursor object.</li>
+<li>insert()This method inserts a new record into the content
+provider.</li>
+<li>delete() This method deletes an existing record from the content
+provider.</li>
+<li>update() This method updates an existing record from the
+content provider.</li>
+<li>getType() This method returns the MIME type of the data at the
+given URI.</li>
+</ol>
+</li>
+</ul>
+<h2>FRAGMENT</h2>
+<ul>
+<li>A Fragment is a piece of an activity which enable more modular activity
+design.</li>
+<li>You create fragments by extending Fragment class and You can insert a fragment
+into your activity layout by declaring the fragment in the activity’s layout
+file, as a <fragment> element.</li>
+<li>A fragment has its own layout and its own behaviour with its own life cycle
+callbacks.</li>
+<li>You can add or remove fragments in an activity while the activity is running.</li>
+<li>You can combine multiple fragments in a single activity to build a multi-pane
+UI.</li>
+<li>A fragment can be used in multiple activities.</li>
+</ul>
+<h2>ANDROID FRAGMENT LIFECYCLE METHODS</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>onAttach(Activity)</td>
+<td>it is called only once when it is attached with activity.</td>
+</tr>
+<tr>
+<td>onCreate(Bundle)</td>
+<td>It is used to initialize the fragment.</td>
+</tr>
+<tr>
+<td>onCreateView(LayoutInflater, ViewGroup, Bundle)</td>
+<td>creates and returns view hierarchy.</td>
+</tr>
+<tr>
+<td>onActivityCreated(Bundle)</td>
+<td>It is invoked after the completion of onCreate() method.</td>
+</tr>
+<tr>
+<td>onViewStateRestored(Bundle)</td>
+<td>It provides information to the fragment that all the saved state of fragment view hierarchy has been restored.</td>
+</tr>
+<tr>
+<td>onStart()</td>
+<td>makes the fragment visible.</td>
+</tr>
+<tr>
+<td>onResume()</td>
+<td>makes the fragment interactive.</td>
+</tr>
+<tr>
+<td>onPause()</td>
+<td>is called when fragment is no longer interactive.</td>
+</tr>
+<tr>
+<td>onStop()</td>
+<td>is called when fragment is no longer visible.</td>
+</tr>
+<tr>
+<td>onDestroyView()</td>
+<td>allows the fragment to clean up resources.</td>
+</tr>
+<tr>
+<td>onDestroy()</td>
+<td>allows the fragment to do final clean up of fragment state.</td>
+</tr>
+<tr>
+<td>onDetach()</td>
+<td>It is called immediately prior to the fragment no longer being associated with its activity.</td>
+</tr>
+</tbody>
+</table>
+<h2>MEDIAPLAYER CLASS</h2>
+<ul>
+<li>We can play and control the audio files in android by the help of MediaPlayer
+class.</li>
+<li>The android.media.MediaPlayer class is used to control the audio or video
+files.
+|                                                Method &amp; description                                                |
+|:------------------------------------------------------------------------------------------------------------------:|
+| <code>isPlaying()</code> This method just returns true/false indicating the song is playing or not                            |
+| <code>seekTo(position)</code> This method takes an integer, and move song to that particular position millisecond             |
+| <code>getCurrentPosition()</code> This method returns the current position of song in milliseconds                            |
+| <code>getDuration()</code> This method returns the total time duration of song in milliseconds                                |
+| <code>reset()</code> This method resets the media player                                                                      |
+| <code>release()</code> This method releases any resource attached with MediaPlayer object                                     |
+| <code>setVolume(float leftVolume, float rightVolume)</code> This method sets the up down volume for this player               |
+| <code>setDataSource(FileDescriptor fd)</code> This method sets the data source of audio/video file                            |
+| <code>selectTrack(int index)</code> This method takes an integer, and select the track from the list on that particular index |
+| <code>getTrackInfo()</code> This method returns an array of track information                                                 |</li>
+</ul>
+<h2>TEXTTOSPEECH</h2>
+<ul>
+<li>Android allows you convert your text into voice. Not only you can convert it
+but it also allows you to speak text in variety of different languages.</li>
+<li>TextToSpeech class is responsible to convert text into speech.</li>
+<li>It provides a lot of methods to control the speech such as setSpeedRate(),
+setPitch() etc.
+|                                               Method &amp; description                                              |
+|:---------------------------------------------------------------------------------------------------------------:|
+| <code>addSpeech(String text, String filename)</code> This method adds a mapping between a string of text and a sound file. |
+| <code>getLanguage()</code> This method returns a Locale instance describing the language.                                  |
+| <code>isSpeaking()</code> This method checks whether the TextToSpeech engine is busy speaking.                             |
+| <code>setPitch(float pitch)</code> This method sets the speech pitch for the TextToSpeech engine.                          |
+| <code>setSpeechRate(float speechRate)</code> This method sets the speech rate.                                             |
+| <code>shutdown()</code> This method releases the resources used by the TextToSpeech engine.                                |
+| <code>stop()</code> This method stop the speak.                                                                            |</li>
+</ul>
+<h2>Android AsyncTask example and explanation</h2>
+<ul>
+<li>Android AsyncTask going to do background operation on background thread and
+update on main thread.</li>
+<li>In android we cant directly touch background thread to
+main thread in android development. asynctask help us to make communication
+between background thread to main thread.</li>
+</ul>
+<h3>Methods of AsyncTask</h3>
+<ul>
+<li><code>onPreExecute()</code> − Before doing background operation we should show something
+on screen like progressbar or any animation to user. we can directly
+comminicate background operation using on</li>
+<li><code>doInBackground()</code> -  but for the best practice, we should call all asyncTask
+methods .</li>
+<li><code>doInBackground(Params)</code> − In this method we have to do background operation
+on background thread. Operations in this method should not touch on any
+mainthread activities or fragments.</li>
+<li><code>onProgressUpdate(Progress…)</code> − While doing background operation, if you want
+to update some information on UI, we can use this method.</li>
+<li><code>onPostExecute(Result)</code> − In this method we can update ui of background
+operation result.</li>
+</ul>
+<h3>Generic Types in Async Task</h3>
+<ul>
+<li><code>TypeOfVarArgParams</code> − It contains information about what type of params used
+for execution.</li>
+<li><code>ProgressValue</code> − It contains information about progress units. While doing
+background operation we can update information on ui using onProgressUpdate().</li>
+<li><code>ResultValue</code> −It contains information about result type.</li>
+</ul>
+<h2>LOCATION BASED SERVICES</h2>
+<ul>
+<li>Android location APIs make it easy for you to build location-aware
+applications, without needing to focus on the details of the underlying
+location technology.</li>
+<li>This becomes possible with the help of Google Play services, which facilitates
+adding location awareness to your app with automated location tracking,
+geofencing, and activity recognition.</li>
+<li>For this Google provides us a library via Google Play Services for using maps.</li>
+<li>In order to use the Google Maps API, you must register your application on
+the Google Developer Console and enable the API.</li>
+</ul>
+<h2>SMS TELEPHONY</h2>
+<ul>
+<li>In Android, you can use SmsManager API or devices Built-in SMS application to
+send SMS’s.</li>
+<li>SmsManager API<pre><code class="language-java">SmsManager smsManager = SmsManager.getDefault();
+sms.sendTextMessage(&quot;8802177690&quot;, null, &quot;hello javatpoint&quot;, pi,null);
+</code></pre>
+</li>
+<li>Built-in SMS application<pre><code class="language-java">Intent sendIntent = new Intent(Intent.ACTION_VIEW);
+sendIntent.putExtra(&quot;sms_body&quot;, &quot;default content&quot;);
+sendIntent.setType(&quot;vnd.android-dir/mms-sms&quot;);
+startActivity(sendIntent);
+</code></pre>
+</li>
+<li>Both need SEND_SMS permission.<pre><code class="language-xml">&lt;uses-permission android:name=&quot;android.permission.SEND_SMS&quot; /&gt;
+</code></pre>
+</li>
+</ul>]]></description>
+  </item>
+  <item>
     <title>Pratical S6</title>
     <link>https://anzenkodo.github.io/notes/programming/android/pratical-s6.html</link>
-    <pubDate>2022-12-16T23:31:58.669Z</pubDate>
+    <pubDate>2022-12-17T00:30:48.999Z</pubDate>
     <description><![CDATA[<h2>1. Write a program to place Name, Age, Mobile number linearly(vertical) on the display screen using Linear layout.</h2>
 <pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
 &lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
@@ -1881,7 +4967,7 @@ public class MainActivity extends AppCompatActivity {
   <item>
     <title>MGT</title>
     <link>https://anzenkodo.github.io/notes/study/mgt.html</link>
-    <pubDate>2022-12-16T23:31:58.669Z</pubDate>
+    <pubDate>2022-12-17T00:30:48.999Z</pubDate>
     <description><![CDATA[<h1>MGT</h1>
 <ol>
 <li>Who said “Management is the function of executive leadership anywhere”:</li>
@@ -1948,886 +5034,6 @@ spirit to achieve goal.</li>
 <ol start="11">
 <li></li>
 </ol>]]></description>
-  </item>
-  <item>
-    <title>Grammmar</title>
-    <link>https://anzenkodo.github.io/notes/study/grammmar.html</link>
-    <pubDate>2022-12-16T23:31:58.669Z</pubDate>
-    <description><![CDATA[<h1>Grammar in English</h1>
-<h2>Part of Speech</h2>
-<p>Words are divided into different kinds of classes called <strong>Parts of Speech</strong>.
-The parts of speech are eight in number:</p>
-<ol>
-<li><a href="#noun">Noun</a></li>
-<li><a href="#adjective">Adjective</a></li>
-<li><a href="#pronoun">Pronoun</a></li>
-<li><a href="#verb">Verb</a></li>
-<li><a href="#adverb">Adverb</a></li>
-<li><a href="#preposition">Preposition</a></li>
-<li><a href="#conjunction">Conjunction</a></li>
-<li><a href="#interjection">Interjection</a></li>
-<li><a href="#determiners">Determiners</a> (In some modern grammars)</li>
-</ol>
-<h3>Noun</h3>
-<p>A <strong>Noun</strong> is a word used as the name of the person, place, or things as,</p>
-<ol>
-<li>That <em>Mountain</em> look so beautiful from here.</li>
-<li>That <em>tree</em> was so small when we came last year.</li>
-<li>I don’t like <em>rain</em>.</li>
-</ol>
-<p><em><strong>Note</strong></em>
-The word <em>Things</em> includes:</p>
-<ol>
-<li>All the objects that we can see, hear, taste, touch, or smell.</li>
-<li>Something that we can <em>think of</em>, but can’t perceive by the senses.</li>
-</ol>
-<h3>Adjective</h3>
-<p>An <strong>Adjective</strong> is a word used to add something to the meaning of a noun; as,</p>
-<ol>
-<li>He is <em>playing game</em>.</li>
-<li>She look <strong>beautiful</strong> tonight.</li>
-<li>Sun <strong>set early</strong> today.</li>
-</ol>
-<h3>Pronoun</h3>
-<p>A <strong>Pronoun</strong> is a word used instead of noun; as,</p>
-<ol>
-<li>He is was playing football, but <em>he’s</em> broke his leg.</li>
-<li>The books are where you left <em>them</em>.</li>
-</ol>
-<h3>Verb</h3>
-<p>A <strong>Verb</strong> is a word used to express an action or state; as,</p>
-<ol>
-<li>He is <em>sleeping</em>.</li>
-<li>That boy is very <em>playful</em>.</li>
-<li>India is a very <em>diverse</em> country.</li>
-</ol>
-<h3>Adverb</h3>
-<p>An <strong>Adverb</strong> is a word used to <em>add something</em> to the meaning of the verb, an
-adjective, or another adverb; as,</p>
-<ol>
-<li>He is working <em>very</em> hard today.</li>
-<li>That horse is running <em>so</em> fast today.</li>
-<li>New York look <em>so</em> beautiful in the night.</li>
-</ol>
-<h3>Preposition</h3>
-<p>A <strong>Preposition</strong> is a word used with a noun or pronoun to show how the person
-or thing denoted by the noun or pronoun stands in relation to something else; as</p>
-<ol>
-<li><em>Before</em> the dog got the hat.</li>
-<li>The Ice cream is <em>under</em> the fridge.</li>
-<li>He is <em>going</em> to Goa trip.</li>
-</ol>
-<h3>Conjunction</h3>
-<p>A <strong>Conjunction</strong> is a word used to <em>join</em> words or sentences; as,</p>
-<ol>
-<li>He <em>and</em> she are cousins.</li>
-<li>Three <em>and</em> two make five.</li>
-<li>Happy <em>but</em> sad inside.</li>
-</ol>
-<p>Conjunction have <strong>FANBOYS</strong> a which to remember coordinating conjunctions:</p>
-<ul>
-<li><strong>For</strong> - since, because
-<ul>
-<li>I don’t eat buttons <em>for</em> they are not food.</li>
-</ul>
-</li>
-<li><strong>And</strong> - combines things
-<ul>
-<li>The kangaroo robbed the band <em>and</em> torched the saloon.</li>
-</ul>
-</li>
-<li><strong>Nor</strong> - combines untrue things
-<ul>
-<li>She won’t leave her tree <em>nor</em> will she speak with humans.</li>
-</ul>
-</li>
-<li><strong>But</strong> - express exceptions
-<ul>
-<li>We used every building material <em>but</em> chewing gum.</li>
-</ul>
-</li>
-<li><strong>Or</strong> - choosing between options
-<ul>
-<li>Would you rather have pet bear <em>or</em> a pet giraffe?</li>
-</ul>
-</li>
-<li><strong>Yet</strong> - to the contrary
-<ul>
-<li>I want to leave, <em>yet</em> I cannot.</li>
-</ul>
-</li>
-<li><strong>So</strong> - shows consequences
-<ul>
-<li>He is allergic to sheep, <em>so</em> he skipped the wool festival.</li>
-</ul>
-</li>
-</ul>
-<h3>Interjection</h3>
-<p>An <strong>Interjection</strong> is a word which expresses some sudden feeling; as,</p>
-<ol>
-<li><em>Oh my god</em> ! What have you done.</li>
-<li><em>What</em> ! She is dead.</li>
-<li>Hurrah ! We have won the game.</li>
-</ol>
-<h3>Determiners</h3>
-<p><strong>Determiners</strong> are words that comes at the beginning of the noun, introduces
-noun, determines noun that is whether none is specific or general.
-There’s are divided into four types which are:</p>
-<h4>Articles</h4>
-<ul>
-<li><strong>Indefinite articles</strong> - <em>a, an</em> - general version of noun
-<ul>
-<li><em>A</em> book is man’s best friend</li>
-</ul>
-</li>
-<li><strong>Definite articles</strong> - <em>the</em> - specific version of noun
-<ul>
-<li><em>The</em> city Mumbai was called Bombay.</li>
-</ul>
-</li>
-</ul>
-<h4>Demonstratives</h4>
-<blockquote>
-<p><em>this, that, these, those</em></p>
-</blockquote>
-<ul>
-<li><strong>Demonstratives</strong> pronouns are also used as determiners. They are used to
-point something specific within a sentence. They focus attention on the nouns
-that they are replacing.
-<ul>
-<li>I want go to <em>that</em> movie.</li>
-<li>He wanted <em>those</em> boys to go away.</li>
-</ul>
-</li>
-</ul>
-<h4>Possessives</h4>
-<blockquote>
-<p><em>my, your, his, her, your their</em></p>
-</blockquote>
-<ul>
-<li><strong>Possessive</strong> pronouns are words that are used to show ownership.
-<ul>
-<li>Where is <em>your</em> bike?</li>
-<li>It’s <em>our</em> secret recipe.</li>
-</ul>
-</li>
-</ul>
-<h4>Quantifiers</h4>
-<blockquote>
-<p><em>some, few little many, much, any</em></p>
-</blockquote>
-<ul>
-<li>They indicate how much or how little of the noun is being discussed.
-<ul>
-<li>He took <em>some</em> books of mine.</li>
-<li>He has few apples in the refrigerator.</li>
-</ul>
-</li>
-</ul>]]></description>
-  </item>
-  <item>
-    <title>C</title>
-    <link>https://anzenkodo.github.io/notes/programming/languages/c.html</link>
-    <pubDate>2022-12-16T23:31:58.665Z</pubDate>
-    <description><![CDATA[<h1>C</h1>
-<ul>
-<li>In fact, you should use the main() to do very little except call each of the other functions.</li>
-<li>A good rule of thumb is that a function should not take more lines than will fit on a single screen. If the function is longer than that, you’re probably making it do too much.</li>
-<li>The difference between local and global variables:
-<ul>
-<li>A variable is global only if you define the variable (such as inti;) before a function name.</li>
-<li>A variable is local only if you define it after an opening brace. A function always begins with opening braces. Some statements, such as while, also have opening braces, and you can define local variables within those braces as well.</li>
-</ul>
-</li>
-<li>Local variables are safer than global variables.</li>
-<li>Don’t define global variables in the middle of a program. They’re too hard to locate if you do.</li>
-</ul>]]></description>
-  </item>
-  <item>
-    <title>Bash</title>
-    <link>https://anzenkodo.github.io/notes/programming/languages/bash.html</link>
-    <pubDate>2022-12-16T23:31:58.665Z</pubDate>
-    <description><![CDATA[<p><a href="#">#</a> Bash</p>
-<ul>
-<li>
-<p>Functions Info</p>
-<p><strong>apropos</strong> - List of man pages for possible matches based on a search term.</p>
-</li>
-</ul>
-<h2>Commands</h2>
-<ul>
-<li>
-<p>Man Page Organization</p>
-<p><a href="/notes/Bash%20da610a137ca64195bdf4ec37d6e4274b/Man%20Page%202df02a5a631a4ebe9bcfd37a72009fc0.csv">Man Page</a></p>
-</li>
-<li>
-<p>Redirecting Standard Output</p>
-<pre><code class="language-bash">ls -l /usr/bin &gt; ls-output.txt
-</code></pre>
-<ul>
-<li>This makes output of ls command</li>
-</ul>
-</li>
-<li>
-<p>About <code>uniq</code></p>
-<ul>
-<li><code>uniq</code> to remove any duplicates from the output of the <code>sort</code> command.</li>
-</ul>
-<pre><code class="language-bash">ls /bin /usr/bin | sort | uniq
-</code></pre>
-<ul>
-<li>To see the list of duplicates instead, add the <code>d</code> option to <code>uniq</code></li>
-</ul>
-<pre><code class="language-bash">ls /bin /usr/bin | sort | uniq -d
-</code></pre>
-</li>
-<li>
-<p>About <code>tee</code></p>
-<ul>
-<li><code>tee</code> is like <code>ls &gt; output.txt</code> but it can work with grep command.</li>
-</ul>
-<pre><code class="language-bash">ls /usr/bin | tee ls.txt | grep zip
-</code></pre>
-<h2>About <code>echo</code></h2>
-<pre><code class="language-bash">echo $((2 + 2))
-</code></pre>
-</li>
-<li>
-<p>Symbols</p>
-<p><a href="/notes/Bash%20da610a137ca64195bdf4ec37d6e4274b/Symbols%20d88a1a92cda7446fa8a9d2c975c8947e.csv">Symbols</a></p>
-</li>
-<li>
-<p><code>echo</code> Arithmetic Exponentiation can be nested</p>
-<pre><code class="language-bash">echo $(($((5**2)) * 3))
-</code></pre>
-</li>
-<li>
-<p>The range of integers.</p>
-<pre><code class="language-bash">echo {1..10}
-echo a{A{1,2},B{3,4}}b
-</code></pre>
-</li>
-<li>
-<p>Enverment Value List</p>
-<pre><code class="language-bash">cli printenv | less
-set | less
-</code></pre>
-</li>
-</ul>
-<h2>History</h2>
-<ul>
-<li>
-<p>To see the history</p>
-<pre><code class="language-bash">history
-</code></pre>
-</li>
-<li>
-<p>History Command</p>
-<p><a href="/notes/Bash%20da610a137ca64195bdf4ec37d6e4274b/History%20Command%205694bb062b694eb68fa66879592e9106.csv">History Command</a></p>
-</li>
-<li>
-<p>History Expansion Commands</p>
-<p><a href="/notes/Bash%20da610a137ca64195bdf4ec37d6e4274b/History%20Expansion%20Commands%204935186cd0cd4e49a5c894c0463b2851.csv">History Expansion Commands</a></p>
-</li>
-<li>
-<p>To record the command</p>
-<pre><code class="language-bash">script
-</code></pre>
-</li>
-</ul>
-<h2>Permissions</h2>
-<ul>
-<li>
-<p>To see the group number</p>
-<pre><code class="language-bash">id
-</code></pre>
-</li>
-<li>
-<p>File Type</p>
-<p><a href="/notes/Bash%20da610a137ca64195bdf4ec37d6e4274b/File%20Type%20b93329415ef14da18905fe8e533748f4.csv">File Type</a></p>
-</li>
-<li>
-<p>Permission Attributes -rwxrwxr–</p>
-<p><a href="/notes/Bash%20da610a137ca64195bdf4ec37d6e4274b/Permission%20Attributes%20-rwxrwxr%E2%80%93%2035ff6cb19e8645a3b96ba09a33eba035.csv">Permission Attributes -rwxrwxr–</a></p>
-</li>
-<li>
-<p>File Modes in Binary and Octal</p>
-<p><a href="/notes/Bash%20da610a137ca64195bdf4ec37d6e4274b/File%20Modes%20in%20Binary%20and%20Octal%208ac1bb600cca40ebb1db460155009adb.csv">File Modes in Binary and Octal</a></p>
-</li>
-<li>
-<p>The attribute for changing the file permission</p>
-<ul>
-<li><code>7 (rwx)</code>, <code>6 (rw-)</code>, <code>5 (r-x)</code>, <code>4 (r--)</code>, and <code>0 (---)</code></li>
-</ul>
-</li>
-<li>
-<p><code>chmod</code> Symbolic Notation</p>
-<p><a href="/notes/Bash%20da610a137ca64195bdf4ec37d6e4274b/chmod%20Symbolic%20Notation%2036655aed32be491d8cf121e4b3981626.csv">chmod Symbolic Notation</a></p>
-<p><a href="/notes/Bash%20da610a137ca64195bdf4ec37d6e4274b/chmod%20Symbolic%20Notation%20Examples%20d2fdf09328984fce96f5699222acfa25.csv">chmod Symbolic Notation Examples</a></p>
-</li>
-<li>
-<p><code>umask</code> command controls the default permissions given to a file when it is created.</p>
-<pre><code class="language-bash">umask 005
-</code></pre>
-</li>
-</ul>
-<h2>File System</h2>
-<ul>
-<li>
-<p>Testing and Repairing File Systems</p>
-<pre><code class="language-bash">sudo fsck /dev/sdb1
-</code></pre>
-</li>
-<li>
-<p>Make bootable USB drive</p>
-<pre><code class="language-bash">sudo dd bs=4M if=path/to/input.iso of=/dev/sd&lt;?&gt; conv=fdatasync  status=progress
-</code></pre>
-</li>
-</ul>
-<h2>Helpful Command</h2>
-<ul>
-<li>
-<p>Execute <code>find</code> file with command use <code>xargs</code></p>
-<pre><code class="language-bash">find ~ -type f -name &quot;index.html&quot; | xargs ls -l
-</code></pre>
-</li>
-<li>
-<p>Use <code>find</code> to find the file</p>
-<pre><code class="language-bash">find ~ -type f -name &quot;index.html&quot;
-</code></pre>
-</li>
-<li>
-<p>Best way to compress in tar</p>
-<pre><code class="language-bash">tar cfJ playground.tar.xz playground
-</code></pre>
-</li>
-<li>
-<p>How to Mount ISO File on Linux</p>
-<pre><code class="language-bash">mount -t iso9660 -o loop image.iso /mnt/iso_image
-</code></pre>
-</li>
-<li>
-<p>How to sort in Linux</p>
-<pre><code class="language-bash">sort -nk 5
-
-# With command
-
-ls -l /usr/share | sort -nk 5
-
-# Sort in ':'
-
-sort -ht ':' -k 3 /etc/passwd | head
-</code></pre>
-</li>
-<li>
-<p>Remove Duplicate use <code>uniq</code></p>
-<pre><code class="language-bash">sort foo.txt | uniq
-</code></pre>
-</li>
-<li>
-<p>Spell check in Terminal</p>
-<pre><code class="language-bash">aspell check filename
-
-# To check HTML code
-
-aspell -H check html-filename
-</code></pre>
-</li>
-<li>
-<p>To make PDF</p>
-<pre><code class="language-bash">ls -l ~/ | pr pr.ps | groff &gt; pr.ps
-
-# Convert PostScript file into Potable Document File
-
-ps2pdf pr.ps pr.pdf
-</code></pre>
-</li>
-<li>
-<p>Good Locations for Scripts</p>
-<ul>
-<li><code>~/bin</code>Scripts intended for personal use.</li>
-<li><code>/usr/local/bin</code>Script that everyone on a system is allowed to use.</li>
-<li><code>/usr/local/sbin</code>Scripts intended for use by the system administrator</li>
-<li><code>/usr/local</code>Locally supplied software, scripts and compiled programs</li>
-</ul>
-</li>
-</ul>
-<h1>Shell Script</h1>
-<ul>
-<li>
-<p>Assigning Values to Variables and Constants.</p>
-<pre><code class="language-bash">a=z # Assign the string &quot;z&quot; to variable a.
-b=&quot;a string&quot; # Embedded spaces must be within quotes.
-c=&quot;a string and $b&quot; # Other expansions such as variables can be expanded into the assignment.
-d=&quot;$(ls -l foo.txt)&quot; # Results of a command.
-e=$((5 * 7)) # Arithmetic expansion.
-f=&quot;\t\ta string\n&quot; # Escape sequences such as tabs and newlines.
-</code></pre>
-</li>
-<li>
-<p>Using variables with other commands.</p>
-<pre><code class="language-bash">filename=&quot;myFile&quot;
-touch file
-mv file ${filename}
-</code></pre>
-</li>
-<li>
-<p>Here script</p>
-<pre><code class="language-bash">command &lt;&lt; token
-text
-token
-</code></pre>
-</li>
-<li>
-<p><code>_EOF_</code></p>
-<ul>
-<li>
-<p>Example</p>
-<pre><code class="language-bash"># !/bin/bash
-date=$(date +&quot;%x %r %Z&quot;)
-
-cat &lt;&lt; _EOF_
-&lt;html&gt;
-    &lt;head&gt;
-        &lt;title&gt;Website&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;h1&gt;Website&lt;/h1&gt;
-        &lt;p&gt;Hello World&lt;/p&gt;
-    &lt;/body&gt;
-&lt;/html&gt;
-_EOF_
-</code></pre>
-</li>
-<li>
-<p><code>_EOF_</code> with command</p>
-<pre><code class="language-bash">#!/bin/bash
-# Script to retrieve a file via FTP
-FTP_SERVER=ftp.nl.debian.org
-FTP_PATH=/debian/dists/stretch/main/installer-amd64/current/images/
-cdrom REMOTE_FILE=debian-cd_info.tar.gz
-ftp -n &lt;&lt; _EOF_
-open $FTP_SERVER
-user anonymous me@linuxbox
-cd $FTP_PATH
-hash
-get $REMOTE_FILE
-bye
-_EOF_
-ls -l &quot;$REMOTE_FILE&quot;
-</code></pre>
-</li>
-<li>
-<p><code>_EOF_</code> with <code>-</code></p>
-<pre><code class="language-bash"># !/bin/bash
-date=$(date +&quot;%x %r %Z&quot;)
-
-cat &lt;&lt;- _EOF_
-&lt;html&gt;
-    &lt;head&gt;
-        &lt;title&gt;Website&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;h1&gt;Website&lt;/h1&gt;
-        &lt;p&gt;Hello World&lt;/p&gt;
-    &lt;/body&gt;
-&lt;/html&gt;
-_EOF_
-</code></pre>
-</li>
-</ul>
-</li>
-<li>
-<p>Shell Functions</p>
-<pre><code class="language-bash"># !/bin/bash
-
-z=human # Gobal variable
-
-echo_1() {
-echo &quot;hello&quot;
-return
-}
-
-echo_2() {
-i=world # local veariable
-echo &quot;world&quot;
-return
-}
-
-echo ${echo_1} ${echo_2} $z
-</code></pre>
-</li>
-<li>
-<p>Flow Control: Branching with if</p>
-<ul>
-<li>
-<p><code>if</code></p>
-<pre><code class="language-bash">x=5
-if [ &quot;$x&quot; -eq 5 ]; then
-echo &quot;x equals 5.&quot;
-else
-echo &quot;x does not equal 5.&quot;
-fi
-</code></pre>
-</li>
-<li>
-<p><code>if</code> in shell</p>
-<pre><code class="language-bash">if [ “$x” -eq 5 ]; then echo &quot;equals 5&quot;; else echo &quot;does not equal 5&quot;; fi
-</code></pre>
-</li>
-<li>
-<p><code>if</code>, <code>elif</code> and <code>else</code></p>
-<pre><code class="language-bash">if commands; then
-commands
-[elif commands; then
-commands...]
-[else
-commands]
-fi
-</code></pre>
-</li>
-</ul>
-</li>
-</ul>
-<h2>Expressions Examples</h2>
-<ul>
-<li>
-<p>File Expressions</p>
-<pre><code class="language-bash">#!/bin/bash
-# test-file: Evaluate the status of a file
-FILE=~/.bashrc
-if [ -e &quot;$FILE&quot; ]; then
-if [ -f &quot;$FILE&quot; ]; then
-echo &quot;$FILE is a regular file.&quot;
-fi
-if [ -d &quot;$FILE&quot; ]; then
-echo &quot;$FILE is a directory.&quot;
-fi
-if [ -r &quot;$FILE&quot; ]; then
-echo &quot;$FILE is readable.&quot;
-fi
-if [ -w &quot;$FILE&quot; ]; then
-echo &quot;$FILE is writable.&quot;
-fi
-if [ -x &quot;$FILE&quot; ]; then
-echo &quot;$FILE is executable/searchable.&quot;
-fi
-else
-echo &quot;$FILE does not exist&quot;
-exit 1
-fi
-exit
-</code></pre>
-</li>
-<li>
-<p>String Expressions</p>
-<pre><code class="language-bash">#!/bin/bash
-# test-string: evaluate the value of a string
-ANSWER=maybe
-if [ -z &quot;$ANSWER&quot; ]; then
-echo &quot;There is no answer.&quot; &gt;&amp;2
-exit 1
-fi
-if [ &quot;$ANSWER&quot; = &quot;yes&quot; ]; then
-echo &quot;The answer is YES.&quot;
-elif [ &quot;$ANSWER&quot; = &quot;no&quot; ]; then
-echo &quot;The answer is NO.&quot;
-elif [ &quot;$ANSWER&quot; = &quot;maybe&quot; ]; then
-echo &quot;The answer is MAYBE.&quot;
-else
-echo &quot;The answer is UNKNOWN.&quot;
-fi
-</code></pre>
-</li>
-<li>
-<p>Integer Expressions</p>
-<pre><code class="language-bash">#!/bin/bash
-# test-integer: evaluate the value of an integer.
-INT=-5
-if [ -z &quot;$INT&quot; ]; then
-echo &quot;INT is empty.&quot; &gt;&amp;2
-exit 1
-fi
-if [ &quot;$INT&quot; -eq 0 ]; then
-echo &quot;INT is zero.&quot;
-else
-if [ &quot;$INT&quot; -lt 0 ]; then
-echo &quot;INT is negative.&quot;
-else
-echo &quot;INT is positive.&quot;
-fi
-if [ $((INT % 2)) -eq 0 ]; then
-echo &quot;INT is even.&quot;
-else
-echo &quot;INT is odd.&quot;
-fi
-fi
-</code></pre>
-</li>
-<li>
-<p>File Expressions</p>
-<table>
-<thead>
-<tr>
-<th>Expression</th>
-<th>Is True If:</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>file1 -ef file2</td>
-<td>file1 and file2 have the same inode numbers (the two filenames refer to the same file by hard linking).</td>
-</tr>
-<tr>
-<td>file1 -nt file2</td>
-<td>file1 is newer than file2.</td>
-</tr>
-<tr>
-<td>file1 -ot file2</td>
-<td>file1 is older than file2.</td>
-</tr>
-<tr>
-<td>-b file</td>
-<td>file exists and is a block-special (device) file.</td>
-</tr>
-<tr>
-<td>-c file</td>
-<td>file exists and is a character-special (device) file.</td>
-</tr>
-<tr>
-<td>-d file</td>
-<td>file exists and is a directory.</td>
-</tr>
-<tr>
-<td>-e file</td>
-<td>file exists.</td>
-</tr>
-<tr>
-<td>-f file</td>
-<td>file exists and is a regular file.</td>
-</tr>
-<tr>
-<td>-g file</td>
-<td>file exists and is set-group-ID.</td>
-</tr>
-<tr>
-<td>-G file</td>
-<td>file exists and is owned by the effective group ID.</td>
-</tr>
-<tr>
-<td>-k file</td>
-<td>file exists and has its “sticky bit” set.</td>
-</tr>
-<tr>
-<td>-L file</td>
-<td>file exists and is a symbolic link.</td>
-</tr>
-<tr>
-<td>-O file</td>
-<td>file exists and is owned by the effective user ID.</td>
-</tr>
-<tr>
-<td>-p file</td>
-<td>file exists and is a named pipe.</td>
-</tr>
-<tr>
-<td>-r file</td>
-<td>file exists and is readable (has readable permission for the effective user).</td>
-</tr>
-<tr>
-<td>-s file</td>
-<td>file exists and has a length greater than zero.</td>
-</tr>
-<tr>
-<td>-S file</td>
-<td>file exists and is a network socket.</td>
-</tr>
-<tr>
-<td>-t fd</td>
-<td>fd is a file descriptor directed to/from the terminal. This can be used to determine whether standard input/output/error is being redirected.</td>
-</tr>
-<tr>
-<td>-u file</td>
-<td>file exists and is setuid.</td>
-</tr>
-<tr>
-<td>-w file</td>
-<td>file exists and is writable (has write permission for the effective user).</td>
-</tr>
-<tr>
-<td>-x file</td>
-<td>file exists and is executable (has execute/search permission for the effective user).</td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>
-<p>String Expressions</p>
-<table>
-<thead>
-<tr>
-<th>Expression</th>
-<th>Is True If…</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>string</td>
-<td>string is not null.</td>
-</tr>
-<tr>
-<td>-n string</td>
-<td>The length of string is greater than zero.</td>
-</tr>
-<tr>
-<td>-z string</td>
-<td>The length of string is zero.</td>
-</tr>
-<tr>
-<td><code>string1 = string2</code> <code>string1 == string2</code></td>
-<td>string1 and string2 are equal. Single or double equal signs may be used. The use of double equal signs is supported by bash and is generally preferred, but it is not POSIX compliant.</td>
-</tr>
-<tr>
-<td>string1 != string2</td>
-<td>string1 and string2 are not equal.</td>
-</tr>
-<tr>
-<td>string1 &gt; string2</td>
-<td>string1 sorts after string2.</td>
-</tr>
-<tr>
-<td>string1 &lt; string2</td>
-<td>string1 sorts before string2.</td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>
-<p>Integer Expressions</p>
-<table>
-<thead>
-<tr>
-<th>Expression</th>
-<th>Is True If…</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>integer1 -eq integer2</td>
-<td>integer1 is equal to integer2.</td>
-</tr>
-<tr>
-<td>integer1 -ne integer2</td>
-<td>integer1 is not equal to integer2.</td>
-</tr>
-<tr>
-<td>integer1 -le integer2</td>
-<td>integer1 is less than or equal to integer2.</td>
-</tr>
-<tr>
-<td>integer1 is less than or equal to integer2.</td>
-<td>integer1 is less than integer2.</td>
-</tr>
-<tr>
-<td>integer1 -ge integer2</td>
-<td>integer1 is greater than or equal to integer2.</td>
-</tr>
-<tr>
-<td>integer1 -gt integer2</td>
-<td>integer1 is greater than integer2.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>]]></description>
-  </item>
-  <item>
-    <title>CSS</title>
-    <link>https://anzenkodo.github.io/notes/programming/languages/css.html</link>
-    <pubDate>2022-12-16T23:31:58.665Z</pubDate>
-    <description><![CDATA[<h1>CSS</h1>
-<p><a href="/notes/CSS%208946e12a95f04e3490bd9c09bfb99d1e/SASS%20d57c9cbb233644a3a615a487f4cdf949.md">SASS</a></p>
-<ul>
-<li>
-<p>BEM Method</p>
-<pre><code class="language-css">/* Block component */
-.btn {}
-/* Element that depends upon the block */
-.btn__price {}
-/* Modifier that changes the style of the block */
-.btn--orange {}
-.btn--big {}
-</code></pre>
-</li>
-<li>
-<p>Dark Mode Setting</p>
-<pre><code class="language-css">:root {
-  color-scheme: light dark; /* both supported */
-}
-</code></pre>
-</li>
-<li>
-<p>Image Dark</p>
-<ul>
-<li>
-<p>Apply the filter directly on the body tag.</p>
-<pre><code class="language-css">body.dark-theme img {
-  filter: brightness(.8) contrast(1.2);
-}
-</code></pre>
-</li>
-<li>
-<p>Or apply it via media query.</p>
-<pre><code class="language-css">@media (prefers-color-scheme: dark) {
-  img {
-    filter: brightness(.8) contrast(1.2);
-  }
-}
-</code></pre>
-</li>
-</ul>
-</li>
-<li>
-<p>Image prefer Dark</p>
-<pre><code class="language-html">&lt;picture&gt;
-  &lt;!-- Use this image if the user's OS setting is light or unset --&gt;
-  &lt;source srcset=&quot;photo-light.png&quot; media=&quot;(prefers-color-scheme: light) or (prefers-color-scheme: no-preference)&quot;&gt;
-  &lt;!-- Use this image if the user's OS setting is dark --&gt;
-  &lt;source srcset=&quot;photo-dark.png&quot; media=&quot;(prefers-color-scheme: dark)&quot;&gt;
-&lt;/picture&gt;
-</code></pre>
-</li>
-<li>
-<p>Non-standard attributes, dataset</p>
-<pre><code class="language-css">&lt;style&gt;
-  /* styles rely on the custom attribute &quot;order-state&quot; */
-  .order[order-state=&quot;new&quot;] {
-    color: green;
-  }
-
-  .order[order-state=&quot;pending&quot;] {
-    color: blue;
-  }
-
-  .order[order-state=&quot;canceled&quot;] {
-    color: red;
-  }
-&lt;/style&gt;
-
-&lt;div class=&quot;order&quot; order-state=&quot;new&quot;&gt;
-  A new order.
-&lt;/div&gt;
-
-&lt;div class=&quot;order&quot; order-state=&quot;pending&quot;&gt;
-  A pending order.
-&lt;/div&gt;
-
-&lt;div class=&quot;order&quot; order-state=&quot;canceled&quot;&gt;
-  A canceled order.
-&lt;/div&gt;
-</code></pre>
-</li>
-</ul>]]></description>
   </item>
   </channel>
 </rss>
