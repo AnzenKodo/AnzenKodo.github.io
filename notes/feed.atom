@@ -5,7 +5,7 @@
   <link href="https://anzenkodo.github.io/notes/" />
   <link href="https://anzenkodo.github.io/notes/" rel="self" />
 	<id>https://anzenkodo.github.io/notes/</id>
-  <updated>2022-12-18T05:32:09.264Z</updated>
+  <updated>2022-12-18T06:08:20.187Z</updated>
   <author>
     <name>Axel</name>
     <email>AnzenKodo@altmails.com</email>
@@ -13,7 +13,7 @@
     <entry>
     <title>Home</title>
     <link href="https://anzenkodo.github.io/notes/" />
-    <updated>2022-12-18T05:32:09.264Z</updated>
+    <updated>2022-12-18T06:08:20.187Z</updated>
     <id>/notes/</id>
     <content type="html"><![CDATA[<p>This my personal website where I post my notes about thing that I have learn.</p>
 <h2>Features</h2>
@@ -398,28 +398,9 @@ colspan="3"><strong>30–32</strong> ATP</td> </tr> </tbody> </table>
   <td></td> <td>♖</td> </tr> </tbody> </table>]]></content>
   </entry>
   <entry>
-    <title>C</title>
-    <link href="https://anzenkodo.github.io/notes/programming/languages/c.html" />
-    <updated>2022-12-18T05:32:09.264Z</updated>
-    <id>/notes/programming/languages/c.html</id>
-    <content type="html"><![CDATA[<h1>C</h1>
-<ul>
-<li>In fact, you should use the main() to do very little except call each of the other functions.</li>
-<li>A good rule of thumb is that a function should not take more lines than will fit on a single screen. If the function is longer than that, you’re probably making it do too much.</li>
-<li>The difference between local and global variables:
-<ul>
-<li>A variable is global only if you define the variable (such as inti;) before a function name.</li>
-<li>A variable is local only if you define it after an opening brace. A function always begins with opening braces. Some statements, such as while, also have opening braces, and you can define local variables within those braces as well.</li>
-</ul>
-</li>
-<li>Local variables are safer than global variables.</li>
-<li>Don’t define global variables in the middle of a program. They’re too hard to locate if you do.</li>
-</ul>]]></content>
-  </entry>
-  <entry>
     <title>Bash</title>
     <link href="https://anzenkodo.github.io/notes/programming/languages/bash.html" />
-    <updated>2022-12-18T05:32:09.264Z</updated>
+    <updated>2022-12-18T06:08:20.187Z</updated>
     <id>/notes/programming/languages/bash.html</id>
     <content type="html"><![CDATA[<p><a href="#">#</a> Bash</p>
 <ul>
@@ -1016,98 +997,9 @@ fi
 </ul>]]></content>
   </entry>
   <entry>
-    <title>CSS</title>
-    <link href="https://anzenkodo.github.io/notes/programming/languages/css.html" />
-    <updated>2022-12-18T05:32:09.264Z</updated>
-    <id>/notes/programming/languages/css.html</id>
-    <content type="html"><![CDATA[<h1>CSS</h1>
-<p><a href="/notes/CSS%208946e12a95f04e3490bd9c09bfb99d1e/SASS%20d57c9cbb233644a3a615a487f4cdf949.md">SASS</a></p>
-<ul>
-<li>
-<p>BEM Method</p>
-<pre><code class="language-css">/* Block component */
-.btn {}
-/* Element that depends upon the block */
-.btn__price {}
-/* Modifier that changes the style of the block */
-.btn--orange {}
-.btn--big {}
-</code></pre>
-</li>
-<li>
-<p>Dark Mode Setting</p>
-<pre><code class="language-css">:root {
-  color-scheme: light dark; /* both supported */
-}
-</code></pre>
-</li>
-<li>
-<p>Image Dark</p>
-<ul>
-<li>
-<p>Apply the filter directly on the body tag.</p>
-<pre><code class="language-css">body.dark-theme img {
-  filter: brightness(.8) contrast(1.2);
-}
-</code></pre>
-</li>
-<li>
-<p>Or apply it via media query.</p>
-<pre><code class="language-css">@media (prefers-color-scheme: dark) {
-  img {
-    filter: brightness(.8) contrast(1.2);
-  }
-}
-</code></pre>
-</li>
-</ul>
-</li>
-<li>
-<p>Image prefer Dark</p>
-<pre><code class="language-html">&lt;picture&gt;
-  &lt;!-- Use this image if the user's OS setting is light or unset --&gt;
-  &lt;source srcset=&quot;photo-light.png&quot; media=&quot;(prefers-color-scheme: light) or (prefers-color-scheme: no-preference)&quot;&gt;
-  &lt;!-- Use this image if the user's OS setting is dark --&gt;
-  &lt;source srcset=&quot;photo-dark.png&quot; media=&quot;(prefers-color-scheme: dark)&quot;&gt;
-&lt;/picture&gt;
-</code></pre>
-</li>
-<li>
-<p>Non-standard attributes, dataset</p>
-<pre><code class="language-css">&lt;style&gt;
-  /* styles rely on the custom attribute &quot;order-state&quot; */
-  .order[order-state=&quot;new&quot;] {
-    color: green;
-  }
-
-  .order[order-state=&quot;pending&quot;] {
-    color: blue;
-  }
-
-  .order[order-state=&quot;canceled&quot;] {
-    color: red;
-  }
-&lt;/style&gt;
-
-&lt;div class=&quot;order&quot; order-state=&quot;new&quot;&gt;
-  A new order.
-&lt;/div&gt;
-
-&lt;div class=&quot;order&quot; order-state=&quot;pending&quot;&gt;
-  A pending order.
-&lt;/div&gt;
-
-&lt;div class=&quot;order&quot; order-state=&quot;canceled&quot;&gt;
-  A canceled order.
-&lt;/div&gt;
-</code></pre>
-</li>
-</ul>]]></content>
-  </entry>
-  <entry>
     <title>Java</title>
     <link href="https://anzenkodo.github.io/notes/programming/languages/java.html" />
-    <updated>2022-12-18T05:32:09.264Z</updated>
+    <updated>2022-12-18T06:08:20.187Z</updated>
     <id>/notes/programming/languages/java.html</id>
     <content type="html"><![CDATA[<h1>Java</h1>
 <h2>1) Write a program to check number is even or odd using if else.</h2>
@@ -1604,9 +1496,117 @@ class Copyfile {
 </code></pre>]]></content>
   </entry>
   <entry>
+    <title>C</title>
+    <link href="https://anzenkodo.github.io/notes/programming/languages/c.html" />
+    <updated>2022-12-18T06:08:20.187Z</updated>
+    <id>/notes/programming/languages/c.html</id>
+    <content type="html"><![CDATA[<h1>C</h1>
+<ul>
+<li>In fact, you should use the main() to do very little except call each of the other functions.</li>
+<li>A good rule of thumb is that a function should not take more lines than will fit on a single screen. If the function is longer than that, you’re probably making it do too much.</li>
+<li>The difference between local and global variables:
+<ul>
+<li>A variable is global only if you define the variable (such as inti;) before a function name.</li>
+<li>A variable is local only if you define it after an opening brace. A function always begins with opening braces. Some statements, such as while, also have opening braces, and you can define local variables within those braces as well.</li>
+</ul>
+</li>
+<li>Local variables are safer than global variables.</li>
+<li>Don’t define global variables in the middle of a program. They’re too hard to locate if you do.</li>
+</ul>]]></content>
+  </entry>
+  <entry>
+    <title>CSS</title>
+    <link href="https://anzenkodo.github.io/notes/programming/languages/css.html" />
+    <updated>2022-12-18T06:08:20.187Z</updated>
+    <id>/notes/programming/languages/css.html</id>
+    <content type="html"><![CDATA[<h1>CSS</h1>
+<p><a href="/notes/CSS%208946e12a95f04e3490bd9c09bfb99d1e/SASS%20d57c9cbb233644a3a615a487f4cdf949.md">SASS</a></p>
+<ul>
+<li>
+<p>BEM Method</p>
+<pre><code class="language-css">/* Block component */
+.btn {}
+/* Element that depends upon the block */
+.btn__price {}
+/* Modifier that changes the style of the block */
+.btn--orange {}
+.btn--big {}
+</code></pre>
+</li>
+<li>
+<p>Dark Mode Setting</p>
+<pre><code class="language-css">:root {
+  color-scheme: light dark; /* both supported */
+}
+</code></pre>
+</li>
+<li>
+<p>Image Dark</p>
+<ul>
+<li>
+<p>Apply the filter directly on the body tag.</p>
+<pre><code class="language-css">body.dark-theme img {
+  filter: brightness(.8) contrast(1.2);
+}
+</code></pre>
+</li>
+<li>
+<p>Or apply it via media query.</p>
+<pre><code class="language-css">@media (prefers-color-scheme: dark) {
+  img {
+    filter: brightness(.8) contrast(1.2);
+  }
+}
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>Image prefer Dark</p>
+<pre><code class="language-html">&lt;picture&gt;
+  &lt;!-- Use this image if the user's OS setting is light or unset --&gt;
+  &lt;source srcset=&quot;photo-light.png&quot; media=&quot;(prefers-color-scheme: light) or (prefers-color-scheme: no-preference)&quot;&gt;
+  &lt;!-- Use this image if the user's OS setting is dark --&gt;
+  &lt;source srcset=&quot;photo-dark.png&quot; media=&quot;(prefers-color-scheme: dark)&quot;&gt;
+&lt;/picture&gt;
+</code></pre>
+</li>
+<li>
+<p>Non-standard attributes, dataset</p>
+<pre><code class="language-css">&lt;style&gt;
+  /* styles rely on the custom attribute &quot;order-state&quot; */
+  .order[order-state=&quot;new&quot;] {
+    color: green;
+  }
+
+  .order[order-state=&quot;pending&quot;] {
+    color: blue;
+  }
+
+  .order[order-state=&quot;canceled&quot;] {
+    color: red;
+  }
+&lt;/style&gt;
+
+&lt;div class=&quot;order&quot; order-state=&quot;new&quot;&gt;
+  A new order.
+&lt;/div&gt;
+
+&lt;div class=&quot;order&quot; order-state=&quot;pending&quot;&gt;
+  A pending order.
+&lt;/div&gt;
+
+&lt;div class=&quot;order&quot; order-state=&quot;canceled&quot;&gt;
+  A canceled order.
+&lt;/div&gt;
+</code></pre>
+</li>
+</ul>]]></content>
+  </entry>
+  <entry>
     <title>React</title>
     <link href="https://anzenkodo.github.io/notes/programming/languages/javascript/react.html" />
-    <updated>2022-12-18T05:32:09.264Z</updated>
+    <updated>2022-12-18T06:08:20.187Z</updated>
     <id>/notes/programming/languages/javascript/react.html</id>
     <content type="html"><![CDATA[<h1>React</h1>
 <ul>
@@ -1622,7 +1622,7 @@ class Copyfile {
   <entry>
     <title>NodeJS</title>
     <link href="https://anzenkodo.github.io/notes/programming/languages/javascript/nodejs.html" />
-    <updated>2022-12-18T05:32:09.264Z</updated>
+    <updated>2022-12-18T06:08:20.187Z</updated>
     <id>/notes/programming/languages/javascript/nodejs.html</id>
     <content type="html"><![CDATA[<h1>NodeJS</h1>
 <p>From <a href="https://trainings.internshala.com/nodejs-training">Internshala Training NodeJS Course</a></p>
@@ -1727,7 +1727,7 @@ function tester(val) {
   <entry>
     <title>JS</title>
     <link href="https://anzenkodo.github.io/notes/programming/languages/javascript/js.html" />
-    <updated>2022-12-18T05:32:09.264Z</updated>
+    <updated>2022-12-18T06:08:20.187Z</updated>
     <id>/notes/programming/languages/javascript/js.html</id>
     <content type="html"><![CDATA[<h1>The JavaScript language</h1>
 <h1>Standard built-in objects</h1>
@@ -4932,7 +4932,7 @@ console.log(&quot;Bye World&quot;);
   <entry>
     <title>Browser</title>
     <link href="https://anzenkodo.github.io/notes/programming/languages/javascript/browser.html" />
-    <updated>2022-12-18T05:32:09.264Z</updated>
+    <updated>2022-12-18T06:08:20.187Z</updated>
     <id>/notes/programming/languages/javascript/browser.html</id>
     <content type="html"><![CDATA[<h1>Browser: Document, Events, Interfaces</h1>
 <h1>Document</h1>
@@ -6273,7 +6273,7 @@ if (confirm(&quot;Go to Wikipedia?&quot;)) {
   <entry>
     <title>Pratical Sem6</title>
     <link href="https://anzenkodo.github.io/notes/programming/languages/php/pratical-sem6.html" />
-    <updated>2022-12-18T05:32:09.264Z</updated>
+    <updated>2022-12-18T06:08:20.187Z</updated>
     <id>/notes/programming/languages/php/pratical-sem6.html</id>
     <content type="html"><![CDATA[<h2>1. Write a PHP program using expressions and operator (ternary operator, arithmetic operators and comparison operators)</h2>
 <pre><code class="language-php">&lt;?php
