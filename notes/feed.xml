@@ -5,7 +5,7 @@
     <link>https://anzenkodo.github.io/notes/</link>
     <description>This my personal website where I post my notes about thing that I have learn.</description>
     <language>en-US</language>
-    <lastBuildDate>2022-12-20T09:32:13.132Z</lastBuildDate>
+    <lastBuildDate>2022-12-20T10:07:25.074Z</lastBuildDate>
     <image>
       <url>https://anzenkodo.github.io/notes/favicon.png</url>
       <title>AK#Notes</title>
@@ -18,7 +18,7 @@
       <item>
     <title>Home</title>
     <link>https://anzenkodo.github.io/notes/</link>
-    <pubDate>2022-12-20T09:32:13.132Z</pubDate>
+    <pubDate>2022-12-20T10:07:25.074Z</pubDate>
     <description><![CDATA[<p>This my personal website where I post my notes about thing that I have learn.</p>
 <h2>Features</h2>
 <ul>
@@ -402,9 +402,27 @@ colspan="3"><strong>30–32</strong> ATP</td> </tr> </tbody> </table>
   <td></td> <td>♖</td> </tr> </tbody> </table>]]></description>
   </item>
   <item>
+    <title>C</title>
+    <link>https://anzenkodo.github.io/notes/programming/languages/c.html</link>
+    <pubDate>2022-12-20T10:07:25.074Z</pubDate>
+    <description><![CDATA[<h1>C</h1>
+<ul>
+<li>In fact, you should use the main() to do very little except call each of the other functions.</li>
+<li>A good rule of thumb is that a function should not take more lines than will fit on a single screen. If the function is longer than that, you’re probably making it do too much.</li>
+<li>The difference between local and global variables:
+<ul>
+<li>A variable is global only if you define the variable (such as inti;) before a function name.</li>
+<li>A variable is local only if you define it after an opening brace. A function always begins with opening braces. Some statements, such as while, also have opening braces, and you can define local variables within those braces as well.</li>
+</ul>
+</li>
+<li>Local variables are safer than global variables.</li>
+<li>Don’t define global variables in the middle of a program. They’re too hard to locate if you do.</li>
+</ul>]]></description>
+  </item>
+  <item>
     <title>Bash</title>
     <link>https://anzenkodo.github.io/notes/programming/languages/bash.html</link>
-    <pubDate>2022-12-20T09:32:13.132Z</pubDate>
+    <pubDate>2022-12-20T10:07:25.074Z</pubDate>
     <description><![CDATA[<p><a href="#">#</a> Bash</p>
 <ul>
 <li>
@@ -1002,7 +1020,7 @@ fi
   <item>
     <title>CSS</title>
     <link>https://anzenkodo.github.io/notes/programming/languages/css.html</link>
-    <pubDate>2022-12-20T09:32:13.132Z</pubDate>
+    <pubDate>2022-12-20T10:07:25.074Z</pubDate>
     <description><![CDATA[<h1>CSS</h1>
 <p><a href="/notes/CSS%208946e12a95f04e3490bd9c09bfb99d1e/SASS%20d57c9cbb233644a3a615a487f4cdf949.md">SASS</a></p>
 <ul>
@@ -1090,7 +1108,7 @@ fi
   <item>
     <title>Java</title>
     <link>https://anzenkodo.github.io/notes/programming/languages/java.html</link>
-    <pubDate>2022-12-20T09:32:13.132Z</pubDate>
+    <pubDate>2022-12-20T10:07:25.074Z</pubDate>
     <description><![CDATA[<h1>Java</h1>
 <h2>1) Write a program to check number is even or odd using if else.</h2>
 <pre><code class="language-java">import java.util.Scanner;
@@ -1586,27 +1604,128 @@ class Copyfile {
 </code></pre>]]></description>
   </item>
   <item>
-    <title>C</title>
-    <link>https://anzenkodo.github.io/notes/programming/languages/c.html</link>
-    <pubDate>2022-12-20T09:32:13.132Z</pubDate>
-    <description><![CDATA[<h1>C</h1>
+    <title>NodeJS</title>
+    <link>https://anzenkodo.github.io/notes/programming/languages/javascript/nodejs.html</link>
+    <pubDate>2022-12-20T10:07:25.074Z</pubDate>
+    <description><![CDATA[<h1>NodeJS</h1>
+<p>From <a href="https://trainings.internshala.com/nodejs-training">Internshala Training NodeJS Course</a></p>
+<h1>Require</h1>
 <ul>
-<li>In fact, you should use the main() to do very little except call each of the other functions.</li>
-<li>A good rule of thumb is that a function should not take more lines than will fit on a single screen. If the function is longer than that, you’re probably making it do too much.</li>
-<li>The difference between local and global variables:
+<li>
+<p>Import node module</p>
+<pre><code class="language-jsx">const { readFs } = require(&quot;fs&quot;);
+const { readHttps } = require(&quot;https&quot;);
+</code></pre>
+</li>
+<li>
+<p>Input the string in <code>console.log</code>.</p>
+<pre><code class="language-jsx">st readLine = require(&quot;readline&quot;).createInterface({
+  output: process.stdout,
+  input: process.stdin,
+});
+
+readLine.question(&quot;What is your name?\n&quot;, (name) =&gt; {
+  console.log(`Welcome ${name}`);
+  readLine.close();
+});
+
+// What is your name?
+// Jimmin &lt;= Ask to input here
+// Welcome Jimmin
+</code></pre>
+</li>
+</ul>
+<h1>Module</h1>
 <ul>
-<li>A variable is global only if you define the variable (such as inti;) before a function name.</li>
-<li>A variable is local only if you define it after an opening brace. A function always begins with opening braces. Some statements, such as while, also have opening braces, and you can define local variables within those braces as well.</li>
+<li>
+<p>Process</p>
+<p>The <code>process</code> object in Node.js is a global object that can be accessed inside any module without requiring it.</p>
+<ul>
+<li>
+<p><code>process.on</code></p>
+<pre><code class="language-jsx">process.on('beforeExit', (code) =&gt; {
+console.log('Process beforeExit event with code: ', code);
+});
+// Process beforeExit event with code:  0                                                                                             /0.3s
+</code></pre>
+</li>
+<li>
+<p>Process expressions</p>
+<pre><code class="language-jsx">console.log(process.ppid);
+// 21321
+console.log(process.argv);
+// [
+//  '/snap/node/5148/bin/node',
+//  '/home/kurama/Documents/Projects/Node JS/app.js'
+//]
+console.log(`Reports are compact? ${process.report.compact}`);
+// Reports are compact? false                                                                                                         /0.3s
+</code></pre>
+</li>
 </ul>
 </li>
-<li>Local variables are safer than global variables.</li>
-<li>Don’t define global variables in the middle of a program. They’re too hard to locate if you do.</li>
+<li>
+<p>Module</p>
+<p>The <code>module</code> is same as process but you can only access within the file information.</p>
+</li>
+<li>
+<p>Event</p>
+<ul>
+<li>
+<p>EventEmitter</p>
+<pre><code class="language-jsx">const events = require(&quot;events&quot;);
+const eEmitter = new events.EventEmitter();
+
+const getParty = function () {
+  console.log(&quot;Time to party&quot;);
+  const ran = Math.ceil(Math.random() * 10);
+  console.log(`Party starts in ${ran}`);
+  tester(ran);
+};
+
+eEmitter.on(&quot;music&quot;, getParty);
+
+tester(2);
+
+function tester(val) {
+  setTimeout((e) =&gt; {
+    eEmitter.emit(&quot;music&quot;);
+  }, val * 1000);
+}
+
+// Time to party
+// Party starts in 5
+// Time to party
+// Party starts in 8
+// Time to party
+// Party starts in 3
+// Time to party
+// Party starts in 9
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>]]></description>
+  </item>
+  <item>
+    <title>React</title>
+    <link>https://anzenkodo.github.io/notes/programming/languages/javascript/react.html</link>
+    <pubDate>2022-12-20T10:07:25.074Z</pubDate>
+    <description><![CDATA[<h1>React</h1>
+<ul>
+<li>Function VS Class Component
+<ul>
+<li>A functional component is just a plain JavaScript function that accepts props as an argument and returns a React element.</li>
+<li>A class component requires you to extend from React. Component and create a render function which returns a React element.</li>
+</ul>
+</li>
+<li></li>
 </ul>]]></description>
   </item>
   <item>
     <title>JS</title>
     <link>https://anzenkodo.github.io/notes/programming/languages/javascript/js.html</link>
-    <pubDate>2022-12-20T09:32:13.132Z</pubDate>
+    <pubDate>2022-12-20T10:07:25.074Z</pubDate>
     <description><![CDATA[<h1>The JavaScript language</h1>
 <h1>Standard built-in objects</h1>
 <h2>Proxy</h2>
@@ -4810,7 +4929,7 @@ console.log(&quot;Bye World&quot;);
   <item>
     <title>Browser</title>
     <link>https://anzenkodo.github.io/notes/programming/languages/javascript/browser.html</link>
-    <pubDate>2022-12-20T09:32:13.132Z</pubDate>
+    <pubDate>2022-12-20T10:07:25.074Z</pubDate>
     <description><![CDATA[<h1>Browser: Document, Events, Interfaces</h1>
 <h1>Document</h1>
 <h2>document.documentElement</h2>
@@ -6148,128 +6267,9 @@ if (confirm(&quot;Go to Wikipedia?&quot;)) {
 </ul>]]></description>
   </item>
   <item>
-    <title>NodeJS</title>
-    <link>https://anzenkodo.github.io/notes/programming/languages/javascript/nodejs.html</link>
-    <pubDate>2022-12-20T09:32:13.132Z</pubDate>
-    <description><![CDATA[<h1>NodeJS</h1>
-<p>From <a href="https://trainings.internshala.com/nodejs-training">Internshala Training NodeJS Course</a></p>
-<h1>Require</h1>
-<ul>
-<li>
-<p>Import node module</p>
-<pre><code class="language-jsx">const { readFs } = require(&quot;fs&quot;);
-const { readHttps } = require(&quot;https&quot;);
-</code></pre>
-</li>
-<li>
-<p>Input the string in <code>console.log</code>.</p>
-<pre><code class="language-jsx">st readLine = require(&quot;readline&quot;).createInterface({
-  output: process.stdout,
-  input: process.stdin,
-});
-
-readLine.question(&quot;What is your name?\n&quot;, (name) =&gt; {
-  console.log(`Welcome ${name}`);
-  readLine.close();
-});
-
-// What is your name?
-// Jimmin &lt;= Ask to input here
-// Welcome Jimmin
-</code></pre>
-</li>
-</ul>
-<h1>Module</h1>
-<ul>
-<li>
-<p>Process</p>
-<p>The <code>process</code> object in Node.js is a global object that can be accessed inside any module without requiring it.</p>
-<ul>
-<li>
-<p><code>process.on</code></p>
-<pre><code class="language-jsx">process.on('beforeExit', (code) =&gt; {
-console.log('Process beforeExit event with code: ', code);
-});
-// Process beforeExit event with code:  0                                                                                             /0.3s
-</code></pre>
-</li>
-<li>
-<p>Process expressions</p>
-<pre><code class="language-jsx">console.log(process.ppid);
-// 21321
-console.log(process.argv);
-// [
-//  '/snap/node/5148/bin/node',
-//  '/home/kurama/Documents/Projects/Node JS/app.js'
-//]
-console.log(`Reports are compact? ${process.report.compact}`);
-// Reports are compact? false                                                                                                         /0.3s
-</code></pre>
-</li>
-</ul>
-</li>
-<li>
-<p>Module</p>
-<p>The <code>module</code> is same as process but you can only access within the file information.</p>
-</li>
-<li>
-<p>Event</p>
-<ul>
-<li>
-<p>EventEmitter</p>
-<pre><code class="language-jsx">const events = require(&quot;events&quot;);
-const eEmitter = new events.EventEmitter();
-
-const getParty = function () {
-  console.log(&quot;Time to party&quot;);
-  const ran = Math.ceil(Math.random() * 10);
-  console.log(`Party starts in ${ran}`);
-  tester(ran);
-};
-
-eEmitter.on(&quot;music&quot;, getParty);
-
-tester(2);
-
-function tester(val) {
-  setTimeout((e) =&gt; {
-    eEmitter.emit(&quot;music&quot;);
-  }, val * 1000);
-}
-
-// Time to party
-// Party starts in 5
-// Time to party
-// Party starts in 8
-// Time to party
-// Party starts in 3
-// Time to party
-// Party starts in 9
-</code></pre>
-</li>
-</ul>
-</li>
-</ul>]]></description>
-  </item>
-  <item>
-    <title>React</title>
-    <link>https://anzenkodo.github.io/notes/programming/languages/javascript/react.html</link>
-    <pubDate>2022-12-20T09:32:13.132Z</pubDate>
-    <description><![CDATA[<h1>React</h1>
-<ul>
-<li>Function VS Class Component
-<ul>
-<li>A functional component is just a plain JavaScript function that accepts props as an argument and returns a React element.</li>
-<li>A class component requires you to extend from React. Component and create a render function which returns a React element.</li>
-</ul>
-</li>
-<li></li>
-</ul>]]></description>
-  </item>
-  <item>
     <title>Pratical Sem6</title>
     <link>https://anzenkodo.github.io/notes/programming/languages/php/pratical-sem6.html</link>
-    <pubDate>2022-12-20T09:32:13.132Z</pubDate>
+    <pubDate>2022-12-20T10:07:25.074Z</pubDate>
     <description><![CDATA[<h2>1. Write a PHP program using expressions and operator (ternary operator, arithmetic operators and comparison operators)</h2>
 <pre><code class="language-php">&lt;?php
   echo 1 &gt; 2 ? 1 : 2;
