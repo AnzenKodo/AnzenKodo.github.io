@@ -68,7 +68,7 @@ site.use(jsx())
   .use(minifyHTML({ extensions: [".html", ".css", ".js"] }));
 import { input } from "./src/_includes/utils/input.js";
 
-site.copy([".jpg", ".png", ".gif", ".mp3", ".webp", ".webm", ".svg"]);
+site.copy([".jpg", ".png", ".gif", ".mp3", ".webp", ".webm", ".svg"], (file) => file.toLowerCase());
 
 const siteData = {
   name: "AK#Notes",
