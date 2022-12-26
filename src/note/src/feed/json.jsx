@@ -22,7 +22,7 @@ export default function ({ site, search }, { md, url, htmlUrl }) {
     items: [],
   };
 
-  for (const post of search.pages("", "date=desc", 10)) {
+  for (const post of search.pages("", "", 10)) {
     const title = formatNameSrc(post);
 
     feed.items.push({
