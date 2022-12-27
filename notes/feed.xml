@@ -5,7 +5,7 @@
     <link>https://anzenkodo.github.io/notes/</link>
     <description>This my personal website where I post my notes about thing that I have learn.</description>
     <language>en-US</language>
-    <lastBuildDate>2022-12-27T05:31:53.399Z</lastBuildDate>
+    <lastBuildDate>2022-12-27T06:08:54.295Z</lastBuildDate>
     <image>
       <url>https://anzenkodo.github.io/notes/favicon.png</url>
       <title>AK#Notes</title>
@@ -16,988 +16,9 @@
     <atom:link href="https://anzenkodo.github.io/notes/feed.xml" rel="self" type="application/rss+xml" />
     <atom:link href="https://anzenkodo.github.io/notes/feed.xml" rel="alternate" type="application/rss+xml" />
       <item>
-    <title>Home</title>
-    <link>https://anzenkodo.github.io/notes/</link>
-    <pubDate>2022-12-27T05:31:53.399Z</pubDate>
-    <description><![CDATA[<p>This my personal website where I post my notes about thing that I have learn.</p>
-<h2>Features</h2>
-<ul>
-<li>Easy to:
-<ul>
-<li>Setup</li>
-<li>Configure</li>
-<li>Write</li>
-</ul>
-</li>
-<li>Supports:
-<ul>
-<li>Tags</li>
-<li>Search (Power by <a href="https://duckduckgo.com/">DuckDuckGo</a>)</li>
-<li>Canonical</li>
-<li><a href="https://ogp.me/">Open Graph</a></li>
-<li>Analytics</li>
-<li><a href="https://pages.github.com/">GitHub Pages</a></li>
-</ul>
-</li>
-<li>Auto generate:
-<ul>
-<li>GitHub Pages Actions file</li>
-<li>Favicon</li>
-<li>Sitemap</li>
-<li>404 page</li>
-<li>CSS</li>
-<li><code>mainfest.json</code> file</li>
-<li>Feeds
-<ul>
-<li>RSS</li>
-<li>JSON</li>
-<li>Atom</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>No Client side JavaScript</li>
-<li>Minified HTML &amp; Inline CSS</li>
-<li>Lightweight</li>
-</ul>
-<h2>Getting Started</h2>
-<h3>Installing</h3>
-<ul>
-<li>Download deno from <a href="https://deno.land/">https://deno.land/</a> and install it.</li>
-<li>After installing deno run following commands.</li>
-</ul>
-<pre><code class="language-sh"># Install the dblog
-deno run https://deno.land/x/dblog/install.js # Add deno to path, if you didn't already.
-
-# See all the options that are available
-dblog --help
-
-# Setup the your blog (Skip this if already your blog setup)
-dblog --setup
-
-# Make your blog and Run on localhost
-dblog --serve
-</code></pre>
-<h3>Update</h3>
-<p>To update dblog, rerun the installation command.</p>
-<pre><code class="language-sh">deno run https://deno.land/x/dblog/install.js
-</code></pre>
-<h3>Run dblog without installing dblog</h3>
-<pre><code class="language-sh">deno run -A https://deno.land/x/dblog/mod.js --help
-</code></pre>
-<h2>Live Demo &amp; Folder</h2>
-<ul>
-<li><a href="https://anzenkodo.github.io/dblog">Live Demo</a></li>
-<li><a href="https://github.com/AnzenKodo/dblog/tree/gh-pages">Generated Files</a></li>
-</ul>
-<h2>Configuration</h2>
-<p>Place <code>config.json</code> in root folder to edit default configuration. The
-<code>config.json</code> is optional.</p>
-<p><strong>The <code>config.json</code> with default configuration:</strong></p>
-<pre><code class="language-json">{
-  &quot;name&quot;: &quot;dblog&quot;,
-  &quot;start_url&quot;: &quot;https://AnzenKodo.github.io/dblog/&quot;,
-  &quot;description&quot;: &quot;dblog blog generator, that generates blog from Markdown and JSON file. dblog handles technical parts, so you can focus on hard part writing.&quot;,
-  &quot;email&quot;: &quot;&quot;,
-  &quot;author&quot;: &quot;AnzenKodo&quot;,
-  &quot;posts&quot;: &quot;./posts&quot;,
-  &quot;output&quot;: &quot;./site&quot;,
-  &quot;favicon&quot;: &quot;favicon.svg&quot;,
-  &quot;lang&quot;: &quot;en-US&quot;,
-  &quot;port&quot;: 8000,
-  &quot;background&quot;: &quot;#ffffff&quot;,
-  &quot;foreground&quot;: &quot;#000000&quot;,
-  &quot;theme&quot;: &quot;#01a252&quot;,
-  &quot;footer&quot;: &quot;&lt;p&gt;Made by &lt;a href=\&quot;https://AnzenKodo.github.io/AnzenKodo\&quot;&gt;AnzenKodo&lt;/a&gt; under &lt;a href=\&quot;https://anzenkodo.github.io/dblog/LICENSE\&quot;&gt;MIT&lt;/a&gt;&lt;/p&gt;\n&quot;,
-  &quot;page404&quot;: &quot;404 Page Not Found, Sorry :(&quot;,
-  &quot;backup&quot;: false,
-  &quot;exclude&quot;: [
-    &quot;config.json&quot;,
-    &quot;backup.json&quot;
-  ],
-  &quot;nav&quot;: {},
-  &quot;head&quot;: &quot;&quot;
-}
-</code></pre>
-<p><strong>Note:</strong> Every option is optional.</p>
-<ul>
-<li><strong>name</strong> - Name of your blog.</li>
-<li><strong>start_url</strong> - Start URL of your site. <em>Example:</em> ‘<a href="https://example.com/">https://example.com/</a>’,
-‘<a href="https://blog.example.com/">https://blog.example.com/</a>’, ‘<a href="https://example.com/blog/">https://example.com/blog/</a>’</li>
-<li><strong>email</strong> - Your email address. This will enable ‘Reply with Email’ button in
-posts.</li>
-<li><strong>author</strong> - Your name or username.</li>
-<li><strong>posts</strong> - Path of posts.</li>
-<li><strong>output</strong> - Folder where your blog build will be placed. <em>Example:</em> ‘./blog’,
-‘…/site/blog’, ‘site/blog’.</li>
-<li><strong>favicon</strong> - <em><strong>Recommended 500x500px</strong></em>. Favicon location. <em>If empty,
-generated favicon will be used</em>. <em>Example:</em> ‘./favicon.png’,
-‘./static/favicon.icon’, ‘…/favicon.jpg’.</li>
-<li><strong>lang</strong> - Blog language in ‘RFC 5646’ format. Example: ‘ja’ for Japanese,
-‘sv’ for Swedish, ‘it’ for Italian. See
-<a href="https://wikipedia.org/wiki/IETF_language_tag#List_of_common_primary_language_subtags">List of common primary language subtags in Wikipedia</a></li>
-<li><strong>footer</strong> - Footer of your website. <em>Supports CommonMark Markdown format</em>.
-<em>Example:</em>
-<code>Made by [AnzenKodo](https://AnzenKodo.github.io/AnzenKodo) uder [MIT License](https://anzenkodo.github.io/dblog/LICENSE.html)</code>.</li>
-<li><strong>port</strong> - Port of your blog on localhost. <em>Example</em>: ‘8080’, ‘8300’, ‘8400’.</li>
-<li><strong>background</strong> - Background color in light mode. Becomes foreground color in
-light mode. <em>Example:</em> ‘#000000’, &quot;#ffffff’, ‘##FEFBFE’.</li>
-<li><strong>foreground</strong> - Foreground color in light mode. Becomes background color in
-light mode. <em>Example:</em> ‘#000000’, &quot;#ffffff’, ‘##FEFBFE’.</li>
-<li><strong>theme</strong> - Blog theme color. <em>Example:</em> ‘#0583f2’, ‘#f20544’, ‘#f2b705’.</li>
-<li><strong>page404</strong> - 404 page message. <em>Example:</em> ‘Sorry, page not found :(’.</li>
-<li><strong>backup</strong> - Backup file location. <em>Example:</em> <code>false</code> to don’t generate
-<code>backup.json</code> file, ‘./backup.json’, ‘./site/backup.json’, ‘…/backup.json’.</li>
-<li><strong>exclude</strong> - Exclude files or folder. <em>Example:</em><pre><code class="language-json">&quot;exclude&quot;: [ &quot;.env&quot;, &quot;todo.md&quot;, &quot;drafts&quot; ],
-</code></pre>
-</li>
-<li><strong>nav</strong> - Nav bar item list. Example:<pre><code class="language-json">&quot;nav&quot;: {
-  &quot;about&quot;: &quot;./about.md&quot;,
-  &quot;stie&quot;: &quot;https://anzenkodo.github.io/AnzenKodo&quot;
-}
-</code></pre>
-</li>
-<li><strong>head</strong> - If you analytics or any other tags you want to put on head tag.
-<em>Example:</em>
-<code>&lt;link rel=&quot;preconnect&quot; href=&quot;//www.google-analytics.com&quot; crossorigin=&quot;&quot;&gt;</code>.</li>
-</ul>
-<h2>CLI Options</h2>
-<pre><code class="language-sh">dblog blog generator, that generates blog from Markdown and JSON file. dblog handles technical parts, so you can focus on hard part writing.
-
-Website: https://anzenkodo.github.io/dblog
-Package: https://deno.land/x/dblog
-Repo: https://github.com/AnzenKodo/dblog
-Docs: https://anzenkodo.github.io/dblog/posts/dblog-Docs.html
-
-USAGE:
-  dblog [OPTIONS]
-
-OPTIONS:
-  --serve   Build blog and Start localhost.
-    --noopen  Don't open browser, when starting localhost.
-  --build   Build blog without starting localhost.
-  --setup   Setup new blog.
-  --backup  Restore blog if 'backup.json' file available.
-  --readme  Generate 'README.md' file.
-  --help    Print help information.
-</code></pre>
-<h2>File Options</h2>
-<pre><code>---
-title: If empty the file name will be used
-description: If empty the first paragraph will be used.
-tags: [ &quot;tag1&quot;, &quot;tag2&quot; ]
-date: 20/08/2020
-canonical:
----
-</code></pre>
-<ul>
-<li><strong>date</strong> - If empty, the file date will be used. <em>Note:</em> The file <code>date</code> might
-not always right. So always give you own date.</li>
-<li><strong>canonical</strong> - Share content between multiple sites without impacting SEO.
-Just put canonical URL. Know more about
-<a href="https://developers.google.com/search/docs/advanced/crawling/consolidate-duplicate-urls">canonical url</a>.</li>
-</ul>
-<h3>If file name start with underscore “_” it will be consider as draft.</h3>
-<p><strong>Example:</strong> <code>posts/_This is draft.md</code></p>
-<h2>Markdown Guide</h2>
-<h3><a href="https://commonmark.org/help/">CommonMark</a> Syntex</h3>
-<h4>Heading</h4>
-<pre><code class="language-md"># H1
-
-## H2
-
-### H3
-
-#### H4
-
-##### H5
-
-###### H6
-</code></pre>
-<h1>H1</h1>
-<h2>H2</h2>
-<h3>H3</h3>
-<h4>H4</h4>
-<h5>H5</h5>
-<h6>H6</h6>
-<h4>Inline style</h4>
-<pre><code class="language-md">**Bold** _Italic_ ~~Strikethrough~~
-</code></pre>
-<p><strong>Bold</strong> <em>Italic</em> <s>Strikethrough</s></p>
-<h4>Link and Image</h4>
-<pre><code class="language-md">[website](https://anzenkodo.github.io/dblog)
-![Jurassic Deno by Samip Poudel](https://deno.land/images/artwork/jurassicDeno.jpg)
-</code></pre>
-<p><a href="https://anzenkodo.github.io/dblog">website</a>
-<img src="https://deno.land/images/artwork/jurassicDeno.jpg" alt="Jurassic Deno by Samip Poudel"></p>
-<h4>Blockquote</h4>
-<pre><code class="language-md">&gt; 'The road to hell is paved with good intentions' by Abbot Bernard
-</code></pre>
-<blockquote>
-<p>‘The road to hell is paved with good intentions’ by Abbot Bernard</p>
-</blockquote>
-<h4>List</h4>
-<pre><code class="language-md">- List
-  - List
-- List
-
-1. One
-2. Two
-3. Three
-</code></pre>
-<ul>
-<li>List
-<ul>
-<li>List</li>
-</ul>
-</li>
-<li>List</li>
-</ul>
-<ol>
-<li>One</li>
-<li>Two</li>
-<li>Three</li>
-</ol>
-<h4>Horizontal rule</h4>
-<pre><code class="language-md">---
-</code></pre>
-<hr>
-<h4>Code block</h4>
-<div class="highlight highlight-source-lisp notranslate position-relative overflow-auto">
-<pre>
-`Inline code` with backticks
-```js
-  console.log("Code Blog in JavaScript");
-```
-</pre>
-</div>
-<p><code>Inline code</code> with backticks</p>
-<pre><code class="language-js">console.log(&quot;Code Blog in JavaScript&quot;);
-</code></pre>
-<h3>Additional Markdown syntax</h3>
-<h4>Checkbox</h4>
-<pre><code class="language-md">- [ ] Checkbox
-- [x] Checkbox with tick
-</code></pre>
-<ul class="task-list">
-<li class="task-list-item"><input type="checkbox" id="cbx_0" disabled="true"><label for="cbx_0"> Checkbox</label></li>
-<li class="task-list-item"><input type="checkbox" id="cbx_1" checked="true" disabled="true"><label for="cbx_1"> Checkbox with tick</label></li>
-</ul>
-<h4>Image with caption</h4>
-<pre><code class="language-md">![Deno](https://deno.land/images/artwork/deno_matrix.png &quot;Matrix by bramaudi&quot;)
-</code></pre>
-<figure data-type="image"><img src="https://deno.land/images/artwork/deno_matrix.png" alt="Deno" loading="lazy" decoding="async"><figcaption>Matrix by bramaudi</figcaption></figure>
-<h4>Footer</h4>
-<pre><code class="language-md">Here is a footnote reference[^1]. [^1]: Here is the footnote.
-</code></pre>
-<p>Here is a footnote reference[^1]. [^1]: Here is the footnote.</p>
-<h4>Additional inline syntax</h4>
-<pre><code class="language-md">~sub~ ^sup^ ==mark== [[kbd]] _underline_ ++insert++ ~~delete~~
-</code></pre>
-<p><sub>sub</sub>
-<sup>sup</sup>
-<mark>mark</mark>
-<kbd>kbd</kbd>
-<u>underline</u>
-<ins>insert</ins>
-<del>delete</del></p>
-<h4>Description list</h4>
-<pre><code class="language-md">: Definition 1 Term 2 with _inline markup_ : Definition 2 Third paragraph of
-definition 2.
-</code></pre>
-<dl>
-  <dt>Definition 1</dt>
-  <dd>Term 2 with inline.</dd>
-  <dt>Definition 2</dt>
-  <dd>Third paragraph of definition 2.</dd>
-</dl>
-<h4>Abbreviation</h4>
-<pre><code class="language-md">*[abbr]: Abbreviation
-</code></pre>
-<p><abbr title="Abbreviation">abbr</abbr></p>
-<h4>Table</h4>
-<h5>Normal</h5>
-<pre><code class="language-md">| Syntax    | Description |
-| --------- | ----------- |
-| Header    | Title       |
-| Paragraph | Text        |
-</code></pre>
-<table>
-<thead>
-<tr>
-<th>Syntax</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Header</td>
-<td>Title</td>
-</tr>
-<tr>
-<td>Paragraph</td>
-<td>Text</td>
-</tr>
-</tbody>
-</table>
-<h5>Multiline</h5>
-<pre><code class="language-md">| Markdown  | Rendered HTML |
-| --------- | ------------- |
-| _Italic_  | _Italic_      |
-|           |               |
-| - Item 1  | - Item 1      |
-| - Item 2  | - Item 2      |
-| ```python | ```python \   |
-| .1 + .2   | .1 + .2       |
-</code></pre>
-<table><thead><tr><th>Markdown</th><th>Rendered HTML</th></tr></thead> <tbody>
-  <tr> <td> <pre><code>*Italic* </code></pre> </td> <td> <p><em>Italic</em></p>
-  </td> </tr> <tr> <td> <pre><code>- Item 1 - Item 2</code></pre> </td> <td>
-  <ul> <li>Item 1</li> <li>Item 2</li> </ul> </td> </tr> <tr> <td>
-<pre><code>
-```python
-.1 + .2
-```
-</code></pre> </td> <td> <pre><code class="language-python">.1 + .2
-  </code></pre> </td> </tr> </tbody> </table>
-<h5>Rowspan</h5>
-<pre><code class="language-md">|                       Stage | Direct Products | ATP Yields |
-| --------------------------: | --------------: | ---------: |
-|                  Glycolysis |           2 ATP |            |
-|                          ^^ |          2 NADH |   3--5 ATP |
-|          Pyruvaye oxidation |          2 NADH |      5 ATP |
-|           Citric acid cycle |           2 ATP |            |
-|                          ^^ |          6 NADH |     15 ATP |
-|                          ^^ |         2 FADH2 |      3 ATP |
-|              **30--32** ATP |                 |            |
-| [Net ATP yields per hexose] |                 |            |
-</code></pre>
-<table> <caption id="netatpyieldsperhexose">Net ATP yields per hexose</caption>
-  <thead> <tr> <th align="right">Stage</th> <th align="right">Direct
-Products</th> <th align="right">ATP Yields</th> </tr> </thead> <tbody> <tr> <td
-align="right" rowspan="2">Glycolysis</td> <td align="right" colspan="2">2
-ATP</td> </tr> <tr> <td align="right">2 NADH</td> <td align="right">3–5
-ATP</td> </tr> <tr> <td align="right">Pyruvaye oxidation</td> <td
-align="right">2 NADH</td> <td align="right">5 ATP</td> </tr> <tr> <td
-align="right" rowspan="3">Citric acid cycle</td> <td align="right"
-colspan="2">2 ATP</td> </tr> <tr> <td align="right">6 NADH</td> <td
-align="right">15 ATP</td> </tr> <tr> <td align="right">2 FADH2</td> <td
-align="right">3 ATP</td> </tr> <tr> <td align="right"
-colspan="3"><strong>30–32</strong> ATP</td> </tr> </tbody> </table>
-<h4>Headerless</h4>
-<pre><code class="language-md">|--|--|--|--|--|--|--|--| |♜| |♝|♛|♚|♝|♞|♜| | |♟|♟|♟| |♟|♟|♟| |♟| |♞| | | | | |
-| |♗| | |♟| | | | | | | | |♙| | | | | | | | | |♘| | | |♙|♙|♙|♙| |♙|♙|♙|
-|♖|♘|♗|♕|♔| | |♖|
-</code></pre>
-<table> <tbody> <tr> <td>♜</td> <td></td> <td>♝</td> <td>♛</td> <td>♚</td>
-  <td>♝</td> <td>♞</td> <td>♜</td> </tr> <tr> <td></td> <td>♟</td> <td>♟</td>
-  <td>♟</td> <td></td> <td>♟</td> <td>♟</td> <td>♟</td> </tr> <tr> <td>♟</td>
-  <td></td> <td>♞</td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-  <tr> <td></td> <td>♗</td> <td></td> <td></td> <td>♟</td> <td></td> <td></td>
-  <td></td> </tr> <tr> <td></td> <td></td> <td></td> <td></td> <td>♙</td>
-  <td></td> <td></td> <td></td> </tr> <tr> <td></td> <td></td> <td></td>
-  <td></td> <td></td> <td>♘</td> <td></td> <td></td> </tr> <tr> <td>♙</td>
-  <td>♙</td> <td>♙</td> <td>♙</td> <td></td> <td>♙</td> <td>♙</td> <td>♙</td>
-  </tr> <tr> <td>♖</td> <td>♘</td> <td>♗</td> <td>♕</td> <td>♔</td> <td></td>
-  <td></td> <td>♖</td> </tr> </tbody> </table>]]></description>
-  </item>
-  <item>
-    <title>Final</title>
-    <link>https://anzenkodo.github.io/notes/programming/android/final.html</link>
-    <pubDate>2022-12-27T05:31:53.399Z</pubDate>
-    <description><![CDATA[<h1>1. Attempt any FIVE of the following: 10</h1>
-<h2>a) List any four features of Android operating system.</h2>
-<ul>
-<li>Open Source</li>
-<li>Beautiul UI</li>
-<li>Connectivity</li>
-<li>Storage</li>
-<li>Multi-Touch</li>
-<li>Multi-Tasking</li>
-<li>Multi-Language</li>
-<li>Resizable widgets</li>
-<li>Messaging</li>
-<li>Media Support</li>
-<li>Web Browser</li>
-</ul>
-<h2>b) Define Dalvik Virtual Machine (DVM).</h2>
-<table>
-<thead>
-<tr>
-<th>JVM</th>
-<th>DVM</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>JVM supports multiple OS</td>
-<td>DVM supports only Android Operating system.</td>
-</tr>
-<tr>
-<td>JVM forms separate classes in separate <code>.class</code> byte code files.</td>
-<td>DVM forms multiple class in <code>.dex</code> byte code file.</td>
-</tr>
-<tr>
-<td>It is based on stack based virtual machine architecture.</td>
-<td>It is based on register based virtual machine architecture.</td>
-</tr>
-<tr>
-<td>JVM runs on more memory</td>
-<td>DVM runs on less memory.</td>
-</tr>
-<tr>
-<td>The executable format of JVM is JAR.</td>
-<td>The executable format of DVM is APK.</td>
-</tr>
-<tr>
-<td>JVM has different constant pools.</td>
-<td>DVM has common constant pool.</td>
-</tr>
-<tr>
-<td>It runs <code>.class</code> byte code directly.</td>
-<td>The <code>.class</code> byte codes are optimize to .odex format before executing in DVM.</td>
-</tr>
-</tbody>
-</table>
-<h2>c) List any four folders from directory structure of Android project and elaborate in one line.</h2>
-<h3>Manifests Folder</h3>
-<ul>
-<li>Manifests folder contains AndroidManifest.xml for creating our android application.</li>
-<li>This file contains information about our application such as the Android version, metadata, states package for Kotlin file, and other application components.</li>
-<li>It acts as an intermediator between android OS and our application.</li>
-</ul>
-<h3>Java folder</h3>
-<ul>
-<li>The Java folder contains all the java and Kotlin source code (.java) files that we create during the app development, including other Test files.</li>
-</ul>
-<h3>Resource (res) folder</h3>
-<ul>
-<li>The resource folder is the most important folder because it contains all the non-code sources like images, XML layouts, and UI strings for our android application.</li>
-</ul>
-<h3>res/drawable folder</h3>
-<ul>
-<li>It contains the different types of images used for the development of the application.</li>
-</ul>
-<h2>d) List any four attributes of check box.</h2>
-<ul>
-<li>text - This is the Text to display.</li>
-<li>id - This supplies an identifier name for this view.</li>
-<li>visibility - This controls the initial visibility of the view.</li>
-<li>editable - If set, specifies that this TextView has an input method.</li>
-</ul>
-<h2>e) Draw diagram of activity life cycle.</h2>
-<pre><code>                             ┌┬────────┬┐
-                             ││Activity││
-                             ││launched││
-                             └┴────┬───┴┘
-                                   │
-                              ┌────▼─────┐
-         ┌────────────────────►onCreate()│
-         │                    └────┬─────┘
-         │                         │
-         │                    ┌────▼────┐                    ┌───────────┐
-         │                    │onStart()◄────────────────────┤onRestart()│
-         │                    └────┬────┘                    └───────▲───┘
-         │                         │                                 │
-User navigates                ┌────▼─────┐                           │
-to the activity               │onResume()◄───────────────┐           │
-         │                    └────┬─────┘               │           │
-         │                         │                     │           │
-  ┌┬─────┴─────┬┐            ┌┬────┴───┬┐                │           │
-  ││App process││            ││Activity││                │           │
-  ││killed     ││            ││Running ││                │           │
-  └┴─────▲─────┴┘            └┴────┬───┴┘                │           │
-         │                         │                     │           │
-         │                         ▼                     │           │
-Apps with higher priority   Another activity comes   User returns    │
-need memory                 into the foreground      to the activity │
-         │                         │                     │           │
-         │                         │                     │           │
-         │                    ┌────▼────┐                │           │
-         │                    │onPause()├────────────────┘           │
-         │                    └────┬────┘                            │
-         │                         │                                 │
-         │                         │                                 │
-         │                  The activity is                          │
-         │                  no longer visible                        │
-         │                         │                        User navigates
-         │                         │                        to the activity
-         │                    ┌────▼───┐                             │
-         └────────────────────┤onStop()├─────────────────────────────┘
-                              └────┬───┘
-                                   │
-                                   │
-                            The activity is finishing or
-                            being destroyed by the system
-                                   │
-                                   │
-                              ┌────▼──────┐
-                              │onDestroy()│
-                              └────┬──────┘
-                                   │
-                             ┌┬────▼────┬┐
-                             ││Activity ││
-                             ││Shut Down││
-                             └┴─────────┴┘
-</code></pre>
-<h2>f) State syntax to display built in zoom control.</h2>
-<p>In Android, Zoom Control is a class that has some set of methods that are used to control the zoom functionality.</p>
-<pre><code class="language-java">ZoomControl zoomControls = (ZoomControls) findViewById(R.id.simpleZoomControl);
-</code></pre>
-<h2>g) Name two classes used to play audio and video in Android.</h2>
-<ul>
-<li>The following classes are used to play sound and video in the Android framework:
-<ul>
-<li>MediaPlayer - This class is the primary API for playing sound and video.</li>
-<li>AudioManager - This class manages audio sources and audio output on a device.</li>
-</ul>
-</li>
-</ul>
-<h1>2. Attempt any THREE of the following: 12</h1>
-<h2>a) Describe Android architecture with diagram.</h2>
-<ul>
-<li>Android architecture contains different number of components to support any android device needs. Android software contains an open-source Linux Kernel having collection of number of C/C++ libraries which are exposed through an application framework services.</li>
-<li>The main components of android architecture are following:</li>
-</ul>
-<ol>
-<li><strong>Applications:</strong> Applications is the top layer of android architecture. The pre-installed applications like home, contacts, camera, etc and third party applications will be installed on this layer only.</li>
-<li><strong>Application framework:</strong> Application Framework provides several important classes which are used to create an Android application.</li>
-<li><strong>Application runtime:</strong> Android Runtime environment contains components like core libraries and the Dalvik virtual machine(DVM).</li>
-<li><strong>Platform libraries:</strong> The Platform Libraries includes various C/C++ core libraries and Java based libraries such as Media, Graphics, OpenGL etc. to provide a support for android development.</li>
-<li><strong>Linux Kernel:</strong> The linux kernel manages all the available drivers such as display drivers, camera drivers, audio drivers, etc. which are required during the runtime.</li>
-</ol>
-<h2>b) Differentiate between DVM and JVM</h2>
-<table>
-<thead>
-<tr>
-<th>JVM</th>
-<th>DVM</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>JVM supports multiple OS</td>
-<td>DVM supports only Android Operating system.</td>
-</tr>
-<tr>
-<td>JVM forms separate classes in separate <code>.class</code> byte code files.</td>
-<td>DVM forms multiple class in <code>.dex</code> byte code file.</td>
-</tr>
-<tr>
-<td>It is based on stack based virtual machine architecture.</td>
-<td>It is based on register based virtual machine architecture.</td>
-</tr>
-<tr>
-<td>JVM runs on more memory</td>
-<td>DVM runs on less memory.</td>
-</tr>
-<tr>
-<td>The executable format of JVM is JAR.</td>
-<td>The executable format of DVM is APK.</td>
-</tr>
-<tr>
-<td>JVM has different constant pools.</td>
-<td>DVM has common constant pool.</td>
-</tr>
-<tr>
-<td>It runs <code>.class</code> byte code directly.</td>
-<td>The <code>.class</code> byte codes are optimize to .odex format before executing in DVM.</td>
-</tr>
-</tbody>
-</table>
-<h2>c) List and elaborate steps to deploy in Android application on Google play store.</h2>
-<ul>
-<li>Step 1 - First generate signed apk of your Android App to publish it on Play Store.</li>
-<li>Step 2 - Sign up for Google Play Console to publish and manage your Android App.</li>
-<li>Step 3 - Now click on Create Application.</li>
-<li>Step 4 - Now fill store listing details of your App which include Title, Short and Full description.</li>
-<li>Step 5 - Now Click on ready on publish along with save draft and click on Manage release.</li>
-<li>Step 6 - After Manage production click on edit release.</li>
-<li>Step 7 - Now click on review.</li>
-<li>Step 8 - After review click on Start Rollout to production.</li>
-</ul>
-<h2>d) Describe with example, how to create a simple database in SQLite (Assume suitable data).</h2>
-<ul>
-<li>SQLite is a opensource SQL database that stores data to a text file on a device. Android comes in with built in SQLite database implementation.</li>
-<li>SQLite supports all the relational database features.</li>
-</ul>
-<pre><code class="language-java">SQLiteDatabase mydatabase = openOrCreateDatabase(&quot;your database name&quot;,MODE_PRIVATE,null);
-</code></pre>
-<h1>3. Attempt any THREE of the following: 12</h1>
-<h2>a) Write down the steps to install and configure Android studio.</h2>
-<ul>
-<li>Head over to <a href="https://developer.android.com/studio">https://developer.android.com/studio</a> to get the Android Studio executable or zip file.</li>
-<li>Click on the Download Android Studio Button.</li>
-<li>After the downloading has finished, open the file from downloads and run it. It will prompt the following dialog box.</li>
-<li>Once “Finish” is clicked, choose the ‘Don’t import Settings option’.</li>
-<li>This will start the Android Studio.</li>
-<li>After it has found the SDK components, it will redirect to the Welcome dialog box.</li>
-<li>Now it is time to download the SDK components.</li>
-<li>Click on Start a new Android Studio project to build a new app.</li>
-</ul>
-<h2>b) State syntax to create Text View and Image button with any two attributes of each.</h2>
-<h3>TextView</h3>
-<pre><code class="language-xml">&lt;TextView
-    android:id=&quot;@+id/student_name&quot;
-    android:layout_width=&quot;wrap_content&quot;
-    android:layout_height=&quot;wrap_content&quot;
-    android:text=&quot;Name:&quot; /&gt;
-</code></pre>
-<ul>
-<li>text -  Sets text of the Textview</li>
-<li>id - Gives a unique ID to the Textview</li>
-</ul>
-<h3>ImageButton</h3>
-<pre><code class="language-xml">&lt;ImageButton
-  android:id=&quot;@+id/imageButton&quot;
-  android:src=&quot;@drawable/button&quot;
-  android:layout_height=&quot;wrap_content&quot;
-  android:layout_width=&quot;wrap_content&quot;/&gt;
-</code></pre>
-<ul>
-<li>background - This is a drawable to use as the background.</li>
-<li>id - Gives a unique ID to the Textview</li>
-</ul>
-<h2>c) Describe Android service life cycle along with diagram.</h2>
-<ul>
-<li>A service is an application component which runs withour direst interaction with the user in the background.</li>
-<li>Services are used for repetitive and potentially long running operations:
-<ul>
-<li>Internet downloads</li>
-<li>Checking for new data</li>
-<li>Data processing</li>
-<li>Updating content</li>
-<li>Providers and the like</li>
-</ul>
-</li>
-<li>They typically run in the background to perform long-running operations or work for remote processes.</li>
-</ul>
-<pre><code>                             ┌┬────────┬┐
-                             ││Activity││
-                             ││launched││
-                             └┴────┬───┴┘
-                                   │
-                              ┌────▼─────┐
-         ┌────────────────────►onCreate()│
-         │                    └────┬─────┘
-         │                         │
-         │                    ┌────▼────┐                    ┌───────────┐
-         │                    │onStart()◄────────────────────┤onRestart()│
-         │                    └────┬────┘                    └───────▲───┘
-         │                         │                                 │
-User navigates                ┌────▼─────┐                           │
-to the activity               │onResume()◄───────────────┐           │
-         │                    └────┬─────┘               │           │
-         │                         │                     │           │
-  ┌┬─────┴─────┬┐            ┌┬────┴───┬┐                │           │
-  ││App process││            ││Activity││                │           │
-  ││killed     ││            ││Running ││                │           │
-  └┴─────▲─────┴┘            └┴────┬───┴┘                │           │
-         │                         │                     │           │
-         │                         ▼                     │           │
-Apps with higher priority   Another activity comes   User returns    │
-need memory                 into the foreground      to the activity │
-         │                         │                     │           │
-         │                         │                     │           │
-         │                    ┌────▼────┐                │           │
-         │                    │onPause()├────────────────┘           │
-         │                    └────┬────┘                            │
-         │                         │                                 │
-         │                         │                                 │
-         │                  The activity is                          │
-         │                  no longer visible                        │
-         │                         │                        User navigates
-         │                         │                        to the activity
-         │                    ┌────▼───┐                             │
-         └────────────────────┤onStop()├─────────────────────────────┘
-                              └────┬───┘
-                                   │
-                                   │
-                            The activity is finishing or
-                            being destroyed by the system
-                                   │
-                                   │
-                              ┌────▼──────┐
-                              │onDestroy()│
-                              └────┬──────┘
-                                   │
-                             ┌┬────▼────┬┐
-                             ││Activity ││
-                             ││Shut Down││
-                             └┴─────────┴┘
-</code></pre>
-<h2>d) State and elaborate the syntax of required class and methods for Geocoding.</h2>
-<ul>
-<li>A class for handling geocoding and reverse geocoding.</li>
-<li>Geocoding is the process of transforming a street address or other description of a location into a (latitude, longitude) coordinate.</li>
-</ul>
-<pre><code class="language-java">public final class Geocoder
-extends Object
-</code></pre>
-<h1>4. Attempt any THREE of the following: 12</h1>
-<h2>a) Explain with example, code to create GUI using absolute layout (Assume suitable data).</h2>
-<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;AbsoluteLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
-    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;
-    android:paddingLeft=&quot;16dp&quot;
-    android:paddingTop=&quot;16dp&quot;
-    android:paddingRight=&quot;16dp&quot;
-    tools:context=&quot;.MainActivity&quot;&gt;
-    &lt;TextView
-        android:id=&quot;@+id/student_name&quot;
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:layout_x=&quot;125dp&quot;
-        android:layout_y=&quot;280dp&quot;
-        android:text=&quot;Name:&quot;
-        android:textColor=&quot;#86AD33&quot;
-        android:textSize=&quot;20dp&quot;
-        android:textStyle=&quot;bold&quot; /&gt;
-    &lt;TextView
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:layout_x=&quot;125dp&quot;
-        android:layout_y=&quot;304dp&quot;
-        android:text=&quot;Age:&quot;
-        android:textColor=&quot;#86AD33&quot;
-        android:textSize=&quot;20dp&quot;
-        android:textStyle=&quot;bold&quot; /&gt;
-    &lt;TextView
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:layout_x=&quot;125dp&quot;
-        android:layout_y=&quot;328dp&quot;
-        android:text=&quot;Mobile Number:&quot;
-        android:textColor=&quot;#86AD33&quot;
-        android:textSize=&quot;20dp&quot;
-        android:textStyle=&quot;bold&quot; /&gt;
-&lt;/AbsoluteLayout&gt;
-</code></pre>
-<h2>b) Write a program to demonstrate Date and Time picker.</h2>
-<h3>Date Picker</h3>
-<ul>
-<li>Android Date Picker allows you to select the date consisting of day, month and
-year in your custom user interface.</li>
-<li>Methods of DatePicker:
-<ul>
-<li><strong>getDayOfMonth()</strong> - This method gets the selected day of month.</li>
-<li><strong>getMonth()</strong> - This method gets the selected month.</li>
-<li><strong>getYear()</strong> - This method gets the selected year.</li>
-<li><strong>getFirstDayOfWeek()</strong> - This method returns first day of the week.</li>
-<li><strong>getCalendarView()</strong> - This method returns calender View.</li>
-</ul>
-</li>
-</ul>
-<h3>TimePicker</h3>
-<ul>
-<li>Android Time Picker allows us to select the time of day in either 24h or AM/PM
-mode.</li>
-<li>The time consists of hours, minutes and clock format.</li>
-<li>Methods of TimePicker</li>
-</ul>
-<ol>
-<li><strong>setCurrentHour()</strong> - This method sets the current hour.</li>
-<li>setCurrentMinute() - This method sets the current minute.</li>
-<li><strong>is24HoursView()</strong> - This method returns true if this 24 hour view else
-false.</li>
-<li><strong>isEnabled()</strong> - This method returns the enabled status for this view.</li>
-</ol>
-<h2>c) Describe multimedia framework of Android with diagram.</h2>
-<figure data-type="image"><img src="https://source.android.com/static/docs/core/media/images/ape_media_buffer_alloc_n.png" alt="Multimedia framework of Android diagram" loading="lazy" decoding="async"></figure>
-<h2>d) Discuss developer console with at least four features.</h2>
-<ul>
-<li>Multiple User Accounts</li>
-<li>Store Listing Details</li>
-<li>Upload and Instantly Publish</li>
-<li>Alpha and Beta Testing</li>
-<li>Multiple APK Support</li>
-<li>Selling and Pricing Your Products</li>
-<li>In-app Products</li>
-<li>Distribution Controls</li>
-<li>User Reviews and Crash Reports</li>
-<li>App Statistics</li>
-</ul>
-<h2>e) Write a program to demonstrate declaring and using permissions with any relevant example.</h2>
-<p>AndroidManifest.xml</p>
-<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-    &lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-            package=&quot;org.geeksforgeeks.requestPermission&quot;&gt;
-
-        &lt;!--Declaring the required permissions--&gt;
-        &lt;uses-permission android:name=&quot;android.permission.READ_EXTERNAL_STORAGE&quot; /&gt;
-        &lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot; /&gt;
-        &lt;uses-permission android:name=&quot;android.permission.CAMERA&quot; /&gt;
-
-        &lt;application
-            android:allowBackup=&quot;true&quot;
-            android:icon=&quot;@mipmap/ic_launcher&quot;
-            android:label=&quot;@string/app_name&quot;
-            android:roundIcon=&quot;@mipmap/ic_launcher_round&quot;
-            android:supportsRtl=&quot;true&quot;
-            android:theme=&quot;@style/AppTheme&quot;&gt;
-
-            &lt;activity
-                android:name=&quot;.MainActivity&quot;&gt;
-
-                &lt;intent-filter&gt;
-                    &lt;action
-                        android:name=&quot;android.intent.action.MAIN&quot; /&gt;
-
-                    &lt;category
-                        android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;
-                &lt;/intent-filter&gt;
-
-            &lt;/activity&gt;
-        &lt;/application&gt;
-
-&lt;/manifest&gt;
-</code></pre>
-<p>activity_main.xml</p>
-<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;RelativeLayout
-    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
-    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;
-    tools:context=&quot;.MainActivity&quot;&gt;
-
-    &lt;!-- To show toolbar--&gt;
-    &lt;android.support.v7.widget.Toolbar
-        android:id=&quot;@+id/toolbar&quot;
-        android:layout_width=&quot;match_parent&quot;
-        android:background=&quot;@color/colorPrimary&quot;
-        app:title=&quot;GFG | Permission Example&quot;
-        app:titleTextColor=&quot;@android:color/white&quot;
-        android:layout_height=&quot;?android:attr/actionBarSize&quot;/&gt;
-
-    &lt;!--Button to request storage permission--&gt;
-    &lt;Button
-        android:id=&quot;@+id/storage&quot;
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:text=&quot;Storage&quot;
-        android:layout_marginTop=&quot;16dp&quot;
-        android:padding=&quot;8dp&quot;
-        android:layout_below=&quot;@id/toolbar&quot;
-        android:layout_centerHorizontal=&quot;true&quot;/&gt;
-
-    &lt;!--Button to request camera permission--&gt;
-    &lt;Button
-        android:id=&quot;@+id/camera&quot;
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:text=&quot;Camera&quot;
-        android:layout_marginTop=&quot;16dp&quot;
-        android:padding=&quot;8dp&quot;
-        android:layout_below=&quot;@id/storage&quot;
-        android:layout_centerHorizontal=&quot;true&quot;/&gt;
-
-&lt;/RelativeLayout&gt;
-</code></pre>
-<p>MainActivity.java</p>
-<pre><code class="language-java">import android.Manifest;
-import android.content.pm.PackageManager;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
-
-public class MainActivity extends AppCompatActivity {
-
-    // Defining Buttons
-    private Button storage, camera;
-
-    // Defining Permission codes.
-    // We can give any value
-    // but unique for each permission.
-    private static final int CAMERA_PERMISSION_CODE = 100;
-    private static final int STORAGE_PERMISSION_CODE = 101;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        storage = findViewById(R.id.storage);
-        camera = findViewById(R.id.camera);
-
-        // Set Buttons on Click Listeners
-        storage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v)
-            {
-                checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE);
-            }
-        });
-
-        camera.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v)
-            {
-                checkPermission(Manifest.permission.CAMERA, CAMERA_PERMISSION_CODE);
-            }
-        });
-    }
-
-    // Function to check and request permission.
-    public void checkPermission(String permission, int requestCode)
-    {
-        if (ContextCompat.checkSelfPermission(MainActivity.this, permission) == PackageManager.PERMISSION_DENIED) {
-
-            // Requesting the permission
-            ActivityCompat.requestPermissions(MainActivity.this, new String[] { permission }, requestCode);
-        }
-        else {
-            Toast.makeText(MainActivity.this, &quot;Permission already granted&quot;, Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    // This function is called when the user accepts or decline the permission.
-    // Request Code is used to check which permission called this function.
-    // This request code is provided when the user is prompt for permission.
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode,
-                                        @NonNull String[] permissions,
-                                        @NonNull int[] grantResults)
-    {
-        super.onRequestPermissionsResult(requestCode,
-                                        permissions,
-                                        grantResults);
-
-        if (requestCode == CAMERA_PERMISSION_CODE) {
-            if (grantResults.length &gt; 0 &amp;&amp; grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(MainActivity.this, &quot;Camera Permission Granted&quot;, Toast.LENGTH_SHORT) .show();
-            }
-            else {
-                Toast.makeText(MainActivity.this, &quot;Camera Permission Denied&quot;, Toast.LENGTH_SHORT) .show();
-            }
-        }
-        else if (requestCode == STORAGE_PERMISSION_CODE) {
-            if (grantResults.length &gt; 0
-                &amp;&amp; grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(MainActivity.this, &quot;Storage Permission Granted&quot;, Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(MainActivity.this, &quot;Storage Permission Denied&quot;, Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
-}
-</code></pre>]]></description>
-  </item>
-  <item>
     <title>UT2 6S</title>
     <link>https://anzenkodo.github.io/notes/programming/android/ut2-6s.html</link>
-    <pubDate>2022-12-27T05:31:53.399Z</pubDate>
+    <pubDate>2022-12-27T06:08:54.295Z</pubDate>
     <description><![CDATA[<h1>MAD QUESTION BANK</h1>
 <h2>1. Write the syntax for Intent-Filter tag.</h2>
 <pre><code class="language-xml">&lt;intent-fliter
@@ -1181,7 +202,7 @@ axes.</li>
   <item>
     <title>Viva 6S</title>
     <link>https://anzenkodo.github.io/notes/programming/android/viva-6s.html</link>
-    <pubDate>2022-12-27T05:31:53.399Z</pubDate>
+    <pubDate>2022-12-27T06:08:54.295Z</pubDate>
     <description><![CDATA[<h1>MAD VIVA QUESTION</h1>
 <p>(thk to SaturoGojoo,AK,NEWBIEN00B)</p>
 <h2>1) What is android?</h2>
@@ -1444,7 +465,7 @@ Progress bars are used to show progress of a task. For example, when you are upl
   <item>
     <title>Viva 6S sort</title>
     <link>https://anzenkodo.github.io/notes/programming/android/viva-6s-sort.html</link>
-    <pubDate>2022-12-27T05:31:53.399Z</pubDate>
+    <pubDate>2022-12-27T06:08:54.295Z</pubDate>
     <description><![CDATA[<h1>MAD VIVA</h1>
 <h2>1) What is Android?</h2>
 <p>Android is mobile OS based on modified version of Linux kernel and other open
@@ -1785,7 +806,7 @@ AM/PM mode or 24h mode.</li>
   <item>
     <title>Notes</title>
     <link>https://anzenkodo.github.io/notes/programming/android/notes.html</link>
-    <pubDate>2022-12-27T05:31:53.399Z</pubDate>
+    <pubDate>2022-12-27T06:08:54.295Z</pubDate>
     <description><![CDATA[<h1>Android</h1>
 <h2>1. What is Mobile application?</h2>
 <ul>
@@ -3413,7 +2434,7 @@ startActivity(sendIntent);
   <item>
     <title>Pratical S6</title>
     <link>https://anzenkodo.github.io/notes/programming/android/pratical-s6.html</link>
-    <pubDate>2022-12-27T05:31:53.399Z</pubDate>
+    <pubDate>2022-12-27T06:08:54.295Z</pubDate>
     <description><![CDATA[<h2>1. Write a program to place Name, Age, Mobile number linearly(vertical) on the display screen using Linear layout.</h2>
 <pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
 &lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
@@ -4102,7 +3123,7 @@ public class MainActivity extends AppCompatActivity {
   <item>
     <title>MGT</title>
     <link>https://anzenkodo.github.io/notes/study/mgt.html</link>
-    <pubDate>2022-12-27T05:31:53.399Z</pubDate>
+    <pubDate>2022-12-27T06:08:54.295Z</pubDate>
     <description><![CDATA[<h1>MGT</h1>
 <ol>
 <li>Who said “Management is the function of executive leadership anywhere”:</li>
@@ -4173,7 +3194,7 @@ spirit to achieve goal.</li>
   <item>
     <title>Grammmar</title>
     <link>https://anzenkodo.github.io/notes/study/grammmar.html</link>
-    <pubDate>2022-12-27T05:31:53.399Z</pubDate>
+    <pubDate>2022-12-27T06:08:54.295Z</pubDate>
     <description><![CDATA[<h1>Grammar in English</h1>
 <h2>Part of Speech</h2>
 <p>Words are divided into different kinds of classes called <strong>Parts of Speech</strong>.
@@ -4347,9 +3368,395 @@ that they are replacing.
 </ul>]]></description>
   </item>
   <item>
+    <title>Home</title>
+    <link>https://anzenkodo.github.io/notes/</link>
+    <pubDate>2022-12-27T06:08:54.291Z</pubDate>
+    <description><![CDATA[<p>This my personal website where I post my notes about thing that I have learn.</p>
+<h2>Features</h2>
+<ul>
+<li>Easy to:
+<ul>
+<li>Setup</li>
+<li>Configure</li>
+<li>Write</li>
+</ul>
+</li>
+<li>Supports:
+<ul>
+<li>Tags</li>
+<li>Search (Power by <a href="https://duckduckgo.com/">DuckDuckGo</a>)</li>
+<li>Canonical</li>
+<li><a href="https://ogp.me/">Open Graph</a></li>
+<li>Analytics</li>
+<li><a href="https://pages.github.com/">GitHub Pages</a></li>
+</ul>
+</li>
+<li>Auto generate:
+<ul>
+<li>GitHub Pages Actions file</li>
+<li>Favicon</li>
+<li>Sitemap</li>
+<li>404 page</li>
+<li>CSS</li>
+<li><code>mainfest.json</code> file</li>
+<li>Feeds
+<ul>
+<li>RSS</li>
+<li>JSON</li>
+<li>Atom</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>No Client side JavaScript</li>
+<li>Minified HTML &amp; Inline CSS</li>
+<li>Lightweight</li>
+</ul>
+<h2>Getting Started</h2>
+<h3>Installing</h3>
+<ul>
+<li>Download deno from <a href="https://deno.land/">https://deno.land/</a> and install it.</li>
+<li>After installing deno run following commands.</li>
+</ul>
+<pre><code class="language-sh"># Install the dblog
+deno run https://deno.land/x/dblog/install.js # Add deno to path, if you didn't already.
+
+# See all the options that are available
+dblog --help
+
+# Setup the your blog (Skip this if already your blog setup)
+dblog --setup
+
+# Make your blog and Run on localhost
+dblog --serve
+</code></pre>
+<h3>Update</h3>
+<p>To update dblog, rerun the installation command.</p>
+<pre><code class="language-sh">deno run https://deno.land/x/dblog/install.js
+</code></pre>
+<h3>Run dblog without installing dblog</h3>
+<pre><code class="language-sh">deno run -A https://deno.land/x/dblog/mod.js --help
+</code></pre>
+<h2>Live Demo &amp; Folder</h2>
+<ul>
+<li><a href="https://anzenkodo.github.io/dblog">Live Demo</a></li>
+<li><a href="https://github.com/AnzenKodo/dblog/tree/gh-pages">Generated Files</a></li>
+</ul>
+<h2>Configuration</h2>
+<p>Place <code>config.json</code> in root folder to edit default configuration. The
+<code>config.json</code> is optional.</p>
+<p><strong>The <code>config.json</code> with default configuration:</strong></p>
+<pre><code class="language-json">{
+  &quot;name&quot;: &quot;dblog&quot;,
+  &quot;start_url&quot;: &quot;https://AnzenKodo.github.io/dblog/&quot;,
+  &quot;description&quot;: &quot;dblog blog generator, that generates blog from Markdown and JSON file. dblog handles technical parts, so you can focus on hard part writing.&quot;,
+  &quot;email&quot;: &quot;&quot;,
+  &quot;author&quot;: &quot;AnzenKodo&quot;,
+  &quot;posts&quot;: &quot;./posts&quot;,
+  &quot;output&quot;: &quot;./site&quot;,
+  &quot;favicon&quot;: &quot;favicon.svg&quot;,
+  &quot;lang&quot;: &quot;en-US&quot;,
+  &quot;port&quot;: 8000,
+  &quot;background&quot;: &quot;#ffffff&quot;,
+  &quot;foreground&quot;: &quot;#000000&quot;,
+  &quot;theme&quot;: &quot;#01a252&quot;,
+  &quot;footer&quot;: &quot;&lt;p&gt;Made by &lt;a href=\&quot;https://AnzenKodo.github.io/AnzenKodo\&quot;&gt;AnzenKodo&lt;/a&gt; under &lt;a href=\&quot;https://anzenkodo.github.io/dblog/LICENSE\&quot;&gt;MIT&lt;/a&gt;&lt;/p&gt;\n&quot;,
+  &quot;page404&quot;: &quot;404 Page Not Found, Sorry :(&quot;,
+  &quot;backup&quot;: false,
+  &quot;exclude&quot;: [
+    &quot;config.json&quot;,
+    &quot;backup.json&quot;
+  ],
+  &quot;nav&quot;: {},
+  &quot;head&quot;: &quot;&quot;
+}
+</code></pre>
+<p><strong>Note:</strong> Every option is optional.</p>
+<ul>
+<li><strong>name</strong> - Name of your blog.</li>
+<li><strong>start_url</strong> - Start URL of your site. <em>Example:</em> ‘<a href="https://example.com/">https://example.com/</a>’,
+‘<a href="https://blog.example.com/">https://blog.example.com/</a>’, ‘<a href="https://example.com/blog/">https://example.com/blog/</a>’</li>
+<li><strong>email</strong> - Your email address. This will enable ‘Reply with Email’ button in
+posts.</li>
+<li><strong>author</strong> - Your name or username.</li>
+<li><strong>posts</strong> - Path of posts.</li>
+<li><strong>output</strong> - Folder where your blog build will be placed. <em>Example:</em> ‘./blog’,
+‘…/site/blog’, ‘site/blog’.</li>
+<li><strong>favicon</strong> - <em><strong>Recommended 500x500px</strong></em>. Favicon location. <em>If empty,
+generated favicon will be used</em>. <em>Example:</em> ‘./favicon.png’,
+‘./static/favicon.icon’, ‘…/favicon.jpg’.</li>
+<li><strong>lang</strong> - Blog language in ‘RFC 5646’ format. Example: ‘ja’ for Japanese,
+‘sv’ for Swedish, ‘it’ for Italian. See
+<a href="https://wikipedia.org/wiki/IETF_language_tag#List_of_common_primary_language_subtags">List of common primary language subtags in Wikipedia</a></li>
+<li><strong>footer</strong> - Footer of your website. <em>Supports CommonMark Markdown format</em>.
+<em>Example:</em>
+<code>Made by [AnzenKodo](https://AnzenKodo.github.io/AnzenKodo) uder [MIT License](https://anzenkodo.github.io/dblog/LICENSE.html)</code>.</li>
+<li><strong>port</strong> - Port of your blog on localhost. <em>Example</em>: ‘8080’, ‘8300’, ‘8400’.</li>
+<li><strong>background</strong> - Background color in light mode. Becomes foreground color in
+light mode. <em>Example:</em> ‘#000000’, &quot;#ffffff’, ‘##FEFBFE’.</li>
+<li><strong>foreground</strong> - Foreground color in light mode. Becomes background color in
+light mode. <em>Example:</em> ‘#000000’, &quot;#ffffff’, ‘##FEFBFE’.</li>
+<li><strong>theme</strong> - Blog theme color. <em>Example:</em> ‘#0583f2’, ‘#f20544’, ‘#f2b705’.</li>
+<li><strong>page404</strong> - 404 page message. <em>Example:</em> ‘Sorry, page not found :(’.</li>
+<li><strong>backup</strong> - Backup file location. <em>Example:</em> <code>false</code> to don’t generate
+<code>backup.json</code> file, ‘./backup.json’, ‘./site/backup.json’, ‘…/backup.json’.</li>
+<li><strong>exclude</strong> - Exclude files or folder. <em>Example:</em><pre><code class="language-json">&quot;exclude&quot;: [ &quot;.env&quot;, &quot;todo.md&quot;, &quot;drafts&quot; ],
+</code></pre>
+</li>
+<li><strong>nav</strong> - Nav bar item list. Example:<pre><code class="language-json">&quot;nav&quot;: {
+  &quot;about&quot;: &quot;./about.md&quot;,
+  &quot;stie&quot;: &quot;https://anzenkodo.github.io/AnzenKodo&quot;
+}
+</code></pre>
+</li>
+<li><strong>head</strong> - If you analytics or any other tags you want to put on head tag.
+<em>Example:</em>
+<code>&lt;link rel=&quot;preconnect&quot; href=&quot;//www.google-analytics.com&quot; crossorigin=&quot;&quot;&gt;</code>.</li>
+</ul>
+<h2>CLI Options</h2>
+<pre><code class="language-sh">dblog blog generator, that generates blog from Markdown and JSON file. dblog handles technical parts, so you can focus on hard part writing.
+
+Website: https://anzenkodo.github.io/dblog
+Package: https://deno.land/x/dblog
+Repo: https://github.com/AnzenKodo/dblog
+Docs: https://anzenkodo.github.io/dblog/posts/dblog-Docs.html
+
+USAGE:
+  dblog [OPTIONS]
+
+OPTIONS:
+  --serve   Build blog and Start localhost.
+    --noopen  Don't open browser, when starting localhost.
+  --build   Build blog without starting localhost.
+  --setup   Setup new blog.
+  --backup  Restore blog if 'backup.json' file available.
+  --readme  Generate 'README.md' file.
+  --help    Print help information.
+</code></pre>
+<h2>File Options</h2>
+<pre><code>---
+title: If empty the file name will be used
+description: If empty the first paragraph will be used.
+tags: [ &quot;tag1&quot;, &quot;tag2&quot; ]
+date: 20/08/2020
+canonical:
+---
+</code></pre>
+<ul>
+<li><strong>date</strong> - If empty, the file date will be used. <em>Note:</em> The file <code>date</code> might
+not always right. So always give you own date.</li>
+<li><strong>canonical</strong> - Share content between multiple sites without impacting SEO.
+Just put canonical URL. Know more about
+<a href="https://developers.google.com/search/docs/advanced/crawling/consolidate-duplicate-urls">canonical url</a>.</li>
+</ul>
+<h3>If file name start with underscore “_” it will be consider as draft.</h3>
+<p><strong>Example:</strong> <code>posts/_This is draft.md</code></p>
+<h2>Markdown Guide</h2>
+<h3><a href="https://commonmark.org/help/">CommonMark</a> Syntex</h3>
+<h4>Heading</h4>
+<pre><code class="language-md"># H1
+
+## H2
+
+### H3
+
+#### H4
+
+##### H5
+
+###### H6
+</code></pre>
+<h1>H1</h1>
+<h2>H2</h2>
+<h3>H3</h3>
+<h4>H4</h4>
+<h5>H5</h5>
+<h6>H6</h6>
+<h4>Inline style</h4>
+<pre><code class="language-md">**Bold** _Italic_ ~~Strikethrough~~
+</code></pre>
+<p><strong>Bold</strong> <em>Italic</em> <s>Strikethrough</s></p>
+<h4>Link and Image</h4>
+<pre><code class="language-md">[website](https://anzenkodo.github.io/dblog)
+![Jurassic Deno by Samip Poudel](https://deno.land/images/artwork/jurassicDeno.jpg)
+</code></pre>
+<p><a href="https://anzenkodo.github.io/dblog">website</a>
+<img src="https://deno.land/images/artwork/jurassicDeno.jpg" alt="Jurassic Deno by Samip Poudel"></p>
+<h4>Blockquote</h4>
+<pre><code class="language-md">&gt; 'The road to hell is paved with good intentions' by Abbot Bernard
+</code></pre>
+<blockquote>
+<p>‘The road to hell is paved with good intentions’ by Abbot Bernard</p>
+</blockquote>
+<h4>List</h4>
+<pre><code class="language-md">- List
+  - List
+- List
+
+1. One
+2. Two
+3. Three
+</code></pre>
+<ul>
+<li>List
+<ul>
+<li>List</li>
+</ul>
+</li>
+<li>List</li>
+</ul>
+<ol>
+<li>One</li>
+<li>Two</li>
+<li>Three</li>
+</ol>
+<h4>Horizontal rule</h4>
+<pre><code class="language-md">---
+</code></pre>
+<hr>
+<h4>Code block</h4>
+<div class="highlight highlight-source-lisp notranslate position-relative overflow-auto">
+<pre>
+`Inline code` with backticks
+```js
+  console.log("Code Blog in JavaScript");
+```
+</pre>
+</div>
+<p><code>Inline code</code> with backticks</p>
+<pre><code class="language-js">console.log(&quot;Code Blog in JavaScript&quot;);
+</code></pre>
+<h3>Additional Markdown syntax</h3>
+<h4>Checkbox</h4>
+<pre><code class="language-md">- [ ] Checkbox
+- [x] Checkbox with tick
+</code></pre>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" id="cbx_0" disabled="true"><label for="cbx_0"> Checkbox</label></li>
+<li class="task-list-item"><input type="checkbox" id="cbx_1" checked="true" disabled="true"><label for="cbx_1"> Checkbox with tick</label></li>
+</ul>
+<h4>Image with caption</h4>
+<pre><code class="language-md">![Deno](https://deno.land/images/artwork/deno_matrix.png &quot;Matrix by bramaudi&quot;)
+</code></pre>
+<figure data-type="image"><img src="https://deno.land/images/artwork/deno_matrix.png" alt="Deno" loading="lazy" decoding="async"><figcaption>Matrix by bramaudi</figcaption></figure>
+<h4>Footer</h4>
+<pre><code class="language-md">Here is a footnote reference[^1]. [^1]: Here is the footnote.
+</code></pre>
+<p>Here is a footnote reference[^1]. [^1]: Here is the footnote.</p>
+<h4>Additional inline syntax</h4>
+<pre><code class="language-md">~sub~ ^sup^ ==mark== [[kbd]] _underline_ ++insert++ ~~delete~~
+</code></pre>
+<p><sub>sub</sub>
+<sup>sup</sup>
+<mark>mark</mark>
+<kbd>kbd</kbd>
+<u>underline</u>
+<ins>insert</ins>
+<del>delete</del></p>
+<h4>Description list</h4>
+<pre><code class="language-md">: Definition 1 Term 2 with _inline markup_ : Definition 2 Third paragraph of
+definition 2.
+</code></pre>
+<dl>
+  <dt>Definition 1</dt>
+  <dd>Term 2 with inline.</dd>
+  <dt>Definition 2</dt>
+  <dd>Third paragraph of definition 2.</dd>
+</dl>
+<h4>Abbreviation</h4>
+<pre><code class="language-md">*[abbr]: Abbreviation
+</code></pre>
+<p><abbr title="Abbreviation">abbr</abbr></p>
+<h4>Table</h4>
+<h5>Normal</h5>
+<pre><code class="language-md">| Syntax    | Description |
+| --------- | ----------- |
+| Header    | Title       |
+| Paragraph | Text        |
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Syntax</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Header</td>
+<td>Title</td>
+</tr>
+<tr>
+<td>Paragraph</td>
+<td>Text</td>
+</tr>
+</tbody>
+</table>
+<h5>Multiline</h5>
+<pre><code class="language-md">| Markdown  | Rendered HTML |
+| --------- | ------------- |
+| _Italic_  | _Italic_      |
+|           |               |
+| - Item 1  | - Item 1      |
+| - Item 2  | - Item 2      |
+| ```python | ```python \   |
+| .1 + .2   | .1 + .2       |
+</code></pre>
+<table><thead><tr><th>Markdown</th><th>Rendered HTML</th></tr></thead> <tbody>
+  <tr> <td> <pre><code>*Italic* </code></pre> </td> <td> <p><em>Italic</em></p>
+  </td> </tr> <tr> <td> <pre><code>- Item 1 - Item 2</code></pre> </td> <td>
+  <ul> <li>Item 1</li> <li>Item 2</li> </ul> </td> </tr> <tr> <td>
+<pre><code>
+```python
+.1 + .2
+```
+</code></pre> </td> <td> <pre><code class="language-python">.1 + .2
+  </code></pre> </td> </tr> </tbody> </table>
+<h5>Rowspan</h5>
+<pre><code class="language-md">|                       Stage | Direct Products | ATP Yields |
+| --------------------------: | --------------: | ---------: |
+|                  Glycolysis |           2 ATP |            |
+|                          ^^ |          2 NADH |   3--5 ATP |
+|          Pyruvaye oxidation |          2 NADH |      5 ATP |
+|           Citric acid cycle |           2 ATP |            |
+|                          ^^ |          6 NADH |     15 ATP |
+|                          ^^ |         2 FADH2 |      3 ATP |
+|              **30--32** ATP |                 |            |
+| [Net ATP yields per hexose] |                 |            |
+</code></pre>
+<table> <caption id="netatpyieldsperhexose">Net ATP yields per hexose</caption>
+  <thead> <tr> <th align="right">Stage</th> <th align="right">Direct
+Products</th> <th align="right">ATP Yields</th> </tr> </thead> <tbody> <tr> <td
+align="right" rowspan="2">Glycolysis</td> <td align="right" colspan="2">2
+ATP</td> </tr> <tr> <td align="right">2 NADH</td> <td align="right">3–5
+ATP</td> </tr> <tr> <td align="right">Pyruvaye oxidation</td> <td
+align="right">2 NADH</td> <td align="right">5 ATP</td> </tr> <tr> <td
+align="right" rowspan="3">Citric acid cycle</td> <td align="right"
+colspan="2">2 ATP</td> </tr> <tr> <td align="right">6 NADH</td> <td
+align="right">15 ATP</td> </tr> <tr> <td align="right">2 FADH2</td> <td
+align="right">3 ATP</td> </tr> <tr> <td align="right"
+colspan="3"><strong>30–32</strong> ATP</td> </tr> </tbody> </table>
+<h4>Headerless</h4>
+<pre><code class="language-md">|--|--|--|--|--|--|--|--| |♜| |♝|♛|♚|♝|♞|♜| | |♟|♟|♟| |♟|♟|♟| |♟| |♞| | | | | |
+| |♗| | |♟| | | | | | | | |♙| | | | | | | | | |♘| | | |♙|♙|♙|♙| |♙|♙|♙|
+|♖|♘|♗|♕|♔| | |♖|
+</code></pre>
+<table> <tbody> <tr> <td>♜</td> <td></td> <td>♝</td> <td>♛</td> <td>♚</td>
+  <td>♝</td> <td>♞</td> <td>♜</td> </tr> <tr> <td></td> <td>♟</td> <td>♟</td>
+  <td>♟</td> <td></td> <td>♟</td> <td>♟</td> <td>♟</td> </tr> <tr> <td>♟</td>
+  <td></td> <td>♞</td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+  <tr> <td></td> <td>♗</td> <td></td> <td></td> <td>♟</td> <td></td> <td></td>
+  <td></td> </tr> <tr> <td></td> <td></td> <td></td> <td></td> <td>♙</td>
+  <td></td> <td></td> <td></td> </tr> <tr> <td></td> <td></td> <td></td>
+  <td></td> <td></td> <td>♘</td> <td></td> <td></td> </tr> <tr> <td>♙</td>
+  <td>♙</td> <td>♙</td> <td>♙</td> <td></td> <td>♙</td> <td>♙</td> <td>♙</td>
+  </tr> <tr> <td>♖</td> <td>♘</td> <td>♗</td> <td>♕</td> <td>♔</td> <td></td>
+  <td></td> <td>♖</td> </tr> </tbody> </table>]]></description>
+  </item>
+  <item>
     <title>Question Bank</title>
     <link>https://anzenkodo.github.io/notes/programming/database/er-diagram/question-bank.html</link>
-    <pubDate>2022-12-27T05:31:53.395Z</pubDate>
+    <pubDate>2022-12-27T06:08:54.291Z</pubDate>
     <description><![CDATA[<h2>Question bank for 2 Marks.</h2>
 <h3>1. Define Entity Set?</h3>
 <ul>
@@ -4386,6 +3793,134 @@ single entity and each column representing an attribute of that entity.</li>
 <h3>2. Explain Unary operations in relational algebra?</h3>
 <h3>3. Explain Set Theory operation in relational algebra?</h3>
 <h3>4. Define generalization and specialization hierarchy for a motor vehicle sales company. The Company sells motorcycles, passenger cars, vans and buses. Justify your placement of attributes at each level of hierarchy. Explain why they should not be placed at higher or lower level.</h3>]]></description>
+  </item>
+  <item>
+    <title>ER Diagram</title>
+    <link>https://anzenkodo.github.io/notes/programming/database/er-diagram/</link>
+    <pubDate>2022-12-27T06:08:54.291Z</pubDate>
+    <description><![CDATA[<p>An Entity Relationship Diagram (ERD) is a visual representation of different
+data using conventions that describe how these data are related to each other.</p>
+<p>Example of ER Diagram:</p>
+<figure data-type="image"><img src="./ER.svg" alt="ER Diagram" loading="lazy" decoding="async"></figure>
+<p>In the diagram, the elements inside rectangles are called entities while the
+items inside diamonds denote the relationships between entities.</p>
+<p>In the diagram, the elements inside rectangles are called entities while the
+items inside diamonds denote the relationships between entities.</p>
+<h2>Features</h2>
+<h3>Entity</h3>
+<ul>
+<li>An entity can be a person, place, event, or object that is relevant to given
+system.</li>
+<li>For Example, a school system may include student, teacher, major courses,
+subject, fees, and other items.</li>
+<li>Entites are represented in ER diagrams by a rectangles and named using
+singular nouns.</li>
+</ul>
+<h3>Weak Entity</h3>
+<ul>
+<li>A weak entity is an entity that depends on teh existence of another entity.</li>
+<li>A weak entity is represented in a database by a separated table, but it does
+not have a primary key of its own.</li>
+<li>It relies on the primary key of the entity on which it depends.</li>
+<li>Example:
+<ul>
+<li>Consider a databse of orders placed by customers at a retail store.
+“customer” entity might be the identifying entity, while the “order” entity
+is the weak entity. Each order is associated with specific customer, and the
+customer’s primary key (e.g. a customer ID) is used as the primary key for
+the order as well. This means that the order cannot be uniquely identified
+without also specifying the customer to which it belongs.</li>
+</ul>
+</li>
+<li>The single identifying entity can have multiple weak entities associated with
+it.</li>
+<li>Diagram:<pre><code>+---------+      +--------------+
+|         |      |+------------+|
+| Orders  |------||Orders Items||
+|         |      |+------------+|
++---------+      +--------------+
+</code></pre>
+</li>
+</ul>
+<h3>Attribute</h3>
+<ul>
+<li>An attributes is a characterstic or property of an entity.</li>
+<li>Attributes are represented as columns in a database table, with each row
+representing a single entity and each column representing an attribute of that
+entity.</li>
+<li>Example: A “customer” table might include attributes such as “name”,
+“address,” and “phone number,” with each attribute storing information about a
+perticular customer.</li>
+<li>There are two types of attributes:
+<ul>
+<li>Multivalued Attribute</li>
+<li>Derived Attribute</li>
+</ul>
+</li>
+</ul>
+<h4>Multivalued Attribute</h4>
+<ul>
+<li>If an attribute can have more than one value it is called an multivalued
+attribute.</li>
+<li>It is important to note that this is different to an attribute having it own
+attributes.</li>
+<li>Example: A “customer” entity can have multiple “phone_numbers” values.</li>
+<li>Diagram: <img src="./Multivalued-Attribute.svg" alt="Multivalued Attribute Diagram"></li>
+</ul>
+<h4>Derived Attribute</h4>
+<ul>
+<li>An attribute based on another attribute.</li>
+<li>Example: “Age” can be derived from “Date of birth”.</li>
+<li>Diagram: <img src="./Derived-Attribute.svg" alt="Derived Attribute Diagram"></li>
+</ul>
+<h3>Relationship</h3>
+<ul>
+<li>A relationship describes how entities interact.</li>
+<li>Example: The entity “carpenter” may be related to the entity “table” by the
+relationship “builds” or “makes”.</li>
+<li>Relationships are represented by diamond shapes and are labeled using verbs.</li>
+</ul>
+<h4>Recursive Relationship</h4>
+<ul>
+<li>The same entity participates more than once in the relationship.</li>
+<li>Example: An employee can be a supervisor and be supervised, so there is a
+recursive relationship.</li>
+</ul>
+<h2>Extended Features</h2>
+<h3>Generalization</h3>
+<ul>
+<li>A generalization hierarchy is a form of abstraction that specifies that two or
+more entities that share common attributes can be generalized into a
+higher-level entity type called a super type or generic entity.</li>
+<li>The lower level of entities becomes the subtypes, or categories, to the super
+type. Subtypes are dependent entities.</li>
+<li>Example: Account is the higher-level entity set and saving account and current
+account are lower-level entity sets.</li>
+<li>Diagram: <img src="./Generalization.webp" alt="Generalization Diagram"></li>
+</ul>
+<h3>Specialization</h3>
+<ul>
+<li>Specialization is the process of taking subsets of the higher-level entity set
+to form lower-level entity sets.</li>
+<li>It is a process of defining a set of subclasses of an entity type, which is
+called the super class of the specialization.</li>
+<li>The process of defining subclass is based on the basis of some distinguish
+characteristics of the entities in the super class.</li>
+<li>Diagram: <img src="./Specialization.webp" alt="Specialization Diagram"></li>
+</ul>
+<h3>Aggregration</h3>
+<ul>
+<li>Aggregration is a process when relation between two entities is treated as a
+single entity.</li>
+<li>Example: The relationship between Center and Course together, is acting as an
+Entity, which is in relationship with another entity Visitor.</li>
+<li>Diagram: <img src="./Aggregration.webp" alt="Aggregration Diagram"></li>
+</ul>
+<h2>Resources</h2>
+<ul>
+<li><a href="https://www.lucidchart.com/pages/er-diagrams">What is an Entity Relationship Diagram (ERD)?</a></li>
+<li><a href="https://www.studytonight.com/dbms/generalization-and-specialization.php">The Enhanced ER Model</a></li>
+</ul>]]></description>
   </item>
   </channel>
 </rss>
