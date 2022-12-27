@@ -1,7 +1,7 @@
 export const todoMd = Deno.readTextFileSync("notes/Todo.md");
 
 export default function getTodo() {
-  const arrMd = todoMd.match(/## .*\n(- \s|.+\n)+/g);
+  const arrMd = todoMd.match(/## .*\n+(- \s|.+\n\n)+/g);
 
   const obj = {};
   for (const val of arrMd) {
