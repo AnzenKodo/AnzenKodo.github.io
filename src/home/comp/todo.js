@@ -6,7 +6,9 @@ export default function getTodo() {
   const obj = {};
   for (const val of arrMd) {
     const title = val.match(/(?<=^## ).*/)[0];
-    const lists = val.replace("\n", "").match(/^(\s+|)- \[ \] .+/gm);
+    const lists = val.match(/^(\s+|)- \[ \] .+/gm);
+
+    if (lists === null) continue;
 
     const nestedList = lists.map((list) => {
       return list.replace(/- \[ \]/, "").replace(/^\s/, "");
