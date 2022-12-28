@@ -5,7 +5,7 @@
     <link>https://anzenkodo.github.io/notes/</link>
     <description>This my personal website where I post my notes about thing that I have learn.</description>
     <language>en-US</language>
-    <lastBuildDate>2022-12-28T21:05:00.085Z</lastBuildDate>
+    <lastBuildDate>2022-12-28T21:32:13.596Z</lastBuildDate>
     <image>
       <url>https://anzenkodo.github.io/notes/favicon.png</url>
       <title>AK#Notes</title>
@@ -16,660 +16,698 @@
     <atom:link href="https://anzenkodo.github.io/notes/feed.xml" rel="self" type="application/rss+xml" />
     <atom:link href="https://anzenkodo.github.io/notes/feed.xml" rel="alternate" type="application/rss+xml" />
       <item>
-    <title>Computer Paradigms</title>
-    <link>https://anzenkodo.github.io/notes/programming/computer-paradigms.html</link>
-    <pubDate>2022-12-28T21:05:00.085Z</pubDate>
-    <description><![CDATA[<h2>1. Explain the difference between declarative and imperative programming paradigm.</h2>
-<h3>Imperative Programing</h3>
-<p>Imperative programming consists of sets of detailed instructions that are given
-to the computer to execute in a given order. It’s called “imperative” because as
-programmers we dictate exactly what the computer has to do, in a very specific
-way.</p>
-<pre><code class="language-js">const nums = [1, 4, 3, 6, 7, 8, 9, 2];
-const result = [];
+    <title>pratical s6</title>
+    <link>https://anzenkodo.github.io/notes/programming/android/pratical-s6.html</link>
+    <pubDate>2022-12-28T21:32:13.596Z</pubDate>
+    <description><![CDATA[<h2>1. Write a program to place Name, Age, Mobile number linearly(vertical) on the display screen using Linear layout.</h2>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:paddingLeft=&quot;16dp&quot;
+    android:paddingRight=&quot;16dp&quot;
+    android:paddingTop=&quot;16dp&quot;
+    android:orientation=&quot;vertical&quot;
+    tools:context=&quot;.MainActivity&quot;&gt;
+    &lt;TextView
+        android:id=&quot;@+id/student_name&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:text=&quot;Name:&quot; /&gt;
+    &lt;TextView
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:text=&quot;Age:&quot; /&gt;
+    &lt;TextView
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:text=&quot;Mobile Number:&quot; /&gt;
+&lt;/LinearLayout&gt;
+</code></pre>
+<p><a href="https://codingatharva.blogspot.com/2020/01/program-to-place-ui-component-in-linear-vertical-layout-in-Android-Studio.html">Source</a></p>
+<h2>2. Write a program to place Name, Age, Mobile number linearly(vertical) on the display screen using Absolute layout.</h2>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;AbsoluteLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:paddingLeft=&quot;16dp&quot;
+    android:paddingTop=&quot;16dp&quot;
+    android:paddingRight=&quot;16dp&quot;
+    tools:context=&quot;.MainActivity&quot;&gt;
+    &lt;TextView
+        android:id=&quot;@+id/student_name&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_x=&quot;125dp&quot;
+        android:layout_y=&quot;280dp&quot;
+        android:text=&quot;Name:&quot;
+        android:textColor=&quot;#86AD33&quot;
+        android:textSize=&quot;20dp&quot;
+        android:textStyle=&quot;bold&quot; /&gt;
+    &lt;TextView
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_x=&quot;125dp&quot;
+        android:layout_y=&quot;304dp&quot;
+        android:text=&quot;Age:&quot;
+        android:textColor=&quot;#86AD33&quot;
+        android:textSize=&quot;20dp&quot;
+        android:textStyle=&quot;bold&quot; /&gt;
+    &lt;TextView
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_x=&quot;125dp&quot;
+        android:layout_y=&quot;328dp&quot;
+        android:text=&quot;Mobile Number:&quot;
+        android:textColor=&quot;#86AD33&quot;
+        android:textSize=&quot;20dp&quot;
+        android:textStyle=&quot;bold&quot; /&gt;
+&lt;/AbsoluteLayout&gt;
+</code></pre>
+<p><a href="https://codingatharva.blogspot.com/2020/01/absolute-layout-centrally-in-Android-Studio.html">Source</a></p>
+<h2>3. Write a program to display 5 students basic information in a table form using Table layout.</h2>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;TableLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:collapseColumns=&quot;*&quot;
+    android:shrinkColumns=&quot;*&quot;
+    tools:context=&quot;.MainActivity&quot;&gt;
+    &lt;TableRow
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:gravity=&quot;center_horizontal&quot;&gt;
+        &lt;TextView
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:text=&quot;10 Students Basic Information&quot;
+            android:textColor=&quot;#86AD33&quot;
+            android:textSize=&quot;20dp&quot;
+            android:textStyle=&quot;bold&quot; /&gt;
+    &lt;/TableRow&gt;
+    &lt;TableRow
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;&gt;
+        &lt;TextView
+            android:layout_width=&quot;0dp&quot;
+            android:layout_weight=&quot;1&quot;
+            android:text=&quot;Student Numbers&quot;
+            android:textColor=&quot;#000&quot;
+            android:textStyle=&quot;bold&quot; /&gt;
+        &lt;TextView
+            android:layout_width=&quot;0dp&quot;
+            android:layout_weight=&quot;1&quot;
+            android:text=&quot;Name&quot;
+            android:textColor=&quot;#000&quot;
+            android:textStyle=&quot;bold&quot; /&gt;
+        &lt;TextView
+            android:layout_width=&quot;0dp&quot;
+            android:layout_weight=&quot;1&quot;
+            android:text=&quot;RollNo&quot;
+            android:textColor=&quot;#000&quot;
+            android:textStyle=&quot;bold&quot; /&gt;
+        &lt;TextView
+            android:layout_width=&quot;0dp&quot;
+            android:layout_weight=&quot;1&quot;
+            android:text=&quot;Age&quot;
+            android:textColor=&quot;#000&quot;
+            android:textStyle=&quot;bold&quot; /&gt;
+    &lt;/TableRow&gt;
+    &lt;TableRow
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;&gt;
+        &lt;TextView
+            android:layout_width=&quot;0dp&quot;
+            android:layout_weight=&quot;1&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:text=&quot;Student 1:&quot;
+            android:textColor=&quot;#86AD33&quot;
+            android:textStyle=&quot;bold&quot; /&gt;
+        &lt;EditText
+            android:layout_width=&quot;0dp&quot;
+            android:layout_weight=&quot;1&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            /&gt;
+        &lt;EditText
+            android:layout_width=&quot;0dp&quot;
+            android:layout_weight=&quot;1&quot;
+            android:layout_height=&quot;wrap_content&quot; /&gt;
+        &lt;EditText
+            android:layout_width=&quot;0dp&quot;
+            android:layout_weight=&quot;1&quot;
+            android:layout_height=&quot;wrap_content&quot; /&gt;
+    &lt;/TableRow&gt;
+    &lt;TableRow
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;&gt;
+        &lt;TextView
+            android:layout_width=&quot;0dp&quot;
+            android:layout_weight=&quot;1&quot;
+            android:text=&quot;Student 2:&quot;
+            android:textColor=&quot;#86AD33&quot;
+            android:textStyle=&quot;bold&quot; /&gt;
+        &lt;EditText
+            android:layout_width=&quot;0dp&quot;
+            android:layout_weight=&quot;1&quot;
+            android:layout_height=&quot;wrap_content&quot; /&gt;
+        &lt;EditText
+            android:layout_width=&quot;0dp&quot;
+            android:layout_weight=&quot;1&quot;
+            android:layout_height=&quot;wrap_content&quot; /&gt;
+        &lt;EditText
+            android:layout_width=&quot;0dp&quot;
+            android:layout_weight=&quot;1&quot;
+            android:layout_height=&quot;wrap_content&quot; /&gt;
+    &lt;/TableRow&gt;
+    &lt;TableRow
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;&gt;
+        &lt;TextView
+            android:layout_width=&quot;0dp&quot;
+            android:layout_weight=&quot;1&quot;
+            android:text=&quot;Student 3:&quot;
+            android:textColor=&quot;#86AD33&quot;
+            android:textStyle=&quot;bold&quot; /&gt;
+        &lt;EditText
+            android:layout_width=&quot;0dp&quot;
+            android:layout_weight=&quot;1&quot;
+            android:layout_height=&quot;wrap_content&quot; /&gt;
+        &lt;EditText
+            android:layout_width=&quot;0dp&quot;
+            android:layout_weight=&quot;1&quot;
+            android:layout_height=&quot;wrap_content&quot; /&gt;
+        &lt;EditText
+            android:layout_width=&quot;0dp&quot;
+            android:layout_weight=&quot;1&quot;
+            android:layout_height=&quot;wrap_content&quot; /&gt;
+    &lt;/TableRow&gt;
+    &lt;TableRow
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;&gt;
+        &lt;TextView
+            android:layout_width=&quot;0dp&quot;
+            android:layout_weight=&quot;1&quot;
+            android:text=&quot;Student 4:&quot;
+            android:textColor=&quot;#86AD33&quot;
+            android:textStyle=&quot;bold&quot; /&gt;
+        &lt;EditText
+            android:layout_width=&quot;0dp&quot;
+            android:layout_weight=&quot;1&quot;
+            android:layout_height=&quot;wrap_content&quot; /&gt;
+        &lt;EditText
+            android:layout_width=&quot;0dp&quot;
+            android:layout_weight=&quot;1&quot;
+            android:layout_height=&quot;wrap_content&quot; /&gt;
+        &lt;EditText
+            android:layout_width=&quot;0dp&quot;
+            android:layout_weight=&quot;1&quot;
+            android:layout_height=&quot;wrap_content&quot; /&gt;
+    &lt;/TableRow&gt;
+    &lt;TableRow
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;&gt;
+        &lt;TextView
+            android:layout_width=&quot;0dp&quot;
+            android:layout_weight=&quot;1&quot;
+            android:text=&quot;Student 5:&quot;
+            android:textColor=&quot;#86AD33&quot;
+            android:textStyle=&quot;bold&quot; /&gt;
+        &lt;EditText
+            android:layout_width=&quot;0dp&quot;
+            android:layout_weight=&quot;1&quot;
+            android:layout_height=&quot;wrap_content&quot; /&gt;
+        &lt;EditText
+            android:layout_width=&quot;0dp&quot;
+            android:layout_weight=&quot;1&quot;
+            android:layout_height=&quot;wrap_content&quot; /&gt;
+        &lt;EditText
+            android:layout_width=&quot;0dp&quot;
+            android:layout_weight=&quot;1&quot;
+            android:layout_height=&quot;wrap_content&quot; /&gt;
+    &lt;/TableRow&gt;
+&lt;/TableLayout&gt;
+</code></pre>
+<p><a href="https://codingatharva.blogspot.com/2020/02/program-to-display-10-students-basic-info-in-table-layout-android.html">Source</a></p>
+<h2>4. Write a program to accept username and password from the end user using Text View and edit Text.</h2>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;TableLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:padding=&quot;50dp&quot;
+    tools:context=&quot;.MainActivity&quot;&gt;
+    &lt;TextView
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:gravity=&quot;center&quot;
+        android:textSize=&quot;25dp&quot;
+        android:text=&quot;Login Page&quot; /&gt;
+    &lt;TableRow
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:gravity=&quot;center_horizontal&quot;&gt;
+        &lt;TextView
+            android:layout_height=&quot;wrap_content&quot;
+            android:layout_weight=&quot;1&quot;
+            android:gravity=&quot;center&quot;
+            android:text=&quot;Enter UserName:&quot; /&gt;
 
-for (let i = 0; i &lt; nums.length; i++) {
-  if (nums[i] &gt; 5) result.push(nums[i]);
+        &lt;EditText
+            android:id=&quot;@+id/user&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:layout_weight=&quot;1&quot;
+            android:hint=&quot;abc@gmail.com&quot; /&gt;
+    &lt;/TableRow&gt;
+    &lt;TableRow
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:gravity=&quot;center_horizontal&quot;&gt;
+        &lt;TextView
+            android:layout_height=&quot;wrap_content&quot;
+            android:layout_weight=&quot;1&quot;
+            android:gravity=&quot;center&quot;
+            android:text=&quot;Enter Password:&quot; /&gt;
+        &lt;EditText
+            android:id=&quot;@+id/pass&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:layout_weight=&quot;1&quot;
+            android:hint=&quot;1234&quot; /&gt;
+    &lt;/TableRow&gt;
+    &lt;Button
+        android:id=&quot;@+id/btn1&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_marginBottom=&quot;172dp&quot;
+        android:text=&quot;Login&quot; /&gt;
+&lt;/TableLayout&gt;
+</code></pre>
+<pre><code class="language-java">import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+public class MainActivity extends AppCompatActivity {
+   EditText user,pass;
+    Button b;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        b= findViewById(R.id.btn1);
+        user = findViewById(R.id.user);
+        pass = findViewById(R.id.pass);
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(user.getText().toString().equals(&quot;atharva&quot;) &amp; pass.getText().toString().equals(&quot;1234&quot;))
+?
+                {
+                    Toast.makeText( getApplicationContext(),&quot;Login Sucessful&quot;,Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    Toast.makeText( getApplicationContext(),&quot;Login UnSucessful&quot;,Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
 }
-
-console.log(result); // Output: [ 6, 7, 8, 9 ]
 </code></pre>
-<h3>Declarative Programming</h3>
-<p>Declarative programming is all about hiding away complexity and bringing
-programming languages closer to human language and thinking. It’s the direct
-opposite of imperative programming in the sense that the programmer doesn’t give
-instructions about how the computer should execute the task, but rather on what
-result is needed.</p>
-<pre><code class="language-js">const nums = [1, 4, 3, 6, 7, 8, 9, 2];
-
-console.log(nums.filter((num) =&gt; num &gt; 5)); // Output: [ 6, 7, 8, 9 ]
+<p><a href="https://codingatharva.blogspot.com/2020/03/program-to-accept-username-and-password-in-Android-Studio.html">Source</a></p>
+<h2>5. Write a program to create a toggle button to display ON/OFF Bluetooth on the display screen.</h2>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    tools:context=&quot;.MainActivity&quot;
+    android:padding=&quot;20dp&quot;&gt;
+    &lt;ToggleButton
+        android:id=&quot;@+id/toggleButton&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;50dp&quot;
+        android:text=&quot;ToggleButton&quot;
+        android:textOn=&quot;ON&quot;
+        android:textOff=&quot;OFF&quot;
+        android:textSize=&quot;20sp&quot;
+        android:layout_centerInParent=&quot;true&quot;/&gt;
+    &lt;TextView android:id=&quot;@+id/textView&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_below=&quot;@id/toggleButton&quot;
+        android:text=&quot;Bluetooth is OFF&quot;
+        android:gravity=&quot;center_horizontal&quot;
+        android:layout_marginTop=&quot;20dp&quot;
+        android:textSize=&quot;20sp&quot;
+        android:textColor=&quot;@color/colorAccent&quot;/&gt;
+&lt;/RelativeLayout&gt;
 </code></pre>
-<h2>2. Explain</h2>
-<p>Reference: <a href="https://youtu.be/fnZjrNfQVdo">https://youtu.be/fnZjrNfQVdo</a></p>
-<h3>Names</h3>
-<p>Identifiers that allow us to refer to variables, constants, functions, types,
-operations, and so on.</p>
-<h3>Bindings</h3>
-<p>An association of a name with an object</p>
-<h3>Scopes</h3>
-<p>The lifetime of a binding of a name to an object</p>
-<p><strong>Example:</strong></p>
-<pre><code class="language-js">function x() {
-  let y = &quot;Hello World&quot;; // Y is only avaiable inside x() scope
-  return y;
+<pre><code class="language-java">package com.example.togglebuttonbluetooth;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.widget.CompoundButton;
+import android.widget.TextView;
+import android.widget.ToggleButton;
+
+public class MainActivity extends AppCompatActivity {
+
+    ToggleButton toggleButton;
+    TextView textView;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        toggleButton = findViewById(R.id.toggleButton);
+        textView = findViewById(R.id.textView);
+
+        toggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                if(isChecked)
+                {
+                    textView.setText(&quot;Bluetooth is &quot; + toggleButton.getTextOn());
+                }
+                else
+                {
+                    textView.setText(&quot;Bluetooth is &quot; + toggleButton.getTextOff());
+                }
+            }
+        });
+    }
 }
-console.log(x());
-// &quot;Hello World&quot;
 </code></pre>
-<h4>Static Scope</h4>
-<p>Scope of a variable determined at compile time.</p>
-<h4>Dynamic Scope</h4>
-<p>Scope of variable determined at runtime.</p>
-<h2>3. Explain different storage allocation mechanisms.</h2>
-<p>Reference:
-<a href="https://www.youtube.com/watch?v=nZG0bQYHB9U">Storage allocation | Static, Stack&amp; Heap | Compiler Design | Lec- 49</a></p>
-<p>There are three types:</p>
-<ol>
-<li>Static stroage allocation</li>
-<li>Stack storage allocation</li>
-<li>Heap storage allocation</li>
-</ol>
-<h3>1. Static stroage allocation</h3>
-<ul>
-<li>In static allocation, names are bond to <strong>storage locations</strong>.</li>
-<li>If memory is created at compile time then the memory will be creted in static
-area adn only once.</li>
-<li>Static allocation supports the <strong>dynamic data structure</strong> that means, memory
-is created only at comple time and deallocated after program completion.</li>
-<li>The drawback with static storage allocation is that the size and position of
-data objects should be know at compile time.</li>
-<li>Another drawback is restriction of the recursion proccess.</li>
-<li>Example in JavaScript:<pre><code class="language-js">// Declare a variable with the &quot;const&quot; keyword
-const x = 10;
+<p><a href="http://www.programmingtutorials4u.com/android-programming/programs/android-toggle-button/">Source</a></p>
+<h2>6. Write a program to create a login form for a social networking site.</h2>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:background=&quot;#495B8F&quot;
+    android:padding=&quot;20dp&quot;
+    tools:context=&quot;.MainActivity&quot;&gt;
 
-// Access the value of the variable
-console.log(x); // Output: 10
+    &lt;TextView android:id=&quot;@+id/logo&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;80dp&quot;
+        android:text=&quot;F A C E B O O K&quot;
+        android:gravity=&quot;center&quot;
+        android:textSize=&quot;40sp&quot;
+        android:textStyle=&quot;bold&quot;
+        android:layout_marginTop=&quot;40dp&quot;
+        android:textColor=&quot;@android:color/white&quot;/&gt;
 
-// Attempt to reassign the value of the variable
-x = 20;
+    &lt;EditText
+        android:id=&quot;@+id/username&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;60dp&quot;
+        android:layout_below=&quot;@id/logo&quot;
+        android:layout_marginTop=&quot;30dp&quot;
+        android:background=&quot;@android:color/white&quot;
+        android:fontFamily=&quot;monospace&quot;
+        android:hint=&quot;Email or phone number&quot;
+        android:padding=&quot;10dp&quot;
+        android:textSize=&quot;22sp&quot; /&gt;
 
-// This will throw an error because the value of a const variable cannot be changed
+    &lt;EditText
+        android:id=&quot;@+id/password&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;60dp&quot;
+        android:layout_below=&quot;@id/username&quot;
+        android:background=&quot;@android:color/white&quot;
+        android:fontFamily=&quot;monospace&quot;
+        android:hint=&quot;Password&quot;
+        android:padding=&quot;10dp&quot;
+        android:layout_marginTop=&quot;20dp&quot;
+        android:textSize=&quot;22sp&quot; /&gt;
+
+    &lt;Button android:id=&quot;@+id/btnLogin&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;50dp&quot;
+        android:layout_below=&quot;@id/password&quot;
+        android:layout_marginTop=&quot;30dp&quot;
+        android:text=&quot;Log In&quot;
+        android:background=&quot;#6D9ADD&quot;
+        android:textColor=&quot;@android:color/white&quot;
+        android:textSize=&quot;18sp&quot;/&gt;
+
+    &lt;TextView
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_centerHorizontal=&quot;true&quot;
+        android:text=&quot;Forgot Password?&quot;
+        android:textColor=&quot;@android:color/white&quot;
+        android:layout_below=&quot;@id/btnLogin&quot;
+        android:layout_marginTop=&quot;10dp&quot;
+        android:textSize=&quot;16sp&quot;/&gt;
+
+&lt;/RelativeLayout&gt;
 </code></pre>
-</li>
-</ul>
-<h3>2. Stack storage allocation</h3>
-<ul>
-<li>In this storage is organized as a <strong>stack</strong>(LIFO).</li>
-<li>Activation records are pushed and popped.</li>
-<li>Activation record contains the locals so that they are bound to fresh storage
-in each activation record.</li>
-<li>The value of local is deleted when the activation ends.</li>
-<li>It works on the basis of <strong>LIFO</strong> and this allocation supports the recursion
-process.</li>
-<li>Example in JavaScript:<pre><code class="language-js">function foo(x) {
-  // Declare a local variable y
-  let y = x + 1;
+<pre><code class="language-java">package com.example.socialnetworkingapp;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 
-  // Access the value of the local variable
-  console.log(y); // Output: x + 1
+public class MainActivity extends AppCompatActivity {
 
-  // Reassign the value of the local variable
-  y = x + 2;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
 
-  // The value of the local variable can be changed
-  console.log(y); // Output: x + 2
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
 }
-
-// Call the function with an argument
-foo(10);
 </code></pre>
-</li>
-</ul>
-<h3>3. Heap storage allocation</h3>
-<ul>
-<li>It is the most flexible allocation scheme.</li>
-<li>It is flexible because it is dynamica nature.</li>
-<li>Allocation and deallocation of memory can be done at any time and at any place
-depending upon the users requirement.</li>
-<li>Advantage of Heap allocation is used to allocate memory to the variables
-dynamically and when the variables are no more used then claim it back.</li>
-<li>Heap storage allocation supports teh recursion process.</li>
-<li>Example in JavaScript:<pre><code class="language-js">// Create a new object using the object literal notation
-let obj = {};
+<p><a href="http://www.programmingtutorials4u.com/android-programming/programs/social-networking-login-form/">Source</a></p>
+<h2>7. Write a program to show five checkboxes and toast selected checkbox.</h2>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:orientation=&quot;vertical&quot;
+    android:padding=&quot;10dp&quot;
+    tools:context=&quot;.MainActivity&quot;&gt;
 
-// Add a property to the object
-obj.name = &quot;John&quot;;
+    &lt;CheckBox
+        android:id=&quot;@+id/cb1&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:text=&quot;Android&quot;
+        android:textSize=&quot;25dp&quot;
+        android:layout_gravity=&quot;center&quot;
+        android:padding=&quot;10dp&quot;
+        android:checked=&quot;false&quot;/&gt;
 
-// Access the value of the property
-console.log(obj.name); // Output: &quot;John&quot;
+    &lt;CheckBox
+        android:id=&quot;@+id/cb2&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:text=&quot;Pythpn&quot;
+        android:textSize=&quot;25dp&quot;
+        android:layout_gravity=&quot;center&quot;
+        android:padding=&quot;10dp&quot;
+        android:checked=&quot;false&quot;/&gt;
+    &lt;CheckBox
+        android:id=&quot;@+id/cb3&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:text=&quot;PHP&quot;
+        android:textSize=&quot;25dp&quot;
+        android:layout_gravity=&quot;center&quot;
+        android:padding=&quot;10dp&quot;
+        android:checked=&quot;false&quot;/&gt;
+    &lt;CheckBox
+        android:id=&quot;@+id/cb4&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:text=&quot;C&quot;
+        android:textSize=&quot;25dp&quot;
+        android:layout_gravity=&quot;center&quot;
+        android:padding=&quot;10dp&quot;
+        android:checked=&quot;false&quot;/&gt;
+    &lt;CheckBox
+        android:id=&quot;@+id/cb5&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:text=&quot;Java&quot;
+        android:textSize=&quot;25dp&quot;
+        android:layout_gravity=&quot;center&quot;
+        android:padding=&quot;10dp&quot;
+        android:checked=&quot;false&quot;/&gt;
 
-// Reassign the value of the property
-obj.name = &quot;Jane&quot;;
-
-// The value of the property can be changed
-console.log(obj.name); // Output: &quot;Jane&quot;
+    &lt;Button
+        android:id=&quot;@+id/btn&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:text=&quot;Submit&quot;
+        android:textSize=&quot;35dp&quot;
+        android:layout_gravity=&quot;center&quot;
+        android:padding=&quot;10dp&quot;/&gt;
+&lt;/LinearLayout&gt;
 </code></pre>
-</li>
-</ul>
-<h2>4. What is Lambda Calculus? Explain Free variable and Bound variable.</h2>
-<p>Lambda calculus is a formal system that is used to define and study functions
-and their properties. It consists of three main elements: variables, functions,
-and application.</p>
-<ul>
-<li><strong>Variables</strong> are symbols that represent values. In lambda calculus, variables
-are denoted by a single lowercase letter, such as x or y.</li>
-<li><strong>Functions</strong> are expressions that take one or more arguments and return a
-result. In lambda calculus, functions are denoted by the Greek letter “lambda”
-(λ), followed by a list of variables (the function’s arguments), and a body
-expression (the function’s result). For example, the function f(x, y) = x + y
-could be written as λx.λy.x + y in lambda calculus.</li>
-<li><strong>Application</strong> is the process of applying a function to its arguments. In
-lambda calculus, application is denoted by placing the function expression and
-its arguments within parentheses, separated by spaces. For example, the
-application f(x, y) could be written as (f x y) in lambda calculus.</li>
-</ul>
-<h3>Free variable</h3>
-<p>In lambda calculus, a free variable is a variable that is not bound to any
-particular value or function. It can be used freely within an expression, and
-its value is not determined until the expression is evaluated.</p>
-<p>Example:</p>
-<pre><code class="language-lambda">(λx.x + y) 2
+<p><a href="https://codingatharva.blogspot.com/2020/03/program-demonstrate-checkboxes-in-android-studio.html">Source</a></p>
+<h2>8. Write a program to display circular progress bar.</h2>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout
+    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:gravity=&quot;center_horizontal&quot;
+    android:orientation=&quot;vertical&quot;
+    tools:context=&quot;.MainActivity&quot;&gt;
+
+    &lt;RelativeLayout
+        android:id=&quot;@+id/progress_layout&quot;
+        android:layout_width=&quot;200dp&quot;
+        android:layout_height=&quot;200dp&quot;
+        android:layout_margin=&quot;100dp&quot;&gt;
+
+        &lt;!--progress bar implementation--&gt;
+        &lt;ProgressBar
+            android:id=&quot;@+id/progress_bar&quot;
+            style=&quot;?android:attr/progressBarStyleHorizontal&quot;
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;match_parent&quot;
+            android:background=&quot;@drawable/circular_shape&quot;
+            android:indeterminate=&quot;false&quot;
+            android:progressDrawable=&quot;@drawable/circular_progress_bar&quot;
+            android:textAlignment=&quot;center&quot; /&gt;
+
+        &lt;!--Text implementation in center of the progress bar--&gt;
+        &lt;TextView
+            android:id=&quot;@+id/progress_text&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:layout_alignParentLeft=&quot;true&quot;
+            android:layout_alignParentRight=&quot;true&quot;
+            android:layout_centerVertical=&quot;true&quot;
+            android:gravity=&quot;center&quot;
+            android:text=&quot;---&quot;
+            android:textColor=&quot;@color/colorPrimary&quot;
+            android:textSize=&quot;28sp&quot;
+            android:textStyle=&quot;bold&quot; /&gt;
+    &lt;/RelativeLayout&gt;
+
+&lt;/LinearLayout&gt;
 </code></pre>
-<h3>Bound variable.</h3>
-<p>A bound variable, on the other hand, is a variable that is bound to a particular
-value or function within an expression. It cannot be used freely, and its value
-is determined by the binding.</p>
-<p>Example:</p>
-<pre><code class="language-lambda">(λx.x + y) (λy.y * 2)
-</code></pre>
-<h2>5. Different between</h2>
-<h3>Functional Programming</h3>
-<ul>
-<li>Functional programming is the form of programming that attempts to avoid
-changing state and mutable data.</li>
-<li>In a functional program, the output of a function should always be the same,
-given the same exact inputs to the function.</li>
-<li>This is because the outputs of a function in functional programming purely
-relies on arguments of the function, and there is no magic that is happening
-behind the scenes.</li>
-<li>It works particularly well when there are no boundaries required, or those
-boundaries are already predefined.</li>
-<li>Functional programming provides the advantages like efficiency, lazy
-evaluation, nested functions, bug-free code, parallel programming.</li>
-<li>Each small function does its part and only its part.</li>
-<li>The function can be easily invoked and reused at any point. It also helps the
-code to be managed and the same thing or statements does not need to be
-written again and again.</li>
-<li>Example: if you call function getSum() it calculates the sum of two inputs and
-returns the sum. Given the same inputs for x and y, we will always get the
-same output for sum.</li>
-</ul>
-<h3>Object Oriented Programming(OOP).</h3>
-<ul>
-<li>Object oriented programming is a programming paradigm in which you program
-using objects to represent things you are programming about (sometimes real
-world things).</li>
-<li>The objects hold data about them in attributes.</li>
-<li>The attributes in the objects are manipulated through methods or functions
-that are given to the object.</li>
-<li>Example:
-<ul>
-<li>We might have a Person object that represents all of the data a person would
-have: weight, height, skin color, hair color, hair length, and so on.</li>
-<li>Those would be the attributes.</li>
-<li>Then the person object would also have things that it can do such as: pick
-box up, put box down, eat, sleep, etc.</li>
-<li>These would be the functions that play with the data the object stores.</li>
-</ul>
-</li>
-<li>The main deal with OOP is the ability to encapsulate data from outsiders.
-Encapsulation is the ability to hide variables within the class from outside
-access — which makes it great for security reasons, along with leaky, unwanted
-or accidental usage.</li>
-</ul>
-<h2>6. What is higher order function?</h2>
-<p>Higher-order functions are functions that either accept other functions as
-arguments, or return a function as a result.</p>
-<p>The result of one higher-order function can be used as the input to another
-higher-order function. Any time we pass a lambda expression to a method, that
-method is a higher-order function.</p>
-<p>A higher order function (HOF) is a function that follows at least one of the
-following conditions −</p>
-<ul>
-<li>Takes on or more functions as argument</li>
-<li>Returns a function as its result</li>
-</ul>
-<h3>Example:</h3>
-<pre><code class="language-js">function add(x) {
-  return function (y) {
-    return x + y;
-  };
+<pre><code class="language-java">import android.os.Bundle;
+import android.os.Handler;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+    private ProgressBar progressBar;
+    private TextView progressText;
+    int i = 0;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // set the id for the progressbar and progress text
+        progressBar = findViewById(R.id.progress_bar);
+        progressText = findViewById(R.id.progress_text);
+
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                // set the limitations for the numeric
+                // text under the progress bar
+                if (i &lt;= 100) {
+                    progressText.setText(&quot;&quot; + i);
+                    progressBar.setProgress(i);
+                    i++;
+                    handler.postDelayed(this, 200);
+                } else {
+                    handler.removeCallbacks(this);
+                }
+            }
+        }, 200);
+    }
 }
-
-const addTwo = add(2);
-console.log(addTwo(3)); // Output: 5
-console.log(addTwo(4)); // Output: 6
 </code></pre>
-<p>The add function is a higher-order function because it takes a function as an
-argument (in this case, the anonymous function that returns x + y) and returns a
-function as a result (the addTwo function). The addTwo function is a closure,
-which is a function that references variables from its outer scope. In this
-case, the addTwo function closes over the variable x, which is set to 2. When
-the addTwo function is called with an argument, it adds that argument to the
-value of x and returns the result.</p>
-<p>Higher-order functions are a powerful tool in functional programming, and are
-widely used in many programming languages. They allow you to create flexible,
-reusable code, and can make your programs more expressive and easier to
-understand.</p>
-<h2>7. Difference between</h2>
-<h3>Normal Evaluation</h3>
-<p>Normal order evaluation, also known as call-by-name, is a evaluation strategy
-that evaluates the arguments to a function before the function itself. This
-means that the arguments are evaluated every time they are used within the
-function, rather than being evaluated once before the function is called.</p>
-<p>Example in Python:</p>
-<pre><code class="language-python">from functools import partial
+<p><a href="https://www.geeksforgeeks.org/how-to-implement-circular-progressbar-in-android/">Source</a></p>
+<h2>9. Write a program to display 15 buttons using Grid view.</h2>
+<p><a href="https://codingatharva.blogspot.com/2020/03/program-to-display-15-buttons-using-grid-view-in-android-studio.html">Source</a></p>
+<h2>10. Write a program to display a toast message</h2>
+<pre><code class="language-java">import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
-def foo(x, y):
-  print(&quot;x =&quot;, x)
-  print(&quot;y =&quot;, y)
-  return x + y
+public class MainActivity extends AppCompatActivity {
 
-def bar(x):
-  print(&quot;x =&quot;, x)
-  return x * 2
+    Button b1;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        b1 = (Button) findViewById(R.id.toast_button);
 
-lazy_bar = partial(bar, eval=lambda: bar(1))
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this,&quot;You just Toasted me!!!&quot;,Toast.LENGTH_LONG).show();
+                /*Another way to display a Toast message
+                    Toast t=Toast.makeText(MainActivity.this,&quot;You just Toasted me!!!&quot;,Toast.LENGTH_LONG);
+                    t.show();
+                */
+            }
+        });
+    }
 
-print(foo(lazy_bar(), lazy_bar()))  # Output: x = 1, x = 1, y = 2, 3
-</code></pre>
-<h3>Application order evaluation</h3>
-<p>Application order evaluation, also known as call-by-value, is a evaluation
-strategy that evaluates the function before the arguments. This means that the
-arguments are evaluated once before the function is called, and the resulting
-values are passed to the function as inputs.</p>
-<p>Example in Python:</p>
-<pre><code class="language-python">def foo(x, y):
-  print(&quot;x =&quot;, x)
-  print(&quot;y =&quot;, y)
-  return x + y
-
-def bar(x):
-  print(&quot;x =&quot;, x)
-  return x * 2
-
-print(foo(bar(1), bar(2)))  # Output: x = 1, x = 2, x = 2, y = 4, 6
-print(foo(bar(2), bar(1)))  # Output: x = 2, x = 1, x = 1, y = 2, 4
-</code></pre>
-<h2>8. What is paradigm and programming paradigm?</h2>
-<p>Programming paradigms are different ways or styles in which a given program or
-programming language can be organized. Each paradigm consists of certain
-structures, features, and opinions about how common programming problems should
-be tackled.</p>
-<p>There are several types of programming paradigms, including:</p>
-<ol>
-<li>Imperative</li>
-<li>Functional</li>
-<li>Object-oriented</li>
-<li>Logic</li>
-<li>Event-driven</li>
-<li>Procedural</li>
-<li>Aspect-oriented</li>
-</ol>
-<h3>Imperative Programing</h3>
-<p>Imperative programming consists of sets of detailed instructions that are given
-to the computer to execute in a given order. It’s called “imperative” because as
-programmers we dictate exactly what the computer has to do, in a very specific
-way.</p>
-<pre><code class="language-js">const nums = [1, 4, 3, 6, 7, 8, 9, 2];
-const result = [];
-
-for (let i = 0; i &lt; nums.length; i++) {
-  if (nums[i] &gt; 5) result.push(nums[i]);
 }
-
-console.log(result); // Output: [ 6, 7, 8, 9 ]
 </code></pre>
-<h3>Declarative Programming</h3>
-<p>Declarative programming is all about hiding away complexity and bringing
-programming languages closer to human language and thinking. It’s the direct
-opposite of imperative programming in the sense that the programmer doesn’t give
-instructions about how the computer should execute the task, but rather on what
-result is needed.</p>
-<pre><code class="language-js">const nums = [1, 4, 3, 6, 7, 8, 9, 2];
+<pre><code class="language-xml">&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    android:id=&quot;@+id/activity_main&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:paddingBottom=&quot;@dimen/activity_vertical_margin&quot;
+    android:paddingLeft=&quot;@dimen/activity_horizontal_margin&quot;
+    android:paddingRight=&quot;@dimen/activity_horizontal_margin&quot;
+    android:paddingTop=&quot;@dimen/activity_vertical_margin&quot;
+    tools:context=&quot;codedost.toast.MainActivity&quot;&gt;
 
-console.log(nums.filter((num) =&gt; num &gt; 5)); // Output: [ 6, 7, 8, 9 ]
+    &lt;Button
+        android:id=&quot;@+id/toast_button&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:text=&quot;Toast me!&quot;
+        android:layout_centerVertical=&quot;true&quot;
+        android:layout_centerHorizontal=&quot;true&quot;
+    /&gt;
+
+&lt;/RelativeLayout&gt;
 </code></pre>
-<h3>Functional Programing</h3>
-<p>Functional programming takes the concept of functions a little bit further.</p>
-<p>In functional programming, functions are treated as first-class citizens,
-meaning that they can be assigned to variables, passed as arguments, and
-returned from other functions.</p>
-<p>A pure function is one that relies only on its inputs to generate its result.
-And given the same input, it will always produce the same result.</p>
-<pre><code class="language-js">const nums = [1, 4, 3, 6, 7, 8, 9, 2];
-
-function filterNums() {
-  const result = []; // Internal variable
-
-  for (let i = 0; i &lt; nums.length; i++) {
-    if (nums[i] &gt; 5) result.push(nums[i]);
-  }
-
-  return result;
-}
-
-console.log(filterNums()); // Output: [ 6, 7, 8, 9 ]
-</code></pre>
-<h3>Object-oriented Programing</h3>
-<p>The core concept of OOP is to separate concerns into entities which are coded as
-objects. Each entity will group a given set of information (properties) and
-actions (methods) that can be performed by the entity.</p>
-<h2>9. What is calling sequence?</h2>
-<p>The code sequence required to effect transfer of control to a subroutine or
-procedure, including parameter passing and the recording of the return address.
-Uniformity of calling sequences is vital if it is required to call procedures
-written in a different language from the calling program.</p>
-<h2>10. What is parameter passing?</h2>
-<ul>
-<li>Reference: <a href="https://youtu.be/fnZjrNfQVdo">Parameter Passing – Real Python</a></li>
-<li>A function is a self-contained block of code that encapsulates a specific task
-or related group of tasks.</li>
-<li>An argument(s) is a value(s) provided to a function to customize its behavior
-from one call to the next.</li>
-<li>A parameter (or parameter variable) is a variable in the function definition
-to store an argument.</li>
-</ul>
-<h3>Example</h3>
-<ul>
-<li>
-<p>To pass an argument to a function is to provide that argument’s value to the
-appropriate parameter variable.</p>
-<pre><code class="language-python">def square(num):
-  return num * num
-
-val = 4
-print(square(val))
-# 16
-</code></pre>
-<p>The argument <code>4</code> is passed to the function <code>square</code></p>
-<ul>
-<li><code>num</code> is given the vale <code>4</code> since that was the value of <code>val</code> when <code>square</code>
-was called.</li>
-</ul>
-</li>
-<li>
-<p>Never wolud we consider modifyin the value of <code>num</code> in this function.</p>
-</li>
-</ul>]]></description>
-  </item>
-  <item>
-    <title>viva 6s</title>
-    <link>https://anzenkodo.github.io/notes/programming/android/viva-6s.html</link>
-    <pubDate>2022-12-28T21:05:00.085Z</pubDate>
-    <description><![CDATA[<h1>MAD VIVA QUESTION</h1>
-<p>(thk to SaturoGojoo,AK,NEWBIEN00B)</p>
-<h2>1) What is android?</h2>
-<p>Android is a mobile operating system based on a modified version of the Linux kernel and other open source software, designed primarily for touchscreen mobile devices such as smartphones and tablets.</p>
-<h2>2) Enlist Features of android?</h2>
-<ul>
-<li>Open Source</li>
-<li>Beautiul UI</li>
-<li>Connectivity</li>
-<li>Storage</li>
-<li>Multi-Touch</li>
-<li>Multi-Tasking</li>
-<li>Multi-Language</li>
-<li>Resizable widgets</li>
-<li>Messaging</li>
-<li>Media Support</li>
-<li>Web Browser</li>
-</ul>
-<h2>3) Explain android architecture?</h2>
-<ul>
-<li>
-<p>Android architecture contains different number of components to support any android device needs. Android software contains an open-source Linux Kernel having collection of number of C/C++ libraries which are exposed through an application framework services.</p>
-</li>
-<li>
-<p>The main components of android architecture are following:</p>
-</li>
-</ul>
-<ol>
-<li><strong>Applications:</strong> Applications is the top layer of android architecture. The pre-installed applications like home, contacts, camera, etc and third party applications will be installed on this layer only.</li>
-<li><strong>Application framework:</strong> Application Framework provides several important classes which are used to create an Android application.</li>
-<li><strong>Application runtime:</strong> Android Runtime environment contains components like core libraries and the Dalvik virtual machine(DVM).</li>
-<li><strong>Platform libraries:</strong> The Platform Libraries includes various C/C++ core libraries and Java based libraries such as Media, Graphics, OpenGL etc. to provide a support for android development.</li>
-<li><strong>Linux Kernel:</strong> The linux kernel manages all the available drivers such as display drivers, camera drivers, audio drivers, etc. which are required during the runtime.</li>
-</ol>
-<h2>4) Explain android sdk?</h2>
-<ul>
-<li>The Android software development kit(SDK)  allows developers to create applications for the Android platform. The Android SDK is the most important software of Android which is installed.</li>
-<li>The Android SDK provides to test application API libraries and emulator documentation sample code developer tools and tutorials which helps us to build and test the debug apps from Android.</li>
-<li>Android SDK provides the tools and application programming interface(API)  for developers to create applications on the Android platform using Java programming language.</li>
-</ul>
-<h2>5) What is Android AVD?</h2>
-<ul>
-<li>An AVD is an emulator configuration that enables to modules an actual device
-by calling hardware and software option to be emulated by the Android
-emulator.</li>
-<li>The AVD manager is an interface that we can launch from android studio which
-helps us to create and manage AVD.</li>
-<li>An AVD contains hardware profile, system image, storage area, skin and other
-properties.</li>
-<li>AVD contains emulator for Wear OS, TV, Mobile Phones, Tables, Automotive.</li>
-</ul>
-<h3>Hardware profile</h3>
-<ul>
-<li>Hardware profile defines the characteristics of a device as shipped from the
-factory of a device as shipped from the factory.</li>
-<li>The AVD manager comes preloaded with certain hardware profile such as Pixel
-device and we can define or customize the hardware profile as needed.</li>
-</ul>
-<h3>System image</h3>
-<ul>
-<li>A system image labelled with Google API includes access to Google Play
-services.</li>
-<li>A system image Labelled with Google Play logo in the Play Store includes the
-Google Play Store apps and can access to the Google Play Services.</li>
-</ul>
-<h3>Storage Area</h3>
-<ul>
-<li>The AVD has dedicated storage area on our development machine.</li>
-<li>It stores the devices data such as installed apps and settings, as well as
-emulated and SD cards.</li>
-<li>If needed we can use the AVD manager to wipe user data so that the devices has
-the same data as if it was a new device.</li>
-</ul>
-<h2>6) What is emulator?</h2>
-<p>The Android Emulator simulates Android devices on your computer so that you can test your application on a variety of devices and Android API levels without needing to have each physical device.</p>
-<h2>7) Difference between JVM and dVM?</h2>
-<table>
-<thead>
-<tr>
-<th>JVM</th>
-<th>DVM</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>JVM supports multiple OS</td>
-<td>DVM supports only Android Operating system.</td>
-</tr>
-<tr>
-<td>JVM forms separate classes in separate <code>.class</code> byte code files.</td>
-<td>DVM forms multiple class in <code>.dex</code> byte code file.</td>
-</tr>
-<tr>
-<td>It is based on stack based virtual machine architecture.</td>
-<td>It is based on register based virtual machine architecture.</td>
-</tr>
-<tr>
-<td>JVM runs on more memory</td>
-<td>DVM runs on less memory.</td>
-</tr>
-<tr>
-<td>The executable format of JVM is JAR.</td>
-<td>The executable format of DVM is APK.</td>
-</tr>
-<tr>
-<td>JVM has different constant pools.</td>
-<td>DVM has common constant pool.</td>
-</tr>
-<tr>
-<td>It runs <code>.class</code> byte code directly.</td>
-<td>The <code>.class</code> byte codes are optimize to .odex format before executing in DVM.</td>
-</tr>
-</tbody>
-</table>
-<h2>8) What are activities?</h2>
-<ol>
-<li>Activities dictate the UI and handles the user interaction to the smart phone screen.</li>
-<li>Activities represent a single screen that user interact.</li>
-</ol>
-<h2>9) What are services?</h2>
-<ul>
-<li>A service is an application component which runs in the background.</li>
-<li>There are three types of service in Android:</li>
-</ul>
-<h3>Foreground service</h3>
-<ul>
-<li>A foreground service performs some operation that is noticeable to the user.</li>
-<li>For example, an audio app would use a foreground service to play an audio track.</li>
-<li>Foreground services must display a Notification. Foreground services continue running even when the user isn’t interacting with the app.</li>
-</ul>
-<h3>Backgroud Service**</h3>
-<ul>
-<li>A background service performs an operation that isn’t directly noticed by the user.</li>
-<li>For example, if an app used a service to compact its storage, that would usually be a background service.</li>
-</ul>
-<h3>Bound Service</h3>
-<ul>
-<li>A service is bound when an application component binds to it by calling bindService().</li>
-<li>A bound service offers a client-server interface that allows components to interact with the service, send requests, receive results, and even do so across processes with interprocess communication (IPC).</li>
-</ul>
-<h2>10) What are intents(<code>Implict</code> and <code>explicit</code> intent)?</h2>
-<h3>Implicit intent</h3>
-<p>The implicit intent is the intent where instead of defining the exact components, you define the action that you want to perform for different activities.</p>
-<h3>Explicit intent</h3>
-<p>An explicit intent is an intent where you explicitly define the component that needs to be called by Android System. An explicit intent is one that you use to launch a specific app component, such s a particular activity or service in your app.</p>
-<h2>11) Explain main Activity file ,manifest and layout file?</h2>
-<p><strong>MainActivity file</strong>
-The main activity. Java file is automatically kept in this folder by Android studio all the classes will be available here and Android studio will even bundle together the package so that we can work with the file without having to go through all the folders.</p>
-<p><strong>Manifest file</strong>
-It contains an Android manifest.xml file that is generated by Android studio when we create a project. This file contains the configuration parameters of a project such as Permission services and additional libraries.</p>
-<p><strong>Layout file</strong>
-Layout specifies the various widgets to be used in the UI and the relationships between such widgets and their containers. Layout files are stored in “res-&gt; layout” in the Android application.</p>
-<h2>12) What are different types of UI compents?</h2>
-<p><strong>TextView</strong>
-TextView is a UI Component that displays the text to the user on their Display Screen.
-<strong>EditText</strong>
-EditText is a user interface control that allows the users to enter some text.
-<strong>Button</strong>
-This is a UI that is used to perform some action as soon as the user clicks on it.
-<strong>ProgressBar</strong>
-Progress bars are used to show progress of a task. For example, when you are uploading or downloading something from the internet, it is better to show the progress of download/upload to the user. In android there is a class called Progress Dialog that allows you to create progress bar.</p>
-<h2>13) What are Layouts (<code>LinearLayout</code>, <code>AbsoluteLayout</code>, <code>TableLayout</code>, <code>FrameLayout</code>, <code>RelativeLayout</code>)?</h2>
-<p><strong>LinearLayout</strong> is a view group that aligns all children in a single direction, vertically or horizontally.
-<strong>AbsoluteLayout</strong> enables us to specify the exact location of its children.
-<strong>TableLayout</strong> is a view that groups views into rows and columns.
-<strong>RelativeLayout</strong> is a view group that displays child views in relative positions.
-<strong>FrameLayout</strong> is a placeholder on screen that we can use to display a single view.</p>
-<h2>14) Define: <code>textview</code>, <code>Edittextview</code>, <code>Button</code>, <code>Image button</code>, <code>checkbox</code>(attributes and methods)?</h2>
-<ul>
-<li><strong>TextView</strong> - This control is used to display text to the user.</li>
-<li><strong>EditTextView</strong> - EditText is a predefined subclass of TextView that includes rich editing capabilities.</li>
-<li><strong>Button</strong> - A push-button that can be pressed, or clicked, by the user to perform an action.</li>
-<li><strong>ImageButton</strong> - An ImageButton is an AbsoluteLayout which enables you to specify the exact location of its children. This shows a button with an image (instead of text) that can be pressed or clicked by the user.</li>
-<li><strong>CheckBox</strong> - An on/off switch that can be toggled by the user. You should use check box when presenting users with a group of selectable options that are not mutually exclusive.</li>
-</ul>
-<h2>15) Explain <code>listview</code>, <code>gridview</code>, <code>imageview</code>, <code>scrollview</code>?</h2>
-<ul>
-<li><strong>ListView</strong> - List of scrollable items can be displayed in Android using ListView. It helps you to displaying the data in the form of a scrollable list.</li>
-<li><strong>GridView</strong> - It is a view group that display items in two dimensional scrolling grid (rows and columns), the grid items are not necessarily predetermined but they are automatically inserted to the layout using a ListAdapter.</li>
-<li><strong>ImageView</strong> - It is used to display an image file in application.</li>
-<li><strong>Scrollview</strong> - It is a view group that is used to make vertically scrollable views. A scroll view contains a single direct child only.</li>
-</ul>
-<h2>16) What is toast explain with example?</h2>
-<ul>
-<li>Toast is used to display information for a period of time.</li>
-<li>It contains a message to be displayed quickly and disappears after specified period of time.</li>
-<li>It does not block the user interaction.</li>
-<li>Example:</li>
-</ul>
-<pre><code class="language-xml=">Toast.makeText(getApplicationContext(),&quot;Hello Javatpoint&quot;,Toast.LENGTH_SHORT).show();
-</code></pre>
-<h2>17) Explain activity lifecycle?</h2>
-<!-- Android Activity Lifecycle is controlled by 7 methods of android.app.Activity class.
-- The android Activity is the subclass of ContextThemeWrapper class.
-- An activity is the single screen in android. It is like window or frame of Java.
-- By the help of activity, you can place all your UI components or widgets in a single screen.
-
-![Activity Lifecycle Image](https://i.imgur.com/VKu9fbr.png)-->
-<ul>
-<li><strong>7 lifecycle methods of android activity.</strong>
-<ul>
-<li><strong>onCreate</strong> - called when activity is first created.</li>
-<li><strong>onStart</strong> - called when activity is becoming visible to the user.</li>
-<li><strong>onResume</strong> - called when activity will start interacting with the user.</li>
-<li><strong>onPause</strong> - called when activity is not visible to the user.</li>
-<li><strong>onStop</strong> - called when activity is no longer visible to the user.</li>
-<li><strong>onRestart</strong> - called after your activity is stopped, prior to start.</li>
-<li><strong>onDestroy</strong> - called before the activity is destroyed.</li>
-</ul>
-</li>
-</ul>
-<h2>18) Explain broadcast receivers?</h2>
-<p>Broadcast Receivers simply respond to broadcast messages from other applications or from the system itself. These messages are sometime called events or intents.</p>
-<h3>Creating the Broadcast Receiver</h3>
-<p>A broadcast receiver is implemented as a subclass of Broadcast Receiver class and overriding the <code>onReceive()</code> method where each message is received as an Intent object parameter.</p>
-<h3>Registering Broadcast Receiver</h3>
-<p>An application listens for specific broadcast intents by registering a broadcast receiver in AndroidManifest.xml file. Consider we are going to register MyReceiver for system generated event <code>ACTION_BOOT_COMPLETED</code> which is fired by the system once the Android system has completed the boot process.</p>
-<h2>19) Explain content provider?</h2>
-<p>Android system allows the content provider to store the application data in several ways. Users can manage to store the application data like images, audio, videos, and personal contact information by storing them in SQLite Database, in files, or even on a network. In order to share the data, content providers have certain permissions that are used to grant or restrict the rights to other applications to interfere with the data.</p>
-<h2>20) What is sensors?</h2>
-<ul>
-<li>Most Android-powered devices have built-in sensors that measure motion, orientation, and various environmental conditions.</li>
-<li>These sensors are capable of providing raw data with high precision and accuracy, and are useful if you want to monitor three-dimensional device movement or positioning, or you want to monitor changes in the ambient environment near a device.</li>
-<li>There are three type of sensors in android:</li>
-</ul>
-<h3>Mostion sensors</h3>
-<p>These sensors measure acceleration forces and rotational forces along three axes. This category includes accelerometers, gravity sensors, gyroscopes, and rotational vector sensors.</p>
-<h3>Environmental sensors</h3>
-<p>These sensors measure various environmental parameters, such as ambient air temperature and pressure, illumination, and humidity. This category includes barometers, photometers, and thermometers.</p>
-<h3>Position sensors</h3>
-<p>These sensors measure the physical position of a device. This category includes orientation sensors and magnetometers.</p>
-<h2>21) What is location based services?</h2>
-<p><strong>Location Based Services:</strong> Creating the Project, Getting the Maps API Key, Displaying the Map, Displaying the Zoom Control, Navigating to a Specific Location, Adding Markers, Getting Location,Geocoding and Reverse Geocoding, Getting Location Data, Monitoring Location.</p>
-<h2>22) What is Geo code and reverse Geo code?</h2>
-<h3>Geo code</h3>
-<p>Geocoding is the process of converting addresses (like a street address) into geographic coordinates (like latitude and longitude), which you can use to place markers on a map, or position the map.</p>
-<h3>Reverse Geo code</h3>
-<p>Reverse geocoding is the process of converting geographic coordinates into a human-readable address.</p>
-<h2>23) Enlist Steps to publish android application?</h2>
-<p><strong>Step 1:</strong> First generate signed apk of your Android App to publish it on Play Store.
-<strong>Step 2:</strong> Sign up for Google Play Console to publish and manage your Android App.
-<strong>Step 3:</strong> Now click on Create Application.
-<strong>Step 4:</strong> Now fill store listing details of your App which include Title, Short and Full description.
-<strong>Step 5:</strong> Now Click on ready on publish along with save draft and click on Manage release.
-<strong>Step 6:</strong> After Manage production click on edit release.
-<strong>Step 7:</strong> Now click on review.
-<strong>Step 8:</strong> After review click on Start Rollout to production.</p>
-<h2>24) What is Date and time Picker?</h2>
-<h3>Datepicker</h3>
-<ul>
-<li>Datepicker is a widget used to select a date. It allows to select date by day, month and year in your custom UI (user interface).</li>
-<li>Methods of DatePicker inckudes getDayOfMonth(), getMonth(), getYear(), getFirstDayOfWeek()</li>
-</ul>
-<h3>Timepicker</h3>
-<ul>
-<li>Timepicker is a widget used for selecting the time of the day in either AM/PM mode or 24 hours mode. The displayed time consist of hours, minutes and clock format.</li>
-<li>Methods of Timepicker inckudes setCurrentHour(), setHour(), setCurrentMinute(), getCurrentMinute()</li>
-</ul>]]></description>
+<p><a href="https://www.javatpoint.com/android-toast-example">Source</a></p>]]></description>
   </item>
   <item>
     <title>viva 6s sort</title>
     <link>https://anzenkodo.github.io/notes/programming/android/viva-6s-sort.html</link>
-    <pubDate>2022-12-28T21:05:00.085Z</pubDate>
+    <pubDate>2022-12-28T21:32:13.596Z</pubDate>
     <description><![CDATA[<h1>MAD VIVA</h1>
 <h2>1) What is Android?</h2>
 <p>Android is mobile OS based on modified version of Linux kernel and other open
@@ -1010,7 +1048,7 @@ AM/PM mode or 24h mode.</li>
   <item>
     <title>final</title>
     <link>https://anzenkodo.github.io/notes/programming/android/final.html</link>
-    <pubDate>2022-12-28T21:05:00.085Z</pubDate>
+    <pubDate>2022-12-28T21:32:13.596Z</pubDate>
     <description><![CDATA[<h1>1. Attempt any FIVE of the following: 10</h1>
 <h2>a) List any four features of Android operating system.</h2>
 <ul>
@@ -1603,7 +1641,7 @@ public class MainActivity extends AppCompatActivity {
   <item>
     <title>ut2 6s</title>
     <link>https://anzenkodo.github.io/notes/programming/android/ut2-6s.html</link>
-    <pubDate>2022-12-28T21:05:00.085Z</pubDate>
+    <pubDate>2022-12-28T21:32:13.596Z</pubDate>
     <description><![CDATA[<h1>MAD QUESTION BANK</h1>
 <h2>1. Write the syntax for Intent-Filter tag.</h2>
 <pre><code class="language-xml">&lt;intent-fliter
@@ -1787,7 +1825,7 @@ axes.</li>
   <item>
     <title>notes</title>
     <link>https://anzenkodo.github.io/notes/programming/android/notes.html</link>
-    <pubDate>2022-12-28T21:05:00.085Z</pubDate>
+    <pubDate>2022-12-28T21:32:13.596Z</pubDate>
     <description><![CDATA[<h1>Android</h1>
 <h2>1. What is Mobile application?</h2>
 <ul>
@@ -3413,698 +3451,272 @@ startActivity(sendIntent);
 </ul>]]></description>
   </item>
   <item>
-    <title>pratical s6</title>
-    <link>https://anzenkodo.github.io/notes/programming/android/pratical-s6.html</link>
-    <pubDate>2022-12-28T21:05:00.085Z</pubDate>
-    <description><![CDATA[<h2>1. Write a program to place Name, Age, Mobile number linearly(vertical) on the display screen using Linear layout.</h2>
-<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
-    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;
-    android:paddingLeft=&quot;16dp&quot;
-    android:paddingRight=&quot;16dp&quot;
-    android:paddingTop=&quot;16dp&quot;
-    android:orientation=&quot;vertical&quot;
-    tools:context=&quot;.MainActivity&quot;&gt;
-    &lt;TextView
-        android:id=&quot;@+id/student_name&quot;
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:text=&quot;Name:&quot; /&gt;
-    &lt;TextView
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:text=&quot;Age:&quot; /&gt;
-    &lt;TextView
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:text=&quot;Mobile Number:&quot; /&gt;
-&lt;/LinearLayout&gt;
+    <title>viva 6s</title>
+    <link>https://anzenkodo.github.io/notes/programming/android/viva-6s.html</link>
+    <pubDate>2022-12-28T21:32:13.596Z</pubDate>
+    <description><![CDATA[<h1>MAD VIVA QUESTION</h1>
+<p>(thk to SaturoGojoo,AK,NEWBIEN00B)</p>
+<h2>1) What is android?</h2>
+<p>Android is a mobile operating system based on a modified version of the Linux kernel and other open source software, designed primarily for touchscreen mobile devices such as smartphones and tablets.</p>
+<h2>2) Enlist Features of android?</h2>
+<ul>
+<li>Open Source</li>
+<li>Beautiul UI</li>
+<li>Connectivity</li>
+<li>Storage</li>
+<li>Multi-Touch</li>
+<li>Multi-Tasking</li>
+<li>Multi-Language</li>
+<li>Resizable widgets</li>
+<li>Messaging</li>
+<li>Media Support</li>
+<li>Web Browser</li>
+</ul>
+<h2>3) Explain android architecture?</h2>
+<ul>
+<li>
+<p>Android architecture contains different number of components to support any android device needs. Android software contains an open-source Linux Kernel having collection of number of C/C++ libraries which are exposed through an application framework services.</p>
+</li>
+<li>
+<p>The main components of android architecture are following:</p>
+</li>
+</ul>
+<ol>
+<li><strong>Applications:</strong> Applications is the top layer of android architecture. The pre-installed applications like home, contacts, camera, etc and third party applications will be installed on this layer only.</li>
+<li><strong>Application framework:</strong> Application Framework provides several important classes which are used to create an Android application.</li>
+<li><strong>Application runtime:</strong> Android Runtime environment contains components like core libraries and the Dalvik virtual machine(DVM).</li>
+<li><strong>Platform libraries:</strong> The Platform Libraries includes various C/C++ core libraries and Java based libraries such as Media, Graphics, OpenGL etc. to provide a support for android development.</li>
+<li><strong>Linux Kernel:</strong> The linux kernel manages all the available drivers such as display drivers, camera drivers, audio drivers, etc. which are required during the runtime.</li>
+</ol>
+<h2>4) Explain android sdk?</h2>
+<ul>
+<li>The Android software development kit(SDK)  allows developers to create applications for the Android platform. The Android SDK is the most important software of Android which is installed.</li>
+<li>The Android SDK provides to test application API libraries and emulator documentation sample code developer tools and tutorials which helps us to build and test the debug apps from Android.</li>
+<li>Android SDK provides the tools and application programming interface(API)  for developers to create applications on the Android platform using Java programming language.</li>
+</ul>
+<h2>5) What is Android AVD?</h2>
+<ul>
+<li>An AVD is an emulator configuration that enables to modules an actual device
+by calling hardware and software option to be emulated by the Android
+emulator.</li>
+<li>The AVD manager is an interface that we can launch from android studio which
+helps us to create and manage AVD.</li>
+<li>An AVD contains hardware profile, system image, storage area, skin and other
+properties.</li>
+<li>AVD contains emulator for Wear OS, TV, Mobile Phones, Tables, Automotive.</li>
+</ul>
+<h3>Hardware profile</h3>
+<ul>
+<li>Hardware profile defines the characteristics of a device as shipped from the
+factory of a device as shipped from the factory.</li>
+<li>The AVD manager comes preloaded with certain hardware profile such as Pixel
+device and we can define or customize the hardware profile as needed.</li>
+</ul>
+<h3>System image</h3>
+<ul>
+<li>A system image labelled with Google API includes access to Google Play
+services.</li>
+<li>A system image Labelled with Google Play logo in the Play Store includes the
+Google Play Store apps and can access to the Google Play Services.</li>
+</ul>
+<h3>Storage Area</h3>
+<ul>
+<li>The AVD has dedicated storage area on our development machine.</li>
+<li>It stores the devices data such as installed apps and settings, as well as
+emulated and SD cards.</li>
+<li>If needed we can use the AVD manager to wipe user data so that the devices has
+the same data as if it was a new device.</li>
+</ul>
+<h2>6) What is emulator?</h2>
+<p>The Android Emulator simulates Android devices on your computer so that you can test your application on a variety of devices and Android API levels without needing to have each physical device.</p>
+<h2>7) Difference between JVM and dVM?</h2>
+<table>
+<thead>
+<tr>
+<th>JVM</th>
+<th>DVM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JVM supports multiple OS</td>
+<td>DVM supports only Android Operating system.</td>
+</tr>
+<tr>
+<td>JVM forms separate classes in separate <code>.class</code> byte code files.</td>
+<td>DVM forms multiple class in <code>.dex</code> byte code file.</td>
+</tr>
+<tr>
+<td>It is based on stack based virtual machine architecture.</td>
+<td>It is based on register based virtual machine architecture.</td>
+</tr>
+<tr>
+<td>JVM runs on more memory</td>
+<td>DVM runs on less memory.</td>
+</tr>
+<tr>
+<td>The executable format of JVM is JAR.</td>
+<td>The executable format of DVM is APK.</td>
+</tr>
+<tr>
+<td>JVM has different constant pools.</td>
+<td>DVM has common constant pool.</td>
+</tr>
+<tr>
+<td>It runs <code>.class</code> byte code directly.</td>
+<td>The <code>.class</code> byte codes are optimize to .odex format before executing in DVM.</td>
+</tr>
+</tbody>
+</table>
+<h2>8) What are activities?</h2>
+<ol>
+<li>Activities dictate the UI and handles the user interaction to the smart phone screen.</li>
+<li>Activities represent a single screen that user interact.</li>
+</ol>
+<h2>9) What are services?</h2>
+<ul>
+<li>A service is an application component which runs in the background.</li>
+<li>There are three types of service in Android:</li>
+</ul>
+<h3>Foreground service</h3>
+<ul>
+<li>A foreground service performs some operation that is noticeable to the user.</li>
+<li>For example, an audio app would use a foreground service to play an audio track.</li>
+<li>Foreground services must display a Notification. Foreground services continue running even when the user isn’t interacting with the app.</li>
+</ul>
+<h3>Backgroud Service**</h3>
+<ul>
+<li>A background service performs an operation that isn’t directly noticed by the user.</li>
+<li>For example, if an app used a service to compact its storage, that would usually be a background service.</li>
+</ul>
+<h3>Bound Service</h3>
+<ul>
+<li>A service is bound when an application component binds to it by calling bindService().</li>
+<li>A bound service offers a client-server interface that allows components to interact with the service, send requests, receive results, and even do so across processes with interprocess communication (IPC).</li>
+</ul>
+<h2>10) What are intents(<code>Implict</code> and <code>explicit</code> intent)?</h2>
+<h3>Implicit intent</h3>
+<p>The implicit intent is the intent where instead of defining the exact components, you define the action that you want to perform for different activities.</p>
+<h3>Explicit intent</h3>
+<p>An explicit intent is an intent where you explicitly define the component that needs to be called by Android System. An explicit intent is one that you use to launch a specific app component, such s a particular activity or service in your app.</p>
+<h2>11) Explain main Activity file ,manifest and layout file?</h2>
+<p><strong>MainActivity file</strong>
+The main activity. Java file is automatically kept in this folder by Android studio all the classes will be available here and Android studio will even bundle together the package so that we can work with the file without having to go through all the folders.</p>
+<p><strong>Manifest file</strong>
+It contains an Android manifest.xml file that is generated by Android studio when we create a project. This file contains the configuration parameters of a project such as Permission services and additional libraries.</p>
+<p><strong>Layout file</strong>
+Layout specifies the various widgets to be used in the UI and the relationships between such widgets and their containers. Layout files are stored in “res-&gt; layout” in the Android application.</p>
+<h2>12) What are different types of UI compents?</h2>
+<p><strong>TextView</strong>
+TextView is a UI Component that displays the text to the user on their Display Screen.
+<strong>EditText</strong>
+EditText is a user interface control that allows the users to enter some text.
+<strong>Button</strong>
+This is a UI that is used to perform some action as soon as the user clicks on it.
+<strong>ProgressBar</strong>
+Progress bars are used to show progress of a task. For example, when you are uploading or downloading something from the internet, it is better to show the progress of download/upload to the user. In android there is a class called Progress Dialog that allows you to create progress bar.</p>
+<h2>13) What are Layouts (<code>LinearLayout</code>, <code>AbsoluteLayout</code>, <code>TableLayout</code>, <code>FrameLayout</code>, <code>RelativeLayout</code>)?</h2>
+<p><strong>LinearLayout</strong> is a view group that aligns all children in a single direction, vertically or horizontally.
+<strong>AbsoluteLayout</strong> enables us to specify the exact location of its children.
+<strong>TableLayout</strong> is a view that groups views into rows and columns.
+<strong>RelativeLayout</strong> is a view group that displays child views in relative positions.
+<strong>FrameLayout</strong> is a placeholder on screen that we can use to display a single view.</p>
+<h2>14) Define: <code>textview</code>, <code>Edittextview</code>, <code>Button</code>, <code>Image button</code>, <code>checkbox</code>(attributes and methods)?</h2>
+<ul>
+<li><strong>TextView</strong> - This control is used to display text to the user.</li>
+<li><strong>EditTextView</strong> - EditText is a predefined subclass of TextView that includes rich editing capabilities.</li>
+<li><strong>Button</strong> - A push-button that can be pressed, or clicked, by the user to perform an action.</li>
+<li><strong>ImageButton</strong> - An ImageButton is an AbsoluteLayout which enables you to specify the exact location of its children. This shows a button with an image (instead of text) that can be pressed or clicked by the user.</li>
+<li><strong>CheckBox</strong> - An on/off switch that can be toggled by the user. You should use check box when presenting users with a group of selectable options that are not mutually exclusive.</li>
+</ul>
+<h2>15) Explain <code>listview</code>, <code>gridview</code>, <code>imageview</code>, <code>scrollview</code>?</h2>
+<ul>
+<li><strong>ListView</strong> - List of scrollable items can be displayed in Android using ListView. It helps you to displaying the data in the form of a scrollable list.</li>
+<li><strong>GridView</strong> - It is a view group that display items in two dimensional scrolling grid (rows and columns), the grid items are not necessarily predetermined but they are automatically inserted to the layout using a ListAdapter.</li>
+<li><strong>ImageView</strong> - It is used to display an image file in application.</li>
+<li><strong>Scrollview</strong> - It is a view group that is used to make vertically scrollable views. A scroll view contains a single direct child only.</li>
+</ul>
+<h2>16) What is toast explain with example?</h2>
+<ul>
+<li>Toast is used to display information for a period of time.</li>
+<li>It contains a message to be displayed quickly and disappears after specified period of time.</li>
+<li>It does not block the user interaction.</li>
+<li>Example:</li>
+</ul>
+<pre><code class="language-xml=">Toast.makeText(getApplicationContext(),&quot;Hello Javatpoint&quot;,Toast.LENGTH_SHORT).show();
 </code></pre>
-<p><a href="https://codingatharva.blogspot.com/2020/01/program-to-place-ui-component-in-linear-vertical-layout-in-Android-Studio.html">Source</a></p>
-<h2>2. Write a program to place Name, Age, Mobile number linearly(vertical) on the display screen using Absolute layout.</h2>
-<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;AbsoluteLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
-    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;
-    android:paddingLeft=&quot;16dp&quot;
-    android:paddingTop=&quot;16dp&quot;
-    android:paddingRight=&quot;16dp&quot;
-    tools:context=&quot;.MainActivity&quot;&gt;
-    &lt;TextView
-        android:id=&quot;@+id/student_name&quot;
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:layout_x=&quot;125dp&quot;
-        android:layout_y=&quot;280dp&quot;
-        android:text=&quot;Name:&quot;
-        android:textColor=&quot;#86AD33&quot;
-        android:textSize=&quot;20dp&quot;
-        android:textStyle=&quot;bold&quot; /&gt;
-    &lt;TextView
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:layout_x=&quot;125dp&quot;
-        android:layout_y=&quot;304dp&quot;
-        android:text=&quot;Age:&quot;
-        android:textColor=&quot;#86AD33&quot;
-        android:textSize=&quot;20dp&quot;
-        android:textStyle=&quot;bold&quot; /&gt;
-    &lt;TextView
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:layout_x=&quot;125dp&quot;
-        android:layout_y=&quot;328dp&quot;
-        android:text=&quot;Mobile Number:&quot;
-        android:textColor=&quot;#86AD33&quot;
-        android:textSize=&quot;20dp&quot;
-        android:textStyle=&quot;bold&quot; /&gt;
-&lt;/AbsoluteLayout&gt;
-</code></pre>
-<p><a href="https://codingatharva.blogspot.com/2020/01/absolute-layout-centrally-in-Android-Studio.html">Source</a></p>
-<h2>3. Write a program to display 5 students basic information in a table form using Table layout.</h2>
-<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;TableLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;
-    android:collapseColumns=&quot;*&quot;
-    android:shrinkColumns=&quot;*&quot;
-    tools:context=&quot;.MainActivity&quot;&gt;
-    &lt;TableRow
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:gravity=&quot;center_horizontal&quot;&gt;
-        &lt;TextView
-            android:layout_width=&quot;match_parent&quot;
-            android:layout_height=&quot;wrap_content&quot;
-            android:text=&quot;10 Students Basic Information&quot;
-            android:textColor=&quot;#86AD33&quot;
-            android:textSize=&quot;20dp&quot;
-            android:textStyle=&quot;bold&quot; /&gt;
-    &lt;/TableRow&gt;
-    &lt;TableRow
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;wrap_content&quot;&gt;
-        &lt;TextView
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:text=&quot;Student Numbers&quot;
-            android:textColor=&quot;#000&quot;
-            android:textStyle=&quot;bold&quot; /&gt;
-        &lt;TextView
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:text=&quot;Name&quot;
-            android:textColor=&quot;#000&quot;
-            android:textStyle=&quot;bold&quot; /&gt;
-        &lt;TextView
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:text=&quot;RollNo&quot;
-            android:textColor=&quot;#000&quot;
-            android:textStyle=&quot;bold&quot; /&gt;
-        &lt;TextView
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:text=&quot;Age&quot;
-            android:textColor=&quot;#000&quot;
-            android:textStyle=&quot;bold&quot; /&gt;
-    &lt;/TableRow&gt;
-    &lt;TableRow
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;wrap_content&quot;&gt;
-        &lt;TextView
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:layout_height=&quot;wrap_content&quot;
-            android:text=&quot;Student 1:&quot;
-            android:textColor=&quot;#86AD33&quot;
-            android:textStyle=&quot;bold&quot; /&gt;
-        &lt;EditText
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:layout_height=&quot;wrap_content&quot;
-            /&gt;
-        &lt;EditText
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:layout_height=&quot;wrap_content&quot; /&gt;
-        &lt;EditText
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:layout_height=&quot;wrap_content&quot; /&gt;
-    &lt;/TableRow&gt;
-    &lt;TableRow
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;wrap_content&quot;&gt;
-        &lt;TextView
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:text=&quot;Student 2:&quot;
-            android:textColor=&quot;#86AD33&quot;
-            android:textStyle=&quot;bold&quot; /&gt;
-        &lt;EditText
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:layout_height=&quot;wrap_content&quot; /&gt;
-        &lt;EditText
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:layout_height=&quot;wrap_content&quot; /&gt;
-        &lt;EditText
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:layout_height=&quot;wrap_content&quot; /&gt;
-    &lt;/TableRow&gt;
-    &lt;TableRow
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;wrap_content&quot;&gt;
-        &lt;TextView
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:text=&quot;Student 3:&quot;
-            android:textColor=&quot;#86AD33&quot;
-            android:textStyle=&quot;bold&quot; /&gt;
-        &lt;EditText
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:layout_height=&quot;wrap_content&quot; /&gt;
-        &lt;EditText
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:layout_height=&quot;wrap_content&quot; /&gt;
-        &lt;EditText
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:layout_height=&quot;wrap_content&quot; /&gt;
-    &lt;/TableRow&gt;
-    &lt;TableRow
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;wrap_content&quot;&gt;
-        &lt;TextView
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:text=&quot;Student 4:&quot;
-            android:textColor=&quot;#86AD33&quot;
-            android:textStyle=&quot;bold&quot; /&gt;
-        &lt;EditText
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:layout_height=&quot;wrap_content&quot; /&gt;
-        &lt;EditText
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:layout_height=&quot;wrap_content&quot; /&gt;
-        &lt;EditText
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:layout_height=&quot;wrap_content&quot; /&gt;
-    &lt;/TableRow&gt;
-    &lt;TableRow
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;wrap_content&quot;&gt;
-        &lt;TextView
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:text=&quot;Student 5:&quot;
-            android:textColor=&quot;#86AD33&quot;
-            android:textStyle=&quot;bold&quot; /&gt;
-        &lt;EditText
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:layout_height=&quot;wrap_content&quot; /&gt;
-        &lt;EditText
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:layout_height=&quot;wrap_content&quot; /&gt;
-        &lt;EditText
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:layout_height=&quot;wrap_content&quot; /&gt;
-    &lt;/TableRow&gt;
-&lt;/TableLayout&gt;
-</code></pre>
-<p><a href="https://codingatharva.blogspot.com/2020/02/program-to-display-10-students-basic-info-in-table-layout-android.html">Source</a></p>
-<h2>4. Write a program to accept username and password from the end user using Text View and edit Text.</h2>
-<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;TableLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
-    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;
-    android:padding=&quot;50dp&quot;
-    tools:context=&quot;.MainActivity&quot;&gt;
-    &lt;TextView
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:gravity=&quot;center&quot;
-        android:textSize=&quot;25dp&quot;
-        android:text=&quot;Login Page&quot; /&gt;
-    &lt;TableRow
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:gravity=&quot;center_horizontal&quot;&gt;
-        &lt;TextView
-            android:layout_height=&quot;wrap_content&quot;
-            android:layout_weight=&quot;1&quot;
-            android:gravity=&quot;center&quot;
-            android:text=&quot;Enter UserName:&quot; /&gt;
+<h2>17) Explain activity lifecycle?</h2>
+<!-- Android Activity Lifecycle is controlled by 7 methods of android.app.Activity class.
+- The android Activity is the subclass of ContextThemeWrapper class.
+- An activity is the single screen in android. It is like window or frame of Java.
+- By the help of activity, you can place all your UI components or widgets in a single screen.
 
-        &lt;EditText
-            android:id=&quot;@+id/user&quot;
-            android:layout_height=&quot;wrap_content&quot;
-            android:layout_weight=&quot;1&quot;
-            android:hint=&quot;abc@gmail.com&quot; /&gt;
-    &lt;/TableRow&gt;
-    &lt;TableRow
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:gravity=&quot;center_horizontal&quot;&gt;
-        &lt;TextView
-            android:layout_height=&quot;wrap_content&quot;
-            android:layout_weight=&quot;1&quot;
-            android:gravity=&quot;center&quot;
-            android:text=&quot;Enter Password:&quot; /&gt;
-        &lt;EditText
-            android:id=&quot;@+id/pass&quot;
-            android:layout_height=&quot;wrap_content&quot;
-            android:layout_weight=&quot;1&quot;
-            android:hint=&quot;1234&quot; /&gt;
-    &lt;/TableRow&gt;
-    &lt;Button
-        android:id=&quot;@+id/btn1&quot;
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:layout_marginBottom=&quot;172dp&quot;
-        android:text=&quot;Login&quot; /&gt;
-&lt;/TableLayout&gt;
-</code></pre>
-<pre><code class="language-java">import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
-public class MainActivity extends AppCompatActivity {
-   EditText user,pass;
-    Button b;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        b= findViewById(R.id.btn1);
-        user = findViewById(R.id.user);
-        pass = findViewById(R.id.pass);
-        b.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(user.getText().toString().equals(&quot;atharva&quot;) &amp; pass.getText().toString().equals(&quot;1234&quot;))
-?
-                {
-                    Toast.makeText( getApplicationContext(),&quot;Login Sucessful&quot;,Toast.LENGTH_SHORT).show();
-                }
-                else
-                {
-                    Toast.makeText( getApplicationContext(),&quot;Login UnSucessful&quot;,Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-    }
-}
-</code></pre>
-<p><a href="https://codingatharva.blogspot.com/2020/03/program-to-accept-username-and-password-in-Android-Studio.html">Source</a></p>
-<h2>5. Write a program to create a toggle button to display ON/OFF Bluetooth on the display screen.</h2>
-<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
-    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;
-    tools:context=&quot;.MainActivity&quot;
-    android:padding=&quot;20dp&quot;&gt;
-    &lt;ToggleButton
-        android:id=&quot;@+id/toggleButton&quot;
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;50dp&quot;
-        android:text=&quot;ToggleButton&quot;
-        android:textOn=&quot;ON&quot;
-        android:textOff=&quot;OFF&quot;
-        android:textSize=&quot;20sp&quot;
-        android:layout_centerInParent=&quot;true&quot;/&gt;
-    &lt;TextView android:id=&quot;@+id/textView&quot;
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:layout_below=&quot;@id/toggleButton&quot;
-        android:text=&quot;Bluetooth is OFF&quot;
-        android:gravity=&quot;center_horizontal&quot;
-        android:layout_marginTop=&quot;20dp&quot;
-        android:textSize=&quot;20sp&quot;
-        android:textColor=&quot;@color/colorAccent&quot;/&gt;
-&lt;/RelativeLayout&gt;
-</code></pre>
-<pre><code class="language-java">package com.example.togglebuttonbluetooth;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.widget.CompoundButton;
-import android.widget.TextView;
-import android.widget.ToggleButton;
-
-public class MainActivity extends AppCompatActivity {
-
-    ToggleButton toggleButton;
-    TextView textView;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        toggleButton = findViewById(R.id.toggleButton);
-        textView = findViewById(R.id.textView);
-
-        toggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
-                if(isChecked)
-                {
-                    textView.setText(&quot;Bluetooth is &quot; + toggleButton.getTextOn());
-                }
-                else
-                {
-                    textView.setText(&quot;Bluetooth is &quot; + toggleButton.getTextOff());
-                }
-            }
-        });
-    }
-}
-</code></pre>
-<p><a href="http://www.programmingtutorials4u.com/android-programming/programs/android-toggle-button/">Source</a></p>
-<h2>6. Write a program to create a login form for a social networking site.</h2>
-<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
-    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;
-    android:background=&quot;#495B8F&quot;
-    android:padding=&quot;20dp&quot;
-    tools:context=&quot;.MainActivity&quot;&gt;
-
-    &lt;TextView android:id=&quot;@+id/logo&quot;
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;80dp&quot;
-        android:text=&quot;F A C E B O O K&quot;
-        android:gravity=&quot;center&quot;
-        android:textSize=&quot;40sp&quot;
-        android:textStyle=&quot;bold&quot;
-        android:layout_marginTop=&quot;40dp&quot;
-        android:textColor=&quot;@android:color/white&quot;/&gt;
-
-    &lt;EditText
-        android:id=&quot;@+id/username&quot;
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;60dp&quot;
-        android:layout_below=&quot;@id/logo&quot;
-        android:layout_marginTop=&quot;30dp&quot;
-        android:background=&quot;@android:color/white&quot;
-        android:fontFamily=&quot;monospace&quot;
-        android:hint=&quot;Email or phone number&quot;
-        android:padding=&quot;10dp&quot;
-        android:textSize=&quot;22sp&quot; /&gt;
-
-    &lt;EditText
-        android:id=&quot;@+id/password&quot;
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;60dp&quot;
-        android:layout_below=&quot;@id/username&quot;
-        android:background=&quot;@android:color/white&quot;
-        android:fontFamily=&quot;monospace&quot;
-        android:hint=&quot;Password&quot;
-        android:padding=&quot;10dp&quot;
-        android:layout_marginTop=&quot;20dp&quot;
-        android:textSize=&quot;22sp&quot; /&gt;
-
-    &lt;Button android:id=&quot;@+id/btnLogin&quot;
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;50dp&quot;
-        android:layout_below=&quot;@id/password&quot;
-        android:layout_marginTop=&quot;30dp&quot;
-        android:text=&quot;Log In&quot;
-        android:background=&quot;#6D9ADD&quot;
-        android:textColor=&quot;@android:color/white&quot;
-        android:textSize=&quot;18sp&quot;/&gt;
-
-    &lt;TextView
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:layout_centerHorizontal=&quot;true&quot;
-        android:text=&quot;Forgot Password?&quot;
-        android:textColor=&quot;@android:color/white&quot;
-        android:layout_below=&quot;@id/btnLogin&quot;
-        android:layout_marginTop=&quot;10dp&quot;
-        android:textSize=&quot;16sp&quot;/&gt;
-
-&lt;/RelativeLayout&gt;
-</code></pre>
-<pre><code class="language-java">package com.example.socialnetworkingapp;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-
-public class MainActivity extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-    }
-}
-</code></pre>
-<p><a href="http://www.programmingtutorials4u.com/android-programming/programs/social-networking-login-form/">Source</a></p>
-<h2>7. Write a program to show five checkboxes and toast selected checkbox.</h2>
-<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
-    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;
-    android:orientation=&quot;vertical&quot;
-    android:padding=&quot;10dp&quot;
-    tools:context=&quot;.MainActivity&quot;&gt;
-
-    &lt;CheckBox
-        android:id=&quot;@+id/cb1&quot;
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:text=&quot;Android&quot;
-        android:textSize=&quot;25dp&quot;
-        android:layout_gravity=&quot;center&quot;
-        android:padding=&quot;10dp&quot;
-        android:checked=&quot;false&quot;/&gt;
-
-    &lt;CheckBox
-        android:id=&quot;@+id/cb2&quot;
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:text=&quot;Pythpn&quot;
-        android:textSize=&quot;25dp&quot;
-        android:layout_gravity=&quot;center&quot;
-        android:padding=&quot;10dp&quot;
-        android:checked=&quot;false&quot;/&gt;
-    &lt;CheckBox
-        android:id=&quot;@+id/cb3&quot;
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:text=&quot;PHP&quot;
-        android:textSize=&quot;25dp&quot;
-        android:layout_gravity=&quot;center&quot;
-        android:padding=&quot;10dp&quot;
-        android:checked=&quot;false&quot;/&gt;
-    &lt;CheckBox
-        android:id=&quot;@+id/cb4&quot;
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:text=&quot;C&quot;
-        android:textSize=&quot;25dp&quot;
-        android:layout_gravity=&quot;center&quot;
-        android:padding=&quot;10dp&quot;
-        android:checked=&quot;false&quot;/&gt;
-    &lt;CheckBox
-        android:id=&quot;@+id/cb5&quot;
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:text=&quot;Java&quot;
-        android:textSize=&quot;25dp&quot;
-        android:layout_gravity=&quot;center&quot;
-        android:padding=&quot;10dp&quot;
-        android:checked=&quot;false&quot;/&gt;
-
-    &lt;Button
-        android:id=&quot;@+id/btn&quot;
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:text=&quot;Submit&quot;
-        android:textSize=&quot;35dp&quot;
-        android:layout_gravity=&quot;center&quot;
-        android:padding=&quot;10dp&quot;/&gt;
-&lt;/LinearLayout&gt;
-</code></pre>
-<p><a href="https://codingatharva.blogspot.com/2020/03/program-demonstrate-checkboxes-in-android-studio.html">Source</a></p>
-<h2>8. Write a program to display circular progress bar.</h2>
-<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;LinearLayout
-    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;
-    android:gravity=&quot;center_horizontal&quot;
-    android:orientation=&quot;vertical&quot;
-    tools:context=&quot;.MainActivity&quot;&gt;
-
-    &lt;RelativeLayout
-        android:id=&quot;@+id/progress_layout&quot;
-        android:layout_width=&quot;200dp&quot;
-        android:layout_height=&quot;200dp&quot;
-        android:layout_margin=&quot;100dp&quot;&gt;
-
-        &lt;!--progress bar implementation--&gt;
-        &lt;ProgressBar
-            android:id=&quot;@+id/progress_bar&quot;
-            style=&quot;?android:attr/progressBarStyleHorizontal&quot;
-            android:layout_width=&quot;match_parent&quot;
-            android:layout_height=&quot;match_parent&quot;
-            android:background=&quot;@drawable/circular_shape&quot;
-            android:indeterminate=&quot;false&quot;
-            android:progressDrawable=&quot;@drawable/circular_progress_bar&quot;
-            android:textAlignment=&quot;center&quot; /&gt;
-
-        &lt;!--Text implementation in center of the progress bar--&gt;
-        &lt;TextView
-            android:id=&quot;@+id/progress_text&quot;
-            android:layout_width=&quot;wrap_content&quot;
-            android:layout_height=&quot;wrap_content&quot;
-            android:layout_alignParentLeft=&quot;true&quot;
-            android:layout_alignParentRight=&quot;true&quot;
-            android:layout_centerVertical=&quot;true&quot;
-            android:gravity=&quot;center&quot;
-            android:text=&quot;---&quot;
-            android:textColor=&quot;@color/colorPrimary&quot;
-            android:textSize=&quot;28sp&quot;
-            android:textStyle=&quot;bold&quot; /&gt;
-    &lt;/RelativeLayout&gt;
-
-&lt;/LinearLayout&gt;
-</code></pre>
-<pre><code class="language-java">import android.os.Bundle;
-import android.os.Handler;
-import android.widget.ProgressBar;
-import android.widget.TextView;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-public class MainActivity extends AppCompatActivity {
-
-    private ProgressBar progressBar;
-    private TextView progressText;
-    int i = 0;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        // set the id for the progressbar and progress text
-        progressBar = findViewById(R.id.progress_bar);
-        progressText = findViewById(R.id.progress_text);
-
-        final Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                // set the limitations for the numeric
-                // text under the progress bar
-                if (i &lt;= 100) {
-                    progressText.setText(&quot;&quot; + i);
-                    progressBar.setProgress(i);
-                    i++;
-                    handler.postDelayed(this, 200);
-                } else {
-                    handler.removeCallbacks(this);
-                }
-            }
-        }, 200);
-    }
-}
-</code></pre>
-<p><a href="https://www.geeksforgeeks.org/how-to-implement-circular-progressbar-in-android/">Source</a></p>
-<h2>9. Write a program to display 15 buttons using Grid view.</h2>
-<p><a href="https://codingatharva.blogspot.com/2020/03/program-to-display-15-buttons-using-grid-view-in-android-studio.html">Source</a></p>
-<h2>10. Write a program to display a toast message</h2>
-<pre><code class="language-java">import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
-
-public class MainActivity extends AppCompatActivity {
-
-    Button b1;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        b1 = (Button) findViewById(R.id.toast_button);
-
-        b1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this,&quot;You just Toasted me!!!&quot;,Toast.LENGTH_LONG).show();
-                /*Another way to display a Toast message
-                    Toast t=Toast.makeText(MainActivity.this,&quot;You just Toasted me!!!&quot;,Toast.LENGTH_LONG);
-                    t.show();
-                */
-            }
-        });
-    }
-
-}
-</code></pre>
-<pre><code class="language-xml">&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
-    android:id=&quot;@+id/activity_main&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;
-    android:paddingBottom=&quot;@dimen/activity_vertical_margin&quot;
-    android:paddingLeft=&quot;@dimen/activity_horizontal_margin&quot;
-    android:paddingRight=&quot;@dimen/activity_horizontal_margin&quot;
-    android:paddingTop=&quot;@dimen/activity_vertical_margin&quot;
-    tools:context=&quot;codedost.toast.MainActivity&quot;&gt;
-
-    &lt;Button
-        android:id=&quot;@+id/toast_button&quot;
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:text=&quot;Toast me!&quot;
-        android:layout_centerVertical=&quot;true&quot;
-        android:layout_centerHorizontal=&quot;true&quot;
-    /&gt;
-
-&lt;/RelativeLayout&gt;
-</code></pre>
-<p><a href="https://www.javatpoint.com/android-toast-example">Source</a></p>]]></description>
+![Activity Lifecycle Image](https://i.imgur.com/VKu9fbr.png)-->
+<ul>
+<li><strong>7 lifecycle methods of android activity.</strong>
+<ul>
+<li><strong>onCreate</strong> - called when activity is first created.</li>
+<li><strong>onStart</strong> - called when activity is becoming visible to the user.</li>
+<li><strong>onResume</strong> - called when activity will start interacting with the user.</li>
+<li><strong>onPause</strong> - called when activity is not visible to the user.</li>
+<li><strong>onStop</strong> - called when activity is no longer visible to the user.</li>
+<li><strong>onRestart</strong> - called after your activity is stopped, prior to start.</li>
+<li><strong>onDestroy</strong> - called before the activity is destroyed.</li>
+</ul>
+</li>
+</ul>
+<h2>18) Explain broadcast receivers?</h2>
+<p>Broadcast Receivers simply respond to broadcast messages from other applications or from the system itself. These messages are sometime called events or intents.</p>
+<h3>Creating the Broadcast Receiver</h3>
+<p>A broadcast receiver is implemented as a subclass of Broadcast Receiver class and overriding the <code>onReceive()</code> method where each message is received as an Intent object parameter.</p>
+<h3>Registering Broadcast Receiver</h3>
+<p>An application listens for specific broadcast intents by registering a broadcast receiver in AndroidManifest.xml file. Consider we are going to register MyReceiver for system generated event <code>ACTION_BOOT_COMPLETED</code> which is fired by the system once the Android system has completed the boot process.</p>
+<h2>19) Explain content provider?</h2>
+<p>Android system allows the content provider to store the application data in several ways. Users can manage to store the application data like images, audio, videos, and personal contact information by storing them in SQLite Database, in files, or even on a network. In order to share the data, content providers have certain permissions that are used to grant or restrict the rights to other applications to interfere with the data.</p>
+<h2>20) What is sensors?</h2>
+<ul>
+<li>Most Android-powered devices have built-in sensors that measure motion, orientation, and various environmental conditions.</li>
+<li>These sensors are capable of providing raw data with high precision and accuracy, and are useful if you want to monitor three-dimensional device movement or positioning, or you want to monitor changes in the ambient environment near a device.</li>
+<li>There are three type of sensors in android:</li>
+</ul>
+<h3>Mostion sensors</h3>
+<p>These sensors measure acceleration forces and rotational forces along three axes. This category includes accelerometers, gravity sensors, gyroscopes, and rotational vector sensors.</p>
+<h3>Environmental sensors</h3>
+<p>These sensors measure various environmental parameters, such as ambient air temperature and pressure, illumination, and humidity. This category includes barometers, photometers, and thermometers.</p>
+<h3>Position sensors</h3>
+<p>These sensors measure the physical position of a device. This category includes orientation sensors and magnetometers.</p>
+<h2>21) What is location based services?</h2>
+<p><strong>Location Based Services:</strong> Creating the Project, Getting the Maps API Key, Displaying the Map, Displaying the Zoom Control, Navigating to a Specific Location, Adding Markers, Getting Location,Geocoding and Reverse Geocoding, Getting Location Data, Monitoring Location.</p>
+<h2>22) What is Geo code and reverse Geo code?</h2>
+<h3>Geo code</h3>
+<p>Geocoding is the process of converting addresses (like a street address) into geographic coordinates (like latitude and longitude), which you can use to place markers on a map, or position the map.</p>
+<h3>Reverse Geo code</h3>
+<p>Reverse geocoding is the process of converting geographic coordinates into a human-readable address.</p>
+<h2>23) Enlist Steps to publish android application?</h2>
+<p><strong>Step 1:</strong> First generate signed apk of your Android App to publish it on Play Store.
+<strong>Step 2:</strong> Sign up for Google Play Console to publish and manage your Android App.
+<strong>Step 3:</strong> Now click on Create Application.
+<strong>Step 4:</strong> Now fill store listing details of your App which include Title, Short and Full description.
+<strong>Step 5:</strong> Now Click on ready on publish along with save draft and click on Manage release.
+<strong>Step 6:</strong> After Manage production click on edit release.
+<strong>Step 7:</strong> Now click on review.
+<strong>Step 8:</strong> After review click on Start Rollout to production.</p>
+<h2>24) What is Date and time Picker?</h2>
+<h3>Datepicker</h3>
+<ul>
+<li>Datepicker is a widget used to select a date. It allows to select date by day, month and year in your custom UI (user interface).</li>
+<li>Methods of DatePicker inckudes getDayOfMonth(), getMonth(), getYear(), getFirstDayOfWeek()</li>
+</ul>
+<h3>Timepicker</h3>
+<ul>
+<li>Timepicker is a widget used for selecting the time of the day in either AM/PM mode or 24 hours mode. The displayed time consist of hours, minutes and clock format.</li>
+<li>Methods of Timepicker inckudes setCurrentHour(), setHour(), setCurrentMinute(), getCurrentMinute()</li>
+</ul>]]></description>
   </item>
   <item>
     <title>java</title>
     <link>https://anzenkodo.github.io/notes/programming/languages/java.html</link>
-    <pubDate>2022-12-28T21:05:00.085Z</pubDate>
+    <pubDate>2022-12-28T21:32:13.596Z</pubDate>
     <description><![CDATA[<h1>Java</h1>
 <h2>1) Write a program to check number is even or odd using if else.</h2>
 <pre><code class="language-java">import java.util.Scanner;
@@ -4602,7 +4214,7 @@ class Copyfile {
   <item>
     <title>bash</title>
     <link>https://anzenkodo.github.io/notes/programming/languages/bash.html</link>
-    <pubDate>2022-12-28T21:05:00.085Z</pubDate>
+    <pubDate>2022-12-28T21:32:13.596Z</pubDate>
     <description><![CDATA[<p><a href="#">#</a> Bash</p>
 <ul>
 <li>
@@ -5200,7 +4812,7 @@ fi
   <item>
     <title>c</title>
     <link>https://anzenkodo.github.io/notes/programming/languages/c.html</link>
-    <pubDate>2022-12-28T21:05:00.085Z</pubDate>
+    <pubDate>2022-12-28T21:32:13.596Z</pubDate>
     <description><![CDATA[<h1>C</h1>
 <ul>
 <li>In fact, you should use the main() to do very little except call each of the other functions.</li>
@@ -5213,6 +4825,94 @@ fi
 </li>
 <li>Local variables are safer than global variables.</li>
 <li>Don’t define global variables in the middle of a program. They’re too hard to locate if you do.</li>
+</ul>]]></description>
+  </item>
+  <item>
+    <title>css</title>
+    <link>https://anzenkodo.github.io/notes/programming/languages/css.html</link>
+    <pubDate>2022-12-28T21:32:13.596Z</pubDate>
+    <description><![CDATA[<h1>CSS</h1>
+<p><a href="/notes/CSS%208946e12a95f04e3490bd9c09bfb99d1e/SASS%20d57c9cbb233644a3a615a487f4cdf949.md">SASS</a></p>
+<ul>
+<li>
+<p>BEM Method</p>
+<pre><code class="language-css">/* Block component */
+.btn {}
+/* Element that depends upon the block */
+.btn__price {}
+/* Modifier that changes the style of the block */
+.btn--orange {}
+.btn--big {}
+</code></pre>
+</li>
+<li>
+<p>Dark Mode Setting</p>
+<pre><code class="language-css">:root {
+  color-scheme: light dark; /* both supported */
+}
+</code></pre>
+</li>
+<li>
+<p>Image Dark</p>
+<ul>
+<li>
+<p>Apply the filter directly on the body tag.</p>
+<pre><code class="language-css">body.dark-theme img {
+  filter: brightness(.8) contrast(1.2);
+}
+</code></pre>
+</li>
+<li>
+<p>Or apply it via media query.</p>
+<pre><code class="language-css">@media (prefers-color-scheme: dark) {
+  img {
+    filter: brightness(.8) contrast(1.2);
+  }
+}
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>Image prefer Dark</p>
+<pre><code class="language-html">&lt;picture&gt;
+  &lt;!-- Use this image if the user's OS setting is light or unset --&gt;
+  &lt;source srcset=&quot;photo-light.png&quot; media=&quot;(prefers-color-scheme: light) or (prefers-color-scheme: no-preference)&quot;&gt;
+  &lt;!-- Use this image if the user's OS setting is dark --&gt;
+  &lt;source srcset=&quot;photo-dark.png&quot; media=&quot;(prefers-color-scheme: dark)&quot;&gt;
+&lt;/picture&gt;
+</code></pre>
+</li>
+<li>
+<p>Non-standard attributes, dataset</p>
+<pre><code class="language-css">&lt;style&gt;
+  /* styles rely on the custom attribute &quot;order-state&quot; */
+  .order[order-state=&quot;new&quot;] {
+    color: green;
+  }
+
+  .order[order-state=&quot;pending&quot;] {
+    color: blue;
+  }
+
+  .order[order-state=&quot;canceled&quot;] {
+    color: red;
+  }
+&lt;/style&gt;
+
+&lt;div class=&quot;order&quot; order-state=&quot;new&quot;&gt;
+  A new order.
+&lt;/div&gt;
+
+&lt;div class=&quot;order&quot; order-state=&quot;pending&quot;&gt;
+  A pending order.
+&lt;/div&gt;
+
+&lt;div class=&quot;order&quot; order-state=&quot;canceled&quot;&gt;
+  A canceled order.
+&lt;/div&gt;
+</code></pre>
+</li>
 </ul>]]></description>
   </item>
   </channel>
