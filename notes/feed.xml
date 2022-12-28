@@ -5,7 +5,7 @@
     <link>https://anzenkodo.github.io/notes/</link>
     <description>This my personal website where I post my notes about thing that I have learn.</description>
     <language>en-US</language>
-    <lastBuildDate>2022-12-28T03:07:18.299Z</lastBuildDate>
+    <lastBuildDate>2022-12-28T03:33:03.926Z</lastBuildDate>
     <image>
       <url>https://anzenkodo.github.io/notes/favicon.png</url>
       <title>AK#Notes</title>
@@ -16,2113 +16,9 @@
     <atom:link href="https://anzenkodo.github.io/notes/feed.xml" rel="self" type="application/rss+xml" />
     <atom:link href="https://anzenkodo.github.io/notes/feed.xml" rel="alternate" type="application/rss+xml" />
       <item>
-    <title>ut2 6s</title>
-    <link>https://anzenkodo.github.io/notes/programming/languages/python/ut2-6s.html</link>
-    <pubDate>2022-12-28T03:07:18.299Z</pubDate>
-    <description><![CDATA[<h1>Python QB UT 2</h1>
-<h2>1. Explain scope of a variable in Python.</h2>
-<ul>
-<li>A variable is only available from inside the region it is created.</li>
-<li>This is called scope.</li>
-<li>There are two types of scopes in Python:</li>
-</ul>
-<h3>Local scope</h3>
-<ul>
-<li>A variable created inside a function belongs to the local scope, and can only
-be used inside that function.</li>
-<li>Example<pre><code class="language-python">def fun()
-  x=10 # X is local variable
-  print(x)
-
-fun()
-</code></pre>
-O/P<pre><code>10
-</code></pre>
-</li>
-</ul>
-<h3>Global scope</h3>
-<ul>
-<li>A variable created in the main body of the code is a global variable and
-belongs to the global scope.</li>
-<li>Global variables are available from within any scope global and local.</li>
-<li>Example:<pre><code class="language-python">a = 50 # a is global variable
-def fun()
-  print(a)
-
-fun()
-print(a)
-</code></pre>
-O/P<pre><code>50
-50
-</code></pre>
-</li>
-</ul>
-<h2>2. Define class, data hiding, method overloading, inheritance, data abstraction, numpy, pandas.</h2>
-<h3>i) <code>class</code></h3>
-<ul>
-<li>Class is a blueprint for the object.</li>
-<li>We define a class by using the keyword class.</li>
-<li>Class objects are used to access different attributes.</li>
-</ul>
-<h3>ii) Data Hiding</h3>
-<ul>
-<li>Data hiding is one of the important features of Object Oriented Programming
-which allows preventing the functions of a program to access directly the
-internal representation of a class type.</li>
-</ul>
-<h3>iii) Method Overloading</h3>
-<ul>
-<li>Overloading is the ability of a function or an operator to behave in different
-ways based on the parameters that are passed to the function, or the operands
-that the operator acts on.</li>
-</ul>
-<h3>iv) Inheritance</h3>
-<ul>
-<li>Inheritance refers to defining a new class with little or no modification to
-an existing class.</li>
-<li>The new class is called as derived or child class and the old class is called
-as base or parent class.</li>
-</ul>
-<h3>v) Data Abstraction</h3>
-<ul>
-<li>Data abstraction refers to providing only essential information about the data
-to the outside world and hiding the background details.</li>
-</ul>
-<h3>vi) Numpy</h3>
-<ul>
-<li>Numpy is a python package which stands for “Numerical Python”.</li>
-</ul>
-<h3>vii) Pandas</h3>
-<ul>
-<li>Pandas is an open source library that allows to perform data manipulation.</li>
-<li>Pandas library is built on the top of Numpy.</li>
-</ul>
-<h2>3. Explain Composition classes with program.</h2>
-<ul>
-<li>Composition class is composed of one of or more instance of other classes.</li>
-<li>In simple words, one class is container and other class is content, if we
-delete the container objects then all of its contents objects are also
-deleted.<pre><code class="language-python">class test:
-  def __init__(self, name, marks):
-    self.name = name
-    self.marks = marks
-
-class addr:
-  def __init__(self, ad, name, marks):
-    self.ad = ad
-    self.ob = test(name, marks)
-
-  def disp(self):
-    print(self.ad, self.ob.name, self.ob.marks)
-
-t = addr(&quot;Virar&quot;, &quot;ABC&quot;, 99)
-t.disp()
-</code></pre>
-O/P<pre><code>Virar ABC 99
-</code></pre>
-</li>
-</ul>
-<h2>4. WAP to create a file, write some contents in it and read the content from file.</h2>
-<pre><code class="language-python">o = open(&quot;name.txt&quot;, &quot;w&quot;)
-o.write(&quot;I am a programmer&quot;)
-o.close()
-o = open(&quot;name.txt&quot;, &quot;r&quot;)
-print(o.read())
-o.close()
-</code></pre>
-<p>O/P</p>
-<pre><code>I am a programmer
-</code></pre>
-<h2>5. WAP to check <code>ZeroDivisionError</code> Exception.</h2>
-<pre><code class="language-python">x = int (input(&quot;x:&quot;))
-y = int(input(&quot;y:&quot;))
-
-try:
-  x/y
-except ZeroDivisionError:
-  print(&quot;Error: Division by Zero&quot;)
-else:
-  print(x/y)
-</code></pre>
-<p>O/P</p>
-<pre><code>x: 0
-y: 0
-
-Error: Divison by Zero
-</code></pre>
-<h2>6. WAP to throw an exception if age&lt;18 (using raise).</h2>
-<pre><code class="language-python">age = int(input(&quot;Age:&quot;))
-try:
-  if age &lt; 18:
-    raise Exception
-except Exception:
-  print(&quot;Too small to vote!!&quot;)
-else:
-  print(&quot;You can vote!!&quot;)
-</code></pre>
-<h2>7. List different modes of opening file.</h2>
-<p>Following are the different modes of opening file:</p>
-<ul>
-<li><code>r</code></li>
-<li><code>rb</code></li>
-<li><code>r+</code></li>
-<li><code>rb+</code></li>
-<li><code>w</code></li>
-<li><code>wb</code></li>
-<li><code>wb</code></li>
-<li><code>w+</code></li>
-<li><code>wb+</code></li>
-</ul>
-<h2>8. WAP to create class animal having method feed that prints ‘I eat food’. It has a sub class herbivorous having method feed that prints “I eat only plants”. Call the method by creating an object of each of the classes.</h2>
-<pre><code class="language-python">class animal:
-  def feed(self):
-    print(&quot;I eat food&quot;)
-
-class herbivorous(animal):
-  def feed(self):
-    print(&quot;I eat only plants&quot;)
-
-a = animal()
-a.feed()
-h = herbivorous()
-h.feed()
-</code></pre>
-<h2>9. WAP to create base classes namely add, mul having method addition and multiplication that prints addition and multiplication respectively. Derive a class derived from add and mul that has method divide and returns division. Create object and call methods.</h2>
-<pre><code class="language-python">class add:
-  def addition(self, a, b):
-    self.a = a
-    self.b = b
-    print(self.a + self.b)
-
-class mul:
-  def multiplication(self, a, b):
-    self.a = a
-    self.b = b
-    print(self.a * self.b)
-
-class derived(add, mul):
-  def divide(self, a, b)
-    self.a = a
-    self.b = b
-    return self.a / self.b
-
-d = derived()
-print(d.divide(28, 4))
-d.multiplication(2, 4)
-d.addition(5, 6)
-</code></pre>
-<p>O/P</p>
-<pre><code>7.0
-8
-11
-</code></pre>
-<h2>10. WAP to implement multilevel inheritance.</h2>
-<pre><code class="language-python">class Student:
-  def accept(self):
-    self.roll = 10
-
-class Test(Student):
-  def getdata(self):
-    self.name = &quot;ABC&quot;
-
-class Result(Test):
-  def info(self):
-    self.marks = 99
-  def disp(self):
-    print(self.roll, self.name, self.marks)
-
-r = result()
-r.accept()
-r.getdata()
-r.info()
-r.disp()
-</code></pre>
-<p>O/P</p>
-<pre><code>10 ABC 99
-</code></pre>
-<h2>11. Create a 3x4 matrix of random values using numpy and perform following:</h2>
-<ol>
-<li>print type of array</li>
-<li>print dimension</li>
-<li>print shape</li>
-<li>print size</li>
-<li>print type of elements</li>
-<li>sort row wise</li>
-<li>print min, max, sum, flatten</li>
-</ol>
-<pre><code class="language-python">import numpy as n
-
-p = n.random.randint(30, size = (3, 3))
-print(p)
-print(type(p))
-print(p.ndim)
-print(p.shape)
-print(p.size)
-print(n.dtype)
-print(n.sort(p))
-pritt(p.min())
-print(p.max())
-print(sum(p))
-print(p.flatten())
-</code></pre>
-<p>O/P</p>
-<pre><code>[[10, 20, 21]
- [14, 15, 13]
- [23, 24, 29]]
-&lt;class 'numpy.ndarray'&gt;
-2
-(3, 3)
-9
-int64
-[[10, 20, 21]
- [13, 14, 15]
- [23, 24, 29]]
-10
-29
-[51 42 76]
-[10 20 21 14 15 13 23 24 29]
-</code></pre>
-<h2>12. WAP that accepts a string and calculate the number of upper and lower case letters (string=&quot;Viva College)</h2>
-<pre><code class="language-python">c = input(&quot;Enter string.&quot;)
-u = 0
-i = 0
-
-for i in c:
-  if (i.isupper()):
-    u += 1
-  if (i.islower()):
-    i += 1
-
-print(&quot;Upper case letters are&quot;, u)
-print(&quot;Lower case letters are&quot;, i)
-</code></pre>
-<h2>13. WAP to generate a random float where the value is between 5 and 50</h2>
-<pre><code class="language-python">import random
-a = random.uiform(5, 50)
-print(a)
-</code></pre>
-<p>O/P</p>
-<pre><code>20.80854522266047
-</code></pre>
-<h2>14. Plot a line from position (10, 33) to position (80, 65) with following:</h2>
-<ol>
-<li>marker - 0</li>
-<li>line-dotted, line color-red</li>
-<li>x-label: student, y-label marks.</li>
-<li>Add grid lines</li>
-</ol>
-<pre><code class="language-python">import matplotlib.pylot as p
-import numpy as n
-
-x = n.array([10, 33])
-y = n.array([80, 64])
-
-p.xlabel(&quot;Student&quot;)
-p.ylable(&quot;Marks&quot;)
-p.plot(x, y, marker = 'o', linestyle = 'dotted', color = 'r')
-p.grid()
-p.show()
-</code></pre>
-<h2>15. WAP to print 3x3 matrix with o at border and I inside.</h2>
-<pre><code class="language-python">import numpy as n
-a = n.zeros((3, 3))
-a[1:-1, 1:-1] = 1
-print(a)
-</code></pre>
-<p>O/P</p>
-<pre><code>[[0. 0. 0.]
- [0. 1. 0.]
- [0. 0. 0.]]
-</code></pre>
-<h2>16. WAP to create matrix with values 2-10.</h2>
-<pre><code class="language-python">import numbpy as n
-a = n.arange(2, 11).reshape(3, 3)
-print(a)
-</code></pre>
-<p>O/P</p>
-<pre><code>[[2 3 4]
- [5 6 7]
- [8 9 10]]
-</code></pre>
-<h2>17. Explain Exception Handling in python.</h2>
-<ul>
-<li>When we executes a Python program, there may be a few uncertain conditions
-which occur, known as errors. Errors also referred to as bugs that are
-incorrect or inaccurate action that may cause the problems in the running of
-the program of program or may interrupt the execution of program.</li>
-<li>There are three types of error:
-<ul>
-<li>i) Compile Time Errors.</li>
-<li>ii) Run Time Errors.</li>
-<li>iii) Logical Errors.</li>
-</ul>
-</li>
-<li>Errors occured at runtime are known as exception. Exception handling is a
-feature that is used for handling any unreported errors in program.</li>
-<li>By handling the exceptions, we can provide a meaningful message to the user
-about the problem rather than system generated error message, which may not be
-understandable to the user.</li>
-<li>Exception can be either built-in exception or user defined exceptions.</li>
-</ul>]]></description>
-  </item>
-  <item>
-    <title>ut1 6s</title>
-    <link>https://anzenkodo.github.io/notes/programming/languages/python/ut1-6s.html</link>
-    <pubDate>2022-12-28T03:07:18.299Z</pubDate>
-    <description><![CDATA[<p><strong>Note: WAP (write a program)</strong></p>
-<h2>WAP to print Fibonacci Series</h2>
-<pre><code class="language-python">term = int(input(&quot;Enter the term: &quot;))
-
-n1, n2 = 0, 1
-
-if term &lt; 0:
-    print(&quot;Invalid term&quot;)
-else:
-    for i in range(term):
-        print(n1)
-        nth = n1 + n2
-        n1 = n2
-        n2 = nth
-</code></pre>
-<p><strong>Output</strong>:</p>
-<pre><code>Enter the term: 7
-0
-1
-1
-2
-3
-5
-8
-</code></pre>
-<h2>Factorial of a number</h2>
-<pre><code class="language-python">n = int(input(&quot;Enter the number: &quot;))
-f = 1
-
-for i in range(1, n + 1):
-    f = f * i
-
-print(f)
-</code></pre>
-<p><strong>Output</strong>:</p>
-<pre><code>Enter the number: 6
-720
-</code></pre>
-<h2>Perform <code>intersection()</code>, <code>union()</code>, <code>difference()</code>, <code>symmetric_difference()</code> on <code>set</code></h2>
-<pre><code class="language-python">set1 = {1, 5, 8, &quot;Google&quot;, 9, 6}
-set2 = {1, &quot;Google&quot;, 6, 3, 2, 11}
-
-i = set1.intersection(set2)
-u = set1.union(set2);
-d = set1.difference(set2)
-s = set1.symmetric_difference(set2)
-
-set1.clear()
-
-print(&quot;Intersection =&quot;, i);
-print(&quot;Union =&quot;, u);
-print(&quot;Set Difference =&quot;, d);
-print(&quot;Symmetric Difference =&quot;, s);
-print(&quot;Clear Set =&quot;, set1);
-</code></pre>
-<p><strong>Output</strong>:</p>
-<pre><code>Intersection =  {1, 'Google', 6}
-Union =  {1, 2, 3, 5, 6, 8, 9, 11, 'Google'}
-Set Difference =  {8, 9, 5}
-Symmetric Difference =  {2, 3, 5, 8, 9, 11}
-Clear Set =  set()
-</code></pre>
-<h2>WAP that takes the marks of 5 Subjects and displays the grade</h2>
-<pre><code class="language-python">sub1 = int(input(&quot;Enter marks of subject 1: &quot;))
-sub2 = int(input(&quot;Enter marks of subject 2: &quot;))
-sub3 = int(input(&quot;Enter marks of subject 3: &quot;))
-sub4 = int(input(&quot;Enter marks of subject 4: &quot;))
-sub5 = int(input(&quot;Enter marks of subject 5: &quot;))
-
-total = ((sub1 + sub2 + sub3 + sub4 + sub5) / 5)
-print(&quot;\nPercentage is&quot;, total)
-
-if total &gt; 75:
-    print(&quot;Distinction&quot;)
-elif total &gt;= 65 and total &lt; 75:
-    print(&quot;First Class&quot;)
-elif total &gt;= 50 and total &lt; 60:
-    print(&quot;Second Class&quot;)
-elif total &gt;=35 and total &lt; 50:
-    print(&quot;Third Class&quot;);
-else:
-    print(&quot;Fail&quot;)
-</code></pre>
-<p><strong>Output</strong>:</p>
-<pre><code>Enter marks of subject 1: 57
-Enter marks of subject 2: 78
-Enter marks of subject 3: 87
-Enter marks of subject 4: 50
-Enter marks of subject 5: 70
-
-Percentage is 68.4
-First Class
-</code></pre>
-<h2>Explain features of python</h2>
-<ol>
-<li>Python is easy to use and a high level programming language.</li>
-<li>Python is interpreted language</li>
-<li>Interactive mode</li>
-<li>Free and Open Source</li>
-<li>Platform independence</li>
-<li>Portable</li>
-<li>Object oriented language</li>
-</ol>
-<h2>WAP to check whether entered character is vowel or not</h2>
-<pre><code class="language-python">ch = input(&quot;Enter the character: &quot;).lower()
-
-if(ch == 'a' or ch == 'e' or ch == 'i' or ch == 'o' or ch == 'u'):
-    print(&quot;Entered character is vowel.&quot;)
-else:
-    print(&quot;Entered character is not a vowel.&quot;)
-</code></pre>
-<p><strong>Output</strong>:</p>
-<pre><code>Enter character: a
-Entered character is a vowel.
-</code></pre>
-<h2>WAP to check number is prime or not</h2>
-<pre><code class="language-python">num = int(input(&quot;Enter a number: &quot;));
-
-if num &gt; 1:
-    for i in range(2, num):
-        if (num % i) == 0:
-            print(num, &quot;is not a prime number.&quot;)
-            break;
-    else:
-        print(num, &quot;is prime number.&quot;)
-else:
-    print(num, &quot;is not a prime number.&quot;);
-</code></pre>
-<p><strong>Output</strong>:</p>
-<pre><code>Enter the number: 11
-11 is a prime number.
-</code></pre>
-<h2>WAP checks whether the number is palindrome or not.</h2>
-<pre><code class="language-python">n = input(&quot;Enter number: &quot;)
-rev = n[ : :-1]
-
-if rev == n:
-    print(n, &quot;is a palindrome.&quot;)
-else:
-    print(n, &quot;is not a palindrome.&quot;)
-</code></pre>
-<p><strong>Output</strong>:</p>
-<pre><code>Enter number: 33
-33 is a palindrome.
-</code></pre>
-<h2>WAP to perform following operation on list</h2>
-<ol>
-<li><strong>max()</strong> - Find largest number</li>
-<li><strong>reverse()</strong> - Find  Reverse of the list</li>
-<li><strong>i % 2</strong> - Select even item of the list</li>
-<li><strong>sum()</strong> - Sum of all item in a list</li>
-</ol>
-<h3>Find largest number</h3>
-<pre><code class="language-python">a = [8,2,5,1,2,4,6,11]
-print(&quot;Largest number&quot;, max(a))
-</code></pre>
-<p><strong>Output</strong>:</p>
-<pre><code>Largest number 11
-</code></pre>
-<h3>Reverse list</h3>
-<pre><code class="language-python">a = [8,2,5,1,2,4,6,11]
-a.reverse()
-print(&quot;Reverse list&quot;, a)
-</code></pre>
-<p><strong>Output</strong>:</p>
-<pre><code>Reverse list [11, 6, 4, 2, 1, 5, 2, 8]
-</code></pre>
-<h3>Even items</h3>
-<pre><code class="language-python">a = [8,2,5,1,2,4,6,11]
-
-for i in a:
-  if (i % 2) == 0:
-    print(i)
-</code></pre>
-<p><strong>Output</strong>:</p>
-<pre><code>8
-2
-2
-6
-4
-</code></pre>
-<h3>Sum of all items</h3>
-<pre><code class="language-python">a = [8,2,5,1,2,4,6,11]
-print(&quot;Sumof all items:&quot;, sum(a))
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>Sum of all items: 39
-</code></pre>
-<h2>Compare list and sets</h2>
-<table>
-<thead>
-<tr>
-<th>Lists</th>
-<th>Sets</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Lists are Ordered.</td>
-<td>Sets are Unordered.</td>
-</tr>
-<tr>
-<td>Lists are Mutable.</td>
-<td>Sets are mutable but only stored immutable elements.</td>
-</tr>
-<tr>
-<td>Elements can be changed or replaced in Lists.</td>
-<td>Elements cannot be changed or replaced.</td>
-</tr>
-</tbody>
-</table>
-<h2>Describe various list functions</h2>
-<ol>
-<li><strong>extend()</strong> - add  all elements of of list to the another list</li>
-<li><strong>insert()</strong> - insert and item from the list</li>
-<li><strong>clear()</strong> - removes all elements from the list</li>
-<li><strong>copy()</strong> - returns a copy of the list</li>
-<li><strong>reverse()</strong> - reverse the order of element in the list</li>
-<li><strong>sort()</strong> - sort the element list</li>
-</ol>
-<p><strong>Note:</strong> <strong>Given below example will not come in exam. This is only for reference.</strong></p>
-<h3>extend()</h3>
-<pre><code class="language-python">list1 = [1, 5, 8, 9, 6]
-list2 = [1, 6, 3, 2, 11]
-
-list1.extend(list2)
-print(&quot;Extend:&quot;, list1)
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>Extend: [1, 5, 8, 9, 6, 1, 6, 3, 2, 11]
-</code></pre>
-<h3>insert()</h3>
-<pre><code class="language-python">list1 = [1, 5, 8, 9, 6]
-
-list1.insert(3, 100)
-print(&quot;Insert:&quot;, list1)
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>Insert: [1, 5, 8, 100, 9, 6]
-</code></pre>
-<h3>clear()</h3>
-<pre><code class="language-python">list1 = [1, 5, 8, 9, 6]
-
-list1.clear()
-print(&quot;Clear:&quot;, list1)
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>Clear: []
-</code></pre>
-<h3>reverse()</h3>
-<pre><code class="language-python">list1 = [1, 5, 8, 9, 6]
-
-list1.reverse()
-print(&quot;Reverse:&quot;, list1)
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>Reverse: [6, 9, 8, 5, 1]
-</code></pre>
-<h3>sort()</h3>
-<pre><code class="language-python">list1 = [1, 5, 8, 9, 6]
-
-list1.sort()
-print(&quot;Sort:&quot;, list1)
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>Sort: [1, 5, 6, 8, 9]
-</code></pre>
-<h2>Write a program convert US Dollars to Indian Rupees.</h2>
-<pre><code class="language-python">usd = float(input(&quot;Enter currency in USD: &quot;))
-inr = usd * 75
-print(&quot;The currency in INR is&quot;, inr)
-</code></pre>
-<p><strong>Output</strong>:</p>
-<pre><code>Enter currency in USD: 2
-The currency in INR: 150.0
-</code></pre>
-<h2>Explain operator in python</h2>
-<p>An operator is Single set of special symbols that performs predefined
-operations  on operators. Python provides a variety of operators, which are
-described as follows.</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Operators</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Arithmetic operators</td>
-<td>+, -, *, /, %, **, //</td>
-</tr>
-<tr>
-<td>Assignment Operators</td>
-<td>+=, =, -=, /=, //=</td>
-</tr>
-<tr>
-<td>Logical Operators</td>
-<td>and, or, not</td>
-</tr>
-<tr>
-<td>Bitwise Operators</td>
-<td>&amp;, &gt;&gt;, &lt;&lt;, ^</td>
-</tr>
-<tr>
-<td>Membership Operators</td>
-<td>in, not in</td>
-</tr>
-<tr>
-<td>Identity Operators</td>
-<td>is, is not</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Note:</strong> <strong>Given below example will not come in exam. This is only for reference.</strong></p>
-<h3>Arithmetic operators</h3>
-<pre><code class="language-python">num1 = int(input(&quot;Enter first number: &quot;))
-num2 = int(input(&quot;Enter second number: &quot;))
-
-print(num1, &quot;+&quot;, num2, &quot;=&quot;, num1 + num2)
-print(num1, &quot;-&quot;, num2, &quot;=&quot;, num1 - num2)
-print(num1, &quot;*&quot;, num2, &quot;=&quot;, num1 * num2)
-print(num1, &quot;/&quot;, num2, &quot;=&quot;, num1 / num2)
-print(num1, &quot;%&quot;, num2, &quot;=&quot;, num1 % num2)
-print(num1, &quot;**&quot;, num2, &quot;=&quot;, num1 ** num2)
-print(num1, &quot;//&quot;, num2, &quot;=&quot;, num1 // num2)
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>Enter first number: 10
-Enter second number: 10
-10 + 10 = 20
-10 - 10 = 0
-10 * 10 = 100
-10 / 10 = 1.0
-10 % 10 = 0
-10 ** 10 = 10000000000
-10 // 10 = 1
-</code></pre>
-<h3>Assignment Operators</h3>
-<pre><code class="language-python">a = 3
-b = 5
-
-a += b
-
-print(a)
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>8
-</code></pre>
-<h3>Logical Operators</h3>
-<pre><code class="language-python">num1 = int(input(&quot;Enter first number: &quot;))
-num2 = int(input(&quot;Enter second number: &quot;))
-
-if (num1 &lt; num2 and num1 &lt;= num2):
-    print(num1, &quot;&lt;&quot;, num2, &quot;and&quot;, num1, &quot;&lt;=&quot;, num2)
-elif (num1 &gt; num2 or num1 &gt;= num2):
-    print(num1, &quot;&gt;&quot;, num2, &quot;or&quot;, num1, &quot;&gt;=&quot;, num2)
-elif not(num1 &lt; num2 and num1 &lt;=num2):
-    print(&quot;Not:&quot;, num1, &quot;&lt;&quot;, num2, &quot;and&quot;, num1, &quot;&lt;=&quot;, num2)
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>Enter first number: 10
-Enter second number: 1
-10 &gt; 1 or 10 &gt;= 1
-</code></pre>
-<h3>Bitwise Operators</h3>
-<pre><code class="language-python">num1 = int(input(&quot;Enter first number: &quot;))
-num2 = int(input(&quot;Enter second number: &quot;))
-
-print(num1, &quot;&amp;&quot;, num2, &quot;=&quot;, num1 &amp; num2)
-print(num1, &quot;|&quot;, num2, &quot;=&quot;, num1 | num2)
-print(num1, &quot;^&quot;, num2, &quot;=&quot;, num1 ^ num2)
-print(num1, &quot;&gt;&gt;&quot;, num2, &quot;=&quot;, num1 &gt;&gt; num2)
-print(num1, &quot;&lt;&lt;&quot;, num2, &quot;=&quot;, num1 &lt;&lt; num2)
-print(&quot;~&quot;,num1, &quot;=&quot;, ~num1)
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>Enter first number: 10
-Enter second number: 10
-10 &amp; 10 = 10
-10 | 10 = 10
-10 ^ 10 = 0
-10 &gt;&gt; 10 = 0
-10 &lt;&lt; 10 = 10240
-~ 10 = -11
-</code></pre>
-<h3>Membership Operators</h3>
-<pre><code class="language-python">x = [&quot;apple&quot;, &quot;banana&quot;]
-y = [&quot;pineapple&quot;, &quot;orange&quot;]
-
-print(&quot;apple in x:&quot;, &quot;apple&quot; in x)
-print(&quot;pineapple not in x:&quot;, &quot;pineapple&quot; not in x)
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>apple in x: True
-pineapple not in x: True
-</code></pre>
-<h3>Identity Operators</h3>
-<pre><code class="language-python">x = [&quot;apple&quot;, &quot;banana&quot;]
-y = [&quot;pineapple&quot;, &quot;orange&quot;]
-
-print(&quot;x is y:&quot;, x is y)
-print(&quot;x is not y:&quot;, x is not y)
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>x is y: False
-x is not y: True
-</code></pre>
-<h2>Explain <code>continue</code>, <code>pass</code>, <code>break</code>, <code>else</code> with example.</h2>
-<h3>continue</h3>
-<p>The **continue **statement skips the code that comes after it, and the control
-is passed back to the next iteration.</p>
-<p><strong>Example</strong>:</p>
-<pre><code>for i in range(6):
-    if i == 7:
-        continue
-    print(&quot;The Number is:&quot; , i)
-</code></pre>
-<p><strong>Output</strong>:</p>
-<pre><code>The number is: 0
-The number is: 1
-The number is: 2
-The number is: 3
-The number is: 4
-The number is: 5
-The number is: 6
-</code></pre>
-<h3>pass</h3>
-<p>Python pass statement is used as a placeholder inside loops, functions, class,
-if-statement that is meant to be implemented later.</p>
-<p><strong>Example</strong>:</p>
-<pre><code>a = 10
-b = 20
-if a &lt; b:
-  pass
-else:
-  print(&quot;b &lt; a&quot;)
-</code></pre>
-<p><strong>Output</strong>:
-No output</p>
-<h3>break</h3>
-<p>The <strong>break</strong> statement takes care of terminating the loop in which it is used.
-If the break statement is used inside nested loops, the current loop is
-terminated, and the flow will continue with the code followed that comes after
-the loop.</p>
-<p><strong>Example</strong>:</p>
-<pre><code class="language-python">for i in range(4):
-    for j in range(4):
-        if j==2:
-            break
-        print(&quot;The number is&quot;, i, j)
-</code></pre>
-<p><strong>Output</strong>:</p>
-<pre><code>This number is 0 0
-This number is 0 1
-This number is 1 0
-This number is 1 1
-This number is 2 0
-This number is 2 1
-This number is 3 0
-This number is 3 1
-</code></pre>
-<h3>else</h3>
-<p>**else **statement can be combined with an if statement. An else statement
-contains the block of code that executes if the conditional expression in the
-if statement resolves to 0 or a FALSE value.</p>
-<p><strong>Example</strong>:</p>
-<pre><code class="language-python">num = 3
-if num &gt;= 0:
-    print(&quot;Positive or Zero&quot;)
-else:
-    print(&quot;Negative number&quot;)
-</code></pre>
-<p><strong>Output</strong>:</p>
-<pre><code>Positive or Zero
-</code></pre>
-<h2>Define dictionary explain <code>access</code>, <code>delete</code>, <code>update()</code> dictionary</h2>
-<p>Dictionary in Python is an unordered collection of data values, used to store
-data values like a map, which, unlike other Data Types that hold only a single
-value as an element, Dictionary holds key:value pair.</p>
-<h3>acces</h3>
-<p>You can access the items of a dictionary by referring to its key name</p>
-<p><strong>Example</strong>:</p>
-<pre><code class="language-python">di = {&quot;Name&quot;: &quot;VIVA&quot;,&quot;Dept&quot;: &quot;TYCO&quot;, &quot;add&quot;:&quot;Virar&quot;, &quot;No&quot;:123}
-x = di[&quot;Name&quot;]
-print(x)
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>VIVA
-</code></pre>
-<h3>update()</h3>
-<p>Updates the dictionary with the specified key-value pairs</p>
-<p><strong>Example:</strong></p>
-<pre><code class="language-python">di = {&quot;Name&quot;: &quot;VIVA&quot;,&quot;Dept&quot;: &quot;TYCO&quot;, &quot;add&quot;:&quot;Virar&quot;, &quot;No&quot;: 123}
-di.update({&quot;No&quot;:456})
-print(di)
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>{'Name': 'VIVA', 'Dept': 'TYCO', 'add': 'Virar', 'No': 456}
-</code></pre>
-<h3>del</h3>
-<p>The del keyword is used delete the dictionary completely</p>
-<p><strong>Example:</strong></p>
-<pre><code class="language-python">di = {&quot;Name&quot;: &quot;VIVA&quot;, &quot;Dept&quot;: &quot;TYCO&quot;, &quot;add&quot;:&quot;Virar&quot;, &quot;No&quot;: 123}
-del di
-print(di)
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>NameError: name 'di' is not defined
-</code></pre>]]></description>
-  </item>
-  <item>
-    <title>practical s6</title>
-    <link>https://anzenkodo.github.io/notes/programming/languages/python/practical-s6.html</link>
-    <pubDate>2022-12-28T03:07:18.299Z</pubDate>
-    <description><![CDATA[<h1>Python practical question bank solved</h1>
-<h2>1) WAP to create 3x3 matrix with 1 at the border and zero inside.</h2>
-<pre><code class="language-python">import numpy as n
-a=n.ones((3, 3))
-a[1:-1,1:-1]=0
-print(a)
-</code></pre>
-<p>Output</p>
-<pre><code>[[1. 1. 1.]
- [1. 0. 1.]
- [1. 1. 1.]]
-</code></pre>
-<h2>2) WAP to calculate area of circle and area of rectangle using abstract class.</h2>
-<pre><code class="language-python">from abc import ABC, abstractmethod
-class test(ABC):
-    @abstractmethod
-    def area(self):
-        pass
-class Rec(test):
-    def area(self):
-        self. l=4
-        self. b=2
-        print(self.l*self.b)
-class Cir(test):
-    def area(self):
-        self.r=5
-        print(3.14*self.r*self.r)
-R=Rec()
-R. area()
-C=Cir()
-C. area()
-</code></pre>
-<p>Output</p>
-<pre><code>8
-78.5
-</code></pre>
-<h2>3) WAP to create dictionary where key is 1 to 10 and value is square of 1 to 10.</h2>
-<pre><code class="language-python">a=dict()
-for i in range(1,11):
-    a[i]=i**2
-print(a)
-</code></pre>
-<p>Output
-<code>{1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81, 10: 100}</code></p>
-<h2>4) WAP to display result using inheritance.</h2>
-<pre><code class="language-python">class Student:
-    def accept(self):
-        self. name=input(&quot;Name:&quot;)
-class Test:
-    def marks(self):
-        self. m1=int(input(&quot;M1:&quot;))
-        self. m2=int(input(&quot;M2:&quot;))
-class Result(Student, Test):
-    def total(self):
-        self. t=self.m1+self.m2
-    def disp(self):
-        print(self.name)
-        print(self.t)
-r=Result()
-r. accept()
-r. marks()
-r. total()
-r. disp()
-</code></pre>
-<p>Output</p>
-<pre><code>Name:ramesh
-M1:80
-M2:70
-ramesh
-150
-</code></pre>
-<h2>5) WAP to remove duplicates from dictionary.</h2>
-<pre><code class="language-python">d={1:20, 1:20, 2:30}
-res={}
-for x, y in d. items() :
-    if y not in d. items() :
-        res[x]=y
-print(res)
-</code></pre>
-<p>Output
-<code>{1: 20, 2: 30}</code></p>
-<h2>6) WAP to print sum of entered no. using function with arbitrary argument arguments.</h2>
-<pre><code class="language-python">def sum(*x):
-    n=0
-    for i in x:
-        n+=i
-    print(n)
-sum(1, 2,3,4,5)
-</code></pre>
-<p>Output
-<code>15</code></p>
-<p><code>fibonacci.py</code></p>
-<pre><code class="language-python">def fib(n):
-  n1, n2= 0,1
-  for i in range(n):
-    print(n1)
-    nth=n1+n2
-    n1=n2
-    n2=nth
-</code></pre>
-<p><code>fib.py</code></p>
-<pre><code class="language-python">import fibonacci
-print(fibonacci.fib(5))
-</code></pre>
-<p>To run the code, run <code>fib.py</code> file.</p>
-<h2>8) WAP to print following pattern.</h2>
-<pre><code>***
-**
-*
-</code></pre>
-<pre><code class="language-python">for i in range(4, 0, -1):
-    for j in range(0, i-1):
-        print(“*”, end= ‘ ’)
-    print(&quot; &quot;)
-</code></pre>
-<h2>9) WAP to print distinction, first class, second, third class and fail using if else.</h2>
-<pre><code class="language-python">s1=int(input(&quot;English:&quot;))
-s2=int(input(&quot;Hindi:&quot;))
-s3=int(input(&quot;Marathi:&quot;))
-s4=int(input(&quot;Maths:&quot;))
-s5=int(input(&quot;Science:&quot;))
-a=(s1+s2+s3+s4+s5)/5
-if a&gt;=90:
-    print(&quot;Distinction&quot;)
-elif a&gt;=75 and a&lt;90:
-    print(&quot;First class&quot;)
-elif a&gt;=45 and a&lt;75:
-    print(&quot;Second class&quot;)
-elif a&gt;=35 and a&lt;45:
-    print(&quot;Third class&quot;)
-else:
-    print(&quot;Failed&quot;)
-</code></pre>
-<p>Output</p>
-<pre><code>English:70
-Hindi:80
-Marathi:90
-Maths:80
-Science:70
-First class
-</code></pre>
-<h2>10) WAP to calculate area of circle and rectangle using method overriding.</h2>
-<pre><code class="language-python">class Rec:
-    def area(self):
-        self. l=4
-        self. b=2
-        print(&quot;Area of rectangle=&quot;,self.l*self.b)
-class Cir:
-    def area(self):
-        self. r=3.5
-        print(&quot;Area of circle=&quot;,3.14*self.r*self.r)
-r=Rec()
-r. area()
-c=Cir()
-c. area()
-</code></pre>
-<p>Output</p>
-<pre><code>Area of rectangle= 8
-Area of circle= 38.465
-</code></pre>
-<h2>11) Check entered password is correct or not using user defined exception.</h2>
-<pre><code class="language-python">class WrongPasswordException(Exception):
-  pass
-p=input(&quot;Enter password:&quot;)
-try:
-  if p!='abc12':
-    raise WrongPasswordException
-except WrongPasswordException:
-  print(&quot;Incorrect password!&quot;)
-else:
-  print(&quot;Correct password!&quot;)
-</code></pre>
-<p>Output</p>
-<pre><code>Enter password:abc12
-Correct password!
-</code></pre>
-<h2>12) Create list and perform following operations.</h2>
-<ol>
-<li>print elements using for loop</li>
-<li>del elements 3,4</li>
-<li>del 4 and add ‘o’,‘n’ ‘a’</li>
-<li>acces element ‘d’ from orignal list</li>
-<li>find len of list</li>
-</ol>
-<h3>1.print elements using for loop</h3>
-<pre><code class="language-python=">li = ['a','n','a','c',['o','n','d'],'a']
-for i in li:
-    print(i)
-</code></pre>
-<p>Output</p>
-<pre><code>a
-n
-a
-c
-['o', 'n', 'd']
-a
-</code></pre>
-<h3>2. del elements 3,4</h3>
-<h3>3. del 4 and add ‘o’,‘n’ ‘a’</h3>
-<h3>4. acces element ‘d’ from orignal list</h3>
-<h3>5. find len of list</h3>
-<pre><code class="language-python=">li = ['a','n','a','c',['o','n','d'],'a']
-print(&quot;The length of list is: &quot;, len(li))
-</code></pre>
-<p>Output
-<code>The length of list is:  6</code></p>
-<h2>13) WAP using numpy to generate six random integers between 20-30.</h2>
-<pre><code class="language-python=">import numpy as n
-a=n.random.randint(20,30,6)
-print(a)
-</code></pre>
-<p>Output
-<code>[24 27 29 25 22 22]</code></p>
-<h2>14) WAP to concatenate dictionaries to create new one.</h2>
-<pre><code class="language-python">d1={1:10}
-d2={2:20}
-d3={3:30}
-d4={}
-for i in d1, d2, d3:
-    d4. update(i)
-print(d4)
-</code></pre>
-<p>Output
-<code>{1: 10, 2: 20, 3: 30}</code></p>
-<h2>15) WAP to print unique values of following dict.</h2>
-<pre><code class="language-python">d={1:10, 2:20, 3:30, 4:30}
-d={1:10, 2:20, 3:30, 4:30}
-u=set()
-for i in d:
-    for val in d.values() :
-        u. add(val)
-print(u)
-</code></pre>
-<p>Output
-<code>{10, 20, 30}</code></p>
-<h2>16) Create 3x4 matrix filled with 10-21.</h2>
-<pre><code class="language-python">import numpy as n
-a=n.arange(10,22).reshape((3,4))
-print(a)
-</code></pre>
-<p>Output</p>
-<pre><code>[[10 11 12 13]
- [14 15 16 17]
- [18 19 20 21]]
-</code></pre>
-<h2>17) WAP to create class Emp having data members name, salary use constructor to accept values and display information.</h2>
-<pre><code class="language-python">class Emp:
-    def __init__(self, name, salary):
-        self. name=name
-        self. salary=salary
-    def disp(self):
-        print(&quot;Name:&quot;,self.name)
-        print(&quot;Salary:&quot;,self.salary)
-e=Emp(&quot;Abc&quot;,10000)
-e. disp()
-</code></pre>
-<p>Output</p>
-<pre><code>Name: Abc
-Salary: 10000
-</code></pre>]]></description>
-  </item>
-  <item>
-    <title>sample paper 6s</title>
-    <link>https://anzenkodo.github.io/notes/programming/languages/python/sample-paper-6s.html</link>
-    <pubDate>2022-12-28T03:07:18.299Z</pubDate>
-    <description><![CDATA[<h2>Q1 Any FIVE</h2>
-<h3>a. Name different modes of Python.</h3>
-<p>Python has two basic modes:</p>
-<ol>
-<li>Script mode (or Normal mode)
-<ul>
-<li>The mode where the scripted and finished .py files are in the Python
-Interpreter.</li>
-</ul>
-</li>
-<li>Interactive mode
-<ul>
-<li>A command line shell which gives immediate feedback for each statement,
-while running previously fed statements in active memory.</li>
-</ul>
-</li>
-</ol>
-<h3>b. List identity Operators</h3>
-<table>
-<thead>
-<tr>
-<th>Operator</th>
-<th>Description</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>is</td>
-<td>Returns <code>True</code> if both variables are sames object</td>
-<td>x is y</td>
-</tr>
-<tr>
-<td>is not</td>
-<td>Returns <code>False</code> if both variables are sames object</td>
-<td>x is not y</td>
-</tr>
-</tbody>
-</table>
-<h3>c. Describe Dictionary</h3>
-<ul>
-<li>A dictionary is collection which is unordered, changeable and indexed.</li>
-<li>Dictionaries are written with curl brackets, and they have keys and values.</li>
-<li>Example:<pre><code class="language-python">company = {
-	&quot;name&quot;: &quot;Apple&quot;,
-	&quot;product&quot;: &quot;IPhone&quot;
-	&quot;model&quot;: &quot;11&quot;
-}
-</code></pre>
-</li>
-</ul>
-<h3>d. State use of namespace in Python</h3>
-<ul>
-<li>A namespace is a simple system to control the names in a program.</li>
-<li>Python implements namespaces in the form of dictionaries.</li>
-<li>It maintains a name-to-object mapping where names act as keys and the objects
-as values.</li>
-</ul>
-<h3>e. List different object oriented features supported by Python.</h3>
-<ul>
-<li>Python OPP Concepts
-<ol>
-<li>Object</li>
-<li>Class</li>
-<li>Method</li>
-<li>Inheritance</li>
-<li>Polymorphism</li>
-<li>Data Abstraction</li>
-<li>Encapsulation</li>
-</ol>
-</li>
-</ul>
-<h3>f. Write steps involved in creation of a user defined exception?</h3>
-<ul>
-<li>Exception can be define by creating a new class.</li>
-<li>This exception class has to be derived, either directly or indirectly, from the built-in <code>Exception</code>.</li>
-<li>When the programmer suspects the possibility of exception, he should raise his
-own exception using <code>raise</code>.</li>
-<li>The programmer can insert the code inside a <code>try</code> block.</li>
-<li>Catch the exception using <code>except</code> block.</li>
-<li>Example:<pre><code class="language-python">class Error(Exception):
-	print(&quot;Value can't be 0.&quot;)
-
-number = 0
-
-try:
-	if number == 0:
-		raise Error
-	else:
-		print(&quot;Value is more then 0.&quot;)
-except Error:
-	pass
-</code></pre>
-</li>
-<li>Output:<pre><code>Value can't be 0.
-</code></pre>
-</li>
-</ul>
-<h3>g. Describe Python Interpreter</h3>
-<ul>
-<li>Python interpreter converts the code written in Python language by users to
-language which computer hardware or system can understand.</li>
-<li>Python interpreter is a bytecode interpreter, its input is instruction set
-sets called bytecode.</li>
-</ul>
-<h3>h. List features of Python</h3>
-<ul>
-<li>Easy to code</li>
-<li>High Level programming language</li>
-<li>Object-Oriented Language</li>
-<li>Portable language</li>
-<li>Use interpreter</li>
-<li>GUI Support</li>
-</ul>
-<h2>Q2 Any THREE</h2>
-<h3>a. Explain two Membership and two logical operators in python with appropriate examples.</h3>
-<h4>Membership Operators</h4>
-<ul>
-<li>Membership operators are used to test whether a value is found within a
-sequence.</li>
-<li>Example of <code>in</code>:<pre><code class="language-python">x = 4
-y = 8
-list = [1, 2, 3, 4, 5]
-
-if (x in list):
-	print(&quot;X is in list array&quot;)
-else:
-	print(&quot;X is not in list array&quot;)
-</code></pre>
-Output:<pre><code>X is in list array
-</code></pre>
-</li>
-<li>Example of <code>not in</code>:<pre><code class="language-python">if (y not in list):
-	print(&quot;Y is not in list array&quot;)
-else:
-	print(&quot;Y is in list array&quot;)
-</code></pre>
-Output:<pre><code>Y is not in list array
-</code></pre>
-</li>
-</ul>
-<h4>Logical Operators</h4>
-<ul>
-<li>Logical operators are usedto perform locical operations on the values of
-variables. The value is either <code>true</code> or <code>false</code></li>
-<li>Example of <code>and</code>, <code>or</code> and <code>not</code>.<pre><code class="language-python">a = True
-b = False
-print('a and b is', a and b)
-print('a or b is', a or b)
-print('not a is', not a)
-</code></pre>
-<pre><code>a and b is False
-a or b is True
-a not b is False
-</code></pre>
-</li>
-</ul>
-<h3>b. Describe any four methods of lists in Python</h3>
-<ul>
-<li><code>append()</code> - Adds an element at the end of the list.</li>
-<li><code>pop()</code> - Removes the element at the specified position.</li>
-<li><code>sort()</code> - Sorts the list</li>
-<li><code>clear()</code> - Removes all the elements from the list.
-Example:</li>
-</ul>
-<pre><code class="language-python">fruits = ['apple', 'banana', 'cherry']
-
-fruits.append(&quot;orange&quot;)
-print(fruits)
-
-fruits.pop(1)
-print(fruits)
-
-fruits.sort()
-print(fruits)
-
-fruits.clear()
-print(fruits)
-</code></pre>
-<p>Output:</p>
-<pre><code>['apple', 'banana', 'cherry', 'orange']
-['apple', 'cherry', 'orange']
-['apple', 'cherry', 'orange']
-
-</code></pre>
-<h3>c. Comparing between local and global variable</h3>
-<table>
-<thead>
-<tr>
-<th>Local</th>
-<th>Global</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>It is declare  inside a function</td>
-<td>It is declared outside the function</td>
-</tr>
-<tr>
-<td>It is created when the function starts execution and lost when the function terminate.</td>
-<td>It is created before the program’s global execution starts and lost when the program terminates.</td>
-</tr>
-<tr>
-<td>Local variables can be accessed with the help of statements, inside a function in which they are declared.</td>
-<td>You can access global variables by any statement in the program.</td>
-</tr>
-<tr>
-<td>Parameters passing is required for local variables to access the value in other function.</td>
-<td>Parameters passing is not necessary for a global variable as it is visible throughout the program</td>
-</tr>
-</tbody>
-</table>
-<h3>d. Write a Python program to print Fibonacci series up to n terms</h3>
-<p>Example:</p>
-<pre><code class="language-python">term = int(input(&quot;Enter the term: &quot;))
-
-n1, n2 = 0, 1
-
-if term &lt; 0:
-	print(&quot;Invalid term&quot;)
-else:
-	for i in range(term):
-		print(n1)
-		nth = n1 + n2
-		n1 = n2
-		n2 = nth
-</code></pre>
-<p>Output:</p>
-<pre><code>Enter the term: 7
-0
-1
-1
-2
-3
-5
-8
-</code></pre>
-<h2>Q3 Any THREE</h2>
-<h3>a. Write a program to input any two and interchange the tuple variable.</h3>
-<p>Example:</p>
-<pre><code>a = (1, 2, 3, 4, 5)
-b = (13, 23, 36, 47, 75)
-
-a,b = b,a
-
-print(a)
-print(b)
-</code></pre>
-<p>Output:</p>
-<pre><code>(13, 23, 36, 47, 75)
-(1, 2, 3, 4, 5)
-</code></pre>
-<h3>b. Explain different loops available in python with suitable examples.</h3>
-<h4><code>while</code></h4>
-<p>A <code>while</code> loop executes a target statement as long as given condition is true.</p>
-<p>Syntax:</p>
-<pre><code>while expression: statement(s)
-</code></pre>
-<p>Example:</p>
-<pre><code class="language-python">count = 0
-
-while(count &lt; 5):
-	print(count)
-	count += 1
-
-print(&quot;over&quot;)
-</code></pre>
-<p>Output:</p>
-<pre><code>0
-1
-2
-3
-4
-over
-</code></pre>
-<h4><code>for loop</code></h4>
-<p>It has the ability to iterate over the items of any sequence, such as a list or
-a string.</p>
-<p>Syntax:</p>
-<pre><code>for iterating in sequence: statements(s)
-</code></pre>
-<p>Example:</p>
-<pre><code class="language-python">fruits = ['banana', 'apple', 'mango']
-
-for fruit in fruits:
-	print(fruit)
-
-print(&quot;over&quot;)
-</code></pre>
-<p>Output:</p>
-<pre><code>banana
-apple
-mango
-over
-</code></pre>
-<h4>Nested loops</h4>
-<p>Python programming language allows to use one loop inside another loop.</p>
-<p>Syntax:</p>
-<pre><code>for iterating in sequence:
-	for iterating in sequence:
-		statements(s)
-	statements(s)
-</code></pre>
-<p>Example:</p>
-<pre><code class="language-python">nums = [1, 2, 3]
-words = [&quot;hello&quot;, &quot;hi&quot;, &quot;bye&quot;]
-
-for num in nums:
-	print(num)
-
-	for word in words:
-		print(word)
-</code></pre>
-<p>Output:</p>
-<pre><code>1
-hello
-hi
-bye
-2
-hello
-hi
-bye
-3
-hello
-hi
-bye
-</code></pre>
-<h3>c. Describe various modes of file object? Explain any two in detail.</h3>
-<p>There are four different methods modes for opening a file:</p>
-<ul>
-<li><strong>r</strong> - <em>Read</em> - Opens a file for reading. Error if the file does not exist.</li>
-<li><strong>w</strong> - <em>Write</em> - Opens a file for writing. Creates the file if it does not
-exist.</li>
-<li><strong>x</strong> - <em>Create</em> - Creates the specified file. Error if file exist.</li>
-<li><strong>a</strong> - <em>Append</em> - Opens a file for appending. Creates the if it does not
-exist.</li>
-</ul>
-<p>In addition, the file should be handled as binary or text mode:</p>
-<ul>
-<li>t - <strong>Text</strong> - Default value - <em>Text mode</em>.</li>
-<li>b - Binary - Binary mode (e.g. images).</li>
-</ul>
-<h4>Read a file</h4>
-<p>The <code>read()</code> method and <strong>r</strong> mode is used to read files.
-Before read a file, the file must open using <code>open()</code> function.</p>
-<p><code>text.txt</code> file content:</p>
-<pre><code class="language-txt">Hello World
-</code></pre>
-<p>Program:</p>
-<pre><code class="language-python">f = open(&quot;text.txt&quot;, &quot;r&quot;)
-print(f.read())
-</code></pre>
-<p>Output:</p>
-<pre><code>Hello world
-</code></pre>
-<h4>Write a file</h4>
-<p>The <code>write()</code> method and <code>a</code> or <code>w</code> modes is used to write files.</p>
-<p>Program:</p>
-<pre><code class="language-python">f = open(&quot;text.txt&quot;, &quot;w&quot;)
-f.write(&quot;Hello World&quot;)
-f.close()
-</code></pre>
-<p><code>text.txt</code> file content:</p>
-<pre><code>Hello World
-</code></pre>
-<h3>d. Illustrate the use of method overriding? Explain with example</h3>
-<p>If a class inherits a method from its superclass, then there is a chance to
-override the method provided.
-Example:</p>
-<pre><code class="language-python">class Parent:
-	def echo(self):
-		print('I am from Parent class.')
-
-class Child(Parent):
-	def echo(self):
-		print('I am from Child class.')
-
-p = Parent()
-c = Child()
-
-p.echo()
-c.echo()
-</code></pre>
-<p>Output:</p>
-<pre><code>I am from Parent class.
-I am from Child class.
-</code></pre>
-<h2>Q4 Any THREE</h2>
-<h3>a. Use of any four methods of tuple in Python?</h3>
-<ul>
-<li><code>len()</code> - Returns the <strong>length</strong> of the tuple.</li>
-<li><code>max()</code> - Highest value will returned.</li>
-<li><code>min()</code> - Lowest value be returned.</li>
-<li><code>count()</code> - Returns the number of times a specified value occurs in tuple.</li>
-</ul>
-<p>Example:</p>
-<pre><code class="language-python">t = (12, 45, 43, 8, 35, 12)
-print(len(t))
-print(max(t))
-print(min(t))
-print(t1.count(12))
-</code></pre>
-<p>Output:</p>
-<pre><code>6
-45
-8
-2
-</code></pre>
-<h3>b. Write a python Program to read contents of first.txt and write same content in second.txt file</h3>
-<p><code>first.txt</code> file content:</p>
-<pre><code>Hello World
-</code></pre>
-<p>Program:</p>
-<pre><code class="language-python">with open('first.txt', 'r') as firstfile, open('second.txt', 'a') as secondfile:
-
-	for line in firstfile:
-		secondfile.write(line)
-</code></pre>
-<p><code>second.txt</code> file content:</p>
-<pre><code>Hello world
-</code></pre>
-<h3>c. Show how try…except block is used for exception handling in Python with example.</h3>
-<ul>
-<li>When an exception occurs, Python will normally stop and generate an error
-message.</li>
-<li>These exceptions can be handled using the <code>try</code> statement.</li>
-<li>The <code>except</code> block lets you handle the error.</li>
-<li>Syntax:<pre><code class="language-python">try:
-	# Code
-except:
-	# Code
-</code></pre>
-</li>
-<li>Example:<pre><code class="language-python">try:
-	print(x)
-except NameError:
-	print(&quot;Variable x is not defined&quot;)
-</code></pre>
-</li>
-<li>Output:<pre><code>Variable x is not defined.
-</code></pre>
-</li>
-</ul>
-<h3>d. Write the output for the following if the variable fruit = “banana”</h3>
-<pre><code>&gt;&gt;&gt; fruit[:3]
-&gt;&gt;&gt; fruit[3:]
-&gt;&gt;&gt; fruit[3:3]
-&gt;&gt;&gt; fruit[:]
-</code></pre>
-<p>Output:</p>
-<pre><code>&gt;&gt;&gt; fruit = &quot;banana&quot;
-&gt;&gt;&gt; fruit[:3]
-'ban'
-&gt;&gt;&gt; fruit[3:]
-'ana'
-&gt;&gt;&gt; fruit[3:3]
-''
-&gt;&gt;&gt; fruit[:]
-'banana'
-</code></pre>
-<h2>Q5 Any TWO</h2>
-<h3>a. Determine various data types available in Python with example.</h3>
-<h4>Numbers</h4>
-<ul>
-<li><code>int</code>, <code>float</code> and complex numbers fall under numbers category.</li>
-<li>Example:<pre><code class="language-python">a = 5
-a = 2.0
-a = 1+2j
-</code></pre>
-</li>
-</ul>
-<h4>String</h4>
-<ul>
-<li>String is sequence of Unicode characters.</li>
-<li>We can use single quotes or double quotes to represent strings.</li>
-<li>Multi-line string can be denoted using triple quotes <code>'''</code> or <code>&quot;&quot;&quot;</code>.</li>
-<li>Example:<pre><code class="language-python">s = &quot;This is string&quot;
-s = '''
-	A multi line string
-'''
-</code></pre>
-</li>
-</ul>
-<h4>List</h4>
-<ul>
-<li>List is an ordered sequence of items.</li>
-<li>It is one of the most used datatype in Python.</li>
-<li>List is very flexible.</li>
-<li>All the items in a list don not need to be the same type.</li>
-<li>Example:<pre><code class="language-python">a = [1, 2.2, 'python']
-</code></pre>
-</li>
-</ul>
-<h4>Tuple</h4>
-<ul>
-<li>Tuple is an ordered sequence of items same as a list.</li>
-<li>The only difference is that tuples are immutable.</li>
-<li>Tuples once created cannot be modified.</li>
-<li>Example:<pre><code class="language-python">t = (5, 'program', 1+3j)
-</code></pre>
-</li>
-</ul>
-<h4>Set</h4>
-<ul>
-<li>Set is an unordered collection of unique items.</li>
-<li>Set is defined by values separated by comma inside braces { }.</li>
-<li>Items in a set are not ordered</li>
-<li>Example:<pre><code class="language-python">a = {5,2,3,1,4}
-</code></pre>
-</li>
-</ul>
-<h4>Dictionary</h4>
-<ul>
-<li>Dictionary is an unordered collection of key-value pairs.</li>
-<li>It is generally used when we have a huge amount of data.</li>
-<li>Dictionaries are defined within braces <code>{}</code>.</li>
-<li>Example:<pre><code class="language-python">d = {1:'value','key':2}
-</code></pre>
-</li>
-</ul>
-<h3>b. Write a python program to calculate factorial of given number using function.</h3>
-<p>Example:</p>
-<pre><code class="language-python">n = int(input(&quot;Enter the number: &quot;))
-f = 1
-
-for i in range(1, n + 1):
-	f = f * 1
-
-print(f)
-</code></pre>
-<p>Output:</p>
-<pre><code>Enter the number: 6
-720
-</code></pre>
-<h3>c. Show the output for the following:</h3>
-<pre><code>&gt;&gt;&gt; a = [1, 2, 3]
-&gt;&gt;&gt; b = [4, 5, 6]
-&gt;&gt;&gt; c = a + b
-&gt;&gt;&gt; print(c)
-[1, 2, 3, 4, 5, 6]
-</code></pre>
-<pre><code>&gt;&gt;&gt; [1, 2, 3] * 3
-[1, 2, 3, 1, 2, 3, 1, 2, 3]
-</code></pre>
-<pre><code>&gt;&gt;&gt; t = ['a', 'b', 'c', 'd', 'e', 'f']
-&gt;&gt;&gt; t[1:3] = ['x', 'y']
-&gt;&gt;&gt; print(t)
-['a', 'x', 'y', 'd', 'e', 'f']
-</code></pre>
-<h2>Q6 Any TWO</h2>
-<h3>a. Describe Set in python with suitable examples.</h3>
-<h4>Creating a set</h4>
-<p>Set can be created using curly braces <code>{}</code> or using <code>set()</code> method.</p>
-<pre><code class="language-python">fruits = {'apple', 'banana', 'cherry'}
-fruits = set(['apple', 'banana', 'cherry'])
-</code></pre>
-<h4>Adding items to the set</h4>
-<p>Item can added using <code>add()</code> method.</p>
-<p>Example:</p>
-<pre><code class="language-python">fruits = {'apple', 'banana', 'cherry'}
-fruits.add('orange')
-print(fruits)
-</code></pre>
-<p>Output:</p>
-<pre><code>{'apple', 'banana', 'cherry', 'orange'}
-</code></pre>
-<h4>Removing items from the set</h4>
-<p>There three methods to remove sets:</p>
-<ul>
-<li><code>discard()</code> - removes given items from set.</li>
-<li><code>remove()</code> - removes given item from set. If item is not avaliable it will
-give error.</li>
-<li><code>pop()</code> - removes list item from the set.</li>
-</ul>
-<p>Example:</p>
-<pre><code class="language-python">fruits = {'apple', 'banana', 'cherry', 'orange'}
-fruits.discard(&quot;apple&quot;)
-fruits.remove(&quot;banana&quot;)
-fruits.pop()
-print(fruits)
-</code></pre>
-<p>Output:</p>
-<pre><code>{'cherry'}
-</code></pre>
-<h4>Comparison of set</h4>
-<ul>
-<li><code>|</code> - shows the union of two set.</li>
-<li><code>&amp;</code> - shows the intersection of two set.</li>
-<li><code>-</code> - shows the difference of two set.</li>
-<li><code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>==</code> - comparison operators can also be use in set.</li>
-</ul>
-<pre><code class="language-python">fruits = {'apple', 'banana', 'cherry'}
-fruits2 = {'orange', 'pineapple', 'apple'}
-
-print(fruits|fruits2)
-print(fruits&amp;fruits2)
-print(fruits-fruits2)
-print(fruits&gt;fruits2)
-print(fruits&lt;fruits2)
-print(fruits==fruits2)
-</code></pre>
-<p>Output:</p>
-<pre><code>{'apple', 'banana', 'cherry', 'orange', 'pineapple', 'apple'}
-{'apple'}
-{'banana', 'cherry', 'orange', 'pineapple'}
-False
-False
-True
-</code></pre>
-<h3>b. Illustrate class inheritance in Python with an example</h3>
-<h4>Simple Inheritance</h4>
-<p>In inheritance, the child class acquires the properties and access all the data
-members and function defined in the parent class.</p>
-<p>Illustration:</p>
-<pre><code> ┏━━━━━━━━━━┓
- ┃Base Class┃
- ┗━━━━━━━━━━┛
-      ⇑
-┏━━━━━━━━━━━━┓
-┃Deived Class┃
-┗━━━━━━━━━━━━┛
-</code></pre>
-<p>Syntax:</p>
-<pre><code class="language-python">class Base:
-	# Body of base class
-class Derived(Base):
-	# Body of derived class
-</code></pre>
-<p>Example:</p>
-<pre><code class="language-python">class Parent:
-	parentname = &quot;&quot;
-	childname = &quot;&quot;
-	def show_parent(self):
-		print(self.parentname)
-
-class Child(Parent):
-	def show_child(self):
-		print(self.childname)
-
-c = Child()
-c.parentname = &quot;Arati&quot;
-c.childname = &quot;Purva&quot;
-c.show_parent()
-c.show_child()
-</code></pre>
-<p>Output:</p>
-<pre><code>Arati
-Purva
-</code></pre>
-<h4>Multiple inheritance</h4>
-<p>Multiple inheritace means that you’re inheriting the property of multiple
-classes into one.</p>
-<p>Illustration:</p>
-<pre><code>┏━━━━━━━━━━━━┓┏━━━━━━━━━━━━┓┏━━━━━━━━━━━━┓
-┃Base Class 1┃┃Base Class 2┃┃Base Class 3┃
-┗━━━━━━━━━━━━┛┗━━━━━━━━━━━━┛┗━━━━━━━━━━━━┛
-     ┃              ┃             ┃
-     ┗━━━━━━━━━━━━━━╋━━━━━━━━━━━━━┛
-              ┏━━━━━━━━━━━━┓
-              ┃Deived Class┃
-              ┗━━━━━━━━━━━━┛
-</code></pre>
-<p>Syntax:</p>
-<pre><code class="language-python">class A:
-	# variable of class A
-class B:
-	# variable of class B
-class C(A, B):
-	# variable of class C
-</code></pre>
-<p>Example:</p>
-<pre><code class="language-python">class Parent1:
-	def echo(self):
-		print(&quot;Parent class 1&quot;)
-
-class Parent2:
-	def echo2(self):
-		print(&quot;Parent class 2&quot;)
-
-class Child(Parent1, Parent2):
-	def show(self):
-		print(&quot;Child class&quot;)
-
-c = Child()
-c.echo()
-c.echo2()
-c.show()
-</code></pre>
-<p>Output:</p>
-<pre><code>Parent class 1
-Parent class 2
-Child class
-</code></pre>
-<h3>c. Design a class Employee with data members: name, department and salary. Create suitable methods for reading and printing employee information</h3>
-<p>Example:</p>
-<pre><code class="language-python">class Employee:
-	name = &quot;&quot;
-	department = &quot;&quot;
-	salary = 0
-
-	def setData(self):
-		self.name = input(&quot;Enter Name: &quot;)
-		self.department = input(&quot;Enter Department: &quot;)
-		self.salary = int(input(&quot;Enter Salary: &quot;))
-
-	def showData(self):
-		print(&quot;Name:&quot;, self.name)
-		print(&quot;Department:&quot;, self.department)
-		print(&quot;Salary:&quot;, self.salary)
-
-e = Employee()
-e.setData()
-e.showData()
-</code></pre>
-<p>Output:</p>
-<pre><code>Enter Name: Jonney
-Enter Department: Testing
-Enter Salary: 20000
-Name: Jonney
-Department: Testing
-Salary: 20000
-</code></pre>]]></description>
-  </item>
-  <item>
-    <title>mgt</title>
-    <link>https://anzenkodo.github.io/notes/study/mgt.html</link>
-    <pubDate>2022-12-28T03:07:18.299Z</pubDate>
-    <description><![CDATA[<h1>MGT</h1>
-<ol>
-<li>Who said “Management is the function of executive leadership anywhere”:</li>
-</ol>
-<ul>
-<li>a) Ralph C. Devis</li>
-</ul>
-<ol start="2">
-<li>Universal, goal oriented, multidimensional, continuous process are some
-characteristics of:</li>
-</ol>
-<ul>
-<li>a) Management</li>
-</ul>
-<ol start="3">
-<li>Optimum utilization of resources can be ensured by:</li>
-</ol>
-<ul>
-<li>c) Management</li>
-</ul>
-<ol start="4">
-<li>Motivating the people and building the team spirit to improve the life
-standard of worker is possible due to:</li>
-</ol>
-<ul>
-<li>b) Management</li>
-</ul>
-<ol start="5">
-<li><strong>Management</strong> is the art of getting work done through people</li>
-<li>Management is a creative and <strong>Continuous</strong> process.</li>
-<li>Management is _______</li>
-</ol>
-<ul>
-<li>
-<ol>
-<li>Art of getting things done through people</li>
-</ol>
-</li>
-<li>
-<ol start="2">
-<li>Art of knowing what you want to do in best and cheaper way.</li>
-</ol>
-<ul>
-<li><strong>a) 1&amp;2</strong></li>
-</ul>
-</li>
-</ul>
-<ol start="8">
-<li><strong>Administration</strong> concerned with decision making, policy making.</li>
-<li>The difference between administration and management is that:</li>
-</ol>
-<ul>
-<li>a) Administration is largely determinative while management is essentially
-executive.</li>
-</ul>
-<ol start="10">
-<li>A tool manufacturing firm want to improve its performance from good to best
-suggest the steps they should follow:</li>
-</ol>
-<ul>
-<li>a) 1. Optimum utilisation of resources and reduce wastage. 2. Building team
-spirit to achieve goal.</li>
-</ul>
-<ol start="11">
-<li></li>
-</ol>]]></description>
-  </item>
-  <item>
-    <title>grammmar</title>
-    <link>https://anzenkodo.github.io/notes/study/grammmar.html</link>
-    <pubDate>2022-12-28T03:07:18.299Z</pubDate>
-    <description><![CDATA[<h1>Grammar in English</h1>
-<h2>Part of Speech</h2>
-<p>Words are divided into different kinds of classes called <strong>Parts of Speech</strong>.
-The parts of speech are eight in number:</p>
-<ol>
-<li><a href="#noun">Noun</a></li>
-<li><a href="#adjective">Adjective</a></li>
-<li><a href="#pronoun">Pronoun</a></li>
-<li><a href="#verb">Verb</a></li>
-<li><a href="#adverb">Adverb</a></li>
-<li><a href="#preposition">Preposition</a></li>
-<li><a href="#conjunction">Conjunction</a></li>
-<li><a href="#interjection">Interjection</a></li>
-<li><a href="#determiners">Determiners</a> (In some modern grammars)</li>
-</ol>
-<h3>Noun</h3>
-<p>A <strong>Noun</strong> is a word used as the name of the person, place, or things as,</p>
-<ol>
-<li>That <em>Mountain</em> look so beautiful from here.</li>
-<li>That <em>tree</em> was so small when we came last year.</li>
-<li>I don’t like <em>rain</em>.</li>
-</ol>
-<p><em><strong>Note</strong></em>
-The word <em>Things</em> includes:</p>
-<ol>
-<li>All the objects that we can see, hear, taste, touch, or smell.</li>
-<li>Something that we can <em>think of</em>, but can’t perceive by the senses.</li>
-</ol>
-<h3>Adjective</h3>
-<p>An <strong>Adjective</strong> is a word used to add something to the meaning of a noun; as,</p>
-<ol>
-<li>He is <em>playing game</em>.</li>
-<li>She look <strong>beautiful</strong> tonight.</li>
-<li>Sun <strong>set early</strong> today.</li>
-</ol>
-<h3>Pronoun</h3>
-<p>A <strong>Pronoun</strong> is a word used instead of noun; as,</p>
-<ol>
-<li>He is was playing football, but <em>he’s</em> broke his leg.</li>
-<li>The books are where you left <em>them</em>.</li>
-</ol>
-<h3>Verb</h3>
-<p>A <strong>Verb</strong> is a word used to express an action or state; as,</p>
-<ol>
-<li>He is <em>sleeping</em>.</li>
-<li>That boy is very <em>playful</em>.</li>
-<li>India is a very <em>diverse</em> country.</li>
-</ol>
-<h3>Adverb</h3>
-<p>An <strong>Adverb</strong> is a word used to <em>add something</em> to the meaning of the verb, an
-adjective, or another adverb; as,</p>
-<ol>
-<li>He is working <em>very</em> hard today.</li>
-<li>That horse is running <em>so</em> fast today.</li>
-<li>New York look <em>so</em> beautiful in the night.</li>
-</ol>
-<h3>Preposition</h3>
-<p>A <strong>Preposition</strong> is a word used with a noun or pronoun to show how the person
-or thing denoted by the noun or pronoun stands in relation to something else; as</p>
-<ol>
-<li><em>Before</em> the dog got the hat.</li>
-<li>The Ice cream is <em>under</em> the fridge.</li>
-<li>He is <em>going</em> to Goa trip.</li>
-</ol>
-<h3>Conjunction</h3>
-<p>A <strong>Conjunction</strong> is a word used to <em>join</em> words or sentences; as,</p>
-<ol>
-<li>He <em>and</em> she are cousins.</li>
-<li>Three <em>and</em> two make five.</li>
-<li>Happy <em>but</em> sad inside.</li>
-</ol>
-<p>Conjunction have <strong>FANBOYS</strong> a which to remember coordinating conjunctions:</p>
-<ul>
-<li><strong>For</strong> - since, because
-<ul>
-<li>I don’t eat buttons <em>for</em> they are not food.</li>
-</ul>
-</li>
-<li><strong>And</strong> - combines things
-<ul>
-<li>The kangaroo robbed the band <em>and</em> torched the saloon.</li>
-</ul>
-</li>
-<li><strong>Nor</strong> - combines untrue things
-<ul>
-<li>She won’t leave her tree <em>nor</em> will she speak with humans.</li>
-</ul>
-</li>
-<li><strong>But</strong> - express exceptions
-<ul>
-<li>We used every building material <em>but</em> chewing gum.</li>
-</ul>
-</li>
-<li><strong>Or</strong> - choosing between options
-<ul>
-<li>Would you rather have pet bear <em>or</em> a pet giraffe?</li>
-</ul>
-</li>
-<li><strong>Yet</strong> - to the contrary
-<ul>
-<li>I want to leave, <em>yet</em> I cannot.</li>
-</ul>
-</li>
-<li><strong>So</strong> - shows consequences
-<ul>
-<li>He is allergic to sheep, <em>so</em> he skipped the wool festival.</li>
-</ul>
-</li>
-</ul>
-<h3>Interjection</h3>
-<p>An <strong>Interjection</strong> is a word which expresses some sudden feeling; as,</p>
-<ol>
-<li><em>Oh my god</em> ! What have you done.</li>
-<li><em>What</em> ! She is dead.</li>
-<li>Hurrah ! We have won the game.</li>
-</ol>
-<h3>Determiners</h3>
-<p><strong>Determiners</strong> are words that comes at the beginning of the noun, introduces
-noun, determines noun that is whether none is specific or general.
-There’s are divided into four types which are:</p>
-<h4>Articles</h4>
-<ul>
-<li><strong>Indefinite articles</strong> - <em>a, an</em> - general version of noun
-<ul>
-<li><em>A</em> book is man’s best friend</li>
-</ul>
-</li>
-<li><strong>Definite articles</strong> - <em>the</em> - specific version of noun
-<ul>
-<li><em>The</em> city Mumbai was called Bombay.</li>
-</ul>
-</li>
-</ul>
-<h4>Demonstratives</h4>
-<blockquote>
-<p><em>this, that, these, those</em></p>
-</blockquote>
-<ul>
-<li><strong>Demonstratives</strong> pronouns are also used as determiners. They are used to
-point something specific within a sentence. They focus attention on the nouns
-that they are replacing.
-<ul>
-<li>I want go to <em>that</em> movie.</li>
-<li>He wanted <em>those</em> boys to go away.</li>
-</ul>
-</li>
-</ul>
-<h4>Possessives</h4>
-<blockquote>
-<p><em>my, your, his, her, your their</em></p>
-</blockquote>
-<ul>
-<li><strong>Possessive</strong> pronouns are words that are used to show ownership.
-<ul>
-<li>Where is <em>your</em> bike?</li>
-<li>It’s <em>our</em> secret recipe.</li>
-</ul>
-</li>
-</ul>
-<h4>Quantifiers</h4>
-<blockquote>
-<p><em>some, few little many, much, any</em></p>
-</blockquote>
-<ul>
-<li>They indicate how much or how little of the noun is being discussed.
-<ul>
-<li>He took <em>some</em> books of mine.</li>
-<li>He has few apples in the refrigerator.</li>
-</ul>
-</li>
-</ul>]]></description>
-  </item>
-  <item>
     <title>Home</title>
     <link>https://anzenkodo.github.io/notes/</link>
-    <pubDate>2022-12-28T03:07:18.295Z</pubDate>
+    <pubDate>2022-12-28T03:33:03.926Z</pubDate>
     <description><![CDATA[<p>This my personal website where I post my notes about thing that I have learn.</p>
 <h2>Features</h2>
 <ul>
@@ -2506,9 +402,157 @@ colspan="3"><strong>30–32</strong> ATP</td> </tr> </tbody> </table>
   <td></td> <td>♖</td> </tr> </tbody> </table>]]></description>
   </item>
   <item>
+    <title>anything you want</title>
+    <link>https://anzenkodo.github.io/notes/books/anything-you-want.html</link>
+    <pubDate>2022-12-28T03:33:03.926Z</pubDate>
+    <description><![CDATA[<h1>Anything You Want</h1>
+<p>Author: Derek Sivers
+Created time: March 21, 2021 12:38 AM
+Page No.: 96
+Progress: ✔️</p>
+<h1>What I am going to to do after reading it?</h1>
+<ul>
+<li>Start teaching someone something and that you business starts.</li>
+<li></li>
+<li></li>
+</ul>
+<h1>Points</h1>
+<ul>
+<li>Clients of Your Business
+<ul>
+<li>The Problem with big clients like Google, Microsoft &amp; Apple.
+<ul>
+<li>You have to custom-tailor your product to please a very few specific people.</li>
+<li>Those people might change their minds or leave the company.</li>
+<li>Whom are you really working for? Are you self-employed or is this client your boss?</li>
+<li>If you do land the big client, that organization will practically own you.</li>
+<li>By trying so hard to please the big client, you will lose wants.</li>
+</ul>
+</li>
+<li>Good thing about small clients.
+<ul>
+<li>You don’t need to change what you do to please one client; you need to please only the majority (or yourself).</li>
+<li>If one client needs to leave, it’s OK; you can sincerely wish her well.</li>
+<li>Because no one client can demand that you do what he says, you are your own boss (as long as you keep your clients happy in general).</li>
+<li>You hear hundreds of people’s opinions and stay in touch with what the majority of your clients want.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>When you say no to most things, you leave room in your life to throw yourself completely into that rare thing that makes happy &amp; fulfilling.</li>
+<li>When you are at something great you don’t feel something big going to happen.</li>
+<li>You can’t prevent bad things from happening. Resist the urge to punish everyone for one person’s mistake.</li>
+<li>Business improvement.
+<ul>
+<li>Customers satisfaction.
+<ul>
+<li>Never forget that absolutely everything you do is for your customers.</li>
+<li>Make every decision even decisions about whether to expand the business, raise money, or promote someone according to what’s best for your customers.</li>
+<li>If you’re ever unsure what to prioritize, just ask your customers the open-ended question, “How can I best help you now?” Then focus on satisfying those requests.</li>
+</ul>
+</li>
+<li>Important things to remember.
+<ul>
+<li>Don’t let other people play with your fear. Like Saying that you need this stuff to protect yourself against lawsuits. They’ll scare you with horrible worst-case scenarios. Those are just sales tactics.</li>
+<li>Have the confidence to know that when your target 1 percent hears you excluding the other 99 percent, the people in that 1 percent will come to you because you’ve shown how much you value them.</li>
+<li>Don’t think you need a huge vision. Just stay focused on helping people today.</li>
+<li>Act like you don’t need the money. Because banks love to lend money to those who don’t need it. Record labels love to sign musicians who don’t need their help. <strong>It’s a strange law of human behavior. It’s pretty universal.</strong></li>
+<li>You don’t need something big to improve the business sometimes it’s little things that’s add up.</li>
+<li>People remember you more for the smile that you put on there face then fancy business stuff.</li>
+<li>Always prepare for 2x because anytime it can come.</li>
+</ul>
+</li>
+<li>Self-Employed VS Business Owner
+<ul>
+<li>Being self-employed feels like freedom until you realize that if you take time off, your business crumbles.</li>
+<li>To be a true business owner, make it so that you could leave for a year, and when you came back, your business would be doing better than when you left.</li>
+</ul>
+</li>
+<li>Solve problems
+<ul>
+<li>Before trusting someone verify that they can do the job.</li>
+<li>Why businesses keep problems around? (Like- Nord VPN)
+→A business is started to solve a problem. But if the problem were truly solved, that business would no longer be needed! So the business accidentally or unconsciously keeps the problem around so that they can keep solving it for a fee.</li>
+<li>If the company has a problem with your decisions then explain your thought process and philosophy.</li>
+<li>If you are an owner of the company you can be anything. And if don’t feel like doing something then give the role to someone who loves doing that role.</li>
+<li>Don’t freedom but don’t give too much that they can overturn you.</li>
+</ul>
+</li>
+<li>Start now. No funding needed.</li>
+</ul>
+</li>
+<li>Personal improvement.
+<ul>
+<li>Don’t follow other people path without making your own path.</li>
+<li>Don’t spend decades in pursuit of something that someone convinced them you should want.</li>
+<li>If present is worse than past, then move back and restart improving where things are good.</li>
+<li>Success comes from persistently improving and inventing, not from persistently doing what’s not working.</li>
+<li>Doing work yourself is inefficient but it is what make it so joyful in the first place.</li>
+</ul>
+</li>
+<li>Derek Sivers philosophies of Business.
+<ul>
+<li>Business is not about money. It’s about making dreams come true for others and for yourself.</li>
+<li>Making a company is a great way to improve the world while improving yourself.</li>
+<li>When you make a company, you make a utopia. It’s where you design your perfect world.</li>
+<li>Never do anything just for the money.</li>
+<li>Don’t pursue business just for your own gain. Only answer the calls for help.</li>
+<li>Success comes from persistently improving and inventing, not from persistently promoting what’s not working.</li>
+<li>Your business plan is moot. You don’t know what people really want until you start doing it.</li>
+<li>Starting with no money is an advantage. You don’t need money to start helping people.</li>
+<li>You can’t please everyone, so proudly exclude people.</li>
+<li>Make yourself unnecessary to the running of your business.</li>
+<li>The real point of doing anything is to be happy, so do only what makes you happy.</li>
+</ul>
+</li>
+</ul>
+<h1>Meaning</h1>
+<ul>
+<li><strong>Abdicate</strong> - Surrender or relinquish power or responsibility.</li>
+</ul>
+<h1>Stories</h1>
+<hr>
+<blockquote>
+<p>Your CD has been gently taken from our CD Baby shelves with sterilized contamination-free gloves and placed onto a satin pillow.</p>
+</blockquote>
+<blockquote>
+<p>A team of 50 employees inspected your CD and polished it to make sure it was in the best possible condition before mailing.</p>
+</blockquote>
+<blockquote>
+<p>We all had a wonderful celebration afterward and the whole party marched down the 6th. I hope you had a wonderful time shopping at CD Baby. We sure did.</p>
+</blockquote>
+<blockquote>
+<p>Your picture is on our wall as “Customer of the Year.” We’re all exhausted but can’t wait for you to come back to <a href="http://cdbaby.com/">CDBABY.COM</a>!! That one silly e-mail, sent out with every order, has been so loved</p>
+</blockquote>
+<blockquote>
+<p>Our packing specialist from Japan lit a candle and a hush fell over the crowd as he put your CD into the finest gold-lined box that money can buy.</p>
+</blockquote>
+<p>That one silly e-mail, sent out with every order, has been so loved that if you search Google for “private CD Baby jet,” you’ll get almost twenty thousand results. Each one is somebody who got the email and loved it enough to post it on his website and tell all his friends. That one goofy e-mail created thousands of new customers. When you’re thinking of how to make your business</p>
+<hr>
+<p>We answered our phone within two rings, always 7am to 10pm, seven days a week. Phones were everywhere, so even if the customer service rep was busy, someone in the warehouse could pick up. All anyone had to do was say, “CD Baby!” Customers loved this! Someone actually picking up the phone at a company is so rare that musicians would often tell me later at conferences that it was the main reason they decided to go with CD Baby—they could always talk to a weren’t completely swamped, they should take a minute and get to know the caller a bit. Ask about her music. Ask how it’s going. Yes, it would lead to twenty-minute conversations sometimes, but those people became lifelong fans.</p>
+<hr>
+<h1>Resources</h1>
+<ul>
+<li></li>
+</ul>
+<h1>Quote</h1>
+<blockquote>
+<p>I’m a student, not a guru.</p>
+</blockquote>
+<p>— Derek Sivers</p>
+<blockquote>
+<p>If it’s not a hit, switch</p>
+</blockquote>
+<p>— Derek Sivers</p>
+<blockquote>
+<p>“No business plan survives first contact with customers.”</p>
+</blockquote>
+<p>— Steve Blank:</p>]]></description>
+  </item>
+  <item>
     <title>your music and people</title>
     <link>https://anzenkodo.github.io/notes/books/your-music-and-people.html</link>
-    <pubDate>2022-12-28T03:07:18.295Z</pubDate>
+    <pubDate>2022-12-28T03:33:03.926Z</pubDate>
     <description><![CDATA[<h1>Your Music and People</h1>
 <p>Author: Derek Sivers Created time: April 13, 2021 9:01 PM Page No.: 146
 Progress: ✔️</p>
@@ -2684,9 +728,562 @@ things how they should be.</p>
 <p>— Derek Sivers</p>]]></description>
   </item>
   <item>
+    <title>show your work</title>
+    <link>https://anzenkodo.github.io/notes/books/show-your-work.html</link>
+    <pubDate>2022-12-28T03:33:03.926Z</pubDate>
+    <description><![CDATA[<h1>Show your work</h1>
+<p>Author: Austin Kieon Created time: March 19, 2021 9:03 PM Page No.: 224
+Progress: ✔️</p>
+<h1>What I am going to do after reading it?</h1>
+<ul>
+<li>Improve my social media account.
+<ul>
+<li>Start posting more then three content on twitter.</li>
+<li>Try instagram reels.</li>
+</ul>
+</li>
+<li>Capture more my life in camera
+<ul>
+<li>Organize in Google Photos or Instagram.</li>
+<li>Put camera app in home screen.</li>
+</ul>
+</li>
+<li>Use Google Keep to capture my voice recording.</li>
+</ul>
+<h1>Points</h1>
+<ul>
+<li>About Amateurs
+<ul>
+<li>Why being amateurs are better than Professionals?
+<ul>
+<li>They have little to lose</li>
+<li>Amateurs are willing to try anything.</li>
+<li>They can share share anything without worry looking good.</li>
+<li>Amateurs know that contributing something is better than contributing
+nothing.</li>
+</ul>
+</li>
+<li>How to stay amateurs?
+<ul>
+<li>For professionals, the best way to flourish is to retain an amateur’s
+spirit and embrace uncertainty and the unknown.</li>
+<li>I you feel like being to comfortable then try something new.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Social Media
+<ul>
+<li>
+<p>Own Website &amp; Blog with own domain name is more important than Social Media.</p>
+</li>
+<li>
+<p>How to start social media?</p>
+<ul>
+<li>Pay attention to what others are sharing, and then start taking note of
+what they’re not sharing.</li>
+<li>Be on the lookout for voids that you can fill with your own efforts, no
+matter how bad they are at first.</li>
+<li>Don’t worry, for now, about how you’ll make money or a career off it.</li>
+<li>Forget about being an expert or a professional.</li>
+<li>Share what you love.</li>
+</ul>
+</li>
+<li>
+<p>What to share in social media?</p>
+<ul>
+<li>Sort your content with only so meaningful bits thing left behind.</li>
+<li>Make you content into small bits</li>
+<li>Share you small bits in different pieces.</li>
+<li>Share your influences and what’s inspiring you.</li>
+</ul>
+</li>
+<li>
+<p>How to share about projects?</p>
+<ul>
+<li>If you’re in the middle of executing a project, write about your methods
+or share works in progress.</li>
+<li>If you’ve just completed a project, show the final product.</li>
+<li>Share scraps from the cutting-room floor, or write about what you learned.</li>
+<li>If you have lots of projects out into the world, you can report on how
+they’re doing you can tell stories about how people are interacting with
+your work.</li>
+</ul>
+</li>
+<li>
+<p>Crediting</p>
+<ul>
+<li>Attribution is all about providing context for what you’re sharing.
+<ul>
+<li>What the work is?</li>
+<li>Who made it?</li>
+<li>How they made it?</li>
+<li>When and where it was made?</li>
+<li>Why you’re sharing it?</li>
+<li>Why people should care about it?</li>
+<li>Where people can see some more work like it?</li>
+</ul>
+</li>
+<li>Give proper credit to inspiration or creater of content you make.</li>
+<li>If you don’t know who made then don’t share it.</li>
+<li>You give credit because people are lazy they don’t search in google to
+find the credated artist.</li>
+</ul>
+</li>
+<li>
+<p>How to make or find content for social media?</p>
+<p>This isn’t about making art, it’s about simply keeping track of what’s going
+on</p>
+<ul>
+<li>Start a work journal.</li>
+<li>Take a lot of photographs of your work at different stages in your
+process.</li>
+<li>Shoot video of you working.</li>
+<li>If you can’t find a good use for a platform, feel free to abandon it.</li>
+<li>Set timer for Times you are going to use social media.</li>
+<li>Find content in other people abandoned work.</li>
+</ul>
+</li>
+<li>
+<p>What to put on social media?</p>
+<ul>
+<li>So don’t post things online that you’re not ready for everyone in the
+world to see.</li>
+<li>You need feedback but don’t share absolutely everything.</li>
+<li>Only put something online if helpful or entertaining.</li>
+<li>If you don’t know to put something online or not then put it for only 24 H
+and see the response.</li>
+</ul>
+</li>
+<li>
+<p>Flow to Stock</p>
+<ul>
+<li>First put small bits of content (like: tweet, photos, short video).</li>
+<li>Then all bits of content in large content (like: blog, full length video,
+podcast).</li>
+<li>Large content into evergreen content (like: books).</li>
+</ul>
+</li>
+<li>
+<p>Format of content</p>
+<ul>
+<li>Speak to them directly in plain language.</li>
+<li>Be brief. Learn to speak. Learn to write.</li>
+<li>Use spell-check</li>
+<li>Use less 2 hashtag in tweets.</li>
+</ul>
+</li>
+<li>
+<p>How to get friends?</p>
+<ul>
+<li>Email is most important form of friends collecting.
+<ul>
+<li>Start Newsletter.</li>
+<li>Ask people to ask something to you through email.</li>
+<li>Never ever add someone’s email address to your mailing list without her
+permission.</li>
+<li>Don’t spam people.</li>
+</ul>
+</li>
+<li>Engage with others (like: tweet, comment, share, like).</li>
+<li>Don’t accept anything in return.</li>
+<li>Anyone say something listen first full without thinking to what to say
+next.</li>
+<li>Don’t worry about followers, like, viewers.</li>
+<li>Get good at something rather than getting connection.</li>
+<li>Only make and post stuff that you love to make &amp; share.</li>
+<li>Don’t be creepy. Don’t be a jerk. Don’t waste people’s time. Don’t ask too
+much.</li>
+<li>Don’t ask for anything in return.</li>
+</ul>
+</li>
+<li>
+<p>How to make money?</p>
+<ul>
+<li>Put free stuff first.</li>
+<li>If people like it start putting premium content.</li>
+<li>Ask for Donation.</li>
+<li>For start-up project Kickstarter and Indiegogo.</li>
+<li>Sell your products.</li>
+<li>Paid content and newsletter.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>People
+<ul>
+<li>Meet online friends in real life also.</li>
+<li>Don’t waste time with people with you feel low energy.</li>
+<li>Handle other people success.
+<ul>
+<li>Don’t be one of those horrible fans who stops listening to your favorite
+band just because they have a hit single.</li>
+<li>Don’t write off your friends because they’ve had a little bit of success.</li>
+<li>Don’t be jealous when the people you like do well celebrate their victory
+as if it’s your own.</li>
+</ul>
+</li>
+<li>Best Friends
+<ul>
+<li>The people who share your obsessions.</li>
+<li>The people who have same objective as you.</li>
+<li>The people with whom you share a mutual respect.</li>
+<li>Praise them, engage with them always.</li>
+<li>Invite them to collaborate.</li>
+<li>Show them work before you show anybody else.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1>Meaning</h1>
+<p><strong>Human spam -</strong> They just post content but don’t engage with others people
+content.</p>
+<p><strong>Hoarder -</strong> They don’t post many thing just engage for something in return.</p>
+<p><strong>Contributor -</strong> They engage and put good stuff also.</p>
+<p><strong>Troll -</strong> Who isn’t interested in improving your work, only provoking you with
+hateful, aggressive, or upsetting talk.</p>
+<h1>Stories</h1>
+<p>John T. Unger tells this terrific story from his days as a street poet. He would
+do a poetry reading and afterward some guy would come up to him and say, “Your
+poem changed my life, man!” And John would say, “Oh, thanks. Want to buy a book?
+It’s five dollars.” And the guy would take the book, hand it back to John, and
+say, “Nah, that’s okay.” To which John would respond, “Geez, how much is your
+life worth?”</p>
+<hr>
+<p>In 2013, the Internet fell in love with astronaut Chris Hadfield, commander of
+the International Space Station. Three years earlier, Hadfield and his family
+were sitting around the dinner table, trying to figure out ways to generate
+interest for the Canadian Space Agency, which, like many space programs, faced
+major budget cuts and needed more public support. “Dad wanted a way to help
+people connect with the real side of what an astronaut’s life is,” said
+Hadfield’s son Evan. “Not just the glamour and science, but also the day-to-day
+activities.”</p>
+<p>Commander Hadfield wanted to show his work.</p>
+<p>Things fell into place when his sons explained social media to him and got him
+set up on Twitter and other social networks. During his next five-month mission,
+while performing all his regular astronautical duties, he tweeted, answered
+questions from his followers, posted pictures he’d taken of Earth, recorded
+music, and filmed YouTube videos of himself clipping his nails, brushing his
+teeth, sleeping, and even performing maintenance on the space station. Millions
+of people ate it all up, including my agent, Ted, who tweeted, “Wouldn’t
+normally watch live video of a couple of guys doing plumbing repair, but IT’S IN
+SPACE!”</p>
+<hr>
+<p>When George Lucas was a teenager, he almost died in a car accident. He decided
+“every day now is an extra day,” dedicated himself to film, and went on to
+direct Star Wars . Wayne Coyne, lead singer of The Flaming Lips, was 16 when he
+was held up while working at a Long John Silver’s. “I realized I was going to
+die,” he says. “And when that gets into your mind . . . it utterly changed me .
+. . I thought, <em>I’m not going to sit here and wait for things to happen, I’m
+going to make them happen, and if people think I’m an idiot I don’t care.</em>”</p>
+<p>Tim Kreider, in his book We Learn Nothing , says that getting stabbed in the
+throat was the best thing to ever happen to him. For a whole year, he was happy
+and life was good. “You’d like to think that nearly getting killed would be a
+permanently life-altering experience,” Kreider writes, but “the illumination
+didn’t last.” Eventually, he was back to “the busy work of living.” The writer
+George Saunders, speaking of his own near-death experience, said, “For three or
+four days after that, it was the most beautiful world. To have gotten back in
+it, you know? And I thought, if you could walk around like that all the time, to
+really have that</p>
+<hr>
+<p>When the late film critic Roger Ebert went through several intense surgeries to
+treat his cancer, he lost the ability to speak. He lost his voice either
+scribble responses on a pad of paper, or type on his Mac and have the awkward
+computer voice read it out loud through his laptop speakers.</p>
+<p>Cut off from everyday conversation, he poured himself into tweeting, posting to
+Facebook, and blogging at <a href="http://rogerebert.com/">rogerebert.com</a> . He ripped
+out posts at a breakneck speed, writing thousands and thousands of words about
+everything he could think of—his boyhood in Urbana, Illinois, his love for Steak
+’n Shake, his conversations with famous movie actors, his thoughts on his
+inevitable death. Hundreds and hundreds of people would respond to his posts,
+and he would respond back. Blogging became his primary way of communicating with
+the world. “On the web, my real voice finds expression,” he wrote.</p>
+<hr>
+<h1>Resources</h1>
+<ul>
+<li>Steal Like an Artist - Austin Kleon</li>
+<li><a href="https://youtu.be/oww7oB9rjgw">Steal Like An Artist: Austin Kleon at TEDxKC</a></li>
+<li><a href="https://youtu.be/WMc3yh4Buvk">Keep Going with Austin Kleon and Debbie Millman | SXSW 2019</a></li>
+<li>Brian Eno, A Year With Swollen Appendices</li>
+<li>Steven Johnson, Where Good Ideas Come From</li>
+<li>David Byrne, How Music Works</li>
+<li>Mike Monteiro, Design Is a Job</li>
+<li>Kio Stark, Don’t Go Back to School</li>
+<li>Ian Svenonius, Supernatural Strategies for Making a Rock ‘n’ Roll</li>
+<li>Sidney Lumet, Making Movies</li>
+<li>P.T. Barnum, The Art of Money Getting</li>
+<li>A Life of Picasso - John Richardson</li>
+</ul>
+<h1>Quote</h1>
+<blockquote>
+<p>“Connections don’t mean shit, I’ve never had any connections that weren’t a
+natural outgrowth of doing things I was doing anyway.”</p>
+</blockquote>
+<ul>
+<li>Steve Albini</li>
+</ul>
+<blockquote>
+<p>“Books are made out of books.”</p>
+</blockquote>
+<ul>
+<li>Cormac McCarthy</li>
+</ul>
+<blockquote>
+<p>“Anyone who isn’t embarrassed of who they were last year probably isn’t
+learning enough,”</p>
+</blockquote>
+<ul>
+<li>Alain de Botton.</li>
+</ul>
+<blockquote>
+<p>“Whenever Picasso learned how to do something, he abandoned it.”</p>
+</blockquote>
+<ul>
+<li>—Milton Glaser</li>
+</ul>
+<blockquote>
+<p>“We work because it’s a chain reaction, each subject leads to the next.”</p>
+</blockquote>
+<ul>
+<li>—Charles Eames</li>
+</ul>
+<blockquote>
+<p>“Work is never finished, only abandoned.”</p>
+</blockquote>
+<ul>
+<li>—Paul Valéry</li>
+</ul>
+<blockquote>
+<p>“We don’t make movies to make money, we make money to make more movies.”</p>
+</blockquote>
+<ul>
+<li>—Walt Disney</li>
+</ul>
+<blockquote>
+<p>“The trick is not caring what EVERYBODY thinks of you and just caring about
+what the RIGHT people think of you.”</p>
+</blockquote>
+<ul>
+<li>—Brian Michael Bendis</li>
+</ul>
+<blockquote>
+<p>“I ain’t going to give up. Every time you think I’m one place, I’m going to
+show up someplace else. I come pre-hated. Take your best shot.”</p>
+</blockquote>
+<ul>
+<li>—Cyndi Lauper</li>
+</ul>
+<blockquote>
+<p>“You and I will be around a lot longer than Twitter, and nothing substitutes
+face to face.”</p>
+</blockquote>
+<ul>
+<li>—Rob Delaney</li>
+</ul>
+<blockquote>
+<p>“It’s all about paying attention. Attention is vitality. It connects you with
+others.”</p>
+</blockquote>
+<ul>
+<li>Susan Sontag</li>
+</ul>
+<blockquote>
+<p>“Part of the act of creating is in discovering your own kind. They are
+everywhere. But don’t look for them in the wrong places.”</p>
+</blockquote>
+<ul>
+<li>—Henry Miller</li>
+</ul>
+<blockquote>
+<p>“Whatever excites you, go do it. Whatever drains you, stop doing it.”</p>
+</blockquote>
+<ul>
+<li>—Derek Sivers</li>
+</ul>
+<blockquote>
+<p>“When people realize they’re being listened to, they tell you things.”</p>
+</blockquote>
+<ul>
+<li>—Richard Ford</li>
+</ul>
+<blockquote>
+<p>“Whatever we say, we’re always talking about ourselves.”</p>
+</blockquote>
+<ul>
+<li>—Alison Bechdel</li>
+</ul>
+<blockquote>
+<p>“You got to make your case.”</p>
+</blockquote>
+<ul>
+<li>—Kanye West</li>
+</ul>
+<blockquote>
+<p>“In the first act, you get your hero up a tree. The second act, you throw
+rocks at him. For the third act, you let him down.”</p>
+</blockquote>
+<ul>
+<li>—George Abbott</li>
+</ul>
+<blockquote>
+<p>“‘The cat sat on a mat’ is not a story. ‘The cat sat on the dog’s mat’ is a
+story.”</p>
+</blockquote>
+<ul>
+<li>—John le Carré</li>
+</ul>
+<blockquote>
+<p>Work doesn’t speak for itself .</p>
+</blockquote>
+<ul>
+<li>Austin Kleon</li>
+</ul>
+<blockquote>
+<p>“To fake a photograph, all you have to do is change the caption. To fake a
+painting, change the attribution.”</p>
+</blockquote>
+<ul>
+<li>Errol Morris</li>
+</ul>
+<blockquote>
+<p>“Do what you do best and link to the rest.”</p>
+</blockquote>
+<ul>
+<li>—Jeff Jarvis</li>
+</ul>
+<blockquote>
+<p>“I don’t believe in guilty pleasures. If you f—ing like something, like it.”</p>
+</blockquote>
+<ul>
+<li>—Dave Grohl</li>
+</ul>
+<blockquote>
+<p>“You’re only as good as your record collection.”</p>
+</blockquote>
+<ul>
+<li>—DJ Spooky</li>
+</ul>
+<blockquote>
+<p>“All of us who do creative work, we get into it because we have good taste,
+But there is this gap. For the first couple years you make stuff, it’s just
+not that good. It’s trying to be good, it has potential, but it’s not. But
+your taste, the thing that got you into the game, is still killer.”</p>
+</blockquote>
+<ul>
+<li>Ira Glass.</li>
+</ul>
+<blockquote>
+<p>“I’m basically a curator, Making books has always felt very connected to my
+bookselling experience, that of wanting to draw people’s attention to things
+that I liked, to shape things that I liked into new shapes.”</p>
+</blockquote>
+<ul>
+<li>Jonathan Lethem</li>
+</ul>
+<blockquote>
+<p>“Carving out a space for yourself online, somewhere where you can express
+yourself and share your work, is still one of the best possible investments
+you can make with your time.”</p>
+</blockquote>
+<ul>
+<li>—Andy Baio</li>
+</ul>
+<blockquote>
+<p>“If you work on something a little bit every day, you end up with something
+that is massive.”</p>
+</blockquote>
+<ul>
+<li>—Kenneth Goldsmith</li>
+</ul>
+<blockquote>
+<p>“Post as though everyone who can read it has the power to fire you.”</p>
+</blockquote>
+<ul>
+<li>Lauren Cerand</li>
+</ul>
+<blockquote>
+<p>“The Internet is a copy machine, Once anything that can be copied is brought
+into contact with the Internet, it will be copied, and those copies never
+leave.”</p>
+</blockquote>
+<ul>
+<li>Kevin Kelly</li>
+</ul>
+<blockquote>
+<p>“Make no mistake: This is not your diary. You are not letting it all hang out.
+You are picking and choosing every single word.”</p>
+</blockquote>
+<ul>
+<li>—Dani Shapiro</li>
+</ul>
+<blockquote>
+<p>“One day at a time. It sounds so simple. It actually is simple but it isn’t
+easy: It requires incredible support and fastidious structuring.”</p>
+</blockquote>
+<ul>
+<li>—Russell Brand</li>
+</ul>
+<blockquote>
+<p>Overnight success is a myth. Dig into almost every overnight success story and
+you’ll find about a decade’s worth of hard work and perseverance.</p>
+</blockquote>
+<ul>
+<li>Austin Kleon</li>
+</ul>
+<blockquote>
+<p>“Put yourself, and your work, out there every day, and you’ll start meeting
+some amazing people.”</p>
+</blockquote>
+<ul>
+<li>—Bobby Solomon</li>
+</ul>
+<blockquote>
+<p>“You have to make stuff, No one is going to give a damn about your résumé;
+they want to see what you have made with your own little fingers.”</p>
+</blockquote>
+<p>David Carr</p>
+<blockquote>
+<p>“In order for connection to happen, we have to allow ourselves to be
+seen—really seen.”</p>
+</blockquote>
+<p>Brené Brown</p>
+<blockquote>
+<p>“A lot of people are so used to just seeing the outcome of work. They never
+see the side of the work you go through to produce the outcome.”</p>
+</blockquote>
+<p>—Michael Jackson</p>
+<blockquote>
+<p>The Thing About Life Is That One Day You’ll Be Dead</p>
+</blockquote>
+<p>David Shields</p>
+<blockquote>
+<p>“Find your voice, shout it from the rooftops, and keep doing it until the
+people that are looking for you find you.”</p>
+</blockquote>
+<p>— Dan Harmon</p>
+<blockquote>
+<p>“Creativity is not a talent. It is a way of operating.”</p>
+</blockquote>
+<p>—John Cleese</p>
+<blockquote>
+<p>“Give what you have. To someone, it may be better than you dare to think.”</p>
+</blockquote>
+<p>—Henry Wadsworth Longfellow</p>
+<blockquote>
+<p>“That I don’t know what I’m doing.”</p>
+</blockquote>
+<p>Thom Yorke</p>
+<blockquote>
+<p>“That’s all any of us are: amateurs. We don’t live long enough to be anything
+else.”</p>
+</blockquote>
+<p>—Charlie Chaplin</p>]]></description>
+  </item>
+  <item>
     <title>personal values</title>
     <link>https://anzenkodo.github.io/notes/books/personal-values.html</link>
-    <pubDate>2022-12-28T03:07:18.295Z</pubDate>
+    <pubDate>2022-12-28T03:33:03.926Z</pubDate>
     <description><![CDATA[<h1>Personal Values</h1>
 <p>Author: Mark Manson Created time: March 12, 2021 8:36 PM Page No.: 50 Progress:
 ✔️</p>
@@ -2831,7 +1428,7 @@ never love at all.</li>
   <item>
     <title>your first year in code</title>
     <link>https://anzenkodo.github.io/notes/books/your-first-year-in-code.html</link>
-    <pubDate>2022-12-28T03:07:18.295Z</pubDate>
+    <pubDate>2022-12-28T03:33:03.926Z</pubDate>
     <description><![CDATA[<h1>Your First Year in Code</h1>
 <p>Author: Isaac Lyman Created time: March 12, 2021 8:36 PM Page No.: 184 Progress:
 ✔️</p>
@@ -2932,6 +1529,535 @@ people won’t want to say bad things about.</li>
 <li>How does it fit with other topics or technologies?</li>
 <li>What’s the problem that it’s trying to solve?</li>
 </ul>]]></description>
+  </item>
+  <item>
+    <title>range</title>
+    <link>https://anzenkodo.github.io/notes/books/range.html</link>
+    <pubDate>2022-12-28T03:33:03.926Z</pubDate>
+    <description><![CDATA[<h1>Range</h1>
+<p>Author: David Epstein
+Created time: March 13, 2021 6:02 AM
+Page No.: 354
+Progress: ✔️</p>
+<h1>Points</h1>
+<ul>
+<li>Eventual elites typically devote less time early on to deliberate practice in the activity in which they will eventually become experts.</li>
+<li>They play a variety of sports, usually in an unstructured or lightly structured environment; they gain a range of physical proficiencies from which they can draw; they learn about their own abilities and proclivities.</li>
+<li>They learn about their own abilities and proclivities; and only later do they focus in and ramp up technical practice in one area.</li>
+<li>The more contexts in which something is learned, the more the learner creates abstract models, and the less they rely on any particular example.</li>
+<li>Learners become better at applying their knowledge to a situation they’ve never seen before, which is the essence of creativity.</li>
+<li><strong>Learn with Mix things</strong> not a Single thing.</li>
+<li>The more likely an expert was to have his or her predictions featured on op-ed pages and television, <strong>the more likely they were always wrong.</strong></li>
+<li>The best forecasters view their own ideas as <strong>hypotheses in need of testing.</strong>
+<ul>
+<li>Their aim is not to convince their teammates of their own expertise, <strong>but to encourage their teammates to help them falsify their own notions.</strong></li>
+</ul>
+</li>
+<li>Crew leadership not as decision making, but as sensemaking.
+<ul>
+<li>If I make a decision, it is a possession, I take pride in it, I tend to defend it and not listen to those who question it.</li>
+<li>If I make sense, then this is more dynamic and I listen and I can change it.</li>
+</ul>
+</li>
+</ul>
+<h1>Storys</h1>
+<p>Dark horses were on the hunt for match quality. “They never look around and say, ‘Oh, I’m going to fall behind, these people started earlier and have more than me at a younger age,’”</p>
+<p>Ogas told me.</p>
+<p>“They focused on, ‘Here’s who I am at the moment, here are my motivations, here’s what I’ve found I like to do, here’s what I’d like to learn, and here are the opportunities. Which of these is the best match right now? And maybe a year from now I’ll switch because I’ll find something better.’”</p>
+<hr>
+<h1>Quotes</h1>
+<blockquote>
+<p>Learning stuff was less important than learning about oneself. — David Epstein</p>
+</blockquote>]]></description>
+  </item>
+  <item>
+    <title>enlightenment now</title>
+    <link>https://anzenkodo.github.io/notes/books/enlightenment-now.html</link>
+    <pubDate>2022-12-28T03:33:03.926Z</pubDate>
+    <description><![CDATA[<h1>Enlightenment Now</h1>
+<p>Author: Steven Pinker Created time: August 20, 2021 11:29 AM Page No.: 576
+Progress: ✔️</p>
+<p>Description</p>
+<h1>What I am going to to do after reading it?</h1>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<h1>Points</h1>
+<ul>
+<li>Education
+<ul>
+<li>More than 80 percent of the world was unschooled; by 1900.</li>
+<li>83 percent of the world is literate.</li>
+<li>Middle Eastern and North African countries, more than three-quarters of the
+people over sixty-five are illiterate, whereas the rate for those in their
+teens and twenties is in the single digits.</li>
+<li>According to current projections, by the middle of this century, only five
+countries will have more than a fifth of their population uneducated, and by
+the end of the century the worldwide proportion will fall to zero.</li>
+<li>Less-educated people reported having more leisure.</li>
+<li>Early in the 19th century, 12 percent of the world could read and write;
+today 83 percent can.</li>
+</ul>
+</li>
+<li>Politics
+<ul>
+<li>Engagement with politics is like sports fandom in another way: people seek
+and consume news to enhance the fan experience, not to make their opinions
+more accurate.</li>
+<li>Liberals are more hostile and aggressive.</li>
+<li>Conservatives are indeed more prejudiced against African Americans, but
+liberals turn out to be more prejudiced against religious Christians.</li>
+<li>Conservatives are indeed more biased toward allowing Christian prayers in
+schools, but liberals are more biased toward allowing Muslim prayers in
+schools.</li>
+<li>But just when we need this disinterested forum the most, academia has become
+more politicized as well—not more polarized, but more left-wing. Colleges
+have always been more liberal than the American population.</li>
+<li>Many political commentators can recall a failure of peacekeeping forces
+(such as in Bosnia in 1995) and conclude that they are a waste of money and
+manpower. But when a peacekeeping force is successful, nothing photogenic
+happens, and it fails to make the news.</li>
+<li>Three-quarters of the nonviolent resistance movements succeeded, compared
+with only a third of the violent ones. Gandhi and King were right, but
+without data, you would never know it.</li>
+</ul>
+</li>
+<li>Improvement of world
+<ul>
+<li>Life expectancy across the world has risen from 30 to 71, and in the more
+fortunate countries to 81.</li>
+<li>Rest in 2007 had reached the level of the West in 1950.</li>
+<li>Netherlands, Scandinavia, and the United Kingdom, are the world’s most
+liberal, followed by the United States and other wealthy English-speaking
+countries, then Catholic and Southern Europe, then the former Communist
+countries of central Europe.</li>
+<li>People recognize that democracies are relatively nice places to live, the
+idea of democracy can become contagious and the number can increase over
+time.</li>
+<li>Life has been getting safer in every way. Over the course of the 20th
+century, Americans became 96 percent less likely to be killed in a car
+accident, 88 percent less likely to be mowed down on the sidewalk, 99
+percent less likely to die in a plane crash, 59 percent less likely to fall
+to their deaths, 92 percent less likely to die by fire, 90 percent less
+likely to drown, 92 percent less likely to be asphyxiated, and 95 percent
+less likely to be killed on the job.</li>
+<li>“drugs are symptomatic of the rising value affluent societies place on human
+life. . . . Health research is displacing R&amp;D that could have gone toward
+more mundane consumer products. Indeed, . . . the rising value of human life
+virtually dictates slower growth in regular consumer goods and services—and
+they constitute the bulk of measured GDP.” A natural interpretation is that
+this tradeoff is evidence for the acceleration of progress, not the
+stagnation of progress.</li>
+<li>Muslims in the Middle East, the world’s most conservative culture, have
+values today that are comparable to those of young people in Western Europe.</li>
+</ul>
+</li>
+<li>Improvement in Lifestyle
+<ul>
+<li>Time spent on laundry alone fell from 11.5 hours a week in 1920 to 1.5 in
+2014.14 For returning “washday” to our lives, Hans Rosling suggests, the
+washing machine deserves to be called the greatest invention of the
+Industrial Revolution.</li>
+<li>Fact, single and working mothers today spend more time with their children
+than stay-at-home married mothers did in 1965.</li>
+<li>Senior citizens today are richer than people of working age: the poverty
+rate for people over 65 plunged from 35 percent in 1960 to less than 10
+percent in 2011, well below the national rate of 15 percent.</li>
+<li>Millennials seem to be in pretty good shape, happier and mentally healthier
+than their helicoptering parents.</li>
+</ul>
+</li>
+<li>Human nature
+<ul>
+<li>Those with happy but meaningless lives are takers and beneficiaries; those
+with meaningful but unhappy lives are givers and benefactors.</li>
+<li>Time spent with friends makes a life happier; time spent with loved ones
+makes it more meaningful.</li>
+<li>People who feel they lead meaningful lives are more susceptible to stress,
+struggle, and worry.</li>
+<li>Meaning, in contrast, registers the novel and expansive goals that are
+opened up for us as social, brainy, and talkative occupants of the uniquely
+human cognitive niche. We consider goals that are rooted in the distant past
+and stretch far into the future, that affect people beyond our circle of
+acquaintance, and that must be ratified by our fellows, based on our ability
+to persuade them of their worth and on our reputation for benevolence and
+efficacy.</li>
+<li>People may be likelier to acknowledge a problem when they have reason to
+think it is solvable than when they are terrified into numbness and
+helplessness.</li>
+<li>Governments pay parents to send their children to school, child labor
+plummets, which suggests that poor parents send their children to work out
+of desperation rather than greed.</li>
+<li>People saw more infractions by the other team.</li>
+<li>Exchange can make an entire society not just richer but nicer, because in an
+effective market it is cheaper to buy things than to steal them.</li>
+</ul>
+</li>
+<li>Biases
+<ul>
+<li>People understand concepts only when they are forced to think them through,
+to discuss them with others, and to use them to solve problems.</li>
+<li>People are less biased when they have skin in the game and have to live with
+the consequences of their opinions.</li>
+<li>People are quite capable of reasoning in an unbiased manner, at least when
+they are evaluating arguments rather than producing them, and when they are
+after the truth rather than trying to win a debate.</li>
+<li>To make public discourse more rational, issues should be depoliticized as
+much as is feasible.</li>
+<li>When people hear about a new policy, such as welfare reform, they will like
+it if it is proposed by their own party and hate it if it is proposed by the
+other—all the while convinced that they are reacting to it on its objective
+merits.</li>
+<li>People should take into consideration evidence that goes against their
+beliefs. It is more useful to pay attention to those who disagree with you
+than to pay attention to those who agree.</li>
+</ul>
+</li>
+<li>Social Media
+<ul>
+<li>Users of social media have more close friends, express more trust in people,
+feel more supported, and are more politically involved.</li>
+<li>Social media users care too much, not too little, about other people, and
+they empathize with them over their troubles rather than envying them their
+successes.</li>
+<li>They are less likely to have a large number of friends but also less likely
+to want a large number of friend.</li>
+<li>Just because social life looks different today from the way it looked in the
+1950s, it does not mean that humans, that quintessentially social species,
+have become any less social.</li>
+<li>People see each other less in traditional venues like clubs, churches,
+unions, fraternal organizations, and dinner parties, and more in informal
+gatherings and via digital media.</li>
+</ul>
+</li>
+<li>Tech
+<ul>
+<li>The more sophisticated and powerful a technology, the more people are needed
+to weaponize it.</li>
+<li>And the more people needed to weaponize it, the more societal controls work
+to defuse, or soften, or prevent harm from happening.</li>
+<li>That’s because hundreds of thousands of man-years of effort have gone into
+preventing this from happening, in the case of the internet, and millions of
+years of evolutionary effort to prevent species death, in the case of
+biology.</li>
+</ul>
+</li>
+<li>Countries
+<ul>
+<li>Countries that combine free markets with more taxation, social spending, and
+regulation than the United States (such as Canada, New Zealand, and Western
+Europe) turn out to be not grim dystopias but rather pleasant places to
+live, and they trounce the United States in every measure of human
+flourishing, including crime, life expectancy, infant mortality, education,
+and happiness.</li>
+<li>Developed countries are actually pretty happy, a majority of all countries
+have gotten happier, and as long as countries get richer they should get
+happier still.</li>
+<li>The empirical picture at present suggests that people flourish most in
+liberal democracies with a mixture of civic norms, guaranteed rights, market
+freedom, social spending, and judicious regulation.</li>
+<li>Whenever ethnic neighbors go for each other’s throats we read about it, but
+what about the neighborhoods that never make the news because they live in
+boring peace? What proportion of pairs of ethnic neighbors coexist without
+violence? The answer is, most of them: 95 percent of the neighbors in the
+former Soviet Union, 99 percent of those in Africa</li>
+</ul>
+</li>
+<li>Cyber Attack
+<ul>
+<li>The strikes have mostly been nuisances such as doxing, namely leaking
+confidential documents or e-mail (as in the Russian meddling in the 2016
+American election), and distributed denial-of-service attacks, where a
+botnet (an array of hacked computers) floods a site with traffic.</li>
+<li>Not a single person has ever been injured by a cyberattack.</li>
+</ul>
+</li>
+<li>Weapon
+<ul>
+<li>The ban was driven by a widespread revulsion at the very idea, but the
+world’s militaries needed little convincing, because tiny living things make
+lousy weapons. They easily blow back and infect the weaponeers, warriors,
+and citizens of the side that uses them.</li>
+<li>The biologist Paul Ewald notes that natural selection among pathogens works
+against the terrorist’s goal of sudden and spectacular devastation.</li>
+<li>Germs that depend on rapid person-to-person contagion, like the common-cold
+virus, are selected to keep their hosts alive and ambulatory so they can
+shake hands with and sneeze on as many people as possible. Germs get greedy
+and kill their hosts only if they have some other way of getting from body
+to body, like mosquitoes (for malaria), a contaminable water supply (for
+cholera), or trenches packed with injured soldiers (for the 1918 Spanish
+flu).</li>
+<li>If a nuclear bomb has been detonated on your territory, you know it. States
+can launch weapons from submarines, which hide in deep water, or from bomber
+aircraft, which can be sent scrambling, making the weapons invulnerable to a
+first strike and poised to exact devastating revenge.</li>
+</ul>
+</li>
+<li>Forecasters
+<ul>
+<li>The forecasters who do the worst were the ones with Big Ideas—left-wing or
+right-wing, optimistic or pessimistic—which they held with an inspiring (but
+misguided) confidence. The more famous they were, and the closer the event
+was to their area of expertise, the less accurate their predictions turned
+out to be.</li>
+<li>These experts gathered as much information from as many sources as they
+could. When thinking, they often shifted mental gears, sprinkling their
+speech with transition markers such as “however,” “but,” “although,” and “on
+the other hand.” They talked about possibilities and probabilities, not
+certainties. And while no one likes to say “I was wrong,” these experts more
+readily admitted it and changed their minds.47</li>
+<li>They have personality traits that psychologists call “openness to
+experience” (intellectual curiosity and a taste for variety), “need for
+cognition” (pleasure taken in intellectual activity), and “integrative
+complexity” (appreciating uncertainty and seeing multiple sides).</li>
+<li>They are anti-impulsive, distrusting their first gut feeling. They are
+neither left-wing nor right-wing. They aren’t necessarily humble about their
+abilities, but they are humble about particular beliefs, treating them as
+“hypotheses to be tested, not treasures to be guarded.”</li>
+<li>They are aware of cognitive blind spots like the Availability and
+confirmation biases, and they discipline themselves to avoid them.</li>
+</ul>
+</li>
+<li>Religions
+<ul>
+<li>Positive contributions of religions at particular times and places are
+education, charity, medical care, counseling, conflict resolution, and other
+social services.</li>
+<li>Developed world these efforts are dwarfed by their secular counterparts; no
+religion could have decimated hunger, disease, illiteracy, war, homicide, or
+poverty on the scales.</li>
+<li>It’s long been known that churchgoers are happier and more charitable than
+stay-at-homes, but</li>
+<li>An atheist who has been pulled into a congregation by an observant spouse is
+as charitable as the faithful among the flock, whereas a fervent believer
+who prays alone is not particularly charitable.</li>
+<li>13 percent of the world’s population identified themselves as a “convinced
+atheist” in 2012, up from around 10 percent in 2005. 65 It would not be
+fanciful to say that over the course of the 20th century the global rate of
+atheism increased by a factor of 500, and that it has doubled again so far
+in the 21st.</li>
+<li>An additional 23 percent of the world’s population identify themselves as
+“not a religious person,” leaving 59 percent of the world as “religious,”
+down from close to 100 percent a century before.</li>
+<li>Countries with stronger safety nets are less religious, holding other
+factors constant.</li>
+<li>When people become more intellectually curious and scientifically literate,
+they stop believing in miracles.</li>
+<li>Better-educated countries have lower rates of belief.</li>
+<li>The same holds true among the fifty states: the more religious the state,
+the more dysfunctional its citizens’ lives.</li>
+</ul>
+</li>
+<li>Who care about you?
+<ul>
+<li>The next is the realization that this does not imply that life is
+meaningless, because people care about you, and vice versa.</li>
+<li>You care about yourself, and you have a responsibility to respect the laws
+of the universe that keep you alive, so you don’t squander your existence.</li>
+<li>Your loved ones care about you, and you have a responsibility not to orphan
+your children, widow your spouse, and shatter your parents.</li>
+<li>And anyone with a humanistic sensibility cares about you, not in the sense
+of feeling your pain—human empathy is too feeble to spread itself across
+billions of strangers—but in the sense of realizing that your existence is
+cosmically no less important than theirs, and that we all have a
+responsibility to use the laws of the universe to enhance the conditions in
+which we all can flourish.</li>
+</ul>
+</li>
+<li>Others
+<ul>
+<li>The mental health professions, and perhaps the culture at large, has been
+lowering the bar for what counts as a mental illness.</li>
+<li>Any headline that ends in a question mark can be answered with the word no.</li>
+<li>Not every problem is a crisis, a plague, or an epidemic, and among the
+things that happen in the world is that people solve the problems
+confronting them.</li>
+</ul>
+</li>
+</ul>
+<h1>Meaning</h1>
+<p><em>Wordsmithing</em> - The making of changes to a text to improve clarity and style.</p>
+<p><em>Catastrophize</em> - Worse then it truly is</p>
+<p><em>Modicum</em> - Small quantity of valuable thing</p>
+<p><em>Emphatic</em> - Forcefully and Clearly</p>
+<p><em>Millennials</em> - Those born after 1980</p>
+<h1>Stories</h1>
+<p>When the data suggested that the gun-control measure lowered crime, all the
+liberal numerates spotted it, and most of the conservative numerates missed
+it—they did a bit better than the conservative innumerates, but were still wrong
+more often than they were right. When the data showed that gun control increased
+crime, this time most of the conservative numerates spotted it, but the liberal
+numerates missed it; in fact, they did no better than the liberal innumerates.</p>
+<hr>
+<p>Cultural pessimists saw the Y2K bug as comeuppance for enthralling our
+civilization to technology. Among religious thinkers, the numerological link to
+Christian millennialism was irresistible. The Reverend Jerry Falwell declared,
+“I believe that Y2K may be God’s instrument to shake this nation, humble this
+nation, awaken this nation and from this nation start revival that spreads the
+face of the earth before the Rapture of the Church.” A hundred billion dollars
+was spent worldwide on reprogramming software for Y2K Readiness, a challenge
+that was likened to replacing every bolt in every bridge in the world.</p>
+<hr>
+<p>In one cartoon of the new millennium, a father says to his young boy, “Son, your
+mother and I have bought software to control what you see on the Internet. Um .
+. . Could you install it for us?”</p>
+<hr>
+<p>Spain was an economic laggard among Western countries, even though Spaniards
+were highly schooled, because Spanish education was controlled by the Catholic
+Church, and “the children of the masses received only oral instruction in the
+Creed, the catechism, and a few simple manual skills. . . . Science,
+mathematics, political economy, and secular history were considered too
+controversial for anyone but trained theologians.”</p>
+<hr>
+<h1>Resources</h1>
+<ul>
+<li>The Blank Slate - Steven Pinker</li>
+</ul>
+<h1>Quote</h1>
+<blockquote>
+<p>Remember your history: the fact that something is bad today doesn’t mean it
+was better in the past.</p>
+</blockquote>
+<p>— Steven Pinker</p>
+<blockquote>
+<p>Any movement that calls itself “scientific” but fails to nurture opportunities
+for the testing of its own beliefs is not a scientific movement.</p>
+</blockquote>
+<p>— Steven Pinker</p>
+<blockquote>
+<p>You must not fool yourself—and you are the easiest person to fool.</p>
+</blockquote>
+<p>— Richard Feynman</p>
+<blockquote>
+<p>Most readers have no idea whether their favorite columnists, gurus, or talking
+heads are more accurate than a chimpanzee picking bananas.</p>
+</blockquote>
+<p>— Steven Pinker</p>
+<blockquote>
+<p>If either the right wing or the left wing gained control of the country, it
+would fly around in circles.</p>
+</blockquote>
+<p>— Pat Paulsen</p>
+<blockquote>
+<p>We don’t believe in reason; we use reason</p>
+</blockquote>
+<p>— Steven Pinker</p>
+<blockquote>
+<p>I am not an optimist. I’m a very serious possibilist.</p>
+</blockquote>
+<p>— Hans Rosling</p>
+<blockquote>
+<p>Your money or your life</p>
+</blockquote>
+<p>— Jack Benny</p>
+<blockquote>
+<p>Larger the team, the more societal influences.</p>
+</blockquote>
+<p>— Kevin Kelly</p>
+<blockquote>
+<p>Technology is our best hope for cheating death, at least for a while.</p>
+</blockquote>
+<p>— Steven Pinker</p>
+<blockquote>
+<p>Other people are more valuable to you alive than dead.</p>
+</blockquote>
+<p>— Steven Pinker</p>]]></description>
+  </item>
+  <item>
+    <title>self discipline</title>
+    <link>https://anzenkodo.github.io/notes/books/self-discipline.html</link>
+    <pubDate>2022-12-28T03:33:03.926Z</pubDate>
+    <description><![CDATA[<h1>Self-Discipline</h1>
+<p>Author: Mark Manson Created time: March 12, 2021 8:36 PM Page No.: 50 Progress:
+✔️</p>
+<h1>Quote</h1>
+<ul>
+<li>Just because something makes us feel bad doesn’t mean we are bad.</li>
+</ul>
+<h1>Points</h1>
+<ul>
+<li>Demons and Shame?
+<ul>
+<li>Find it. Address it. And most importantly: accept it. Find that deep, dark
+ugly part of yourself. Confront it, head-on, allowing yourself to feel all
+the awful, icky emotions that come with it. Then accept that this is a part
+of you and it’s never going away. And that’s fine. You can work with this,
+rather than against it.</li>
+</ul>
+</li>
+<li>Self Discipline is easy with people than without them.</li>
+<li>You pursue it rather than run from it. And with every pursuit, you get
+stronger and healthier and happier.</li>
+<li>Goal vs Habits
+<ul>
+<li>Goals are a one-time bargain. They are the spending mindset. “I will spend X
+amount of energy to receive Y reward.”</li>
+<li>Habits are an investing mindset. Habits require one to invest one’s efforts
+for a little while and then take the rewards of that effort and re-invest
+them in a greater effort to form even better habits.</li>
+</ul>
+</li>
+<li>It is okay to miss a day inhabit just remember it is part of the purposes.</li>
+<li>People don’t develop and acquire habits at the same rate; everyone is
+different.</li>
+<li>Some habits are better than other habits because some habits once acquired,
+make other positive habits much easier to acquire as well.
+<ul>
+<li>eg: quitting smoking is hard. But some data suggests that taking up some
+form of exercises such as jogging or biking can make it easier for someone
+to quit</li>
+</ul>
+</li>
+<li>You wouldn’t keep watching a TV show you don’t like. You wouldn’t eat an
+entire plate of food you don’t like. So why the hell are you trying to read a
+book you don’t like?</li>
+</ul>
+<h1>Stores</h1>
+<ul>
+<li>Waight Loss
+<ul>
+<li>I know someone who lost a lot of weight (almost 80 lbs) over a 2-year
+period. He was running marathons by the time he was in shape, but you know
+how he started out? Four minutes a day on the exercise bike. That’s all he
+could do at first, but he did it every single day and increased his workout
+as he lost more weight and gained more confidence.</li>
+<li>Once he knew he could do a few minutes on the bike, he figured he could do a
+few more, then he figured he could go for a run, then he believed he could
+run competitively, then he set a goal to run a marathon and did it.</li>
+<li>He didn’t say, “OK, I’m ridiculously overweight so I should run a marathon.”
+He instead started where he was, which was in his basement on an exercise
+bike for four minutes a day. This kept him engaged and he didn’t feel too
+overwhelmed while he was working to create a healthier lifestyle.</li>
+</ul>
+</li>
+<li>Making Friends
+<ul>
+<li>Now, I don’t mean just bullshitty Facebook chatter. I mean genuine, “Hey
+man, what’s been going on with you lately? How have things been?” followed
+by a couple, “Oh, that’s cool, tell me about that,” and finally finished off
+with a, “We should get together soon, what are you doing next week?” for
+good measure.</li>
+<li>It would take maybe 15-20 minutes at most. And it was surprising how easy it
+was to reconnect with many people. Most of the time it was touching base
+with some friends who I had kind of lost touch with.</li>
+<li>Other times it was reaching out and taking a chance with getting to know
+someone whom I barely knew. Other times it was going out and meeting
+somebody new, maybe at a party or a conference or being introduced</li>
+</ul>
+</li>
+</ul>]]></description>
+  </item>
+  <item>
+    <title>newspaper blackout</title>
+    <link>https://anzenkodo.github.io/notes/books/newspaper-blackout.html</link>
+    <pubDate>2022-12-28T03:33:03.926Z</pubDate>
+    <description><![CDATA[<h1>Newspaper Blackout</h1>
+<p>Author: Austin Kieon
+Created time: March 26, 2021 8:03 PM
+Page No.: 208
+Progress: ✔️</p>]]></description>
   </item>
   </channel>
 </rss>
