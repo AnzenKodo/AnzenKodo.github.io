@@ -5,7 +5,7 @@
     <link>https://anzenkodo.github.io/notes/</link>
     <description>This my personal website where I post my notes about thing that I have learn.</description>
     <language>en-US</language>
-    <lastBuildDate>2022-12-30T07:32:04.430Z</lastBuildDate>
+    <lastBuildDate>2022-12-30T08:08:51.268Z</lastBuildDate>
     <image>
       <url>https://anzenkodo.github.io/notes/favicon.png</url>
       <title>AK#Notes</title>
@@ -16,565 +16,9 @@
     <atom:link href="https://anzenkodo.github.io/notes/feed.xml" rel="self" type="application/rss+xml" />
     <atom:link href="https://anzenkodo.github.io/notes/feed.xml" rel="alternate" type="application/rss+xml" />
       <item>
-    <title>pratical sem6</title>
-    <link>https://anzenkodo.github.io/notes/programming/languages/php/pratical-sem6.html</link>
-    <pubDate>2022-12-30T07:32:04.430Z</pubDate>
-    <description><![CDATA[<h2>1. Write a PHP program using expressions and operator (ternary operator, arithmetic operators and comparison operators)</h2>
-<pre><code class="language-php">&lt;?php
-  echo 1 &gt; 2 ? 1 : 2;
-  echo &quot;&lt;br&gt;&quot;;
-  echo 1 + 2;
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>2
-3
-</code></pre>
-<h2>2. Write a PHP program to the use of decision making and control structures using:</h2>
-<h3><code>if</code> statement</h3>
-<pre><code class="language-php">&lt;?php
-$x = 1;
-if ($x &gt; 0) {
-  echo &quot;The number is positive&quot;;
-}
-</code></pre>
-<p>O/P</p>
-<pre><code>The number is positive
-</code></pre>
-<h3><code>if else</code> statement</h3>
-<pre><code class="language-php">&lt;?php
-$x = &quot;August&quot;;
-
-if ($x &gt; 0) {
-  echo &quot;The number is positive&quot;;
-} else {
-  echo &quot;The number is negative&quot;;
-}
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>Happy Independence Day!!!
-</code></pre>
-<h3><code>if elseif if</code> statement</h3>
-<pre><code class="language-php">&lt;?php
-$x = &quot;August&quot;;
-
-if ($x &gt; 0) {
-  echo &quot;The number is positive&quot;;
-} elseif ( $x &lt; 0 ) {
-  echo &quot;The number is negative&quot;;
-} else {
-  echo &quot;The value is not number&quot;;
-}
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>The number is positive
-</code></pre>
-<h3><code>switch case</code> statement</h3>
-<pre><code class="language-php">&lt;?php
-$n = &quot;Monday&quot;;
-
-switch($n) {
-  case &quot;Monday&quot;:
-    echo &quot;Its Monday&quot;;
-    break;
-  case &quot;Tuesday&quot;:
-    echo &quot;Its Tuesday&quot;;
-    break;
-  case &quot;Wednesday&quot;:
-    echo &quot;Its Wednesday&quot;;
-    break;
-  case &quot;Thuesday&quot;:
-    echo &quot;Its Thuesday&quot;;
-    break;
-  case &quot;Friday&quot;:
-    echo &quot;Its Friday&quot;;
-    break;
-  case &quot;Saturday&quot;:
-    echo &quot;Its Saturday&quot;;
-    break;
-  case &quot;Sunday&quot;:
-    echo &quot;Its Suday&quot;;
-    break;
-  default:
-    echo &quot;Doesn't exist&quot;;
-}
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>Its Monday
-</code></pre>
-<h2>3. Write a PHP program to the use of looping structure using:</h2>
-<h3><code>while</code> statement</h3>
-<pre><code class="language-php">&lt;?php
-$num = 0;
-
-while ($num &lt;= 10) {
-  echo $num;
-  $num++;
-}
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>012345678910
-</code></pre>
-<h3><code>do while</code> statement</h3>
-<pre><code class="language-php">&lt;?php
-$x = 1;
-do {
-  echo $x;
-  $x++;
-} while ($x &lt;= 5);
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>12345
-</code></pre>
-<h3><code>for</code> statement</h3>
-<pre><code class="language-php">&lt;?php
-for ($i = 1; $i &lt;= 10; $i++) {
-  echo $i;
-}
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>12345678910
-</code></pre>
-<h2>4. Write a PHP program to the use of looping structure using for statement, for each statement.</h2>
-<h3><code>for</code> statement</h3>
-<pre><code class="language-php">&lt;?php
-for ($x = 0; $x &lt;= 5; $x++) {
-  echo $x;
-}
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>012345
-</code></pre>
-<h3><code>foreach</code> statement</h3>
-<pre><code class="language-php">&lt;?php
-$a = array(&quot;Hello&quot;, &quot;World&quot;);
-
-foreach ($a as $b) {
-  echo $b.&quot; &quot;;
-}
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>Hello World
-</code></pre>
-<h2>5. Write a PHP program for creating and manipulating , associative array and multidimensional array.</h2>
-<h3>Indexed array</h3>
-<pre><code class="language-php">&lt;?php
-$a = array(&quot;Red&quot;, &quot;Blue&quot;, &quot;Green&quot;);
-echo &quot;My fav color is: &quot;.$a[0];
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>My fav color is: Red
-</code></pre>
-<h3>Associative arrays</h3>
-<pre><code class="language-php">&lt;?php
-$a = array(&quot;Red&quot;=&gt;1, &quot;Blue&quot;=&gt;2, &quot;Green&quot;=&gt;3);
-echo $a[&quot;Red&quot;].$a[&quot;Blue&quot;],$a[&quot;Green&quot;];
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>123
-</code></pre>
-<h3>Multidimensional array</h3>
-<pre><code class="language-php">&lt;?php
-$a = array(array(&quot;Red&quot;, &quot;Blue&quot;, &quot;Green&quot;));
-echo &quot;My fav color is: &quot;.$a[0][1];
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>My fav color is: Blue
-</code></pre>
-<h2>6. Write a PHP program to calculate</h2>
-<h3>Length of string</h3>
-<pre><code class="language-php">&lt;?php
-  echo strlen(&quot;Hello world!&quot;);
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>12
-</code></pre>
-<h3>Count the no of words in string</h3>
-<pre><code class="language-php">&lt;?php
-  echo str_word_count(&quot;Hello world!&quot;);
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>2
-</code></pre>
-<h3>Compare two string using string function.</h3>
-<pre><code class="language-php">&lt;?php
-  echo strcmp(&quot;Hello world!&quot;, &quot;Hello world&quot;);
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>0
-</code></pre>
-<h2>7. Write a PHP program using following string function:</h2>
-<ul>
-<li>strrev()</li>
-<li>strpos()</li>
-<li>strrpos()</li>
-<li>str_replace()</li>
-<li>ucwords()</li>
-<li>strtoupper()</li>
-<li>strtolower()</li>
-</ul>
-<pre><code class="language-php">&lt;?php
-  echo strrev(&quot;Hello world!&quot;).&quot;&lt;/br&gt;&quot;;
-  echo strpos(&quot;Hello world!&quot;, &quot;world&quot;).&quot;&lt;/br&gt;&quot;;
-  echo strrpos(&quot;I love php, I love php too!&quot;,&quot;php&quot;).&quot;&lt;/br&gt;&quot;;
-  echo str_replace(&quot;world&quot;, &quot;bvit&quot;, &quot;Hello world!&quot;).&quot;&lt;/br&gt;&quot;;
-  echo ucwords(&quot;Welcome to php world&quot;).&quot;&lt;/br&gt;&quot;;
-  echo strtoupper(&quot;Information Technology&quot;).&quot;&lt;/br&gt;&quot;;
-  echo strtolower(&quot;INFORMATION TECHNOLOGY&quot;).&quot;&lt;/br&gt;&quot;;
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>!dlrow olleH
-6
-19
-Hello bvit!
-Welcome To Php World
-INFORMATION TECHNOLOGY
-information technology
-</code></pre>
-<h2>8. Write a PHP program to use: and anonymous function.</h2>
-<h3>User define function</h3>
-<pre><code class="language-php">&lt;?php
-  function writeMessage() {
-    echo &quot;Welcome to PHP world&quot;;
-  }
-  writeMessage();
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>Welcome to PHP world
-</code></pre>
-<h3>Variable function</h3>
-<pre><code class="language-php">&lt;?php
-  function writeMessage() {
-    echo &quot;Welcome to PHP world&quot;;
-  }
-
-  $w = &quot;writeMessage&quot;;
-  $w();
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>Welcome to PHP world
-</code></pre>
-<h3>Anonymous function</h3>
-<pre><code class="language-php">&lt;?php
-  $a=function() { echo &quot;Anonymous function&quot;; };
-  $a();
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>Anonymous function
-</code></pre>
-<h2>9. Write a PHP program to create PDF document by using graphics concept.</h2>
-<pre><code class="language-php">&lt;?php
-  require('fpdf.php');
-  $pdf = new FPDF();
-  $pdf-&gt;AddPage();
-  $pdf-&gt;SetFont('Arial','B',16);
-  $pdf-&gt;Cell(40,10,'Hello World!');
-  $pdf-&gt;Output();
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>Hello World
-</code></pre>
-<h2>10. Write a PHP program</h2>
-<h3>a) To inherit member of superclass in subclass</h3>
-<pre><code class="language-php">&lt;?php
-class Class1 {
-  function func() {
-    echo &quot;Hello World&quot;;
-  }
-}
-
-class Class2 extends Class1 {
-  function echo() {
-    echo &quot;Bye World&quot;;
-  }
-}
-
-$o = new Class2;
-$o-&gt;func();
-$o-&gt;echo();
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>Hello World
-Bye World
-</code></pre>
-<h3>b) Create constructor to initialize object of class by using object oriented concept.</h3>
-<pre><code class="language-php">&lt;?php
-class Obj {
-  public function __construct($name, $surname) {
-    $this-&gt;name=$name;
-    $this-&gt;surname=$surname;
-  }
-  public function showName() {
-    echo &quot;My name is &quot;.$this-&gt;name.&quot; &quot;.$this-&gt;surname;
-  }
-}
-
-$sid=new Obj(&quot;Aman&quot;,&quot;Varma&quot;);
-$sid-&gt;showName();
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>My name is Aman Varma
-</code></pre>
-<h2>11. Write a PHP program on</h2>
-<h3>Introspection</h3>
-<pre><code class="language-php">&lt;?php
-if (!class_exists(&quot;Obj&quot;)) {
-  echo &quot;Class don't exists.&quot;
-}
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>Class don't exists
-</code></pre>
-<h3>Serialization.</h3>
-<pre><code class="language-php">&lt;?php
-echo serialize(array(&quot;Red&quot;));
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>a:1:{i:0;s:3:&quot;Red&quot;;}
-</code></pre>
-<h2>12. Design a web page using following form controls:</h2>
-<ul>
-<li>a) Textbox</li>
-<li>b) Radio button</li>
-<li>c) Check box</li>
-<li>d) Button</li>
-</ul>
-<pre><code class="language-php">&lt;form action=&quot;&lt;?php 1_SELF_PHP ?&gt;&quot; method=&quot;post&quot;&gt;
-  Name:
-  &lt;input type=&quot;text&quot; name=&quot;name&quot;&gt;
-  Sex:
-  &lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;male&quot;&gt;Male&lt;/input&gt;
-  &lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;female&quot;&gt;Female&lt;/input&gt;
-  Vehical:
-  &lt;input type=&quot;checkbox&quot; name=&quot;vehicle[]&quot; value=&quot;bike&quot;&gt;Bike&lt;/input&gt;
-  &lt;input type=&quot;checkbox&quot; name=&quot;vehicle[]&quot; value=&quot;car&quot;&gt;Car&lt;/input&gt;
-  &lt;input type=&quot;checkbox&quot; name=&quot;vehicle[]&quot; value=&quot;scooter&quot;&gt;Scooter&lt;/input&gt;
-  &lt;button name=&quot;submit&quot;&gt;Submit&lt;/button&gt;
-&lt;/form&gt;
-
-&lt;?php
-if ( isset($_POST[&quot;submit&quot;]) ) {
-  echo $_POST[&quot;name&quot;].&quot; is &quot;.$_POST[&quot;sex&quot;].&quot; will travel by &quot;;
-  foreach ($_POST[&quot;vehicle&quot;] as $selected) {
-    echo $selected.&quot; &quot;;
-  }
-}
-?&gt;
-</code></pre>
-<h2>13. Design a web page using following form controls:</h2>
-<ul>
-<li>a) List box</li>
-<li>b) Hidden field box</li>
-</ul>
-<pre><code class="language-php">&lt;form action=&quot;&lt;? $_PHP_SELF ?&gt;&quot; method=&quot;post&quot;&gt;
-  &lt;input type=&quot;hidden&quot; name=&quot;name&quot; value=&quot;Jone&quot;&gt;
-  &lt;select name=&quot;foods&quot;&gt;
-    &lt;option value=&quot;Tomatoes&quot;&gt;Tomatoes&lt;/option&gt;
-    &lt;option value=&quot;Cucumbers&quot;&gt;Cucumbers&lt;/option&gt;
-    &lt;option value=&quot;Celery&quot;&gt;Celery&lt;/option&gt;
-  &lt;/select&gt;
-  &lt;br&gt;
-  &lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;Submit&quot;/&gt;
-&lt;/form&gt;
-
-&lt;?php
-  if( isset($_POST[&quot;foods&quot;]) ) {
-    echo $_POST[&quot;name&quot;].&quot; have chosen &quot;.$_POST[&quot;foods&quot;];
-  }
-?&gt;
-</code></pre>
-<h2>14. Develop a web page with data validation.</h2>
-<pre><code class="language-php">&lt;form action=&quot;&lt;?php $_PHP_SELF ?&gt;&quot; method=&quot;post&quot;&gt;
-  Name:&lt;input type=&quot;text&quot; name=&quot;name&quot; required&gt;
-  &lt;input type=&quot;submit&quot;&gt;
-&lt;/form&gt;
-
-&lt;?php
-  if (!preg_match(&quot;/^[a-zA-Z_ ]*$/&quot;, $_POST[&quot;name&quot;])) {
-    echo &quot;Only letter and whitespace is allowed&quot;;
-  }
-?&gt;
-</code></pre>
-<h2>15. Write a PHP program to:</h2>
-<h3>Create cookies</h3>
-<pre><code class="language-php">&lt;?php
-setcookie(&quot;name&quot;, &quot;Jone&quot;, time() + (86400 * 30), &quot;/&quot;);
-?&gt;
-&lt;?php
-if (isset($_COOKIE[&quot;name&quot;])) {
-  echo &quot;Name: &quot;.$_COOKIE[&quot;name&quot;];
-}
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>Name: Jone
-</code></pre>
-<ul>
-<li>
-<p>Modify cookies value
-Set cookie agien with setcookie function.</p>
-</li>
-<li>
-<p>Delete cookies</p>
-</li>
-</ul>
-<pre><code class="language-php">&lt;?php
-setcookie(&quot;name&quot;, &quot;&quot;, time() - 3600, &quot;/&quot;);
-?&gt;
-&lt;?php
-if (isset($_COOKIE[&quot;name&quot;])) {
-  echo &quot;Name: &quot;.$_COOKIE[&quot;name&quot;];
-} else {
-  echo &quot;Cookie is not set.&quot;;
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>Cookie is not set.
-</code></pre>
-<h2>16. Write a PHP program to:</h2>
-<ul>
-<li>Start session</li>
-<li>Get session variable</li>
-<li>Destroy session</li>
-</ul>
-<pre><code class="language-php">&lt;?php
-  session_start();
-
-  $_SESSION[&quot;color&quot;] = &quot;Red&quot;;
-  $_SESSION[&quot;animal&quot;] = &quot;Lion&quot;;
-
-  echo $_SESSION[&quot;color&quot;].&quot; &quot;.$_SESSION[&quot;animal&quot;];
-
-  session_unset();
-  session_destroy();
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>Red Lion
-</code></pre>
-<h2>17. Write a PHP program for sending and receiving plain text message (sending email).</h2>
-<pre><code class="language-php">&lt;?php
-  $status = mail(&quot;AnzenKodo@altmail.com&quot;, &quot;Title&quot;, &quot;Hello World&quot;);
-  if ($status) {
-    echo &quot;Mail is sent.&quot;;
-  } else {
-    echo &quot;Mail can't be sent&quot;;
-  }
-?&gt;
-</code></pre>
-<h2>18. Write a PHP program to</h2>
-<h3>Create database</h3>
-<pre><code class="language-php">&lt;?php
-// Create connection
-$conn = mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;, &quot;test&quot;);
-// Check connection
-if ($conn-&gt;connect_error) {
-  die(&quot;Connection failed.&quot;);
-}
-
-// Create database
-$sql = &quot;CREATE DATABASE myDB&quot;;
-if (mysqli_query($conn, $sql)) {
-  echo &quot;Database created successfully&quot;;
-} else {
-  echo &quot;Error creating database&quot;;
-}
-
-mysqli_close($conn);
-?&gt;
-</code></pre>
-<h3>Creation of table.</h3>
-<pre><code class="language-php">&lt;?php
-// Create connection
-$conn = mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;, &quot;test&quot;);
-// Check connection
-if (!$conn) {
-  die(&quot;Connection failed&quot;);
-}
-
-// sql to create table
-$sql = &quot;CREATE TABLE MyGuests(id INT(6))&quot;;
-
-if (mysqli_query($conn, $sql)) {
-  echo &quot;Table MyGuests created successfully&quot;;
-} else {
-  echo &quot;Error creating table: &quot; . $conn-&gt;error;
-}
-
-$conn-&gt;close();
-?&gt;
-</code></pre>
-<h2>19. Write a PHP program to Inserting and retrieving the query result operations and Update ,Delete operations on table data.</h2>
-<pre><code class="language-php">&lt;?php
-// Connecting to MySQL
-$conn = mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;, &quot;test&quot;);
-if (!$conn) {
-  die(&quot;Error: &quot;.mysqli_error($conn));
-}
-
-// Inserting data
-$sql = &quot;INSERT INTO my_table(id, name) VALUES (1, 'Jone'), (2, 'Jonney)&quot;;
-if (!mysqli_query($conn, $sql)) {
-  die(&quot;Error&quot;);
-}
-
-// Retrieving data
-$sql = &quot;SELECT * FROM my_table&quot;;
-if ($result = mysqli_query($conn, $sql)) {
-  if (mysqli_num_rows($result) &gt; 0) {
-    while ($row = mysqli_fetch_array($result)) {
-      echo &quot;ID: &quot;.$row[&quot;id&quot;].&quot;, Name: &quot;.$row[&quot;name&quot;];
-    }
-  } else {
-    echo &quot;Rows can't be zero&quot;;
-  }
-} else {
-  die(&quot;Error: &quot;.mysqli_error($conn));
-}
-
-// Update data
-$sql = &quot;UPDATE my_table SET name='tim' WHERE id=2&quot;;
-if (!mysqli_query($conn, $sql) {
-  die(&quot;Error&quot;);
-}
-
-// Delete data
-$sql = &quot;DELETE FROM my_table WHERE id=1&quot;;
-if (!mysqli_query($conn, $sql) {
-  die(&quot;Error&quot;));
-}
-
-mysqli_close();
-?&gt;
-</code></pre>]]></description>
-  </item>
-  <item>
     <title>sample paper 6s</title>
     <link>https://anzenkodo.github.io/notes/programming/languages/php/sample-paper-6s.html</link>
-    <pubDate>2022-12-30T07:32:04.430Z</pubDate>
+    <pubDate>2022-12-30T08:08:51.268Z</pubDate>
     <description><![CDATA[<h1><em>22619</em> - Web Based Application development with PHP</h1>
 <ul>
 <li><strong>Programme Name:</strong> Computer/Information Technology Engineering</li>
@@ -1070,7 +514,7 @@ $conn = mysqli_connect(&quot;mydb&quot;, &quot;root&quot;, &quot;root&quot;, &qu
   <item>
     <title>ut2 6s</title>
     <link>https://anzenkodo.github.io/notes/programming/languages/php/ut2-6s.html</link>
-    <pubDate>2022-12-30T07:32:04.430Z</pubDate>
+    <pubDate>2022-12-30T08:08:51.268Z</pubDate>
     <description><![CDATA[<h1>PHP Unit 2 AB</h1>
 <h3>1. Write the syntax for creating Cookie.</h3>
 <ul>
@@ -1530,7 +974,7 @@ Joey
   <item>
     <title>notes</title>
     <link>https://anzenkodo.github.io/notes/programming/languages/php/notes.html</link>
-    <pubDate>2022-12-30T07:32:04.430Z</pubDate>
+    <pubDate>2022-12-30T08:08:51.268Z</pubDate>
     <description><![CDATA[<h1>1. Expressions and Control Statements in PHP</h1>
 <h2>1. What is web application?</h2>
 <ul>
@@ -2728,9 +2172,565 @@ if (mysqli_num_rows($result)) {
 </code></pre>]]></description>
   </item>
   <item>
+    <title>pratical sem6</title>
+    <link>https://anzenkodo.github.io/notes/programming/languages/php/pratical-sem6.html</link>
+    <pubDate>2022-12-30T08:08:51.268Z</pubDate>
+    <description><![CDATA[<h2>1. Write a PHP program using expressions and operator (ternary operator, arithmetic operators and comparison operators)</h2>
+<pre><code class="language-php">&lt;?php
+  echo 1 &gt; 2 ? 1 : 2;
+  echo &quot;&lt;br&gt;&quot;;
+  echo 1 + 2;
+?&gt;
+</code></pre>
+<p>O/P</p>
+<pre><code>2
+3
+</code></pre>
+<h2>2. Write a PHP program to the use of decision making and control structures using:</h2>
+<h3><code>if</code> statement</h3>
+<pre><code class="language-php">&lt;?php
+$x = 1;
+if ($x &gt; 0) {
+  echo &quot;The number is positive&quot;;
+}
+</code></pre>
+<p>O/P</p>
+<pre><code>The number is positive
+</code></pre>
+<h3><code>if else</code> statement</h3>
+<pre><code class="language-php">&lt;?php
+$x = &quot;August&quot;;
+
+if ($x &gt; 0) {
+  echo &quot;The number is positive&quot;;
+} else {
+  echo &quot;The number is negative&quot;;
+}
+?&gt;
+</code></pre>
+<p>O/P</p>
+<pre><code>Happy Independence Day!!!
+</code></pre>
+<h3><code>if elseif if</code> statement</h3>
+<pre><code class="language-php">&lt;?php
+$x = &quot;August&quot;;
+
+if ($x &gt; 0) {
+  echo &quot;The number is positive&quot;;
+} elseif ( $x &lt; 0 ) {
+  echo &quot;The number is negative&quot;;
+} else {
+  echo &quot;The value is not number&quot;;
+}
+?&gt;
+</code></pre>
+<p>O/P</p>
+<pre><code>The number is positive
+</code></pre>
+<h3><code>switch case</code> statement</h3>
+<pre><code class="language-php">&lt;?php
+$n = &quot;Monday&quot;;
+
+switch($n) {
+  case &quot;Monday&quot;:
+    echo &quot;Its Monday&quot;;
+    break;
+  case &quot;Tuesday&quot;:
+    echo &quot;Its Tuesday&quot;;
+    break;
+  case &quot;Wednesday&quot;:
+    echo &quot;Its Wednesday&quot;;
+    break;
+  case &quot;Thuesday&quot;:
+    echo &quot;Its Thuesday&quot;;
+    break;
+  case &quot;Friday&quot;:
+    echo &quot;Its Friday&quot;;
+    break;
+  case &quot;Saturday&quot;:
+    echo &quot;Its Saturday&quot;;
+    break;
+  case &quot;Sunday&quot;:
+    echo &quot;Its Suday&quot;;
+    break;
+  default:
+    echo &quot;Doesn't exist&quot;;
+}
+?&gt;
+</code></pre>
+<p>O/P</p>
+<pre><code>Its Monday
+</code></pre>
+<h2>3. Write a PHP program to the use of looping structure using:</h2>
+<h3><code>while</code> statement</h3>
+<pre><code class="language-php">&lt;?php
+$num = 0;
+
+while ($num &lt;= 10) {
+  echo $num;
+  $num++;
+}
+?&gt;
+</code></pre>
+<p>O/P</p>
+<pre><code>012345678910
+</code></pre>
+<h3><code>do while</code> statement</h3>
+<pre><code class="language-php">&lt;?php
+$x = 1;
+do {
+  echo $x;
+  $x++;
+} while ($x &lt;= 5);
+?&gt;
+</code></pre>
+<p>O/P</p>
+<pre><code>12345
+</code></pre>
+<h3><code>for</code> statement</h3>
+<pre><code class="language-php">&lt;?php
+for ($i = 1; $i &lt;= 10; $i++) {
+  echo $i;
+}
+?&gt;
+</code></pre>
+<p>O/P</p>
+<pre><code>12345678910
+</code></pre>
+<h2>4. Write a PHP program to the use of looping structure using for statement, for each statement.</h2>
+<h3><code>for</code> statement</h3>
+<pre><code class="language-php">&lt;?php
+for ($x = 0; $x &lt;= 5; $x++) {
+  echo $x;
+}
+?&gt;
+</code></pre>
+<p>O/P</p>
+<pre><code>012345
+</code></pre>
+<h3><code>foreach</code> statement</h3>
+<pre><code class="language-php">&lt;?php
+$a = array(&quot;Hello&quot;, &quot;World&quot;);
+
+foreach ($a as $b) {
+  echo $b.&quot; &quot;;
+}
+?&gt;
+</code></pre>
+<p>O/P</p>
+<pre><code>Hello World
+</code></pre>
+<h2>5. Write a PHP program for creating and manipulating , associative array and multidimensional array.</h2>
+<h3>Indexed array</h3>
+<pre><code class="language-php">&lt;?php
+$a = array(&quot;Red&quot;, &quot;Blue&quot;, &quot;Green&quot;);
+echo &quot;My fav color is: &quot;.$a[0];
+?&gt;
+</code></pre>
+<p>O/P</p>
+<pre><code>My fav color is: Red
+</code></pre>
+<h3>Associative arrays</h3>
+<pre><code class="language-php">&lt;?php
+$a = array(&quot;Red&quot;=&gt;1, &quot;Blue&quot;=&gt;2, &quot;Green&quot;=&gt;3);
+echo $a[&quot;Red&quot;].$a[&quot;Blue&quot;],$a[&quot;Green&quot;];
+?&gt;
+</code></pre>
+<p>O/P</p>
+<pre><code>123
+</code></pre>
+<h3>Multidimensional array</h3>
+<pre><code class="language-php">&lt;?php
+$a = array(array(&quot;Red&quot;, &quot;Blue&quot;, &quot;Green&quot;));
+echo &quot;My fav color is: &quot;.$a[0][1];
+?&gt;
+</code></pre>
+<p>O/P</p>
+<pre><code>My fav color is: Blue
+</code></pre>
+<h2>6. Write a PHP program to calculate</h2>
+<h3>Length of string</h3>
+<pre><code class="language-php">&lt;?php
+  echo strlen(&quot;Hello world!&quot;);
+?&gt;
+</code></pre>
+<p>O/P</p>
+<pre><code>12
+</code></pre>
+<h3>Count the no of words in string</h3>
+<pre><code class="language-php">&lt;?php
+  echo str_word_count(&quot;Hello world!&quot;);
+?&gt;
+</code></pre>
+<p>O/P</p>
+<pre><code>2
+</code></pre>
+<h3>Compare two string using string function.</h3>
+<pre><code class="language-php">&lt;?php
+  echo strcmp(&quot;Hello world!&quot;, &quot;Hello world&quot;);
+?&gt;
+</code></pre>
+<p>O/P</p>
+<pre><code>0
+</code></pre>
+<h2>7. Write a PHP program using following string function:</h2>
+<ul>
+<li>strrev()</li>
+<li>strpos()</li>
+<li>strrpos()</li>
+<li>str_replace()</li>
+<li>ucwords()</li>
+<li>strtoupper()</li>
+<li>strtolower()</li>
+</ul>
+<pre><code class="language-php">&lt;?php
+  echo strrev(&quot;Hello world!&quot;).&quot;&lt;/br&gt;&quot;;
+  echo strpos(&quot;Hello world!&quot;, &quot;world&quot;).&quot;&lt;/br&gt;&quot;;
+  echo strrpos(&quot;I love php, I love php too!&quot;,&quot;php&quot;).&quot;&lt;/br&gt;&quot;;
+  echo str_replace(&quot;world&quot;, &quot;bvit&quot;, &quot;Hello world!&quot;).&quot;&lt;/br&gt;&quot;;
+  echo ucwords(&quot;Welcome to php world&quot;).&quot;&lt;/br&gt;&quot;;
+  echo strtoupper(&quot;Information Technology&quot;).&quot;&lt;/br&gt;&quot;;
+  echo strtolower(&quot;INFORMATION TECHNOLOGY&quot;).&quot;&lt;/br&gt;&quot;;
+?&gt;
+</code></pre>
+<p>O/P</p>
+<pre><code>!dlrow olleH
+6
+19
+Hello bvit!
+Welcome To Php World
+INFORMATION TECHNOLOGY
+information technology
+</code></pre>
+<h2>8. Write a PHP program to use: and anonymous function.</h2>
+<h3>User define function</h3>
+<pre><code class="language-php">&lt;?php
+  function writeMessage() {
+    echo &quot;Welcome to PHP world&quot;;
+  }
+  writeMessage();
+?&gt;
+</code></pre>
+<p>O/P</p>
+<pre><code>Welcome to PHP world
+</code></pre>
+<h3>Variable function</h3>
+<pre><code class="language-php">&lt;?php
+  function writeMessage() {
+    echo &quot;Welcome to PHP world&quot;;
+  }
+
+  $w = &quot;writeMessage&quot;;
+  $w();
+?&gt;
+</code></pre>
+<p>O/P</p>
+<pre><code>Welcome to PHP world
+</code></pre>
+<h3>Anonymous function</h3>
+<pre><code class="language-php">&lt;?php
+  $a=function() { echo &quot;Anonymous function&quot;; };
+  $a();
+?&gt;
+</code></pre>
+<p>O/P</p>
+<pre><code>Anonymous function
+</code></pre>
+<h2>9. Write a PHP program to create PDF document by using graphics concept.</h2>
+<pre><code class="language-php">&lt;?php
+  require('fpdf.php');
+  $pdf = new FPDF();
+  $pdf-&gt;AddPage();
+  $pdf-&gt;SetFont('Arial','B',16);
+  $pdf-&gt;Cell(40,10,'Hello World!');
+  $pdf-&gt;Output();
+?&gt;
+</code></pre>
+<p>O/P</p>
+<pre><code>Hello World
+</code></pre>
+<h2>10. Write a PHP program</h2>
+<h3>a) To inherit member of superclass in subclass</h3>
+<pre><code class="language-php">&lt;?php
+class Class1 {
+  function func() {
+    echo &quot;Hello World&quot;;
+  }
+}
+
+class Class2 extends Class1 {
+  function echo() {
+    echo &quot;Bye World&quot;;
+  }
+}
+
+$o = new Class2;
+$o-&gt;func();
+$o-&gt;echo();
+?&gt;
+</code></pre>
+<p>O/P</p>
+<pre><code>Hello World
+Bye World
+</code></pre>
+<h3>b) Create constructor to initialize object of class by using object oriented concept.</h3>
+<pre><code class="language-php">&lt;?php
+class Obj {
+  public function __construct($name, $surname) {
+    $this-&gt;name=$name;
+    $this-&gt;surname=$surname;
+  }
+  public function showName() {
+    echo &quot;My name is &quot;.$this-&gt;name.&quot; &quot;.$this-&gt;surname;
+  }
+}
+
+$sid=new Obj(&quot;Aman&quot;,&quot;Varma&quot;);
+$sid-&gt;showName();
+?&gt;
+</code></pre>
+<p>O/P</p>
+<pre><code>My name is Aman Varma
+</code></pre>
+<h2>11. Write a PHP program on</h2>
+<h3>Introspection</h3>
+<pre><code class="language-php">&lt;?php
+if (!class_exists(&quot;Obj&quot;)) {
+  echo &quot;Class don't exists.&quot;
+}
+?&gt;
+</code></pre>
+<p>O/P</p>
+<pre><code>Class don't exists
+</code></pre>
+<h3>Serialization.</h3>
+<pre><code class="language-php">&lt;?php
+echo serialize(array(&quot;Red&quot;));
+?&gt;
+</code></pre>
+<p>O/P</p>
+<pre><code>a:1:{i:0;s:3:&quot;Red&quot;;}
+</code></pre>
+<h2>12. Design a web page using following form controls:</h2>
+<ul>
+<li>a) Textbox</li>
+<li>b) Radio button</li>
+<li>c) Check box</li>
+<li>d) Button</li>
+</ul>
+<pre><code class="language-php">&lt;form action=&quot;&lt;?php 1_SELF_PHP ?&gt;&quot; method=&quot;post&quot;&gt;
+  Name:
+  &lt;input type=&quot;text&quot; name=&quot;name&quot;&gt;
+  Sex:
+  &lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;male&quot;&gt;Male&lt;/input&gt;
+  &lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;female&quot;&gt;Female&lt;/input&gt;
+  Vehical:
+  &lt;input type=&quot;checkbox&quot; name=&quot;vehicle[]&quot; value=&quot;bike&quot;&gt;Bike&lt;/input&gt;
+  &lt;input type=&quot;checkbox&quot; name=&quot;vehicle[]&quot; value=&quot;car&quot;&gt;Car&lt;/input&gt;
+  &lt;input type=&quot;checkbox&quot; name=&quot;vehicle[]&quot; value=&quot;scooter&quot;&gt;Scooter&lt;/input&gt;
+  &lt;button name=&quot;submit&quot;&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;?php
+if ( isset($_POST[&quot;submit&quot;]) ) {
+  echo $_POST[&quot;name&quot;].&quot; is &quot;.$_POST[&quot;sex&quot;].&quot; will travel by &quot;;
+  foreach ($_POST[&quot;vehicle&quot;] as $selected) {
+    echo $selected.&quot; &quot;;
+  }
+}
+?&gt;
+</code></pre>
+<h2>13. Design a web page using following form controls:</h2>
+<ul>
+<li>a) List box</li>
+<li>b) Hidden field box</li>
+</ul>
+<pre><code class="language-php">&lt;form action=&quot;&lt;? $_PHP_SELF ?&gt;&quot; method=&quot;post&quot;&gt;
+  &lt;input type=&quot;hidden&quot; name=&quot;name&quot; value=&quot;Jone&quot;&gt;
+  &lt;select name=&quot;foods&quot;&gt;
+    &lt;option value=&quot;Tomatoes&quot;&gt;Tomatoes&lt;/option&gt;
+    &lt;option value=&quot;Cucumbers&quot;&gt;Cucumbers&lt;/option&gt;
+    &lt;option value=&quot;Celery&quot;&gt;Celery&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;br&gt;
+  &lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;Submit&quot;/&gt;
+&lt;/form&gt;
+
+&lt;?php
+  if( isset($_POST[&quot;foods&quot;]) ) {
+    echo $_POST[&quot;name&quot;].&quot; have chosen &quot;.$_POST[&quot;foods&quot;];
+  }
+?&gt;
+</code></pre>
+<h2>14. Develop a web page with data validation.</h2>
+<pre><code class="language-php">&lt;form action=&quot;&lt;?php $_PHP_SELF ?&gt;&quot; method=&quot;post&quot;&gt;
+  Name:&lt;input type=&quot;text&quot; name=&quot;name&quot; required&gt;
+  &lt;input type=&quot;submit&quot;&gt;
+&lt;/form&gt;
+
+&lt;?php
+  if (!preg_match(&quot;/^[a-zA-Z_ ]*$/&quot;, $_POST[&quot;name&quot;])) {
+    echo &quot;Only letter and whitespace is allowed&quot;;
+  }
+?&gt;
+</code></pre>
+<h2>15. Write a PHP program to:</h2>
+<h3>Create cookies</h3>
+<pre><code class="language-php">&lt;?php
+setcookie(&quot;name&quot;, &quot;Jone&quot;, time() + (86400 * 30), &quot;/&quot;);
+?&gt;
+&lt;?php
+if (isset($_COOKIE[&quot;name&quot;])) {
+  echo &quot;Name: &quot;.$_COOKIE[&quot;name&quot;];
+}
+?&gt;
+</code></pre>
+<p>O/P</p>
+<pre><code>Name: Jone
+</code></pre>
+<ul>
+<li>
+<p>Modify cookies value
+Set cookie agien with setcookie function.</p>
+</li>
+<li>
+<p>Delete cookies</p>
+</li>
+</ul>
+<pre><code class="language-php">&lt;?php
+setcookie(&quot;name&quot;, &quot;&quot;, time() - 3600, &quot;/&quot;);
+?&gt;
+&lt;?php
+if (isset($_COOKIE[&quot;name&quot;])) {
+  echo &quot;Name: &quot;.$_COOKIE[&quot;name&quot;];
+} else {
+  echo &quot;Cookie is not set.&quot;;
+?&gt;
+</code></pre>
+<p>O/P</p>
+<pre><code>Cookie is not set.
+</code></pre>
+<h2>16. Write a PHP program to:</h2>
+<ul>
+<li>Start session</li>
+<li>Get session variable</li>
+<li>Destroy session</li>
+</ul>
+<pre><code class="language-php">&lt;?php
+  session_start();
+
+  $_SESSION[&quot;color&quot;] = &quot;Red&quot;;
+  $_SESSION[&quot;animal&quot;] = &quot;Lion&quot;;
+
+  echo $_SESSION[&quot;color&quot;].&quot; &quot;.$_SESSION[&quot;animal&quot;];
+
+  session_unset();
+  session_destroy();
+?&gt;
+</code></pre>
+<p>O/P</p>
+<pre><code>Red Lion
+</code></pre>
+<h2>17. Write a PHP program for sending and receiving plain text message (sending email).</h2>
+<pre><code class="language-php">&lt;?php
+  $status = mail(&quot;AnzenKodo@altmail.com&quot;, &quot;Title&quot;, &quot;Hello World&quot;);
+  if ($status) {
+    echo &quot;Mail is sent.&quot;;
+  } else {
+    echo &quot;Mail can't be sent&quot;;
+  }
+?&gt;
+</code></pre>
+<h2>18. Write a PHP program to</h2>
+<h3>Create database</h3>
+<pre><code class="language-php">&lt;?php
+// Create connection
+$conn = mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;, &quot;test&quot;);
+// Check connection
+if ($conn-&gt;connect_error) {
+  die(&quot;Connection failed.&quot;);
+}
+
+// Create database
+$sql = &quot;CREATE DATABASE myDB&quot;;
+if (mysqli_query($conn, $sql)) {
+  echo &quot;Database created successfully&quot;;
+} else {
+  echo &quot;Error creating database&quot;;
+}
+
+mysqli_close($conn);
+?&gt;
+</code></pre>
+<h3>Creation of table.</h3>
+<pre><code class="language-php">&lt;?php
+// Create connection
+$conn = mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;, &quot;test&quot;);
+// Check connection
+if (!$conn) {
+  die(&quot;Connection failed&quot;);
+}
+
+// sql to create table
+$sql = &quot;CREATE TABLE MyGuests(id INT(6))&quot;;
+
+if (mysqli_query($conn, $sql)) {
+  echo &quot;Table MyGuests created successfully&quot;;
+} else {
+  echo &quot;Error creating table: &quot; . $conn-&gt;error;
+}
+
+$conn-&gt;close();
+?&gt;
+</code></pre>
+<h2>19. Write a PHP program to Inserting and retrieving the query result operations and Update ,Delete operations on table data.</h2>
+<pre><code class="language-php">&lt;?php
+// Connecting to MySQL
+$conn = mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;, &quot;test&quot;);
+if (!$conn) {
+  die(&quot;Error: &quot;.mysqli_error($conn));
+}
+
+// Inserting data
+$sql = &quot;INSERT INTO my_table(id, name) VALUES (1, 'Jone'), (2, 'Jonney)&quot;;
+if (!mysqli_query($conn, $sql)) {
+  die(&quot;Error&quot;);
+}
+
+// Retrieving data
+$sql = &quot;SELECT * FROM my_table&quot;;
+if ($result = mysqli_query($conn, $sql)) {
+  if (mysqli_num_rows($result) &gt; 0) {
+    while ($row = mysqli_fetch_array($result)) {
+      echo &quot;ID: &quot;.$row[&quot;id&quot;].&quot;, Name: &quot;.$row[&quot;name&quot;];
+    }
+  } else {
+    echo &quot;Rows can't be zero&quot;;
+  }
+} else {
+  die(&quot;Error: &quot;.mysqli_error($conn));
+}
+
+// Update data
+$sql = &quot;UPDATE my_table SET name='tim' WHERE id=2&quot;;
+if (!mysqli_query($conn, $sql) {
+  die(&quot;Error&quot;);
+}
+
+// Delete data
+$sql = &quot;DELETE FROM my_table WHERE id=1&quot;;
+if (!mysqli_query($conn, $sql) {
+  die(&quot;Error&quot;));
+}
+
+mysqli_close();
+?&gt;
+</code></pre>]]></description>
+  </item>
+  <item>
     <title>ut1 6s</title>
     <link>https://anzenkodo.github.io/notes/programming/languages/php/ut1-6s.html</link>
-    <pubDate>2022-12-30T07:32:04.430Z</pubDate>
+    <pubDate>2022-12-30T08:08:51.268Z</pubDate>
     <description><![CDATA[<h2>Write a php program to find the largest number among three numbers.</h2>
 <pre><code class="language-php">&lt;?php
   function largest($x, $y, $z) {
@@ -3158,9 +3158,1780 @@ variable Evaluates to and will attempt to execute it.</p>
 </code></pre>]]></description>
   </item>
   <item>
+    <title>finals</title>
+    <link>https://anzenkodo.github.io/notes/programming/languages/python/finals.html</link>
+    <pubDate>2022-12-30T08:08:51.268Z</pubDate>
+    <description><![CDATA[<h1>Python</h1>
+<h2>a) Name different modes of Python.</h2>
+<p>Python has two basic modes:</p>
+<ol>
+<li>Script mode (or Normal mode)</li>
+</ol>
+<ul>
+<li>The mode where the scripted and finished .py files are in the Python
+Interpreter.</li>
+</ul>
+<ol start="2">
+<li>Interactive mode</li>
+</ol>
+<ul>
+<li>A command line shell which gives immediate feedback for each statement,
+while running previously fed statements in active memory.</li>
+</ul>
+<h2>b) List identity Operators</h2>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>is</td>
+<td>Returns <code>True</code> if both variables are sames object</td>
+<td>x is y</td>
+</tr>
+<tr>
+<td>is not</td>
+<td>Returns <code>False</code> if both variables are sames object</td>
+<td>x is not y</td>
+</tr>
+</tbody>
+</table>
+<h2>c) Give two differences between list and tuple.</h2>
+<h3>List</h3>
+<ul>
+<li>Lists are mutable.</li>
+<li>The list is better for performing operations.</li>
+<li>Lists consume more memory.</li>
+<li>More likely error will occur.</li>
+</ul>
+<h3>Tuple</h3>
+<ul>
+<li>Tuples are immutable.</li>
+<li>The implication of iterations is faster.</li>
+<li>Tuple consume less memory.</li>
+<li>Less likely error will occur.</li>
+</ul>
+<h2>d) Explain Local and Global variable.</h2>
+<table>
+<thead>
+<tr>
+<th>Local</th>
+<th>Global</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>It is declare  inside a function</td>
+<td>It is declared outside the function</td>
+</tr>
+<tr>
+<td>It is created when the function starts execution and lost when the function terminate.</td>
+<td>It is created before the program’s global execution starts and lost when the program terminates.</td>
+</tr>
+<tr>
+<td>Local variables can be accessed with the help of statements, inside a function in which they are declared.</td>
+<td>You can access global variables by any statement in the program.</td>
+</tr>
+<tr>
+<td>Parameters passing is required for local variables to access the value in other function.</td>
+<td>Parameters passing is not necessary for a global variable as it is visible throughout the program</td>
+</tr>
+</tbody>
+</table>
+<h2>e) Define class and object in python.</h2>
+<h3>Class</h3>
+<ul>
+<li>Class is a blueprint for the object.</li>
+<li>We define a class by using the keyword class.</li>
+<li>Class objects are used to access different attributes.</li>
+</ul>
+<h3>Object</h3>
+<ul>
+<li>Classes are the user-defined blueprints that help us create an “object”.</li>
+<li>Objects are the instances of a particular class.</li>
+<li>Every other element in Python will be an object of some class, such as the string, dictionary, number(10,40), etc.</li>
+</ul>
+<h2>f) How to give single and multiline comment in python.</h2>
+<h3>Single-Line</h3>
+<ul>
+<li>Add the hash (#) symbol before the comment:</li>
+</ul>
+<pre><code class="language-python"># This is your comment
+</code></pre>
+<h3>Multiline</h3>
+<p>-Python will ignore string literals that are not assigned to a variable, you can add a multiline string (triple quotes) in your code, and place your comment inside it:</p>
+<pre><code class="language-python">&quot;&quot;&quot;
+This is a comment
+written in
+more than just one line
+&quot;&quot;&quot;
+</code></pre>
+<h2>g) List different modes of opening file in python.</h2>
+<p>There are four different methods modes for opening a file:</p>
+<ul>
+<li><strong>r</strong> - <em>Read</em> - Opens a file for reading. Error if the file does not exist.</li>
+<li><strong>w</strong> - <em>Write</em> - Opens a file for writing. Creates the file if it does not
+exist.</li>
+<li><strong>x</strong> - <em>Create</em> - Creates the specified file. Error if file exist.</li>
+<li><strong>a</strong> - <em>Append</em> - Opens a file for appending. Creates the if it does not
+exist.</li>
+</ul>
+<p>In addition, the file should be handled as binary or text mode:</p>
+<ul>
+<li>t - <strong>Text</strong> - Default value - <em>Text mode</em>.</li>
+<li>b - Binary - Binary mode (e.g. images).</li>
+</ul>
+<h2>a) Write a program to print following:</h2>
+<pre><code class="language-python">rows = int(input(&quot;Enter number of rows: &quot;))
+
+for i in range(rows):
+    for j in range(i+1):
+        print(j+1, end=&quot; &quot;)
+    print(&quot;\n&quot;)
+</code></pre>
+<h2>b) Explain four Buit-in tuple functions python with example.</h2>
+<ul>
+<li><code>len()</code> - Returns the <strong>length</strong> of the tuple.</li>
+<li><code>max()</code> - Highest value will returned.</li>
+<li><code>min()</code> - Lowest value be returned.</li>
+<li><code>count()</code> - Returns the number of times a specified value occurs in tuple.</li>
+</ul>
+<h2>Explain how to use user defined function in python with example.</h2>
+<p>In Python, a user-defined function’s declaration begins with the keyword def and followed by the function name.</p>
+<pre><code class="language-python">def printt():
+    print(&quot;This is Python 3.2 Tutorial&quot;)
+    print(&quot;This is Python 3.2 Tutorial&quot;)
+    print(&quot;This is Python 3.2 Tutorial&quot;)
+printt()
+</code></pre>
+<p>Output:</p>
+<pre><code>This is Python 3.2 Tutorial
+This is Python 3.2 Tutorial
+This is Python 3.2 Tutorial
+</code></pre>
+<h2>d) Write a program to create class EMPLOYEE with ID and NAME and display its contents.</h2>
+<pre><code class="language-python">class Employee:
+	name = &quot;&quot;
+	department = &quot;&quot;
+	salary = 0
+
+	def setData(self):
+		self.name = input(&quot;Enter Name: &quot;)
+		self.department = input(&quot;Enter Department: &quot;)
+		self.salary = int(input(&quot;Enter Salary: &quot;))
+
+	def showData(self):
+		print(&quot;Name:&quot;, self.name)
+		print(&quot;Department:&quot;, self.department)
+		print(&quot;Salary:&quot;, self.salary)
+
+e = Employee()
+e.setData()
+e.showData()
+</code></pre>
+<p>Output:</p>
+<pre><code>Enter Name: Jonney
+Enter Department: Testing
+Enter Salary: 20000
+Name: Jonney
+Department: Testing
+Salary: 20000
+</code></pre>
+<h2>List Data types used in python. Explain any two with example.</h2>
+<p>Thare are three data type in python numbers, string &amp; boolean.</p>
+<h3>String</h3>
+<ul>
+<li>String is a collection of group of characters.</li>
+<li>String are identified as a contiguous set of characters enclosed in single quotes(’ ') or double quotes(&quot; &quot;).</li>
+<li>String can also can be define with str() function.</li>
+</ul>
+<h3>Boolean</h3>
+<ul>
+<li>Boolean represents the two values namely False and True.</li>
+<li>The true value is represented true as 1 and false as 0.</li>
+</ul>
+<h2>b) Explain membership and assignment operators with example.</h2>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>in</td>
+<td>True if value in list or in sequence</td>
+<td>(‘H’ in x) is True</td>
+</tr>
+<tr>
+<td>not in</td>
+<td>False if value not in list or in sequence</td>
+<td>(‘H’ in x) is False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th style="text-align:center">Description</th>
+<th>Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>=</td>
+<td style="text-align:center">Assign value of right side of expression to left side operand</td>
+<td>x = y + z</td>
+</tr>
+<tr>
+<td>+=</td>
+<td style="text-align:center">Add and Assign: Add right side operand with left side operand and then assign to left operand</td>
+<td>a += b</td>
+</tr>
+<tr>
+<td>-=</td>
+<td style="text-align:center">Subtract AND: Subtract right operand from left operand and then assign to left operand: True if both operands are equal</td>
+<td>a -= b</td>
+</tr>
+<tr>
+<td>*=</td>
+<td style="text-align:center">Multiply AND: Multiply right operand with left operand and then assign to left operand</td>
+<td>a *= b</td>
+</tr>
+</tbody>
+</table>
+<h2>c) Explain indexing and slicing in list with example.</h2>
+<ul>
+<li>“Indexing” means referring to an element of an iterable by its position within the iterable.</li>
+<li>“Slicing” means getting a subset of elements from an iterable based on their indices.</li>
+</ul>
+<h2>d) Write a program for importing module for addition and substraction of two numbers.</h2>
+<pre><code class="language-python">a = int(input(&quot;Enter first number: &quot;))
+b = int( input(&quot;Enter second number: &quot;))
+Sum = a+b; #Add two numbers
+Difference = a-b; #Subtract two numbers
+# To print the result
+print(&quot;Addition of two numbers = &quot;,Sum)
+print(&quot;Subtraction of two numbers = &quot;,Difference)
+</code></pre>
+<p>Output:</p>
+<pre><code>Output:
+Enter first number: 30
+Enter second number: 20
+Addition of two numbers = 50
+Subtraction of two numbers = 10
+</code></pre>
+<h2>a) Write a program to create dictionary of students that includes their ROLL NO. and NAME:</h2>
+<p>i) Add three students in above dictionary
+ii) Update name= ‘Shreyas’ of ROLL NO = 2
+iii) Delete information of ROLL NO = 1</p>
+<pre><code class="language-python">students = {
+  1: &quot;ronney&quot;,
+  2: &quot;jay&quot;
+}
+
+students[2] = &quot;Shreyas&quot;
+del students[1]
+print(students)
+</code></pre>
+<p>Output:</p>
+<pre><code>{ 2: &quot;Shreyas&quot; }
+</code></pre>
+<h2>b) Explain decision making statements If-else, if-elif-else with example.</h2>
+<p>The if…elif…else statement is used in Python for decision making.</p>
+<pre><code class="language-python">num = 3.4
+
+if num &gt; 0:
+    print(&quot;Positive number&quot;)
+elif num == 0:
+    print(&quot;Zero&quot;)
+else:
+    print(&quot;Negative number&quot;)
+</code></pre>
+<h2>c) Explain use of format () method with example.</h2>
+<p>Python format() function has been introduced for handling complex string formatting more efficiently.</p>
+<pre><code class="language-python">txt = &quot;I have {an:.2f} Ruppes!&quot;
+print(txt.format(an = 4))
+</code></pre>
+<p>Output:</p>
+<pre><code>I have 4.00 Ruppes!
+</code></pre>
+<h2>d) Explain building blocks of python.</h2>
+<ul>
+<li>The core data structures to learn in Python are List (list), Dictionary (dict), Tuple (tuple), and Set (set).</li>
+<li>To indicate a block of code in Python, you must indent each line of the block by the same amount.</li>
+</ul>
+<h2>e) Write a program illustrating use of user defined package in python.</h2>
+<p>Packages are a way of structuring many packages and modules which helps in a well-organized hierarchy of data set, making the directories and modules easy to access.</p>
+<p><a href="http://file1.py/">file1.py</a>:</p>
+<pre><code class="language-python">class Bmw:
+    # First we create a constructor for this class
+    # and add members to it, here models
+    def __init__(self):
+        self.models = ['i8', 'x1', 'x5', 'x6']
+
+    # A normal print function
+    def outModels(self):
+        print('These are the available models for BMW')
+        for model in self.models:
+            print('\t%s ' % model)
+</code></pre>
+<p><a href="http://file2.py/">file2.py</a></p>
+<pre><code class="language-python">from Bmw import Bmw
+</code></pre>
+<h2>Write the output of the following:</h2>
+<pre><code>&gt;&gt;&gt; a = [2, 5, 1, 3, 6, 9, 7]
+&gt;&gt;&gt; a[2:6] = [2, 4, 9, 0]
+&gt;&gt;&gt; print (a)
+</code></pre>
+<p>Ans:</p>
+<pre><code>[2, 5, 2, 4, 9, 0, 7]
+</code></pre>
+<pre><code>b = [&quot;Hello&quot;, &quot;Good&quot;]
+b.append(&quot;python&quot;)
+print (b)
+</code></pre>
+<p>Ans:</p>
+<pre><code>['Hello', 'Good', 'python']
+</code></pre>
+<pre><code>t1 = [3, 5, 6, 7]
+print (t1[2])
+print (t1[-1])
+print (t1[2:])
+print(t1[:])
+</code></pre>
+<p>Ans:</p>
+<pre><code>6
+7
+[6, 7]
+[3, 5, 6, 7]
+</code></pre>
+<h2>Explain method overloading in python with example.</h2>
+<ul>
+<li>overloading is the ability of a function or an operator to behave in different ways based on the parameters that are passed to the function, or the operands that the operator acts on.</li>
+</ul>
+<pre><code class="language-python">class A:
+    def __init__(self, a):
+        self.a = a
+
+    # adding two objects
+    def __add__(self, o):
+        return self.a + o.a
+ob1 = A(1)
+ob2 = A(2)
+ob3 = A(&quot;Geeks&quot;)
+ob4 = A(&quot;For&quot;)
+
+print(ob1 + ob2)
+print(ob3 + ob4)
+</code></pre>
+<h2>Write a program to open a file in write mode and some contents at the end of file.</h2>
+<pre><code class="language-python">o = open(&quot;name.txt&quot;, &quot;w&quot;)
+o.write(&quot;I am a programmer&quot;)
+o.close()
+o = open(&quot;name.txt&quot;, &quot;r&quot;)
+print(o.read())
+o.close()
+</code></pre>
+<p>O/P</p>
+<pre><code>I am a programmer
+</code></pre>
+<h2>a) Explain package Numpy with example.</h2>
+<ul>
+<li>Numpy is a python package which stands for “Numerical Python”.</li>
+</ul>
+<pre><code class="language-python">import numpy as n
+a=n.ones((3, 3))
+a[1:-1,1:-1]=0
+print(a)
+</code></pre>
+<p>Output:</p>
+<pre><code>[[1. 1. 1.]
+ [1. 0. 1.]
+ [1. 1. 1.]]
+</code></pre>
+<h2>6) Write a program to implement the concept of inheritance in python.</h2>
+<pre><code class="language-python">class Parent:
+	parentname = &quot;&quot;
+	childname = &quot;&quot;
+	def show_parent(self):
+		print(self.parentname)
+
+class Child(Parent):
+	def show_child(self):
+		print(self.childname)
+
+c = Child()
+c.parentname = &quot;Arati&quot;
+c.childname = &quot;Purva&quot;
+c.show_parent()
+c.show_child()
+</code></pre>
+<h2>c) Explain Try-except block used in exception handling in python with example.</h2>
+<ul>
+<li>When an exception occurs, Python will normally stop and generate an error message.</li>
+<li>These exceptions can be handled using the try statement.</li>
+<li>The except block lets you handle the error.</li>
+</ul>
+<pre><code class="language-python">try:
+  print(x)
+except NameError:
+  print(&quot;Variable x is not defined&quot;)
+</code></pre>]]></description>
+  </item>
+  <item>
+    <title>sample paper 6s</title>
+    <link>https://anzenkodo.github.io/notes/programming/languages/python/sample-paper-6s.html</link>
+    <pubDate>2022-12-30T08:08:51.268Z</pubDate>
+    <description><![CDATA[<h2>Q1 Any FIVE</h2>
+<h3>a. Name different modes of Python.</h3>
+<p>Python has two basic modes:</p>
+<ol>
+<li>Script mode (or Normal mode)
+<ul>
+<li>The mode where the scripted and finished .py files are in the Python
+Interpreter.</li>
+</ul>
+</li>
+<li>Interactive mode
+<ul>
+<li>A command line shell which gives immediate feedback for each statement,
+while running previously fed statements in active memory.</li>
+</ul>
+</li>
+</ol>
+<h3>b. List identity Operators</h3>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>is</td>
+<td>Returns <code>True</code> if both variables are sames object</td>
+<td>x is y</td>
+</tr>
+<tr>
+<td>is not</td>
+<td>Returns <code>False</code> if both variables are sames object</td>
+<td>x is not y</td>
+</tr>
+</tbody>
+</table>
+<h3>c. Describe Dictionary</h3>
+<ul>
+<li>A dictionary is collection which is unordered, changeable and indexed.</li>
+<li>Dictionaries are written with curl brackets, and they have keys and values.</li>
+<li>Example:<pre><code class="language-python">company = {
+	&quot;name&quot;: &quot;Apple&quot;,
+	&quot;product&quot;: &quot;IPhone&quot;
+	&quot;model&quot;: &quot;11&quot;
+}
+</code></pre>
+</li>
+</ul>
+<h3>d. State use of namespace in Python</h3>
+<ul>
+<li>A namespace is a simple system to control the names in a program.</li>
+<li>Python implements namespaces in the form of dictionaries.</li>
+<li>It maintains a name-to-object mapping where names act as keys and the objects
+as values.</li>
+</ul>
+<h3>e. List different object oriented features supported by Python.</h3>
+<ul>
+<li>Python OPP Concepts
+<ol>
+<li>Object</li>
+<li>Class</li>
+<li>Method</li>
+<li>Inheritance</li>
+<li>Polymorphism</li>
+<li>Data Abstraction</li>
+<li>Encapsulation</li>
+</ol>
+</li>
+</ul>
+<h3>f. Write steps involved in creation of a user defined exception?</h3>
+<ul>
+<li>Exception can be define by creating a new class.</li>
+<li>This exception class has to be derived, either directly or indirectly, from the built-in <code>Exception</code>.</li>
+<li>When the programmer suspects the possibility of exception, he should raise his
+own exception using <code>raise</code>.</li>
+<li>The programmer can insert the code inside a <code>try</code> block.</li>
+<li>Catch the exception using <code>except</code> block.</li>
+<li>Example:<pre><code class="language-python">class Error(Exception):
+	print(&quot;Value can't be 0.&quot;)
+
+number = 0
+
+try:
+	if number == 0:
+		raise Error
+	else:
+		print(&quot;Value is more then 0.&quot;)
+except Error:
+	pass
+</code></pre>
+</li>
+<li>Output:<pre><code>Value can't be 0.
+</code></pre>
+</li>
+</ul>
+<h3>g. Describe Python Interpreter</h3>
+<ul>
+<li>Python interpreter converts the code written in Python language by users to
+language which computer hardware or system can understand.</li>
+<li>Python interpreter is a bytecode interpreter, its input is instruction set
+sets called bytecode.</li>
+</ul>
+<h3>h. List features of Python</h3>
+<ul>
+<li>Easy to code</li>
+<li>High Level programming language</li>
+<li>Object-Oriented Language</li>
+<li>Portable language</li>
+<li>Use interpreter</li>
+<li>GUI Support</li>
+</ul>
+<h2>Q2 Any THREE</h2>
+<h3>a. Explain two Membership and two logical operators in python with appropriate examples.</h3>
+<h4>Membership Operators</h4>
+<ul>
+<li>Membership operators are used to test whether a value is found within a
+sequence.</li>
+<li>Example of <code>in</code>:<pre><code class="language-python">x = 4
+y = 8
+list = [1, 2, 3, 4, 5]
+
+if (x in list):
+	print(&quot;X is in list array&quot;)
+else:
+	print(&quot;X is not in list array&quot;)
+</code></pre>
+Output:<pre><code>X is in list array
+</code></pre>
+</li>
+<li>Example of <code>not in</code>:<pre><code class="language-python">if (y not in list):
+	print(&quot;Y is not in list array&quot;)
+else:
+	print(&quot;Y is in list array&quot;)
+</code></pre>
+Output:<pre><code>Y is not in list array
+</code></pre>
+</li>
+</ul>
+<h4>Logical Operators</h4>
+<ul>
+<li>Logical operators are usedto perform locical operations on the values of
+variables. The value is either <code>true</code> or <code>false</code></li>
+<li>Example of <code>and</code>, <code>or</code> and <code>not</code>.<pre><code class="language-python">a = True
+b = False
+print('a and b is', a and b)
+print('a or b is', a or b)
+print('not a is', not a)
+</code></pre>
+<pre><code>a and b is False
+a or b is True
+a not b is False
+</code></pre>
+</li>
+</ul>
+<h3>b. Describe any four methods of lists in Python</h3>
+<ul>
+<li><code>append()</code> - Adds an element at the end of the list.</li>
+<li><code>pop()</code> - Removes the element at the specified position.</li>
+<li><code>sort()</code> - Sorts the list</li>
+<li><code>clear()</code> - Removes all the elements from the list.
+Example:</li>
+</ul>
+<pre><code class="language-python">fruits = ['apple', 'banana', 'cherry']
+
+fruits.append(&quot;orange&quot;)
+print(fruits)
+
+fruits.pop(1)
+print(fruits)
+
+fruits.sort()
+print(fruits)
+
+fruits.clear()
+print(fruits)
+</code></pre>
+<p>Output:</p>
+<pre><code>['apple', 'banana', 'cherry', 'orange']
+['apple', 'cherry', 'orange']
+['apple', 'cherry', 'orange']
+
+</code></pre>
+<h3>c. Comparing between local and global variable</h3>
+<table>
+<thead>
+<tr>
+<th>Local</th>
+<th>Global</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>It is declare  inside a function</td>
+<td>It is declared outside the function</td>
+</tr>
+<tr>
+<td>It is created when the function starts execution and lost when the function terminate.</td>
+<td>It is created before the program’s global execution starts and lost when the program terminates.</td>
+</tr>
+<tr>
+<td>Local variables can be accessed with the help of statements, inside a function in which they are declared.</td>
+<td>You can access global variables by any statement in the program.</td>
+</tr>
+<tr>
+<td>Parameters passing is required for local variables to access the value in other function.</td>
+<td>Parameters passing is not necessary for a global variable as it is visible throughout the program</td>
+</tr>
+</tbody>
+</table>
+<h3>d. Write a Python program to print Fibonacci series up to n terms</h3>
+<p>Example:</p>
+<pre><code class="language-python">term = int(input(&quot;Enter the term: &quot;))
+
+n1, n2 = 0, 1
+
+if term &lt; 0:
+	print(&quot;Invalid term&quot;)
+else:
+	for i in range(term):
+		print(n1)
+		nth = n1 + n2
+		n1 = n2
+		n2 = nth
+</code></pre>
+<p>Output:</p>
+<pre><code>Enter the term: 7
+0
+1
+1
+2
+3
+5
+8
+</code></pre>
+<h2>Q3 Any THREE</h2>
+<h3>a. Write a program to input any two and interchange the tuple variable.</h3>
+<p>Example:</p>
+<pre><code>a = (1, 2, 3, 4, 5)
+b = (13, 23, 36, 47, 75)
+
+a,b = b,a
+
+print(a)
+print(b)
+</code></pre>
+<p>Output:</p>
+<pre><code>(13, 23, 36, 47, 75)
+(1, 2, 3, 4, 5)
+</code></pre>
+<h3>b. Explain different loops available in python with suitable examples.</h3>
+<h4><code>while</code></h4>
+<p>A <code>while</code> loop executes a target statement as long as given condition is true.</p>
+<p>Syntax:</p>
+<pre><code>while expression: statement(s)
+</code></pre>
+<p>Example:</p>
+<pre><code class="language-python">count = 0
+
+while(count &lt; 5):
+	print(count)
+	count += 1
+
+print(&quot;over&quot;)
+</code></pre>
+<p>Output:</p>
+<pre><code>0
+1
+2
+3
+4
+over
+</code></pre>
+<h4><code>for loop</code></h4>
+<p>It has the ability to iterate over the items of any sequence, such as a list or
+a string.</p>
+<p>Syntax:</p>
+<pre><code>for iterating in sequence: statements(s)
+</code></pre>
+<p>Example:</p>
+<pre><code class="language-python">fruits = ['banana', 'apple', 'mango']
+
+for fruit in fruits:
+	print(fruit)
+
+print(&quot;over&quot;)
+</code></pre>
+<p>Output:</p>
+<pre><code>banana
+apple
+mango
+over
+</code></pre>
+<h4>Nested loops</h4>
+<p>Python programming language allows to use one loop inside another loop.</p>
+<p>Syntax:</p>
+<pre><code>for iterating in sequence:
+	for iterating in sequence:
+		statements(s)
+	statements(s)
+</code></pre>
+<p>Example:</p>
+<pre><code class="language-python">nums = [1, 2, 3]
+words = [&quot;hello&quot;, &quot;hi&quot;, &quot;bye&quot;]
+
+for num in nums:
+	print(num)
+
+	for word in words:
+		print(word)
+</code></pre>
+<p>Output:</p>
+<pre><code>1
+hello
+hi
+bye
+2
+hello
+hi
+bye
+3
+hello
+hi
+bye
+</code></pre>
+<h3>c. Describe various modes of file object? Explain any two in detail.</h3>
+<p>There are four different methods modes for opening a file:</p>
+<ul>
+<li><strong>r</strong> - <em>Read</em> - Opens a file for reading. Error if the file does not exist.</li>
+<li><strong>w</strong> - <em>Write</em> - Opens a file for writing. Creates the file if it does not
+exist.</li>
+<li><strong>x</strong> - <em>Create</em> - Creates the specified file. Error if file exist.</li>
+<li><strong>a</strong> - <em>Append</em> - Opens a file for appending. Creates the if it does not
+exist.</li>
+</ul>
+<p>In addition, the file should be handled as binary or text mode:</p>
+<ul>
+<li>t - <strong>Text</strong> - Default value - <em>Text mode</em>.</li>
+<li>b - Binary - Binary mode (e.g. images).</li>
+</ul>
+<h4>Read a file</h4>
+<p>The <code>read()</code> method and <strong>r</strong> mode is used to read files.
+Before read a file, the file must open using <code>open()</code> function.</p>
+<p><code>text.txt</code> file content:</p>
+<pre><code class="language-txt">Hello World
+</code></pre>
+<p>Program:</p>
+<pre><code class="language-python">f = open(&quot;text.txt&quot;, &quot;r&quot;)
+print(f.read())
+</code></pre>
+<p>Output:</p>
+<pre><code>Hello world
+</code></pre>
+<h4>Write a file</h4>
+<p>The <code>write()</code> method and <code>a</code> or <code>w</code> modes is used to write files.</p>
+<p>Program:</p>
+<pre><code class="language-python">f = open(&quot;text.txt&quot;, &quot;w&quot;)
+f.write(&quot;Hello World&quot;)
+f.close()
+</code></pre>
+<p><code>text.txt</code> file content:</p>
+<pre><code>Hello World
+</code></pre>
+<h3>d. Illustrate the use of method overriding? Explain with example</h3>
+<p>If a class inherits a method from its superclass, then there is a chance to
+override the method provided.
+Example:</p>
+<pre><code class="language-python">class Parent:
+	def echo(self):
+		print('I am from Parent class.')
+
+class Child(Parent):
+	def echo(self):
+		print('I am from Child class.')
+
+p = Parent()
+c = Child()
+
+p.echo()
+c.echo()
+</code></pre>
+<p>Output:</p>
+<pre><code>I am from Parent class.
+I am from Child class.
+</code></pre>
+<h2>Q4 Any THREE</h2>
+<h3>a. Use of any four methods of tuple in Python?</h3>
+<ul>
+<li><code>len()</code> - Returns the <strong>length</strong> of the tuple.</li>
+<li><code>max()</code> - Highest value will returned.</li>
+<li><code>min()</code> - Lowest value be returned.</li>
+<li><code>count()</code> - Returns the number of times a specified value occurs in tuple.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-python">t = (12, 45, 43, 8, 35, 12)
+print(len(t))
+print(max(t))
+print(min(t))
+print(t1.count(12))
+</code></pre>
+<p>Output:</p>
+<pre><code>6
+45
+8
+2
+</code></pre>
+<h3>b. Write a python Program to read contents of first.txt and write same content in second.txt file</h3>
+<p><code>first.txt</code> file content:</p>
+<pre><code>Hello World
+</code></pre>
+<p>Program:</p>
+<pre><code class="language-python">with open('first.txt', 'r') as firstfile, open('second.txt', 'a') as secondfile:
+
+	for line in firstfile:
+		secondfile.write(line)
+</code></pre>
+<p><code>second.txt</code> file content:</p>
+<pre><code>Hello world
+</code></pre>
+<h3>c. Show how try…except block is used for exception handling in Python with example.</h3>
+<ul>
+<li>When an exception occurs, Python will normally stop and generate an error
+message.</li>
+<li>These exceptions can be handled using the <code>try</code> statement.</li>
+<li>The <code>except</code> block lets you handle the error.</li>
+<li>Syntax:<pre><code class="language-python">try:
+	# Code
+except:
+	# Code
+</code></pre>
+</li>
+<li>Example:<pre><code class="language-python">try:
+	print(x)
+except NameError:
+	print(&quot;Variable x is not defined&quot;)
+</code></pre>
+</li>
+<li>Output:<pre><code>Variable x is not defined.
+</code></pre>
+</li>
+</ul>
+<h3>d. Write the output for the following if the variable fruit = “banana”</h3>
+<pre><code>&gt;&gt;&gt; fruit[:3]
+&gt;&gt;&gt; fruit[3:]
+&gt;&gt;&gt; fruit[3:3]
+&gt;&gt;&gt; fruit[:]
+</code></pre>
+<p>Output:</p>
+<pre><code>&gt;&gt;&gt; fruit = &quot;banana&quot;
+&gt;&gt;&gt; fruit[:3]
+'ban'
+&gt;&gt;&gt; fruit[3:]
+'ana'
+&gt;&gt;&gt; fruit[3:3]
+''
+&gt;&gt;&gt; fruit[:]
+'banana'
+</code></pre>
+<h2>Q5 Any TWO</h2>
+<h3>a. Determine various data types available in Python with example.</h3>
+<h4>Numbers</h4>
+<ul>
+<li><code>int</code>, <code>float</code> and complex numbers fall under numbers category.</li>
+<li>Example:<pre><code class="language-python">a = 5
+a = 2.0
+a = 1+2j
+</code></pre>
+</li>
+</ul>
+<h4>String</h4>
+<ul>
+<li>String is sequence of Unicode characters.</li>
+<li>We can use single quotes or double quotes to represent strings.</li>
+<li>Multi-line string can be denoted using triple quotes <code>'''</code> or <code>&quot;&quot;&quot;</code>.</li>
+<li>Example:<pre><code class="language-python">s = &quot;This is string&quot;
+s = '''
+	A multi line string
+'''
+</code></pre>
+</li>
+</ul>
+<h4>List</h4>
+<ul>
+<li>List is an ordered sequence of items.</li>
+<li>It is one of the most used datatype in Python.</li>
+<li>List is very flexible.</li>
+<li>All the items in a list don not need to be the same type.</li>
+<li>Example:<pre><code class="language-python">a = [1, 2.2, 'python']
+</code></pre>
+</li>
+</ul>
+<h4>Tuple</h4>
+<ul>
+<li>Tuple is an ordered sequence of items same as a list.</li>
+<li>The only difference is that tuples are immutable.</li>
+<li>Tuples once created cannot be modified.</li>
+<li>Example:<pre><code class="language-python">t = (5, 'program', 1+3j)
+</code></pre>
+</li>
+</ul>
+<h4>Set</h4>
+<ul>
+<li>Set is an unordered collection of unique items.</li>
+<li>Set is defined by values separated by comma inside braces { }.</li>
+<li>Items in a set are not ordered</li>
+<li>Example:<pre><code class="language-python">a = {5,2,3,1,4}
+</code></pre>
+</li>
+</ul>
+<h4>Dictionary</h4>
+<ul>
+<li>Dictionary is an unordered collection of key-value pairs.</li>
+<li>It is generally used when we have a huge amount of data.</li>
+<li>Dictionaries are defined within braces <code>{}</code>.</li>
+<li>Example:<pre><code class="language-python">d = {1:'value','key':2}
+</code></pre>
+</li>
+</ul>
+<h3>b. Write a python program to calculate factorial of given number using function.</h3>
+<p>Example:</p>
+<pre><code class="language-python">n = int(input(&quot;Enter the number: &quot;))
+f = 1
+
+for i in range(1, n + 1):
+	f = f * 1
+
+print(f)
+</code></pre>
+<p>Output:</p>
+<pre><code>Enter the number: 6
+720
+</code></pre>
+<h3>c. Show the output for the following:</h3>
+<pre><code>&gt;&gt;&gt; a = [1, 2, 3]
+&gt;&gt;&gt; b = [4, 5, 6]
+&gt;&gt;&gt; c = a + b
+&gt;&gt;&gt; print(c)
+[1, 2, 3, 4, 5, 6]
+</code></pre>
+<pre><code>&gt;&gt;&gt; [1, 2, 3] * 3
+[1, 2, 3, 1, 2, 3, 1, 2, 3]
+</code></pre>
+<pre><code>&gt;&gt;&gt; t = ['a', 'b', 'c', 'd', 'e', 'f']
+&gt;&gt;&gt; t[1:3] = ['x', 'y']
+&gt;&gt;&gt; print(t)
+['a', 'x', 'y', 'd', 'e', 'f']
+</code></pre>
+<h2>Q6 Any TWO</h2>
+<h3>a. Describe Set in python with suitable examples.</h3>
+<h4>Creating a set</h4>
+<p>Set can be created using curly braces <code>{}</code> or using <code>set()</code> method.</p>
+<pre><code class="language-python">fruits = {'apple', 'banana', 'cherry'}
+fruits = set(['apple', 'banana', 'cherry'])
+</code></pre>
+<h4>Adding items to the set</h4>
+<p>Item can added using <code>add()</code> method.</p>
+<p>Example:</p>
+<pre><code class="language-python">fruits = {'apple', 'banana', 'cherry'}
+fruits.add('orange')
+print(fruits)
+</code></pre>
+<p>Output:</p>
+<pre><code>{'apple', 'banana', 'cherry', 'orange'}
+</code></pre>
+<h4>Removing items from the set</h4>
+<p>There three methods to remove sets:</p>
+<ul>
+<li><code>discard()</code> - removes given items from set.</li>
+<li><code>remove()</code> - removes given item from set. If item is not avaliable it will
+give error.</li>
+<li><code>pop()</code> - removes list item from the set.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-python">fruits = {'apple', 'banana', 'cherry', 'orange'}
+fruits.discard(&quot;apple&quot;)
+fruits.remove(&quot;banana&quot;)
+fruits.pop()
+print(fruits)
+</code></pre>
+<p>Output:</p>
+<pre><code>{'cherry'}
+</code></pre>
+<h4>Comparison of set</h4>
+<ul>
+<li><code>|</code> - shows the union of two set.</li>
+<li><code>&amp;</code> - shows the intersection of two set.</li>
+<li><code>-</code> - shows the difference of two set.</li>
+<li><code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>==</code> - comparison operators can also be use in set.</li>
+</ul>
+<pre><code class="language-python">fruits = {'apple', 'banana', 'cherry'}
+fruits2 = {'orange', 'pineapple', 'apple'}
+
+print(fruits|fruits2)
+print(fruits&amp;fruits2)
+print(fruits-fruits2)
+print(fruits&gt;fruits2)
+print(fruits&lt;fruits2)
+print(fruits==fruits2)
+</code></pre>
+<p>Output:</p>
+<pre><code>{'apple', 'banana', 'cherry', 'orange', 'pineapple', 'apple'}
+{'apple'}
+{'banana', 'cherry', 'orange', 'pineapple'}
+False
+False
+True
+</code></pre>
+<h3>b. Illustrate class inheritance in Python with an example</h3>
+<h4>Simple Inheritance</h4>
+<p>In inheritance, the child class acquires the properties and access all the data
+members and function defined in the parent class.</p>
+<p>Illustration:</p>
+<pre><code> ┏━━━━━━━━━━┓
+ ┃Base Class┃
+ ┗━━━━━━━━━━┛
+      ⇑
+┏━━━━━━━━━━━━┓
+┃Deived Class┃
+┗━━━━━━━━━━━━┛
+</code></pre>
+<p>Syntax:</p>
+<pre><code class="language-python">class Base:
+	# Body of base class
+class Derived(Base):
+	# Body of derived class
+</code></pre>
+<p>Example:</p>
+<pre><code class="language-python">class Parent:
+	parentname = &quot;&quot;
+	childname = &quot;&quot;
+	def show_parent(self):
+		print(self.parentname)
+
+class Child(Parent):
+	def show_child(self):
+		print(self.childname)
+
+c = Child()
+c.parentname = &quot;Arati&quot;
+c.childname = &quot;Purva&quot;
+c.show_parent()
+c.show_child()
+</code></pre>
+<p>Output:</p>
+<pre><code>Arati
+Purva
+</code></pre>
+<h4>Multiple inheritance</h4>
+<p>Multiple inheritace means that you’re inheriting the property of multiple
+classes into one.</p>
+<p>Illustration:</p>
+<pre><code>┏━━━━━━━━━━━━┓┏━━━━━━━━━━━━┓┏━━━━━━━━━━━━┓
+┃Base Class 1┃┃Base Class 2┃┃Base Class 3┃
+┗━━━━━━━━━━━━┛┗━━━━━━━━━━━━┛┗━━━━━━━━━━━━┛
+     ┃              ┃             ┃
+     ┗━━━━━━━━━━━━━━╋━━━━━━━━━━━━━┛
+              ┏━━━━━━━━━━━━┓
+              ┃Deived Class┃
+              ┗━━━━━━━━━━━━┛
+</code></pre>
+<p>Syntax:</p>
+<pre><code class="language-python">class A:
+	# variable of class A
+class B:
+	# variable of class B
+class C(A, B):
+	# variable of class C
+</code></pre>
+<p>Example:</p>
+<pre><code class="language-python">class Parent1:
+	def echo(self):
+		print(&quot;Parent class 1&quot;)
+
+class Parent2:
+	def echo2(self):
+		print(&quot;Parent class 2&quot;)
+
+class Child(Parent1, Parent2):
+	def show(self):
+		print(&quot;Child class&quot;)
+
+c = Child()
+c.echo()
+c.echo2()
+c.show()
+</code></pre>
+<p>Output:</p>
+<pre><code>Parent class 1
+Parent class 2
+Child class
+</code></pre>
+<h3>c. Design a class Employee with data members: name, department and salary. Create suitable methods for reading and printing employee information</h3>
+<p>Example:</p>
+<pre><code class="language-python">class Employee:
+	name = &quot;&quot;
+	department = &quot;&quot;
+	salary = 0
+
+	def setData(self):
+		self.name = input(&quot;Enter Name: &quot;)
+		self.department = input(&quot;Enter Department: &quot;)
+		self.salary = int(input(&quot;Enter Salary: &quot;))
+
+	def showData(self):
+		print(&quot;Name:&quot;, self.name)
+		print(&quot;Department:&quot;, self.department)
+		print(&quot;Salary:&quot;, self.salary)
+
+e = Employee()
+e.setData()
+e.showData()
+</code></pre>
+<p>Output:</p>
+<pre><code>Enter Name: Jonney
+Enter Department: Testing
+Enter Salary: 20000
+Name: Jonney
+Department: Testing
+Salary: 20000
+</code></pre>]]></description>
+  </item>
+  <item>
+    <title>practical s6</title>
+    <link>https://anzenkodo.github.io/notes/programming/languages/python/practical-s6.html</link>
+    <pubDate>2022-12-30T08:08:51.268Z</pubDate>
+    <description><![CDATA[<h1>Python practical question bank solved</h1>
+<h2>1) WAP to create 3x3 matrix with 1 at the border and zero inside.</h2>
+<pre><code class="language-python">import numpy as n
+a=n.ones((3, 3))
+a[1:-1,1:-1]=0
+print(a)
+</code></pre>
+<p>Output</p>
+<pre><code>[[1. 1. 1.]
+ [1. 0. 1.]
+ [1. 1. 1.]]
+</code></pre>
+<h2>2) WAP to calculate area of circle and area of rectangle using abstract class.</h2>
+<pre><code class="language-python">from abc import ABC, abstractmethod
+class test(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+class Rec(test):
+    def area(self):
+        self. l=4
+        self. b=2
+        print(self.l*self.b)
+class Cir(test):
+    def area(self):
+        self.r=5
+        print(3.14*self.r*self.r)
+R=Rec()
+R. area()
+C=Cir()
+C. area()
+</code></pre>
+<p>Output</p>
+<pre><code>8
+78.5
+</code></pre>
+<h2>3) WAP to create dictionary where key is 1 to 10 and value is square of 1 to 10.</h2>
+<pre><code class="language-python">a=dict()
+for i in range(1,11):
+    a[i]=i**2
+print(a)
+</code></pre>
+<p>Output
+<code>{1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81, 10: 100}</code></p>
+<h2>4) WAP to display result using inheritance.</h2>
+<pre><code class="language-python">class Student:
+    def accept(self):
+        self. name=input(&quot;Name:&quot;)
+class Test:
+    def marks(self):
+        self. m1=int(input(&quot;M1:&quot;))
+        self. m2=int(input(&quot;M2:&quot;))
+class Result(Student, Test):
+    def total(self):
+        self. t=self.m1+self.m2
+    def disp(self):
+        print(self.name)
+        print(self.t)
+r=Result()
+r. accept()
+r. marks()
+r. total()
+r. disp()
+</code></pre>
+<p>Output</p>
+<pre><code>Name:ramesh
+M1:80
+M2:70
+ramesh
+150
+</code></pre>
+<h2>5) WAP to remove duplicates from dictionary.</h2>
+<pre><code class="language-python">d={1:20, 1:20, 2:30}
+res={}
+for x, y in d. items() :
+    if y not in d. items() :
+        res[x]=y
+print(res)
+</code></pre>
+<p>Output
+<code>{1: 20, 2: 30}</code></p>
+<h2>6) WAP to print sum of entered no. using function with arbitrary argument arguments.</h2>
+<pre><code class="language-python">def sum(*x):
+    n=0
+    for i in x:
+        n+=i
+    print(n)
+sum(1, 2,3,4,5)
+</code></pre>
+<p>Output
+<code>15</code></p>
+<p><code>fibonacci.py</code></p>
+<pre><code class="language-python">def fib(n):
+  n1, n2= 0,1
+  for i in range(n):
+    print(n1)
+    nth=n1+n2
+    n1=n2
+    n2=nth
+</code></pre>
+<p><code>fib.py</code></p>
+<pre><code class="language-python">import fibonacci
+print(fibonacci.fib(5))
+</code></pre>
+<p>To run the code, run <code>fib.py</code> file.</p>
+<h2>8) WAP to print following pattern.</h2>
+<pre><code>***
+**
+*
+</code></pre>
+<pre><code class="language-python">for i in range(4, 0, -1):
+    for j in range(0, i-1):
+        print(“*”, end= ‘ ’)
+    print(&quot; &quot;)
+</code></pre>
+<h2>9) WAP to print distinction, first class, second, third class and fail using if else.</h2>
+<pre><code class="language-python">s1=int(input(&quot;English:&quot;))
+s2=int(input(&quot;Hindi:&quot;))
+s3=int(input(&quot;Marathi:&quot;))
+s4=int(input(&quot;Maths:&quot;))
+s5=int(input(&quot;Science:&quot;))
+a=(s1+s2+s3+s4+s5)/5
+if a&gt;=90:
+    print(&quot;Distinction&quot;)
+elif a&gt;=75 and a&lt;90:
+    print(&quot;First class&quot;)
+elif a&gt;=45 and a&lt;75:
+    print(&quot;Second class&quot;)
+elif a&gt;=35 and a&lt;45:
+    print(&quot;Third class&quot;)
+else:
+    print(&quot;Failed&quot;)
+</code></pre>
+<p>Output</p>
+<pre><code>English:70
+Hindi:80
+Marathi:90
+Maths:80
+Science:70
+First class
+</code></pre>
+<h2>10) WAP to calculate area of circle and rectangle using method overriding.</h2>
+<pre><code class="language-python">class Rec:
+    def area(self):
+        self. l=4
+        self. b=2
+        print(&quot;Area of rectangle=&quot;,self.l*self.b)
+class Cir:
+    def area(self):
+        self. r=3.5
+        print(&quot;Area of circle=&quot;,3.14*self.r*self.r)
+r=Rec()
+r. area()
+c=Cir()
+c. area()
+</code></pre>
+<p>Output</p>
+<pre><code>Area of rectangle= 8
+Area of circle= 38.465
+</code></pre>
+<h2>11) Check entered password is correct or not using user defined exception.</h2>
+<pre><code class="language-python">class WrongPasswordException(Exception):
+  pass
+p=input(&quot;Enter password:&quot;)
+try:
+  if p!='abc12':
+    raise WrongPasswordException
+except WrongPasswordException:
+  print(&quot;Incorrect password!&quot;)
+else:
+  print(&quot;Correct password!&quot;)
+</code></pre>
+<p>Output</p>
+<pre><code>Enter password:abc12
+Correct password!
+</code></pre>
+<h2>12) Create list and perform following operations.</h2>
+<ol>
+<li>print elements using for loop</li>
+<li>del elements 3,4</li>
+<li>del 4 and add ‘o’,‘n’ ‘a’</li>
+<li>acces element ‘d’ from orignal list</li>
+<li>find len of list</li>
+</ol>
+<h3>1.print elements using for loop</h3>
+<pre><code class="language-python=">li = ['a','n','a','c',['o','n','d'],'a']
+for i in li:
+    print(i)
+</code></pre>
+<p>Output</p>
+<pre><code>a
+n
+a
+c
+['o', 'n', 'd']
+a
+</code></pre>
+<h3>2. del elements 3,4</h3>
+<h3>3. del 4 and add ‘o’,‘n’ ‘a’</h3>
+<h3>4. acces element ‘d’ from orignal list</h3>
+<h3>5. find len of list</h3>
+<pre><code class="language-python=">li = ['a','n','a','c',['o','n','d'],'a']
+print(&quot;The length of list is: &quot;, len(li))
+</code></pre>
+<p>Output
+<code>The length of list is:  6</code></p>
+<h2>13) WAP using numpy to generate six random integers between 20-30.</h2>
+<pre><code class="language-python=">import numpy as n
+a=n.random.randint(20,30,6)
+print(a)
+</code></pre>
+<p>Output
+<code>[24 27 29 25 22 22]</code></p>
+<h2>14) WAP to concatenate dictionaries to create new one.</h2>
+<pre><code class="language-python">d1={1:10}
+d2={2:20}
+d3={3:30}
+d4={}
+for i in d1, d2, d3:
+    d4. update(i)
+print(d4)
+</code></pre>
+<p>Output
+<code>{1: 10, 2: 20, 3: 30}</code></p>
+<h2>15) WAP to print unique values of following dict.</h2>
+<pre><code class="language-python">d={1:10, 2:20, 3:30, 4:30}
+d={1:10, 2:20, 3:30, 4:30}
+u=set()
+for i in d:
+    for val in d.values() :
+        u. add(val)
+print(u)
+</code></pre>
+<p>Output
+<code>{10, 20, 30}</code></p>
+<h2>16) Create 3x4 matrix filled with 10-21.</h2>
+<pre><code class="language-python">import numpy as n
+a=n.arange(10,22).reshape((3,4))
+print(a)
+</code></pre>
+<p>Output</p>
+<pre><code>[[10 11 12 13]
+ [14 15 16 17]
+ [18 19 20 21]]
+</code></pre>
+<h2>17) WAP to create class Emp having data members name, salary use constructor to accept values and display information.</h2>
+<pre><code class="language-python">class Emp:
+    def __init__(self, name, salary):
+        self. name=name
+        self. salary=salary
+    def disp(self):
+        print(&quot;Name:&quot;,self.name)
+        print(&quot;Salary:&quot;,self.salary)
+e=Emp(&quot;Abc&quot;,10000)
+e. disp()
+</code></pre>
+<p>Output</p>
+<pre><code>Name: Abc
+Salary: 10000
+</code></pre>]]></description>
+  </item>
+  <item>
+    <title>ut2 6s</title>
+    <link>https://anzenkodo.github.io/notes/programming/languages/python/ut2-6s.html</link>
+    <pubDate>2022-12-30T08:08:51.268Z</pubDate>
+    <description><![CDATA[<h1>Python QB UT 2</h1>
+<h2>1. Explain scope of a variable in Python.</h2>
+<ul>
+<li>A variable is only available from inside the region it is created.</li>
+<li>This is called scope.</li>
+<li>There are two types of scopes in Python:</li>
+</ul>
+<h3>Local scope</h3>
+<ul>
+<li>A variable created inside a function belongs to the local scope, and can only
+be used inside that function.</li>
+<li>Example<pre><code class="language-python">def fun()
+  x=10 # X is local variable
+  print(x)
+
+fun()
+</code></pre>
+O/P<pre><code>10
+</code></pre>
+</li>
+</ul>
+<h3>Global scope</h3>
+<ul>
+<li>A variable created in the main body of the code is a global variable and
+belongs to the global scope.</li>
+<li>Global variables are available from within any scope global and local.</li>
+<li>Example:<pre><code class="language-python">a = 50 # a is global variable
+def fun()
+  print(a)
+
+fun()
+print(a)
+</code></pre>
+O/P<pre><code>50
+50
+</code></pre>
+</li>
+</ul>
+<h2>2. Define class, data hiding, method overloading, inheritance, data abstraction, numpy, pandas.</h2>
+<h3>i) <code>class</code></h3>
+<ul>
+<li>Class is a blueprint for the object.</li>
+<li>We define a class by using the keyword class.</li>
+<li>Class objects are used to access different attributes.</li>
+</ul>
+<h3>ii) Data Hiding</h3>
+<ul>
+<li>Data hiding is one of the important features of Object Oriented Programming
+which allows preventing the functions of a program to access directly the
+internal representation of a class type.</li>
+</ul>
+<h3>iii) Method Overloading</h3>
+<ul>
+<li>Overloading is the ability of a function or an operator to behave in different
+ways based on the parameters that are passed to the function, or the operands
+that the operator acts on.</li>
+</ul>
+<h3>iv) Inheritance</h3>
+<ul>
+<li>Inheritance refers to defining a new class with little or no modification to
+an existing class.</li>
+<li>The new class is called as derived or child class and the old class is called
+as base or parent class.</li>
+</ul>
+<h3>v) Data Abstraction</h3>
+<ul>
+<li>Data abstraction refers to providing only essential information about the data
+to the outside world and hiding the background details.</li>
+</ul>
+<h3>vi) Numpy</h3>
+<ul>
+<li>Numpy is a python package which stands for “Numerical Python”.</li>
+</ul>
+<h3>vii) Pandas</h3>
+<ul>
+<li>Pandas is an open source library that allows to perform data manipulation.</li>
+<li>Pandas library is built on the top of Numpy.</li>
+</ul>
+<h2>3. Explain Composition classes with program.</h2>
+<ul>
+<li>Composition class is composed of one of or more instance of other classes.</li>
+<li>In simple words, one class is container and other class is content, if we
+delete the container objects then all of its contents objects are also
+deleted.<pre><code class="language-python">class test:
+  def __init__(self, name, marks):
+    self.name = name
+    self.marks = marks
+
+class addr:
+  def __init__(self, ad, name, marks):
+    self.ad = ad
+    self.ob = test(name, marks)
+
+  def disp(self):
+    print(self.ad, self.ob.name, self.ob.marks)
+
+t = addr(&quot;Virar&quot;, &quot;ABC&quot;, 99)
+t.disp()
+</code></pre>
+O/P<pre><code>Virar ABC 99
+</code></pre>
+</li>
+</ul>
+<h2>4. WAP to create a file, write some contents in it and read the content from file.</h2>
+<pre><code class="language-python">o = open(&quot;name.txt&quot;, &quot;w&quot;)
+o.write(&quot;I am a programmer&quot;)
+o.close()
+o = open(&quot;name.txt&quot;, &quot;r&quot;)
+print(o.read())
+o.close()
+</code></pre>
+<p>O/P</p>
+<pre><code>I am a programmer
+</code></pre>
+<h2>5. WAP to check <code>ZeroDivisionError</code> Exception.</h2>
+<pre><code class="language-python">x = int (input(&quot;x:&quot;))
+y = int(input(&quot;y:&quot;))
+
+try:
+  x/y
+except ZeroDivisionError:
+  print(&quot;Error: Division by Zero&quot;)
+else:
+  print(x/y)
+</code></pre>
+<p>O/P</p>
+<pre><code>x: 0
+y: 0
+
+Error: Divison by Zero
+</code></pre>
+<h2>6. WAP to throw an exception if age&lt;18 (using raise).</h2>
+<pre><code class="language-python">age = int(input(&quot;Age:&quot;))
+try:
+  if age &lt; 18:
+    raise Exception
+except Exception:
+  print(&quot;Too small to vote!!&quot;)
+else:
+  print(&quot;You can vote!!&quot;)
+</code></pre>
+<h2>7. List different modes of opening file.</h2>
+<p>Following are the different modes of opening file:</p>
+<ul>
+<li><code>r</code></li>
+<li><code>rb</code></li>
+<li><code>r+</code></li>
+<li><code>rb+</code></li>
+<li><code>w</code></li>
+<li><code>wb</code></li>
+<li><code>wb</code></li>
+<li><code>w+</code></li>
+<li><code>wb+</code></li>
+</ul>
+<h2>8. WAP to create class animal having method feed that prints ‘I eat food’. It has a sub class herbivorous having method feed that prints “I eat only plants”. Call the method by creating an object of each of the classes.</h2>
+<pre><code class="language-python">class animal:
+  def feed(self):
+    print(&quot;I eat food&quot;)
+
+class herbivorous(animal):
+  def feed(self):
+    print(&quot;I eat only plants&quot;)
+
+a = animal()
+a.feed()
+h = herbivorous()
+h.feed()
+</code></pre>
+<h2>9. WAP to create base classes namely add, mul having method addition and multiplication that prints addition and multiplication respectively. Derive a class derived from add and mul that has method divide and returns division. Create object and call methods.</h2>
+<pre><code class="language-python">class add:
+  def addition(self, a, b):
+    self.a = a
+    self.b = b
+    print(self.a + self.b)
+
+class mul:
+  def multiplication(self, a, b):
+    self.a = a
+    self.b = b
+    print(self.a * self.b)
+
+class derived(add, mul):
+  def divide(self, a, b)
+    self.a = a
+    self.b = b
+    return self.a / self.b
+
+d = derived()
+print(d.divide(28, 4))
+d.multiplication(2, 4)
+d.addition(5, 6)
+</code></pre>
+<p>O/P</p>
+<pre><code>7.0
+8
+11
+</code></pre>
+<h2>10. WAP to implement multilevel inheritance.</h2>
+<pre><code class="language-python">class Student:
+  def accept(self):
+    self.roll = 10
+
+class Test(Student):
+  def getdata(self):
+    self.name = &quot;ABC&quot;
+
+class Result(Test):
+  def info(self):
+    self.marks = 99
+  def disp(self):
+    print(self.roll, self.name, self.marks)
+
+r = result()
+r.accept()
+r.getdata()
+r.info()
+r.disp()
+</code></pre>
+<p>O/P</p>
+<pre><code>10 ABC 99
+</code></pre>
+<h2>11. Create a 3x4 matrix of random values using numpy and perform following:</h2>
+<ol>
+<li>print type of array</li>
+<li>print dimension</li>
+<li>print shape</li>
+<li>print size</li>
+<li>print type of elements</li>
+<li>sort row wise</li>
+<li>print min, max, sum, flatten</li>
+</ol>
+<pre><code class="language-python">import numpy as n
+
+p = n.random.randint(30, size = (3, 3))
+print(p)
+print(type(p))
+print(p.ndim)
+print(p.shape)
+print(p.size)
+print(n.dtype)
+print(n.sort(p))
+pritt(p.min())
+print(p.max())
+print(sum(p))
+print(p.flatten())
+</code></pre>
+<p>O/P</p>
+<pre><code>[[10, 20, 21]
+ [14, 15, 13]
+ [23, 24, 29]]
+&lt;class 'numpy.ndarray'&gt;
+2
+(3, 3)
+9
+int64
+[[10, 20, 21]
+ [13, 14, 15]
+ [23, 24, 29]]
+10
+29
+[51 42 76]
+[10 20 21 14 15 13 23 24 29]
+</code></pre>
+<h2>12. WAP that accepts a string and calculate the number of upper and lower case letters (string=&quot;Viva College)</h2>
+<pre><code class="language-python">c = input(&quot;Enter string.&quot;)
+u = 0
+i = 0
+
+for i in c:
+  if (i.isupper()):
+    u += 1
+  if (i.islower()):
+    i += 1
+
+print(&quot;Upper case letters are&quot;, u)
+print(&quot;Lower case letters are&quot;, i)
+</code></pre>
+<h2>13. WAP to generate a random float where the value is between 5 and 50</h2>
+<pre><code class="language-python">import random
+a = random.uiform(5, 50)
+print(a)
+</code></pre>
+<p>O/P</p>
+<pre><code>20.80854522266047
+</code></pre>
+<h2>14. Plot a line from position (10, 33) to position (80, 65) with following:</h2>
+<ol>
+<li>marker - 0</li>
+<li>line-dotted, line color-red</li>
+<li>x-label: student, y-label marks.</li>
+<li>Add grid lines</li>
+</ol>
+<pre><code class="language-python">import matplotlib.pylot as p
+import numpy as n
+
+x = n.array([10, 33])
+y = n.array([80, 64])
+
+p.xlabel(&quot;Student&quot;)
+p.ylable(&quot;Marks&quot;)
+p.plot(x, y, marker = 'o', linestyle = 'dotted', color = 'r')
+p.grid()
+p.show()
+</code></pre>
+<h2>15. WAP to print 3x3 matrix with o at border and I inside.</h2>
+<pre><code class="language-python">import numpy as n
+a = n.zeros((3, 3))
+a[1:-1, 1:-1] = 1
+print(a)
+</code></pre>
+<p>O/P</p>
+<pre><code>[[0. 0. 0.]
+ [0. 1. 0.]
+ [0. 0. 0.]]
+</code></pre>
+<h2>16. WAP to create matrix with values 2-10.</h2>
+<pre><code class="language-python">import numbpy as n
+a = n.arange(2, 11).reshape(3, 3)
+print(a)
+</code></pre>
+<p>O/P</p>
+<pre><code>[[2 3 4]
+ [5 6 7]
+ [8 9 10]]
+</code></pre>
+<h2>17. Explain Exception Handling in python.</h2>
+<ul>
+<li>When we executes a Python program, there may be a few uncertain conditions
+which occur, known as errors. Errors also referred to as bugs that are
+incorrect or inaccurate action that may cause the problems in the running of
+the program of program or may interrupt the execution of program.</li>
+<li>There are three types of error:
+<ul>
+<li>i) Compile Time Errors.</li>
+<li>ii) Run Time Errors.</li>
+<li>iii) Logical Errors.</li>
+</ul>
+</li>
+<li>Errors occured at runtime are known as exception. Exception handling is a
+feature that is used for handling any unreported errors in program.</li>
+<li>By handling the exceptions, we can provide a meaningful message to the user
+about the problem rather than system generated error message, which may not be
+understandable to the user.</li>
+<li>Exception can be either built-in exception or user defined exceptions.</li>
+</ul>]]></description>
+  </item>
+  <item>
     <title>notes</title>
     <link>https://anzenkodo.github.io/notes/programming/languages/python/notes.html</link>
-    <pubDate>2022-12-30T07:32:04.430Z</pubDate>
+    <pubDate>2022-12-30T08:08:51.268Z</pubDate>
     <description><![CDATA[<h1>1. Introduction and Syntax of Python Program</h1>
 <h2>3. Enlist applications for Python programming.</h2>
 <p>Python is often used as a support language for software developers, for build
@@ -4543,1777 +6314,6 @@ except Exception:
 <p>O/P</p>
 <pre><code>Enter your age: 16
 You are not 18
-</code></pre>]]></description>
-  </item>
-  <item>
-    <title>sample paper 6s</title>
-    <link>https://anzenkodo.github.io/notes/programming/languages/python/sample-paper-6s.html</link>
-    <pubDate>2022-12-30T07:32:04.430Z</pubDate>
-    <description><![CDATA[<h2>Q1 Any FIVE</h2>
-<h3>a. Name different modes of Python.</h3>
-<p>Python has two basic modes:</p>
-<ol>
-<li>Script mode (or Normal mode)
-<ul>
-<li>The mode where the scripted and finished .py files are in the Python
-Interpreter.</li>
-</ul>
-</li>
-<li>Interactive mode
-<ul>
-<li>A command line shell which gives immediate feedback for each statement,
-while running previously fed statements in active memory.</li>
-</ul>
-</li>
-</ol>
-<h3>b. List identity Operators</h3>
-<table>
-<thead>
-<tr>
-<th>Operator</th>
-<th>Description</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>is</td>
-<td>Returns <code>True</code> if both variables are sames object</td>
-<td>x is y</td>
-</tr>
-<tr>
-<td>is not</td>
-<td>Returns <code>False</code> if both variables are sames object</td>
-<td>x is not y</td>
-</tr>
-</tbody>
-</table>
-<h3>c. Describe Dictionary</h3>
-<ul>
-<li>A dictionary is collection which is unordered, changeable and indexed.</li>
-<li>Dictionaries are written with curl brackets, and they have keys and values.</li>
-<li>Example:<pre><code class="language-python">company = {
-	&quot;name&quot;: &quot;Apple&quot;,
-	&quot;product&quot;: &quot;IPhone&quot;
-	&quot;model&quot;: &quot;11&quot;
-}
-</code></pre>
-</li>
-</ul>
-<h3>d. State use of namespace in Python</h3>
-<ul>
-<li>A namespace is a simple system to control the names in a program.</li>
-<li>Python implements namespaces in the form of dictionaries.</li>
-<li>It maintains a name-to-object mapping where names act as keys and the objects
-as values.</li>
-</ul>
-<h3>e. List different object oriented features supported by Python.</h3>
-<ul>
-<li>Python OPP Concepts
-<ol>
-<li>Object</li>
-<li>Class</li>
-<li>Method</li>
-<li>Inheritance</li>
-<li>Polymorphism</li>
-<li>Data Abstraction</li>
-<li>Encapsulation</li>
-</ol>
-</li>
-</ul>
-<h3>f. Write steps involved in creation of a user defined exception?</h3>
-<ul>
-<li>Exception can be define by creating a new class.</li>
-<li>This exception class has to be derived, either directly or indirectly, from the built-in <code>Exception</code>.</li>
-<li>When the programmer suspects the possibility of exception, he should raise his
-own exception using <code>raise</code>.</li>
-<li>The programmer can insert the code inside a <code>try</code> block.</li>
-<li>Catch the exception using <code>except</code> block.</li>
-<li>Example:<pre><code class="language-python">class Error(Exception):
-	print(&quot;Value can't be 0.&quot;)
-
-number = 0
-
-try:
-	if number == 0:
-		raise Error
-	else:
-		print(&quot;Value is more then 0.&quot;)
-except Error:
-	pass
-</code></pre>
-</li>
-<li>Output:<pre><code>Value can't be 0.
-</code></pre>
-</li>
-</ul>
-<h3>g. Describe Python Interpreter</h3>
-<ul>
-<li>Python interpreter converts the code written in Python language by users to
-language which computer hardware or system can understand.</li>
-<li>Python interpreter is a bytecode interpreter, its input is instruction set
-sets called bytecode.</li>
-</ul>
-<h3>h. List features of Python</h3>
-<ul>
-<li>Easy to code</li>
-<li>High Level programming language</li>
-<li>Object-Oriented Language</li>
-<li>Portable language</li>
-<li>Use interpreter</li>
-<li>GUI Support</li>
-</ul>
-<h2>Q2 Any THREE</h2>
-<h3>a. Explain two Membership and two logical operators in python with appropriate examples.</h3>
-<h4>Membership Operators</h4>
-<ul>
-<li>Membership operators are used to test whether a value is found within a
-sequence.</li>
-<li>Example of <code>in</code>:<pre><code class="language-python">x = 4
-y = 8
-list = [1, 2, 3, 4, 5]
-
-if (x in list):
-	print(&quot;X is in list array&quot;)
-else:
-	print(&quot;X is not in list array&quot;)
-</code></pre>
-Output:<pre><code>X is in list array
-</code></pre>
-</li>
-<li>Example of <code>not in</code>:<pre><code class="language-python">if (y not in list):
-	print(&quot;Y is not in list array&quot;)
-else:
-	print(&quot;Y is in list array&quot;)
-</code></pre>
-Output:<pre><code>Y is not in list array
-</code></pre>
-</li>
-</ul>
-<h4>Logical Operators</h4>
-<ul>
-<li>Logical operators are usedto perform locical operations on the values of
-variables. The value is either <code>true</code> or <code>false</code></li>
-<li>Example of <code>and</code>, <code>or</code> and <code>not</code>.<pre><code class="language-python">a = True
-b = False
-print('a and b is', a and b)
-print('a or b is', a or b)
-print('not a is', not a)
-</code></pre>
-<pre><code>a and b is False
-a or b is True
-a not b is False
-</code></pre>
-</li>
-</ul>
-<h3>b. Describe any four methods of lists in Python</h3>
-<ul>
-<li><code>append()</code> - Adds an element at the end of the list.</li>
-<li><code>pop()</code> - Removes the element at the specified position.</li>
-<li><code>sort()</code> - Sorts the list</li>
-<li><code>clear()</code> - Removes all the elements from the list.
-Example:</li>
-</ul>
-<pre><code class="language-python">fruits = ['apple', 'banana', 'cherry']
-
-fruits.append(&quot;orange&quot;)
-print(fruits)
-
-fruits.pop(1)
-print(fruits)
-
-fruits.sort()
-print(fruits)
-
-fruits.clear()
-print(fruits)
-</code></pre>
-<p>Output:</p>
-<pre><code>['apple', 'banana', 'cherry', 'orange']
-['apple', 'cherry', 'orange']
-['apple', 'cherry', 'orange']
-
-</code></pre>
-<h3>c. Comparing between local and global variable</h3>
-<table>
-<thead>
-<tr>
-<th>Local</th>
-<th>Global</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>It is declare  inside a function</td>
-<td>It is declared outside the function</td>
-</tr>
-<tr>
-<td>It is created when the function starts execution and lost when the function terminate.</td>
-<td>It is created before the program’s global execution starts and lost when the program terminates.</td>
-</tr>
-<tr>
-<td>Local variables can be accessed with the help of statements, inside a function in which they are declared.</td>
-<td>You can access global variables by any statement in the program.</td>
-</tr>
-<tr>
-<td>Parameters passing is required for local variables to access the value in other function.</td>
-<td>Parameters passing is not necessary for a global variable as it is visible throughout the program</td>
-</tr>
-</tbody>
-</table>
-<h3>d. Write a Python program to print Fibonacci series up to n terms</h3>
-<p>Example:</p>
-<pre><code class="language-python">term = int(input(&quot;Enter the term: &quot;))
-
-n1, n2 = 0, 1
-
-if term &lt; 0:
-	print(&quot;Invalid term&quot;)
-else:
-	for i in range(term):
-		print(n1)
-		nth = n1 + n2
-		n1 = n2
-		n2 = nth
-</code></pre>
-<p>Output:</p>
-<pre><code>Enter the term: 7
-0
-1
-1
-2
-3
-5
-8
-</code></pre>
-<h2>Q3 Any THREE</h2>
-<h3>a. Write a program to input any two and interchange the tuple variable.</h3>
-<p>Example:</p>
-<pre><code>a = (1, 2, 3, 4, 5)
-b = (13, 23, 36, 47, 75)
-
-a,b = b,a
-
-print(a)
-print(b)
-</code></pre>
-<p>Output:</p>
-<pre><code>(13, 23, 36, 47, 75)
-(1, 2, 3, 4, 5)
-</code></pre>
-<h3>b. Explain different loops available in python with suitable examples.</h3>
-<h4><code>while</code></h4>
-<p>A <code>while</code> loop executes a target statement as long as given condition is true.</p>
-<p>Syntax:</p>
-<pre><code>while expression: statement(s)
-</code></pre>
-<p>Example:</p>
-<pre><code class="language-python">count = 0
-
-while(count &lt; 5):
-	print(count)
-	count += 1
-
-print(&quot;over&quot;)
-</code></pre>
-<p>Output:</p>
-<pre><code>0
-1
-2
-3
-4
-over
-</code></pre>
-<h4><code>for loop</code></h4>
-<p>It has the ability to iterate over the items of any sequence, such as a list or
-a string.</p>
-<p>Syntax:</p>
-<pre><code>for iterating in sequence: statements(s)
-</code></pre>
-<p>Example:</p>
-<pre><code class="language-python">fruits = ['banana', 'apple', 'mango']
-
-for fruit in fruits:
-	print(fruit)
-
-print(&quot;over&quot;)
-</code></pre>
-<p>Output:</p>
-<pre><code>banana
-apple
-mango
-over
-</code></pre>
-<h4>Nested loops</h4>
-<p>Python programming language allows to use one loop inside another loop.</p>
-<p>Syntax:</p>
-<pre><code>for iterating in sequence:
-	for iterating in sequence:
-		statements(s)
-	statements(s)
-</code></pre>
-<p>Example:</p>
-<pre><code class="language-python">nums = [1, 2, 3]
-words = [&quot;hello&quot;, &quot;hi&quot;, &quot;bye&quot;]
-
-for num in nums:
-	print(num)
-
-	for word in words:
-		print(word)
-</code></pre>
-<p>Output:</p>
-<pre><code>1
-hello
-hi
-bye
-2
-hello
-hi
-bye
-3
-hello
-hi
-bye
-</code></pre>
-<h3>c. Describe various modes of file object? Explain any two in detail.</h3>
-<p>There are four different methods modes for opening a file:</p>
-<ul>
-<li><strong>r</strong> - <em>Read</em> - Opens a file for reading. Error if the file does not exist.</li>
-<li><strong>w</strong> - <em>Write</em> - Opens a file for writing. Creates the file if it does not
-exist.</li>
-<li><strong>x</strong> - <em>Create</em> - Creates the specified file. Error if file exist.</li>
-<li><strong>a</strong> - <em>Append</em> - Opens a file for appending. Creates the if it does not
-exist.</li>
-</ul>
-<p>In addition, the file should be handled as binary or text mode:</p>
-<ul>
-<li>t - <strong>Text</strong> - Default value - <em>Text mode</em>.</li>
-<li>b - Binary - Binary mode (e.g. images).</li>
-</ul>
-<h4>Read a file</h4>
-<p>The <code>read()</code> method and <strong>r</strong> mode is used to read files.
-Before read a file, the file must open using <code>open()</code> function.</p>
-<p><code>text.txt</code> file content:</p>
-<pre><code class="language-txt">Hello World
-</code></pre>
-<p>Program:</p>
-<pre><code class="language-python">f = open(&quot;text.txt&quot;, &quot;r&quot;)
-print(f.read())
-</code></pre>
-<p>Output:</p>
-<pre><code>Hello world
-</code></pre>
-<h4>Write a file</h4>
-<p>The <code>write()</code> method and <code>a</code> or <code>w</code> modes is used to write files.</p>
-<p>Program:</p>
-<pre><code class="language-python">f = open(&quot;text.txt&quot;, &quot;w&quot;)
-f.write(&quot;Hello World&quot;)
-f.close()
-</code></pre>
-<p><code>text.txt</code> file content:</p>
-<pre><code>Hello World
-</code></pre>
-<h3>d. Illustrate the use of method overriding? Explain with example</h3>
-<p>If a class inherits a method from its superclass, then there is a chance to
-override the method provided.
-Example:</p>
-<pre><code class="language-python">class Parent:
-	def echo(self):
-		print('I am from Parent class.')
-
-class Child(Parent):
-	def echo(self):
-		print('I am from Child class.')
-
-p = Parent()
-c = Child()
-
-p.echo()
-c.echo()
-</code></pre>
-<p>Output:</p>
-<pre><code>I am from Parent class.
-I am from Child class.
-</code></pre>
-<h2>Q4 Any THREE</h2>
-<h3>a. Use of any four methods of tuple in Python?</h3>
-<ul>
-<li><code>len()</code> - Returns the <strong>length</strong> of the tuple.</li>
-<li><code>max()</code> - Highest value will returned.</li>
-<li><code>min()</code> - Lowest value be returned.</li>
-<li><code>count()</code> - Returns the number of times a specified value occurs in tuple.</li>
-</ul>
-<p>Example:</p>
-<pre><code class="language-python">t = (12, 45, 43, 8, 35, 12)
-print(len(t))
-print(max(t))
-print(min(t))
-print(t1.count(12))
-</code></pre>
-<p>Output:</p>
-<pre><code>6
-45
-8
-2
-</code></pre>
-<h3>b. Write a python Program to read contents of first.txt and write same content in second.txt file</h3>
-<p><code>first.txt</code> file content:</p>
-<pre><code>Hello World
-</code></pre>
-<p>Program:</p>
-<pre><code class="language-python">with open('first.txt', 'r') as firstfile, open('second.txt', 'a') as secondfile:
-
-	for line in firstfile:
-		secondfile.write(line)
-</code></pre>
-<p><code>second.txt</code> file content:</p>
-<pre><code>Hello world
-</code></pre>
-<h3>c. Show how try…except block is used for exception handling in Python with example.</h3>
-<ul>
-<li>When an exception occurs, Python will normally stop and generate an error
-message.</li>
-<li>These exceptions can be handled using the <code>try</code> statement.</li>
-<li>The <code>except</code> block lets you handle the error.</li>
-<li>Syntax:<pre><code class="language-python">try:
-	# Code
-except:
-	# Code
-</code></pre>
-</li>
-<li>Example:<pre><code class="language-python">try:
-	print(x)
-except NameError:
-	print(&quot;Variable x is not defined&quot;)
-</code></pre>
-</li>
-<li>Output:<pre><code>Variable x is not defined.
-</code></pre>
-</li>
-</ul>
-<h3>d. Write the output for the following if the variable fruit = “banana”</h3>
-<pre><code>&gt;&gt;&gt; fruit[:3]
-&gt;&gt;&gt; fruit[3:]
-&gt;&gt;&gt; fruit[3:3]
-&gt;&gt;&gt; fruit[:]
-</code></pre>
-<p>Output:</p>
-<pre><code>&gt;&gt;&gt; fruit = &quot;banana&quot;
-&gt;&gt;&gt; fruit[:3]
-'ban'
-&gt;&gt;&gt; fruit[3:]
-'ana'
-&gt;&gt;&gt; fruit[3:3]
-''
-&gt;&gt;&gt; fruit[:]
-'banana'
-</code></pre>
-<h2>Q5 Any TWO</h2>
-<h3>a. Determine various data types available in Python with example.</h3>
-<h4>Numbers</h4>
-<ul>
-<li><code>int</code>, <code>float</code> and complex numbers fall under numbers category.</li>
-<li>Example:<pre><code class="language-python">a = 5
-a = 2.0
-a = 1+2j
-</code></pre>
-</li>
-</ul>
-<h4>String</h4>
-<ul>
-<li>String is sequence of Unicode characters.</li>
-<li>We can use single quotes or double quotes to represent strings.</li>
-<li>Multi-line string can be denoted using triple quotes <code>'''</code> or <code>&quot;&quot;&quot;</code>.</li>
-<li>Example:<pre><code class="language-python">s = &quot;This is string&quot;
-s = '''
-	A multi line string
-'''
-</code></pre>
-</li>
-</ul>
-<h4>List</h4>
-<ul>
-<li>List is an ordered sequence of items.</li>
-<li>It is one of the most used datatype in Python.</li>
-<li>List is very flexible.</li>
-<li>All the items in a list don not need to be the same type.</li>
-<li>Example:<pre><code class="language-python">a = [1, 2.2, 'python']
-</code></pre>
-</li>
-</ul>
-<h4>Tuple</h4>
-<ul>
-<li>Tuple is an ordered sequence of items same as a list.</li>
-<li>The only difference is that tuples are immutable.</li>
-<li>Tuples once created cannot be modified.</li>
-<li>Example:<pre><code class="language-python">t = (5, 'program', 1+3j)
-</code></pre>
-</li>
-</ul>
-<h4>Set</h4>
-<ul>
-<li>Set is an unordered collection of unique items.</li>
-<li>Set is defined by values separated by comma inside braces { }.</li>
-<li>Items in a set are not ordered</li>
-<li>Example:<pre><code class="language-python">a = {5,2,3,1,4}
-</code></pre>
-</li>
-</ul>
-<h4>Dictionary</h4>
-<ul>
-<li>Dictionary is an unordered collection of key-value pairs.</li>
-<li>It is generally used when we have a huge amount of data.</li>
-<li>Dictionaries are defined within braces <code>{}</code>.</li>
-<li>Example:<pre><code class="language-python">d = {1:'value','key':2}
-</code></pre>
-</li>
-</ul>
-<h3>b. Write a python program to calculate factorial of given number using function.</h3>
-<p>Example:</p>
-<pre><code class="language-python">n = int(input(&quot;Enter the number: &quot;))
-f = 1
-
-for i in range(1, n + 1):
-	f = f * 1
-
-print(f)
-</code></pre>
-<p>Output:</p>
-<pre><code>Enter the number: 6
-720
-</code></pre>
-<h3>c. Show the output for the following:</h3>
-<pre><code>&gt;&gt;&gt; a = [1, 2, 3]
-&gt;&gt;&gt; b = [4, 5, 6]
-&gt;&gt;&gt; c = a + b
-&gt;&gt;&gt; print(c)
-[1, 2, 3, 4, 5, 6]
-</code></pre>
-<pre><code>&gt;&gt;&gt; [1, 2, 3] * 3
-[1, 2, 3, 1, 2, 3, 1, 2, 3]
-</code></pre>
-<pre><code>&gt;&gt;&gt; t = ['a', 'b', 'c', 'd', 'e', 'f']
-&gt;&gt;&gt; t[1:3] = ['x', 'y']
-&gt;&gt;&gt; print(t)
-['a', 'x', 'y', 'd', 'e', 'f']
-</code></pre>
-<h2>Q6 Any TWO</h2>
-<h3>a. Describe Set in python with suitable examples.</h3>
-<h4>Creating a set</h4>
-<p>Set can be created using curly braces <code>{}</code> or using <code>set()</code> method.</p>
-<pre><code class="language-python">fruits = {'apple', 'banana', 'cherry'}
-fruits = set(['apple', 'banana', 'cherry'])
-</code></pre>
-<h4>Adding items to the set</h4>
-<p>Item can added using <code>add()</code> method.</p>
-<p>Example:</p>
-<pre><code class="language-python">fruits = {'apple', 'banana', 'cherry'}
-fruits.add('orange')
-print(fruits)
-</code></pre>
-<p>Output:</p>
-<pre><code>{'apple', 'banana', 'cherry', 'orange'}
-</code></pre>
-<h4>Removing items from the set</h4>
-<p>There three methods to remove sets:</p>
-<ul>
-<li><code>discard()</code> - removes given items from set.</li>
-<li><code>remove()</code> - removes given item from set. If item is not avaliable it will
-give error.</li>
-<li><code>pop()</code> - removes list item from the set.</li>
-</ul>
-<p>Example:</p>
-<pre><code class="language-python">fruits = {'apple', 'banana', 'cherry', 'orange'}
-fruits.discard(&quot;apple&quot;)
-fruits.remove(&quot;banana&quot;)
-fruits.pop()
-print(fruits)
-</code></pre>
-<p>Output:</p>
-<pre><code>{'cherry'}
-</code></pre>
-<h4>Comparison of set</h4>
-<ul>
-<li><code>|</code> - shows the union of two set.</li>
-<li><code>&amp;</code> - shows the intersection of two set.</li>
-<li><code>-</code> - shows the difference of two set.</li>
-<li><code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>==</code> - comparison operators can also be use in set.</li>
-</ul>
-<pre><code class="language-python">fruits = {'apple', 'banana', 'cherry'}
-fruits2 = {'orange', 'pineapple', 'apple'}
-
-print(fruits|fruits2)
-print(fruits&amp;fruits2)
-print(fruits-fruits2)
-print(fruits&gt;fruits2)
-print(fruits&lt;fruits2)
-print(fruits==fruits2)
-</code></pre>
-<p>Output:</p>
-<pre><code>{'apple', 'banana', 'cherry', 'orange', 'pineapple', 'apple'}
-{'apple'}
-{'banana', 'cherry', 'orange', 'pineapple'}
-False
-False
-True
-</code></pre>
-<h3>b. Illustrate class inheritance in Python with an example</h3>
-<h4>Simple Inheritance</h4>
-<p>In inheritance, the child class acquires the properties and access all the data
-members and function defined in the parent class.</p>
-<p>Illustration:</p>
-<pre><code> ┏━━━━━━━━━━┓
- ┃Base Class┃
- ┗━━━━━━━━━━┛
-      ⇑
-┏━━━━━━━━━━━━┓
-┃Deived Class┃
-┗━━━━━━━━━━━━┛
-</code></pre>
-<p>Syntax:</p>
-<pre><code class="language-python">class Base:
-	# Body of base class
-class Derived(Base):
-	# Body of derived class
-</code></pre>
-<p>Example:</p>
-<pre><code class="language-python">class Parent:
-	parentname = &quot;&quot;
-	childname = &quot;&quot;
-	def show_parent(self):
-		print(self.parentname)
-
-class Child(Parent):
-	def show_child(self):
-		print(self.childname)
-
-c = Child()
-c.parentname = &quot;Arati&quot;
-c.childname = &quot;Purva&quot;
-c.show_parent()
-c.show_child()
-</code></pre>
-<p>Output:</p>
-<pre><code>Arati
-Purva
-</code></pre>
-<h4>Multiple inheritance</h4>
-<p>Multiple inheritace means that you’re inheriting the property of multiple
-classes into one.</p>
-<p>Illustration:</p>
-<pre><code>┏━━━━━━━━━━━━┓┏━━━━━━━━━━━━┓┏━━━━━━━━━━━━┓
-┃Base Class 1┃┃Base Class 2┃┃Base Class 3┃
-┗━━━━━━━━━━━━┛┗━━━━━━━━━━━━┛┗━━━━━━━━━━━━┛
-     ┃              ┃             ┃
-     ┗━━━━━━━━━━━━━━╋━━━━━━━━━━━━━┛
-              ┏━━━━━━━━━━━━┓
-              ┃Deived Class┃
-              ┗━━━━━━━━━━━━┛
-</code></pre>
-<p>Syntax:</p>
-<pre><code class="language-python">class A:
-	# variable of class A
-class B:
-	# variable of class B
-class C(A, B):
-	# variable of class C
-</code></pre>
-<p>Example:</p>
-<pre><code class="language-python">class Parent1:
-	def echo(self):
-		print(&quot;Parent class 1&quot;)
-
-class Parent2:
-	def echo2(self):
-		print(&quot;Parent class 2&quot;)
-
-class Child(Parent1, Parent2):
-	def show(self):
-		print(&quot;Child class&quot;)
-
-c = Child()
-c.echo()
-c.echo2()
-c.show()
-</code></pre>
-<p>Output:</p>
-<pre><code>Parent class 1
-Parent class 2
-Child class
-</code></pre>
-<h3>c. Design a class Employee with data members: name, department and salary. Create suitable methods for reading and printing employee information</h3>
-<p>Example:</p>
-<pre><code class="language-python">class Employee:
-	name = &quot;&quot;
-	department = &quot;&quot;
-	salary = 0
-
-	def setData(self):
-		self.name = input(&quot;Enter Name: &quot;)
-		self.department = input(&quot;Enter Department: &quot;)
-		self.salary = int(input(&quot;Enter Salary: &quot;))
-
-	def showData(self):
-		print(&quot;Name:&quot;, self.name)
-		print(&quot;Department:&quot;, self.department)
-		print(&quot;Salary:&quot;, self.salary)
-
-e = Employee()
-e.setData()
-e.showData()
-</code></pre>
-<p>Output:</p>
-<pre><code>Enter Name: Jonney
-Enter Department: Testing
-Enter Salary: 20000
-Name: Jonney
-Department: Testing
-Salary: 20000
-</code></pre>]]></description>
-  </item>
-  <item>
-    <title>practical s6</title>
-    <link>https://anzenkodo.github.io/notes/programming/languages/python/practical-s6.html</link>
-    <pubDate>2022-12-30T07:32:04.430Z</pubDate>
-    <description><![CDATA[<h1>Python practical question bank solved</h1>
-<h2>1) WAP to create 3x3 matrix with 1 at the border and zero inside.</h2>
-<pre><code class="language-python">import numpy as n
-a=n.ones((3, 3))
-a[1:-1,1:-1]=0
-print(a)
-</code></pre>
-<p>Output</p>
-<pre><code>[[1. 1. 1.]
- [1. 0. 1.]
- [1. 1. 1.]]
-</code></pre>
-<h2>2) WAP to calculate area of circle and area of rectangle using abstract class.</h2>
-<pre><code class="language-python">from abc import ABC, abstractmethod
-class test(ABC):
-    @abstractmethod
-    def area(self):
-        pass
-class Rec(test):
-    def area(self):
-        self. l=4
-        self. b=2
-        print(self.l*self.b)
-class Cir(test):
-    def area(self):
-        self.r=5
-        print(3.14*self.r*self.r)
-R=Rec()
-R. area()
-C=Cir()
-C. area()
-</code></pre>
-<p>Output</p>
-<pre><code>8
-78.5
-</code></pre>
-<h2>3) WAP to create dictionary where key is 1 to 10 and value is square of 1 to 10.</h2>
-<pre><code class="language-python">a=dict()
-for i in range(1,11):
-    a[i]=i**2
-print(a)
-</code></pre>
-<p>Output
-<code>{1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81, 10: 100}</code></p>
-<h2>4) WAP to display result using inheritance.</h2>
-<pre><code class="language-python">class Student:
-    def accept(self):
-        self. name=input(&quot;Name:&quot;)
-class Test:
-    def marks(self):
-        self. m1=int(input(&quot;M1:&quot;))
-        self. m2=int(input(&quot;M2:&quot;))
-class Result(Student, Test):
-    def total(self):
-        self. t=self.m1+self.m2
-    def disp(self):
-        print(self.name)
-        print(self.t)
-r=Result()
-r. accept()
-r. marks()
-r. total()
-r. disp()
-</code></pre>
-<p>Output</p>
-<pre><code>Name:ramesh
-M1:80
-M2:70
-ramesh
-150
-</code></pre>
-<h2>5) WAP to remove duplicates from dictionary.</h2>
-<pre><code class="language-python">d={1:20, 1:20, 2:30}
-res={}
-for x, y in d. items() :
-    if y not in d. items() :
-        res[x]=y
-print(res)
-</code></pre>
-<p>Output
-<code>{1: 20, 2: 30}</code></p>
-<h2>6) WAP to print sum of entered no. using function with arbitrary argument arguments.</h2>
-<pre><code class="language-python">def sum(*x):
-    n=0
-    for i in x:
-        n+=i
-    print(n)
-sum(1, 2,3,4,5)
-</code></pre>
-<p>Output
-<code>15</code></p>
-<p><code>fibonacci.py</code></p>
-<pre><code class="language-python">def fib(n):
-  n1, n2= 0,1
-  for i in range(n):
-    print(n1)
-    nth=n1+n2
-    n1=n2
-    n2=nth
-</code></pre>
-<p><code>fib.py</code></p>
-<pre><code class="language-python">import fibonacci
-print(fibonacci.fib(5))
-</code></pre>
-<p>To run the code, run <code>fib.py</code> file.</p>
-<h2>8) WAP to print following pattern.</h2>
-<pre><code>***
-**
-*
-</code></pre>
-<pre><code class="language-python">for i in range(4, 0, -1):
-    for j in range(0, i-1):
-        print(“*”, end= ‘ ’)
-    print(&quot; &quot;)
-</code></pre>
-<h2>9) WAP to print distinction, first class, second, third class and fail using if else.</h2>
-<pre><code class="language-python">s1=int(input(&quot;English:&quot;))
-s2=int(input(&quot;Hindi:&quot;))
-s3=int(input(&quot;Marathi:&quot;))
-s4=int(input(&quot;Maths:&quot;))
-s5=int(input(&quot;Science:&quot;))
-a=(s1+s2+s3+s4+s5)/5
-if a&gt;=90:
-    print(&quot;Distinction&quot;)
-elif a&gt;=75 and a&lt;90:
-    print(&quot;First class&quot;)
-elif a&gt;=45 and a&lt;75:
-    print(&quot;Second class&quot;)
-elif a&gt;=35 and a&lt;45:
-    print(&quot;Third class&quot;)
-else:
-    print(&quot;Failed&quot;)
-</code></pre>
-<p>Output</p>
-<pre><code>English:70
-Hindi:80
-Marathi:90
-Maths:80
-Science:70
-First class
-</code></pre>
-<h2>10) WAP to calculate area of circle and rectangle using method overriding.</h2>
-<pre><code class="language-python">class Rec:
-    def area(self):
-        self. l=4
-        self. b=2
-        print(&quot;Area of rectangle=&quot;,self.l*self.b)
-class Cir:
-    def area(self):
-        self. r=3.5
-        print(&quot;Area of circle=&quot;,3.14*self.r*self.r)
-r=Rec()
-r. area()
-c=Cir()
-c. area()
-</code></pre>
-<p>Output</p>
-<pre><code>Area of rectangle= 8
-Area of circle= 38.465
-</code></pre>
-<h2>11) Check entered password is correct or not using user defined exception.</h2>
-<pre><code class="language-python">class WrongPasswordException(Exception):
-  pass
-p=input(&quot;Enter password:&quot;)
-try:
-  if p!='abc12':
-    raise WrongPasswordException
-except WrongPasswordException:
-  print(&quot;Incorrect password!&quot;)
-else:
-  print(&quot;Correct password!&quot;)
-</code></pre>
-<p>Output</p>
-<pre><code>Enter password:abc12
-Correct password!
-</code></pre>
-<h2>12) Create list and perform following operations.</h2>
-<ol>
-<li>print elements using for loop</li>
-<li>del elements 3,4</li>
-<li>del 4 and add ‘o’,‘n’ ‘a’</li>
-<li>acces element ‘d’ from orignal list</li>
-<li>find len of list</li>
-</ol>
-<h3>1.print elements using for loop</h3>
-<pre><code class="language-python=">li = ['a','n','a','c',['o','n','d'],'a']
-for i in li:
-    print(i)
-</code></pre>
-<p>Output</p>
-<pre><code>a
-n
-a
-c
-['o', 'n', 'd']
-a
-</code></pre>
-<h3>2. del elements 3,4</h3>
-<h3>3. del 4 and add ‘o’,‘n’ ‘a’</h3>
-<h3>4. acces element ‘d’ from orignal list</h3>
-<h3>5. find len of list</h3>
-<pre><code class="language-python=">li = ['a','n','a','c',['o','n','d'],'a']
-print(&quot;The length of list is: &quot;, len(li))
-</code></pre>
-<p>Output
-<code>The length of list is:  6</code></p>
-<h2>13) WAP using numpy to generate six random integers between 20-30.</h2>
-<pre><code class="language-python=">import numpy as n
-a=n.random.randint(20,30,6)
-print(a)
-</code></pre>
-<p>Output
-<code>[24 27 29 25 22 22]</code></p>
-<h2>14) WAP to concatenate dictionaries to create new one.</h2>
-<pre><code class="language-python">d1={1:10}
-d2={2:20}
-d3={3:30}
-d4={}
-for i in d1, d2, d3:
-    d4. update(i)
-print(d4)
-</code></pre>
-<p>Output
-<code>{1: 10, 2: 20, 3: 30}</code></p>
-<h2>15) WAP to print unique values of following dict.</h2>
-<pre><code class="language-python">d={1:10, 2:20, 3:30, 4:30}
-d={1:10, 2:20, 3:30, 4:30}
-u=set()
-for i in d:
-    for val in d.values() :
-        u. add(val)
-print(u)
-</code></pre>
-<p>Output
-<code>{10, 20, 30}</code></p>
-<h2>16) Create 3x4 matrix filled with 10-21.</h2>
-<pre><code class="language-python">import numpy as n
-a=n.arange(10,22).reshape((3,4))
-print(a)
-</code></pre>
-<p>Output</p>
-<pre><code>[[10 11 12 13]
- [14 15 16 17]
- [18 19 20 21]]
-</code></pre>
-<h2>17) WAP to create class Emp having data members name, salary use constructor to accept values and display information.</h2>
-<pre><code class="language-python">class Emp:
-    def __init__(self, name, salary):
-        self. name=name
-        self. salary=salary
-    def disp(self):
-        print(&quot;Name:&quot;,self.name)
-        print(&quot;Salary:&quot;,self.salary)
-e=Emp(&quot;Abc&quot;,10000)
-e. disp()
-</code></pre>
-<p>Output</p>
-<pre><code>Name: Abc
-Salary: 10000
-</code></pre>]]></description>
-  </item>
-  <item>
-    <title>ut2 6s</title>
-    <link>https://anzenkodo.github.io/notes/programming/languages/python/ut2-6s.html</link>
-    <pubDate>2022-12-30T07:32:04.430Z</pubDate>
-    <description><![CDATA[<h1>Python QB UT 2</h1>
-<h2>1. Explain scope of a variable in Python.</h2>
-<ul>
-<li>A variable is only available from inside the region it is created.</li>
-<li>This is called scope.</li>
-<li>There are two types of scopes in Python:</li>
-</ul>
-<h3>Local scope</h3>
-<ul>
-<li>A variable created inside a function belongs to the local scope, and can only
-be used inside that function.</li>
-<li>Example<pre><code class="language-python">def fun()
-  x=10 # X is local variable
-  print(x)
-
-fun()
-</code></pre>
-O/P<pre><code>10
-</code></pre>
-</li>
-</ul>
-<h3>Global scope</h3>
-<ul>
-<li>A variable created in the main body of the code is a global variable and
-belongs to the global scope.</li>
-<li>Global variables are available from within any scope global and local.</li>
-<li>Example:<pre><code class="language-python">a = 50 # a is global variable
-def fun()
-  print(a)
-
-fun()
-print(a)
-</code></pre>
-O/P<pre><code>50
-50
-</code></pre>
-</li>
-</ul>
-<h2>2. Define class, data hiding, method overloading, inheritance, data abstraction, numpy, pandas.</h2>
-<h3>i) <code>class</code></h3>
-<ul>
-<li>Class is a blueprint for the object.</li>
-<li>We define a class by using the keyword class.</li>
-<li>Class objects are used to access different attributes.</li>
-</ul>
-<h3>ii) Data Hiding</h3>
-<ul>
-<li>Data hiding is one of the important features of Object Oriented Programming
-which allows preventing the functions of a program to access directly the
-internal representation of a class type.</li>
-</ul>
-<h3>iii) Method Overloading</h3>
-<ul>
-<li>Overloading is the ability of a function or an operator to behave in different
-ways based on the parameters that are passed to the function, or the operands
-that the operator acts on.</li>
-</ul>
-<h3>iv) Inheritance</h3>
-<ul>
-<li>Inheritance refers to defining a new class with little or no modification to
-an existing class.</li>
-<li>The new class is called as derived or child class and the old class is called
-as base or parent class.</li>
-</ul>
-<h3>v) Data Abstraction</h3>
-<ul>
-<li>Data abstraction refers to providing only essential information about the data
-to the outside world and hiding the background details.</li>
-</ul>
-<h3>vi) Numpy</h3>
-<ul>
-<li>Numpy is a python package which stands for “Numerical Python”.</li>
-</ul>
-<h3>vii) Pandas</h3>
-<ul>
-<li>Pandas is an open source library that allows to perform data manipulation.</li>
-<li>Pandas library is built on the top of Numpy.</li>
-</ul>
-<h2>3. Explain Composition classes with program.</h2>
-<ul>
-<li>Composition class is composed of one of or more instance of other classes.</li>
-<li>In simple words, one class is container and other class is content, if we
-delete the container objects then all of its contents objects are also
-deleted.<pre><code class="language-python">class test:
-  def __init__(self, name, marks):
-    self.name = name
-    self.marks = marks
-
-class addr:
-  def __init__(self, ad, name, marks):
-    self.ad = ad
-    self.ob = test(name, marks)
-
-  def disp(self):
-    print(self.ad, self.ob.name, self.ob.marks)
-
-t = addr(&quot;Virar&quot;, &quot;ABC&quot;, 99)
-t.disp()
-</code></pre>
-O/P<pre><code>Virar ABC 99
-</code></pre>
-</li>
-</ul>
-<h2>4. WAP to create a file, write some contents in it and read the content from file.</h2>
-<pre><code class="language-python">o = open(&quot;name.txt&quot;, &quot;w&quot;)
-o.write(&quot;I am a programmer&quot;)
-o.close()
-o = open(&quot;name.txt&quot;, &quot;r&quot;)
-print(o.read())
-o.close()
-</code></pre>
-<p>O/P</p>
-<pre><code>I am a programmer
-</code></pre>
-<h2>5. WAP to check <code>ZeroDivisionError</code> Exception.</h2>
-<pre><code class="language-python">x = int (input(&quot;x:&quot;))
-y = int(input(&quot;y:&quot;))
-
-try:
-  x/y
-except ZeroDivisionError:
-  print(&quot;Error: Division by Zero&quot;)
-else:
-  print(x/y)
-</code></pre>
-<p>O/P</p>
-<pre><code>x: 0
-y: 0
-
-Error: Divison by Zero
-</code></pre>
-<h2>6. WAP to throw an exception if age&lt;18 (using raise).</h2>
-<pre><code class="language-python">age = int(input(&quot;Age:&quot;))
-try:
-  if age &lt; 18:
-    raise Exception
-except Exception:
-  print(&quot;Too small to vote!!&quot;)
-else:
-  print(&quot;You can vote!!&quot;)
-</code></pre>
-<h2>7. List different modes of opening file.</h2>
-<p>Following are the different modes of opening file:</p>
-<ul>
-<li><code>r</code></li>
-<li><code>rb</code></li>
-<li><code>r+</code></li>
-<li><code>rb+</code></li>
-<li><code>w</code></li>
-<li><code>wb</code></li>
-<li><code>wb</code></li>
-<li><code>w+</code></li>
-<li><code>wb+</code></li>
-</ul>
-<h2>8. WAP to create class animal having method feed that prints ‘I eat food’. It has a sub class herbivorous having method feed that prints “I eat only plants”. Call the method by creating an object of each of the classes.</h2>
-<pre><code class="language-python">class animal:
-  def feed(self):
-    print(&quot;I eat food&quot;)
-
-class herbivorous(animal):
-  def feed(self):
-    print(&quot;I eat only plants&quot;)
-
-a = animal()
-a.feed()
-h = herbivorous()
-h.feed()
-</code></pre>
-<h2>9. WAP to create base classes namely add, mul having method addition and multiplication that prints addition and multiplication respectively. Derive a class derived from add and mul that has method divide and returns division. Create object and call methods.</h2>
-<pre><code class="language-python">class add:
-  def addition(self, a, b):
-    self.a = a
-    self.b = b
-    print(self.a + self.b)
-
-class mul:
-  def multiplication(self, a, b):
-    self.a = a
-    self.b = b
-    print(self.a * self.b)
-
-class derived(add, mul):
-  def divide(self, a, b)
-    self.a = a
-    self.b = b
-    return self.a / self.b
-
-d = derived()
-print(d.divide(28, 4))
-d.multiplication(2, 4)
-d.addition(5, 6)
-</code></pre>
-<p>O/P</p>
-<pre><code>7.0
-8
-11
-</code></pre>
-<h2>10. WAP to implement multilevel inheritance.</h2>
-<pre><code class="language-python">class Student:
-  def accept(self):
-    self.roll = 10
-
-class Test(Student):
-  def getdata(self):
-    self.name = &quot;ABC&quot;
-
-class Result(Test):
-  def info(self):
-    self.marks = 99
-  def disp(self):
-    print(self.roll, self.name, self.marks)
-
-r = result()
-r.accept()
-r.getdata()
-r.info()
-r.disp()
-</code></pre>
-<p>O/P</p>
-<pre><code>10 ABC 99
-</code></pre>
-<h2>11. Create a 3x4 matrix of random values using numpy and perform following:</h2>
-<ol>
-<li>print type of array</li>
-<li>print dimension</li>
-<li>print shape</li>
-<li>print size</li>
-<li>print type of elements</li>
-<li>sort row wise</li>
-<li>print min, max, sum, flatten</li>
-</ol>
-<pre><code class="language-python">import numpy as n
-
-p = n.random.randint(30, size = (3, 3))
-print(p)
-print(type(p))
-print(p.ndim)
-print(p.shape)
-print(p.size)
-print(n.dtype)
-print(n.sort(p))
-pritt(p.min())
-print(p.max())
-print(sum(p))
-print(p.flatten())
-</code></pre>
-<p>O/P</p>
-<pre><code>[[10, 20, 21]
- [14, 15, 13]
- [23, 24, 29]]
-&lt;class 'numpy.ndarray'&gt;
-2
-(3, 3)
-9
-int64
-[[10, 20, 21]
- [13, 14, 15]
- [23, 24, 29]]
-10
-29
-[51 42 76]
-[10 20 21 14 15 13 23 24 29]
-</code></pre>
-<h2>12. WAP that accepts a string and calculate the number of upper and lower case letters (string=&quot;Viva College)</h2>
-<pre><code class="language-python">c = input(&quot;Enter string.&quot;)
-u = 0
-i = 0
-
-for i in c:
-  if (i.isupper()):
-    u += 1
-  if (i.islower()):
-    i += 1
-
-print(&quot;Upper case letters are&quot;, u)
-print(&quot;Lower case letters are&quot;, i)
-</code></pre>
-<h2>13. WAP to generate a random float where the value is between 5 and 50</h2>
-<pre><code class="language-python">import random
-a = random.uiform(5, 50)
-print(a)
-</code></pre>
-<p>O/P</p>
-<pre><code>20.80854522266047
-</code></pre>
-<h2>14. Plot a line from position (10, 33) to position (80, 65) with following:</h2>
-<ol>
-<li>marker - 0</li>
-<li>line-dotted, line color-red</li>
-<li>x-label: student, y-label marks.</li>
-<li>Add grid lines</li>
-</ol>
-<pre><code class="language-python">import matplotlib.pylot as p
-import numpy as n
-
-x = n.array([10, 33])
-y = n.array([80, 64])
-
-p.xlabel(&quot;Student&quot;)
-p.ylable(&quot;Marks&quot;)
-p.plot(x, y, marker = 'o', linestyle = 'dotted', color = 'r')
-p.grid()
-p.show()
-</code></pre>
-<h2>15. WAP to print 3x3 matrix with o at border and I inside.</h2>
-<pre><code class="language-python">import numpy as n
-a = n.zeros((3, 3))
-a[1:-1, 1:-1] = 1
-print(a)
-</code></pre>
-<p>O/P</p>
-<pre><code>[[0. 0. 0.]
- [0. 1. 0.]
- [0. 0. 0.]]
-</code></pre>
-<h2>16. WAP to create matrix with values 2-10.</h2>
-<pre><code class="language-python">import numbpy as n
-a = n.arange(2, 11).reshape(3, 3)
-print(a)
-</code></pre>
-<p>O/P</p>
-<pre><code>[[2 3 4]
- [5 6 7]
- [8 9 10]]
-</code></pre>
-<h2>17. Explain Exception Handling in python.</h2>
-<ul>
-<li>When we executes a Python program, there may be a few uncertain conditions
-which occur, known as errors. Errors also referred to as bugs that are
-incorrect or inaccurate action that may cause the problems in the running of
-the program of program or may interrupt the execution of program.</li>
-<li>There are three types of error:
-<ul>
-<li>i) Compile Time Errors.</li>
-<li>ii) Run Time Errors.</li>
-<li>iii) Logical Errors.</li>
-</ul>
-</li>
-<li>Errors occured at runtime are known as exception. Exception handling is a
-feature that is used for handling any unreported errors in program.</li>
-<li>By handling the exceptions, we can provide a meaningful message to the user
-about the problem rather than system generated error message, which may not be
-understandable to the user.</li>
-<li>Exception can be either built-in exception or user defined exceptions.</li>
-</ul>]]></description>
-  </item>
-  <item>
-    <title>finals</title>
-    <link>https://anzenkodo.github.io/notes/programming/languages/python/finals.html</link>
-    <pubDate>2022-12-30T07:32:04.430Z</pubDate>
-    <description><![CDATA[<h1>Python</h1>
-<h2>a) Name different modes of Python.</h2>
-<p>Python has two basic modes:</p>
-<ol>
-<li>Script mode (or Normal mode)</li>
-</ol>
-<ul>
-<li>The mode where the scripted and finished .py files are in the Python
-Interpreter.</li>
-</ul>
-<ol start="2">
-<li>Interactive mode</li>
-</ol>
-<ul>
-<li>A command line shell which gives immediate feedback for each statement,
-while running previously fed statements in active memory.</li>
-</ul>
-<h2>b) List identity Operators</h2>
-<table>
-<thead>
-<tr>
-<th>Operator</th>
-<th>Description</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>is</td>
-<td>Returns <code>True</code> if both variables are sames object</td>
-<td>x is y</td>
-</tr>
-<tr>
-<td>is not</td>
-<td>Returns <code>False</code> if both variables are sames object</td>
-<td>x is not y</td>
-</tr>
-</tbody>
-</table>
-<h2>c) Give two differences between list and tuple.</h2>
-<h3>List</h3>
-<ul>
-<li>Lists are mutable.</li>
-<li>The list is better for performing operations.</li>
-<li>Lists consume more memory.</li>
-<li>More likely error will occur.</li>
-</ul>
-<h3>Tuple</h3>
-<ul>
-<li>Tuples are immutable.</li>
-<li>The implication of iterations is faster.</li>
-<li>Tuple consume less memory.</li>
-<li>Less likely error will occur.</li>
-</ul>
-<h2>d) Explain Local and Global variable.</h2>
-<table>
-<thead>
-<tr>
-<th>Local</th>
-<th>Global</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>It is declare  inside a function</td>
-<td>It is declared outside the function</td>
-</tr>
-<tr>
-<td>It is created when the function starts execution and lost when the function terminate.</td>
-<td>It is created before the program’s global execution starts and lost when the program terminates.</td>
-</tr>
-<tr>
-<td>Local variables can be accessed with the help of statements, inside a function in which they are declared.</td>
-<td>You can access global variables by any statement in the program.</td>
-</tr>
-<tr>
-<td>Parameters passing is required for local variables to access the value in other function.</td>
-<td>Parameters passing is not necessary for a global variable as it is visible throughout the program</td>
-</tr>
-</tbody>
-</table>
-<h2>e) Define class and object in python.</h2>
-<h3>Class</h3>
-<ul>
-<li>Class is a blueprint for the object.</li>
-<li>We define a class by using the keyword class.</li>
-<li>Class objects are used to access different attributes.</li>
-</ul>
-<h3>Object</h3>
-<ul>
-<li>Classes are the user-defined blueprints that help us create an “object”.</li>
-<li>Objects are the instances of a particular class.</li>
-<li>Every other element in Python will be an object of some class, such as the string, dictionary, number(10,40), etc.</li>
-</ul>
-<h2>f) How to give single and multiline comment in python.</h2>
-<h3>Single-Line</h3>
-<ul>
-<li>Add the hash (#) symbol before the comment:</li>
-</ul>
-<pre><code class="language-python"># This is your comment
-</code></pre>
-<h3>Multiline</h3>
-<p>-Python will ignore string literals that are not assigned to a variable, you can add a multiline string (triple quotes) in your code, and place your comment inside it:</p>
-<pre><code class="language-python">&quot;&quot;&quot;
-This is a comment
-written in
-more than just one line
-&quot;&quot;&quot;
-</code></pre>
-<h2>g) List different modes of opening file in python.</h2>
-<p>There are four different methods modes for opening a file:</p>
-<ul>
-<li><strong>r</strong> - <em>Read</em> - Opens a file for reading. Error if the file does not exist.</li>
-<li><strong>w</strong> - <em>Write</em> - Opens a file for writing. Creates the file if it does not
-exist.</li>
-<li><strong>x</strong> - <em>Create</em> - Creates the specified file. Error if file exist.</li>
-<li><strong>a</strong> - <em>Append</em> - Opens a file for appending. Creates the if it does not
-exist.</li>
-</ul>
-<p>In addition, the file should be handled as binary or text mode:</p>
-<ul>
-<li>t - <strong>Text</strong> - Default value - <em>Text mode</em>.</li>
-<li>b - Binary - Binary mode (e.g. images).</li>
-</ul>
-<h2>a) Write a program to print following:</h2>
-<pre><code class="language-python">rows = int(input(&quot;Enter number of rows: &quot;))
-
-for i in range(rows):
-    for j in range(i+1):
-        print(j+1, end=&quot; &quot;)
-    print(&quot;\n&quot;)
-</code></pre>
-<h2>b) Explain four Buit-in tuple functions python with example.</h2>
-<ul>
-<li><code>len()</code> - Returns the <strong>length</strong> of the tuple.</li>
-<li><code>max()</code> - Highest value will returned.</li>
-<li><code>min()</code> - Lowest value be returned.</li>
-<li><code>count()</code> - Returns the number of times a specified value occurs in tuple.</li>
-</ul>
-<h2>Explain how to use user defined function in python with example.</h2>
-<p>In Python, a user-defined function’s declaration begins with the keyword def and followed by the function name.</p>
-<pre><code class="language-python">def printt():
-    print(&quot;This is Python 3.2 Tutorial&quot;)
-    print(&quot;This is Python 3.2 Tutorial&quot;)
-    print(&quot;This is Python 3.2 Tutorial&quot;)
-printt()
-</code></pre>
-<p>Output:</p>
-<pre><code>This is Python 3.2 Tutorial
-This is Python 3.2 Tutorial
-This is Python 3.2 Tutorial
-</code></pre>
-<h2>d) Write a program to create class EMPLOYEE with ID and NAME and display its contents.</h2>
-<pre><code class="language-python">class Employee:
-	name = &quot;&quot;
-	department = &quot;&quot;
-	salary = 0
-
-	def setData(self):
-		self.name = input(&quot;Enter Name: &quot;)
-		self.department = input(&quot;Enter Department: &quot;)
-		self.salary = int(input(&quot;Enter Salary: &quot;))
-
-	def showData(self):
-		print(&quot;Name:&quot;, self.name)
-		print(&quot;Department:&quot;, self.department)
-		print(&quot;Salary:&quot;, self.salary)
-
-e = Employee()
-e.setData()
-e.showData()
-</code></pre>
-<p>Output:</p>
-<pre><code>Enter Name: Jonney
-Enter Department: Testing
-Enter Salary: 20000
-Name: Jonney
-Department: Testing
-Salary: 20000
-</code></pre>
-<h2>List Data types used in python. Explain any two with example.</h2>
-<p>Thare are three data type in python numbers, string &amp; boolean.</p>
-<h3>String</h3>
-<ul>
-<li>String is a collection of group of characters.</li>
-<li>String are identified as a contiguous set of characters enclosed in single quotes(’ ') or double quotes(&quot; &quot;).</li>
-<li>String can also can be define with str() function.</li>
-</ul>
-<h3>Boolean</h3>
-<ul>
-<li>Boolean represents the two values namely False and True.</li>
-<li>The true value is represented true as 1 and false as 0.</li>
-</ul>
-<h2>b) Explain membership and assignment operators with example.</h2>
-<table>
-<thead>
-<tr>
-<th>Operator</th>
-<th>Description</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>in</td>
-<td>True if value in list or in sequence</td>
-<td>(‘H’ in x) is True</td>
-</tr>
-<tr>
-<td>not in</td>
-<td>False if value not in list or in sequence</td>
-<td>(‘H’ in x) is False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Operator</th>
-<th style="text-align:center">Description</th>
-<th>Syntax</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>=</td>
-<td style="text-align:center">Assign value of right side of expression to left side operand</td>
-<td>x = y + z</td>
-</tr>
-<tr>
-<td>+=</td>
-<td style="text-align:center">Add and Assign: Add right side operand with left side operand and then assign to left operand</td>
-<td>a += b</td>
-</tr>
-<tr>
-<td>-=</td>
-<td style="text-align:center">Subtract AND: Subtract right operand from left operand and then assign to left operand: True if both operands are equal</td>
-<td>a -= b</td>
-</tr>
-<tr>
-<td>*=</td>
-<td style="text-align:center">Multiply AND: Multiply right operand with left operand and then assign to left operand</td>
-<td>a *= b</td>
-</tr>
-</tbody>
-</table>
-<h2>c) Explain indexing and slicing in list with example.</h2>
-<ul>
-<li>“Indexing” means referring to an element of an iterable by its position within the iterable.</li>
-<li>“Slicing” means getting a subset of elements from an iterable based on their indices.</li>
-</ul>
-<h2>d) Write a program for importing module for addition and substraction of two numbers.</h2>
-<pre><code class="language-python">a = int(input(&quot;Enter first number: &quot;))
-b = int( input(&quot;Enter second number: &quot;))
-Sum = a+b; #Add two numbers
-Difference = a-b; #Subtract two numbers
-# To print the result
-print(&quot;Addition of two numbers = &quot;,Sum)
-print(&quot;Subtraction of two numbers = &quot;,Difference)
-</code></pre>
-<p>Output:</p>
-<pre><code>Output:
-Enter first number: 30
-Enter second number: 20
-Addition of two numbers = 50
-Subtraction of two numbers = 10
-</code></pre>
-<h2>a) Write a program to create dictionary of students that includes their ROLL NO. and NAME:</h2>
-<p>i) Add three students in above dictionary
-ii) Update name= ‘Shreyas’ of ROLL NO = 2
-iii) Delete information of ROLL NO = 1</p>
-<pre><code class="language-python">students = {
-  1: &quot;ronney&quot;,
-  2: &quot;jay&quot;
-}
-
-students[2] = &quot;Shreyas&quot;
-del students[1]
-print(students)
-</code></pre>
-<p>Output:</p>
-<pre><code>{ 2: &quot;Shreyas&quot; }
-</code></pre>
-<h2>b) Explain decision making statements If-else, if-elif-else with example.</h2>
-<p>The if…elif…else statement is used in Python for decision making.</p>
-<pre><code class="language-python">num = 3.4
-
-if num &gt; 0:
-    print(&quot;Positive number&quot;)
-elif num == 0:
-    print(&quot;Zero&quot;)
-else:
-    print(&quot;Negative number&quot;)
-</code></pre>
-<h2>c) Explain use of format () method with example.</h2>
-<p>Python format() function has been introduced for handling complex string formatting more efficiently.</p>
-<pre><code class="language-python">txt = &quot;I have {an:.2f} Ruppes!&quot;
-print(txt.format(an = 4))
-</code></pre>
-<p>Output:</p>
-<pre><code>I have 4.00 Ruppes!
-</code></pre>
-<h2>d) Explain building blocks of python.</h2>
-<ul>
-<li>The core data structures to learn in Python are List (list), Dictionary (dict), Tuple (tuple), and Set (set).</li>
-<li>To indicate a block of code in Python, you must indent each line of the block by the same amount.</li>
-</ul>
-<h2>e) Write a program illustrating use of user defined package in python.</h2>
-<p>Packages are a way of structuring many packages and modules which helps in a well-organized hierarchy of data set, making the directories and modules easy to access.</p>
-<p><a href="http://file1.py/">file1.py</a>:</p>
-<pre><code class="language-python">class Bmw:
-    # First we create a constructor for this class
-    # and add members to it, here models
-    def __init__(self):
-        self.models = ['i8', 'x1', 'x5', 'x6']
-
-    # A normal print function
-    def outModels(self):
-        print('These are the available models for BMW')
-        for model in self.models:
-            print('\t%s ' % model)
-</code></pre>
-<p><a href="http://file2.py/">file2.py</a></p>
-<pre><code class="language-python">from Bmw import Bmw
-</code></pre>
-<h2>Write the output of the following:</h2>
-<pre><code>&gt;&gt;&gt; a = [2, 5, 1, 3, 6, 9, 7]
-&gt;&gt;&gt; a[2:6] = [2, 4, 9, 0]
-&gt;&gt;&gt; print (a)
-</code></pre>
-<p>Ans:</p>
-<pre><code>[2, 5, 2, 4, 9, 0, 7]
-</code></pre>
-<pre><code>b = [&quot;Hello&quot;, &quot;Good&quot;]
-b.append(&quot;python&quot;)
-print (b)
-</code></pre>
-<p>Ans:</p>
-<pre><code>['Hello', 'Good', 'python']
-</code></pre>
-<pre><code>t1 = [3, 5, 6, 7]
-print (t1[2])
-print (t1[-1])
-print (t1[2:])
-print(t1[:])
-</code></pre>
-<p>Ans:</p>
-<pre><code>6
-7
-[6, 7]
-[3, 5, 6, 7]
-</code></pre>
-<h2>Explain method overloading in python with example.</h2>
-<ul>
-<li>overloading is the ability of a function or an operator to behave in different ways based on the parameters that are passed to the function, or the operands that the operator acts on.</li>
-</ul>
-<pre><code class="language-python">class A:
-    def __init__(self, a):
-        self.a = a
-
-    # adding two objects
-    def __add__(self, o):
-        return self.a + o.a
-ob1 = A(1)
-ob2 = A(2)
-ob3 = A(&quot;Geeks&quot;)
-ob4 = A(&quot;For&quot;)
-
-print(ob1 + ob2)
-print(ob3 + ob4)
-</code></pre>
-<h2>Write a program to open a file in write mode and some contents at the end of file.</h2>
-<pre><code class="language-python">o = open(&quot;name.txt&quot;, &quot;w&quot;)
-o.write(&quot;I am a programmer&quot;)
-o.close()
-o = open(&quot;name.txt&quot;, &quot;r&quot;)
-print(o.read())
-o.close()
-</code></pre>
-<p>O/P</p>
-<pre><code>I am a programmer
-</code></pre>
-<h2>a) Explain package Numpy with example.</h2>
-<ul>
-<li>Numpy is a python package which stands for “Numerical Python”.</li>
-</ul>
-<pre><code class="language-python">import numpy as n
-a=n.ones((3, 3))
-a[1:-1,1:-1]=0
-print(a)
-</code></pre>
-<p>Output:</p>
-<pre><code>[[1. 1. 1.]
- [1. 0. 1.]
- [1. 1. 1.]]
-</code></pre>
-<h2>6) Write a program to implement the concept of inheritance in python.</h2>
-<pre><code class="language-python">class Parent:
-	parentname = &quot;&quot;
-	childname = &quot;&quot;
-	def show_parent(self):
-		print(self.parentname)
-
-class Child(Parent):
-	def show_child(self):
-		print(self.childname)
-
-c = Child()
-c.parentname = &quot;Arati&quot;
-c.childname = &quot;Purva&quot;
-c.show_parent()
-c.show_child()
-</code></pre>
-<h2>c) Explain Try-except block used in exception handling in python with example.</h2>
-<ul>
-<li>When an exception occurs, Python will normally stop and generate an error message.</li>
-<li>These exceptions can be handled using the try statement.</li>
-<li>The except block lets you handle the error.</li>
-</ul>
-<pre><code class="language-python">try:
-  print(x)
-except NameError:
-  print(&quot;Variable x is not defined&quot;)
 </code></pre>]]></description>
   </item>
   </channel>
