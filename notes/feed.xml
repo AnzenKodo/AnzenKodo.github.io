@@ -5,7 +5,7 @@
     <link>https://anzenkodo.github.io/notes/</link>
     <description>This my personal website where I post my notes about thing that I have learn.</description>
     <language>en-US</language>
-    <lastBuildDate>2023-01-02T06:09:05.100Z</lastBuildDate>
+    <lastBuildDate>2023-01-02T06:36:48.807Z</lastBuildDate>
     <image>
       <url>https://anzenkodo.github.io/notes/favicon.png</url>
       <title>AK#Notes</title>
@@ -18,7 +18,7 @@
       <item>
     <title>Home</title>
     <link>https://anzenkodo.github.io/notes/</link>
-    <pubDate>2023-01-02T06:09:05.100Z</pubDate>
+    <pubDate>2023-01-02T06:36:48.807Z</pubDate>
     <description><![CDATA[<p>This my personal website where I post my notes about thing that I have learn.</p>
 <h2>Features</h2>
 <ul>
@@ -402,9 +402,397 @@ colspan="3"><strong>30–32</strong> ATP</td> </tr> </tbody> </table>
   <td></td> <td>♖</td> </tr> </tbody> </table>]]></description>
   </item>
   <item>
+    <title>Computer Paradigms</title>
+    <link>https://anzenkodo.github.io/notes/programming/computer-paradigms.html</link>
+    <pubDate>2023-01-02T06:36:48.807Z</pubDate>
+    <description><![CDATA[<h2>1. Explain the difference between declarative and imperative programming paradigm.</h2>
+<h3>Imperative Programing</h3>
+<p>Imperative programming consists of sets of detailed instructions that are given
+to the computer to execute in a given order. It’s called “imperative” because as
+programmers we dictate exactly what the computer has to do, in a very specific
+way.</p>
+<pre><code class="language-js">const nums = [1, 4, 3, 6, 7, 8, 9, 2];
+const result = [];
+
+for (let i = 0; i &lt; nums.length; i++) {
+  if (nums[i] &gt; 5) result.push(nums[i]);
+}
+
+console.log(result); // Output: [ 6, 7, 8, 9 ]
+</code></pre>
+<h3>Declarative Programming</h3>
+<p>Declarative programming is all about hiding away complexity and bringing
+programming languages closer to human language and thinking. It’s the direct
+opposite of imperative programming in the sense that the programmer doesn’t give
+instructions about how the computer should execute the task, but rather on what
+result is needed.</p>
+<pre><code class="language-js">const nums = [1, 4, 3, 6, 7, 8, 9, 2];
+
+console.log(nums.filter((num) =&gt; num &gt; 5)); // Output: [ 6, 7, 8, 9 ]
+</code></pre>
+<h2>2. Explain</h2>
+<p>Reference: <a href="https://youtu.be/fnZjrNfQVdo">https://youtu.be/fnZjrNfQVdo</a></p>
+<h3>Names</h3>
+<p>Identifiers that allow us to refer to variables, constants, functions, types,
+operations, and so on.</p>
+<h3>Bindings</h3>
+<p>An association of a name with an object</p>
+<h3>Scopes</h3>
+<p>The lifetime of a binding of a name to an object</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js">function x() {
+  let y = &quot;Hello World&quot;; // Y is only avaiable inside x() scope
+  return y;
+}
+console.log(x());
+// &quot;Hello World&quot;
+</code></pre>
+<h4>Static Scope</h4>
+<p>Scope of a variable determined at compile time.</p>
+<h4>Dynamic Scope</h4>
+<p>Scope of variable determined at runtime.</p>
+<h2>3. Explain different storage allocation mechanisms.</h2>
+<p>Reference:
+<a href="https://www.youtube.com/watch?v=nZG0bQYHB9U">Storage allocation | Static, Stack&amp; Heap | Compiler Design | Lec- 49</a></p>
+<p>There are three types:</p>
+<ol>
+<li>Static stroage allocation</li>
+<li>Stack storage allocation</li>
+<li>Heap storage allocation</li>
+</ol>
+<h3>1. Static stroage allocation</h3>
+<ul>
+<li>In static allocation, names are bond to <strong>storage locations</strong>.</li>
+<li>If memory is created at compile time then the memory will be creted in static
+area adn only once.</li>
+<li>Static allocation supports the <strong>dynamic data structure</strong> that means, memory
+is created only at comple time and deallocated after program completion.</li>
+<li>The drawback with static storage allocation is that the size and position of
+data objects should be know at compile time.</li>
+<li>Another drawback is restriction of the recursion proccess.</li>
+<li>Example in JavaScript:<pre><code class="language-js">// Declare a variable with the &quot;const&quot; keyword
+const x = 10;
+
+// Access the value of the variable
+console.log(x); // Output: 10
+
+// Attempt to reassign the value of the variable
+x = 20;
+
+// This will throw an error because the value of a const variable cannot be changed
+</code></pre>
+</li>
+</ul>
+<h3>2. Stack storage allocation</h3>
+<ul>
+<li>In this storage is organized as a <strong>stack</strong>(LIFO).</li>
+<li>Activation records are pushed and popped.</li>
+<li>Activation record contains the locals so that they are bound to fresh storage
+in each activation record.</li>
+<li>The value of local is deleted when the activation ends.</li>
+<li>It works on the basis of <strong>LIFO</strong> and this allocation supports the recursion
+process.</li>
+<li>Example in JavaScript:<pre><code class="language-js">function foo(x) {
+  // Declare a local variable y
+  let y = x + 1;
+
+  // Access the value of the local variable
+  console.log(y); // Output: x + 1
+
+  // Reassign the value of the local variable
+  y = x + 2;
+
+  // The value of the local variable can be changed
+  console.log(y); // Output: x + 2
+}
+
+// Call the function with an argument
+foo(10);
+</code></pre>
+</li>
+</ul>
+<h3>3. Heap storage allocation</h3>
+<ul>
+<li>It is the most flexible allocation scheme.</li>
+<li>It is flexible because it is dynamica nature.</li>
+<li>Allocation and deallocation of memory can be done at any time and at any place
+depending upon the users requirement.</li>
+<li>Advantage of Heap allocation is used to allocate memory to the variables
+dynamically and when the variables are no more used then claim it back.</li>
+<li>Heap storage allocation supports teh recursion process.</li>
+<li>Example in JavaScript:<pre><code class="language-js">// Create a new object using the object literal notation
+let obj = {};
+
+// Add a property to the object
+obj.name = &quot;John&quot;;
+
+// Access the value of the property
+console.log(obj.name); // Output: &quot;John&quot;
+
+// Reassign the value of the property
+obj.name = &quot;Jane&quot;;
+
+// The value of the property can be changed
+console.log(obj.name); // Output: &quot;Jane&quot;
+</code></pre>
+</li>
+</ul>
+<h2>4. What is Lambda Calculus? Explain Free variable and Bound variable.</h2>
+<p>Lambda calculus is a formal system that is used to define and study functions
+and their properties. It consists of three main elements: variables, functions,
+and application.</p>
+<ul>
+<li><strong>Variables</strong> are symbols that represent values. In lambda calculus, variables
+are denoted by a single lowercase letter, such as x or y.</li>
+<li><strong>Functions</strong> are expressions that take one or more arguments and return a
+result. In lambda calculus, functions are denoted by the Greek letter “lambda”
+(λ), followed by a list of variables (the function’s arguments), and a body
+expression (the function’s result). For example, the function f(x, y) = x + y
+could be written as λx.λy.x + y in lambda calculus.</li>
+<li><strong>Application</strong> is the process of applying a function to its arguments. In
+lambda calculus, application is denoted by placing the function expression and
+its arguments within parentheses, separated by spaces. For example, the
+application f(x, y) could be written as (f x y) in lambda calculus.</li>
+</ul>
+<h3>Free variable</h3>
+<p>In lambda calculus, a free variable is a variable that is not bound to any
+particular value or function. It can be used freely within an expression, and
+its value is not determined until the expression is evaluated.</p>
+<p>Example:</p>
+<pre><code class="language-lambda">(λx.x + y) 2
+</code></pre>
+<h3>Bound variable.</h3>
+<p>A bound variable, on the other hand, is a variable that is bound to a particular
+value or function within an expression. It cannot be used freely, and its value
+is determined by the binding.</p>
+<p>Example:</p>
+<pre><code class="language-lambda">(λx.x + y) (λy.y * 2)
+</code></pre>
+<h2>5. Different between</h2>
+<h3>Functional Programming</h3>
+<ul>
+<li>Functional programming is the form of programming that attempts to avoid
+changing state and mutable data.</li>
+<li>In a functional program, the output of a function should always be the same,
+given the same exact inputs to the function.</li>
+<li>This is because the outputs of a function in functional programming purely
+relies on arguments of the function, and there is no magic that is happening
+behind the scenes.</li>
+<li>It works particularly well when there are no boundaries required, or those
+boundaries are already predefined.</li>
+<li>Functional programming provides the advantages like efficiency, lazy
+evaluation, nested functions, bug-free code, parallel programming.</li>
+<li>Each small function does its part and only its part.</li>
+<li>The function can be easily invoked and reused at any point. It also helps the
+code to be managed and the same thing or statements does not need to be
+written again and again.</li>
+<li>Example: if you call function getSum() it calculates the sum of two inputs and
+returns the sum. Given the same inputs for x and y, we will always get the
+same output for sum.</li>
+</ul>
+<h3>Object Oriented Programming(OOP).</h3>
+<ul>
+<li>Object oriented programming is a programming paradigm in which you program
+using objects to represent things you are programming about (sometimes real
+world things).</li>
+<li>The objects hold data about them in attributes.</li>
+<li>The attributes in the objects are manipulated through methods or functions
+that are given to the object.</li>
+<li>Example:
+<ul>
+<li>We might have a Person object that represents all of the data a person would
+have: weight, height, skin color, hair color, hair length, and so on.</li>
+<li>Those would be the attributes.</li>
+<li>Then the person object would also have things that it can do such as: pick
+box up, put box down, eat, sleep, etc.</li>
+<li>These would be the functions that play with the data the object stores.</li>
+</ul>
+</li>
+<li>The main deal with OOP is the ability to encapsulate data from outsiders.
+Encapsulation is the ability to hide variables within the class from outside
+access — which makes it great for security reasons, along with leaky, unwanted
+or accidental usage.</li>
+</ul>
+<h2>6. What is higher order function?</h2>
+<p>Higher-order functions are functions that either accept other functions as
+arguments, or return a function as a result.</p>
+<p>The result of one higher-order function can be used as the input to another
+higher-order function. Any time we pass a lambda expression to a method, that
+method is a higher-order function.</p>
+<p>A higher order function (HOF) is a function that follows at least one of the
+following conditions −</p>
+<ul>
+<li>Takes on or more functions as argument</li>
+<li>Returns a function as its result</li>
+</ul>
+<h3>Example:</h3>
+<pre><code class="language-js">function add(x) {
+  return function (y) {
+    return x + y;
+  };
+}
+
+const addTwo = add(2);
+console.log(addTwo(3)); // Output: 5
+console.log(addTwo(4)); // Output: 6
+</code></pre>
+<p>The add function is a higher-order function because it takes a function as an
+argument (in this case, the anonymous function that returns x + y) and returns a
+function as a result (the addTwo function). The addTwo function is a closure,
+which is a function that references variables from its outer scope. In this
+case, the addTwo function closes over the variable x, which is set to 2. When
+the addTwo function is called with an argument, it adds that argument to the
+value of x and returns the result.</p>
+<p>Higher-order functions are a powerful tool in functional programming, and are
+widely used in many programming languages. They allow you to create flexible,
+reusable code, and can make your programs more expressive and easier to
+understand.</p>
+<h2>7. Difference between</h2>
+<h3>Normal Evaluation</h3>
+<p>Normal order evaluation, also known as call-by-name, is a evaluation strategy
+that evaluates the arguments to a function before the function itself. This
+means that the arguments are evaluated every time they are used within the
+function, rather than being evaluated once before the function is called.</p>
+<p>Example in Python:</p>
+<pre><code class="language-python">from functools import partial
+
+def foo(x, y):
+  print(&quot;x =&quot;, x)
+  print(&quot;y =&quot;, y)
+  return x + y
+
+def bar(x):
+  print(&quot;x =&quot;, x)
+  return x * 2
+
+lazy_bar = partial(bar, eval=lambda: bar(1))
+
+print(foo(lazy_bar(), lazy_bar()))  # Output: x = 1, x = 1, y = 2, 3
+</code></pre>
+<h3>Application order evaluation</h3>
+<p>Application order evaluation, also known as call-by-value, is a evaluation
+strategy that evaluates the function before the arguments. This means that the
+arguments are evaluated once before the function is called, and the resulting
+values are passed to the function as inputs.</p>
+<p>Example in Python:</p>
+<pre><code class="language-python">def foo(x, y):
+  print(&quot;x =&quot;, x)
+  print(&quot;y =&quot;, y)
+  return x + y
+
+def bar(x):
+  print(&quot;x =&quot;, x)
+  return x * 2
+
+print(foo(bar(1), bar(2)))  # Output: x = 1, x = 2, x = 2, y = 4, 6
+print(foo(bar(2), bar(1)))  # Output: x = 2, x = 1, x = 1, y = 2, 4
+</code></pre>
+<h2>8. What is paradigm and programming paradigm?</h2>
+<p>Programming paradigms are different ways or styles in which a given program or
+programming language can be organized. Each paradigm consists of certain
+structures, features, and opinions about how common programming problems should
+be tackled.</p>
+<p>There are several types of programming paradigms, including:</p>
+<ol>
+<li>Imperative</li>
+<li>Functional</li>
+<li>Object-oriented</li>
+<li>Logic</li>
+<li>Event-driven</li>
+<li>Procedural</li>
+<li>Aspect-oriented</li>
+</ol>
+<h3>Imperative Programing</h3>
+<p>Imperative programming consists of sets of detailed instructions that are given
+to the computer to execute in a given order. It’s called “imperative” because as
+programmers we dictate exactly what the computer has to do, in a very specific
+way.</p>
+<pre><code class="language-js">const nums = [1, 4, 3, 6, 7, 8, 9, 2];
+const result = [];
+
+for (let i = 0; i &lt; nums.length; i++) {
+  if (nums[i] &gt; 5) result.push(nums[i]);
+}
+
+console.log(result); // Output: [ 6, 7, 8, 9 ]
+</code></pre>
+<h3>Declarative Programming</h3>
+<p>Declarative programming is all about hiding away complexity and bringing
+programming languages closer to human language and thinking. It’s the direct
+opposite of imperative programming in the sense that the programmer doesn’t give
+instructions about how the computer should execute the task, but rather on what
+result is needed.</p>
+<pre><code class="language-js">const nums = [1, 4, 3, 6, 7, 8, 9, 2];
+
+console.log(nums.filter((num) =&gt; num &gt; 5)); // Output: [ 6, 7, 8, 9 ]
+</code></pre>
+<h3>Functional Programing</h3>
+<p>Functional programming takes the concept of functions a little bit further.</p>
+<p>In functional programming, functions are treated as first-class citizens,
+meaning that they can be assigned to variables, passed as arguments, and
+returned from other functions.</p>
+<p>A pure function is one that relies only on its inputs to generate its result.
+And given the same input, it will always produce the same result.</p>
+<pre><code class="language-js">const nums = [1, 4, 3, 6, 7, 8, 9, 2];
+
+function filterNums() {
+  const result = []; // Internal variable
+
+  for (let i = 0; i &lt; nums.length; i++) {
+    if (nums[i] &gt; 5) result.push(nums[i]);
+  }
+
+  return result;
+}
+
+console.log(filterNums()); // Output: [ 6, 7, 8, 9 ]
+</code></pre>
+<h3>Object-oriented Programing</h3>
+<p>The core concept of OOP is to separate concerns into entities which are coded as
+objects. Each entity will group a given set of information (properties) and
+actions (methods) that can be performed by the entity.</p>
+<h2>9. What is calling sequence?</h2>
+<p>The code sequence required to effect transfer of control to a subroutine or
+procedure, including parameter passing and the recording of the return address.
+Uniformity of calling sequences is vital if it is required to call procedures
+written in a different language from the calling program.</p>
+<h2>10. What is parameter passing?</h2>
+<ul>
+<li>Reference: <a href="https://youtu.be/fnZjrNfQVdo">Parameter Passing – Real Python</a></li>
+<li>A function is a self-contained block of code that encapsulates a specific task
+or related group of tasks.</li>
+<li>An argument(s) is a value(s) provided to a function to customize its behavior
+from one call to the next.</li>
+<li>A parameter (or parameter variable) is a variable in the function definition
+to store an argument.</li>
+</ul>
+<h3>Example</h3>
+<ul>
+<li>
+<p>To pass an argument to a function is to provide that argument’s value to the
+appropriate parameter variable.</p>
+<pre><code class="language-python">def square(num):
+  return num * num
+
+val = 4
+print(square(val))
+# 16
+</code></pre>
+<p>The argument <code>4</code> is passed to the function <code>square</code></p>
+<ul>
+<li><code>num</code> is given the vale <code>4</code> since that was the value of <code>val</code> when <code>square</code>
+was called.</li>
+</ul>
+</li>
+<li>
+<p>Never wolud we consider modifyin the value of <code>num</code> in this function.</p>
+</li>
+</ul>]]></description>
+  </item>
+  <item>
     <title>C</title>
     <link>https://anzenkodo.github.io/notes/programming/languages/c.html</link>
-    <pubDate>2023-01-02T06:09:05.100Z</pubDate>
+    <pubDate>2023-01-02T06:36:48.807Z</pubDate>
     <description><![CDATA[<h1>C</h1>
 <ul>
 <li>In fact, you should use the main() to do very little except call each of the other functions.</li>
@@ -422,7 +810,7 @@ colspan="3"><strong>30–32</strong> ATP</td> </tr> </tbody> </table>
   <item>
     <title>Bash</title>
     <link>https://anzenkodo.github.io/notes/programming/languages/bash.html</link>
-    <pubDate>2023-01-02T06:09:05.100Z</pubDate>
+    <pubDate>2023-01-02T06:36:48.807Z</pubDate>
     <description><![CDATA[<p><a href="#">#</a> Bash</p>
 <ul>
 <li>
@@ -1020,7 +1408,7 @@ fi
   <item>
     <title>CSS</title>
     <link>https://anzenkodo.github.io/notes/programming/languages/css.html</link>
-    <pubDate>2023-01-02T06:09:05.100Z</pubDate>
+    <pubDate>2023-01-02T06:36:48.807Z</pubDate>
     <description><![CDATA[<h1>CSS</h1>
 <p><a href="/notes/CSS%208946e12a95f04e3490bd9c09bfb99d1e/SASS%20d57c9cbb233644a3a615a487f4cdf949.md">SASS</a></p>
 <ul>
@@ -1108,7 +1496,7 @@ fi
   <item>
     <title>Java</title>
     <link>https://anzenkodo.github.io/notes/programming/languages/java.html</link>
-    <pubDate>2023-01-02T06:09:05.100Z</pubDate>
+    <pubDate>2023-01-02T06:36:48.807Z</pubDate>
     <description><![CDATA[<h1>Java</h1>
 <h2>1) Write a program to check number is even or odd using if else.</h2>
 <pre><code class="language-java">import java.util.Scanner;
@@ -1604,9 +1992,128 @@ class Copyfile {
 </code></pre>]]></description>
   </item>
   <item>
+    <title>React</title>
+    <link>https://anzenkodo.github.io/notes/programming/languages/javascript/react.html</link>
+    <pubDate>2023-01-02T06:36:48.807Z</pubDate>
+    <description><![CDATA[<h1>React</h1>
+<ul>
+<li>Function VS Class Component
+<ul>
+<li>A functional component is just a plain JavaScript function that accepts props as an argument and returns a React element.</li>
+<li>A class component requires you to extend from React. Component and create a render function which returns a React element.</li>
+</ul>
+</li>
+<li></li>
+</ul>]]></description>
+  </item>
+  <item>
+    <title>NodeJS</title>
+    <link>https://anzenkodo.github.io/notes/programming/languages/javascript/nodejs.html</link>
+    <pubDate>2023-01-02T06:36:48.807Z</pubDate>
+    <description><![CDATA[<h1>NodeJS</h1>
+<p>From <a href="https://trainings.internshala.com/nodejs-training">Internshala Training NodeJS Course</a></p>
+<h1>Require</h1>
+<ul>
+<li>
+<p>Import node module</p>
+<pre><code class="language-jsx">const { readFs } = require(&quot;fs&quot;);
+const { readHttps } = require(&quot;https&quot;);
+</code></pre>
+</li>
+<li>
+<p>Input the string in <code>console.log</code>.</p>
+<pre><code class="language-jsx">st readLine = require(&quot;readline&quot;).createInterface({
+  output: process.stdout,
+  input: process.stdin,
+});
+
+readLine.question(&quot;What is your name?\n&quot;, (name) =&gt; {
+  console.log(`Welcome ${name}`);
+  readLine.close();
+});
+
+// What is your name?
+// Jimmin &lt;= Ask to input here
+// Welcome Jimmin
+</code></pre>
+</li>
+</ul>
+<h1>Module</h1>
+<ul>
+<li>
+<p>Process</p>
+<p>The <code>process</code> object in Node.js is a global object that can be accessed inside any module without requiring it.</p>
+<ul>
+<li>
+<p><code>process.on</code></p>
+<pre><code class="language-jsx">process.on('beforeExit', (code) =&gt; {
+console.log('Process beforeExit event with code: ', code);
+});
+// Process beforeExit event with code:  0                                                                                             /0.3s
+</code></pre>
+</li>
+<li>
+<p>Process expressions</p>
+<pre><code class="language-jsx">console.log(process.ppid);
+// 21321
+console.log(process.argv);
+// [
+//  '/snap/node/5148/bin/node',
+//  '/home/kurama/Documents/Projects/Node JS/app.js'
+//]
+console.log(`Reports are compact? ${process.report.compact}`);
+// Reports are compact? false                                                                                                         /0.3s
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>Module</p>
+<p>The <code>module</code> is same as process but you can only access within the file information.</p>
+</li>
+<li>
+<p>Event</p>
+<ul>
+<li>
+<p>EventEmitter</p>
+<pre><code class="language-jsx">const events = require(&quot;events&quot;);
+const eEmitter = new events.EventEmitter();
+
+const getParty = function () {
+  console.log(&quot;Time to party&quot;);
+  const ran = Math.ceil(Math.random() * 10);
+  console.log(`Party starts in ${ran}`);
+  tester(ran);
+};
+
+eEmitter.on(&quot;music&quot;, getParty);
+
+tester(2);
+
+function tester(val) {
+  setTimeout((e) =&gt; {
+    eEmitter.emit(&quot;music&quot;);
+  }, val * 1000);
+}
+
+// Time to party
+// Party starts in 5
+// Time to party
+// Party starts in 8
+// Time to party
+// Party starts in 3
+// Time to party
+// Party starts in 9
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>]]></description>
+  </item>
+  <item>
     <title>JS</title>
     <link>https://anzenkodo.github.io/notes/programming/languages/javascript/js.html</link>
-    <pubDate>2023-01-02T06:09:05.100Z</pubDate>
+    <pubDate>2023-01-02T06:36:48.807Z</pubDate>
     <description><![CDATA[<h1>The JavaScript language</h1>
 <h1>Standard built-in objects</h1>
 <h2>Proxy</h2>
@@ -4808,24 +5315,9 @@ console.log(&quot;Bye World&quot;);
 </ul>]]></description>
   </item>
   <item>
-    <title>React</title>
-    <link>https://anzenkodo.github.io/notes/programming/languages/javascript/react.html</link>
-    <pubDate>2023-01-02T06:09:05.100Z</pubDate>
-    <description><![CDATA[<h1>React</h1>
-<ul>
-<li>Function VS Class Component
-<ul>
-<li>A functional component is just a plain JavaScript function that accepts props as an argument and returns a React element.</li>
-<li>A class component requires you to extend from React. Component and create a render function which returns a React element.</li>
-</ul>
-</li>
-<li></li>
-</ul>]]></description>
-  </item>
-  <item>
     <title>Browser</title>
     <link>https://anzenkodo.github.io/notes/programming/languages/javascript/browser.html</link>
-    <pubDate>2023-01-02T06:09:05.100Z</pubDate>
+    <pubDate>2023-01-02T06:36:48.807Z</pubDate>
     <description><![CDATA[<h1>Browser: Document, Events, Interfaces</h1>
 <h1>Document</h1>
 <h2>document.documentElement</h2>
@@ -6161,540 +6653,6 @@ if (confirm(&quot;Go to Wikipedia?&quot;)) {
 <ul>
 <li><code>$0</code> The currently-inspected element in the page. <code>$0.style.background = 'red'</code></li>
 </ul>]]></description>
-  </item>
-  <item>
-    <title>NodeJS</title>
-    <link>https://anzenkodo.github.io/notes/programming/languages/javascript/nodejs.html</link>
-    <pubDate>2023-01-02T06:09:05.100Z</pubDate>
-    <description><![CDATA[<h1>NodeJS</h1>
-<p>From <a href="https://trainings.internshala.com/nodejs-training">Internshala Training NodeJS Course</a></p>
-<h1>Require</h1>
-<ul>
-<li>
-<p>Import node module</p>
-<pre><code class="language-jsx">const { readFs } = require(&quot;fs&quot;);
-const { readHttps } = require(&quot;https&quot;);
-</code></pre>
-</li>
-<li>
-<p>Input the string in <code>console.log</code>.</p>
-<pre><code class="language-jsx">st readLine = require(&quot;readline&quot;).createInterface({
-  output: process.stdout,
-  input: process.stdin,
-});
-
-readLine.question(&quot;What is your name?\n&quot;, (name) =&gt; {
-  console.log(`Welcome ${name}`);
-  readLine.close();
-});
-
-// What is your name?
-// Jimmin &lt;= Ask to input here
-// Welcome Jimmin
-</code></pre>
-</li>
-</ul>
-<h1>Module</h1>
-<ul>
-<li>
-<p>Process</p>
-<p>The <code>process</code> object in Node.js is a global object that can be accessed inside any module without requiring it.</p>
-<ul>
-<li>
-<p><code>process.on</code></p>
-<pre><code class="language-jsx">process.on('beforeExit', (code) =&gt; {
-console.log('Process beforeExit event with code: ', code);
-});
-// Process beforeExit event with code:  0                                                                                             /0.3s
-</code></pre>
-</li>
-<li>
-<p>Process expressions</p>
-<pre><code class="language-jsx">console.log(process.ppid);
-// 21321
-console.log(process.argv);
-// [
-//  '/snap/node/5148/bin/node',
-//  '/home/kurama/Documents/Projects/Node JS/app.js'
-//]
-console.log(`Reports are compact? ${process.report.compact}`);
-// Reports are compact? false                                                                                                         /0.3s
-</code></pre>
-</li>
-</ul>
-</li>
-<li>
-<p>Module</p>
-<p>The <code>module</code> is same as process but you can only access within the file information.</p>
-</li>
-<li>
-<p>Event</p>
-<ul>
-<li>
-<p>EventEmitter</p>
-<pre><code class="language-jsx">const events = require(&quot;events&quot;);
-const eEmitter = new events.EventEmitter();
-
-const getParty = function () {
-  console.log(&quot;Time to party&quot;);
-  const ran = Math.ceil(Math.random() * 10);
-  console.log(`Party starts in ${ran}`);
-  tester(ran);
-};
-
-eEmitter.on(&quot;music&quot;, getParty);
-
-tester(2);
-
-function tester(val) {
-  setTimeout((e) =&gt; {
-    eEmitter.emit(&quot;music&quot;);
-  }, val * 1000);
-}
-
-// Time to party
-// Party starts in 5
-// Time to party
-// Party starts in 8
-// Time to party
-// Party starts in 3
-// Time to party
-// Party starts in 9
-</code></pre>
-</li>
-</ul>
-</li>
-</ul>]]></description>
-  </item>
-  <item>
-    <title>UT1 6S</title>
-    <link>https://anzenkodo.github.io/notes/programming/languages/php/ut1-6s.html</link>
-    <pubDate>2023-01-02T06:09:05.100Z</pubDate>
-    <description><![CDATA[<h2>Write a php program to find the largest number among three numbers.</h2>
-<pre><code class="language-php">&lt;?php
-  function largest($x, $y, $z) {
-    if ($x &gt;= $y) {
-      if($x &gt;= $z) {
-        echo $x;
-      } else {
-        echo $z;
-      }
-    }
-    else {
-      if($y &gt;= $z) {
-        echo $y;
-      } else {
-        echo $z;
-      }
-    }
-  }
-
-  largest(100, 50, 25);
-?&gt;
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>100
-</code></pre>
-<h2>Write a php code for creating a basic image.</h2>
-<pre><code class="language-php">&lt;?php
-$image = imagecreatetruecolor(500, 300);
-imagefilledrectangle($image, 20, 20, 480, 280);
-header(&quot;Content-type: image/png&quot;);
-imagepng($image);
-?&gt;
-</code></pre>
-<h2>Explain inheritance with examples.</h2>
-<p>In Inheritance  the new class can inherit the properties and methods from the
-old class.</p>
-<p>The old class is the base class also called a parent class and then the new
-class is a derived  class also called a subclass.</p>
-<p><strong>Example</strong>:</p>
-<pre><code class="language-php">&lt;?php
-  class Person {
-    var $name, $age;
-  }
-  class Employee extends Person {
-    var $salary, $designation;
-  }
-?&gt;
-</code></pre>
-<h2>Explain the concept of introspection in php with an example.</h2>
-<p>PHP Introspection is the ability of a program to examine an object’s
-characteristics such as its name, parent class (if any), properties and methods.</p>
-<p>Introspection  in PHP offers a useful Ability  to examine classes’ interfaces
-properties methods. With introspection we can write  code that operates on any
-object or class.</p>
-<p><strong>Example</strong>:</p>
-<pre><code class="language-php">&lt;?php
-  if (class_exists('MyClass')) {
-    $myclass = new MyClass();
-  }
-?&gt;
-</code></pre>
-<h2>How to use overloading and overriding functions in php?</h2>
-<h2>Overloading</h2>
-<p>Method overloading is the ability to create a multiple function
-of the same name with a different implementation  depending upon the types of
-arguments.</p>
-<p>How to use overloading in PHP?</p>
-<pre><code class="language-php">&lt;?php
-class First {
-  function func() {
-    echo &quot;Hello World&quot;;
-  }
-}
-
-class Second extends First {
-  function func() {
-    echo &quot;Bye World&quot;;
-  }
-}
-
-$o = new Second;
-$o-&gt;func();
-</code></pre>
-<p>O/P</p>
-<pre><code>Bye World
-</code></pre>
-<h2>Overriding</h2>
-<p>In function overriding, both parent and child classes should have the same
-function name with and number of arguments. It is used to replace the parent
-method in child class.</p>
-<pre><code class="language-php">&lt;?php
-&lt;?php
-class First {
-  function func() {
-    echo &quot;Hello World&quot;;
-  }
-}
-
-class Second extends First {
-  function func() {
-    echo &quot;Bye World&quot;;
-  }
-}
-
-$f = new First;
-$s = new Second;
-$f-&gt;func();
-$s-&gt;func();
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>Hello World
-Bye World
-</code></pre>
-<h2>How to use the flip function in php.</h2>
-<p>The array_flip function flips/All keys with their associated values in array.</p>
-<p>This function is very useful when we have a big/ large array.and we want to
-know if a given value  is in the array.</p>
-<p><strong>Syntax</strong>:</p>
-<pre><code>array_flip(array_name)
-</code></pre>
-<p><strong>Example:</strong></p>
-<pre><code class="language-php">&lt;?php
-  $a = array(&quot;a&quot;);
-  print_r(array_flip($a));  //flip function is used
-?&gt;
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>Array( [0]=&gt; a )
-</code></pre>
-<h2>How to define properties and methods of a class? Explain with suitable examples.</h2>
-<ol>
-<li>Objects have access to special variables called. properties.</li>
-<li>A property Can be valued as an array and even another object.</li>
-<li>All properties go inside the curly braces.</li>
-<li>The characteristics of a class are known as its properties.</li>
-</ol>
-<p><strong>Example:</strong></p>
-<pre><code class="language-php">&lt;?php
-  class Student {
-    var $roll_no;
-    var $name;
-    function display() {
-      echo &quot;Roll No: &quot; . $this-&gt;roll_no. &quot;&lt;br&gt;&quot;;
-      echo &quot;Name: &quot; $this-&gt;name;
-    }
-  }
-
-  $s1 = new Student;
-  $s1-&gt;roll_no = 10;
-  $s1-&gt;name = &quot;Amar&quot;;
-  $si-&gt;display();
-?&gt;
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>Roll No: 10
-Name: Amar
-</code></pre>
-<p>A class method is exactly similar to PHP functions.</p>
-<ol>
-<li>Method is a function defined within the class.</li>
-<li>Methods on the other hand are functions that operate on the data.</li>
-<li>Method is also written within the braces {}.</li>
-</ol>
-<p>The method can be accessed from outside the class.</p>
-<p><strong>Example:</strong></p>
-<pre><code class="language-php">&lt;?php
-class Person {
-	public $age = 25;
-
-	public function printAge() {
-		echo &quot;The age is: $this-&gt;age&quot;;
-	}
-}
-
-$person = new Person;
-$person-&gt;age = 20;
-$person-&gt;printAge();
-?&gt;
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>The age is: 20
-</code></pre>
-<h2>Explain the arithmetic operators that can be used in php with examples.</h2>
-<p>The PHP arithmetic operators are used with numeric values to perform common
-arithmetical operations, such as addition, subtraction, multiplication etc.</p>
-<p><strong>Example:</strong></p>
-<pre><code class="language-php">&lt;?php
-  $a = 42;
-  $b = 20;
-
-  $c = $a + $b;
-  echo &quot;Addition is: $c &lt;br/&gt;&quot;;
-  $c = $a - $b;
-  echo &quot;Subtraction is: $c &lt;br/&gt;&quot;;
-  $c = $a * $b;
-  echo &quot;Multiplication is: $c &lt;br/&gt;&quot;;
-  $c = $a / $b;
-  echo &quot;Division is: $c &lt;br/&gt;&quot;;
-  $c = $a % $b;
-  echo &quot;Modulus is: $c &lt;br/&gt;&quot;;
-?&gt;
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>Addition is: 62
-Subtraction is: 22
-Multiplication is: 840
-Division is: 2.1
-Modulus is: 2
-</code></pre>
-<h2>What is the use of anonymous functions in php? Explain with examples.</h2>
-<p>Anonymous functions, also known as closures, allow the creation of functions
-which have no specified name. They are most useful as the value of callable
-parameters, but they have many other uses.</p>
-<pre><code class="language-php">&lt;?php
-$func = function () { echo &quot;Hello World&quot;; };
-$func();
-</code></pre>
-<p>O/P</p>
-<pre><code>Hello World
-</code></pre>
-<h2>Explain cloning objects with examples.</h2>
-<p>Object cloning is the process in PHP to create a copy of an object. An object
-copy is created by using the clone keyword when the object is cloned PHP will
-perform Shallow copy  of all the object properties and properties that are
-referenced to their variables will remain references.</p>
-<p><strong>Example:</strong></p>
-<pre><code class="language-php">&lt;?php
-class Obj {
-  public $name;
-}
-
-$o = new Obj;
-$c = clone $o;
-
-$o-&gt;name = &quot;Jonney&quot;;
-$c-&gt;name = &quot;Jone&quot;;
-
-echo &quot;Origenal: &quot;.$o-&gt;name.&quot;, Clone: &quot;.$c-&gt;name;
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>Origenal: Jonney, Clone: Jone
-</code></pre>
-<h2>Explain indexed and associative arrays with examples.</h2>
-<p>Indexed array: An array having only integer keys is typically referred to as an
-indexed array and index arrays can store numbers, drinks and any object but
-their index will be represented by number.</p>
-<p><strong>Example:</strong></p>
-<pre><code class="language-php">&lt;?php
-  $colors = array(&quot;Red&quot;);
-  print_r($colors);
-?&gt;
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>Array ( [0] =&gt; Red )
-</code></pre>
-<p>The associative arrays are very similar to numeric arrays in terms of
-functionality but they are different in terms of their index. Associative arrays
-will have their index as string so that you can establish a strong association
-between key and values.</p>
-<pre><code class="language-php">&lt;?php
-  $ages = array( &quot;Peter&quot;=&gt;22 );
-  print_r($ages);
-?&gt;
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>Array ( [Peter] =&gt; 22 )
-</code></pre>
-<h2>How to define constructor and destructor in php with an example?</h2>
-<ul>
-<li><strong>constructor</strong> - When we create a new object it is useful to initialize its
-properties.</li>
-<li><strong>destructor</strong> - The destructor method will be called as soon as there are no
-other references to a particular object.</li>
-</ul>
-<pre><code class="language-php">&lt;?php
-class Obj {
-  function __construct() {
-    echo &quot;Class created&quot;;
-  }
-
-  function __destruct() {
-    echo &quot;Class destroyed&quot;;
-  }
-}
-
-$o = new Obj;
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>Class Created
-Class Destroyed
-</code></pre>
-<h2>Explain the following string function with an example.</h2>
-<ol>
-<li>strpos()</li>
-<li>strlen()</li>
-<li>strcmp()</li>
-<li>str_word_count()</li>
-<li>strpos()</li>
-</ol>
-<ul>
-<li><strong>strpos()</strong> - Returns the position of the first occurrence of a string.</li>
-<li><strong>strlen()</strong> - Returns the length of a string.</li>
-<li><strong>strcmp()</strong> - Compares two strings.</li>
-<li><strong>str_word_count()</strong> - Count the number of words in a string.</li>
-<li><strong>strrpos()</strong> - Finds the position of the last occurrence of a string.</li>
-</ul>
-<pre><code class="language-php">&lt;?php
-echo strpos(&quot;Hello World&quot;, &quot;Hello&quot;);
-echo strlen(&quot;Hello World&quot;);
-echo strcmp(&quot;Hello World&quot;, &quot;Hello World&quot;);
-echo str_word_count(&quot;Hello World&quot;);
-echo strrpos(&quot;Hello World&quot;, &quot;Hello&quot;);
-</code></pre>
-<p>O/P</p>
-<pre><code>0
-11
-0
-2
-0
-</code></pre>
-<h2>Write a program using a foreach loop.</h2>
-<p><strong>Example:</strong></p>
-<pre><code class="language-php">&lt;?php
-$a = array(1, 2, 3, 4, 5);
-foreach ($a as $n) {
-  echo $n;
-}
-</code></pre>
-<p>O/P</p>
-<pre><code>12345
-</code></pre>
-<h2>Explain serialization with suitable examples.</h2>
-<p>A string representation of any object in the form of byte-stream is obtained by
-serialize() function in PHP. All property variables of the object are contained
-in the string and methods are not saved. This string can be stored in any file.</p>
-<p><strong>Example:</strong></p>
-<pre><code class="language-php">&lt;?php
-echo serialize(array(&quot;Red&quot;));
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>a:1:{i:0;s:3:&quot;Red&quot;;}
-</code></pre>
-<h2>Define <code>imagecolorallocate()</code> function along with suitable examples.</h2>
-<p><code>imagecolorallocate()</code> function is another inbuilt PHP function mainly used to
-implement a new color to an image. It returns the color of an image in an RGB
-format (RED GREEN BLUE).</p>
-<p><strong>Example:</strong></p>
-<pre><code class="language-php">&lt;?php
-  $im = imagecreate(100, 100);
-  // sets background to red
-  $background = imagecolorallocate($im, 255, 0, 0);
-  // sets some colors
-  $white = imagecolorallocate($im, 255, 255, 255);
-  $black = imagecolorallocate($im, 0, 0, 0);
-  // hexadecimal way
-  $white = imagecolorallocate($im, 0xFF, 0xFF, 0xFF);
-  $black = imagecolorallocate($im, 0x00, 0x00, 0x00);
-?&gt;
-</code></pre>
-<h2>Write a program to create a filled rectangle.</h2>
-<pre><code class="language-php">&lt;?php
-$image = imagecreatetruecolor(500, 300);
-imagefilledrectangle($image, 20, 20, 480, 280);
-header(&quot;Content-type: image/png&quot;);
-imagepng($image);
-?&gt;
-</code></pre>
-<h2>Explain any three data types used in php.</h2>
-<ol>
-<li><strong>Integer:</strong> integer data type used to specify a numeric value  without a fractional component the range of integers.</li>
-<li><strong>Strings:</strong> a string is a sequence of characters where characters are the same as a byte.</li>
-<li><strong>Boolean:</strong>   boolean  value can be either true or false both are  case-insensitive.</li>
-</ol>
-<h2>Differentiate between implode and explode function.</h2>
-<table>
-<thead>
-<tr>
-<th>No.</th>
-<th>Implode</th>
-<th>Explode</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>The implode() function returns a string from the elements of an array.</td>
-<td>explode function breaks a string  into smaller parts and stores it  as an array.</td>
-</tr>
-<tr>
-<td>2</td>
-<td>The implode() function accepts its  parameters in either order.  However, for consistency with explode(),  you should use the documented order of  arguments.</td>
-<td>The explode() function splits  these strings based on a specific  delimiter and returns an array that  contains elements which are sustained  by the splitting operation.</td>
-</tr>
-<tr>
-<td>3</td>
-<td>syntax :-string implode (pieces)</td>
-<td>array explode (delimiter, string, limit)</td>
-</tr>
-<tr>
-<td>4</td>
-<td><strong>Example</strong>:  <code>php &lt;?php $arr = array(&quot;I&quot;, &quot;love&quot;, &quot;PHP.&quot;); $pole = implode(&quot; &quot;, $arr); \ echo &quot;$pole&quot;; ?&gt; </code>  Output: I love PHP.</td>
-<td>Example: <?php  $string = "I love php."; $pole = explode(" ", $string); \ \ print_r($pole); ?>  Output: Array ( [0] =&gt; I [1] =&gt; love [2] =&gt; php. )</td>
-</tr>
-</tbody>
-</table>
-<h2>State the variable function. Explain it with an example.</h2>
-<p>PHP supports the concept of variable function means that we can call a function
-based on a value of a variable if a variable name has a round parentheses
-appended to it PHP will look for a function with the same name as a whatever
-variable Evaluates to and will attempt to execute it.</p>
-<p><strong>Example:</strong></p>
-<pre><code class="language-php">&lt;?php
-  function add($x, $y){
-    echo $x + $y;
-  }
-  $var =  &quot;add&quot;;
-  $var(10,20);
-?&gt;
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>30
-</code></pre>]]></description>
   </item>
   </channel>
 </rss>
