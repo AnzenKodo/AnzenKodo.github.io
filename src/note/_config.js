@@ -66,9 +66,15 @@ site.use(jsx())
   .use(sitemap())
   .use(katex())
   .use(minifyHTML({ extensions: [".html", ".css", ".js"] }));
-import { input } from "./src/_includes/utils/input.js";
 
-site.copy([".jpg", ".png", ".gif", ".mp3", ".webp", ".webm", ".svg"], (file) => file.toLowerCase());
+import setInput, { input } from "./src/_includes/utils/input.js";
+
+site.copy(
+  [".jpg", ".png", ".gif", ".mp3", ".webp", ".webm", ".svg"],
+  (file) => {
+    return setInput(file.toLowerCase());
+  },
+);
 
 const siteData = {
   name: "AK#Notes",
