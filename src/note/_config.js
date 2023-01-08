@@ -4,8 +4,6 @@ import minifyHTML from "lume/plugins/minify_html.ts";
 import codeHighlight from "lume/plugins/code_highlight.ts";
 import inline from "lume/plugins/inline.ts";
 import metas from "lume/plugins/metas.ts";
-import basePath from "lume/plugins/base_path.ts";
-import slugifyUrls from "lume/plugins/slugify_urls.ts";
 import windi from "lume/plugins/windi_css.ts";
 import toc from "https://deno.land/x/lume_markdown_plugins@v0.1.0/toc/mod.ts";
 import checkbox from "npm:markdown-it-task-checkbox";
@@ -58,8 +56,6 @@ site.use(jsx())
     minify: true,
     mode: "interpret",
   }))
-  .use(slugifyUrls())
-  .use(basePath())
   .use(metas())
   .use(inline())
   .use(codeHighlight())
@@ -71,9 +67,7 @@ import setInput, { input } from "./src/_includes/utils/input.js";
 
 site.copy(
   [".jpg", ".png", ".gif", ".mp3", ".webp", ".webm", ".svg"],
-  (file) => {
-    return setInput(file.toLowerCase());
-  },
+  (file) => setInput(file),
 );
 
 const siteData = {
