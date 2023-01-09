@@ -5,7 +5,7 @@
     <link>https://anzenkodo.github.io/notes/</link>
     <description>This my personal website where I post my notes about thing that I have learn.</description>
     <language>en-US</language>
-    <lastBuildDate>2023-01-09T16:13:11.975Z</lastBuildDate>
+    <lastBuildDate>2023-01-09T16:50:52.060Z</lastBuildDate>
     <image>
       <url>https://anzenkodo.github.io/notes/favicon.png</url>
       <title>AK#Notes</title>
@@ -18,7 +18,7 @@
       <item>
     <title>Home</title>
     <link>https://anzenkodo.github.io/notes/</link>
-    <pubDate>2023-01-09T16:13:11.975Z</pubDate>
+    <pubDate>2023-01-09T16:50:52.060Z</pubDate>
     <description><![CDATA[<p>This my personal website where I post my notes about thing that I have learn.</p>
 <h2>Features</h2>
 <ul>
@@ -402,4232 +402,611 @@ colspan="3"><strong>30–32</strong> ATP</td> </tr> </tbody> </table>
   <td></td> <td>♖</td> </tr> </tbody> </table>]]></description>
   </item>
   <item>
-    <title>React</title>
-    <link>https://anzenkodo.github.io/notes/Programming/Languages/JavaScript/React.html</link>
-    <pubDate>2023-01-09T16:13:11.975Z</pubDate>
-    <description><![CDATA[<h1>React</h1>
+    <title>keys</title>
+    <link>https://anzenkodo.github.io/notes/Programming/database/keys.html</link>
+    <pubDate>2023-01-09T16:50:52.060Z</pubDate>
+    <description><![CDATA[<p>Keys are used to uniquely identify any record or row of data from the table. It
+is also used to establish and identify relationships between tables.</p>
+<p><strong>Example:</strong> ID is used as a key in the “student” table because it is unique for
+each student.</p>
+<h2>Primary Key</h2>
 <ul>
-<li>Function VS Class Component
-<ul>
-<li>A functional component is just a plain JavaScript function that accepts props as an argument and returns a React element.</li>
-<li>A class component requires you to extend from React. Component and create a render function which returns a React element.</li>
+<li>It is the first key.</li>
+<li>Used to identify one and only one instance of an entity uniquely.</li>
 </ul>
-</li>
-<li></li>
+<h2>Candidate Key</h2>
+<ul>
+<li>A candidate key is an attribute or set of attributes that can uiquely identify
+a tuple.</li>
+<li>The candidate keys are as strong as the primary key.</li>
+<li>Example: “employee” table, id is best suited for the primary key. The rest of
+the attributes like SSN, Passport_Number, License_Number are considered a
+candidate key.</li>
+</ul>
+<h2>Super Key</h2>
+<ul>
+<li>Super Key is an attribute set that can uniquely identify a tuple.</li>
 </ul>]]></description>
   </item>
   <item>
-    <title>NodeJS</title>
-    <link>https://anzenkodo.github.io/notes/Programming/Languages/JavaScript/NodeJS.html</link>
-    <pubDate>2023-01-09T16:13:11.975Z</pubDate>
-    <description><![CDATA[<h1>NodeJS</h1>
-<p>From <a href="https://trainings.internshala.com/nodejs-training">Internshala Training NodeJS Course</a></p>
-<h1>Require</h1>
-<ul>
-<li>
-<p>Import node module</p>
-<pre><code class="language-jsx">const { readFs } = require(&quot;fs&quot;);
-const { readHttps } = require(&quot;https&quot;);
-</code></pre>
-</li>
-<li>
-<p>Input the string in <code>console.log</code>.</p>
-<pre><code class="language-jsx">st readLine = require(&quot;readline&quot;).createInterface({
-  output: process.stdout,
-  input: process.stdin,
-});
-
-readLine.question(&quot;What is your name?\n&quot;, (name) =&gt; {
-  console.log(`Welcome ${name}`);
-  readLine.close();
-});
-
-// What is your name?
-// Jimmin &lt;= Ask to input here
-// Welcome Jimmin
-</code></pre>
-</li>
-</ul>
-<h1>Module</h1>
-<ul>
-<li>
-<p>Process</p>
-<p>The <code>process</code> object in Node.js is a global object that can be accessed inside any module without requiring it.</p>
-<ul>
-<li>
-<p><code>process.on</code></p>
-<pre><code class="language-jsx">process.on('beforeExit', (code) =&gt; {
-console.log('Process beforeExit event with code: ', code);
-});
-// Process beforeExit event with code:  0                                                                                             /0.3s
-</code></pre>
-</li>
-<li>
-<p>Process expressions</p>
-<pre><code class="language-jsx">console.log(process.ppid);
-// 21321
-console.log(process.argv);
-// [
-//  '/snap/node/5148/bin/node',
-//  '/home/kurama/Documents/Projects/Node JS/app.js'
-//]
-console.log(`Reports are compact? ${process.report.compact}`);
-// Reports are compact? false                                                                                                         /0.3s
-</code></pre>
-</li>
-</ul>
-</li>
-<li>
-<p>Module</p>
-<p>The <code>module</code> is same as process but you can only access within the file information.</p>
-</li>
-<li>
-<p>Event</p>
-<ul>
-<li>
-<p>EventEmitter</p>
-<pre><code class="language-jsx">const events = require(&quot;events&quot;);
-const eEmitter = new events.EventEmitter();
-
-const getParty = function () {
-  console.log(&quot;Time to party&quot;);
-  const ran = Math.ceil(Math.random() * 10);
-  console.log(`Party starts in ${ran}`);
-  tester(ran);
-};
-
-eEmitter.on(&quot;music&quot;, getParty);
-
-tester(2);
-
-function tester(val) {
-  setTimeout((e) =&gt; {
-    eEmitter.emit(&quot;music&quot;);
-  }, val * 1000);
-}
-
-// Time to party
-// Party starts in 5
-// Time to party
-// Party starts in 8
-// Time to party
-// Party starts in 3
-// Time to party
-// Party starts in 9
-</code></pre>
-</li>
-</ul>
-</li>
-</ul>]]></description>
-  </item>
-  <item>
-    <title>Pratical Sem6</title>
-    <link>https://anzenkodo.github.io/notes/Programming/Languages/PHP/Pratical Sem6.html</link>
-    <pubDate>2023-01-09T16:13:11.975Z</pubDate>
-    <description><![CDATA[<h2>1. Write a PHP program using expressions and operator (ternary operator, arithmetic operators and comparison operators)</h2>
-<pre><code class="language-php">&lt;?php
-  echo 1 &gt; 2 ? 1 : 2;
-  echo &quot;&lt;br&gt;&quot;;
-  echo 1 + 2;
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>2
-3
-</code></pre>
-<h2>2. Write a PHP program to the use of decision making and control structures using:</h2>
-<h3><code>if</code> statement</h3>
-<pre><code class="language-php">&lt;?php
-$x = 1;
-if ($x &gt; 0) {
-  echo &quot;The number is positive&quot;;
-}
-</code></pre>
-<p>O/P</p>
-<pre><code>The number is positive
-</code></pre>
-<h3><code>if else</code> statement</h3>
-<pre><code class="language-php">&lt;?php
-$x = &quot;August&quot;;
-
-if ($x &gt; 0) {
-  echo &quot;The number is positive&quot;;
-} else {
-  echo &quot;The number is negative&quot;;
-}
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>Happy Independence Day!!!
-</code></pre>
-<h3><code>if elseif if</code> statement</h3>
-<pre><code class="language-php">&lt;?php
-$x = &quot;August&quot;;
-
-if ($x &gt; 0) {
-  echo &quot;The number is positive&quot;;
-} elseif ( $x &lt; 0 ) {
-  echo &quot;The number is negative&quot;;
-} else {
-  echo &quot;The value is not number&quot;;
-}
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>The number is positive
-</code></pre>
-<h3><code>switch case</code> statement</h3>
-<pre><code class="language-php">&lt;?php
-$n = &quot;Monday&quot;;
-
-switch($n) {
-  case &quot;Monday&quot;:
-    echo &quot;Its Monday&quot;;
-    break;
-  case &quot;Tuesday&quot;:
-    echo &quot;Its Tuesday&quot;;
-    break;
-  case &quot;Wednesday&quot;:
-    echo &quot;Its Wednesday&quot;;
-    break;
-  case &quot;Thuesday&quot;:
-    echo &quot;Its Thuesday&quot;;
-    break;
-  case &quot;Friday&quot;:
-    echo &quot;Its Friday&quot;;
-    break;
-  case &quot;Saturday&quot;:
-    echo &quot;Its Saturday&quot;;
-    break;
-  case &quot;Sunday&quot;:
-    echo &quot;Its Suday&quot;;
-    break;
-  default:
-    echo &quot;Doesn't exist&quot;;
-}
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>Its Monday
-</code></pre>
-<h2>3. Write a PHP program to the use of looping structure using:</h2>
-<h3><code>while</code> statement</h3>
-<pre><code class="language-php">&lt;?php
-$num = 0;
-
-while ($num &lt;= 10) {
-  echo $num;
-  $num++;
-}
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>012345678910
-</code></pre>
-<h3><code>do while</code> statement</h3>
-<pre><code class="language-php">&lt;?php
-$x = 1;
-do {
-  echo $x;
-  $x++;
-} while ($x &lt;= 5);
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>12345
-</code></pre>
-<h3><code>for</code> statement</h3>
-<pre><code class="language-php">&lt;?php
-for ($i = 1; $i &lt;= 10; $i++) {
-  echo $i;
-}
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>12345678910
-</code></pre>
-<h2>4. Write a PHP program to the use of looping structure using for statement, for each statement.</h2>
-<h3><code>for</code> statement</h3>
-<pre><code class="language-php">&lt;?php
-for ($x = 0; $x &lt;= 5; $x++) {
-  echo $x;
-}
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>012345
-</code></pre>
-<h3><code>foreach</code> statement</h3>
-<pre><code class="language-php">&lt;?php
-$a = array(&quot;Hello&quot;, &quot;World&quot;);
-
-foreach ($a as $b) {
-  echo $b.&quot; &quot;;
-}
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>Hello World
-</code></pre>
-<h2>5. Write a PHP program for creating and manipulating , associative array and multidimensional array.</h2>
-<h3>Indexed array</h3>
-<pre><code class="language-php">&lt;?php
-$a = array(&quot;Red&quot;, &quot;Blue&quot;, &quot;Green&quot;);
-echo &quot;My fav color is: &quot;.$a[0];
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>My fav color is: Red
-</code></pre>
-<h3>Associative arrays</h3>
-<pre><code class="language-php">&lt;?php
-$a = array(&quot;Red&quot;=&gt;1, &quot;Blue&quot;=&gt;2, &quot;Green&quot;=&gt;3);
-echo $a[&quot;Red&quot;].$a[&quot;Blue&quot;],$a[&quot;Green&quot;];
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>123
-</code></pre>
-<h3>Multidimensional array</h3>
-<pre><code class="language-php">&lt;?php
-$a = array(array(&quot;Red&quot;, &quot;Blue&quot;, &quot;Green&quot;));
-echo &quot;My fav color is: &quot;.$a[0][1];
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>My fav color is: Blue
-</code></pre>
-<h2>6. Write a PHP program to calculate</h2>
-<h3>Length of string</h3>
-<pre><code class="language-php">&lt;?php
-  echo strlen(&quot;Hello world!&quot;);
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>12
-</code></pre>
-<h3>Count the no of words in string</h3>
-<pre><code class="language-php">&lt;?php
-  echo str_word_count(&quot;Hello world!&quot;);
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>2
-</code></pre>
-<h3>Compare two string using string function.</h3>
-<pre><code class="language-php">&lt;?php
-  echo strcmp(&quot;Hello world!&quot;, &quot;Hello world&quot;);
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>0
-</code></pre>
-<h2>7. Write a PHP program using following string function:</h2>
-<ul>
-<li>strrev()</li>
-<li>strpos()</li>
-<li>strrpos()</li>
-<li>str_replace()</li>
-<li>ucwords()</li>
-<li>strtoupper()</li>
-<li>strtolower()</li>
-</ul>
-<pre><code class="language-php">&lt;?php
-  echo strrev(&quot;Hello world!&quot;).&quot;&lt;/br&gt;&quot;;
-  echo strpos(&quot;Hello world!&quot;, &quot;world&quot;).&quot;&lt;/br&gt;&quot;;
-  echo strrpos(&quot;I love php, I love php too!&quot;,&quot;php&quot;).&quot;&lt;/br&gt;&quot;;
-  echo str_replace(&quot;world&quot;, &quot;bvit&quot;, &quot;Hello world!&quot;).&quot;&lt;/br&gt;&quot;;
-  echo ucwords(&quot;Welcome to php world&quot;).&quot;&lt;/br&gt;&quot;;
-  echo strtoupper(&quot;Information Technology&quot;).&quot;&lt;/br&gt;&quot;;
-  echo strtolower(&quot;INFORMATION TECHNOLOGY&quot;).&quot;&lt;/br&gt;&quot;;
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>!dlrow olleH
-6
-19
-Hello bvit!
-Welcome To Php World
-INFORMATION TECHNOLOGY
-information technology
-</code></pre>
-<h2>8. Write a PHP program to use: and anonymous function.</h2>
-<h3>User define function</h3>
-<pre><code class="language-php">&lt;?php
-  function writeMessage() {
-    echo &quot;Welcome to PHP world&quot;;
-  }
-  writeMessage();
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>Welcome to PHP world
-</code></pre>
-<h3>Variable function</h3>
-<pre><code class="language-php">&lt;?php
-  function writeMessage() {
-    echo &quot;Welcome to PHP world&quot;;
-  }
-
-  $w = &quot;writeMessage&quot;;
-  $w();
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>Welcome to PHP world
-</code></pre>
-<h3>Anonymous function</h3>
-<pre><code class="language-php">&lt;?php
-  $a=function() { echo &quot;Anonymous function&quot;; };
-  $a();
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>Anonymous function
-</code></pre>
-<h2>9. Write a PHP program to create PDF document by using graphics concept.</h2>
-<pre><code class="language-php">&lt;?php
-  require('fpdf.php');
-  $pdf = new FPDF();
-  $pdf-&gt;AddPage();
-  $pdf-&gt;SetFont('Arial','B',16);
-  $pdf-&gt;Cell(40,10,'Hello World!');
-  $pdf-&gt;Output();
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>Hello World
-</code></pre>
-<h2>10. Write a PHP program</h2>
-<h3>a) To inherit member of superclass in subclass</h3>
-<pre><code class="language-php">&lt;?php
-class Class1 {
-  function func() {
-    echo &quot;Hello World&quot;;
-  }
-}
-
-class Class2 extends Class1 {
-  function echo() {
-    echo &quot;Bye World&quot;;
-  }
-}
-
-$o = new Class2;
-$o-&gt;func();
-$o-&gt;echo();
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>Hello World
-Bye World
-</code></pre>
-<h3>b) Create constructor to initialize object of class by using object oriented concept.</h3>
-<pre><code class="language-php">&lt;?php
-class Obj {
-  public function __construct($name, $surname) {
-    $this-&gt;name=$name;
-    $this-&gt;surname=$surname;
-  }
-  public function showName() {
-    echo &quot;My name is &quot;.$this-&gt;name.&quot; &quot;.$this-&gt;surname;
-  }
-}
-
-$sid=new Obj(&quot;Aman&quot;,&quot;Varma&quot;);
-$sid-&gt;showName();
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>My name is Aman Varma
-</code></pre>
-<h2>11. Write a PHP program on</h2>
-<h3>Introspection</h3>
-<pre><code class="language-php">&lt;?php
-if (!class_exists(&quot;Obj&quot;)) {
-  echo &quot;Class don't exists.&quot;
-}
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>Class don't exists
-</code></pre>
-<h3>Serialization.</h3>
-<pre><code class="language-php">&lt;?php
-echo serialize(array(&quot;Red&quot;));
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>a:1:{i:0;s:3:&quot;Red&quot;;}
-</code></pre>
-<h2>12. Design a web page using following form controls:</h2>
-<ul>
-<li>a) Textbox</li>
-<li>b) Radio button</li>
-<li>c) Check box</li>
-<li>d) Button</li>
-</ul>
-<pre><code class="language-php">&lt;form action=&quot;&lt;?php 1_SELF_PHP ?&gt;&quot; method=&quot;post&quot;&gt;
-  Name:
-  &lt;input type=&quot;text&quot; name=&quot;name&quot;&gt;
-  Sex:
-  &lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;male&quot;&gt;Male&lt;/input&gt;
-  &lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;female&quot;&gt;Female&lt;/input&gt;
-  Vehical:
-  &lt;input type=&quot;checkbox&quot; name=&quot;vehicle[]&quot; value=&quot;bike&quot;&gt;Bike&lt;/input&gt;
-  &lt;input type=&quot;checkbox&quot; name=&quot;vehicle[]&quot; value=&quot;car&quot;&gt;Car&lt;/input&gt;
-  &lt;input type=&quot;checkbox&quot; name=&quot;vehicle[]&quot; value=&quot;scooter&quot;&gt;Scooter&lt;/input&gt;
-  &lt;button name=&quot;submit&quot;&gt;Submit&lt;/button&gt;
-&lt;/form&gt;
-
-&lt;?php
-if ( isset($_POST[&quot;submit&quot;]) ) {
-  echo $_POST[&quot;name&quot;].&quot; is &quot;.$_POST[&quot;sex&quot;].&quot; will travel by &quot;;
-  foreach ($_POST[&quot;vehicle&quot;] as $selected) {
-    echo $selected.&quot; &quot;;
-  }
-}
-?&gt;
-</code></pre>
-<h2>13. Design a web page using following form controls:</h2>
-<ul>
-<li>a) List box</li>
-<li>b) Hidden field box</li>
-</ul>
-<pre><code class="language-php">&lt;form action=&quot;&lt;? $_PHP_SELF ?&gt;&quot; method=&quot;post&quot;&gt;
-  &lt;input type=&quot;hidden&quot; name=&quot;name&quot; value=&quot;Jone&quot;&gt;
-  &lt;select name=&quot;foods&quot;&gt;
-    &lt;option value=&quot;Tomatoes&quot;&gt;Tomatoes&lt;/option&gt;
-    &lt;option value=&quot;Cucumbers&quot;&gt;Cucumbers&lt;/option&gt;
-    &lt;option value=&quot;Celery&quot;&gt;Celery&lt;/option&gt;
-  &lt;/select&gt;
-  &lt;br&gt;
-  &lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;Submit&quot;/&gt;
-&lt;/form&gt;
-
-&lt;?php
-  if( isset($_POST[&quot;foods&quot;]) ) {
-    echo $_POST[&quot;name&quot;].&quot; have chosen &quot;.$_POST[&quot;foods&quot;];
-  }
-?&gt;
-</code></pre>
-<h2>14. Develop a web page with data validation.</h2>
-<pre><code class="language-php">&lt;form action=&quot;&lt;?php $_PHP_SELF ?&gt;&quot; method=&quot;post&quot;&gt;
-  Name:&lt;input type=&quot;text&quot; name=&quot;name&quot; required&gt;
-  &lt;input type=&quot;submit&quot;&gt;
-&lt;/form&gt;
-
-&lt;?php
-  if (!preg_match(&quot;/^[a-zA-Z_ ]*$/&quot;, $_POST[&quot;name&quot;])) {
-    echo &quot;Only letter and whitespace is allowed&quot;;
-  }
-?&gt;
-</code></pre>
-<h2>15. Write a PHP program to:</h2>
-<h3>Create cookies</h3>
-<pre><code class="language-php">&lt;?php
-setcookie(&quot;name&quot;, &quot;Jone&quot;, time() + (86400 * 30), &quot;/&quot;);
-?&gt;
-&lt;?php
-if (isset($_COOKIE[&quot;name&quot;])) {
-  echo &quot;Name: &quot;.$_COOKIE[&quot;name&quot;];
-}
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>Name: Jone
-</code></pre>
-<ul>
-<li>
-<p>Modify cookies value
-Set cookie agien with setcookie function.</p>
-</li>
-<li>
-<p>Delete cookies</p>
-</li>
-</ul>
-<pre><code class="language-php">&lt;?php
-setcookie(&quot;name&quot;, &quot;&quot;, time() - 3600, &quot;/&quot;);
-?&gt;
-&lt;?php
-if (isset($_COOKIE[&quot;name&quot;])) {
-  echo &quot;Name: &quot;.$_COOKIE[&quot;name&quot;];
-} else {
-  echo &quot;Cookie is not set.&quot;;
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>Cookie is not set.
-</code></pre>
-<h2>16. Write a PHP program to:</h2>
-<ul>
-<li>Start session</li>
-<li>Get session variable</li>
-<li>Destroy session</li>
-</ul>
-<pre><code class="language-php">&lt;?php
-  session_start();
-
-  $_SESSION[&quot;color&quot;] = &quot;Red&quot;;
-  $_SESSION[&quot;animal&quot;] = &quot;Lion&quot;;
-
-  echo $_SESSION[&quot;color&quot;].&quot; &quot;.$_SESSION[&quot;animal&quot;];
-
-  session_unset();
-  session_destroy();
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>Red Lion
-</code></pre>
-<h2>17. Write a PHP program for sending and receiving plain text message (sending email).</h2>
-<pre><code class="language-php">&lt;?php
-  $status = mail(&quot;AnzenKodo@altmail.com&quot;, &quot;Title&quot;, &quot;Hello World&quot;);
-  if ($status) {
-    echo &quot;Mail is sent.&quot;;
-  } else {
-    echo &quot;Mail can't be sent&quot;;
-  }
-?&gt;
-</code></pre>
-<h2>18. Write a PHP program to</h2>
-<h3>Create database</h3>
-<pre><code class="language-php">&lt;?php
-// Create connection
-$conn = mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;, &quot;test&quot;);
-// Check connection
-if ($conn-&gt;connect_error) {
-  die(&quot;Connection failed.&quot;);
-}
-
-// Create database
-$sql = &quot;CREATE DATABASE myDB&quot;;
-if (mysqli_query($conn, $sql)) {
-  echo &quot;Database created successfully&quot;;
-} else {
-  echo &quot;Error creating database&quot;;
-}
-
-mysqli_close($conn);
-?&gt;
-</code></pre>
-<h3>Creation of table.</h3>
-<pre><code class="language-php">&lt;?php
-// Create connection
-$conn = mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;, &quot;test&quot;);
-// Check connection
-if (!$conn) {
-  die(&quot;Connection failed&quot;);
-}
-
-// sql to create table
-$sql = &quot;CREATE TABLE MyGuests(id INT(6))&quot;;
-
-if (mysqli_query($conn, $sql)) {
-  echo &quot;Table MyGuests created successfully&quot;;
-} else {
-  echo &quot;Error creating table: &quot; . $conn-&gt;error;
-}
-
-$conn-&gt;close();
-?&gt;
-</code></pre>
-<h2>19. Write a PHP program to Inserting and retrieving the query result operations and Update ,Delete operations on table data.</h2>
-<pre><code class="language-php">&lt;?php
-// Connecting to MySQL
-$conn = mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;, &quot;test&quot;);
-if (!$conn) {
-  die(&quot;Error: &quot;.mysqli_error($conn));
-}
-
-// Inserting data
-$sql = &quot;INSERT INTO my_table(id, name) VALUES (1, 'Jone'), (2, 'Jonney)&quot;;
-if (!mysqli_query($conn, $sql)) {
-  die(&quot;Error&quot;);
-}
-
-// Retrieving data
-$sql = &quot;SELECT * FROM my_table&quot;;
-if ($result = mysqli_query($conn, $sql)) {
-  if (mysqli_num_rows($result) &gt; 0) {
-    while ($row = mysqli_fetch_array($result)) {
-      echo &quot;ID: &quot;.$row[&quot;id&quot;].&quot;, Name: &quot;.$row[&quot;name&quot;];
-    }
-  } else {
-    echo &quot;Rows can't be zero&quot;;
-  }
-} else {
-  die(&quot;Error: &quot;.mysqli_error($conn));
-}
-
-// Update data
-$sql = &quot;UPDATE my_table SET name='tim' WHERE id=2&quot;;
-if (!mysqli_query($conn, $sql) {
-  die(&quot;Error&quot;);
-}
-
-// Delete data
-$sql = &quot;DELETE FROM my_table WHERE id=1&quot;;
-if (!mysqli_query($conn, $sql) {
-  die(&quot;Error&quot;));
-}
-
-mysqli_close();
-?&gt;
-</code></pre>]]></description>
-  </item>
-  <item>
-    <title>Final</title>
-    <link>https://anzenkodo.github.io/notes/Programming/Languages/PHP/Final.html</link>
-    <pubDate>2023-01-09T16:13:11.975Z</pubDate>
-    <description><![CDATA[<h1>PHP</h1>
-<h2>Attempt any FIVE :</h2>
-<h3>(a) Describe advantage of PHP.</h3>
-<ul>
-<li><strong>Web Application Features</strong> - PHP is a programming language support most
-commonly used Web application features like HTTP Cookie, Session, File
-Upload, etc.</li>
-<li><strong>CLI (Command Line Interface)</strong> - PHP is commonly used to write Web
-applications to be integrated to Web servers using the Common Gateway
-Interface (CGI).</li>
-<li><strong>Built-in Modules</strong> - The standard PHP build comes with many free and open
-source libraries included as built-in modules.</li>
-<li><strong>Object-Oriented Programming (OOP)</strong> - PHP supports object-oriented
-programming features like object.</li>
-<li><strong>Pre-Compilation</strong> - PHP Web applications are usually deployed in source
-code, which will be interpreted on-the-fly when Web requests arrive to the
-server.</li>
-<li><strong>Real Time Access Monitoring</strong> - PHP provides access logging by creating the
-summary of recent accesses for the user.</li>
-<li><strong>File I/O</strong> - PHP supports most commonly used file I/O features like local
-file and path management, remote resource access using Internet protocols
-like HTTP and FTP.</li>
-</ul>
-<h3>(b) What is array ? How to store data in array ?</h3>
-<ul>
-<li>An array is a special variable, which can hold more than one value at a time.</li>
-<li>To create array we use <code>array()</code> function.</li>
-</ul>
-<pre><code class="language-php">&lt;?php
-$array = array(&quot;Hello&quot;, &quot;World&quot;);
-print_r($array);
-</code></pre>
-<p>O/P</p>
-<pre><code>Array ( [0] =&gt; &quot;Hello&quot;, [1] =&gt; &quot;World&quot; )
-</code></pre>
-<h3>© List types of inheritance.</h3>
-<ul>
-<li>Single</li>
-<li>Multiple</li>
-<li>Multilevel Inheritance.</li>
-</ul>
-<h3>(d) How can we destroy cookies ?</h3>
-<ul>
-<li>To delete cookie, we can use <code>setcookie</code> function with expiration date in</li>
-</ul>
-<pre><code class="language-php">&lt;?php
-setcookie(&quot;name&quot;, &quot;&quot;, time() - 3600, &quot;/&quot;);
-?&gt;
-</code></pre>
-<h3>(e) List any four data types in MySQL.</h3>
-<ul>
-<li>int</li>
-<li>float</li>
-<li>char</li>
-<li>json</li>
-<li>boolean</li>
-<li>xml</li>
-</ul>
-<h3>(f) Write syntax of PHP.</h3>
-<pre><code class="language-php">&lt;?php
-$hello = &quot;Hello World&quot;;
-?&gt;
-</code></pre>
-<h3>(g) How to create session variable in PHP ?</h3>
-<p>A session is a way to store information in variables to be used across multiple pages.</p>
-<pre><code class="language-php">&lt;?php
-session_start();
-
-$_SESSION[&quot;color&quot;] = &quot;Red&quot;;
-$_SESSION[&quot;animal&quot;] = &quot;Cat&quot;;
-echo $_SESSION[&quot;color&quot;].&quot; &quot;.$_SESSION[&quot;animal&quot;];
-?&gt;
-</code></pre>
-<h2>2. Attempt any THREE :</h2>
-<h3>(a) Write down rules for declaring PHP variable.</h3>
-<ul>
-<li>A variable starts with the $ sign, followed by the name of the variable.</li>
-<li>A variable name must start with a letter or the underscore character.</li>
-<li>A variable name cannot start with a number.</li>
-</ul>
-<h3>(b) Write a program to create associative array in PHP.</h3>
-<p>Associative arrays are arrays that use named keys that you assign to them.</p>
-<pre><code class="language-php">&lt;?php
-$a = array(&quot;Red&quot;=&gt;1, &quot;Blue&quot;=&gt;2, &quot;Green&quot;=&gt;3);
-echo $a[&quot;Red&quot;].$a[&quot;Blue&quot;],$a[&quot;Green&quot;];
-</code></pre>
-<p>O/P</p>
-<pre><code>123
-</code></pre>
-<h3>© Define Introspection and explain it with suitable example.</h3>
-<ul>
-<li>PHP Introspection is the ability of a program to examine an object’s
-characteristics such as its name, parent class (if any), properties and
-methods.</li>
-<li>Introspection in PHP offers a useful Ability to examine classes’ interfaces
-properties methods. With introspection we can write code that operates on any
-object or class.</li>
-</ul>
-<pre><code class="language-php">&lt;?php
-class Obj {}
-
-class Obj2 extends Obj {
-  public $hello = &quot;world&quot;;
-  function func() {}
-}
-$o = new Obj2;
-
-if (class_exists('Obj2')) {
-  echo &quot;Class exists&quot;;
-}
-if (is_object($o)) {
-  echo &quot;Is object&quot;;
-}
-
-print_r(get_class($o));
-print_r(get_class_methods($o));
-print_r(get_class_vars('Obj'));
-print_r(get_parent_class($o));
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>class exists
-Is object
-Obj2
-Array ( [0] =&gt; func )
-Array ( [hello] =&gt; world )
-Obj
-</code></pre>
-<h3>(d) Write difference between get( ) &amp; post( ) method of form (Any four points).</h3>
-<h4>GET</h4>
-<ul>
-<li>It sends the encoded user information appended to the page request (to the URL).</li>
-<li>The page and the encoded information are separated by the ? character.</li>
-<li>The GET method produces a long string the appears in our server logs, in the browser’ location box.</li>
-<li>The GET method is restricted to send up to 1024 characters only.</li>
-<li>Never use GET method if we have password or other sensitive information.</li>
-<li>GET cannot be used to send binary data to the server.</li>
-<li>The php provides $_GET assoiative array to a access all the sent information using GET method.</li>
-</ul>
-<h4>POST</h4>
-<ul>
-<li>It transfers information via HTTP header, not throought the URL.</li>
-<li>The POST method does not have any restriction on data size.</li>
-<li>The POST method can be used to send ASCII as well as binary data.</li>
-<li>The data sent by POST  method goes through HTTP header, so security depends on HTTP protocol.</li>
-<li>By using secure HTTP, we can make sure that our information is secure.</li>
-<li>The PHP provides $_POST associative array to access all the sent information using POST method.</li>
-</ul>
-<h2>3. Attempt any THREE :</h2>
-<h3>(a) Define function. How to define user defined function in PHP ? Give example.</h3>
-<p>A function is a block of statements that can be used repeatedly in a program.</p>
-<pre><code class="language-php">&lt;?php
-function func() {
-  echo &quot;Hello World&quot;;
-}
-</code></pre>
-<p>O/P</p>
-<pre><code>Hello World
-</code></pre>
-<h3>(b) Explain method overloading with example.</h3>
-<p>If the derived class is having the same method name as the base class then the method in the derived class takes precedence over or overrides the base class method.</p>
-<pre><code class="language-php">&lt;?php
-class First {
-  function func() {
-    echo &quot;Hello World&quot;;
-  }
-}
-
-class Second extends First {
-  function func() {
-    echo &quot;Bye World&quot;;
-  }
-}
-
-$o = new Second;
-$o-&gt;func();
-</code></pre>
-<h3>© Define session &amp; cookie. Explain use of session start.</h3>
-<h4>What is cookie?</h4>
-<ul>
-<li>Cookie save the data in browser, so next time refresh the browser it will not
-delete from browser.</li>
-<li>Cookie is used to identify the user.</li>
-<li>A cookie is a small file that server embeds to user’s computer.</li>
-<li>Each time the same computer requests a page with a browser, it will send the
-cookie too.</li>
-</ul>
-<h4>How to create it?</h4>
-<ul>
-<li>Use <code>setcookie</code> function to create cookie.</li>
-<li>Syntex:<pre><code>setcookie($cookie_name, $cookie_value, $time, $location)
-</code></pre>
-</li>
-</ul>
-<h4>Example</h4>
-<pre><code class="language-php">&lt;?php
-setcookie(&quot;name&quot;, &quot;Jonney&quot;, time() + (86400 * 30), &quot;/&quot;);
-if (isset($_COOKIE[&quot;name&quot;])) {
-  echo &quot;Name: &quot;.$_COOKIE[&quot;name&quot;];
-}
-</code></pre>
-<p>O/P</p>
-<pre><code>Name: Jonney
-</code></pre>
-<h4>Session</h4>
-<ul>
-<li>A session is a way to store information in variables to be used across
-multiple pages.</li>
-<li>Sessions allow us to store data on the web server that associated with a
-session ID.</li>
-<li>Once we create a session, PHP sends a cookie that contains the session ID to
-the web browser.</li>
-<li>A session is started with the session_start() function.</li>
-<li>The session_start() function first checks if a session is already started and
-if none is started then it starts one.</li>
-</ul>
-<pre><code class="language-php">&lt;?php
-session_start()
-?&gt;
-&lt;?php
-$_SESSION[&quot;name&quot;] = &quot;Jonney&quot;;
-echo &quot;Name: &quot;.$_SESSION[&quot;name&quot;];
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>Name: Jonney
-</code></pre>
-<h3>(d) Explain delete operation of PHP on table data.</h3>
-<ul>
-<li>We can create a MySQL database by using MySQL Command Line Client.</li>
-<li>Open the MySQL console and write down password, if we set one while
-installation.</li>
-<li>We will get the following:
-<ul>
-<li>To create the data base enter <code>CREATE DATABASE database_name</code></li>
-<li>To check the database is crated enter <code>SHOW DATABASES</code></li>
-</ul>
-</li>
-<li>Creating database through php:<pre><code class="language-php">&lt;?php
-$conn = mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;, &quot;test&quot;);
-
-if (!$conn) {
-  die(&quot;Can't connect to MySQL &quot;);
-}
-
-$sql = &quot;CRATE DATABASE emp&quot;;
-
-if (!mysqli_query($conn, $sql)) {
-  die(&quot;Can't create database &quot;.mysqli_error($conn);
-}
-
-echo &quot;Created database &lt;br/&gt;&quot;;
-?&gt;
-</code></pre>
-O/P<pre><code>Created database
-</code></pre>
-</li>
-</ul>
-<h2>4. Attempt any THREE :</h2>
-<h3>(a) Write PHP script to sort any five numbers using array function.</h3>
-<pre><code class="language-php">&lt;?php
-$cars = array(&quot;Volvo&quot;, &quot;BMW&quot;, &quot;Toyota&quot;);
-sort($cars);
-?&gt;
-</code></pre>
-<p>Output:</p>
-<pre><code>BMW
-Toyota
-Volvo
-</code></pre>
-<h3>(b) Write PHP program for cloning of an object.</h3>
-<pre><code class="language-php">&lt;?php
-class Obj {
-  public $name;
-}
-
-$o = new Obj;
-$c = clone $o;
-
-$o-&gt;name = &quot;Jonney&quot;;
-$c-&gt;name = &quot;Jone&quot;;
-
-echo &quot;Origenal: &quot;.$o-&gt;name.&quot;, Clone: &quot;.$c-&gt;name;
-?&gt;
-</code></pre>
-<p>Output:</p>
-<pre><code>Origenal: Jonney, Clone: JOne
-</code></pre>
-<h3>© Create customer form like customer name, address, mobile no, date of birth using different form of input elements &amp; display user inserted values in new PHP form.</h3>
-<pre><code class="language-php">&lt;form action=&quot;&lt;?php 1_SELF_PHP ?&gt;&quot; method=&quot;post&quot;&gt;
-  Name:
-  &lt;input type=&quot;text&quot; name=&quot;name&quot;&gt;
-  Sex:
-  &lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;male&quot;&gt;Male&lt;/input&gt;
-  &lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;female&quot;&gt;Female&lt;/input&gt;
-  Vehical:
-  &lt;input type=&quot;checkbox&quot; name=&quot;vehicle[]&quot; value=&quot;bike&quot;&gt;Bike&lt;/input&gt;
-  &lt;input type=&quot;checkbox&quot; name=&quot;vehicle[]&quot; value=&quot;car&quot;&gt;Car&lt;/input&gt;
-  &lt;input type=&quot;checkbox&quot; name=&quot;vehicle[]&quot; value=&quot;scooter&quot;&gt;Scooter&lt;/input&gt;
-  &lt;button name=&quot;submit&quot;&gt;Submit&lt;/button&gt;
-&lt;/form&gt;
-
-&lt;?php
-if ( isset($_POST[&quot;submit&quot;]) ) {
-  echo $_POST[&quot;name&quot;].&quot; is &quot;.$_POST[&quot;sex&quot;].&quot; will travel by &quot;;
-  foreach ($_POST[&quot;vehicle&quot;] as $selected) {
-    echo $selected.&quot; &quot;;
-  }
-}
-?&gt;
-</code></pre>
-<h3>(d) Inserting and retrieving the query result operations.</h3>
-<pre><code class="language-php">&lt;?php
-$server= &quot;localhost&quot;;
-$user = &quot;root&quot;;
-$password = &quot;&quot;;
-$db = &quot;feedback&quot;;
-// Create connection
-$conn = new mysqli($server, $user, $password, $db);
-// Check connection
-if ($conn-&gt;connect_error)
-{
-die(&quot;Connection failed: &quot; . $conn-&gt;connect_error);
-}
-$sql = INSERT INTO data VALUES('ashok','you are awesome bro');
-[if](if) ($conn-&gt;query($sql) === TRUE)
-{
-echo &quot;feedback sucessfully submitted&quot;;
-}
-else
-{
-echo &quot;Error: &quot; . $sql . &quot;&lt;br&gt;&quot; . $conn-&gt;error;
-}
-$conn-&gt;close();
-?&gt;
-</code></pre>
-<h3>(e) How do you validate user inputs in PHP ?</h3>
-<pre><code class="language-php">&lt;form action=&quot;&lt;?php $_PHP_SELF ?&gt;&quot; method=&quot;post&quot;&gt;
-  Name:&lt;input type=&quot;text&quot; name=&quot;name&quot; required&gt;
-  &lt;input type=&quot;submit&quot;&gt;
-&lt;/form&gt;
-
-&lt;?php
-  if (!preg_match(&quot;/^[a-zA-Z_ ]*$/&quot;, $_POST[&quot;name&quot;])) {
-    echo &quot;Only letter and whitespace is allowed&quot;;
-  }
-?&gt;
-</code></pre>
-<h2>5. Attempt any TWO :</h2>
-<h3>(a) Explain different loops in PHP with example.</h3>
-<h4><code>while</code> statement</h4>
-<pre><code class="language-php">&lt;?php
-$num = 0;
-
-while ($num &lt;= 10) {
-  echo $num;
-  $num++;
-}
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>012345678910
-</code></pre>
-<h4><code>do while</code> statement</h4>
-<pre><code class="language-php">&lt;?php
-$x = 1;
-
-do {
-  echo &quot;The number is: $x &lt;br&gt;&quot;;
-  $x++;
-} while ($x &lt;= 5);
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>The number is: 1
-The number is: 2
-The number is: 3
-The number is: 4
-The number is: 5
-</code></pre>
-<h4><code>for</code> loop</h4>
-<pre><code class="language-php">&lt;?php
-for ($i = 1; $i &lt;= 10; $i++) {
-  echo $i.&quot; &quot;;
-}
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>1 2 3 4 5 6 7 8 9 10
-</code></pre>
-<h3>(b) How do you connect MySQL database with PHP.</h3>
-<pre><code class="language-php">&lt;?php
-  // Creating connection
-  $conn = mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;, &quot;test&quot;);
-
-  // Checking connection
-  if (!$conn) {
-      die(&quot;Connection failed.&quot;);
-  }
-  echo &quot;Connected successfully&quot;;
-?&gt;
-</code></pre>
-<h3>© Create a class as “Percentage” with two properties length &amp; width. Calculate area of rectangle for two objects.</h3>
-<pre><code class="language-php">&lt;?php
-class Rectangle {
-  public $width = 0;
-  public $height = 0;
-
-  function setSize($w = 0, $h = 0) {
-    $this-&gt;width = $w;
-    $this-&gt;height = $h;
-  }
-
-  function getArea() {
-    return ($this-&gt;width * $this-&gt;height);
-  }
-
-  function getPerimeter() {
-    return ( ($this-&gt;width + $this-&gt;height) * 2 );
-  }
-
-  function isSquare() {
-    if ($this-&gt;width == $this-&gt;height) {
-       return true;
-     } else {
-        return false;
-     }
-  }
-
-}
-</code></pre>
-<h2>6. Attempt any TWO :</h2>
-<h3>(a) Write a PHP program to demonstrate use of cookies.</h3>
-<ul>
-<li>Cookie save the data in browser, so next time refresh the browser it will not
-delete from browser.</li>
-<li>Cookie is used to identify the user.</li>
-<li>A cookie is a small file that server embeds to user’s computer.</li>
-<li>Each time the same computer requests a page with a browser, it will send the
-cookie too.</li>
-</ul>
-<h4>How to create it?</h4>
-<ul>
-<li>Use <code>setcookie</code> function to create cookie.</li>
-<li>Syntex:<pre><code>setcookie($cookie_name, $cookie_value, $time, $location)
-</code></pre>
-</li>
-</ul>
-<h4>Example</h4>
-<pre><code class="language-php">&lt;?php
-setcookie(&quot;name&quot;, &quot;Jonney&quot;, time() + (86400 * 30), &quot;/&quot;);
-if (isset($_COOKIE[&quot;name&quot;])) {
-  echo &quot;Name: &quot;.$_COOKIE[&quot;name&quot;];
-}
-</code></pre>
-<p>O/P</p>
-<pre><code>Name: Jonney
-</code></pre>
-<h3>(b) Explain any four string functions in PHP with example.</h3>
-<ul>
-<li><strong>strrev()</strong> - Reverses a string.</li>
-<li><strong>strpos()</strong> - Returns the position of the first occurrence of a string.</li>
-<li><strong>strrpos()</strong> - Finds the position of the last occurrence of a string.</li>
-<li><strong>str_replace()</strong> - Replaces some characters in a string.</li>
-</ul>
-<h3>© What is inheritance?</h3>
-<ul>
-<li>The old class is the base class, also called as parent class or super class,
-and the new class is the derived class also called as child class or sub
-class.</li>
-<li>The derived class has its own variables and methods plus variables and
-methods from the base class.</li>
-<li>The <code>extends</code> keyword is used for the inheritance.</li>
-</ul>
-<pre><code class="language-php">&lt;?php
-class Class1 {
-  function func() {
-    echo &quot;Hello World&quot;;
-  }
-}
-
-class Class2 extends Class1 {
-  function echo() {
-    echo &quot;Bye World&quot;;
-  }
-}
-
-$o = new Class2;
-$o-&gt;func();
-$o-&gt;echo();
-</code></pre>
-<p>O/P</p>
-<pre><code>Hello World
-Bye World
-</code></pre>
-<h3>(ii) Write update operation on table data.</h3>
-<pre><code class="language-php">&lt;?php
-// Connect MySQL
-$conn = mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;, &quot;test&quot;);
-if (!$conn) {
-  echo &quot;Error: &quot;.mysqli_error($conn);
-}
-
-// Create table
-$table = &quot;CREATE TABLE employee(id INT(4), name VARCHAR(22), salary INT(4))&quot;;
-if (!mysqli_query($conn, $table)) {
-  echo &quot;Can't create table.&quot;;
-}
-echo &quot;Created table&lt;br/&gt;&quot;;
-
-// Insert data
-$insert = &quot;INSERT INTO employee(id, name, salary) VALUES (1, 'Sam', 3200), (2, 'Jonney', 4500), (3, 'Jone', 2000)&quot;;
-if (!mysqli_query($conn, $insert)) {
-  echo &quot;Can't insert data.&quot;;
-}
-
-// Dalete data
-$delete = &quot;DELETE FROM employee WHERE id=2&quot;;
-if (!mysqli_query($conn, $delete)) {
-  echo &quot;Can't delete data.&quot;;
-}
-
-// Retrive data
-$retrive = &quot;SELECT * FROM employee&quot;;
-$result = mysqli_query($conn, $retrive);
-
-if (mysqli_num_rows($result)) {
-  while ($row = mysqli_fetch_assoc($result)) {
-    echo &quot;Name: &quot;.$row['name'].&quot;, Salary: &quot;.$row['salary'].&quot;, ID: &quot;.$row['id'].&quot;&lt;/br&gt;&quot;;
-  }
-}
-?&gt;
-</code></pre>]]></description>
-  </item>
-  <item>
-    <title>Sample Paper 6S</title>
-    <link>https://anzenkodo.github.io/notes/Programming/Languages/PHP/Sample-Paper-6S.html</link>
-    <pubDate>2023-01-09T16:13:11.975Z</pubDate>
-    <description><![CDATA[<h1><em>22619</em> - Web Based Application development with PHP</h1>
-<ul>
-<li><strong>Programme Name:</strong> Computer/Information Technology Engineering</li>
-<li><strong>Programmecode:</strong> CO/IF</li>
-<li><strong>Semester:</strong> VI Sem</li>
-<li><strong>Marks:</strong> 70</li>
-</ul>
-<h2>Q.1) Attempt any FIVE of the following. <em>(10 Marks)</em></h2>
-<h3>a) List any four advantages of PHP?</h3>
-<ol>
-<li>PHP is open source and free from cost.</li>
-<li>It is platform independent.</li>
-<li>PHP based application can run on any OS like UNIX, Linux and Windows, etc</li>
-<li>Easy to learn.</li>
-<li>Has built-in database connection modules.</li>
-</ol>
-<h3>b) State the use of <code>str_word_count</code> along with its syntax.</h3>
-<ul>
-<li><code>str_word_count()</code> function counts the numbers of word in a string.</li>
-<li>Syntax:<pre><code>str_word_count(string,return,char)
-</code></pre>
-</li>
-<li>Example:<pre><code class="language-php">&lt;?php
-echo set_word_count(&quot;Hello World&quot;);
-?&gt;
-</code></pre>
-O/P<pre><code>2
-</code></pre>
-</li>
-</ul>
-<h3>c) Define serialization.</h3>
-<ul>
-<li>Serialization of data means converting it into a string of bytes in such a way
-that you can produce the original data again from the string via a process as
-unserialization.</li>
-<li>After you have the ability to serialize/unserialize, you can store your
-serialized string anywhere and recreate a copy of the data again when needed.</li>
-<li>PHP offers two functions, serialize() and unserialize(), which take a value of
-any type (except type resource) and encode the value into string form and
-decode again, respectively.</li>
-</ul>
-<h3>d) Write the syntax for creating Cookie.</h3>
-<ul>
-<li>To set cookie in PHP, the <code>setcookie()</code> function is used.</li>
-<li>Syntex:<pre><code class="language-php">setcookie($name, $value, $expire_time, $path, $domain)
-</code></pre>
-</li>
-<li><code>setcookie()</code> function the parameters.
-<ul>
-<li><strong>name</strong> - Name of the cookie, which is used with $_COOKIE function to get
-value.</li>
-<li><strong>value</strong> - Value of the named variable.</li>
-<li><strong>expire time</strong> - Time when cookie will expire.</li>
-<li><strong>path</strong> - Directory where cookie will valied.</li>
-<li><strong>domain</strong> - The default server hostname.</li>
-</ul>
-</li>
-</ul>
-<h3>e) Write syntax of Connecting PHP Webpage with MySQL.</h3>
-<ul>
-<li>
-<p>Syntex:</p>
-<pre><code>mysqli_connect(host, username, password, dbname, port, socket)
-</code></pre>
-</li>
-<li>
-<p>Parameter:</p>
-<ul>
-<li><strong>host</strong> - Specifies a host name or an IP address.</li>
-<li><strong>username</strong> -Specifies the MySQL username</li>
-<li><strong>password</strong> - Specifies the MySQL password</li>
-<li><strong>dbname</strong> - Specifies the default database to be used</li>
-<li><strong>port</strong>  - Specifies the port number to attempt to connect to the MySQL
-server</li>
-<li><strong>socket</strong> - Specifies the socket or named pipe to be used</li>
-</ul>
-</li>
-<li>
-<p>Example:</p>
-<pre><code class="language-php">&lt;?php
-mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;, &quot;/&quot;, &quot;domain.com&quot;,
-	&quot;/run/mysql/mysql.sock&quot;)
-</code></pre>
-</li>
-</ul>
-<h3>f) Define GET and POST methods.</h3>
-<h4>GET</h4>
-<ul>
-<li>It sends the encoded user information appended to the page request (to the
-URL).</li>
-<li>The page and the encoded information are separated by the ? character.</li>
-<li>The GET method produces a long string the appears in our server logs, in the
-browser location box.</li>
-<li>The GET method is restricted to send up to 1024 characters only.</li>
-<li>Never use GET method if we have password or other sensitive information.</li>
-<li>GET cannot be used to send binary data to the server.</li>
-<li>The php provides $_GET assoiative array to a access all the sent information
-using GET method.</li>
-<li>Example:<pre><code class="language-php">&lt;form action=&quot;&lt;?php $_PHP_SELF ?&gt;&quot; method=&quot;GET&quot;&gt;
-	Name: &lt;input type=&quot;text&quot; name=&quot;name&quot;&gt;
-	&lt;input type=&quot;submit&quot;&gt;
-&lt;/form&gt;
-&lt;?php
-if ($_GET[&quot;name&quot;]) {
-	echo $_GET[&quot;name&quot;];
-}
-?&gt;
-</code></pre>
-</li>
-<li>Output:<pre><code>Name: Joey
-Submit
-Joey
-</code></pre>
-</li>
-</ul>
-<h4>POST</h4>
-<ul>
-<li>It transfers information via HTTP header, not throought the URL.</li>
-<li>The POST method does not have any restriction on data size.</li>
-<li>The POST method can be used to send ASCII as well as binary data.</li>
-<li>The data sent by POST  method goes through HTTP header, so security depends on
-HTTP protocol.</li>
-<li>By using secure HTTP, we can make sure that our information is secure.</li>
-<li>The PHP provides $_POST associative array to access all the sent information
-using POST method.</li>
-<li>Example:<pre><code class="language-php">&lt;form action=&quot;&lt;?php $_PHP_SELF ?&gt;&quot; method=&quot;post&quot;&gt;
-	Name: &lt;input type=&quot;text&quot; name=&quot;name&quot;&gt;
-	&lt;input type=&quot;submit&quot;&gt;
-&lt;/form&gt;
-&lt;?php
-if ($_POST[&quot;name&quot;]) {
-	echo $_POST[&quot;name&quot;];
-}
-?&gt;
-</code></pre>
-</li>
-<li>Output<pre><code>Name: Joey
-Submit
-Joey
-</code></pre>
-</li>
-</ul>
-<h3>g) State the use of <code>$</code> sign in PHP.</h3>
-<ul>
-<li>The $ operator in PHP is used to declare a variable.</li>
-<li>A variable starts with the $ sign followed by the name of the variable.</li>
-<li>Example:<pre><code class="language-php">&lt;?php
-$var_name = &quot;Hello World!&quot;;
-?&gt;
-</code></pre>
-</li>
-</ul>
-<h2>Q.2) Attempt any THREE of the following. <em>(12 Marks)</em></h2>
-<h3>a) Write a program using foreach loop.</h3>
-<pre><code class="language-php">&lt;?php
-  //declare array
-  $season = array (&quot;Summer&quot;, &quot;Winter&quot;, &quot;Autumn&quot;, &quot;Rainy&quot;);
-  //access array elements using foreach loop
-  foreach ($season as $element) {
-    echo &quot;$element&quot;;
-    echo &quot;&lt;/br&gt;&quot;;
-  }
-?&gt;
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>Summer
-Winter
-Autumn
-Rainy
-</code></pre>
-<h3>b) Explain Indexed and Associative arrays with suitable example.</h3>
-<h4>Indexed arrays</h4>
-<p>Indexed array: An array having only integer keys is typically referred to as an
-indexed array and index arrays can store numbers, drinks and any object but
-their index will be represented by number.</p>
-<p><strong>Example:</strong></p>
-<pre><code class="language-php">&lt;?php
-  // Define an indexed array
-  $colors = array(&quot;Red&quot;, &quot;Green&quot;, &quot;Blue&quot;);
-  // Printing array structure
-  print_r($colors);
-?&gt;
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>Array ( [0] =&gt; Red [1] =&gt; Green [2] =&gt; Blue )
-</code></pre>
-<h4>Associative arrays</h4>
-<p>The associative arrays are very similar to numeric arrays in terms of
-functionality but they are different in terms of their index. Associative arrays
-will have their index as string so that you can establish a strong association
-between key and values.</p>
-<pre><code class="language-php">&lt;?php
-  // Define an associative array
-  $ages = array(&quot;Peter&quot;=&gt;22, &quot;Clark&quot;=&gt;32, &quot;John&quot;=&gt;28);
-  // Printing array structure
-  print_r($ages);
-?&gt;
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>Array ( [Peter] =&gt; 22 [Clark] =&gt; 32 [John] =&gt; 28 )
-</code></pre>
-<h3>c) Define Introspection and explain it with suitable example.</h3>
-<p>PHP Introspection is the ability of a program to examine an object’s
-characteristics such as its name, parent class (if any), properties and methods.</p>
-<p>Introspection  in PHP offers a useful Ability  to examine classes’ interfaces
-properties methods. With introspection we can write  code that operates on any
-object or class.</p>
-<p><strong>Example</strong>:</p>
-<pre><code class="language-php">&lt;?php
-  if (class_exists('MyClass')) {
-    $myclass = new MyClass();
-  }
-?&gt;
-</code></pre>
-<h3>d) Differentiate between Session and Cookies.</h3>
-<table>
-<thead>
-<tr>
-<th>SESSION</th>
-<th>COOKIES</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Session are stored in server side</td>
-<td>Cookies are stored in client browser.</td>
-</tr>
-<tr>
-<td>Session is server resource.</td>
-<td>Cookies are client-side resource.</td>
-</tr>
-<tr>
-<td>It stores unlimeted data.</td>
-<td>It stores limited data.</td>
-</tr>
-<tr>
-<td>It holds multiple variables.</td>
-<td>It doen’t hold multiple variables.</td>
-</tr>
-<tr>
-<td>Session values can’t accessed easily.</td>
-<td>Cookies values can accessed easily.</td>
-</tr>
-<tr>
-<td>It is more secure.</td>
-<td>It is less secure.</td>
-</tr>
-</tbody>
-</table>
-<h2>Q.3) Attempt any THREE of the following. <em>(12 Marks)</em></h2>
-<h3>a) Differentiate between implode and explode functions.</h3>
-<table>
-<thead>
-<tr>
-<th>No.</th>
-<th>Implode</th>
-<th>Explode</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>The implode() function returns a string from the elements of an array.</td>
-<td>explode function breaks a string  into smaller parts and stores it  as an array.</td>
-</tr>
-<tr>
-<td>2</td>
-<td>The implode() function accepts its  parameters in either order.  However, for consistency with explode(),  you should use the documented order of  arguments.</td>
-<td>The explode() function splits  these strings based on a specific  delimiter and returns an array that  contains elements which are sustained  by the splitting operation.</td>
-</tr>
-<tr>
-<td>3</td>
-<td>syntax :-string implode (pieces)</td>
-<td>array explode (delimiter, string, limit)</td>
-</tr>
-<tr>
-<td>4</td>
-<td><strong>Example</strong>:  <code>php &lt;?php $arr = array(&quot;I&quot;, &quot;love&quot;, &quot;PHP.&quot;); $pole = implode(&quot; &quot;, $arr); \ echo &quot;$pole&quot;; ?&gt; </code>  Output: I love PHP.</td>
-<td>Example: <?php  $string = "I love php."; $pole = explode(" ", $string); \ \ print_r($pole); ?>  Output: Array ( [0] =&gt; I [1] =&gt; love [2] =&gt; php. )</td>
-</tr>
-</tbody>
-</table>
-<h3>b) Write a program for cloning of an object.</h3>
-<pre><code class="language-php">&lt;?php
-class Obj {
-  public $name;
-}
-
-$o = new Obj;
-$c = clone $o;
-
-$o-&gt;name = &quot;Jonney&quot;;
-$c-&gt;name = &quot;Jone&quot;;
-
-echo &quot;Origenal: &quot;.$o-&gt;name.&quot;, Clone: &quot;.$c-&gt;name;
-?&gt;
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>Origenal: Jonney, Clone: JOne
-</code></pre>
-<h3>c) Define session and explain how it works.</h3>
-<ul>
-<li>A session is a way to store information in variables to be used across
-multiple pages.</li>
-<li>Sessions allow us to store data on the web server that associated with a
-session ID.</li>
-<li>Once we create a session, PHP sends a cookie that contains the session ID to
-the web browser.</li>
-<li>A session is started with the session_start() function.</li>
-<li>The session_start() function first checks if a session is already started and
-if none is started then it starts one.</li>
-<li>Example:<pre><code class="language-php">&lt;?php
-session_start();
-$_SESSION[&quot;color&quot;] = &quot;Red&quot;;
-$_SESSION[&quot;animal&quot;] = &quot;Cat&quot;;
-echo $_SESSION[&quot;color&quot;].&quot; &quot;.$_SESSION[&quot;animal&quot;];
-?&gt;
-</code></pre>
-</li>
-</ul>
-<h3>d) Write Update and Delete operations on table data.</h3>
-<h2>Q.4) Attempt any THREE of the following. <em>(12 Marks)</em></h2>
-<h3>a) State the variable function.Explain it with example.</h3>
-<p>PHP supports the concept of variable function means that we can call a function
-based on a value of a variable if a variable name has a round parentheses
-appended to it PHP will look for a function with the same name as a whatever
-variable Evaluates to and will attempt to execute it.</p>
-<p><strong>Example:</strong></p>
-<pre><code class="language-php">&lt;?php
-  function add($x, $y){
-    echo $x + $y;
-  }
-  $var =  &quot;add&quot;;
-  $var(10,20);
-?&gt;
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>30
-</code></pre>
-<h3>b) Explain the concept of Serialization with example.</h3>
-<p>A string representation of any object in the form of byte-stream is obtained by
-serialize() function in PHP. All property variables of the object are contained
-in the string and methods are not saved. This string can be stored in any file.</p>
-<p><strong>Example:</strong></p>
-<pre><code class="language-php">&lt;?php
-echo serialize(array(&quot;Red&quot;));
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>a:1:{i:0;s:3:&quot;Red&quot;;}
-</code></pre>
-<h3>c) Answer the following:</h3>
-<h4>i) Get session variables</h4>
-<ul>
-<li>The session variables are not passed individually to each new page, instead
-they are retrieved from the session we open at the beginning of each page.</li>
-<li>All session variable values are stored in the global <code>$_SESSION</code> variable.</li>
-</ul>
-<h4>ii) Destroy session.</h4>
-<ul>
-<li>To remove all global session variables and destroy the session, we use
-<code>session_unset()</code> and <code>session_destroy()</code> functions.</li>
-<li>No arguments are needed in <code>session_destroy()</code> function.</li>
-<li>Example:<pre><code class="language-php">&lt;?php
-session_start();
-$_SESSION[&quot;color&quot;] = &quot;red&quot;;
-$_SESSION[&quot;animal&quot;] = &quot;Lion&quot;;
-echo $_SESSION[&quot;color&quot;].&quot; &quot;.$_SESSION[&quot;animal&quot;];
-session_unset();
-session_destroy();
-?&gt;
-</code></pre>
-</li>
-</ul>
-<h2>Q.5) Attempt any TWO of the following. <em>(12 Marks)</em></h2>
-<h3>a) Explain any three data types used in PHP.</h3>
-<ol>
-<li><strong>Integer:</strong> integer data type used to specify a numeric value  without a fractional component the range of integers.</li>
-<li><strong>Strings:</strong> a string is a sequence of characters where characters are the same as a byte.</li>
-<li><strong>Boolean:</strong> boolean  value can be either true or false both are  case-insensitive.</li>
-</ol>
-<h3>b) Write a program to connect PHP with MySQL.</h3>
-<pre><code class="language-php">&lt;?php
-$conn = mysqli_connect(&quot;mydb&quot;, &quot;root&quot;, &quot;root&quot;);
-if ($conn) {
-	echo &quot;Connection Successful&quot;;
-} else {
-	echo &quot;Connection Unsuccessful&quot;;
-}
-</code></pre>
-<p>O/P</p>
-<pre><code>Connction Successful
-</code></pre>
-<h3>c) Explain the concept of overriding in detail.</h3>
-<p>In function overriding, both parent and child classes should have the same
-function name with and number of arguments. It is used to replace the parent
-method in child class.</p>
-<pre><code class="language-php">&lt;?php
-class ParentClass {
-  function helloWorld() {
-    echo &quot;Parent&quot;;
-  }
-}
-class ChildClass extends ParentClass {
-  function helloWorld() {
-    echo &quot;Child&quot;;
-  }
-}
-$p = new ParentClass;
-$c = new ChildClass;
-$p-&gt;helloWorld();
-$c-&gt;helloWorld();
-?&gt;
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>Parent
-Child
-</code></pre>
-<h2>Q.6) Attempt any TWO of the following. <em>(12 Marks)</em></h2>
-<h3>a) Explain web page validation with example.</h3>
-<ul>
-<li>For validating a web page we use preg_match() function.</li>
-<li>The preg_match() function searches string for pattern, returning true if
-pattern exists, and false otherwise.</li>
-<li>Example:<pre><code class="language-php">&lt;form action=&quot;&lt;?php $_PHP_SELF ?&gt;&quot; method=&quot;post&quot;&gt;
-	Name:&lt;input type=&quot;text&quot; name=&quot;name&quot; required&gt;
-	&lt;input type=&quot;submit&quot;&gt;
-&lt;/form&gt;
-&lt;?php
-if (!preg_match(&quot;/^[a-zA-Z_ ]*$/&quot;, $_POST[&quot;name&quot;])) {
-	echo &quot;Only letter and whitespace is allowed&quot;;
-}
-?&gt;
-</code></pre>
-</li>
-</ul>
-<h3>b) Write a program to create PDF document in PHP.</h3>
-<pre><code class="language-php">&lt;?php
-  require('fpdf.php');
-  $pdf = new FPDF();
-  $pdf-&gt;AddPage();
-  $pdf-&gt;SetFont('Arial','B',16);
-  $pdf-&gt;Cell(40,10,'Hello World!');
-  $pdf-&gt;Output();
-?&gt;
-</code></pre>
-<h3>c) Elaborate the following:</h3>
-<h4>i) __call()</h4>
-<ul>
-<li>The __call() method is invoked automatically when a non-existing method or
-inaccessible method is called.</li>
-<li>The __call() method accepts two arguments:
-<ul>
-<li>$name is the name of the method that is being called by the object.</li>
-<li>$arguments is an array of arguments passed to the method call.</li>
-</ul>
-</li>
-<li>Syntax:<pre><code>public __call ( string $name , array $arguments ) : mixed
-</code></pre>
-</li>
-<li>Example:<pre><code class="language-php">&lt;?php
-  class Obj {
-  	function __call($method, $argument) {
-  		print_r($method);
-  		print_r($argument);
-  	}
-  }
-
-  $o = new Obj;
-
-  $o-&gt;hello(&quot;World&quot;);
-?&gt;
-</code></pre>
-O/P<pre><code>hello
-Array([0]=&gt;&quot;World&quot;)
-</code></pre>
-</li>
-</ul>
-<h4>ii) mysqli_connect()</h4>
-<ul>
-<li>This function opens a connection to a MySQL server.</li>
-<li>It returns a MySQL link identifier on success, or FALSE on failure.</li>
-<li>Syntax:<pre><code class="language-php">mysqli_connect($server, $username, $password)
-</code></pre>
-</li>
-<li>Example:<pre><code class="language-php">&lt;?php
-$conn = mysqli_connect(&quot;mydb&quot;, &quot;root&quot;, &quot;root&quot;, &quot;text&quot;);
-?&gt;
-</code></pre>
-</li>
-</ul>]]></description>
-  </item>
-  <item>
-    <title>Notes</title>
-    <link>https://anzenkodo.github.io/notes/Programming/Languages/PHP/Notes.html</link>
-    <pubDate>2023-01-09T16:13:11.975Z</pubDate>
-    <description><![CDATA[<h1>1. Expressions and Control Statements in PHP</h1>
-<h2>1. What is web application?</h2>
-<ul>
-<li>A Web application is a computer software or program that performs some
-specific tasks at its client by using a Web browser.</li>
-<li>The Web-based applications are also known as Web apps.</li>
-<li>Web applications are usually based on the client-server architecture where
-the client input/request data while the server stores and responds with
-result.</li>
-</ul>
-<h2>3. What is PHP?</h2>
-<ul>
-<li>PHP is a widely used open source language that is specifically used for web
-application development and can be embedded within HTML.</li>
-<li>PHP is a server-side scripting language that is used in Web based
-applications.</li>
-<li>PHP is a general-purpose programming language originally designed for web
-application development. PHP is a recursive. acronym for “PHP: Hypertext
-Preprocessor”.</li>
-</ul>
-<h2>4. Enlist features of PHP.</h2>
-<ul>
-<li><strong>Web Application Features</strong> - PHP is a programming language support most
-commonly used Web application features like HTTP Cookie, Session, File
-Upload, etc.</li>
-<li><strong>CLI (Command Line Interface)</strong> - PHP is commonly used to write Web
-applications to be integrated to Web servers using the Common Gateway
-Interface (CGI).</li>
-<li><strong>Built-in Modules</strong> - The standard PHP build comes with many free and open
-source libraries included as built-in modules.</li>
-<li><strong>Object-Oriented Programming (OOP)</strong> - PHP supports object-oriented
-programming features like object.</li>
-<li><strong>Pre-Compilation</strong> - PHP Web applications are usually deployed in source
-code, which will be interpreted on-the-fly when Web requests arrive to the
-server.</li>
-<li><strong>Real Time Access Monitoring</strong> - PHP provides access logging by creating the
-summary of recent accesses for the user.</li>
-<li><strong>File I/O</strong> - PHP supports most commonly used file I/O features like local
-file and path management, remote resource access using Internet protocols
-like HTTP and FTP.</li>
-</ul>
-<h2>5. What is variable? How to declare it? Explain with example.</h2>
-<ul>
-<li>PHP variables are nothing but a named storage locations in the memory.</li>
-<li>A variable is a named container in a PHP script in which a data value can be
-stored.</li>
-<li>A variable starts with the ($) sign, followed by the name of the variable.</li>
-<li><strong>Syntax</strong> - $var</li>
-</ul>
-<pre><code class="language-php">$var = &quot;Hello World&quot;;
-echo $var;
-</code></pre>
-<p>O/P</p>
-<pre><code>Hello World
-</code></pre>
-<h2>6. Explain constants in PHP with example.</h2>
-<ul>
-<li>A PHP script is executed on the server, and the plain HTML result is sent
-back to the browser.</li>
-<li>A PHP script can be placed anywhere in the document. A PHP programming script
-starts with <code>&lt;?php</code> and ends with <code>?&gt;</code>.</li>
-<li>The default file extension for PHP files is “.php”.</li>
-<li>A PHP file normally contains HTML tags and some PHP scripting code.</li>
-</ul>
-<pre><code class="language-php">&lt;?phh
-  $var = &quot;Hello World&quot;
-  echo $var;
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>Hello World
-</code></pre>
-<h2>7. What are the decision statements used by PHP?</h2>
-<h3><code>if</code> statement</h3>
-<pre><code class="language-php">&lt;?php
-$x = -12;
-
-if ($x &gt; 0) {
-  echo &quot;The number is positive&quot;;
-}
-
-else{
-  echo &quot;The number is negative&quot;;
-}
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>The number is negative
-</code></pre>
-<h3><code>if else</code> statement</h3>
-<pre><code class="language-php">&lt;?php
-$x = &quot;August&quot;;
-
-if ($x == &quot;January&quot;) {
-  echo &quot;Happy Republic Day&quot;;
-} elseif ($x == &quot;August&quot;) {
-  echo &quot;Happy Independence Day!!!&quot;;
-} else {
-  echo &quot;Nothing to show&quot;;
-}
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>Happy Independence Day!!!
-</code></pre>
-<h3>Nested <code>if</code> statement</h3>
-<pre><code class="language-php">&lt;?php
-$a = 10;
-$b = 20;
-
-if ($a == 10) {
-  if ($b == $20) {
-      echo &quot;The addiotion is: &quot;.($a + b);
-  }
-}
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>The addition is 30
-</code></pre>
-<h3><code>switch case</code> statement</h3>
-<pre><code class="language-php">&lt;?php
-$n = &quot;Monday&quot;;
-
-switch($n) {
-  case &quot;Monday&quot;:
-    echo &quot;Its Monday&quot;;
-    break;
-  case &quot;Tuesday&quot;:
-    echo &quot;Its Tuesday&quot;;
-    break;
-  case &quot;Wednesday&quot;:
-    echo &quot;Its Wednesday&quot;;
-    break;
-  case &quot;Thuesday&quot;:
-    echo &quot;Its Thuesday&quot;;
-    break;
-  case &quot;Friday&quot;:
-    echo &quot;Its Friday&quot;;
-    break;
-  case &quot;Saturday&quot;:
-    echo &quot;Its Saturday&quot;;
-    break;
-  case &quot;Sunday&quot;:
-    echo &quot;Its Suday&quot;;
-    break;
-  default:
-    echo &quot;Doesn't exist&quot;;
-}
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>Its Monday
-</code></pre>
-<h2>8. Describe loops in PHP.</h2>
-<h3><code>while</code> statement</h3>
-<pre><code class="language-php">&lt;?php
-$num = 0;
-
-while ($num &lt;= 10) {
-  echo $num;
-  $num++;
-}
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>012345678910
-</code></pre>
-<h3><code>do while</code> statement</h3>
-<pre><code class="language-php">&lt;?php
-$x = 1;
-
-do {
-  echo &quot;The number is: $x &lt;br&gt;&quot;;
-  $x++;
-} while ($x &lt;= 5);
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>The number is: 1
-The number is: 2
-The number is: 3
-The number is: 4
-The number is: 5
-</code></pre>
-<h3><code>for</code> loop</h3>
-<pre><code class="language-php">&lt;?php
-for ($i = 1; $i &lt;= 10; $i++) {
-  echo $i.&quot; &quot;;
-}
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>1 2 3 4 5 6 7 8 9 10
-</code></pre>
-<h2>10. Define the term expressions with example.</h2>
-<ul>
-<li>An expression is a piece of code that evaluates to a value.</li>
-<li>A value a number, a string of text, or a Boolean.</li>
-<li>An expression is a combination of values, variables, operators, and functions
-that results in a value.</li>
-<li>Like <code>$z = $x+$y</code>, where <code>$x + $y</code> is the expression.</li>
-</ul>
-<h2>11. Describe data types in PHP in detail.</h2>
-<ul>
-<li>A data type is defined as, “a set of values and the allowable operations on
-those values”.</li>
-<li>The data type determines the operations that we can perform on it.</li>
-<li>PHP supports eight primitive types:
-<ul>
-<li>Four Scalar Types:
-<ul>
-<li><strong>Integer</strong> - The integer data type is used to specify a numeric value.</li>
-<li><strong>Float</strong> - Floating point numbers are real numbers, representing numeric
-values with decimal digits.</li>
-<li><strong>String</strong> - A string is a sequence of characters where a character is
-the same as a byte.</li>
-<li><strong>Boolean</strong> - .Boolean value can be either TRUE value or FALSE value.</li>
-</ul>
-</li>
-<li>Two Compound Types:
-<ul>
-<li><strong>Array</strong> - An array stores group of values under single variable name.</li>
-<li><strong>Object</strong> - PHP supports Object Oriented Programming (OOP).</li>
-</ul>
-</li>
-<li>Two Special Types:
-<ul>
-<li><strong>Resource</strong> - The resource is a special PHP data type that refers to
-external resource (e.g. file, image etc.).</li>
-<li><strong>Null</strong> - The null value represents a variable that has no value.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2>12. Explain variable scope in PHP.</h2>
-<ul>
-<li>Scope of variable is an area or part of program in which it is
-accessible/visible.</li>
-<li>There are two type of scope in PHP:
-<ul>
-<li><strong>Local Scope</strong> - A variable which is declared inside the function is
-called as local variable.</li>
-<li><strong>Global Scope</strong> - Variables declared outside function are by default
-global variables and can accessed from any part of program.</li>
-</ul>
-</li>
-</ul>
-<pre><code class="language-php">&lt;?php
-$a = &quot;Hello&quot; // Global Scope
-
-function func() {
-  $b = &quot;World&quot;; // Local scope
-}
-</code></pre>
-<h2>13. Write the difference between break and continue statement of PHP with example.</h2>
-<h3><code>break</code></h3>
-<ul>
-<li>You have already seen the break statement used in an earlier chapter of this
-tutorial. It was used to “jump out” of a switch statement.</li>
-<li>The break statement can also be used to jump out of a loop.</li>
-</ul>
-<pre><code class="language-php">&lt;?php
-for ($x = 0; $x &lt; 10; $x++) {
-  if ($x == 4) {
-    break;
-  }
-  echo $x.&quot; &quot;;
-}
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>0 1 2 3
-</code></pre>
-<h3><code>continue</code></h3>
-<ul>
-<li>The continue statement breaks one iteration (in the loop), if a specified
-condition occurs, and continues with the next iteration in the loop.</li>
-</ul>
-<pre><code class="language-php">&lt;?php
-for ($x = 0; $x &lt; 10; $x++) {
-  if ($x == 4) {
-    continue;
-  }
-  echo $x.&quot; &quot;;
-}
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>0 1 2 3 5 6 7 8 9
-</code></pre>
-<h2>16. Find output:</h2>
-<pre><code class="language-php">&lt;?php
-  $a= &quot;9 Lives.&quot; -1;
-  var_dump($a);
-?&gt;
-</code></pre>
-<h2>17. Find the output.</h2>
-<pre><code class="language-php">&lt;?php
-  $str = &quot;welcome&quot;;
-  echo &quot;You are $str&quot;;
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>You are welcome
-</code></pre>
-<h2>18. Write program to find a area of rectangle.</h2>
-<pre><code class="language-php">&lt;?php
- $length = 14;
- $width = 12;
- echo &quot;area of rectangle is $length * $width= &quot; . ($length * $width) . &quot;&lt;br /&gt;&quot;;
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>area of rectangle is 14 * 12= 168
-</code></pre>
-<h1>2. Arrays, Function and Graphics</h1>
-<h2>2. How to create an array? Explain with example.</h2>
-<ul>
-<li>An array is a special variable, which can hold more than one value at a time.</li>
-<li>To create array we use <code>array()</code> function.</li>
-</ul>
-<pre><code class="language-php">&lt;?php
-$array = array(&quot;Hello&quot;, &quot;World&quot;);
-print_r($array);
-</code></pre>
-<p>O/P</p>
-<pre><code>Array ( [0] =&gt; &quot;Hello&quot;, [1] =&gt; &quot;World&quot; )
-</code></pre>
-<h2>3. What is string?</h2>
-<ul>
-<li>A string is collection of characters.</li>
-<li>A string is series of characters, where a character is the same as a byte.</li>
-</ul>
-<pre><code class="language-php">&lt;?php
-$string = &quot;Hello World&quot;;
-?&gt;
-</code></pre>
-<h2>4. What is function?</h2>
-<ul>
-<li>A function is a block of statements that can be used repeatedly in a program.</li>
-<li>A function will be executed by a call to the function.</li>
-</ul>
-<pre><code class="language-php">&lt;?php
-function func() {
-  echo &quot;Hello World&quot;;
-}
-func();
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>Hello World
-</code></pre>
-<h2>5. How to extract data from array? Explain with example.</h2>
-<ul>
-<li>The extract() function imports variables into the local symbol table from an
-array.</li>
-<li>This function uses array keys as variable names and values as variable
-values. For each element it will create a variable in the current symbol
-table.</li>
-</ul>
-<pre><code class="language-php">&lt;?php
-$color[&quot;red&quot;] = &quot;#rrr&quot;;
-extract($color);
-echo $red;
-</code></pre>
-<p>O/P</p>
-<pre><code>#rrr
-</code></pre>
-<h2>6. Enlist types of arrays. Describe with example.</h2>
-<h3>Indexed array</h3>
-<p>Indexed Arrays are arrays in which the elements are ordered based on index.</p>
-<pre><code class="language-php">&lt;?php
-$a = array(&quot;Red&quot;, &quot;Blue&quot;, &quot;Green&quot;);
-echo &quot;My fav color is: &quot;.$a[0];
-</code></pre>
-<p>O/P</p>
-<pre><code>My fav color is: Red
-</code></pre>
-<h3>Associative Arrays</h3>
-<p>Associative arrays are arrays that use named keys that you assign to them.</p>
-<pre><code class="language-php">&lt;?php
-$a = array(&quot;Red&quot;=&gt;1, &quot;Blue&quot;=&gt;2, &quot;Green&quot;=&gt;3);
-echo $a[&quot;Red&quot;].$a[&quot;Blue&quot;],$a[&quot;Green&quot;];
-</code></pre>
-<p>O/P</p>
-<pre><code>123
-</code></pre>
-<h3>Multidimensional array</h3>
-<p>A multidimensional array is an array containing one or more arrays.</p>
-<pre><code class="language-php">&lt;?php
-$a = array(array(&quot;Red&quot;, &quot;Blue&quot;, &quot;Green&quot;));
-echo &quot;My fav color is: &quot;.$a[0][1];
-</code></pre>
-<p>O/P</p>
-<pre><code>My fav color is: Blue
-</code></pre>
-<h2>8. How to add image in PHP? Explain with example.</h2>
-<pre><code class="language-php">&lt;?php
-$image = imagecreatetruecolor(500, 300);
-imagefilledrectangle($image, 20, 20, 480, 280);
-header(&quot;Content-type: image/png&quot;);
-imagepng($image);
-?&gt;
-</code></pre>
-<h2>14. With the help of example describe traversing of array.</h2>
-<p>Traversing an array means to visit each and every element of array using a
-looping structure and iterator functions.</p>
-<pre><code class="language-php">&lt;?php
-$a = array(1, 2, 3, 4, 5);
-foreach ($a as $n) {
-  echo $n;
-}
-</code></pre>
-<p>O/P</p>
-<pre><code>12345
-</code></pre>
-<h2>16. Which operations performed on string in PHP?</h2>
-<ul>
-<li><strong>strrev()</strong> - Reverses a string.</li>
-<li><strong>strpos()</strong> - Returns the position of the first occurrence of a string.</li>
-<li><strong>strrpos()</strong> - Finds the position of the last occurrence of a string.</li>
-<li><strong>str_replace()</strong> - Replaces some characters in a string.</li>
-<li><strong>ucwords()</strong> - Converts the first character of each word in a string to
-uppercase.</li>
-<li><strong>strtoupper()</strong> - Converts a string to uppercase letters.</li>
-<li><strong>strtolower()</strong> - Converts a string to lowercase letters.</li>
-<li><strong>strcmp()</strong> - Compares two strings.</li>
-<li><strong>str_word_count()</strong> - Count the number of words in a string.</li>
-<li><strong>strlen()</strong> - Returns the length of a string.</li>
-</ul>
-<pre><code class="language-php">&lt;?php
-strrev(&quot;Hello World&quot;);
-strpos(&quot;Hello World&quot;, &quot;Hello&quot;);
-strrpos(&quot;Hello World&quot;, &quot;Hello&quot;);
-str_replace(&quot;Hello&quot;, &quot;Bye&quot;, &quot;Hello World&quot;);
-ucwords(&quot;hello world&quot;);
-strtoupper(&quot;Hello World&quot;);
-strtolower(&quot;Hello World&quot;);
-strcmp(&quot;Hello World&quot;, &quot;Hello World&quot;);
-str_word_count(&quot;Hello World&quot;);
-strlen(&quot;Hello World&quot;);
-</code></pre>
-<p>O/P</p>
-<pre><code>dlroW olleH
-0
-0
-Bye World
-Hello World
-HELLO WORLD
-hello world
-0
-2
-11
-</code></pre>
-<h2>18. Explain the following types of functions with example:</h2>
-<h3>(i) User defined functions</h3>
-<p>A function is a block of statements that can be used repeatedly in a program.</p>
-<pre><code class="language-php">&lt;?php
-function func() {
-  echo &quot;Hello World&quot;;
-}
-</code></pre>
-<p>O/P</p>
-<pre><code>Hello World
-</code></pre>
-<h3>(ii) Variable function</h3>
-<p>If a variable name has parentheses appended to it, PHP will look for a function
-with the same name as whatever the variable evaluates</p>
-<pre><code class="language-php">&lt;?php
-function func() {
-  echo &quot;Hello World&quot;;
-}
-
-$f = &quot;func&quot;;
-$f();
-</code></pre>
-<p>O/P</p>
-<pre><code>Hello World
-</code></pre>
-<h3>(iii) Anonymous function.</h3>
-<p>Anonymous function is a function without any user defined name.</p>
-<pre><code class="language-php">&lt;?php
-$func = function () { echo &quot;Hello World&quot;; };
-$func();
-</code></pre>
-<p>O/P</p>
-<pre><code>Hello World
-</code></pre>
-<h2>18. How to create PDF in PHP? Describe with example.</h2>
-<pre><code class="language-php">&lt;?php
-require('fpdf.php');
-$pdf = new FPDF();
-$pdf-&gt;AddPage();
-$pdf-&gt;SetFont('Arial', 'B', 16);
-$pdf-&gt;Cell(40, 10, &quot;Hello World&quot;);
-$pdf-&gt;Output();
-?&gt;
-</code></pre>
-<h2>19. How to scaling an image in PHP?</h2>
-<pre><code class="language-php">&lt;?php
-$image = imagecreatefrompng(&quot;image.png&quot;);
-$img = imagescale($image, 500, 500);
-header(&quot;Content-type: image/png&quot;);
-imagepng($img);
-</code></pre>
-<h2>20. Explain array_flip() function with example.</h2>
-<ul>
-<li>The array_flip() function flips/exchanges all keys with their associated
-values in an array.</li>
-<li><strong>Syntax</strong> - <code>array_flip($array)</code></li>
-</ul>
-<pre><code class="language-php">&lt;?php
-$a = array(&quot;Hello&quot;, &quot;World&quot;);
-print_r(array_flip($a));
-</code></pre>
-<p>O/P</p>
-<pre><code>Array ( [Hello] =&gt; 0, [World] =&gt; 1 )
-</code></pre>
-<h1>3. Apply Object Oriented Concepts in PHP</h1>
-<h2>1. What is OOP?</h2>
-<ul>
-<li>In object oriented programming, everything will be around the objects and
-class.</li>
-<li>By using OOP in PHP we can create modular web application.</li>
-<li>By using OOP in PHP we can perform any activity in the object model structure.</li>
-<li>OPP helps in building complex, reusable web applications.</li>
-<li>Object Oriented is an approach to software development that models
-application around real world objects such as employees, cars, bank accounts,
-etc.</li>
-<li>A class defines the properties and methods of a real world object.</li>
-<li>An object is an occurrence of a class.</li>
-</ul>
-<h2>2. What is object?</h2>
-<ul>
-<li>An object is an instance or occurrence of a class.</li>
-<li>Anything in the world is an object like laptop, books, car etc. even object
-has two thing properties and behaviors.</li>
-<li>The data associated with an object are called its properties.</li>
-<li>The functions associated with an object are called its methods.</li>
-<li>We can group similar objects with the same characteristics and behaviors in
-into one class.</li>
-</ul>
-<h2>5. What is inheritance?</h2>
-<ul>
-<li>The old class is the base class, also called as parent class or super class,
-and the new class is the derived class also called as child class or sub
-class.</li>
-<li>The derived class has its own variables and methods plus variables and
-methods from the base class.</li>
-<li>The <code>extends</code> keyword is used for the inheritance.</li>
-</ul>
-<pre><code class="language-php">&lt;?php
-class Class1 {
-  function func() {
-    echo &quot;Hello World&quot;;
-  }
-}
-
-class Class2 extends Class1 {
-  function echo() {
-    echo &quot;Bye World&quot;;
-  }
-}
-
-$o = new Class2;
-$o-&gt;func();
-$o-&gt;echo();
-</code></pre>
-<p>O/P</p>
-<pre><code>Hello World
-Bye World
-</code></pre>
-<h2>6. Describe method overloading with example.</h2>
-<p>If the derived class is having the same method name as the base class then the method in the derived class takes precedence over or overrides the base class method.</p>
-<pre><code class="language-php">&lt;?php
-class First {
-  function func() {
-    echo &quot;Hello World&quot;;
-  }
-}
-
-class Second extends First {
-  function func() {
-    echo &quot;Bye World&quot;;
-  }
-}
-
-$o = new Second;
-$o-&gt;func();
-</code></pre>
-<h2>7. Explain sleep and wakeup functions?</h2>
-<ul>
-<li>These functions are used to notify objects that they are being serialized or
-unserialised.</li>
-</ul>
-<h3><code>__sleep()</code></h3>
-<ul>
-<li>serialize() checks if our class has a function with the magic name sleep().</li>
-<li>If so, that function is executed prior (i.e. just before) to any
-serialization.</li>
-</ul>
-<h3><code>__wakeup()</code></h3>
-<ul>
-<li>unserialize() checks for the presence of a function with the magic name ___
-wakeup().</li>
-<li>If present, this function can reconstruct any resources that the object may
-have.</li>
-</ul>
-<pre><code class="language-php">&lt;?php
-class Obj {
-  function __sleep() {
-    $this-&gt;name = &quot;Jonney&quot;;
-    echo &quot;Obj is serialize()&quot;;
-    return array(&quot;name&quot;);
-  }
-
-  function __wakeup() {
-    echo &quot;Obj is unserialize()&quot;;
-  }
-}
-
-$o = new Obj;
-$s = serialize($o);
-unserialize($s);
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>Obj is serialize()
-Obj is unserialize()
-</code></pre>
-<h2><code>__call</code></h2>
-<ul>
-<li>The __call() method is invoked automatically when a non-existing method or
-inaccessible method is called.</li>
-<li>The __call() method accepts two arguments:
-<ul>
-<li>$name is the name of the method that is being called by the object.</li>
-<li>$arguments is an array of arguments passed to the method call.</li>
-</ul>
-</li>
-</ul>
-<pre><code class="language-php">&lt;?php
-class Obj {
-  function __call($method, $parameters) {
-    print_r($method);
-    print_r($parameters);
-  }
-}
-
-$o = new Obj;
-$o-&gt;hello(&quot;World&quot;);
-</code></pre>
-<p>O/P</p>
-<pre><code>hello
-Array ( [0] =&gt; &quot;World&quot; )
-</code></pre>
-<h2>8. What serialization in PHP?</h2>
-<ul>
-<li>Serialization of data means converting it into a string of bytes in such a
-way that you can produce the original data again from the string via a
-process as unserialization.</li>
-<li>After you have the ability to serialize/unserialize, you can store your
-serialized string anywhere and recreate a copy of the data again when needed.</li>
-</ul>
-<pre><code class="language-php">&lt;?php
-echo serialize(array(&quot;Red&quot;));
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>a:1:{i:0;s:3:&quot;Red&quot;;}
-</code></pre>
-<ul>
-<li>O/P means:
-<ul>
-<li>a:1 - <strong>a</strong>rray - There are <strong>1</strong> array.</li>
-<li>i:0 - <strong>i</strong>tem - This is <strong>0</strong>th item.</li>
-<li>s:3 - <strong>s</strong>tring - There are <strong>3</strong> string in <strong>“Red”</strong>.</li>
-</ul>
-</li>
-</ul>
-<h2>10. Define method overriding.</h2>
-<ul>
-<li>In function overriding, both parent and child classes should have same
-function name with and number of arguments.</li>
-<li>It is used to replace parent method in child class.</li>
-<li>The purpose of overriding is to change the behavior of parent class method.</li>
-<li>The two methods with the same name and same parameter is called overriding.</li>
-</ul>
-<pre><code class="language-php">&lt;?php
-class First {
-  function func() {
-    echo &quot;Hello World&quot;;
-  }
-}
-
-class Second extends First {
-  function func() {
-    echo &quot;Bye World&quot;;
-  }
-}
-
-$f = new First;
-$s = new Second;
-$f-&gt;func();
-$s-&gt;func();
-</code></pre>
-<p>O/P</p>
-<pre><code>Hello World
-Bye World
-</code></pre>
-<h2>12. What is object cloning? Describe with example.</h2>
-<ul>
-<li>Object cloning is the process in PHP to create a copy of an object.</li>
-<li>An object copy is created by using the clone keyword when the object is
-cloned PHP will perform Shallow copy of all the object properties and
-properties that are referenced to their variables will remain references.</li>
-</ul>
-<pre><code class="language-php">&lt;?php
-class Obj {
-  public $name;
-}
-
-$o = new Obj;
-$c = clone $o;
-
-$o-&gt;name = &quot;Jonney&quot;;
-$c-&gt;name = &quot;Jone&quot;;
-
-echo &quot;Origenal: &quot;.$o-&gt;name.&quot;, Clone: &quot;.$c-&gt;name;
-?&gt;
-</code></pre>
-<h2>13. Define the terms:</h2>
-<h3>(i) Object</h3>
-<p>Objects are the things you create out of a class.</p>
-<h3>(ii) Class</h3>
-<p>A class is what you use to define the properties, methods and behavior of objects.</p>
-<h3>(iii) Inheritance</h3>
-<ul>
-<li>The old class is the base class, also called as parent class or super class,
-and the new class is the derived class also called as child class or sub
-class.</li>
-</ul>
-<h3>(iv) Constructor.</h3>
-<ul>
-<li>When we create a new object it is useful to initialize its properties.</li>
-<li>PHP provides us with a special method to help initialize an object’s
-properties called a constructor.</li>
-</ul>
-<h2>16. Differentiate between constructor and destructor.</h2>
-<ul>
-<li><strong>constructor</strong> - When we create a new object it is useful to initialize its
+    <title>question bank</title>
+    <link>https://anzenkodo.github.io/notes/Programming/database/question-bank.html</link>
+    <pubDate>2023-01-09T16:50:52.060Z</pubDate>
+    <description><![CDATA[<h2>Question bank for 2 Marks.</h2>
+<h3>1. Define Entity Set?</h3>
+<ul>
+<li>An entity set is a collection of similar entites.</li>
+<li>An entity is an object or concept in the real world that can be identified and
+tracked, such as a person, a place or a thing.</li>
+<li>An entity set is a set of entities of the same type that share common
 properties.</li>
-<li><strong>destructor</strong> - The destructor method will be called as soon as there are no
-other references to a particular object.</li>
-</ul>
-<pre><code class="language-php">&lt;?php
-class Obj {
-  function __construct() {
-    echo &quot;Class created&quot;;
-  }
-
-  function __destruct() {
-    echo &quot;Class destroyed&quot;;
-  }
-}
-
-$o = new Obj;
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>Class Created
-Class Destroyed
-</code></pre>
-<h2>17. Compare object and class.</h2>
+<li>Example:
 <ul>
-<li>A class is what you use to define the properties, methods and behavior of
-objects.</li>
-<li>Objects are the things you create out of a class.</li>
-</ul>
-<h2>18. How to examine classes in introspection? Explain with example.</h2>
-<ul>
-<li>PHP Introspection is the ability of a program to examine an object’s
-characteristics such as its name, parent class (if any), properties and
-methods.</li>
-<li>Introspection in PHP offers a useful Ability to examine classes’ interfaces
-properties methods. With introspection we can write code that operates on any
-object or class.</li>
-</ul>
-<pre><code class="language-php">&lt;?php
-class Obj {}
-
-class Obj2 extends Obj {
-  public $hello = &quot;world&quot;;
-  function func() {}
-}
-$o = new Obj2;
-
-if (class_exists('Obj2')) {
-  echo &quot;Class exists&quot;;
-}
-if (is_object($o)) {
-  echo &quot;Is object&quot;;
-}
-
-print_r(get_class($o));
-print_r(get_class_methods($o));
-print_r(get_class_vars('Obj'));
-print_r(get_parent_class($o));
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>class exists
-Is object
-Obj2
-Array ( [0] =&gt; func )
-Array ( [hello] =&gt; world )
-Obj
-</code></pre>
-<h2>Examining an Object</h2>
-<ul>
-<li><code>is_object()</code> - Checks if an object.</li>
-<li><code>get_class()</code> - Return object’s class name.</li>
-<li><code>method_exists()</code> - Checks if method exists.</li>
-<li><code>class_exists()</code> - Checks if class exists.</li>
-</ul>
-<pre><code class="language-php">&lt;?php
-class Obj {
-  function func() {
-    echo &quot;Hello World&quot;;
-  }
-}
-
-$o = new Obj;
-echo is_object($o);
-echo get_class($o);
-echo method_exists($o, 'func');
-echo class_exists('Obj');
-</code></pre>
-<p>O/P</p>
-<pre><code>1
-Obj
-1
-1
-</code></pre>
-<h1>4. Creating and Validating forms</h1>
-<h2>1. What is form? How to create it?</h2>
-<h3>What is form?</h3>
-<ul>
-<li>Forms are essential parts in web development. Forms are used to get input from
-the user and submi it to the web server for processing.</li>
-<li>Forms are used to communicate between users and the server.</li>
-</ul>
-<h3>How to create it?</h3>
-<ul>
-<li>A document that containing blank fields, that the user can fill the data or
-user can select the data. It is known as Form.</li>
-<li>Generally, the data will store in the database. We can create and use forms
-in PHP. To get form data, we need to use PHP superglobals <code>$_GET</code>and $_POST</li>
-<li>The form request may be get or post. To retrieve data from get request, we
-need to use <code>$_GET</code>, for post request <code>$_POST</code></li>
-</ul>
-<pre><code class="language-php">&lt;form action=&quot;&lt;?php $_SELF_PHP ?&gt;&quot; method=&quot;post&quot;&gt;
-  &lt;input type=&quot;text&quot; name=&quot;name&quot;&gt;
-  &lt;input type=&quot;submit&quot;&gt;
-&lt;/form&gt;
-
-&lt;?php
-if (isset($_POST[&quot;name&quot;])) {
-  echo &quot;Your name is: &quot;.$_POST[&quot;name&quot;];
-}
-?&gt;
-</code></pre>
-<h2>2. What is form control?</h2>
-<ul>
-<li>There are different types of form controls that we can use to collect data
-using form namely, Textbox, Checkbox, Radio button, and so on.</li>
-<li><strong>TEXTBOX</strong> - A text input field allows the user to enter a singel text.</li>
-<li><strong>TEXTAREA</strong> - A textarea field is similar a text input field but it allows
-the user to enter multiple lines of text.</li>
-<li><strong>RADIO BUTTON</strong> - The radio buttons are for single choice from multiple
-options. All radio buttons in the group have the same name attribute.</li>
-<li><strong>CHECKBOX</strong> - A checkbox field is a simple toggle button. It can be either
-ON or OFF. The value attribute should contain the value that will be sent to
-the server when the checkbox is selected.</li>
-<li><strong>LIST</strong> - There are two type of list:
-<ul>
-<li><strong>Singleline LIST</strong> - The list represents a Windows control to display a
-list of items to a user. A user can select an item from the list.</li>
-<li><strong>Multiline LIST</strong> - A multi-select list allows the user to select multiple
-items. To turn a normal list into a multi-select list, add the attribute
-multiple with a value of “multiple” to the select element.</li>
+<li>A “customer” entity set might include all of the customer records in a
+customer database, with each record repesenting a single customer. The
+entity set would include attributes such as the customer’s name, address,
+and phone number, as well as any other relevant information.</li>
 </ul>
 </li>
+<li>Entity sets represent as tables in a database, with each row representing a
+single entity and each column representing an attribute of that entity.</li>
 </ul>
-<h2>3. Write short note on: Server role.</h2>
-<ul>
-<li>PHP is a server-side scripting language.</li>
-<li>Using PHP we can create dynamic web sites.</li>
-<li>That means its processing happens in the server by consuming server’s
-resources and sends only the output to the client.</li>
-</ul>
-<h2>5. When to use GET and POST method.</h2>
-<h3>GET</h3>
-<ul>
-<li>It sends the encoded user information appended to the page request (to the
-URL).</li>
-<li>The page and the encoded information are separated by the ? character.</li>
-<li>The GET method produces a long string the appears in our server logs, in the
-browser’ location box.</li>
-<li>The GET method is restricted to send up to 1024 characters only.</li>
-<li>Never use GET method if we have password or other sensitive information.</li>
-<li>GET cannot be used to send binary data to the server.</li>
-<li>The php provides $_GET assoiative array to a access all the sent information
-using GET method.</li>
-<li>Example:<pre><code class="language-php">&lt;form action=&quot;&lt;?php $_PHP_SELF ?&gt;&quot; method=&quot;GET&quot;&gt;
-	Name: &lt;input type=&quot;text&quot; name=&quot;name&quot;&gt;
-	&lt;input type=&quot;submit&quot;&gt;
-&lt;/form&gt;
-
-&lt;?php
-if ($_GET[&quot;name&quot;]) {
-	echo $_GET[&quot;name&quot;];
-}
-?&gt;
-</code></pre>
-</li>
-<li>Output:<pre><code>Name: Joey
-Submit
-
-Joey
-</code></pre>
-</li>
-</ul>
-<h3>POST</h3>
-<ul>
-<li>It transfers information via HTTP header, not throought the URL.</li>
-<li>The POST method does not have any restriction on data size.</li>
-<li>The POST method can be used to send ASCII as well as binary data.</li>
-<li>The data sent by POST  method goes through HTTP header, so security depends on
-HTTP protocol.</li>
-<li>By using secure HTTP, we can make sure that our information is secure.</li>
-<li>The PHP provides $_POST associative array to access all the sent information
-using POST method.</li>
-<li>Example:<pre><code class="language-php">&lt;form action=&quot;&lt;?php $_PHP_SELF ?&gt;&quot; method=&quot;post&quot;&gt;
-	Name: &lt;input type=&quot;text&quot; name=&quot;name&quot;&gt;
-	&lt;input type=&quot;submit&quot;&gt;
-&lt;/form&gt;
-
-&lt;?php
-if ($_POST[&quot;name&quot;]) {
-	echo $_POST[&quot;name&quot;];
-}
-?&gt;
-</code></pre>
-</li>
-<li>Output<pre><code>Name: Joey
-Submit
-
-Joey
-</code></pre>
-</li>
-</ul>
-<h2>7. What is cookie? How to create it? Explain with example.</h2>
-<h3>What is cookie?</h3>
-<ul>
-<li>Cookie save the data in browser, so next time refresh the browser it will not
-delete from browser.</li>
-<li>Cookie is used to identify the user.</li>
-<li>A cookie is a small file that server embeds to user’s computer.</li>
-<li>Each time the same computer requests a page with a browser, it will send the
-cookie too.</li>
-</ul>
-<h3>How to create it?</h3>
-<ul>
-<li>Use <code>setcookie</code> function to create cookie.</li>
-<li>Syntex:<pre><code>setcookie($cookie_name, $cookie_value, $time, $location)
-</code></pre>
-</li>
-</ul>
-<h3>Example</h3>
-<pre><code class="language-php">&lt;?php
-setcookie(&quot;name&quot;, &quot;Jonney&quot;, time() + (86400 * 30), &quot;/&quot;);
-if (isset($_COOKIE[&quot;name&quot;])) {
-  echo &quot;Name: &quot;.$_COOKIE[&quot;name&quot;];
-}
-</code></pre>
-<p>O/P</p>
-<pre><code>Name: Jonney
-</code></pre>
-<h2>8. What is session? Explain with example.</h2>
-<ul>
-<li>A session is a way to store information in variables to be used across
-multiple pages.</li>
-<li>Sessions allow us to store data on the web server that associated with a
-session ID.</li>
-<li>Once we create a session, PHP sends a cookie that contains the session ID to
-the web browser.</li>
-<li>A session is started with the session_start() function.</li>
-<li>The session_start() function first checks if a session is already started and
-if none is started then it starts one.</li>
-</ul>
-<pre><code class="language-php">&lt;?php
-session_start()
-?&gt;
-&lt;?php
-$_SESSION[&quot;name&quot;] = &quot;Jonney&quot;;
-echo &quot;Name: &quot;.$_SESSION[&quot;name&quot;];
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>Name: Jonney
-</code></pre>
-<h2>9. How we can get the cookie values and destroy the cookies?</h2>
-<h3>To get cookie value.</h3>
-<pre><code class="language-php">&lt;?php
-setcookie(&quot;name&quot;, &quot;Jonney&quot;, time() + (83400 * 30), &quot;/&quot;);
-
-if ( isset($_COOKIE[&quot;name&quot;]) ) {
-  echo &quot;Name: &quot;.$_COOKIE[&quot;name&quot;];
-}
-?&gt;
-</code></pre>
-<h3>To destroy the cookie.</h3>
-<pre><code class="language-php">&lt;?php
-setcookie(&quot;name&quot;, &quot;&quot;, time() - 3600, &quot;/&quot;);
-?&gt;
-</code></pre>
-<h2>11. What is form validation? Explain with suitable example.</h2>
-<ul>
-<li>For validating a web page we use preg_match() function.</li>
-<li>The preg_match() function searches string for pattern, returning true if
-pattern exists, and false otherwise.</li>
-</ul>
-<pre><code class="language-php">&lt;form action=&quot;&lt;?php $_PHP_SELF ?&gt;&quot; method=&quot;post&quot;&gt;
-  &lt;input type=&quot;text&quot; name=&quot;name&quot; required&gt;
-  &lt;input type=&quot;submit&quot;&gt;
-&lt;/form&gt;
-
-&lt;?php
-if ( isset($_POST[&quot;name&quot;]) ) {
-  if ( !preg_match(&quot;/^[a-zA-Z_ ]*$/&quot;, $_POST[&quot;name&quot;]) ) {
-    echo &quot;Only Words and Whitespaces are allowed.&quot;;
-  }
-}
-?&gt;
-</code></pre>
-<h2>14. How to send e-mail? Describe with example.</h2>
-<ul>
-<li><code>mail()</code> function is useful to sending the mail.</li>
-<li>Syntex:<pre><code class="language-php">mail($to, $subject, $message, $header, $parametes);
-</code></pre>
-</li>
-<li><code>mail()</code> function parametes:
-<ul>
-<li><strong>to</strong> - represents the address of receiver.</li>
-<li><strong>subject</strong> - it specifies the subject of mail.</li>
-<li><strong>message</strong> - it defines the message which is to be sent.</li>
-<li><strong>headers</strong> - it is optional and specifies the additional headers like Cc, Bcc.</li>
-<li><strong>parameters</strong> - it is optional and specifies the additional parameters.</li>
-</ul>
-</li>
-</ul>
-<pre><code class="language-php">&lt;?php
-$sent = mail(&quot;AnzenKodo@altmail.com&quot;, &quot;Title&quot;, &quot;Message&quot;);
-
-if (!$sent) {
-  echo &quot;Message is not sent.&quot;;
-} else {
-  echo &quot;Message is sent.&quot;;
-}
-</code></pre>
-<p>O/P</p>
-<pre><code>Message is sent.
-</code></pre>
-<h1>5. Database Operations</h1>
-<h2>1. What is database?</h2>
-<ul>
-<li>A database is a collection of related data.</li>
-<li>A database is a collection of information that is organized so that it can
-easily be accessed, managed and updated.</li>
-<li>With PHP, we can connect to and manipulate databases.</li>
-</ul>
-<h2>2. What is DBMS?</h2>
-<ul>
-<li>A DataBase Management System (DBMS) is system software for creating and
-managing databases.</li>
-<li>The DBMS provides users and programmers with a systematic way to create,
-retrieve, update and manage data.</li>
-</ul>
-<h2>3. What is MySQL? How it is used in PHP?</h2>
-<ul>
-<li>MySQL is an open-source relational database management system (RDBMS).</li>
-<li>It is the most popular database system used with PHP.</li>
-<li>Using my sql:<pre><code class="language-php">&lt;?php
-  // Creating connection
-  $conn = mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;, &quot;test&quot;);
-
-  // Checking connection
-  if (!$conn) {
-      die(&quot;Connection failed.&quot;);
-  }
-  echo &quot;Connected successfully&quot;;
-?&gt;
-</code></pre>
-</li>
-</ul>
-<h2>4. How to create and delete a database in MySQL?</h2>
-<ul>
-<li>We can create a MySQL database by using MySQL Command Line Client.</li>
-<li>Open the MySQL console and write down password, if we set one while
-installation.</li>
-<li>We will get the following:
-<ul>
-<li>To create the data base enter <code>CREATE DATABASE database_name</code></li>
-<li>To check the database is crated enter <code>SHOW DATABASES</code></li>
-</ul>
-</li>
-<li>Creating database through php:<pre><code class="language-php">&lt;?php
-$conn = mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;, &quot;test&quot;);
-
-if (!$conn) {
-  die(&quot;Can't connect to MySQL &quot;);
-}
-
-$sql = &quot;CRATE DATABASE emp&quot;;
-
-if (!mysqli_query($conn, $sql)) {
-  die(&quot;Can't create database &quot;.mysqli_error($conn);
-}
-
-echo &quot;Created database &lt;br/&gt;&quot;;
-?&gt;
-</code></pre>
-O/P<pre><code>Created database
-</code></pre>
-</li>
-</ul>
-<h2>5. Explain mysqli_connect() function with example.</h2>
-<ul>
-<li>The mysqli_connect() function is used to connect with MySQL database.</li>
-<li>It returns resource if connection is established or null.</li>
-<li>Syntax: <code>mysqli_connect(server, username, password, dbname, port, socket)</code></li>
-<li>Example:<pre><code class="language-php">&lt;?php
-$conn = mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;, &quot;test&quot;);
-
-if (!$conn) {
-  echo &quot;Can't connect to database.&quot;;
-  exit();
-} else {
-  echo &quot;Databse is connected.&quot;;
-}
-mysqli_close($conn);
-</code></pre>
-</li>
-</ul>
-<h2>7. Write a program to create an employee table to perform insert, delete and update operations.</h2>
-<pre><code class="language-php">&lt;?php
-// Connect MySQL
-$conn = mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;, &quot;test&quot;);
-if (!$conn) {
-  echo &quot;Error: &quot;.mysqli_error($conn);
-}
-
-// Create table
-$table = &quot;CREATE TABLE employee(id INT(4), name VARCHAR(22), salary INT(4))&quot;;
-if (!mysqli_query($conn, $table)) {
-  echo &quot;Can't create table.&quot;;
-}
-echo &quot;Created table&lt;br/&gt;&quot;;
-
-// Insert data
-$insert = &quot;INSERT INTO employee(id, name, salary) VALUES (1, 'Sam', 3200), (2, 'Jonney', 4500), (3, 'Jone', 2000)&quot;;
-if (!mysqli_query($conn, $insert)) {
-  echo &quot;Can't insert data.&quot;;
-}
-
-// Dalete data
-$delete = &quot;DELETE FROM employee WHERE id=2&quot;;
-if (!mysqli_query($conn, $delete)) {
-  echo &quot;Can't delete data.&quot;;
-}
-
-// Retrive data
-$retrive = &quot;SELECT * FROM employee&quot;;
-$result = mysqli_query($conn, $retrive);
-
-if (mysqli_num_rows($result)) {
-  while ($row = mysqli_fetch_assoc($result)) {
-    echo &quot;Name: &quot;.$row['name'].&quot;, Salary: &quot;.$row['salary'].&quot;, ID: &quot;.$row['id'].&quot;&lt;/br&gt;&quot;;
-  }
-}
-?&gt;
-</code></pre>]]></description>
+<h3>2. Define Generalization?</h3>
+<h3>3. Define Specialization?</h3>
+<h3>4. Explain referential integrity constraints with example?</h3>
+<h3>5. Explain Primary key constraint with example?</h3>
+<h2>Question bank for 3 Marks.</h2>
+<h3>1. Write notes on types of attributes?</h3>
+<h3>2. Explain different types of Keys in DBMS?</h3>
+<h3>3. List out and explain mapping Cardinalities in ER Diagram?</h3>
+<h3>4. Write notes on the following constraints: i) Not NULL ii) Unique</h3>
+<h3>5. Write notes on the following</h3>
+<h4>1. Left Outer Join</h4>
+<h4>2. Right Outer Join</h4>
+<h2>Question bank for 5 Marks.</h2>
+<h3>1. Construct an ER diagram for a car insurance company that has a set of customers each of whom owns one or more cars, Each car has associated with it zero to any number of recorded accidents?</h3>
+<h3>2. Explain Unary operations in relational algebra?</h3>
+<h3>3. Explain Set Theory operation in relational algebra?</h3>
+<h3>4. Define generalization and specialization hierarchy for a motor vehicle sales company. The Company sells motorcycles, passenger cars, vans and buses. Justify your placement of attributes at each level of hierarchy. Explain why they should not be placed at higher or lower level.</h3>]]></description>
   </item>
   <item>
-    <title>UT2 6S</title>
-    <link>https://anzenkodo.github.io/notes/Programming/Languages/PHP/UT2-6S.html</link>
-    <pubDate>2023-01-09T16:13:11.975Z</pubDate>
-    <description><![CDATA[<h1>PHP Unit 2 AB</h1>
-<h3>1. Write the syntax for creating Cookie.</h3>
+    <title>er diagram</title>
+    <link>https://anzenkodo.github.io/notes/Programming/database/er-diagram/</link>
+    <pubDate>2023-01-09T16:50:52.060Z</pubDate>
+    <description><![CDATA[<p>An Entity Relationship Diagram (ERD) is a visual representation of different
+data using conventions that describe how these data are related to each other.</p>
+<p>Example of ER Diagram:</p>
+<figure data-type="image"><img src="./ER.svg" alt="ER Diagram" loading="lazy" decoding="async"></figure>
+<p>In the diagram, the elements inside rectangles are called entities while the
+items inside diamonds denote the relationships between entities.</p>
+<p>In the diagram, the elements inside rectangles are called entities while the
+items inside diamonds denote the relationships between entities.</p>
+<h2>Features</h2>
+<h3>Entity</h3>
 <ul>
-<li>To set cookie in PHP, the <code>setcookie()</code> function is used.</li>
-<li>Syntex:<pre><code class="language-php">setcookie($name, $value, $expire_time, $path, $domain)
-</code></pre>
-</li>
-<li><code>setcookie()</code> function the parameters.
+<li>An entity can be a person, place, event, or object that is relevant to given
+system.</li>
+<li>For Example, a school system may include student, teacher, major courses,
+subject, fees, and other items.</li>
+<li>Entites are represented in ER diagrams by a rectangles and named using
+singular nouns.</li>
+</ul>
+<h3>Weak Entity</h3>
 <ul>
-<li><strong>name</strong> - Name of the cookie, which is used with $_COOKIE function to get
-value.</li>
-<li><strong>value</strong> - Value of the named variable.</li>
-<li><strong>expire time</strong> - Time when cookie will expire.</li>
-<li><strong>path</strong> - Directory where cookie will valied.</li>
-<li><strong>domain</strong> - The default server hostname.</li>
+<li>A weak entity is an entity that depends on teh existence of another entity.</li>
+<li>A weak entity is represented in a database by a separated table, but it does
+not have a primary key of its own.</li>
+<li>It relies on the primary key of the entity on which it depends.</li>
+<li>Example:
+<ul>
+<li>Consider a databse of orders placed by customers at a retail store.
+“customer” entity might be the identifying entity, while the “order” entity
+is the weak entity. Each order is associated with specific customer, and the
+customer’s primary key (e.g. a customer ID) is used as the primary key for
+the order as well. This means that the order cannot be uniquely identified
+without also specifying the customer to which it belongs.</li>
 </ul>
 </li>
-</ul>
-<h3>2. WAP to connect PHP with MySQL.</h3>
-<pre><code class="language-php">&lt;?php
-$conn = mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;, &quot;test&quot;);
-if ($conn) {
-	echo &quot;MySQL connected&quot;;
-} else {
-	echo &quot;MySQL can't connect&quot;;
-}
-</code></pre>
-<p>O/P</p>
-<pre><code>MySQL connected
-</code></pre>
-<h3>3. Differentiate between Session and Cookies.</h3>
-<table>
-<thead>
-<tr>
-<th>SESSION</th>
-<th>COOKIES</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Session are stored in server side</td>
-<td>Cookies are stored in client browser.</td>
-</tr>
-<tr>
-<td>Session is server resource.</td>
-<td>Cookies are client-side resource.</td>
-</tr>
-<tr>
-<td>It stores unlimeted data.</td>
-<td>It stores limited data.</td>
-</tr>
-<tr>
-<td>It holds multiple variables.</td>
-<td>It doen’t hold multiple variables.</td>
-</tr>
-<tr>
-<td>Session values can’t accessed easily.</td>
-<td>Cookies values can accessed easily.</td>
-</tr>
-<tr>
-<td>It is more secure.</td>
-<td>It is less secure.</td>
-</tr>
-</tbody>
-</table>
-<h3>4. Define session and explain how it works.</h3>
-<ul>
-<li>A session is a way to store information in variables to be used across
-multiple pages.</li>
-<li>Sessions allow us to store data on the web server that associated with a
-session ID.</li>
-<li>Once we create a session, PHP sends a cookie that contains the session ID to
-the web browser.</li>
-<li>A session is started with the session_start() function.</li>
-<li>The session_start() function first checks if a session is already started and
-if none is started then it starts one.</li>
-<li>Example:<pre><code class="language-php">&lt;?php
-session_start();
-
-$_SESSION[&quot;color&quot;] = &quot;Red&quot;;
-$_SESSION[&quot;animal&quot;] = &quot;Cat&quot;;
-echo $_SESSION[&quot;color&quot;].&quot; &quot;.$_SESSION[&quot;animal&quot;];
-?&gt;
+<li>The single identifying entity can have multiple weak entities associated with
+it.</li>
+<li>Diagram:<pre><code>+---------+      +--------------+
+|         |      |+------------+|
+| Orders  |------||Orders Items||
+|         |      |+------------+|
++---------+      +--------------+
 </code></pre>
 </li>
 </ul>
-<h3>5. Write update and delete operations on table.</h3>
-<pre><code class="language-php">UPDATE:
-&lt;?php
-$conn = mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;, &quot;test&quot;);
-if (!$conn) {
-	echo &quot;Can't connect to MySQL&quot;;
-}
-
-$sql = &quot;UPDATE my_table SET name='Jonney' WHERE id=2&quot;;
-if (!mysqli_query($conn, $sql)) {
-	die(&quot;Can't Update Table&quot;);
-}
-echo &quot;Update data&lt;/br&gt;&quot;;
-?&gt;
-DELETE:
-&lt;?php
-$sql = &quot;DELETE my_table WHERE id=1&quot;;
-if (!mysqli_query($conn, $sql)) {
-	die(&quot;Can't Delete data&quot;);
-}
-echo &quot;Deleted data&lt;/br&gt;&quot;;
-
-mysqli_close($conn);
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>UPDATE:Update data
-DELETE:Deleted data
-</code></pre>
-<h3>6. Answer the following</h3>
-<h4>i) Get session variables</h4>
+<h3>Attribute</h3>
 <ul>
-<li>The session variables are not passed individually to each new page, instead
-they are retrieved from the session we open at the beginning of each page.</li>
-<li>All session variable values are stored in the global <code>$_SESSION</code> variable.</li>
-</ul>
-<h4>ii) Destroy session.</h4>
+<li>An attributes is a characterstic or property of an entity.</li>
+<li>Attributes are represented as columns in a database table, with each row
+representing a single entity and each column representing an attribute of that
+entity.</li>
+<li>Example: A “customer” table might include attributes such as “name”,
+“address,” and “phone number,” with each attribute storing information about a
+perticular customer.</li>
+<li>There are two types of attributes:
 <ul>
-<li>To remove all global session variables and destroy the session, we use
-<code>session_unset()</code> and <code>session_destroy()</code> functions.</li>
-<li>No arguments are needed in <code>session_destroy()</code> function.</li>
-<li>Example:<pre><code class="language-php">&lt;?php
-session_start();
-
-$_SESSION[&quot;color&quot;] = &quot;red&quot;;
-$_SESSION[&quot;animal&quot;] = &quot;Lion&quot;;
-echo $_SESSION[&quot;color&quot;].&quot; &quot;.$_SESSION[&quot;animal&quot;];
-session_unset();
-session_destroy();
-?&gt;
-</code></pre>
-</li>
-</ul>
-<h3>7. Explain inserting and retrieving the query result operations.</h3>
-<ul>
-<li>For inserting a data into the table we use the INSERT query.</li>
-<li>For retrieving the data, we use the SELECT query.</li>
-</ul>
-<pre><code class="language-php">&lt;?php
-$conn = mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;, &quot;test&quot;);
-if (!$conn) {
-	echo &quot;Can't connect to MySQL&quot;;
-}
-
-// Insert the data
-$sql = &quot;INSERT INTO my_table(id, name) VALUES (1, 'Jonney'), (2, 'Jone')&quot;;
-if (!mysqli_query($conn, $sql)) {
-	echo &quot;Can't Insert the data&quot;;
-}
-
-// Retriving
-$sql = &quot;SELECT * FROM my_table&quot;;
-$result = mysqli_connect($conn, $sql);
-
-if ($mysqli_num_rows($result) &gt; 0) {
-	while ($row = mysqli_fetch_array($result)) {
-		echo &quot;Name: &quot;.$row['name'].&quot;, ID: &quot;.$row['id'].&quot;&lt;br/&gt;&quot;;
-	}
-} else {
-	echo &quot;Rows can't be zero.&quot;;
-}
-</code></pre>
-<h3>8. Explain web page validation with example.</h3>
-<ul>
-<li>For validating a web page we use preg_match() function.</li>
-<li>The preg_match() function searches string for pattern, returning true if
-pattern exists, and false otherwise.</li>
-<li>Example:<pre><code class="language-php">&lt;form action=&quot;&lt;?php $_PHP_SELF ?&gt;&quot; method=&quot;post&quot;&gt;
-	Name:&lt;input type=&quot;text&quot; name=&quot;name&quot; required&gt;
-	&lt;input type=&quot;submit&quot;&gt;
-&lt;/form&gt;
-
-&lt;?php
-if (!preg_match(&quot;/^[a-zA-Z_ ]*$/&quot;, $_POST[&quot;name&quot;])) {
-	echo &quot;Only letter and whitespace is allowed&quot;;
-}
-?&gt;
-</code></pre>
-</li>
-</ul>
-<h3>9.  Elaborate the following:</h3>
-<h4>i) <code>mysqli_query()</code></h4>
-<p>This function in php is used to pass a sql query to mysql database.
-This function returns the query handle for SELECT queries, TRUE/FALSE for other
-queries, or FALSE on failure.</p>
-<ul>
-<li>Syntex:<pre><code class="language-php">mysqli_query(string, query, resource link_identifier])
-</code></pre>
-</li>
-</ul>
-<h4>ii) <code>mysqli_connect()</code></h4>
-<ul>
-<li>This function opens a connection to a MySQL server.</li>
-<li>It returns a MySQL link identifier on success, or FALSE on failure.</li>
-<li>Syntax:<pre><code class="language-php">mysqli_connect($server, $username, $password)
-</code></pre>
-</li>
-<li>Example:<pre><code class="language-php">$conn = mysqli_connect(&quot;mydb&quot;, &quot;root&quot;, &quot;root&quot;);
-</code></pre>
-</li>
-</ul>
-<h3>10. Explain the use of mail() function in php.</h3>
-<ul>
-<li><code>mail()</code> function is useful to sending the mail.</li>
-<li>Syntex:<pre><code class="language-php">mail($to, $subject, $message, $header, $parametes);
-</code></pre>
-</li>
-<li><code>mail()</code> function parametes:
-<ul>
-<li><strong>to</strong> - represents the address of receiver.</li>
-<li><strong>subject</strong> - it specifies the subject of mail.</li>
-<li><strong>message</strong> - it defines the message which is to be sent.</li>
-<li><strong>headers</strong> - it is optional and specifies the additional headers like Cc, Bcc.</li>
-<li><strong>parameters</strong> - it is optional and specifies the additional parameters.</li>
+<li>Multivalued Attribute</li>
+<li>Derived Attribute</li>
 </ul>
 </li>
 </ul>
-<pre><code class="language-php">&lt;?php
-$sent = mail(&quot;AnzenKodo@altmail.com&quot;, &quot;Title&quot;, &quot;Message&quot;);
-
-if (!$sent) {
-  echo &quot;Message is not sent.&quot;;
-} else {
-  echo &quot;Message is sent.&quot;;
-}
-</code></pre>
-<p>O/P</p>
-<pre><code>Message is sent.
-</code></pre>
-<h3>11. How to use radio button in form? Give suitable example.</h3>
+<h4>Multivalued Attribute</h4>
 <ul>
-<li>The radio buttons are for single choice from multiple options.</li>
-<li>All radio buttons in the group have the same name attribute.</li>
-<li>Only one button can be selected per group.</li>
-<li>The value attribute is mandatory for checkboxes and radio buttons.</li>
-<li>Example:<pre><code class="language-php">&lt;form action=&quot;&lt;?php $_PHP_SELF ?&gt;&quot; method=&quot;post&quot;&gt;
-	Color:
-	&lt;input type=&quot;radio&quot; name=&quot;color&quot; value=&quot;White&quot;&gt;White&lt;/input&gt;
-	&lt;input type=&quot;radio&quot; name=&quot;color&quot; value=&quot;Blue&quot;&gt;Blue&lt;/input&gt;
-	&lt;input type=&quot;radio&quot; name=&quot;color&quot; value=&quot;Red&quot;&gt;Red&lt;/input&gt;
-	&lt;input type=&quot;Submit&quot;&gt;
-&lt;/form&gt;
-
-&lt;?php
-if (isset($_POST[&quot;color&quot;])) {
-	echo $_POST[&quot;color&quot;];
-}
-?&gt;
-</code></pre>
+<li>If an attribute can have more than one value it is called an multivalued
+attribute.</li>
+<li>It is important to note that this is different to an attribute having it own
+attributes.</li>
+<li>Example: A “customer” entity can have multiple “phone_numbers” values.</li>
+<li>Diagram: <img src="./Multivalued-Attribute.svg" alt="Multivalued Attribute Diagram"></li>
+</ul>
+<h4>Derived Attribute</h4>
+<ul>
+<li>An attribute based on another attribute.</li>
+<li>Example: “Age” can be derived from “Date of birth”.</li>
+<li>Diagram: <img src="./Derived-Attribute.svg" alt="Derived Attribute Diagram"></li>
+</ul>
+<h3>Relationship</h3>
+<ul>
+<li>A relationship describes how entities interact.</li>
+<li>Example: The entity “carpenter” may be related to the entity “table” by the
+relationship “builds” or “makes”.</li>
+<li>Relationships are represented by diamond shapes and are labeled using verbs.</li>
+</ul>
+<h4>Recursive Relationship</h4>
+<ul>
+<li>The same entity participates more than once in the relationship.</li>
+<li>Example: An employee can be a supervisor and be supervised, so there is a
+recursive relationship.</li>
+</ul>
+<h2>Extended Features</h2>
+<h3>Generalization</h3>
+<ul>
+<li>A generalization hierarchy is a form of abstraction that specifies that two or
+more entities that share common attributes can be generalized into a
+higher-level entity type called a super type or generic entity.</li>
+<li>The lower level of entities becomes the subtypes, or categories, to the super
+type. Subtypes are dependent entities.</li>
+<li>Example: Account is the higher-level entity set and saving account and current
+account are lower-level entity sets.</li>
+<li>Diagram: <img src="./Generalization.webp" alt="Generalization Diagram"></li>
+</ul>
+<h3>Specialization</h3>
+<ul>
+<li>Specialization is the process of taking subsets of the higher-level entity set
+to form lower-level entity sets.</li>
+<li>It is a process of defining a set of subclasses of an entity type, which is
+called the super class of the specialization.</li>
+<li>The process of defining subclass is based on the basis of some distinguish
+characteristics of the entities in the super class.</li>
+<li>Diagram: <img src="./Specialization.webp" alt="Specialization Diagram"></li>
+</ul>
+<h3>Aggregration</h3>
+<ul>
+<li>Aggregration is a process when relation between two entities is treated as a
+single entity.</li>
+<li>Example: The relationship between Center and Course together, is acting as an
+Entity, which is in relationship with another entity Visitor.</li>
+<li>Diagram: <img src="./Aggregration.webp" alt="Aggregration Diagram"></li>
+</ul>
+<h2>Resources</h2>
+<ul>
+<li><a href="https://www.lucidchart.com/pages/er-diagrams">What is an Entity Relationship Diagram (ERD)?</a></li>
+<li><a href="https://www.studytonight.com/dbms/generalization-and-specialization.php">The Enhanced ER Model</a></li>
+</ul>]]></description>
+  </item>
+  <item>
+    <title>Grammmar</title>
+    <link>https://anzenkodo.github.io/notes/Study/Grammmar.html</link>
+    <pubDate>2023-01-09T16:50:52.060Z</pubDate>
+    <description><![CDATA[<h1>Grammar in English</h1>
+<h2>Part of Speech</h2>
+<p>Words are divided into different kinds of classes called <strong>Parts of Speech</strong>.
+The parts of speech are eight in number:</p>
+<ol>
+<li><a href="#noun">Noun</a></li>
+<li><a href="#adjective">Adjective</a></li>
+<li><a href="#pronoun">Pronoun</a></li>
+<li><a href="#verb">Verb</a></li>
+<li><a href="#adverb">Adverb</a></li>
+<li><a href="#preposition">Preposition</a></li>
+<li><a href="#conjunction">Conjunction</a></li>
+<li><a href="#interjection">Interjection</a></li>
+<li><a href="#determiners">Determiners</a> (In some modern grammars)</li>
+</ol>
+<h3>Noun</h3>
+<p>A <strong>Noun</strong> is a word used as the name of the person, place, or things as,</p>
+<ol>
+<li>That <em>Mountain</em> look so beautiful from here.</li>
+<li>That <em>tree</em> was so small when we came last year.</li>
+<li>I don’t like <em>rain</em>.</li>
+</ol>
+<p><em><strong>Note</strong></em>
+The word <em>Things</em> includes:</p>
+<ol>
+<li>All the objects that we can see, hear, taste, touch, or smell.</li>
+<li>Something that we can <em>think of</em>, but can’t perceive by the senses.</li>
+</ol>
+<h3>Adjective</h3>
+<p>An <strong>Adjective</strong> is a word used to add something to the meaning of a noun; as,</p>
+<ol>
+<li>He is <em>playing game</em>.</li>
+<li>She look <strong>beautiful</strong> tonight.</li>
+<li>Sun <strong>set early</strong> today.</li>
+</ol>
+<h3>Pronoun</h3>
+<p>A <strong>Pronoun</strong> is a word used instead of noun; as,</p>
+<ol>
+<li>He is was playing football, but <em>he’s</em> broke his leg.</li>
+<li>The books are where you left <em>them</em>.</li>
+</ol>
+<h3>Verb</h3>
+<p>A <strong>Verb</strong> is a word used to express an action or state; as,</p>
+<ol>
+<li>He is <em>sleeping</em>.</li>
+<li>That boy is very <em>playful</em>.</li>
+<li>India is a very <em>diverse</em> country.</li>
+</ol>
+<h3>Adverb</h3>
+<p>An <strong>Adverb</strong> is a word used to <em>add something</em> to the meaning of the verb, an
+adjective, or another adverb; as,</p>
+<ol>
+<li>He is working <em>very</em> hard today.</li>
+<li>That horse is running <em>so</em> fast today.</li>
+<li>New York look <em>so</em> beautiful in the night.</li>
+</ol>
+<h3>Preposition</h3>
+<p>A <strong>Preposition</strong> is a word used with a noun or pronoun to show how the person
+or thing denoted by the noun or pronoun stands in relation to something else; as</p>
+<ol>
+<li><em>Before</em> the dog got the hat.</li>
+<li>The Ice cream is <em>under</em> the fridge.</li>
+<li>He is <em>going</em> to Goa trip.</li>
+</ol>
+<h3>Conjunction</h3>
+<p>A <strong>Conjunction</strong> is a word used to <em>join</em> words or sentences; as,</p>
+<ol>
+<li>He <em>and</em> she are cousins.</li>
+<li>Three <em>and</em> two make five.</li>
+<li>Happy <em>but</em> sad inside.</li>
+</ol>
+<p>Conjunction have <strong>FANBOYS</strong> a which to remember coordinating conjunctions:</p>
+<ul>
+<li><strong>For</strong> - since, because
+<ul>
+<li>I don’t eat buttons <em>for</em> they are not food.</li>
+</ul>
+</li>
+<li><strong>And</strong> - combines things
+<ul>
+<li>The kangaroo robbed the band <em>and</em> torched the saloon.</li>
+</ul>
+</li>
+<li><strong>Nor</strong> - combines untrue things
+<ul>
+<li>She won’t leave her tree <em>nor</em> will she speak with humans.</li>
+</ul>
+</li>
+<li><strong>But</strong> - express exceptions
+<ul>
+<li>We used every building material <em>but</em> chewing gum.</li>
+</ul>
+</li>
+<li><strong>Or</strong> - choosing between options
+<ul>
+<li>Would you rather have pet bear <em>or</em> a pet giraffe?</li>
+</ul>
+</li>
+<li><strong>Yet</strong> - to the contrary
+<ul>
+<li>I want to leave, <em>yet</em> I cannot.</li>
+</ul>
+</li>
+<li><strong>So</strong> - shows consequences
+<ul>
+<li>He is allergic to sheep, <em>so</em> he skipped the wool festival.</li>
+</ul>
 </li>
 </ul>
-<h3>12. WAP in php to counting no. of rows in table.</h3>
-<pre><code class="language-php">&lt;?php
-$conn = mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;, &quot;test&quot;);
-if (!$conn) {
-	die(&quot;Can't connect to MySQL&quot;);
-}
-
-$sql = &quot;SELECT * FROM my_table&quot;;
-if ($result = mysqli_query($conn, $sql)) {
-	echo &quot;No of rows: &quot;.mysqli_num_rows($result);
-} else {
-	echo &quot;Can't connect&quot;;
-}
-
-mysqli_close($conn);
-?&gt;
-</code></pre>
-<h3>13. WAP in php to counting no. of fields in table.</h3>
-<pre><code class="language-php">&lt;?php
-$conn = mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;, &quot;test&quot;);
-if (!$conn) {
-	die(&quot;Can't connect to MySQL&quot;);
-}
-
-$sql = &quot;SELECT * FROM my_table&quot;
-if ($result = mysqli_query($conn, $sql)) {
-	echo &quot;No of fields: &quot;.mysqli_num_fields($result);
-}
-mysqli_close();
-?&gt;
-</code></pre>
-<h3>14. WAP in php to create database and creation of table.</h3>
-<pre><code class="language-php">Creating database:
-&lt;?php
-$conn = mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;);
-if (!$conn) {
-	die(&quot;Can't connect to MySQL&quot;);
-}
-
-$sql = &quot;CREATE DATABASE db&quot;;
-if (!mysqli_query($conn, $sql) {
-	die(&quot;Can't create Database&quot;);
-}
-echo &quot;Created database&lt;/br&gt;&quot;;
-
-mysqli_close($conn);
-?&gt;
-
-Creating Table:
-&lt;?php
-$conn = mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;&quot;, &quot;db&quot;);
-if (!$conn) {
-	die(&quot;Can't create Table&quot;);
-}
-
-$sql = &quot;CREATE TABLE my_table(name VARCHAR(22), id INT(4))&quot;;
-if(!mysqli_query($conn, $sql) {
-	die(&quot;Error: &quot;.mysqli_error($conn));
-}
-echo &quot;Created table&lt;br/&gt;&quot;;
-
-mysqli_close($conn);
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>Created database
-Created table
-</code></pre>
-<h3>15. How to used list and button in form? Give suitable example.</h3>
+<h3>Interjection</h3>
+<p>An <strong>Interjection</strong> is a word which expresses some sudden feeling; as,</p>
+<ol>
+<li><em>Oh my god</em> ! What have you done.</li>
+<li><em>What</em> ! She is dead.</li>
+<li>Hurrah ! We have won the game.</li>
+</ol>
+<h3>Determiners</h3>
+<p><strong>Determiners</strong> are words that comes at the beginning of the noun, introduces
+noun, determines noun that is whether none is specific or general.
+There’s are divided into four types which are:</p>
+<h4>Articles</h4>
 <ul>
-<li>List
+<li><strong>Indefinite articles</strong> - <em>a, an</em> - general version of noun
 <ul>
-<li>The list represents a windows control to display a list of items to a user.</li>
-<li>A user can select an item from the list.</li>
-<li>User can either select one option from a list or multiple options, depending
-on the type of list.</li>
+<li><em>A</em> book is man’s best friend</li>
 </ul>
 </li>
-<li>Button
+<li><strong>Definite articles</strong> - <em>the</em> - specific version of noun
 <ul>
-<li>A button is a control, which is an interactive component that enables users
-to communicate with an application which we click and release to perform
-some actions.</li>
-<li>A button can be clicked by using the mouse, ENTER key, or SPACEBAR if the
-button has focus.</li>
+<li><em>The</em> city Mumbai was called Bombay.</li>
 </ul>
 </li>
-<li>Example:<pre><code class="language-php">&lt;form action=&quot;&lt;?php $_PHP_SELF ?&gt;&quot; method=&quot;post&quot;&gt;
-	&lt;select name=&quot;language&quot;&gt;
-		&lt;option name=&quot;C&quot;&gt;C&lt;/option&gt;
-		&lt;option name=&quot;C++&quot;&gt;C++&lt;/option&gt;
-		&lt;option name=&quot;PHP&quot;&gt;PHP&lt;/option&gt;
-	&lt;/select&gt;
-	&lt;input type=&quot;submit&quot;&gt;
-&lt;/form&gt;
-
-&lt;?php
-if (isset($_POST[&quot;language&quot;])) {
-	echo &quot;Selected: &quot;.$_POST[&quot;language&quot;];
-}
-?&gt;
-</code></pre>
+</ul>
+<h4>Demonstratives</h4>
+<blockquote>
+<p><em>this, that, these, those</em></p>
+</blockquote>
+<ul>
+<li><strong>Demonstratives</strong> pronouns are also used as determiners. They are used to
+point something specific within a sentence. They focus attention on the nouns
+that they are replacing.
+<ul>
+<li>I want go to <em>that</em> movie.</li>
+<li>He wanted <em>those</em> boys to go away.</li>
+</ul>
 </li>
 </ul>
-<h3>16. Answer the following</h3>
-<h4>i) Use of cookies</h4>
+<h4>Possessives</h4>
+<blockquote>
+<p><em>my, your, his, her, your their</em></p>
+</blockquote>
 <ul>
-<li>Cookie save the data in browser, so next time refresh the browser it will not
-delete from browser.</li>
-<li>Cookie is used to identify the user.</li>
-<li>A cookie is a small file that server embeds to user’s computer.</li>
-<li>Each time the same computer requests a page with a browser, it will send the
-cookie too.</li>
+<li><strong>Possessive</strong> pronouns are words that are used to show ownership.
+<ul>
+<li>Where is <em>your</em> bike?</li>
+<li>It’s <em>our</em> secret recipe.</li>
 </ul>
-<h4>ii) How to set the cookie?</h4>
-<ul>
-<li>Use <code>setcookie</code> function to create cookie.</li>
-<li>Syntex:<pre><code>setcookie($cookie_name, $cookie_value, $time, $location)
-</code></pre>
 </li>
 </ul>
-<h4>iii) How to modify?</h4>
+<h4>Quantifiers</h4>
+<blockquote>
+<p><em>some, few little many, much, any</em></p>
+</blockquote>
 <ul>
-<li>Set cookie agien with <code>setcookie</code> function.</li>
+<li>They indicate how much or how little of the noun is being discussed.
+<ul>
+<li>He took <em>some</em> books of mine.</li>
+<li>He has few apples in the refrigerator.</li>
 </ul>
-<h4>iv) How to delete the cookies?</h4>
-<ul>
-<li>To delete cookie, we can use <code>setcookie</code> function with expiration date in
-past.</li>
-<li>Example:<pre><code>setcookie($cookie_name, &quot;&quot;, time() - 3600);
-</code></pre>
-</li>
-<li>We can also put <code>null</code> in time section to delete cookie.</li>
-<li>Example<pre><code>setcookie($cookie_name, &quot;&quot;, null);
-</code></pre>
-</li>
-</ul>
-<h3>17. Define GET and POST methods.</h3>
-<h4>GET</h4>
-<ul>
-<li>It sends the encoded user information appended to the page request (to the
-URL).</li>
-<li>The page and the encoded information are separated by the ? character.</li>
-<li>The GET method produces a long string the appears in our server logs, in the
-browser’ location box.</li>
-<li>The GET method is restricted to send up to 1024 characters only.</li>
-<li>Never use GET method if we have password or other sensitive information.</li>
-<li>GET cannot be used to send binary data to the server.</li>
-<li>The php provides $_GET assoiative array to a access all the sent information
-using GET method.</li>
-<li>Example:<pre><code class="language-php">&lt;form action=&quot;&lt;?php $_PHP_SELF ?&gt;&quot; method=&quot;GET&quot;&gt;
-	Name: &lt;input type=&quot;text&quot; name=&quot;name&quot;&gt;
-	&lt;input type=&quot;submit&quot;&gt;
-&lt;/form&gt;
-
-&lt;?php
-if ($_GET[&quot;name&quot;]) {
-	echo $_GET[&quot;name&quot;];
-}
-?&gt;
-</code></pre>
-</li>
-<li>Output:<pre><code>Name: Joey
-Submit
-
-Joey
-</code></pre>
-</li>
-</ul>
-<h4>POST</h4>
-<ul>
-<li>It transfers information via HTTP header, not throought the URL.</li>
-<li>The POST method does not have any restriction on data size.</li>
-<li>The POST method can be used to send ASCII as well as binary data.</li>
-<li>The data sent by POST  method goes through HTTP header, so security depends on
-HTTP protocol.</li>
-<li>By using secure HTTP, we can make sure that our information is secure.</li>
-<li>The PHP provides $_POST associative array to access all the sent information
-using POST method.</li>
-<li>Example:<pre><code class="language-php">&lt;form action=&quot;&lt;?php $_PHP_SELF ?&gt;&quot; method=&quot;post&quot;&gt;
-	Name: &lt;input type=&quot;text&quot; name=&quot;name&quot;&gt;
-	&lt;input type=&quot;submit&quot;&gt;
-&lt;/form&gt;
-
-&lt;?php
-if ($_POST[&quot;name&quot;]) {
-	echo $_POST[&quot;name&quot;];
-}
-?&gt;
-</code></pre>
-</li>
-<li>Output<pre><code>Name: Joey
-Submit
-
-Joey
-</code></pre>
 </li>
 </ul>]]></description>
   </item>
   <item>
-    <title>UT1 6S</title>
-    <link>https://anzenkodo.github.io/notes/Programming/Languages/PHP/UT1-6S.html</link>
-    <pubDate>2023-01-09T16:13:11.975Z</pubDate>
-    <description><![CDATA[<h2>Write a php program to find the largest number among three numbers.</h2>
-<pre><code class="language-php">&lt;?php
-  function largest($x, $y, $z) {
-    if ($x &gt;= $y) {
-      if($x &gt;= $z) {
-        echo $x;
-      } else {
-        echo $z;
-      }
-    }
-    else {
-      if($y &gt;= $z) {
-        echo $y;
-      } else {
-        echo $z;
-      }
-    }
-  }
-
-  largest(100, 50, 25);
-?&gt;
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>100
-</code></pre>
-<h2>Write a php code for creating a basic image.</h2>
-<pre><code class="language-php">&lt;?php
-$image = imagecreatetruecolor(500, 300);
-imagefilledrectangle($image, 20, 20, 480, 280);
-header(&quot;Content-type: image/png&quot;);
-imagepng($image);
-?&gt;
-</code></pre>
-<h2>Explain inheritance with examples.</h2>
-<p>In Inheritance  the new class can inherit the properties and methods from the
-old class.</p>
-<p>The old class is the base class also called a parent class and then the new
-class is a derived  class also called a subclass.</p>
-<p><strong>Example</strong>:</p>
-<pre><code class="language-php">&lt;?php
-  class Person {
-    var $name, $age;
-  }
-  class Employee extends Person {
-    var $salary, $designation;
-  }
-?&gt;
-</code></pre>
-<h2>Explain the concept of introspection in php with an example.</h2>
-<p>PHP Introspection is the ability of a program to examine an object’s
-characteristics such as its name, parent class (if any), properties and methods.</p>
-<p>Introspection  in PHP offers a useful Ability  to examine classes’ interfaces
-properties methods. With introspection we can write  code that operates on any
-object or class.</p>
-<p><strong>Example</strong>:</p>
-<pre><code class="language-php">&lt;?php
-  if (class_exists('MyClass')) {
-    $myclass = new MyClass();
-  }
-?&gt;
-</code></pre>
-<h2>How to use overloading and overriding functions in php?</h2>
-<h2>Overloading</h2>
-<p>Method overloading is the ability to create a multiple function
-of the same name with a different implementation  depending upon the types of
-arguments.</p>
-<p>How to use overloading in PHP?</p>
-<pre><code class="language-php">&lt;?php
-class First {
-  function func() {
-    echo &quot;Hello World&quot;;
-  }
-}
-
-class Second extends First {
-  function func() {
-    echo &quot;Bye World&quot;;
-  }
-}
-
-$o = new Second;
-$o-&gt;func();
-</code></pre>
-<p>O/P</p>
-<pre><code>Bye World
-</code></pre>
-<h2>Overriding</h2>
-<p>In function overriding, both parent and child classes should have the same
-function name with and number of arguments. It is used to replace the parent
-method in child class.</p>
-<pre><code class="language-php">&lt;?php
-&lt;?php
-class First {
-  function func() {
-    echo &quot;Hello World&quot;;
-  }
-}
-
-class Second extends First {
-  function func() {
-    echo &quot;Bye World&quot;;
-  }
-}
-
-$f = new First;
-$s = new Second;
-$f-&gt;func();
-$s-&gt;func();
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>Hello World
-Bye World
-</code></pre>
-<h2>How to use the flip function in php.</h2>
-<p>The array_flip function flips/All keys with their associated values in array.</p>
-<p>This function is very useful when we have a big/ large array.and we want to
-know if a given value  is in the array.</p>
-<p><strong>Syntax</strong>:</p>
-<pre><code>array_flip(array_name)
-</code></pre>
-<p><strong>Example:</strong></p>
-<pre><code class="language-php">&lt;?php
-  $a = array(&quot;a&quot;);
-  print_r(array_flip($a));  //flip function is used
-?&gt;
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>Array( [0]=&gt; a )
-</code></pre>
-<h2>How to define properties and methods of a class? Explain with suitable examples.</h2>
+    <title>MGT</title>
+    <link>https://anzenkodo.github.io/notes/Study/MGT.html</link>
+    <pubDate>2023-01-09T16:50:52.060Z</pubDate>
+    <description><![CDATA[<h1>MGT</h1>
 <ol>
-<li>Objects have access to special variables called. properties.</li>
-<li>A property Can be valued as an array and even another object.</li>
-<li>All properties go inside the curly braces.</li>
-<li>The characteristics of a class are known as its properties.</li>
-</ol>
-<p><strong>Example:</strong></p>
-<pre><code class="language-php">&lt;?php
-  class Student {
-    var $roll_no;
-    var $name;
-    function display() {
-      echo &quot;Roll No: &quot; . $this-&gt;roll_no. &quot;&lt;br&gt;&quot;;
-      echo &quot;Name: &quot; $this-&gt;name;
-    }
-  }
-
-  $s1 = new Student;
-  $s1-&gt;roll_no = 10;
-  $s1-&gt;name = &quot;Amar&quot;;
-  $si-&gt;display();
-?&gt;
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>Roll No: 10
-Name: Amar
-</code></pre>
-<p>A class method is exactly similar to PHP functions.</p>
-<ol>
-<li>Method is a function defined within the class.</li>
-<li>Methods on the other hand are functions that operate on the data.</li>
-<li>Method is also written within the braces {}.</li>
-</ol>
-<p>The method can be accessed from outside the class.</p>
-<p><strong>Example:</strong></p>
-<pre><code class="language-php">&lt;?php
-class Person {
-	public $age = 25;
-
-	public function printAge() {
-		echo &quot;The age is: $this-&gt;age&quot;;
-	}
-}
-
-$person = new Person;
-$person-&gt;age = 20;
-$person-&gt;printAge();
-?&gt;
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>The age is: 20
-</code></pre>
-<h2>Explain the arithmetic operators that can be used in php with examples.</h2>
-<p>The PHP arithmetic operators are used with numeric values to perform common
-arithmetical operations, such as addition, subtraction, multiplication etc.</p>
-<p><strong>Example:</strong></p>
-<pre><code class="language-php">&lt;?php
-  $a = 42;
-  $b = 20;
-
-  $c = $a + $b;
-  echo &quot;Addition is: $c &lt;br/&gt;&quot;;
-  $c = $a - $b;
-  echo &quot;Subtraction is: $c &lt;br/&gt;&quot;;
-  $c = $a * $b;
-  echo &quot;Multiplication is: $c &lt;br/&gt;&quot;;
-  $c = $a / $b;
-  echo &quot;Division is: $c &lt;br/&gt;&quot;;
-  $c = $a % $b;
-  echo &quot;Modulus is: $c &lt;br/&gt;&quot;;
-?&gt;
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>Addition is: 62
-Subtraction is: 22
-Multiplication is: 840
-Division is: 2.1
-Modulus is: 2
-</code></pre>
-<h2>What is the use of anonymous functions in php? Explain with examples.</h2>
-<p>Anonymous functions, also known as closures, allow the creation of functions
-which have no specified name. They are most useful as the value of callable
-parameters, but they have many other uses.</p>
-<pre><code class="language-php">&lt;?php
-$func = function () { echo &quot;Hello World&quot;; };
-$func();
-</code></pre>
-<p>O/P</p>
-<pre><code>Hello World
-</code></pre>
-<h2>Explain cloning objects with examples.</h2>
-<p>Object cloning is the process in PHP to create a copy of an object. An object
-copy is created by using the clone keyword when the object is cloned PHP will
-perform Shallow copy  of all the object properties and properties that are
-referenced to their variables will remain references.</p>
-<p><strong>Example:</strong></p>
-<pre><code class="language-php">&lt;?php
-class Obj {
-  public $name;
-}
-
-$o = new Obj;
-$c = clone $o;
-
-$o-&gt;name = &quot;Jonney&quot;;
-$c-&gt;name = &quot;Jone&quot;;
-
-echo &quot;Origenal: &quot;.$o-&gt;name.&quot;, Clone: &quot;.$c-&gt;name;
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>Origenal: Jonney, Clone: Jone
-</code></pre>
-<h2>Explain indexed and associative arrays with examples.</h2>
-<p>Indexed array: An array having only integer keys is typically referred to as an
-indexed array and index arrays can store numbers, drinks and any object but
-their index will be represented by number.</p>
-<p><strong>Example:</strong></p>
-<pre><code class="language-php">&lt;?php
-  $colors = array(&quot;Red&quot;);
-  print_r($colors);
-?&gt;
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>Array ( [0] =&gt; Red )
-</code></pre>
-<p>The associative arrays are very similar to numeric arrays in terms of
-functionality but they are different in terms of their index. Associative arrays
-will have their index as string so that you can establish a strong association
-between key and values.</p>
-<pre><code class="language-php">&lt;?php
-  $ages = array( &quot;Peter&quot;=&gt;22 );
-  print_r($ages);
-?&gt;
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>Array ( [Peter] =&gt; 22 )
-</code></pre>
-<h2>How to define constructor and destructor in php with an example?</h2>
-<ul>
-<li><strong>constructor</strong> - When we create a new object it is useful to initialize its
-properties.</li>
-<li><strong>destructor</strong> - The destructor method will be called as soon as there are no
-other references to a particular object.</li>
-</ul>
-<pre><code class="language-php">&lt;?php
-class Obj {
-  function __construct() {
-    echo &quot;Class created&quot;;
-  }
-
-  function __destruct() {
-    echo &quot;Class destroyed&quot;;
-  }
-}
-
-$o = new Obj;
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>Class Created
-Class Destroyed
-</code></pre>
-<h2>Explain the following string function with an example.</h2>
-<ol>
-<li>strpos()</li>
-<li>strlen()</li>
-<li>strcmp()</li>
-<li>str_word_count()</li>
-<li>strpos()</li>
+<li>Who said “Management is the function of executive leadership anywhere”:</li>
 </ol>
 <ul>
-<li><strong>strpos()</strong> - Returns the position of the first occurrence of a string.</li>
-<li><strong>strlen()</strong> - Returns the length of a string.</li>
-<li><strong>strcmp()</strong> - Compares two strings.</li>
-<li><strong>str_word_count()</strong> - Count the number of words in a string.</li>
-<li><strong>strrpos()</strong> - Finds the position of the last occurrence of a string.</li>
-</ul>
-<pre><code class="language-php">&lt;?php
-echo strpos(&quot;Hello World&quot;, &quot;Hello&quot;);
-echo strlen(&quot;Hello World&quot;);
-echo strcmp(&quot;Hello World&quot;, &quot;Hello World&quot;);
-echo str_word_count(&quot;Hello World&quot;);
-echo strrpos(&quot;Hello World&quot;, &quot;Hello&quot;);
-</code></pre>
-<p>O/P</p>
-<pre><code>0
-11
-0
-2
-0
-</code></pre>
-<h2>Write a program using a foreach loop.</h2>
-<p><strong>Example:</strong></p>
-<pre><code class="language-php">&lt;?php
-$a = array(1, 2, 3, 4, 5);
-foreach ($a as $n) {
-  echo $n;
-}
-</code></pre>
-<p>O/P</p>
-<pre><code>12345
-</code></pre>
-<h2>Explain serialization with suitable examples.</h2>
-<p>A string representation of any object in the form of byte-stream is obtained by
-serialize() function in PHP. All property variables of the object are contained
-in the string and methods are not saved. This string can be stored in any file.</p>
-<p><strong>Example:</strong></p>
-<pre><code class="language-php">&lt;?php
-echo serialize(array(&quot;Red&quot;));
-?&gt;
-</code></pre>
-<p>O/P</p>
-<pre><code>a:1:{i:0;s:3:&quot;Red&quot;;}
-</code></pre>
-<h2>Define <code>imagecolorallocate()</code> function along with suitable examples.</h2>
-<p><code>imagecolorallocate()</code> function is another inbuilt PHP function mainly used to
-implement a new color to an image. It returns the color of an image in an RGB
-format (RED GREEN BLUE).</p>
-<p><strong>Example:</strong></p>
-<pre><code class="language-php">&lt;?php
-  $im = imagecreate(100, 100);
-  // sets background to red
-  $background = imagecolorallocate($im, 255, 0, 0);
-  // sets some colors
-  $white = imagecolorallocate($im, 255, 255, 255);
-  $black = imagecolorallocate($im, 0, 0, 0);
-  // hexadecimal way
-  $white = imagecolorallocate($im, 0xFF, 0xFF, 0xFF);
-  $black = imagecolorallocate($im, 0x00, 0x00, 0x00);
-?&gt;
-</code></pre>
-<h2>Write a program to create a filled rectangle.</h2>
-<pre><code class="language-php">&lt;?php
-$image = imagecreatetruecolor(500, 300);
-imagefilledrectangle($image, 20, 20, 480, 280);
-header(&quot;Content-type: image/png&quot;);
-imagepng($image);
-?&gt;
-</code></pre>
-<h2>Explain any three data types used in php.</h2>
-<ol>
-<li><strong>Integer:</strong> integer data type used to specify a numeric value  without a fractional component the range of integers.</li>
-<li><strong>Strings:</strong> a string is a sequence of characters where characters are the same as a byte.</li>
-<li><strong>Boolean:</strong>   boolean  value can be either true or false both are  case-insensitive.</li>
-</ol>
-<h2>Differentiate between implode and explode function.</h2>
-<table>
-<thead>
-<tr>
-<th>No.</th>
-<th>Implode</th>
-<th>Explode</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>The implode() function returns a string from the elements of an array.</td>
-<td>explode function breaks a string  into smaller parts and stores it  as an array.</td>
-</tr>
-<tr>
-<td>2</td>
-<td>The implode() function accepts its  parameters in either order.  However, for consistency with explode(),  you should use the documented order of  arguments.</td>
-<td>The explode() function splits  these strings based on a specific  delimiter and returns an array that  contains elements which are sustained  by the splitting operation.</td>
-</tr>
-<tr>
-<td>3</td>
-<td>syntax :-string implode (pieces)</td>
-<td>array explode (delimiter, string, limit)</td>
-</tr>
-<tr>
-<td>4</td>
-<td><strong>Example</strong>:  <code>php &lt;?php $arr = array(&quot;I&quot;, &quot;love&quot;, &quot;PHP.&quot;); $pole = implode(&quot; &quot;, $arr); \ echo &quot;$pole&quot;; ?&gt; </code>  Output: I love PHP.</td>
-<td>Example: <?php  $string = "I love php."; $pole = explode(" ", $string); \ \ print_r($pole); ?>  Output: Array ( [0] =&gt; I [1] =&gt; love [2] =&gt; php. )</td>
-</tr>
-</tbody>
-</table>
-<h2>State the variable function. Explain it with an example.</h2>
-<p>PHP supports the concept of variable function means that we can call a function
-based on a value of a variable if a variable name has a round parentheses
-appended to it PHP will look for a function with the same name as a whatever
-variable Evaluates to and will attempt to execute it.</p>
-<p><strong>Example:</strong></p>
-<pre><code class="language-php">&lt;?php
-  function add($x, $y){
-    echo $x + $y;
-  }
-  $var =  &quot;add&quot;;
-  $var(10,20);
-?&gt;
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>30
-</code></pre>]]></description>
-  </item>
-  <item>
-    <title>Finals</title>
-    <link>https://anzenkodo.github.io/notes/Programming/Languages/Python/Finals.html</link>
-    <pubDate>2023-01-09T16:13:11.975Z</pubDate>
-    <description><![CDATA[<h1>Python</h1>
-<h2>a) Name different modes of Python.</h2>
-<p>Python has two basic modes:</p>
-<ol>
-<li>Script mode (or Normal mode)</li>
-</ol>
-<ul>
-<li>The mode where the scripted and finished .py files are in the Python
-Interpreter.</li>
+<li>a) Ralph C. Devis</li>
 </ul>
 <ol start="2">
-<li>Interactive mode</li>
+<li>Universal, goal oriented, multidimensional, continuous process are some
+characteristics of:</li>
 </ol>
 <ul>
-<li>A command line shell which gives immediate feedback for each statement,
-while running previously fed statements in active memory.</li>
+<li>a) Management</li>
 </ul>
-<h2>b) List identity Operators</h2>
-<table>
-<thead>
-<tr>
-<th>Operator</th>
-<th>Description</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>is</td>
-<td>Returns <code>True</code> if both variables are sames object</td>
-<td>x is y</td>
-</tr>
-<tr>
-<td>is not</td>
-<td>Returns <code>False</code> if both variables are sames object</td>
-<td>x is not y</td>
-</tr>
-</tbody>
-</table>
-<h2>c) Give two differences between list and tuple.</h2>
-<h3>List</h3>
+<ol start="3">
+<li>Optimum utilization of resources can be ensured by:</li>
+</ol>
 <ul>
-<li>Lists are mutable.</li>
-<li>The list is better for performing operations.</li>
-<li>Lists consume more memory.</li>
-<li>More likely error will occur.</li>
+<li>c) Management</li>
 </ul>
-<h3>Tuple</h3>
+<ol start="4">
+<li>Motivating the people and building the team spirit to improve the life
+standard of worker is possible due to:</li>
+</ol>
 <ul>
-<li>Tuples are immutable.</li>
-<li>The implication of iterations is faster.</li>
-<li>Tuple consume less memory.</li>
-<li>Less likely error will occur.</li>
+<li>b) Management</li>
 </ul>
-<h2>d) Explain Local and Global variable.</h2>
-<table>
-<thead>
-<tr>
-<th>Local</th>
-<th>Global</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>It is declare  inside a function</td>
-<td>It is declared outside the function</td>
-</tr>
-<tr>
-<td>It is created when the function starts execution and lost when the function terminate.</td>
-<td>It is created before the program’s global execution starts and lost when the program terminates.</td>
-</tr>
-<tr>
-<td>Local variables can be accessed with the help of statements, inside a function in which they are declared.</td>
-<td>You can access global variables by any statement in the program.</td>
-</tr>
-<tr>
-<td>Parameters passing is required for local variables to access the value in other function.</td>
-<td>Parameters passing is not necessary for a global variable as it is visible throughout the program</td>
-</tr>
-</tbody>
-</table>
-<h2>e) Define class and object in python.</h2>
-<h3>Class</h3>
+<ol start="5">
+<li><strong>Management</strong> is the art of getting work done through people</li>
+<li>Management is a creative and <strong>Continuous</strong> process.</li>
+<li>Management is _______</li>
+</ol>
 <ul>
-<li>Class is a blueprint for the object.</li>
-<li>We define a class by using the keyword class.</li>
-<li>Class objects are used to access different attributes.</li>
-</ul>
-<h3>Object</h3>
+<li>
+<ol>
+<li>Art of getting things done through people</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>Art of knowing what you want to do in best and cheaper way.</li>
+</ol>
 <ul>
-<li>Classes are the user-defined blueprints that help us create an “object”.</li>
-<li>Objects are the instances of a particular class.</li>
-<li>Every other element in Python will be an object of some class, such as the string, dictionary, number(10,40), etc.</li>
+<li><strong>a) 1&amp;2</strong></li>
 </ul>
-<h2>f) How to give single and multiline comment in python.</h2>
-<h3>Single-Line</h3>
+</li>
+</ul>
+<ol start="8">
+<li><strong>Administration</strong> concerned with decision making, policy making.</li>
+<li>The difference between administration and management is that:</li>
+</ol>
 <ul>
-<li>Add the hash (#) symbol before the comment:</li>
+<li>a) Administration is largely determinative while management is essentially
+executive.</li>
 </ul>
-<pre><code class="language-python"># This is your comment
-</code></pre>
-<h3>Multiline</h3>
-<p>-Python will ignore string literals that are not assigned to a variable, you can add a multiline string (triple quotes) in your code, and place your comment inside it:</p>
-<pre><code class="language-python">&quot;&quot;&quot;
-This is a comment
-written in
-more than just one line
-&quot;&quot;&quot;
-</code></pre>
-<h2>g) List different modes of opening file in python.</h2>
-<p>There are four different methods modes for opening a file:</p>
+<ol start="10">
+<li>A tool manufacturing firm want to improve its performance from good to best
+suggest the steps they should follow:</li>
+</ol>
 <ul>
-<li><strong>r</strong> - <em>Read</em> - Opens a file for reading. Error if the file does not exist.</li>
-<li><strong>w</strong> - <em>Write</em> - Opens a file for writing. Creates the file if it does not
-exist.</li>
-<li><strong>x</strong> - <em>Create</em> - Creates the specified file. Error if file exist.</li>
-<li><strong>a</strong> - <em>Append</em> - Opens a file for appending. Creates the if it does not
-exist.</li>
+<li>a) 1. Optimum utilisation of resources and reduce wastage. 2. Building team
+spirit to achieve goal.</li>
 </ul>
-<p>In addition, the file should be handled as binary or text mode:</p>
+<ol start="11">
+<li></li>
+</ol>]]></description>
+  </item>
+  <item>
+    <title>Communication</title>
+    <link>https://anzenkodo.github.io/notes/Study/Communication/Communication.html</link>
+    <pubDate>2023-01-09T16:50:52.060Z</pubDate>
+    <description><![CDATA[<h2>DSB-SC Signal</h2>
 <ul>
-<li>t - <strong>Text</strong> - Default value - <em>Text mode</em>.</li>
-<li>b - Binary - Binary mode (e.g. images).</li>
+<li>DSB-SC stands for Double Sideband Suppressed Carrier.</li>
+<li>It is a type of amplitude modulation (AM) used for transmitting information.</li>
+<li>In DSB-SC, the carrier single is suppressed and only the two sidebands (upper
+and lower) are transmitted.</li>
 </ul>
-<h2>a) Write a program to print following:</h2>
-<pre><code class="language-python">rows = int(input(&quot;Enter number of rows: &quot;))
-
-for i in range(rows):
-    for j in range(i+1):
-        print(j+1, end=&quot; &quot;)
-    print(&quot;\n&quot;)
-</code></pre>
-<h2>b) Explain four Buit-in tuple functions python with example.</h2>
+<h2>Diodes</h2>
+<p>A diode is a type of electronic device that allows current to flow through it in
+only one direction. It consists of a semiconductor material with two electrodes
+called the anode and the cathode. The anode is the positive electrode and the
+cathode is the negative electrode.</p>
+<h2>Sidebands</h2>
+<p>Sidebands are additional frequency components that are produced when a
+modulating signal is applied to a carrier signal. In amplitude modulation (AM),
+for example, the modulating signal modulates the amplitude of the carrier
+signal, which results in the generation of two sidebands (upper and lower)
+around the carrier frequency.</p>
+<h2>Modulating Signal</h2>
+<p>A modulating signal is a signal that is used to carry information by modulating
+another signal called the carrier signal. Modulation is the process of encoding
+the information onto the carrier signal in a way that can be transmitted and
+received.</p>
+<p>There are several types of modulation, including:</p>
+<h3>Amplitude modulation (AM)</h3>
+<p>The modulating signal modulates the amplitude of the carrier signal.</p>
+<h3>Frequency modulation (FM)</h3>
+<p>The modulating signal modulates the frequency of the carrier signal.</p>
+<h3>Phase modulation (PM) In FM, the modulating</h3>
+<p>The modulating signal modulates the phase of the carrier signal.</p>
+<h2>Amplitude</h2>
+<p>Amplitude is a measure of the strength or intensity of a signal or wave. It is
+typically represented by the height of the waveform or by the peak-to-peak value
+of the waveform. In other words, it is a measure of the maximum deviation of the
+waveform from the baseline.</p>
+<h2>Phase</h2>
+<p>Phase is a measure of the position of a point in time (instant) on a waveform
+cycle. It is typically measured in degrees or radians, and it is used to
+describe the timing of a waveform relative to a reference point.</p>
+<h3>90 Degree Phase Shift</h3>
+<p>Phase shifts are often used in electronic circuits to shift the timing of a
+waveform or to adjust the relative phase between two or more waveforms. They can
+be introduced into a waveform by using electronic components such as phase
+shifters, delay lines, or filters.</p>
+<h2>m(t)</h2>
+<p>A message signal, or m(t), is a type of electrical or electronic signal that
+carries information. It can be an analog signal, such as an audio or video
+signal, or a digital signal, such as a binary signal.</p>]]></description>
+  </item>
+  <item>
+    <title>Amplitude Modulation</title>
+    <link>https://anzenkodo.github.io/notes/Study/Communication/Amplitude-Modulation.html</link>
+    <pubDate>2023-01-09T16:50:52.060Z</pubDate>
+    <description><![CDATA[<p>It is the process in Amplitude of Carrier signal changes according to message signal.</p>]]></description>
+  </item>
+  <item>
+    <title>Basic</title>
+    <link>https://anzenkodo.github.io/notes/Study/Communication/Basic/Basic.html</link>
+    <pubDate>2023-01-09T16:50:52.060Z</pubDate>
+    <description><![CDATA[<h2>Block Diagram</h2>
+<figure data-type="image"><img src="./Block-Diagram.svg" alt="Block Diagram" loading="lazy" decoding="async"></figure>
 <ul>
-<li><code>len()</code> - Returns the <strong>length</strong> of the tuple.</li>
-<li><code>max()</code> - Highest value will returned.</li>
-<li><code>min()</code> - Lowest value be returned.</li>
-<li><code>count()</code> - Returns the number of times a specified value occurs in tuple.</li>
+<li>Resources:
+<a href="https://youtu.be/CkanrZD-0Ew?list=PLUyMayDZBhiwAwraPQFd6CjbHQygcY0vB">Communication System Block diagram Explain</a></li>
 </ul>
-<h2>Explain how to use user defined function in python with example.</h2>
-<p>In Python, a user-defined function’s declaration begins with the keyword def and followed by the function name.</p>
-<pre><code class="language-python">def printt():
-    print(&quot;This is Python 3.2 Tutorial&quot;)
-    print(&quot;This is Python 3.2 Tutorial&quot;)
-    print(&quot;This is Python 3.2 Tutorial&quot;)
-printt()
-</code></pre>
-<p>Output:</p>
-<pre><code>This is Python 3.2 Tutorial
-This is Python 3.2 Tutorial
-This is Python 3.2 Tutorial
-</code></pre>
-<h2>d) Write a program to create class EMPLOYEE with ID and NAME and display its contents.</h2>
-<pre><code class="language-python">class Employee:
-	name = &quot;&quot;
-	department = &quot;&quot;
-	salary = 0
-
-	def setData(self):
-		self.name = input(&quot;Enter Name: &quot;)
-		self.department = input(&quot;Enter Department: &quot;)
-		self.salary = int(input(&quot;Enter Salary: &quot;))
-
-	def showData(self):
-		print(&quot;Name:&quot;, self.name)
-		print(&quot;Department:&quot;, self.department)
-		print(&quot;Salary:&quot;, self.salary)
-
-e = Employee()
-e.setData()
-e.showData()
-</code></pre>
-<p>Output:</p>
-<pre><code>Enter Name: Jonney
-Enter Department: Testing
-Enter Salary: 20000
-Name: Jonney
-Department: Testing
-Salary: 20000
-</code></pre>
-<h2>List Data types used in python. Explain any two with example.</h2>
-<p>Thare are three data type in python numbers, string &amp; boolean.</p>
-<h3>String</h3>
+<h2>Baseband and Passband Signal</h2>
+<figure data-type="image"><img src="./Baseband-and-Passband-Signal.svg" alt="Baseband and Passband Signal" loading="lazy" decoding="async"></figure>
 <ul>
-<li>String is a collection of group of characters.</li>
-<li>String are identified as a contiguous set of characters enclosed in single quotes(’ ') or double quotes(&quot; &quot;).</li>
-<li>String can also can be define with str() function.</li>
+<li>Resources:
+<a href="https://youtu.be/Tp89619XK5Y?list=PLUyMayDZBhiwAwraPQFd6CjbHQygcY0vB">Baseband and Passband Signal</a></li>
 </ul>
-<h3>Boolean</h3>
+<h3>Baseband Signal</h3>
+<ol>
+<li>All sources of information generates baseband single.
 <ul>
-<li>Boolean represents the two values namely False and True.</li>
-<li>The true value is represented true as 1 and false as 0.</li>
+<li>Exp: Audio, Video, Image</li>
 </ul>
-<h2>b) Explain membership and assignment operators with example.</h2>
-<table>
-<thead>
-<tr>
-<th>Operator</th>
-<th>Description</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>in</td>
-<td>True if value in list or in sequence</td>
-<td>(‘H’ in x) is True</td>
-</tr>
-<tr>
-<td>not in</td>
-<td>False if value not in list or in sequence</td>
-<td>(‘H’ in x) is False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Operator</th>
-<th style="text-align:center">Description</th>
-<th>Syntax</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>=</td>
-<td style="text-align:center">Assign value of right side of expression to left side operand</td>
-<td>x = y + z</td>
-</tr>
-<tr>
-<td>+=</td>
-<td style="text-align:center">Add and Assign: Add right side operand with left side operand and then assign to left operand</td>
-<td>a += b</td>
-</tr>
-<tr>
-<td>-=</td>
-<td style="text-align:center">Subtract AND: Subtract right operand from left operand and then assign to left operand: True if both operands are equal</td>
-<td>a -= b</td>
-</tr>
-<tr>
-<td>*=</td>
-<td style="text-align:center">Multiply AND: Multiply right operand with left operand and then assign to left operand</td>
-<td>a *= b</td>
-</tr>
-</tbody>
-</table>
-<h2>c) Explain indexing and slicing in list with example.</h2>
+</li>
+<li>Signals are transmitted without modulation.
 <ul>
-<li>“Indexing” means referring to an element of an iterable by its position within the iterable.</li>
-<li>“Slicing” means getting a subset of elements from an iterable based on their indices.</li>
+<li>Exp: Landline</li>
 </ul>
-<h2>d) Write a program for importing module for addition and substraction of two numbers.</h2>
-<pre><code class="language-python">a = int(input(&quot;Enter first number: &quot;))
-b = int( input(&quot;Enter second number: &quot;))
-Sum = a+b; #Add two numbers
-Difference = a-b; #Subtract two numbers
-# To print the result
-print(&quot;Addition of two numbers = &quot;,Sum)
-print(&quot;Subtraction of two numbers = &quot;,Difference)
+</li>
+<li>(0 to 20khz) Audio S/g &amp; (0 to 55Mhz) Video S/g</li>
+<li>Frequency Domain<pre><code>▲
+│
+│ Amplitude
+├────┐
+│    │
+│    │
+└────┴──────► Frequency
+    Fm(Frequency modulation)
 </code></pre>
-<p>Output:</p>
-<pre><code>Output:
-Enter first number: 30
-Enter second number: 20
-Addition of two numbers = 50
-Subtraction of two numbers = 10
-</code></pre>
-<h2>a) Write a program to create dictionary of students that includes their ROLL NO. and NAME:</h2>
-<p>i) Add three students in above dictionary
-ii) Update name= ‘Shreyas’ of ROLL NO = 2
-iii) Delete information of ROLL NO = 1</p>
-<pre><code class="language-python">students = {
-  1: &quot;ronney&quot;,
-  2: &quot;jay&quot;
-}
-
-students[2] = &quot;Shreyas&quot;
-del students[1]
-print(students)
-</code></pre>
-<p>Output:</p>
-<pre><code>{ 2: &quot;Shreyas&quot; }
-</code></pre>
-<h2>b) Explain decision making statements If-else, if-elif-else with example.</h2>
-<p>The if…elif…else statement is used in Python for decision making.</p>
-<pre><code class="language-python">num = 3.4
-
-if num &gt; 0:
-    print(&quot;Positive number&quot;)
-elif num == 0:
-    print(&quot;Zero&quot;)
-else:
-    print(&quot;Negative number&quot;)
-</code></pre>
-<h2>c) Explain use of format () method with example.</h2>
-<p>Python format() function has been introduced for handling complex string formatting more efficiently.</p>
-<pre><code class="language-python">txt = &quot;I have {an:.2f} Ruppes!&quot;
-print(txt.format(an = 4))
-</code></pre>
-<p>Output:</p>
-<pre><code>I have 4.00 Ruppes!
-</code></pre>
-<h2>d) Explain building blocks of python.</h2>
+</li>
+</ol>
+<h3>Passband Signal</h3>
+<ol>
+<li>Baseband signal transmitted at high frequancy modulation signal.
 <ul>
-<li>The core data structures to learn in Python are List (list), Dictionary (dict), Tuple (tuple), and Set (set).</li>
-<li>To indicate a block of code in Python, you must indent each line of the block by the same amount.</li>
+<li>Exp: AM, FM, PM</li>
 </ul>
-<h2>e) Write a program illustrating use of user defined package in python.</h2>
-<p>Packages are a way of structuring many packages and modules which helps in a well-organized hierarchy of data set, making the directories and modules easy to access.</p>
-<p><a href="http://file1.py/">file1.py</a>:</p>
-<pre><code class="language-python">class Bmw:
-    # First we create a constructor for this class
-    # and add members to it, here models
-    def __init__(self):
-        self.models = ['i8', 'x1', 'x5', 'x6']
-
-    # A normal print function
-    def outModels(self):
-        print('These are the available models for BMW')
-        for model in self.models:
-            print('\t%s ' % model)
-</code></pre>
-<p><a href="http://file2.py/">file2.py</a></p>
-<pre><code class="language-python">from Bmw import Bmw
-</code></pre>
-<h2>Write the output of the following:</h2>
-<pre><code>&gt;&gt;&gt; a = [2, 5, 1, 3, 6, 9, 7]
-&gt;&gt;&gt; a[2:6] = [2, 4, 9, 0]
-&gt;&gt;&gt; print (a)
-</code></pre>
-<p>Ans:</p>
-<pre><code>[2, 5, 2, 4, 9, 0, 7]
-</code></pre>
-<pre><code>b = [&quot;Hello&quot;, &quot;Good&quot;]
-b.append(&quot;python&quot;)
-print (b)
-</code></pre>
-<p>Ans:</p>
-<pre><code>['Hello', 'Good', 'python']
-</code></pre>
-<pre><code>t1 = [3, 5, 6, 7]
-print (t1[2])
-print (t1[-1])
-print (t1[2:])
-print(t1[:])
-</code></pre>
-<p>Ans:</p>
-<pre><code>6
-7
-[6, 7]
-[3, 5, 6, 7]
-</code></pre>
-<h2>Explain method overloading in python with example.</h2>
+</li>
+<li>It is high frequency Modulated carrier signal.
 <ul>
-<li>overloading is the ability of a function or an operator to behave in different ways based on the parameters that are passed to the function, or the operands that the operator acts on.</li>
+<li>Exp: Satalite Signal</li>
 </ul>
-<pre><code class="language-python">class A:
-    def __init__(self, a):
-        self.a = a
-
-    # adding two objects
-    def __add__(self, o):
-        return self.a + o.a
-ob1 = A(1)
-ob2 = A(2)
-ob3 = A(&quot;Geeks&quot;)
-ob4 = A(&quot;For&quot;)
-
-print(ob1 + ob2)
-print(ob3 + ob4)
-</code></pre>
-<h2>Write a program to open a file in write mode and some contents at the end of file.</h2>
-<pre><code class="language-python">o = open(&quot;name.txt&quot;, &quot;w&quot;)
-o.write(&quot;I am a programmer&quot;)
-o.close()
-o = open(&quot;name.txt&quot;, &quot;r&quot;)
-print(o.read())
-o.close()
-</code></pre>
-<p>O/P</p>
-<pre><code>I am a programmer
-</code></pre>
-<h2>a) Explain package Numpy with example.</h2>
-<ul>
-<li>Numpy is a python package which stands for “Numerical Python”.</li>
-</ul>
-<pre><code class="language-python">import numpy as n
-a=n.ones((3, 3))
-a[1:-1,1:-1]=0
-print(a)
-</code></pre>
-<p>Output:</p>
-<pre><code>[[1. 1. 1.]
- [1. 0. 1.]
- [1. 1. 1.]]
-</code></pre>
-<h2>6) Write a program to implement the concept of inheritance in python.</h2>
-<pre><code class="language-python">class Parent:
-	parentname = &quot;&quot;
-	childname = &quot;&quot;
-	def show_parent(self):
-		print(self.parentname)
-
-class Child(Parent):
-	def show_child(self):
-		print(self.childname)
-
-c = Child()
-c.parentname = &quot;Arati&quot;
-c.childname = &quot;Purva&quot;
-c.show_parent()
-c.show_child()
-</code></pre>
-<h2>c) Explain Try-except block used in exception handling in python with example.</h2>
-<ul>
-<li>When an exception occurs, Python will normally stop and generate an error message.</li>
-<li>These exceptions can be handled using the try statement.</li>
-<li>The except block lets you handle the error.</li>
-</ul>
-<pre><code class="language-python">try:
-  print(x)
-except NameError:
-  print(&quot;Variable x is not defined&quot;)
-</code></pre>]]></description>
+</li>
+<li>(550Khz to 1640kHz) for AM &amp; (88Mhz to 108MHz) for FM</li>
+</ol>]]></description>
+  </item>
+  <item>
+    <title>Modulation</title>
+    <link>https://anzenkodo.github.io/notes/Study/Communication/Modulation/</link>
+    <pubDate>2023-01-09T16:50:52.060Z</pubDate>
+    <description><![CDATA[<figure data-type="image"><img src="./Modulation.svg" alt="Modulation Diagram" loading="lazy" decoding="async"></figure>
+<p>Modulation is the process of encoding the information onto the carrier signal in
+a way that can be transmitted and received.</p>
+<h2>Analog modulation methods</h2>
+<p>In analog modulation, the modulation is applied continuously in response to the
+analog information signal. Common analog modulation techniques include:</p>
+<h3>Amplitude modulation (AM)</h3>
+<p>Here the amplitude of the carrier signal is varied in accordance with the
+instantaneous amplitude of the modulating signal.</p>
+<h4>Double-sideband modulation (DSB)</h4>
+<h5>Double-sideband modulation with carrier (DSB-WC) (used on the AM radio broadcasting band)</h5>
+<h5>Double-sideband suppressed-carrier transmission (DSB-SC)</h5>
+<h5>Double-sideband reduced carrier transmission (DSB-RC)</h5>
+<h4>Single-sideband modulation (SSB, or SSB-AM)</h4>
+<h5>Single-sideband modulation with carrier (SSB-WC)</h5>
+<h5>Single-sideband modulation suppressed carrier modulation (SSB-SC)</h5>
+<h4>Vestigial sideband modulation (VSB, or VSB-AM)</h4>
+<h4>Quadrature amplitude modulation (QAM)</h4>
+<h3>Angle modulation</h3>
+<p>Which is approximately constant envelope</p>
+<h4>Frequency modulation (FM)</h4>
+<p>Here the frequency of the carrier signal is varied in accordance with the
+instantaneous amplitude of the modulating signal)</p>
+<h4>Phase modulation (PM)</h4>
+<p>Here the phase shift of the carrier signal is varied in accordance with the
+instantaneous amplitude of the modulating signal)</p>
+<h4>Transpositional Modulation ™,</h4>
+<p>Which the waveform inflection is modified resulting in a signal where each
+quarter cycle is transposed in the modulation process. TM is a pseudo-analog
+modulation (AM). Where an AM carrier also carries a phase variable phase f(ǿ).
+TM is f(AM,ǿ)</p>
+<h2>Pulse modulation methods</h2>
+<h3>Analog methods</h3>
+<h4>Pulse-amplitude modulation (PAM)</h4>
+<h4>Pulse-width modulation (PWM) and pulse-depth modulation (PDM)</h4>
+<h4>Pulse-frequency modulation (PFM)</h4>
+<h4>Pulse-position modulation (PPM)</h4>
+<h3>Digital methods</h3>
+<h4>Pulse-code modulation (PCM)</h4>
+<h5>Differential PCM (DPCM)</h5>
+<h6>Adaptive DPCM (ADPCM)</h6>
+<h4>Delta modulation (DM or Δ-modulation)</h4>
+<h5>Delta-sigma modulation (ΣΔ)</h5>
+<h5>Continuously variable slope delta modulation(CVSDM), also called adaptive delta modulation (ADM)</h5>
+<h4>Pulse-density modulation (PDM)</h4>]]></description>
   </item>
   </channel>
 </rss>
