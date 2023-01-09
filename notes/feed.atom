@@ -5,7 +5,7 @@
   <link href="https://anzenkodo.github.io/notes/" />
   <link href="https://anzenkodo.github.io/notes/" rel="self" />
 	<id>https://anzenkodo.github.io/notes/</id>
-  <updated>2023-01-09T21:06:35.798Z</updated>
+  <updated>2023-01-09T21:32:08.168Z</updated>
   <author>
     <name>Axel</name>
     <email>AnzenKodo@altmails.com</email>
@@ -13,7 +13,7 @@
     <entry>
     <title>Home</title>
     <link href="https://anzenkodo.github.io/notes/" />
-    <updated>2023-01-09T21:06:35.798Z</updated>
+    <updated>2023-01-09T21:32:08.168Z</updated>
     <id>/notes/</id>
     <content type="html"><![CDATA[<p>This my personal website where I post my notes about thing that I have learn.</p>
 <h2>Features</h2>
@@ -398,536 +398,9 @@ colspan="3"><strong>30–32</strong> ATP</td> </tr> </tbody> </table>
   <td></td> <td>♖</td> </tr> </tbody> </table>]]></content>
   </entry>
   <entry>
-    <title>Viva 6S sort</title>
-    <link href="https://anzenkodo.github.io/notes/Programming/android/Viva-6S-sort.html" />
-    <updated>2023-01-09T21:06:35.798Z</updated>
-    <id>/notes/Programming/android/Viva-6S-sort.html</id>
-    <content type="html"><![CDATA[<h1>MAD VIVA</h1>
-<h2>1) What is Android?</h2>
-<p>Android is mobile OS based on modified version of Linux kernel and other open
-source software, designed primarily for touchscreen mobile devices such as
-smartphones and tablets.</p>
-<h2>2) Enlist features of Android?</h2>
-<ul>
-<li><strong>Open Source</strong> - Android is open-source, which helps to develop customized
-android version for future updates.</li>
-<li><strong>Customizable</strong> - Anyone can customize the Android Platform.</li>
-<li><strong>Connectivity</strong> - It provides GSM, CDMA, Bluetooth, WiFi etc.</li>
-<li><strong>Storage</strong> - Many android devices support external storage through Micro SD
-card.</li>
-<li><strong>Widgets, Multi-Tasking, Multi-Touch, Media Support</strong></li>
-</ul>
-<h2>3) Explain Android architecture?</h2>
-<ul>
-<li>Android architecture contains different number of components to support any
-android device needs.</li>
-<li>The main components of Android architecture are following:
-<ul>
-<li><strong>Applications</strong> - Applications is the top layer of android architecture.
-The pre-installed applications like will be installed on this layer only.</li>
-<li><strong>Application framework</strong> - Application framework provides several important
-classes which are used to create an Android application.</li>
-<li><strong>Platform libraries</strong> - The platform libraries includes versions C/C++ core
-libraries such as Media, Graphics, OpenGL etc. To provide a support for
-android development.</li>
-<li><strong>Linux Kernel</strong> - The Linux Kernel manages all the available drivers such
-as display drivers, camera drivers, audio drivers, etc. Which are required
-during the runtime.</li>
-</ul>
-</li>
-</ul>
-<h2>4) Explain Android SDK?</h2>
-<ul>
-<li>The Android software development kit(SDK) allows developers to create
-applications for the Android platform. The Android SDK is the most important
-software of Android which is installed.</li>
-<li>The Android SDK provides to test application API libraries and emulator
-documentation sample code developer tools and tutorials which helps us to
-build and test the debug apps from Android.</li>
-<li>Android SDK provides the tools and application programming interface(API) for
-developers to create applications on the Android platform using Java
-programming language.</li>
-</ul>
-<h2>5) What is Android AVD?</h2>
-<ul>
-<li>An AVD is an emulator configuration that enables to modules an actual device
-by calling hardware and software option to be emulated by the Android
-emulator.</li>
-<li>The AVD manager is an interface that we can launch from android studio which
-helps us to create and manage AVD.</li>
-<li>An AVD contains hardware profile, system image, storage area, skin and other
-properties.</li>
-<li>AVD contains emulator for Wear OS, TV, Mobile Phones, Tables, Automotive.</li>
-</ul>
-<h3>Hardware profile</h3>
-<ul>
-<li>Hardware profile defines the characteristics of a device as shipped from the
-factory of a device as shipped from the factory.</li>
-<li>The AVD manager comes preloaded with certain hardware profile such as Pixel
-device and we can define or customize the hardware profile as needed.</li>
-</ul>
-<h3>System image</h3>
-<ul>
-<li>A system image labelled with Google API includes access to Google Play
-services.</li>
-<li>A system image Labelled with Google Play logo in the Play Store includes the
-Google Play Store apps and can access to the Google Play Services.</li>
-</ul>
-<h3>Storage Area</h3>
-<ul>
-<li>The AVD has dedicated storage area on our development machine.</li>
-<li>It stores the devices data such as installed apps and settings, as well as
-emulated and SD cards.</li>
-<li>If needed we can use the AVD manager to wipe user data so that the devices has
-the same data as if it was a new device.</li>
-</ul>
-<h2>6) What is emulator?</h2>
-<p>The Android Emulator simulates Android devices on your computer so that you can
-test your application on a variety of devices and Android API levels without
-needing to have each physical device.</p>
-<h2>7) Difference between JVM and DVM?</h2>
-<table>
-<thead>
-<tr>
-<th>JVM</th>
-<th>DVM</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>JVM supports multiple OS</td>
-<td>DVM supports only Android OS</td>
-</tr>
-<tr>
-<td>JVM forms separate classes in separate <code>.class</code> byte code files.</td>
-<td>DVM forms multiple class in <code>.dex</code> byte code file.</td>
-</tr>
-<tr>
-<td>JVM runs on more memory</td>
-<td>DVM runs on less memory.</td>
-</tr>
-<tr>
-<td>The executable format of JVM is JAR</td>
-<td>The executable format of DVM is APK.</td>
-</tr>
-<tr>
-<td>JVM has different constant pools.</td>
-<td>DVM has common constant pool.</td>
-</tr>
-<tr>
-<td>It runs <code>.class</code> byte code directly…</td>
-<td>The <code>.class</code> byte codes are optimize to <code>.odex</code> format before executing in DVM.</td>
-</tr>
-<tr>
-<td>JVM has different constant pools.</td>
-<td>DVM has common constant pool.</td>
-</tr>
-</tbody>
-</table>
-<h2>8) What are activities?</h2>
-<ul>
-<li>Activates dictate the UI and handles the user interaction to the smartphone
-screen.</li>
-<li>Activates represent a single screen that user interact.</li>
-</ul>
-<h2>9) What are services?</h2>
-<ul>
-<li>There are Three types of services in Android:
-<ul>
-<li>Foreground service</li>
-<li>Background service</li>
-<li>Bound service</li>
-</ul>
-</li>
-</ul>
-<h3>Foreground service</h3>
-<ul>
-<li>A foreground service performs some operation that noticeable to the user.</li>
-<li>Foreground services must display a Notification.</li>
-<li>Foreground service continue running even when the user isn’t interacting with
-the app.</li>
-<li><strong>Example:</strong> An audio app would use a foreground service to play an audio
-track.</li>
-</ul>
-<h3>Background Service</h3>
-<ul>
-<li>A background service performs an operating that isn’t directly noticed by
-user.</li>
-<li><strong>Example:</strong> If an app used a service to compact its storage, that would
-usually be a background service.</li>
-</ul>
-<h3>Bound Service</h3>
-<ul>
-<li>A service is bound when an application component binds to it by calling
-<code>bindService()</code>.</li>
-<li>A bound service offers a client-server interface that allows components to
-interact with the service, send requests, receive results, and even do so
-across processes with Interprocess Communication(IPC).</li>
-</ul>
-<h2>10) What are intents?</h2>
-<h3>Implicit intent</h3>
-<p>The implicit intent is the intent where instead of defining the exact components
-, you define the action that you want to perform for different activities.</p>
-<h3>Explicit intent</h3>
-<p>An explicit intent is an intent where you explicitly define the component that
-needs to be called by Android System. An explicit intent is one that you use to
-launch a specific app component, such as particular activity or service in your
-app.</p>
-<h2>11) Explain MainActivity, Manifest &amp; Layout file?</h2>
-<h3>MainActivity</h3>
-<p>The MainActivity.java file is automatically kept in main folder by Android
-Studio all the classes will be available here and Android Studio will even
-bundle together the package so that we can work with the file without having to
-go through all the folders.</p>
-<h3>Manifest</h3>
-<p>Manifest file generated by Android Studio when we create a project. This file
-contains the configuration parameters of a project such as permission services
-and additional libraries.</p>
-<h3>Layout</h3>
-<p>Layout specifies the various widgets to be used in UI and the relationships
-between such widgets and their containers. Layout files are stored in
-<code>res-&gt;layout</code> in the Android application.</p>
-<h2>12) What are different types of UI components?</h2>
-<ul>
-<li><code>TextView</code> - is a UI component that displays the text to the user  on the user display screen.</li>
-<li><code>EditText</code> - is a UI control that allows the user to enter some
-text.</li>
-<li><code>Button</code> - is a UI that is used to perform some action as soon as the
-user clicks on it.</li>
-<li><code>ProgressBar</code> - are used to show progress of a task.</li>
-</ul>
-<h2>13) What are Layouts?</h2>
-<ul>
-<li><code>LinearLayout</code> - is a view group that aligns all children in a single
-direction, vertically or horizontally.</li>
-<li><code>AbsoluteLayout</code> - enables us to specify the exact location of its children.</li>
-<li><code>TableLayout</code> - is a view that groups views into rows and columns.</li>
-<li><code>RelativeLayout</code> - is a view group that displays child views in relative
-positions.</li>
-<li><code>FrameLayout</code> - is a placeholder on screen that we can use to display a single
-view.</li>
-</ul>
-<h2>14) Define</h2>
-<ul>
-<li><code>TextView</code> - This control is used to display text to the user.</li>
-<li><code>EditTextView</code> - EditText is a predefined subclass of TextView that includes
-rich editing capabilities.</li>
-<li><code>Button</code> - A push-button that can be pressed, or clicked, by the user to
-perform an action.</li>
-<li><code>ImageButton</code> - An ImageButton is an AbsoluteLayout which enables you to
-specify the exact location of its children. This shows a button with an image
-(instead of text) that can be pressed or clicked by the user.</li>
-<li><code>CheckBox</code> - An on/off switch that can be toggled by the user. You should use
-check box when presenting users with a group of selectable options that are
-not mutually exclusive.</li>
-</ul>
-<h2>15) Explain</h2>
-<ul>
-<li><code>ListView</code> - List of scrollable items can be displayed in Android using
-ListView. It helps you to displaying the data in the form of a scrollable list.</li>
-<li><code>GridView</code> - It is a view group that display items in two dimensional
-scrolling grid (rows and columns), the grid items are not necessarily
-predetermined but they are automatically inserted to the layout using a
-ListAdapter.</li>
-<li><code>ImageView</code> - It is used to display an image file in application.</li>
-<li><code>Scrollview</code> - It is a view group that is used to make vertically scrollable
-views. A scroll view contains a single direct child only.</li>
-</ul>
-<h2>16) What is toast explain with example?</h2>
-<ul>
-<li>Toast is used to display information for a period of time.</li>
-<li>It contains a message to be displayed quickly and disappears after specified period of time.</li>
-<li>It does not block the user interaction.</li>
-<li>Example:</li>
-</ul>
-<pre><code class="language-xml">Toast.makeText(getApplicationContext(),&quot;Hello Javatpoint&quot;,Toast.LENGTH_SHORT).show();
-</code></pre>
-<h2>17) Explain activity life cycle?</h2>
-<ul>
-<li><code>onCreate</code> - called when activity is first created.</li>
-<li><code>onStart</code> - called when activity is becoming visible to the user.</li>
-<li><code>onResume</code> - called when activity will start interacting with the user.</li>
-<li><code>onPause</code> - called when activity is not visible to the user.</li>
-<li><code>onStop</code> - called when activity is no longer visible to the user.</li>
-<li><code>onRestart</code> - called after your activity is stopped, prior to start.</li>
-<li><code>onDestroy</code> - called before the activity is destroyed.</li>
-</ul>
-<h2>18) Explain broadcast receivers?</h2>
-<p>Broadcast Receivers simply respond to broadcast messages from other applications
-or from the system itself. These messages are sometime called events or intents.</p>
-<h3>Creating the Broadcast Receiver</h3>
-<p>A broadcast receiver is implemented as a subclass of Broadcast Receiver class
-and overriding the <code>onReceive()</code> method where each message is received as an
-Intent object parameter.</p>
-<h3>Registering Broadcast Receiver</h3>
-<p>An application listens for specific broadcast intents by registering a broadcast
-receiver in AndroidManifest.xml file. Consider we are going to register
-My Receiver for system generated event <code>ACTION_BOOT_COMPLETED</code> which is fired
-by the system once the Android system has completed the boot process.</p>
-<h2>19) Explain content provider?</h2>
-<ul>
-<li>Android system allows the content provider to store the application data in
-several ways.</li>
-<li>Users can manage to store the application data like images, audio, videos, and
-personal contact information by storing them in SQLite database, in files or
-even on a network.</li>
-<li>In order to share the data, content providers have certain permissions that
-are used to grant or restrict the right to other applications to interfere
-with the data.</li>
-</ul>
-<h2>20) What is sensors?</h2>
-<ul>
-<li>Most Android powered devices have built-in sensors that measure motion,
-orientation, and various environmental conditions.</li>
-<li>There are three type of sensors in Android:
-<ul>
-<li>Motion</li>
-<li>Environmental</li>
-<li>Position</li>
-</ul>
-</li>
-</ul>
-<h3>Motion</h3>
-<p>These sensors measure acceleration forces and rotational forces along three axes
-. This category includes accelerometers, gravity sensors, gyroscopes, and
-rotational vector.</p>
-<h3>Environmental</h3>
-<p>These sensors measure various environmental parameters, such as ambient air
-temperature and pressure, illumination, and humidity. This category includes
-barometers, photometers, and thermometers.</p>
-<h3>Position</h3>
-<p>These sensors measure the physical position of a device. This category includes
-orientation sensors and magnetometers.</p>
-<h2>21) What is location based services?</h2>
-<p><strong>Location Based Services:</strong> Location-Based Services(LBS) are present in Android
-to provide you with features like current location detection, display of nearby
-places, Geofencing, etc. It fetches the location using your device’s GPS, WiFi,
-or Cellular Networks.</p>
-<h2>22) What is Geo code and Reverse geo code?</h2>
-<h3>Geo code</h3>
-<p>Geocoding is the process of converting addresses (like a street address) into
-geographic coordinates (like latitude and longitude), which you can use to place
-markers on a map, or position the map.</p>
-<h3>Reverse Geo code</h3>
-<p>Reverse geocoding is the process of converting geographic coordinates into a
-human-readable address.</p>
-<h2>23) Enlist Steps to publish android application?</h2>
-<ul>
-<li><strong>Step 1:</strong> First generate signed apk of your Android App to publish it on Play Store.</li>
-<li><strong>Step 2:</strong> Sign up for Google Play Console to publish and manage your Android App.</li>
-<li><strong>Step 3:</strong> Now click on Create Application.</li>
-<li><strong>Step 4:</strong> Now fill store listing details of your App which include Title, Short and Full description.</li>
-<li><strong>Step 5:</strong> Now Click on ready on publish along with save draft and click on Manage release.</li>
-<li><strong>Step 6:</strong> After Manage production click on edit release.</li>
-<li><strong>Step 7:</strong> Now click on review.</li>
-<li><strong>Step 8:</strong> After review click on Start Rollout to production.</li>
-</ul>
-<h2>24) What is date and time picker?</h2>
-<h3><code>DatePicker</code></h3>
-<ul>
-<li>Date picker is widget used to select a date.</li>
-<li>It allows to select data by day, month and year in your custom UI.</li>
-<li>Methods of <code>DatePicker</code> in invokes <code>getDayOfMonth()</code>, <code>getMonth()</code>,
-<code>getYear()</code>, <code>getFirstDayOfWeek()</code>.</li>
-</ul>
-<h3><code>TimePicker</code></h3>
-<ul>
-<li><code>TimePicker</code> is a widget used for selecting the time of the day in either
-AM/PM mode or 24h mode.</li>
-<li>The displayed time consist of hours, minutes and clock format.</li>
-<li>Methods of <code>TimePicker</code> invokes <code>setCurrentHour()</code>, <code>setHour()</code>,
-<code>setCurrentMinute()</code>, <code>getCurrentMinute()</code>.</li>
-</ul>]]></content>
-  </entry>
-  <entry>
-    <title>UT2 6S</title>
-    <link href="https://anzenkodo.github.io/notes/Programming/android/UT2-6S.html" />
-    <updated>2023-01-09T21:06:35.798Z</updated>
-    <id>/notes/Programming/android/UT2-6S.html</id>
-    <content type="html"><![CDATA[<h1>MAD QUESTION BANK</h1>
-<h2>1. Write the syntax for Intent-Filter tag.</h2>
-<pre><code class="language-xml">&lt;intent-fliter
-android:icon=&quot;drawable resource&quot;
-android:label=&quot;string resource&quot;
-android:priority=&quot;integer&quot;&gt;
-&lt;/intent-fliter&gt;
-</code></pre>
-<h2>2. Define Services in Android OS.</h2>
-<ul>
-<li>A service is an application component which runs withour direst interaction
-with the user in the background.</li>
-<li>Services are used for repetitive and potentially long running operations:
-<ul>
-<li>Internet downloads</li>
-<li>Checking for new data</li>
-<li>Data processing</li>
-<li>Updating content</li>
-<li>Providers and the like</li>
-</ul>
-</li>
-<li>They typically run in the background to perform long-running operations or
-work for remote processes.</li>
-</ul>
-<h3>1. Started</h3>
-<ul>
-<li>The service start with startService() function.</li>
-<li>To stop the service we can use stopService() &amp; stopSelf() function.</li>
-</ul>
-<h3>2. Bound</h3>
-<ul>
-<li>A service is bound when an application component binds to it by calling
-bindService().</li>
-<li>To un bound the service we can use unbindService() function.</li>
-</ul>
-<h2>3. Enlist the steps to publish the Android application</h2>
-<ul>
-<li><strong>Step 1</strong> - Sign up or Sign in for an account on the Android Developer
-console.</li>
-<li><strong>Step 2</strong> - Create a new appplication.</li>
-<li><strong>Step 3</strong> - Prepare multimedia.</li>
-<li><strong>Step 4</strong> - Prepare code for release.</li>
-<li><strong>Step 5</strong> - Build a release-ready APK.</li>
-<li><strong>Step 6</strong> - Upload APK complete the checklist on the left until all the items
-have a green checkmark.</li>
-</ul>
-<h2>5. What is Date and Time picker with its methods?</h2>
-<h3>Date Picker</h3>
-<ul>
-<li>Android Date Picker allows you to select the date consisting of day, month and
-year in your custom user interface.</li>
-<li>Methods of DatePicker:
-<ul>
-<li><strong>getDayOfMonth()</strong> - This method gets the selected day of month.</li>
-<li><strong>getMonth()</strong> - This method gets the selected month.</li>
-<li><strong>getYear()</strong> - This method gets the selected year.</li>
-<li><strong>getFirstDayOfWeek()</strong> - This method returns first day of the week.</li>
-<li><strong>getCalendarView()</strong> - This method returns calender View.</li>
-</ul>
-</li>
-</ul>
-<h3>TimePicker</h3>
-<ul>
-<li>Android Time Picker allows us to select the time of day in either 24h or AM/PM
-mode.</li>
-<li>The time consists of hours, minutes and clock format.</li>
-<li>Methods of TimePicker</li>
-</ul>
-<ol>
-<li><strong>setCurrentHour()</strong> - This method sets the current hour.</li>
-<li>setCurrentMinute() - This method sets the current minute.</li>
-<li><strong>is24HoursView()</strong> - This method returns true if this 24 hour view else
-false.</li>
-<li><strong>isEnabled()</strong> - This method returns the enabled status for this view.</li>
-</ol>
-<h2>6. Write a program to display circular progress bar.</h2>
-<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;RelativeLayout
-  xmlns:android=&quot;https://schemas.android.com/apk/res/android&quot;
-  xmlns:app=&quot;https://schemas.android.com/apk/res-auto&quot;
-  xmlns:tools=&quot;https://schemas.android.com/tools&quot;
-  android:layout_width=&quot;match_parent&quot;
-  android:layout_height=&quot;match_parent&quot;
-  tools:context=&quot;.MainActivity&quot;&gt;
-  &lt;Button
-    android:id=&quot;@+id/btnDownloadFile&quot;
-    android:layout_width=&quot;wrap_content&quot;
-    android:layout_height=&quot;wrap_content&quot;
-    android:text=&quot;Download File&quot;
-    andorid:layout_centerInParent=&quot;true&quot; /&gt;
-&lt;/RelativeLayout&gt;
-</code></pre>
-<h2>7. List sensors in Android and explain anyone in detail.</h2>
-<p>The Android supports broad categories of sensors:</p>
-<ol>
-<li>Motion Sensors</li>
-<li>Enviromental Sensors</li>
-<li>Position Sensors</li>
-</ol>
-<h3>Montion Sensors:</h3>
-<ul>
-<li>A motion sensor (or motion detector) is an electronic device that is designed
-to detect and measure movements.</li>
-<li>Motion sensors are used primarily in home and business secrity systems.</li>
-<li>These sensors measure accelecation forces and rotational forces along three
-axes.</li>
-</ul>
-<h2>8. Develop the registration form using the following GUI.</h2>
-<pre><code class="language-xml">&lt;RelativeLayout
-  xmlns:android=&quot;https://schemas.android.com/apk/res/android&quot;
-  xmlns:tools=&quot;https://schemas.android.com/tools&quot;
-  android:layout_width=&quot;match_parent&quot;
-  android:layout_height=&quot;match_parent&quot;
-  android:paddingBottom=&quot;wrap_content&quot;
-  android:paddingTop=&quot;wrap_content&quot;
-  tools:context=&quot;.MainActivity&quot;&gt;
-  &lt;FrameLayout&gt;
-    &lt;ImageView
-      android:layout_width=&quot;wrap_content&quot;
-      android:layout_height=&quot;wrap_content&quot;
-      android:src=&quot;@drawable/banner_image&quot; /&gt;
-  &lt;FrameLayout&gt;
-  &lt;EditText
-    android:id=&quot;@+id/editText1&quot;
-    android:hint=&quot;Name&quot;
-    android:layout_width=&quot;wrap_content&quot;
-    android:layout_height=&quot;wrap_content&quot;
-    android:layout_centerHorizontal=&quot;true&quot;
-    android:layout_centerVertical=&quot;true&quot;
-    android:drawableLeft=&quot;@drawable/name_image&quot; /&gt;
-  &lt;EditText
-    android:id=&quot;@+id/editText2&quot;
-    android:hint=&quot;Email ID&quot;
-    android:layout_width=&quot;wrap_content&quot;
-    android:layout_height=&quot;wrap_content&quot;
-    android:layout_centerHorizontal=&quot;true&quot;
-    android:layout_centerVertical=&quot;true&quot;
-    android:drawbleLeft=&quot;@drawable/email_image&quot; /&gt;
-  &lt;EditText
-    android:id=&quot;@+id/editText1&quot;
-    android:hint=&quot;Password&quot;
-    android:layout_width=&quot;wrap_content&quot;
-    android:layout_height=&quot;wrap_content&quot;
-    android:layout_centerHorizontal=&quot;true&quot;
-    android:layout_centerVertical=&quot;true&quot;
-    android:drawableLeft=&quot;@drawable/pass_image&quot; /&gt;
-  &lt;EditText
-    android:id=&quot;@+id/editText1&quot;
-    android:hint=&quot;Confirm Password&quot;
-    android:layout_width=&quot;wrap_content&quot;
-    android:layout_height=&quot;wrap_content&quot;
-    android:layout_centerHorizontal=&quot;true&quot;
-    android:layout_cneterVertical=&quot;true&quot;
-    android:drawableLeft=&quot;@drawable/conpass_image&quot; /&gt;
-  &lt;EditText
-    android:id=&quot;@+id/editText1&quot;
-    android:hint=&quot;Enter Mobile&quot;
-    android:layout_width=&quot;wrap_content&quot;
-    android:layout_height=&quot;wrap_content&quot;
-    android:layout_centerHorizontal=&quot;true&quot;
-    android:layout_centerVertical=&quot;true&quot;
-    android:drawableLeft=&quot;@drawable/mobile_image&quot; /&gt;
-  &lt;RadioButton
-    android:id=&quot;@+id/radioMale&quot;
-    android:layout_width=&quot;wrap_content&quot;
-    android:layout_height=&quot;wrap_content&quot;
-    android:text=&quot;Male&quot; /&gt;
-  &lt;RadioButton
-    android:id=&quot;@+id/radioFemale&quot;
-    android:layout_width=&quot;wrap_content&quot;
-    android:layout_height=&quot;wrap_content&quot;
-    android:text=&quot;Female&quot; /&gt;
-  &lt;Button
-    android:id=&quot;@+id/btnDisplay&quot;
-    android:layout_width=&quot;wrap_content&quot;
-    android:layout_height=&quot;wrap_content&quot;
-    android:text=&quot;Register&quot; /&gt;
-&lt;/RelativeLayout&gt;
-</code></pre>]]></content>
-  </entry>
-  <entry>
     <title>Viva 6S</title>
     <link href="https://anzenkodo.github.io/notes/Programming/android/Viva-6S.html" />
-    <updated>2023-01-09T21:06:35.798Z</updated>
+    <updated>2023-01-09T21:32:08.168Z</updated>
     <id>/notes/Programming/android/Viva-6S.html</id>
     <content type="html"><![CDATA[<h1>MAD VIVA QUESTION</h1>
 <p>(thk to SaturoGojoo,AK,NEWBIEN00B)</p>
@@ -1191,7 +664,7 @@ Progress bars are used to show progress of a task. For example, when you are upl
   <entry>
     <title>Notes</title>
     <link href="https://anzenkodo.github.io/notes/Programming/android/Notes.html" />
-    <updated>2023-01-09T21:06:35.798Z</updated>
+    <updated>2023-01-09T21:32:08.168Z</updated>
     <id>/notes/Programming/android/Notes.html</id>
     <content type="html"><![CDATA[<h1>Android</h1>
 <h2>1. What is Mobile application?</h2>
@@ -2818,9 +2291,1130 @@ startActivity(sendIntent);
 </ul>]]></content>
   </entry>
   <entry>
+    <title>Final</title>
+    <link href="https://anzenkodo.github.io/notes/Programming/android/Final.html" />
+    <updated>2023-01-09T21:32:08.168Z</updated>
+    <id>/notes/Programming/android/Final.html</id>
+    <content type="html"><![CDATA[<h1>1. Attempt any FIVE of the following: 10</h1>
+<h2>a) List any four features of Android operating system.</h2>
+<ul>
+<li>Open Source</li>
+<li>Beautiul UI</li>
+<li>Connectivity</li>
+<li>Storage</li>
+<li>Multi-Touch</li>
+<li>Multi-Tasking</li>
+<li>Multi-Language</li>
+<li>Resizable widgets</li>
+<li>Messaging</li>
+<li>Media Support</li>
+<li>Web Browser</li>
+</ul>
+<h2>b) Define Dalvik Virtual Machine (DVM).</h2>
+<table>
+<thead>
+<tr>
+<th>JVM</th>
+<th>DVM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JVM supports multiple OS</td>
+<td>DVM supports only Android Operating system.</td>
+</tr>
+<tr>
+<td>JVM forms separate classes in separate <code>.class</code> byte code files.</td>
+<td>DVM forms multiple class in <code>.dex</code> byte code file.</td>
+</tr>
+<tr>
+<td>It is based on stack based virtual machine architecture.</td>
+<td>It is based on register based virtual machine architecture.</td>
+</tr>
+<tr>
+<td>JVM runs on more memory</td>
+<td>DVM runs on less memory.</td>
+</tr>
+<tr>
+<td>The executable format of JVM is JAR.</td>
+<td>The executable format of DVM is APK.</td>
+</tr>
+<tr>
+<td>JVM has different constant pools.</td>
+<td>DVM has common constant pool.</td>
+</tr>
+<tr>
+<td>It runs <code>.class</code> byte code directly.</td>
+<td>The <code>.class</code> byte codes are optimize to .odex format before executing in DVM.</td>
+</tr>
+</tbody>
+</table>
+<h2>c) List any four folders from directory structure of Android project and elaborate in one line.</h2>
+<h3>Manifests Folder</h3>
+<ul>
+<li>Manifests folder contains AndroidManifest.xml for creating our android application.</li>
+<li>This file contains information about our application such as the Android version, metadata, states package for Kotlin file, and other application components.</li>
+<li>It acts as an intermediator between android OS and our application.</li>
+</ul>
+<h3>Java folder</h3>
+<ul>
+<li>The Java folder contains all the java and Kotlin source code (.java) files that we create during the app development, including other Test files.</li>
+</ul>
+<h3>Resource (res) folder</h3>
+<ul>
+<li>The resource folder is the most important folder because it contains all the non-code sources like images, XML layouts, and UI strings for our android application.</li>
+</ul>
+<h3>res/drawable folder</h3>
+<ul>
+<li>It contains the different types of images used for the development of the application.</li>
+</ul>
+<h2>d) List any four attributes of check box.</h2>
+<ul>
+<li>text - This is the Text to display.</li>
+<li>id - This supplies an identifier name for this view.</li>
+<li>visibility - This controls the initial visibility of the view.</li>
+<li>editable - If set, specifies that this TextView has an input method.</li>
+</ul>
+<h2>e) Draw diagram of activity life cycle.</h2>
+<pre><code>                             ┌┬────────┬┐
+                             ││Activity││
+                             ││launched││
+                             └┴────┬───┴┘
+                                   │
+                              ┌────▼─────┐
+         ┌────────────────────►onCreate()│
+         │                    └────┬─────┘
+         │                         │
+         │                    ┌────▼────┐                    ┌───────────┐
+         │                    │onStart()◄────────────────────┤onRestart()│
+         │                    └────┬────┘                    └───────▲───┘
+         │                         │                                 │
+User navigates                ┌────▼─────┐                           │
+to the activity               │onResume()◄───────────────┐           │
+         │                    └────┬─────┘               │           │
+         │                         │                     │           │
+  ┌┬─────┴─────┬┐            ┌┬────┴───┬┐                │           │
+  ││App process││            ││Activity││                │           │
+  ││killed     ││            ││Running ││                │           │
+  └┴─────▲─────┴┘            └┴────┬───┴┘                │           │
+         │                         │                     │           │
+         │                         ▼                     │           │
+Apps with higher priority   Another activity comes   User returns    │
+need memory                 into the foreground      to the activity │
+         │                         │                     │           │
+         │                         │                     │           │
+         │                    ┌────▼────┐                │           │
+         │                    │onPause()├────────────────┘           │
+         │                    └────┬────┘                            │
+         │                         │                                 │
+         │                         │                                 │
+         │                  The activity is                          │
+         │                  no longer visible                        │
+         │                         │                        User navigates
+         │                         │                        to the activity
+         │                    ┌────▼───┐                             │
+         └────────────────────┤onStop()├─────────────────────────────┘
+                              └────┬───┘
+                                   │
+                                   │
+                            The activity is finishing or
+                            being destroyed by the system
+                                   │
+                                   │
+                              ┌────▼──────┐
+                              │onDestroy()│
+                              └────┬──────┘
+                                   │
+                             ┌┬────▼────┬┐
+                             ││Activity ││
+                             ││Shut Down││
+                             └┴─────────┴┘
+</code></pre>
+<h2>f) State syntax to display built in zoom control.</h2>
+<p>In Android, Zoom Control is a class that has some set of methods that are used to control the zoom functionality.</p>
+<pre><code class="language-java">ZoomControl zoomControls = (ZoomControls) findViewById(R.id.simpleZoomControl);
+</code></pre>
+<h2>g) Name two classes used to play audio and video in Android.</h2>
+<ul>
+<li>The following classes are used to play sound and video in the Android framework:
+<ul>
+<li>MediaPlayer - This class is the primary API for playing sound and video.</li>
+<li>AudioManager - This class manages audio sources and audio output on a device.</li>
+</ul>
+</li>
+</ul>
+<h1>2. Attempt any THREE of the following: 12</h1>
+<h2>a) Describe Android architecture with diagram.</h2>
+<ul>
+<li>Android architecture contains different number of components to support any android device needs. Android software contains an open-source Linux Kernel having collection of number of C/C++ libraries which are exposed through an application framework services.</li>
+<li>The main components of android architecture are following:</li>
+</ul>
+<ol>
+<li><strong>Applications:</strong> Applications is the top layer of android architecture. The pre-installed applications like home, contacts, camera, etc and third party applications will be installed on this layer only.</li>
+<li><strong>Application framework:</strong> Application Framework provides several important classes which are used to create an Android application.</li>
+<li><strong>Application runtime:</strong> Android Runtime environment contains components like core libraries and the Dalvik virtual machine(DVM).</li>
+<li><strong>Platform libraries:</strong> The Platform Libraries includes various C/C++ core libraries and Java based libraries such as Media, Graphics, OpenGL etc. to provide a support for android development.</li>
+<li><strong>Linux Kernel:</strong> The linux kernel manages all the available drivers such as display drivers, camera drivers, audio drivers, etc. which are required during the runtime.</li>
+</ol>
+<h2>b) Differentiate between DVM and JVM</h2>
+<table>
+<thead>
+<tr>
+<th>JVM</th>
+<th>DVM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JVM supports multiple OS</td>
+<td>DVM supports only Android Operating system.</td>
+</tr>
+<tr>
+<td>JVM forms separate classes in separate <code>.class</code> byte code files.</td>
+<td>DVM forms multiple class in <code>.dex</code> byte code file.</td>
+</tr>
+<tr>
+<td>It is based on stack based virtual machine architecture.</td>
+<td>It is based on register based virtual machine architecture.</td>
+</tr>
+<tr>
+<td>JVM runs on more memory</td>
+<td>DVM runs on less memory.</td>
+</tr>
+<tr>
+<td>The executable format of JVM is JAR.</td>
+<td>The executable format of DVM is APK.</td>
+</tr>
+<tr>
+<td>JVM has different constant pools.</td>
+<td>DVM has common constant pool.</td>
+</tr>
+<tr>
+<td>It runs <code>.class</code> byte code directly.</td>
+<td>The <code>.class</code> byte codes are optimize to .odex format before executing in DVM.</td>
+</tr>
+</tbody>
+</table>
+<h2>c) List and elaborate steps to deploy in Android application on Google play store.</h2>
+<ul>
+<li>Step 1 - First generate signed apk of your Android App to publish it on Play Store.</li>
+<li>Step 2 - Sign up for Google Play Console to publish and manage your Android App.</li>
+<li>Step 3 - Now click on Create Application.</li>
+<li>Step 4 - Now fill store listing details of your App which include Title, Short and Full description.</li>
+<li>Step 5 - Now Click on ready on publish along with save draft and click on Manage release.</li>
+<li>Step 6 - After Manage production click on edit release.</li>
+<li>Step 7 - Now click on review.</li>
+<li>Step 8 - After review click on Start Rollout to production.</li>
+</ul>
+<h2>d) Describe with example, how to create a simple database in SQLite (Assume suitable data).</h2>
+<ul>
+<li>SQLite is a opensource SQL database that stores data to a text file on a device. Android comes in with built in SQLite database implementation.</li>
+<li>SQLite supports all the relational database features.</li>
+</ul>
+<pre><code class="language-java">SQLiteDatabase mydatabase = openOrCreateDatabase(&quot;your database name&quot;,MODE_PRIVATE,null);
+</code></pre>
+<h1>3. Attempt any THREE of the following: 12</h1>
+<h2>a) Write down the steps to install and configure Android studio.</h2>
+<ul>
+<li>Head over to <a href="https://developer.android.com/studio">https://developer.android.com/studio</a> to get the Android Studio executable or zip file.</li>
+<li>Click on the Download Android Studio Button.</li>
+<li>After the downloading has finished, open the file from downloads and run it. It will prompt the following dialog box.</li>
+<li>Once “Finish” is clicked, choose the ‘Don’t import Settings option’.</li>
+<li>This will start the Android Studio.</li>
+<li>After it has found the SDK components, it will redirect to the Welcome dialog box.</li>
+<li>Now it is time to download the SDK components.</li>
+<li>Click on Start a new Android Studio project to build a new app.</li>
+</ul>
+<h2>b) State syntax to create Text View and Image button with any two attributes of each.</h2>
+<h3>TextView</h3>
+<pre><code class="language-xml">&lt;TextView
+    android:id=&quot;@+id/student_name&quot;
+    android:layout_width=&quot;wrap_content&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:text=&quot;Name:&quot; /&gt;
+</code></pre>
+<ul>
+<li>text -  Sets text of the Textview</li>
+<li>id - Gives a unique ID to the Textview</li>
+</ul>
+<h3>ImageButton</h3>
+<pre><code class="language-xml">&lt;ImageButton
+  android:id=&quot;@+id/imageButton&quot;
+  android:src=&quot;@drawable/button&quot;
+  android:layout_height=&quot;wrap_content&quot;
+  android:layout_width=&quot;wrap_content&quot;/&gt;
+</code></pre>
+<ul>
+<li>background - This is a drawable to use as the background.</li>
+<li>id - Gives a unique ID to the Textview</li>
+</ul>
+<h2>c) Describe Android service life cycle along with diagram.</h2>
+<ul>
+<li>A service is an application component which runs withour direst interaction with the user in the background.</li>
+<li>Services are used for repetitive and potentially long running operations:
+<ul>
+<li>Internet downloads</li>
+<li>Checking for new data</li>
+<li>Data processing</li>
+<li>Updating content</li>
+<li>Providers and the like</li>
+</ul>
+</li>
+<li>They typically run in the background to perform long-running operations or work for remote processes.</li>
+</ul>
+<pre><code>                             ┌┬────────┬┐
+                             ││Activity││
+                             ││launched││
+                             └┴────┬───┴┘
+                                   │
+                              ┌────▼─────┐
+         ┌────────────────────►onCreate()│
+         │                    └────┬─────┘
+         │                         │
+         │                    ┌────▼────┐                    ┌───────────┐
+         │                    │onStart()◄────────────────────┤onRestart()│
+         │                    └────┬────┘                    └───────▲───┘
+         │                         │                                 │
+User navigates                ┌────▼─────┐                           │
+to the activity               │onResume()◄───────────────┐           │
+         │                    └────┬─────┘               │           │
+         │                         │                     │           │
+  ┌┬─────┴─────┬┐            ┌┬────┴───┬┐                │           │
+  ││App process││            ││Activity││                │           │
+  ││killed     ││            ││Running ││                │           │
+  └┴─────▲─────┴┘            └┴────┬───┴┘                │           │
+         │                         │                     │           │
+         │                         ▼                     │           │
+Apps with higher priority   Another activity comes   User returns    │
+need memory                 into the foreground      to the activity │
+         │                         │                     │           │
+         │                         │                     │           │
+         │                    ┌────▼────┐                │           │
+         │                    │onPause()├────────────────┘           │
+         │                    └────┬────┘                            │
+         │                         │                                 │
+         │                         │                                 │
+         │                  The activity is                          │
+         │                  no longer visible                        │
+         │                         │                        User navigates
+         │                         │                        to the activity
+         │                    ┌────▼───┐                             │
+         └────────────────────┤onStop()├─────────────────────────────┘
+                              └────┬───┘
+                                   │
+                                   │
+                            The activity is finishing or
+                            being destroyed by the system
+                                   │
+                                   │
+                              ┌────▼──────┐
+                              │onDestroy()│
+                              └────┬──────┘
+                                   │
+                             ┌┬────▼────┬┐
+                             ││Activity ││
+                             ││Shut Down││
+                             └┴─────────┴┘
+</code></pre>
+<h2>d) State and elaborate the syntax of required class and methods for Geocoding.</h2>
+<ul>
+<li>A class for handling geocoding and reverse geocoding.</li>
+<li>Geocoding is the process of transforming a street address or other description of a location into a (latitude, longitude) coordinate.</li>
+</ul>
+<pre><code class="language-java">public final class Geocoder
+extends Object
+</code></pre>
+<h1>4. Attempt any THREE of the following: 12</h1>
+<h2>a) Explain with example, code to create GUI using absolute layout (Assume suitable data).</h2>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;AbsoluteLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:paddingLeft=&quot;16dp&quot;
+    android:paddingTop=&quot;16dp&quot;
+    android:paddingRight=&quot;16dp&quot;
+    tools:context=&quot;.MainActivity&quot;&gt;
+    &lt;TextView
+        android:id=&quot;@+id/student_name&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_x=&quot;125dp&quot;
+        android:layout_y=&quot;280dp&quot;
+        android:text=&quot;Name:&quot;
+        android:textColor=&quot;#86AD33&quot;
+        android:textSize=&quot;20dp&quot;
+        android:textStyle=&quot;bold&quot; /&gt;
+    &lt;TextView
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_x=&quot;125dp&quot;
+        android:layout_y=&quot;304dp&quot;
+        android:text=&quot;Age:&quot;
+        android:textColor=&quot;#86AD33&quot;
+        android:textSize=&quot;20dp&quot;
+        android:textStyle=&quot;bold&quot; /&gt;
+    &lt;TextView
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_x=&quot;125dp&quot;
+        android:layout_y=&quot;328dp&quot;
+        android:text=&quot;Mobile Number:&quot;
+        android:textColor=&quot;#86AD33&quot;
+        android:textSize=&quot;20dp&quot;
+        android:textStyle=&quot;bold&quot; /&gt;
+&lt;/AbsoluteLayout&gt;
+</code></pre>
+<h2>b) Write a program to demonstrate Date and Time picker.</h2>
+<h3>Date Picker</h3>
+<ul>
+<li>Android Date Picker allows you to select the date consisting of day, month and
+year in your custom user interface.</li>
+<li>Methods of DatePicker:
+<ul>
+<li><strong>getDayOfMonth()</strong> - This method gets the selected day of month.</li>
+<li><strong>getMonth()</strong> - This method gets the selected month.</li>
+<li><strong>getYear()</strong> - This method gets the selected year.</li>
+<li><strong>getFirstDayOfWeek()</strong> - This method returns first day of the week.</li>
+<li><strong>getCalendarView()</strong> - This method returns calender View.</li>
+</ul>
+</li>
+</ul>
+<h3>TimePicker</h3>
+<ul>
+<li>Android Time Picker allows us to select the time of day in either 24h or AM/PM
+mode.</li>
+<li>The time consists of hours, minutes and clock format.</li>
+<li>Methods of TimePicker</li>
+</ul>
+<ol>
+<li><strong>setCurrentHour()</strong> - This method sets the current hour.</li>
+<li>setCurrentMinute() - This method sets the current minute.</li>
+<li><strong>is24HoursView()</strong> - This method returns true if this 24 hour view else
+false.</li>
+<li><strong>isEnabled()</strong> - This method returns the enabled status for this view.</li>
+</ol>
+<h2>c) Describe multimedia framework of Android with diagram.</h2>
+<figure data-type="image"><img src="https://source.android.com/static/docs/core/media/images/ape_media_buffer_alloc_n.png" alt="Multimedia framework of Android diagram" loading="lazy" decoding="async"></figure>
+<h2>d) Discuss developer console with at least four features.</h2>
+<ul>
+<li>Multiple User Accounts</li>
+<li>Store Listing Details</li>
+<li>Upload and Instantly Publish</li>
+<li>Alpha and Beta Testing</li>
+<li>Multiple APK Support</li>
+<li>Selling and Pricing Your Products</li>
+<li>In-app Products</li>
+<li>Distribution Controls</li>
+<li>User Reviews and Crash Reports</li>
+<li>App Statistics</li>
+</ul>
+<h2>e) Write a program to demonstrate declaring and using permissions with any relevant example.</h2>
+<p>AndroidManifest.xml</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+    &lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+            package=&quot;org.geeksforgeeks.requestPermission&quot;&gt;
+
+        &lt;!--Declaring the required permissions--&gt;
+        &lt;uses-permission android:name=&quot;android.permission.READ_EXTERNAL_STORAGE&quot; /&gt;
+        &lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot; /&gt;
+        &lt;uses-permission android:name=&quot;android.permission.CAMERA&quot; /&gt;
+
+        &lt;application
+            android:allowBackup=&quot;true&quot;
+            android:icon=&quot;@mipmap/ic_launcher&quot;
+            android:label=&quot;@string/app_name&quot;
+            android:roundIcon=&quot;@mipmap/ic_launcher_round&quot;
+            android:supportsRtl=&quot;true&quot;
+            android:theme=&quot;@style/AppTheme&quot;&gt;
+
+            &lt;activity
+                android:name=&quot;.MainActivity&quot;&gt;
+
+                &lt;intent-filter&gt;
+                    &lt;action
+                        android:name=&quot;android.intent.action.MAIN&quot; /&gt;
+
+                    &lt;category
+                        android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;
+                &lt;/intent-filter&gt;
+
+            &lt;/activity&gt;
+        &lt;/application&gt;
+
+&lt;/manifest&gt;
+</code></pre>
+<p>activity_main.xml</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;RelativeLayout
+    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    tools:context=&quot;.MainActivity&quot;&gt;
+
+    &lt;!-- To show toolbar--&gt;
+    &lt;android.support.v7.widget.Toolbar
+        android:id=&quot;@+id/toolbar&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:background=&quot;@color/colorPrimary&quot;
+        app:title=&quot;GFG | Permission Example&quot;
+        app:titleTextColor=&quot;@android:color/white&quot;
+        android:layout_height=&quot;?android:attr/actionBarSize&quot;/&gt;
+
+    &lt;!--Button to request storage permission--&gt;
+    &lt;Button
+        android:id=&quot;@+id/storage&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:text=&quot;Storage&quot;
+        android:layout_marginTop=&quot;16dp&quot;
+        android:padding=&quot;8dp&quot;
+        android:layout_below=&quot;@id/toolbar&quot;
+        android:layout_centerHorizontal=&quot;true&quot;/&gt;
+
+    &lt;!--Button to request camera permission--&gt;
+    &lt;Button
+        android:id=&quot;@+id/camera&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:text=&quot;Camera&quot;
+        android:layout_marginTop=&quot;16dp&quot;
+        android:padding=&quot;8dp&quot;
+        android:layout_below=&quot;@id/storage&quot;
+        android:layout_centerHorizontal=&quot;true&quot;/&gt;
+
+&lt;/RelativeLayout&gt;
+</code></pre>
+<p>MainActivity.java</p>
+<pre><code class="language-java">import android.Manifest;
+import android.content.pm.PackageManager;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+
+    // Defining Buttons
+    private Button storage, camera;
+
+    // Defining Permission codes.
+    // We can give any value
+    // but unique for each permission.
+    private static final int CAMERA_PERMISSION_CODE = 100;
+    private static final int STORAGE_PERMISSION_CODE = 101;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        storage = findViewById(R.id.storage);
+        camera = findViewById(R.id.camera);
+
+        // Set Buttons on Click Listeners
+        storage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE);
+            }
+        });
+
+        camera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                checkPermission(Manifest.permission.CAMERA, CAMERA_PERMISSION_CODE);
+            }
+        });
+    }
+
+    // Function to check and request permission.
+    public void checkPermission(String permission, int requestCode)
+    {
+        if (ContextCompat.checkSelfPermission(MainActivity.this, permission) == PackageManager.PERMISSION_DENIED) {
+
+            // Requesting the permission
+            ActivityCompat.requestPermissions(MainActivity.this, new String[] { permission }, requestCode);
+        }
+        else {
+            Toast.makeText(MainActivity.this, &quot;Permission already granted&quot;, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    // This function is called when the user accepts or decline the permission.
+    // Request Code is used to check which permission called this function.
+    // This request code is provided when the user is prompt for permission.
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                        @NonNull String[] permissions,
+                                        @NonNull int[] grantResults)
+    {
+        super.onRequestPermissionsResult(requestCode,
+                                        permissions,
+                                        grantResults);
+
+        if (requestCode == CAMERA_PERMISSION_CODE) {
+            if (grantResults.length &gt; 0 &amp;&amp; grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(MainActivity.this, &quot;Camera Permission Granted&quot;, Toast.LENGTH_SHORT) .show();
+            }
+            else {
+                Toast.makeText(MainActivity.this, &quot;Camera Permission Denied&quot;, Toast.LENGTH_SHORT) .show();
+            }
+        }
+        else if (requestCode == STORAGE_PERMISSION_CODE) {
+            if (grantResults.length &gt; 0
+                &amp;&amp; grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(MainActivity.this, &quot;Storage Permission Granted&quot;, Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(MainActivity.this, &quot;Storage Permission Denied&quot;, Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+}
+</code></pre>]]></content>
+  </entry>
+  <entry>
+    <title>UT2 6S</title>
+    <link href="https://anzenkodo.github.io/notes/Programming/android/UT2-6S.html" />
+    <updated>2023-01-09T21:32:08.168Z</updated>
+    <id>/notes/Programming/android/UT2-6S.html</id>
+    <content type="html"><![CDATA[<h1>MAD QUESTION BANK</h1>
+<h2>1. Write the syntax for Intent-Filter tag.</h2>
+<pre><code class="language-xml">&lt;intent-fliter
+android:icon=&quot;drawable resource&quot;
+android:label=&quot;string resource&quot;
+android:priority=&quot;integer&quot;&gt;
+&lt;/intent-fliter&gt;
+</code></pre>
+<h2>2. Define Services in Android OS.</h2>
+<ul>
+<li>A service is an application component which runs withour direst interaction
+with the user in the background.</li>
+<li>Services are used for repetitive and potentially long running operations:
+<ul>
+<li>Internet downloads</li>
+<li>Checking for new data</li>
+<li>Data processing</li>
+<li>Updating content</li>
+<li>Providers and the like</li>
+</ul>
+</li>
+<li>They typically run in the background to perform long-running operations or
+work for remote processes.</li>
+</ul>
+<h3>1. Started</h3>
+<ul>
+<li>The service start with startService() function.</li>
+<li>To stop the service we can use stopService() &amp; stopSelf() function.</li>
+</ul>
+<h3>2. Bound</h3>
+<ul>
+<li>A service is bound when an application component binds to it by calling
+bindService().</li>
+<li>To un bound the service we can use unbindService() function.</li>
+</ul>
+<h2>3. Enlist the steps to publish the Android application</h2>
+<ul>
+<li><strong>Step 1</strong> - Sign up or Sign in for an account on the Android Developer
+console.</li>
+<li><strong>Step 2</strong> - Create a new appplication.</li>
+<li><strong>Step 3</strong> - Prepare multimedia.</li>
+<li><strong>Step 4</strong> - Prepare code for release.</li>
+<li><strong>Step 5</strong> - Build a release-ready APK.</li>
+<li><strong>Step 6</strong> - Upload APK complete the checklist on the left until all the items
+have a green checkmark.</li>
+</ul>
+<h2>5. What is Date and Time picker with its methods?</h2>
+<h3>Date Picker</h3>
+<ul>
+<li>Android Date Picker allows you to select the date consisting of day, month and
+year in your custom user interface.</li>
+<li>Methods of DatePicker:
+<ul>
+<li><strong>getDayOfMonth()</strong> - This method gets the selected day of month.</li>
+<li><strong>getMonth()</strong> - This method gets the selected month.</li>
+<li><strong>getYear()</strong> - This method gets the selected year.</li>
+<li><strong>getFirstDayOfWeek()</strong> - This method returns first day of the week.</li>
+<li><strong>getCalendarView()</strong> - This method returns calender View.</li>
+</ul>
+</li>
+</ul>
+<h3>TimePicker</h3>
+<ul>
+<li>Android Time Picker allows us to select the time of day in either 24h or AM/PM
+mode.</li>
+<li>The time consists of hours, minutes and clock format.</li>
+<li>Methods of TimePicker</li>
+</ul>
+<ol>
+<li><strong>setCurrentHour()</strong> - This method sets the current hour.</li>
+<li>setCurrentMinute() - This method sets the current minute.</li>
+<li><strong>is24HoursView()</strong> - This method returns true if this 24 hour view else
+false.</li>
+<li><strong>isEnabled()</strong> - This method returns the enabled status for this view.</li>
+</ol>
+<h2>6. Write a program to display circular progress bar.</h2>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;RelativeLayout
+  xmlns:android=&quot;https://schemas.android.com/apk/res/android&quot;
+  xmlns:app=&quot;https://schemas.android.com/apk/res-auto&quot;
+  xmlns:tools=&quot;https://schemas.android.com/tools&quot;
+  android:layout_width=&quot;match_parent&quot;
+  android:layout_height=&quot;match_parent&quot;
+  tools:context=&quot;.MainActivity&quot;&gt;
+  &lt;Button
+    android:id=&quot;@+id/btnDownloadFile&quot;
+    android:layout_width=&quot;wrap_content&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:text=&quot;Download File&quot;
+    andorid:layout_centerInParent=&quot;true&quot; /&gt;
+&lt;/RelativeLayout&gt;
+</code></pre>
+<h2>7. List sensors in Android and explain anyone in detail.</h2>
+<p>The Android supports broad categories of sensors:</p>
+<ol>
+<li>Motion Sensors</li>
+<li>Enviromental Sensors</li>
+<li>Position Sensors</li>
+</ol>
+<h3>Montion Sensors:</h3>
+<ul>
+<li>A motion sensor (or motion detector) is an electronic device that is designed
+to detect and measure movements.</li>
+<li>Motion sensors are used primarily in home and business secrity systems.</li>
+<li>These sensors measure accelecation forces and rotational forces along three
+axes.</li>
+</ul>
+<h2>8. Develop the registration form using the following GUI.</h2>
+<pre><code class="language-xml">&lt;RelativeLayout
+  xmlns:android=&quot;https://schemas.android.com/apk/res/android&quot;
+  xmlns:tools=&quot;https://schemas.android.com/tools&quot;
+  android:layout_width=&quot;match_parent&quot;
+  android:layout_height=&quot;match_parent&quot;
+  android:paddingBottom=&quot;wrap_content&quot;
+  android:paddingTop=&quot;wrap_content&quot;
+  tools:context=&quot;.MainActivity&quot;&gt;
+  &lt;FrameLayout&gt;
+    &lt;ImageView
+      android:layout_width=&quot;wrap_content&quot;
+      android:layout_height=&quot;wrap_content&quot;
+      android:src=&quot;@drawable/banner_image&quot; /&gt;
+  &lt;FrameLayout&gt;
+  &lt;EditText
+    android:id=&quot;@+id/editText1&quot;
+    android:hint=&quot;Name&quot;
+    android:layout_width=&quot;wrap_content&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:layout_centerHorizontal=&quot;true&quot;
+    android:layout_centerVertical=&quot;true&quot;
+    android:drawableLeft=&quot;@drawable/name_image&quot; /&gt;
+  &lt;EditText
+    android:id=&quot;@+id/editText2&quot;
+    android:hint=&quot;Email ID&quot;
+    android:layout_width=&quot;wrap_content&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:layout_centerHorizontal=&quot;true&quot;
+    android:layout_centerVertical=&quot;true&quot;
+    android:drawbleLeft=&quot;@drawable/email_image&quot; /&gt;
+  &lt;EditText
+    android:id=&quot;@+id/editText1&quot;
+    android:hint=&quot;Password&quot;
+    android:layout_width=&quot;wrap_content&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:layout_centerHorizontal=&quot;true&quot;
+    android:layout_centerVertical=&quot;true&quot;
+    android:drawableLeft=&quot;@drawable/pass_image&quot; /&gt;
+  &lt;EditText
+    android:id=&quot;@+id/editText1&quot;
+    android:hint=&quot;Confirm Password&quot;
+    android:layout_width=&quot;wrap_content&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:layout_centerHorizontal=&quot;true&quot;
+    android:layout_cneterVertical=&quot;true&quot;
+    android:drawableLeft=&quot;@drawable/conpass_image&quot; /&gt;
+  &lt;EditText
+    android:id=&quot;@+id/editText1&quot;
+    android:hint=&quot;Enter Mobile&quot;
+    android:layout_width=&quot;wrap_content&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:layout_centerHorizontal=&quot;true&quot;
+    android:layout_centerVertical=&quot;true&quot;
+    android:drawableLeft=&quot;@drawable/mobile_image&quot; /&gt;
+  &lt;RadioButton
+    android:id=&quot;@+id/radioMale&quot;
+    android:layout_width=&quot;wrap_content&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:text=&quot;Male&quot; /&gt;
+  &lt;RadioButton
+    android:id=&quot;@+id/radioFemale&quot;
+    android:layout_width=&quot;wrap_content&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:text=&quot;Female&quot; /&gt;
+  &lt;Button
+    android:id=&quot;@+id/btnDisplay&quot;
+    android:layout_width=&quot;wrap_content&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:text=&quot;Register&quot; /&gt;
+&lt;/RelativeLayout&gt;
+</code></pre>]]></content>
+  </entry>
+  <entry>
+    <title>Viva 6S sort</title>
+    <link href="https://anzenkodo.github.io/notes/Programming/android/Viva-6S-sort.html" />
+    <updated>2023-01-09T21:32:08.168Z</updated>
+    <id>/notes/Programming/android/Viva-6S-sort.html</id>
+    <content type="html"><![CDATA[<h1>MAD VIVA</h1>
+<h2>1) What is Android?</h2>
+<p>Android is mobile OS based on modified version of Linux kernel and other open
+source software, designed primarily for touchscreen mobile devices such as
+smartphones and tablets.</p>
+<h2>2) Enlist features of Android?</h2>
+<ul>
+<li><strong>Open Source</strong> - Android is open-source, which helps to develop customized
+android version for future updates.</li>
+<li><strong>Customizable</strong> - Anyone can customize the Android Platform.</li>
+<li><strong>Connectivity</strong> - It provides GSM, CDMA, Bluetooth, WiFi etc.</li>
+<li><strong>Storage</strong> - Many android devices support external storage through Micro SD
+card.</li>
+<li><strong>Widgets, Multi-Tasking, Multi-Touch, Media Support</strong></li>
+</ul>
+<h2>3) Explain Android architecture?</h2>
+<ul>
+<li>Android architecture contains different number of components to support any
+android device needs.</li>
+<li>The main components of Android architecture are following:
+<ul>
+<li><strong>Applications</strong> - Applications is the top layer of android architecture.
+The pre-installed applications like will be installed on this layer only.</li>
+<li><strong>Application framework</strong> - Application framework provides several important
+classes which are used to create an Android application.</li>
+<li><strong>Platform libraries</strong> - The platform libraries includes versions C/C++ core
+libraries such as Media, Graphics, OpenGL etc. To provide a support for
+android development.</li>
+<li><strong>Linux Kernel</strong> - The Linux Kernel manages all the available drivers such
+as display drivers, camera drivers, audio drivers, etc. Which are required
+during the runtime.</li>
+</ul>
+</li>
+</ul>
+<h2>4) Explain Android SDK?</h2>
+<ul>
+<li>The Android software development kit(SDK) allows developers to create
+applications for the Android platform. The Android SDK is the most important
+software of Android which is installed.</li>
+<li>The Android SDK provides to test application API libraries and emulator
+documentation sample code developer tools and tutorials which helps us to
+build and test the debug apps from Android.</li>
+<li>Android SDK provides the tools and application programming interface(API) for
+developers to create applications on the Android platform using Java
+programming language.</li>
+</ul>
+<h2>5) What is Android AVD?</h2>
+<ul>
+<li>An AVD is an emulator configuration that enables to modules an actual device
+by calling hardware and software option to be emulated by the Android
+emulator.</li>
+<li>The AVD manager is an interface that we can launch from android studio which
+helps us to create and manage AVD.</li>
+<li>An AVD contains hardware profile, system image, storage area, skin and other
+properties.</li>
+<li>AVD contains emulator for Wear OS, TV, Mobile Phones, Tables, Automotive.</li>
+</ul>
+<h3>Hardware profile</h3>
+<ul>
+<li>Hardware profile defines the characteristics of a device as shipped from the
+factory of a device as shipped from the factory.</li>
+<li>The AVD manager comes preloaded with certain hardware profile such as Pixel
+device and we can define or customize the hardware profile as needed.</li>
+</ul>
+<h3>System image</h3>
+<ul>
+<li>A system image labelled with Google API includes access to Google Play
+services.</li>
+<li>A system image Labelled with Google Play logo in the Play Store includes the
+Google Play Store apps and can access to the Google Play Services.</li>
+</ul>
+<h3>Storage Area</h3>
+<ul>
+<li>The AVD has dedicated storage area on our development machine.</li>
+<li>It stores the devices data such as installed apps and settings, as well as
+emulated and SD cards.</li>
+<li>If needed we can use the AVD manager to wipe user data so that the devices has
+the same data as if it was a new device.</li>
+</ul>
+<h2>6) What is emulator?</h2>
+<p>The Android Emulator simulates Android devices on your computer so that you can
+test your application on a variety of devices and Android API levels without
+needing to have each physical device.</p>
+<h2>7) Difference between JVM and DVM?</h2>
+<table>
+<thead>
+<tr>
+<th>JVM</th>
+<th>DVM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JVM supports multiple OS</td>
+<td>DVM supports only Android OS</td>
+</tr>
+<tr>
+<td>JVM forms separate classes in separate <code>.class</code> byte code files.</td>
+<td>DVM forms multiple class in <code>.dex</code> byte code file.</td>
+</tr>
+<tr>
+<td>JVM runs on more memory</td>
+<td>DVM runs on less memory.</td>
+</tr>
+<tr>
+<td>The executable format of JVM is JAR</td>
+<td>The executable format of DVM is APK.</td>
+</tr>
+<tr>
+<td>JVM has different constant pools.</td>
+<td>DVM has common constant pool.</td>
+</tr>
+<tr>
+<td>It runs <code>.class</code> byte code directly…</td>
+<td>The <code>.class</code> byte codes are optimize to <code>.odex</code> format before executing in DVM.</td>
+</tr>
+<tr>
+<td>JVM has different constant pools.</td>
+<td>DVM has common constant pool.</td>
+</tr>
+</tbody>
+</table>
+<h2>8) What are activities?</h2>
+<ul>
+<li>Activates dictate the UI and handles the user interaction to the smartphone
+screen.</li>
+<li>Activates represent a single screen that user interact.</li>
+</ul>
+<h2>9) What are services?</h2>
+<ul>
+<li>There are Three types of services in Android:
+<ul>
+<li>Foreground service</li>
+<li>Background service</li>
+<li>Bound service</li>
+</ul>
+</li>
+</ul>
+<h3>Foreground service</h3>
+<ul>
+<li>A foreground service performs some operation that noticeable to the user.</li>
+<li>Foreground services must display a Notification.</li>
+<li>Foreground service continue running even when the user isn’t interacting with
+the app.</li>
+<li><strong>Example:</strong> An audio app would use a foreground service to play an audio
+track.</li>
+</ul>
+<h3>Background Service</h3>
+<ul>
+<li>A background service performs an operating that isn’t directly noticed by
+user.</li>
+<li><strong>Example:</strong> If an app used a service to compact its storage, that would
+usually be a background service.</li>
+</ul>
+<h3>Bound Service</h3>
+<ul>
+<li>A service is bound when an application component binds to it by calling
+<code>bindService()</code>.</li>
+<li>A bound service offers a client-server interface that allows components to
+interact with the service, send requests, receive results, and even do so
+across processes with Interprocess Communication(IPC).</li>
+</ul>
+<h2>10) What are intents?</h2>
+<h3>Implicit intent</h3>
+<p>The implicit intent is the intent where instead of defining the exact components
+, you define the action that you want to perform for different activities.</p>
+<h3>Explicit intent</h3>
+<p>An explicit intent is an intent where you explicitly define the component that
+needs to be called by Android System. An explicit intent is one that you use to
+launch a specific app component, such as particular activity or service in your
+app.</p>
+<h2>11) Explain MainActivity, Manifest &amp; Layout file?</h2>
+<h3>MainActivity</h3>
+<p>The MainActivity.java file is automatically kept in main folder by Android
+Studio all the classes will be available here and Android Studio will even
+bundle together the package so that we can work with the file without having to
+go through all the folders.</p>
+<h3>Manifest</h3>
+<p>Manifest file generated by Android Studio when we create a project. This file
+contains the configuration parameters of a project such as permission services
+and additional libraries.</p>
+<h3>Layout</h3>
+<p>Layout specifies the various widgets to be used in UI and the relationships
+between such widgets and their containers. Layout files are stored in
+<code>res-&gt;layout</code> in the Android application.</p>
+<h2>12) What are different types of UI components?</h2>
+<ul>
+<li><code>TextView</code> - is a UI component that displays the text to the user  on the user display screen.</li>
+<li><code>EditText</code> - is a UI control that allows the user to enter some
+text.</li>
+<li><code>Button</code> - is a UI that is used to perform some action as soon as the
+user clicks on it.</li>
+<li><code>ProgressBar</code> - are used to show progress of a task.</li>
+</ul>
+<h2>13) What are Layouts?</h2>
+<ul>
+<li><code>LinearLayout</code> - is a view group that aligns all children in a single
+direction, vertically or horizontally.</li>
+<li><code>AbsoluteLayout</code> - enables us to specify the exact location of its children.</li>
+<li><code>TableLayout</code> - is a view that groups views into rows and columns.</li>
+<li><code>RelativeLayout</code> - is a view group that displays child views in relative
+positions.</li>
+<li><code>FrameLayout</code> - is a placeholder on screen that we can use to display a single
+view.</li>
+</ul>
+<h2>14) Define</h2>
+<ul>
+<li><code>TextView</code> - This control is used to display text to the user.</li>
+<li><code>EditTextView</code> - EditText is a predefined subclass of TextView that includes
+rich editing capabilities.</li>
+<li><code>Button</code> - A push-button that can be pressed, or clicked, by the user to
+perform an action.</li>
+<li><code>ImageButton</code> - An ImageButton is an AbsoluteLayout which enables you to
+specify the exact location of its children. This shows a button with an image
+(instead of text) that can be pressed or clicked by the user.</li>
+<li><code>CheckBox</code> - An on/off switch that can be toggled by the user. You should use
+check box when presenting users with a group of selectable options that are
+not mutually exclusive.</li>
+</ul>
+<h2>15) Explain</h2>
+<ul>
+<li><code>ListView</code> - List of scrollable items can be displayed in Android using
+ListView. It helps you to displaying the data in the form of a scrollable list.</li>
+<li><code>GridView</code> - It is a view group that display items in two dimensional
+scrolling grid (rows and columns), the grid items are not necessarily
+predetermined but they are automatically inserted to the layout using a
+ListAdapter.</li>
+<li><code>ImageView</code> - It is used to display an image file in application.</li>
+<li><code>Scrollview</code> - It is a view group that is used to make vertically scrollable
+views. A scroll view contains a single direct child only.</li>
+</ul>
+<h2>16) What is toast explain with example?</h2>
+<ul>
+<li>Toast is used to display information for a period of time.</li>
+<li>It contains a message to be displayed quickly and disappears after specified period of time.</li>
+<li>It does not block the user interaction.</li>
+<li>Example:</li>
+</ul>
+<pre><code class="language-xml">Toast.makeText(getApplicationContext(),&quot;Hello Javatpoint&quot;,Toast.LENGTH_SHORT).show();
+</code></pre>
+<h2>17) Explain activity life cycle?</h2>
+<ul>
+<li><code>onCreate</code> - called when activity is first created.</li>
+<li><code>onStart</code> - called when activity is becoming visible to the user.</li>
+<li><code>onResume</code> - called when activity will start interacting with the user.</li>
+<li><code>onPause</code> - called when activity is not visible to the user.</li>
+<li><code>onStop</code> - called when activity is no longer visible to the user.</li>
+<li><code>onRestart</code> - called after your activity is stopped, prior to start.</li>
+<li><code>onDestroy</code> - called before the activity is destroyed.</li>
+</ul>
+<h2>18) Explain broadcast receivers?</h2>
+<p>Broadcast Receivers simply respond to broadcast messages from other applications
+or from the system itself. These messages are sometime called events or intents.</p>
+<h3>Creating the Broadcast Receiver</h3>
+<p>A broadcast receiver is implemented as a subclass of Broadcast Receiver class
+and overriding the <code>onReceive()</code> method where each message is received as an
+Intent object parameter.</p>
+<h3>Registering Broadcast Receiver</h3>
+<p>An application listens for specific broadcast intents by registering a broadcast
+receiver in AndroidManifest.xml file. Consider we are going to register
+My Receiver for system generated event <code>ACTION_BOOT_COMPLETED</code> which is fired
+by the system once the Android system has completed the boot process.</p>
+<h2>19) Explain content provider?</h2>
+<ul>
+<li>Android system allows the content provider to store the application data in
+several ways.</li>
+<li>Users can manage to store the application data like images, audio, videos, and
+personal contact information by storing them in SQLite database, in files or
+even on a network.</li>
+<li>In order to share the data, content providers have certain permissions that
+are used to grant or restrict the right to other applications to interfere
+with the data.</li>
+</ul>
+<h2>20) What is sensors?</h2>
+<ul>
+<li>Most Android powered devices have built-in sensors that measure motion,
+orientation, and various environmental conditions.</li>
+<li>There are three type of sensors in Android:
+<ul>
+<li>Motion</li>
+<li>Environmental</li>
+<li>Position</li>
+</ul>
+</li>
+</ul>
+<h3>Motion</h3>
+<p>These sensors measure acceleration forces and rotational forces along three axes
+. This category includes accelerometers, gravity sensors, gyroscopes, and
+rotational vector.</p>
+<h3>Environmental</h3>
+<p>These sensors measure various environmental parameters, such as ambient air
+temperature and pressure, illumination, and humidity. This category includes
+barometers, photometers, and thermometers.</p>
+<h3>Position</h3>
+<p>These sensors measure the physical position of a device. This category includes
+orientation sensors and magnetometers.</p>
+<h2>21) What is location based services?</h2>
+<p><strong>Location Based Services:</strong> Location-Based Services(LBS) are present in Android
+to provide you with features like current location detection, display of nearby
+places, Geofencing, etc. It fetches the location using your device’s GPS, WiFi,
+or Cellular Networks.</p>
+<h2>22) What is Geo code and Reverse geo code?</h2>
+<h3>Geo code</h3>
+<p>Geocoding is the process of converting addresses (like a street address) into
+geographic coordinates (like latitude and longitude), which you can use to place
+markers on a map, or position the map.</p>
+<h3>Reverse Geo code</h3>
+<p>Reverse geocoding is the process of converting geographic coordinates into a
+human-readable address.</p>
+<h2>23) Enlist Steps to publish android application?</h2>
+<ul>
+<li><strong>Step 1:</strong> First generate signed apk of your Android App to publish it on Play Store.</li>
+<li><strong>Step 2:</strong> Sign up for Google Play Console to publish and manage your Android App.</li>
+<li><strong>Step 3:</strong> Now click on Create Application.</li>
+<li><strong>Step 4:</strong> Now fill store listing details of your App which include Title, Short and Full description.</li>
+<li><strong>Step 5:</strong> Now Click on ready on publish along with save draft and click on Manage release.</li>
+<li><strong>Step 6:</strong> After Manage production click on edit release.</li>
+<li><strong>Step 7:</strong> Now click on review.</li>
+<li><strong>Step 8:</strong> After review click on Start Rollout to production.</li>
+</ul>
+<h2>24) What is date and time picker?</h2>
+<h3><code>DatePicker</code></h3>
+<ul>
+<li>Date picker is widget used to select a date.</li>
+<li>It allows to select data by day, month and year in your custom UI.</li>
+<li>Methods of <code>DatePicker</code> in invokes <code>getDayOfMonth()</code>, <code>getMonth()</code>,
+<code>getYear()</code>, <code>getFirstDayOfWeek()</code>.</li>
+</ul>
+<h3><code>TimePicker</code></h3>
+<ul>
+<li><code>TimePicker</code> is a widget used for selecting the time of the day in either
+AM/PM mode or 24h mode.</li>
+<li>The displayed time consist of hours, minutes and clock format.</li>
+<li>Methods of <code>TimePicker</code> invokes <code>setCurrentHour()</code>, <code>setHour()</code>,
+<code>setCurrentMinute()</code>, <code>getCurrentMinute()</code>.</li>
+</ul>]]></content>
+  </entry>
+  <entry>
     <title>Pratical S6</title>
     <link href="https://anzenkodo.github.io/notes/Programming/android/Pratical-S6.html" />
-    <updated>2023-01-09T21:06:35.798Z</updated>
+    <updated>2023-01-09T21:32:08.168Z</updated>
     <id>/notes/Programming/android/Pratical-S6.html</id>
     <content type="html"><![CDATA[<h2>1. Write a program to place Name, Age, Mobile number linearly(vertical) on the display screen using Linear layout.</h2>
 <pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
@@ -3510,7 +4104,7 @@ public class MainActivity extends AppCompatActivity {
   <entry>
     <title>keys</title>
     <link href="https://anzenkodo.github.io/notes/Programming/database/keys.html" />
-    <updated>2023-01-09T21:06:35.798Z</updated>
+    <updated>2023-01-09T21:32:08.168Z</updated>
     <id>/notes/Programming/database/keys.html</id>
     <content type="html"><![CDATA[<p>Keys are used to uniquely identify any record or row of data from the table. It
 is also used to establish and identify relationships between tables.</p>
@@ -3538,7 +4132,7 @@ candidate key.</li>
   <entry>
     <title>question bank</title>
     <link href="https://anzenkodo.github.io/notes/Programming/database/question-bank.html" />
-    <updated>2023-01-09T21:06:35.798Z</updated>
+    <updated>2023-01-09T21:32:08.168Z</updated>
     <id>/notes/Programming/database/question-bank.html</id>
     <content type="html"><![CDATA[<h2>Question bank for 2 Marks.</h2>
 <h3>1. Define Entity Set?</h3>
@@ -3580,7 +4174,7 @@ single entity and each column representing an attribute of that entity.</li>
   <entry>
     <title>er diagram</title>
     <link href="https://anzenkodo.github.io/notes/Programming/database/er-diagram/" />
-    <updated>2023-01-09T21:06:35.798Z</updated>
+    <updated>2023-01-09T21:32:08.168Z</updated>
     <id>/notes/Programming/database/er-diagram/</id>
     <content type="html"><![CDATA[<p>An Entity Relationship Diagram (ERD) is a visual representation of different
 data using conventions that describe how these data are related to each other.</p>
@@ -3705,28 +4299,5 @@ Entity, which is in relationship with another entity Visitor.</li>
 <li><a href="https://www.lucidchart.com/pages/er-diagrams">What is an Entity Relationship Diagram (ERD)?</a></li>
 <li><a href="https://www.studytonight.com/dbms/generalization-and-specialization.php">The Enhanced ER Model</a></li>
 </ul>]]></content>
-  </entry>
-  <entry>
-    <title>decision tree</title>
-    <link href="https://anzenkodo.github.io/notes/Programming/data-structure/tree/decision-tree.html" />
-    <updated>2023-01-09T21:06:35.798Z</updated>
-    <id>/notes/Programming/data-structure/tree/decision-tree.html</id>
-    <content type="html"><![CDATA[<p>A decision tree is a flowchart-like tree structure that is used to make a
-decision or prediction based on multiple conditions. It is a supervised learning
-algorithm, which means that it is trained on a labeled dataset, where the
-correct output is already known.</p>
-<p>The decision tree algorithm works by starting at the root node and asking a
-series of questions based on the features of the data. Each question splits the
-data into two branches, and the algorithm continues to ask questions and split
-the data until it reaches a leaf node, which represents a prediction or
-decision.</p>
-<p>The goal of the decision tree algorithm is to create a tree that accurately
-predicts the target variable based on the features of the data. The accuracy of
-the prediction is determined by how well the tree is able to classify the
-training data.</p>
-<p>Decision trees are often used for classification tasks, such as determining
-whether a given email is spam or not, or for regression tasks, such as
-predicting the price of a house based on its features. They are also commonly
-used in data mining and machine learning applications.</p>]]></content>
   </entry>
 </feed>
