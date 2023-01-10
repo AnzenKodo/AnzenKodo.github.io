@@ -5,7 +5,7 @@
   <link href="https://anzenkodo.github.io/notes/" />
   <link href="https://anzenkodo.github.io/notes/" rel="self" />
 	<id>https://anzenkodo.github.io/notes/</id>
-  <updated>2023-01-10T04:36:56.343Z</updated>
+  <updated>2023-01-10T05:05:48.951Z</updated>
   <author>
     <name>Axel</name>
     <email>AnzenKodo@altmails.com</email>
@@ -13,7 +13,7 @@
     <entry>
     <title>Home</title>
     <link href="https://anzenkodo.github.io/notes/" />
-    <updated>2023-01-10T04:36:56.343Z</updated>
+    <updated>2023-01-10T05:05:48.951Z</updated>
     <id>/notes/</id>
     <content type="html"><![CDATA[<p>This my personal website where I post my notes about thing that I have learn.</p>
 <h2>Features</h2>
@@ -398,699 +398,9 @@ colspan="3"><strong>30–32</strong> ATP</td> </tr> </tbody> </table>
   <td></td> <td>♖</td> </tr> </tbody> </table>]]></content>
   </entry>
   <entry>
-    <title>Pratical S6</title>
-    <link href="https://anzenkodo.github.io/notes/Programming/android/Pratical-S6.html" />
-    <updated>2023-01-10T04:36:56.343Z</updated>
-    <id>/notes/Programming/android/Pratical-S6.html</id>
-    <content type="html"><![CDATA[<h2>1. Write a program to place Name, Age, Mobile number linearly(vertical) on the display screen using Linear layout.</h2>
-<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
-    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;
-    android:paddingLeft=&quot;16dp&quot;
-    android:paddingRight=&quot;16dp&quot;
-    android:paddingTop=&quot;16dp&quot;
-    android:orientation=&quot;vertical&quot;
-    tools:context=&quot;.MainActivity&quot;&gt;
-    &lt;TextView
-        android:id=&quot;@+id/student_name&quot;
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:text=&quot;Name:&quot; /&gt;
-    &lt;TextView
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:text=&quot;Age:&quot; /&gt;
-    &lt;TextView
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:text=&quot;Mobile Number:&quot; /&gt;
-&lt;/LinearLayout&gt;
-</code></pre>
-<p><a href="https://codingatharva.blogspot.com/2020/01/program-to-place-ui-component-in-linear-vertical-layout-in-Android-Studio.html">Source</a></p>
-<h2>2. Write a program to place Name, Age, Mobile number linearly(vertical) on the display screen using Absolute layout.</h2>
-<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;AbsoluteLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
-    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;
-    android:paddingLeft=&quot;16dp&quot;
-    android:paddingTop=&quot;16dp&quot;
-    android:paddingRight=&quot;16dp&quot;
-    tools:context=&quot;.MainActivity&quot;&gt;
-    &lt;TextView
-        android:id=&quot;@+id/student_name&quot;
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:layout_x=&quot;125dp&quot;
-        android:layout_y=&quot;280dp&quot;
-        android:text=&quot;Name:&quot;
-        android:textColor=&quot;#86AD33&quot;
-        android:textSize=&quot;20dp&quot;
-        android:textStyle=&quot;bold&quot; /&gt;
-    &lt;TextView
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:layout_x=&quot;125dp&quot;
-        android:layout_y=&quot;304dp&quot;
-        android:text=&quot;Age:&quot;
-        android:textColor=&quot;#86AD33&quot;
-        android:textSize=&quot;20dp&quot;
-        android:textStyle=&quot;bold&quot; /&gt;
-    &lt;TextView
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:layout_x=&quot;125dp&quot;
-        android:layout_y=&quot;328dp&quot;
-        android:text=&quot;Mobile Number:&quot;
-        android:textColor=&quot;#86AD33&quot;
-        android:textSize=&quot;20dp&quot;
-        android:textStyle=&quot;bold&quot; /&gt;
-&lt;/AbsoluteLayout&gt;
-</code></pre>
-<p><a href="https://codingatharva.blogspot.com/2020/01/absolute-layout-centrally-in-Android-Studio.html">Source</a></p>
-<h2>3. Write a program to display 5 students basic information in a table form using Table layout.</h2>
-<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;TableLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;
-    android:collapseColumns=&quot;*&quot;
-    android:shrinkColumns=&quot;*&quot;
-    tools:context=&quot;.MainActivity&quot;&gt;
-    &lt;TableRow
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:gravity=&quot;center_horizontal&quot;&gt;
-        &lt;TextView
-            android:layout_width=&quot;match_parent&quot;
-            android:layout_height=&quot;wrap_content&quot;
-            android:text=&quot;10 Students Basic Information&quot;
-            android:textColor=&quot;#86AD33&quot;
-            android:textSize=&quot;20dp&quot;
-            android:textStyle=&quot;bold&quot; /&gt;
-    &lt;/TableRow&gt;
-    &lt;TableRow
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;wrap_content&quot;&gt;
-        &lt;TextView
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:text=&quot;Student Numbers&quot;
-            android:textColor=&quot;#000&quot;
-            android:textStyle=&quot;bold&quot; /&gt;
-        &lt;TextView
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:text=&quot;Name&quot;
-            android:textColor=&quot;#000&quot;
-            android:textStyle=&quot;bold&quot; /&gt;
-        &lt;TextView
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:text=&quot;RollNo&quot;
-            android:textColor=&quot;#000&quot;
-            android:textStyle=&quot;bold&quot; /&gt;
-        &lt;TextView
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:text=&quot;Age&quot;
-            android:textColor=&quot;#000&quot;
-            android:textStyle=&quot;bold&quot; /&gt;
-    &lt;/TableRow&gt;
-    &lt;TableRow
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;wrap_content&quot;&gt;
-        &lt;TextView
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:layout_height=&quot;wrap_content&quot;
-            android:text=&quot;Student 1:&quot;
-            android:textColor=&quot;#86AD33&quot;
-            android:textStyle=&quot;bold&quot; /&gt;
-        &lt;EditText
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:layout_height=&quot;wrap_content&quot;
-            /&gt;
-        &lt;EditText
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:layout_height=&quot;wrap_content&quot; /&gt;
-        &lt;EditText
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:layout_height=&quot;wrap_content&quot; /&gt;
-    &lt;/TableRow&gt;
-    &lt;TableRow
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;wrap_content&quot;&gt;
-        &lt;TextView
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:text=&quot;Student 2:&quot;
-            android:textColor=&quot;#86AD33&quot;
-            android:textStyle=&quot;bold&quot; /&gt;
-        &lt;EditText
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:layout_height=&quot;wrap_content&quot; /&gt;
-        &lt;EditText
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:layout_height=&quot;wrap_content&quot; /&gt;
-        &lt;EditText
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:layout_height=&quot;wrap_content&quot; /&gt;
-    &lt;/TableRow&gt;
-    &lt;TableRow
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;wrap_content&quot;&gt;
-        &lt;TextView
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:text=&quot;Student 3:&quot;
-            android:textColor=&quot;#86AD33&quot;
-            android:textStyle=&quot;bold&quot; /&gt;
-        &lt;EditText
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:layout_height=&quot;wrap_content&quot; /&gt;
-        &lt;EditText
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:layout_height=&quot;wrap_content&quot; /&gt;
-        &lt;EditText
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:layout_height=&quot;wrap_content&quot; /&gt;
-    &lt;/TableRow&gt;
-    &lt;TableRow
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;wrap_content&quot;&gt;
-        &lt;TextView
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:text=&quot;Student 4:&quot;
-            android:textColor=&quot;#86AD33&quot;
-            android:textStyle=&quot;bold&quot; /&gt;
-        &lt;EditText
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:layout_height=&quot;wrap_content&quot; /&gt;
-        &lt;EditText
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:layout_height=&quot;wrap_content&quot; /&gt;
-        &lt;EditText
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:layout_height=&quot;wrap_content&quot; /&gt;
-    &lt;/TableRow&gt;
-    &lt;TableRow
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;wrap_content&quot;&gt;
-        &lt;TextView
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:text=&quot;Student 5:&quot;
-            android:textColor=&quot;#86AD33&quot;
-            android:textStyle=&quot;bold&quot; /&gt;
-        &lt;EditText
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:layout_height=&quot;wrap_content&quot; /&gt;
-        &lt;EditText
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:layout_height=&quot;wrap_content&quot; /&gt;
-        &lt;EditText
-            android:layout_width=&quot;0dp&quot;
-            android:layout_weight=&quot;1&quot;
-            android:layout_height=&quot;wrap_content&quot; /&gt;
-    &lt;/TableRow&gt;
-&lt;/TableLayout&gt;
-</code></pre>
-<p><a href="https://codingatharva.blogspot.com/2020/02/program-to-display-10-students-basic-info-in-table-layout-android.html">Source</a></p>
-<h2>4. Write a program to accept username and password from the end user using Text View and edit Text.</h2>
-<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;TableLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
-    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;
-    android:padding=&quot;50dp&quot;
-    tools:context=&quot;.MainActivity&quot;&gt;
-    &lt;TextView
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:gravity=&quot;center&quot;
-        android:textSize=&quot;25dp&quot;
-        android:text=&quot;Login Page&quot; /&gt;
-    &lt;TableRow
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:gravity=&quot;center_horizontal&quot;&gt;
-        &lt;TextView
-            android:layout_height=&quot;wrap_content&quot;
-            android:layout_weight=&quot;1&quot;
-            android:gravity=&quot;center&quot;
-            android:text=&quot;Enter UserName:&quot; /&gt;
-
-        &lt;EditText
-            android:id=&quot;@+id/user&quot;
-            android:layout_height=&quot;wrap_content&quot;
-            android:layout_weight=&quot;1&quot;
-            android:hint=&quot;abc@gmail.com&quot; /&gt;
-    &lt;/TableRow&gt;
-    &lt;TableRow
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:gravity=&quot;center_horizontal&quot;&gt;
-        &lt;TextView
-            android:layout_height=&quot;wrap_content&quot;
-            android:layout_weight=&quot;1&quot;
-            android:gravity=&quot;center&quot;
-            android:text=&quot;Enter Password:&quot; /&gt;
-        &lt;EditText
-            android:id=&quot;@+id/pass&quot;
-            android:layout_height=&quot;wrap_content&quot;
-            android:layout_weight=&quot;1&quot;
-            android:hint=&quot;1234&quot; /&gt;
-    &lt;/TableRow&gt;
-    &lt;Button
-        android:id=&quot;@+id/btn1&quot;
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:layout_marginBottom=&quot;172dp&quot;
-        android:text=&quot;Login&quot; /&gt;
-&lt;/TableLayout&gt;
-</code></pre>
-<pre><code class="language-java">import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
-public class MainActivity extends AppCompatActivity {
-   EditText user,pass;
-    Button b;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        b= findViewById(R.id.btn1);
-        user = findViewById(R.id.user);
-        pass = findViewById(R.id.pass);
-        b.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(user.getText().toString().equals(&quot;atharva&quot;) &amp; pass.getText().toString().equals(&quot;1234&quot;))
-?
-                {
-                    Toast.makeText( getApplicationContext(),&quot;Login Sucessful&quot;,Toast.LENGTH_SHORT).show();
-                }
-                else
-                {
-                    Toast.makeText( getApplicationContext(),&quot;Login UnSucessful&quot;,Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-    }
-}
-</code></pre>
-<p><a href="https://codingatharva.blogspot.com/2020/03/program-to-accept-username-and-password-in-Android-Studio.html">Source</a></p>
-<h2>5. Write a program to create a toggle button to display ON/OFF Bluetooth on the display screen.</h2>
-<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
-    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;
-    tools:context=&quot;.MainActivity&quot;
-    android:padding=&quot;20dp&quot;&gt;
-    &lt;ToggleButton
-        android:id=&quot;@+id/toggleButton&quot;
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;50dp&quot;
-        android:text=&quot;ToggleButton&quot;
-        android:textOn=&quot;ON&quot;
-        android:textOff=&quot;OFF&quot;
-        android:textSize=&quot;20sp&quot;
-        android:layout_centerInParent=&quot;true&quot;/&gt;
-    &lt;TextView android:id=&quot;@+id/textView&quot;
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:layout_below=&quot;@id/toggleButton&quot;
-        android:text=&quot;Bluetooth is OFF&quot;
-        android:gravity=&quot;center_horizontal&quot;
-        android:layout_marginTop=&quot;20dp&quot;
-        android:textSize=&quot;20sp&quot;
-        android:textColor=&quot;@color/colorAccent&quot;/&gt;
-&lt;/RelativeLayout&gt;
-</code></pre>
-<pre><code class="language-java">package com.example.togglebuttonbluetooth;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.widget.CompoundButton;
-import android.widget.TextView;
-import android.widget.ToggleButton;
-
-public class MainActivity extends AppCompatActivity {
-
-    ToggleButton toggleButton;
-    TextView textView;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        toggleButton = findViewById(R.id.toggleButton);
-        textView = findViewById(R.id.textView);
-
-        toggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
-                if(isChecked)
-                {
-                    textView.setText(&quot;Bluetooth is &quot; + toggleButton.getTextOn());
-                }
-                else
-                {
-                    textView.setText(&quot;Bluetooth is &quot; + toggleButton.getTextOff());
-                }
-            }
-        });
-    }
-}
-</code></pre>
-<p><a href="http://www.programmingtutorials4u.com/android-programming/programs/android-toggle-button/">Source</a></p>
-<h2>6. Write a program to create a login form for a social networking site.</h2>
-<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
-    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;
-    android:background=&quot;#495B8F&quot;
-    android:padding=&quot;20dp&quot;
-    tools:context=&quot;.MainActivity&quot;&gt;
-
-    &lt;TextView android:id=&quot;@+id/logo&quot;
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;80dp&quot;
-        android:text=&quot;F A C E B O O K&quot;
-        android:gravity=&quot;center&quot;
-        android:textSize=&quot;40sp&quot;
-        android:textStyle=&quot;bold&quot;
-        android:layout_marginTop=&quot;40dp&quot;
-        android:textColor=&quot;@android:color/white&quot;/&gt;
-
-    &lt;EditText
-        android:id=&quot;@+id/username&quot;
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;60dp&quot;
-        android:layout_below=&quot;@id/logo&quot;
-        android:layout_marginTop=&quot;30dp&quot;
-        android:background=&quot;@android:color/white&quot;
-        android:fontFamily=&quot;monospace&quot;
-        android:hint=&quot;Email or phone number&quot;
-        android:padding=&quot;10dp&quot;
-        android:textSize=&quot;22sp&quot; /&gt;
-
-    &lt;EditText
-        android:id=&quot;@+id/password&quot;
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;60dp&quot;
-        android:layout_below=&quot;@id/username&quot;
-        android:background=&quot;@android:color/white&quot;
-        android:fontFamily=&quot;monospace&quot;
-        android:hint=&quot;Password&quot;
-        android:padding=&quot;10dp&quot;
-        android:layout_marginTop=&quot;20dp&quot;
-        android:textSize=&quot;22sp&quot; /&gt;
-
-    &lt;Button android:id=&quot;@+id/btnLogin&quot;
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;50dp&quot;
-        android:layout_below=&quot;@id/password&quot;
-        android:layout_marginTop=&quot;30dp&quot;
-        android:text=&quot;Log In&quot;
-        android:background=&quot;#6D9ADD&quot;
-        android:textColor=&quot;@android:color/white&quot;
-        android:textSize=&quot;18sp&quot;/&gt;
-
-    &lt;TextView
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:layout_centerHorizontal=&quot;true&quot;
-        android:text=&quot;Forgot Password?&quot;
-        android:textColor=&quot;@android:color/white&quot;
-        android:layout_below=&quot;@id/btnLogin&quot;
-        android:layout_marginTop=&quot;10dp&quot;
-        android:textSize=&quot;16sp&quot;/&gt;
-
-&lt;/RelativeLayout&gt;
-</code></pre>
-<pre><code class="language-java">package com.example.socialnetworkingapp;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-
-public class MainActivity extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-    }
-}
-</code></pre>
-<p><a href="http://www.programmingtutorials4u.com/android-programming/programs/social-networking-login-form/">Source</a></p>
-<h2>7. Write a program to show five checkboxes and toast selected checkbox.</h2>
-<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
-    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;
-    android:orientation=&quot;vertical&quot;
-    android:padding=&quot;10dp&quot;
-    tools:context=&quot;.MainActivity&quot;&gt;
-
-    &lt;CheckBox
-        android:id=&quot;@+id/cb1&quot;
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:text=&quot;Android&quot;
-        android:textSize=&quot;25dp&quot;
-        android:layout_gravity=&quot;center&quot;
-        android:padding=&quot;10dp&quot;
-        android:checked=&quot;false&quot;/&gt;
-
-    &lt;CheckBox
-        android:id=&quot;@+id/cb2&quot;
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:text=&quot;Pythpn&quot;
-        android:textSize=&quot;25dp&quot;
-        android:layout_gravity=&quot;center&quot;
-        android:padding=&quot;10dp&quot;
-        android:checked=&quot;false&quot;/&gt;
-    &lt;CheckBox
-        android:id=&quot;@+id/cb3&quot;
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:text=&quot;PHP&quot;
-        android:textSize=&quot;25dp&quot;
-        android:layout_gravity=&quot;center&quot;
-        android:padding=&quot;10dp&quot;
-        android:checked=&quot;false&quot;/&gt;
-    &lt;CheckBox
-        android:id=&quot;@+id/cb4&quot;
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:text=&quot;C&quot;
-        android:textSize=&quot;25dp&quot;
-        android:layout_gravity=&quot;center&quot;
-        android:padding=&quot;10dp&quot;
-        android:checked=&quot;false&quot;/&gt;
-    &lt;CheckBox
-        android:id=&quot;@+id/cb5&quot;
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:text=&quot;Java&quot;
-        android:textSize=&quot;25dp&quot;
-        android:layout_gravity=&quot;center&quot;
-        android:padding=&quot;10dp&quot;
-        android:checked=&quot;false&quot;/&gt;
-
-    &lt;Button
-        android:id=&quot;@+id/btn&quot;
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:text=&quot;Submit&quot;
-        android:textSize=&quot;35dp&quot;
-        android:layout_gravity=&quot;center&quot;
-        android:padding=&quot;10dp&quot;/&gt;
-&lt;/LinearLayout&gt;
-</code></pre>
-<p><a href="https://codingatharva.blogspot.com/2020/03/program-demonstrate-checkboxes-in-android-studio.html">Source</a></p>
-<h2>8. Write a program to display circular progress bar.</h2>
-<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;LinearLayout
-    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;
-    android:gravity=&quot;center_horizontal&quot;
-    android:orientation=&quot;vertical&quot;
-    tools:context=&quot;.MainActivity&quot;&gt;
-
-    &lt;RelativeLayout
-        android:id=&quot;@+id/progress_layout&quot;
-        android:layout_width=&quot;200dp&quot;
-        android:layout_height=&quot;200dp&quot;
-        android:layout_margin=&quot;100dp&quot;&gt;
-
-        &lt;!--progress bar implementation--&gt;
-        &lt;ProgressBar
-            android:id=&quot;@+id/progress_bar&quot;
-            style=&quot;?android:attr/progressBarStyleHorizontal&quot;
-            android:layout_width=&quot;match_parent&quot;
-            android:layout_height=&quot;match_parent&quot;
-            android:background=&quot;@drawable/circular_shape&quot;
-            android:indeterminate=&quot;false&quot;
-            android:progressDrawable=&quot;@drawable/circular_progress_bar&quot;
-            android:textAlignment=&quot;center&quot; /&gt;
-
-        &lt;!--Text implementation in center of the progress bar--&gt;
-        &lt;TextView
-            android:id=&quot;@+id/progress_text&quot;
-            android:layout_width=&quot;wrap_content&quot;
-            android:layout_height=&quot;wrap_content&quot;
-            android:layout_alignParentLeft=&quot;true&quot;
-            android:layout_alignParentRight=&quot;true&quot;
-            android:layout_centerVertical=&quot;true&quot;
-            android:gravity=&quot;center&quot;
-            android:text=&quot;---&quot;
-            android:textColor=&quot;@color/colorPrimary&quot;
-            android:textSize=&quot;28sp&quot;
-            android:textStyle=&quot;bold&quot; /&gt;
-    &lt;/RelativeLayout&gt;
-
-&lt;/LinearLayout&gt;
-</code></pre>
-<pre><code class="language-java">import android.os.Bundle;
-import android.os.Handler;
-import android.widget.ProgressBar;
-import android.widget.TextView;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-public class MainActivity extends AppCompatActivity {
-
-    private ProgressBar progressBar;
-    private TextView progressText;
-    int i = 0;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        // set the id for the progressbar and progress text
-        progressBar = findViewById(R.id.progress_bar);
-        progressText = findViewById(R.id.progress_text);
-
-        final Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                // set the limitations for the numeric
-                // text under the progress bar
-                if (i &lt;= 100) {
-                    progressText.setText(&quot;&quot; + i);
-                    progressBar.setProgress(i);
-                    i++;
-                    handler.postDelayed(this, 200);
-                } else {
-                    handler.removeCallbacks(this);
-                }
-            }
-        }, 200);
-    }
-}
-</code></pre>
-<p><a href="https://www.geeksforgeeks.org/how-to-implement-circular-progressbar-in-android/">Source</a></p>
-<h2>9. Write a program to display 15 buttons using Grid view.</h2>
-<p><a href="https://codingatharva.blogspot.com/2020/03/program-to-display-15-buttons-using-grid-view-in-android-studio.html">Source</a></p>
-<h2>10. Write a program to display a toast message</h2>
-<pre><code class="language-java">import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
-
-public class MainActivity extends AppCompatActivity {
-
-    Button b1;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        b1 = (Button) findViewById(R.id.toast_button);
-
-        b1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this,&quot;You just Toasted me!!!&quot;,Toast.LENGTH_LONG).show();
-                /*Another way to display a Toast message
-                    Toast t=Toast.makeText(MainActivity.this,&quot;You just Toasted me!!!&quot;,Toast.LENGTH_LONG);
-                    t.show();
-                */
-            }
-        });
-    }
-
-}
-</code></pre>
-<pre><code class="language-xml">&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
-    android:id=&quot;@+id/activity_main&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;
-    android:paddingBottom=&quot;@dimen/activity_vertical_margin&quot;
-    android:paddingLeft=&quot;@dimen/activity_horizontal_margin&quot;
-    android:paddingRight=&quot;@dimen/activity_horizontal_margin&quot;
-    android:paddingTop=&quot;@dimen/activity_vertical_margin&quot;
-    tools:context=&quot;codedost.toast.MainActivity&quot;&gt;
-
-    &lt;Button
-        android:id=&quot;@+id/toast_button&quot;
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:text=&quot;Toast me!&quot;
-        android:layout_centerVertical=&quot;true&quot;
-        android:layout_centerHorizontal=&quot;true&quot;
-    /&gt;
-
-&lt;/RelativeLayout&gt;
-</code></pre>
-<p><a href="https://www.javatpoint.com/android-toast-example">Source</a></p>]]></content>
-  </entry>
-  <entry>
     <title>Viva 6S</title>
     <link href="https://anzenkodo.github.io/notes/Programming/android/Viva-6S.html" />
-    <updated>2023-01-10T04:36:56.343Z</updated>
+    <updated>2023-01-10T05:05:48.951Z</updated>
     <id>/notes/Programming/android/Viva-6S.html</id>
     <content type="html"><![CDATA[<h1>MAD VIVA QUESTION</h1>
 <p>(thk to SaturoGojoo,AK,NEWBIEN00B)</p>
@@ -1352,194 +662,9 @@ Progress bars are used to show progress of a task. For example, when you are upl
 </ul>]]></content>
   </entry>
   <entry>
-    <title>UT2 6S</title>
-    <link href="https://anzenkodo.github.io/notes/Programming/android/UT2-6S.html" />
-    <updated>2023-01-10T04:36:56.343Z</updated>
-    <id>/notes/Programming/android/UT2-6S.html</id>
-    <content type="html"><![CDATA[<h1>MAD QUESTION BANK</h1>
-<h2>1. Write the syntax for Intent-Filter tag.</h2>
-<pre><code class="language-xml">&lt;intent-fliter
-android:icon=&quot;drawable resource&quot;
-android:label=&quot;string resource&quot;
-android:priority=&quot;integer&quot;&gt;
-&lt;/intent-fliter&gt;
-</code></pre>
-<h2>2. Define Services in Android OS.</h2>
-<ul>
-<li>A service is an application component which runs withour direst interaction
-with the user in the background.</li>
-<li>Services are used for repetitive and potentially long running operations:
-<ul>
-<li>Internet downloads</li>
-<li>Checking for new data</li>
-<li>Data processing</li>
-<li>Updating content</li>
-<li>Providers and the like</li>
-</ul>
-</li>
-<li>They typically run in the background to perform long-running operations or
-work for remote processes.</li>
-</ul>
-<h3>1. Started</h3>
-<ul>
-<li>The service start with startService() function.</li>
-<li>To stop the service we can use stopService() &amp; stopSelf() function.</li>
-</ul>
-<h3>2. Bound</h3>
-<ul>
-<li>A service is bound when an application component binds to it by calling
-bindService().</li>
-<li>To un bound the service we can use unbindService() function.</li>
-</ul>
-<h2>3. Enlist the steps to publish the Android application</h2>
-<ul>
-<li><strong>Step 1</strong> - Sign up or Sign in for an account on the Android Developer
-console.</li>
-<li><strong>Step 2</strong> - Create a new appplication.</li>
-<li><strong>Step 3</strong> - Prepare multimedia.</li>
-<li><strong>Step 4</strong> - Prepare code for release.</li>
-<li><strong>Step 5</strong> - Build a release-ready APK.</li>
-<li><strong>Step 6</strong> - Upload APK complete the checklist on the left until all the items
-have a green checkmark.</li>
-</ul>
-<h2>5. What is Date and Time picker with its methods?</h2>
-<h3>Date Picker</h3>
-<ul>
-<li>Android Date Picker allows you to select the date consisting of day, month and
-year in your custom user interface.</li>
-<li>Methods of DatePicker:
-<ul>
-<li><strong>getDayOfMonth()</strong> - This method gets the selected day of month.</li>
-<li><strong>getMonth()</strong> - This method gets the selected month.</li>
-<li><strong>getYear()</strong> - This method gets the selected year.</li>
-<li><strong>getFirstDayOfWeek()</strong> - This method returns first day of the week.</li>
-<li><strong>getCalendarView()</strong> - This method returns calender View.</li>
-</ul>
-</li>
-</ul>
-<h3>TimePicker</h3>
-<ul>
-<li>Android Time Picker allows us to select the time of day in either 24h or AM/PM
-mode.</li>
-<li>The time consists of hours, minutes and clock format.</li>
-<li>Methods of TimePicker</li>
-</ul>
-<ol>
-<li><strong>setCurrentHour()</strong> - This method sets the current hour.</li>
-<li>setCurrentMinute() - This method sets the current minute.</li>
-<li><strong>is24HoursView()</strong> - This method returns true if this 24 hour view else
-false.</li>
-<li><strong>isEnabled()</strong> - This method returns the enabled status for this view.</li>
-</ol>
-<h2>6. Write a program to display circular progress bar.</h2>
-<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;RelativeLayout
-  xmlns:android=&quot;https://schemas.android.com/apk/res/android&quot;
-  xmlns:app=&quot;https://schemas.android.com/apk/res-auto&quot;
-  xmlns:tools=&quot;https://schemas.android.com/tools&quot;
-  android:layout_width=&quot;match_parent&quot;
-  android:layout_height=&quot;match_parent&quot;
-  tools:context=&quot;.MainActivity&quot;&gt;
-  &lt;Button
-    android:id=&quot;@+id/btnDownloadFile&quot;
-    android:layout_width=&quot;wrap_content&quot;
-    android:layout_height=&quot;wrap_content&quot;
-    android:text=&quot;Download File&quot;
-    andorid:layout_centerInParent=&quot;true&quot; /&gt;
-&lt;/RelativeLayout&gt;
-</code></pre>
-<h2>7. List sensors in Android and explain anyone in detail.</h2>
-<p>The Android supports broad categories of sensors:</p>
-<ol>
-<li>Motion Sensors</li>
-<li>Enviromental Sensors</li>
-<li>Position Sensors</li>
-</ol>
-<h3>Montion Sensors:</h3>
-<ul>
-<li>A motion sensor (or motion detector) is an electronic device that is designed
-to detect and measure movements.</li>
-<li>Motion sensors are used primarily in home and business secrity systems.</li>
-<li>These sensors measure accelecation forces and rotational forces along three
-axes.</li>
-</ul>
-<h2>8. Develop the registration form using the following GUI.</h2>
-<pre><code class="language-xml">&lt;RelativeLayout
-  xmlns:android=&quot;https://schemas.android.com/apk/res/android&quot;
-  xmlns:tools=&quot;https://schemas.android.com/tools&quot;
-  android:layout_width=&quot;match_parent&quot;
-  android:layout_height=&quot;match_parent&quot;
-  android:paddingBottom=&quot;wrap_content&quot;
-  android:paddingTop=&quot;wrap_content&quot;
-  tools:context=&quot;.MainActivity&quot;&gt;
-  &lt;FrameLayout&gt;
-    &lt;ImageView
-      android:layout_width=&quot;wrap_content&quot;
-      android:layout_height=&quot;wrap_content&quot;
-      android:src=&quot;@drawable/banner_image&quot; /&gt;
-  &lt;FrameLayout&gt;
-  &lt;EditText
-    android:id=&quot;@+id/editText1&quot;
-    android:hint=&quot;Name&quot;
-    android:layout_width=&quot;wrap_content&quot;
-    android:layout_height=&quot;wrap_content&quot;
-    android:layout_centerHorizontal=&quot;true&quot;
-    android:layout_centerVertical=&quot;true&quot;
-    android:drawableLeft=&quot;@drawable/name_image&quot; /&gt;
-  &lt;EditText
-    android:id=&quot;@+id/editText2&quot;
-    android:hint=&quot;Email ID&quot;
-    android:layout_width=&quot;wrap_content&quot;
-    android:layout_height=&quot;wrap_content&quot;
-    android:layout_centerHorizontal=&quot;true&quot;
-    android:layout_centerVertical=&quot;true&quot;
-    android:drawbleLeft=&quot;@drawable/email_image&quot; /&gt;
-  &lt;EditText
-    android:id=&quot;@+id/editText1&quot;
-    android:hint=&quot;Password&quot;
-    android:layout_width=&quot;wrap_content&quot;
-    android:layout_height=&quot;wrap_content&quot;
-    android:layout_centerHorizontal=&quot;true&quot;
-    android:layout_centerVertical=&quot;true&quot;
-    android:drawableLeft=&quot;@drawable/pass_image&quot; /&gt;
-  &lt;EditText
-    android:id=&quot;@+id/editText1&quot;
-    android:hint=&quot;Confirm Password&quot;
-    android:layout_width=&quot;wrap_content&quot;
-    android:layout_height=&quot;wrap_content&quot;
-    android:layout_centerHorizontal=&quot;true&quot;
-    android:layout_cneterVertical=&quot;true&quot;
-    android:drawableLeft=&quot;@drawable/conpass_image&quot; /&gt;
-  &lt;EditText
-    android:id=&quot;@+id/editText1&quot;
-    android:hint=&quot;Enter Mobile&quot;
-    android:layout_width=&quot;wrap_content&quot;
-    android:layout_height=&quot;wrap_content&quot;
-    android:layout_centerHorizontal=&quot;true&quot;
-    android:layout_centerVertical=&quot;true&quot;
-    android:drawableLeft=&quot;@drawable/mobile_image&quot; /&gt;
-  &lt;RadioButton
-    android:id=&quot;@+id/radioMale&quot;
-    android:layout_width=&quot;wrap_content&quot;
-    android:layout_height=&quot;wrap_content&quot;
-    android:text=&quot;Male&quot; /&gt;
-  &lt;RadioButton
-    android:id=&quot;@+id/radioFemale&quot;
-    android:layout_width=&quot;wrap_content&quot;
-    android:layout_height=&quot;wrap_content&quot;
-    android:text=&quot;Female&quot; /&gt;
-  &lt;Button
-    android:id=&quot;@+id/btnDisplay&quot;
-    android:layout_width=&quot;wrap_content&quot;
-    android:layout_height=&quot;wrap_content&quot;
-    android:text=&quot;Register&quot; /&gt;
-&lt;/RelativeLayout&gt;
-</code></pre>]]></content>
-  </entry>
-  <entry>
     <title>Viva 6S sort</title>
     <link href="https://anzenkodo.github.io/notes/Programming/android/Viva-6S-sort.html" />
-    <updated>2023-01-10T04:36:56.343Z</updated>
+    <updated>2023-01-10T05:05:48.951Z</updated>
     <id>/notes/Programming/android/Viva-6S-sort.html</id>
     <content type="html"><![CDATA[<h1>MAD VIVA</h1>
 <h2>1) What is Android?</h2>
@@ -1881,7 +1006,7 @@ AM/PM mode or 24h mode.</li>
   <entry>
     <title>keys</title>
     <link href="https://anzenkodo.github.io/notes/Programming/database/keys.html" />
-    <updated>2023-01-10T04:36:56.343Z</updated>
+    <updated>2023-01-10T05:05:48.951Z</updated>
     <id>/notes/Programming/database/keys.html</id>
     <content type="html"><![CDATA[<p>Keys are used to uniquely identify any record or row of data from the table. It
 is also used to establish and identify relationships between tables.</p>
@@ -1909,7 +1034,7 @@ candidate key.</li>
   <entry>
     <title>question bank</title>
     <link href="https://anzenkodo.github.io/notes/Programming/database/question-bank.html" />
-    <updated>2023-01-10T04:36:56.343Z</updated>
+    <updated>2023-01-10T05:05:48.951Z</updated>
     <id>/notes/Programming/database/question-bank.html</id>
     <content type="html"><![CDATA[<h2>Question bank for 2 Marks.</h2>
 <h3>1. Define Entity Set?</h3>
@@ -1951,7 +1076,7 @@ single entity and each column representing an attribute of that entity.</li>
   <entry>
     <title>er diagram</title>
     <link href="https://anzenkodo.github.io/notes/Programming/database/er-diagram/" />
-    <updated>2023-01-10T04:36:56.343Z</updated>
+    <updated>2023-01-10T05:05:48.951Z</updated>
     <id>/notes/Programming/database/er-diagram/</id>
     <content type="html"><![CDATA[<p>An Entity Relationship Diagram (ERD) is a visual representation of different
 data using conventions that describe how these data are related to each other.</p>
@@ -2080,7 +1205,7 @@ Entity, which is in relationship with another entity Visitor.</li>
   <entry>
     <title>decision tree</title>
     <link href="https://anzenkodo.github.io/notes/Programming/data-structure/tree/decision-tree.html" />
-    <updated>2023-01-10T04:36:56.343Z</updated>
+    <updated>2023-01-10T05:05:48.951Z</updated>
     <id>/notes/Programming/data-structure/tree/decision-tree.html</id>
     <content type="html"><![CDATA[<p>A decision tree is a flowchart-like tree structure that is used to make a
 decision or prediction based on multiple conditions. It is a supervised learning
@@ -2103,7 +1228,7 @@ used in data mining and machine learning applications.</p>]]></content>
   <entry>
     <title>threaded binary tree</title>
     <link href="https://anzenkodo.github.io/notes/Programming/data-structure/tree/threaded-binary-tree.html" />
-    <updated>2023-01-10T04:36:56.343Z</updated>
+    <updated>2023-01-10T05:05:48.951Z</updated>
     <id>/notes/Programming/data-structure/tree/threaded-binary-tree.html</id>
     <content type="html"><![CDATA[<p>A threaded binary tree is a binary tree in which the nodes are threaded, or
 connected, in a way that allows them to be traversed efficiently. In a threaded
@@ -2124,5 +1249,71 @@ tree traversal, but they may not be the best choice for all applications.</p>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=1E95XJd5bS0">Threaded binary tree | data structure</a></li>
 </ul>]]></content>
+  </entry>
+  <entry>
+    <title>linked list</title>
+    <link href="https://anzenkodo.github.io/notes/Programming/data-structure/linked-list/" />
+    <updated>2023-01-10T05:05:48.951Z</updated>
+    <id>/notes/Programming/data-structure/linked-list/</id>
+    <content type="html"><![CDATA[<h2>What is traverse?</h2>
+<ol>
+<li>To traverse a data structure means to visit each element in the structure,
+usually in a systematic way. In the context of a linked list, traversing the
+list means visiting each node in the list, usually by following the next
+pointers from one node to the next.</li>
+<li>For example, if you have a linked list with nodes A, B, C, and D, and you
+want to traverse the list, you might start at node A and follow the next
+pointer to node B, then follow the next pointer to node C, and so on, until
+you reach the end of the list.</li>
+<li>Traversing a linked list can be useful for a variety of purposes, such as
+searching for a specific element, updating the values of certain elements, or
+simply printing out all the elements in the list.</li>
+</ol>
+<h2>What is queue?</h2>
+<ol>
+<li>A queue is a linear data structure that allows for the insertion of elements
+at one end (called the back or rear of the queue) and the deletion of
+elements at the other end (called the front or head of the queue). This is
+known as a First-In, First-Out (FIFO) structure, as the elements that are
+inserted first are also the first to be removed.</li>
+<li>Queues are often used to store data that needs to be processed in a specific
+order, or to store data that will be used by multiple consumers. For example,
+a printer queue might store print jobs that need to be printed in the order
+they were received, or a task queue might store tasks that need to be
+completed by a set of worker threads.</li>
+<li>Queues are useful for storing and managing data in a way that ensures that
+elements are processed in a specific order, and that no element is processed
+more than once. They can be implemented using a variety of data structures,
+such as arrays, linked lists, or circular linked lists.</li>
+</ol>]]></content>
+  </entry>
+  <entry>
+    <title>circular linked list</title>
+    <link href="https://anzenkodo.github.io/notes/Programming/data-structure/linked-list/circular-linked-list.html" />
+    <updated>2023-01-10T05:05:48.951Z</updated>
+    <id>/notes/Programming/data-structure/linked-list/circular-linked-list.html</id>
+    <content type="html"><![CDATA[<p>A circular linked list is a type of linked list in which the last node points to
+the first node, creating a circular chain. This structure has several advantages
+over a traditional linear linked list:</p>
+<ol>
+<li>It allows for easier traversal: In a circular linked list, you can traverse
+the entire list by starting at any node and following the next pointers until
+you reach the starting node again. In a linear linked list, you would have to
+check whether you have reached the end of the list at each step.</li>
+<li>It allows for efficient insertion and deletion at the beginning or end of the
+list: In a circular linked list, the last node is always adjacent to the
+first node, so you can easily insert or delete nodes at either end of the
+list without having to traverse the entire list.</li>
+<li>It allows for efficient implementation of queue data structures: A queue is a
+data structure that allows for insertion at one end (the back of the queue)
+and deletion at the other end (the front of the queue). In a circular linked
+list, you can implement a queue by keeping a pointer to both the front and
+back of the queue and using the next pointers to move between nodes. This
+allows for efficient insertion and deletion operations.</li>
+</ol>
+<p>Overall, the use of a circular linked list can make certain operations more
+efficient compared to a linear linked list, particularly when it comes to
+inserting and deleting nodes at the beginning or end of the list, or when
+implementing queue data structures.</p>]]></content>
   </entry>
 </feed>
