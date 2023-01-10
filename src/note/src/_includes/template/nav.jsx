@@ -31,13 +31,14 @@ function createHtmlList(obj) {
         const index = obj["children"].findIndex((v) => v.name === "index.md");
 
         if (index !== -1) {
-          if (index === 0) {
-            output += `<li class="${active}"><a href="${url}">` + name +
-              "</a></li>";
-          } else {
+          if (index !== 0) {
             output += `<details><summary class="${active}"><a href="${url}">` +
-              name +
-              "</a></summary>";
+            name +
+            "</a></summary>";
+            
+          } else {
+ output += `<li class="${active}"><a href="${url}">` + name +
+              "</a></li>";
           }
         } else {
           output += `<details><summary class="not-active">` + name +
