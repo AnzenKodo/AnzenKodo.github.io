@@ -123,49 +123,49 @@ sudo nixos-rebuild switch
   <a name="file-structure" class="header-anchor a-no-underline" href="#file-structure">File Structure</a>
 </h3><pre>
 <!--TREE:START-->dotfiles
- ├─> nix
- │   ├── configuration.nix
- │   ├── packages.nix
- │   ├── theme.nix
- │   ├── home.nix
- │   ├── fonts.nix
- │   └── system.nix
- ├─> shell
- │   ├── export.sh
- │   ├── profile.sh
- │   ├── config.fish
- │   └── alias.sh
- ├─> bin
- │   ├── backup
- │   ├── note
- │   ├── autostart
- │   ├── chrome_extensions_backup.js
- │   ├── emoji
- │   └── wallpaper.js
+ ├─> qtile
+ │   ├── config.py
+ │   └─> modules
+ │       ├── floating_layout.py
+ │       ├── shortcuts.py
+ │       ├── hooks.py
+ │       ├── advance.py
+ │       ├── screen.py
+ │       └── layout.py
+ ├── git.init
  ├─> browser
  │   ├── Bookmarks.bak
  │   └── Extensions.bak
- ├── git.init
+ ├─> shell
+ │   ├── export.sh
+ │   ├── alias.sh
+ │   ├── config.fish
+ │   └── profile.sh
  ├─> helix
  │   ├── languages.toml
  │   └── config.toml
  ├─> kitty
- │   ├── kitty.conf.bak
- │   ├── unicode-input-favorites.conf
- │   ├── settings.conf
- │   ├── shortcuts.conf
+ │   ├── current-theme.conf
  │   ├── kitty.conf
  │   ├── unicode-input-favorites.conf.save
- │   └── current-theme.conf
- └─> qtile
-     ├─> modules
-     │   ├── screen.py
-     │   ├── layout.py
-     │   ├── advance.py
-     │   ├── shortcuts.py
-     │   ├── hooks.py
-     │   └── floating_layout.py
-     └── config.py<!--TREE:END-->
+ │   ├── settings.conf
+ │   ├── shortcuts.conf
+ │   ├── unicode-input-favorites.conf
+ │   └── kitty.conf.bak
+ ├─> bin
+ │   ├── emoji
+ │   ├── note
+ │   ├── autostart
+ │   ├── backup
+ │   ├── wallpaper.js
+ │   └── chrome_extensions_backup.js
+ └─> nix
+     ├── configuration.nix
+     ├── home.nix
+     ├── theme.nix
+     ├── packages.nix
+     ├── fonts.nix
+     └── system.nix<!--TREE:END-->
 </pre>
 
 <!--BOOKMARKS:START-->
