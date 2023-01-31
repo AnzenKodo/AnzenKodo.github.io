@@ -87,4 +87,8 @@ export default `.content p, .content pre, .content ul, .content ol, .content blo
   max-width: 100%;
   overflow: auto;
   padding-bottom: .5em;
+}
+.content iframe {
+  width: 100%;
+  height: 61vmin;
 }`;
