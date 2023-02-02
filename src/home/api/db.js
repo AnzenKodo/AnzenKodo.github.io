@@ -1,6 +1,6 @@
 import { getAnime, getMovies, getShows } from "../comp/db/api/simkl.js";
 import { gdByCategories, gdByShelf } from "../comp/db/api/goodreads.js";
-import { musicData } from "../comp/db/api/lbz/index.js";
+// import { musicData } from "../comp/db/api/lbz/index.js";
 import { writeInOutput } from "../comp/utils.js";
 
 const data = {
@@ -74,7 +74,7 @@ const data = {
       "listening": await gdByShelf("listening"),
       "dropped": await gdByShelf("listening-dropped"),
     },
-    "music": musicData,
+//     "music": musicData,
   },
 };
 
