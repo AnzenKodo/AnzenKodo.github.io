@@ -1,5 +1,10 @@
 import { DATA } from "../comp/data.js";
-import { getBanner, getWallpaper } from "../comp/ak/pinterest.js";
+import {
+  getBanner,
+  getBrowserWallpaper,
+  getDarkWallpaper,
+  getWallpaper,
+} from "../comp/ak/pinterest.js";
 import getTodo from "../comp/todo.js";
 import { languages } from "../comp/ak/lang.js";
 import { writeInOutput } from "../comp/utils.js";
@@ -21,6 +26,12 @@ const data = {
   ),
   "wallpaper": await getWallpaper(
     "https://i.pinimg.com/originals/b6/b8/d5/b6b8d5c86aa26c964f701a6f8a3a8e51.jpg",
+  ),
+  "darkWallpaper": await getDarkWallpaper(
+    "https://i.pinimg.com/originals/29/e2/ed/29e2ed2f5a67c0827d2b05eb6eb663de.jpg",
+  ),
+  "browserWallpaper": await getBrowserWallpaper(
+    "https://i.pinimg.com/originals/11/13/94/111394df5ea3cf00d7e71c2d2687694c.jpg",
   ),
   "socials": {
     "gitHub": "https://github.com/AnzenKodo",
