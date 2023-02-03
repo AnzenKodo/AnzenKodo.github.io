@@ -3,9 +3,7 @@ const json = await fetch(
   "https://raw.githubusercontent.com/AnzenKodo/dotfiles/master/browser/Bookmarks.bak",
 ).then((res) => res.json());
 
-const obj = json.roots.bookmark_bar.children;
-const bookmarks = obj.filter((val) => val.id === "631");
-const pinboards = bookmarks[0].children;
+const pinboards = json.roots.other.children;
 
 const index = {};
 for (const pinboard of pinboards) {

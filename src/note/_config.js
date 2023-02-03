@@ -72,9 +72,11 @@ site.copy(
 
 const siteData = {
   name: "AK#Notes",
-  description: Deno.readTextFileSync(`src/${input}/index.md`).match(
-    /^[^\n]+(\n[^\n]+)*/,
-  )[0],
+  description: "Degenerate programmer blog.",
+
+  // Deno.readTextFileSync(`src/${input}/index.md`).match(
+  //   /^[^\n]+(\n[^\n]+)*/,
+  // )[0],
   lang: "en",
   author: data.name,
   email: data.email,
