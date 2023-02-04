@@ -11,7 +11,7 @@ export default function getTodo() {
     if (lists === null) continue;
 
     const nestedList = lists.map((list) => {
-      return list.replace(/- \[ \]/, "").replace(/^\s/, "");
+      return list.replace(/\n/, "").replace("- ", "");
     });
 
     obj[title.toLowerCase()] = nestedList;
@@ -19,3 +19,5 @@ export default function getTodo() {
 
   return obj;
 }
+
+console.log(getTodo());
