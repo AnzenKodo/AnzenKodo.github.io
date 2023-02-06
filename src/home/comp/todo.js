@@ -19,5 +19,3 @@ export default function getTodo() {
 
   return obj;
 }
-
-console.log(getTodo());
