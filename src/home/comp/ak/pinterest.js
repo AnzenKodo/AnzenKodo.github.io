@@ -37,14 +37,8 @@ export async function getWallpaper(imgOld) {
   return await getImg(query, imgOld);
 }
 
-export async function getDarkWallpaper(imgOld) {
-  const query =
-    "#mweb-unauth-container > div > div > div:nth-child(5) > div > div.F6l.k1A.zI7.iyn.Hsu > div > div:nth-child(1) > div > div > div.Pj7.sLG.XiG.ho-.m1e > div > div:nth-child(2) > div > div.XiG.zI7.iyn.Hsu > img";
-  return await getImg(query, imgOld);
-}
-
 export async function getBrowserWallpaper(imgOld) {
   const query =
-    "#mweb-unauth-container > div > div > div:nth-child(5) > div > div.F6l.k1A.zI7.iyn.Hsu > div > div:nth-child(1) > div > div > div.Pj7.sLG.XiG.ho-.m1e > div > div:nth-child(3) > div > div.XiG.zI7.iyn.Hsu > img";
+    "#mweb-unauth-container > div > div > div:nth-child(5) > div > div.F6l.k1A.zI7.iyn.Hsu > div > div:nth-child(1) > div > div > div.Pj7.sLG.XiG.ho-.m1e > div > div:nth-child(2) > div > div.XiG.zI7.iyn.Hsu > img";
   return await getImg(query, imgOld);
 }
