@@ -2,7 +2,6 @@ import { DATA } from "../comp/data.js";
 import {
   getBanner,
   getBrowserWallpaper,
-  getDarkWallpaper,
   getWallpaper,
 } from "../comp/ak/pinterest.js";
 import getTodo from "../comp/todo.js";
