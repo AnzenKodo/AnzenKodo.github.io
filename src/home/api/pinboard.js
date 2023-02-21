@@ -3,7 +3,7 @@ const json = await fetch(
   "https://raw.githubusercontent.com/AnzenKodo/dotfiles/master/browser/Bookmarks.bak",
 ).then((res) => res.json());
 
-const pinboards = json.roots.other.children;
+const pinboards = json.roots.synced.children;
 
 const index = {};
 for (const pinboard of pinboards) {
