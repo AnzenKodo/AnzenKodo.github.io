@@ -105,6 +105,7 @@ sudo nixos-rebuild switch
 <li><a href="https://github.com/lawrencehook/remove-youtube-suggestions">RYS — Remove YouTube Suggestions</a> - Spend less time on YouTube. Customize YouTube&#39;s user interface to be less engaging.</li>
 <li><a href="https://github.com/notlmn/copy-as-markdown">Copy as Markdown</a> - Browser extension to copy hyperlinks, images, and selected text as Markdown</li>
 <li><a href="https://twitter.com/vitaminiser">Pinterest Love: Pinterest Screenshot Saver++</a> - Save screenshots and other images to Pinterest, visually search pins and list pinnable images on a page.</li>
+<li><a href="https://chrome.google.com/webstore/detail/nmmicjeknamkfloonkhhcjmomieiodli">YouTube Summary with ChatGPT</a> - Use ChatGPT to summarize YouTube videos</li>
 <li><a href="https://chrome.google.com/webstore/detail/nfakpcpmhhilkdpphcjgnokknpbpdllg">SVG Screenshot</a> - Take scalable, semantic, accessible screenshots, in SVG format.</li>
 <li><a href="https://chrome.google.com/webstore/detail/bgehnoihoklmofgehcefiaicdcdgppck">Spotify Playback Speed</a> - Adds a button and menu to manipulate playback speed on Spotify Web.</li>
 <li><a href="https://add0n.com/always-active.html">Always active Window - Always Visible</a> - Pretend that all browser windows are active by spoofing the visibility state event and more!</li>
@@ -132,49 +133,50 @@ sudo nixos-rebuild switch
  ├─> qtile
  │   ├── config.py
  │   └─> modules
- │       ├── floating_layout.py
  │       ├── shortcuts.py
  │       ├── hooks.py
  │       ├── advance.py
- │       ├── screen.py
- │       └── layout.py
- ├─> wezterm
- │   └── wezterm.lua
- ├── git.init
+ │       ├── layout.py
+ │       ├── floating_layout.py
+ │       └── screen.py
+ ├─> nix
+ │   ├── fonts.nix
+ │   ├── packages.nix
+ │   ├── theme.nix
+ │   ├── home.nix
+ │   ├── configuration.nix
+ │   └── system.nix
+ ├─> bin
+ │   ├── chrome_extensions_backup.js
+ │   ├── wallpaper.js
+ │   ├── autostart
+ │   ├── backup
+ │   ├── emoji
+ │   └── note
+ ├─> shell
+ │   ├── config.fish
+ │   ├── profile.sh
+ │   ├── export.sh
+ │   └── alias.sh
  ├─> browser
  │   ├── Bookmarks.bak
  │   └── Extensions.bak
- ├─> shell
- │   ├── export.sh
- │   ├── alias.sh
- │   ├── config.fish
- │   └── profile.sh
  ├─> helix
  │   ├── languages.toml
  │   └── config.toml
  ├─> kitty
- │   ├── current-theme.conf
- │   └── kitty.conf
- ├─> bin
- │   ├── emoji
- │   ├── note
- │   ├── autostart
- │   ├── backup
- │   ├── wallpaper.js
- │   └── chrome_extensions_backup.js
- └─> nix
-     ├── configuration.nix
-     ├── home.nix
-     ├── theme.nix
-     ├── packages.nix
-     ├── fonts.nix
-     └── system.nix<!--TREE:END-->
+ │   ├── kitty.conf
+ │   └── current-theme.conf
+ └── git.init<!--TREE:END-->
 </pre>
 
 <!--BOOKMARKS:START-->
 <h2>
   <a name="other-recommendation" class="header-anchor a-no-underline" href="#other-recommendation">Other Recommendation</a>
-</h2><h3>
+</h2><ul>
+<li><a href="https://github.com/AumyF/dotstingray">dotstingray</a> - Highly-customizable dotfiles manager</li>
+</ul>
+<h3>
   <a name="find-software" class="header-anchor a-no-underline" href="#find-software">Find Software</a>
 </h3><ul>
 <li><a href="https://github.com/fosslife/awesome-ricing#packages">awesome-ricing</a> - A curated list of awesome tools and technology to help you out with ricing on linux</li>
@@ -198,6 +200,7 @@ sudo nixos-rebuild switch
 <li><a href="https://www.lunarvim.org/#opinionated">LunarVim</a> - An IDE layer for Neovim with sane defaults. Completely free and community driven.</li>
 <li><a href="https://spacevim.org/">SpaceVim</a> - A distribution of the Vim editor that’s inspired by spacemacs.</li>
 <li><a href="https://www.lazyvim.org/">LazyVim</a> - A Neovim setup powered by 💤 lazy.nvim to make it easy to customize and extend your config.</li>
+<li><a href="https://nvchad.com/">NvChad</a> - Neovim with lua is cool</li>
 </ul>
 <h4>
   <a name="emacs" class="header-anchor a-no-underline" href="#emacs">Emacs</a>
@@ -226,6 +229,7 @@ sudo nixos-rebuild switch
 <li><a href="https://st.suckless.org/">st (simple terminal)</a> - suckless.org software that sucks less</li>
 <li><a href="https://hyper.is/">Hyper</a> - A terminal built on web technologies</li>
 <li><a href="https://wezfurlong.org/wezterm/">wezterm</a> - Wez&#39;s Terminal Emulator</li>
+<li><a href="https://www.warp.dev/">Warp</a> - The terminal for the 21st century</li>
 </ul>
 <h3>
   <a name="window-manager" class="header-anchor a-no-underline" href="#window-manager">Window Manager</a>
@@ -252,6 +256,14 @@ sudo nixos-rebuild switch
 <li><a href="https://obsidian.md/">Obsidian</a> - A second brain, for you, forever.</li>
 <li><a href="https://b3log.org/siyuan/en/">SiYuan</a> - Local-first personal knowledge management system that supports Markdown, block-level ref, and bidirectional links</li>
 <li><a href="https://orchard.ink/">Orchard</a> - Thoughtful writing, reimagined.</li>
+</ul>
+<h3>
+  <a name="browser" class="header-anchor a-no-underline" href="#browser">Browser</a>
+</h3><ul>
+<li><a href="https://nyxt.atlas.engineer/">Nyxt browser</a> - The hacker&#39;s power-browser</li>
+<li><a href="https://www.google.com/chrome/">Google Chrome</a> - Download the Fast, Secure Browser from Google</li>
+<li><a href="https://arc.net/">Arc</a> - The Browser Company</li>
+<li><a href="https://www.youtube.com/@AFIM.x">A F I M x</a> - YouTube</li>
 </ul>
 <h2>
   <a name="about-my-phone" class="header-anchor a-no-underline" href="#about-my-phone">About My Phone</a>
