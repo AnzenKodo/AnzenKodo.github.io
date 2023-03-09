@@ -106,7 +106,6 @@ sudo nixos-rebuild switch
 <li><a href="https://github.com/lawrencehook/remove-youtube-suggestions">RYS — Remove YouTube Suggestions</a> - Spend less time on YouTube. Customize YouTube&#39;s user interface to be less engaging.</li>
 <li><a href="https://github.com/notlmn/copy-as-markdown">Copy as Markdown</a> - Browser extension to copy hyperlinks, images, and selected text as Markdown</li>
 <li><a href="https://twitter.com/vitaminiser">Pinterest Love: Pinterest Screenshot Saver++</a> - Save screenshots and other images to Pinterest, visually search pins and list pinnable images on a page.</li>
-<li><a href="https://chrome.google.com/webstore/detail/nmmicjeknamkfloonkhhcjmomieiodli">YouTube Summary with ChatGPT</a> - Use ChatGPT to summarize YouTube videos</li>
 <li><a href="https://chrome.google.com/webstore/detail/nfakpcpmhhilkdpphcjgnokknpbpdllg">SVG Screenshot</a> - Take scalable, semantic, accessible screenshots, in SVG format.</li>
 <li><a href="https://chrome.google.com/webstore/detail/bgehnoihoklmofgehcefiaicdcdgppck">Spotify Playback Speed</a> - Adds a button and menu to manipulate playback speed on Spotify Web.</li>
 <li><a href="https://add0n.com/always-active.html">Always active Window - Always Visible</a> - Pretend that all browser windows are active by spoofing the visibility state event and more!</li>
@@ -131,36 +130,36 @@ sudo nixos-rebuild switch
   <a name="file-structure" class="header-anchor a-no-underline" href="#file-structure">File Structure</a>
 </h3><pre>
 <!--TREE:START-->dotfiles
+ ├─> nix
+ │   ├── fonts.nix
+ │   ├── packages.nix
+ │   ├── theme.nix
+ │   ├── home.nix
+ │   ├── configuration.nix
+ │   └── system.nix
  ├─> bin
- │   ├── autostart
  │   ├── chrome_extensions_backup.js
- │   ├── backup
  │   ├── wallpaper.js
+ │   ├── autostart
+ │   ├── backup
  │   ├── emoji
  │   └── note
- ├── screenshort.png
+ ├─> shell
+ │   ├── config.fish
+ │   ├── profile.sh
+ │   ├── export.sh
+ │   └── alias.sh
  ├─> browser
- │   ├── Extensions.bak
- │   └── Bookmarks.bak
- ├── git.init
+ │   ├── Bookmarks.bak
+ │   └── Extensions.bak
+ ├── screenshort.png
  ├─> helix
- │   ├── config.toml
- │   └── languages.toml
- ├─> nix
- │   ├── configuration.nix
- │   ├── theme.nix
- │   ├── system.nix
- │   ├── home.nix
- │   ├── packages.nix
- │   └── fonts.nix
+ │   ├── languages.toml
+ │   └── config.toml
  ├─> kitty
- │   ├── current-theme.conf
- │   └── kitty.conf
- └─> shell
-     ├── profile.sh
-     ├── export.sh
-     ├── alias.sh
-     └── config.fish<!--TREE:END-->
+ │   ├── kitty.conf
+ │   └── current-theme.conf
+ └── git.init<!--TREE:END-->
 </pre>
 
 <!--BOOKMARKS:START-->
