@@ -7,6 +7,7 @@ import {
 import getTodo from "../comp/todo.js";
 import { languages } from "../comp/ak/lang.js";
 import site from "../comp/ak/site.js";
+import social from "../comp/ak/social.js";
 import { writeInOutput } from "../comp/utils.js";
 
 const data = {
@@ -30,17 +31,7 @@ const data = {
   "browserWallpaper": await getBrowserWallpaper(
     "https://i.pinimg.com/originals/11/13/94/111394df5ea3cf00d7e71c2d2687694c.jpg",
   ),
-  "socials": {
-    "gitHub": "https://github.com/AnzenKodo",
-    "twitter": "https://twitter.com/AnzenKodo",
-    "pinterest": "https://www.pinterest.com/AnzenKodo",
-    // "wakaTime": "https://wakatime.com/@AnzenKodo",
-    "goodreads": "https://www.goodreads.com/AnzenKodo",
-    "substack": "https://substack.com/profile/125347446-axel",
-    "listenBrainz": "https://listenbrainz.org/user/AnzenKodo/",
-    "simkl": "https://simkl.com/5607531",
-    "discord": "https://discord.com/users/910257548593086474",
-  },
+  "socials": social,
   languages,
   "todo": getTodo(),
   "support": {
@@ -52,6 +43,8 @@ const data = {
     "db": DATA.start_url + "api/db.json",
     "pinboard": DATA.start_url + "api/pinboard.json",
     "github": "https://api.github.com/users/AnzenKodo",
+    "bookmarks":
+      "https://github.com/AnzenKodo/dotfiles/blob/master/browser/Bookmarks.bak",
   },
 };
 

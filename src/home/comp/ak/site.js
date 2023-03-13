@@ -1,6 +1,6 @@
 import { parse } from "https://deno.land/std@0.179.0/path/mod.ts";
 
-export default function site(start_url, ignore) {
+export default function site(start_url, ignore = []) {
   const obj = {};
 
   [...Deno.readDirSync("./home/pages/")]
