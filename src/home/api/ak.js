@@ -46,13 +46,7 @@ const data = {
   "support": {
     "ethereum": "0xE9421ad603651a6ecD56d3C78472E64EDE7Cf43A",
   },
-  "site": site(DATA.start_url, [
-    "blogroll",
-    "db",
-    "pinboard",
-    "todo",
-    "awesome",
-  ]),
+  "site": site(DATA.start_url, ["index", "license"]),
   "api": {
     "notes": "https://anzenkodo.substack.com/feed",
     "db": DATA.start_url + "api/db.json",
