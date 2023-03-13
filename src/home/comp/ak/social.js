@@ -1,6 +1,5 @@
-const bookmark = await fetch(
-  "https://raw.githubusercontent.com/AnzenKodo/dotfiles/master/browser/Bookmarks.bak",
-).then((res) => res.json());
+import { AK } from "../data.js";
+const bookmark = await fetch(AK.api.bookmarks).then((res) => res.json());
 
 const social = {};
 
@@ -14,5 +13,4 @@ bookmark
   .children
   .map((obj) => social[obj.name] = obj.url);
 
-// .filter((item) => item.name === "Social Media");
 export default social;

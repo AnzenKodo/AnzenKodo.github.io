@@ -42,6 +42,7 @@ const data = {
     "notes": "https://anzenkodo.substack.com/feed",
     "db": DATA.start_url + "api/db.json",
     "pinboard": DATA.start_url + "api/pinboard.json",
+    "blogroll": DATA.start_url + "api/blogroll.json",
     "github": "https://api.github.com/users/AnzenKodo",
     "bookmarks":
       "https://github.com/AnzenKodo/dotfiles/blob/master/browser/Bookmarks.bak",

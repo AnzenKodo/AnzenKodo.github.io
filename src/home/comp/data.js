@@ -1,6 +1,6 @@
 export const CONFIG = JSON.parse(Deno.readTextFileSync("./config.json"));
 
-const data = Object.assign(CONFIG, {
+export const DATA = Object.assign(CONFIG, {
   description: CONFIG.username + " official website.",
   location: "Mom's basement",
   style: {
@@ -11,4 +11,6 @@ const data = Object.assign(CONFIG, {
   output: "../" + CONFIG.output,
 });
 
-export const DATA = data;
+export const AK = JSON.parse(
+  Deno.readTextFileSync(DATA.output + "/api/ak.json"),
+);
