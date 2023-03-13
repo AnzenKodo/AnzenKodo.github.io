@@ -11,6 +11,7 @@ export const DATA = Object.assign(CONFIG, {
   output: "../" + CONFIG.output,
 });
 
-export const AK = JSON.parse(
-  Deno.readTextFileSync(DATA.output + "/api/ak.json"),
-);
+export const AK = () =>
+  JSON.parse(
+    Deno.readTextFileSync(DATA.output + "/api/ak.json"),
+  );

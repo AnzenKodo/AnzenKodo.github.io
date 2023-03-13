@@ -1,5 +1,6 @@
-import { AK } from "../data.js";
-const bookmark = await fetch(AK.api.bookmarks).then((res) => res.json());
+const bookmark = await fetch(
+  "https://raw.githubusercontent.com/AnzenKodo/dotfiles/master/browser/Bookmarks.bak",
+).then((res) => res.json());
 
 const social = {};
 
