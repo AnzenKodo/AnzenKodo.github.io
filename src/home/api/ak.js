@@ -32,12 +32,13 @@ const data = {
   "socials": {
     "gitHub": "https://github.com/AnzenKodo",
     "twitter": "https://twitter.com/AnzenKodo",
-    "discord": "https://discord.com/users/910257548593086474",
     "pinterest": "https://www.pinterest.com/AnzenKodo",
-    "wakaTime": "https://wakatime.com/@AnzenKodo",
+    // "wakaTime": "https://wakatime.com/@AnzenKodo",
     "goodreads": "https://www.goodreads.com/AnzenKodo",
+    "substack": "https://substack.com/profile/125347446-axel",
     "listenBrainz": "https://listenbrainz.org/user/AnzenKodo/",
     "simkl": "https://simkl.com/5607531",
+    "discord": "https://discord.com/users/910257548593086474",
   },
   languages,
   "todo": getTodo(),
@@ -45,8 +46,9 @@ const data = {
     "ethereum": "0xE9421ad603651a6ecD56d3C78472E64EDE7Cf43A",
   },
   "api": {
-    "blog": "https://anzenkodo.github.io/notes/feed.json",
+    "notes": "https://anzenkodo.substack.com/feed",
     "db": DATA.start_url + "api/db.json",
+    "pinboard": DATA.start_url + "api/pinboard.json",
     "github": "https://api.github.com/users/AnzenKodo",
   },
 };

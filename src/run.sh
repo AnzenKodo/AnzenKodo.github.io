@@ -33,12 +33,6 @@ run "home/pages"
 echo "Coping assests folder..."
 cp -r assets/ ../site/
 
-echo "Making notes..."
-cp -r notes/online note/src/
-cd note
-deno task build
-cd ..
-
 echo "Running"
 if command -v pip &> /dev/null
 then
