@@ -6,6 +6,7 @@ import {
 } from "../comp/ak/pinterest.js";
 import getTodo from "../comp/todo.js";
 import { languages } from "../comp/ak/lang.js";
+import site from "../comp/ak/site.js";
 import { writeInOutput } from "../comp/utils.js";
 
 const data = {
@@ -45,6 +46,13 @@ const data = {
   "support": {
     "ethereum": "0xE9421ad603651a6ecD56d3C78472E64EDE7Cf43A",
   },
+  "site": site(DATA.start_url, [
+    "blogroll",
+    "db",
+    "pinboard",
+    "todo",
+    "awesome",
+  ]),
   "api": {
     "notes": "https://anzenkodo.substack.com/feed",
     "db": DATA.start_url + "api/db.json",
