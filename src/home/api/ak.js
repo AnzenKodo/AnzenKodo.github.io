@@ -14,7 +14,7 @@ const data = {
   "name": DATA.name,
   "username": DATA.username,
   "email": DATA.email,
-  "description": "Programming nerd who is obsessed with JavaScript.",
+  "description": "Understanding the world one step at time...",
   "location": DATA.location,
   "age": "ಠ_ಠ",
   "hobby": "Making fun stuff.",
