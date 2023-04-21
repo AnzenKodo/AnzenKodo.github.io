@@ -45,7 +45,6 @@ const data = {
     ["index", "license"],
   ),
   "api": {
-    "notes": "https://anzenkodo.substack.com/feed",
     "db": DATA.start_url + "api/db.json",
     "pinboard": DATA.start_url + "api/pinboard.json",
     "blogroll": DATA.start_url + "api/blogroll.json",
