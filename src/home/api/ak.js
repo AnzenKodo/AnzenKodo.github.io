@@ -39,9 +39,6 @@ const data = {
   },
   "site": site(
     DATA.start_url,
-    {
-      notes: "https://anzenkodo.substack.com/",
-    },
     ["index", "license"],
   ),
   "api": {
