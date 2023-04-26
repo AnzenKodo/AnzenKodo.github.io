@@ -39,7 +39,7 @@ const data = {
   },
   "site": site(
     DATA.start_url,
-    "",
+    {},
     ["index", "license"],
   ),
   "api": {
