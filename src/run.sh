@@ -33,13 +33,6 @@ run "home/pages"
 echo "Coping assests folder..."
 cp -r assets/ ../site/
 
-echo "Running"
-if command -v pip &> /dev/null
-then
-    pip install -r run/requirements.txt
-    python run/twitter.py
-fi
-
 echo "Making blogroll..."
 cd blogroll
 if [ ! -d vendor ]
