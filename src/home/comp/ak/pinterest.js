@@ -1,7 +1,7 @@
 import { DATA } from "../data.js";
 import {
   DOMParser,
-} from "https://deno.land/x/deno_dom@v0.1.32-alpha/deno-dom-wasm.ts";
+} from "https://deno.land/x/deno_dom@v0.1.38/deno-dom-wasm.ts";
 
 const url = `https://www.pinterest.com/${DATA.username}/imgporn/`;
 const html = await fetch(url).then((res) => res.text());
