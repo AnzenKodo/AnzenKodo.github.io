@@ -18,7 +18,7 @@ imagepng($im, "{$output}favicon.png");
 
 $opml = "";
 use \Dallgoot\Yaml;
-$feeds = (array)Yaml::parseFile(__DIR__.'/../notes/Feed.yaml', 0, 0);
+$feeds = (array)Yaml::parseFile(__DIR__.'/../data/feed.yaml', 0, 0);
 echo "Making php index.html file.";
 ob_start();
 require_once 'pages/index.php';

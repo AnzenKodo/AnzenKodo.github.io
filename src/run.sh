@@ -16,11 +16,6 @@ then
   export $(cat ../.env | sed 's/#.*//g' | xargs)
 fi
 
-if [ ! -d notes ]
-then
-  git clone https://$GITHUB_TOKEN@github.com/AnzenKodo/notes.git
-fi
-
 echo "Making Main website..."
 run() {
   for filename in $1/*; do
