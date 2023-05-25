@@ -4,7 +4,6 @@ import {
   getBrowserWallpaper,
   getWallpaper,
 } from "../comp/ak/pinterest.js";
-import getTodo from "../comp/todo.js";
 import { languages } from "../comp/ak/lang.js";
 import site from "../comp/ak/site.js";
 import social from "../comp/ak/social.js";
@@ -33,7 +32,6 @@ const data = {
   ),
   "socials": social,
   languages,
-  "todo": getTodo(),
   "support": {
     "ethereum": "0xE9421ad603651a6ecD56d3C78472E64EDE7Cf43A",
   },
@@ -43,8 +41,6 @@ const data = {
     ["index", "license"],
   ),
   "api": {
-    "db": DATA.start_url + "api/db.json",
-    "pinboard": DATA.start_url + "api/pinboard.json",
     "blogroll": DATA.start_url + "api/blogroll.json",
     "github": "https://api.github.com/users/AnzenKodo",
     "bookmarks":
