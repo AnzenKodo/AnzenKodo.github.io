@@ -44,7 +44,7 @@ const data = {
     "blogroll": DATA.start_url + "api/blogroll.json",
     "github": "https://api.github.com/users/AnzenKodo",
     "bookmarks":
-      "https://github.com/AnzenKodo/dotfiles/blob/master/browser/Bookmarks.bak",
+      "https://raw.githubusercontent.com/AnzenKodo/dotfiles/master/browser/Bookmarks.bak",
   },
 };
 
