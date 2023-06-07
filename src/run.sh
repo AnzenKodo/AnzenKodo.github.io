@@ -37,7 +37,7 @@ fi
   php index.php
 cd ..
 
-mkdir ../.well-known
+mkdir ../site/.well-known
 echo "This is a Brave Rewards publisher verification file.
 
 Domain: anzenkodo.github.io
