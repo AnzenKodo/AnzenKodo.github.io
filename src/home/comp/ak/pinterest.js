@@ -3,7 +3,7 @@ import {
   DOMParser,
 } from "https://deno.land/x/deno_dom@v0.1.38/deno-dom-wasm.ts";
 
-const url = `https://www.pinterest.com/${DATA.username}/imgporn/`;
+const url = `https://www.pinterest.com/${DATA.username}/imgs/`;
 const html = await fetch(url).then((res) => res.text());
 const doc = new DOMParser().parseFromString(html, "text/html");
 
