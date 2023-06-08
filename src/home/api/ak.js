@@ -5,7 +5,7 @@ import {
   getWallpaper,
 } from "../comp/ak/pinterest.js";
 import { languages } from "../comp/ak/lang.js";
-import social from "../comp/ak/social.js";
+import sites from "../comp/ak/sites.js";
 import { writeInOutput } from "../comp/utils.js";
 
 const data = Object.assign(DATA, {
@@ -22,11 +22,11 @@ const data = Object.assign(DATA, {
   "browserWallpaper": await getBrowserWallpaper(
     DATA.browserWallpaper,
   ),
-  "socials": social,
-  languages,
   "api": Object.assign(DATA.api, {
     "blogroll": DATA.start_url + "api/blogroll.json",
   }),
+  sites,
+  languages,
 });
 
 writeInOutput("api/ak.json", JSON.stringify(data, null, 2));
