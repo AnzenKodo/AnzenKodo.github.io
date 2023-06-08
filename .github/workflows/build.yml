@@ -19,13 +19,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    
-    - name: Cloning notes repo
-      shell: bash
-      run: |
-        git config --global url."https://${{ secrets.TOKENS }}@github".insteadOf https://github
-        git clone https://github.com/AnzenKodo/notes.git src/notes
-        
+
     - name: Setup Deno
       # uses: denoland/setup-deno@v1
       uses: denoland/setup-deno@004814556e37c54a2f6e31384c9e18e983317366
