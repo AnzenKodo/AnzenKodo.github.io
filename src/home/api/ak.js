@@ -8,10 +8,13 @@ import { languages } from "../comp/ak/lang.js";
 import sites from "../comp/ak/sites.js";
 import { writeInOutput } from "../comp/utils.js";
 
+const config = structuredClone(CONFIG);
+delete config.output;
+
 writeInOutput(
   "api/ak.json",
   JSON.stringify(
-    Object.assign(CONFIG, {
+    Object.assign(config, {
       "website": CONFIG.start_url,
       "color": DATA.style.theme.substring(1),
       "logo": CONFIG.start_url + "assets/ak/logo",
