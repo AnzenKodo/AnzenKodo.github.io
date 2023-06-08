@@ -4,7 +4,7 @@ require_once __DIR__.'/vendor/autoload.php';
 
 
 // Read the JSON file
-$json = (object)json_decode(file_get_contents(__DIR__.'/../config.json'), true);
+$json = (object)json_decode(file_get_contents(__DIR__.'/../data/config.json'), true);
 
 $output = "../{$json->output}/blogroll/";
 // Create a folder if it doesn't already exist
