@@ -14,7 +14,7 @@ bookmark
   .children
   .map((obj) =>
     sites[obj.name.match(/^[\w# ]+[^ -]/)[0]] = {
-      description: obj.name.match(/[^- ][\w ]+$/)[0],
+      description: obj.name.match(/[^- ][\w ]+$/)[0] || "",
       url: obj.url,
     }
   );
