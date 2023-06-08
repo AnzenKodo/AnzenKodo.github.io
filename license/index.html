@@ -39,6 +39,17 @@
     .skip-to-main:focus { transform: translateY(0%) }
     .a-no-underline { text-decoration: none }
     .a-no-underline:hover { text-decoration: underline }
+    .toc {
+      position: fixed;
+      bottom: 1px;
+      right: 1px;
+      background: var(--bg);
+    }
+    .toc li {
+      display: list-item;
+      margin-left: 3em;
+      list-style: decimal;
+    }
     body>header p:first-child {
       font-size: 2em;
       font-weight: bold;
@@ -50,6 +61,15 @@
 </head>
   <body>
     <a class="skip-to-main" href="#main">Skip to content</a>
+    <nav>
+        <details class="toc">
+          <summary>Table of Content</summary>
+          <ul>
+<li><a href="#mit-license">MIT License</a></li>
+</ul>
+
+      </details>
+    </nav>
     <header>
     <h1 class="name"><a class="a-no-underline" href="https://AnzenKodo.github.io/">AK</a>#License</h1>
     <p class="description"><p>License of AK</p>

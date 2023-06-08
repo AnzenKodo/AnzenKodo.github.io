@@ -41,6 +41,17 @@
     .skip-to-main:focus { transform: translateY(0%) }
     .a-no-underline { text-decoration: none }
     .a-no-underline:hover { text-decoration: underline }
+    .toc {
+      position: fixed;
+      bottom: 1px;
+      right: 1px;
+      background: var(--bg);
+    }
+    .toc li {
+      display: list-item;
+      margin-left: 3em;
+      list-style: decimal;
+    }
     body>header p:first-child {
       font-size: 2em;
       font-weight: bold;
@@ -72,6 +83,17 @@ main > pre a:hover {
 </head>
   <body>
     <a class="skip-to-main" href="#main">Skip to content</a>
+    <nav>
+        <details class="toc">
+          <summary>Table of Content</summary>
+          <ul>
+<li><a href="#about">About</a></li>
+<li><a href="#sites">Sites</a></li>
+<li><a href="#support">Support</a></li>
+</ul>
+
+      </details>
+    </nav>
     <header><h1 class="name">AK(AnzenKodo)</h1></header>
     <main id="main"><div align="center">
 <!-- banner:start --><a href="https://AnzenKodo.github.io/"><img width="100%" src="https://i.pinimg.com/originals/58/0f/7f/580f7f88933312de71275c0c123afb5a.jpg" loading="lazy"></a><!-- banner:end -->
