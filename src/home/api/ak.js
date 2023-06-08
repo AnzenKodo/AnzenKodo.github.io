@@ -1,4 +1,4 @@
-import { CONFIG } from "../comp/data.js";
+import { CONFIG, DATA } from "../comp/data.js";
 import {
   getBanner,
   getBrowserWallpaper,
@@ -13,7 +13,7 @@ writeInOutput(
   JSON.stringify(
     Object.assign(CONFIG, {
       "website": CONFIG.start_url,
-      "color": CONFIG.style.theme.substring(1),
+      "color": DATA.style.theme.substring(1),
       "logo": CONFIG.start_url + "assets/ak/logo",
       "mascot": CONFIG.start_url + "assets/ak/mascot",
       "banner": await getBanner(
