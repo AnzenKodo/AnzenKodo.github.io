@@ -6,6 +6,7 @@ import {
 } from "../comp/ak/pinterest.js";
 import { languages } from "../comp/ak/lang.js";
 import sites from "../comp/ak/sites.js";
+import status from "../comp/ak/status.js";
 import { writeInOutput } from "../comp/utils.js";
 
 const config = structuredClone(CONFIG);
@@ -15,6 +16,7 @@ writeInOutput(
   "api/ak.json",
   JSON.stringify(
     Object.assign(config, {
+      "status": status,
       "website": CONFIG.start_url,
       "color": DATA.style.theme.substring(1),
       "logo": CONFIG.start_url + "assets/ak/logo",
