@@ -10,7 +10,7 @@ bookmark
   .children
   .filter((item) => item.name === "Personal")[0]
   .children
-  .filter((item) => item.name === "Social Media")[0]
+  .filter((item) => item.name === "Sites")[0]
   .children
   .map((obj) =>
     sites[obj.name.match(/^[\w# ]+[^ -]/)[0]] = {

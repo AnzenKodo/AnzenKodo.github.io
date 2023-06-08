@@ -16,7 +16,6 @@ writeInOutput(
   "api/ak.json",
   JSON.stringify(
     Object.assign(config, {
-      "status": status,
       "website": CONFIG.start_url,
       "color": DATA.style.theme.substring(1),
       "logo": CONFIG.start_url + "assets/ak/logo",
@@ -33,6 +32,7 @@ writeInOutput(
       "api": Object.assign(CONFIG.api, {
         "blogroll": CONFIG.start_url + "api/blogroll.json",
       }),
+      status,
       sites,
       languages,
     }),
