@@ -28,19 +28,19 @@ run "home/pages"
 echo "Coping assests folder..."
 cp -r assets/ ../site/
 
-echo "Making blogroll..."
-cd blogroll
-if [ ! -d vendor ]
-then
-  composer install
-fi
-  php index.php
-cd ..
-
-mkdir ../site/.well-know
-touch ../site/.well-know/brave-rewards-verification.txt
-echo "This is a Brave Rewards publisher verification file.
-
-Domain: anzenkodo.github.io
-Token: 4165d0e625cb72d07a870bbb7c17ef9583e535ce6ecd7a47284d965f87f2bc17
-" > ../site/.well-know/brave-rewards-verification.txt
+# echo "Making blogroll..."
+# cd blogroll
+# if [ ! -d vendor ]
+# then
+#   composer install
+# fi
+#   php index.php
+# cd ..
+#
+# mkdir ../site/.well-know
+# touch ../site/.well-know/brave-rewards-verification.txt
+# echo "This is a Brave Rewards publisher verification file.
+#
+# Domain: anzenkodo.github.io
+# Token: 4165d0e625cb72d07a870bbb7c17ef9583e535ce6ecd7a47284d965f87f2bc17
+# " > ../site/.well-know/brave-rewards-verification.txt

@@ -1,10 +1,13 @@
-export const CONFIG = JSON.parse(Deno.readTextFileSync("./config.json"));
+const config = JSON.parse(Deno.readTextFileSync("./data/config.json"));
 
-export const DATA = Object.assign(CONFIG, {
-  description: CONFIG.username + " official website.",
-  style: {
-    "background": "#ffffff",
-    "foreground": "#000000",
-    "theme": "#f20544",
+export const DATA = Object.assign(
+  config,
+  {
+    description: config.username + " official website.",
+    style: {
+      "background": "#ffffff",
+      "foreground": "#000000",
+      "theme": "#f20544",
+    },
   },
-});
+);

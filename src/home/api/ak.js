@@ -7,7 +7,7 @@ import {
 import { languages } from "../comp/ak/lang.js";
 import sites from "../comp/ak/sites.js";
 import { writeInOutput } from "../comp/utils.js";
-
+console.log(DATA);
 const data = Object.assign(DATA, {
   "website": DATA.start_url,
   "color": DATA.style.theme.substring(1),
