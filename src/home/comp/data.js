@@ -1,7 +1,7 @@
 export const CONFIG = JSON.parse(Deno.readTextFileSync("./data/config.json"));
 
 export const DATA = Object.assign(
-  CONFIG,
+  structuredClone(CONFIG),
   {
     description: CONFIG.username + " official website.",
     style: {
