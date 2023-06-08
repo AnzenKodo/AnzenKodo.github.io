@@ -1,4 +1,5 @@
 import { marked } from "https://esm.sh/marked@4.0.18";
+import toc from "npm:markdown-toc@1.2.0";
 import writeHtml from "./html.js";
 
 const renderer = {
@@ -43,6 +44,8 @@ export default function writeMd(obj) {
     );
   }
 
+  obj.toc = marked.parse(toc(obj.content).content);
   obj.content = marked.parse(obj.content);
+
   writeHtml(obj);
 }

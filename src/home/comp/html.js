@@ -19,6 +19,7 @@ export default function writeHtml(
     path,
     prems,
     header = "",
+    toc,
   },
 ) {
   const nameL = name.toLowerCase();
@@ -84,6 +85,17 @@ export default function writeHtml(
     .skip-to-main:focus { transform: translateY(0%) }
     .a-no-underline { text-decoration: none }
     .a-no-underline:hover { text-decoration: underline }
+    .toc {
+      position: fixed;
+      bottom: 1px;
+      right: 1px;
+      background: var(--bg);
+    }
+    .toc li {
+      display: list-item;
+      margin-left: 3em;
+      list-style: decimal;
+    }
     body>header p:first-child {
       font-size: 2em;
       font-weight: bold;
@@ -102,6 +114,15 @@ export default function writeHtml(
     ${header}
   </header>`;
 
+  const tocBox = toc
+    ? `<nav>
+        <details class="toc">
+          <summary>Table of Content</summary>
+          ${toc}
+      </details>
+    </nav>`
+    : "";
+
   const footer =
     `<footer><p><a class="a-no-underline" href="${DATA.start_url}/license">LICENSE</a></p></footer>`;
 
@@ -110,6 +131,7 @@ export default function writeHtml(
   ${head}
   <body>
     <a class="skip-to-main" href="#main">Skip to content</a>
+    ${tocBox}
     ${headerEle}
     <main id="main">${content}</main>
     ${footer}
