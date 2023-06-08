@@ -2,14 +2,16 @@
 // Load plugins
 require_once __DIR__.'/vendor/autoload.php';
 
+
+// Read the JSON file
+$json = (object)json_decode(file_get_contents(__DIR__.'/../config.json'), true);
+
+$output = "../" + $json->output + "/blogroll/";
 // Create a folder if it doesn't already exist
-$output = "../../site/blogroll/";
 if (!file_exists($output)) {
     mkdir($output, 0777, true);
 }
 
-// Read the JSON file
-$json = file_get_contents(__DIR__.'/../config.json');
 require_once 'pages/manifest.php';
 file_put_contents("{$output}manifest.json", json_encode($data, JSON_PRETTY_PRINT));
 
