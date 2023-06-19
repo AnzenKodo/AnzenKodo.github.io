@@ -104,6 +104,7 @@ export default function writeHtml(
     .header-anchor { color: var(--fg) }
     ${style}
   </style>
+  <meta name="p:domain_verify" content="58991bda8a8d977467539ef5aa572c42"/>
 </head>`;
 
   const headerEle = type === "profile"
