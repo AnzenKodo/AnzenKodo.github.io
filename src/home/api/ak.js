@@ -19,11 +19,11 @@ writeInOutput(
       "banner": await getImg([2, 1], CONFIG.banner),
       "wallpaper": {
         desktop: await getImg([1, 1], CONFIG.wallpaper.desktop),
-        browser: await getImg([1, 2], CONFIG.browser.browser),
-        mobile: await getImg([3, 1], CONFIG.browser.mobile),
+        browser: await getImg([1, 2], CONFIG.wallpaper.browser),
+        mobile: await getImg([3, 1], CONFIG.wallpaper.mobile),
         mobileLockscreen: await getImg(
           [3, 2],
-          CONFIG.browser.mobileLockscreen,
+          CONFIG.wallpaper.mobileLockscreen,
         ),
       },
       "api": Object.assign(CONFIG.api, {
