@@ -1,9 +1,5 @@
 import { CONFIG, DATA } from "../comp/data.js";
-import {
-  getBanner,
-  getBrowserWallpaper,
-  getWallpaper,
-} from "../comp/ak/pinterest.js";
+import getImg from "../comp/ak/pinterest.js";
 import { languages } from "../comp/ak/lang.js";
 import sites from "../comp/ak/sites.js";
 import status from "../comp/ak/status.js";
@@ -20,15 +16,16 @@ writeInOutput(
       "color": DATA.style.theme.substring(1),
       "logo": CONFIG.start_url + "assets/ak/logo",
       "mascot": CONFIG.start_url + "assets/ak/mascot",
-      "banner": await getBanner(
-        CONFIG.banner,
-      ),
-      "wallpaper": await getWallpaper(
-        CONFIG.wallpaper,
-      ),
-      "browserWallpaper": await getBrowserWallpaper(
-        CONFIG.browserWallpaper,
-      ),
+      "banner": await getImg([2, 1], CONFIG.banner),
+      "wallpaper": {
+        desktop: await getImg([1, 1], CONFIG.wallpaper.desktop),
+        browser: await getImg([1, 2], CONFIG.browser.browser),
+        mobile: await getImg([3, 1], CONFIG.browser.mobile),
+        mobileLockscreen: await getImg(
+          [3, 2],
+          CONFIG.browser.mobileLockscreen,
+        ),
+      },
       "api": Object.assign(CONFIG.api, {
         "blogroll": CONFIG.start_url + "api/blogroll.json",
       }),
