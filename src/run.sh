@@ -14,7 +14,7 @@ export OUTPUT="../site"
 export CONFIG="./data/config.json"
 
 echo "Copying assests folder..."
-cp -r assets $OUTPUT/
+cp -r assets $OUTPUT
 
 echo "Making Home site..."
 deno run -A home.js
