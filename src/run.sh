@@ -18,7 +18,7 @@ cp -r assets/ $OUTPUT
 if ! command -v deno &> /dev/null
 then
 	echo "Installing deno..."
-	apt install unzip
+	sudo apt install unzip
 	curl -fsSL https://deno.land/x/install/install.sh | sh
 fi
 echo "Making Home site..."
