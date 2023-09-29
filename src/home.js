@@ -43,7 +43,7 @@ const fullHtml = `<!DOCTYPE html>
 		<meta name="theme-color" content="${config.color}">
 		<meta property="og:type" content="profile">
 		<meta property="og:description" content="${config.username} official website.">
-		<meta property="og:image" content="${config.logo}">
+		<meta property="og:image" content="${config.logo}.png">
 		<meta property="og:image:alt" content="${config.username} logo">
 		<meta property="og:profile:username" content="${config.username}">
 		<meta property="og:profile:first_name" content="${config.name}">
