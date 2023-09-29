@@ -10,10 +10,10 @@ fi
 cd "$(dirname "$0")"
 
 echo "Setting up environment variables..."
-export OUTPUT = "site"
+export OUTPUT = "../site"
 
 echo "Coping assests folder..."
-cp -r assets/ ../site/
+cp -r assets/ $OUTPUT
 
 if !command -v deno &> /dev/null
 then
@@ -22,10 +22,10 @@ then
 	curl -fsSL https://deno.land/x/install/install.sh | sh
 fi
 echo "Making Home site..."
-deno run -A src/home.js
+deno run -A home.js
 
 echo "Making Blogroll..."
-cd src/blogroll
+cd blogroll
 if [ ! -d vendor ]
 then
   composer install
@@ -33,10 +33,10 @@ fi
   php index.php
 cd ..
 
-mkdir ./site/.well-know
-touch ../site/.well-know/brave-rewards-verification.txt
+mkdir $OUTPUT.well-know
+touch $OUTPUT.well-know/brave-rewards-verification.txt
 echo "This is a Brave Rewards publisher verification file.
 
 Domain: anzenkodo.github.io
 Token: 4165d0e625cb72d07a870bbb7c17ef9583e535ce6ecd7a47284d965f87f2bc17
-" > ../site/.well-know/brave-rewards-verification.txt
+" > $OUTPUT.well-know/brave-rewards-verification.txt
