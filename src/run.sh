@@ -15,7 +15,7 @@ export OUTPUT="../site"
 echo "Coping assests folder..."
 cp -r assets/ $OUTPUT
 
-if !command -v deno &> /dev/null
+if ! command -v deno &> /dev/null
 then
 	echo "Installing deno..."
 	apt install unzip
