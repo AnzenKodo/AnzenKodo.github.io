@@ -11,9 +11,10 @@ cd "$(dirname "$0")"
 
 echo "Setting up environment variables..."
 export OUTPUT="../site"
+export CONFIG="./data/config.json"
 
 echo "Copying assests folder..."
-cp -r assets/ $OUTPUT
+cp -r assets/ $OUTPUT/assets
 
 echo "Making Home site..."
 deno run -A home.js

@@ -4,6 +4,8 @@ const md = await fetch(
   "https://raw.githubusercontent.com/AnzenKodo/AnzenKodo/main/README.md",
 ).then((res) => res.text());
 
+const config = JSON.parse(Deno.readTextFileSync(Deno.env.get("CONFIG")))
+
 const renderer = {
   heading(text, level) {
     const escapedText = text.toLowerCase().replace(/[^\w]+/g, "-");
@@ -35,10 +37,19 @@ const fullHtml = `<!DOCTYPE html>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>AK(AnzenKodo)</title>
+        <title>AK(${config.username})</title>
+		<link rel="icon" type="image/png" href="${config.website}/assets/favicon/home-favicon.png">
+		<meta name="description" content="${config.username} official website.">
+		<meta name="theme-color" content="${config.color}">
+		<meta property="og:type" content="profile">
+		<meta property="og:description" content="${config.username} official website.">
+		<meta property="og:image" content="${config.website}/assets/favicon/home-favicon.png">
+		<meta property="og:image:alt" content="${config.username} logo">
+		<meta property="og:profile:username" content="${config.username}">
+		<meta property="og:profile:first_name" content="${config.name}">
         <style>
 			:root {
-			  --theme: #f20544;
+			  --theme: ${config.color};
 			  color-scheme: dark light;
 			  accent-color: var(--theme);
 			}
@@ -60,3 +71,4 @@ const fullHtml = `<!DOCTYPE html>
 </html>`
 
 Deno.writeTextFileSync(`./${Deno.env.get("OUTPUT")}/index.html`, fullHtml.replaceAll("\n", ""));
+Deno.writeTextFileSync(`./${Deno.env.get("OUTPUT")}/404.html`, fullHtml.replaceAll("\n", ""));
