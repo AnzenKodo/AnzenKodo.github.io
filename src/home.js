@@ -8,7 +8,7 @@ const config = JSON.parse(Deno.readTextFileSync(Deno.env.get("CONFIG")))
 
 const renderer = {
   heading(text, level) {
-    if (level === 1) return text;
+    if (level === 1) return `<h1>${text}</h1>`;
     const escapedText = text.toLowerCase().replace(/[^\w]+/g, "-");
     return `<h${level}>
   <a name="${escapedText}" class="header-anchor a-no-underline" href="#${escapedText}">${text}</a>
