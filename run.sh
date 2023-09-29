@@ -15,10 +15,16 @@ export OUTPUT = "site"
 echo "Coping assests folder..."
 cp -r assets/ ../site/
 
+if !command -v deno &> /dev/null
+then
+	echo "Installing deno..."
+	apt install unzip
+	curl -fsSL https://deno.land/x/install/install.sh | sh
+fi
 echo "Making Home site..."
 deno run -A src/home.js
 
-echo "Making blogroll..."
+echo "Making Blogroll..."
 cd src/blogroll
 if [ ! -d vendor ]
 then
