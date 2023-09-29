@@ -12,15 +12,9 @@ cd "$(dirname "$0")"
 echo "Setting up environment variables..."
 export OUTPUT="../site"
 
-echo "Coping assests folder..."
+echo "Copying assests folder..."
 cp -r assets/ $OUTPUT
 
-if ! command -v deno &> /dev/null
-then
-	echo "Installing deno..."
-	sudo apt install unzip
-	curl -fsSL https://deno.land/x/install/install.sh | sh
-fi
 echo "Making Home site..."
 deno run -A home.js
 
