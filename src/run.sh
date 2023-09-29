@@ -10,7 +10,7 @@ fi
 cd "$(dirname "$0")"
 
 echo "Setting up environment variables..."
-export OUTPUT = "../site"
+export OUTPUT="../site"
 
 echo "Coping assests folder..."
 cp -r assets/ $OUTPUT
