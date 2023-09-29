@@ -40,3 +40,4 @@ echo "This is a Brave Rewards publisher verification file.
 Domain: anzenkodo.github.io
 Token: 4165d0e625cb72d07a870bbb7c17ef9583e535ce6ecd7a47284d965f87f2bc17
 " > $OUTPUT.well-know/brave-rewards-verification.txt
+
