@@ -6,7 +6,7 @@ require_once __DIR__.'/vendor/autoload.php';
 // Read the JSON file
 $json = (object)json_decode(file_get_contents(__DIR__.'/../data/config.json'), true);
 
-$output = "./{getenv('OUTPUT')}/blogroll/";
+$output = "../{getenv('OUTPUT')}/blogroll/";
 // Create a folder if it doesn't already exist
 if (!file_exists($output)) {
     mkdir($output, 0777, true);
