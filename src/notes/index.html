@@ -117,7 +117,7 @@
                 padding: 0.5rem 1em;
             }
             details:has(nav)[open] {
-                height: 90%;
+                max-height: 90%;
                 overflow-y: scroll;
                 bottom: 50px;
                 margin-left: 1em;
@@ -143,19 +143,26 @@
 	<body>
 	    <a href="#skip-top-main">Skip to main</a>
 		<header>
-			<h1 style="text-align: center;"><a href="{{.website}}">AK</a>#<a href="{{.start_url}}">{{.short_name}}</a></h1>
+			<h1 style="text-align: center;">
+                <a href="{{.website}}">AK</a>#<a href="{{.start_url}}">
+                    {{.short_name}}
+                </a>
+            </h1>
+            {{ if ne .toc "<nav>\n</nav>\n" }}
 			<details class="table-of-content">
-						    {{.toc}}
-
 			    <summary>Table of Content</summary>
+                {{.toc}}
 			</details>
+            {{ end }}
 		</header>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem">{{.heading}}</h1>
 			{{.content}}
 		</main>
 		<footer>
-			<p style="text-align: center; font-size: small;">This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a></p>
+			<p style="text-align: center; font-size: small;">
+                This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>
+            </p>
 		</footer>
 	</body>
 </html>

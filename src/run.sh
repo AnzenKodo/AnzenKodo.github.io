@@ -18,26 +18,20 @@ mkdir -p $OUTPUT
 cp -r assets $OUTPUT
 
 echo "Making Home site..."
-deno run -A home.js
-
-if [ ! -d note ]
-then
-    echo "Cloneing the Notes Repo"
-    git config --global url."https://$GITHUB_TOKEN@github".insteadOf https://github
-    git clone https://$GITHUB_TOKEN@github/AnzenKodo/notes.git note
-fi
+# deno run -A home.js
 
 echo "Making AK#Notes"
 cd notes
 go run .
 cd -
 
-# echo "Making Blogroll..."
 # cd blogroll
 # if [ ! -d vendor ]
 # then
+#   echo "Downloading required packages for Blogroll..."
 #   composer install
 # fi
+#   echo "Making Blogroll..."
 #   php index.php
 # cd ..
 
@@ -47,5 +41,5 @@ echo "This is a Brave Rewards publisher verification file.
 
 Domain: anzenkodo.github.io
 Token: 4165d0e625cb72d07a870bbb7c17ef9583e535ce6ecd7a47284d965f87f2bc17
-" > $OUTPUT.well-know/brave-rewards-verification.txt
+" > $OUTPUT/.well-know/brave-rewards-verification.txt
 

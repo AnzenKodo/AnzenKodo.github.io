@@ -49,9 +49,13 @@ func getData() m {
 	data["author"] = config["username"]
 	data["website"] = config["website"]
 	data["logo"] = config["website"] + "assets/notes.png"
-	data["input"] = "../note/Online"
 	data["heading"] = ""
 	data["url"] = config["website"] + ""
+	
+	data["input"] = os.Getenv("HOME") + "/Documents/Notes/Online"
+	_, err = os.Stat(data["input"])
+    if os.IsNotExist(err) { data["input"] = "../note/Online" }
+    
 	data["output"] = "../" + os.Getenv("OUTPUT") + "/notes"
 
 	return data
@@ -107,7 +111,7 @@ func main() {
 			inputFilepath := data["input"] + "/" + filepath
 			outputFilepath := data["output"] + "/" + filepath
 			htmlOutputFilepath := pathNoExt(outputFilepath) + ".html"
-			if filepath == "README.md" {
+			if filepath == "Home.md" {
 				htmlOutputFilepath = data["output"] + "/index.html"
 			}
 
