@@ -21,11 +21,10 @@ echo "Making Home site..."
 deno run -A home.js
 
 echo "Cloneing the Notes Repo"
-if [ ! -d notes ]
+if [ ! -d note ]
 then
     git config --global url."https://${{ secrets.TOKENS }}@github".insteadOf https://github
     git clone https://github.com/AnzenKodo/notes.git note
-    tree
 fi
 
 echo "Making AK#Notes"
