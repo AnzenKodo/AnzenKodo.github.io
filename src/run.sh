@@ -24,7 +24,7 @@ if [ ! -d note ]
 then
     echo "Cloneing the Notes Repo"
     git config --global url."https://$GITHUB_TOKEN@github".insteadOf https://github
-    git clone https://github.com/AnzenKodo/notes.git note
+    git clone https://$GITHUB_TOKEN@github/AnzenKodo/notes.git note
 fi
 
 echo "Making AK#Notes"
