@@ -20,10 +20,10 @@ cp -r assets $OUTPUT
 echo "Making Home site..."
 deno run -A home.js
 
-echo "Cloneing the Notes Repo"
 if [ ! -d note ]
 then
-    git config --global url."https://${{ secrets.TOKENS }}@github".insteadOf https://github
+    echo "Cloneing the Notes Repo"
+    git config --global url."https://$GITHUB_TOKEN@github".insteadOf https://github
     git clone https://github.com/AnzenKodo/notes.git note
 fi
 
