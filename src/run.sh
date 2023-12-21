@@ -18,22 +18,22 @@ mkdir -p $OUTPUT
 cp -r assets $OUTPUT
 
 echo "Making Home site..."
-# deno run -A home.js
+deno run -A home.js
 
 echo "Making AK#Notes"
 cd notes
 go run .
 cd -
 
-# cd blogroll
-# if [ ! -d vendor ]
-# then
-#   echo "Downloading required packages for Blogroll..."
-#   composer install
-# fi
-#   echo "Making Blogroll..."
-#   php index.php
-# cd ..
+cd blogroll
+if [ ! -d vendor ]
+then
+  echo "Downloading required packages for Blogroll..."
+  composer install
+fi
+  echo "Making Blogroll..."
+  php index.php
+cd ..
 
 mkdir $OUTPUT/.well-know
 touch $OUTPUT/.well-know/brave-rewards-verification.txt
