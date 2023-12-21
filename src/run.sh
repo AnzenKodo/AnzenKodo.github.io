@@ -25,6 +25,7 @@ if [ ! -d notes ]
 then
     git config --global url."https://${{ secrets.TOKENS }}@github".insteadOf https://github
     git clone https://github.com/AnzenKodo/notes.git note
+    tree
 fi
 
 echo "Making AK#Notes"
