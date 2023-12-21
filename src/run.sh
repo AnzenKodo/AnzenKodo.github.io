@@ -20,14 +20,22 @@ cp -r assets $OUTPUT
 echo "Making Home site..."
 deno run -A home.js
 
-echo "Making Blogroll..."
-cd blogroll
-if [ ! -d vendor ]
-then
-  composer install
-fi
-  php index.php
-cd ..
+echo "Cloneing the Notes Repo"
+git clone https://github.com/AnzenKodo/Notes
+
+echo "Making AK#Notes"
+cd notes
+go run .
+cd -
+
+# echo "Making Blogroll..."
+# cd blogroll
+# if [ ! -d vendor ]
+# then
+#   composer install
+# fi
+#   php index.php
+# cd ..
 
 mkdir $OUTPUT.well-know
 touch $OUTPUT.well-know/brave-rewards-verification.txt
