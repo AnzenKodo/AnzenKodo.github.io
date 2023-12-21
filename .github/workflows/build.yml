@@ -24,7 +24,12 @@ jobs:
       uses: denoland/setup-deno@004814556e37c54a2f6e31384c9e18e983317366
       with:
         deno-version: v1.x
-
+    
+    - name: Setup Go 1.21.1
+      uses: actions/setup-go@v4
+      with:
+        go-version: [ '1.21.1' ]
+    
     - name: Build
       run: bash ./src/run.sh
       shell: bash
