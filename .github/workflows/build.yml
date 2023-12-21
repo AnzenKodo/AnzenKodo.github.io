@@ -11,7 +11,7 @@ permissions:
   contents: write
 
 env:
-  GITHUB_TOKEN: ${{ secrets.TOKENS }}
+  GITHUB_TOKEN: ${{ secrets.CLONE_TOKEN }}
 
 jobs:
   build:
@@ -29,7 +29,14 @@ jobs:
       uses: actions/setup-go@v4
       with:
         go-version: '1.21.1'
-    
+
+    - name: Clone Notes Repo
+      uses: actions/checkout@v4
+      with:
+        repository: AnzenKodo/Notes
+        token: ${{ secrets.CLONE_TOKEN }}
+        path: src/note
+        
     - name: Build
       run: bash ./src/run.sh
       shell: bash
