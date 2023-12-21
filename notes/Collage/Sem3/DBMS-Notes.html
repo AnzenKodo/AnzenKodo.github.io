@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>AK#Notes - DBMS-Notes</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="description" content="My useless Notes.">
+  		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/notes.png">
+  		<meta property="og:image:alt" content="AK#Notes logo">
+  		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="AK#Notes - DBMS-Notes">
+		<meta property="og:description" content="My useless Notes.">
+		<meta property="og:url" content="https://AnzenKodo.github.io/">
+		<meta property="og:type" content="website">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<meta property="og:article:published_time" content="<no value>">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/notes.png">
+		<link rel="alternate" type="application/rss+xml" title="AK#Notes RSS feed" href="https://AnzenKodo.github.io/notes/feed.xml">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+			:root {
+			    color-scheme: dark light;
+				--theme: #FF6C22;
+			}
+			body {
+                max-width: 40rem;
+                margin: 0 auto;
+                font-family: system-ui;
+                padding: 0 1em;
+			}
+			h1, h2, h3, h4, h5, h6 {
+                font-family: monospace;
+                margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+                font-size: 2rem;
+			}
+			h3 {
+			    font-size: 1.8rem;
+			}
+			h4 {
+			    font-size: 1.5rem;
+			}
+			h5 {
+			    font-size: 1.3rem;
+			}
+			h6 {
+			    font-size: 1rem;
+			}
+			p {
+			    line-height: 1.5rem;
+			}
+			a {
+			    color: var(--theme);
+			    text-decoration: none;
+			}
+			a:hover, a:focus {
+			    text-decoration: underline;
+			}
+			a:active {
+			    background: var(--theme);
+			    color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+                margin-top: .5rem;
+			}
+			li {
+                margin-bottom: .5rem;
+			}
+			table {
+			    border-collapse: collapse;
+			}
+            th {
+                font-size: 1.1rem;
+                border: 2px solid;
+                padding: .3rem .3rem;
+            }
+            td {
+                border: 1px solid;
+                padding: .3rem .5rem;
+                line-height: 1.5rem;
+            }
+            blockquote {
+                margin-left: 0;
+                margin-right: 0;
+                border: 1px solid;
+                border-left: 10px solid;
+                padding: 0 1rem;
+            }
+            code {
+                border: 1px solid;
+                padding: 0 .2rem .2rem .2rem;
+            }
+            img {
+                max-width: 100%;
+                display: block;
+                margin: 0 auto;
+            }
+            [href="#skip-top-main"] {
+                padding: 0.3em;
+                position: absolute;
+                transform: translateY(-200%);
+            }
+            [href="#skip-top-main"]:focus {
+                transform: translateY(0%);
+                background: var(--theme);
+                color: inherit;
+            }
+            details:has(nav) {
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+                background: black;
+                padding: 0.5rem 1em;
+            }
+            details:has(nav)[open] {
+                height: 90%;
+                overflow-y: scroll;
+                bottom: 50px;
+                margin-left: 1em;
+            }
+            details:has(nav)[open] summary {
+                background: black;
+                padding: 0.5em 1em;
+                text-align: center;
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+            }
+            details:has(nav) ul:first-child {
+                padding-left: 1em;
+                margin-top: 1.5em;            
+            }
+            .heading-anchor::before {
+                content: "#";
+                margin-left: .5rem;
+            }
+		</style>
+	</head>
+	<body>
+	    <a href="#skip-top-main">Skip to main</a>
+		<header>
+			<h1 style="text-align: center;"><a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a></h1>
+			<details class="table-of-content">
+						    <nav>
+<ul>
+<li><a href="#database-system-concepts-and-architecture">Database System Concepts and Architecture</a></li>
+<li><a href="#the-entity-relationship-model">
+The Entity-Relationship Model</a></li>
+<li><a href="#relational-model-relational-algebra">
+Relational Model &amp; Relational Algebra</a></li>
+<li><a href="#structured-query-language-sql-indexing">
+Structured Query Language (SQL) &amp; Indexing</a></li>
+<li><a href="#relational-database-design">
+Relational Database Design</a></li>
+</ul>
+</nav>
+
+
+			    <summary>Table of Content</summary>
+			</details>
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem">DBMS-Notes</h1>
+			<h2>Database System Concepts and Architecture<a name="database-system-concepts-and-architecture" class="heading-anchor" href="#database-system-concepts-and-architecture" rel="nofollow" aria-hidden="true"></a></h2>
+<p>Introduction, Characteristics of Databases</p>
+
+<p>File system v/s Database system</p>
+
+<p>Data abstraction and Data Independence</p>
+
+<p>DBMS system architecture</p>
+
+<p>Database Administrator (DBA)</p>
+
+<p>Role of DBA</p>
+
+<p>Self-learning Topics: Identify the types of Databases.</p>
+<h2>
+The Entity-Relationship Model<a name="the-entity-relationship-model" class="heading-anchor" href="#the-entity-relationship-model" rel="nofollow" aria-hidden="true"></a></h2>
+<p>Conceptual Modeling of a database</p>
+
+<p>The Entity-Relationship (ER) Model</p>
+
+<p>Entity Type</p>
+
+<p>Entity Sets</p>
+
+<p>Attributes and Keys</p>
+
+<p>Relationship Types</p>
+
+<p>Relationship Sets</p>
+
+<p>Weak entity Types</p>
+
+<p>Generalization</p>
+
+<p>Specialization and Aggregation</p>
+
+<p>Extended Entity-Relationship (EER) Model</p>
+
+<p>Self-learning Topics: Design an ER model for any real time case study.</p>
+<h2>
+Relational Model &amp; Relational Algebra<a name="relational-model-relational-algebra" class="heading-anchor" href="#relational-model-relational-algebra" rel="nofollow" aria-hidden="true"></a></h2>
+<p>Introduction to Relational Model</p>
+
+<p>Relational Model Constraints</p>
+
+<p>Relational Database Schemas</p>
+
+<p>Concept of Keys: Primary Kay, Secondary key, Foreign Key</p>
+
+<p>Mapping the ER and EER Model to the Relational Model</p>
+
+<p>Introduction to Relational Algebra</p>
+
+<p>Relational Algebra expressions for Unary Relational Operations</p>
+
+<p>Set Theory operations,</p>
+
+<p>Binary Relational operation</p>
+
+<p>Relational Algebra Queries</p>
+
+<p>Self-learning Topics: Map the ER model designed in module II to relational
+schema..</p>
+<h2>
+Structured Query Language (SQL) &amp; Indexing<a name="structured-query-language-sql-indexing" class="heading-anchor" href="#structured-query-language-sql-indexing" rel="nofollow" aria-hidden="true"></a></h2>
+<p>Overview of SQL, Data Definition Commands</p>
+
+<p>Set operations, aggregate function</p>
+
+<p>null values</p>
+
+<p>Data Manipulation commands</p>
+
+<p>Data Control commands</p>
+
+<p>Complex Retrieval Queries using Group By Recursive Queries, nested Queries</p>
+
+<p>Integrity constraints in SQL.</p>
+
+<p>Database Programming with JDBC</p>
+
+<p>Security and authorization Grant &amp; Revoke in SQL Functions and Procedures in SQL
+and cursors.</p>
+
+<p>Grant &amp; Revoke in SQL Functions and Procedures in SQL and cursors.</p>
+<h2>
+Relational Database Design<a name="relational-database-design" class="heading-anchor" href="#relational-database-design" rel="nofollow" aria-hidden="true"></a></h2>
+<p>Design guidelines for relational Schema</p>
+
+<p>Functional Dependencies, Database tables and normalization</p>
+
+<p>The need for normalization</p>
+
+<p>The normalization process</p>
+
+<p>Improving the design</p>
+
+<p>Definition of Normal Forms- 1NF, 2NF, 3NF &amp; The Boyce-Codd Normal Form (BCNF).</p>
+
+<p>Self-learning Topics: Consider any real time application and normalization upto
+3NF/BCNF</p>
+
+		</main>
+		<footer>
+			<p style="text-align: center; font-size: small;">This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a></p>
+		</footer>
+	</body>
+</html>

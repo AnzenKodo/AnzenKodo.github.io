@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>AK#Notes - PCPF-QB</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="description" content="My useless Notes.">
+  		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/notes.png">
+  		<meta property="og:image:alt" content="AK#Notes logo">
+  		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="AK#Notes - PCPF-QB">
+		<meta property="og:description" content="My useless Notes.">
+		<meta property="og:url" content="https://AnzenKodo.github.io/">
+		<meta property="og:type" content="website">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<meta property="og:article:published_time" content="<no value>">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/notes.png">
+		<link rel="alternate" type="application/rss+xml" title="AK#Notes RSS feed" href="https://AnzenKodo.github.io/notes/feed.xml">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+			:root {
+			    color-scheme: dark light;
+				--theme: #FF6C22;
+			}
+			body {
+                max-width: 40rem;
+                margin: 0 auto;
+                font-family: system-ui;
+                padding: 0 1em;
+			}
+			h1, h2, h3, h4, h5, h6 {
+                font-family: monospace;
+                margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+                font-size: 2rem;
+			}
+			h3 {
+			    font-size: 1.8rem;
+			}
+			h4 {
+			    font-size: 1.5rem;
+			}
+			h5 {
+			    font-size: 1.3rem;
+			}
+			h6 {
+			    font-size: 1rem;
+			}
+			p {
+			    line-height: 1.5rem;
+			}
+			a {
+			    color: var(--theme);
+			    text-decoration: none;
+			}
+			a:hover, a:focus {
+			    text-decoration: underline;
+			}
+			a:active {
+			    background: var(--theme);
+			    color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+                margin-top: .5rem;
+			}
+			li {
+                margin-bottom: .5rem;
+			}
+			table {
+			    border-collapse: collapse;
+			}
+            th {
+                font-size: 1.1rem;
+                border: 2px solid;
+                padding: .3rem .3rem;
+            }
+            td {
+                border: 1px solid;
+                padding: .3rem .5rem;
+                line-height: 1.5rem;
+            }
+            blockquote {
+                margin-left: 0;
+                margin-right: 0;
+                border: 1px solid;
+                border-left: 10px solid;
+                padding: 0 1rem;
+            }
+            code {
+                border: 1px solid;
+                padding: 0 .2rem .2rem .2rem;
+            }
+            img {
+                max-width: 100%;
+                display: block;
+                margin: 0 auto;
+            }
+            [href="#skip-top-main"] {
+                padding: 0.3em;
+                position: absolute;
+                transform: translateY(-200%);
+            }
+            [href="#skip-top-main"]:focus {
+                transform: translateY(0%);
+                background: var(--theme);
+                color: inherit;
+            }
+            details:has(nav) {
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+                background: black;
+                padding: 0.5rem 1em;
+            }
+            details:has(nav)[open] {
+                height: 90%;
+                overflow-y: scroll;
+                bottom: 50px;
+                margin-left: 1em;
+            }
+            details:has(nav)[open] summary {
+                background: black;
+                padding: 0.5em 1em;
+                text-align: center;
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+            }
+            details:has(nav) ul:first-child {
+                padding-left: 1em;
+                margin-top: 1.5em;            
+            }
+            .heading-anchor::before {
+                content: "#";
+                margin-left: .5rem;
+            }
+		</style>
+	</head>
+	<body>
+	    <a href="#skip-top-main">Skip to main</a>
+		<header>
+			<h1 style="text-align: center;"><a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a></h1>
+			<details class="table-of-content">
+						    <nav>
+<ul>
+<li><a href="#module-1">Module 1</a>
+<ul>
+<li><a href="#1-what-do-you-mean-by-programming-paradigm-explain-with-example-the-difference-between-declarative-and-imperative-programming-paradigm">
+1. What do you mean by Programming Paradigm. Explain with example the difference between declarative and imperative programming paradigm.</a></li>
+<li><a href="#3-explain-type-system-and-type-checking">
+3. Explain type system and type checking.</a></li>
+<li><a href="#4-explain-different-storage-allocation-mechanisms">
+4. Explain different storage allocation mechanisms.</a>
+<ul>
+<li><a href="#static-storage-allocation">
+Static Storage Allocation</a></li>
+<li><a href="#stack-based-storage-allocation">
+Stack Based Storage Allocation</a></li>
+<li><a href="#heap-allocation">
+Heap Allocation</a></li>
+</ul></li>
+<li><a href="#5-static-scoping-vs-dynamic-scoping">
+5. Static Scoping vs. Dynamic Scoping</a></li>
+<li><a href="#6-discuss-call-by-value-vs-call-by-reference">
+6. Discuss Call by value vs. Call by reference.</a>
+<ul>
+<li><a href="#call-by-value">
+Call by value</a></li>
+<li><a href="#call-by-reference">
+Call by reference</a></li>
+<li><a href="#difference-between-call-by-value-and-call-by-reference-in-c">
+Difference Between Call by Value and Call by Reference in C</a></li>
+</ul></li>
+<li><a href="#7-types-of-binding-in-programming-languages">
+7. Types of binding in Programming Languages</a>
+<ul>
+<li><a href="#static-binding">
+Static binding</a></li>
+<li><a href="#dynamic-binding">
+Dynamic binding</a></li>
+</ul></li>
+<li><a href="#8-write-a-note-on-naming-and-scoping-rules-for-scripting-languages">
+8. Write a note on Naming and Scoping rules for scripting languages.</a>
+<ul>
+<li><a href="#naming">
+Naming</a></li>
+<li><a href="#scoping">
+Scoping</a></li>
+</ul></li>
+<li><a href="#9-describe-different-parameter-passing-modes">
+9. Describe different parameter passing modes.</a></li>
+<li><a href="#10-compare-heap-based-and-stack-based-principal-storage-allocation-mechanism">
+10. Compare heap based and stack-based principal storage allocation mechanism.</a></li>
+<li><a href="#11-discuss-scope-with-reference-to-binding-in-program-also-compare-static-and-dynamic-scoping">
+11. Discuss Scope with reference to binding in program. Also compare static and dynamic scoping.</a></li>
+<li><a href="#12-justify-the-following-statement-no-single-factor-determines-whether-a-programming-language-is-good">
+12. Justify the following statement, “No single factor determines whether a programming language is good.”</a></li>
+</ul></li>
+<li><a href="#module-2">
+Module 2</a>
+<ul>
+<li><a href="#1-explain-type-and-type-classes-in-haskell">
+1. Explain Type and Type classes in Haskell.</a></li>
+<li><a href="#2-what-is-composite-data-type-explain-different-composite-data-types-in-haskell">
+2. What is composite data type? Explain different composite data types in Haskell.</a></li>
+<li><a href="#4-lambda-calculus">
+4. Lambda Calculus</a></li>
+<li><a href="#5-what-is-pattern-matching-in-haskell-explain-with-an-example">
+5. What is pattern matching in Haskell. Explain with an example.</a></li>
+<li><a href="#6-higher-order-function">
+6. Higher order function</a></li>
+<li><a href="#7-what-mathematical-formalism-underlies-functional-programming">
+7. What mathematical formalism underlies functional programming?</a></li>
+<li><a href="#8-explain-concept-of-currying-in-haskell-with-an-example">
+8. Explain concept of currying in haskell with an example.</a></li>
+<li><a href="#9-explain-features-of-functional-programming-languages">
+9. Explain features of functional programming languages.</a>
+<ul>
+<li><a href="#immutable-data">
+Immutable Data</a></li>
+<li><a href="#referential-transparency">
+Referential transparency</a></li>
+<li><a href="#modularity">
+Modularity</a></li>
+<li><a href="#maintainability">
+Maintainability</a></li>
+<li><a href="#closure">
+Closure</a></li>
+</ul></li>
+<li><a href="#higher-order-functions">
+Higher-order functions</a></li>
+<li><a href="#pure-function">
+Pure function</a>
+<ul>
+<li><a href="#impure-functions">
+Impure functions</a></li>
+</ul></li>
+<li><a href="#10-what-is-the-difference-between-normal-order-and-applicative-order-evaluation-what-is-lazy-evaluation">
+10. What is the difference between normal-order and applicative-order evaluation? What is lazy evaluation?</a></li>
+<li><a href="#11-the-haskell-function-head-defined-in-prelude-returns-the-first-element-of-a-list-and-throws-an-exception-when-we-try-to-apply-it-on-an-empty-list-define-two-variants-of-this-function-you-can-use-different-names-that-work-exactly-like-head-function-except-in-the-case-of-an-empty-list-input-they-will-show-as-output-instead-of-throwing-an-exception-you-must-use-the-following-constructs-in-haskell-for-defining-the-functions">
+11. The haskell function head defined in prelude, returns the first element of a list and throws an exception when we try to apply it on an empty list. Define two variants of this function (you can use different names) that work exactly like head function except in the case of an empty list input they will show [] as output instead of throwing an exception. You must use the following constructs in Haskell for defining the functions.</a></li>
+<li><a href="#12-define-haskell-function-that-inputs-one-operator-and-two-operands-which-may-be-int-integer-float-or-double-the-function-will-perform-the-operation-and-computes-the-result-clearly-mention-the-type-signature-for-the-function">
+12. Define Haskell function that inputs one operator +,-,*,^ and two operands which may be Int, Integer, Float or Double. The function will perform the operation and computes the result. Clearly mention the type signature for the function.</a></li>
+<li><a href="#13-define-a-haskell-function-named-addus-that-adds-2-input-numbers">
+13. Define a haskell function named “addUs” that adds 2 input numbers.</a></li>
+</ul></li>
+<li><a href="#module-3">
+Module 3</a>
+<ul>
+<li><a href="#2-write-following-english-statements-in-prolog-mention-which-are-facts-and-rules">
+2. Write following English statements in Prolog. Mention which are facts and rules.</a></li>
+<li><a href="#4-explain-what-are-facts-rules-and-queries-in-logic-programming-with-example">
+4. Explain what are facts, rules, and queries in logic programming with example.</a></li>
+<li><a href="#5-describe-the-difference-between-forward-chaining-and-backward-chaining-which-is-used-in-prolog-by-default">
+5. Describe the difference between forward chaining and backward chaining. Which is used in Prolog by default?</a></li>
+<li><a href="#6-list-operations-in-prolog">
+6. List operations in Prolog</a></li>
+<li><a href="#7-explain-prolog-database-manipulation-commands-with-an-example">
+7. Explain prolog database manipulation commands with an example.</a>
+<ul>
+<li><a href="#static-database-manipulation">
+Static Database Manipulation.</a></li>
+<li><a href="#dynamic-database-manipulation">
+Dynamic Database Manipulation</a></li>
+</ul></li>
+<li><a href="#8-why-do-we-use-is-instead-of-in-prolog">
+8. Why do we use “is” instead of &quot;=&quot; in prolog?</a></li>
+<li><a href="#9-write-a-prolog-code-to-find-if-a-list-is-sorted-or-not">
+9. Write a prolog code to find if a list is sorted or not.</a></li>
+<li><a href="#10-briefly-describe-the-process-of-resolution-and-unification-in-logic-programming-with-example">
+10. Briefly describe the process of resolution and unification in logic programming with example.</a></li>
+<li><a href="#11-explain-how-prolog-differs-from-imperative-languages-in-its-handling-of-arithmetic">
+11. Explain how Prolog differs from imperative languages in its handling of arithmetic.</a></li>
+<li><a href="#12-explain-what-are-facts-rules-and-queries-in-logic-programming-with-example">
+12. Explain what are facts, rules, and queries in logic programming with example.</a></li>
+</ul></li>
+</ul>
+</nav>
+
+
+			    <summary>Table of Content</summary>
+			</details>
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem">PCPF-QB</h1>
+			<h2>Module 1<a name="module-1" class="heading-anchor" href="#module-1" rel="nofollow" aria-hidden="true"></a></h2><h3>
+1. What do you mean by Programming Paradigm. Explain with example the difference between declarative and imperative programming paradigm.<a name="1-what-do-you-mean-by-programming-paradigm-explain-with-example-the-difference-between-declarative-and-imperative-programming-paradigm" class="heading-anchor" href="#1-what-do-you-mean-by-programming-paradigm-explain-with-example-the-difference-between-declarative-and-imperative-programming-paradigm" rel="nofollow" aria-hidden="true"></a></h3>
+<iframe src="https://www.youtube-nocookie.com/embed/z6GbGzDst18" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<table>
+<thead>
+<tr>
+<th>Imperative Language</th>
+<th>Declarative Language</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Describes how to perform a computation</td>
+<td>Describes what computation should be performed</td>
+</tr>
+
+<tr>
+<td>Uses statements and instructions to change the state of the program</td>
+<td>Uses expressions and declarations to describe the</td>
+</tr>
+
+<tr>
+<td>Focuses on control flow and the order of</td>
+<td>Focuses on the problem to be solved, not the solution</td>
+</tr>
+
+<tr>
+<td>Examples: C, C++, Java, Python</td>
+<td>Examples: SQL, Prolog, Haskell, Lisp</td>
+</tr>
+
+<tr>
+<td>Code is written in a step-by-step manner</td>
+<td>Code is written in a more abstract and logical way</td>
+</tr>
+
+<tr>
+<td>Emphasizes on the process and the sequence of instructions</td>
+<td>Emphasizes on the final outcome and the results</td>
+</tr>
+
+<tr>
+<td>Uses variables and mutable data structures</td>
+<td>Uses constants and immutable data structures</td>
+</tr>
+
+<tr>
+<td>Programs are written with explicit control flow</td>
+<td>Programs are written with implicit control flow</td>
+</tr>
+
+<tr>
+<td>Programs are written with explicit memory management</td>
+<td>Programs are written with implicit memory management</td>
+</tr>
+
+<tr>
+<td>Programs are written with explicit error handling</td>
+<td>Programs are written with implicit error handling</td>
+</tr>
+
+<tr>
+<td>Programs are written with explicit state management</td>
+<td>Programs are written with implicit state management</td>
+</tr>
+</tbody>
+</table>
+
+<p>Declarative programming focuses on describing the desired outcome of a program,
+rather than specifying how to achieve it. In this paradigm, the programmer
+declares what the program should do and the underlying system is responsible for
+executing the task. Examples of declarative programming languages are SQL, HTML,
+and XSLT.</p>
+
+<p>Imperative programming, on the other hand, focuses on specifying how the task
+should be executed. In this paradigm, the programmer writes code that explicitly
+describes the steps to be taken to achieve a desired outcome. Examples of
+imperative programming languages are C, Java, and Python.</p>
+
+<p>In summary, declarative programming focuses on what to do, while imperative
+programming focuses on how to do it.</p>
+<h3>
+3. Explain type system and type checking.<a name="3-explain-type-system-and-type-checking" class="heading-anchor" href="#3-explain-type-system-and-type-checking" rel="nofollow" aria-hidden="true"></a></h3>
+<p>A type system is a formal set of rules in a programming language that defines the types of data that can be stored and processed, as well as the operations that can be performed on these data types. A type system helps ensure that the data used in a program is well-defined and consistent, and it can help prevent type-related errors from occurring.</p>
+
+<p>Type checking is the process of verifying that a program follows the rules defined by the type system. Type checking can occur at various stages of the software development process, including compile-time, run-time, or both. During type checking, the system checks that each value in the program has a well-defined type, and that each operation performed on a value is valid for that type.</p>
+
+<p>In C, common types include int (integer), char (character), float (floating point number), and double (double precision floating point number).</p>
+
+<p>In Haskell, common types include Int (integer), Float (floating point number), Char (character), and <a href="list of values of type a">a</a>.</p>
+<h3>
+4. Explain different storage allocation mechanisms.<a name="4-explain-different-storage-allocation-mechanisms" class="heading-anchor" href="#4-explain-different-storage-allocation-mechanisms" rel="nofollow" aria-hidden="true"></a></h3>
+<ul>
+<li>Storage management is the process of managing the allocation, deallocation, and use of memory in a
+computer system.</li>
+<li>The goal of storage management is to ensure that the system has enough memory available for its needs,
+while minimizing the amount of wasted memory.</li>
+<li>Programs require memory to store data such as variables, arrays, and objects.</li>
+<li>Memory is allocated to the program in chunks called blocks.</li>
+<li>Storage management is responsible for allocating these blocks of memory to the program.</li>
+<li>It also keeps track of which blocks are in use and which are free.</li>
+<li>It deallocates blocks that are no longer needed.</li>
+</ul>
+
+<p><img src="./memory.png" alt="Stoage Management Diagram"></p>
+
+<table>
+<thead>
+<tr>
+<th>Mechanism</th>
+<th>Allocation</th>
+<th>Deallocation</th>
+<th>Lifetime</th>
+<th>Speed</th>
+<th>Responsibility</th>
+<th>Usage</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Stack allocation</td>
+<td>LIFO</td>
+<td>Automatically managed by the system</td>
+<td>Function call</td>
+<td>Fast</td>
+<td>System</td>
+<td>Function call frames and local variables</td>
+</tr>
+
+<tr>
+<td>Heap allocation</td>
+<td>Dynamic, at runtime</td>
+<td>Programmer-managed</td>
+<td>Persistent</td>
+<td>Slow</td>
+<td>Programmer</td>
+<td>Objects and data structures with a longer lifetime</td>
+</tr>
+
+<tr>
+<td>Static allocation</td>
+<td>At compile time</td>
+<td>Persistent for the entire program</td>
+<td>Entire program</td>
+<td>Fast</td>
+<td>None</td>
+<td>Global variables and constants</td>
+</tr>
+</tbody>
+</table>
+<h4>
+Static Storage Allocation<a name="static-storage-allocation" class="heading-anchor" href="#static-storage-allocation" rel="nofollow" aria-hidden="true"></a></h4>
+<ul>
+<li>Static storage allocation is a method of allocating memory for a program during the compilation process, before the program is executed.</li>
+<li>This method is also known as “compile-time allocation” or “static memory allocation.”</li>
+<li>The memory is allocated in a fixed size and the size remains constant throughout the execution of the program.</li>
+<li>Pros:
+
+<ul>
+<li>Simple to implement and understand.</li>
+<li>Memory allocation is done at compile time, so it is known in advance how much memory will be used by the program.</li>
+<li>No need for memory allocation and deallocation during runtime, so it can be more efficient.</li>
+</ul></li>
+<li>Cons:
+
+<ul>
+<li>The amount of memory allocated cannot be changed during runtime.</li>
+<li>If the program requires more memory than what was allocated at compile time, it can lead to memory overflow errors.</li>
+<li>If the program uses less memory than what was allocated at compile time, it can lead to wasted memory.</li>
+</ul></li>
+</ul>
+<h4>
+Stack Based Storage Allocation<a name="stack-based-storage-allocation" class="heading-anchor" href="#stack-based-storage-allocation" rel="nofollow" aria-hidden="true"></a></h4>
+<ul>
+<li>Stack-based storage allocation is a method of allocating memory for a program where memory is allocated and deallocated in a last-in, first-out (LIFO) order.</li>
+<li>The stack is a data structure that stores data in a linear manner, with the most recent item being added to the top of the stack.</li>
+<li>The memory is allocated for a specific scope, and once that scope is exited, the memory is deallocated.</li>
+<li>Pros:
+
+<ul>
+<li>Simple to implement and understand.</li>
+<li>Memory allocation and deallocation is done automatically, so there is no need for manual memory management.</li>
+<li>Memory is allocated and deallocated in a LIFO order, which makes it easy to keep track of memory usage.</li>
+</ul></li>
+<li>Cons:
+
+<ul>
+<li>The amount of memory that can be allocated is limited by the size of the stack.</li>
+<li>It’s not suitable for data that needs to be stored longer-term.</li>
+<li>Recursive functions can cause stack overflow if the recursion goes too deep.</li>
+</ul></li>
+</ul>
+<h4>
+Heap Allocation<a name="heap-allocation" class="heading-anchor" href="#heap-allocation" rel="nofollow" aria-hidden="true"></a></h4>
+<ul>
+<li>Heap allocation refers to the process of dynamically allocating memory on the heap during runtime, as opposed
+to stack allocation, which takes place on the stack.</li>
+<li>Heap allocation is used to allocate memory for objects that have a longer lifespan than the function call or the
+block in which they are created.</li>
+<li>Heap allocation is performed using functions such as malloc or new in C or C++, or the operator new in Java.</li>
+<li>Memory allocated on the heap is not automatically freed when the function or block in which it was allocated
+terminates. It must be explicitly deallocated using free or delete.</li>
+<li>Heap allocation is useful when the size of the object is not known at compile time, or when the object needs to
+persist beyond the scope of the function or block in which it is created.</li>
+<li>The advantage of heap allocation is that it provides greater flexibility in terms of memory allocation, as objects
+can be created and destroyed dynamically as needed.</li>
+<li>However, heap allocation also requires more overhead and can result in memory leaks if objects are not
+properly deallocated.</li>
+<li>Therefore, it is important to understand the trade-off between stack allocation and heap allocation and to
+choose the appropriate method based on the requirements of the program.</li>
+<li>Heap allocation is also subject to fragmentation, where the available memory is split into smaller blocks, making
+it difficult to allocate large blocks of contiguous memory.</li>
+<li>Pros:
+
+<ul>
+<li>Provides more memory than stack</li>
+<li>Offers more flexibility and control over memory</li>
+<li>Ideal for large data structures and objects</li>
+</ul></li>
+<li>Cons:
+
+<ul>
+<li>Slower access</li>
+<li>Fragmentation can occur</li>
+<li>More overhead and requires careful management</li>
+</ul></li>
+</ul>
+<h3>
+5. Static Scoping vs. Dynamic Scoping<a name="5-static-scoping-vs-dynamic-scoping" class="heading-anchor" href="#5-static-scoping-vs-dynamic-scoping" rel="nofollow" aria-hidden="true"></a></h3>
+<iframe src="https://www.youtube.com/embed/ndftEFZ5fgc" title="C programming | Static and Dynamic scoping | Scoping rules | Lexical scoping | Fluid Binding" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Static Scoping</th>
+<th>Dynamic Scoping</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Definition</td>
+<td>Based on the location of the variable definition in the source code</td>
+<td>Based on the call stack at the time the variable is evaluated</td>
+</tr>
+
+<tr>
+<td>Determination of variable value</td>
+<td>Closest enclosing block in which the variable is defined</td>
+<td>Most recent call to a function that has defined the variable</td>
+</tr>
+
+<tr>
+<td>Debugging</td>
+<td>Easier</td>
+<td>More difficult</td>
+</tr>
+
+<tr>
+<td>Performance</td>
+<td>Faster</td>
+<td>Slower</td>
+</tr>
+
+<tr>
+<td>Typical Use</td>
+<td>Most statically-typed programming languages</td>
+<td>Older dynamically-typed programming languages</td>
+</tr>
+</tbody>
+</table>
+
+<p>Static scoping and dynamic scoping are two different ways that variables in a program can be associated with values.</p>
+
+<p>Static scoping is a scoping rule that determines the value of a variable based on the location of the variable definition in the source code. In static scoping, the value of a variable is determined by the closest enclosing block in which the variable is defined.</p>
+
+<p>Dynamic scoping is a scoping rule that determines the value of a variable based on the call stack at the time the variable is evaluated. In dynamic scoping, the value of a variable is determined by the most recent call to a function that has defined the variable.</p>
+<h3>
+6. Discuss Call by value vs. Call by reference.<a name="6-discuss-call-by-value-vs-call-by-reference" class="heading-anchor" href="#6-discuss-call-by-value-vs-call-by-reference" rel="nofollow" aria-hidden="true"></a></h3>
+<iframe src="https://www.youtube.com/embed/HEiPxjVR8CU" title="Call By Value & Call By Reference in C" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<h4>
+Call by value<a name="call-by-value" class="heading-anchor" href="#call-by-value" rel="nofollow" aria-hidden="true"></a></h4>
+<p>Call by value evaluates the argument expression and passes the resulting value to the function. The function receives a copy of the value, so any changes made to the argument within the function are not reflected in the caller.</p>
+
+<p>Example Program:</p>
+
+<div class="highlight highlight-c"><pre>#include &lt;stdio.h&gt;
+
+void swap(int x, int y){
+    int temp = x;
+    x = y;
+    y = temp;
+}
+
+int main(){
+    int x = 10;
+    int y = 11;
+    printf(&quot;Values before swap: x = %d, y = %d\n&quot;, x,y);
+    swap(x,y);
+    printf(&quot;Values after swap: x = %d, y = %d&quot;, x,y);
+}
+</pre></div>
+
+<p>Output:</p>
+
+<div class="highlight highlight-C"><pre>Values before swap: x = 10, y = 11
+Values after swap: x = 10, y = 11
+</pre></div>
+<h4>
+Call by reference<a name="call-by-reference" class="heading-anchor" href="#call-by-reference" rel="nofollow" aria-hidden="true"></a></h4>
+<p>Call by reference evaluates the argument expression and passes a reference to the resulting object to the function. The function receives a reference to the same object, so any changes made to the argument within the function are reflected in the caller.</p>
+
+<div class="highlight highlight-c"><pre>#include &lt;stdio.h&gt;
+
+void swap(int *x, int *y){
+    int temp = *x;
+    *x = *y;
+    *y = temp;
+}
+
+int main(){
+    int x = 10;
+    int y = 11;
+    printf(&quot;Values before swap: x = %d, y = %d\n&quot;, x,y);
+    swap(&amp;x,&amp;y);
+    printf(&quot;Values after swap: x = %d, y = %d&quot;, x,y);
+}
+</pre></div>
+
+<p>Output:</p>
+
+<div class="highlight highlight-C"><pre>Values before swap: x = 10, y = 11
+Values after swap: x = 11, y = 10
+</pre></div>
+<h4>
+Difference Between Call by Value and Call by Reference in C<a name="difference-between-call-by-value-and-call-by-reference-in-c" class="heading-anchor" href="#difference-between-call-by-value-and-call-by-reference-in-c" rel="nofollow" aria-hidden="true"></a></h4>
+<table>
+<thead>
+<tr>
+<th>Calling by Value</th>
+<th>Calling by Reference</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Copies the value of an object.</td>
+<td>Pass a pointer that contains the memory address of an object that gives access to its contents.</td>
+</tr>
+
+<tr>
+<td>Guarantees that changes that alter the state of the parameter will only affect the named parameter bounded by the scope of the function.</td>
+<td>Changes that alter the state of the parameter will reflect to the contents of the passed object.</td>
+</tr>
+
+<tr>
+<td>Simpler to implement and simpler to reason with.</td>
+<td>More difficult to keep track of changing values that happens for each time a function may be called.</td>
+</tr>
+</tbody>
+</table>
+<h3>
+7. Types of binding in Programming Languages<a name="7-types-of-binding-in-programming-languages" class="heading-anchor" href="#7-types-of-binding-in-programming-languages" rel="nofollow" aria-hidden="true"></a></h3><h4>
+Static binding<a name="static-binding" class="heading-anchor" href="#static-binding" rel="nofollow" aria-hidden="true"></a></h4>
+<ul>
+<li>Occurs at compile-time, before the program is executed.</li>
+<li>Assigns the memory location of the variable or function during the compilation process.</li>
+<li>Also known as early binding or compile-time binding.</li>
+<li>The type of the variable or function is determined at compile-time and cannot be changed at runtime.</li>
+
+<li><p>Example:</p>
+
+<div class="highlight highlight-cpp"><pre>int = 5
+</pre></div></li>
+</ul>
+<h4>
+Dynamic binding<a name="dynamic-binding" class="heading-anchor" href="#dynamic-binding" rel="nofollow" aria-hidden="true"></a></h4>
+<ul>
+<li>Occurs at runtime, when the program is executed.</li>
+<li>Assigns the memory location of the variable or function during the execution of the program.</li>
+<li>Also known as late binding or runtime binding.</li>
+<li>The type of the variable or function can be determined at runtime.</li>
+
+<li><p>Example:</p>
+
+<div class="highlight highlight-cpp"><pre>int x = 5;
+x = 7;
+</pre></div></li>
+</ul>
+<h3>
+8. Write a note on Naming and Scoping rules for scripting languages.<a name="8-write-a-note-on-naming-and-scoping-rules-for-scripting-languages" class="heading-anchor" href="#8-write-a-note-on-naming-and-scoping-rules-for-scripting-languages" rel="nofollow" aria-hidden="true"></a></h3><h4>
+Naming<a name="naming" class="heading-anchor" href="#naming" rel="nofollow" aria-hidden="true"></a></h4>
+<ul>
+<li>Naming rules in scripting languages generally allow for the use of letters, digits, and underscore characters in variable names, with the first character being a letter or underscore.</li>
+<li>Names are case-sensitive and cannot be reserved words.</li>
+</ul>
+<h4>
+Scoping<a name="scoping" class="heading-anchor" href="#scoping" rel="nofollow" aria-hidden="true"></a></h4>
+<ul>
+<li>Scoping rules determine the visibility and accessibility of variables and functions within the program.</li>
+<li>There are two types of scoping in scripting languages: local and global scoping.</li>
+<li>Local scoping means variables are only accessible within a function or block of code.</li>
+<li>Global scoping means variables are accessible throughout the entire program.</li>
+</ul>
+
+<p>It's important to be mindful of naming and scoping rules as incorrect use can lead to unexpected results or errors.</p>
+<h3>
+9. Describe different parameter passing modes.<a name="9-describe-different-parameter-passing-modes" class="heading-anchor" href="#9-describe-different-parameter-passing-modes" rel="nofollow" aria-hidden="true"></a></h3>
+<p>Parameter passing modes refer to the ways in which arguments or parameters are passed to a function when it's called. There are four common parameter passing modes in programming:</p>
+
+<ol>
+<li><p>Call by value: This is the simplest and most common mode of parameter passing. In call by value, a copy of the argument is made and passed to the function. Any changes made to the argument inside the function have no effect on the original argument outside the function.</p></li>
+
+<li><p>Call by reference: In call by reference, the address of the argument is passed to the function. This means that the function can modify the original argument, which will be reflected outside the function.</p></li>
+
+<li><p>Call by pointer: This is similar to call by reference, but the argument is passed as a pointer rather than a reference. The function receives the address of the argument, so it can access and modify the original argument.</p></li>
+
+<li><p>Call by const reference: This is similar to call by reference, but the argument is passed as a constant reference. This means that the function can access the argument, but cannot modify it.</p></li>
+</ol>
+<h3>
+10. Compare heap based and stack-based principal storage allocation mechanism.<a name="10-compare-heap-based-and-stack-based-principal-storage-allocation-mechanism" class="heading-anchor" href="#10-compare-heap-based-and-stack-based-principal-storage-allocation-mechanism" rel="nofollow" aria-hidden="true"></a></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Heap-based</th>
+<th>Stack-based</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Definition</td>
+<td>Dynamic memory allocation mechanism in which memory is allocated at runtime and can grow or shrink as needed</td>
+<td>Dynamic memory allocation mechanism in which memory is allocated in a contiguous block and follows the Last-In-First-Out (LIFO) order</td>
+</tr>
+
+<tr>
+<td>Usage</td>
+<td>Used for data that needs to persist after the function call is complete</td>
+<td>Used for data that is required only for the duration of the function call</td>
+</tr>
+
+<tr>
+<td>Accessibility</td>
+<td>Memory in the heap can be accessed anywhere in the program</td>
+<td>Memory in the stack can only be accessed within the function it was allocated in</td>
+</tr>
+
+<tr>
+<td>Allocation and Deallocation</td>
+<td>Allocation and deallocation of memory in the heap can be slow and must be managed explicitly</td>
+<td>Allocation and deallocation of memory in the stack is fast and is managed automatically by the program</td>
+</tr>
+
+<tr>
+<td>Flexibility</td>
+<td>The heap offers more flexibility in terms of size and can be resized dynamically</td>
+<td>The size of the stack is fixed and cannot be resized dynamically</td>
+</tr>
+
+<tr>
+<td>Fragmentation</td>
+<td>The heap can suffer from fragmentation if blocks of memory are frequently allocated and deallocated</td>
+<td>The stack does not suffer from fragmentation</td>
+</tr>
+
+<tr>
+<td>Possibility of Memory Leaks</td>
+<td>The heap is more prone to memory leaks, since it is not automatically managed</td>
+<td>The stack is less prone to memory leaks, since it is automatically managed</td>
+</tr>
+</tbody>
+</table>
+<h3>
+11. Discuss Scope with reference to binding in program. Also compare static and dynamic scoping.<a name="11-discuss-scope-with-reference-to-binding-in-program-also-compare-static-and-dynamic-scoping" class="heading-anchor" href="#11-discuss-scope-with-reference-to-binding-in-program-also-compare-static-and-dynamic-scoping" rel="nofollow" aria-hidden="true"></a></h3>
+<p><strong>Scope</strong> refers to the part of the program in which a particular identifier or variable is accessible or visible. In other words, scope defines the region of the program where a variable can be referred to by its name.</p>
+
+<p><strong>Binding</strong> refers to the association of a variable or identifier with a value. The process of binding a variable to a value is called variable initialization.</p>
+
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Static Scoping</th>
+<th>Dynamic Scoping</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Definition</td>
+<td>Scoping based on the position in the source code at compile time</td>
+<td>Scoping based on the sequence of function calls at runtime</td>
+</tr>
+
+<tr>
+<td>Scope Determination</td>
+<td>Compile Time</td>
+<td>Runtime</td>
+</tr>
+
+<tr>
+<td>Variable Accessibility</td>
+<td>Within the block in which it was declared and any nested blocks</td>
+<td>Anywhere within the program as long as its containing function has been called</td>
+</tr>
+
+<tr>
+<td>Example Languages</td>
+<td>C, Java, Python</td>
+<td>Common Lisp</td>
+</tr>
+
+<tr>
+<td>Advantages</td>
+<td>Easier to understand, less prone to errors</td>
+<td>Useful for global variables that need to be accessible from anywhere in the program</td>
+</tr>
+
+<tr>
+<td>Disadvantages</td>
+<td>Limited accessibility of variables</td>
+<td>More complex and prone to errors</td>
+</tr>
+</tbody>
+</table>
+<h3>
+12. Justify the following statement, “No single factor determines whether a programming language is good.”<a name="12-justify-the-following-statement-no-single-factor-determines-whether-a-programming-language-is-good" class="heading-anchor" href="#12-justify-the-following-statement-no-single-factor-determines-whether-a-programming-language-is-good" rel="nofollow" aria-hidden="true"></a></h3>
+<p>The statement &quot;No single factor determines whether a programming language is good&quot; is accurate because the quality of a programming language is determined by a combination of many factors, rather than just one. Some of the factors that influence the quality of a programming language include:</p>
+
+<ol>
+<li><p>Expressiveness: How easily and efficiently can complex concepts be expressed in the language?</p></li>
+
+<li><p>Readability: How easily can the code written in the language be understood by other programmers?</p></li>
+
+<li><p>Performance: How efficiently does the language execute code and handle large amounts of data?</p></li>
+
+<li><p>Interoperability: How easily does the language integrate with other systems and programming languages?</p></li>
+
+<li><p>Ecosystem: How rich and supportive is the community of users, libraries, and tools around the language?</p></li>
+
+<li><p>Portability: How easily can code written in the language be run on different platforms and devices?</p></li>
+
+<li><p>Maturity: How long has the language been in use and how well established is it in the industry?</p></li>
+</ol>
+
+<p>It is difficult to determine which programming language is best because each language excels in some areas and falls short in others. The best choice of programming language depends on the specific requirements of the project, the goals of the developer, and personal preferences.</p>
+
+<p>Therefore, no single factor can determine whether a programming language is good, and it is more accurate to say that the quality of a programming language is determined by a combination of many factors.</p>
+<h2>
+Module 2<a name="module-2" class="heading-anchor" href="#module-2" rel="nofollow" aria-hidden="true"></a></h2><h3>
+1. Explain Type and Type classes in Haskell.<a name="1-explain-type-and-type-classes-in-haskell" class="heading-anchor" href="#1-explain-type-and-type-classes-in-haskell" rel="nofollow" aria-hidden="true"></a></h3>
+<p>In Haskell, a &quot;type&quot; refers to a category of values that have the same kind of behavior or operations defined for them. A type is used to ensure that values of different categories are not mixed together accidentally in a program.</p>
+
+<p>A &quot;type class&quot; is a collection of types that support a particular set of operations. Type classes in Haskell provide a way to define the behavior of types in a general and reusable way. For example, the Eq type class provides a definition for equality comparison (== and /=) for its instances, which include basic types like integers and floating-point numbers, as well as custom types.</p>
+
+<p>Type classes are declared using the keyword class followed by the type class name and its associated operations, and then specifying which types are instances of the type class using the keyword instance.</p>
+<h3>
+2. What is composite data type? Explain different composite data types in Haskell.<a name="2-what-is-composite-data-type-explain-different-composite-data-types-in-haskell" class="heading-anchor" href="#2-what-is-composite-data-type-explain-different-composite-data-types-in-haskell" rel="nofollow" aria-hidden="true"></a></h3>
+<p>Composite data type is a type that consists of multiple values of different data types combined together into a single entity. In Haskell, the following are some of the commonly used composite data types:</p>
+
+<ol>
+<li>Tuples: A tuple is a fixed-size collection of values of different types, separated by commas and enclosed in parentheses.</li>
+<li>Lists: A list is an ordered collection of values of the same type. Lists are represented by square brackets and the values are separated by commas.</li>
+<li>Arrays: An array is a fixed-size collection of values of the same type, stored in contiguous memory locations.</li>
+<li>Records: A record is a composite data type that consists of a set of named values. The values can be of different types.</li>
+<li>Algebraic data types: Algebraic data types are composite data types that can take on multiple values. For example, the type <code>Maybe</code> can take on the values <code>Just a</code> or <code>Nothing</code>.</li>
+</ol>
+<h3>
+4. Lambda Calculus<a name="4-lambda-calculus" class="heading-anchor" href="#4-lambda-calculus" rel="nofollow" aria-hidden="true"></a></h3>
+<ul>
+<li>Lambda calculus is a formal system for expressing computation based on the concept of lambda functions. It was
+introduced by Alonzo Church in the 1930s as a mathematical tool for studying the foundations of mathematics
+and logic.</li>
+<li>A lambda function is a function without a name, also known as an anonymous function. It consists of three parts:</li>
+<li>The lambda keyword, which indicates that the function is anonymous.</li>
+<li>A list of one or more variables, which represent the function's arguments.</li>
+
+<li><p>An expression, which represents the function's body.
+The syntax for a lambda function is as follows:</p>
+
+<pre><code>λx.x + 1
+</code></pre>
+
+<p>Here, λ is the lambda keyword, x is the variable, and x+1 is the expression.</p></li>
+
+<li><p>In lambda calculus, functions are first-class citizens, which means they can be passed as arguments and returned
+as values. This makes it a powerful tool for functional programming languages like Lisp, Scheme, and Haskell.</p></li>
+
+<li><p>Lambda calculus can be used to express a wide range of computations, including recursive functions, and it
+forms the theoretical basis for many programming languages.</p></li>
+</ul>
+<h3>
+5. What is pattern matching in Haskell. Explain with an example.<a name="5-what-is-pattern-matching-in-haskell-explain-with-an-example" class="heading-anchor" href="#5-what-is-pattern-matching-in-haskell-explain-with-an-example" rel="nofollow" aria-hidden="true"></a></h3>
+<p>We use pattern matching in Haskell to simplify our codes by identifying specific types of expression. We can also use if-else as an alternative to pattern matching.</p>
+
+<p>In pattern matching, we match an expression against a series of patterns. If a match is found, the corresponding code block is executed. If no match is found, a runtime error is generated.</p>
+
+<div class="highlight highlight-haskell"><pre>sq :: Int -&gt; Int 
+sq 0 = 1 --first pattern
+sq n = n * n -- second pattern
+
+main = do 
+   putStrLn &quot;The square of 5 is:&quot; -- adding text decsription
+   print (sq 5) --calling the sq function and printing output
+</pre></div>
+
+<p>Output:</p>
+
+<pre><code>The square of 5 is:
+25
+</code></pre>
+<h3>
+6. Higher order function<a name="6-higher-order-function" class="heading-anchor" href="#6-higher-order-function" rel="nofollow" aria-hidden="true"></a></h3>
+<p>A higher-order function is a function that takes one or more functions as arguments and/or returns a function as its result. Higher-order functions are a key feature of functional programming, and they allow for a more abstract and composable approach to solving problems.</p>
+
+<p>In simple terms, a higher-order function can either accept functions as inputs or produce a function as output, or both. By using higher-order functions, you can write more abstract, reusable, and composable code, making it easier to write, test, and maintain complex software systems.</p>
+
+<p>Example in Python:</p>
+
+<div class="highlight highlight-python"><pre>def square(x):
+    return x * x
+
+def cube(x):
+    return x * x * x
+
+def apply(func, x):
+    return func(x)
+
+print(apply(square, 5)) # 25
+print(apply(cube, 5)) # 125
+</pre></div>
+<h3>
+7. What mathematical formalism underlies functional programming?<a name="7-what-mathematical-formalism-underlies-functional-programming" class="heading-anchor" href="#7-what-mathematical-formalism-underlies-functional-programming" rel="nofollow" aria-hidden="true"></a></h3>
+<p>Functional programming is based on the mathematical theory of lambda calculus. Lambda calculus is a mathematical framework for defining functions and manipulating expressions. It provides a formalism for defining functions as well as operations for combining and transforming those functions. The concept of lambda calculus is central to functional programming and provides the basis for defining and manipulating functions in a functional programming language.</p>
+<h3>
+8. Explain concept of currying in haskell with an example.<a name="8-explain-concept-of-currying-in-haskell-with-an-example" class="heading-anchor" href="#8-explain-concept-of-currying-in-haskell-with-an-example" rel="nofollow" aria-hidden="true"></a></h3>
+<iframe src="https://www.youtube.com/embed/m12c99qgHBU" title="Haskell for Imperative Programmers #7 - Partial Function Application & Currying" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<p>Currying is the process of transforming a function that takes multiple arguments in a tuple as its argument, into a function that takes just a single argument and returns another function which accepts further arguments, one by one, that the original function would receive in the rest of that tuple.</p>
+
+<div class="highlight highlight-haskell"><pre>f :: a -&gt; (b -&gt; c)     -- which can also be written as    f :: a -&gt; b -&gt; c
+</pre></div>
+<h3>
+9. Explain features of functional programming languages.<a name="9-explain-features-of-functional-programming-languages" class="heading-anchor" href="#9-explain-features-of-functional-programming-languages" rel="nofollow" aria-hidden="true"></a></h3><h4>
+Immutable Data<a name="immutable-data" class="heading-anchor" href="#immutable-data" rel="nofollow" aria-hidden="true"></a></h4>
+<p>Immutable Data means that you should easily able to create data structures instead of modifying ones which is already exist.</p>
+<h4>
+Referential transparency<a name="referential-transparency" class="heading-anchor" href="#referential-transparency" rel="nofollow" aria-hidden="true"></a></h4>
+<p>Functional programs should perform operations just like as if it is for the first time. So, you will know what may or may not have happened during the program’s execution, and its side effects. In FP term it is called Referential transparency.</p>
+<h4>
+Modularity<a name="modularity" class="heading-anchor" href="#modularity" rel="nofollow" aria-hidden="true"></a></h4>
+<p>Modular design increases productivity. Small modules can be coded quickly and have a greater chance of re-use which surely leads to faster development of programs. Apart from it, the modules can be tested separately which helps you to reduce the time spent on unit testing and debugging.</p>
+<h4>
+Maintainability<a name="maintainability" class="heading-anchor" href="#maintainability" rel="nofollow" aria-hidden="true"></a></h4>
+<p>Maintainability is a simple term which means FP programming is easier to maintain as you don’t need to worry about accidentally changing anything outside the given function.</p>
+
+<p>First-class function</p>
+
+<p>‘First-class function’ is a definition, attributed to programming language entities that have no restriction on their use. Therefore, first-class functions can appear anywhere in the program.</p>
+<h4>
+Closure<a name="closure" class="heading-anchor" href="#closure" rel="nofollow" aria-hidden="true"></a></h4>
+<p>The closure is an inner function which can access variables of parent function’s, even after the parent function has executed.</p>
+<h3>
+Higher-order functions<a name="higher-order-functions" class="heading-anchor" href="#higher-order-functions" rel="nofollow" aria-hidden="true"></a></h3>
+<p>Higher-order functions either take other functions as arguments or return them as results.</p>
+
+<p>Higher-order functions allow partial applications or currying. This technique applies a function to its arguments one at a time, as each application returning a new function which accepts the next argument.</p>
+<h3>
+Pure function<a name="pure-function" class="heading-anchor" href="#pure-function" rel="nofollow" aria-hidden="true"></a></h3>
+<p>A ‘Pure function’ is a function whose inputs are declared as inputs and none of them should be hidden. The outputs are also declared as outputs.</p>
+
+<p>Pure functions act on their parameters. It is not efficient if not returning anything. Moreover, it offers the same output for the given parameters</p>
+
+<p><strong>Example:</strong></p>
+
+<div class="highlight highlight-c"><pre>Function Pure(a,b)
+{
+	return a+b;
+}
+</pre></div>
+<h4>
+Impure functions<a name="impure-functions" class="heading-anchor" href="#impure-functions" rel="nofollow" aria-hidden="true"></a></h4>
+<p>Impure functions exactly in the opposite of pure. They have hidden inputs or output; it is called impure. Impure functions cannot be used or tested in isolation as they have dependencies.</p>
+
+<p><strong>Example</strong></p>
+
+<div class="highlight highlight-c"><pre>int z;
+function notPure(){
+	z = z+10;
+}
+</pre></div>
+<h3>
+10. What is the difference between normal-order and applicative-order evaluation? What is lazy evaluation?<a name="10-what-is-the-difference-between-normal-order-and-applicative-order-evaluation-what-is-lazy-evaluation" class="heading-anchor" href="#10-what-is-the-difference-between-normal-order-and-applicative-order-evaluation-what-is-lazy-evaluation" rel="nofollow" aria-hidden="true"></a></h3>
+<p><iframe src="https://www.youtube.com/embed/DN32KzPvjUI" title="Functional Languages Evaluation Order" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+| Feature | Normal Order Evaluation | Applicative Order Evaluation |
+| --- | --- | --- |
+| Evaluation Strategy | Evaluate arguments only when needed | Evaluate all arguments first |
+| Computation Strategy | Lazy evaluation | Eager evaluation |
+| Debugging | More difficult | Easier |
+| Performance | Can be more efficient | Can be less efficient |
+| Typical Use | Functional programming languages | Imperative programming languages |</p>
+<h3>
+11. The haskell function head defined in prelude, returns the first element of a list and throws an exception when we try to apply it on an empty list. Define two variants of this function (you can use different names) that work exactly like head function except in the case of an empty list input they will show [] as output instead of throwing an exception. You must use the following constructs in Haskell for defining the functions.<a name="11-the-haskell-function-head-defined-in-prelude-returns-the-first-element-of-a-list-and-throws-an-exception-when-we-try-to-apply-it-on-an-empty-list-define-two-variants-of-this-function-you-can-use-different-names-that-work-exactly-like-head-function-except-in-the-case-of-an-empty-list-input-they-will-show-as-output-instead-of-throwing-an-exception-you-must-use-the-following-constructs-in-haskell-for-defining-the-functions" class="heading-anchor" href="#11-the-haskell-function-head-defined-in-prelude-returns-the-first-element-of-a-list-and-throws-an-exception-when-we-try-to-apply-it-on-an-empty-list-define-two-variants-of-this-function-you-can-use-different-names-that-work-exactly-like-head-function-except-in-the-case-of-an-empty-list-input-they-will-show-as-output-instead-of-throwing-an-exception-you-must-use-the-following-constructs-in-haskell-for-defining-the-functions" rel="nofollow" aria-hidden="true"></a></h3>
+<ol>
+<li>First implementation should make use of pattern matching.</li>
+<li>Second implementation uses guard equations
+\
+Note: Students are not expected to write the main function and do user Io</li>
+</ol>
+<h3>
+12. Define Haskell function that inputs one operator +,-,*,^ and two operands which may be Int, Integer, Float or Double. The function will perform the operation and computes the result. Clearly mention the type signature for the function.<a name="12-define-haskell-function-that-inputs-one-operator-and-two-operands-which-may-be-int-integer-float-or-double-the-function-will-perform-the-operation-and-computes-the-result-clearly-mention-the-type-signature-for-the-function" class="heading-anchor" href="#12-define-haskell-function-that-inputs-one-operator-and-two-operands-which-may-be-int-integer-float-or-double-the-function-will-perform-the-operation-and-computes-the-result-clearly-mention-the-type-signature-for-the-function" rel="nofollow" aria-hidden="true"></a></h3>
+<p><strong>Note:</strong> Students are not expected to write the main function and do user IO.</p>
+<h3>
+13. Define a haskell function named “addUs” that adds 2 input numbers.<a name="13-define-a-haskell-function-named-addus-that-adds-2-input-numbers" class="heading-anchor" href="#13-define-a-haskell-function-named-addus-that-adds-2-input-numbers" rel="nofollow" aria-hidden="true"></a></h3>
+<pre><code>Using this function as a building block, define a Haskell function “multiplyUs”
+that multiplies two input numbers. The multiplyUs function should cater to
+following:
+
+1. Inputs may be signed numbers e.g. “multiplyUs (-2) * (3)” should result in
+   “-6” and “multiplyUs (-2) * (-6)” should result in “12”
+2. It should use guard expressions and recursion.
+3. No need to write the main function to do user interaction writing definition
+   for “addUs” and “multiplyUs” is sufficient.
+</code></pre>
+
+<p>Here is the definition for the <code>addUs</code> function in Haskell:</p>
+
+<div class="highlight highlight-haskell"><pre>addUs :: Int -&gt; Int -&gt; Int
+addUs a b = a + b` 
+</pre></div>
+
+<p>And here is the definition for the <code>multiplyUs</code> function using <code>addUs</code> as a building block:</p>
+
+<div class="highlight highlight-haskell"><pre>multiplyUs :: Int -&gt; Int -&gt; Int
+multiplyUs a 0 = 0
+multiplyUs a b
+  | a &gt;= 0 &amp;&amp; b &gt;= 0 = helper a b 0
+  | a &gt;= 0 &amp;&amp; b &lt; 0 = helper a (negate b) 0 * (-1)
+  | a &lt; 0 &amp;&amp; b &gt;= 0 = helper (negate a) b 0 * (-1)
+  | a &lt; 0 &amp;&amp; b &lt; 0 = helper (negate a) (negate b) 0
+  where
+    helper _ 0 res = res
+    helper a b res = helper a (b - 1) (addUs res a)`
+</pre></div>
+<h2>
+Module 3<a name="module-3" class="heading-anchor" href="#module-3" rel="nofollow" aria-hidden="true"></a></h2><h3>
+2. Write following English statements in Prolog. Mention which are facts and rules.<a name="2-write-following-english-statements-in-prolog-mention-which-are-facts-and-rules" class="heading-anchor" href="#2-write-following-english-statements-in-prolog-mention-which-are-facts-and-rules" rel="nofollow" aria-hidden="true"></a></h3>
+<ol>
+<li>Ram writes a book.</li>
+<li>Sham reads a book if it is written by Ram.</li>
+<li>If someone reads any book then he is a scholar.</li>
+<li>If someone reads a book written by Ram he is a fan of Ram.</li>
+<li>Sham is fan of Ram.</li>
+</ol>
+<h3>
+4. Explain what are facts, rules, and queries in logic programming with example.<a name="4-explain-what-are-facts-rules-and-queries-in-logic-programming-with-example" class="heading-anchor" href="#4-explain-what-are-facts-rules-and-queries-in-logic-programming-with-example" rel="nofollow" aria-hidden="true"></a></h3>
+<p>In Prolog, a program is made up of a collection of facts and rules that describe relationships between different objects.</p>
+
+<ol>
+<li><p>Facts are simple statements that describe a relationship between one or more objects. They are represented as predicates and are used to assert information into the program. An example of a fact would be: “John is a software engineer”.</p>
+
+<div class="highlight highlight-prolog"><pre>person(john, age(30), job('software engineer')).
+</pre></div></li>
+
+<li><p>Rules are logical statements that define how one predicate can be derived from other predicates. They are used to express more complex relationships between objects, and are represented as a head predicate followed by a body of predicates. An example of a rule would be: “If a person is older than 30 and has a job as a software engineer, then they are considered a senior software engineer.”</p>
+
+<div class="highlight highlight-prolog"><pre>senior_software_engineer(X) :- person(X, age(Age), job('software engineer')), Age &gt; 30.
+</pre></div></li>
+
+<li><p>Queries are used to ask the Prolog program to find solutions that satisfy a given predicate. Queries are used to retrieve information from the program and are represented as predicates with variables. An example of a query would be: “Who is a senior software engineer?”. Copy code</p>
+
+<div class="highlight highlight-prolog"><pre>?- senior_software_engineer(X).
+</pre></div></li>
+</ol>
+
+<p>The Prolog interpreter will attempt to find a value for the variable X that makes the predicate senior_software_engineer(X) true. In this case, X will be bound to the value ‘john’ if the previously defined rule and fact are present in the knowledge base.</p>
+
+<p>In summary, facts are used to assert information, rules are used to express complex relationships, and queries are used to retrieve information from the program. Prolog uses a reasoning engine to deduce the solution based on the facts and rules provided and the queries made by the user.</p>
+<h3>
+5. Describe the difference between forward chaining and backward chaining. Which is used in Prolog by default?<a name="5-describe-the-difference-between-forward-chaining-and-backward-chaining-which-is-used-in-prolog-by-default" class="heading-anchor" href="#5-describe-the-difference-between-forward-chaining-and-backward-chaining-which-is-used-in-prolog-by-default" rel="nofollow" aria-hidden="true"></a></h3>
+<table>
+<thead>
+<tr>
+<th>Forward Chaining</th>
+<th>Backward Chaining</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Forward chaining starts from known facts and applies inference rule to extract more data unit it reaches to the goal.</td>
+<td>Backward chaining starts from the goal and works backward through inference rules to find the required facts that support the goal.</td>
+</tr>
+
+<tr>
+<td>It is a bottom-up approach</td>
+<td>It is a top-down approach</td>
+</tr>
+
+<tr>
+<td>Forward chaining is known as data-driven inference technique as we reach to the goal using the available data.</td>
+<td>Backward chaining is known as goal-driven technique as we start from the goal and divide into sub-goal to extract the facts.</td>
+</tr>
+
+<tr>
+<td>Forward chaining reasoning applies a breadth-first search strategy.</td>
+<td>Backward chaining reasoning applies a depth-first search strategy.</td>
+</tr>
+
+<tr>
+<td>Forward chaining tests for all the available rules</td>
+<td>Backward chaining only tests for few required rules.</td>
+</tr>
+
+<tr>
+<td>Forward chaining is suitable for the planning, monitoring, control, and interpretation application.</td>
+<td>Backward chaining is suitable for diagnostic, prescription, and debugging application.</td>
+</tr>
+
+<tr>
+<td>Forward chaining can generate an infinite number of possible conclusions.</td>
+<td>Backward chaining generates a finite number of possible conclusions.</td>
+</tr>
+
+<tr>
+<td>It operates in the forward direction.</td>
+<td>It operates in the backward direction.</td>
+</tr>
+
+<tr>
+<td>Forward chaining is aimed for any conclusion.</td>
+<td>Backward chaining is only aimed for the required data.</td>
+</tr>
+</tbody>
+</table>
+<h3>
+6. List operations in Prolog<a name="6-list-operations-in-prolog" class="heading-anchor" href="#6-list-operations-in-prolog" rel="nofollow" aria-hidden="true"></a></h3>
+<table>
+<thead>
+<tr>
+<th>Operations</th>
+<th>Definition</th>
+<th>Predicates</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Membership Checking</td>
+<td>During this operation, we can verify whether a given element is member of specified list or not?</td>
+<td>list_member(X,L)</td>
+</tr>
+
+<tr>
+<td>Length Calculation</td>
+<td>With this operation, we can find the length of a list.</td>
+<td>list_length(L,N)</td>
+</tr>
+
+<tr>
+<td>Concatenation</td>
+<td>Concatenation is an operation which is used to join/add two lists.</td>
+<td>list_concat(L1,L2,L3)</td>
+</tr>
+
+<tr>
+<td>Delete Items</td>
+<td>This operation removes the specified element from a list.</td>
+<td>list_delete(L1,L2,L3)</td>
+</tr>
+
+<tr>
+<td>Append Items</td>
+<td>Append operation adds one list into another (as an item).</td>
+<td>list_append(L1,L2,L3)</td>
+</tr>
+
+<tr>
+<td>Insert Items</td>
+<td>This operation inserts a given item into a list.</td>
+<td>list_insert(X,L,R)</td>
+</tr>
+</tbody>
+</table>
+<h3>
+7. Explain prolog database manipulation commands with an example.<a name="7-explain-prolog-database-manipulation-commands-with-an-example" class="heading-anchor" href="#7-explain-prolog-database-manipulation-commands-with-an-example" rel="nofollow" aria-hidden="true"></a></h3>
+<p>In Prolog, database manipulation is typically done using a combination of predicates and rules. A predicate is a logical statement that describes a relationship between one or more objects, and a rule is a logical statement that defines how one predicate can be derived from other predicates.</p>
+
+<p>There are two type of Database Manipulation:</p>
+<h4>
+Static Database Manipulation.<a name="static-database-manipulation" class="heading-anchor" href="#static-database-manipulation" rel="nofollow" aria-hidden="true"></a></h4>
+<p>Static database manipulation refers to the process of modifying a database that is not expected to change during the execution of a program. The data is considered static, meaning it will not change after the program is started.</p>
+
+<p>Database manipulation commands give us the power to alter the meaning of predicates while we are executing statements. Predicates whose definitions are altered during run-time are called dynamic predicates,</p>
+
+<p>Example of static Database Manipulation:</p>
+
+<div class="highlight highlight-prolog"><pre>?- listing.
+yes
+
+?-assert(happy(maria)).
+
+?- listing.
+happy(maria).
+
+?- assert(happy(vineet)).
+yes
+
+?- assert(happy(cassius)).
+yes
+
+?- assert(happy(brutus)).
+yes
+
+?- assert(happy(vineet)).
+yes
+</pre></div>
+<h4>
+Dynamic Database Manipulation<a name="dynamic-database-manipulation" class="heading-anchor" href="#dynamic-database-manipulation" rel="nofollow" aria-hidden="true"></a></h4>
+<p>Dynamic database manipulation refers to the process of modifying a database that is expected to change during the execution of a program. The data is considered dynamic, meaning it can change during the execution of the program.</p>
+
+<p>Database manipulation is especially useful for storing in memory evaluation results, to the effect that if we ever need to compute the same goal again in the future, we don’t have to redo the calculations: we only have to look up the asserted fact. This is called memorization or caching, and it can greatly increase computational speed.</p>
+
+<p>Example of Dynamic Database Manipulation:</p>
+
+<div class="highlight highlight-prolog"><pre>:- dynamic lookup/3.
+add_and_square(X,Y,Res) :- lookup(X,Y,Res). !.
+add_and_square(X,Y,Res) is (X+Y) (X+Y), assert(lookup(X,Y.Res)).
+</pre></div>
+<h3>
+8. Why do we use “is” instead of &quot;=&quot; in prolog?<a name="8-why-do-we-use-is-instead-of-in-prolog" class="heading-anchor" href="#8-why-do-we-use-is-instead-of-in-prolog" rel="nofollow" aria-hidden="true"></a></h3>
+<p>In Prolog, the <code>is</code> operator is used to evaluate an arithmetic expression and bind the result to a variable, while the <code>=</code> operator is used to perform unification between two terms.</p>
+
+<p>For example, the following code:</p>
+
+<div class="highlight highlight-prolog"><pre>`X is 2 + 2.` 
+</pre></div>
+
+<p>evaluates the expression <code>2 + 2</code> and binds the result to the variable <code>X</code>. So, the query <code>X = 4</code> would return <code>true</code>.</p>
+<h3>
+9. Write a prolog code to find if a list is sorted or not.<a name="9-write-a-prolog-code-to-find-if-a-list-is-sorted-or-not" class="heading-anchor" href="#9-write-a-prolog-code-to-find-if-a-list-is-sorted-or-not" rel="nofollow" aria-hidden="true"></a></h3>
+<div class="highlight highlight-prolog"><pre>sorted(L) :- sorted(L, _).
+
+sorted([], _).
+sorted([_], _) :- !.
+sorted([X,X|R], Order) :- !, sorted([X|R], Order).
+sorted([X,Y|R], Order) :- compare(Order, X, Y), sorted([Y|R], Order).
+</pre></div>
+
+<p>CLI Output:</p>
+
+<pre><code>?- sorted([ann, bob, coy]).
+true.
+
+?- sorted([coy, bob, dan, bob, ann]).
+false.
+</code></pre>
+<h3>
+10. Briefly describe the process of resolution and unification in logic programming with example.<a name="10-briefly-describe-the-process-of-resolution-and-unification-in-logic-programming-with-example" class="heading-anchor" href="#10-briefly-describe-the-process-of-resolution-and-unification-in-logic-programming-with-example" rel="nofollow" aria-hidden="true"></a></h3>
+<p>Resolution and unification are the central processes in logic programming, especially in Prolog.</p>
+
+<ol>
+<li><p>Resolution: Resolution is the process of finding a solution to a query by searching through the knowledge base (rules and facts) to find a proof. The goal is to find a set of rules and facts that logically support the query.</p></li>
+
+<li><p>Unification: Unification is the process of finding a common solution between two expressions. In Prolog, unification is used to match the query against the rules in the knowledge base, to determine if the query can be proven.</p></li>
+</ol>
+
+<p>Unification Example:</p>
+
+<div class="highlight highlight-prolog"><pre>?- a = b.
+?- f(X, b) = f(a, Y).
+?- f(X, b) = g(X, b).
+?- a(X, X, b) = a(b, X, X).
+?- a(X, X, b) = a(c, X, X).
+?- a(X, f) = a(X, f).
+</pre></div>
+<h3>
+11. Explain how Prolog differs from imperative languages in its handling of arithmetic.<a name="11-explain-how-prolog-differs-from-imperative-languages-in-its-handling-of-arithmetic" class="heading-anchor" href="#11-explain-how-prolog-differs-from-imperative-languages-in-its-handling-of-arithmetic" rel="nofollow" aria-hidden="true"></a></h3>
+<p>Prolog and imperative languages differ in their handling of arithmetic in the following ways:</p>
+
+<ol>
+<li>Evaluation order: In imperative languages, arithmetic expressions are evaluated following the standard operator precedence rules. In Prolog, arithmetic expressions are evaluated based on the logic rules of the program and the values of variables, not necessarily in the order they are written.</li>
+<li>Variables: In imperative languages, variables can be assigned values, and the values can be updated. In Prolog, variables are used to represent relationships between values, and the values of variables cannot be updated.</li>
+<li>State: Imperative languages have a notion of state, where the values of variables can change as the program executes. Prolog, on the other hand, is a declarative language and does not have a notion of state.</li>
+<li>Control flow: Imperative languages control the flow of execution through the use of conditionals and loops. In Prolog, control flow is determined by the relationships between variables and the logic rules of the program.</li>
+<li>Input/Output: Imperative languages often have explicit input/output statements. In Prolog, input/output is performed through queries to the knowledge base, and the results of these queries can be used to further determine the values of variables.</li>
+</ol>
+<h3>
+12. Explain what are facts, rules, and queries in logic programming with example.<a name="12-explain-what-are-facts-rules-and-queries-in-logic-programming-with-example" class="heading-anchor" href="#12-explain-what-are-facts-rules-and-queries-in-logic-programming-with-example" rel="nofollow" aria-hidden="true"></a></h3>
+<p>In Prolog, a program is made up of a collection of facts and rules that describe relationships between different objects.</p>
+
+<ol>
+<li><p>Facts are simple statements that describe a relationship between one or more objects. They are represented as predicates and are used to assert information into the program. An example of a fact would be: “John is a software engineer”.</p>
+
+<div class="highlight highlight-prolog"><pre>person(john, age(30), job('software engineer')).
+</pre></div></li>
+
+<li><p>Rules are logical statements that define how one predicate can be derived from other predicates. They are used to express more complex relationships between objects, and are represented as a head predicate followed by a body of predicates. An example of a rule would be: “If a person is older than 30 and has a job as a software engineer, then they are considered a senior software engineer.”</p>
+
+<div class="highlight highlight-prolog"><pre>senior_software_engineer(X) :- person(X, age(Age), job('software engineer')), Age &gt; 30.
+</pre></div></li>
+
+<li><p>Queries are used to ask the Prolog program to find solutions that satisfy a given predicate. Queries are used to retrieve information from the program and are represented as predicates with variables. An example of a query would be: “Who is a senior software engineer?”. Copy code</p>
+
+<div class="highlight highlight-prolog"><pre>?- senior_software_engineer(X).
+</pre></div></li>
+</ol>
+
+<p>The Prolog interpreter will attempt to find a value for the variable X that makes the predicate senior_software_engineer(X) true. In this case, X will be bound to the value ‘john’ if the previously defined rule and fact are present in the knowledge base.</p>
+
+<p>In summary, facts are used to assert information, rules are used to express complex relationships, and queries are used to retrieve information from the program. Prolog uses a reasoning engine to deduce the solution based on the facts and rules provided and the queries made by the user.</p>
+
+		</main>
+		<footer>
+			<p style="text-align: center; font-size: small;">This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a></p>
+		</footer>
+	</body>
+</html>

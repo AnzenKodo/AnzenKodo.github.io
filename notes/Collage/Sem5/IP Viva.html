@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>AK#Notes - IP Viva</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="description" content="My useless Notes.">
+  		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/notes.png">
+  		<meta property="og:image:alt" content="AK#Notes logo">
+  		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="AK#Notes - IP Viva">
+		<meta property="og:description" content="My useless Notes.">
+		<meta property="og:url" content="https://AnzenKodo.github.io/">
+		<meta property="og:type" content="website">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<meta property="og:article:published_time" content="<no value>">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/notes.png">
+		<link rel="alternate" type="application/rss+xml" title="AK#Notes RSS feed" href="https://AnzenKodo.github.io/notes/feed.xml">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+			:root {
+			    color-scheme: dark light;
+				--theme: #FF6C22;
+			}
+			body {
+                max-width: 40rem;
+                margin: 0 auto;
+                font-family: system-ui;
+                padding: 0 1em;
+			}
+			h1, h2, h3, h4, h5, h6 {
+                font-family: monospace;
+                margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+                font-size: 2rem;
+			}
+			h3 {
+			    font-size: 1.8rem;
+			}
+			h4 {
+			    font-size: 1.5rem;
+			}
+			h5 {
+			    font-size: 1.3rem;
+			}
+			h6 {
+			    font-size: 1rem;
+			}
+			p {
+			    line-height: 1.5rem;
+			}
+			a {
+			    color: var(--theme);
+			    text-decoration: none;
+			}
+			a:hover, a:focus {
+			    text-decoration: underline;
+			}
+			a:active {
+			    background: var(--theme);
+			    color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+                margin-top: .5rem;
+			}
+			li {
+                margin-bottom: .5rem;
+			}
+			table {
+			    border-collapse: collapse;
+			}
+            th {
+                font-size: 1.1rem;
+                border: 2px solid;
+                padding: .3rem .3rem;
+            }
+            td {
+                border: 1px solid;
+                padding: .3rem .5rem;
+                line-height: 1.5rem;
+            }
+            blockquote {
+                margin-left: 0;
+                margin-right: 0;
+                border: 1px solid;
+                border-left: 10px solid;
+                padding: 0 1rem;
+            }
+            code {
+                border: 1px solid;
+                padding: 0 .2rem .2rem .2rem;
+            }
+            img {
+                max-width: 100%;
+                display: block;
+                margin: 0 auto;
+            }
+            [href="#skip-top-main"] {
+                padding: 0.3em;
+                position: absolute;
+                transform: translateY(-200%);
+            }
+            [href="#skip-top-main"]:focus {
+                transform: translateY(0%);
+                background: var(--theme);
+                color: inherit;
+            }
+            details:has(nav) {
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+                background: black;
+                padding: 0.5rem 1em;
+            }
+            details:has(nav)[open] {
+                height: 90%;
+                overflow-y: scroll;
+                bottom: 50px;
+                margin-left: 1em;
+            }
+            details:has(nav)[open] summary {
+                background: black;
+                padding: 0.5em 1em;
+                text-align: center;
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+            }
+            details:has(nav) ul:first-child {
+                padding-left: 1em;
+                margin-top: 1.5em;            
+            }
+            .heading-anchor::before {
+                content: "#";
+                margin-left: .5rem;
+            }
+		</style>
+	</head>
+	<body>
+	    <a href="#skip-top-main">Skip to main</a>
+		<header>
+			<h1 style="text-align: center;"><a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a></h1>
+			<details class="table-of-content">
+						    <nav>
+<ul>
+<li><a href="#explain-the-working-of-web-browser-with-example">Explain the working of Web Browser with example.</a></li>
+<li><a href="#describe-http-protocol-describe-an-http-message">
+Describe HTTP Protocol. Describe an HTTP message.</a></li>
+<li><a href="#what-is-tls-explain-the-needs-of-tls">
+What is TLS? Explain the needs of TLS?</a></li>
+<li><a href="#what-is-xml-compare-xml-and-json">
+What is XML? Compare XML and JSON?</a></li>
+<li><a href="#what-is-json-explain-json-syntax">
+What is JSON? Explain JSON Syntax?</a></li>
+<li><a href="#describe-arrow-function-in-es6-along-with-an-example">
+Describe Arrow function in ES6 along with an example</a></li>
+<li><a href="#conditional-and-looping-statements">
+Conditional and looping statements</a></li>
+<li><a href="#reactjs-example">
+ReactJS example</a></li>
+</ul>
+</nav>
+
+
+			    <summary>Table of Content</summary>
+			</details>
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem">IP Viva</h1>
+			<h2>Explain the working of Web Browser with example.<a name="explain-the-working-of-web-browser-with-example" class="heading-anchor" href="#explain-the-working-of-web-browser-with-example" rel="nofollow" aria-hidden="true"></a></h2><h2>
+Describe HTTP Protocol. Describe an HTTP message.<a name="describe-http-protocol-describe-an-http-message" class="heading-anchor" href="#describe-http-protocol-describe-an-http-message" rel="nofollow" aria-hidden="true"></a></h2><h2>
+What is TLS? Explain the needs of TLS?<a name="what-is-tls-explain-the-needs-of-tls" class="heading-anchor" href="#what-is-tls-explain-the-needs-of-tls" rel="nofollow" aria-hidden="true"></a></h2><h2>
+What is XML? Compare XML and JSON?<a name="what-is-xml-compare-xml-and-json" class="heading-anchor" href="#what-is-xml-compare-xml-and-json" rel="nofollow" aria-hidden="true"></a></h2>
+<div class="highlight highlight-xml"><pre>&lt;name&gt;Aman&lt;/name&gt;
+&lt;rollno&gt;21&lt;/rollno&gt;
+</pre></div>
+
+<div class="highlight highlight-json"><pre>{
+	&quot;name&quot;: &quot;Aman Varma&quot;,
+	&quot;rollno&quot;: 21
+}
+</pre></div>
+<h2>
+What is JSON? Explain JSON Syntax?<a name="what-is-json-explain-json-syntax" class="heading-anchor" href="#what-is-json-explain-json-syntax" rel="nofollow" aria-hidden="true"></a></h2>
+<div class="highlight highlight-html"><pre>&lt;Q&gt;Hello&lt;Q&gt;
+</pre></div>
+<h2>
+Describe Arrow function in ES6 along with an example<a name="describe-arrow-function-in-es6-along-with-an-example" class="heading-anchor" href="#describe-arrow-function-in-es6-along-with-an-example" rel="nofollow" aria-hidden="true"></a></h2>
+<div class="highlight highlight-js"><pre>// Normal function
+display(a);
+function display(a) {
+	console.log(a);
+}
+
+// Arrow function
+display(&quot;hi&quot;); // error
+const display = (a) =&gt; {
+	console.log(a)
+}
+
+// calling both
+display(&quot;hi&quot;)
+</pre></div>
+<h2>
+Conditional and looping statements<a name="conditional-and-looping-statements" class="heading-anchor" href="#conditional-and-looping-statements" rel="nofollow" aria-hidden="true"></a></h2>
+<div class="highlight highlight-js"><pre>addEve
+</pre></div>
+<h2>
+ReactJS example<a name="reactjs-example" class="heading-anchor" href="#reactjs-example" rel="nofollow" aria-hidden="true"></a></h2>
+<div class="highlight highlight-jsx"><pre>import React from 'react'; 
+function App() {
+	return (&lt;h1&gt;Hello World!&lt;/h1&gt;); 
+} 
+export default App;
+</pre></div>
+
+<div class="highlight highlight-js"><pre>const div = document.querySelector(&quot;h1&quot;)
+div.textContent = &quot;Hello World&quot;
+</pre></div>
+
+		</main>
+		<footer>
+			<p style="text-align: center; font-size: small;">This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a></p>
+		</footer>
+	</body>
+</html>

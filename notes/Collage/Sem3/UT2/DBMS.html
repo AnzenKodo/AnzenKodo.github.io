@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>AK#Notes - DBMS</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="description" content="My useless Notes.">
+  		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/notes.png">
+  		<meta property="og:image:alt" content="AK#Notes logo">
+  		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="AK#Notes - DBMS">
+		<meta property="og:description" content="My useless Notes.">
+		<meta property="og:url" content="https://AnzenKodo.github.io/">
+		<meta property="og:type" content="website">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<meta property="og:article:published_time" content="<no value>">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/notes.png">
+		<link rel="alternate" type="application/rss+xml" title="AK#Notes RSS feed" href="https://AnzenKodo.github.io/notes/feed.xml">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+			:root {
+			    color-scheme: dark light;
+				--theme: #FF6C22;
+			}
+			body {
+                max-width: 40rem;
+                margin: 0 auto;
+                font-family: system-ui;
+                padding: 0 1em;
+			}
+			h1, h2, h3, h4, h5, h6 {
+                font-family: monospace;
+                margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+                font-size: 2rem;
+			}
+			h3 {
+			    font-size: 1.8rem;
+			}
+			h4 {
+			    font-size: 1.5rem;
+			}
+			h5 {
+			    font-size: 1.3rem;
+			}
+			h6 {
+			    font-size: 1rem;
+			}
+			p {
+			    line-height: 1.5rem;
+			}
+			a {
+			    color: var(--theme);
+			    text-decoration: none;
+			}
+			a:hover, a:focus {
+			    text-decoration: underline;
+			}
+			a:active {
+			    background: var(--theme);
+			    color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+                margin-top: .5rem;
+			}
+			li {
+                margin-bottom: .5rem;
+			}
+			table {
+			    border-collapse: collapse;
+			}
+            th {
+                font-size: 1.1rem;
+                border: 2px solid;
+                padding: .3rem .3rem;
+            }
+            td {
+                border: 1px solid;
+                padding: .3rem .5rem;
+                line-height: 1.5rem;
+            }
+            blockquote {
+                margin-left: 0;
+                margin-right: 0;
+                border: 1px solid;
+                border-left: 10px solid;
+                padding: 0 1rem;
+            }
+            code {
+                border: 1px solid;
+                padding: 0 .2rem .2rem .2rem;
+            }
+            img {
+                max-width: 100%;
+                display: block;
+                margin: 0 auto;
+            }
+            [href="#skip-top-main"] {
+                padding: 0.3em;
+                position: absolute;
+                transform: translateY(-200%);
+            }
+            [href="#skip-top-main"]:focus {
+                transform: translateY(0%);
+                background: var(--theme);
+                color: inherit;
+            }
+            details:has(nav) {
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+                background: black;
+                padding: 0.5rem 1em;
+            }
+            details:has(nav)[open] {
+                height: 90%;
+                overflow-y: scroll;
+                bottom: 50px;
+                margin-left: 1em;
+            }
+            details:has(nav)[open] summary {
+                background: black;
+                padding: 0.5em 1em;
+                text-align: center;
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+            }
+            details:has(nav) ul:first-child {
+                padding-left: 1em;
+                margin-top: 1.5em;            
+            }
+            .heading-anchor::before {
+                content: "#";
+                margin-left: .5rem;
+            }
+		</style>
+	</head>
+	<body>
+	    <a href="#skip-top-main">Skip to main</a>
+		<header>
+			<h1 style="text-align: center;"><a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a></h1>
+			<details class="table-of-content">
+						    <nav>
+<ul>
+<li><a href="#2-marks">2 Marks</a>
+<ul>
+<li><a href="#1-define-normalization">
+1) Define Normalization?</a></li>
+<li><a href="#2-explain-functional-dependency">
+2) Explain Functional Dependency?</a></li>
+<li><a href="#3-consider-the-table">
+3) Consider the table</a>
+<ul>
+<li><a href="#write-the-sql-for-following">
+Write the SQL for following:</a>
+<ul>
+<li><a href="#a-list-the-employee-record-working-in-production-department">
+a) List the employee record working in Production Department.</a></li>
+<li><a href="#b-list-all-employee-records">
+b) List all Employee records.</a></li>
+<li><a href="#c-list-employee-details-having-the-salary-less-than-90000">
+c) List Employee details having the salary less than 90000.</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#4-explain-default-and-check-constraints">
+4) Explain Default and Check Constraints?</a>
+<ul>
+<li><a href="#default">
+Default</a></li>
+<li><a href="#check-constraint">
+Check Constraint</a></li>
+</ul></li>
+<li><a href="#5-explain-nested-queries-with-examples">
+5) Explain nested queries with examples?</a></li>
+</ul></li>
+<li><a href="#3-marks">
+3 Marks</a>
+<ul>
+<li><a href="#1-write-notes-on-dcl-commands">
+1) Write notes on DCL Commands?</a></li>
+<li><a href="#2-write-short-notes-on-inference-rules-for-functional-dependency">
+2) Write short notes on inference rules for functional dependency?</a></li>
+<li><a href="#3-explain-procedure-with-syntax">
+3) Explain Procedure with syntax?</a></li>
+<li><a href="#4-explain-function-with-syntax">
+4) Explain function with syntax?</a></li>
+<li><a href="#5-create-a-table-student-having-columns-std-id-std-name-class-and-dob-also-add-two-records-into-the-table">
+5) Create a table student having columns std_id, std_name,class and dob. Also add two records into the table?</a></li>
+</ul></li>
+<li><a href="#5-marks">
+5 Marks</a>
+<ul>
+<li><a href="#1-explain-ddl-commands-with-syntax-and-example">
+1) Explain DDL Commands with Syntax and Example?</a></li>
+<li><a href="#2-explain-dml-commands-with-syntax-and-example">
+2) Explain DML Commands with Syntax and Example?</a></li>
+<li><a href="#3-explain-program-for-jdbc-with-example">
+3) Explain Program for JDBC with Example?</a></li>
+<li><a href="#4-explain-need-of-normalization-along-with-all-the-normal-forms">
+4) Explain need of normalization along with all the normal forms?</a></li>
+<li><a href="#5-explain-the-types-of-functional-dependency">
+5) Explain the types of functional dependency?</a></li>
+</ul></li>
+</ul>
+</nav>
+
+
+			    <summary>Table of Content</summary>
+			</details>
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem">DBMS</h1>
+			<h2>2 Marks<a name="2-marks" class="heading-anchor" href="#2-marks" rel="nofollow" aria-hidden="true"></a></h2><h3>
+1) Define Normalization?<a name="1-define-normalization" class="heading-anchor" href="#1-define-normalization" rel="nofollow" aria-hidden="true"></a></h3>
+<p>Normalization is a database design technique that reduces data redundancy and
+eliminates undesirable characteristics like Insertion, Update and Deletion
+Anomalies. Normalization rules divides larger tables into smaller tables and
+links them using relationships. The purpose of Normalisation in SQL is to
+eliminate redundant (repetitive) data and ensure data is stored logically.</p>
+<h3>
+2) Explain Functional Dependency?<a name="2-explain-functional-dependency" class="heading-anchor" href="#2-explain-functional-dependency" rel="nofollow" aria-hidden="true"></a></h3>
+<p>A functional dependency is a constraint that specifies the relationship between
+two sets of attributes where one set can accurately determine the value of other
+sets.</p>
+
+<p>It is denoted as <strong>X</strong> → <strong>Y</strong>, where <strong>X</strong> is a set of attributes that is
+capable of determining the value of <strong>Y</strong>.</p>
+
+<p>The attribute set on the left side of the arrow, X is called <strong>Determinant</strong>,
+while on the right side, Y is called the <strong>Dependent</strong>.</p>
+
+<p>To better understand:
+<a href="https://www.geeksforgeeks.org/types-of-functional-dependencies-in-dbms/">https://www.geeksforgeeks.org/types-of-functional-dependencies-in-dbms/</a></p>
+<h3>
+3) Consider the table<a name="3-consider-the-table" class="heading-anchor" href="#3-consider-the-table" rel="nofollow" aria-hidden="true"></a></h3>
+<table>
+<thead>
+<tr>
+<th>Emp_id</th>
+<th>Emp_Name</th>
+<th>Department</th>
+<th>Salary</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>E01</td>
+<td>Ahmad</td>
+<td>Production</td>
+<td>92780</td>
+</tr>
+
+<tr>
+<td>E02</td>
+<td>Jack</td>
+<td>Sales</td>
+<td>88320</td>
+</tr>
+
+<tr>
+<td>E03</td>
+<td>Amar</td>
+<td>Quality</td>
+<td>75850</td>
+</tr>
+
+<tr>
+<td>E04</td>
+<td>Sagar</td>
+<td>Production</td>
+<td>80590</td>
+</tr>
+</tbody>
+</table>
+<h4>
+Write the SQL for following:<a name="write-the-sql-for-following" class="heading-anchor" href="#write-the-sql-for-following" rel="nofollow" aria-hidden="true"></a></h4><h5>
+a) List the employee record working in Production Department.<a name="a-list-the-employee-record-working-in-production-department" class="heading-anchor" href="#a-list-the-employee-record-working-in-production-department" rel="nofollow" aria-hidden="true"></a></h5>
+<div class="highlight highlight-sql"><pre>SELECT * FROM Employee WHERE Department = &quot;Production&quot;
+</pre></div>
+<h5>
+b) List all Employee records.<a name="b-list-all-employee-records" class="heading-anchor" href="#b-list-all-employee-records" rel="nofollow" aria-hidden="true"></a></h5>
+<div class="highlight highlight-sql"><pre>SELECT * from Employee
+</pre></div>
+<h5>
+c) List Employee details having the salary less than 90000.<a name="c-list-employee-details-having-the-salary-less-than-90000" class="heading-anchor" href="#c-list-employee-details-having-the-salary-less-than-90000" rel="nofollow" aria-hidden="true"></a></h5>
+<div class="highlight highlight-sql"><pre>SELECT * FROM Employee WHERE Salary &lt; 90000
+</pre></div>
+<h3>
+4) Explain Default and Check Constraints?<a name="4-explain-default-and-check-constraints" class="heading-anchor" href="#4-explain-default-and-check-constraints" rel="nofollow" aria-hidden="true"></a></h3><h4>
+Default<a name="default" class="heading-anchor" href="#default" rel="nofollow" aria-hidden="true"></a></h4>
+<p>A default constraint is used to specify a default value for a column in a table.
+If a value is not specified for the column when a new row is inserted, the
+default value will be used.</p>
+
+<p><strong>Example:</strong> you may want to set a default value of &quot;N/A&quot; for a column called
+&quot;phone&quot; in a &quot;customers&quot; table, so that if no phone number is provided for a new
+customer, the value &quot;N/A&quot; will be inserted into the &quot;phone&quot; column.</p>
+<h4>
+Check Constraint<a name="check-constraint" class="heading-anchor" href="#check-constraint" rel="nofollow" aria-hidden="true"></a></h4>
+<p>A check constraint is used to specify a condition that must be met by the data
+in a column. If a new value is inserted into the column that does not meet the
+condition, the insert operation will fail.</p>
+
+<p><strong>Example:</strong> you may want to set a check constraint on a column called &quot;age&quot; in
+a &quot;students&quot; table, so that the age of students must be greater than 16 and less
+than 25.</p>
+<h3>
+5) Explain nested queries with examples?<a name="5-explain-nested-queries-with-examples" class="heading-anchor" href="#5-explain-nested-queries-with-examples" rel="nofollow" aria-hidden="true"></a></h3>
+<p>A nested query in SQL contains a query inside another query.</p>
+
+<p>The result of the inner query will be used by the outer query.</p>
+
+<p>For instance, a nested query can have two SELECT statements, one on the inner
+query and the other on the outer query.</p>
+
+<p>Example:</p>
+
+<div class="highlight highlight-sql"><pre>SELECT * FROM Students
+WHERE class = &quot;IT&quot; IN (SELECT tec_name FROM Teachers);
+</pre></div>
+<h2>
+3 Marks<a name="3-marks" class="heading-anchor" href="#3-marks" rel="nofollow" aria-hidden="true"></a></h2><h3>
+1) Write notes on DCL Commands?<a name="1-write-notes-on-dcl-commands" class="heading-anchor" href="#1-write-notes-on-dcl-commands" rel="nofollow" aria-hidden="true"></a></h3>
+<p>The Data Control Language (DCL) commands present in SQL are</p>
+
+<ul>
+<li>GRANT
+
+<ul>
+<li>GRANT is a DCL command used to grant(give access to) security privileges to
+specific database users.</li>
+<li>It is mostly used to restrict user access to INSERT, DELETE, SELECT, UPDATE,
+EXECUTE, ALTER or to provide privileges to user's data.</li>
+</ul></li>
+<li>REVOKE
+
+<ul>
+<li>REVOKE is a DCL command that is used to revoke the permissions/access that
+was granted via the GRANT command.</li>
+<li>It is mostly used to revert back to the time when no access was specified,
+i.e., withdrawing the permission that was authorized to carry out specific
+tasks.</li>
+</ul></li>
+</ul>
+<h3>
+2) Write short notes on inference rules for functional dependency?<a name="2-write-short-notes-on-inference-rules-for-functional-dependency" class="heading-anchor" href="#2-write-short-notes-on-inference-rules-for-functional-dependency" rel="nofollow" aria-hidden="true"></a></h3>
+<p>Inference rules are used to determine functional dependencies (FDs) that hold
+between attributes in a relation.</p>
+
+<p>Here are a few commonly used inference rules for functional dependency:</p>
+
+<ul>
+<li>Union rule: If <strong>X → Y</strong> and <strong>X → Z</strong> hold, then <strong>X → Y U Z</strong> also holds.</li>
+<li>Trivial dependency: <strong>X → X</strong> is always true for any attribute X in a
+relation.</li>
+<li>Reflexive rule: If <strong>X → Y</strong> holds, then <strong>X → {X} U Y</strong> also holds, where
+<strong>{X}</strong> is the set containing only <strong>X</strong>.</li>
+<li>Augmentation rule: If <strong>X → Y</strong> holds, then <strong>X → Y U Z</strong> also holds, where
+<strong>Z</strong> is any set of attributes in the relation.</li>
+</ul>
+<h3>
+3) Explain Procedure with syntax?<a name="3-explain-procedure-with-syntax" class="heading-anchor" href="#3-explain-procedure-with-syntax" rel="nofollow" aria-hidden="true"></a></h3>
+<p>Procedures are generally used to encapsulate a specific set of actions that are
+often used in an application.</p>
+
+<p>Syntax:</p>
+
+<div class="highlight highlight-sql"><pre>CREATE PROCEDURE procedure_name (parameter1 data_type, parameter2 data_type, ...)
+BEGIN
+    -- Procedure body (SQL statements)
+END;
+</pre></div>
+<h3>
+4) Explain function with syntax?<a name="4-explain-function-with-syntax" class="heading-anchor" href="#4-explain-function-with-syntax" rel="nofollow" aria-hidden="true"></a></h3>
+<p>In a database, a function is a predefined, reusable routine that performs a
+specific task or calculation. Functions can take one or more input parameters,
+perform some operation on those inputs, and return a single output value.</p>
+
+<p>Syntax:</p>
+
+<div class="highlight highlight-sql"><pre>CREATE FUNCTION function_name (parameter1 data_type, parameter2 data_type, ...)
+RETURNS return_data_type
+BEGIN
+    -- Function body (SQL statements)
+END;
+</pre></div>
+<h3>
+5) Create a table student having columns std_id, std_name,class and dob. Also add two records into the table?<a name="5-create-a-table-student-having-columns-std-id-std-name-class-and-dob-also-add-two-records-into-the-table" class="heading-anchor" href="#5-create-a-table-student-having-columns-std-id-std-name-class-and-dob-also-add-two-records-into-the-table" rel="nofollow" aria-hidden="true"></a></h3>
+<div class="highlight highlight-sql"><pre>CREATE TABLE Students (std_id int, std_name varchar(100), class varchar(32), dob date);
+INSERT INTO Students (std_id, std_name, class, dob) values (1, &quot;Tommey&quot;, &quot;IT&quot;, '01-12-2003');
+INSERT INTO Students (std_id, std_name, class, dob) values (2, &quot;Jimmey&quot;, &quot;IT&quot;, '02-01-2006');
+</pre></div>
+<h2>
+5 Marks<a name="5-marks" class="heading-anchor" href="#5-marks" rel="nofollow" aria-hidden="true"></a></h2><h3>
+1) Explain DDL Commands with Syntax and Example?<a name="1-explain-ddl-commands-with-syntax-and-example" class="heading-anchor" href="#1-explain-ddl-commands-with-syntax-and-example" rel="nofollow" aria-hidden="true"></a></h3>
+<p>There are 4 Data Definition Language (DDL) commands:</p>
+
+<ul>
+<li>CREATE
+
+<ul>
+<li>This command builds a new table.</li>
+<li>Syntax: <code>CREATE object_type object_name ([name] [parameters]);</code></li>
+<li>Example: <code>CREATE TABLE Student (id int, name varchar)</code></li>
+</ul></li>
+<li>ALTER
+
+<ul>
+<li>An alter command modifies an existing database table. This command can add
+up additional column, drop existing columns and even change the data type of
+columns involved in a database table.</li>
+<li>Syntax: <code>ALTER object_type object_name (parameters);</code></li>
+<li>Example: <code>ALTER TABLE Student ADD Address varchar(50);</code></li>
+</ul></li>
+<li>DROP
+
+<ul>
+<li>A drop command is used to delete objects such as a table, index or view. A
+DROP statement cannot be rolled back, so once an object is destroyed,
+there’s no way to recover it.</li>
+<li>Syntax: <code>DROP object_type object_name;</code></li>
+<li>Example: <code>DROP TABLE Student;</code></li>
+</ul></li>
+<li>TRUNCATE
+
+<ul>
+<li>Similar to DROP, the TRUNCATE statement is used to quickly remove all
+records from a table. However, unlike DROP that completely destroys a table,
+TRUNCATE preserves its full structure to be reused later.</li>
+<li>Syntax: <code>TRUNCATE TABLE table_name;</code></li>
+<li>Example: <code>TRUNCATE TABLE Student;</code></li>
+</ul></li>
+</ul>
+<h3>
+2) Explain DML Commands with Syntax and Example?<a name="2-explain-dml-commands-with-syntax-and-example" class="heading-anchor" href="#2-explain-dml-commands-with-syntax-and-example" rel="nofollow" aria-hidden="true"></a></h3>
+<p>There are 4 Data Definition Manipulation (DML) commands:</p>
+
+<ul>
+<li>SELECT
+
+<ul>
+<li>This command is used to retrieve rows from a table.</li>
+<li>Syntax: <code>SELECT object_type FROM table_name where (parameters)</code>.</li>
+<li>Example: <code>SELECT * FROM Student</code></li>
+</ul></li>
+<li>UPDATE
+
+<ul>
+<li>This command modifies data of one or more records.</li>
+<li>Syntax: `UPDATE table_name SET column_name = value where condition.</li>
+<li>Example: <code>UPDATE Student SET name = &quot;Jonny&quot; WHERE roll_no is 5</code></li>
+</ul></li>
+<li>INSERT:
+
+<ul>
+<li>This command adds one or more records to a database table. The insert
+command syntax is</li>
+<li>Syntax: <code>INSERT INTO table_name [column(s)] VALUES [value(s)]</code></li>
+<li>Example: <code>INSERT INTO Student (roll_no, name) values (25, &quot;Ron&quot;)</code></li>
+</ul></li>
+<li>DELETE
+
+<ul>
+<li>This command removes one or more records from a table according to specified
+conditions.</li>
+<li>Syntax: <code>DELETE FROM table_name where condition</code></li>
+<li>Example: <code>DELETE FROM Student where roll_no is 3</code></li>
+</ul></li>
+</ul>
+<h3>
+3) Explain Program for JDBC with Example?<a name="3-explain-program-for-jdbc-with-example" class="heading-anchor" href="#3-explain-program-for-jdbc-with-example" rel="nofollow" aria-hidden="true"></a></h3>
+<p>JDBC or Java Database Connectivity is a Java API to connect and execute the
+query with the database.</p>
+
+<p>Java application that needs to communicate with the database has to be
+programmed using JDBC API.</p>
+
+<p>Here is an example of a simple JDBC program that connects to a database, creates
+a table, and inserts a record into that table:</p>
+
+<div class="highlight highlight-java"><pre>import java.sql.*;
+ 
+public class JDBCDemo {
+   
+    public static void main(String args[]) throws SQLException, ClassNotFoundException {
+        // Load driver class
+        Class.forName(&quot;sun.jdbc.odbc.JdbcOdbcDriver&quot;);
+ 
+        // Obtain a connection
+        Connection con = DriverManager.getConnection(
+            &quot;jdbc:odbc:XE&quot;, &quot;root&quot;, &quot;12345&quot;);
+ 
+        // Obtain a statement
+        Statement st = con.createStatement();
+ 
+        // Execute the query
+        int count = st.executeUpdate(&quot;insert into students values(109, 'bhatt')&quot;);
+        System.out.println(
+            &quot;number of rows affected by this query= &quot;
+            + count);
+ 
+        con.close();
+    }
+}
+</pre></div>
+<h3>
+4) Explain need of normalization along with all the normal forms?<a name="4-explain-need-of-normalization-along-with-all-the-normal-forms" class="heading-anchor" href="#4-explain-need-of-normalization-along-with-all-the-normal-forms" rel="nofollow" aria-hidden="true"></a></h3>
+<p>Normalization is a database design technique that reduces data redundancy and
+eliminates undesirable characteristics like Insertion, Update and Deletion
+Anomalies. Normalization rules divides larger tables into smaller tables and
+links them using relationships. The purpose of Normalisation in SQL is to
+eliminate redundant (repetitive) data and ensure data is stored logically.</p>
+
+<p>Here is a list of Normal Forms in SQL:</p>
+
+<ul>
+<li>1NF (First Normal Form)
+
+<ul>
+<li>Each table cell should contain a single value.</li>
+<li>Each record needs to be unique.</li>
+</ul></li>
+<li>2NF (Second Normal Form)
+
+<ul>
+<li>Rule 1- Be in 1NF</li>
+<li>Rule 2- Single Column Primary Key that does not functionally dependant on
+any subset of candidate key relation</li>
+</ul></li>
+<li>3NF (Third Normal Form)
+
+<ul>
+<li>Rule 1- Be in 2NF</li>
+<li>Rule 2- Has no transitive functional dependencies</li>
+</ul></li>
+<li>BCNF (Boyce-Codd Normal Form)
+
+<ul>
+<li>Even when a database is in 3rd Normal Form, still there would be anomalies
+resulted if it has more than one Candidate Key.</li>
+</ul></li>
+<li>4NF (Fourth Normal Form)
+
+<ul>
+<li>If no database table instance contains two or more, independent and
+multivalued data describing the relevant entity, then it is in 4th Normal
+Form.</li>
+</ul></li>
+<li>5NF (Fifth Normal Form)
+
+<ul>
+<li>A table is in 5th Normal Form only if it is in 4NF and it cannot be
+decomposed into any number of smaller tables without loss of data.</li>
+</ul></li>
+<li>6NF (Sixth Normal Form)</li>
+</ul>
+<h3>
+5) Explain the types of functional dependency?<a name="5-explain-the-types-of-functional-dependency" class="heading-anchor" href="#5-explain-the-types-of-functional-dependency" rel="nofollow" aria-hidden="true"></a></h3>
+<p>A functional dependency is a constraint that specifies the relationship between
+two sets of attributes where one set can accurately determine the value of other
+sets.</p>
+
+<p>There are 4 type of functional dependency:</p>
+
+<ol>
+<li>Trivial functional dependency
+
+<ul>
+<li>In Trivial Functional Dependency, a dependent is always a subset of the
+determinant.</li>
+<li>i.e. If X → Y and Y is the subset of X, then it is called trivial
+functional dependency</li>
+</ul></li>
+<li>Non-Trivial functional dependency
+
+<ul>
+<li>In Non-trivial functional dependency, the dependent is strictly not a
+subset of the determinant.</li>
+<li>i.e. If X → Y and Y is not a subset of X, then it is called Non-trivial
+functional dependency.</li>
+</ul></li>
+<li>Multivalued functional dependency
+
+<ul>
+<li>In Multivalued functional dependency, entities of the dependent set are not
+dependent on each other.</li>
+<li>i.e. If a → {b, c} and there exists no functional dependency between b and
+c, then it is called a multivalued functional dependency.</li>
+</ul></li>
+<li>Transitive functional dependency
+
+<ul>
+<li>In transitive functional dependency, dependent is indirectly dependent on
+determinant.</li>
+<li>i.e. If a → b &amp; b → c, then according to axiom of transitivity, a → c. This
+is a transitive functional dependency.</li>
+</ul></li>
+</ol>
+
+		</main>
+		<footer>
+			<p style="text-align: center; font-size: small;">This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a></p>
+		</footer>
+	</body>
+</html>

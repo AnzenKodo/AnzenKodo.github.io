@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>AK#Notes - DSA</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="description" content="My useless Notes.">
+  		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/notes.png">
+  		<meta property="og:image:alt" content="AK#Notes logo">
+  		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="AK#Notes - DSA">
+		<meta property="og:description" content="My useless Notes.">
+		<meta property="og:url" content="https://AnzenKodo.github.io/">
+		<meta property="og:type" content="website">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<meta property="og:article:published_time" content="<no value>">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/notes.png">
+		<link rel="alternate" type="application/rss+xml" title="AK#Notes RSS feed" href="https://AnzenKodo.github.io/notes/feed.xml">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+			:root {
+			    color-scheme: dark light;
+				--theme: #FF6C22;
+			}
+			body {
+                max-width: 40rem;
+                margin: 0 auto;
+                font-family: system-ui;
+                padding: 0 1em;
+			}
+			h1, h2, h3, h4, h5, h6 {
+                font-family: monospace;
+                margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+                font-size: 2rem;
+			}
+			h3 {
+			    font-size: 1.8rem;
+			}
+			h4 {
+			    font-size: 1.5rem;
+			}
+			h5 {
+			    font-size: 1.3rem;
+			}
+			h6 {
+			    font-size: 1rem;
+			}
+			p {
+			    line-height: 1.5rem;
+			}
+			a {
+			    color: var(--theme);
+			    text-decoration: none;
+			}
+			a:hover, a:focus {
+			    text-decoration: underline;
+			}
+			a:active {
+			    background: var(--theme);
+			    color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+                margin-top: .5rem;
+			}
+			li {
+                margin-bottom: .5rem;
+			}
+			table {
+			    border-collapse: collapse;
+			}
+            th {
+                font-size: 1.1rem;
+                border: 2px solid;
+                padding: .3rem .3rem;
+            }
+            td {
+                border: 1px solid;
+                padding: .3rem .5rem;
+                line-height: 1.5rem;
+            }
+            blockquote {
+                margin-left: 0;
+                margin-right: 0;
+                border: 1px solid;
+                border-left: 10px solid;
+                padding: 0 1rem;
+            }
+            code {
+                border: 1px solid;
+                padding: 0 .2rem .2rem .2rem;
+            }
+            img {
+                max-width: 100%;
+                display: block;
+                margin: 0 auto;
+            }
+            [href="#skip-top-main"] {
+                padding: 0.3em;
+                position: absolute;
+                transform: translateY(-200%);
+            }
+            [href="#skip-top-main"]:focus {
+                transform: translateY(0%);
+                background: var(--theme);
+                color: inherit;
+            }
+            details:has(nav) {
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+                background: black;
+                padding: 0.5rem 1em;
+            }
+            details:has(nav)[open] {
+                height: 90%;
+                overflow-y: scroll;
+                bottom: 50px;
+                margin-left: 1em;
+            }
+            details:has(nav)[open] summary {
+                background: black;
+                padding: 0.5em 1em;
+                text-align: center;
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+            }
+            details:has(nav) ul:first-child {
+                padding-left: 1em;
+                margin-top: 1.5em;            
+            }
+            .heading-anchor::before {
+                content: "#";
+                margin-left: .5rem;
+            }
+		</style>
+	</head>
+	<body>
+	    <a href="#skip-top-main">Skip to main</a>
+		<header>
+			<h1 style="text-align: center;"><a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a></h1>
+			<details class="table-of-content">
+						    <nav>
+<ul>
+<li><a href="#1-a-6-marks">1.A) 6 Marks</a>
+<ul>
+<li><a href="#i-illustrate-an-algorithm-to-count-number-of-nodes-in-singly-linked-list">
+i) Illustrate an algorithm to count number of nodes in singly linked list.</a></li>
+<li><a href="#ii-interpret-following-terminologies-i-node-ii-root-iii-leaf-node">
+ii) Interpret following terminologies i) Node ii) Root iii) Leaf Node</a></li>
+<li><a href="#iii-summarize-any-3-properties-of-b-tree">
+iii) Summarize any 3 properties of B-Tree</a></li>
+</ul></li>
+<li><a href="#1-b-4-marks">
+1.B) 4 Marks</a>
+<ul>
+<li><a href="#i-describe-linked-list-with-types">
+i) Describe Linked List with types.</a></li>
+<li><a href="#ii-illustrate-algorithm-to-display-data-from-circular-linked-list">
+ii) Illustrate algorithm to display data from circular linked list.</a></li>
+<li><a href="#iii-summarize-note-on-binary-tree">
+iii) Summarize note on Binary Tree</a>
+<ul>
+<li><a href="#types-of-binary-tree">
+Types of Binary Tree</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#2-5-marks">
+2. 5 Marks</a>
+<ul>
+<li><a href="#i-summarize-note-on-tranversal-of-binary-tree">
+i) Summarize note on Tranversal of Binary Tree.</a></li>
+<li><a href="#ii-discover-short-note-on-dfs-along-with-its-advantage-and-disadvantage">
+ii) Discover short note on DFS along with its advantage and disadvantage.</a>
+<ul>
+<li><a href="#advantage">
+Advantage</a></li>
+<li><a href="#disadvantage">
+Disadvantage</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#3-5-marks">
+3. 5 Marks</a>
+<ul>
+<li><a href="#i-explain-doubly-linked-list-write-an-algorithm-to-create-doubly-linked-list">
+i) Explain Doubly Linked List. Write an algorithm to create Doubly Linked list.</a></li>
+<li><a href="#ii-slove-the-following-graph">
+ii) Slove the following graph.</a></li>
+</ul></li>
+</ul>
+</nav>
+
+
+			    <summary>Table of Content</summary>
+			</details>
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem">DSA</h1>
+			<h2>1.A) 6 Marks<a name="1-a-6-marks" class="heading-anchor" href="#1-a-6-marks" rel="nofollow" aria-hidden="true"></a></h2><h3>
+i) Illustrate an algorithm to count number of nodes in singly linked list.<a name="i-illustrate-an-algorithm-to-count-number-of-nodes-in-singly-linked-list" class="heading-anchor" href="#i-illustrate-an-algorithm-to-count-number-of-nodes-in-singly-linked-list" rel="nofollow" aria-hidden="true"></a></h3>
+<pre><code>Step 1: if head is NULL then
+          print(&quot;List is empty&quot;)
+        else
+Step 3: q = head AND counter = 0
+Step 2: counter = counter + 1
+Step 4: Go to next_node
+Step 5: if q != NULL
+          Repeat from Step 3
+Step 6: Return counter
+</code></pre>
+<h3>
+ii) Interpret following terminologies i) Node ii) Root iii) Leaf Node<a name="ii-interpret-following-terminologies-i-node-ii-root-iii-leaf-node" class="heading-anchor" href="#ii-interpret-following-terminologies-i-node-ii-root-iii-leaf-node" rel="nofollow" aria-hidden="true"></a></h3>
+<p><img src="./Graph-Terminologies.svg" alt="Graph Terminologies Diagram"></p>
+
+<ul>
+<li>i) <strong>Node:</strong> A node is a basic unit of a data in a graph, tree or other data
+structure. It can contain a value or data, as well as a reference to other
+nodes. In a graph, a node represents a vertex or a point and it can be
+connected to other nodes with edges.</li>
+<li>ii) <strong>Root:</strong> In a tree data structure, the root is the topmost node that is
+the ancestor of all other nodes in the tree. It is the node from which all
+other nodes can be reached by following a path down the tree. The root node
+does not have any parent.</li>
+<li>iii) <strong>Leaf Node:</strong> In a tree data structure, a leaf node is a node that has
+no children. It is a node that is located at the bottom of the tree and does
+not have any descendant nodes. A leaf node is also called a terminal node.</li>
+</ul>
+<h3>
+iii) Summarize any 3 properties of B-Tree<a name="iii-summarize-any-3-properties-of-b-tree" class="heading-anchor" href="#iii-summarize-any-3-properties-of-b-tree" rel="nofollow" aria-hidden="true"></a></h3>
+<ul>
+<li><strong>Multi-node structure:</strong> B-Trees are multi-node data structures, which means
+that the keys are not stored in a single node but are distributed among
+multiple nodes. This allows for efficient searching, insertion and deletion
+operations.</li>
+<li><strong>Balancing:</strong> B-Trees are self-balancing data structures. They automatically
+adjust their structure to maintain a certain level of balance, which ensures
+that the height of the tree remains small, and the search, insertion and
+deletion operations are performed efficiently.</li>
+<li><strong>Large number of keys:</strong> B-Trees are designed to efficiently store and
+retrieve a large number of keys. Each node in a B-Tree can store multiple
+keys, which allows for a high degree of parallelism in searching, insertion
+and deletion operations. This makes B-Trees particularly useful in databases
+and file systems where large amounts of data need to be stored and retrieved
+efficiently.</li>
+</ul>
+
+<p><a href="https://youtu.be/KnXohGgIpQU">B-Tree Explaned</a></p>
+<h2>
+1.B) 4 Marks<a name="1-b-4-marks" class="heading-anchor" href="#1-b-4-marks" rel="nofollow" aria-hidden="true"></a></h2><h3>
+i) Describe Linked List with types.<a name="i-describe-linked-list-with-types" class="heading-anchor" href="#i-describe-linked-list-with-types" rel="nofollow" aria-hidden="true"></a></h3>
+<p><img src="./Linked-List-Types.png" alt="Linked List types graphs"></p>
+
+<ul>
+<li><strong>Singly Linked List:</strong> It is the simplest type of linked list in which every
+node contains some data and a pointer to the next node of the same data type.
+The node contains a pointer to the next node means that the node stores the
+address of the next node in the sequence. A single linked list allows the
+traversal of data only in one way.</li>
+<li><strong>Doubly Linked List:</strong> A doubly linked list or a two-way linked list is a
+more complex type of linked list that contains a pointer to the next as well
+as the previous node in sequence, Therefore, it contains three parts of data,
+a pointer to the next node, and a pointer to the previous node. This would
+enable us to traverse the list in the backward direction as well.</li>
+<li><strong>Circular Linked List:</strong> A circular linked list is one in which the last node
+contains the pointer to the first node of the list. While traversing a
+circular linked list, one can begin at any node and traverse the list in any
+direction forward and backward until reaching the same node where it started.
+Thus, a circular linked list has no beginning and no end.</li>
+</ul>
+<h3>
+ii) Illustrate algorithm to display data from circular linked list.<a name="ii-illustrate-algorithm-to-display-data-from-circular-linked-list" class="heading-anchor" href="#ii-illustrate-algorithm-to-display-data-from-circular-linked-list" rel="nofollow" aria-hidden="true"></a></h3>
+<pre><code>Step 1: SET CURR = HEAD
+Step 2: DO
+    Step 3: PRINT CURR -&gt; DATA
+    Step 4: SET CURR = CURR -&gt; NEXT
+Step 5: WHILE (CURR != HEAD)
+Step 6: EXIT
+</code></pre>
+
+<ul>
+<li><strong>Step 1:</strong> Initialize a pointer, CURR, and set it to the head of the circular
+linked list.</li>
+<li><strong>Step 2:</strong> Iterate through the list by following the next pointer of each
+node until CURR is equal to the head of the list again.</li>
+<li><strong>Step 3:</strong> Print the data of the current node.</li>
+<li><strong>Step 4:</strong> Move the CURR pointer to the next node by following the next
+pointer.</li>
+<li><strong>Step 5:</strong> Repeat steps 2-4 until CURR is equal to the head again, indicating
+that all nodes have been visited.</li>
+<li><strong>Step 6:</strong> Exit</li>
+</ul>
+<h3>
+iii) Summarize note on Binary Tree<a name="iii-summarize-note-on-binary-tree" class="heading-anchor" href="#iii-summarize-note-on-binary-tree" rel="nofollow" aria-hidden="true"></a></h3>
+<ul>
+<li>A binary tree is a tree data structure.</li>
+<li>Each node in a binary tree has at most two children.</li>
+<li>The two children are referred to as the left child and right child.</li>
+<li>The topmost node in a binary tree is called the root.</li>
+<li>The left and right children can themselves be binary trees, creating a
+hierarchical structure.</li>
+<li>Binary trees are often used for searching and sorting algorithms.</li>
+<li>They are also used in data compression and computer science.</li>
+<li>They can be implemented using pointers in programming languages like C and
+C++.</li>
+</ul>
+<h4>
+Types of Binary Tree<a name="types-of-binary-tree" class="heading-anchor" href="#types-of-binary-tree" rel="nofollow" aria-hidden="true"></a></h4>
+<p><img src="./Full-Binary-Tree.png" alt="Full Binary Tree"></p>
+
+<ul>
+<li><strong>Full Binary Tree</strong> A full Binary tree is a special type of binary tree in
+which every parent node/internal node has either two or no children.</li>
+</ul>
+
+<p><img src="./Perfect-Binary-Tree.png" alt="Perfect Binary Tree"></p>
+
+<ul>
+<li><strong>Perfect Binary Tree</strong> A perfect binary tree is a type of binary tree in
+which every internal node has exactly two child nodes and all the leaf nodes
+are at the same level.</li>
+</ul>
+
+<p><img src="./Complete-Binary-Tree.png" alt="Complete Binary Tree"></p>
+
+<ul>
+<li><strong>Complete Binary Tree</strong> A complete binary tree is just like a full binary
+tree, but with two major differences</li>
+</ul>
+
+<p><img src="Skewed-Binary-Tree.png" alt="Skewed Binary Tree"></p>
+
+<ul>
+<li><strong>Skewed Binary Tree</strong> A skewed binary tree is a pathological/degenerate tree
+in which the tree is either dominated by the left nodes or the right nodes.
+Thus, there are two types of skewed binary tree: left-skewed binary tree and
+right-skewed binary tree.</li>
+</ul>
+
+<p><img src="./Balanced-Binary-Tree.png" alt="Balanced Binary Tree"></p>
+
+<ul>
+<li><strong>Balanced Binary Tree</strong> It is a type of binary tree in which the difference
+between the height of the left and the right subtree for each node is either 0
+or 1.</li>
+</ul>
+<h2>
+2. 5 Marks<a name="2-5-marks" class="heading-anchor" href="#2-5-marks" rel="nofollow" aria-hidden="true"></a></h2><h3>
+i) Summarize note on Tranversal of Binary Tree.<a name="i-summarize-note-on-tranversal-of-binary-tree" class="heading-anchor" href="#i-summarize-note-on-tranversal-of-binary-tree" rel="nofollow" aria-hidden="true"></a></h3>
+<p><img src="Tranversal-of-Binary-Tree.png" alt="Tranversal of Binary Tree"></p>
+
+<p>Traversing a binary tree involves visiting each node in the tree in a specific
+order. There are three common ways to traverse a binary tree:</p>
+
+<ul>
+<li><strong>In-order traversal</strong>: <em>Left Root Right</em> In this method, the left subtree of
+a node is visited first, then the node itself, and finally the right subtree.
+This method visits nodes in ascending order for a binary search tree.</li>
+<li><strong>Pre-order traversal</strong>: <em>Root Left Right</em> In this method, the node is visited
+first, then its left subtree, and finally the right subtree. This method is
+used to create a copy of the tree.</li>
+<li><strong>Post-order traversal</strong>: <em>Left Root Right</em> In this method, the left subtree
+is visited first, then the right subtree, and finally the node itself. This
+method is used to delete the tree.</li>
+</ul>
+
+<p>More Info <a href="https://www.youtube.com/watch?v=-b2lciNd2L4">https://www.youtube.com/watch?v=-b2lciNd2L4</a></p>
+<h3>
+ii) Discover short note on DFS along with its advantage and disadvantage.<a name="ii-discover-short-note-on-dfs-along-with-its-advantage-and-disadvantage" class="heading-anchor" href="#ii-discover-short-note-on-dfs-along-with-its-advantage-and-disadvantage" rel="nofollow" aria-hidden="true"></a></h3>
+<p>Depth-first search (DFS) is an algorithm for traversing or searching tree or
+graph data structures.</p>
+
+<ul>
+<li>It starts at the root node (or some arbitrary node) and explores as far as
+possible along each branch before backtracking.</li>
+<li>The algorithm uses a stack data structure to keep track of the nodes to visit
+next.</li>
+<li>The algorithm starts by pushing the root node to the stack.</li>
+<li>Then, it pops a node from the stack and visits it.</li>
+<li>If the visited node has any unvisited children, it pushes them to the stack.</li>
+<li>This process continues until the stack is empty or the desired node is found.</li>
+<li>DFS visits the nodes as deep as possible before backtracking to visit the next
+branch</li>
+<li>DFS can be implemented in both recursive and non-recursive way</li>
+<li>DFS is not guaranteed to find the shortest path to a node</li>
+<li>DFS can be used to solve problems like finding the strongly connected
+components in a directed graph, Topological sorting, solving puzzles like
+mazes and Sudoku, and finding the path in a maze</li>
+<li>DFS can also be used to detect cycle in a graph and solving problems like
+finding the path between two nodes in a graph.</li>
+</ul>
+<h4>
+Advantage<a name="advantage" class="heading-anchor" href="#advantage" rel="nofollow" aria-hidden="true"></a></h4>
+<ul>
+<li>It is simple and easy to implement.</li>
+<li>It can be used to solve many problems like finding the strongly connected
+components in a directed graph, Topological sorting, solving puzzles like
+mazes and Sudoku, and finding the path in a maze</li>
+<li>It can be implemented in both recursive and non-recursive way</li>
+</ul>
+<h4>
+Disadvantage<a name="disadvantage" class="heading-anchor" href="#disadvantage" rel="nofollow" aria-hidden="true"></a></h4>
+<ul>
+<li>It requires a lot of memory to store the stack and the visited nodes.</li>
+<li>It may take a long time to visit all the nodes in a large graph.</li>
+<li>It is not guaranteed to find the shortest path to a node.</li>
+<li>It is not suitable for graphs with large number of edges and vertices.</li>
+<li>It is not efficient for finding the shortest path in a weighted graph.</li>
+</ul>
+
+<p>More example: <a href="https://www.youtube.com/watch?v=iaBEKo5sM7w">https://www.youtube.com/watch?v=iaBEKo5sM7w</a></p>
+<h2>
+3. 5 Marks<a name="3-5-marks" class="heading-anchor" href="#3-5-marks" rel="nofollow" aria-hidden="true"></a></h2><h3>
+i) Explain Doubly Linked List. Write an algorithm to create Doubly Linked list.<a name="i-explain-doubly-linked-list-write-an-algorithm-to-create-doubly-linked-list" class="heading-anchor" href="#i-explain-doubly-linked-list-write-an-algorithm-to-create-doubly-linked-list" rel="nofollow" aria-hidden="true"></a></h3>
+<p>A doubly linked list is a variation of the linked list data structure where each
+node contains an additional pointer, typically called previous pointer, that
+points to the previous node in the list. This allows for a more efficient
+traversal of the list in both directions, as opposed to a singly linked list
+where traversal is only possible in one direction.</p>
+
+<ol>
+<li>Start</li>
+<li>Input the DATA to be inserted</li>
+<li>Create a new node.</li>
+<li>NewNode → Data = DATA NewNode →Lpoint =NULL</li>
+<li>IF START IS NULL NewNode→ Rpoint = NULL</li>
+<li>Else NewNode → Rpoint = START START→Lpoint = NewNode</li>
+<li>START =NewNode</li>
+<li>Stop</li>
+</ol>
+<h3>
+ii) Slove the following graph.<a name="ii-slove-the-following-graph" class="heading-anchor" href="#ii-slove-the-following-graph" rel="nofollow" aria-hidden="true"></a></h3>
+<p><img src="./Graph.png" alt="Graph"></p>
+
+		</main>
+		<footer>
+			<p style="text-align: center; font-size: small;">This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a></p>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>AK#Notes - PCPF</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="description" content="My useless Notes.">
+  		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/notes.png">
+  		<meta property="og:image:alt" content="AK#Notes logo">
+  		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="AK#Notes - PCPF">
+		<meta property="og:description" content="My useless Notes.">
+		<meta property="og:url" content="https://AnzenKodo.github.io/">
+		<meta property="og:type" content="website">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<meta property="og:article:published_time" content="<no value>">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/notes.png">
+		<link rel="alternate" type="application/rss+xml" title="AK#Notes RSS feed" href="https://AnzenKodo.github.io/notes/feed.xml">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+			:root {
+			    color-scheme: dark light;
+				--theme: #FF6C22;
+			}
+			body {
+                max-width: 40rem;
+                margin: 0 auto;
+                font-family: system-ui;
+                padding: 0 1em;
+			}
+			h1, h2, h3, h4, h5, h6 {
+                font-family: monospace;
+                margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+                font-size: 2rem;
+			}
+			h3 {
+			    font-size: 1.8rem;
+			}
+			h4 {
+			    font-size: 1.5rem;
+			}
+			h5 {
+			    font-size: 1.3rem;
+			}
+			h6 {
+			    font-size: 1rem;
+			}
+			p {
+			    line-height: 1.5rem;
+			}
+			a {
+			    color: var(--theme);
+			    text-decoration: none;
+			}
+			a:hover, a:focus {
+			    text-decoration: underline;
+			}
+			a:active {
+			    background: var(--theme);
+			    color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+                margin-top: .5rem;
+			}
+			li {
+                margin-bottom: .5rem;
+			}
+			table {
+			    border-collapse: collapse;
+			}
+            th {
+                font-size: 1.1rem;
+                border: 2px solid;
+                padding: .3rem .3rem;
+            }
+            td {
+                border: 1px solid;
+                padding: .3rem .5rem;
+                line-height: 1.5rem;
+            }
+            blockquote {
+                margin-left: 0;
+                margin-right: 0;
+                border: 1px solid;
+                border-left: 10px solid;
+                padding: 0 1rem;
+            }
+            code {
+                border: 1px solid;
+                padding: 0 .2rem .2rem .2rem;
+            }
+            img {
+                max-width: 100%;
+                display: block;
+                margin: 0 auto;
+            }
+            [href="#skip-top-main"] {
+                padding: 0.3em;
+                position: absolute;
+                transform: translateY(-200%);
+            }
+            [href="#skip-top-main"]:focus {
+                transform: translateY(0%);
+                background: var(--theme);
+                color: inherit;
+            }
+            details:has(nav) {
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+                background: black;
+                padding: 0.5rem 1em;
+            }
+            details:has(nav)[open] {
+                height: 90%;
+                overflow-y: scroll;
+                bottom: 50px;
+                margin-left: 1em;
+            }
+            details:has(nav)[open] summary {
+                background: black;
+                padding: 0.5em 1em;
+                text-align: center;
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+            }
+            details:has(nav) ul:first-child {
+                padding-left: 1em;
+                margin-top: 1.5em;            
+            }
+            .heading-anchor::before {
+                content: "#";
+                margin-left: .5rem;
+            }
+		</style>
+	</head>
+	<body>
+	    <a href="#skip-top-main">Skip to main</a>
+		<header>
+			<h1 style="text-align: center;"><a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a></h1>
+			<details class="table-of-content">
+						    <nav>
+<ul>
+<li><a href="#1-explain-database-manipulation">1. Explain database manipulation.</a>
+<ul>
+<li><a href="#static-database-manipulation">
+Static Database Manipulation.</a></li>
+<li><a href="#dynamic-database-manipulation">
+Dynamic Database Manipulation</a></li>
+</ul></li>
+<li><a href="#2-what-is-imperative-control-flow">
+2. What is imperative control flow?</a></li>
+<li><a href="#3-what-is-dynamic-database-manipulation">
+3. What is dynamic Database manipulation?</a></li>
+<li><a href="#4-what-is-logic-programming">
+4. What is logic programming?</a></li>
+<li><a href="#5-application-of-prolog">
+5. Application of prolog.</a></li>
+<li><a href="#6-what-is-list-in-prolog">
+6. What is List in Prolog?</a></li>
+<li><a href="#7-explain-facts-rules-and-queries-along-with-an-example">
+7. Explain Facts, Rules and Queries along with an example.</a></li>
+<li><a href="#8-explain-the-unification-and-resolution-in-prolog-with-example">
+8. Explain the unification and resolution in prolog with example.</a>
+<ul>
+<li><a href="#unification">
+Unification</a></li>
+<li><a href="#resolution">
+Resolution</a></li>
+</ul></li>
+<li><a href="#9-list-operation-in-prolog">
+9. List operation in Prolog.</a></li>
+<li><a href="#10-lazy-versus-eager-evaluation-order-for-function-parameters">
+10. Lazy versus Eager evaluation order for function parameters.</a></li>
+<li><a href="#11-what-is-dynamic-database">
+11. What is dynamic database.</a></li>
+</ul>
+</nav>
+
+
+			    <summary>Table of Content</summary>
+			</details>
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem">PCPF</h1>
+			<h2>1. Explain database manipulation.<a name="1-explain-database-manipulation" class="heading-anchor" href="#1-explain-database-manipulation" rel="nofollow" aria-hidden="true"></a></h2>
+<p>Resources: <a href="https://youtu.be/dFEWzUqU5lo">https://youtu.be/dFEWzUqU5lo</a></p>
+
+<p>In Prolog, database manipulation is typically done using a combination of
+predicates and rules. A predicate is a logical statement that describes a
+relationship between one or more objects, and a rule is a logical statement that
+defines how one predicate can be derived from other predicates.</p>
+
+<p>There are two type of Database Manipulation:</p>
+<h3>
+Static Database Manipulation.<a name="static-database-manipulation" class="heading-anchor" href="#static-database-manipulation" rel="nofollow" aria-hidden="true"></a></h3>
+<p>Static database manipulation refers to the process of modifying a database that
+is not expected to change during the execution of a program. The data is
+considered static, meaning it will not change after the program is started.</p>
+
+<p>Database manipulation commands give us the power to alter the meaning of
+predicates while we are executing statements. Predicates whose definitions are
+altered during run-time are called dynamic predicates,</p>
+
+<p>Example of static Database Manipulation:</p>
+
+<div class="highlight highlight-prolog"><pre>?- listing.
+yes
+
+?-assert(happy(maria)).
+
+?- listing.
+happy(maria).
+
+?- assert(happy(vineet)).
+yes
+
+?- assert(happy(cassius)).
+yes
+
+?- assert(happy(brutus)).
+yes
+
+?- assert(happy(vineet)).
+yes
+</pre></div>
+<h3>
+Dynamic Database Manipulation<a name="dynamic-database-manipulation" class="heading-anchor" href="#dynamic-database-manipulation" rel="nofollow" aria-hidden="true"></a></h3>
+<p>Dynamic database manipulation refers to the process of modifying a database that
+is expected to change during the execution of a program. The data is considered
+dynamic, meaning it can change during the execution of the program.</p>
+
+<p>Database manipulation is especially useful for storing in memory evaluation
+results, to the effect that if we ever need to compute the same goal again in
+the future, we don't have to redo the calculations: we only have to look up the
+asserted fact. This is called memorization or caching, and it can greatly
+increase computational speed.</p>
+
+<p>Example of Dynamic Database Manipulation:</p>
+
+<div class="highlight highlight-prolog"><pre>:- dynamic lookup/3.
+add_and_square(X,Y,Res) :- lookup(X,Y,Res). !.
+add_and_square(X,Y,Res) is (X+Y) (X+Y), assert(lookup(X,Y.Res)).
+</pre></div>
+<h2>
+2. What is imperative control flow?<a name="2-what-is-imperative-control-flow" class="heading-anchor" href="#2-what-is-imperative-control-flow" rel="nofollow" aria-hidden="true"></a></h2>
+<p>PROLOG gives the programmer explicit control-flow features to completely control
+how PROLOG processes the input that has been provided and how it evaluates the
+result the use has requested. It is implemented using what is known in PROLOG as
+the cut.</p>
+
+<p>The cut, in PROLOG, is a predicate with no argument and written as T, which
+always succeeds, but cannot be backtracked past. It means you cannot backtrack
+after you encounter it. It is used to stop any unwanted backtracking and this in
+turn stops any extra solutions from being found by PROLOG.</p>
+
+<p>The cut should be used only when understood properly. There is a temptation many
+programmers have to start using the cut as an experiment when the code is not
+working as intended. If you do this, remember that wh debugging is complete, you
+should be able to understand the need for every cut you used in your code. The
+use o cut should hence be commented right next to where it is used precisely.
+This is best practice.</p>
+
+<p>Example: Suppose we have the following facts already present in our database:</p>
+
+<div class="highlight highlight-prolog"><pre>teaches(dr_frodo, history).   studies(ahmed, english).
+teaches(dr_frodo, english).   studies(anshuman, english).
+teaches(dr_frodo, chemistry). studies(andre, chemistry).
+teaches(dr_fondu, physics).   studies(alex, physics).
+</pre></div>
+
+<p>Then consider the following query and its outputs:</p>
+
+<div class="highlight highlight-prolog"><pre>?- teaches(dr_frodo, course), studies(student, course).
+course = english
+student ahmed;
+
+course = english
+student =  anshuman;
+
+course = chemistry
+student = andre;
+
+false.
+</pre></div>
+
+<p>Backtracking has not been stopped in any way, shape, or form over here.</p>
+
+<p>Course is in the beginning bound to history in the first rule in the top-left,
+but because there are no students of history, when this goal fails, backtracking
+takes place and Course gets bound again to english, and the next goal is tried
+and 2 answers are found in ahmed and anshuman, after which backtracking occurs
+again, and Course is bound to chemistry, and a final Student, andre, is found.</p>
+
+<p>Dr. Fondu and Alex are ignored by the way because the query makes it absolutely
+clear that only Dr. Frodo's courses are to be checked. If you wondered this,
+please read the information provided more carefully from the next time!</p>
+
+<p>Now, let us start adding the cut to different parts of the query and understand
+how it works.</p>
+
+<p><strong>Case 1</strong></p>
+
+<div class="highlight highlight-prolog"><pre>?-teaches(dr_frodo, Course), !, studies (Student, Course).
+false.
+</pre></div>
+
+<p>This time Course is first bound to history, then the cut is executed, and then
+studies goal is tried and fails (because nobody studies history according to the
+database). Because of the cut, we cannot backtrack to the teaches goal to find
+another binding for Course, so the whole query fails, and the result is returned
+as False.</p>
+
+<p><strong>Case 2:</strong></p>
+
+<div class="highlight highlight-prolog"><pre>?-teaches(dr_frodo, Course), studies (Student, Course), !.
+Course english
+Student = ahmed:
+false.
+</pre></div>
+
+<p>Here the teaches goal is tried as usual, and Course is bound to history, again
+as usual. Next the studies goal is tried and fails, so we don't get to the cut
+at the end of the query at this point, and backtracking can occur.</p>
+
+<p>Thus, the teaches goal is re-tried, and Course is bound to english. Then the
+studies goal is tried again, and succeeds, with Student = ahmed. After that, the
+cut is tried with it reaching the end of the query and of course succeeds, so no
+further backtracking is possible and only one solution is thus found. If you
+enter a semi-colon after the first solution, you get a false as shown.</p>
+
+<div class="highlight highlight-prolog"><pre>?-!, teaches(dr_frodo, Course), studies (Student, Course).
+Course = english
+Student = ahmed;
+</pre></div>
+
+<p>This means that: vineet will enjoy X if X is a taco and X is not a Big
+BellyTaco. This is very similar to the original statement given: vineet enjoys
+alltacos except Big BellyTacos.</p>
+
+<p><em><strong>Negation as failure</strong></em> is an important tool for the following reasons:</p>
+
+<ol>
+<li>It helps with expressivity. Especially, the ability to show exceptions
+safely.</li>
+<li>Negation as failure instead of the cut-fail combination gives us better
+chance of not making the errors that often happen due to the use of cuts.</li>
+
+<li><p>It is built-in for PROLOG, so we do not have to define it ourselves. In
+PROLOG, the operator + stands for negation as failure, so we can better
+describe vineet's preferences as shown:</p>
+
+<div class="highlight highlight-prolog"><pre>enjoys(vineet,X):- taco(X), 1+ big belly taco(X).
+</pre></div></li>
+</ol>
+<h2>
+3. What is dynamic Database manipulation?<a name="3-what-is-dynamic-database-manipulation" class="heading-anchor" href="#3-what-is-dynamic-database-manipulation" rel="nofollow" aria-hidden="true"></a></h2>
+<p>Dynamic database manipulation refers to the process of modifying a database that
+is expected to change during the execution of a program. The data is considered
+dynamic, meaning it can change during the execution of the program.</p>
+
+<p>Dynamic Database manipulation is especially useful for storing in memory
+evaluation results, to the effect that if we ever need to compute the same goal
+again in the future, we don't have to redo the calculations: we only have to
+look up the asserted fact. This is called memorization or caching, and it can
+greatly increase computational speed.</p>
+
+<p>Here is a simple example of this technique at work:</p>
+
+<div class="highlight highlight-prolog"><pre>:- dynamic lookup/3.
+add_and_square(X,Y,Res) :- lookup(X,Y,Res). !.
+add_and_square(X,Y,Res) is (X+Y) (X+Y), assert(lookup(X,Y.Res)).
+</pre></div>
+
+<p>What does this program do?</p>
+
+<p>It takes two numbers X and Y, adds X to Y, and then squares the result.</p>
+
+<p>But the point to understand is this: how does it do it? Let us check out the
+code above.</p>
+
+<p>First, notice that we have declared 'lookup' in the beginning as a dynamic
+predicate.</p>
+
+<p>This is mandatory if we want to use lookup during runtime.</p>
+
+<p>Second, notice how there are two clauses defining add_and_square.</p>
+
+<p>The second one in the third line will do the required arithmetic calculation and
+add or 'assert' the result into the PROLOG factbase using the 'predicate'
+lookup. This means that it caches and stores the result into memory.</p>
+
+<p>Finally, the first clause checks the database to see if the evaluation we need
+has already been done before and if it has been, the program will just return
+the final value, and the cut will prevent it from entering the second clause.
+When we run the code, we have the following result:</p>
+
+<div class="highlight highlight-prolog"><pre>?-add_and_square(2,4,X).
+X = 36
+yes
+</pre></div>
+
+<p>Here's an example of the program at work. Suppose we give PROLOG another query:</p>
+
+<div class="highlight highlight-prolog"><pre>?- add_and_square(1,5,Y). 
+Y = 36 
+yes
+</pre></div>
+
+<p>If we now ask for a listing, we see that the database now contains:</p>
+
+<div class="highlight highlight-prolog"><pre>lookup(2, 4, 36). 
+lookup(1, 5, 36).
+</pre></div>
+
+<p>Should we a second time, request PROLOG to add and square 1 and 5 with the same
+predicate 'add_and_square', it will not make the evaluation again. It will
+simple return the calculated result from the database.</p>
+
+<p>To round out our fundamentals of static and dynamic database manipulation, heed
+a word of warning. Although manipulating databases in PROLOG is a very tempting
+and necessary technique, it can lead to difficult, tangled code, especially when
+using dynamic manipulations. If you depend on it a little too much in a program
+with loads of backtracking involved and recursion to boot, understanding what is
+going on and tracing your steps going back for debugging can be a nightmare. It
+is a non-declarative feature of PROLOG that should be used sparingly and very
+carefully.</p>
+<h2>
+4. What is logic programming?<a name="4-what-is-logic-programming" class="heading-anchor" href="#4-what-is-logic-programming" rel="nofollow" aria-hidden="true"></a></h2>
+<p>Logic programming is a paradigm of programming that is based on formal logic.</p>
+
+<p>The most well-known logic programming language is Prolog, which stands for
+&quot;Programming in Logic&quot;.</p>
+
+<p>Logic is shown in the form of relationships (called as facts and rules).</p>
+
+<p>Logic programming languages use a declarative programming style, where the
+programmer states the desired properties of the solution rather than describing
+the steps to be taken to achieve it.</p>
+
+<p>In logic programming, the program is a set of logical statements that describe
+the relationships between different objects and their properties, and the goal
+of the program is to find a set of values for the objects that satisfies all of
+the logical statements.</p>
+
+<p>The program then uses a reasoning engine, often based on resolution theorem
+proving, to deduce the solution.</p>
+
+<p>This approach is particularly well-suited for tasks that involve symbolic
+reasoning and rule-based systems, such as natural language processing, expert
+systems, and automated theorem proving.</p>
+<h2>
+5. Application of prolog.<a name="5-application-of-prolog" class="heading-anchor" href="#5-application-of-prolog" rel="nofollow" aria-hidden="true"></a></h2>
+<p>Prolog (short for &quot;Programming in Logic&quot;) is a programming language that is
+particularly well-suited for tasks involving symbolic reasoning and rule-based
+systems.</p>
+
+<p>It is often used in artificial intelligence and natural language processing
+applications, such as language translation, expert systems, and automated
+theorem proving.</p>
+
+<p>Prolog is also used in some database systems, as well as in some educational
+settings as a tool for teaching logic and formal reasoning. Additionally, it can
+be applied in medical diagnosis, natural language understanding, game playing,
+and many other fields.</p>
+<h2>
+6. What is List in Prolog?<a name="6-what-is-list-in-prolog" class="heading-anchor" href="#6-what-is-list-in-prolog" rel="nofollow" aria-hidden="true"></a></h2>
+<p>We have already seen simple items like parameters or arguments in PROLOG
+programs. Now, as step up, in PROLOG, a widely used data-structure is the list.</p>
+
+<p>Lists are written in the following way:</p>
+
+<ul>
+<li>They must start and end wit square brackets <code>[]</code>, and</li>
+<li>All the items they contain inside them must be separated by commas. Here is a
+simple list <code>[a, fawad, Variable, carrot]</code></li>
+</ul>
+
+<p>PROLOG has a special functionality to split the beginning of the list that we
+call the head form the remainder of the list that we call the tail. We have to
+write symbol '|'(pronounced 'bar') in the list to differentiate between the
+first item of the list and the remainder of it.</p>
+
+<p><strong>For exmple</strong></p>
+
+<div class="highlight highlight-prolog"><pre>[one, two, three] = [A|B]
+</pre></div>
+
+<p>where <code>A = one</code> and <code>B = [two, three]</code></p>
+
+<p>The unification here pulls through and succeeds. How? 'A' is bound to the first
+item and 'B' to remainder of it.</p>
+
+<p>Here are some more example:</p>
+
+<div class="highlight highlight-prolog"><pre>[a, b, c, d, e, f, g]
+[carrots, parrots, bandana, sauna]
+[] /* Note An empty list is still an actual list */
+</pre></div>
+<h2>
+7. Explain Facts, Rules and Queries along with an example.<a name="7-explain-facts-rules-and-queries-along-with-an-example" class="heading-anchor" href="#7-explain-facts-rules-and-queries-along-with-an-example" rel="nofollow" aria-hidden="true"></a></h2>
+<p>In Prolog, a program is made up of a collection of facts and rules that describe
+relationships between different objects.</p>
+
+<ol>
+<li><p>Facts are simple statements that describe a relationship between one or more
+objects. They are represented as predicates and are used to assert
+information into the program. An example of a fact would be: &quot;John is a
+software engineer&quot;.</p>
+
+<div class="highlight highlight-prolog"><pre>person(john, age(30), job('software engineer')).
+</pre></div></li>
+
+<li><p>Rules are logical statements that define how one predicate can be derived
+from other predicates. They are used to express more complex relationships
+between objects, and are represented as a head predicate followed by a body
+of predicates. An example of a rule would be: &quot;If a person is older than 30
+and has a job as a software engineer, then they are considered a senior
+software engineer.&quot;</p>
+
+<div class="highlight highlight-prolog"><pre>senior_software_engineer(X) :- person(X, age(Age), job('software engineer')), Age &gt; 30.
+</pre></div></li>
+
+<li><p>Queries are used to ask the Prolog program to find solutions that satisfy a
+given predicate. Queries are used to retrieve information from the program
+and are represented as predicates with variables. An example of a query would
+be: &quot;Who is a senior software engineer?&quot;. Copy code</p>
+
+<div class="highlight highlight-prolog"><pre>?- senior_software_engineer(X).
+</pre></div></li>
+</ol>
+
+<p>The Prolog interpreter will attempt to find a value for the variable X that
+makes the predicate senior_software_engineer(X) true. In this case, X will be
+bound to the value 'john' if the previously defined rule and fact are present in
+the knowledge base.</p>
+
+<p>In summary, facts are used to assert information, rules are used to express
+complex relationships, and queries are used to retrieve information from the
+program. Prolog uses a reasoning engine to deduce the solution based on the
+facts and rules provided and the queries made by the user.</p>
+<h2>
+8. Explain the unification and resolution in prolog with example.<a name="8-explain-the-unification-and-resolution-in-prolog-with-example" class="heading-anchor" href="#8-explain-the-unification-and-resolution-in-prolog-with-example" rel="nofollow" aria-hidden="true"></a></h2><h3>
+Unification<a name="unification" class="heading-anchor" href="#unification" rel="nofollow" aria-hidden="true"></a></h3>
+<p>The terminology for matching items elements with variables is known as
+unification.</p>
+
+<ul>
+<li>Unification is the process of applying a correct substiution the two equal
+name predical identical (same).</li>
+<li>In unification one or more variables tagged with a values to make the two
+terms similar or identical.</li>
+
+<li><p>Example:</p>
+
+<div class="highlight highlight-prolog"><pre>name(X, Student). name(Student, Y)
+X = Student
+Y = Student / Student = Y
+
+name(x, Collage). name(Y, Computer)
+X != Y % (Variable to Variable does not match)
+Collage != Computer % Not equale string wrong unification
+</pre></div></li>
+</ul>
+
+<p><em>'%' is used when you want to comment something in Prolog.</em></p>
+
+<ul>
+<li>Variables only starts with Capital letters or an Underscore it will be a
+single letter.</li>
+<li>For instance PROLOG can unify <strong>Collage(X)</strong> and <strong>Collage(Student)</strong> by
+binding variable X to student that means we are assigning 'Student' to the
+variable X.</li>
+</ul>
+<h3>
+Resolution<a name="resolution" class="heading-anchor" href="#resolution" rel="nofollow" aria-hidden="true"></a></h3>
+<p>Resolution is one kind of proof technique that works this way:</p>
+
+<ol>
+<li>Select two clauses that contain conflicting terms.</li>
+<li>Combine those two clauses and cancel out the conficting terms. For example we
+have following statement:
+
+<ol>
+<li>If it is a preasent day, you will do strawberry picking.</li>
+<li>If you are doing strawberry picking you are happy.</li>
+</ol></li>
+</ol>
+
+<p>Above statement can be written in propositional logic like this:</p>
+
+<ol>
+<li>strawberry_picking &lt;- pleasent</li>
+<li>happy &lt;- strawberry_picking</li>
+</ol>
+
+<p>And again these statement can be written in CNF</p>
+
+<ol>
+<li>(strawberry_picking v~ pleasent ) ^</li>
+<li>(happy v~ strawberry_picking)</li>
+
+<li><p>For any propositional logic, there are two easy rules we follow:</p>
+
+<pre><code>(p ∧ q) ≡ (p ∨ q)  
+¬(p → ¬q) ≡ (p ∨ q)
+</code></pre></li>
+</ol>
+
+<p>What do those symobls means? Lets say we have following clauses in PROLOG:</p>
+
+<div class="highlight highlight-prolog"><pre>   m:-b. and t:-p, m, z.
+</pre></div>
+
+<p>The clause 'm' get replaced with <code>b</code> in the second clause and now we can say
+   that:</p>
+
+<div class="highlight highlight-prolog"><pre>   t:-p, b, z.
+</pre></div>
+
+<p>This is resolution. This means that when you resolve two clauses you reduce
+   them to get one clause.</p>
+
+<ol>
+<li>Another easy example, we have two sentances:
+
+<ul>
+<li>Man like joking.</li>
+<li>Chandler is a man.</li>
+</ul></li>
+</ol>
+
+<p>Now we ask query 'Who likes joking.' So, by resolving the two sentences, we
+   get one new sentence: Chandler like joking.</p>
+<h2>
+9. List operation in Prolog.<a name="9-list-operation-in-prolog" class="heading-anchor" href="#9-list-operation-in-prolog" rel="nofollow" aria-hidden="true"></a></h2>
+<table>
+<thead>
+<tr>
+<th>Operations</th>
+<th>Definition</th>
+<th>Predicates</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Membership Checking</td>
+<td>During this operation, we can verify whether a given element is member of specified list or not?</td>
+<td>list_member(X,L)</td>
+</tr>
+
+<tr>
+<td>Length Calculation</td>
+<td>With this operation, we can find the length of a list.</td>
+<td>list_length(L,N)</td>
+</tr>
+
+<tr>
+<td>Concatenation</td>
+<td>Concatenation is an operation which is used to join/add two lists.</td>
+<td>list_concat(L1,L2,L3)</td>
+</tr>
+
+<tr>
+<td>Delete Items</td>
+<td>This operation removes the specified element from a list.</td>
+<td>list_delete(L1,L2,L3)</td>
+</tr>
+
+<tr>
+<td>Append Items</td>
+<td>Append operation adds one list into another (as an item).</td>
+<td>list_append(L1,L2,L3)</td>
+</tr>
+
+<tr>
+<td>Insert Items</td>
+<td>This operation inserts a given item into a list.</td>
+<td>list_insert(X,L,R)</td>
+</tr>
+</tbody>
+</table>
+<h2>
+10. Lazy versus Eager evaluation order for function parameters.<a name="10-lazy-versus-eager-evaluation-order-for-function-parameters" class="heading-anchor" href="#10-lazy-versus-eager-evaluation-order-for-function-parameters" rel="nofollow" aria-hidden="true"></a></h2>
+<p>In programming, the evaluation order of function parameters can be either lazy
+or eager.</p>
+
+<ol>
+<li>Lazy evaluation, also known as non-strict evaluation, is a technique where
+the evaluation of function parameters is delayed until they are actually
+needed. This means that the function arguments are only evaluated when they
+are needed to compute the final result. This can be useful when working with
+large or infinite data sets, as it can save a lot of computation time and
+resources.</li>
+<li>Eager evaluation, also known as strict evaluation, is a technique where the
+evaluation of function parameters is done immediately, before the function is
+called. This means that all function arguments are evaluated, whether they
+are needed to compute the final result or not. This can be useful when
+working with small and well-defined data sets, as it can make the code easier
+to understand and debug.</li>
+</ol>
+
+<p>In Prolog, the evaluation order is typically Lazy and it's driven by the query
+made by the user. The Prolog engine uses a backtracking algorithm to explore
+different possible solutions to a query and the evaluation of parameters is done
+only when it's needed to find a solution.</p>
+<h2>
+11. What is dynamic database.<a name="11-what-is-dynamic-database" class="heading-anchor" href="#11-what-is-dynamic-database" rel="nofollow" aria-hidden="true"></a></h2>
+<p>A dynamic database is a type of database that can be modified or updated during
+the execution of a program. This is in contrast to a static database, which is a
+type of database that is loaded into the program at the start and remains
+unchanged throughout the execution.</p>
+
+<p>Dynamic databases are often used in applications where the data is expected to
+change frequently, such as in real-time data analysis, distributed systems, and
+other applications that require the ability to modify the data in response to
+changing conditions.</p>
+
+<p>See also
+<a href="#-3.-what-is-dynamic-database-manipulation?">What is dynamic Database manipulation?</a>
+for more.</p>
+
+		</main>
+		<footer>
+			<p style="text-align: center; font-size: small;">This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a></p>
+		</footer>
+	</body>
+</html>

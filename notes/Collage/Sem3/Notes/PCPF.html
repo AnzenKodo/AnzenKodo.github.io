@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>AK#Notes - PCPF</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="description" content="My useless Notes.">
+  		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/notes.png">
+  		<meta property="og:image:alt" content="AK#Notes logo">
+  		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="AK#Notes - PCPF">
+		<meta property="og:description" content="My useless Notes.">
+		<meta property="og:url" content="https://AnzenKodo.github.io/">
+		<meta property="og:type" content="website">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<meta property="og:article:published_time" content="<no value>">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/notes.png">
+		<link rel="alternate" type="application/rss+xml" title="AK#Notes RSS feed" href="https://AnzenKodo.github.io/notes/feed.xml">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+			:root {
+			    color-scheme: dark light;
+				--theme: #FF6C22;
+			}
+			body {
+                max-width: 40rem;
+                margin: 0 auto;
+                font-family: system-ui;
+                padding: 0 1em;
+			}
+			h1, h2, h3, h4, h5, h6 {
+                font-family: monospace;
+                margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+                font-size: 2rem;
+			}
+			h3 {
+			    font-size: 1.8rem;
+			}
+			h4 {
+			    font-size: 1.5rem;
+			}
+			h5 {
+			    font-size: 1.3rem;
+			}
+			h6 {
+			    font-size: 1rem;
+			}
+			p {
+			    line-height: 1.5rem;
+			}
+			a {
+			    color: var(--theme);
+			    text-decoration: none;
+			}
+			a:hover, a:focus {
+			    text-decoration: underline;
+			}
+			a:active {
+			    background: var(--theme);
+			    color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+                margin-top: .5rem;
+			}
+			li {
+                margin-bottom: .5rem;
+			}
+			table {
+			    border-collapse: collapse;
+			}
+            th {
+                font-size: 1.1rem;
+                border: 2px solid;
+                padding: .3rem .3rem;
+            }
+            td {
+                border: 1px solid;
+                padding: .3rem .5rem;
+                line-height: 1.5rem;
+            }
+            blockquote {
+                margin-left: 0;
+                margin-right: 0;
+                border: 1px solid;
+                border-left: 10px solid;
+                padding: 0 1rem;
+            }
+            code {
+                border: 1px solid;
+                padding: 0 .2rem .2rem .2rem;
+            }
+            img {
+                max-width: 100%;
+                display: block;
+                margin: 0 auto;
+            }
+            [href="#skip-top-main"] {
+                padding: 0.3em;
+                position: absolute;
+                transform: translateY(-200%);
+            }
+            [href="#skip-top-main"]:focus {
+                transform: translateY(0%);
+                background: var(--theme);
+                color: inherit;
+            }
+            details:has(nav) {
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+                background: black;
+                padding: 0.5rem 1em;
+            }
+            details:has(nav)[open] {
+                height: 90%;
+                overflow-y: scroll;
+                bottom: 50px;
+                margin-left: 1em;
+            }
+            details:has(nav)[open] summary {
+                background: black;
+                padding: 0.5em 1em;
+                text-align: center;
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+            }
+            details:has(nav) ul:first-child {
+                padding-left: 1em;
+                margin-top: 1.5em;            
+            }
+            .heading-anchor::before {
+                content: "#";
+                margin-left: .5rem;
+            }
+		</style>
+	</head>
+	<body>
+	    <a href="#skip-top-main">Skip to main</a>
+		<header>
+			<h1 style="text-align: center;"><a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a></h1>
+			<details class="table-of-content">
+						    <nav>
+<ul>
+<li><a href="#1-a">1.A</a>
+<ul>
+<li><a href="#i-explain-the-difference-between-declarative-and-imperative-programming-paradigm">
+i) Explain the difference between declarative and imperative programming paradigm.</a></li>
+<li><a href="#explain-names-scopes-and-bindings">
+Explain Names, Scopes and Bindings.</a></li>
+<li><a href="#explain-different-storage-allocation-mechanisms">
+Explain different storage allocation mechanisms.</a>
+<ul>
+<li><a href="#static-storage-allocation">
+Static Storage Allocation</a></li>
+<li><a href="#stack-based-storage-allocation">
+Stack Based Storage Allocation :</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#1-b">
+1.B</a>
+<ul>
+<li><a href="#i-what-is-paradigm-and-programming-paradigm">
+i) What is paradigm and programming paradigm?</a></li>
+<li><a href="#i-different-between-functional-programming-and-object-oriented-programming">
+i) Different between functional programming and object oriented programming.</a></li>
+<li><a href="#what-is-calling-sequence">
+What is calling sequence?</a></li>
+</ul></li>
+<li><a href="#3">
+3</a>
+<ul>
+<li><a href="#i-what-is-higher-order-function">
+i) What is higher order function?</a></li>
+<li><a href="#ii-difference-between-normal-and-applicative-order-evaluation">
+ii) Difference between Normal and applicative order evaluation.</a></li>
+</ul></li>
+</ul>
+</nav>
+
+
+			    <summary>Table of Content</summary>
+			</details>
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem">PCPF</h1>
+			<h2>1.A<a name="1-a" class="heading-anchor" href="#1-a" rel="nofollow" aria-hidden="true"></a></h2><h3>
+i) Explain the difference between declarative and imperative programming paradigm.<a name="i-explain-the-difference-between-declarative-and-imperative-programming-paradigm" class="heading-anchor" href="#i-explain-the-difference-between-declarative-and-imperative-programming-paradigm" rel="nofollow" aria-hidden="true"></a></h3>
+<iframe src="https://www.youtube-nocookie.com/embed/z6GbGzDst18" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<p>Declarative and imperative are two main paradigms of computer programming.</p>
+
+<p>Declarative programming focuses on describing the desired outcome of a program, rather than specifying how to achieve it. In this paradigm, the programmer declares what the program should do and the underlying system is responsible for executing the task. Examples of declarative programming languages are SQL, HTML, and XSLT.</p>
+
+<p>Imperative programming, on the other hand, focuses on specifying how the task should be executed. In this paradigm, the programmer writes code that explicitly describes the steps to be taken to achieve a desired outcome. Examples of imperative programming languages are C, Java, and Python.</p>
+
+<p>In summary, declarative programming focuses on what to do, while imperative programming focuses on how to do it.</p>
+<h3>
+Explain Names, Scopes and Bindings.<a name="explain-names-scopes-and-bindings" class="heading-anchor" href="#explain-names-scopes-and-bindings" rel="nofollow" aria-hidden="true"></a></h3>
+<p>Names, scopes, and bindings are fundamental concepts in computer programming.</p>
+
+<p>Names: In programming, a name is a label used to refer to a value, function, or object. Names can be assigned to various elements in the code and are used to refer to them later. For example, in a programming language like C, you can assign a name to a variable and then use that name to refer to its value: <code>int x = 42</code>. In this example, <code>x</code> is the name and <code>42</code> is the value.</p>
+
+<p>Scopes: A scope is the region of the code in which a name is accessible. In other words, it determines the visibility and lifetime of a name. There are two types of scopes: global and local. A global scope is the entire program, and a name defined in a global scope can be accessed from anywhere in the program. A local scope is a specific block of code, such as a function or a loop, and a name defined in a local scope can only be accessed within that block. Example:</p>
+
+<div class="highlight highlight-c"><pre>int x = 3; // Here `x` have globle scope
+
+void main(void) {
+    int y = 5; // Here `y` has local scope which can only access inside `main` function
+}
+</pre></div>
+
+<p>Bindings: A binding is the association of a name with a value. In other words, it is the process of assigning a value to a name. A binding creates a relationship between a name and a value that lasts until the end of the scope or until the binding is changed. For example, in the Python code <code>int x = 42</code>, <code>x</code> is the name, <code>42</code> is the value, and the assignment <code>x = 42</code> creates the binding between <code>x</code> and <code>42</code>.</p>
+
+<p>In summary, names are labels used to refer to values, scopes determine the visibility and lifetime of names, and bindings associate names with values.</p>
+<h3>
+Explain different storage allocation mechanisms.<a name="explain-different-storage-allocation-mechanisms" class="heading-anchor" href="#explain-different-storage-allocation-mechanisms" rel="nofollow" aria-hidden="true"></a></h3><h4>
+Static Storage Allocation<a name="static-storage-allocation" class="heading-anchor" href="#static-storage-allocation" rel="nofollow" aria-hidden="true"></a></h4>
+<ul>
+<li>Static storage allocation is a method of allocating memory for a program during the compilation process, before the program is executed.</li>
+<li>This method is also known as &quot;compile-time allocation&quot; or &quot;static memory allocation.&quot;</li>
+<li>The memory is allocated in a fixed size and the size remains constant throughout the execution of the program.</li>
+<li>Pros:
+
+<ul>
+<li>Simple to implement and understand.</li>
+<li>Memory allocation is done at compile time, so it is known in advance how much memory will be used by the program.</li>
+<li>No need for memory allocation and deallocation during runtime, so it can be more efficient.</li>
+</ul></li>
+<li>Cons:
+
+<ul>
+<li>The amount of memory allocated cannot be changed during runtime.</li>
+<li>If the program requires more memory than what was allocated at compile time, it can lead to memory overflow errors.</li>
+<li>If the program uses less memory than what was allocated at compile time, it can lead to wasted memory.</li>
+</ul></li>
+</ul>
+<h4>
+Stack Based Storage Allocation :<a name="stack-based-storage-allocation" class="heading-anchor" href="#stack-based-storage-allocation" rel="nofollow" aria-hidden="true"></a></h4>
+<ul>
+<li>Stack-based storage allocation is a method of allocating memory for a program where memory is allocated
+and deallocated in a last-in, first-out (LIFO) order.</li>
+<li>The stack is a data structure that stores data in a linear manner, with the most recent item being added to
+the top of the stack.</li>
+<li>The memory is allocated for a specific scope, and once that scope is exited, the memory is deallocated.</li>
+<li>Pros:
+
+<ul>
+<li>Simple to implement and understand.</li>
+<li>Memory allocation and deallocation is done automatically, so there is no need for manual memory management.</li>
+<li>Memory is allocated and deallocated in a LIFO order, which makes it easy to keep track of memory usage.</li>
+</ul></li>
+<li>Cons:
+
+<ul>
+<li>The amount of memory that can be allocated is limited by the size of the stack.</li>
+<li>It's not suitable for data that needs to be stored longer-term.</li>
+<li>Recursive functions can cause stack overflow if the recursion goes too deep.</li>
+</ul></li>
+</ul>
+
+<p><img src="./stack-heap-staic.png" alt=""></p>
+
+<table>
+<thead>
+<tr>
+<th>Mechanism</th>
+<th>Allocation</th>
+<th>Deallocation</th>
+<th>Lifetime</th>
+<th>Speed</th>
+<th>Responsibility</th>
+<th>Usage</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Stack allocation</td>
+<td>LIFO</td>
+<td>Automatically managed by the system</td>
+<td>Function call</td>
+<td>Fast</td>
+<td>System</td>
+<td>Function call frames and local variables</td>
+</tr>
+
+<tr>
+<td>Heap allocation</td>
+<td>Dynamic, at runtime</td>
+<td>Programmer-managed</td>
+<td>Persistent</td>
+<td>Slow</td>
+<td>Programmer</td>
+<td>Objects and data structures with a longer lifetime</td>
+</tr>
+
+<tr>
+<td>Static allocation</td>
+<td>At compile time</td>
+<td>Persistent for the entire program</td>
+<td>Entire program</td>
+<td>Fast</td>
+<td>None</td>
+<td>Global variables and constants</td>
+</tr>
+</tbody>
+</table>
+<h2>
+1.B<a name="1-b" class="heading-anchor" href="#1-b" rel="nofollow" aria-hidden="true"></a></h2><h3>
+i) What is paradigm and programming paradigm?<a name="i-what-is-paradigm-and-programming-paradigm" class="heading-anchor" href="#i-what-is-paradigm-and-programming-paradigm" rel="nofollow" aria-hidden="true"></a></h3>
+<p>A paradigm is a set of beliefs, concepts, values, and practices that define and guide a particular discipline or field.</p>
+
+<p>Programming paradigm is a term used to describe a set of practices and beliefs that define how a programmer should approach software development. It is a way of thinking about and solving problems using a particular set of techniques and concepts.</p>
+
+<p>There are several programming paradigms, including:</p>
+
+<ul>
+<li><strong>Imperative programming:</strong> This paradigm emphasizes describing how a program operates, using commands and statements to specify a sequence of actions. Example: C, C++, Java, Python, Go</li>
+<li><strong>Declarative programming:</strong> This paradigm emphasizes describing what a program should accomplish, using expressions and statements to specify the desired result, rather than the steps to achieve the result. Example: SQL, Prolog, XSLT, HTML, CSS</li>
+<li><strong>Object-Oriented programming:</strong> This paradigm emphasizes the use of objects, which are instances of classes that encapsulate data and behavior. Example: Java, C++, Python, Ruby, Swift, Objective-C</li>
+<li><strong>Functional programming:</strong> This paradigm emphasizes the use of mathematical functions to describe the computation of a program, and the avoidance of changing state and mutable data. Example: Haskell, Scheme, ML, Lisp, F#, Erlang, Scala.</li>
+<li><strong>Logic programming:</strong> This paradigm is based on formal logic and uses rules and facts to describe relationships between data and the desired outcome of a program. Example: Prolog</li>
+<li><strong>Scripting:</strong> This paradigm emphasizes the use of scripting languages for automating tasks and creating simple programs. Example: Perl, Python, Bash, Ruby</li>
+</ul>
+<h3>
+i) Different between functional programming and object oriented programming.<a name="i-different-between-functional-programming-and-object-oriented-programming" class="heading-anchor" href="#i-different-between-functional-programming-and-object-oriented-programming" rel="nofollow" aria-hidden="true"></a></h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Functional Programming</th>
+<th>Object-Oriented Programming</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Focus</td>
+<td>Emphasizes mathematical functions and expressions</td>
+<td>Emphasizes objects, classes, and encapsulation of state and behavior</td>
+</tr>
+
+<tr>
+<td>Mutability</td>
+<td>Avoids changing state and mutable data, promoting immutability and purity</td>
+<td>Encourages encapsulation of state and behavior and supports inheritance and polymorphism</td>
+</tr>
+
+<tr>
+<td>Composition</td>
+<td>Focuses on composing functions to solve problems</td>
+<td>Focuses on objects sending and receiving messages to solve problems</td>
+</tr>
+
+<tr>
+<td>Approach</td>
+<td>Declarative, evaluating expressions and functions</td>
+<td>Procedural, sending and receiving messages between objects</td>
+</tr>
+
+<tr>
+<td>Reusability</td>
+<td>Promotes reusability through higher-order functions and function composition</td>
+<td>Promotes reusability through inheritance and polymorphism</td>
+</tr>
+
+<tr>
+<td>Abstraction</td>
+<td>Supports abstraction through higher-order functions and function composition</td>
+<td>Supports abstraction through classes and objects</td>
+</tr>
+
+<tr>
+<td>State</td>
+<td>Avoids changing state and mutable data, promoting immutability and purity</td>
+<td>Encourages encapsulation of state and behavior and supports inheritance and polymorphism</td>
+</tr>
+</tbody>
+</table>
+<h3>
+What is calling sequence?<a name="what-is-calling-sequence" class="heading-anchor" href="#what-is-calling-sequence" rel="nofollow" aria-hidden="true"></a></h3>
+<p>The calling sequence refers to the order in which function calls are made when a program is executed. In other words, it refers to the sequence in which functions are executed, starting from the main function and proceeding through any nested function calls.</p>
+
+<p>Each time a function is called, the system stores information about the call, such as the values of the arguments, the location of the next instruction to be executed, and the location in the calling function where control should return. This information is typically stored on a stack data structure, and the system uses this information to keep track of the current function and to return to the calling function when the current function returns.</p>
+
+<p>The calling sequence determines the order in which functions are executed, and it can have a significant impact on the behavior and performance of the program. For example, if the calling sequence leads to an excessive number of function calls, the program may run slowly or run out of stack space and crash. On the other hand, if the calling sequence is well optimized, the program can run more efficiently and produce more accurate results.</p>
+<h2>
+3<a name="3" class="heading-anchor" href="#3" rel="nofollow" aria-hidden="true"></a></h2><h3>
+i) What is higher order function?<a name="i-what-is-higher-order-function" class="heading-anchor" href="#i-what-is-higher-order-function" rel="nofollow" aria-hidden="true"></a></h3>
+<p>A higher-order function is a function that takes one or more functions as arguments and/or returns a function as its result. Higher-order functions are a key feature of functional programming, and they allow for a more abstract and composable approach to solving problems.</p>
+
+<p>In simple terms, a higher-order function can either accept functions as inputs or produce a function as output, or both. By using higher-order functions, you can write more abstract, reusable, and composable code, making it easier to write, test, and maintain complex software systems.</p>
+
+<p>Example in Python:</p>
+
+<div class="highlight highlight-python"><pre>def square(x):
+    return x * x
+
+def cube(x):
+    return x * x * x
+
+def apply(func, x):
+    return func(x)
+
+print(apply(square, 5)) # 25
+print(apply(cube, 5)) # 125
+</pre></div>
+<h3>
+ii) Difference between Normal and applicative order evaluation.<a name="ii-difference-between-normal-and-applicative-order-evaluation" class="heading-anchor" href="#ii-difference-between-normal-and-applicative-order-evaluation" rel="nofollow" aria-hidden="true"></a></h3>
+<iframe src="https://www.youtube-nocookie.com/embed/DN32KzPvjUI?start=41" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Normal Order Evaluation</th>
+<th>Applicative Order Evaluation</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Evaluation Strategy</td>
+<td>Evaluate arguments only when needed</td>
+<td>Evaluate all arguments first</td>
+</tr>
+
+<tr>
+<td>Computation Strategy</td>
+<td>Lazy evaluation</td>
+<td>Eager evaluation</td>
+</tr>
+
+<tr>
+<td>Debugging</td>
+<td>More difficult</td>
+<td>Easier</td>
+</tr>
+
+<tr>
+<td>Performance</td>
+<td>Can be more efficient</td>
+<td>Can be less efficient</td>
+</tr>
+
+<tr>
+<td>Typical Use</td>
+<td>Functional programming languages</td>
+<td>Imperative programming languages</td>
+</tr>
+</tbody>
+</table>
+
+		</main>
+		<footer>
+			<p style="text-align: center; font-size: small;">This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a></p>
+		</footer>
+	</body>
+</html>

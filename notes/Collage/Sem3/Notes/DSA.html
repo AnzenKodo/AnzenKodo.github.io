@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>AK#Notes - DSA</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="description" content="My useless Notes.">
+  		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/notes.png">
+  		<meta property="og:image:alt" content="AK#Notes logo">
+  		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="AK#Notes - DSA">
+		<meta property="og:description" content="My useless Notes.">
+		<meta property="og:url" content="https://AnzenKodo.github.io/">
+		<meta property="og:type" content="website">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<meta property="og:article:published_time" content="<no value>">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/notes.png">
+		<link rel="alternate" type="application/rss+xml" title="AK#Notes RSS feed" href="https://AnzenKodo.github.io/notes/feed.xml">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+			:root {
+			    color-scheme: dark light;
+				--theme: #FF6C22;
+			}
+			body {
+                max-width: 40rem;
+                margin: 0 auto;
+                font-family: system-ui;
+                padding: 0 1em;
+			}
+			h1, h2, h3, h4, h5, h6 {
+                font-family: monospace;
+                margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+                font-size: 2rem;
+			}
+			h3 {
+			    font-size: 1.8rem;
+			}
+			h4 {
+			    font-size: 1.5rem;
+			}
+			h5 {
+			    font-size: 1.3rem;
+			}
+			h6 {
+			    font-size: 1rem;
+			}
+			p {
+			    line-height: 1.5rem;
+			}
+			a {
+			    color: var(--theme);
+			    text-decoration: none;
+			}
+			a:hover, a:focus {
+			    text-decoration: underline;
+			}
+			a:active {
+			    background: var(--theme);
+			    color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+                margin-top: .5rem;
+			}
+			li {
+                margin-bottom: .5rem;
+			}
+			table {
+			    border-collapse: collapse;
+			}
+            th {
+                font-size: 1.1rem;
+                border: 2px solid;
+                padding: .3rem .3rem;
+            }
+            td {
+                border: 1px solid;
+                padding: .3rem .5rem;
+                line-height: 1.5rem;
+            }
+            blockquote {
+                margin-left: 0;
+                margin-right: 0;
+                border: 1px solid;
+                border-left: 10px solid;
+                padding: 0 1rem;
+            }
+            code {
+                border: 1px solid;
+                padding: 0 .2rem .2rem .2rem;
+            }
+            img {
+                max-width: 100%;
+                display: block;
+                margin: 0 auto;
+            }
+            [href="#skip-top-main"] {
+                padding: 0.3em;
+                position: absolute;
+                transform: translateY(-200%);
+            }
+            [href="#skip-top-main"]:focus {
+                transform: translateY(0%);
+                background: var(--theme);
+                color: inherit;
+            }
+            details:has(nav) {
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+                background: black;
+                padding: 0.5rem 1em;
+            }
+            details:has(nav)[open] {
+                height: 90%;
+                overflow-y: scroll;
+                bottom: 50px;
+                margin-left: 1em;
+            }
+            details:has(nav)[open] summary {
+                background: black;
+                padding: 0.5em 1em;
+                text-align: center;
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+            }
+            details:has(nav) ul:first-child {
+                padding-left: 1em;
+                margin-top: 1.5em;            
+            }
+            .heading-anchor::before {
+                content: "#";
+                margin-left: .5rem;
+            }
+		</style>
+	</head>
+	<body>
+	    <a href="#skip-top-main">Skip to main</a>
+		<header>
+			<h1 style="text-align: center;"><a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a></h1>
+			<details class="table-of-content">
+						    <nav>
+<ul>
+<li><a href="#explain-linear-and-non-linear-data-structures">Explain linear and non-linear data structures.</a>
+<ul>
+<li><a href="#linear-data-structures">
+Linear Data Structures</a></li>
+<li><a href="#non-linear-data-structures">
+Non-Linear Data Structures</a></li>
+</ul></li>
+<li><a href="#what-is-depth-height-and-degree-of-binary-tree">
+What is depth, height and degree of Binary tree?</a></li>
+<li><a href="#what-is-recursion-state-its-advantages-and-disadvantages">
+What is recursion? State its advantages and disadvantages?</a>
+<ul>
+<li><a href="#advantages">
+Advantages</a></li>
+<li><a href="#disadvantages">
+Disadvantages</a></li>
+</ul></li>
+<li><a href="#explain-asymptotic-notations">
+Explain asymptotic notations</a></li>
+<li><a href="#write-an-algorithm-for-implementing-queue-using-array">
+Write an algorithm for implementing queue using array.</a></li>
+<li><a href="#write-an-algorithm-for-merge-sort-and-comment-on-its-comlexity">
+Write an algorithm for merge sort and comment on its comlexity.</a></li>
+<li><a href="#explain-bfs-and-dfs-algorithm-with-example">
+Explain BFS and DFS algorithm with example.</a>
+<ul>
+<li><a href="#dfs">
+DFS</a></li>
+<li><a href="#bfs">
+BFS</a></li>
+</ul></li>
+<li><a href="#traverse-the-following-binary-tree-into-preorder-inorder-postorder-by-giving-its-algorithm">
+Traverse the following binary tree into preorder, inorder, postorder by giving its algorithm.</a></li>
+<li><a href="#what-is-binary-search-tree-construct-binary-search-tree-for-following-elements">
+What is Binary search tree. Construct Binary search tree for following elements.</a></li>
+<li><a href="#what-is-minimum-spanning-tree-draw-the-mst-using-kruskal-s-and-prim-s-algorithm-and-find-out-the-cost-with-all-intermediate-steps">
+What is minimum spanning Tree? Draw the MST using kruskal's and prim's algorithm and find out the cost with all intermediate steps.</a>
+<ul>
+<li><a href="#using-kruskal-s-algo">
+Using Kruskal's algo:</a></li>
+<li><a href="#using-prim-s-algo">
+Using Prim's algo:</a></li>
+</ul></li>
+</ul>
+</nav>
+
+
+			    <summary>Table of Content</summary>
+			</details>
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem">DSA</h1>
+			<h2>Explain linear and non-linear data structures.<a name="explain-linear-and-non-linear-data-structures" class="heading-anchor" href="#explain-linear-and-non-linear-data-structures" rel="nofollow" aria-hidden="true"></a></h2><h3>
+Linear Data Structures<a name="linear-data-structures" class="heading-anchor" href="#linear-data-structures" rel="nofollow" aria-hidden="true"></a></h3>
+<p>Linear data structures are those in which data elements are arranged in a linear
+sequence, such as arrays, linked lists, stacks, and queues. These data
+structures can be traversed in a linear fashion, meaning that each element can
+be visited by visiting the elements before it and after it.</p>
+
+<p>Some characteristics of Linear Data Structures are:</p>
+
+<ul>
+<li>Elements are stored in contiguous or adjacent memory locations</li>
+<li>Elements can be traversed sequentially</li>
+<li>Elements are stored and accessed in a linear fashion</li>
+<li>Examples: Arrays, Linked Lists, Stacks, Queues</li>
+</ul>
+<h3>
+Non-Linear Data Structures<a name="non-linear-data-structures" class="heading-anchor" href="#non-linear-data-structures" rel="nofollow" aria-hidden="true"></a></h3>
+<p>Non-linear data structures, on the other hand, are those in which the data
+elements are not arranged in a linear sequence. These data structures are
+organized in a hierarchical or a network-like fashion, and can be traversed in a
+non-linear fashion. Examples of non-linear data structures include trees,
+graphs, and hash tables.</p>
+
+<p>Some characteristics of Non-Linear Data Structures are:</p>
+
+<ul>
+<li>Elements are not stored in contiguous memory locations</li>
+<li>Elements can be traversed in a non-sequential manner</li>
+<li>Elements are stored and accessed in a non-linear fashion</li>
+<li>Examples: Trees, Graphs, Hash tables</li>
+</ul>
+<h2>
+What is depth, height and degree of Binary tree?<a name="what-is-depth-height-and-degree-of-binary-tree" class="heading-anchor" href="#what-is-depth-height-and-degree-of-binary-tree" rel="nofollow" aria-hidden="true"></a></h2>
+<p><img src="./DSA-Graph.png" alt="Binary Tree Diagram"></p>
+<h2>
+What is recursion? State its advantages and disadvantages?<a name="what-is-recursion-state-its-advantages-and-disadvantages" class="heading-anchor" href="#what-is-recursion-state-its-advantages-and-disadvantages" rel="nofollow" aria-hidden="true"></a></h2>
+<p>Recursion is a technique in computer science where a function calls itself as a
+part of its execution. This allows for a problem to be broken down into smaller,
+manageable sub-problems, making it easier to solve.</p>
+<h3>
+Advantages<a name="advantages" class="heading-anchor" href="#advantages" rel="nofollow" aria-hidden="true"></a></h3>
+<ul>
+<li>Simplicity: Recursive functions can often be simpler and more elegant than
+their iterative counterparts.</li>
+<li>Reusability: Recursive functions can be used to solve similar problems in
+different parts of a program, leading to code reuse.</li>
+<li>Modularity: Recursive functions can be broken down into smaller, more
+manageable sub-problems, making it easier to understand and debug the code.</li>
+</ul>
+<h3>
+Disadvantages<a name="disadvantages" class="heading-anchor" href="#disadvantages" rel="nofollow" aria-hidden="true"></a></h3>
+<ul>
+<li>Space complexity: Recursive functions may use up a lot of memory due to the
+function call stack, leading to stack overflow errors.</li>
+<li>Performance: Recursive functions can be slower than their iterative
+counterparts, especially for large inputs.</li>
+<li>Risk of infinite loops: If not implemented correctly, a recursive function can
+lead to infinite recursion, causing the program to crash.</li>
+</ul>
+<h2>
+Explain asymptotic notations<a name="explain-asymptotic-notations" class="heading-anchor" href="#explain-asymptotic-notations" rel="nofollow" aria-hidden="true"></a></h2>
+<p>Asymptotic notation is a way to describe the performance of an algorithm in
+terms of the size of the input. It is used to express the limiting behavior of a
+function when the argument tends towards a particular value or infinity.</p>
+
+<p>There are three commonly used asymptotic notations:</p>
+
+<ul>
+<li><strong>Big O notation (O(n)):</strong> Big O notation expresses the upper bound of an
+algorithm's time complexity, or the maximum amount of time the algorithm will
+take to complete. It describes the worst-case scenario.</li>
+<li><strong>Big Ω notation (Ω(n)):</strong> Big Ω notation expresses the lower bound of an
+algorithm's time complexity, or the minimum amount of time the algorithm will
+take to complete. It describes the best-case scenario.</li>
+<li><strong>Big Θ notation (Θ(n)):</strong> Big Θ notation expresses the tight bound of an
+algorithm's time complexity, or the average amount of time the algorithm will
+take to complete. It describes the average-case scenario.</li>
+</ul>
+<h2>
+Write an algorithm for implementing queue using array.<a name="write-an-algorithm-for-implementing-queue-using-array" class="heading-anchor" href="#write-an-algorithm-for-implementing-queue-using-array" rel="nofollow" aria-hidden="true"></a></h2>
+<pre><code>Step 1: Declare an array &quot;queue&quot; of size &quot;n&quot; to store the elements in the queue.
+Step 2: Declare two variables &quot;front&quot; and &quot;rear&quot; and initialize them to -1.
+Step 3: To insert an element in the queue, check if the queue is full (if rear = n-1). If it is, then write &quot;Queue Overflow&quot; and exit.
+Step 4: If the queue is not full, increment &quot;rear&quot; by 1 and insert the element at the position &quot;rear&quot; in the array &quot;queue&quot;.
+Step 5: To delete an element from the queue, check if the queue is empty (if front = -1 and rear = -1). If it is, then write &quot;Queue Underflow&quot; and exit.
+Step 6: If the queue is not empty, increment &quot;front&quot; by 1 and delete the element present at the position &quot;front&quot; in the array &quot;queue&quot;.
+Step 7: To display the elements in the queue, check if the queue is empty (if front = -1 and rear = -1). If it is, then write &quot;Queue is empty&quot; and exit.
+Step 8: If the queue is not empty, traverse the queue from front to rear and print the elements present in the array &quot;queue&quot;.
+Step 9: Exit
+</code></pre>
+
+<p><a href="https://youtu.be/HI34Oytjjb4">What is queue?</a></p>
+<h2>
+Write an algorithm for merge sort and comment on its comlexity.<a name="write-an-algorithm-for-merge-sort-and-comment-on-its-comlexity" class="heading-anchor" href="#write-an-algorithm-for-merge-sort-and-comment-on-its-comlexity" rel="nofollow" aria-hidden="true"></a></h2>
+<ul>
+<li><strong>Step 1:</strong> If the number of elements in the list is less than or equal to 1,
+return the list (base case)</li>
+<li><strong>Step 2:</strong> Divide the list into two equal parts.</li>
+<li><strong>Step 3:</strong> Recursively sort the left half of the list using merge sort.</li>
+<li><strong>Step 4:</strong> Recursively sort the right half of the list using merge sort.</li>
+<li><strong>Step 5:</strong> Merge the two sorted halves of the list together by comparing the
+first element of each half and adding the smaller element to the final list.
+Repeat this process until one of the halves is exhausted.</li>
+<li><strong>Step 6:</strong> Return the final sorted list.</li>
+</ul>
+
+<p>The time complexity of merge sort is O(n log n) in the worst, average and best
+cases. It is considered to be an efficient sorting algorithm due to its
+divide-and-conquer strategy and the linear time complexity of the merge
+operation. However, it has a high space complexity as it requires an extra space
+to store the left and right sub-lists.</p>
+<h2>
+Explain BFS and DFS algorithm with example.<a name="explain-bfs-and-dfs-algorithm-with-example" class="heading-anchor" href="#explain-bfs-and-dfs-algorithm-with-example" rel="nofollow" aria-hidden="true"></a></h2><h3>
+DFS<a name="dfs" class="heading-anchor" href="#dfs" rel="nofollow" aria-hidden="true"></a></h3>
+<ul>
+<li>It starts at the tree root (or some arbitrary node of a graph) and explores as
+far as possible along each branch before backtracking.</li>
+<li>It uses Stack data structure to remember to get the next vertex to visit from
+the stack, and mark the current vertex as visited.</li>
+
+<li><p>Example: Consider the below graph, DFS traversal of the above graph will be: 0
+1 3 4 2</p>
+
+<pre><code>  0
+ / \
+1   2
+/ \
+3   4
+</code></pre>
+
+<ul>
+<li>More example: <a href="https://www.youtube.com/watch?v=iaBEKo5sM7w">https://www.youtube.com/watch?v=iaBEKo5sM7w</a></li>
+</ul></li>
+</ul>
+<h3>
+BFS<a name="bfs" class="heading-anchor" href="#bfs" rel="nofollow" aria-hidden="true"></a></h3>
+<ul>
+<li>It starts at the tree root (or some arbitrary node of a graph) and explores
+the neighbor nodes first, before moving to the next level neighbors.</li>
+<li>It uses Queue data structure to remember to get the next vertex to visit from
+the queue, and mark the current vertex as visited.</li>
+
+<li><p>Example: Consider the below graph, BFS traversal of the above graph will be: 0
+1 2 3</p>
+
+<pre><code>  0
+ / \
+1   2
+/ \
+3   4
+</code></pre></li>
+</ul>
+<h2>
+Traverse the following binary tree into preorder, inorder, postorder by giving its algorithm.<a name="traverse-the-following-binary-tree-into-preorder-inorder-postorder-by-giving-its-algorithm" class="heading-anchor" href="#traverse-the-following-binary-tree-into-preorder-inorder-postorder-by-giving-its-algorithm" rel="nofollow" aria-hidden="true"></a></h2>
+<p><img src="./in-pre-post.png" alt="Graph Diagram"></p>
+
+<ul>
+<li>In-order: B D A G E C H F I</li>
+<li>Pre-order: A B D C E G F H I</li>
+<li>Post-order: D B G E H I F C A</li>
+</ul>
+<h2>
+What is Binary search tree. Construct Binary search tree for following elements.<a name="what-is-binary-search-tree-construct-binary-search-tree-for-following-elements" class="heading-anchor" href="#what-is-binary-search-tree-construct-binary-search-tree-for-following-elements" rel="nofollow" aria-hidden="true"></a></h2>
+<p><code>13, 3, 4, 12, 14, 10, 5, 1, 8, 2 7, 9, 11, 6 9</code>
+<img src="./bst.png" alt="Binary Search Tree"></p>
+
+<ul>
+<li><a href="https://youtu.be/MFhxShGxHWc">Binary Search Algorithm in 100 Seconds</a></li>
+<li><a href="https://youtu.be/cySVml6e_Fc">Binary Search Trees (BST) - Insertion and Deletion</a></li>
+</ul>
+<h2>
+What is minimum spanning Tree? Draw the MST using kruskal's and prim's algorithm and find out the cost with all intermediate steps.<a name="what-is-minimum-spanning-tree-draw-the-mst-using-kruskal-s-and-prim-s-algorithm-and-find-out-the-cost-with-all-intermediate-steps" class="heading-anchor" href="#what-is-minimum-spanning-tree-draw-the-mst-using-kruskal-s-and-prim-s-algorithm-and-find-out-the-cost-with-all-intermediate-steps" rel="nofollow" aria-hidden="true"></a></h2>
+<p>Minimum Spanning Tree (MST) is a subset of the edges of a connected, undirected
+graph that connects all the vertices together, without any cycles and with the
+minimum possible total edge weight. There are two famous algorithms to find the
+MST in a graph - Kruskal's algorithm and Prim's algorithm.</p>
+
+<p><img src="./Tree.png" alt="Tree Diagram"></p>
+<h3>
+Using Kruskal's algo:<a name="using-kruskal-s-algo" class="heading-anchor" href="#using-kruskal-s-algo" rel="nofollow" aria-hidden="true"></a></h3>
+<p><img src="./mst.png" alt="Minimum Spanning Tree Diagram"> Cost is 19</p>
+<h3>
+Using Prim's algo:<a name="using-prim-s-algo" class="heading-anchor" href="#using-prim-s-algo" rel="nofollow" aria-hidden="true"></a></h3>
+<ol>
+<li>Choose an arbitrary start vertex.</li>
+<li>Keep including connected min edges[with no cycles].</li>
+<li><a href="https://youtu.be/5M7bOXrn54A">https://youtu.be/5M7bOXrn54A</a></li>
+</ol>
+
+<p><img src="./prim-mst.png" alt="Minimum Spanning Tree Diagram using Prims algo"> Cost is 22</p>
+
+		</main>
+		<footer>
+			<p style="text-align: center; font-size: small;">This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a></p>
+		</footer>
+	</body>
+</html>
