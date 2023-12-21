@@ -29,7 +29,14 @@ jobs:
       uses: actions/setup-go@v4
       with:
         go-version: '1.21.1'
-    
+
+    - name: Clone Notes Repo
+      uses: GuillaumeFalourd/clone-github-repo-action@v2.3
+      with:
+        owner: 'AnzenKodo'
+        repository: 'Notes'
+        access-token: ${{ secrets.CLONE_TOKEN }}
+        
     - name: Build
       run: bash ./src/run.sh
       shell: bash
