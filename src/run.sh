@@ -35,8 +35,8 @@ cd -
 #   php index.php
 # cd ..
 
-mkdir $OUTPUT.well-know
-touch $OUTPUT.well-know/brave-rewards-verification.txt
+mkdir $OUTPUT/.well-know
+touch $OUTPUT/.well-know/brave-rewards-verification.txt
 echo "This is a Brave Rewards publisher verification file.
 
 Domain: anzenkodo.github.io
