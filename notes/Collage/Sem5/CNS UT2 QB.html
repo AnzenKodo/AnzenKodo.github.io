@@ -117,7 +117,7 @@
                 padding: 0.5rem 1em;
             }
             details:has(nav)[open] {
-                height: 90%;
+                max-height: 90%;
                 overflow-y: scroll;
                 bottom: 50px;
                 margin-left: 1em;
@@ -143,9 +143,15 @@
 	<body>
 	    <a href="#skip-top-main">Skip to main</a>
 		<header>
-			<h1 style="text-align: center;"><a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a></h1>
+			<h1 style="text-align: center;">
+                <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">
+                    Notes
+                </a>
+            </h1>
+            
 			<details class="table-of-content">
-						    <nav>
+			    <summary>Table of Content</summary>
+                <nav>
 <ul>
 <li><a href="#module-3">Module 3</a>
 <ul>
@@ -329,9 +335,8 @@ Consider Internal Threats</a></li>
 </ul>
 </nav>
 
-
-			    <summary>Table of Content</summary>
 			</details>
+            
 		</header>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem">CNS UT2 QB</h1>
@@ -689,7 +694,9 @@ Consider Internal Threats<a name="consider-internal-threats" class="heading-anch
 
 		</main>
 		<footer>
-			<p style="text-align: center; font-size: small;">This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a></p>
+			<p style="text-align: center; font-size: small;">
+                This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>
+            </p>
 		</footer>
 	</body>
 </html>
