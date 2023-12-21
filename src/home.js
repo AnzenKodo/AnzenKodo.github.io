@@ -52,6 +52,7 @@ const fullHtml = `<!DOCTYPE html>
 			:root {
 			  --theme: ${config.color};
 			  color-scheme: dark light;
+     			  background: #000;
 			  accent-color: var(--theme);
 			}
             body {
