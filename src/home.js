@@ -1,17 +1,17 @@
 import { marked } from "https://deno.land/x/marked@1.0.2/mod.ts";
 
 const md = await fetch(
-  "https://raw.githubusercontent.com/AnzenKodo/AnzenKodo/main/README.md",
+	"https://raw.githubusercontent.com/AnzenKodo/AnzenKodo/main/README.md",
 ).then((res) => res.text());
 
 const config = JSON.parse(Deno.readTextFileSync(Deno.env.get("CONFIG")))
 
 const renderer = {
-  heading(text, level) {
-    if (level === 1) return `<h1>${text}</h1>`;
-    const escapedText = text.toLowerCase().replace(/[^\w]+/g, "-");
-    return `<h${level}>
-  <a name="${escapedText}" class="header-anchor a-no-underline" href="#${escapedText}">${text}</a>
+	heading(text, level) {
+    	if (level === 1) return `<h1>${text}</h1>`;
+    	const escapedText = text.toLowerCase().replace(/[^\w]+/g, "-");
+    	return `<h${level}>
+	 <a name="${escapedText}" class="header-anchor a-no-underline" href="#${escapedText}">${text}</a>
 </h${level}>`;
   },
 };
@@ -35,7 +35,7 @@ const html = marked.parse(md);
 
 const fullHtml = `<!DOCTYPE html>
 <html lang="en-US">
-    <head>
+	<head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>AK(${config.username})</title>
@@ -50,14 +50,16 @@ const fullHtml = `<!DOCTYPE html>
 		<meta property="og:profile:first_name" content="${config.name}">
         <style>
 			:root {
-			  --theme: ${config.color};
-			  color-scheme: dark light;
-			  accent-color: var(--theme);
+				--theme: ${config.color};
+				color-scheme: dark;
+				accent-color: var(--theme);
 			}
             body {
 				font-family: Consolas, "Lucida Console", Monaco, monospace;
 				max-width: 40rem;
 				margin: 0 auto;
+				padding: 0 1rem;
+		 		background: #000;
             }
 			a {
 				color: var(--theme);
@@ -66,6 +68,10 @@ const fullHtml = `<!DOCTYPE html>
 			a:hover, a:focus {
 				text-decoration: underline;
 			}
+   			a:active {
+	  			background: var(--theme);
+	  			color: inherit;
+	  		}
         </style>
     </head>
     <body>${html}</body>
