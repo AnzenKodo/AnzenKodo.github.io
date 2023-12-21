@@ -51,14 +51,15 @@ const fullHtml = `<!DOCTYPE html>
         <style>
 			:root {
 				--theme: ${config.color};
-				color-scheme: dark light;
-	 			background: #000;
+				color-scheme: dark;
 				accent-color: var(--theme);
 			}
             body {
 				font-family: Consolas, "Lucida Console", Monaco, monospace;
 				max-width: 40rem;
 				margin: 0 auto;
+				padding: 0 1rem;
+		 		background: #000;
             }
 			a {
 				color: var(--theme);
@@ -67,6 +68,10 @@ const fullHtml = `<!DOCTYPE html>
 			a:hover, a:focus {
 				text-decoration: underline;
 			}
+   			a:active {
+	  			background: var(--theme);
+	  			color: inherit;
+	  		}
         </style>
     </head>
     <body>${html}</body>
