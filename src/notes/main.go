@@ -48,7 +48,7 @@ func getData() m {
 	data["foreground_color"] = ""
 	data["author"] = config["username"]
 	data["website"] = config["website"]
-	data["logo"] = config["website"] + "assets/notes.png"
+	data["logo"] = config["website"] + "assets/favicon/notes.png"
 	data["heading"] = ""
 	data["url"] = config["website"] + ""
 	
