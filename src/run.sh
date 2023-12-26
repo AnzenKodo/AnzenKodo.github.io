@@ -17,23 +17,26 @@ echo "Copying assests folder..."
 mkdir -p $OUTPUT
 cp -r assets $OUTPUT
 
-echo "Making Home site..."
-# deno run -A home.js
+if [ $1 = "--make-blogroll" ]
+then
+    cd blogroll
+    echo "Downloading required packages for Blogroll..."
+    composer install
+    echo "Making Blogroll..."
+    php index.php
+    exit 0
+fi
+
+if command -v deno &> /dev/null
+then
+    echo "Making Home site..."
+    deno run -A home.js
+fi
 
 echo "Making AK#Notes"
 cd notes
 go run .
 cd -
-
-cd blogroll
-if [ ! -d vendor ]
-then
-  echo "Downloading required packages for Blogroll..."
-  composer install
-fi
-  echo "Making Blogroll..."
-  # php index.php
-cd ..
 
 mkdir $OUTPUT/.well-known
 touch $OUTPUT/.well-known/brave-rewards-verification.txt

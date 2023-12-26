@@ -80,7 +80,6 @@ func (options *renderer) Header(out *bytes.Buffer, text func() bool, level int, 
 	out.WriteString(fmt.Sprintf("<h%d>", level))
 	out.WriteString(textHTML)
 	out.WriteString(fmt.Sprintf(`<a name="%s" class="heading-anchor" href="#%s" rel="nofollow" aria-hidden="true"></a></h%d>`, anchorName, anchorName, level))
-	
 }
 
 // extractText returns the recursive concatenation of the text content of an html node.
