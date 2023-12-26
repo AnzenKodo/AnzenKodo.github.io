@@ -1,0 +1,24 @@
+name: Build AK#Blogroll
+
+on:
+  schedule: 
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Clone repo
+      shell: bash
+      run: git clone https://github.com/AnzenKodo/AnzenKodo.github.io repo --branch gh-pages \
+        mv repo/site .
+      
+    - name: Making Blogroll
+      shell: bash
+      run: cd src/blogroll \
+        composer install \
+        php index.php
