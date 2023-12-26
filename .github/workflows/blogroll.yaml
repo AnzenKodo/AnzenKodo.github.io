@@ -14,11 +14,12 @@ jobs:
 
     - name: Clone repo
       shell: bash
-      run: git clone -b gh-pages https://github.com/AnzenKodo/AnzenKodo.github.io repo && \
-        mv repo/site .
+      run: git clone -b gh-pages https://github.com/AnzenKodo/AnzenKodo.github.io repo
+      
+    - name: Move site folder
+      shell: bash
+      run: mv repo/site . && cd src/blogroll
       
     - name: Making Blogroll
       shell: bash
-      run: cd src/blogroll && \
-        composer install && \
-        php index.php
+      run: composer install && php index.php
