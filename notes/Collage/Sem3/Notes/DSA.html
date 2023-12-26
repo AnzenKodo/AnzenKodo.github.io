@@ -89,14 +89,15 @@
                 border-left: 10px solid;
                 padding: 0 1rem;
             }
-            code {
+            pre {
+                background: black;
+                overflow-x: auto;
+                padding: 1em;
+                border: 1px solid;
+            }
+            :not(pre) > code {
                 border: 1px solid;
                 padding: 0 .2rem .2rem .2rem;
-            }
-            pre {
-              background: black;
-              overflow-x: auto;
-              padding: 1em;
             }
             img {
                 max-width: 100%;
@@ -113,20 +114,20 @@
                 background: var(--theme);
                 color: inherit;
             }
-            details:has(nav) {
+            #table-of-content {
                 position: fixed;
                 bottom: 10px;
                 right: 10px;
                 background: black;
                 padding: 0.5rem 1em;
             }
-            details:has(nav)[open] {
+            #table-of-content[open] {
                 max-height: 90%;
-                overflow-y: scroll;
+                overflow-y: auto;
                 bottom: 50px;
                 margin-left: 1em;
             }
-            details:has(nav)[open] summary {
+            #table-of-content[open] summary {
                 background: black;
                 padding: 0.5em 1em;
                 text-align: center;
@@ -134,7 +135,7 @@
                 bottom: 10px;
                 right: 10px;
             }
-            details:has(nav) ul:first-child {
+            #table-of-content ul:first-child {
                 padding-left: 1em;
                 margin-top: 1.5em;            
             }
@@ -151,7 +152,7 @@
                 <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
             
-			<details class="table-of-content">
+			<details id="table-of-content">
 			    <summary>Table of Content</summary>
                 <nav>
 <ul>
@@ -286,18 +287,70 @@ take to complete. It describes the average-case scenario.</li>
 </ul>
 <h2>
 Write an algorithm for implementing queue using array.<a name="write-an-algorithm-for-implementing-queue-using-array" class="heading-anchor" href="#write-an-algorithm-for-implementing-queue-using-array" rel="nofollow" aria-hidden="true"></a></h2>
-<pre><code>Step 1: Declare an array &quot;queue&quot; of size &quot;n&quot; to store the elements in the queue.
-Step 2: Declare two variables &quot;front&quot; and &quot;rear&quot; and initialize them to -1.
-Step 3: To insert an element in the queue, check if the queue is full (if rear = n-1). If it is, then write &quot;Queue Overflow&quot; and exit.
-Step 4: If the queue is not full, increment &quot;rear&quot; by 1 and insert the element at the position &quot;rear&quot; in the array &quot;queue&quot;.
-Step 5: To delete an element from the queue, check if the queue is empty (if front = -1 and rear = -1). If it is, then write &quot;Queue Underflow&quot; and exit.
-Step 6: If the queue is not empty, increment &quot;front&quot; by 1 and delete the element present at the position &quot;front&quot; in the array &quot;queue&quot;.
-Step 7: To display the elements in the queue, check if the queue is empty (if front = -1 and rear = -1). If it is, then write &quot;Queue is empty&quot; and exit.
-Step 8: If the queue is not empty, traverse the queue from front to rear and print the elements present in the array &quot;queue&quot;.
-Step 9: Exit
-</code></pre>
+<html>
+<style type="text/css">
+/* Background */ .bg { color: #f8f8f2; background-color: #000000 }
+/* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; }
+/* LineHighlight */ .chroma .hl { background-color: #191919 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* Line */ .chroma .line { display: flex; }
+/* Keyword */ .chroma .k { color: #ff0000 }
+/* KeywordConstant */ .chroma .kc { color: #ff0000 }
+/* KeywordDeclaration */ .chroma .kd { color: #ff0000 }
+/* KeywordNamespace */ .chroma .kn { color: #ff0000 }
+/* KeywordPseudo */ .chroma .kp { color: #ff0000 }
+/* KeywordReserved */ .chroma .kr { color: #ff0000 }
+/* KeywordType */ .chroma .kt { color: #ee82ee }
+/* NameConstant */ .chroma .no { color: #7fffd4 }
+/* NameFunction */ .chroma .nf { color: #ffff00 }
+/* NameVariable */ .chroma .nv { color: #eedd82 }
+/* LiteralString */ .chroma .s { color: #87ceeb }
+/* LiteralStringAffix */ .chroma .sa { color: #87ceeb }
+/* LiteralStringBacktick */ .chroma .sb { color: #87ceeb }
+/* LiteralStringChar */ .chroma .sc { color: #87ceeb }
+/* LiteralStringDelimiter */ .chroma .dl { color: #87ceeb }
+/* LiteralStringDoc */ .chroma .sd { color: #87ceeb }
+/* LiteralStringDouble */ .chroma .s2 { color: #87ceeb }
+/* LiteralStringEscape */ .chroma .se { color: #87ceeb }
+/* LiteralStringHeredoc */ .chroma .sh { color: #87ceeb }
+/* LiteralStringInterpol */ .chroma .si { color: #87ceeb }
+/* LiteralStringOther */ .chroma .sx { color: #87ceeb }
+/* LiteralStringRegex */ .chroma .sr { color: #87ceeb }
+/* LiteralStringSingle */ .chroma .s1 { color: #87ceeb }
+/* LiteralStringSymbol */ .chroma .ss { color: #ff6600 }
+/* LiteralNumber */ .chroma .m { color: #ff6600 }
+/* LiteralNumberBin */ .chroma .mb { color: #ff6600 }
+/* LiteralNumberFloat */ .chroma .mf { color: #ff6600 }
+/* LiteralNumberHex */ .chroma .mh { color: #ff6600 }
+/* LiteralNumberInteger */ .chroma .mi { color: #ff6600 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #ff6600 }
+/* LiteralNumberOct */ .chroma .mo { color: #ff6600 }
+/* Comment */ .chroma .c { color: #00ff00 }
+/* CommentHashbang */ .chroma .ch { color: #00ff00 }
+/* CommentMultiline */ .chroma .cm { color: #00ff00 }
+/* CommentSingle */ .chroma .c1 { color: #00ff00 }
+/* CommentSpecial */ .chroma .cs { color: #00ff00 }
+/* CommentPreproc */ .chroma .cp { color: #e5e5e5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #e5e5e5 }
+body { color: #f8f8f2; background-color: #000000; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">Step 1: Declare an array &#34;queue&#34; of size &#34;n&#34; to store the elements in the queue.
+</span></span><span class="line"><span class="cl">Step 2: Declare two variables &#34;front&#34; and &#34;rear&#34; and initialize them to -1.
+</span></span><span class="line"><span class="cl">Step 3: To insert an element in the queue, check if the queue is full (if rear = n-1). If it is, then write &#34;Queue Overflow&#34; and exit.
+</span></span><span class="line"><span class="cl">Step 4: If the queue is not full, increment &#34;rear&#34; by 1 and insert the element at the position &#34;rear&#34; in the array &#34;queue&#34;.
+</span></span><span class="line"><span class="cl">Step 5: To delete an element from the queue, check if the queue is empty (if front = -1 and rear = -1). If it is, then write &#34;Queue Underflow&#34; and exit.
+</span></span><span class="line"><span class="cl">Step 6: If the queue is not empty, increment &#34;front&#34; by 1 and delete the element present at the position &#34;front&#34; in the array &#34;queue&#34;.
+</span></span><span class="line"><span class="cl">Step 7: To display the elements in the queue, check if the queue is empty (if front = -1 and rear = -1). If it is, then write &#34;Queue is empty&#34; and exit.
+</span></span><span class="line"><span class="cl">Step 8: If the queue is not empty, traverse the queue from front to rear and print the elements present in the array &#34;queue&#34;.
+</span></span><span class="line"><span class="cl">Step 9: Exit
+</span></span></code></pre>
+</body>
+</html>
 
-<p><a href="https://youtu.be/HI34Oytjjb4">What is queue?</a></p>
+<p></p>
 <h2>
 Write an algorithm for merge sort and comment on its comlexity.<a name="write-an-algorithm-for-merge-sort-and-comment-on-its-comlexity" class="heading-anchor" href="#write-an-algorithm-for-merge-sort-and-comment-on-its-comlexity" rel="nofollow" aria-hidden="true"></a></h2>
 <ul>
@@ -329,12 +382,64 @@ the stack, and mark the current vertex as visited.</li>
 <li><p>Example: Consider the below graph, DFS traversal of the above graph will be: 0
 1 3 4 2</p>
 
-<pre><code>  0
- / \
-1   2
-/ \
-3   4
-</code></pre>
+<html>
+<style type="text/css">
+/* Background */ .bg { color: #f8f8f2; background-color: #000000 }
+/* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; }
+/* LineHighlight */ .chroma .hl { background-color: #191919 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* Line */ .chroma .line { display: flex; }
+/* Keyword */ .chroma .k { color: #ff0000 }
+/* KeywordConstant */ .chroma .kc { color: #ff0000 }
+/* KeywordDeclaration */ .chroma .kd { color: #ff0000 }
+/* KeywordNamespace */ .chroma .kn { color: #ff0000 }
+/* KeywordPseudo */ .chroma .kp { color: #ff0000 }
+/* KeywordReserved */ .chroma .kr { color: #ff0000 }
+/* KeywordType */ .chroma .kt { color: #ee82ee }
+/* NameConstant */ .chroma .no { color: #7fffd4 }
+/* NameFunction */ .chroma .nf { color: #ffff00 }
+/* NameVariable */ .chroma .nv { color: #eedd82 }
+/* LiteralString */ .chroma .s { color: #87ceeb }
+/* LiteralStringAffix */ .chroma .sa { color: #87ceeb }
+/* LiteralStringBacktick */ .chroma .sb { color: #87ceeb }
+/* LiteralStringChar */ .chroma .sc { color: #87ceeb }
+/* LiteralStringDelimiter */ .chroma .dl { color: #87ceeb }
+/* LiteralStringDoc */ .chroma .sd { color: #87ceeb }
+/* LiteralStringDouble */ .chroma .s2 { color: #87ceeb }
+/* LiteralStringEscape */ .chroma .se { color: #87ceeb }
+/* LiteralStringHeredoc */ .chroma .sh { color: #87ceeb }
+/* LiteralStringInterpol */ .chroma .si { color: #87ceeb }
+/* LiteralStringOther */ .chroma .sx { color: #87ceeb }
+/* LiteralStringRegex */ .chroma .sr { color: #87ceeb }
+/* LiteralStringSingle */ .chroma .s1 { color: #87ceeb }
+/* LiteralStringSymbol */ .chroma .ss { color: #ff6600 }
+/* LiteralNumber */ .chroma .m { color: #ff6600 }
+/* LiteralNumberBin */ .chroma .mb { color: #ff6600 }
+/* LiteralNumberFloat */ .chroma .mf { color: #ff6600 }
+/* LiteralNumberHex */ .chroma .mh { color: #ff6600 }
+/* LiteralNumberInteger */ .chroma .mi { color: #ff6600 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #ff6600 }
+/* LiteralNumberOct */ .chroma .mo { color: #ff6600 }
+/* Comment */ .chroma .c { color: #00ff00 }
+/* CommentHashbang */ .chroma .ch { color: #00ff00 }
+/* CommentMultiline */ .chroma .cm { color: #00ff00 }
+/* CommentSingle */ .chroma .c1 { color: #00ff00 }
+/* CommentSpecial */ .chroma .cs { color: #00ff00 }
+/* CommentPreproc */ .chroma .cp { color: #e5e5e5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #e5e5e5 }
+body { color: #f8f8f2; background-color: #000000; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">  0
+</span></span><span class="line"><span class="cl"> / \
+</span></span><span class="line"><span class="cl">1   2
+</span></span><span class="line"><span class="cl">/ \
+</span></span><span class="line"><span class="cl">3   4
+</span></span></code></pre>
+</body>
+</html>
 
 <ul>
 <li>More example: <a href="https://www.youtube.com/watch?v=iaBEKo5sM7w">https://www.youtube.com/watch?v=iaBEKo5sM7w</a></li>
@@ -351,12 +456,64 @@ the queue, and mark the current vertex as visited.</li>
 <li><p>Example: Consider the below graph, BFS traversal of the above graph will be: 0
 1 2 3</p>
 
-<pre><code>  0
- / \
-1   2
-/ \
-3   4
-</code></pre></li>
+<html>
+<style type="text/css">
+/* Background */ .bg { color: #f8f8f2; background-color: #000000 }
+/* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; }
+/* LineHighlight */ .chroma .hl { background-color: #191919 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* Line */ .chroma .line { display: flex; }
+/* Keyword */ .chroma .k { color: #ff0000 }
+/* KeywordConstant */ .chroma .kc { color: #ff0000 }
+/* KeywordDeclaration */ .chroma .kd { color: #ff0000 }
+/* KeywordNamespace */ .chroma .kn { color: #ff0000 }
+/* KeywordPseudo */ .chroma .kp { color: #ff0000 }
+/* KeywordReserved */ .chroma .kr { color: #ff0000 }
+/* KeywordType */ .chroma .kt { color: #ee82ee }
+/* NameConstant */ .chroma .no { color: #7fffd4 }
+/* NameFunction */ .chroma .nf { color: #ffff00 }
+/* NameVariable */ .chroma .nv { color: #eedd82 }
+/* LiteralString */ .chroma .s { color: #87ceeb }
+/* LiteralStringAffix */ .chroma .sa { color: #87ceeb }
+/* LiteralStringBacktick */ .chroma .sb { color: #87ceeb }
+/* LiteralStringChar */ .chroma .sc { color: #87ceeb }
+/* LiteralStringDelimiter */ .chroma .dl { color: #87ceeb }
+/* LiteralStringDoc */ .chroma .sd { color: #87ceeb }
+/* LiteralStringDouble */ .chroma .s2 { color: #87ceeb }
+/* LiteralStringEscape */ .chroma .se { color: #87ceeb }
+/* LiteralStringHeredoc */ .chroma .sh { color: #87ceeb }
+/* LiteralStringInterpol */ .chroma .si { color: #87ceeb }
+/* LiteralStringOther */ .chroma .sx { color: #87ceeb }
+/* LiteralStringRegex */ .chroma .sr { color: #87ceeb }
+/* LiteralStringSingle */ .chroma .s1 { color: #87ceeb }
+/* LiteralStringSymbol */ .chroma .ss { color: #ff6600 }
+/* LiteralNumber */ .chroma .m { color: #ff6600 }
+/* LiteralNumberBin */ .chroma .mb { color: #ff6600 }
+/* LiteralNumberFloat */ .chroma .mf { color: #ff6600 }
+/* LiteralNumberHex */ .chroma .mh { color: #ff6600 }
+/* LiteralNumberInteger */ .chroma .mi { color: #ff6600 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #ff6600 }
+/* LiteralNumberOct */ .chroma .mo { color: #ff6600 }
+/* Comment */ .chroma .c { color: #00ff00 }
+/* CommentHashbang */ .chroma .ch { color: #00ff00 }
+/* CommentMultiline */ .chroma .cm { color: #00ff00 }
+/* CommentSingle */ .chroma .c1 { color: #00ff00 }
+/* CommentSpecial */ .chroma .cs { color: #00ff00 }
+/* CommentPreproc */ .chroma .cp { color: #e5e5e5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #e5e5e5 }
+body { color: #f8f8f2; background-color: #000000; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">  0
+</span></span><span class="line"><span class="cl"> / \
+</span></span><span class="line"><span class="cl">1   2
+</span></span><span class="line"><span class="cl">/ \
+</span></span><span class="line"><span class="cl">3   4
+</span></span></code></pre>
+</body>
+</html></li>
 </ul>
 <h2>
 Traverse the following binary tree into preorder, inorder, postorder by giving its algorithm.<a name="traverse-the-following-binary-tree-into-preorder-inorder-postorder-by-giving-its-algorithm" class="heading-anchor" href="#traverse-the-following-binary-tree-into-preorder-inorder-postorder-by-giving-its-algorithm" rel="nofollow" aria-hidden="true"></a></h2>
@@ -373,8 +530,8 @@ What is Binary search tree. Construct Binary search tree for following elements.
 <img src="./bst.png" alt="Binary Search Tree"></p>
 
 <ul>
-<li><a href="https://youtu.be/MFhxShGxHWc">Binary Search Algorithm in 100 Seconds</a></li>
-<li><a href="https://youtu.be/cySVml6e_Fc">Binary Search Trees (BST) - Insertion and Deletion</a></li>
+<li></li>
+<li></li>
 </ul>
 <h2>
 What is minimum spanning Tree? Draw the MST using kruskal's and prim's algorithm and find out the cost with all intermediate steps.<a name="what-is-minimum-spanning-tree-draw-the-mst-using-kruskal-s-and-prim-s-algorithm-and-find-out-the-cost-with-all-intermediate-steps" class="heading-anchor" href="#what-is-minimum-spanning-tree-draw-the-mst-using-kruskal-s-and-prim-s-algorithm-and-find-out-the-cost-with-all-intermediate-steps" rel="nofollow" aria-hidden="true"></a></h2>

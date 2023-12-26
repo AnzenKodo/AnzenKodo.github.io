@@ -89,14 +89,15 @@
                 border-left: 10px solid;
                 padding: 0 1rem;
             }
-            code {
+            pre {
+                background: black;
+                overflow-x: auto;
+                padding: 1em;
+                border: 1px solid;
+            }
+            :not(pre) > code {
                 border: 1px solid;
                 padding: 0 .2rem .2rem .2rem;
-            }
-            pre {
-              background: black;
-              overflow-x: auto;
-              padding: 1em;
             }
             img {
                 max-width: 100%;
@@ -113,20 +114,20 @@
                 background: var(--theme);
                 color: inherit;
             }
-            details:has(nav) {
+            #table-of-content {
                 position: fixed;
                 bottom: 10px;
                 right: 10px;
                 background: black;
                 padding: 0.5rem 1em;
             }
-            details:has(nav)[open] {
+            #table-of-content[open] {
                 max-height: 90%;
-                overflow-y: scroll;
+                overflow-y: auto;
                 bottom: 50px;
                 margin-left: 1em;
             }
-            details:has(nav)[open] summary {
+            #table-of-content[open] summary {
                 background: black;
                 padding: 0.5em 1em;
                 text-align: center;
@@ -134,7 +135,7 @@
                 bottom: 10px;
                 right: 10px;
             }
-            details:has(nav) ul:first-child {
+            #table-of-content ul:first-child {
                 padding-left: 1em;
                 margin-top: 1.5em;            
             }
@@ -151,7 +152,7 @@
                 <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
             
-			<details class="table-of-content">
+			<details id="table-of-content">
 			    <summary>Table of Content</summary>
                 <nav>
 <ul>
@@ -217,26 +218,78 @@ altered during run-time are called dynamic predicates,</p>
 
 <p>Example of static Database Manipulation:</p>
 
-<div class="highlight highlight-prolog"><pre>?- listing.
-yes
-
-?-assert(happy(maria)).
-
-?- listing.
-happy(maria).
-
-?- assert(happy(vineet)).
-yes
-
-?- assert(happy(cassius)).
-yes
-
-?- assert(happy(brutus)).
-yes
-
-?- assert(happy(vineet)).
-yes
-</pre></div>
+<html>
+<style type="text/css">
+/* Background */ .bg { color: #f8f8f2; background-color: #000000 }
+/* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; }
+/* LineHighlight */ .chroma .hl { background-color: #191919 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* Line */ .chroma .line { display: flex; }
+/* Keyword */ .chroma .k { color: #ff0000 }
+/* KeywordConstant */ .chroma .kc { color: #ff0000 }
+/* KeywordDeclaration */ .chroma .kd { color: #ff0000 }
+/* KeywordNamespace */ .chroma .kn { color: #ff0000 }
+/* KeywordPseudo */ .chroma .kp { color: #ff0000 }
+/* KeywordReserved */ .chroma .kr { color: #ff0000 }
+/* KeywordType */ .chroma .kt { color: #ee82ee }
+/* NameConstant */ .chroma .no { color: #7fffd4 }
+/* NameFunction */ .chroma .nf { color: #ffff00 }
+/* NameVariable */ .chroma .nv { color: #eedd82 }
+/* LiteralString */ .chroma .s { color: #87ceeb }
+/* LiteralStringAffix */ .chroma .sa { color: #87ceeb }
+/* LiteralStringBacktick */ .chroma .sb { color: #87ceeb }
+/* LiteralStringChar */ .chroma .sc { color: #87ceeb }
+/* LiteralStringDelimiter */ .chroma .dl { color: #87ceeb }
+/* LiteralStringDoc */ .chroma .sd { color: #87ceeb }
+/* LiteralStringDouble */ .chroma .s2 { color: #87ceeb }
+/* LiteralStringEscape */ .chroma .se { color: #87ceeb }
+/* LiteralStringHeredoc */ .chroma .sh { color: #87ceeb }
+/* LiteralStringInterpol */ .chroma .si { color: #87ceeb }
+/* LiteralStringOther */ .chroma .sx { color: #87ceeb }
+/* LiteralStringRegex */ .chroma .sr { color: #87ceeb }
+/* LiteralStringSingle */ .chroma .s1 { color: #87ceeb }
+/* LiteralStringSymbol */ .chroma .ss { color: #ff6600 }
+/* LiteralNumber */ .chroma .m { color: #ff6600 }
+/* LiteralNumberBin */ .chroma .mb { color: #ff6600 }
+/* LiteralNumberFloat */ .chroma .mf { color: #ff6600 }
+/* LiteralNumberHex */ .chroma .mh { color: #ff6600 }
+/* LiteralNumberInteger */ .chroma .mi { color: #ff6600 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #ff6600 }
+/* LiteralNumberOct */ .chroma .mo { color: #ff6600 }
+/* Comment */ .chroma .c { color: #00ff00 }
+/* CommentHashbang */ .chroma .ch { color: #00ff00 }
+/* CommentMultiline */ .chroma .cm { color: #00ff00 }
+/* CommentSingle */ .chroma .c1 { color: #00ff00 }
+/* CommentSpecial */ .chroma .cs { color: #00ff00 }
+/* CommentPreproc */ .chroma .cp { color: #e5e5e5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #e5e5e5 }
+body { color: #f8f8f2; background-color: #000000; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="s">?-</span> <span class="s">listing</span><span class="p">.</span>
+</span></span><span class="line"><span class="cl"><span class="s">yes</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="s">?-</span><span class="nf">assert</span><span class="p">(</span><span class="nf">happy</span><span class="p">(</span><span class="s">maria</span><span class="p">)).</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="s">?-</span> <span class="s">listing</span><span class="p">.</span>
+</span></span><span class="line"><span class="cl"><span class="nf">happy</span><span class="p">(</span><span class="s">maria</span><span class="p">).</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="s">?-</span> <span class="nf">assert</span><span class="p">(</span><span class="nf">happy</span><span class="p">(</span><span class="s">vineet</span><span class="p">)).</span>
+</span></span><span class="line"><span class="cl"><span class="s">yes</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="s">?-</span> <span class="nf">assert</span><span class="p">(</span><span class="nf">happy</span><span class="p">(</span><span class="s">cassius</span><span class="p">)).</span>
+</span></span><span class="line"><span class="cl"><span class="s">yes</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="s">?-</span> <span class="nf">assert</span><span class="p">(</span><span class="nf">happy</span><span class="p">(</span><span class="s">brutus</span><span class="p">)).</span>
+</span></span><span class="line"><span class="cl"><span class="s">yes</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="s">?-</span> <span class="nf">assert</span><span class="p">(</span><span class="nf">happy</span><span class="p">(</span><span class="s">vineet</span><span class="p">)).</span>
+</span></span><span class="line"><span class="cl"><span class="s">yes</span>
+</span></span></code></pre>
+</body>
+</html>
 <h3>
 Dynamic Database Manipulation<a name="dynamic-database-manipulation" class="heading-anchor" href="#dynamic-database-manipulation" rel="nofollow" aria-hidden="true"></a></h3>
 <p>Dynamic database manipulation refers to the process of modifying a database that
@@ -251,10 +304,62 @@ increase computational speed.</p>
 
 <p>Example of Dynamic Database Manipulation:</p>
 
-<div class="highlight highlight-prolog"><pre>:- dynamic lookup/3.
-add_and_square(X,Y,Res) :- lookup(X,Y,Res). !.
-add_and_square(X,Y,Res) is (X+Y) (X+Y), assert(lookup(X,Y.Res)).
-</pre></div>
+<html>
+<style type="text/css">
+/* Background */ .bg { color: #f8f8f2; background-color: #000000 }
+/* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; }
+/* LineHighlight */ .chroma .hl { background-color: #191919 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* Line */ .chroma .line { display: flex; }
+/* Keyword */ .chroma .k { color: #ff0000 }
+/* KeywordConstant */ .chroma .kc { color: #ff0000 }
+/* KeywordDeclaration */ .chroma .kd { color: #ff0000 }
+/* KeywordNamespace */ .chroma .kn { color: #ff0000 }
+/* KeywordPseudo */ .chroma .kp { color: #ff0000 }
+/* KeywordReserved */ .chroma .kr { color: #ff0000 }
+/* KeywordType */ .chroma .kt { color: #ee82ee }
+/* NameConstant */ .chroma .no { color: #7fffd4 }
+/* NameFunction */ .chroma .nf { color: #ffff00 }
+/* NameVariable */ .chroma .nv { color: #eedd82 }
+/* LiteralString */ .chroma .s { color: #87ceeb }
+/* LiteralStringAffix */ .chroma .sa { color: #87ceeb }
+/* LiteralStringBacktick */ .chroma .sb { color: #87ceeb }
+/* LiteralStringChar */ .chroma .sc { color: #87ceeb }
+/* LiteralStringDelimiter */ .chroma .dl { color: #87ceeb }
+/* LiteralStringDoc */ .chroma .sd { color: #87ceeb }
+/* LiteralStringDouble */ .chroma .s2 { color: #87ceeb }
+/* LiteralStringEscape */ .chroma .se { color: #87ceeb }
+/* LiteralStringHeredoc */ .chroma .sh { color: #87ceeb }
+/* LiteralStringInterpol */ .chroma .si { color: #87ceeb }
+/* LiteralStringOther */ .chroma .sx { color: #87ceeb }
+/* LiteralStringRegex */ .chroma .sr { color: #87ceeb }
+/* LiteralStringSingle */ .chroma .s1 { color: #87ceeb }
+/* LiteralStringSymbol */ .chroma .ss { color: #ff6600 }
+/* LiteralNumber */ .chroma .m { color: #ff6600 }
+/* LiteralNumberBin */ .chroma .mb { color: #ff6600 }
+/* LiteralNumberFloat */ .chroma .mf { color: #ff6600 }
+/* LiteralNumberHex */ .chroma .mh { color: #ff6600 }
+/* LiteralNumberInteger */ .chroma .mi { color: #ff6600 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #ff6600 }
+/* LiteralNumberOct */ .chroma .mo { color: #ff6600 }
+/* Comment */ .chroma .c { color: #00ff00 }
+/* CommentHashbang */ .chroma .ch { color: #00ff00 }
+/* CommentMultiline */ .chroma .cm { color: #00ff00 }
+/* CommentSingle */ .chroma .c1 { color: #00ff00 }
+/* CommentSpecial */ .chroma .cs { color: #00ff00 }
+/* CommentPreproc */ .chroma .cp { color: #e5e5e5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #e5e5e5 }
+body { color: #f8f8f2; background-color: #000000; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="p">:-</span> <span class="s">dynamic</span> <span class="s">lookup</span><span class="o">/</span><span class="mf">3.</span>
+</span></span><span class="line"><span class="cl"><span class="nf">add_and_square</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span><span class="nv">Y</span><span class="p">,</span><span class="nv">Res</span><span class="p">)</span> <span class="p">:-</span> <span class="nf">lookup</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span><span class="nv">Y</span><span class="p">,</span><span class="nv">Res</span><span class="p">).</span> <span class="p">!.</span>
+</span></span><span class="line"><span class="cl"><span class="nf">add_and_square</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span><span class="nv">Y</span><span class="p">,</span><span class="nv">Res</span><span class="p">)</span> <span class="o">is</span> <span class="p">(</span><span class="nv">X</span><span class="o">+</span><span class="nv">Y</span><span class="p">)</span> <span class="p">(</span><span class="nv">X</span><span class="o">+</span><span class="nv">Y</span><span class="p">),</span> <span class="nf">assert</span><span class="p">(</span><span class="nf">lookup</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span><span class="nv">Y</span><span class="p">.</span><span class="nv">Res</span><span class="p">)).</span>
+</span></span></code></pre>
+</body>
+</html>
 <h2>
 2. What is imperative control flow?<a name="2-what-is-imperative-control-flow" class="heading-anchor" href="#2-what-is-imperative-control-flow" rel="nofollow" aria-hidden="true"></a></h2>
 <p>PROLOG gives the programmer explicit control-flow features to completely control
@@ -276,26 +381,130 @@ This is best practice.</p>
 
 <p>Example: Suppose we have the following facts already present in our database:</p>
 
-<div class="highlight highlight-prolog"><pre>teaches(dr_frodo, history).   studies(ahmed, english).
-teaches(dr_frodo, english).   studies(anshuman, english).
-teaches(dr_frodo, chemistry). studies(andre, chemistry).
-teaches(dr_fondu, physics).   studies(alex, physics).
-</pre></div>
+<html>
+<style type="text/css">
+/* Background */ .bg { color: #f8f8f2; background-color: #000000 }
+/* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; }
+/* LineHighlight */ .chroma .hl { background-color: #191919 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* Line */ .chroma .line { display: flex; }
+/* Keyword */ .chroma .k { color: #ff0000 }
+/* KeywordConstant */ .chroma .kc { color: #ff0000 }
+/* KeywordDeclaration */ .chroma .kd { color: #ff0000 }
+/* KeywordNamespace */ .chroma .kn { color: #ff0000 }
+/* KeywordPseudo */ .chroma .kp { color: #ff0000 }
+/* KeywordReserved */ .chroma .kr { color: #ff0000 }
+/* KeywordType */ .chroma .kt { color: #ee82ee }
+/* NameConstant */ .chroma .no { color: #7fffd4 }
+/* NameFunction */ .chroma .nf { color: #ffff00 }
+/* NameVariable */ .chroma .nv { color: #eedd82 }
+/* LiteralString */ .chroma .s { color: #87ceeb }
+/* LiteralStringAffix */ .chroma .sa { color: #87ceeb }
+/* LiteralStringBacktick */ .chroma .sb { color: #87ceeb }
+/* LiteralStringChar */ .chroma .sc { color: #87ceeb }
+/* LiteralStringDelimiter */ .chroma .dl { color: #87ceeb }
+/* LiteralStringDoc */ .chroma .sd { color: #87ceeb }
+/* LiteralStringDouble */ .chroma .s2 { color: #87ceeb }
+/* LiteralStringEscape */ .chroma .se { color: #87ceeb }
+/* LiteralStringHeredoc */ .chroma .sh { color: #87ceeb }
+/* LiteralStringInterpol */ .chroma .si { color: #87ceeb }
+/* LiteralStringOther */ .chroma .sx { color: #87ceeb }
+/* LiteralStringRegex */ .chroma .sr { color: #87ceeb }
+/* LiteralStringSingle */ .chroma .s1 { color: #87ceeb }
+/* LiteralStringSymbol */ .chroma .ss { color: #ff6600 }
+/* LiteralNumber */ .chroma .m { color: #ff6600 }
+/* LiteralNumberBin */ .chroma .mb { color: #ff6600 }
+/* LiteralNumberFloat */ .chroma .mf { color: #ff6600 }
+/* LiteralNumberHex */ .chroma .mh { color: #ff6600 }
+/* LiteralNumberInteger */ .chroma .mi { color: #ff6600 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #ff6600 }
+/* LiteralNumberOct */ .chroma .mo { color: #ff6600 }
+/* Comment */ .chroma .c { color: #00ff00 }
+/* CommentHashbang */ .chroma .ch { color: #00ff00 }
+/* CommentMultiline */ .chroma .cm { color: #00ff00 }
+/* CommentSingle */ .chroma .c1 { color: #00ff00 }
+/* CommentSpecial */ .chroma .cs { color: #00ff00 }
+/* CommentPreproc */ .chroma .cp { color: #e5e5e5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #e5e5e5 }
+body { color: #f8f8f2; background-color: #000000; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nf">teaches</span><span class="p">(</span><span class="s">dr_frodo</span><span class="p">,</span> <span class="s">history</span><span class="p">).</span>   <span class="nf">studies</span><span class="p">(</span><span class="s">ahmed</span><span class="p">,</span> <span class="s">english</span><span class="p">).</span>
+</span></span><span class="line"><span class="cl"><span class="nf">teaches</span><span class="p">(</span><span class="s">dr_frodo</span><span class="p">,</span> <span class="s">english</span><span class="p">).</span>   <span class="nf">studies</span><span class="p">(</span><span class="s">anshuman</span><span class="p">,</span> <span class="s">english</span><span class="p">).</span>
+</span></span><span class="line"><span class="cl"><span class="nf">teaches</span><span class="p">(</span><span class="s">dr_frodo</span><span class="p">,</span> <span class="s">chemistry</span><span class="p">).</span> <span class="nf">studies</span><span class="p">(</span><span class="s">andre</span><span class="p">,</span> <span class="s">chemistry</span><span class="p">).</span>
+</span></span><span class="line"><span class="cl"><span class="nf">teaches</span><span class="p">(</span><span class="s">dr_fondu</span><span class="p">,</span> <span class="s">physics</span><span class="p">).</span>   <span class="nf">studies</span><span class="p">(</span><span class="s">alex</span><span class="p">,</span> <span class="s">physics</span><span class="p">).</span>
+</span></span></code></pre>
+</body>
+</html>
 
 <p>Then consider the following query and its outputs:</p>
 
-<div class="highlight highlight-prolog"><pre>?- teaches(dr_frodo, course), studies(student, course).
-course = english
-student ahmed;
-
-course = english
-student =  anshuman;
-
-course = chemistry
-student = andre;
-
-false.
-</pre></div>
+<html>
+<style type="text/css">
+/* Background */ .bg { color: #f8f8f2; background-color: #000000 }
+/* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; }
+/* LineHighlight */ .chroma .hl { background-color: #191919 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* Line */ .chroma .line { display: flex; }
+/* Keyword */ .chroma .k { color: #ff0000 }
+/* KeywordConstant */ .chroma .kc { color: #ff0000 }
+/* KeywordDeclaration */ .chroma .kd { color: #ff0000 }
+/* KeywordNamespace */ .chroma .kn { color: #ff0000 }
+/* KeywordPseudo */ .chroma .kp { color: #ff0000 }
+/* KeywordReserved */ .chroma .kr { color: #ff0000 }
+/* KeywordType */ .chroma .kt { color: #ee82ee }
+/* NameConstant */ .chroma .no { color: #7fffd4 }
+/* NameFunction */ .chroma .nf { color: #ffff00 }
+/* NameVariable */ .chroma .nv { color: #eedd82 }
+/* LiteralString */ .chroma .s { color: #87ceeb }
+/* LiteralStringAffix */ .chroma .sa { color: #87ceeb }
+/* LiteralStringBacktick */ .chroma .sb { color: #87ceeb }
+/* LiteralStringChar */ .chroma .sc { color: #87ceeb }
+/* LiteralStringDelimiter */ .chroma .dl { color: #87ceeb }
+/* LiteralStringDoc */ .chroma .sd { color: #87ceeb }
+/* LiteralStringDouble */ .chroma .s2 { color: #87ceeb }
+/* LiteralStringEscape */ .chroma .se { color: #87ceeb }
+/* LiteralStringHeredoc */ .chroma .sh { color: #87ceeb }
+/* LiteralStringInterpol */ .chroma .si { color: #87ceeb }
+/* LiteralStringOther */ .chroma .sx { color: #87ceeb }
+/* LiteralStringRegex */ .chroma .sr { color: #87ceeb }
+/* LiteralStringSingle */ .chroma .s1 { color: #87ceeb }
+/* LiteralStringSymbol */ .chroma .ss { color: #ff6600 }
+/* LiteralNumber */ .chroma .m { color: #ff6600 }
+/* LiteralNumberBin */ .chroma .mb { color: #ff6600 }
+/* LiteralNumberFloat */ .chroma .mf { color: #ff6600 }
+/* LiteralNumberHex */ .chroma .mh { color: #ff6600 }
+/* LiteralNumberInteger */ .chroma .mi { color: #ff6600 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #ff6600 }
+/* LiteralNumberOct */ .chroma .mo { color: #ff6600 }
+/* Comment */ .chroma .c { color: #00ff00 }
+/* CommentHashbang */ .chroma .ch { color: #00ff00 }
+/* CommentMultiline */ .chroma .cm { color: #00ff00 }
+/* CommentSingle */ .chroma .c1 { color: #00ff00 }
+/* CommentSpecial */ .chroma .cs { color: #00ff00 }
+/* CommentPreproc */ .chroma .cp { color: #e5e5e5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #e5e5e5 }
+body { color: #f8f8f2; background-color: #000000; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="s">?-</span> <span class="nf">teaches</span><span class="p">(</span><span class="s">dr_frodo</span><span class="p">,</span> <span class="s">course</span><span class="p">),</span> <span class="nf">studies</span><span class="p">(</span><span class="s">student</span><span class="p">,</span> <span class="s">course</span><span class="p">).</span>
+</span></span><span class="line"><span class="cl"><span class="s">course</span> <span class="o">=</span> <span class="s">english</span>
+</span></span><span class="line"><span class="cl"><span class="s">student</span> <span class="s">ahmed</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="s">course</span> <span class="o">=</span> <span class="s">english</span>
+</span></span><span class="line"><span class="cl"><span class="s">student</span> <span class="o">=</span>  <span class="s">anshuman</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="s">course</span> <span class="o">=</span> <span class="s">chemistry</span>
+</span></span><span class="line"><span class="cl"><span class="s">student</span> <span class="o">=</span> <span class="s">andre</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="s">false</span><span class="p">.</span>
+</span></span></code></pre>
+</body>
+</html>
 
 <p>Backtracking has not been stopped in any way, shape, or form over here.</p>
 
@@ -314,9 +523,61 @@ how it works.</p>
 
 <p><strong>Case 1</strong></p>
 
-<div class="highlight highlight-prolog"><pre>?-teaches(dr_frodo, Course), !, studies (Student, Course).
-false.
-</pre></div>
+<html>
+<style type="text/css">
+/* Background */ .bg { color: #f8f8f2; background-color: #000000 }
+/* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; }
+/* LineHighlight */ .chroma .hl { background-color: #191919 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* Line */ .chroma .line { display: flex; }
+/* Keyword */ .chroma .k { color: #ff0000 }
+/* KeywordConstant */ .chroma .kc { color: #ff0000 }
+/* KeywordDeclaration */ .chroma .kd { color: #ff0000 }
+/* KeywordNamespace */ .chroma .kn { color: #ff0000 }
+/* KeywordPseudo */ .chroma .kp { color: #ff0000 }
+/* KeywordReserved */ .chroma .kr { color: #ff0000 }
+/* KeywordType */ .chroma .kt { color: #ee82ee }
+/* NameConstant */ .chroma .no { color: #7fffd4 }
+/* NameFunction */ .chroma .nf { color: #ffff00 }
+/* NameVariable */ .chroma .nv { color: #eedd82 }
+/* LiteralString */ .chroma .s { color: #87ceeb }
+/* LiteralStringAffix */ .chroma .sa { color: #87ceeb }
+/* LiteralStringBacktick */ .chroma .sb { color: #87ceeb }
+/* LiteralStringChar */ .chroma .sc { color: #87ceeb }
+/* LiteralStringDelimiter */ .chroma .dl { color: #87ceeb }
+/* LiteralStringDoc */ .chroma .sd { color: #87ceeb }
+/* LiteralStringDouble */ .chroma .s2 { color: #87ceeb }
+/* LiteralStringEscape */ .chroma .se { color: #87ceeb }
+/* LiteralStringHeredoc */ .chroma .sh { color: #87ceeb }
+/* LiteralStringInterpol */ .chroma .si { color: #87ceeb }
+/* LiteralStringOther */ .chroma .sx { color: #87ceeb }
+/* LiteralStringRegex */ .chroma .sr { color: #87ceeb }
+/* LiteralStringSingle */ .chroma .s1 { color: #87ceeb }
+/* LiteralStringSymbol */ .chroma .ss { color: #ff6600 }
+/* LiteralNumber */ .chroma .m { color: #ff6600 }
+/* LiteralNumberBin */ .chroma .mb { color: #ff6600 }
+/* LiteralNumberFloat */ .chroma .mf { color: #ff6600 }
+/* LiteralNumberHex */ .chroma .mh { color: #ff6600 }
+/* LiteralNumberInteger */ .chroma .mi { color: #ff6600 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #ff6600 }
+/* LiteralNumberOct */ .chroma .mo { color: #ff6600 }
+/* Comment */ .chroma .c { color: #00ff00 }
+/* CommentHashbang */ .chroma .ch { color: #00ff00 }
+/* CommentMultiline */ .chroma .cm { color: #00ff00 }
+/* CommentSingle */ .chroma .c1 { color: #00ff00 }
+/* CommentSpecial */ .chroma .cs { color: #00ff00 }
+/* CommentPreproc */ .chroma .cp { color: #e5e5e5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #e5e5e5 }
+body { color: #f8f8f2; background-color: #000000; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="s">?-</span><span class="nf">teaches</span><span class="p">(</span><span class="s">dr_frodo</span><span class="p">,</span> <span class="nv">Course</span><span class="p">),</span> <span class="p">!,</span> <span class="nf">studies</span> <span class="p">(</span><span class="nv">Student</span><span class="p">,</span> <span class="nv">Course</span><span class="p">).</span>
+</span></span><span class="line"><span class="cl"><span class="s">false</span><span class="p">.</span>
+</span></span></code></pre>
+</body>
+</html>
 
 <p>This time Course is first bound to history, then the cut is executed, and then
 studies goal is tried and fails (because nobody studies history according to the
@@ -326,11 +587,63 @@ as False.</p>
 
 <p><strong>Case 2:</strong></p>
 
-<div class="highlight highlight-prolog"><pre>?-teaches(dr_frodo, Course), studies (Student, Course), !.
-Course english
-Student = ahmed:
-false.
-</pre></div>
+<html>
+<style type="text/css">
+/* Background */ .bg { color: #f8f8f2; background-color: #000000 }
+/* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; }
+/* LineHighlight */ .chroma .hl { background-color: #191919 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* Line */ .chroma .line { display: flex; }
+/* Keyword */ .chroma .k { color: #ff0000 }
+/* KeywordConstant */ .chroma .kc { color: #ff0000 }
+/* KeywordDeclaration */ .chroma .kd { color: #ff0000 }
+/* KeywordNamespace */ .chroma .kn { color: #ff0000 }
+/* KeywordPseudo */ .chroma .kp { color: #ff0000 }
+/* KeywordReserved */ .chroma .kr { color: #ff0000 }
+/* KeywordType */ .chroma .kt { color: #ee82ee }
+/* NameConstant */ .chroma .no { color: #7fffd4 }
+/* NameFunction */ .chroma .nf { color: #ffff00 }
+/* NameVariable */ .chroma .nv { color: #eedd82 }
+/* LiteralString */ .chroma .s { color: #87ceeb }
+/* LiteralStringAffix */ .chroma .sa { color: #87ceeb }
+/* LiteralStringBacktick */ .chroma .sb { color: #87ceeb }
+/* LiteralStringChar */ .chroma .sc { color: #87ceeb }
+/* LiteralStringDelimiter */ .chroma .dl { color: #87ceeb }
+/* LiteralStringDoc */ .chroma .sd { color: #87ceeb }
+/* LiteralStringDouble */ .chroma .s2 { color: #87ceeb }
+/* LiteralStringEscape */ .chroma .se { color: #87ceeb }
+/* LiteralStringHeredoc */ .chroma .sh { color: #87ceeb }
+/* LiteralStringInterpol */ .chroma .si { color: #87ceeb }
+/* LiteralStringOther */ .chroma .sx { color: #87ceeb }
+/* LiteralStringRegex */ .chroma .sr { color: #87ceeb }
+/* LiteralStringSingle */ .chroma .s1 { color: #87ceeb }
+/* LiteralStringSymbol */ .chroma .ss { color: #ff6600 }
+/* LiteralNumber */ .chroma .m { color: #ff6600 }
+/* LiteralNumberBin */ .chroma .mb { color: #ff6600 }
+/* LiteralNumberFloat */ .chroma .mf { color: #ff6600 }
+/* LiteralNumberHex */ .chroma .mh { color: #ff6600 }
+/* LiteralNumberInteger */ .chroma .mi { color: #ff6600 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #ff6600 }
+/* LiteralNumberOct */ .chroma .mo { color: #ff6600 }
+/* Comment */ .chroma .c { color: #00ff00 }
+/* CommentHashbang */ .chroma .ch { color: #00ff00 }
+/* CommentMultiline */ .chroma .cm { color: #00ff00 }
+/* CommentSingle */ .chroma .c1 { color: #00ff00 }
+/* CommentSpecial */ .chroma .cs { color: #00ff00 }
+/* CommentPreproc */ .chroma .cp { color: #e5e5e5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #e5e5e5 }
+body { color: #f8f8f2; background-color: #000000; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="s">?-</span><span class="nf">teaches</span><span class="p">(</span><span class="s">dr_frodo</span><span class="p">,</span> <span class="nv">Course</span><span class="p">),</span> <span class="nf">studies</span> <span class="p">(</span><span class="nv">Student</span><span class="p">,</span> <span class="nv">Course</span><span class="p">),</span> <span class="p">!.</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Course</span> <span class="s">english</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Student</span> <span class="o">=</span> <span class="nn">ahmed</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"><span class="s">false</span><span class="p">.</span>
+</span></span></code></pre>
+</body>
+</html>
 
 <p>Here the teaches goal is tried as usual, and Course is bound to history, again
 as usual. Next the studies goal is tried and fails, so we don't get to the cut
@@ -342,10 +655,62 @@ cut is tried with it reaching the end of the query and of course succeeds, so no
 further backtracking is possible and only one solution is thus found. If you
 enter a semi-colon after the first solution, you get a false as shown.</p>
 
-<div class="highlight highlight-prolog"><pre>?-!, teaches(dr_frodo, Course), studies (Student, Course).
-Course = english
-Student = ahmed;
-</pre></div>
+<html>
+<style type="text/css">
+/* Background */ .bg { color: #f8f8f2; background-color: #000000 }
+/* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; }
+/* LineHighlight */ .chroma .hl { background-color: #191919 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* Line */ .chroma .line { display: flex; }
+/* Keyword */ .chroma .k { color: #ff0000 }
+/* KeywordConstant */ .chroma .kc { color: #ff0000 }
+/* KeywordDeclaration */ .chroma .kd { color: #ff0000 }
+/* KeywordNamespace */ .chroma .kn { color: #ff0000 }
+/* KeywordPseudo */ .chroma .kp { color: #ff0000 }
+/* KeywordReserved */ .chroma .kr { color: #ff0000 }
+/* KeywordType */ .chroma .kt { color: #ee82ee }
+/* NameConstant */ .chroma .no { color: #7fffd4 }
+/* NameFunction */ .chroma .nf { color: #ffff00 }
+/* NameVariable */ .chroma .nv { color: #eedd82 }
+/* LiteralString */ .chroma .s { color: #87ceeb }
+/* LiteralStringAffix */ .chroma .sa { color: #87ceeb }
+/* LiteralStringBacktick */ .chroma .sb { color: #87ceeb }
+/* LiteralStringChar */ .chroma .sc { color: #87ceeb }
+/* LiteralStringDelimiter */ .chroma .dl { color: #87ceeb }
+/* LiteralStringDoc */ .chroma .sd { color: #87ceeb }
+/* LiteralStringDouble */ .chroma .s2 { color: #87ceeb }
+/* LiteralStringEscape */ .chroma .se { color: #87ceeb }
+/* LiteralStringHeredoc */ .chroma .sh { color: #87ceeb }
+/* LiteralStringInterpol */ .chroma .si { color: #87ceeb }
+/* LiteralStringOther */ .chroma .sx { color: #87ceeb }
+/* LiteralStringRegex */ .chroma .sr { color: #87ceeb }
+/* LiteralStringSingle */ .chroma .s1 { color: #87ceeb }
+/* LiteralStringSymbol */ .chroma .ss { color: #ff6600 }
+/* LiteralNumber */ .chroma .m { color: #ff6600 }
+/* LiteralNumberBin */ .chroma .mb { color: #ff6600 }
+/* LiteralNumberFloat */ .chroma .mf { color: #ff6600 }
+/* LiteralNumberHex */ .chroma .mh { color: #ff6600 }
+/* LiteralNumberInteger */ .chroma .mi { color: #ff6600 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #ff6600 }
+/* LiteralNumberOct */ .chroma .mo { color: #ff6600 }
+/* Comment */ .chroma .c { color: #00ff00 }
+/* CommentHashbang */ .chroma .ch { color: #00ff00 }
+/* CommentMultiline */ .chroma .cm { color: #00ff00 }
+/* CommentSingle */ .chroma .c1 { color: #00ff00 }
+/* CommentSpecial */ .chroma .cs { color: #00ff00 }
+/* CommentPreproc */ .chroma .cp { color: #e5e5e5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #e5e5e5 }
+body { color: #f8f8f2; background-color: #000000; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="s">?-</span><span class="p">!,</span> <span class="nf">teaches</span><span class="p">(</span><span class="s">dr_frodo</span><span class="p">,</span> <span class="nv">Course</span><span class="p">),</span> <span class="nf">studies</span> <span class="p">(</span><span class="nv">Student</span><span class="p">,</span> <span class="nv">Course</span><span class="p">).</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Course</span> <span class="o">=</span> <span class="s">english</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Student</span> <span class="o">=</span> <span class="s">ahmed</span><span class="p">;</span>
+</span></span></code></pre>
+</body>
+</html>
 
 <p>This means that: vineet will enjoy X if X is a taco and X is not a Big
 BellyTaco. This is very similar to the original statement given: vineet enjoys
@@ -363,8 +728,60 @@ chance of not making the errors that often happen due to the use of cuts.</li>
 PROLOG, the operator + stands for negation as failure, so we can better
 describe vineet's preferences as shown:</p>
 
-<div class="highlight highlight-prolog"><pre>enjoys(vineet,X):- taco(X), 1+ big belly taco(X).
-</pre></div></li>
+<html>
+<style type="text/css">
+/* Background */ .bg { color: #f8f8f2; background-color: #000000 }
+/* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; }
+/* LineHighlight */ .chroma .hl { background-color: #191919 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* Line */ .chroma .line { display: flex; }
+/* Keyword */ .chroma .k { color: #ff0000 }
+/* KeywordConstant */ .chroma .kc { color: #ff0000 }
+/* KeywordDeclaration */ .chroma .kd { color: #ff0000 }
+/* KeywordNamespace */ .chroma .kn { color: #ff0000 }
+/* KeywordPseudo */ .chroma .kp { color: #ff0000 }
+/* KeywordReserved */ .chroma .kr { color: #ff0000 }
+/* KeywordType */ .chroma .kt { color: #ee82ee }
+/* NameConstant */ .chroma .no { color: #7fffd4 }
+/* NameFunction */ .chroma .nf { color: #ffff00 }
+/* NameVariable */ .chroma .nv { color: #eedd82 }
+/* LiteralString */ .chroma .s { color: #87ceeb }
+/* LiteralStringAffix */ .chroma .sa { color: #87ceeb }
+/* LiteralStringBacktick */ .chroma .sb { color: #87ceeb }
+/* LiteralStringChar */ .chroma .sc { color: #87ceeb }
+/* LiteralStringDelimiter */ .chroma .dl { color: #87ceeb }
+/* LiteralStringDoc */ .chroma .sd { color: #87ceeb }
+/* LiteralStringDouble */ .chroma .s2 { color: #87ceeb }
+/* LiteralStringEscape */ .chroma .se { color: #87ceeb }
+/* LiteralStringHeredoc */ .chroma .sh { color: #87ceeb }
+/* LiteralStringInterpol */ .chroma .si { color: #87ceeb }
+/* LiteralStringOther */ .chroma .sx { color: #87ceeb }
+/* LiteralStringRegex */ .chroma .sr { color: #87ceeb }
+/* LiteralStringSingle */ .chroma .s1 { color: #87ceeb }
+/* LiteralStringSymbol */ .chroma .ss { color: #ff6600 }
+/* LiteralNumber */ .chroma .m { color: #ff6600 }
+/* LiteralNumberBin */ .chroma .mb { color: #ff6600 }
+/* LiteralNumberFloat */ .chroma .mf { color: #ff6600 }
+/* LiteralNumberHex */ .chroma .mh { color: #ff6600 }
+/* LiteralNumberInteger */ .chroma .mi { color: #ff6600 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #ff6600 }
+/* LiteralNumberOct */ .chroma .mo { color: #ff6600 }
+/* Comment */ .chroma .c { color: #00ff00 }
+/* CommentHashbang */ .chroma .ch { color: #00ff00 }
+/* CommentMultiline */ .chroma .cm { color: #00ff00 }
+/* CommentSingle */ .chroma .c1 { color: #00ff00 }
+/* CommentSpecial */ .chroma .cs { color: #00ff00 }
+/* CommentPreproc */ .chroma .cp { color: #e5e5e5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #e5e5e5 }
+body { color: #f8f8f2; background-color: #000000; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nf">enjoys</span><span class="p">(</span><span class="s">vineet</span><span class="p">,</span><span class="nv">X</span><span class="p">):-</span> <span class="nf">taco</span><span class="p">(</span><span class="nv">X</span><span class="p">),</span> <span class="mi">1</span><span class="o">+</span> <span class="s">big</span> <span class="s">belly</span> <span class="nf">taco</span><span class="p">(</span><span class="nv">X</span><span class="p">).</span>
+</span></span></code></pre>
+</body>
+</html></li>
 </ol>
 <h2>
 3. What is dynamic Database manipulation?<a name="3-what-is-dynamic-database-manipulation" class="heading-anchor" href="#3-what-is-dynamic-database-manipulation" rel="nofollow" aria-hidden="true"></a></h2>
@@ -380,10 +797,62 @@ greatly increase computational speed.</p>
 
 <p>Here is a simple example of this technique at work:</p>
 
-<div class="highlight highlight-prolog"><pre>:- dynamic lookup/3.
-add_and_square(X,Y,Res) :- lookup(X,Y,Res). !.
-add_and_square(X,Y,Res) is (X+Y) (X+Y), assert(lookup(X,Y.Res)).
-</pre></div>
+<html>
+<style type="text/css">
+/* Background */ .bg { color: #f8f8f2; background-color: #000000 }
+/* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; }
+/* LineHighlight */ .chroma .hl { background-color: #191919 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* Line */ .chroma .line { display: flex; }
+/* Keyword */ .chroma .k { color: #ff0000 }
+/* KeywordConstant */ .chroma .kc { color: #ff0000 }
+/* KeywordDeclaration */ .chroma .kd { color: #ff0000 }
+/* KeywordNamespace */ .chroma .kn { color: #ff0000 }
+/* KeywordPseudo */ .chroma .kp { color: #ff0000 }
+/* KeywordReserved */ .chroma .kr { color: #ff0000 }
+/* KeywordType */ .chroma .kt { color: #ee82ee }
+/* NameConstant */ .chroma .no { color: #7fffd4 }
+/* NameFunction */ .chroma .nf { color: #ffff00 }
+/* NameVariable */ .chroma .nv { color: #eedd82 }
+/* LiteralString */ .chroma .s { color: #87ceeb }
+/* LiteralStringAffix */ .chroma .sa { color: #87ceeb }
+/* LiteralStringBacktick */ .chroma .sb { color: #87ceeb }
+/* LiteralStringChar */ .chroma .sc { color: #87ceeb }
+/* LiteralStringDelimiter */ .chroma .dl { color: #87ceeb }
+/* LiteralStringDoc */ .chroma .sd { color: #87ceeb }
+/* LiteralStringDouble */ .chroma .s2 { color: #87ceeb }
+/* LiteralStringEscape */ .chroma .se { color: #87ceeb }
+/* LiteralStringHeredoc */ .chroma .sh { color: #87ceeb }
+/* LiteralStringInterpol */ .chroma .si { color: #87ceeb }
+/* LiteralStringOther */ .chroma .sx { color: #87ceeb }
+/* LiteralStringRegex */ .chroma .sr { color: #87ceeb }
+/* LiteralStringSingle */ .chroma .s1 { color: #87ceeb }
+/* LiteralStringSymbol */ .chroma .ss { color: #ff6600 }
+/* LiteralNumber */ .chroma .m { color: #ff6600 }
+/* LiteralNumberBin */ .chroma .mb { color: #ff6600 }
+/* LiteralNumberFloat */ .chroma .mf { color: #ff6600 }
+/* LiteralNumberHex */ .chroma .mh { color: #ff6600 }
+/* LiteralNumberInteger */ .chroma .mi { color: #ff6600 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #ff6600 }
+/* LiteralNumberOct */ .chroma .mo { color: #ff6600 }
+/* Comment */ .chroma .c { color: #00ff00 }
+/* CommentHashbang */ .chroma .ch { color: #00ff00 }
+/* CommentMultiline */ .chroma .cm { color: #00ff00 }
+/* CommentSingle */ .chroma .c1 { color: #00ff00 }
+/* CommentSpecial */ .chroma .cs { color: #00ff00 }
+/* CommentPreproc */ .chroma .cp { color: #e5e5e5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #e5e5e5 }
+body { color: #f8f8f2; background-color: #000000; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="p">:-</span> <span class="s">dynamic</span> <span class="s">lookup</span><span class="o">/</span><span class="mf">3.</span>
+</span></span><span class="line"><span class="cl"><span class="nf">add_and_square</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span><span class="nv">Y</span><span class="p">,</span><span class="nv">Res</span><span class="p">)</span> <span class="p">:-</span> <span class="nf">lookup</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span><span class="nv">Y</span><span class="p">,</span><span class="nv">Res</span><span class="p">).</span> <span class="p">!.</span>
+</span></span><span class="line"><span class="cl"><span class="nf">add_and_square</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span><span class="nv">Y</span><span class="p">,</span><span class="nv">Res</span><span class="p">)</span> <span class="o">is</span> <span class="p">(</span><span class="nv">X</span><span class="o">+</span><span class="nv">Y</span><span class="p">)</span> <span class="p">(</span><span class="nv">X</span><span class="o">+</span><span class="nv">Y</span><span class="p">),</span> <span class="nf">assert</span><span class="p">(</span><span class="nf">lookup</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span><span class="nv">Y</span><span class="p">.</span><span class="nv">Res</span><span class="p">)).</span>
+</span></span></code></pre>
+</body>
+</html>
 
 <p>What does this program do?</p>
 
@@ -408,23 +877,179 @@ has already been done before and if it has been, the program will just return
 the final value, and the cut will prevent it from entering the second clause.
 When we run the code, we have the following result:</p>
 
-<div class="highlight highlight-prolog"><pre>?-add_and_square(2,4,X).
-X = 36
-yes
-</pre></div>
+<html>
+<style type="text/css">
+/* Background */ .bg { color: #f8f8f2; background-color: #000000 }
+/* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; }
+/* LineHighlight */ .chroma .hl { background-color: #191919 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* Line */ .chroma .line { display: flex; }
+/* Keyword */ .chroma .k { color: #ff0000 }
+/* KeywordConstant */ .chroma .kc { color: #ff0000 }
+/* KeywordDeclaration */ .chroma .kd { color: #ff0000 }
+/* KeywordNamespace */ .chroma .kn { color: #ff0000 }
+/* KeywordPseudo */ .chroma .kp { color: #ff0000 }
+/* KeywordReserved */ .chroma .kr { color: #ff0000 }
+/* KeywordType */ .chroma .kt { color: #ee82ee }
+/* NameConstant */ .chroma .no { color: #7fffd4 }
+/* NameFunction */ .chroma .nf { color: #ffff00 }
+/* NameVariable */ .chroma .nv { color: #eedd82 }
+/* LiteralString */ .chroma .s { color: #87ceeb }
+/* LiteralStringAffix */ .chroma .sa { color: #87ceeb }
+/* LiteralStringBacktick */ .chroma .sb { color: #87ceeb }
+/* LiteralStringChar */ .chroma .sc { color: #87ceeb }
+/* LiteralStringDelimiter */ .chroma .dl { color: #87ceeb }
+/* LiteralStringDoc */ .chroma .sd { color: #87ceeb }
+/* LiteralStringDouble */ .chroma .s2 { color: #87ceeb }
+/* LiteralStringEscape */ .chroma .se { color: #87ceeb }
+/* LiteralStringHeredoc */ .chroma .sh { color: #87ceeb }
+/* LiteralStringInterpol */ .chroma .si { color: #87ceeb }
+/* LiteralStringOther */ .chroma .sx { color: #87ceeb }
+/* LiteralStringRegex */ .chroma .sr { color: #87ceeb }
+/* LiteralStringSingle */ .chroma .s1 { color: #87ceeb }
+/* LiteralStringSymbol */ .chroma .ss { color: #ff6600 }
+/* LiteralNumber */ .chroma .m { color: #ff6600 }
+/* LiteralNumberBin */ .chroma .mb { color: #ff6600 }
+/* LiteralNumberFloat */ .chroma .mf { color: #ff6600 }
+/* LiteralNumberHex */ .chroma .mh { color: #ff6600 }
+/* LiteralNumberInteger */ .chroma .mi { color: #ff6600 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #ff6600 }
+/* LiteralNumberOct */ .chroma .mo { color: #ff6600 }
+/* Comment */ .chroma .c { color: #00ff00 }
+/* CommentHashbang */ .chroma .ch { color: #00ff00 }
+/* CommentMultiline */ .chroma .cm { color: #00ff00 }
+/* CommentSingle */ .chroma .c1 { color: #00ff00 }
+/* CommentSpecial */ .chroma .cs { color: #00ff00 }
+/* CommentPreproc */ .chroma .cp { color: #e5e5e5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #e5e5e5 }
+body { color: #f8f8f2; background-color: #000000; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="s">?-</span><span class="nf">add_and_square</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="nv">X</span><span class="p">).</span>
+</span></span><span class="line"><span class="cl"><span class="nv">X</span> <span class="o">=</span> <span class="mi">36</span>
+</span></span><span class="line"><span class="cl"><span class="s">yes</span>
+</span></span></code></pre>
+</body>
+</html>
 
 <p>Here's an example of the program at work. Suppose we give PROLOG another query:</p>
 
-<div class="highlight highlight-prolog"><pre>?- add_and_square(1,5,Y). 
-Y = 36 
-yes
-</pre></div>
+<html>
+<style type="text/css">
+/* Background */ .bg { color: #f8f8f2; background-color: #000000 }
+/* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; }
+/* LineHighlight */ .chroma .hl { background-color: #191919 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* Line */ .chroma .line { display: flex; }
+/* Keyword */ .chroma .k { color: #ff0000 }
+/* KeywordConstant */ .chroma .kc { color: #ff0000 }
+/* KeywordDeclaration */ .chroma .kd { color: #ff0000 }
+/* KeywordNamespace */ .chroma .kn { color: #ff0000 }
+/* KeywordPseudo */ .chroma .kp { color: #ff0000 }
+/* KeywordReserved */ .chroma .kr { color: #ff0000 }
+/* KeywordType */ .chroma .kt { color: #ee82ee }
+/* NameConstant */ .chroma .no { color: #7fffd4 }
+/* NameFunction */ .chroma .nf { color: #ffff00 }
+/* NameVariable */ .chroma .nv { color: #eedd82 }
+/* LiteralString */ .chroma .s { color: #87ceeb }
+/* LiteralStringAffix */ .chroma .sa { color: #87ceeb }
+/* LiteralStringBacktick */ .chroma .sb { color: #87ceeb }
+/* LiteralStringChar */ .chroma .sc { color: #87ceeb }
+/* LiteralStringDelimiter */ .chroma .dl { color: #87ceeb }
+/* LiteralStringDoc */ .chroma .sd { color: #87ceeb }
+/* LiteralStringDouble */ .chroma .s2 { color: #87ceeb }
+/* LiteralStringEscape */ .chroma .se { color: #87ceeb }
+/* LiteralStringHeredoc */ .chroma .sh { color: #87ceeb }
+/* LiteralStringInterpol */ .chroma .si { color: #87ceeb }
+/* LiteralStringOther */ .chroma .sx { color: #87ceeb }
+/* LiteralStringRegex */ .chroma .sr { color: #87ceeb }
+/* LiteralStringSingle */ .chroma .s1 { color: #87ceeb }
+/* LiteralStringSymbol */ .chroma .ss { color: #ff6600 }
+/* LiteralNumber */ .chroma .m { color: #ff6600 }
+/* LiteralNumberBin */ .chroma .mb { color: #ff6600 }
+/* LiteralNumberFloat */ .chroma .mf { color: #ff6600 }
+/* LiteralNumberHex */ .chroma .mh { color: #ff6600 }
+/* LiteralNumberInteger */ .chroma .mi { color: #ff6600 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #ff6600 }
+/* LiteralNumberOct */ .chroma .mo { color: #ff6600 }
+/* Comment */ .chroma .c { color: #00ff00 }
+/* CommentHashbang */ .chroma .ch { color: #00ff00 }
+/* CommentMultiline */ .chroma .cm { color: #00ff00 }
+/* CommentSingle */ .chroma .c1 { color: #00ff00 }
+/* CommentSpecial */ .chroma .cs { color: #00ff00 }
+/* CommentPreproc */ .chroma .cp { color: #e5e5e5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #e5e5e5 }
+body { color: #f8f8f2; background-color: #000000; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="s">?-</span> <span class="nf">add_and_square</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="nv">Y</span><span class="p">).</span> 
+</span></span><span class="line"><span class="cl"><span class="nv">Y</span> <span class="o">=</span> <span class="mi">36</span> 
+</span></span><span class="line"><span class="cl"><span class="s">yes</span>
+</span></span></code></pre>
+</body>
+</html>
 
 <p>If we now ask for a listing, we see that the database now contains:</p>
 
-<div class="highlight highlight-prolog"><pre>lookup(2, 4, 36). 
-lookup(1, 5, 36).
-</pre></div>
+<html>
+<style type="text/css">
+/* Background */ .bg { color: #f8f8f2; background-color: #000000 }
+/* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; }
+/* LineHighlight */ .chroma .hl { background-color: #191919 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* Line */ .chroma .line { display: flex; }
+/* Keyword */ .chroma .k { color: #ff0000 }
+/* KeywordConstant */ .chroma .kc { color: #ff0000 }
+/* KeywordDeclaration */ .chroma .kd { color: #ff0000 }
+/* KeywordNamespace */ .chroma .kn { color: #ff0000 }
+/* KeywordPseudo */ .chroma .kp { color: #ff0000 }
+/* KeywordReserved */ .chroma .kr { color: #ff0000 }
+/* KeywordType */ .chroma .kt { color: #ee82ee }
+/* NameConstant */ .chroma .no { color: #7fffd4 }
+/* NameFunction */ .chroma .nf { color: #ffff00 }
+/* NameVariable */ .chroma .nv { color: #eedd82 }
+/* LiteralString */ .chroma .s { color: #87ceeb }
+/* LiteralStringAffix */ .chroma .sa { color: #87ceeb }
+/* LiteralStringBacktick */ .chroma .sb { color: #87ceeb }
+/* LiteralStringChar */ .chroma .sc { color: #87ceeb }
+/* LiteralStringDelimiter */ .chroma .dl { color: #87ceeb }
+/* LiteralStringDoc */ .chroma .sd { color: #87ceeb }
+/* LiteralStringDouble */ .chroma .s2 { color: #87ceeb }
+/* LiteralStringEscape */ .chroma .se { color: #87ceeb }
+/* LiteralStringHeredoc */ .chroma .sh { color: #87ceeb }
+/* LiteralStringInterpol */ .chroma .si { color: #87ceeb }
+/* LiteralStringOther */ .chroma .sx { color: #87ceeb }
+/* LiteralStringRegex */ .chroma .sr { color: #87ceeb }
+/* LiteralStringSingle */ .chroma .s1 { color: #87ceeb }
+/* LiteralStringSymbol */ .chroma .ss { color: #ff6600 }
+/* LiteralNumber */ .chroma .m { color: #ff6600 }
+/* LiteralNumberBin */ .chroma .mb { color: #ff6600 }
+/* LiteralNumberFloat */ .chroma .mf { color: #ff6600 }
+/* LiteralNumberHex */ .chroma .mh { color: #ff6600 }
+/* LiteralNumberInteger */ .chroma .mi { color: #ff6600 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #ff6600 }
+/* LiteralNumberOct */ .chroma .mo { color: #ff6600 }
+/* Comment */ .chroma .c { color: #00ff00 }
+/* CommentHashbang */ .chroma .ch { color: #00ff00 }
+/* CommentMultiline */ .chroma .cm { color: #00ff00 }
+/* CommentSingle */ .chroma .c1 { color: #00ff00 }
+/* CommentSpecial */ .chroma .cs { color: #00ff00 }
+/* CommentPreproc */ .chroma .cp { color: #e5e5e5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #e5e5e5 }
+body { color: #f8f8f2; background-color: #000000; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nf">lookup</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">36</span><span class="p">).</span> 
+</span></span><span class="line"><span class="cl"><span class="nf">lookup</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">36</span><span class="p">).</span>
+</span></span></code></pre>
+</body>
+</html>
 
 <p>Should we a second time, request PROLOG to add and square 1 and 5 with the same
 predicate 'add_and_square', it will not make the evaluation again. It will
@@ -496,8 +1121,60 @@ first item of the list and the remainder of it.</p>
 
 <p><strong>For exmple</strong></p>
 
-<div class="highlight highlight-prolog"><pre>[one, two, three] = [A|B]
-</pre></div>
+<html>
+<style type="text/css">
+/* Background */ .bg { color: #f8f8f2; background-color: #000000 }
+/* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; }
+/* LineHighlight */ .chroma .hl { background-color: #191919 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* Line */ .chroma .line { display: flex; }
+/* Keyword */ .chroma .k { color: #ff0000 }
+/* KeywordConstant */ .chroma .kc { color: #ff0000 }
+/* KeywordDeclaration */ .chroma .kd { color: #ff0000 }
+/* KeywordNamespace */ .chroma .kn { color: #ff0000 }
+/* KeywordPseudo */ .chroma .kp { color: #ff0000 }
+/* KeywordReserved */ .chroma .kr { color: #ff0000 }
+/* KeywordType */ .chroma .kt { color: #ee82ee }
+/* NameConstant */ .chroma .no { color: #7fffd4 }
+/* NameFunction */ .chroma .nf { color: #ffff00 }
+/* NameVariable */ .chroma .nv { color: #eedd82 }
+/* LiteralString */ .chroma .s { color: #87ceeb }
+/* LiteralStringAffix */ .chroma .sa { color: #87ceeb }
+/* LiteralStringBacktick */ .chroma .sb { color: #87ceeb }
+/* LiteralStringChar */ .chroma .sc { color: #87ceeb }
+/* LiteralStringDelimiter */ .chroma .dl { color: #87ceeb }
+/* LiteralStringDoc */ .chroma .sd { color: #87ceeb }
+/* LiteralStringDouble */ .chroma .s2 { color: #87ceeb }
+/* LiteralStringEscape */ .chroma .se { color: #87ceeb }
+/* LiteralStringHeredoc */ .chroma .sh { color: #87ceeb }
+/* LiteralStringInterpol */ .chroma .si { color: #87ceeb }
+/* LiteralStringOther */ .chroma .sx { color: #87ceeb }
+/* LiteralStringRegex */ .chroma .sr { color: #87ceeb }
+/* LiteralStringSingle */ .chroma .s1 { color: #87ceeb }
+/* LiteralStringSymbol */ .chroma .ss { color: #ff6600 }
+/* LiteralNumber */ .chroma .m { color: #ff6600 }
+/* LiteralNumberBin */ .chroma .mb { color: #ff6600 }
+/* LiteralNumberFloat */ .chroma .mf { color: #ff6600 }
+/* LiteralNumberHex */ .chroma .mh { color: #ff6600 }
+/* LiteralNumberInteger */ .chroma .mi { color: #ff6600 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #ff6600 }
+/* LiteralNumberOct */ .chroma .mo { color: #ff6600 }
+/* Comment */ .chroma .c { color: #00ff00 }
+/* CommentHashbang */ .chroma .ch { color: #00ff00 }
+/* CommentMultiline */ .chroma .cm { color: #00ff00 }
+/* CommentSingle */ .chroma .c1 { color: #00ff00 }
+/* CommentSpecial */ .chroma .cs { color: #00ff00 }
+/* CommentPreproc */ .chroma .cp { color: #e5e5e5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #e5e5e5 }
+body { color: #f8f8f2; background-color: #000000; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="p">[</span><span class="s">one</span><span class="p">,</span> <span class="s">two</span><span class="p">,</span> <span class="s">three</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nv">A</span><span class="p">|</span><span class="nv">B</span><span class="p">]</span>
+</span></span></code></pre>
+</body>
+</html>
 
 <p>where <code>A = one</code> and <code>B = [two, three]</code></p>
 
@@ -506,10 +1183,62 @@ item and 'B' to remainder of it.</p>
 
 <p>Here are some more example:</p>
 
-<div class="highlight highlight-prolog"><pre>[a, b, c, d, e, f, g]
-[carrots, parrots, bandana, sauna]
-[] /* Note An empty list is still an actual list */
-</pre></div>
+<html>
+<style type="text/css">
+/* Background */ .bg { color: #f8f8f2; background-color: #000000 }
+/* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; }
+/* LineHighlight */ .chroma .hl { background-color: #191919 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* Line */ .chroma .line { display: flex; }
+/* Keyword */ .chroma .k { color: #ff0000 }
+/* KeywordConstant */ .chroma .kc { color: #ff0000 }
+/* KeywordDeclaration */ .chroma .kd { color: #ff0000 }
+/* KeywordNamespace */ .chroma .kn { color: #ff0000 }
+/* KeywordPseudo */ .chroma .kp { color: #ff0000 }
+/* KeywordReserved */ .chroma .kr { color: #ff0000 }
+/* KeywordType */ .chroma .kt { color: #ee82ee }
+/* NameConstant */ .chroma .no { color: #7fffd4 }
+/* NameFunction */ .chroma .nf { color: #ffff00 }
+/* NameVariable */ .chroma .nv { color: #eedd82 }
+/* LiteralString */ .chroma .s { color: #87ceeb }
+/* LiteralStringAffix */ .chroma .sa { color: #87ceeb }
+/* LiteralStringBacktick */ .chroma .sb { color: #87ceeb }
+/* LiteralStringChar */ .chroma .sc { color: #87ceeb }
+/* LiteralStringDelimiter */ .chroma .dl { color: #87ceeb }
+/* LiteralStringDoc */ .chroma .sd { color: #87ceeb }
+/* LiteralStringDouble */ .chroma .s2 { color: #87ceeb }
+/* LiteralStringEscape */ .chroma .se { color: #87ceeb }
+/* LiteralStringHeredoc */ .chroma .sh { color: #87ceeb }
+/* LiteralStringInterpol */ .chroma .si { color: #87ceeb }
+/* LiteralStringOther */ .chroma .sx { color: #87ceeb }
+/* LiteralStringRegex */ .chroma .sr { color: #87ceeb }
+/* LiteralStringSingle */ .chroma .s1 { color: #87ceeb }
+/* LiteralStringSymbol */ .chroma .ss { color: #ff6600 }
+/* LiteralNumber */ .chroma .m { color: #ff6600 }
+/* LiteralNumberBin */ .chroma .mb { color: #ff6600 }
+/* LiteralNumberFloat */ .chroma .mf { color: #ff6600 }
+/* LiteralNumberHex */ .chroma .mh { color: #ff6600 }
+/* LiteralNumberInteger */ .chroma .mi { color: #ff6600 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #ff6600 }
+/* LiteralNumberOct */ .chroma .mo { color: #ff6600 }
+/* Comment */ .chroma .c { color: #00ff00 }
+/* CommentHashbang */ .chroma .ch { color: #00ff00 }
+/* CommentMultiline */ .chroma .cm { color: #00ff00 }
+/* CommentSingle */ .chroma .c1 { color: #00ff00 }
+/* CommentSpecial */ .chroma .cs { color: #00ff00 }
+/* CommentPreproc */ .chroma .cp { color: #e5e5e5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #e5e5e5 }
+body { color: #f8f8f2; background-color: #000000; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="p">[</span><span class="s">a</span><span class="p">,</span> <span class="s">b</span><span class="p">,</span> <span class="s">c</span><span class="p">,</span> <span class="s">d</span><span class="p">,</span> <span class="s">e</span><span class="p">,</span> <span class="s">f</span><span class="p">,</span> <span class="s">g</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="s">carrots</span><span class="p">,</span> <span class="s">parrots</span><span class="p">,</span> <span class="s">bandana</span><span class="p">,</span> <span class="s">sauna</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">[]</span> <span class="cm">/* Note An empty list is still an actual list */</span>
+</span></span></code></pre>
+</body>
+</html>
 <h2>
 7. Explain Facts, Rules and Queries along with an example.<a name="7-explain-facts-rules-and-queries-along-with-an-example" class="heading-anchor" href="#7-explain-facts-rules-and-queries-along-with-an-example" rel="nofollow" aria-hidden="true"></a></h2>
 <p>In Prolog, a program is made up of a collection of facts and rules that describe
@@ -521,8 +1250,60 @@ objects. They are represented as predicates and are used to assert
 information into the program. An example of a fact would be: &quot;John is a
 software engineer&quot;.</p>
 
-<div class="highlight highlight-prolog"><pre>person(john, age(30), job('software engineer')).
-</pre></div></li>
+<html>
+<style type="text/css">
+/* Background */ .bg { color: #f8f8f2; background-color: #000000 }
+/* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; }
+/* LineHighlight */ .chroma .hl { background-color: #191919 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* Line */ .chroma .line { display: flex; }
+/* Keyword */ .chroma .k { color: #ff0000 }
+/* KeywordConstant */ .chroma .kc { color: #ff0000 }
+/* KeywordDeclaration */ .chroma .kd { color: #ff0000 }
+/* KeywordNamespace */ .chroma .kn { color: #ff0000 }
+/* KeywordPseudo */ .chroma .kp { color: #ff0000 }
+/* KeywordReserved */ .chroma .kr { color: #ff0000 }
+/* KeywordType */ .chroma .kt { color: #ee82ee }
+/* NameConstant */ .chroma .no { color: #7fffd4 }
+/* NameFunction */ .chroma .nf { color: #ffff00 }
+/* NameVariable */ .chroma .nv { color: #eedd82 }
+/* LiteralString */ .chroma .s { color: #87ceeb }
+/* LiteralStringAffix */ .chroma .sa { color: #87ceeb }
+/* LiteralStringBacktick */ .chroma .sb { color: #87ceeb }
+/* LiteralStringChar */ .chroma .sc { color: #87ceeb }
+/* LiteralStringDelimiter */ .chroma .dl { color: #87ceeb }
+/* LiteralStringDoc */ .chroma .sd { color: #87ceeb }
+/* LiteralStringDouble */ .chroma .s2 { color: #87ceeb }
+/* LiteralStringEscape */ .chroma .se { color: #87ceeb }
+/* LiteralStringHeredoc */ .chroma .sh { color: #87ceeb }
+/* LiteralStringInterpol */ .chroma .si { color: #87ceeb }
+/* LiteralStringOther */ .chroma .sx { color: #87ceeb }
+/* LiteralStringRegex */ .chroma .sr { color: #87ceeb }
+/* LiteralStringSingle */ .chroma .s1 { color: #87ceeb }
+/* LiteralStringSymbol */ .chroma .ss { color: #ff6600 }
+/* LiteralNumber */ .chroma .m { color: #ff6600 }
+/* LiteralNumberBin */ .chroma .mb { color: #ff6600 }
+/* LiteralNumberFloat */ .chroma .mf { color: #ff6600 }
+/* LiteralNumberHex */ .chroma .mh { color: #ff6600 }
+/* LiteralNumberInteger */ .chroma .mi { color: #ff6600 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #ff6600 }
+/* LiteralNumberOct */ .chroma .mo { color: #ff6600 }
+/* Comment */ .chroma .c { color: #00ff00 }
+/* CommentHashbang */ .chroma .ch { color: #00ff00 }
+/* CommentMultiline */ .chroma .cm { color: #00ff00 }
+/* CommentSingle */ .chroma .c1 { color: #00ff00 }
+/* CommentSpecial */ .chroma .cs { color: #00ff00 }
+/* CommentPreproc */ .chroma .cp { color: #e5e5e5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #e5e5e5 }
+body { color: #f8f8f2; background-color: #000000; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nf">person</span><span class="p">(</span><span class="s">john</span><span class="p">,</span> <span class="nf">age</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span> <span class="nf">job</span><span class="p">(</span><span class="s">&#39;software engineer&#39;</span><span class="p">)).</span>
+</span></span></code></pre>
+</body>
+</html></li>
 
 <li><p>Rules are logical statements that define how one predicate can be derived
 from other predicates. They are used to express more complex relationships
@@ -531,16 +1312,120 @@ of predicates. An example of a rule would be: &quot;If a person is older than 30
 and has a job as a software engineer, then they are considered a senior
 software engineer.&quot;</p>
 
-<div class="highlight highlight-prolog"><pre>senior_software_engineer(X) :- person(X, age(Age), job('software engineer')), Age &gt; 30.
-</pre></div></li>
+<html>
+<style type="text/css">
+/* Background */ .bg { color: #f8f8f2; background-color: #000000 }
+/* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; }
+/* LineHighlight */ .chroma .hl { background-color: #191919 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* Line */ .chroma .line { display: flex; }
+/* Keyword */ .chroma .k { color: #ff0000 }
+/* KeywordConstant */ .chroma .kc { color: #ff0000 }
+/* KeywordDeclaration */ .chroma .kd { color: #ff0000 }
+/* KeywordNamespace */ .chroma .kn { color: #ff0000 }
+/* KeywordPseudo */ .chroma .kp { color: #ff0000 }
+/* KeywordReserved */ .chroma .kr { color: #ff0000 }
+/* KeywordType */ .chroma .kt { color: #ee82ee }
+/* NameConstant */ .chroma .no { color: #7fffd4 }
+/* NameFunction */ .chroma .nf { color: #ffff00 }
+/* NameVariable */ .chroma .nv { color: #eedd82 }
+/* LiteralString */ .chroma .s { color: #87ceeb }
+/* LiteralStringAffix */ .chroma .sa { color: #87ceeb }
+/* LiteralStringBacktick */ .chroma .sb { color: #87ceeb }
+/* LiteralStringChar */ .chroma .sc { color: #87ceeb }
+/* LiteralStringDelimiter */ .chroma .dl { color: #87ceeb }
+/* LiteralStringDoc */ .chroma .sd { color: #87ceeb }
+/* LiteralStringDouble */ .chroma .s2 { color: #87ceeb }
+/* LiteralStringEscape */ .chroma .se { color: #87ceeb }
+/* LiteralStringHeredoc */ .chroma .sh { color: #87ceeb }
+/* LiteralStringInterpol */ .chroma .si { color: #87ceeb }
+/* LiteralStringOther */ .chroma .sx { color: #87ceeb }
+/* LiteralStringRegex */ .chroma .sr { color: #87ceeb }
+/* LiteralStringSingle */ .chroma .s1 { color: #87ceeb }
+/* LiteralStringSymbol */ .chroma .ss { color: #ff6600 }
+/* LiteralNumber */ .chroma .m { color: #ff6600 }
+/* LiteralNumberBin */ .chroma .mb { color: #ff6600 }
+/* LiteralNumberFloat */ .chroma .mf { color: #ff6600 }
+/* LiteralNumberHex */ .chroma .mh { color: #ff6600 }
+/* LiteralNumberInteger */ .chroma .mi { color: #ff6600 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #ff6600 }
+/* LiteralNumberOct */ .chroma .mo { color: #ff6600 }
+/* Comment */ .chroma .c { color: #00ff00 }
+/* CommentHashbang */ .chroma .ch { color: #00ff00 }
+/* CommentMultiline */ .chroma .cm { color: #00ff00 }
+/* CommentSingle */ .chroma .c1 { color: #00ff00 }
+/* CommentSpecial */ .chroma .cs { color: #00ff00 }
+/* CommentPreproc */ .chroma .cp { color: #e5e5e5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #e5e5e5 }
+body { color: #f8f8f2; background-color: #000000; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nf">senior_software_engineer</span><span class="p">(</span><span class="nv">X</span><span class="p">)</span> <span class="p">:-</span> <span class="nf">person</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span> <span class="nf">age</span><span class="p">(</span><span class="nv">Age</span><span class="p">),</span> <span class="nf">job</span><span class="p">(</span><span class="s">&#39;software engineer&#39;</span><span class="p">)),</span> <span class="nv">Age</span> <span class="o">&gt;</span> <span class="mf">30.</span>
+</span></span></code></pre>
+</body>
+</html></li>
 
 <li><p>Queries are used to ask the Prolog program to find solutions that satisfy a
 given predicate. Queries are used to retrieve information from the program
 and are represented as predicates with variables. An example of a query would
 be: &quot;Who is a senior software engineer?&quot;. Copy code</p>
 
-<div class="highlight highlight-prolog"><pre>?- senior_software_engineer(X).
-</pre></div></li>
+<html>
+<style type="text/css">
+/* Background */ .bg { color: #f8f8f2; background-color: #000000 }
+/* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; }
+/* LineHighlight */ .chroma .hl { background-color: #191919 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* Line */ .chroma .line { display: flex; }
+/* Keyword */ .chroma .k { color: #ff0000 }
+/* KeywordConstant */ .chroma .kc { color: #ff0000 }
+/* KeywordDeclaration */ .chroma .kd { color: #ff0000 }
+/* KeywordNamespace */ .chroma .kn { color: #ff0000 }
+/* KeywordPseudo */ .chroma .kp { color: #ff0000 }
+/* KeywordReserved */ .chroma .kr { color: #ff0000 }
+/* KeywordType */ .chroma .kt { color: #ee82ee }
+/* NameConstant */ .chroma .no { color: #7fffd4 }
+/* NameFunction */ .chroma .nf { color: #ffff00 }
+/* NameVariable */ .chroma .nv { color: #eedd82 }
+/* LiteralString */ .chroma .s { color: #87ceeb }
+/* LiteralStringAffix */ .chroma .sa { color: #87ceeb }
+/* LiteralStringBacktick */ .chroma .sb { color: #87ceeb }
+/* LiteralStringChar */ .chroma .sc { color: #87ceeb }
+/* LiteralStringDelimiter */ .chroma .dl { color: #87ceeb }
+/* LiteralStringDoc */ .chroma .sd { color: #87ceeb }
+/* LiteralStringDouble */ .chroma .s2 { color: #87ceeb }
+/* LiteralStringEscape */ .chroma .se { color: #87ceeb }
+/* LiteralStringHeredoc */ .chroma .sh { color: #87ceeb }
+/* LiteralStringInterpol */ .chroma .si { color: #87ceeb }
+/* LiteralStringOther */ .chroma .sx { color: #87ceeb }
+/* LiteralStringRegex */ .chroma .sr { color: #87ceeb }
+/* LiteralStringSingle */ .chroma .s1 { color: #87ceeb }
+/* LiteralStringSymbol */ .chroma .ss { color: #ff6600 }
+/* LiteralNumber */ .chroma .m { color: #ff6600 }
+/* LiteralNumberBin */ .chroma .mb { color: #ff6600 }
+/* LiteralNumberFloat */ .chroma .mf { color: #ff6600 }
+/* LiteralNumberHex */ .chroma .mh { color: #ff6600 }
+/* LiteralNumberInteger */ .chroma .mi { color: #ff6600 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #ff6600 }
+/* LiteralNumberOct */ .chroma .mo { color: #ff6600 }
+/* Comment */ .chroma .c { color: #00ff00 }
+/* CommentHashbang */ .chroma .ch { color: #00ff00 }
+/* CommentMultiline */ .chroma .cm { color: #00ff00 }
+/* CommentSingle */ .chroma .c1 { color: #00ff00 }
+/* CommentSpecial */ .chroma .cs { color: #00ff00 }
+/* CommentPreproc */ .chroma .cp { color: #e5e5e5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #e5e5e5 }
+body { color: #f8f8f2; background-color: #000000; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="s">?-</span> <span class="nf">senior_software_engineer</span><span class="p">(</span><span class="nv">X</span><span class="p">).</span>
+</span></span></code></pre>
+</body>
+</html></li>
 </ol>
 
 <p>The Prolog interpreter will attempt to find a value for the variable X that
@@ -566,14 +1451,66 @@ terms similar or identical.</li>
 
 <li><p>Example:</p>
 
-<div class="highlight highlight-prolog"><pre>name(X, Student). name(Student, Y)
-X = Student
-Y = Student / Student = Y
-
-name(x, Collage). name(Y, Computer)
-X != Y % (Variable to Variable does not match)
-Collage != Computer % Not equale string wrong unification
-</pre></div></li>
+<html>
+<style type="text/css">
+/* Background */ .bg { color: #f8f8f2; background-color: #000000 }
+/* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; }
+/* LineHighlight */ .chroma .hl { background-color: #191919 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* Line */ .chroma .line { display: flex; }
+/* Keyword */ .chroma .k { color: #ff0000 }
+/* KeywordConstant */ .chroma .kc { color: #ff0000 }
+/* KeywordDeclaration */ .chroma .kd { color: #ff0000 }
+/* KeywordNamespace */ .chroma .kn { color: #ff0000 }
+/* KeywordPseudo */ .chroma .kp { color: #ff0000 }
+/* KeywordReserved */ .chroma .kr { color: #ff0000 }
+/* KeywordType */ .chroma .kt { color: #ee82ee }
+/* NameConstant */ .chroma .no { color: #7fffd4 }
+/* NameFunction */ .chroma .nf { color: #ffff00 }
+/* NameVariable */ .chroma .nv { color: #eedd82 }
+/* LiteralString */ .chroma .s { color: #87ceeb }
+/* LiteralStringAffix */ .chroma .sa { color: #87ceeb }
+/* LiteralStringBacktick */ .chroma .sb { color: #87ceeb }
+/* LiteralStringChar */ .chroma .sc { color: #87ceeb }
+/* LiteralStringDelimiter */ .chroma .dl { color: #87ceeb }
+/* LiteralStringDoc */ .chroma .sd { color: #87ceeb }
+/* LiteralStringDouble */ .chroma .s2 { color: #87ceeb }
+/* LiteralStringEscape */ .chroma .se { color: #87ceeb }
+/* LiteralStringHeredoc */ .chroma .sh { color: #87ceeb }
+/* LiteralStringInterpol */ .chroma .si { color: #87ceeb }
+/* LiteralStringOther */ .chroma .sx { color: #87ceeb }
+/* LiteralStringRegex */ .chroma .sr { color: #87ceeb }
+/* LiteralStringSingle */ .chroma .s1 { color: #87ceeb }
+/* LiteralStringSymbol */ .chroma .ss { color: #ff6600 }
+/* LiteralNumber */ .chroma .m { color: #ff6600 }
+/* LiteralNumberBin */ .chroma .mb { color: #ff6600 }
+/* LiteralNumberFloat */ .chroma .mf { color: #ff6600 }
+/* LiteralNumberHex */ .chroma .mh { color: #ff6600 }
+/* LiteralNumberInteger */ .chroma .mi { color: #ff6600 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #ff6600 }
+/* LiteralNumberOct */ .chroma .mo { color: #ff6600 }
+/* Comment */ .chroma .c { color: #00ff00 }
+/* CommentHashbang */ .chroma .ch { color: #00ff00 }
+/* CommentMultiline */ .chroma .cm { color: #00ff00 }
+/* CommentSingle */ .chroma .c1 { color: #00ff00 }
+/* CommentSpecial */ .chroma .cs { color: #00ff00 }
+/* CommentPreproc */ .chroma .cp { color: #e5e5e5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #e5e5e5 }
+body { color: #f8f8f2; background-color: #000000; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nf">name</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span> <span class="nv">Student</span><span class="p">).</span> <span class="nf">name</span><span class="p">(</span><span class="nv">Student</span><span class="p">,</span> <span class="nv">Y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">X</span> <span class="o">=</span> <span class="nv">Student</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Y</span> <span class="o">=</span> <span class="nv">Student</span> <span class="o">/</span> <span class="nv">Student</span> <span class="o">=</span> <span class="nv">Y</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">name</span><span class="p">(</span><span class="s">x</span><span class="p">,</span> <span class="nv">Collage</span><span class="p">).</span> <span class="nf">name</span><span class="p">(</span><span class="nv">Y</span><span class="p">,</span> <span class="nv">Computer</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">X</span> <span class="p">!</span><span class="o">=</span> <span class="nv">Y</span> <span class="c1">% (Variable to Variable does not match)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Collage</span> <span class="p">!</span><span class="o">=</span> <span class="nv">Computer</span> <span class="c1">% Not equale string wrong unification</span>
+</span></span></code></pre>
+</body>
+</html></li>
 </ul>
 
 <p><em>'%' is used when you want to comment something in Prolog.</em></p>
@@ -615,21 +1552,177 @@ have following statement:
 
 <li><p>For any propositional logic, there are two easy rules we follow:</p>
 
-<pre><code>(p ∧ q) ≡ (p ∨ q)  
-¬(p → ¬q) ≡ (p ∨ q)
-</code></pre></li>
+<html>
+<style type="text/css">
+/* Background */ .bg { color: #f8f8f2; background-color: #000000 }
+/* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; }
+/* LineHighlight */ .chroma .hl { background-color: #191919 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* Line */ .chroma .line { display: flex; }
+/* Keyword */ .chroma .k { color: #ff0000 }
+/* KeywordConstant */ .chroma .kc { color: #ff0000 }
+/* KeywordDeclaration */ .chroma .kd { color: #ff0000 }
+/* KeywordNamespace */ .chroma .kn { color: #ff0000 }
+/* KeywordPseudo */ .chroma .kp { color: #ff0000 }
+/* KeywordReserved */ .chroma .kr { color: #ff0000 }
+/* KeywordType */ .chroma .kt { color: #ee82ee }
+/* NameConstant */ .chroma .no { color: #7fffd4 }
+/* NameFunction */ .chroma .nf { color: #ffff00 }
+/* NameVariable */ .chroma .nv { color: #eedd82 }
+/* LiteralString */ .chroma .s { color: #87ceeb }
+/* LiteralStringAffix */ .chroma .sa { color: #87ceeb }
+/* LiteralStringBacktick */ .chroma .sb { color: #87ceeb }
+/* LiteralStringChar */ .chroma .sc { color: #87ceeb }
+/* LiteralStringDelimiter */ .chroma .dl { color: #87ceeb }
+/* LiteralStringDoc */ .chroma .sd { color: #87ceeb }
+/* LiteralStringDouble */ .chroma .s2 { color: #87ceeb }
+/* LiteralStringEscape */ .chroma .se { color: #87ceeb }
+/* LiteralStringHeredoc */ .chroma .sh { color: #87ceeb }
+/* LiteralStringInterpol */ .chroma .si { color: #87ceeb }
+/* LiteralStringOther */ .chroma .sx { color: #87ceeb }
+/* LiteralStringRegex */ .chroma .sr { color: #87ceeb }
+/* LiteralStringSingle */ .chroma .s1 { color: #87ceeb }
+/* LiteralStringSymbol */ .chroma .ss { color: #ff6600 }
+/* LiteralNumber */ .chroma .m { color: #ff6600 }
+/* LiteralNumberBin */ .chroma .mb { color: #ff6600 }
+/* LiteralNumberFloat */ .chroma .mf { color: #ff6600 }
+/* LiteralNumberHex */ .chroma .mh { color: #ff6600 }
+/* LiteralNumberInteger */ .chroma .mi { color: #ff6600 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #ff6600 }
+/* LiteralNumberOct */ .chroma .mo { color: #ff6600 }
+/* Comment */ .chroma .c { color: #00ff00 }
+/* CommentHashbang */ .chroma .ch { color: #00ff00 }
+/* CommentMultiline */ .chroma .cm { color: #00ff00 }
+/* CommentSingle */ .chroma .c1 { color: #00ff00 }
+/* CommentSpecial */ .chroma .cs { color: #00ff00 }
+/* CommentPreproc */ .chroma .cp { color: #e5e5e5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #e5e5e5 }
+body { color: #f8f8f2; background-color: #000000; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">(p ∧ q) ≡ (p ∨ q)  
+</span></span><span class="line"><span class="cl">¬(p → ¬q) ≡ (p ∨ q)
+</span></span></code></pre>
+</body>
+</html></li>
 </ol>
 
 <p>What do those symobls means? Lets say we have following clauses in PROLOG:</p>
 
-<div class="highlight highlight-prolog"><pre>   m:-b. and t:-p, m, z.
-</pre></div>
+<html>
+<style type="text/css">
+/* Background */ .bg { color: #f8f8f2; background-color: #000000 }
+/* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; }
+/* LineHighlight */ .chroma .hl { background-color: #191919 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* Line */ .chroma .line { display: flex; }
+/* Keyword */ .chroma .k { color: #ff0000 }
+/* KeywordConstant */ .chroma .kc { color: #ff0000 }
+/* KeywordDeclaration */ .chroma .kd { color: #ff0000 }
+/* KeywordNamespace */ .chroma .kn { color: #ff0000 }
+/* KeywordPseudo */ .chroma .kp { color: #ff0000 }
+/* KeywordReserved */ .chroma .kr { color: #ff0000 }
+/* KeywordType */ .chroma .kt { color: #ee82ee }
+/* NameConstant */ .chroma .no { color: #7fffd4 }
+/* NameFunction */ .chroma .nf { color: #ffff00 }
+/* NameVariable */ .chroma .nv { color: #eedd82 }
+/* LiteralString */ .chroma .s { color: #87ceeb }
+/* LiteralStringAffix */ .chroma .sa { color: #87ceeb }
+/* LiteralStringBacktick */ .chroma .sb { color: #87ceeb }
+/* LiteralStringChar */ .chroma .sc { color: #87ceeb }
+/* LiteralStringDelimiter */ .chroma .dl { color: #87ceeb }
+/* LiteralStringDoc */ .chroma .sd { color: #87ceeb }
+/* LiteralStringDouble */ .chroma .s2 { color: #87ceeb }
+/* LiteralStringEscape */ .chroma .se { color: #87ceeb }
+/* LiteralStringHeredoc */ .chroma .sh { color: #87ceeb }
+/* LiteralStringInterpol */ .chroma .si { color: #87ceeb }
+/* LiteralStringOther */ .chroma .sx { color: #87ceeb }
+/* LiteralStringRegex */ .chroma .sr { color: #87ceeb }
+/* LiteralStringSingle */ .chroma .s1 { color: #87ceeb }
+/* LiteralStringSymbol */ .chroma .ss { color: #ff6600 }
+/* LiteralNumber */ .chroma .m { color: #ff6600 }
+/* LiteralNumberBin */ .chroma .mb { color: #ff6600 }
+/* LiteralNumberFloat */ .chroma .mf { color: #ff6600 }
+/* LiteralNumberHex */ .chroma .mh { color: #ff6600 }
+/* LiteralNumberInteger */ .chroma .mi { color: #ff6600 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #ff6600 }
+/* LiteralNumberOct */ .chroma .mo { color: #ff6600 }
+/* Comment */ .chroma .c { color: #00ff00 }
+/* CommentHashbang */ .chroma .ch { color: #00ff00 }
+/* CommentMultiline */ .chroma .cm { color: #00ff00 }
+/* CommentSingle */ .chroma .c1 { color: #00ff00 }
+/* CommentSpecial */ .chroma .cs { color: #00ff00 }
+/* CommentPreproc */ .chroma .cp { color: #e5e5e5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #e5e5e5 }
+body { color: #f8f8f2; background-color: #000000; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">   <span class="nn">m</span><span class="p">:</span><span class="o">-</span><span class="s">b</span><span class="p">.</span> <span class="s">and</span> <span class="nn">t</span><span class="p">:</span><span class="o">-</span><span class="s">p</span><span class="p">,</span> <span class="s">m</span><span class="p">,</span> <span class="s">z</span><span class="p">.</span>
+</span></span></code></pre>
+</body>
+</html>
 
 <p>The clause 'm' get replaced with <code>b</code> in the second clause and now we can say
    that:</p>
 
-<div class="highlight highlight-prolog"><pre>   t:-p, b, z.
-</pre></div>
+<html>
+<style type="text/css">
+/* Background */ .bg { color: #f8f8f2; background-color: #000000 }
+/* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; }
+/* LineHighlight */ .chroma .hl { background-color: #191919 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* Line */ .chroma .line { display: flex; }
+/* Keyword */ .chroma .k { color: #ff0000 }
+/* KeywordConstant */ .chroma .kc { color: #ff0000 }
+/* KeywordDeclaration */ .chroma .kd { color: #ff0000 }
+/* KeywordNamespace */ .chroma .kn { color: #ff0000 }
+/* KeywordPseudo */ .chroma .kp { color: #ff0000 }
+/* KeywordReserved */ .chroma .kr { color: #ff0000 }
+/* KeywordType */ .chroma .kt { color: #ee82ee }
+/* NameConstant */ .chroma .no { color: #7fffd4 }
+/* NameFunction */ .chroma .nf { color: #ffff00 }
+/* NameVariable */ .chroma .nv { color: #eedd82 }
+/* LiteralString */ .chroma .s { color: #87ceeb }
+/* LiteralStringAffix */ .chroma .sa { color: #87ceeb }
+/* LiteralStringBacktick */ .chroma .sb { color: #87ceeb }
+/* LiteralStringChar */ .chroma .sc { color: #87ceeb }
+/* LiteralStringDelimiter */ .chroma .dl { color: #87ceeb }
+/* LiteralStringDoc */ .chroma .sd { color: #87ceeb }
+/* LiteralStringDouble */ .chroma .s2 { color: #87ceeb }
+/* LiteralStringEscape */ .chroma .se { color: #87ceeb }
+/* LiteralStringHeredoc */ .chroma .sh { color: #87ceeb }
+/* LiteralStringInterpol */ .chroma .si { color: #87ceeb }
+/* LiteralStringOther */ .chroma .sx { color: #87ceeb }
+/* LiteralStringRegex */ .chroma .sr { color: #87ceeb }
+/* LiteralStringSingle */ .chroma .s1 { color: #87ceeb }
+/* LiteralStringSymbol */ .chroma .ss { color: #ff6600 }
+/* LiteralNumber */ .chroma .m { color: #ff6600 }
+/* LiteralNumberBin */ .chroma .mb { color: #ff6600 }
+/* LiteralNumberFloat */ .chroma .mf { color: #ff6600 }
+/* LiteralNumberHex */ .chroma .mh { color: #ff6600 }
+/* LiteralNumberInteger */ .chroma .mi { color: #ff6600 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #ff6600 }
+/* LiteralNumberOct */ .chroma .mo { color: #ff6600 }
+/* Comment */ .chroma .c { color: #00ff00 }
+/* CommentHashbang */ .chroma .ch { color: #00ff00 }
+/* CommentMultiline */ .chroma .cm { color: #00ff00 }
+/* CommentSingle */ .chroma .c1 { color: #00ff00 }
+/* CommentSpecial */ .chroma .cs { color: #00ff00 }
+/* CommentPreproc */ .chroma .cp { color: #e5e5e5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #e5e5e5 }
+body { color: #f8f8f2; background-color: #000000; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">   <span class="nn">t</span><span class="p">:</span><span class="o">-</span><span class="s">p</span><span class="p">,</span> <span class="s">b</span><span class="p">,</span> <span class="s">z</span><span class="p">.</span>
+</span></span></code></pre>
+</body>
+</html>
 
 <p>This is resolution. This means that when you resolve two clauses you reduce
    them to get one clause.</p>
@@ -731,7 +1824,7 @@ other applications that require the ability to modify the data in response to
 changing conditions.</p>
 
 <p>See also
-<a href="#-3.-what-is-dynamic-database-manipulation?">What is dynamic Database manipulation?</a>
+
 for more.</p>
 
 		</main>

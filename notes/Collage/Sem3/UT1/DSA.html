@@ -89,14 +89,15 @@
                 border-left: 10px solid;
                 padding: 0 1rem;
             }
-            code {
+            pre {
+                background: black;
+                overflow-x: auto;
+                padding: 1em;
+                border: 1px solid;
+            }
+            :not(pre) > code {
                 border: 1px solid;
                 padding: 0 .2rem .2rem .2rem;
-            }
-            pre {
-              background: black;
-              overflow-x: auto;
-              padding: 1em;
             }
             img {
                 max-width: 100%;
@@ -113,20 +114,20 @@
                 background: var(--theme);
                 color: inherit;
             }
-            details:has(nav) {
+            #table-of-content {
                 position: fixed;
                 bottom: 10px;
                 right: 10px;
                 background: black;
                 padding: 0.5rem 1em;
             }
-            details:has(nav)[open] {
+            #table-of-content[open] {
                 max-height: 90%;
-                overflow-y: scroll;
+                overflow-y: auto;
                 bottom: 50px;
                 margin-left: 1em;
             }
-            details:has(nav)[open] summary {
+            #table-of-content[open] summary {
                 background: black;
                 padding: 0.5em 1em;
                 text-align: center;
@@ -134,7 +135,7 @@
                 bottom: 10px;
                 right: 10px;
             }
-            details:has(nav) ul:first-child {
+            #table-of-content ul:first-child {
                 padding-left: 1em;
                 margin-top: 1.5em;            
             }
@@ -151,7 +152,7 @@
                 <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
             
-			<details class="table-of-content">
+			<details id="table-of-content">
 			    <summary>Table of Content</summary>
                 <nav>
 <ul>
@@ -210,16 +211,68 @@ ii) Slove the following graph.</a></li>
 			<h1 style="font-size: 2.3rem">DSA</h1>
 			<h2>1.A) 6 Marks<a name="1-a-6-marks" class="heading-anchor" href="#1-a-6-marks" rel="nofollow" aria-hidden="true"></a></h2><h3>
 i) Illustrate an algorithm to count number of nodes in singly linked list.<a name="i-illustrate-an-algorithm-to-count-number-of-nodes-in-singly-linked-list" class="heading-anchor" href="#i-illustrate-an-algorithm-to-count-number-of-nodes-in-singly-linked-list" rel="nofollow" aria-hidden="true"></a></h3>
-<pre><code>Step 1: if head is NULL then
-          print(&quot;List is empty&quot;)
-        else
-Step 3: q = head AND counter = 0
-Step 2: counter = counter + 1
-Step 4: Go to next_node
-Step 5: if q != NULL
-          Repeat from Step 3
-Step 6: Return counter
-</code></pre>
+<html>
+<style type="text/css">
+/* Background */ .bg { color: #f8f8f2; background-color: #000000 }
+/* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; }
+/* LineHighlight */ .chroma .hl { background-color: #191919 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* Line */ .chroma .line { display: flex; }
+/* Keyword */ .chroma .k { color: #ff0000 }
+/* KeywordConstant */ .chroma .kc { color: #ff0000 }
+/* KeywordDeclaration */ .chroma .kd { color: #ff0000 }
+/* KeywordNamespace */ .chroma .kn { color: #ff0000 }
+/* KeywordPseudo */ .chroma .kp { color: #ff0000 }
+/* KeywordReserved */ .chroma .kr { color: #ff0000 }
+/* KeywordType */ .chroma .kt { color: #ee82ee }
+/* NameConstant */ .chroma .no { color: #7fffd4 }
+/* NameFunction */ .chroma .nf { color: #ffff00 }
+/* NameVariable */ .chroma .nv { color: #eedd82 }
+/* LiteralString */ .chroma .s { color: #87ceeb }
+/* LiteralStringAffix */ .chroma .sa { color: #87ceeb }
+/* LiteralStringBacktick */ .chroma .sb { color: #87ceeb }
+/* LiteralStringChar */ .chroma .sc { color: #87ceeb }
+/* LiteralStringDelimiter */ .chroma .dl { color: #87ceeb }
+/* LiteralStringDoc */ .chroma .sd { color: #87ceeb }
+/* LiteralStringDouble */ .chroma .s2 { color: #87ceeb }
+/* LiteralStringEscape */ .chroma .se { color: #87ceeb }
+/* LiteralStringHeredoc */ .chroma .sh { color: #87ceeb }
+/* LiteralStringInterpol */ .chroma .si { color: #87ceeb }
+/* LiteralStringOther */ .chroma .sx { color: #87ceeb }
+/* LiteralStringRegex */ .chroma .sr { color: #87ceeb }
+/* LiteralStringSingle */ .chroma .s1 { color: #87ceeb }
+/* LiteralStringSymbol */ .chroma .ss { color: #ff6600 }
+/* LiteralNumber */ .chroma .m { color: #ff6600 }
+/* LiteralNumberBin */ .chroma .mb { color: #ff6600 }
+/* LiteralNumberFloat */ .chroma .mf { color: #ff6600 }
+/* LiteralNumberHex */ .chroma .mh { color: #ff6600 }
+/* LiteralNumberInteger */ .chroma .mi { color: #ff6600 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #ff6600 }
+/* LiteralNumberOct */ .chroma .mo { color: #ff6600 }
+/* Comment */ .chroma .c { color: #00ff00 }
+/* CommentHashbang */ .chroma .ch { color: #00ff00 }
+/* CommentMultiline */ .chroma .cm { color: #00ff00 }
+/* CommentSingle */ .chroma .c1 { color: #00ff00 }
+/* CommentSpecial */ .chroma .cs { color: #00ff00 }
+/* CommentPreproc */ .chroma .cp { color: #e5e5e5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #e5e5e5 }
+body { color: #f8f8f2; background-color: #000000; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">Step 1: if head is NULL then
+</span></span><span class="line"><span class="cl">          print(&#34;List is empty&#34;)
+</span></span><span class="line"><span class="cl">        else
+</span></span><span class="line"><span class="cl">Step 3: q = head AND counter = 0
+</span></span><span class="line"><span class="cl">Step 2: counter = counter + 1
+</span></span><span class="line"><span class="cl">Step 4: Go to next_node
+</span></span><span class="line"><span class="cl">Step 5: if q != NULL
+</span></span><span class="line"><span class="cl">          Repeat from Step 3
+</span></span><span class="line"><span class="cl">Step 6: Return counter
+</span></span></code></pre>
+</body>
+</html>
 <h3>
 ii) Interpret following terminologies i) Node ii) Root iii) Leaf Node<a name="ii-interpret-following-terminologies-i-node-ii-root-iii-leaf-node" class="heading-anchor" href="#ii-interpret-following-terminologies-i-node-ii-root-iii-leaf-node" rel="nofollow" aria-hidden="true"></a></h3>
 <p><img src="./Graph-Terminologies.svg" alt="Graph Terminologies Diagram"></p>
@@ -256,7 +309,7 @@ and file systems where large amounts of data need to be stored and retrieved
 efficiently.</li>
 </ul>
 
-<p><a href="https://youtu.be/KnXohGgIpQU">B-Tree Explaned</a></p>
+<p></p>
 <h2>
 1.B) 4 Marks<a name="1-b-4-marks" class="heading-anchor" href="#1-b-4-marks" rel="nofollow" aria-hidden="true"></a></h2><h3>
 i) Describe Linked List with types.<a name="i-describe-linked-list-with-types" class="heading-anchor" href="#i-describe-linked-list-with-types" rel="nofollow" aria-hidden="true"></a></h3>
@@ -281,13 +334,65 @@ Thus, a circular linked list has no beginning and no end.</li>
 </ul>
 <h3>
 ii) Illustrate algorithm to display data from circular linked list.<a name="ii-illustrate-algorithm-to-display-data-from-circular-linked-list" class="heading-anchor" href="#ii-illustrate-algorithm-to-display-data-from-circular-linked-list" rel="nofollow" aria-hidden="true"></a></h3>
-<pre><code>Step 1: SET CURR = HEAD
-Step 2: DO
-    Step 3: PRINT CURR -&gt; DATA
-    Step 4: SET CURR = CURR -&gt; NEXT
-Step 5: WHILE (CURR != HEAD)
-Step 6: EXIT
-</code></pre>
+<html>
+<style type="text/css">
+/* Background */ .bg { color: #f8f8f2; background-color: #000000 }
+/* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; }
+/* LineHighlight */ .chroma .hl { background-color: #191919 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* Line */ .chroma .line { display: flex; }
+/* Keyword */ .chroma .k { color: #ff0000 }
+/* KeywordConstant */ .chroma .kc { color: #ff0000 }
+/* KeywordDeclaration */ .chroma .kd { color: #ff0000 }
+/* KeywordNamespace */ .chroma .kn { color: #ff0000 }
+/* KeywordPseudo */ .chroma .kp { color: #ff0000 }
+/* KeywordReserved */ .chroma .kr { color: #ff0000 }
+/* KeywordType */ .chroma .kt { color: #ee82ee }
+/* NameConstant */ .chroma .no { color: #7fffd4 }
+/* NameFunction */ .chroma .nf { color: #ffff00 }
+/* NameVariable */ .chroma .nv { color: #eedd82 }
+/* LiteralString */ .chroma .s { color: #87ceeb }
+/* LiteralStringAffix */ .chroma .sa { color: #87ceeb }
+/* LiteralStringBacktick */ .chroma .sb { color: #87ceeb }
+/* LiteralStringChar */ .chroma .sc { color: #87ceeb }
+/* LiteralStringDelimiter */ .chroma .dl { color: #87ceeb }
+/* LiteralStringDoc */ .chroma .sd { color: #87ceeb }
+/* LiteralStringDouble */ .chroma .s2 { color: #87ceeb }
+/* LiteralStringEscape */ .chroma .se { color: #87ceeb }
+/* LiteralStringHeredoc */ .chroma .sh { color: #87ceeb }
+/* LiteralStringInterpol */ .chroma .si { color: #87ceeb }
+/* LiteralStringOther */ .chroma .sx { color: #87ceeb }
+/* LiteralStringRegex */ .chroma .sr { color: #87ceeb }
+/* LiteralStringSingle */ .chroma .s1 { color: #87ceeb }
+/* LiteralStringSymbol */ .chroma .ss { color: #ff6600 }
+/* LiteralNumber */ .chroma .m { color: #ff6600 }
+/* LiteralNumberBin */ .chroma .mb { color: #ff6600 }
+/* LiteralNumberFloat */ .chroma .mf { color: #ff6600 }
+/* LiteralNumberHex */ .chroma .mh { color: #ff6600 }
+/* LiteralNumberInteger */ .chroma .mi { color: #ff6600 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #ff6600 }
+/* LiteralNumberOct */ .chroma .mo { color: #ff6600 }
+/* Comment */ .chroma .c { color: #00ff00 }
+/* CommentHashbang */ .chroma .ch { color: #00ff00 }
+/* CommentMultiline */ .chroma .cm { color: #00ff00 }
+/* CommentSingle */ .chroma .c1 { color: #00ff00 }
+/* CommentSpecial */ .chroma .cs { color: #00ff00 }
+/* CommentPreproc */ .chroma .cp { color: #e5e5e5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #e5e5e5 }
+body { color: #f8f8f2; background-color: #000000; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">Step 1: SET CURR = HEAD
+</span></span><span class="line"><span class="cl">Step 2: DO
+</span></span><span class="line"><span class="cl">    Step 3: PRINT CURR -&gt; DATA
+</span></span><span class="line"><span class="cl">    Step 4: SET CURR = CURR -&gt; NEXT
+</span></span><span class="line"><span class="cl">Step 5: WHILE (CURR != HEAD)
+</span></span><span class="line"><span class="cl">Step 6: EXIT
+</span></span></code></pre>
+</body>
+</html>
 
 <ul>
 <li><strong>Step 1:</strong> Initialize a pointer, CURR, and set it to the head of the circular

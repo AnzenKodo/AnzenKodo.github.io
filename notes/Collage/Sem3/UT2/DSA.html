@@ -89,14 +89,15 @@
                 border-left: 10px solid;
                 padding: 0 1rem;
             }
-            code {
+            pre {
+                background: black;
+                overflow-x: auto;
+                padding: 1em;
+                border: 1px solid;
+            }
+            :not(pre) > code {
                 border: 1px solid;
                 padding: 0 .2rem .2rem .2rem;
-            }
-            pre {
-              background: black;
-              overflow-x: auto;
-              padding: 1em;
             }
             img {
                 max-width: 100%;
@@ -113,20 +114,20 @@
                 background: var(--theme);
                 color: inherit;
             }
-            details:has(nav) {
+            #table-of-content {
                 position: fixed;
                 bottom: 10px;
                 right: 10px;
                 background: black;
                 padding: 0.5rem 1em;
             }
-            details:has(nav)[open] {
+            #table-of-content[open] {
                 max-height: 90%;
-                overflow-y: scroll;
+                overflow-y: auto;
                 bottom: 50px;
                 margin-left: 1em;
             }
-            details:has(nav)[open] summary {
+            #table-of-content[open] summary {
                 background: black;
                 padding: 0.5em 1em;
                 text-align: center;
@@ -134,7 +135,7 @@
                 bottom: 10px;
                 right: 10px;
             }
-            details:has(nav) ul:first-child {
+            #table-of-content ul:first-child {
                 padding-left: 1em;
                 margin-top: 1.5em;            
             }
@@ -151,7 +152,7 @@
                 <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
             
-			<details class="table-of-content">
+			<details id="table-of-content">
 			    <summary>Table of Content</summary>
                 <nav>
 <ul>
@@ -284,12 +285,12 @@ find the desired key.</li>
 </ol>
 
 <ul>
-<li><a href="https://youtu.be/T9gct6Dx-jo?t=96">Explain Separate Chaining</a></li>
+<li></li>
 </ul>
 <h3>
 iii) Compose the concept of addition of two polynomials.<a name="iii-compose-the-concept-of-addition-of-two-polynomials" class="heading-anchor" href="#iii-compose-the-concept-of-addition-of-two-polynomials" rel="nofollow" aria-hidden="true"></a></h3>
 <p>Explain:
-<a href="https://www.youtube.com/watch?v=cFHZ-a87Vp4">Application of Linked List (Addition of Two Polynomials)</a></p>
+</p>
 <h2>
 2. 5 Marks<a name="2-5-marks" class="heading-anchor" href="#2-5-marks" rel="nofollow" aria-hidden="true"></a></h2><h3>
 i) Reframe the short note on Double Hashing.<a name="i-reframe-the-short-note-on-double-hashing" class="heading-anchor" href="#i-reframe-the-short-note-on-double-hashing" rel="nofollow" aria-hidden="true"></a></h3>
@@ -305,7 +306,7 @@ out the keys that hash to the same value and reduce clustering in the table.
 Double Hashing requires more computation than linear probing, but it has a lower
 chance of clustering which can result in better performance.</p>
 
-<p>Explain: <a href="https://youtu.be/HcWxaVl1TII">Double Hashing</a></p>
+<p>Explain: </p>
 <h2>
 ii) Translate the given infix to postfix expression using stack <code>((A+B)*D)^(E-F)</code><a name="ii-translate-the-given-infix-to-postfix-expression-using-stack-a-b-d-e-f" class="heading-anchor" href="#ii-translate-the-given-infix-to-postfix-expression-using-stack-a-b-d-e-f" rel="nofollow" aria-hidden="true"></a></h2>
 <table>
@@ -433,7 +434,7 @@ ii) Using Kruskal's algorithm find Minimum Spanning Tree for the following graph
 <p>Minimum Spanning Tree using Kruskal's algorithm:
 <img src="./Minimum-Spanning-Tree.svg" alt="Minimum Spanning Tree"></p>
 
-<p>Here how I made it: <a href="https://youtu.be/71UQH7Pr9kU">Kruskal's algorithm</a></p>
+<p>Here how I made it: </p>
 
 		</main>
 		<footer>

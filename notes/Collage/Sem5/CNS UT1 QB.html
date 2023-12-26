@@ -89,14 +89,15 @@
                 border-left: 10px solid;
                 padding: 0 1rem;
             }
-            code {
+            pre {
+                background: black;
+                overflow-x: auto;
+                padding: 1em;
+                border: 1px solid;
+            }
+            :not(pre) > code {
                 border: 1px solid;
                 padding: 0 .2rem .2rem .2rem;
-            }
-            pre {
-              background: black;
-              overflow-x: auto;
-              padding: 1em;
             }
             img {
                 max-width: 100%;
@@ -113,20 +114,20 @@
                 background: var(--theme);
                 color: inherit;
             }
-            details:has(nav) {
+            #table-of-content {
                 position: fixed;
                 bottom: 10px;
                 right: 10px;
                 background: black;
                 padding: 0.5rem 1em;
             }
-            details:has(nav)[open] {
+            #table-of-content[open] {
                 max-height: 90%;
-                overflow-y: scroll;
+                overflow-y: auto;
                 bottom: 50px;
                 margin-left: 1em;
             }
-            details:has(nav)[open] summary {
+            #table-of-content[open] summary {
                 background: black;
                 padding: 0.5em 1em;
                 text-align: center;
@@ -134,7 +135,7 @@
                 bottom: 10px;
                 right: 10px;
             }
-            details:has(nav) ul:first-child {
+            #table-of-content ul:first-child {
                 padding-left: 1em;
                 margin-top: 1.5em;            
             }
@@ -151,7 +152,7 @@
                 <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
             
-			<details class="table-of-content">
+			<details id="table-of-content">
 			    <summary>Table of Content</summary>
                 <nav>
 <ul>
@@ -361,7 +362,7 @@ Security Attacks<a name="security-attacks" class="heading-anchor" href="#securit
 <li>Active Attack</li>
 </ul>
 
-<p>(Check out <a href="#4-Defination-of-Attack-amp-its-types">Defination of Attack &amp; its types</a>)</p>
+<p>(Check out )</p>
 <h4>
 Security Mechanism<a name="security-mechanism" class="heading-anchor" href="#security-mechanism" rel="nofollow" aria-hidden="true"></a></h4>
 <p>The mechanism is built to identify any breach of security or attack on the organization, is called a security mechanism.</p>
@@ -372,7 +373,7 @@ Security Mechanism<a name="security-mechanism" class="heading-anchor" href="#sec
 
 <ul>
 <li><strong>Encipherment (Encryption)</strong> involves the use of algorithms to transform data into a form that can only be read by someone with appropriate decryption key.</li>
-<li><strong>Digital Signature</strong> (Check out <a href="#2-Digital-Signature">Digital Signature</a>)</li>
+<li><strong>Digital Signature</strong> (Check out )</li>
 <li><strong>Traffic padding</strong> is a technique used to add extra data to a network traffic stream in an attempt to obscure the true content of the traffic and make it more difficult to analyze.</li>
 <li><strong>Routing control</strong> allows the selection of specific physically secure routes for specific data transmission and enables routing changes, particularly when a gap in security is suspected.</li>
 </ul>
