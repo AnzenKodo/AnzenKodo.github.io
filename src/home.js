@@ -10,7 +10,7 @@ const renderer = {
 	heading(text, level) {
     	if (level === 1) return `<h1>${text}</h1>`;
     	const escapedText = text.toLowerCase().replace(/[^\w]+/g, "-");
-    	return `<h${level}>
+    	return `<h${level} id="${escapedText}">
 	 <a name="${escapedText}" class="header-anchor a-no-underline" href="#${escapedText}">${text}</a>
 </h${level}>`;
   },
