@@ -38,7 +38,7 @@ cd notes
 go run .
 cd -
 
-mkdir $OUTPUT/.well-known
+mkdir -i $OUTPUT/.well-known
 echo "This is a Brave Creators publisher verification file.
 
 Domain: anzenkodo.github.io
