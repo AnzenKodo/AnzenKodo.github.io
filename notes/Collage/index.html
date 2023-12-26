@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>AK#Notes - Collage</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="description" content="My useless Notes.">
+  		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
+  		<meta property="og:image:alt" content="AK#Notes logo">
+  		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="AK#Notes - Collage">
+		<meta property="og:description" content="My useless Notes.">
+		<meta property="og:url" content="https://AnzenKodo.github.io/">
+		<meta property="og:type" content="website">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+
+            :root {
+                color-scheme: dark light;
+                --theme: #FF6C22;
+			}
+			body {
+                max-width: 40rem;
+                margin: 0 auto;
+                font-family: system-ui;
+                padding: 0 1em;
+			}
+			h1, h2, h3, h4, h5, h6 {
+                font-family: monospace;
+                margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+                font-size: 2rem;
+			}
+			h3 {
+			    font-size: 1.8rem;
+			}
+			h4 {
+			    font-size: 1.5rem;
+			}
+			h5 {
+			    font-size: 1.3rem;
+			}
+			h6 {
+			    font-size: 1rem;
+			}
+			p {
+			    line-height: 1.5rem;
+			}
+			a {
+			    color: var(--theme);
+			    text-decoration: none;
+			}
+			a:hover, a:focus {
+			    text-decoration: underline;
+			}
+			a:active {
+			    background: var(--theme);
+			    color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+                margin-top: .5rem;
+			}
+			li {
+                margin-bottom: .5rem;
+			}
+			table {
+			    border-collapse: collapse;
+			}
+            th {
+                font-size: 1.1rem;
+                border: 2px solid;
+                padding: .3rem .3rem;
+            }
+            td {
+                border: 1px solid;
+                padding: .3rem .5rem;
+                line-height: 1.5rem;
+            }
+            blockquote {
+                margin-left: 0;
+                margin-right: 0;
+                border: 1px solid;
+                border-left: 10px solid;
+                padding: 0 1rem;
+            }
+            pre {
+                background: black;
+                overflow-x: auto;
+                padding: 1em;
+                border: 1px solid;
+            }
+            :not(pre) > code {
+                border: 1px solid;
+                padding: 0 .2rem .2rem .2rem;
+            }
+            img {
+                max-width: 100%;
+                display: block;
+                margin: 0 auto;
+            }
+            [href="#skip-top-main"] {
+                padding: 0.3em;
+                position: absolute;
+                transform: translateY(-200%);
+            }
+            [href="#skip-top-main"]:focus {
+                transform: translateY(0%);
+                background: var(--theme);
+                color: inherit;
+            }
+            #table-of-content {
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+                background: black;
+                padding: 0.5rem 1em;
+            }
+            #table-of-content[open] {
+                max-height: 90%;
+                overflow-y: auto;
+                bottom: 50px;
+                margin-left: 1em;
+            }
+            #table-of-content[open] summary {
+                background: black;
+                padding: 0.5em 1em;
+                text-align: center;
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+            }
+            #table-of-content ul:first-child {
+                padding-left: 1em;
+                margin-top: 1.5em;            
+            }
+            .heading-anchor::before {
+                content: "#";
+                margin-left: .5rem;
+            }
+		</style>
+	</head>
+	<body>
+	    <a href="#skip-top-main">Skip to main</a>
+		<header>
+			<h1 style="text-align: center;">
+                <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+            </h1>
+            
+			<details id="table-of-content">
+			    <summary>Table of Content</summary>
+                <nav>
+<ul>
+<li><a href="#semester-3">Semester 3</a></li>
+<li><a href="#semester-4">
+Semester 4</a></li>
+<li><a href="#semester-5">
+Semester 5</a></li>
+</ul>
+</nav>
+
+			</details>
+            
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem">Collage</h1>
+			<h2>Semester 3<a name="semester-3" class="heading-anchor" href="#semester-3" rel="nofollow" aria-hidden="true"></a></h2>
+<ul>
+<li>Unit Test 1
+
+<ul>
+<li><a href="Sem3/UT1/DSA.html">DSA</a></li>
+<li><a href="Sem3/Sem/PCPF.html">PCPF</a></li>
+</ul></li>
+<li>Unit Test 2
+
+<ul>
+<li><a href="Sem3/UT2/DBMS.html">DBMS</a></li>
+<li><a href="Sem3/UT2/PCPF.html">PCPF</a></li>
+</ul></li>
+<li>Semester
+
+<ul>
+<li><a href="Sem3/Sem/DBMS-Notes.html">DBMS-Notes</a></li>
+<li><a href="Sem3/Sem/PCPF-QB.html">PCPF-QB</a></li>
+<li><a href="Sem3/Sem/DSA-2019-QP.html">DSA-2019-QP</a></li>
+<li><a href="Sem3/Sem/DSA.html">DSA</a></li>
+<li><a href="Sem3/Sem/PCOM.html">PCOM</a></li>
+</ul></li>
+</ul>
+<h2>
+Semester 4<a name="semester-4" class="heading-anchor" href="#semester-4" rel="nofollow" aria-hidden="true"></a></h2>
+<ul>
+<li>Unit Test 1
+
+<ul>
+<li><a href="Sem4/UT1/Maths.html">Maths</a></li>
+</ul></li>
+<li>Semester
+
+<ul>
+<li><a href="Sem4/Automata.html">Automata</a></li>
+<li><a href="Sem4/COA%20Sem4%20Notes.html">COA Sem4 Notes</a></li>
+<li><a href="Sem4/EM4.html">EM4</a></li>
+</ul></li>
+</ul>
+<h2>
+Semester 5<a name="semester-5" class="heading-anchor" href="#semester-5" rel="nofollow" aria-hidden="true"></a></h2>
+<ul>
+<li>Unit Test 1
+
+<ul>
+<li><a href="Sem5/UT1/CNS%20QB.html">CNS QB</a></li>
+<li><a href="Sem5/UT1/IP%20QB.html">IP QB</a></li>
+<li><a href="Sem5/UT1/SE%20QB.html">SE QB</a></li>
+</ul></li>
+<li>Unit Test 2
+
+<ul>
+<li><a href="Sem5/UT2/CNS%20QB.html">CNS QB</a></li>
+<li><a href="Sem5/UT2/E&E%20QB.html">E&amp;E QB</a></li>
+<li><a href="Sem5/UT2/IP%20QB.html">IP QB</a></li>
+</ul></li>
+<li>Viva
+
+<ul>
+<li><a href="Sem5/IP%20Viva.html">IP Viva</a></li>
+<li><a href="Sem5/SE%20Viva.html">SE Viva</a></li>
+</ul></li>
+<li>Semester
+
+<ul>
+<li><a href="Sem5/ADMT%20Sem5%20Notes.html">ADMT Sem5 Notes</a></li>
+<li><a href="Sem5/CNS%20Sem%20Notes.html">CNS Sem Notes</a></li>
+<li><a href="Sem5/E&E%20Sem%20Notes.html">E&amp;E Sem Notes</a></li>
+<li><a href="Sem5/SE%20Sem%20Notes.html">SE Sem Notes</a></li>
+</ul></li>
+</ul>
+
+<p>$232+32$</p>
+
+		</main>
+		<footer>
+			<p style="text-align: center; font-size: small;">
+                This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>
+            </p>
+		</footer>
+	</body>
+</html>
