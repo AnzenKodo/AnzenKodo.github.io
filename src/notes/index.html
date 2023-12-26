@@ -89,14 +89,15 @@
                 border-left: 10px solid;
                 padding: 0 1rem;
             }
-            code {
+            pre {
+                background: black;
+                overflow-x: auto;
+                padding: 1em;
+                border: 1px solid;
+            }
+            :not(pre) > code {
                 border: 1px solid;
                 padding: 0 .2rem .2rem .2rem;
-            }
-            pre {
-              background: black;
-              overflow-x: auto;
-              padding: 1em;
             }
             img {
                 max-width: 100%;
@@ -113,20 +114,20 @@
                 background: var(--theme);
                 color: inherit;
             }
-            details:has(nav) {
+            #table-of-content {
                 position: fixed;
                 bottom: 10px;
                 right: 10px;
                 background: black;
                 padding: 0.5rem 1em;
             }
-            details:has(nav)[open] {
+            #table-of-content[open] {
                 max-height: 90%;
-                overflow-y: scroll;
+                overflow-y: auto;
                 bottom: 50px;
                 margin-left: 1em;
             }
-            details:has(nav)[open] summary {
+            #table-of-content[open] summary {
                 background: black;
                 padding: 0.5em 1em;
                 text-align: center;
@@ -134,7 +135,7 @@
                 bottom: 10px;
                 right: 10px;
             }
-            details:has(nav) ul:first-child {
+            #table-of-content ul:first-child {
                 padding-left: 1em;
                 margin-top: 1.5em;            
             }
@@ -151,7 +152,7 @@
                 <a href="{{.website}}">AK</a>#<a href="{{.start_url}}">{{.short_name}}</a>
             </h1>
             {{ if ne .toc "<nav>\n</nav>\n" }}
-			<details class="table-of-content">
+			<details id="table-of-content">
 			    <summary>Table of Content</summary>
                 {{.toc}}
 			</details>

@@ -53,6 +53,7 @@ func getData() m {
 	data["url"] = config["website"] + ""
 	
 	data["input"] = os.Getenv("HOME") + "/Documents/Notes/Online"
+	data["inputDir"] = path.Base(data["input"])
 	_, err = os.Stat(data["input"])
     if os.IsNotExist(err) { data["input"] = "../note/Online" }
     
@@ -72,9 +73,19 @@ func htmlParse(inputPath string, outputPath string) {
 
 	data := getData()
 	
-	data["heading"] = filename(inputPath)
-	data["title"] = data["name"] + " - " + data["heading"]
+	if filename(inputPath) == "index" {
+	   fileDir := path.Base(path.Dir(inputPath))
+	   
+	   if fileDir == data["inputDir"] { 
+	       data["heading"] = "Home"
+	   } else { 
+	       data["heading"] = fileDir 
+	   }
+	} else { 
+	   data["heading"] = filename(inputPath) 
+    }
 	
+	data["title"] = data["name"] + " - " + data["heading"]
 	data["content"] = string(Markdown(file))
 	data["toc"] = string(MarkdownToc(file))
     
