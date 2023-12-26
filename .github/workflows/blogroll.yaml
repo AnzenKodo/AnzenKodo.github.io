@@ -14,12 +14,8 @@ jobs:
 
     - name: Clone repo
       shell: bash
-      run: git clone -b gh-pages https://github.com/AnzenKodo/AnzenKodo.github.io repo
-      
-    - name: Move site folder
-      shell: bash
-      run: mv repo/site . && cd src/blogroll
+      run: git clone -b gh-pages https://github.com/AnzenKodo/AnzenKodo.github.io site
       
     - name: Making Blogroll
       shell: bash
-      run: composer install && php index.php
+      run: cd src/blogroll && composer install && php index.php
