@@ -10,9 +10,7 @@ const renderer = {
 	heading(text, level) {
     	if (level === 1) return `<h1>${text}</h1>`;
     	const escapedText = text.toLowerCase().replace(/[^\w]+/g, "-");
-    	return `<h${level} id="${escapedText}">
-	 <a name="${escapedText}" class="header-anchor a-no-underline" href="#${escapedText}">${text}</a>
-</h${level}>`;
+    	return `<h${level} id="${escapedText}"><a name="${escapedText}" href="#${escapedText}"></a>${text}</h${level}>`;
   },
 };
 
@@ -73,10 +71,9 @@ const fullHtml = `<!DOCTYPE html>
 	  			color: inherit;
 	  		}
             img { max-width: 100% }
-            h2 a { color: initial }
-            h2::before { 
+            h2 a::before { 
                 content: "#";
-                color: color: var(--theme);
+                margin-right: 0.5rem;
             }
         </style>
     </head>

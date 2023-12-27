@@ -68,7 +68,6 @@ func (options *renderer) Header(out *bytes.Buffer, text func() bool, level int, 
 	if node, err := html.Parse(strings.NewReader(textHTML)); err == nil {
 		textContent = extractText(node)
 	} else {
-		// Failed to parse HTML (probably can never happen), so just use the whole thing.
 		textContent = html.UnescapeString(textHTML)
 	}
 	anchorName := sanitized_anchor_name.Create(textContent)
@@ -77,9 +76,7 @@ func (options *renderer) Header(out *bytes.Buffer, text func() bool, level int, 
         options.TocHeaderWithAnchor(tocMaker, level - 1, anchorName)
     }
         
-	out.WriteString(fmt.Sprintf("<h%d>", level))
-	out.WriteString(textHTML)
-	out.WriteString(fmt.Sprintf(`<a name="%s" class="heading-anchor" href="#%s" rel="nofollow" aria-hidden="true"></a></h%d>`, anchorName, anchorName, level))
+	out.WriteString(fmt.Sprintf(`<h%d><a name="%s" class="heading-anchor" href="#%s" rel="nofollow" aria-hidden="true"></a>%s</h%d>`, level, anchorName, anchorName, strings.TrimSpace(textHTML), level))
 }
 
 // extractText returns the recursive concatenation of the text content of an html node.

@@ -75,7 +75,6 @@ func htmlParse(inputPath string, outputPath string) {
 	data := getData()
 	data["content"] = string(Markdown(file))
 	data["toc"] = string(MarkdownToc(file))
-	data["title"] = data["name"] + " - " + data["heading"]
     
     description := strings.Replace(strings.Replace(string(file), "  ", " ", -1), "\n", " ", -1)
 	if filename(inputPath) == "index" {
@@ -91,8 +90,8 @@ func htmlParse(inputPath string, outputPath string) {
         data["heading"] = filename(inputPath)
         data["description"] = description[:100]
     }
-	
-    
+    data["title"] = data["heading"] + " - " + data["name"]
+
 	buf := new(bytes.Buffer)
 	err = tem.Execute(buf, data)
 	check(err)
