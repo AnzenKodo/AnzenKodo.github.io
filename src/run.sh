@@ -17,6 +17,9 @@ echo "Copying assests folder..."
 mkdir -p $OUTPUT
 cp -r assets $OUTPUT
 
+echo "Making api endpoints"
+cp -r data $OUTPUT/api
+
 if [ "$@" = "--make-blogroll" ]; then
     cd blogroll
     echo "Downloading required packages for Blogroll..."
