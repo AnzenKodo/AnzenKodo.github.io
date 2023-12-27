@@ -18,7 +18,7 @@ mkdir -p $OUTPUT
 cp -r assets $OUTPUT
 
 echo "Making api endpoints"
-cp -r data $OUTPUT/api
+cp -r api $OUTPUT
 
 if [ "$@" = "--make-blogroll" ]; then
     cd blogroll
