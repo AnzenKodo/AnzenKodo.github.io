@@ -11,6 +11,7 @@ import (
 	"os"
 	"path"
 	"text/template"
+	"strings"
 )
 
 type m map[string]string
@@ -72,22 +73,25 @@ func htmlParse(inputPath string, outputPath string) {
 	check(err)
 
 	data := getData()
-	
+	data["content"] = string(Markdown(file))
+	data["toc"] = string(MarkdownToc(file))
+	data["title"] = data["name"] + " - " + data["heading"]
+    
+    description := strings.Replace(strings.Replace(string(file), "  ", " ", -1), "\n", " ", -1)
 	if filename(inputPath) == "index" {
 	   fileDir := path.Base(path.Dir(inputPath))
 	   
 	   if fileDir == data["inputDir"] { 
-	       data["heading"] = "Home"
+            data["heading"] = "Home"
 	   } else { 
-	       data["heading"] = fileDir 
+            data["heading"] = fileDir
+            data["description"] = description[:100]
 	   }
 	} else { 
-	   data["heading"] = filename(inputPath) 
+        data["heading"] = filename(inputPath)
+        data["description"] = description[:100]
     }
 	
-	data["title"] = data["name"] + " - " + data["heading"]
-	data["content"] = string(Markdown(file))
-	data["toc"] = string(MarkdownToc(file))
     
 	buf := new(bytes.Buffer)
 	err = tem.Execute(buf, data)
@@ -138,12 +142,12 @@ func main() {
 
 			if path.Ext(inputFilepath) == ".md" {
 				htmlParse(inputFilepath, htmlOutputFilepath)
-                // fmt.Println("Created file", htmlOutputFilepath, "from", inputFilepath)
+                fmt.Println("Created file", htmlOutputFilepath, "from", inputFilepath)
 				return nil
 			}
 
 			copyFile(inputFilepath, outputFilepath)
-            // fmt.Println("Copyed file", outputFilepath, "from", inputFilepath)
+            fmt.Println("Copyed file", outputFilepath, "from", inputFilepath)
 
 			return nil
 		})
