@@ -72,6 +72,7 @@ const fullHtml = `<!DOCTYPE html>
 	  			background: var(--theme);
 	  			color: inherit;
 	  		}
+	 		img { max-width: 100% }
         </style>
     </head>
     <body>${html}</body>
