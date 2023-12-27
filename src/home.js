@@ -72,6 +72,11 @@ const fullHtml = `<!DOCTYPE html>
 	  			background: var(--theme);
 	  			color: inherit;
 	  		}
+            h2 a { color: initial }
+            h2::before { 
+                content: "#";
+                color: color: var(--theme);
+            }
         </style>
     </head>
     <body>${html}</body>
