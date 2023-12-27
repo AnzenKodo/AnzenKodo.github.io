@@ -4,7 +4,7 @@ require_once __DIR__.'/vendor/autoload.php';
 
 
 // Read the JSON file
-$json = (object)json_decode(file_get_contents(__DIR__.'/../data/config.json'), true);
+$json = (object)json_decode(file_get_contents(__DIR__.'/../api/info.json'), true);
 
 $getoutput = getenv('OUTPUT');
 $output = "../{$getoutput}/blogroll/";
@@ -21,7 +21,7 @@ imagepng($im, "{$output}favicon.png");
 
 $opml = "";
 use \Dallgoot\Yaml;
-$feeds = (array)Yaml::parseFile(__DIR__.'/../data/feed.yaml', 0, 0);
+$feeds = (array)Yaml::parseFile(__DIR__.'/../api/feed.yaml', 0, 0);
 echo "Making php index.html file.";
 ob_start();
 require_once 'pages/index.php';

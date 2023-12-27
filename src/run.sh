@@ -11,7 +11,7 @@ cd "$(dirname "$0")"
 
 echo "Setting up environment variables..."
 export OUTPUT="../site"
-export CONFIG="./data/config.json"
+export CONFIG="./api/info.json"
 
 echo "Copying assests folder..."
 mkdir -p $OUTPUT
