@@ -19,7 +19,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-
+    
+    - name: Clone repo
+      shell: bash
+      run: git clone -b gh-pages https://github.com/AnzenKodo/AnzenKodo.github.io site
+      
     - name: Setup Deno
       uses: denoland/setup-deno@004814556e37c54a2f6e31384c9e18e983317366
       with:
