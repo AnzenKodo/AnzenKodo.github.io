@@ -41,7 +41,7 @@ require_once __DIR__.'/manifest.php';
     </main>
     <footer>
       <p id="opml"><a href="feed.opml">Download OPML</a></p>
-      <p>Made by <a href="https://anzenkodo.github.io/"><?= $data->author ?></a> | <a href="https://anzenkodo.github.io/license">LICENSE</a></p>
+      <p><a href="https://anzenkodo.github.io/license">LICENSE</a></p>
     </footer>
   </body>
 </html>

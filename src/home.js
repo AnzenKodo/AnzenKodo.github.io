@@ -1,6 +1,6 @@
 import { marked } from "https://deno.land/x/marked@1.0.2/mod.ts";
 
-const config = JSON.parse(Deno.readTextFileSync(Deno.env.get("INFO")))
+const info = JSON.parse(Deno.readTextFileSync(Deno.env.get("INFO")))
 
 const renderer = {
 	heading(text, level) {
@@ -29,19 +29,19 @@ const getPage = (md) => {
 	<head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>AK(${config.username})</title>
-		<link rel="icon" type="image/png" href="${config.website}/assets/favicon/home-favicon.png">
-		<meta name="description" content="${config.username} official website.">
-		<meta name="theme-color" content="${config.color}">
+        <title>AK(${info.username})</title>
+		<link rel="icon" type="image/png" href="${info.website}/assets/favicon/home-favicon.png">
+		<meta name="description" content="${info.username} official website.">
+		<meta name="theme-color" content="${info.color}">
 		<meta property="og:type" content="profile">
-		<meta property="og:description" content="${config.username} official website.">
-		<meta property="og:image" content="${config.logo}.png">
-		<meta property="og:image:alt" content="${config.username} logo">
-		<meta property="og:profile:username" content="${config.username}">
-		<meta property="og:profile:first_name" content="${config.name}">
+		<meta property="og:description" content="${info.username} official website.">
+		<meta property="og:image" content="${info.logo}.png">
+		<meta property="og:image:alt" content="${info.username} logo">
+		<meta property="og:profile:username" content="${info.username}">
+		<meta property="og:profile:first_name" content="${info.name}">
         <style>
 			:root {
-				--theme: ${config.color};
+				--theme: ${info.color};
 				color-scheme: dark;
 				accent-color: var(--theme);
 			}
@@ -85,9 +85,9 @@ Deno.writeTextFileSync(
 );
 Deno.writeTextFileSync(
 	`./${Deno.env.get("OUTPUT")}/404.html`, 
-	getPage(`<p style="font-size: 2rem;text-align: center;">404 Page Not Found</p>`+indexMd)
+	getPage(`<p style="font-size: 2rem;text-align: center;">404 Page Not Found</p>\n`+indexMd)
 );
 Deno.writeTextFileSync(
 	`./${Deno.env.get("OUTPUT")}/LICENSE.html`, 
-	getPage(Deno.readTextFileSync("../LICENSE.md"))
+	getPage(`# [AK](info.website)#(License)\n`+Deno.readTextFileSync("../LICENSE.md"))
 );
