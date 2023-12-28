@@ -89,5 +89,5 @@ Deno.writeTextFileSync(
 );
 Deno.writeTextFileSync(
 	`./${Deno.env.get("OUTPUT")}/license.html`, 
-	getPage(`# [AK](info.website)#(License)\n`+Deno.readTextFileSync("../LICENSE.md"))
+	getPage(`# [AK](info.website)#License\n`+Deno.readTextFileSync("../LICENSE.md"))
 );

@@ -96,8 +96,11 @@ func extractText(n *html.Node) string {
 // GitHub Flavored Markdown fenced code block with highlighting.
 func (*renderer) BlockCode(out *bytes.Buffer, text []byte, lang string) {
 	doubleSpace(out)
-	out.WriteString(fmt.Sprintf(`<div class="code-block"><span class="code-block-language-name">.%s</span>`, lang))
-	err := quick.Highlight(out, string(text), lang, "html", "rrt")
+	out.WriteString("<div class=\"code-block\">")
+	if lang != "" {
+	   out.WriteString(fmt.Sprintf(`<span class="code-block-language-name">.%s</span>`, lang))
+	}
+	err := quick.Highlight(out, string(text), lang, "html", "vulcan")
 	check(err)
 	out.WriteString("</div>")
 }

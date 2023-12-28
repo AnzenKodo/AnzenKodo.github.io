@@ -141,12 +141,12 @@ func main() {
 
 			if path.Ext(inputFilepath) == ".md" {
 				htmlParse(inputFilepath, htmlOutputFilepath)
-                fmt.Println("Created file", htmlOutputFilepath, "from", inputFilepath)
+                // fmt.Println("Created file", htmlOutputFilepath, "from", inputFilepath)
 				return nil
 			}
 
 			copyFile(inputFilepath, outputFilepath)
-            fmt.Println("Copyed file", outputFilepath, "from", inputFilepath)
+            // fmt.Println("Copyed file", outputFilepath, "from", inputFilepath)
 
 			return nil
 		})
