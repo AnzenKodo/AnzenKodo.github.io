@@ -86,7 +86,7 @@ Deno.writeTextFileSync(
 );
 Deno.writeTextFileSync(
 	`./${Deno.env.get("OUTPUT")}/404.html`, 
-	getPage(`# [AK](${info.website})(${info.username})@404\nPage Not Found\n\nGo back [Home](${info.website})`, info)
+	getPage(`# [AK](${info.website})(${info.username})@404\n## Page Not Found\n\nGo back [**Home**](${info.website})`, info)
 );
 Deno.writeTextFileSync(
 	`./${Deno.env.get("OUTPUT")}/license.html`, 
