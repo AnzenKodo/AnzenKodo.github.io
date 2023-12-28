@@ -23,25 +23,25 @@ const loadingLazy = {
 };
 marked.use({ renderer, extensions: [loadingLazy] });
 
-const getPage = (md) => {	
+const getPage = (md, data) => {	
 	return `<!DOCTYPE html>
 <html lang="en-US">
 	<head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>AK(${info.username})</title>
-		<link rel="icon" type="image/png" href="${info.website}/assets/favicon/home-favicon.png">
-		<meta name="description" content="${info.username} official website.">
-		<meta name="theme-color" content="${info.color}">
+        <title>AK(${data.username})</title>
+		<link rel="icon" type="image/png" href="${data.website}/assets/favicon/home-favicon.png">
+		<meta name="description" content="${data.username} official website.">
+		<meta name="theme-color" content="${data.color}">
 		<meta property="og:type" content="profile">
-		<meta property="og:description" content="${info.username} official website.">
-		<meta property="og:image" content="${info.logo}.png">
-		<meta property="og:image:alt" content="${info.username} logo">
-		<meta property="og:profile:username" content="${info.username}">
-		<meta property="og:profile:first_name" content="${info.name}">
+		<meta property="og:description" content="${data.username} official website.">
+		<meta property="og:image" content="${data.logo}.png">
+		<meta property="og:image:alt" content="${data.username} logo">
+		<meta property="og:profile:username" content="${data.username}">
+		<meta property="og:profile:first_name" content="${data.name}">
         <style>
 			:root {
-				--theme: ${info.color};
+				--theme: ${data.color};
 				color-scheme: dark;
 				accent-color: var(--theme);
 			}
@@ -51,6 +51,7 @@ const getPage = (md) => {
 				margin: 0 auto;
 				padding: 0 1rem;
 		 		background: #000;
+		 		word-break: break-word;
             }
 			a {
 				color: var(--theme);
@@ -81,13 +82,13 @@ const indexMd = await fetch("https://raw.githubusercontent.com/AnzenKodo/AnzenKo
 
 Deno.writeTextFileSync(
 	`./${Deno.env.get("OUTPUT")}/index.html`, 
-	getPage(indexMd)
+	getPage(indexMd, info)
 );
 Deno.writeTextFileSync(
 	`./${Deno.env.get("OUTPUT")}/404.html`, 
-	getPage(`<p style="font-size: 2rem;text-align: center;">404 Page Not Found</p>\n`+indexMd)
+	getPage(`# [AK](${info.website})(${info.username})@404\nPage Not Found\n\nGo back [Home](${info.website})`, info)
 );
 Deno.writeTextFileSync(
 	`./${Deno.env.get("OUTPUT")}/license.html`, 
-	getPage(`# [AK](info.website)#License\n`+Deno.readTextFileSync("../LICENSE.md"))
+	getPage(`# [AK](${info.website})(${info.username})@License\n`+Deno.readTextFileSync("../LICENSE.md"), info)
 );

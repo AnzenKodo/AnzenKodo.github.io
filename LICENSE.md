@@ -1,9 +1,8 @@
 ## Licenses Terms
 
-All the website content is license under [Attribution 4.0](#attribution-4.0-international) & source code
-license under [MIT](#mit-icense)
+All the website content is license under [CC BY 4.0 DEED Attribution 4.0 International](#creative-commons-by-4-deed-attribution-4-international) & source code license under [MIT](#mit-license)
 
-## Attribution 4 International
+## Creative Commons BY 4 DEED Attribution 4 International
 
 Creative Commons Corporation ("Creative Commons") is not a law firm and
 does not provide legal services or legal advice. Distribution of
