@@ -29,14 +29,14 @@ const getPage = (md, data, title = "") => {
 	<head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>AK(${data.username}${title})</title>
+        <title>AK(${data.username})${title}</title>
 		<link rel="icon" type="image/png" href="${data.website}/assets/favicon/home-favicon.png">
-		<meta name="description" content="${data.username} official website.">
+		<meta name="description" content="${data.username}${title} official website.">
 		<meta name="theme-color" content="${data.color}">
 		<meta property="og:type" content="profile">
-		<meta property="og:description" content="${data.username} official website.">
+		<meta property="og:description" content="${data.username}${title} official website.">
 		<meta property="og:image" content="${data.logo}.png">
-		<meta property="og:image:alt" content="${data.username} logo">
+		<meta property="og:image:alt" content="${data.username}${title} logo">
 		<meta property="og:profile:username" content="${data.username}">
 		<meta property="og:profile:first_name" content="${data.name}">
         <style>
