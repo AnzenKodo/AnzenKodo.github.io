@@ -23,13 +23,13 @@ const loadingLazy = {
 };
 marked.use({ renderer, extensions: [loadingLazy] });
 
-const getPage = (md, data) => {	
+const getPage = (md, data, title = "") => {	
 	return `<!DOCTYPE html>
 <html lang="en-US">
 	<head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>AK(${data.username})</title>
+        <title>AK(${data.username}${title})</title>
 		<link rel="icon" type="image/png" href="${data.website}/assets/favicon/home-favicon.png">
 		<meta name="description" content="${data.username} official website.">
 		<meta name="theme-color" content="${data.color}">
@@ -89,9 +89,17 @@ Deno.writeTextFileSync(
 );
 Deno.writeTextFileSync(
 	`./${Deno.env.get("OUTPUT")}/404.html`, 
-	getPage(`# [AK](${info.website})(${info.username})@404\n## Page Not Found\n\nGo back [**Home**](${info.website})`, info)
+	getPage(
+	   `# [AK](${info.website})(${info.username})@404\n## Page Not Found\n\nGo back [**Home**](${info.website})`, 
+	   info,
+	   "@404"
+	)
 );
 Deno.writeTextFileSync(
 	`./${Deno.env.get("OUTPUT")}/license.html`, 
-	getPage(`# [AK](${info.website})(${info.username})@License\n`+Deno.readTextFileSync("../LICENSE.md"), info)
+	getPage(
+	   `# [AK](${info.website})(${info.username})@License\n`+Deno.readTextFileSync("../LICENSE.md"), 
+	   info,
+	   "@License"
+	)
 );
