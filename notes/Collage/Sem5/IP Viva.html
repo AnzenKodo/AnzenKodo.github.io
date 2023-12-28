@@ -89,13 +89,21 @@
                 border-left: 10px solid;
                 padding: 0 1rem;
             }
-            pre {
+            .code-block {
                 background: black;
                 overflow-x: auto;
                 padding: 1em;
                 border: 1px solid;
             }
-            :not(pre) > code {
+            .code-block-language-name {
+                position: sticky;
+                left: 95%;
+                font-weight: bold;
+            }
+            pre.chroma {
+                margin-top: 0em;
+            }
+            :not(pre.chroma) > code {
                 border: 1px solid;
                 padding: 0 .2rem .2rem .2rem;
             }
@@ -180,7 +188,7 @@ ReactJS example</a></li>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem">IP Viva</h1>
 			<h2><a name="explain-the-working-of-web-browser-with-example" class="heading-anchor" href="#explain-the-working-of-web-browser-with-example" rel="nofollow" aria-hidden="true"></a>Explain the working of Web Browser with example.</h2><h2><a name="describe-http-protocol-describe-an-http-message" class="heading-anchor" href="#describe-http-protocol-describe-an-http-message" rel="nofollow" aria-hidden="true"></a>Describe HTTP Protocol. Describe an HTTP message.</h2><h2><a name="what-is-tls-explain-the-needs-of-tls" class="heading-anchor" href="#what-is-tls-explain-the-needs-of-tls" rel="nofollow" aria-hidden="true"></a>What is TLS? Explain the needs of TLS?</h2><h2><a name="what-is-xml-compare-xml-and-json" class="heading-anchor" href="#what-is-xml-compare-xml-and-json" rel="nofollow" aria-hidden="true"></a>What is XML? Compare XML and JSON?</h2>
-<html>
+<div class="code-block"><span class="code-block-language-name">.xml</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -235,8 +243,8 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-
-<html>
+</div>
+<div class="code-block"><span class="code-block-language-name">.json</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -293,8 +301,8 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-<h2><a name="what-is-json-explain-json-syntax" class="heading-anchor" href="#what-is-json-explain-json-syntax" rel="nofollow" aria-hidden="true"></a>What is JSON? Explain JSON Syntax?</h2>
-<html>
+</div><h2><a name="what-is-json-explain-json-syntax" class="heading-anchor" href="#what-is-json-explain-json-syntax" rel="nofollow" aria-hidden="true"></a>What is JSON? Explain JSON Syntax?</h2>
+<div class="code-block"><span class="code-block-language-name">.html</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -348,8 +356,8 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-<h2><a name="describe-arrow-function-in-es6-along-with-an-example" class="heading-anchor" href="#describe-arrow-function-in-es6-along-with-an-example" rel="nofollow" aria-hidden="true"></a>Describe Arrow function in ES6 along with an example</h2>
-<html>
+</div><h2><a name="describe-arrow-function-in-es6-along-with-an-example" class="heading-anchor" href="#describe-arrow-function-in-es6-along-with-an-example" rel="nofollow" aria-hidden="true"></a>Describe Arrow function in ES6 along with an example</h2>
+<div class="code-block"><span class="code-block-language-name">.js</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -416,8 +424,8 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-<h2><a name="conditional-and-looping-statements" class="heading-anchor" href="#conditional-and-looping-statements" rel="nofollow" aria-hidden="true"></a>Conditional and looping statements</h2>
-<html>
+</div><h2><a name="conditional-and-looping-statements" class="heading-anchor" href="#conditional-and-looping-statements" rel="nofollow" aria-hidden="true"></a>Conditional and looping statements</h2>
+<div class="code-block"><span class="code-block-language-name">.js</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -471,8 +479,8 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-<h2><a name="reactjs-example" class="heading-anchor" href="#reactjs-example" rel="nofollow" aria-hidden="true"></a>ReactJS example</h2>
-<html>
+</div><h2><a name="reactjs-example" class="heading-anchor" href="#reactjs-example" rel="nofollow" aria-hidden="true"></a>ReactJS example</h2>
+<div class="code-block"><span class="code-block-language-name">.jsx</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -530,8 +538,8 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-
-<html>
+</div>
+<div class="code-block"><span class="code-block-language-name">.js</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -586,12 +594,22 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-
+</div>
 		</main>
 		<footer>
 			<p style="text-align: center; font-size: small;">
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
             </p>
 		</footer>
+	<script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']],
+          }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
 	</body>
 </html>

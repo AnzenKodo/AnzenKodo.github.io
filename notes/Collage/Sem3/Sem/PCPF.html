@@ -89,13 +89,21 @@
                 border-left: 10px solid;
                 padding: 0 1rem;
             }
-            pre {
+            .code-block {
                 background: black;
                 overflow-x: auto;
                 padding: 1em;
                 border: 1px solid;
             }
-            :not(pre) > code {
+            .code-block-language-name {
+                position: sticky;
+                left: 95%;
+                font-weight: bold;
+            }
+            pre.chroma {
+                margin-top: 0em;
+            }
+            :not(pre.chroma) > code {
                 border: 1px solid;
                 padding: 0 .2rem .2rem .2rem;
             }
@@ -214,7 +222,7 @@ ii) Difference between Normal and applicative order evaluation.</a></li>
 
 <p>Scopes: A scope is the region of the code in which a name is accessible. In other words, it determines the visibility and lifetime of a name. There are two types of scopes: global and local. A global scope is the entire program, and a name defined in a global scope can be accessed from anywhere in the program. A local scope is a specific block of code, such as a function or a loop, and a name defined in a local scope can only be accessed within that block. Example:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.c</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -272,7 +280,7 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-
+</div>
 <p>Bindings: A binding is the association of a name with a value. In other words, it is the process of assigning a value to a name. A binding creates a relationship between a name and a value that lasts until the end of the scope or until the binding is changed. For example, in the Python code <code>int x = 42</code>, <code>x</code> is the name, <code>42</code> is the value, and the assignment <code>x = 42</code> creates the binding between <code>x</code> and <code>42</code>.</p>
 
 <p>In summary, names are labels used to refer to values, scopes determine the visibility and lifetime of names, and bindings associate names with values.</p>
@@ -448,7 +456,7 @@ the top of the stack.</li>
 
 <p>Example in Python:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.python</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -512,7 +520,7 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-<h3><a name="ii-difference-between-normal-and-applicative-order-evaluation" class="heading-anchor" href="#ii-difference-between-normal-and-applicative-order-evaluation" rel="nofollow" aria-hidden="true"></a>ii) Difference between Normal and applicative order evaluation.</h3>
+</div><h3><a name="ii-difference-between-normal-and-applicative-order-evaluation" class="heading-anchor" href="#ii-difference-between-normal-and-applicative-order-evaluation" rel="nofollow" aria-hidden="true"></a>ii) Difference between Normal and applicative order evaluation.</h3>
 <iframe src="https://www.youtube-nocookie.com/embed/DN32KzPvjUI?start=41" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 <table>
@@ -563,5 +571,15 @@ body { color: #f8f8f2; background-color: #000000; }
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
             </p>
 		</footer>
+	<script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']],
+          }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
 	</body>
 </html>

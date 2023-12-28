@@ -89,13 +89,21 @@
                 border-left: 10px solid;
                 padding: 0 1rem;
             }
-            pre {
+            .code-block {
                 background: black;
                 overflow-x: auto;
                 padding: 1em;
                 border: 1px solid;
             }
-            :not(pre) > code {
+            .code-block-language-name {
+                position: sticky;
+                left: 95%;
+                font-weight: bold;
+            }
+            pre.chroma {
+                margin-top: 0em;
+            }
+            :not(pre.chroma) > code {
                 border: 1px solid;
                 padding: 0 .2rem .2rem .2rem;
             }
@@ -275,7 +283,7 @@ Demultiplexer</a></li>
 
 <li><p>Instruction are longer but the operand are easily identified.</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.asm</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -331,7 +339,8 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span><span class="line"><span class="cl"><span class="nf">mov</span> <span class="no">bx</span><span class="p">,</span> <span class="mi">1234</span><span class="no">H</span>
 </span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 </ul></li>
 
 <li><p><strong>Register Addressing Mode</strong></p>
@@ -342,7 +351,7 @@ body { color: #f8f8f2; background-color: #000000; }
 
 <li><p>Instruction are shorter but operands can't be identified by looking at instruction.</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.asm</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -398,7 +407,8 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span><span class="line"><span class="cl"><span class="nf">mov</span> <span class="no">ax</span><span class="p">,</span> <span class="no">bx</span>
 </span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 </ul></li>
 
 <li><p><strong>Direct Addressing Mode</strong></p>
@@ -408,7 +418,7 @@ body { color: #f8f8f2; background-color: #000000; }
 
 <li><p>In this mode address of operand is directly specified in the instruction.</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.asm</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -466,7 +476,8 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="no">mov</span> <span class="no">cx</span><span class="p">,</span> <span class="p">[</span><span class="mi">4320</span><span class="no">h</span><span class="p">]</span>
 </span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 </ul></li>
 
 <li><p><strong>Indirect Addressing Mode</strong></p>
@@ -477,7 +488,7 @@ body { color: #f8f8f2; background-color: #000000; }
 <ul>
 <li><p>In this mode the up uses any of the 2 base registers BP, BX or any of the two index registers SI, Di to provide the offset address for the data type.</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.asm</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -532,7 +543,8 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span><span class="line"><span class="cl"><span class="nf">mov</span> <span class="no">cl</span><span class="p">,</span> <span class="p">[</span><span class="no">bx</span><span class="p">]</span>
 </span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 </ul></li>
 
 <li><p><strong>Register Relative Addressing Mode</strong></p>
@@ -540,7 +552,7 @@ body { color: #f8f8f2; background-color: #000000; }
 <ul>
 <li><p>In this mode the operand address is calculated using one of the base registers and a 8-bit or a 16-bit displacement.</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.asm</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -596,7 +608,8 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span><span class="line"><span class="cl"><span class="c">; moves a byte from address pointed by `[bx+4]` in data seg to `cl`
 </span></span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 </ul></li>
 
 <li><p><strong>Base Indexed Addressing Mode</strong></p>
@@ -606,7 +619,7 @@ body { color: #f8f8f2; background-color: #000000; }
 
 <li><p>Operand address is calculated as base register plus and index register.</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.asm</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -664,7 +677,8 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></span><span class="line"><span class="cl"><span class="c">; physical address `ds+10h+bx+si`
 </span></span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 </ul></li>
 
 <li><p><strong>Base Relative Plus Index Addressing Mode</strong></p>
@@ -672,7 +686,7 @@ body { color: #f8f8f2; background-color: #000000; }
 <ul>
 <li><p>In this mode the address of the operand is calculated as base register plus index register plus 8-bit or 16-bit displacement.</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.asm</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -727,7 +741,8 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span><span class="line"><span class="cl"><span class="nf">mov</span> <span class="no">cl</span><span class="p">,</span> <span class="p">[</span><span class="no">bx-di</span><span class="err">+</span><span class="mi">20</span><span class="p">]</span>
 </span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 </ul></li>
 
 <li><p><strong>Implied Addressing Mode</strong></p>
@@ -735,7 +750,7 @@ body { color: #f8f8f2; background-color: #000000; }
 <ul>
 <li><p>In this addressing mode the operands are implied and are not specified in the instruction.</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -791,12 +806,13 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span><span class="line"><span class="cl">cld ; decales the direction flag
 </span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 </ul></li>
 </ul></li>
 </ul>
 <h3><a name="8086-assembly-language" class="heading-anchor" href="#8086-assembly-language" rel="nofollow" aria-hidden="true"></a>8086 Assembly Language</h3>
-<html>
+<div class="code-block"><span class="code-block-language-name">.asm</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -884,7 +900,7 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-<h3><a name="8086-microprocessor-architecture" class="heading-anchor" href="#8086-microprocessor-architecture" rel="nofollow" aria-hidden="true"></a>8086 Microprocessor Architecture</h3>
+</div><h3><a name="8086-microprocessor-architecture" class="heading-anchor" href="#8086-microprocessor-architecture" rel="nofollow" aria-hidden="true"></a>8086 Microprocessor Architecture</h3>
 <p><img src="assets/Pasted%20image%2020231218012117.png" alt=""></p>
 
 <ul>
@@ -956,7 +972,7 @@ body { color: #f8f8f2; background-color: #000000; }
 
 <li><p>Destination: Register</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.asm</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1009,7 +1025,8 @@ body { color: #f8f8f2; background-color: #000000; }
 <pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nf">ADD</span> <span class="no">AL</span><span class="p">,</span> <span class="mi">25</span><span class="no">H</span> <span class="c">; AL &lt;- AL+25H
 </span></span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 </ul></li>
 
 <li><p><strong>ADC (Addition with Carry)</strong></p>
@@ -1017,7 +1034,7 @@ body { color: #f8f8f2; background-color: #000000; }
 <ul>
 <li><p>It adds the carry into the result.</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.asm</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1070,7 +1087,8 @@ body { color: #f8f8f2; background-color: #000000; }
 <pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nf">ADC</span> <span class="no">BX</span><span class="p">,</span> <span class="no">CX</span> <span class="c">; BX &lt;- BX+CX+Carry Flag
 </span></span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 </ul></li>
 
 <li><p><strong>SUB (Subtraction)</strong></p>
@@ -1082,7 +1100,7 @@ body { color: #f8f8f2; background-color: #000000; }
 
 <li><p>Destination: Register</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.asm</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1135,7 +1153,8 @@ body { color: #f8f8f2; background-color: #000000; }
 <pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nf">SUB</span> <span class="no">AL</span><span class="p">,</span> <span class="mi">25</span><span class="no">H</span> <span class="c">; AL &lt;- AL-25
 </span></span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 </ul></li>
 
 <li><p><strong>SBB (Subtraction with Borrow)</strong></p>
@@ -1145,7 +1164,7 @@ body { color: #f8f8f2; background-color: #000000; }
 
 <li><p>It subtracts with the borrow.</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.asm</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1198,7 +1217,8 @@ body { color: #f8f8f2; background-color: #000000; }
 <pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nf">SBB</span> <span class="no">BL</span><span class="p">,</span> <span class="no">CL</span> <span class="c">; BL &lt;- BL-CL
 </span></span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 </ul></li>
 
 <li><p><strong>INC (Increment)</strong></p>
@@ -1209,7 +1229,7 @@ body { color: #f8f8f2; background-color: #000000; }
 
 <li><p>Note: Carry flag is not affected.</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.asm</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1262,7 +1282,8 @@ body { color: #f8f8f2; background-color: #000000; }
 <pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nf">INC</span> <span class="no">AX</span> <span class="c">; AX &lt;- AX + 1
 </span></span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 </ul></li>
 
 <li><p><strong>DEC (Decrement)</strong></p>
@@ -1273,7 +1294,7 @@ body { color: #f8f8f2; background-color: #000000; }
 
 <li><p>Note: Carry flag is not affected.</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.asm</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1326,7 +1347,8 @@ body { color: #f8f8f2; background-color: #000000; }
 <pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nf">DEC</span> <span class="no">BL</span> <span class="c">; BL &lt;- BL - 1
 </span></span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 </ul></li>
 
 <li><p><strong>MUL (Multiplication)</strong></p>
@@ -1336,7 +1358,7 @@ body { color: #f8f8f2; background-color: #000000; }
 
 <li><p>The result is stored in the accumulator (AX) or in DX:AX for 16-bit multiplication.</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.asm</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1389,7 +1411,8 @@ body { color: #f8f8f2; background-color: #000000; }
 <pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nf">MUL</span> <span class="no">BH</span> <span class="c">; AX &lt;- AX * BH
 </span></span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 </ul></li>
 
 <li><p><strong>IMUL (Signed Multiplication)</strong></p>
@@ -1397,7 +1420,7 @@ body { color: #f8f8f2; background-color: #000000; }
 <ul>
 <li><p>Performs signed multiplication of an 8-bit or 16-bit register with the accumulator.</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.asm</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1450,7 +1473,8 @@ body { color: #f8f8f2; background-color: #000000; }
 <pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nf">IMUL</span> <span class="no">CX</span> <span class="c">; AX &lt;- AX * CX (signed multiplication)
 </span></span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 </ul></li>
 
 <li><p><strong>DIV (Division)</strong></p>
@@ -1460,7 +1484,7 @@ body { color: #f8f8f2; background-color: #000000; }
 
 <li><p>Quotient is stored in the accumulator (AL for 8-bit, AX for 16-bit) and remainder in AH (for 8-bit) or DX (for 16-bit).</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.asm</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1513,7 +1537,8 @@ body { color: #f8f8f2; background-color: #000000; }
 <pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nf">DIV</span> <span class="no">BL</span> <span class="c">; AL &lt;- AX / BL, AH &lt;- Remainder
 </span></span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 </ul></li>
 
 <li><p><strong>IDIV (Signed Division)</strong></p>
@@ -1521,7 +1546,7 @@ body { color: #f8f8f2; background-color: #000000; }
 <ul>
 <li><p>Performs signed division of the accumulator by an 8-bit or 16-bit register.</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.asm</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1574,7 +1599,8 @@ body { color: #f8f8f2; background-color: #000000; }
 <pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nf">IDIV</span> <span class="no">BL</span> <span class="c">; AL &lt;- AX / BL (signed division), AH &lt;- Remainder
 </span></span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 </ul></li>
 
 <li><p><strong>NEG (Negation)</strong></p>
@@ -1582,7 +1608,7 @@ body { color: #f8f8f2; background-color: #000000; }
 <ul>
 <li><p>Replaces the value of the specified destination with its two's complement.</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.asm</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1635,7 +1661,8 @@ body { color: #f8f8f2; background-color: #000000; }
 <pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nf">NEG</span> <span class="no">AL</span> <span class="c">; AL &lt;- 2’s complement of AL
 </span></span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 </ul></li>
 
 <li><p><strong>CBW (Convert Byte to Word)</strong></p>
@@ -1643,7 +1670,7 @@ body { color: #f8f8f2; background-color: #000000; }
 <ul>
 <li><p>Converts a signed byte in AL to a signed word in AX.</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.asm</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1696,7 +1723,8 @@ body { color: #f8f8f2; background-color: #000000; }
 <pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nf">CBW</span> <span class="c">; AL -&gt; AX (sign extended)
 </span></span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 </ul></li>
 
 <li><p><strong>CWD (Convert Word to Double Word)</strong></p>
@@ -1704,7 +1732,7 @@ body { color: #f8f8f2; background-color: #000000; }
 <ul>
 <li><p>Converts a signed word in AX to a signed double word in DX:AX.</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.asm</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1757,7 +1785,8 @@ body { color: #f8f8f2; background-color: #000000; }
 <pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nf">CWD</span> <span class="c">; AX -&gt; DX:AX (sign extended)
 </span></span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 </ul></li>
 
 <li><p><strong>DAA, DAS, AAA, AAS, AAM, AAD</strong></p>
@@ -2421,5 +2450,15 @@ body { color: #f8f8f2; background-color: #000000; }
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
             </p>
 		</footer>
+	<script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']],
+          }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
 	</body>
 </html>

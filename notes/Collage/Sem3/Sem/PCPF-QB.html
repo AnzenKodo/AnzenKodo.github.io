@@ -89,13 +89,21 @@
                 border-left: 10px solid;
                 padding: 0 1rem;
             }
-            pre {
+            .code-block {
                 background: black;
                 overflow-x: auto;
                 padding: 1em;
                 border: 1px solid;
             }
-            :not(pre) > code {
+            .code-block-language-name {
+                position: sticky;
+                left: 95%;
+                font-weight: bold;
+            }
+            pre.chroma {
+                margin-top: 0em;
+            }
+            :not(pre.chroma) > code {
                 border: 1px solid;
                 padding: 0 .2rem .2rem .2rem;
             }
@@ -576,7 +584,7 @@ it difficult to allocate large blocks of contiguous memory.</li>
 
 <p>Example Program:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.c</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -644,10 +652,10 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-
+</div>
 <p>Output:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.C</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -702,10 +710,10 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-<h4><a name="call-by-reference" class="heading-anchor" href="#call-by-reference" rel="nofollow" aria-hidden="true"></a>Call by reference</h4>
+</div><h4><a name="call-by-reference" class="heading-anchor" href="#call-by-reference" rel="nofollow" aria-hidden="true"></a>Call by reference</h4>
 <p>Call by reference evaluates the argument expression and passes a reference to the resulting object to the function. The function receives a reference to the same object, so any changes made to the argument within the function are reflected in the caller.</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.c</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -773,10 +781,10 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-
+</div>
 <p>Output:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.C</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -831,7 +839,7 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-<h4><a name="difference-between-call-by-value-and-call-by-reference-in-c" class="heading-anchor" href="#difference-between-call-by-value-and-call-by-reference-in-c" rel="nofollow" aria-hidden="true"></a>Difference Between Call by Value and Call by Reference in C</h4>
+</div><h4><a name="difference-between-call-by-value-and-call-by-reference-in-c" class="heading-anchor" href="#difference-between-call-by-value-and-call-by-reference-in-c" rel="nofollow" aria-hidden="true"></a>Difference Between Call by Value and Call by Reference in C</h4>
 <table>
 <thead>
 <tr>
@@ -866,7 +874,7 @@ body { color: #f8f8f2; background-color: #000000; }
 
 <li><p>Example:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.cpp</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -919,7 +927,8 @@ body { color: #f8f8f2; background-color: #000000; }
 <pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="kt">int</span> <span class="o">=</span> <span class="mi">5</span>
 </span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 </ul>
 <h4><a name="dynamic-binding" class="heading-anchor" href="#dynamic-binding" rel="nofollow" aria-hidden="true"></a>Dynamic binding</h4>
 <ul>
@@ -930,7 +939,7 @@ body { color: #f8f8f2; background-color: #000000; }
 
 <li><p>Example:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.cpp</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -984,7 +993,8 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
 </span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 </ul>
 <h3><a name="8-write-a-note-on-naming-and-scoping-rules-for-scripting-languages" class="heading-anchor" href="#8-write-a-note-on-naming-and-scoping-rules-for-scripting-languages" rel="nofollow" aria-hidden="true"></a>8. Write a note on Naming and Scoping rules for scripting languages.</h3><h4><a name="naming" class="heading-anchor" href="#naming" rel="nofollow" aria-hidden="true"></a>Naming</h4>
 <ul>
@@ -1168,7 +1178,7 @@ and logic.</li>
 <li><p>An expression, which represents the function's body.
 The syntax for a lambda function is as follows:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1222,7 +1232,7 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-
+</div>
 <p>Here, λ is the lambda keyword, x is the variable, and x+1 is the expression.</p></li>
 
 <li><p>In lambda calculus, functions are first-class citizens, which means they can be passed as arguments and returned
@@ -1236,7 +1246,7 @@ forms the theoretical basis for many programming languages.</p></li>
 
 <p>In pattern matching, we match an expression against a series of patterns. If a match is found, the corresponding code block is executed. If no match is found, a runtime error is generated.</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.haskell</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1296,10 +1306,10 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-
+</div>
 <p>Output:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1354,14 +1364,14 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-<h3><a name="6-higher-order-function" class="heading-anchor" href="#6-higher-order-function" rel="nofollow" aria-hidden="true"></a>6. Higher order function</h3>
+</div><h3><a name="6-higher-order-function" class="heading-anchor" href="#6-higher-order-function" rel="nofollow" aria-hidden="true"></a>6. Higher order function</h3>
 <p>A higher-order function is a function that takes one or more functions as arguments and/or returns a function as its result. Higher-order functions are a key feature of functional programming, and they allow for a more abstract and composable approach to solving problems.</p>
 
 <p>In simple terms, a higher-order function can either accept functions as inputs or produce a function as output, or both. By using higher-order functions, you can write more abstract, reusable, and composable code, making it easier to write, test, and maintain complex software systems.</p>
 
 <p>Example in Python:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.python</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1425,14 +1435,14 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-<h3><a name="7-what-mathematical-formalism-underlies-functional-programming" class="heading-anchor" href="#7-what-mathematical-formalism-underlies-functional-programming" rel="nofollow" aria-hidden="true"></a>7. What mathematical formalism underlies functional programming?</h3>
+</div><h3><a name="7-what-mathematical-formalism-underlies-functional-programming" class="heading-anchor" href="#7-what-mathematical-formalism-underlies-functional-programming" rel="nofollow" aria-hidden="true"></a>7. What mathematical formalism underlies functional programming?</h3>
 <p>Functional programming is based on the mathematical theory of lambda calculus. Lambda calculus is a mathematical framework for defining functions and manipulating expressions. It provides a formalism for defining functions as well as operations for combining and transforming those functions. The concept of lambda calculus is central to functional programming and provides the basis for defining and manipulating functions in a functional programming language.</p>
 <h3><a name="8-explain-concept-of-currying-in-haskell-with-an-example" class="heading-anchor" href="#8-explain-concept-of-currying-in-haskell-with-an-example" rel="nofollow" aria-hidden="true"></a>8. Explain concept of currying in haskell with an example.</h3>
 <iframe src="https://www.youtube.com/embed/m12c99qgHBU" title="Haskell for Imperative Programmers #7 - Partial Function Application & Currying" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 <p>Currying is the process of transforming a function that takes multiple arguments in a tuple as its argument, into a function that takes just a single argument and returns another function which accepts further arguments, one by one, that the original function would receive in the rest of that tuple.</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.haskell</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1486,7 +1496,7 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-<h3><a name="9-explain-features-of-functional-programming-languages" class="heading-anchor" href="#9-explain-features-of-functional-programming-languages" rel="nofollow" aria-hidden="true"></a>9. Explain features of functional programming languages.</h3><h4><a name="immutable-data" class="heading-anchor" href="#immutable-data" rel="nofollow" aria-hidden="true"></a>Immutable Data</h4>
+</div><h3><a name="9-explain-features-of-functional-programming-languages" class="heading-anchor" href="#9-explain-features-of-functional-programming-languages" rel="nofollow" aria-hidden="true"></a>9. Explain features of functional programming languages.</h3><h4><a name="immutable-data" class="heading-anchor" href="#immutable-data" rel="nofollow" aria-hidden="true"></a>Immutable Data</h4>
 <p>Immutable Data means that you should easily able to create data structures instead of modifying ones which is already exist.</p>
 <h4><a name="referential-transparency" class="heading-anchor" href="#referential-transparency" rel="nofollow" aria-hidden="true"></a>Referential transparency</h4>
 <p>Functional programs should perform operations just like as if it is for the first time. So, you will know what may or may not have happened during the program’s execution, and its side effects. In FP term it is called Referential transparency.</p>
@@ -1511,7 +1521,7 @@ body { color: #f8f8f2; background-color: #000000; }
 
 <p><strong>Example:</strong></p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.c</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1568,12 +1578,12 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-<h4><a name="impure-functions" class="heading-anchor" href="#impure-functions" rel="nofollow" aria-hidden="true"></a>Impure functions</h4>
+</div><h4><a name="impure-functions" class="heading-anchor" href="#impure-functions" rel="nofollow" aria-hidden="true"></a>Impure functions</h4>
 <p>Impure functions exactly in the opposite of pure. They have hidden inputs or output; it is called impure. Impure functions cannot be used or tested in isolation as they have dependencies.</p>
 
 <p><strong>Example</strong></p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.c</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1630,7 +1640,7 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-<h3><a name="10-what-is-the-difference-between-normal-order-and-applicative-order-evaluation-what-is-lazy-evaluation" class="heading-anchor" href="#10-what-is-the-difference-between-normal-order-and-applicative-order-evaluation-what-is-lazy-evaluation" rel="nofollow" aria-hidden="true"></a>10. What is the difference between normal-order and applicative-order evaluation? What is lazy evaluation?</h3>
+</div><h3><a name="10-what-is-the-difference-between-normal-order-and-applicative-order-evaluation-what-is-lazy-evaluation" class="heading-anchor" href="#10-what-is-the-difference-between-normal-order-and-applicative-order-evaluation-what-is-lazy-evaluation" rel="nofollow" aria-hidden="true"></a>10. What is the difference between normal-order and applicative-order evaluation? What is lazy evaluation?</h3>
 <p><iframe src="https://www.youtube.com/embed/DN32KzPvjUI" title="Functional Languages Evaluation Order" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 | Feature | Normal Order Evaluation | Applicative Order Evaluation |
 | --- | --- | --- |
@@ -1649,7 +1659,7 @@ Note: Students are not expected to write the main function and do user Io</li>
 <h3><a name="12-define-haskell-function-that-inputs-one-operator-and-two-operands-which-may-be-int-integer-float-or-double-the-function-will-perform-the-operation-and-computes-the-result-clearly-mention-the-type-signature-for-the-function" class="heading-anchor" href="#12-define-haskell-function-that-inputs-one-operator-and-two-operands-which-may-be-int-integer-float-or-double-the-function-will-perform-the-operation-and-computes-the-result-clearly-mention-the-type-signature-for-the-function" rel="nofollow" aria-hidden="true"></a>12. Define Haskell function that inputs one operator +,-,*,^ and two operands which may be Int, Integer, Float or Double. The function will perform the operation and computes the result. Clearly mention the type signature for the function.</h3>
 <p><strong>Note:</strong> Students are not expected to write the main function and do user IO.</p>
 <h3><a name="13-define-a-haskell-function-named-addus-that-adds-2-input-numbers" class="heading-anchor" href="#13-define-a-haskell-function-named-addus-that-adds-2-input-numbers" rel="nofollow" aria-hidden="true"></a>13. Define a haskell function named “addUs” that adds 2 input numbers.</h3>
-<html>
+<div class="code-block"><span class="code-block-language-name">.</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1711,10 +1721,10 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-
+</div>
 <p>Here is the definition for the <code>addUs</code> function in Haskell:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.haskell</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1769,10 +1779,10 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-
+</div>
 <p>And here is the definition for the <code>multiplyUs</code> function using <code>addUs</code> as a building block:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.haskell</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1835,7 +1845,7 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-<h2><a name="module-3" class="heading-anchor" href="#module-3" rel="nofollow" aria-hidden="true"></a>Module 3</h2><h3><a name="2-write-following-english-statements-in-prolog-mention-which-are-facts-and-rules" class="heading-anchor" href="#2-write-following-english-statements-in-prolog-mention-which-are-facts-and-rules" rel="nofollow" aria-hidden="true"></a>2. Write following English statements in Prolog. Mention which are facts and rules.</h3>
+</div><h2><a name="module-3" class="heading-anchor" href="#module-3" rel="nofollow" aria-hidden="true"></a>Module 3</h2><h3><a name="2-write-following-english-statements-in-prolog-mention-which-are-facts-and-rules" class="heading-anchor" href="#2-write-following-english-statements-in-prolog-mention-which-are-facts-and-rules" rel="nofollow" aria-hidden="true"></a>2. Write following English statements in Prolog. Mention which are facts and rules.</h3>
 <ol>
 <li>Ram writes a book.</li>
 <li>Sham reads a book if it is written by Ram.</li>
@@ -1849,7 +1859,7 @@ body { color: #f8f8f2; background-color: #000000; }
 <ol>
 <li><p>Facts are simple statements that describe a relationship between one or more objects. They are represented as predicates and are used to assert information into the program. An example of a fact would be: “John is a software engineer”.</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.prolog</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1902,11 +1912,12 @@ body { color: #f8f8f2; background-color: #000000; }
 <pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nf">person</span><span class="p">(</span><span class="s">john</span><span class="p">,</span> <span class="nf">age</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span> <span class="nf">job</span><span class="p">(</span><span class="s">&#39;software engineer&#39;</span><span class="p">)).</span>
 </span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 
 <li><p>Rules are logical statements that define how one predicate can be derived from other predicates. They are used to express more complex relationships between objects, and are represented as a head predicate followed by a body of predicates. An example of a rule would be: “If a person is older than 30 and has a job as a software engineer, then they are considered a senior software engineer.”</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.prolog</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1959,11 +1970,12 @@ body { color: #f8f8f2; background-color: #000000; }
 <pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nf">senior_software_engineer</span><span class="p">(</span><span class="nv">X</span><span class="p">)</span> <span class="p">:-</span> <span class="nf">person</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span> <span class="nf">age</span><span class="p">(</span><span class="nv">Age</span><span class="p">),</span> <span class="nf">job</span><span class="p">(</span><span class="s">&#39;software engineer&#39;</span><span class="p">)),</span> <span class="nv">Age</span> <span class="o">&gt;</span> <span class="mf">30.</span>
 </span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 
 <li><p>Queries are used to ask the Prolog program to find solutions that satisfy a given predicate. Queries are used to retrieve information from the program and are represented as predicates with variables. An example of a query would be: “Who is a senior software engineer?”. Copy code</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.prolog</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -2016,7 +2028,8 @@ body { color: #f8f8f2; background-color: #000000; }
 <pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="s">?-</span> <span class="nf">senior_software_engineer</span><span class="p">(</span><span class="nv">X</span><span class="p">).</span>
 </span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 </ol>
 
 <p>The Prolog interpreter will attempt to find a value for the variable X that makes the predicate senior_software_engineer(X) true. In this case, X will be bound to the value ‘john’ if the previously defined rule and fact are present in the knowledge base.</p>
@@ -2137,7 +2150,7 @@ body { color: #f8f8f2; background-color: #000000; }
 
 <p>Example of static Database Manipulation:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.prolog</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -2209,14 +2222,14 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-<h4><a name="dynamic-database-manipulation" class="heading-anchor" href="#dynamic-database-manipulation" rel="nofollow" aria-hidden="true"></a>Dynamic Database Manipulation</h4>
+</div><h4><a name="dynamic-database-manipulation" class="heading-anchor" href="#dynamic-database-manipulation" rel="nofollow" aria-hidden="true"></a>Dynamic Database Manipulation</h4>
 <p>Dynamic database manipulation refers to the process of modifying a database that is expected to change during the execution of a program. The data is considered dynamic, meaning it can change during the execution of the program.</p>
 
 <p>Database manipulation is especially useful for storing in memory evaluation results, to the effect that if we ever need to compute the same goal again in the future, we don’t have to redo the calculations: we only have to look up the asserted fact. This is called memorization or caching, and it can greatly increase computational speed.</p>
 
 <p>Example of Dynamic Database Manipulation:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.prolog</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -2272,12 +2285,12 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-<h3><a name="8-why-do-we-use-is-instead-of-in-prolog" class="heading-anchor" href="#8-why-do-we-use-is-instead-of-in-prolog" rel="nofollow" aria-hidden="true"></a>8. Why do we use “is” instead of &quot;=&quot; in prolog?</h3>
+</div><h3><a name="8-why-do-we-use-is-instead-of-in-prolog" class="heading-anchor" href="#8-why-do-we-use-is-instead-of-in-prolog" rel="nofollow" aria-hidden="true"></a>8. Why do we use “is” instead of &quot;=&quot; in prolog?</h3>
 <p>In Prolog, the <code>is</code> operator is used to evaluate an arithmetic expression and bind the result to a variable, while the <code>=</code> operator is used to perform unification between two terms.</p>
 
 <p>For example, the following code:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.prolog</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -2331,10 +2344,10 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-
+</div>
 <p>evaluates the expression <code>2 + 2</code> and binds the result to the variable <code>X</code>. So, the query <code>X = 4</code> would return <code>true</code>.</p>
 <h3><a name="9-write-a-prolog-code-to-find-if-a-list-is-sorted-or-not" class="heading-anchor" href="#9-write-a-prolog-code-to-find-if-a-list-is-sorted-or-not" rel="nofollow" aria-hidden="true"></a>9. Write a prolog code to find if a list is sorted or not.</h3>
-<html>
+<div class="code-block"><span class="code-block-language-name">.prolog</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -2393,10 +2406,10 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-
+</div>
 <p>CLI Output:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -2454,7 +2467,7 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-<h3><a name="10-briefly-describe-the-process-of-resolution-and-unification-in-logic-programming-with-example" class="heading-anchor" href="#10-briefly-describe-the-process-of-resolution-and-unification-in-logic-programming-with-example" rel="nofollow" aria-hidden="true"></a>10. Briefly describe the process of resolution and unification in logic programming with example.</h3>
+</div><h3><a name="10-briefly-describe-the-process-of-resolution-and-unification-in-logic-programming-with-example" class="heading-anchor" href="#10-briefly-describe-the-process-of-resolution-and-unification-in-logic-programming-with-example" rel="nofollow" aria-hidden="true"></a>10. Briefly describe the process of resolution and unification in logic programming with example.</h3>
 <p>Resolution and unification are the central processes in logic programming, especially in Prolog.</p>
 
 <ol>
@@ -2465,7 +2478,7 @@ body { color: #f8f8f2; background-color: #000000; }
 
 <p>Unification Example:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.prolog</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -2524,7 +2537,7 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-<h3><a name="11-explain-how-prolog-differs-from-imperative-languages-in-its-handling-of-arithmetic" class="heading-anchor" href="#11-explain-how-prolog-differs-from-imperative-languages-in-its-handling-of-arithmetic" rel="nofollow" aria-hidden="true"></a>11. Explain how Prolog differs from imperative languages in its handling of arithmetic.</h3>
+</div><h3><a name="11-explain-how-prolog-differs-from-imperative-languages-in-its-handling-of-arithmetic" class="heading-anchor" href="#11-explain-how-prolog-differs-from-imperative-languages-in-its-handling-of-arithmetic" rel="nofollow" aria-hidden="true"></a>11. Explain how Prolog differs from imperative languages in its handling of arithmetic.</h3>
 <p>Prolog and imperative languages differ in their handling of arithmetic in the following ways:</p>
 
 <ol>
@@ -2540,7 +2553,7 @@ body { color: #f8f8f2; background-color: #000000; }
 <ol>
 <li><p>Facts are simple statements that describe a relationship between one or more objects. They are represented as predicates and are used to assert information into the program. An example of a fact would be: “John is a software engineer”.</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.prolog</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -2593,11 +2606,12 @@ body { color: #f8f8f2; background-color: #000000; }
 <pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nf">person</span><span class="p">(</span><span class="s">john</span><span class="p">,</span> <span class="nf">age</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span> <span class="nf">job</span><span class="p">(</span><span class="s">&#39;software engineer&#39;</span><span class="p">)).</span>
 </span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 
 <li><p>Rules are logical statements that define how one predicate can be derived from other predicates. They are used to express more complex relationships between objects, and are represented as a head predicate followed by a body of predicates. An example of a rule would be: “If a person is older than 30 and has a job as a software engineer, then they are considered a senior software engineer.”</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.prolog</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -2650,11 +2664,12 @@ body { color: #f8f8f2; background-color: #000000; }
 <pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nf">senior_software_engineer</span><span class="p">(</span><span class="nv">X</span><span class="p">)</span> <span class="p">:-</span> <span class="nf">person</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span> <span class="nf">age</span><span class="p">(</span><span class="nv">Age</span><span class="p">),</span> <span class="nf">job</span><span class="p">(</span><span class="s">&#39;software engineer&#39;</span><span class="p">)),</span> <span class="nv">Age</span> <span class="o">&gt;</span> <span class="mf">30.</span>
 </span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 
 <li><p>Queries are used to ask the Prolog program to find solutions that satisfy a given predicate. Queries are used to retrieve information from the program and are represented as predicates with variables. An example of a query would be: “Who is a senior software engineer?”. Copy code</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.prolog</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -2707,7 +2722,8 @@ body { color: #f8f8f2; background-color: #000000; }
 <pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="s">?-</span> <span class="nf">senior_software_engineer</span><span class="p">(</span><span class="nv">X</span><span class="p">).</span>
 </span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 </ol>
 
 <p>The Prolog interpreter will attempt to find a value for the variable X that makes the predicate senior_software_engineer(X) true. In this case, X will be bound to the value ‘john’ if the previously defined rule and fact are present in the knowledge base.</p>
@@ -2720,5 +2736,15 @@ body { color: #f8f8f2; background-color: #000000; }
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
             </p>
 		</footer>
+	<script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']],
+          }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
 	</body>
 </html>

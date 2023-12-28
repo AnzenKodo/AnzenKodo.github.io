@@ -89,13 +89,21 @@
                 border-left: 10px solid;
                 padding: 0 1rem;
             }
-            pre {
+            .code-block {
                 background: black;
                 overflow-x: auto;
                 padding: 1em;
                 border: 1px solid;
             }
-            :not(pre) > code {
+            .code-block-language-name {
+                position: sticky;
+                left: 95%;
+                font-weight: bold;
+            }
+            pre.chroma {
+                margin-top: 0em;
+            }
+            :not(pre.chroma) > code {
                 border: 1px solid;
                 padding: 0 .2rem .2rem .2rem;
             }
@@ -279,7 +287,7 @@ algorithm's time complexity, or the average amount of time the algorithm will
 take to complete. It describes the average-case scenario.</li>
 </ul>
 <h2><a name="write-an-algorithm-for-implementing-queue-using-array" class="heading-anchor" href="#write-an-algorithm-for-implementing-queue-using-array" rel="nofollow" aria-hidden="true"></a>Write an algorithm for implementing queue using array.</h2>
-<html>
+<div class="code-block"><span class="code-block-language-name">.</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -341,7 +349,7 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-
+</div>
 <p></p>
 <h2><a name="write-an-algorithm-for-merge-sort-and-comment-on-its-comlexity" class="heading-anchor" href="#write-an-algorithm-for-merge-sort-and-comment-on-its-comlexity" rel="nofollow" aria-hidden="true"></a>Write an algorithm for merge sort and comment on its comlexity.</h2>
 <ul>
@@ -371,7 +379,7 @@ the stack, and mark the current vertex as visited.</li>
 <li><p>Example: Consider the below graph, DFS traversal of the above graph will be: 0
 1 3 4 2</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -429,7 +437,7 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-
+</div>
 <ul>
 <li>More example: <a href="https://www.youtube.com/watch?v=iaBEKo5sM7w">https://www.youtube.com/watch?v=iaBEKo5sM7w</a></li>
 </ul></li>
@@ -444,7 +452,7 @@ the queue, and mark the current vertex as visited.</li>
 <li><p>Example: Consider the below graph, BFS traversal of the above graph will be: 0
 1 2 3</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -501,7 +509,8 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span><span class="line"><span class="cl">3   4
 </span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 </ul>
 <h2><a name="traverse-the-following-binary-tree-into-preorder-inorder-postorder-by-giving-its-algorithm" class="heading-anchor" href="#traverse-the-following-binary-tree-into-preorder-inorder-postorder-by-giving-its-algorithm" rel="nofollow" aria-hidden="true"></a>Traverse the following binary tree into preorder, inorder, postorder by giving its algorithm.</h2>
 <p><img src="in-pre-post.png" alt="Graph Diagram"></p>
@@ -543,5 +552,15 @@ MST in a graph - Kruskal's algorithm and Prim's algorithm.</p>
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
             </p>
 		</footer>
+	<script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']],
+          }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
 	</body>
 </html>

@@ -89,13 +89,21 @@
                 border-left: 10px solid;
                 padding: 0 1rem;
             }
-            pre {
+            .code-block {
                 background: black;
                 overflow-x: auto;
                 padding: 1em;
                 border: 1px solid;
             }
-            :not(pre) > code {
+            .code-block-language-name {
+                position: sticky;
+                left: 95%;
+                font-weight: bold;
+            }
+            pre.chroma {
+                margin-top: 0em;
+            }
+            :not(pre.chroma) > code {
                 border: 1px solid;
                 padding: 0 .2rem .2rem .2rem;
             }
@@ -217,7 +225,7 @@ altered during run-time are called dynamic predicates,</p>
 
 <p>Example of static Database Manipulation:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.prolog</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -289,7 +297,7 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-<h3><a name="dynamic-database-manipulation" class="heading-anchor" href="#dynamic-database-manipulation" rel="nofollow" aria-hidden="true"></a>Dynamic Database Manipulation</h3>
+</div><h3><a name="dynamic-database-manipulation" class="heading-anchor" href="#dynamic-database-manipulation" rel="nofollow" aria-hidden="true"></a>Dynamic Database Manipulation</h3>
 <p>Dynamic database manipulation refers to the process of modifying a database that
 is expected to change during the execution of a program. The data is considered
 dynamic, meaning it can change during the execution of the program.</p>
@@ -302,7 +310,7 @@ increase computational speed.</p>
 
 <p>Example of Dynamic Database Manipulation:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.prolog</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -358,7 +366,7 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-<h2><a name="2-what-is-imperative-control-flow" class="heading-anchor" href="#2-what-is-imperative-control-flow" rel="nofollow" aria-hidden="true"></a>2. What is imperative control flow?</h2>
+</div><h2><a name="2-what-is-imperative-control-flow" class="heading-anchor" href="#2-what-is-imperative-control-flow" rel="nofollow" aria-hidden="true"></a>2. What is imperative control flow?</h2>
 <p>PROLOG gives the programmer explicit control-flow features to completely control
 how PROLOG processes the input that has been provided and how it evaluates the
 result the use has requested. It is implemented using what is known in PROLOG as
@@ -378,7 +386,7 @@ This is best practice.</p>
 
 <p>Example: Suppose we have the following facts already present in our database:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.prolog</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -435,10 +443,10 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-
+</div>
 <p>Then consider the following query and its outputs:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.prolog</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -502,7 +510,7 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-
+</div>
 <p>Backtracking has not been stopped in any way, shape, or form over here.</p>
 
 <p>Course is in the beginning bound to history in the first rule in the top-left,
@@ -520,7 +528,7 @@ how it works.</p>
 
 <p><strong>Case 1</strong></p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.prolog</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -575,7 +583,7 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-
+</div>
 <p>This time Course is first bound to history, then the cut is executed, and then
 studies goal is tried and fails (because nobody studies history according to the
 database). Because of the cut, we cannot backtrack to the teaches goal to find
@@ -584,7 +592,7 @@ as False.</p>
 
 <p><strong>Case 2:</strong></p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.prolog</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -641,7 +649,7 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-
+</div>
 <p>Here the teaches goal is tried as usual, and Course is bound to history, again
 as usual. Next the studies goal is tried and fails, so we don't get to the cut
 at the end of the query at this point, and backtracking can occur.</p>
@@ -652,7 +660,7 @@ cut is tried with it reaching the end of the query and of course succeeds, so no
 further backtracking is possible and only one solution is thus found. If you
 enter a semi-colon after the first solution, you get a false as shown.</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.prolog</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -708,7 +716,7 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-
+</div>
 <p>This means that: vineet will enjoy X if X is a taco and X is not a Big
 BellyTaco. This is very similar to the original statement given: vineet enjoys
 alltacos except Big BellyTacos.</p>
@@ -725,7 +733,7 @@ chance of not making the errors that often happen due to the use of cuts.</li>
 PROLOG, the operator + stands for negation as failure, so we can better
 describe vineet's preferences as shown:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.prolog</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -778,7 +786,8 @@ body { color: #f8f8f2; background-color: #000000; }
 <pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nf">enjoys</span><span class="p">(</span><span class="s">vineet</span><span class="p">,</span><span class="nv">X</span><span class="p">):-</span> <span class="nf">taco</span><span class="p">(</span><span class="nv">X</span><span class="p">),</span> <span class="mi">1</span><span class="o">+</span> <span class="s">big</span> <span class="s">belly</span> <span class="nf">taco</span><span class="p">(</span><span class="nv">X</span><span class="p">).</span>
 </span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 </ol>
 <h2><a name="3-what-is-dynamic-database-manipulation" class="heading-anchor" href="#3-what-is-dynamic-database-manipulation" rel="nofollow" aria-hidden="true"></a>3. What is dynamic Database manipulation?</h2>
 <p>Dynamic database manipulation refers to the process of modifying a database that
@@ -793,7 +802,7 @@ greatly increase computational speed.</p>
 
 <p>Here is a simple example of this technique at work:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.prolog</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -849,7 +858,7 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-
+</div>
 <p>What does this program do?</p>
 
 <p>It takes two numbers X and Y, adds X to Y, and then squares the result.</p>
@@ -873,7 +882,7 @@ has already been done before and if it has been, the program will just return
 the final value, and the cut will prevent it from entering the second clause.
 When we run the code, we have the following result:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.prolog</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -929,10 +938,10 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-
+</div>
 <p>Here's an example of the program at work. Suppose we give PROLOG another query:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.prolog</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -988,10 +997,10 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-
+</div>
 <p>If we now ask for a listing, we see that the database now contains:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.prolog</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1046,7 +1055,7 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-
+</div>
 <p>Should we a second time, request PROLOG to add and square 1 and 5 with the same
 predicate 'add_and_square', it will not make the evaluation again. It will
 simple return the calculated result from the database.</p>
@@ -1114,7 +1123,7 @@ first item of the list and the remainder of it.</p>
 
 <p><strong>For exmple</strong></p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.prolog</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1168,7 +1177,7 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-
+</div>
 <p>where <code>A = one</code> and <code>B = [two, three]</code></p>
 
 <p>The unification here pulls through and succeeds. How? 'A' is bound to the first
@@ -1176,7 +1185,7 @@ item and 'B' to remainder of it.</p>
 
 <p>Here are some more example:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.prolog</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1232,7 +1241,7 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-<h2><a name="7-explain-facts-rules-and-queries-along-with-an-example" class="heading-anchor" href="#7-explain-facts-rules-and-queries-along-with-an-example" rel="nofollow" aria-hidden="true"></a>7. Explain Facts, Rules and Queries along with an example.</h2>
+</div><h2><a name="7-explain-facts-rules-and-queries-along-with-an-example" class="heading-anchor" href="#7-explain-facts-rules-and-queries-along-with-an-example" rel="nofollow" aria-hidden="true"></a>7. Explain Facts, Rules and Queries along with an example.</h2>
 <p>In Prolog, a program is made up of a collection of facts and rules that describe
 relationships between different objects.</p>
 
@@ -1242,7 +1251,7 @@ objects. They are represented as predicates and are used to assert
 information into the program. An example of a fact would be: &quot;John is a
 software engineer&quot;.</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.prolog</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1295,7 +1304,8 @@ body { color: #f8f8f2; background-color: #000000; }
 <pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nf">person</span><span class="p">(</span><span class="s">john</span><span class="p">,</span> <span class="nf">age</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span> <span class="nf">job</span><span class="p">(</span><span class="s">&#39;software engineer&#39;</span><span class="p">)).</span>
 </span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 
 <li><p>Rules are logical statements that define how one predicate can be derived
 from other predicates. They are used to express more complex relationships
@@ -1304,7 +1314,7 @@ of predicates. An example of a rule would be: &quot;If a person is older than 30
 and has a job as a software engineer, then they are considered a senior
 software engineer.&quot;</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.prolog</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1357,14 +1367,15 @@ body { color: #f8f8f2; background-color: #000000; }
 <pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nf">senior_software_engineer</span><span class="p">(</span><span class="nv">X</span><span class="p">)</span> <span class="p">:-</span> <span class="nf">person</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span> <span class="nf">age</span><span class="p">(</span><span class="nv">Age</span><span class="p">),</span> <span class="nf">job</span><span class="p">(</span><span class="s">&#39;software engineer&#39;</span><span class="p">)),</span> <span class="nv">Age</span> <span class="o">&gt;</span> <span class="mf">30.</span>
 </span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 
 <li><p>Queries are used to ask the Prolog program to find solutions that satisfy a
 given predicate. Queries are used to retrieve information from the program
 and are represented as predicates with variables. An example of a query would
 be: &quot;Who is a senior software engineer?&quot;. Copy code</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.prolog</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1417,7 +1428,8 @@ body { color: #f8f8f2; background-color: #000000; }
 <pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="s">?-</span> <span class="nf">senior_software_engineer</span><span class="p">(</span><span class="nv">X</span><span class="p">).</span>
 </span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 </ol>
 
 <p>The Prolog interpreter will attempt to find a value for the variable X that
@@ -1441,7 +1453,7 @@ terms similar or identical.</li>
 
 <li><p>Example:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.prolog</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1500,7 +1512,8 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span><span class="line"><span class="cl"><span class="nv">Collage</span> <span class="p">!</span><span class="o">=</span> <span class="nv">Computer</span> <span class="c1">% Not equale string wrong unification</span>
 </span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 </ul>
 
 <p><em>'%' is used when you want to comment something in Prolog.</em></p>
@@ -1541,7 +1554,7 @@ have following statement:
 
 <li><p>For any propositional logic, there are two easy rules we follow:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1595,12 +1608,13 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span><span class="line"><span class="cl">¬(p → ¬q) ≡ (p ∨ q)
 </span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 </ol>
 
 <p>What do those symobls means? Lets say we have following clauses in PROLOG:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.prolog</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1654,11 +1668,11 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-
+</div>
 <p>The clause 'm' get replaced with <code>b</code> in the second clause and now we can say
    that:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.prolog</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1712,7 +1726,7 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-
+</div>
 <p>This is resolution. This means that when you resolve two clauses you reduce
    them to get one clause.</p>
 
@@ -1819,5 +1833,15 @@ for more.</p>
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
             </p>
 		</footer>
+	<script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']],
+          }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
 	</body>
 </html>

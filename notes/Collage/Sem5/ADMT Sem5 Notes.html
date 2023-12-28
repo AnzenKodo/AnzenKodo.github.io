@@ -89,13 +89,21 @@
                 border-left: 10px solid;
                 padding: 0 1rem;
             }
-            pre {
+            .code-block {
                 background: black;
                 overflow-x: auto;
                 padding: 1em;
                 border: 1px solid;
             }
-            :not(pre) > code {
+            .code-block-language-name {
+                position: sticky;
+                left: 95%;
+                font-weight: bold;
+            }
+            pre.chroma {
+                margin-top: 0em;
+            }
+            :not(pre.chroma) > code {
                 border: 1px solid;
                 padding: 0 .2rem .2rem .2rem;
             }
@@ -380,7 +388,7 @@ Vector data</a></li>
 <h3><a name="nested-loop-join" class="heading-anchor" href="#nested-loop-join" rel="nofollow" aria-hidden="true"></a>Nested-Loop Join</h3>
 <p>The nested-loop join is the simplest physical implementation of joining two tables.</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -439,12 +447,12 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-<h3><a name="block-nested-loop-join" class="heading-anchor" href="#block-nested-loop-join" rel="nofollow" aria-hidden="true"></a>Block Nested-Loop Join</h3>
+</div><h3><a name="block-nested-loop-join" class="heading-anchor" href="#block-nested-loop-join" rel="nofollow" aria-hidden="true"></a>Block Nested-Loop Join</h3>
 <p>If the buffer is too small to hold either relation entirely in memory.</p>
 
 <p>We can still obtain a major saving in block accesses if we process the relations on a per-block basis, rather than on a per tuple basis.</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -507,10 +515,10 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-<h3><a name="indexed-nested-loop-join" class="heading-anchor" href="#indexed-nested-loop-join" rel="nofollow" aria-hidden="true"></a>Indexed Nested-Loop Join</h3>
+</div><h3><a name="indexed-nested-loop-join" class="heading-anchor" href="#indexed-nested-loop-join" rel="nofollow" aria-hidden="true"></a>Indexed Nested-Loop Join</h3>
 <p>Nested-loop join, if an index is available on the inner loop’s join attribute, index lookups can replace file scans.</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -568,7 +576,7 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-<h3><a name="merge-join" class="heading-anchor" href="#merge-join" rel="nofollow" aria-hidden="true"></a>Merge Join</h3>
+</div><h3><a name="merge-join" class="heading-anchor" href="#merge-join" rel="nofollow" aria-hidden="true"></a>Merge Join</h3>
 <p>The merge join is the most effective of all join operators.</p>
 <h2><a name="cap-theorem" class="heading-anchor" href="#cap-theorem" rel="nofollow" aria-hidden="true"></a>CAP theorem</h2>
 <p><img src="../../../../assets/Pasted%20image%2020231203231051.png" alt=""></p>
@@ -694,5 +702,15 @@ body { color: #f8f8f2; background-color: #000000; }
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
             </p>
 		</footer>
+	<script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']],
+          }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
 	</body>
 </html>

@@ -89,13 +89,21 @@
                 border-left: 10px solid;
                 padding: 0 1rem;
             }
-            pre {
+            .code-block {
                 background: black;
                 overflow-x: auto;
                 padding: 1em;
                 border: 1px solid;
             }
-            :not(pre) > code {
+            .code-block-language-name {
+                position: sticky;
+                left: 95%;
+                font-weight: bold;
+            }
+            pre.chroma {
+                margin-top: 0em;
+            }
+            :not(pre.chroma) > code {
                 border: 1px solid;
                 padding: 0 .2rem .2rem .2rem;
             }
@@ -288,7 +296,7 @@ v) Explain React Component life cycle?</a></li>
 
 <p>To send props into a component, use the same syntax as HTML attributes.</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.jsx</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -346,7 +354,7 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-<h3><a name="iii-what-is-http-and-https-explain" class="heading-anchor" href="#iii-what-is-http-and-https-explain" rel="nofollow" aria-hidden="true"></a>iii) What is HTTP and HTTPS explain?</h3><h4><a name="http" class="heading-anchor" href="#http" rel="nofollow" aria-hidden="true"></a>HTTP</h4>
+</div><h3><a name="iii-what-is-http-and-https-explain" class="heading-anchor" href="#iii-what-is-http-and-https-explain" rel="nofollow" aria-hidden="true"></a>iii) What is HTTP and HTTPS explain?</h3><h4><a name="http" class="heading-anchor" href="#http" rel="nofollow" aria-hidden="true"></a>HTTP</h4>
 <p><img src="https://hackmd.io/_uploads/rkKtvd2pn.png" alt="HTTP Diagram"></p>
 
 <p>HTTP is abbrieviation of Hypertext Transfer Protocol Secure.</p>
@@ -375,7 +383,7 @@ body { color: #f8f8f2; background-color: #000000; }
 
 <li><p>To create our react app we use <code>create-react-app</code> package.</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.sh</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -429,7 +437,8 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span><span class="line"><span class="cl"><span class="nb">cd</span> my-app
 </span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 
 <li><p>To run react app run <code>npm start</code> in terminal, this will start our app on <code>localhost:8080</code>.</p></li>
 
@@ -474,7 +483,7 @@ body { color: #f8f8f2; background-color: #000000; }
 <li><p><code>for</code>
 syntax:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.js</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -529,12 +538,13 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
 </span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 
 <li><p><code>while</code>
 syntax:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.js</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -589,11 +599,12 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
 </span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 
 <li><p><code>do...while</code></p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.js</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -648,11 +659,12 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="nx">condition</span><span class="p">)</span>
 </span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 
 <li><p><code>for...of</code></p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.js</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -707,7 +719,8 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
 </span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 </ul>
 <h3><a name="iii-differentiate-es5-and-es6" class="heading-anchor" href="#iii-differentiate-es5-and-es6" rel="nofollow" aria-hidden="true"></a>iii) Differentiate ES5 and ES6?</h3>
 <p>ES5 and ES6 are two version of ECMAScript standard which is a specification for the JavaScript programming language.</p>
@@ -739,7 +752,7 @@ body { color: #f8f8f2; background-color: #000000; }
 
 <p>It allows you to create function in a cleaner way compared to regular function.</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.js</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -794,10 +807,10 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-
+</div>
 <p>Output:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -851,7 +864,7 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-<h3><a name="ii-write-notes-on" class="heading-anchor" href="#ii-write-notes-on" rel="nofollow" aria-hidden="true"></a>ii) Write notes on:</h3><h4><a name="classes-in-javascript" class="heading-anchor" href="#classes-in-javascript" rel="nofollow" aria-hidden="true"></a>Classes in JavaScript</h4>
+</div><h3><a name="ii-write-notes-on" class="heading-anchor" href="#ii-write-notes-on" rel="nofollow" aria-hidden="true"></a>ii) Write notes on:</h3><h4><a name="classes-in-javascript" class="heading-anchor" href="#classes-in-javascript" rel="nofollow" aria-hidden="true"></a>Classes in JavaScript</h4>
 <p>Classes introduced in the ES6 version of JavaScript.</p>
 
 <p>A class is a blueprint for the object. You can create an object from the class.</p>
@@ -860,7 +873,7 @@ body { color: #f8f8f2; background-color: #000000; }
 
 <p>Basic example of classes in JavaScript</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.js</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -919,12 +932,12 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-<h4><a name="inheritance" class="heading-anchor" href="#inheritance" rel="nofollow" aria-hidden="true"></a>Inheritance</h4>
+</div><h4><a name="inheritance" class="heading-anchor" href="#inheritance" rel="nofollow" aria-hidden="true"></a>Inheritance</h4>
 <p>Inheritance enables you to define a class that takes all the functionality from a parent class and allows you to add more.</p>
 
 <p>To use class inheritance, you can use the <code>extends</code> keyword.</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.js</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -989,10 +1002,10 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-
+</div>
 <p>Output:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1046,7 +1059,7 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-<h4><a name="conditions-in-javascript" class="heading-anchor" href="#conditions-in-javascript" rel="nofollow" aria-hidden="true"></a>Conditions in JavaScript</h4>
+</div><h4><a name="conditions-in-javascript" class="heading-anchor" href="#conditions-in-javascript" rel="nofollow" aria-hidden="true"></a>Conditions in JavaScript</h4>
 <p>Conditional statements control behavior in JavaScript and determine whether or not pieces of code can run.</p>
 
 <p>There are multiple different types of conditionals in JavaScript:</p>
@@ -1057,7 +1070,7 @@ body { color: #f8f8f2; background-color: #000000; }
 
 <li><p><strong>else if:</strong> This specifies a new test if the first condition is false.</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.js</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1117,12 +1130,13 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 </ul>
 
 <p>Output</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1176,7 +1190,7 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-<h3><a name="iii-explain-react-components-and-its-types-with-examples" class="heading-anchor" href="#iii-explain-react-components-and-its-types-with-examples" rel="nofollow" aria-hidden="true"></a>iii) Explain React components and its types with examples?</h3>
+</div><h3><a name="iii-explain-react-components-and-its-types-with-examples" class="heading-anchor" href="#iii-explain-react-components-and-its-types-with-examples" rel="nofollow" aria-hidden="true"></a>iii) Explain React components and its types with examples?</h3>
 <p>Components are like function that return HTML elements.</p>
 
 <p>Components are independent and reusable bits or code.</p>
@@ -1196,7 +1210,7 @@ body { color: #f8f8f2; background-color: #000000; }
 
 <p>The component also requires a render() method, this method returns HTML.</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.jsx</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1254,14 +1268,14 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-<h4><a name="function-components" class="heading-anchor" href="#function-components" rel="nofollow" aria-hidden="true"></a>Function Components</h4>
+</div><h4><a name="function-components" class="heading-anchor" href="#function-components" rel="nofollow" aria-hidden="true"></a>Function Components</h4>
 <p>A Function Component also returns HTML, and behaves much the same way as a Class component.</p>
 
 <p>These are simply JavaScript function.</p>
 
 <p>We can create a function component to React by writing a JavaScript function.</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.jsx</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1317,7 +1331,7 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-<h3><a name="iv-what-is-react-router-explain-with-an-example" class="heading-anchor" href="#iv-what-is-react-router-explain-with-an-example" rel="nofollow" aria-hidden="true"></a>iv) What is React router. Explain with an example?</h3>
+</div><h3><a name="iv-what-is-react-router-explain-with-an-example" class="heading-anchor" href="#iv-what-is-react-router-explain-with-an-example" rel="nofollow" aria-hidden="true"></a>iv) What is React router. Explain with an example?</h3>
 <p>React Router is a standard library for routing in React.</p>
 
 <p>It enables the navigation among views of various components in a React Application, allows changing the browser URL, and keeps the UI in sync with the URL.</p>
@@ -1325,7 +1339,7 @@ body { color: #f8f8f2; background-color: #000000; }
 <p><strong>Example</strong>
 Home.jsx</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.jsx</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1383,10 +1397,10 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-
+</div>
 <p>About.jsx</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.jsx</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1444,10 +1458,10 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-
+</div>
 <p>Contact.jsx</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.jsx</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1505,10 +1519,10 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-
+</div>
 <p>App.jsx</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.jsx</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1583,7 +1597,7 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-<h3><a name="v-explain-react-component-life-cycle" class="heading-anchor" href="#v-explain-react-component-life-cycle" rel="nofollow" aria-hidden="true"></a>v) Explain React Component life cycle?</h3>
+</div><h3><a name="v-explain-react-component-life-cycle" class="heading-anchor" href="#v-explain-react-component-life-cycle" rel="nofollow" aria-hidden="true"></a>v) Explain React Component life cycle?</h3>
 <p><img src="https://hackmd.io/_uploads/By8c-i36h.png" alt="React Component Life Cycle Diagram"></p>
 
 <p><img src="https://hackmd.io/_uploads/Bk9azj2ah.png" alt="React Component Life Cycle Flow Chart"></p>
@@ -1598,7 +1612,7 @@ DOM.</p>
 <p><strong>Example</strong>
 Code:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.jsx</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1665,10 +1679,10 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-
+</div>
 <p>Output:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1722,12 +1736,22 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-
+</div>
 		</main>
 		<footer>
 			<p style="text-align: center; font-size: small;">
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
             </p>
 		</footer>
+	<script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']],
+          }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
 	</body>
 </html>

@@ -89,13 +89,21 @@
                 border-left: 10px solid;
                 padding: 0 1rem;
             }
-            pre {
+            .code-block {
                 background: black;
                 overflow-x: auto;
                 padding: 1em;
                 border: 1px solid;
             }
-            :not(pre) > code {
+            .code-block-language-name {
+                position: sticky;
+                left: 95%;
+                font-weight: bold;
+            }
+            pre.chroma {
+                margin-top: 0em;
+            }
+            :not(pre.chroma) > code {
                 border: 1px solid;
                 padding: 0 .2rem .2rem .2rem;
             }
@@ -210,7 +218,7 @@ ii) Slove the following graph.</a></li>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem">DSA</h1>
 			<h2><a name="1-a-6-marks" class="heading-anchor" href="#1-a-6-marks" rel="nofollow" aria-hidden="true"></a>1.A) 6 Marks</h2><h3><a name="i-illustrate-an-algorithm-to-count-number-of-nodes-in-singly-linked-list" class="heading-anchor" href="#i-illustrate-an-algorithm-to-count-number-of-nodes-in-singly-linked-list" rel="nofollow" aria-hidden="true"></a>i) Illustrate an algorithm to count number of nodes in singly linked list.</h3>
-<html>
+<div class="code-block"><span class="code-block-language-name">.</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -272,7 +280,7 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-<h3><a name="ii-interpret-following-terminologies-i-node-ii-root-iii-leaf-node" class="heading-anchor" href="#ii-interpret-following-terminologies-i-node-ii-root-iii-leaf-node" rel="nofollow" aria-hidden="true"></a>ii) Interpret following terminologies i) Node ii) Root iii) Leaf Node</h3>
+</div><h3><a name="ii-interpret-following-terminologies-i-node-ii-root-iii-leaf-node" class="heading-anchor" href="#ii-interpret-following-terminologies-i-node-ii-root-iii-leaf-node" rel="nofollow" aria-hidden="true"></a>ii) Interpret following terminologies i) Node ii) Root iii) Leaf Node</h3>
 <p><img src="./Graph-Terminologies.svg" alt="Graph Terminologies Diagram"></p>
 
 <ul>
@@ -328,7 +336,7 @@ direction forward and backward until reaching the same node where it started.
 Thus, a circular linked list has no beginning and no end.</li>
 </ul>
 <h3><a name="ii-illustrate-algorithm-to-display-data-from-circular-linked-list" class="heading-anchor" href="#ii-illustrate-algorithm-to-display-data-from-circular-linked-list" rel="nofollow" aria-hidden="true"></a>ii) Illustrate algorithm to display data from circular linked list.</h3>
-<html>
+<div class="code-block"><span class="code-block-language-name">.</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -387,7 +395,7 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-
+</div>
 <ul>
 <li><strong>Step 1:</strong> Initialize a pointer, CURR, and set it to the head of the circular
 linked list.</li>
@@ -538,5 +546,15 @@ where traversal is only possible in one direction.</p>
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
             </p>
 		</footer>
+	<script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']],
+          }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
 	</body>
 </html>

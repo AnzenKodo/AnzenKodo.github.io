@@ -89,13 +89,21 @@
                 border-left: 10px solid;
                 padding: 0 1rem;
             }
-            pre {
+            .code-block {
                 background: black;
                 overflow-x: auto;
                 padding: 1em;
                 border: 1px solid;
             }
-            :not(pre) > code {
+            .code-block-language-name {
+                position: sticky;
+                left: 95%;
+                font-weight: bold;
+            }
+            pre.chroma {
+                margin-top: 0em;
+            }
+            :not(pre.chroma) > code {
                 border: 1px solid;
                 padding: 0 .2rem .2rem .2rem;
             }
@@ -254,7 +262,7 @@ REST API methods</a></li>
 
 <li><p>Example:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.jsx</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -317,7 +325,8 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 </ul>
 <h3><a name="ii-explain-usestate-with-example" class="heading-anchor" href="#ii-explain-usestate-with-example" rel="nofollow" aria-hidden="true"></a>ii) Explain <code>useState</code> with example?</h3>
 <ul>
@@ -326,7 +335,7 @@ body { color: #f8f8f2; background-color: #000000; }
 
 <li><p>Example:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.jsx</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -390,7 +399,8 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre>
 </body>
-</html></li>
+</html>
+</div></li>
 </ul>
 <h3><a name="iii-explain-mvc-components" class="heading-anchor" href="#iii-explain-mvc-components" rel="nofollow" aria-hidden="true"></a>iii) Explain MVC Components?</h3>
 <p><img src="https://media.geeksforgeeks.org/wp-content/uploads/20220224160807/Model1.png" alt="MVC Diagram"></p>
@@ -432,7 +442,7 @@ body { color: #f8f8f2; background-color: #000000; }
 
 <p>Example:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.js</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -492,10 +502,10 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-
+</div>
 <p>Output:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -551,7 +561,7 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-<h4><a name="phases-of-the-event-loop" class="heading-anchor" href="#phases-of-the-event-loop" rel="nofollow" aria-hidden="true"></a>Phases of the Event loop:</h4>
+</div><h4><a name="phases-of-the-event-loop" class="heading-anchor" href="#phases-of-the-event-loop" rel="nofollow" aria-hidden="true"></a>Phases of the Event loop:</h4>
 <p><img src="https://media.geeksforgeeks.org/wp-content/uploads/20200224062607/phasesofloop-300x240.png" alt="Event Loop phases flowchart"></p>
 
 <ol>
@@ -579,7 +589,7 @@ body { color: #f8f8f2; background-color: #000000; }
 
 <p>Example:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.js</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -655,7 +665,7 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-<h3><a name="ii-write-short-notes-on-expressjs-session" class="heading-anchor" href="#ii-write-short-notes-on-expressjs-session" rel="nofollow" aria-hidden="true"></a>ii) Write short notes on ExpressJS Session.</h3>
+</div><h3><a name="ii-write-short-notes-on-expressjs-session" class="heading-anchor" href="#ii-write-short-notes-on-expressjs-session" rel="nofollow" aria-hidden="true"></a>ii) Write short notes on ExpressJS Session.</h3>
 <p><img src="https://miro.medium.com/v2/resize:fit:1400/1*-D6Ids2z9ebtz0_m9qeBBA.png" alt="Cookie and sesson diagram"></p>
 
 <p>ExpressJS session is a middleware that allows you to store user data between HTTP requests.</p>
@@ -666,7 +676,7 @@ body { color: #f8f8f2; background-color: #000000; }
 
 <p>Sessions solve this problem by assigning the client an ID and making all further requests using that ID.</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.js</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -737,10 +747,10 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-<h3><a name="iii-write-short-notes-on-refs" class="heading-anchor" href="#iii-write-short-notes-on-refs" rel="nofollow" aria-hidden="true"></a>iii) Write short notes on Refs?</h3>
+</div><h3><a name="iii-write-short-notes-on-refs" class="heading-anchor" href="#iii-write-short-notes-on-refs" rel="nofollow" aria-hidden="true"></a>iii) Write short notes on Refs?</h3>
 <p>When you want a component to “remember” some information, but you don’t want that information to trigger new renders, you can use a ref.</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.jsx</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -805,7 +815,7 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-<h3><a name="iv-what-is-callback-explain" class="heading-anchor" href="#iv-what-is-callback-explain" rel="nofollow" aria-hidden="true"></a>iv) What is callback explain?</h3>
+</div><h3><a name="iv-what-is-callback-explain" class="heading-anchor" href="#iv-what-is-callback-explain" rel="nofollow" aria-hidden="true"></a>iv) What is callback explain?</h3>
 <p>A callback is a function that is passed as an argument to another function, and is called after the main function has finished its execution.</p>
 
 <p>(Basically it is a function inside a fucntion)</p>
@@ -814,7 +824,7 @@ body { color: #f8f8f2; background-color: #000000; }
 
 <p>Example:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.js</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -877,10 +887,10 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-
+</div>
 <p>Ouptut:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -934,14 +944,14 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-<h3><a name="v-write-short-notes-on-mongodb-connection" class="heading-anchor" href="#v-write-short-notes-on-mongodb-connection" rel="nofollow" aria-hidden="true"></a>v) Write short notes on MongoDB Connection.</h3>
+</div><h3><a name="v-write-short-notes-on-mongodb-connection" class="heading-anchor" href="#v-write-short-notes-on-mongodb-connection" rel="nofollow" aria-hidden="true"></a>v) Write short notes on MongoDB Connection.</h3>
 <p>MongoDB is a NoSQL database that stores data in JSON-like documents.</p>
 
 <p>To connect to a MongoDB database, you can use the MongoDB shell or a MongoDB driver for your programming language.</p>
 
 <p>The following is an example of how to connect to MongoDB using the Node.js driver:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.js</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -999,7 +1009,7 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-<h2><a name="5-marks-questions" class="heading-anchor" href="#5-marks-questions" rel="nofollow" aria-hidden="true"></a>5 Marks Questions:</h2><h3><a name="1-what-is-nodejs-explain-features-of-nodejs-state-different-types-of-nodejs-modules" class="heading-anchor" href="#1-what-is-nodejs-explain-features-of-nodejs-state-different-types-of-nodejs-modules" rel="nofollow" aria-hidden="true"></a>1) What is NodeJS? Explain features of NodeJS. State different types of NodeJS modules?</h3><h4><a name="what-is-nodejs" class="heading-anchor" href="#what-is-nodejs" rel="nofollow" aria-hidden="true"></a>What is NodeJS?</h4>
+</div><h2><a name="5-marks-questions" class="heading-anchor" href="#5-marks-questions" rel="nofollow" aria-hidden="true"></a>5 Marks Questions:</h2><h3><a name="1-what-is-nodejs-explain-features-of-nodejs-state-different-types-of-nodejs-modules" class="heading-anchor" href="#1-what-is-nodejs-explain-features-of-nodejs-state-different-types-of-nodejs-modules" rel="nofollow" aria-hidden="true"></a>1) What is NodeJS? Explain features of NodeJS. State different types of NodeJS modules?</h3><h4><a name="what-is-nodejs" class="heading-anchor" href="#what-is-nodejs" rel="nofollow" aria-hidden="true"></a>What is NodeJS?</h4>
 <ul>
 <li>Node.js is a open-source, cross-platform JavaScript runtime enviroment and library for running web appliction outside the client's browser.</li>
 <li>It is used extensively for server-side programming, making it possible for developers to use JavaScript for client-side and server-side code without needing to learn an additional language.</li>
@@ -1068,7 +1078,7 @@ body { color: #f8f8f2; background-color: #000000; }
 
 <li><p>Example:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.javascript</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -1127,7 +1137,7 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-
+</div>
 <p>Output: <code>Hello World</code></p></li>
 
 <li><p>In the above example, the <code>app.get()</code> method is used to define a route for the GET method to root of the app.</p></li>
@@ -1278,5 +1288,15 @@ body { color: #f8f8f2; background-color: #000000; }
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
             </p>
 		</footer>
+	<script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']],
+          }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
 	</body>
 </html>

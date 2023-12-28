@@ -89,13 +89,21 @@
                 border-left: 10px solid;
                 padding: 0 1rem;
             }
-            pre {
+            .code-block {
                 background: black;
                 overflow-x: auto;
                 padding: 1em;
                 border: 1px solid;
             }
-            :not(pre) > code {
+            .code-block-language-name {
+                position: sticky;
+                left: 95%;
+                font-weight: bold;
+            }
+            pre.chroma {
+                margin-top: 0em;
+            }
+            :not(pre.chroma) > code {
                 border: 1px solid;
                 padding: 0 .2rem .2rem .2rem;
             }
@@ -284,7 +292,7 @@ while on the right side, Y is called the <strong>Dependent</strong>.</p>
 </tbody>
 </table>
 <h4><a name="write-the-sql-for-following" class="heading-anchor" href="#write-the-sql-for-following" rel="nofollow" aria-hidden="true"></a>Write the SQL for following:</h4><h5><a name="a-list-the-employee-record-working-in-production-department" class="heading-anchor" href="#a-list-the-employee-record-working-in-production-department" rel="nofollow" aria-hidden="true"></a>a) List the employee record working in Production Department.</h5>
-<html>
+<div class="code-block"><span class="code-block-language-name">.sql</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -338,8 +346,8 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></span></code></pre>
 </body>
 </html>
-<h5><a name="b-list-all-employee-records" class="heading-anchor" href="#b-list-all-employee-records" rel="nofollow" aria-hidden="true"></a>b) List all Employee records.</h5>
-<html>
+</div><h5><a name="b-list-all-employee-records" class="heading-anchor" href="#b-list-all-employee-records" rel="nofollow" aria-hidden="true"></a>b) List all Employee records.</h5>
+<div class="code-block"><span class="code-block-language-name">.sql</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -393,8 +401,8 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></span></code></pre>
 </body>
 </html>
-<h5><a name="c-list-employee-details-having-the-salary-less-than-90000" class="heading-anchor" href="#c-list-employee-details-having-the-salary-less-than-90000" rel="nofollow" aria-hidden="true"></a>c) List Employee details having the salary less than 90000.</h5>
-<html>
+</div><h5><a name="c-list-employee-details-having-the-salary-less-than-90000" class="heading-anchor" href="#c-list-employee-details-having-the-salary-less-than-90000" rel="nofollow" aria-hidden="true"></a>c) List Employee details having the salary less than 90000.</h5>
+<div class="code-block"><span class="code-block-language-name">.sql</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -448,7 +456,7 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></span></code></pre>
 </body>
 </html>
-<h3><a name="4-explain-default-and-check-constraints" class="heading-anchor" href="#4-explain-default-and-check-constraints" rel="nofollow" aria-hidden="true"></a>4) Explain Default and Check Constraints?</h3><h4><a name="default" class="heading-anchor" href="#default" rel="nofollow" aria-hidden="true"></a>Default</h4>
+</div><h3><a name="4-explain-default-and-check-constraints" class="heading-anchor" href="#4-explain-default-and-check-constraints" rel="nofollow" aria-hidden="true"></a>4) Explain Default and Check Constraints?</h3><h4><a name="default" class="heading-anchor" href="#default" rel="nofollow" aria-hidden="true"></a>Default</h4>
 <p>A default constraint is used to specify a default value for a column in a table.
 If a value is not specified for the column when a new row is inserted, the
 default value will be used.</p>
@@ -474,7 +482,7 @@ query and the other on the outer query.</p>
 
 <p>Example:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.sql</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -529,7 +537,7 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></span></code></pre>
 </body>
 </html>
-<h2><a name="3-marks" class="heading-anchor" href="#3-marks" rel="nofollow" aria-hidden="true"></a>3 Marks</h2><h3><a name="1-write-notes-on-dcl-commands" class="heading-anchor" href="#1-write-notes-on-dcl-commands" rel="nofollow" aria-hidden="true"></a>1) Write notes on DCL Commands?</h3>
+</div><h2><a name="3-marks" class="heading-anchor" href="#3-marks" rel="nofollow" aria-hidden="true"></a>3 Marks</h2><h3><a name="1-write-notes-on-dcl-commands" class="heading-anchor" href="#1-write-notes-on-dcl-commands" rel="nofollow" aria-hidden="true"></a>1) Write notes on DCL Commands?</h3>
 <p>The Data Control Language (DCL) commands present in SQL are</p>
 
 <ul>
@@ -572,7 +580,7 @@ often used in an application.</p>
 
 <p>Syntax:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.sql</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -629,14 +637,14 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></span></code></pre>
 </body>
 </html>
-<h3><a name="4-explain-function-with-syntax" class="heading-anchor" href="#4-explain-function-with-syntax" rel="nofollow" aria-hidden="true"></a>4) Explain function with syntax?</h3>
+</div><h3><a name="4-explain-function-with-syntax" class="heading-anchor" href="#4-explain-function-with-syntax" rel="nofollow" aria-hidden="true"></a>4) Explain function with syntax?</h3>
 <p>In a database, a function is a predefined, reusable routine that performs a
 specific task or calculation. Functions can take one or more input parameters,
 perform some operation on those inputs, and return a single output value.</p>
 
 <p>Syntax:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.sql</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -694,8 +702,8 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></span></code></pre>
 </body>
 </html>
-<h3><a name="5-create-a-table-student-having-columns-std-id-std-name-class-and-dob-also-add-two-records-into-the-table" class="heading-anchor" href="#5-create-a-table-student-having-columns-std-id-std-name-class-and-dob-also-add-two-records-into-the-table" rel="nofollow" aria-hidden="true"></a>5) Create a table student having columns std_id, std_name,class and dob. Also add two records into the table?</h3>
-<html>
+</div><h3><a name="5-create-a-table-student-having-columns-std-id-std-name-class-and-dob-also-add-two-records-into-the-table" class="heading-anchor" href="#5-create-a-table-student-having-columns-std-id-std-name-class-and-dob-also-add-two-records-into-the-table" rel="nofollow" aria-hidden="true"></a>5) Create a table student having columns std_id, std_name,class and dob. Also add two records into the table?</h3>
+<div class="code-block"><span class="code-block-language-name">.sql</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -751,7 +759,7 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></span></code></pre>
 </body>
 </html>
-<h2><a name="5-marks" class="heading-anchor" href="#5-marks" rel="nofollow" aria-hidden="true"></a>5 Marks</h2><h3><a name="1-explain-ddl-commands-with-syntax-and-example" class="heading-anchor" href="#1-explain-ddl-commands-with-syntax-and-example" rel="nofollow" aria-hidden="true"></a>1) Explain DDL Commands with Syntax and Example?</h3>
+</div><h2><a name="5-marks" class="heading-anchor" href="#5-marks" rel="nofollow" aria-hidden="true"></a>5 Marks</h2><h3><a name="1-explain-ddl-commands-with-syntax-and-example" class="heading-anchor" href="#1-explain-ddl-commands-with-syntax-and-example" rel="nofollow" aria-hidden="true"></a>1) Explain DDL Commands with Syntax and Example?</h3>
 <p>There are 4 Data Definition Language (DDL) commands:</p>
 
 <ul>
@@ -835,7 +843,7 @@ programmed using JDBC API.</p>
 <p>Here is an example of a simple JDBC program that connects to a database, creates
 a table, and inserts a record into that table:</p>
 
-<html>
+<div class="code-block"><span class="code-block-language-name">.java</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #f8f8f2; background-color: #000000 }
 /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #000000; }
@@ -912,7 +920,7 @@ body { color: #f8f8f2; background-color: #000000; }
 </span></span></code></pre>
 </body>
 </html>
-<h3><a name="4-explain-need-of-normalization-along-with-all-the-normal-forms" class="heading-anchor" href="#4-explain-need-of-normalization-along-with-all-the-normal-forms" rel="nofollow" aria-hidden="true"></a>4) Explain need of normalization along with all the normal forms?</h3>
+</div><h3><a name="4-explain-need-of-normalization-along-with-all-the-normal-forms" class="heading-anchor" href="#4-explain-need-of-normalization-along-with-all-the-normal-forms" rel="nofollow" aria-hidden="true"></a>4) Explain need of normalization along with all the normal forms?</h3>
 <p>Normalization is a database design technique that reduces data redundancy and
 eliminates undesirable characteristics like Insertion, Update and Deletion
 Anomalies. Normalization rules divides larger tables into smaller tables and
@@ -1010,5 +1018,15 @@ is a transitive functional dependency.</li>
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
             </p>
 		</footer>
+	<script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']],
+          }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
 	</body>
 </html>
