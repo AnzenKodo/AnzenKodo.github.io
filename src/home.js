@@ -73,9 +73,6 @@ const getPage = (md, data, title = "") => {
     </head>
     <body>
 		${marked.parse(md)}
-		<footer>
-		    <p style="text-align: center"><small><a href="${data.license}">LICENSE</a></small></p>
-		</footer>
   	</body>
 </html>`.replaceAll("\n", "")
 }
@@ -90,7 +87,7 @@ Deno.writeTextFileSync(
 Deno.writeTextFileSync(
 	`./${Deno.env.get("OUTPUT")}/404.html`, 
 	getPage(
-	   `# [AK](${info.website})(${info.username})@404\n## Page Not Found\n\nGo back [**Home**](${info.website})`, 
+	   `# [AK](${info.website})(${info.username})@404\n## Page Not Found\n\nGo back [**Home**](${info.website})\n\n<p style="text-align: center"><small><a href="${info.license}">LICENSE</a></small></p>`, 
 	   info,
 	   "@404"
 	)
