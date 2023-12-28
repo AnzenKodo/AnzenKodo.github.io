@@ -73,6 +73,9 @@ const getPage = (md, data) => {
     </head>
     <body>
 		${marked.parse(md)}
+		<footer>
+		    <p style="text-align: center"><small><a href="${data.license}">LICENSE</a></small></p>
+		</footer>
   	</body>
 </html>`.replaceAll("\n", "")
 }
