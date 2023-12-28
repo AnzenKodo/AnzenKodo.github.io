@@ -32,7 +32,7 @@ func filename(filepath string) string {
 }
 
 func getData() m {
-	file, err := os.ReadFile("../" + os.Getenv("CONFIG"))
+	file, err := os.ReadFile("../" + os.Getenv("INFO"))
 	check(err)
 
 	var config m

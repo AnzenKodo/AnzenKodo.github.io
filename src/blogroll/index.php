@@ -4,7 +4,7 @@ require_once __DIR__.'/vendor/autoload.php';
 
 
 // Read the JSON file
-$json = (object)json_decode(file_get_contents(__DIR__.'/../api/info.json'), true);
+$json = (object)json_decode(file_get_contents(__DIR__."/../".getenv('INFO')), true);
 
 $getoutput = getenv('OUTPUT');
 $output = "../{$getoutput}/blogroll/";

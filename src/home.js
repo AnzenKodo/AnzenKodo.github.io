@@ -1,10 +1,6 @@
 import { marked } from "https://deno.land/x/marked@1.0.2/mod.ts";
 
-const md = await fetch(
-	"https://raw.githubusercontent.com/AnzenKodo/AnzenKodo/main/README.md",
-).then((res) => res.text());
-
-const config = JSON.parse(Deno.readTextFileSync(Deno.env.get("CONFIG")))
+const config = JSON.parse(Deno.readTextFileSync(Deno.env.get("INFO")))
 
 const renderer = {
 	heading(text, level) {
@@ -13,7 +9,6 @@ const renderer = {
     	return `<h${level} id="${escapedText}"><a name="${escapedText}" href="#${escapedText}"></a>${text}</h${level}>`;
   },
 };
-
 const loadingLazy = {
   name: "image",
   level: "inline",
@@ -26,12 +21,10 @@ const loadingLazy = {
     return html.replace(/^<img /, '<img loading="lazy" ');
   },
 };
-
 marked.use({ renderer, extensions: [loadingLazy] });
 
-const html = marked.parse(md);
-
-const fullHtml = `<!DOCTYPE html>
+const getPage = (md) => {	
+	return `<!DOCTYPE html>
 <html lang="en-US">
 	<head>
         <meta charset="utf-8">
@@ -77,8 +70,24 @@ const fullHtml = `<!DOCTYPE html>
             }
         </style>
     </head>
-    <body>${html}</body>
-</html>`
+    <body>
+		${marked.parse(md)}
+  	</body>
+</html>`.replaceAll("\n", "")
+}
 
-Deno.writeTextFileSync(`./${Deno.env.get("OUTPUT")}/index.html`, fullHtml.replaceAll("\n", ""));
-Deno.writeTextFileSync(`./${Deno.env.get("OUTPUT")}/404.html`, fullHtml.replaceAll("\n", ""));
+const indexMd = await fetch("https://raw.githubusercontent.com/AnzenKodo/AnzenKodo/main/README.md")
+    .then((res) => res.text());
+
+Deno.writeTextFileSync(
+	`./${Deno.env.get("OUTPUT")}/index.html`, 
+	getPage(indexMd)
+);
+Deno.writeTextFileSync(
+	`./${Deno.env.get("OUTPUT")}/404.html`, 
+	getPage(`<p style="font-size: 2rem;text-align: center;">404 Page Not Found</p>`+indexMd)
+);
+Deno.writeTextFileSync(
+	`./${Deno.env.get("OUTPUT")}/LICENSE.html`, 
+	getPage(Deno.readTextFileSync("../LICENSE.md"))
+);

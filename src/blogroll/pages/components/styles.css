@@ -1,89 +1,62 @@
-@import url("https://cdn.jsdelivr.net/gh/AnzenKodo/punk@0.14/css/punk.min.css");
-
+:root {
+    color-scheme: dark white;
+    --theme: #0583f2;
+    --bg: #000;
+    --fg: #fff;
+}
 body {
-  letter-spacing: .1em;
+    font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"PT Sans","Open Sans","Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+    background: var(--bg);
+    color: var(--fg);
 }
-
-body>header p {
-  font-size: 1em;
-  border: var(--border);
-  padding: 1em;
-  margin: 1em 0;
+a {
+    text-decoration: none;
+    color: var(--theme);
 }
-
-header>h1 a {
-  text-decoration: none
+a:hover, a:focus { text-decoration: underline; }
+a:active {
+    background: var(--theme);
+    color: inherit;
 }
-
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a {
-  text-decoration: none;
-  color: initial;
+details { margin-bottom: .5rem; }
+details[open] {
+    border: 1px solid;
+    padding: 0 .5rem;
 }
-
-h2:before,
-h3:before,
-h4:before,
-h5:before,
-h6:before {
-  content: "#";
-  margin-right: .3em;
-  color: var(--theme)
+h2 a::before {
+    content: "#";
+    margin-right: .5rem;
 }
-
-details {
-  margin: 1em 0;
-  padding: 0;
+footer {
+    text-align: center;
+    font-size: small;
 }
-
-details ul {
-  margin: .4em 0;
+#opml { 
+    margin: 1.9rem 0 3rem 0;
+    font-weight: bold;
+    font-size: 1.5rem;
 }
-
-details>p {
-  border: var(--border);
-  padding: .5em 1em;
-  margin: 1em 1em;
-}
-
-details summary {
-  font-weight: normal;
-}
-
-.skip-to-content-link {
-  background: var(--theme);
-  color: var(--fg);
-  padding: .3em;
-  position: absolute;
-  transform: translateY(-200%);
-}
-
-.skip-to-content-link:focus {
-  transform: translateY(0%);
-}
-
-li a:visited {
-  color: blue;
-}
-
-#opml {
-  font-size: 1.5em;
-  font-weight: bold;
-  text-align: center;
-  margin: 2em 0;
-}
-
 #opml a {
-  color: var(--fg);
-  text-decoration: none;
-  background: var(--theme);
-  padding: .5em 1em;
+    background: var(--theme);
+    color: white;
+    padding: .5rem 1rem;
 }
-
-#opml a:hover {
-  background: var(--fg);
-  color: var(--theme);
+.skip-to-content-link {
+    background: var(--theme);
+    color: var(--fg);
+    padding: .3em;
+    position: absolute;
+    transform: translateY(-200%);
+}
+.skip-to-content-link:focus {
+    transform: translateY(0%);
+}
+@media (prefers-color-scheme: light) {
+    :root { 
+        --bg: #fff;
+        --fg: #000;
+    }
 }
