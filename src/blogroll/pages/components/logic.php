@@ -5,7 +5,7 @@
   foreach ($feeds as $subject => $values) {
     $subject_id = str_replace(" ", "+", strtolower($subject));
 
-    echo "<h2 id=\"$subject_id\"><a href=\"#$subject_id\" aria-hidden="true"></a>$subject</h2>";
+    echo "<h2 id=\"$subject_id\"><a href=\"#$subject_id\" aria-hidden=\"true\"></a>$subject</h2>";
     $opml .= "<outline title=\"$subject\" text=\"$subject\">";
 
     // $feeds = RSS::feed(["http://xahlee.info/comp/blog.xml", "https://www.jonashietala.se/feed.xml"]);
