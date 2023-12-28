@@ -88,6 +88,6 @@ Deno.writeTextFileSync(
 	getPage(`<p style="font-size: 2rem;text-align: center;">404 Page Not Found</p>\n`+indexMd)
 );
 Deno.writeTextFileSync(
-	`./${Deno.env.get("OUTPUT")}/LICENSE.html`, 
+	`./${Deno.env.get("OUTPUT")}/license.html`, 
 	getPage(`# [AK](info.website)#(License)\n`+Deno.readTextFileSync("../LICENSE.md"))
 );
