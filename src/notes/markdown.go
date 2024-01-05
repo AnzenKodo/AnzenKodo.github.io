@@ -46,6 +46,8 @@ func (options *renderer) Link(out *bytes.Buffer, link []byte, title []byte, cont
     if path.Ext(mdLink) == ".md" {
         htmlLink := pathNoExt(mdLink)+".html"
         out.WriteString(fmt.Sprintf("<a href=\"%s\">%s</a>", htmlLink, mdLinkContent))
+    } else {
+		out.WriteString(fmt.Sprintf("<a href=\"%s\">%s</a>", mdLink, mdLinkContent))
     }
 }
 

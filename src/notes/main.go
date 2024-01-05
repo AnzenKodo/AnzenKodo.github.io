@@ -16,8 +16,11 @@ import (
 
 type m map[string]string
 
-func check(err error) {
+func check(err error, message ...string) {
 	if err != nil {
+		if len(message) > 0 {
+			fmt.Println(message[0]);
+		}
 		log.Fatal(err)
 	}
 }
@@ -33,7 +36,7 @@ func filename(filepath string) string {
 
 func getData() m {
 	file, err := os.ReadFile("../" + os.Getenv("INFO"))
-	check(err)
+	check(err, "Can't read INFO file.")
 
 	var config m
 	dec := json.NewDecoder(bytes.NewReader(file))
@@ -117,7 +120,7 @@ func main() {
 
 	fs.WalkDir(
 		os.DirFS(data["input"]), ".", func(filepath string, d fs.DirEntry, err error) error {
-			check(err)
+			check(err, "Problem with Dir sync: " + filepath)
 			if filepath[:1] == "." {
 				return nil
 			}
@@ -130,11 +133,11 @@ func main() {
 			}
 
 			stat, err := os.Stat(inputFilepath)
-			check(err)
+			check(err, "Can't get file stat: " + inputFilepath)
 
 			if stat.IsDir() {
 				err := os.MkdirAll(outputFilepath, 0750)
-				check(err)
+				check(err, "Can't make Dir: " + outputFilepath)
                 fmt.Println("Created folder"+outputFilepath, "from", inputFilepath)
 				return nil
 			}
