@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Show your work - AK#Notes</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="description" content="Author: Austin Kieon Created time: March 19, 2021 9:03 PM Page No.: 224 Progress: ✔️  # What I a">
+  		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
+  		<meta property="og:image:alt" content="AK#Notes logo">
+  		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="Show your work - AK#Notes">
+		<meta property="og:description" content="Author: Austin Kieon Created time: March 19, 2021 9:03 PM Page No.: 224 Progress: ✔️  # What I a">
+		<meta property="og:url" content="https://AnzenKodo.github.io/">
+		<meta property="og:type" content="website">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+
+            :root {
+                color-scheme: dark light;
+                --theme: #FF6C22;
+			}
+			body {
+                max-width: 40rem;
+                margin: 0 auto;
+                font-family: system-ui;
+                padding: 0 1em;
+                color: inherit !important;
+                word-break: break-word;
+			}
+			h1, h2, h3, h4, h5, h6 {
+                font-family: monospace;
+                margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+                font-size: 2rem;
+			}
+			h3 {
+			    font-size: 1.8rem;
+			}
+			h4 {
+			    font-size: 1.5rem;
+			}
+			h5 {
+			    font-size: 1.3rem;
+			}
+			h6 {
+			    font-size: 1rem;
+			}
+			p {
+			    line-height: 1.5rem;
+			}
+			a {
+			    color: var(--theme);
+			    text-decoration: none;
+			}
+			a:hover, a:focus {
+			    text-decoration: underline;
+			}
+			a:active {
+			    background: var(--theme);
+			    color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+                margin-top: .5rem;
+			}
+			li {
+                margin-bottom: .5rem;
+			}
+			table {
+			    border-collapse: collapse;
+			}
+            th {
+                font-size: 1.1rem;
+                border: 2px solid;
+                padding: .3rem .3rem;
+            }
+            td {
+                border: 1px solid;
+                padding: .3rem .5rem;
+                line-height: 1.5rem;
+            }
+            blockquote {
+                margin-left: 0;
+                margin-right: 0;
+                border: 1px solid;
+                border-left: 10px solid;
+                padding: 0 1rem;
+            }
+            .code-block {
+                background: black;
+                overflow-x: auto;
+                padding: 0em 1em;
+                border: 1px solid;
+            }
+            .code-block-language-name {
+                position: sticky;
+                left: 95%;
+                top: .5em;
+                font-weight: bold;
+                color: white;
+            }
+            :not(pre.chroma) > code {
+                border: 1px solid;
+                padding: 0 .2rem .2rem .2rem;
+            }
+            img {
+                max-width: 100%;
+                display: block;
+                margin: 0 auto;
+            }
+            [href="#skip-top-main"] {
+                padding: 0.3em;
+                position: absolute;
+                transform: translateY(-200%);
+            }
+            [href="#skip-top-main"]:focus {
+                transform: translateY(0%);
+                background: var(--theme);
+                color: inherit;
+            }
+            #table-of-content {
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+                background: black;
+                padding: 0.5rem 1em;
+                z-index: 1;
+                color: white;
+            }
+            #table-of-content[open] {
+                max-height: 90%;
+                overflow-y: auto;
+                bottom: 50px;
+                margin-left: 1em;
+            }
+            #table-of-content[open] summary {
+                background: black;
+                padding: 0.5em 1em;
+                text-align: center;
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+            }
+            #table-of-content ul:first-child {
+                padding-left: 1em;
+                margin-top: 1.5em;            
+            }
+            .heading-anchor::before {
+                content: "#";
+                margin-right: .5rem;
+            }
+		</style>
+	</head>
+	<body>
+	    <a href="#skip-top-main">Skip to main</a>
+		<header>
+			<h1 style="text-align: center;">
+                <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+            </h1>
+            
+			<details id="table-of-content">
+			    <summary>Table of Content</summary>
+                <nav>
+<li><a href="#what-i-am-going-to-do-after-reading-it">
+What I am going to do after reading it?</a></li>
+<li><a href="#points">
+Points</a></li>
+<li><a href="#meaning">
+Meaning</a></li>
+<li><a href="#stories">
+Stories</a></li>
+<li><a href="#resources">
+Resources</a></li>
+<li><a href="#quote">
+Quote</a></li>
+</nav>
+
+			</details>
+            
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem">Show your work</h1>
+			<p>Author: Austin Kieon Created time: March 19, 2021 9:03 PM Page No.: 224
+Progress: ✔️</p>
+<h1><a name="what-i-am-going-to-do-after-reading-it" class="heading-anchor" href="#what-i-am-going-to-do-after-reading-it" rel="nofollow" aria-hidden="true"></a>What I am going to do after reading it?</h1>
+<ul>
+<li>Improve my social media account.
+
+<ul>
+<li>Start posting more then three content on twitter.</li>
+<li>Try instagram reels.</li>
+</ul></li>
+<li>Capture more my life in camera
+
+<ul>
+<li>Organize in Google Photos or Instagram.</li>
+<li>Put camera app in home screen.</li>
+</ul></li>
+<li>Use Google Keep to capture my voice recording.</li>
+</ul>
+<h1><a name="points" class="heading-anchor" href="#points" rel="nofollow" aria-hidden="true"></a>Points</h1>
+<ul>
+<li>About Amateurs
+
+<ul>
+<li>Why being amateurs are better than Professionals?</li>
+<li>They have little to lose</li>
+<li>Amateurs are willing to try anything.</li>
+<li>They can share share anything without worry looking good.</li>
+<li>Amateurs know that contributing something is better than contributing
+nothing.</li>
+<li>How to stay amateurs?</li>
+<li>For professionals, the best way to flourish is to retain an amateur’s
+spirit and embrace uncertainty and the unknown.</li>
+<li>I you feel like being to comfortable then try something new.</li>
+</ul></li>
+
+<li><p>Social Media</p>
+
+<ul>
+<li>Own Website &amp; Blog with own domain name is more important than Social Media.</li>
+<li>How to start social media?</li>
+<li>Pay attention to what others are sharing, and then start taking note of
+what they’re not sharing.</li>
+<li>Be on the lookout for voids that you can fill with your own efforts, no
+matter how bad they are at first.</li>
+<li>Don’t worry, for now, about how you’ll make money or a career off it.</li>
+<li>Forget about being an expert or a professional.</li>
+<li>Share what you love.</li>
+<li>What to share in social media?</li>
+<li>Sort your content with only so meaningful bits thing left behind.</li>
+<li>Make you content into small bits</li>
+<li>Share you small bits in different pieces.</li>
+<li>Share your influences and what’s inspiring you.</li>
+<li>How to share about projects?</li>
+<li>If you’re in the middle of executing a project, write about your methods
+or share works in progress.</li>
+<li>If you’ve just completed a project, show the final product.</li>
+<li>Share scraps from the cutting-room floor, or write about what you learned.</li>
+<li>If you have lots of projects out into the world, you can report on how
+they’re doing you can tell stories about how people are interacting with
+your work.</li>
+<li>Crediting</li>
+<li>Attribution is all about providing context for what you’re sharing.
+
+<ul>
+<li>What the work is?</li>
+<li>Who made it?</li>
+<li>How they made it?</li>
+<li>When and where it was made?</li>
+<li>Why you’re sharing it?</li>
+<li>Why people should care about it?</li>
+<li>Where people can see some more work like it?</li>
+</ul></li>
+<li>Give proper credit to inspiration or creater of content you make.</li>
+<li>If you don't know who made then don't share it.</li>
+<li>You give credit because people are lazy they don't search in google to
+find the credated artist.</li>
+<li>How to make or find content for social media?</li>
+</ul>
+
+<p>This isn’t about making art, it’s about simply keeping track of what’s going
+on</p>
+
+<ul>
+<li>Start a work journal.</li>
+<li>Take a lot of photographs of your work at different stages in your
+process.</li>
+<li>Shoot video of you working.</li>
+<li>If you can’t find a good use for a platform, feel free to abandon it.</li>
+<li>Set timer for Times you are going to use social media.</li>
+<li>Find content in other people abandoned work.</li>
+<li>What to put on social media?</li>
+<li>So don’t post things online that you’re not ready for everyone in the
+world to see.</li>
+<li>You need feedback but don’t share absolutely everything.</li>
+<li>Only put something online if helpful or entertaining.</li>
+<li>If you don't know to put something online or not then put it for only 24 H
+and see the response.</li>
+<li>Flow to Stock</li>
+<li>First put small bits of content (like: tweet, photos, short video).</li>
+<li>Then all bits of content in large content (like: blog, full length video,
+podcast).</li>
+
+<li><p>Large content into evergreen content (like: books).</p></li>
+
+<li><p>Format of content</p></li>
+
+<li><p>Speak to them directly in plain language.</p></li>
+
+<li><p>Be brief. Learn to speak. Learn to write.</p></li>
+
+<li><p>Use spell-check</p></li>
+
+<li><p>Use less 2 hashtag in tweets.</p></li>
+
+<li><p>How to get friends?</p></li>
+
+<li><p>Email is most important form of friends collecting.</p>
+
+<ul>
+<li>Start Newsletter.</li>
+<li>Ask people to ask something to you through email.</li>
+<li>Never ever add someone’s email address to your mailing list without her
+permission.</li>
+<li>Don't spam people.</li>
+</ul></li>
+
+<li><p>Engage with others (like: tweet, comment, share, like).</p></li>
+
+<li><p>Don't accept anything in return.</p></li>
+
+<li><p>Anyone say something listen first full without thinking to what to say
+next.</p></li>
+
+<li><p>Don't worry about followers, like, viewers.</p></li>
+
+<li><p>Get good at something rather than getting connection.</p></li>
+
+<li><p>Only make and post stuff that you love to make &amp; share.</p></li>
+
+<li><p>Don’t be creepy. Don’t be a jerk. Don’t waste people’s time. Don’t ask too
+much.</p></li>
+
+<li><p>Don't ask for anything in return.</p></li>
+
+<li><p>How to make money?</p></li>
+
+<li><p>Put free stuff first.</p></li>
+
+<li><p>If people like it start putting premium content.</p></li>
+
+<li><p>Ask for Donation.</p></li>
+
+<li><p>For start-up project Kickstarter and Indiegogo.</p></li>
+
+<li><p>Sell your products.</p></li>
+
+<li><p>Paid content and newsletter.</p></li>
+</ul></li>
+
+<li><p>People</p>
+
+<ul>
+<li>Meet online friends in real life also.</li>
+<li>Don't waste time with people with you feel low energy.</li>
+<li>Handle other people success.</li>
+<li>Don’t be one of those horrible fans who stops listening to your favorite
+band just because they have a hit single.</li>
+<li>Don’t write off your friends because they’ve had a little bit of success.</li>
+<li>Don’t be jealous when the people you like do well celebrate their victory
+as if it’s your own.</li>
+<li>Best Friends</li>
+<li>The people who share your obsessions.</li>
+<li>The people who have same objective as you.</li>
+<li>The people with whom you share a mutual respect.</li>
+<li>Praise them, engage with them always.</li>
+<li>Invite them to collaborate.</li>
+<li>Show them work before you show anybody else.</li>
+</ul></li>
+</ul>
+<h1><a name="meaning" class="heading-anchor" href="#meaning" rel="nofollow" aria-hidden="true"></a>Meaning</h1>
+<p><strong>Human spam -</strong> They just post content but don't engage with others people
+content.</p>
+
+<p><strong>Hoarder -</strong> They don't post many thing just engage for something in return.</p>
+
+<p><strong>Contributor -</strong> They engage and put good stuff also.</p>
+
+<p><strong>Troll -</strong> Who isn’t interested in improving your work, only provoking you with
+hateful, aggressive, or upsetting talk.</p>
+<h1><a name="stories" class="heading-anchor" href="#stories" rel="nofollow" aria-hidden="true"></a>Stories</h1>
+<p>John T. Unger tells this terrific story from his days as a street poet. He would
+do a poetry reading and afterward some guy would come up to him and say, “Your
+poem changed my life, man!” And John would say, “Oh, thanks. Want to buy a book?
+It’s five dollars.” And the guy would take the book, hand it back to John, and
+say, “Nah, that’s okay.” To which John would respond, “Geez, how much is your
+life worth?”</p>
+
+<hr>
+
+<p>In 2013, the Internet fell in love with astronaut Chris Hadfield, commander of
+the International Space Station. Three years earlier, Hadfield and his family
+were sitting around the dinner table, trying to figure out ways to generate
+interest for the Canadian Space Agency, which, like many space programs, faced
+major budget cuts and needed more public support. “Dad wanted a way to help
+people connect with the real side of what an astronaut’s life is,” said
+Hadfield’s son Evan. “Not just the glamour and science, but also the day-to-day
+activities.”</p>
+
+<p>Commander Hadfield wanted to show his work.</p>
+
+<p>Things fell into place when his sons explained social media to him and got him
+set up on Twitter and other social networks. During his next five-month mission,
+while performing all his regular astronautical duties, he tweeted, answered
+questions from his followers, posted pictures he’d taken of Earth, recorded
+music, and filmed YouTube videos of himself clipping his nails, brushing his
+teeth, sleeping, and even performing maintenance on the space station. Millions
+of people ate it all up, including my agent, Ted, who tweeted, “Wouldn’t
+normally watch live video of a couple of guys doing plumbing repair, but IT’S IN
+SPACE!”</p>
+
+<hr>
+
+<p>When George Lucas was a teenager, he almost died in a car accident. He decided
+“every day now is an extra day,” dedicated himself to film, and went on to
+direct Star Wars . Wayne Coyne, lead singer of The Flaming Lips, was 16 when he
+was held up while working at a Long John Silver’s. “I realized I was going to
+die,” he says. “And when that gets into your mind . . . it utterly changed me .
+. . I thought, _I’m not going to sit here and wait for things to happen, I’m
+going to make them happen, and if people think I’m an idiot I don’t care._”</p>
+
+<p>Tim Kreider, in his book We Learn Nothing , says that getting stabbed in the
+throat was the best thing to ever happen to him. For a whole year, he was happy
+and life was good. “You’d like to think that nearly getting killed would be a
+permanently life-altering experience,” Kreider writes, but “the illumination
+didn’t last.” Eventually, he was back to “the busy work of living.” The writer
+George Saunders, speaking of his own near-death experience, said, “For three or
+four days after that, it was the most beautiful world. To have gotten back in
+it, you know? And I thought, if you could walk around like that all the time, to
+really have that</p>
+
+<hr>
+
+<p>When the late film critic Roger Ebert went through several intense surgeries to
+treat his cancer, he lost the ability to speak. He lost his voice either
+scribble responses on a pad of paper, or type on his Mac and have the awkward
+computer voice read it out loud through his laptop speakers.</p>
+
+<p>Cut off from everyday conversation, he poured himself into tweeting, posting to
+Facebook, and blogging at  . He ripped
+out posts at a breakneck speed, writing thousands and thousands of words about
+everything he could think of—his boyhood in Urbana, Illinois, his love for Steak
+’n Shake, his conversations with famous movie actors, his thoughts on his
+inevitable death. Hundreds and hundreds of people would respond to his posts,
+and he would respond back. Blogging became his primary way of communicating with
+the world. “On the web, my real voice finds expression,” he wrote.</p>
+
+<hr>
+<h1><a name="resources" class="heading-anchor" href="#resources" rel="nofollow" aria-hidden="true"></a>Resources</h1>
+<ul>
+<li>Steal Like an Artist - Austin Kleon</li>
+<li></li>
+<li></li>
+<li>Brian Eno, A Year With Swollen Appendices</li>
+<li>Steven Johnson, Where Good Ideas Come From</li>
+<li>David Byrne, How Music Works</li>
+<li>Mike Monteiro, Design Is a Job</li>
+<li>Kio Stark, Don’t Go Back to School</li>
+<li>Ian Svenonius, Supernatural Strategies for Making a Rock ‘n’ Roll</li>
+<li>Sidney Lumet, Making Movies</li>
+<li>P.T. Barnum, The Art of Money Getting</li>
+<li>A Life of Picasso - John Richardson</li>
+</ul>
+<h1><a name="quote" class="heading-anchor" href="#quote" rel="nofollow" aria-hidden="true"></a>Quote</h1>
+<blockquote>
+<p>“Connections don’t mean shit, I’ve never had any connections that weren’t a
+natural outgrowth of doing things I was doing anyway.”</p>
+</blockquote>
+
+<ul>
+<li>Steve Albini</li>
+</ul>
+
+<blockquote>
+<p>“Books are made out of books.”</p>
+</blockquote>
+
+<ul>
+<li>Cormac McCarthy</li>
+</ul>
+
+<blockquote>
+<p>“Anyone who isn’t embarrassed of who they were last year probably isn’t
+learning enough,”</p>
+</blockquote>
+
+<ul>
+<li>Alain de Botton.</li>
+</ul>
+
+<blockquote>
+<p>“Whenever Picasso learned how to do something, he abandoned it.”</p>
+</blockquote>
+
+<ul>
+<li>—Milton Glaser</li>
+</ul>
+
+<blockquote>
+<p>“We work because it’s a chain reaction, each subject leads to the next.”</p>
+</blockquote>
+
+<ul>
+<li>—Charles Eames</li>
+</ul>
+
+<blockquote>
+<p>“Work is never finished, only abandoned.”</p>
+</blockquote>
+
+<ul>
+<li>—Paul Valéry</li>
+</ul>
+
+<blockquote>
+<p>“We don’t make movies to make money, we make money to make more movies.”</p>
+</blockquote>
+
+<ul>
+<li>—Walt Disney</li>
+</ul>
+
+<blockquote>
+<p>“The trick is not caring what EVERYBODY thinks of you and just caring about
+what the RIGHT people think of you.”</p>
+</blockquote>
+
+<ul>
+<li>—Brian Michael Bendis</li>
+</ul>
+
+<blockquote>
+<p>“I ain’t going to give up. Every time you think I’m one place, I’m going to
+show up someplace else. I come pre-hated. Take your best shot.”</p>
+</blockquote>
+
+<ul>
+<li>—Cyndi Lauper</li>
+</ul>
+
+<blockquote>
+<p>“You and I will be around a lot longer than Twitter, and nothing substitutes
+face to face.”</p>
+</blockquote>
+
+<ul>
+<li>—Rob Delaney</li>
+</ul>
+
+<blockquote>
+<p>“It’s all about paying attention. Attention is vitality. It connects you with
+others.”</p>
+</blockquote>
+
+<ul>
+<li>Susan Sontag</li>
+</ul>
+
+<blockquote>
+<p>“Part of the act of creating is in discovering your own kind. They are
+everywhere. But don’t look for them in the wrong places.”</p>
+</blockquote>
+
+<ul>
+<li>—Henry Miller</li>
+</ul>
+
+<blockquote>
+<p>“Whatever excites you, go do it. Whatever drains you, stop doing it.”</p>
+</blockquote>
+
+<ul>
+<li>—Derek Sivers</li>
+</ul>
+
+<blockquote>
+<p>“When people realize they’re being listened to, they tell you things.”</p>
+</blockquote>
+
+<ul>
+<li>—Richard Ford</li>
+</ul>
+
+<blockquote>
+<p>“Whatever we say, we’re always talking about ourselves.”</p>
+</blockquote>
+
+<ul>
+<li>—Alison Bechdel</li>
+</ul>
+
+<blockquote>
+<p>“You got to make your case.”</p>
+</blockquote>
+
+<ul>
+<li>—Kanye West</li>
+</ul>
+
+<blockquote>
+<p>“In the first act, you get your hero up a tree. The second act, you throw
+rocks at him. For the third act, you let him down.”</p>
+</blockquote>
+
+<ul>
+<li>—George Abbott</li>
+</ul>
+
+<blockquote>
+<p>“‘The cat sat on a mat’ is not a story. ‘The cat sat on the dog’s mat’ is a
+story.”</p>
+</blockquote>
+
+<ul>
+<li>—John le Carré</li>
+</ul>
+
+<blockquote>
+<p>Work doesn’t speak for itself .</p>
+</blockquote>
+
+<ul>
+<li>Austin Kleon</li>
+</ul>
+
+<blockquote>
+<p>“To fake a photograph, all you have to do is change the caption. To fake a
+painting, change the attribution.”</p>
+</blockquote>
+
+<ul>
+<li>Errol Morris</li>
+</ul>
+
+<blockquote>
+<p>“Do what you do best and link to the rest.”</p>
+</blockquote>
+
+<ul>
+<li>—Jeff Jarvis</li>
+</ul>
+
+<blockquote>
+<p>“I don’t believe in guilty pleasures. If you f---ing like something, like it.”</p>
+</blockquote>
+
+<ul>
+<li>—Dave Grohl</li>
+</ul>
+
+<blockquote>
+<p>“You’re only as good as your record collection.”</p>
+</blockquote>
+
+<ul>
+<li>—DJ Spooky</li>
+</ul>
+
+<blockquote>
+<p>“All of us who do creative work, we get into it because we have good taste,
+But there is this gap. For the first couple years you make stuff, it’s just
+not that good. It’s trying to be good, it has potential, but it’s not. But
+your taste, the thing that got you into the game, is still killer.”</p>
+</blockquote>
+
+<ul>
+<li>Ira Glass.</li>
+</ul>
+
+<blockquote>
+<p>“I’m basically a curator, Making books has always felt very connected to my
+bookselling experience, that of wanting to draw people’s attention to things
+that I liked, to shape things that I liked into new shapes.”</p>
+</blockquote>
+
+<ul>
+<li>Jonathan Lethem</li>
+</ul>
+
+<blockquote>
+<p>“Carving out a space for yourself online, somewhere where you can express
+yourself and share your work, is still one of the best possible investments
+you can make with your time.”</p>
+</blockquote>
+
+<ul>
+<li>—Andy Baio</li>
+</ul>
+
+<blockquote>
+<p>“If you work on something a little bit every day, you end up with something
+that is massive.”</p>
+</blockquote>
+
+<ul>
+<li>—Kenneth Goldsmith</li>
+</ul>
+
+<blockquote>
+<p>“Post as though everyone who can read it has the power to fire you.”</p>
+</blockquote>
+
+<ul>
+<li>Lauren Cerand</li>
+</ul>
+
+<blockquote>
+<p>“The Internet is a copy machine, Once anything that can be copied is brought
+into contact with the Internet, it will be copied, and those copies never
+leave.”</p>
+</blockquote>
+
+<ul>
+<li>Kevin Kelly</li>
+</ul>
+
+<blockquote>
+<p>“Make no mistake: This is not your diary. You are not letting it all hang out.
+You are picking and choosing every single word.”</p>
+</blockquote>
+
+<ul>
+<li>—Dani Shapiro</li>
+</ul>
+
+<blockquote>
+<p>“One day at a time. It sounds so simple. It actually is simple but it isn’t
+easy: It requires incredible support and fastidious structuring.”</p>
+</blockquote>
+
+<ul>
+<li>—Russell Brand</li>
+</ul>
+
+<blockquote>
+<p>Overnight success is a myth. Dig into almost every overnight success story and
+you’ll find about a decade’s worth of hard work and perseverance.</p>
+</blockquote>
+
+<ul>
+<li>Austin Kleon</li>
+</ul>
+
+<blockquote>
+<p>“Put yourself, and your work, out there every day, and you’ll start meeting
+some amazing people.”</p>
+</blockquote>
+
+<ul>
+<li>—Bobby Solomon</li>
+</ul>
+
+<blockquote>
+<p>“You have to make stuff, No one is going to give a damn about your résumé;
+they want to see what you have made with your own little fingers.”</p>
+</blockquote>
+
+<p>David Carr</p>
+
+<blockquote>
+<p>“In order for connection to happen, we have to allow ourselves to be
+seen—really seen.”</p>
+</blockquote>
+
+<p>Brené Brown</p>
+
+<blockquote>
+<p>“A lot of people are so used to just seeing the outcome of work. They never
+see the side of the work you go through to produce the outcome.”</p>
+</blockquote>
+
+<p>—Michael Jackson</p>
+
+<blockquote>
+<p>The Thing About Life Is That One Day You'll Be Dead</p>
+</blockquote>
+
+<p>David Shields</p>
+
+<blockquote>
+<p>“Find your voice, shout it from the rooftops, and keep doing it until the
+people that are looking for you find you.”</p>
+</blockquote>
+
+<p>— Dan Harmon</p>
+
+<blockquote>
+<p>“Creativity is not a talent. It is a way of operating.”</p>
+</blockquote>
+
+<p>—John Cleese</p>
+
+<blockquote>
+<p>“Give what you have. To someone, it may be better than you dare to think.”</p>
+</blockquote>
+
+<p>—Henry Wadsworth Longfellow</p>
+
+<blockquote>
+<p>“That I don’t know what I’m doing.”</p>
+</blockquote>
+
+<p>Thom Yorke</p>
+
+<blockquote>
+<p>“That’s all any of us are: amateurs. We don’t live long enough to be anything
+else.”</p>
+</blockquote>
+
+<p>—Charlie Chaplin</p>
+
+		</main>
+		<footer>
+			<p style="text-align: center; font-size: small; margin-top: 5em;">
+                <a href="https://anzenkodo.github.io/license">LICENSE</a>
+            </p>
+		</footer>
+	<script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']],
+          }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+	</body>
+</html>
