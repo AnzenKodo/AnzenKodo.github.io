@@ -22,8 +22,6 @@ cp -r api $OUTPUT
 
 if [ "$@" = "--make-blogroll" ]; then
     cd blogroll
-    echo "Downloading required packages for Blogroll..."
-    composer install
     echo "Making Blogroll..."
     php index.php
     exit 0
