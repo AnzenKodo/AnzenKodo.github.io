@@ -35,6 +35,7 @@ fi
 
 echo "Making AK#Notes"
 cd notes
+export GOMODCACHE="$(pwd)/mod"
 go run .
 cd -
 
