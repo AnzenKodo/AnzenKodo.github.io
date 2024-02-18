@@ -19,7 +19,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    
+
+    - name: Download file X from Google Drive to ./out/ directory
+      uses: k0staa/download-gdrive-file-action@v1
+      with:
+        service-account-auth-json: ${{ secrets.SERVICE_ACCOUNT_AUTH_JSON }}
+        download-file-name: Online/Notes
+        download-to: ./src/note
+
     - name: Clone repo
       shell: bash
       run: git clone -b gh-pages https://github.com/AnzenKodo/AnzenKodo.github.io site
@@ -33,13 +40,6 @@ jobs:
       uses: actions/setup-go@v4
       with:
         go-version: '1.21.1'
-
-    - name: Clone Notes Repo
-      uses: actions/checkout@v4
-      with:
-        repository: AnzenKodo/Notes
-        token: ${{ secrets.CLONE_TOKEN }}
-        path: src/note
         
     - name: Build
       run: bash ./src/run.sh
