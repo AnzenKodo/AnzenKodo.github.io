@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>AI & DS S6 UT1 - AK#Notes</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="description" content="## PEAS Representation  **Example**:   | Agent | Performance | Environment | Actuator | Sensor | | -">
+  		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
+  		<meta property="og:image:alt" content="AK#Notes logo">
+  		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="AI & DS S6 UT1 - AK#Notes">
+		<meta property="og:description" content="## PEAS Representation  **Example**:   | Agent | Performance | Environment | Actuator | Sensor | | -">
+		<meta property="og:url" content="https://AnzenKodo.github.io/">
+		<meta property="og:type" content="website">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+
+            :root {
+                color-scheme: dark light;
+                --theme: #FF6C22;
+			}
+			body {
+                max-width: 40rem;
+                margin: 0 auto;
+                font-family: system-ui;
+                padding: 0 1em;
+                color: inherit !important;
+                word-break: break-word;
+			}
+			h1, h2, h3, h4, h5, h6 {
+                font-family: monospace;
+                margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+                font-size: 2rem;
+			}
+			h3 {
+			    font-size: 1.8rem;
+			}
+			h4 {
+			    font-size: 1.5rem;
+			}
+			h5 {
+			    font-size: 1.3rem;
+			}
+			h6 {
+			    font-size: 1rem;
+			}
+			p {
+			    line-height: 1.5rem;
+			}
+			a {
+			    color: var(--theme);
+			    text-decoration: none;
+			}
+			a:hover, a:focus {
+			    text-decoration: underline;
+			}
+			a:active {
+			    background: var(--theme);
+			    color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+                margin-top: .5rem;
+			}
+			li {
+                margin-bottom: .5rem;
+			}
+			table {
+			    border-collapse: collapse;
+			}
+            th {
+                font-size: 1.1rem;
+                border: 2px solid;
+                padding: .3rem .3rem;
+            }
+            td {
+                border: 1px solid;
+                padding: .3rem .5rem;
+                line-height: 1.5rem;
+            }
+            blockquote {
+                margin-left: 0;
+                margin-right: 0;
+                border: 1px solid;
+                border-left: 10px solid;
+                padding: 0 1rem;
+            }
+            .code-block {
+                background: black;
+                overflow-x: auto;
+                padding: 0em 1em;
+                border: 1px solid;
+            }
+            .code-block-language-name {
+                position: sticky;
+                left: 95%;
+                top: .5em;
+                font-weight: bold;
+                color: white;
+            }
+            :not(pre.chroma) > code {
+                border: 1px solid;
+                padding: 0 .2rem .2rem .2rem;
+            }
+            img {
+                max-width: 100%;
+                display: block;
+                margin: 0 auto;
+            }
+            [href="#skip-top-main"] {
+                padding: 0.3em;
+                position: absolute;
+                transform: translateY(-200%);
+            }
+            [href="#skip-top-main"]:focus {
+                transform: translateY(0%);
+                background: var(--theme);
+                color: inherit;
+            }
+            #table-of-content {
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+                background: black;
+                padding: 0.5rem 1em;
+                z-index: 1;
+                color: white;
+            }
+            #table-of-content[open] {
+                max-height: 90%;
+                overflow-y: auto;
+                bottom: 50px;
+                margin-left: 1em;
+            }
+            #table-of-content[open] summary {
+                background: black;
+                padding: 0.5em 1em;
+                text-align: center;
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+            }
+            #table-of-content ul:first-child {
+                padding-left: 1em;
+                margin-top: 1.5em;            
+            }
+            .heading-anchor::before {
+                content: "#";
+                margin-right: .5rem;
+            }
+		</style>
+	</head>
+	<body>
+	    <a href="#skip-top-main">Skip to main</a>
+		<header>
+			<h1 style="text-align: center;">
+                <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+            </h1>
+            
+			<details id="table-of-content">
+			    <summary>Table of Content</summary>
+                <nav>
+<ul>
+<li><a href="#peas-representation">PEAS Representation</a></li>
+<li><a href="#types-of-agent">
+Types of Agent</a></li>
+<li><a href="#wumbus-world-problem">
+Wumbus world problem</a></li>
+<li><a href="#propositional-logic">
+Propositional logic</a></li>
+<li><a href="#first-order-logic">
+First order logic</a></li>
+<li><a href="#define-agent">
+Define Agent</a></li>
+<li><a href="#define-ai">
+Define AI</a></li>
+<li><a href="#type-of-search-techniques">
+Type of Search Techniques</a>
+<ul>
+<li><a href="#uniformed-search">
+Uniformed Search</a>
+<ul>
+<li><a href="#breadth-first-search">
+Breadth First Search</a></li>
+<li><a href="#uniform-cost-search">
+Uniform Cost Search</a></li>
+<li><a href="#depth-first-search">
+Depth First Search</a></li>
+<li><a href="#depth-limited-search">
+Depth Limited Search</a></li>
+<li><a href="#iterative-deepening-search-first-search">
+Iterative Deepening Search first search</a></li>
+<li><a href="#bidirectional-search">
+Bidirectional Search</a></li>
+</ul></li>
+<li><a href="#informed-search">
+Informed Search</a>
+<ul>
+<li><a href="#best-first-search">
+Best First Search</a></li>
+<li><a href="#a">
+A*</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#knowledge-based-agent">
+Knowledge-based Agent</a></li>
+<li><a href="#graph-coloring">
+Graph coloring</a></li>
+<li><a href="#water-jug-problem">
+Water Jug Problem</a></li>
+<li><a href="#mini-max-algorithm">
+Mini/Max Algorithm</a></li>
+</ul>
+</nav>
+
+			</details>
+            
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem">AI & DS S6 UT1</h1>
+			<h2><a name="peas-representation" class="heading-anchor" href="#peas-representation" rel="nofollow" aria-hidden="true"></a>PEAS Representation</h2>
+<p><strong>Example</strong>:</p>
+
+<table>
+<thead>
+<tr>
+<th>Agent</th>
+<th>Performance</th>
+<th>Environment</th>
+<th>Actuator</th>
+<th>Sensor</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Soccer player robot</td>
+<td>Number of goals,<br>penalties scored,<br>Speed of players</td>
+<td>Team mates,<br>opposition ground goal,<br>referee</td>
+<td>Joint angles,<br>motors</td>
+<td>Camera proximity sensor,<br>infrared sensor</td>
+</tr>
+
+<tr>
+<td>Part picking robot</td>
+<td>Percentage of parts in correct bins</td>
+<td>Conveyor belt with parts bins</td>
+<td>Jointed arm and hand</td>
+<td>Camera, joint angle sensors</td>
+</tr>
+
+<tr>
+<td>Medical diagnosis system</td>
+<td>Healthy patient minimized cost</td>
+<td>Patient,<br>hospital staff</td>
+<td>Perscription diagnosis,<br>scan report</td>
+<td>Symptoms patient response</td>
+</tr>
+
+<tr>
+<td>Auto mated car</td>
+<td>Comfortable trip safety maximum</td>
+<td>Roads, <br>traffic vehicles</td>
+<td>Wheel,<br>accelerator break mirror</td>
+<td>Camera,<br>GPS,<br>odometer</td>
+</tr>
+
+<tr>
+<td>Subject tutoring</td>
+<td>Maximize scores,<br>improvement in students</td>
+<td>Classroom,<br>Desk,<br>chair,<br>Board,<br>staff,<br>Students</td>
+<td>Smart displays,<br>corrections</td>
+<td>Eyes,<br>ears note books</td>
+</tr>
+
+<tr>
+<td>Taxi Driver</td>
+<td>Safe,<br>fast,<br>legal,<br>comfortable trip,<br>maximize profits</td>
+<td>Roads,<br>other traffic,<br>pedestrians,<br>custormers</td>
+<td>Steering wheel,<br>accelerator,<br>break,<br>signal,<br>horn</td>
+<td>Cameras,<br>sonar,<br>speedometer,<br>GPS,<br>engine sensors,<br>keyboard</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="types-of-agent" class="heading-anchor" href="#types-of-agent" rel="nofollow" aria-hidden="true"></a>Types of Agent</h2>
+<p><img src="assets/Pasted%20image%2020240222013057.png" alt=""></p>
+<h2><a name="wumbus-world-problem" class="heading-anchor" href="#wumbus-world-problem" rel="nofollow" aria-hidden="true"></a>Wumbus world problem</h2>
+<p><img src="assets/Pasted%20image%2020240222013408.png" alt=""></p>
+
+<ul>
+<li>The Wumpus world's agent is an example of a knowledge-based agent that represents knowledge representation, reasoning and planning.</li>
+<li><strong>Problem statement</strong> - The wumpus world is a cave with 16 rooms (4x4). Each room is connected to others through walkways (no rooms are connected diagonally). The knowledge-based agent starts from Room.
+
+<ul>
+<li>The cave has some pits, a treasure and a beast named Wumpus.</li>
+<li>The wumpus can not move but eats the one who enters its room.</li>
+<li>If the agent is rewarded, when the goal conditions are met.</li>
+<li>The agent is penalized, when it falls into a pit or being eaten by the weimpus.</li>
+<li>Some elements support the agent to explore the cave like - The wumpu's adjacent rooms are stench</li>
+</ul></li>
+<li>PEAS representation of Wumpus world proble
+
+<ul>
+<li>Performance
+
+<ul>
+<li>Agent gets the gold &amp; return back safe = +1000 points</li>
+<li>Each move of the agent = -1 point</li>
+<li>Agent dies = -1000 points</li>
+<li>Agent uses the arrow = -10 point</li>
+</ul></li>
+<li>Environment
+
+<ul>
+<li>A cave with 16(4x4) rooms</li>
+<li>Rooms adjacent to the wumpus are stinking</li>
+<li>Rooms adjacent to the pit are breezy</li>
+<li>The room with gold glitters</li>
+<li>Agent's initial position-room [1, 1] &amp; facing right side.</li>
+<li>Location of wumpus, gold and 3 pits can be anywhere except in room [1, 1].</li>
+</ul></li>
+<li>Actuators
+
+<ul>
+<li>Devices that allows the agent to perform the following action in the environment.
+
+<ul>
+<li>Move forward</li>
+<li>Turn right</li>
+<li>Turn left</li>
+<li>Shoot</li>
+<li>Grab</li>
+<li>Release</li>
+</ul></li>
+</ul></li>
+<li>Sensors
+
+<ul>
+<li>Devices which helps the agent in sensing the following the environment.
+
+<ul>
+<li>Breeze</li>
+<li>Stench</li>
+<li>Glitter</li>
+<li>Scream (When the Wumpus is killed)</li>
+<li>Bump (When agent hits a wall)
+<br></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<h2><a name="propositional-logic" class="heading-anchor" href="#propositional-logic" rel="nofollow" aria-hidden="true"></a>Propositional logic</h2>
+<p>Source: <a href="https://www.youtube.com/@nesoacademy">Propositional Logic, Propositional Variables &amp; Compound Propositions</a></p>
+
+<p>Proposition is a declarative sentence which can be either TRUE or FALSE but cant be both.</p>
+
+<p><strong>Examples</strong>:</p>
+
+<ul>
+<li><strong>Statement that are propositional logic</strong> (because they are stating a fact and are either true or false but not both).
+
+<ul>
+<li>Delhi is the capital of India.</li>
+<li>Water Froze this morning.</li>
+<li>1+1=2</li>
+</ul></li>
+<li><strong>Statement that not propositional logic</strong>
+
+<ul>
+<li>What time is it? (Not stating a fact and not declarative sentence)</li>
+<li>x + 1 = 2 (can be both TRUE or FALSE)</li>
+</ul></li>
+</ul>
+
+<p><img src="assets/Pasted%20image%2020240222030708.png" alt=""></p>
+
+<p><img src="assets/Pasted%20image%2020240222030459.png" alt=""></p>
+
+<p><img src="assets/Pasted%20image%2020240222030738.png" alt=""></p>
+<h2><a name="first-order-logic" class="heading-anchor" href="#first-order-logic" rel="nofollow" aria-hidden="true"></a>First order logic</h2>
+<p>Source: <a href="https://www.youtube.com/@nesoacademy">Introduction to First Order Logic</a></p>
+
+<p>First-order logic (FOL) is a type of mathematical logic that allows you to reason about properties of objects using quantifiers like &quot;all&quot; (represented as ∀) and &quot;some&quot; (represented as ∃).</p>
+
+<p>Unlike propositional logic, which deals with true or false statements, FOL works with both.</p>
+
+<p><strong>Predicates</strong>:</p>
+
+<p><img src="assets/Pasted%20image%2020240222031452.png" alt=""></p>
+
+<p><img src="assets/Pasted%20image%2020240222031556.png" alt=""></p>
+
+<p><strong>Examples</strong>:</p>
+
+<p><img src="assets/Pasted%20image%2020240222031656.png" alt=""></p>
+<h2><a name="define-agent" class="heading-anchor" href="#define-agent" rel="nofollow" aria-hidden="true"></a>Define Agent</h2>
+<ul>
+<li>An agent is an independent program or entity that interacts with its environment.</li>
+<li>Agents can be simple rule based systems or complex machine learning models.</li>
+<li>Agent is used to map precept to an action.</li>
+<li>Agent is something that act.</li>
+<li>Agent = Agent program + Architecture</li>
+
+<li><p>There are four types of agents:</p>
+
+<ul>
+<li>Simple reflex agent</li>
+<li>Model based agent</li>
+<li>Utility based agent</li>
+
+<li><p>Goal based agent</p>
+<h2><a name="define-ai" class="heading-anchor" href="#define-ai" rel="nofollow" aria-hidden="true"></a>Define AI</h2></li>
+</ul></li>
+
+<li><p>Artificial Intelligence (AI) is the simulation of human intelligence processes by machines, particularly computer systems.</p></li>
+
+<li><p>It involves creating intelligent agents that can perceive their environments, make decisions, and take actions to achieve specific goals.</p></li>
+
+<li><p>AI includes various aspects such as expert systems, natural language processing, speech recognition, and machine vision.</p></li>
+
+<li><p>AI systems operate autonomously, meaning they do not require constant human input.</p></li>
+</ul>
+<h2><a name="type-of-search-techniques" class="heading-anchor" href="#type-of-search-techniques" rel="nofollow" aria-hidden="true"></a>Type of Search Techniques</h2>
+<p><img src="assets/Pasted%20image%2020240222034424.png" alt="">
+Iterative deeping depth first search</p>
+<h3><a name="uniformed-search" class="heading-anchor" href="#uniformed-search" rel="nofollow" aria-hidden="true"></a>Uniformed Search</h3>
+<p>Uninformed search in AI, also known as blind search, refers to a type of search algorithm that explores a problem space without using any specific knowledge or heuristics about the problem.</p>
+<h4><a name="breadth-first-search" class="heading-anchor" href="#breadth-first-search" rel="nofollow" aria-hidden="true"></a>Breadth First Search</h4>
+<ul>
+<li>Uses FIFO (First in First Out) queue.</li>
+<li>Unlike depth first search, the breadth first search completes 1 level fist then go to next level.</li>
+<li>It always complete the answer.</li>
+<li>Example:</li>
+</ul>
+
+<p><img src="assets/Pasted%20image%2020240222035723.png" alt=""></p>
+<h4><a name="uniform-cost-search" class="heading-anchor" href="#uniform-cost-search" rel="nofollow" aria-hidden="true"></a>Uniform Cost Search</h4>
+<ul>
+<li>Uniform cost search considers the expense.</li>
+<li>When there are multiple paths to achieving the desired objective, the optimal solution of uniform cost algorithms is the one with the lowest cost.</li>
+</ul>
+
+<p><img src="assets/Pasted%20image%2020240222033920.png" alt=""></p>
+
+<p>$=S-A \to A-D \to D-G$</p>
+
+<p>$=1+2+3$</p>
+
+<p>$=6$</p>
+<h4><a name="depth-first-search" class="heading-anchor" href="#depth-first-search" rel="nofollow" aria-hidden="true"></a>Depth First Search</h4>
+<ul>
+<li>Unlike breath first search, the depth first search goes to all way to the depth instead of completing one level.</li>
+<li>It can go to infinity loop.</li>
+<li>Example:</li>
+</ul>
+
+<p><img src="assets/DFS-(1)-copy-660.webp" alt=""></p>
+
+<p><img src="assets/DFS-(2)-copy-660.webp" alt=""></p>
+
+<p><img src="assets/DFS-(3)-copy-660.webp" alt=""></p>
+
+<p><img src="assets/DFS-(4)-copy-660.webp" alt=""></p>
+
+<p><img src="assets/DFS-(5)-copy-660.webp" alt=""></p>
+
+<p><img src="assets/DFS-(6)-copy-660.webp" alt=""></p>
+<h4><a name="depth-limited-search" class="heading-anchor" href="#depth-limited-search" rel="nofollow" aria-hidden="true"></a>Depth Limited Search</h4>
+<ul>
+<li>It work like Depth first search.</li>
+<li>But has depth limit how low it can search.</li>
+<li>After reaching depth limit, if it can't find the goal node then will jump to other side of node.</li>
+</ul>
+
+<p><img src="assets/Pasted%20image%2020240222040855.png" alt=""></p>
+<h4><a name="iterative-deepening-search-first-search" class="heading-anchor" href="#iterative-deepening-search-first-search" rel="nofollow" aria-hidden="true"></a>Iterative Deepening Search first search</h4>
+<p><a href="https://www.youtube.com/@MaheshHuddar">Iterative Deepening Search | IDS Search | DFS Algorithm in Artificial Intelligence by Mahesh Huddar</a></p>
+
+<p><img src="assets/Pasted%20image%2020240222041559.png" alt=""></p>
+
+<p><img src="assets/Pasted%20image%2020240222041629.png" alt=""></p>
+
+<p><img src="assets/Pasted%20image%2020240222041742.png" alt=""></p>
+<h4><a name="bidirectional-search" class="heading-anchor" href="#bidirectional-search" rel="nofollow" aria-hidden="true"></a>Bidirectional Search</h4>
+<ul>
+<li>Two simultaneous search from on initial node to goal and backward from goal to initial, stopping when two meet.</li>
+<li>Time Complexity: $2(b^{\frac{d}{2}})$</li>
+<li>Complete in breadth first search.</li>
+<li>Not in depth first search.
+<img src="assets/Pasted%20image%2020240222042354.png" alt=""></li>
+</ul>
+<h3><a name="informed-search" class="heading-anchor" href="#informed-search" rel="nofollow" aria-hidden="true"></a>Informed Search</h3>
+<p>Informed search in AI is a type of search algorithm that uses additional information, such as heuristics or cost estimates, to guide the search process and prioritize which nodes to expand and explore.</p>
+<h4><a name="best-first-search" class="heading-anchor" href="#best-first-search" rel="nofollow" aria-hidden="true"></a>Best First Search</h4>
+<p>Source: <a href="https://www.youtube.com/watch?v=7ffDUDjwz5E">Best First Search Algorithm in Artificial Intelligence | How it Works | All Imp Points(Pros &amp; Cons)</a></p>
+
+<ul>
+<li>Also know as greedy search.</li>
+<li>This algorithm does not involve past knowledge.</li>
+<li>BFS (Best First Search) = F(n) = g(n)</li>
+</ul>
+
+<p><img src="assets/Pasted%20image%2020240222043557.png" alt=""></p>
+<h4><a name="a" class="heading-anchor" href="#a" rel="nofollow" aria-hidden="true"></a>A*</h4>
+<ul>
+<li>This search algorithm involve past knowledge.</li>
+<li>A* search is optimal as the path found is always optimal.</li>
+<li>A* = g(n) + h(n)</li>
+</ul>
+
+<p><img src="assets/Pasted%20image%2020240222044748.png" alt=""></p>
+<h2><a name="knowledge-based-agent" class="heading-anchor" href="#knowledge-based-agent" rel="nofollow" aria-hidden="true"></a>Knowledge-based Agent</h2>
+<p>Knowledge-based agent are those agents who have the capability of maintaining an internal state of knowledge reason ever that knowledge, update their knowledge after observation and takes actions.</p>
+
+<p><img src="assets/Pasted%20image%2020240222060312.png" alt=""></p>
+
+<p>KBA composed of two main parts:</p>
+
+<ul>
+<li>Knowledge base:
+
+<ul>
+<li>Knowledge base is required for updating knowledge for an agent to learn with experiences and take action as par the knowledge.</li>
+</ul></li>
+<li>Inference system:
+
+<ul>
+<li>Inference means deriving new sentences from old.</li>
+<li>It allows us to add new sentence to knowledge-base.</li>
+</ul></li>
+</ul>
+<h2><a name="graph-coloring" class="heading-anchor" href="#graph-coloring" rel="nofollow" aria-hidden="true"></a>Graph coloring</h2>
+<ul>
+<li>Let G be graph 8m be a given positive number.</li>
+<li>With m colors we have to check whether the nodes of G can be colored in such a way that no two adjacent nodes have same color.</li>
+<li>Chromatic Number (m): The m color-ability optimization asks for the smallest integer (m) from which the graph G can be colored.</li>
+</ul>
+
+<p>Example:</p>
+
+<p><img src="assets/Pasted%20image%2020240222051320.png" alt=""></p>
+<h2><a name="water-jug-problem" class="heading-anchor" href="#water-jug-problem" rel="nofollow" aria-hidden="true"></a>Water Jug Problem</h2>
+<ul>
+<li>Two jugs of different capacities all given: X &amp; Y Litre</li>
+<li>No marking is there on the jug.</li>
+<li>Goal is to fill exactly 'L' litres of water into 'Y' litre JUG state is represented as <x,y></li>
+<li>Example:
+
+<ul>
+<li>Suppose capacity of two jugs: 2 liter, 3 liter</li>
+<li>Goal: To get exactly '1' liter of water
+
+<ul>
+<li><strong>Init State</strong>: 0 liter, 0 liter</li>
+<li><strong>Step 1</strong>: Fill 3 liter jug: 0 liter, 3 liter</li>
+<li><strong>Step 3</strong>: Pour 3 liter jug water in 2 liter jug fully: 2 liter, 1 liter.</li>
+<li><strong>Step 4</strong>: Trough 2 liter jug water: 0 liter, 1 liter</li>
+<li>Goal State Achieved <0, 1> liter</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2><a name="mini-max-algorithm" class="heading-anchor" href="#mini-max-algorithm" rel="nofollow" aria-hidden="true"></a>Mini/Max Algorithm</h2>
+<p><img src="assets/Pasted%20image%2020240222055010.png" alt=""></p>
+
+<ul>
+<li>Back tracking algorithm</li>
+<li>Best move strategy used</li>
+<li>Max will try to maximize its utility (Best Move)</li>
+<li>Min will try to minimize utility (Worst Move)</li>
+</ul>
+
+		</main>
+		<footer>
+			<p style="text-align: center; font-size: small; margin-top: 5em;">
+                <a href="https://anzenkodo.github.io/license">LICENSE</a>
+            </p>
+		</footer>
+	<script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']],
+          }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+	</body>
+</html>
