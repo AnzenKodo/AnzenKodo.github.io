@@ -55,12 +55,12 @@ func getData() m {
 	data["logo"] = config["website"] + "assets/favicon/notes.png"
 	data["heading"] = ""
 	data["url"] = config["website"] + ""
-	
-	data["input"] = os.Getenv("HOME") + "/Documents/Notes/Online"
+
+	data["input"] = os.Getenv("HOME") + "/Online/Notes/Online"
 	data["inputDir"] = path.Base(data["input"])
 	_, err = os.Stat(data["input"])
     if os.IsNotExist(err) { data["input"] = "../note/Online" }
-    
+
 	data["output"] = "../" + os.Getenv("OUTPUT") + "/notes"
 
 	return data
@@ -78,20 +78,25 @@ func htmlParse(inputPath string, outputPath string) {
 	data := getData()
 	data["content"] = string(Markdown(file))
 	data["toc"] = string(MarkdownToc(file))
-    
+
     description := strings.Replace(strings.Replace(string(file), "  ", " ", -1), "\n", " ", -1)
+    description_len := len(description)
+    if description_len > 100 {
+        description_len = 100
+    }
+
 	if filename(inputPath) == "index" {
 	   fileDir := path.Base(path.Dir(inputPath))
-	   
-	   if fileDir == data["inputDir"] { 
+
+	   if fileDir == data["inputDir"] {
             data["heading"] = "Home"
-	   } else { 
+	   } else {
             data["heading"] = fileDir
-            data["description"] = description[:100]
+            data["description"] = description[:description_len]
 	   }
-	} else { 
+	} else {
         data["heading"] = filename(inputPath)
-        data["description"] = description[:100]
+        data["description"] = description[:description_len]
     }
     data["title"] = data["heading"] + " - " + data["name"]
 
