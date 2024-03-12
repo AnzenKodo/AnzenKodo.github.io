@@ -16,6 +16,12 @@ jobs:
       shell: bash
       run: git clone -b gh-pages https://github.com/AnzenKodo/AnzenKodo.github.io site
       
+    - name: Download Notes from Google Drive
+      uses: AnimMouse/setup-rclone@v1
+      with:
+        rclone_config: ${{ secrets.RCLONE_CONFIG }}
+    - run: 'rclone copy Personal:Notes src/note'
+    
     - name: Making Blogroll
       shell: bash
       run: bash src/run.sh --make-blogroll
