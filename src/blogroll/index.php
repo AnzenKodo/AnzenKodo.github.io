@@ -20,7 +20,7 @@ require_once 'pages/favicon.php';
 imagepng($im, "{$output}favicon.png");
 
 $opml = "";
-$feeds_file = __DIR__.'/../note/feed.md';
+$feeds_file = __DIR__.'/../note/Feed.md';
 echo "Making php index.html file.";
 ob_start();
 require_once 'pages/index.php';
