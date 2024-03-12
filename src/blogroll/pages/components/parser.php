@@ -5,7 +5,7 @@ $handle = @fopen($feeds_file, "r");
 
 if ($handle) {
 	while (($line = fgets($handle, 4096)) != false) {
-		if ($line[0] == "#") $feed_key = substr($line, 2);
+		if ($line[0] == "#") $feed_key = substr($line, 3);
 		if ($line[0] == "-") {
 			if (!array_key_exists($feed_key, $feeds_data)) $feeds_data[$feed_key] = array();
 			array_push($feeds_data[$feed_key], rtrim(substr($line, 2)));
