@@ -10,7 +10,7 @@ require_once __DIR__.'/manifest.php';
     <meta name="description" content="<?= $data->description ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="theme-color" content="<?= $data->them_color ?>"/>
+    <meta name="theme-color" content="<?= $data->theme_color ?>"/>
 
     <meta property="og:image" content="favicon.png">
     <meta property="og:image:width" content="500">
@@ -35,7 +35,8 @@ require_once __DIR__.'/manifest.php';
       <p><?= $data->description ?> Get all the site's feed link in <a href="http://opml.org/">OPML</a> file, <a href="#opml">in bottom of the page</a>.</p>
     </header>
     <main id="#main">
-       <?php 
+       <?php
+		  require_once "components/parser.php";
           require 'components/logic.php' 
         ?>
     </main>

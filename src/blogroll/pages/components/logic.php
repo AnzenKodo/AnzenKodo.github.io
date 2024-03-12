@@ -1,8 +1,5 @@
 <?php
-  // Delete first element of array
-  array_shift($feeds);
-
-  foreach ($feeds as $subject => $values) {
+  foreach ($feeds_data as $subject => $values) {
     $subject_id = str_replace(" ", "+", strtolower($subject));
 
     echo "<h2 id=\"$subject_id\"><a href=\"#$subject_id\" aria-hidden=\"true\"></a>$subject</h2>";
