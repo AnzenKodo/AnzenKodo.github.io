@@ -17,7 +17,7 @@ class RSS {
 		} else {
 			throw new ErrorException("Can't find datatype of {$url}");
 		}
-
+		
 		return $data;
 	}
 
@@ -48,19 +48,20 @@ class RSS {
 		$its_html = self::checkContentType($url, "html");
 		if($its_html) {
 			$content_html = self::getContent($url);
-			$url = self::getFeedUrl($content_html);
+			// $url = self::getFeedUrl($content_html);
 		}
 
 		$content = self::getContent($url);
 		
+		$data = (object)array();
+		$data->feed = $url;
 		try {
 			$xml = new SimpleXmlElement($content, true);
 		} catch(Exception $e) {
-			return (object)array();
+			return $data;
 		}
 
 		$xml = new SimpleXmlElement($content, true);
-		$data = (object)array();
 		if ($xml->channel) {					// If feed is xml vesrion 1.0
 			$data = self::getRSS($xml, $url);
 		}	else if($xml->entry) {			// If feed is xml version 2.0
