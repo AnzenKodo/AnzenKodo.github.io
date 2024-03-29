@@ -1,0 +1,1700 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>SE Notes - AK#Notes</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="description" content="## Coupling (3)  It measures how closely the modules are connected and how much they rely on each ot">
+  		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
+  		<meta property="og:image:alt" content="AK#Notes logo">
+  		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="SE Notes - AK#Notes">
+		<meta property="og:description" content="## Coupling (3)  It measures how closely the modules are connected and how much they rely on each ot">
+		<meta property="og:url" content="https://AnzenKodo.github.io/">
+		<meta property="og:type" content="website">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+
+            :root {
+                color-scheme: dark light;
+                --theme: #FF6C22;
+			}
+			body {
+                max-width: 40rem;
+                margin: 0 auto;
+                font-family: system-ui;
+                padding: 0 1em;
+                color: inherit !important;
+                word-break: break-word;
+			}
+			h1, h2, h3, h4, h5, h6 {
+                font-family: monospace;
+                margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+                font-size: 2rem;
+			}
+			h3 {
+			    font-size: 1.8rem;
+			}
+			h4 {
+			    font-size: 1.5rem;
+			}
+			h5 {
+			    font-size: 1.3rem;
+			}
+			h6 {
+			    font-size: 1rem;
+			}
+			p {
+			    line-height: 1.5rem;
+			}
+			a {
+			    color: var(--theme);
+			    text-decoration: none;
+			}
+			a:hover, a:focus {
+			    text-decoration: underline;
+			}
+			a:active {
+			    background: var(--theme);
+			    color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+                margin-top: .5rem;
+			}
+			li {
+                margin-bottom: .5rem;
+			}
+			table {
+			    border-collapse: collapse;
+			}
+            th {
+                font-size: 1.1rem;
+                border: 2px solid;
+                padding: .3rem .3rem;
+            }
+            td {
+                border: 1px solid;
+                padding: .3rem .5rem;
+                line-height: 1.5rem;
+            }
+            blockquote {
+                margin-left: 0;
+                margin-right: 0;
+                border: 1px solid;
+                border-left: 10px solid;
+                padding: 0 1rem;
+            }
+            .code-block {
+                background: black;
+                overflow-x: auto;
+                padding: 0em 1em;
+                border: 1px solid;
+            }
+            .code-block-language-name {
+                position: sticky;
+                left: 95%;
+                top: .5em;
+                font-weight: bold;
+                color: white;
+            }
+            :not(pre.chroma) > code {
+                border: 1px solid;
+                padding: 0 .2rem .2rem .2rem;
+            }
+            img {
+                max-width: 100%;
+                display: block;
+                margin: 0 auto;
+            }
+            [href="#skip-top-main"] {
+                padding: 0.3em;
+                position: absolute;
+                transform: translateY(-200%);
+            }
+            [href="#skip-top-main"]:focus {
+                transform: translateY(0%);
+                background: var(--theme);
+                color: inherit;
+            }
+            #table-of-content {
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+                background: black;
+                padding: 0.5rem 1em;
+                z-index: 1;
+                color: white;
+            }
+            #table-of-content[open] {
+                max-height: 90%;
+                overflow-y: auto;
+                bottom: 50px;
+                margin-left: 1em;
+            }
+            #table-of-content[open] summary {
+                background: black;
+                padding: 0.5em 1em;
+                text-align: center;
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+            }
+            #table-of-content ul:first-child {
+                padding-left: 1em;
+                margin-top: 1.5em;            
+            }
+            .heading-anchor::before {
+                content: "#";
+                margin-right: .5rem;
+            }
+		</style>
+	</head>
+	<body>
+	    <a href="#skip-top-main">Skip to main</a>
+		<header>
+			<h1 style="text-align: center;">
+                <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+            </h1>
+            
+			<details id="table-of-content">
+			    <summary>Table of Content</summary>
+                <nav>
+<ul>
+<li><a href="#coupling-3">Coupling (3)</a></li>
+<li><a href="#cohesion-3">
+Cohesion (3)</a>
+<ul>
+<li><a href="#types-of-modules-cohesion">
+Types of Modules Cohesion</a></li>
+</ul></li>
+<li><a href="#software-testing-strategies-3">
+Software Testing Strategies (3)</a>
+<ul>
+<li><a href="#objective-of-software-testing">
+Objective of software testing</a></li>
+<li><a href="#black-box-vs-white-box">
+Black Box vs White Box</a></li>
+</ul></li>
+<li><a href="#software-configuration-management-scm-2">
+Software Configuration Management (SCM) (2)</a>
+<ul>
+<li><a href="#scm-components">
+SCM Components</a></li>
+<li><a href="#scm-repositories">
+SCM Repositories</a></li>
+<li><a href="#scm-process">
+SCM Process</a></li>
+</ul></li>
+<li><a href="#feasibility-study-2">
+Feasibility Study (2)</a></li>
+<li><a href="#risk-2">
+Risk (2)</a>
+<ul>
+<li><a href="#risk-identification">
+RISK IDENTIFICATION</a></li>
+<li><a href="#risk-projection">
+RISK PROJECTION</a></li>
+<li><a href="#risk-assessment">
+RISK ASSESSMENT</a></li>
+</ul></li>
+<li><a href="#mccall-s-quality-factors-2-5m">
+McCall’s Quality Factors (2 5m)</a></li>
+<li><a href="#agile-2">
+Agile (2)</a>
+<ul>
+<li><a href="#principles">
+Principles</a></li>
+</ul></li>
+<li><a href="#evolutionary-process-model">
+Evolutionary Process Model</a>
+<ul>
+<li><a href="#advantages-disadvantages-of-evolutionary-process-model">
+Advantages &amp; Disadvantages of Evolutionary process model</a>
+<ul>
+<li><a href="#advantages">
+Advantages</a></li>
+<li><a href="#disadvantages">
+Disadvantages</a></li>
+<li><a href="#disadvantages">
+Disadvantages</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#kanban">
+Kanban</a></li>
+<li><a href="#agile-and-evolutionary-model">
+Agile and Evolutionary model</a></li>
+<li><a href="#v-model">
+V-model</a>
+<ul>
+<li><a href="#advantages-disadvantages-of-v-model">
+Advantages &amp; Disadvantages of V-Model</a>
+<ul>
+<li><a href="#advantages">
+Advantages</a></li>
+<li><a href="#disadvantages">
+Disadvantages</a></li>
+</ul></li>
+<li><a href="#verification-phase">
+Verification Phase</a></li>
+<li><a href="#validation-phase">
+Validation Phase</a></li>
+</ul></li>
+<li><a href="#software-requirement-specification-srs">
+Software Requirement Specification (SRS)</a></li>
+<li><a href="#rmmm-model-2-comp">
+RMMM Model (2 Comp)</a>
+<ul>
+<li><a href="#risk-mitigation">
+Risk Mitigation</a></li>
+<li><a href="#risk-monitoring">
+Risk Monitoring</a></li>
+<li><a href="#risk-management">
+Risk Management</a></li>
+<li><a href="#drawbacks-of-rmmm">
+Drawbacks of RMMM</a></li>
+</ul></li>
+<li><a href="#user-interface-golden-rules-2-comp">
+User Interface Golden Rules (2 Comp)</a>
+<ul>
+<li><a href="#golden-rules">
+Golden Rules</a></li>
+</ul></li>
+<li><a href="#software-quality-assurance-sqa-2-comp">
+SOFTWARE QUALITY ASSURANCE (SQA) (2 Comp)</a>
+<ul>
+<li><a href="#sqa-task">
+SQA Task</a></li>
+<li><a href="#sqa-task">
+SQA Task</a></li>
+</ul></li>
+<li><a href="#lines-of-code-loc">
+Lines of Code (LOC)</a></li>
+<li><a href="#function-point-fp">
+Function Point (FP)</a></li>
+<li><a href="#re-engineering-bpr">
+Re-Engineering (BPR)</a>
+<ul>
+<li><a href="#process-of-re-engineering">
+Process of Re-Engineering</a></li>
+</ul></li>
+<li><a href="#reverse-engineering">
+Reverse Engineering</a></li>
+<li><a href="#forward-engineering">
+Forward Engineering</a></li>
+<li><a href="#architectural-views-style">
+Architectural Views &amp; Style</a>
+<ul>
+<li><a href="#style">
+Style</a></li>
+<li><a href="#views">
+Views</a></li>
+</ul></li>
+<li><a href="#3-p-s-management-spectrum">
+3 P's Management Spectrum</a>
+<ul>
+<li><a href="#people">
+People</a></li>
+<li><a href="#product">
+Product</a></li>
+<li><a href="#process">
+Process</a></li>
+</ul></li>
+<li><a href="#elicitation">
+Elicitation</a>
+<ul>
+<li><a href="#requirements-elicitation-activities">
+Requirements elicitation Activities:</a></li>
+<li><a href="#requirements-elicitation-methods">
+Requirements elicitation Methods:</a></li>
+<li><a href="#advantages-of-requirements-elicitation">
+Advantages of Requirements Elicitation:</a></li>
+<li><a href="#disadvantages-of-requirements-elicitation">
+Disadvantages of Requirements Elicitation:</a></li>
+</ul></li>
+<li><a href="#scrum">
+SCRUM</a>
+<ul>
+<li><a href="#scrum-framework">
+SCRUM Framework</a>
+<ul>
+<li><a href="#terminologies-used">
+Terminologies Used:</a></li>
+</ul></li>
+<li><a href="#scrum-process">
+Scrum Process</a></li>
+</ul></li>
+<li><a href="#formal-technical-review">
+Formal Technical Review</a>
+<ul>
+<li><a href="#the-review-meeting">
+The Review Meeting</a></li>
+<li><a href="#review-guidelines">
+Review Guidelines</a></li>
+</ul></li>
+<li><a href="#project-tracking">
+Project Tracking</a>
+<ul>
+<li><a href="#features-of-project-scheduling-tools">
+Features of Project Scheduling Tools</a></li>
+<li><a href="#benefits-of-project-scheduling-tools">
+Benefits of Project Scheduling Tools</a></li>
+<li><a href="#criteria-for-selecting-project-scheduling-tools">
+Criteria for Selecting Project Scheduling Tools</a></li>
+<li><a href="#project-scheduling-tools">
+Project Scheduling Tools</a></li>
+</ul></li>
+<li><a href="#cocomo-model">
+COCOMO Model</a>
+<ul>
+<li><a href="#cocomo-ii-models">
+COCOMO II models:</a></li>
+<li><a href="#cocomo-ii-major-decision-situations">
+COCOMO II major decision situations</a></li>
+</ul></li>
+<li><a href="#prototyping-model">
+Prototyping model</a></li>
+<li><a href="#data-flow-diagram-dfd">
+Data Flow Diagram(DFD)</a></li>
+<li><a href="#spiral-model">
+Spiral Model</a></li>
+</ul>
+</nav>
+
+			</details>
+            
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem">SE Notes</h1>
+			<h2><a name="coupling-3" class="heading-anchor" href="#coupling-3" rel="nofollow" aria-hidden="true"></a>Coupling (3)</h2>
+<p>It measures how closely the modules are connected and how much they rely on each other.</p>
+
+<p>It measures how closely the modules are connected and how much they rely on each other.</p>
+
+<p><img src="https://lh7-us.googleusercontent.com/FbVV4Vso5VCQs7sK5izNxxtSejVDMZDuqISd4GekQsrTVGFIXd8IdL-F4R4FjW5LRyW68oSrJKv4zfeCgFRm5QNhzMHz1IZSVDTl4q3PWFR3gA4nXqbsC1AAQSGlWw9QlrFv1KN2g0q_vPpmIOrUp3E" alt=""></p>
+
+<p><img src="https://lh7-us.googleusercontent.com/HFO6zd_iS671n6F5xh4GjRqNQwS8rPcDVnJf786uL6_CDou9LKWe9UZlMPXWRDhGFzY8rMWXhVAo8LIBUbu4yGn5AF4Q0bZ_F8bbVsluH7ygcmsoJb0JcrEJcXFgnYex7Q7SrTr0PBH3T7PxQKboCGY" alt=""></p>
+
+<p><img src="../assets/Pasted%20image%2020231201084501.png" alt=""></p>
+
+<p><img src="../assets/Pasted%20image%2020231201084517.png" alt=""></p>
+<h2><a name="cohesion-3" class="heading-anchor" href="#cohesion-3" rel="nofollow" aria-hidden="true"></a>Cohesion (3)</h2>
+<p><img src="https://lh7-us.googleusercontent.com/dsJ2uekUGZVhQJbN1_NmixRS_kKlZU_Gx_UqyID0lZmBMVO_rVLeGyfU-jUNhE_C3Q50lUmkdYIAbpLgNMhP31tW-Sj47tqyYUR33-vVa8ILtzS8gR1LVJ28GXN71kCxZj2Uqnidp-enqr-5ccHh6bs" alt="Coupling and Cohesion"></p>
+
+<p>Refers to the degree to which the responsibilities of a single module are related and focused.</p>
+
+<p>It measures how strongly the internal elements of a module are connected and work together to achieve a common purpose.</p>
+<h3><a name="types-of-modules-cohesion" class="heading-anchor" href="#types-of-modules-cohesion" rel="nofollow" aria-hidden="true"></a>Types of Modules Cohesion</h3>
+<p><img src="https://lh7-us.googleusercontent.com/QvWeQNpaeQFBMKmgrRd7s2uxSXs3RpKAMBmfpMxhr9-JJ9OUV-5cUrwOU5Q1kKJpAwltX3W_GTqr_hUtsA7d9aLA-eaQS2ih3KHqcOc9Jr2LCKsVw7ATgWHxrZBChjG3qHq0-pmra7sWjRm6CGvEvcw" alt=""></p>
+<h2><a name="software-testing-strategies-3" class="heading-anchor" href="#software-testing-strategies-3" rel="nofollow" aria-hidden="true"></a>Software Testing Strategies (3)</h2>
+<p><img src="../assets/Pasted%20image%2020231201102939.png" alt=""></p>
+<h3><a name="objective-of-software-testing" class="heading-anchor" href="#objective-of-software-testing" rel="nofollow" aria-hidden="true"></a>Objective of software testing</h3>
+<p><img src="../assets/Pasted%20image%2020231201103010.png" alt=""></p>
+<h3><a name="black-box-vs-white-box" class="heading-anchor" href="#black-box-vs-white-box" rel="nofollow" aria-hidden="true"></a>Black Box vs White Box</h3>
+<table>
+<thead>
+<tr>
+<th>Black Box Testing</th>
+<th>White Box Testing</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>It is a way of software testing in which the internal structure or the program or the code is hidden and nothing is known about it.</td>
+<td>It is a way of testing the software in which the tester has knowledge about the internal structure or the code or the program of the software.</td>
+</tr>
+
+<tr>
+<td>Implementation of code is not needed for black box testing.</td>
+<td>Code implementation is necessary for white box testing.</td>
+</tr>
+
+<tr>
+<td>It is mostly done by software testers.</td>
+<td>It is mostly done by software developers.</td>
+</tr>
+
+<tr>
+<td>No knowledge of implementation is needed.</td>
+<td>Knowledge of implementation is required.</td>
+</tr>
+
+<tr>
+<td>It can be referred to as outer or external software testing.</td>
+<td>It is the inner or the internal software testing.</td>
+</tr>
+
+<tr>
+<td>It is a functional test of the software.</td>
+<td>It is a structural test of the software.</td>
+</tr>
+
+<tr>
+<td>This testing can be initiated based on the requirement specifications document.</td>
+<td>This type of testing of software is started after a detail design document.</td>
+</tr>
+
+<tr>
+<td>No knowledge of programming is required.</td>
+<td>It is mandatory to have knowledge of programming.</td>
+</tr>
+
+<tr>
+<td>It is the behavior testing of the software.</td>
+<td>It is the logic testing of the software.</td>
+</tr>
+
+<tr>
+<td>It is applicable to the higher levels of testing of software.</td>
+<td>It is generally applicable to the lower levels of software testing.</td>
+</tr>
+
+<tr>
+<td>It is also called closed testing.</td>
+<td>It is also called as clear box testing.</td>
+</tr>
+
+<tr>
+<td>It is least time consuming.</td>
+<td>It is most time consuming.</td>
+</tr>
+
+<tr>
+<td>It is not suitable or preferred for algorithm testing.</td>
+<td>It is suitable for algorithm testing.</td>
+</tr>
+
+<tr>
+<td>Can be done by trial and error ways and methods.</td>
+<td>Data domains along with inner or internal boundaries can be better tested.</td>
+</tr>
+
+<tr>
+<td><strong>Example:</strong> Search something on google by using keywords</td>
+<td><strong>Example:</strong> By input to check and verify loops</td>
+</tr>
+
+<tr>
+<td><strong>Black-box test design techniques-</strong><br><br>- Decision table testing<br>- All-pairs testing<br>- Equivalence partitioning<br>- Error guessing</td>
+<td><strong>White-box test design techniques-</strong><br><br>- Control flow testing<br>- Data flow testing<br>- Branch testing</td>
+</tr>
+
+<tr>
+<td><strong>Types of Black Box Testing:</strong> <br><br>- Functional Testing <br>- Non-functional testing <br>- Regression Testing</td>
+<td><strong>Types of White Box Testing:</strong> <br><br>- Path Testing <br>- Loop Testing <br>- Condition testing</td>
+</tr>
+
+<tr>
+<td>It is less exhaustive as compared to white box testing.</td>
+<td>It is comparatively more exhaustive than black box testing.</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="software-configuration-management-scm-2" class="heading-anchor" href="#software-configuration-management-scm-2" rel="nofollow" aria-hidden="true"></a>Software Configuration Management (SCM) (2)</h2>
+<p>The concentric layers of software configuration management (SCM) can be thought of as a set of processes and tools that help teams to identify, control, track, and report on changes to a software system throughout its lifecycle.</p>
+<h3><a name="scm-components" class="heading-anchor" href="#scm-components" rel="nofollow" aria-hidden="true"></a>SCM Components</h3>
+<ol>
+<li><strong>Configuration identification</strong>:
+
+<ul>
+<li>Baselines are established to clearly define the state of the software after changes have been made.</li>
+<li>Common baselines include functional or requirements baseline, design baseline, and product or system baseline.</li>
+</ul></li>
+<li><strong>Change control</strong>:
+
+<ul>
+<li>The configuration control board (CCB), headed by the configuration manager, is responsible for most decisions regarding changes.</li>
+<li>A change is initiated by a change request, which typically consists of the change description, reason, affected items, and priority.</li>
+</ul></li>
+<li><strong>Status accounting and auditing</strong>:
+
+<ul>
+<li>Status accounting relies on change requests (CRs) and functional requirements (FRs) to track changes.</li>
+<li>A summary of information from CRs and FRs can be used by the project manager and the CCB to track all the changes.</li>
+</ul></li>
+</ol>
+<h3><a name="scm-repositories" class="heading-anchor" href="#scm-repositories" rel="nofollow" aria-hidden="true"></a>SCM Repositories</h3>
+<p><img src="../assets/Pasted%20image%2020231201054856.png" alt="SCM Repositories Diagram"></p>
+<h3><a name="scm-process" class="heading-anchor" href="#scm-process" rel="nofollow" aria-hidden="true"></a>SCM Process</h3>
+<p><img src="assets/Pasted%20image%2020231025023206.png" alt="SCM Process Diagram"></p>
+
+<p><strong>Concentric layers</strong></p>
+
+<p>The concentric layers of software configuration management (SCM) can be thought of as a set of processes and tools that help teams to identify, control, track, and report on changes to a software system throughout its lifecycle.</p>
+
+<ul>
+<li>Identification
+
+<ul>
+<li>This involves identifying all of the items that make up the software system, such as source code, documentation, test cases, and configuration files.</li>
+</ul></li>
+<li>Change control
+
+<ul>
+<li>This involves establishing and enforcing processes for managing changes to the software system.</li>
+<li>This may include processes for submitting change requests, reviewing changes, and approving changes.</li>
+</ul></li>
+<li>Version control
+
+<ul>
+<li>This involves tracking the different versions of the software system as it evolves over time.</li>
+<li>Version control systems allow teams to create, manage, and track multiple versions of the software system simultaneously.</li>
+</ul></li>
+<li>Configuration auditing
+
+<ul>
+<li>This involves conducting regular audits to ensure that the software system is in compliance with its baselines.</li>
+<li>Baselines are snapshots of the software system that are used to measure progress and ensure that the system is meeting its requirements.</li>
+</ul></li>
+<li>Status reporting
+
+<ul>
+<li>This involves generating and distributing reports on the status of the software system.</li>
+<li>Status reports can provide information on the current state of the system, any recent changes that have been made, and any outstanding issues.</li>
+</ul></li>
+</ul>
+<h2><a name="feasibility-study-2" class="heading-anchor" href="#feasibility-study-2" rel="nofollow" aria-hidden="true"></a>Feasibility Study (2)</h2>
+<p>A detailed analysis that considers all of the critical aspects of a proposed project in order to determine the likelihood of it succeeding.</p>
+
+<p><img src="../assets/Pasted%20image%2020231201050131.png" alt="Type of Feasibility Study"></p>
+
+<ul>
+<li><strong>Collaborative requirement gathering</strong> - collaborating with customer and identifying there problems.
+
+<ul>
+<li>Aim -&gt; to identify problem
+  -&gt; to suggest solution
+  -&gt; to  negotiate different approaches.
+  -&gt; to specify preliminary set of solution requirements</li>
+</ul></li>
+<li><strong>Quality function Deployment</strong> - technique that translates customer needs into technical requirements for software.
+
+<ul>
+<li><strong>Normal requirements</strong> - stated by customer (E.g: Graphic displays, specified o/p formats)</li>
+<li><strong>Expected requirements</strong> - Not clearly stated by customer but still customer expects them. (E.g: system should be user friendly, system should be menu driven)</li>
+<li><strong>Exciting requirements</strong> - Neither stated by customer not expected (developer incudes to make customer more satisfied)</li>
+</ul></li>
+</ul>
+<h2><a name="risk-2" class="heading-anchor" href="#risk-2" rel="nofollow" aria-hidden="true"></a>Risk (2)</h2><h3><a name="risk-identification" class="heading-anchor" href="#risk-identification" rel="nofollow" aria-hidden="true"></a>RISK IDENTIFICATION</h3>
+<p><img src="assets/Pasted%20image%2020231025003858.png" alt="Risk identification circle"></p>
+
+<p>Risk identification is a systematic attempt to specify threats to the project plan(estimates, schedule, resource loading, etc.).</p>
+
+<ul>
+<li>There are two distinct types of risks:
+
+<ul>
+<li><strong>Generic risks</strong> are a potential threat to  every software project.</li>
+<li><strong>Product-specific risks</strong> can be identified only when the project plan and the software statement of scope are examined and an answer to the question is developed:</li>
+</ul></li>
+</ul>
+
+<p>The checklist can be used for risk identification and focuses on some subset of known and predictable risks in the following generic subcategories:</p>
+
+<ul>
+<li><input type="checkbox" checked="" disabled=""> Product size</li>
+<li><input type="checkbox" checked="" disabled=""> Business impact</li>
+<li><input type="checkbox" checked="" disabled=""> Customer characteristics</li>
+<li><input type="checkbox" checked="" disabled=""> Process definition</li>
+<li><input type="checkbox" checked="" disabled=""> Development environment</li>
+<li><input type="checkbox" checked="" disabled=""> Technology to be built</li>
+<li><input type="checkbox" checked="" disabled=""> Staff size and experience</li>
+</ul>
+
+<p>Risk drivers that affect software risk components :</p>
+
+<ul>
+<li>Performance risk</li>
+<li>Cost risk</li>
+<li>Support risk</li>
+<li>Schedule risk</li>
+</ul>
+
+<p>The impact of each risk driver on the risk component is divided into one of four impact categories:</p>
+
+<ul>
+<li>Negligible</li>
+<li>Marginal</li>
+<li>Critical</li>
+<li>Catastrophic.</li>
+</ul>
+<h3><a name="risk-projection" class="heading-anchor" href="#risk-projection" rel="nofollow" aria-hidden="true"></a>RISK PROJECTION</h3>
+<p><img src="assets/Pasted%20image%2020231025005216.png" alt="Risk projection"></p>
+
+<ul>
+<li>Risk projection, also called risk estimation attempts to rate each risk in two ways the likelihood or probability that the risk is real and consequences of the problems associated with the risk.</li>
+<li>Developing Risk Table
+<img src="https://lh7-us.googleusercontent.com/uGtyXDwkcFby-tBtdZeD0p5ZMx8edozU65QYbpXFiSch3QvJ2hZhwFTqQKBNe6dtQlSmrtqWlhJpTXW9a4egWJS_MlFexqzveGn281GdMdjg7tUkoyrpZkDo6ugXtkQWxMRF0wdI7xkDbVoFWOUuMSj2Wg=s2048" alt=""></li>
+</ul>
+<h3><a name="risk-assessment" class="heading-anchor" href="#risk-assessment" rel="nofollow" aria-hidden="true"></a>RISK ASSESSMENT</h3>
+<p>Risk Assessment is a process of estimating  the probability and impact for each risk.</p>
+
+<p><img src="https://lh7-us.googleusercontent.com/ncbnkg54u0Yzpz9cBTUZDXYajlnEAbOhg5KCmhq7SRnZJMnzCZdFghgkzHaqWpg3BUpIJ7RVzA9LQ8qPJY1achlBUQwZAIbN_E0RrE746zgzVNliPYBJkJ8jGaREXHjylmnjWi8kUNUwcG9HIqM9CiqxNQ=s2048" alt=""></p>
+
+<p>Risk Assessment:</p>
+
+<ul>
+<li><strong>Risk Identification</strong> - produces lists of the project-specific risk items likely to compromise a project's success.</li>
+<li><strong>Risk Analysis</strong> - assesses the loss probability and loss magnitude for each identified item, and it assesses compound risks in risk-item interactions.</li>
+<li><strong>Risk Prioritization</strong> - produces a ranked ordering of the risk items identified and analyzed.</li>
+</ul>
+<h2><a name="mccall-s-quality-factors-2-5m" class="heading-anchor" href="#mccall-s-quality-factors-2-5m" rel="nofollow" aria-hidden="true"></a>McCall’s Quality Factors (2 5m)</h2>
+<p><img src="https://lh7-us.googleusercontent.com/LHFd8QTtPq_1E_-hhtWUlLWMhn8lKLnT_PDK1IltpZ9j3vKSr8lmhltarGNlrQU0p09QxdmEKEBYniLW4aJDD1XDY9GstnippDxrOUOgMjG14BJG-pnE-m7xiS_B2k_0Wf4aiC9keX7tfHulbjx3qDwAeg=s2048" alt=""></p>
+
+<ul>
+<li>Introduced in 1977</li>
+<li>The model distinguishes between two levels of quality attributes:
+
+<ul>
+<li>Quality Factors: The higher-level quality attributes which can be accessed directly are called quality factors. These attributes are <em>external attributes</em>.</li>
+<li>Quality Criteria: The lower or second-level quality attributes that can be accessed either subjectively or objectively are called Quality Criteria. These attributes are <em>internal attributes</em>.</li>
+</ul></li>
+</ul>
+<h2><a name="agile-2" class="heading-anchor" href="#agile-2" rel="nofollow" aria-hidden="true"></a>Agile (2)</h2>
+<p>Agile is process model includes concept of developer along with set of guidelines important for development process.</p>
+
+<p>Light-weight method are people-based rather the plan-based methods.</p>
+<h3><a name="principles" class="heading-anchor" href="#principles" rel="nofollow" aria-hidden="true"></a>Principles</h3>
+<p><img src="../assets/12-agile-principles.webp" alt=""></p>
+
+<ul>
+<li>Customer Satisfaction</li>
+<li>Welcome changing requirements</li>
+<li>Working software is delivered frequently (weekly rather then months).</li>
+<li>Daily co-operation between business people &amp; developers</li>
+<li>Project are build around motivated individuals.</li>
+<li>Face-to-face conversation</li>
+<li>Working software</li>
+<li>Maintain a constant pace</li>
+<li>Continuous attention to technical excellence &amp; good design</li>
+<li>Simplicity</li>
+<li>Best architecture, requirements, &amp; design.</li>
+<li>Regularly reflect on becoming more effective &amp; adjusts accordingly.</li>
+</ul>
+<h2><a name="evolutionary-process-model" class="heading-anchor" href="#evolutionary-process-model" rel="nofollow" aria-hidden="true"></a>Evolutionary Process Model</h2>
+<ul>
+<li>Evolutionary model is a combination of Iterative and Incremental model of SDRC.</li>
+<li>The evolutionary model is based on the concept of making an initial product and then evolving the software product over time with iterative and incremental approach with proper feedback.</li>
+<li>The development is carried out simultaneously with feedback of customer.</li>
+<li>This model has number of advantages such as customer involvement, taking feed from the customer and building the exact product that user wants.</li>
+<li>There are two types:
+
+<ol>
+<li>Spiral model</li>
+<li>Prototyping model</li>
+</ol></li>
+</ul>
+<h3><a name="advantages-disadvantages-of-evolutionary-process-model" class="heading-anchor" href="#advantages-disadvantages-of-evolutionary-process-model" rel="nofollow" aria-hidden="true"></a>Advantages &amp; Disadvantages of Evolutionary process model</h3><h4><a name="advantages" class="heading-anchor" href="#advantages" rel="nofollow" aria-hidden="true"></a>Advantages</h4>
+<ul>
+<li>Customer satisfaction is higher.</li>
+<li>Suitable for big &amp; complex project.</li>
+<li>After every iteration risk get analyzed.</li>
+</ul>
+<h4><a name="disadvantages" class="heading-anchor" href="#disadvantages" rel="nofollow" aria-hidden="true"></a>Disadvantages</h4>
+<ul>
+<li>Not suitable for small projects.</li>
+<li>High cost</li>
+<li>This model is more complex.</li>
+</ul>
+<h4><a name="disadvantages" class="heading-anchor" href="#disadvantages" rel="nofollow" aria-hidden="true"></a>Disadvantages</h4><h2><a name="kanban" class="heading-anchor" href="#kanban" rel="nofollow" aria-hidden="true"></a>Kanban</h2>
+<p><img src="../assets/Pasted%20image%2020231201095521.png" alt=""></p>
+
+<p><img src="../assets/Pasted%20image%2020231201095548.png" alt=""></p>
+
+<p><img src="../assets/Pasted%20image%2020231201095620.png" alt=""></p>
+
+<ul>
+<li>Leap time: Time span between  time as ask enters work system.</li>
+<li>Cycle time: how much time spend working on prioritized task.</li>
+</ul>
+<h2><a name="agile-and-evolutionary-model" class="heading-anchor" href="#agile-and-evolutionary-model" rel="nofollow" aria-hidden="true"></a>Agile and Evolutionary model</h2>
+<table>
+<thead>
+<tr>
+<th>Criteria</th>
+<th>Agile Model</th>
+<th>Evolutionary Model</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Planning and Documentation</td>
+<td>Emphasizes adaptive planning and minimal documentation</td>
+<td>Involves significant planning and documentation with updates to the requirements document throughout the development process</td>
+</tr>
+
+<tr>
+<td>Requirements Gathering</td>
+<td>High level requirements set at the beginning, detailed planning done incrementally before each iteration</td>
+<td>Entire project requirements gathered and documented at the early stage</td>
+</tr>
+
+<tr>
+<td>Customer Involvement</td>
+<td>Customer feedback and involvement throughout the project</td>
+<td>User and customer involvement needs to be increased</td>
+</tr>
+
+<tr>
+<td>Delivery Speed</td>
+<td>Fast delivery of software</td>
+<td>Delivery speed can be improved</td>
+</tr>
+
+<tr>
+<td>Testing</td>
+<td>Testing is done throughout the development process</td>
+<td>Testing is typically performed at the end of the lifecycle</td>
+</tr>
+
+<tr>
+<td>Code Reusability</td>
+<td>Promotes code reusability</td>
+<td>Code reusability is not emphasized</td>
+</tr>
+
+<tr>
+<td>Relationship between Cohesion and Coupling</td>
+<td>High cohesion and low coupling</td>
+<td>Cohesion and coupling are not directly related</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="v-model" class="heading-anchor" href="#v-model" rel="nofollow" aria-hidden="true"></a>V-model</h2>
+<p><img src="../assets/Pasted%20image%2020231128051207.png" alt=""></p>
+
+<p>The V-model is SDLC model where execution of processes happens in a sequential manner in a V-shape.</p>
+
+<p>It also know as verification &amp; validation model.</p>
+
+<p>It is a extension of the waterfall model and is based on the association of a testing phase for each corresponding development stage.</p>
+<h3><a name="advantages-disadvantages-of-v-model" class="heading-anchor" href="#advantages-disadvantages-of-v-model" rel="nofollow" aria-hidden="true"></a>Advantages &amp; Disadvantages of V-Model</h3><h4><a name="advantages" class="heading-anchor" href="#advantages" rel="nofollow" aria-hidden="true"></a>Advantages</h4>
+<ul>
+<li>Time saving</li>
+<li>Progress can be tracked easily</li>
+<li>Every component is tested</li>
+</ul>
+<h4><a name="disadvantages" class="heading-anchor" href="#disadvantages" rel="nofollow" aria-hidden="true"></a>Disadvantages</h4>
+<ul>
+<li>Risk analysis not done</li>
+<li>Not suitable for complex projects</li>
+</ul>
+<h3><a name="verification-phase" class="heading-anchor" href="#verification-phase" rel="nofollow" aria-hidden="true"></a>Verification Phase</h3>
+<ul>
+<li><strong>Business Requirement Analysis</strong>
+
+<ul>
+<li>This is the first phase in the development cycle where the product requirements are understood from the customers perspective.</li>
+</ul></li>
+<li><strong>System Design</strong>
+
+<ul>
+<li>Once you have the clearly and detailed product requirements, it is time to design the complete system.</li>
+<li>The system design will have the understanding and detailing the complete hardware and communication setup for product under development.</li>
+</ul></li>
+<li><strong>Architecture Design</strong>
+
+<ul>
+<li>This is also know as High Level Design(HLD).</li>
+<li>In this phase architectural specification are understood and designed.</li>
+</ul></li>
+<li><strong>Model Design</strong>
+
+<ul>
+<li>This is also know as Low Level Design(LLD). The whole architecture is broken into small units &amp; designed separately.</li>
+</ul></li>
+<li><strong>Coding Phase</strong>
+
+<ul>
+<li>The actual implementation of software takes place in coding phase.</li>
+<li>The coding is performed based on the coding guidelines &amp; standards.</li>
+</ul></li>
+</ul>
+<h3><a name="validation-phase" class="heading-anchor" href="#validation-phase" rel="nofollow" aria-hidden="true"></a>Validation Phase</h3>
+<ul>
+<li><strong>Unit Testing</strong>
+
+<ul>
+<li>It is designed in the module design phase are executed on the code during this validation phase.</li>
+</ul></li>
+<li><strong>Integration Testing</strong>
+
+<ul>
+<li>It is associated with architectural design phase.</li>
+<li>It is performed to test that co-existence and communication of the internal modules within the system.</li>
+</ul></li>
+<li><strong>System Testing</strong>
+
+<ul>
+<li>Associated with system design phase checks the entire system functionality.</li>
+</ul></li>
+<li><strong>Acceptance Testing</strong>
+
+<ul>
+<li>associated with business requirement analysis phase.</li>
+<li>Use to test the compatibility issues with other systems available in user environment.</li>
+</ul></li>
+</ul>
+<h2><a name="software-requirement-specification-srs" class="heading-anchor" href="#software-requirement-specification-srs" rel="nofollow" aria-hidden="true"></a>Software Requirement Specification (SRS)</h2>
+<p><img src="https://lh7-us.googleusercontent.com/FqLnzeruZqLTz3J1XMedNJbDSvxcFMnkU0k3cBABGvyXNUd7TXHuqQ5JSdBm66L4xFJMti661e-7-1P7y5ccJZhctPNT3ABHReavzQt8YLLLtJ-E4kzbZv1i3091e0tAqn3BqblaF_QQSkfd8TD4Pj4" alt=""></p>
+
+<ul>
+<li>Software Requirement Specification (SRS) Format is a complete specification and description of requirements of the software that need to be fulfilled for the successful development of the software system.</li>
+<li>These requirements can be functional as well as non-functional depending upon the type of requirement.</li>
+<li>The interaction between different customers and contractors is done because it is necessary to fully understand the needs of customers.</li>
+<li>Software requirement specification is a kind of document which is created by a software analyst after the requirements collected from the various sources - the requirement received by the customer written in ordinary language.</li>
+<li>It is the job of the analyst to write the requirement in technical language so that  they can be understood and beneficial by the development team.</li>
+</ul>
+
+<p><img src="https://lh7-us.googleusercontent.com/NbKUAxqt4Zxh-C58bDYdxwffWP5F9xE9cFfCDeX3dJ7ubWQnEjwK4MAlvk2j6jnmgozZxM3yPLFI0DM_-y8ZjGa3twQVKK53hGh-lAc28I9VvZrEJ0vdOAZxivXy8rwEtVH2GAJ2mgakAoxy60YfN-w" alt=""></p>
+<h2><a name="rmmm-model-2-comp" class="heading-anchor" href="#rmmm-model-2-comp" rel="nofollow" aria-hidden="true"></a>RMMM Model (2 Comp)</h2>
+<p>The RMMM stands for (Risk Mitigation Monitoring Management)</p>
+<h3><a name="risk-mitigation" class="heading-anchor" href="#risk-mitigation" rel="nofollow" aria-hidden="true"></a>Risk Mitigation</h3>
+<p><img src="assets/Pasted%20image%2020231025003343.jpg" alt="Risk Mitigation types"></p>
+
+<ul>
+<li>It is an activity used to avoid problems.</li>
+<li>Steps to avoid risk:
+
+<ol>
+<li>Finding out the risk.</li>
+<li>Removing causes that are responsible for risk creation</li>
+<li>Controlling  the corresponding documents from time to time.</li>
+<li>Conducting timely reviews to speed the work.</li>
+</ol></li>
+</ul>
+<h3><a name="risk-monitoring" class="heading-anchor" href="#risk-monitoring" rel="nofollow" aria-hidden="true"></a>Risk Monitoring</h3>
+<ul>
+<li>It is an activity used for project tracking.</li>
+<li>Steps to risk monitoring:
+
+<ol>
+<li>To check it predicted risks occurs or not.</li>
+<li>To collect data for future risk analysis.</li>
+<li>To allocate which problems are caused by which risks.</li>
+</ol></li>
+</ul>
+<h3><a name="risk-management" class="heading-anchor" href="#risk-management" rel="nofollow" aria-hidden="true"></a>Risk Management</h3>
+<p><img src="assets/Pasted%20image%2020231025013849.png" alt="Risk Management Circle"></p>
+
+<ul>
+<li>Risk management task is done by project manager which risk become reality and cause severe problems.</li>
+<li>If the project manager effectively uses project mitigation to remove risk successful turn it easer to manage the risks.</li>
+<li>The main objective of risk management plan is the risk register.</li>
+<li>The risk register describes and focuses on the predicted treats to a software project.</li>
+</ul>
+<h3><a name="drawbacks-of-rmmm" class="heading-anchor" href="#drawbacks-of-rmmm" rel="nofollow" aria-hidden="true"></a>Drawbacks of RMMM</h3>
+<ul>
+<li>It increases project costs.</li>
+<li>It takes additional time.</li>
+<li>For large project, RMMM implementation is very hard.</li>
+</ul>
+<h2><a name="user-interface-golden-rules-2-comp" class="heading-anchor" href="#user-interface-golden-rules-2-comp" rel="nofollow" aria-hidden="true"></a>User Interface Golden Rules (2 Comp)</h2>
+<p><img src="../assets/Pasted%20image%2020231201043603.png" alt="User Interface Golden Rules"></p>
+
+<p>There are Two types of User Interface(UI)</p>
+
+<ol>
+<li><strong>Command Line Interface(CLI)</strong>
+
+<ul>
+<li>Provides a command prompt, where the user types the command and feeds to the system.</li>
+<li>The user needs to remember the syntax of the command and its use.</li>
+</ul></li>
+<li><strong>Graphical User Interface(GUI)</strong>
+
+<ul>
+<li>Provides thee simple interactive interface to interact with the system.</li>
+</ul></li>
+</ol>
+<h3><a name="golden-rules" class="heading-anchor" href="#golden-rules" rel="nofollow" aria-hidden="true"></a>Golden Rules</h3>
+<ol>
+<li><strong>Place the user in control</strong>
+
+<ul>
+<li>The interaction should be defined in such a way that the user is not forced to implement unnecessary actions.</li>
+<li>The technical internal details must be hidden for the casual user.</li>
+<li>Design for the direct interaction with objects that appear on the screen.</li>
+</ul></li>
+<li><strong>Reduce the user's memory load</strong>
+
+<ul>
+<li>The user interface must be designed in such a way that it reduces the demands on the user's short term memory.</li>
+<li>There must be reset option for obtaining the default values.</li>
+<li>The shortcut should be easily remembered by the users.</li>
+<li>The interface screen should be friendly to users.</li>
+</ul></li>
+<li><strong>Make the interface consistent</strong>
+
+<ul>
+<li>The system must allow the user to put task into meaningful context.</li>
+<li>Consistency should be maintained for all the interaction.</li>
+<li>Do not change the past system that is created by the User expectation unless there is a good reason to do that.</li>
+</ul></li>
+</ol>
+<h2><a name="software-quality-assurance-sqa-2-comp" class="heading-anchor" href="#software-quality-assurance-sqa-2-comp" rel="nofollow" aria-hidden="true"></a>SOFTWARE QUALITY ASSURANCE (SQA) (2 Comp)</h2>
+<p>Software quality assurance (SQA) is a process that ensures that developed software meets and complies with defined or standardized quality specifications.</p>
+
+<p><img src="https://lh7-us.googleusercontent.com/jozae-zJCjjELn3YNbWU3aqDDinIp720VEqE95BqwIVe8K9pTaUoKRKu6FaOa9VSo91fiJ_ZzhgU8Qw8lZB2D23lYLrDQvFE2KxHuFtc94GApJ3AZMRrz_cZYBA98Rz1AMmeprbzbFCc9q1jAsEXBQ8ruQ=s2048" alt=""></p>
+<h3><a name="sqa-task" class="heading-anchor" href="#sqa-task" rel="nofollow" aria-hidden="true"></a>SQA Task</h3>
+<p>A SQA Plan revolves around making sure that the product or service teaches the market trouble and bug-free. </p>
+
+<p>It should also meet the requirements defined in the SRS (software requirement specification). </p>
+
+<p>The purpose of an SQA plan is three-fold. It comprises the following:</p>
+
+<ul>
+<li>Establishing the QA responsibilities of the team in question </li>
+<li>Listing areas of concern that need to be reviewed, audited and looked at</li>
+<li>Identifies the SQA work products</li>
+</ul>
+<h3><a name="sqa-task" class="heading-anchor" href="#sqa-task" rel="nofollow" aria-hidden="true"></a>SQA Task</h3>
+<ul>
+<li>Prepares an SQA plan for a project</li>
+<li>Participates in the development of the project's software process description</li>
+<li>Reviews software engineering activities to verify compliance with the defined software process</li>
+<li>Audits designated software work products to verify compliance with those defined as a part of the software process</li>
+<li>Ensures that deviations in software work and work products are documented and handled according to a documented procedure</li>
+<li>Records any noncompliance and reports to senior management</li>
+</ul>
+<h2><a name="lines-of-code-loc" class="heading-anchor" href="#lines-of-code-loc" rel="nofollow" aria-hidden="true"></a>Lines of Code (LOC)</h2>
+<p>Size oriented measure is derived by considering the size of software that has been produced.</p>
+
+<p>The size measure is based on the lines of code computation.</p>
+
+<p>The lines of code is defined as one line of text in a source file.</p>
+
+<p>While counting the lines of code the simplest standard is:</p>
+
+<ul>
+<li>Don't count blank lines</li>
+<li>Don't count comments.</li>
+<li>Count everything else.</li>
+</ul>
+
+<p>The size oriented measure is not universally accepted method.</p>
+
+<table>
+<thead>
+<tr>
+<th>Project</th>
+<th>LOC</th>
+<th>Effort</th>
+<th>Cost($)</th>
+<th>Doc (Pgs)</th>
+<th>Errors</th>
+<th>Defects</th>
+<th>People</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>ABC</td>
+<td>10,000</td>
+<td>20</td>
+<td>170</td>
+<td>400</td>
+<td>100</td>
+<td>12</td>
+<td>4</td>
+</tr>
+
+<tr>
+<td>PQR</td>
+<td>20,000</td>
+<td>60</td>
+<td>300</td>
+<td>1000</td>
+<td>129</td>
+<td>32</td>
+<td>5</td>
+</tr>
+
+<tr>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+
+<p>A simple set of size measure that can be developed is as given below:</p>
+
+<ul>
+<li>Size = Kilo Lines of Code (KLOC)</li>
+<li>Effort = Person/month</li>
+<li>Productivity = KLOC/person-month</li>
+<li>Quality = Number of faults/KLOC</li>
+<li>Cost = $/KLOC</li>
+<li>Documentation = Pages of documentation/KLOC</li>
+</ul>
+
+<p><strong>Advantages</strong></p>
+
+<ul>
+<li>Most used metric in cost estimation.</li>
+<li>It is very easy to estimate the efforts.</li>
+<li>Used in many models like COCOMO.</li>
+<li>Estimation is closer to developer’s perspective.</li>
+<li>Simple to use.</li>
+</ul>
+
+<p><strong>Disadvantages</strong></p>
+
+<ul>
+<li>It correlates poorly with quality &amp; efficiency of code.</li>
+<li>It doesn't consider complexity.</li>
+<li>Difficult to measure in the early stages of a new product.</li>
+</ul>
+<h2><a name="function-point-fp" class="heading-anchor" href="#function-point-fp" rel="nofollow" aria-hidden="true"></a>Function Point (FP)</h2>
+<p>Decomposition for FP-based estimation focuses on information domain values rather than software functions.</p>
+
+<table>
+<thead>
+<tr>
+<th>Information domain value</th>
+<th>Opt.</th>
+<th>Likely</th>
+<th>Pess.</th>
+<th>Est. count</th>
+<th>Weight</th>
+<th>FP count</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Number of external input</td>
+<td>20</td>
+<td>24</td>
+<td>30</td>
+<td>24</td>
+<td>4</td>
+<td>97</td>
+</tr>
+
+<tr>
+<td>Number of external output</td>
+<td>12</td>
+<td>15</td>
+<td>22</td>
+<td>16</td>
+<td>5</td>
+<td>78</td>
+</tr>
+
+<tr>
+<td>Number of external inquires</td>
+<td>16</td>
+<td>22</td>
+<td>28</td>
+<td>22</td>
+<td>5</td>
+<td>88</td>
+</tr>
+
+<tr>
+<td>Number of internal logical files</td>
+<td>4</td>
+<td>4</td>
+<td>5</td>
+<td>4</td>
+<td>10</td>
+<td>42</td>
+</tr>
+
+<tr>
+<td>Number of external interface files</td>
+<td>2</td>
+<td>2</td>
+<td>3</td>
+<td>2</td>
+<td>7</td>
+<td>15</td>
+</tr>
+
+<tr>
+<td><strong>Count Total</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><strong>320</strong></td>
+</tr>
+</tbody>
+</table>
+
+<p>Each of the complexity weighting factors is estimated, and the value adjustment factor is computed.</p>
+
+<table>
+<thead>
+<tr>
+<th>Factor</th>
+<th>Value</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Backup and recovery</td>
+<td>4</td>
+</tr>
+
+<tr>
+<td>Data communications</td>
+<td>2</td>
+</tr>
+
+<tr>
+<td>Performance critical</td>
+<td>4</td>
+</tr>
+
+<tr>
+<td>Distributed processing</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>Existing operating environment</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Finally, the estimated number of FP is derived:</strong>
+$FP_{estimated} = \text{count total} \times [0.65 + 0.01 \times \sum(F_t) = 375]$</p>
+<h2><a name="re-engineering-bpr" class="heading-anchor" href="#re-engineering-bpr" rel="nofollow" aria-hidden="true"></a>Re-Engineering (BPR)</h2>
+<p><img src="assets/Pasted%20image%2020231024205022.png" alt="Re-engineering flow"></p>
+
+<ul>
+<li>It is process of analyzing, redesigning, and rebuilding an existing software system to improve its quality, performance, maintainability, and/or flexibility.</li>
+<li>It is a process of re-structuring or re-writing components of old software application without modifying its functionality.</li>
+</ul>
+<h3><a name="process-of-re-engineering" class="heading-anchor" href="#process-of-re-engineering" rel="nofollow" aria-hidden="true"></a>Process of Re-Engineering</h3>
+<ol>
+<li>Decide which components of software we want to re-engineer.</li>
+<li>Do reverse engineering to find out features of existing software.</li>
+<li>Perform re-construction of source-code if needed.</li>
+<li>Use forward-engineering idea to generate re-engineered software.</li>
+</ol>
+<h2><a name="reverse-engineering" class="heading-anchor" href="#reverse-engineering" rel="nofollow" aria-hidden="true"></a>Reverse Engineering</h2>
+<p><img src="assets/Pasted%20image%2020231024194254.png" alt="Reverse Engineering flowchart"></p>
+
+<ul>
+<li>Software reverse engineering is a process of recovering the design, requirement specification and functions of the a existing product from an analysis of its code.</li>
+<li>The purpose of reverse engineering is to facilitate the maintenance work by improving the understandability of a system and producing the necessary document for a system.</li>
+<li>Software reverse engineering is performed to find out the source code of a program since the source code used to study in order to enhance the performance of a program repair a bug, detect unsecure content etc.</li>
+</ul>
+<h2><a name="forward-engineering" class="heading-anchor" href="#forward-engineering" rel="nofollow" aria-hidden="true"></a>Forward Engineering</h2>
+<p><img src="assets/Pasted%20image%2020231024203310.png" alt="Forward Engineering flowchart"></p>
+
+<ul>
+<li>Forward engineering is a method by which we can create an application according to the given requirements.</li>
+<li>Another word for forward engineering is renovation.</li>
+<li>The Time needed to design an application is long, and very high competency skills are required.</li>
+<li>Forward engineering is essentially a strategy that allows us to produce complex high-level designs using complex low-level information.</li>
+</ul>
+<h2><a name="architectural-views-style" class="heading-anchor" href="#architectural-views-style" rel="nofollow" aria-hidden="true"></a>Architectural Views &amp; Style</h2><h3><a name="style" class="heading-anchor" href="#style" rel="nofollow" aria-hidden="true"></a>Style</h3>
+<p>An architectural styled is a set of design principles and constraints that are used to guide the design of a software system.</p>
+
+<p>Classification of Architectural Styles:</p>
+
+<ul>
+<li><strong>Data-centered styles</strong>
+
+<ul>
+<li><img src="https://lh7-us.googleusercontent.com/nYYHcKkgaUX7lRIWwvsphxx9dHbyv1UUd4mO7GjRqVrZsvQg6DweiUIp2URKzGZDVMKOZ5b1J0fxqQcvXdnCjtPl7RbfY51T-eDt5_yfyKgQwIpjp-Bp_59wwMjhHdgP9BnasCu6dOyyJHCaBbsHbQE" alt=""></li>
+<li>These styles focus on the data that system needs to manage.</li>
+<li>Example include database centric styles and file-based styles.</li>
+</ul></li>
+<li><strong>Data-flow architecture</strong>
+
+<ul>
+<li><img src="../assets/Pasted%20image%2020231201073931.png" alt=""></li>
+<li>This architecture is applied when the input data is converted into a series of manipulative components into output data.</li>
+</ul></li>
+<li><strong>Call and return architectures</strong>
+
+<ul>
+<li><img src="../assets/05-architectural-design-6-320.webp" alt="">architecture style allows to achieve a program structure which is easy to modify.</li>
+<li>Following are the sub styles exist in this category:
+
+<ul>
+<li><strong>Main program or subprogram architecture</strong>:  The program is divided into smaller pieces hierarchically. <img src="../assets/Pasted%20image%2020231201074438.png" alt=""></li>
+<li><strong>Remote procedure call architecture</strong>: The main program or subprogram components are distributed in network of multiple computers. <img src="../assets/Pasted%20image%2020231201074519.png" alt=""></li>
+</ul></li>
+</ul></li>
+<li><strong>Object-oriented architectures</strong>
+
+<ul>
+<li><img src="../assets/Pasted%20image%2020231201074850.png" alt=""></li>
+<li>This architecture is the latest version of call-and-return architecture.</li>
+<li>It consist of the bundling of data and methods.</li>
+</ul></li>
+
+<li><p><strong>Layered architectures</strong></p>
+
+<ul>
+<li><p><img src="https://lh7-us.googleusercontent.com/9SKRh3HwMBhfeelWwJ4FvsxA5LpLL_o7ZAXcr5uH_VxsJ69953vJAUVUMeW7OV_v-CUcxUtRBORhB1xQwQXxwCBbQYhbaYmr9pc5wx6uO-6r3QUH0FlOktEZehaDT5d6ekZ50NR3mQeblRwn-Knk0BY" alt=""></p>
+<h3><a name="views" class="heading-anchor" href="#views" rel="nofollow" aria-hidden="true"></a>Views</h3></li>
+</ul></li>
+</ul>
+
+<p><img src="assets/Pasted%20image%2020231025014318.png" alt="Architectural Views diagram"></p>
+
+<ul>
+<li>The views are used to <strong>describe the system</strong> from the viewpoint of different stakeholders, such as end-users, developers, system engineers, and project managers.</li>
+<li>The 4+1 views of model are:
+
+<ul>
+<li><strong>Logical view</strong>
+
+<ul>
+<li>The logical view is concerned with functionality that the system provides to end-users.</li>
+</ul></li>
+<li><strong>Process view</strong>
+
+<ul>
+<li>The process view deals with the dynamic aspects of the system, explains the system processes and how they communicate, and focuses on the run time behavior of the system.</li>
+</ul></li>
+<li><strong>Development view</strong>
+
+<ul>
+<li>The development view (aka the implementation view) illustrates a system from a programmer's perspective and is concerned with software management.</li>
+</ul></li>
+<li><strong>Physical view</strong>
+
+<ul>
+<li>(aka deployment view) depicts the system form system engineer's point of view. It is concerned with the topology of software components on the physical layer as well as the physical connections between these components.</li>
+</ul></li>
+<li><strong>Scenarios</strong>
+
+<ul>
+<li>The description of an architecture is illustrated using a small set of use cases, or scenarios, which become a fifty view.</li>
+<li>This view is also know as the use case view.</li>
+<li>The scenarios describe sequences of interaction between objects and between processes.</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2><a name="3-p-s-management-spectrum" class="heading-anchor" href="#3-p-s-management-spectrum" rel="nofollow" aria-hidden="true"></a>3 P's Management Spectrum</h2>
+<ol>
+<li>For properly building a product, there's a very important concept that we all should know while developing a product.</li>
+<li>There are basically 3 critical components know as 3P's
+
+<ol>
+<li>People</li>
+<li>Product</li>
+<li>Process</li>
+</ol></li>
+</ol>
+
+<p><img src="https://hackmd.io/_uploads/r1w0dr6T2.png" alt="Management Spectrum"></p>
+<h3><a name="people" class="heading-anchor" href="#people" rel="nofollow" aria-hidden="true"></a>People</h3>
+<p>The most important of a product and its successful implementation is human resources.</p>
+
+<p>In building a proper product, a well-managed team with clear-cut role defined for each person/item will lead to the success of the product.</p>
+
+<p>We need to have a good team in order to save our time, cost and effort.</p>
+<h3><a name="product" class="heading-anchor" href="#product" rel="nofollow" aria-hidden="true"></a>Product</h3>
+<p>As the name suggests, this is the result of the project.</p>
+
+<p>The project manager should clearly define the product scope to ensure a successful result, control team members as will as technical hurdles face by the team.</p>
+
+<p>Product can consist of tangible/intangible components.</p>
+<h3><a name="process" class="heading-anchor" href="#process" rel="nofollow" aria-hidden="true"></a>Process</h3>
+<p>In every planning, a clearly defined process is the key to the success of any product.</p>
+
+<p>It regulates how the team will go about it's development in the respective time period.</p>
+
+<p>The process has several steps involved like documentation phase, implementation phase etc.</p>
+
+<p><img src="https://hackmd.io/_uploads/BkNCmITah.png" alt="Process Diagram"></p>
+<h2><a name="elicitation" class="heading-anchor" href="#elicitation" rel="nofollow" aria-hidden="true"></a>Elicitation</h2>
+<p><img src="../assets/Pasted%20image%2020231201103624.png" alt=""></p>
+<h3><a name="requirements-elicitation-activities" class="heading-anchor" href="#requirements-elicitation-activities" rel="nofollow" aria-hidden="true"></a>Requirements elicitation Activities:</h3>
+<ul>
+<li>Knowledge of the overall area where the systems is applied.</li>
+<li>The details of the precise customer problem where the system is going to be applied must be understood.</li>
+<li>Interaction of system with external requirements.</li>
+<li>Detailed investigation of user needs.</li>
+<li>Define the constraints for system development.</li>
+</ul>
+<h3><a name="requirements-elicitation-methods" class="heading-anchor" href="#requirements-elicitation-methods" rel="nofollow" aria-hidden="true"></a>Requirements elicitation Methods:</h3>
+<ol>
+<li>Interviews</li>
+<li>Brainstorming Sessions</li>
+<li>Facilitated Application Specification Technique (FAST)</li>
+<li>Quality Function Deployment (QFD)</li>
+<li>Use Case Approach</li>
+</ol>
+<h3><a name="advantages-of-requirements-elicitation" class="heading-anchor" href="#advantages-of-requirements-elicitation" rel="nofollow" aria-hidden="true"></a>Advantages of Requirements Elicitation:</h3>
+<ul>
+<li>Helps to clarify and refine customer requirements.</li>
+<li>Improves communication and collaboration between stakeholders.</li>
+<li>Increases the chances of developing a software system that meets customer needs.</li>
+<li>Avoids misunderstandings and helps to manage expectations.</li>
+<li>Supports the identification of potential risks and problems early in the development cycle.</li>
+<li>Facilitates the development of a comprehensive and accurate project plan.</li>
+<li>Increases user and stakeholder confidence in the software development process.</li>
+<li>Supports the identification of new business opportunities and revenue streams.</li>
+</ul>
+<h3><a name="disadvantages-of-requirements-elicitation" class="heading-anchor" href="#disadvantages-of-requirements-elicitation" rel="nofollow" aria-hidden="true"></a>Disadvantages of Requirements Elicitation:</h3>
+<ul>
+<li>Can be time-consuming and expensive.</li>
+<li>Requires specialized skills and expertise.</li>
+<li>May be impacted by changing business needs and requirements.</li>
+<li>Can be impacted by political and organizational factors.</li>
+<li>Can result in a lack of buy-in and commitment from stakeholders.</li>
+<li>Can be impacted by conflicting priorities and competing interests.</li>
+<li>May result in incomplete or inaccurate requirements if not properly managed.</li>
+<li>Can lead to increased development costs and decreased efficiency if requirements are not well-defined.</li>
+</ul>
+<h2><a name="scrum" class="heading-anchor" href="#scrum" rel="nofollow" aria-hidden="true"></a>SCRUM</h2>
+<ul>
+<li>Type of Agile Framework</li>
+<li>Iterative &amp; incremental s/w development framework.</li>
+<li>For managing knowledge work, with an emphasis on s/w development.</li>
+<li>Designed for team of 3-9 members -&gt; who break their work into accounts that can be completed within time boned iteration called sprints, no longer then 1 month &amp; most commonly 2 weeks, -&gt; then track progress -&gt; replan in 15min stand-up meeting, called &quot;Daily Scrums&quot;.</li>
+<li>Enables teams to self-organize by online collaboration of team members.</li>
+</ul>
+
+<p><img src="../assets/Pasted%20image%2020231128150806.png" alt=""></p>
+<h3><a name="scrum-framework" class="heading-anchor" href="#scrum-framework" rel="nofollow" aria-hidden="true"></a>SCRUM Framework</h3>
+<p>In all framework activates, work tasks happen within a process pattern called a &quot;Sprint&quot;</p>
+<h4><a name="terminologies-used" class="heading-anchor" href="#terminologies-used" rel="nofollow" aria-hidden="true"></a>Terminologies Used:</h4>
+<ul>
+<li><strong>SCRUM team</strong> - contains product owner, development team &amp; scrum master.</li>
+<li><strong>Product owner</strong> - Responsible for product backlog.</li>
+<li><strong>SCRUM master</strong> - Responsible for SCRUM process.</li>
+<li><strong>Development team</strong> - Responsible for delivering product.</li>
+<li><strong>Sprint Bum Down Chart</strong> - Daily sprint progress.</li>
+<li><strong>Release burn down chart</strong> - Chart for completed product backlog.</li>
+<li><strong>Product backlog</strong> - List of priority-wise requirement.</li>
+<li><strong>Sprint backlog</strong> - List of task to be completed which are prioritized.</li>
+<li><strong>Sprint</strong> - Period in which development occurs.</li>
+<li><strong>Spike</strong> - Period in which used to research concept.</li>
+<li><strong>Task</strong> - Items added to sprint backlog at beginning of sprint which are broken into hours.</li>
+</ul>
+
+<p><img src="../assets/Pasted%20image%2020231128152157.png" alt=""></p>
+<h3><a name="scrum-process" class="heading-anchor" href="#scrum-process" rel="nofollow" aria-hidden="true"></a>Scrum Process</h3>
+<p><img src="../../assets/Pasted%20image%2020231128152837.png" alt=""></p>
+
+<ol>
+<li>Define
+
+<ul>
+<li>Defining requirement</li>
+<li>Scrum team, &quot;Mater &amp; Product owner&quot; sit together to decide priority of team for duration of sprint.</li>
+<li>For high level directions for team.</li>
+</ul></li>
+<li>Plan
+
+<ul>
+<li>Selecting items for product backlog</li>
+<li>Evaluates value of different items &amp; estimate efforts need by scrum team.</li>
+</ul></li>
+<li>Build
+
+<ul>
+<li>Task from sprint backlog selected for detection.</li>
+</ul></li>
+<li>Review
+
+<ul>
+<li>Presented by scrum team to product owner about implementation of items.</li>
+</ul></li>
+<li>Retrospect
+
+<ul>
+<li>Final step</li>
+<li>Focuses on identifying improvement area by scrum team</li>
+<li>Also discuss on success of earlier iterations.</li>
+</ul></li>
+</ol>
+<h2><a name="formal-technical-review" class="heading-anchor" href="#formal-technical-review" rel="nofollow" aria-hidden="true"></a>Formal Technical Review</h2>
+<p>**<img src="https://lh7-us.googleusercontent.com/ykT7XIJGFDw9xIf4gzQxgcMdgtek5yRoeraqwNuDEld8xQ-5IH1m1OD6CvjHPxqRhLkJb6vcwoOIFj75vQPbLZGFtN6UM1WpL15gs70iac9nGuvXVIvbGPgpRAaZNUbTqH16T6CrCyQLlUnGPpzZTl1KQw=s2048" alt=""></p>
+
+<ul>
+<li>A FTR is a software quality assurance activity performed by software engineers with the following objectives:
+
+<ul>
+<li>to uncover errors in function, logic or implementation of the software</li>
+<li>to verify that the software meets its requirements</li>
+<li>to ensure that the software has been developed according to the standards</li>
+<li>to achieve uniform software</li>
+<li>to make projects manageable.</li>
+</ul></li>
+</ul>
+<h3><a name="the-review-meeting" class="heading-anchor" href="#the-review-meeting" rel="nofollow" aria-hidden="true"></a>The Review Meeting</h3>
+<p>Each review meeting should be held considering the following constraints- Involvement of people</p>
+
+<ol>
+<li>Between 3, 4 and 5 people should be involve in the review.</li>
+<li>Advance preparation should occur but it should be very short that is at the most 2 hours of work for every person.</li>
+<li>The short duration of the review meeting should be less than two hour. Gives these constraints, it should be clear that an FTR focuses on specific (and small) part of the overall software.</li>
+</ol>
+
+<p>At the end of the review, all attendees of FTR must decide what to do.</p>
+
+<ol>
+<li>Accept the product without any modification.</li>
+<li>Reject the project due to serious error (Once corrected, another app need to be reviewed), or</li>
+<li>Accept the product provisional (minor errors are encountered and should be corrected, but no additional review will be required).</li>
+</ol>
+<h3><a name="review-guidelines" class="heading-anchor" href="#review-guidelines" rel="nofollow" aria-hidden="true"></a>Review Guidelines</h3>
+<p>Guidelines for the conducting of formal technical reviews should be established in advance. These guidelines must be distributed to all reviewers, agreed upon, and then followed. A review that is unregistered can often be worse than a review that does not minimum set of guidelines for FTR.</p>
+
+<ol>
+<li>Review the product, not the manufacture (producer).</li>
+<li>Take written notes (record purpose)</li>
+<li>Limit the number of participants and insists upon advance preparation.</li>
+<li>Develop a checklist for each product that is likely to be reviewed.</li>
+<li>Allocate resources and time schedule for FTRs in order to maintain time schedule.</li>
+<li>Conduct meaningful training for all reviewers in order to make reviews effective.</li>
+<li>Reviews earlier reviews which serve as the base for the current review being conducted.</li>
+<li>Set an agenda and maintain it.</li>
+<li>Separate the problem areas, but do not attempt to solve every problem notes.</li>
+<li>Limit debate and rebuttal.</li>
+</ol>
+<h2><a name="project-tracking" class="heading-anchor" href="#project-tracking" rel="nofollow" aria-hidden="true"></a>Project Tracking</h2>
+<ul>
+<li>Project schedule provides a road map for a software project manager.</li>
+<li>Project schedule defines the tasks &amp; milestones that must be tracked &amp; controlled as the project proceeds.</li>
+<li>Project Managers can use the tools and techniques to develop, monitor, and control project timelines and schedules.</li>
+<li>The tracking tools can automatically produce a pictorial representation of the project plan.</li>
+<li>These tools also instantly update time plans as soon as new information is entered and produce automatic reports to control the project.</li>
+<li>Scheduling tools also look into Task breakdown and Risk management also with greater accuracy and ease of monitoring the reports.</li>
+<li>It also provides a good GUI to effectively communicate with the stakeholders of the project.</li>
+</ul>
+<h3><a name="features-of-project-scheduling-tools" class="heading-anchor" href="#features-of-project-scheduling-tools" rel="nofollow" aria-hidden="true"></a>Features of Project Scheduling Tools</h3>
+<ul>
+<li><strong>Time management</strong>: The project scheduling tools keep projects running the way it is planned. There will be proper time management and better scheduling of the tasks. </li>
+<li><strong>Resource allocation</strong>: It provides the resources required for project development. There will be proper resource allocation and it helps to make sure that proper permissions are given to different individuals involved in the project. It helps to monitor and control all resources in the project.</li>
+<li><strong>Team collaboration</strong>: The project scheduling tool improves team collaboration and communication. It helps to make it easy to comment and chat within the platform without relying on external software.</li>
+<li><strong>User-friendly interface</strong>: Good project scheduling tools are designed to be more user-friendly to enable teams to complete projects in a better and more efficient way. </li>
+</ul>
+<h3><a name="benefits-of-project-scheduling-tools" class="heading-anchor" href="#benefits-of-project-scheduling-tools" rel="nofollow" aria-hidden="true"></a>Benefits of Project Scheduling Tools</h3>
+<ul>
+<li><strong>Defines work tasks</strong>: The project scheduling tool defines the work tasks of a project.</li>
+<li><strong>Time and resource management</strong>: It helps to keep the project on track with respect to the time and plan.</li>
+<li><strong>Cost management</strong>: It helps in determining the cost of the project.</li>
+<li><strong>Improved projectivity</strong>: It enables greater productivity in teams as it helps in smarter planning, better scheduling, and better task delegation.</li>
+<li><strong>Increased efficiency</strong>: The project scheduling tool increases speed and efficiency in project development. </li>
+</ul>
+<h3><a name="criteria-for-selecting-project-scheduling-tools" class="heading-anchor" href="#criteria-for-selecting-project-scheduling-tools" rel="nofollow" aria-hidden="true"></a>Criteria for Selecting Project Scheduling Tools</h3>
+<ul>
+<li><p>Capability to handle multiple projects: The scheduling tool must handle multiple projects at a time.</p></li>
+
+<li><p>User-frinedly: It should be easy to use and must have a user-friendly interface.</p></li>
+
+<li><p>Budget friendly: The tool should be of low cost and should be within the development budget.</p></li>
+
+<li><p>Security features: The tool must be secured and risk-free from vulnerable threats.</p></li>
+</ul>
+<h3><a name="project-scheduling-tools" class="heading-anchor" href="#project-scheduling-tools" rel="nofollow" aria-hidden="true"></a>Project Scheduling Tools</h3>
+<ul>
+<li><p>Microsoft Project</p></li>
+
+<li><p>Daily Activity Reporting and Tracking (DART)</p></li>
+
+<li><p>ProjectManager.com</p></li>
+
+<li><p>GanttPRO</p></li>
+
+<li><p>Zoho Projects</p></li>
+</ul>
+
+<ol>
+<li>### Microsoft Project
+<br></li>
+</ol>
+
+<p>-Microsoft offers a Project Management tool named Microsoft Project for Project </p>
+
+<p>  Planning activities. </p>
+
+<p>-It is simple to use Microsoft Projects for scheduling projects. </p>
+
+<p>-It generates a variety of reports and templates as per Industry standards. It can </p>
+
+<p>  produce data in diagrams or charts in pictorial form. </p>
+
+<p>-Themes and templates can be customized as per the user. </p>
+
+<p>-It supports cloud services and can share data remotely with other users.</p>
+
+<p> Features:</p>
+
+<ul>
+<li><p>Creating the project.</p></li>
+
+<li><p>Assigning resources to the task.</p></li>
+
+<li><p>Tracking the process.</p></li>
+
+<li><p>Managing the cost of the project.</p></li>
+
+<li><p>Analysis of the project.</p></li>
+
+<li><p>Automatic / Manual Scheduling for specific tasks or the entire project.</p></li>
+
+<li><p>To accomplish the tasks, deadlines are set.</p></li>
+</ul>
+
+<ol>
+<li>### Daily Activity Reporting and Tracking (DART)
+<br></li>
+</ol>
+
+<p>-DART Daily Activity Reporting Tool, enables you to track the changes to record </p>
+
+<p>  made by users. </p>
+
+<p>-Many organizations use the DART tool which monitors the progress of the </p>
+
+<p>  software project. </p>
+
+<p>-DART collects the project data and keeps track of the activities in the process. -DART which tracks the progress of the project is called an indicator that computes </p>
+
+<p>  the project plan. </p>
+
+<p>-The DART is used to scale the software project stakeholders regarding the </p>
+
+<p>  performance and updates of the project. </p>
+
+<p> Features:</p>
+
+<ul>
+<li><p>Defines work tasks and their Interdependencies.</p></li>
+
+<li><p>Provides the ability to dispatch the email with a summary of changes.</p></li>
+
+<li><p>Tracks the process and changes in the project plan.</p></li>
+
+<li><p>Analyzing the project plan.</p></li>
+
+<li><p>Manages budget for the project.</p></li>
+</ul>
+
+<p>**</p>
+<h2><a name="cocomo-model" class="heading-anchor" href="#cocomo-model" rel="nofollow" aria-hidden="true"></a>COCOMO Model</h2>
+<p>**<img src="https://lh7-us.googleusercontent.com/M0eToWnh5As6G6-_bmQcyH6VfxtPjPfYNNrcngX_SHwGX97hRe8A_psFlU405pe5a1vDE9bCt8EUchcDrQf-9Pg3imN7efBpVb6W1t0WZzZmSM5ObYvrL8elUcilimzsLNbdnX6jHa4othvkOGVV_Xo" alt=""></p>
+
+<ul>
+<li>The Constructive Cost Model (COCOMO) is an algorithmic software cost estimation  </li>
+<li>Model developed by Barry Boehm. </li>
+<li>The model uses a basic regression formula, with parameters that are derived from  historical project data and current project characteristics. </li>
+<li>COCOMO II is the successor of COCOMO 81 and is better suited for estimating modern software development projects. </li>
+<li>It provides more support for modern software development processes and an updated project database.</li>
+<li>COCOMO II is tuned to modern software life cycles. </li>
+
+<li><p>The original COCOMO model has been very successful, but it doesn't apply to newer software development practices as well as it does to traditional practices. </p>
+<h3><a name="cocomo-ii-models" class="heading-anchor" href="#cocomo-ii-models" rel="nofollow" aria-hidden="true"></a>COCOMO II models:</h3></li>
+
+<li><p><strong>The Application Composition Model</strong></p>
+
+<ul>
+<li>Used in early stages of development, when user i/fs, system interaction, performance assessment and technology evaluation are prime important.</li>
+</ul></li>
+
+<li><p><strong>The Early Design Model</strong></p>
+
+<ul>
+<li>Once requirements are stabilized and basic architecture is constructed, then early design stage model is used. </li>
+<li><strong>The Post-Architecture Model</strong>
+
+<ul>
+<li>This is the most detailed COCOMO II model. </li>
+<li>Used during development of software.</li>
+</ul></li>
+</ul></li>
+
+<li><p>COCOMO II Models also require sizing information like other estimation models for the software.</p></li>
+</ul>
+
+<p>Following 3 sizing options are available:
+  1. Object points    
+  2. Function points 
+  3. Lines of source code</p>
+
+<ul>
+<li><p>COCOMO II Model uses object points that are an indirect s/w measure. They are computed using counts of:</p>
+
+<ol>
+<li>Screenshots taken at User i/f</li>
+<li>Reports</li>
+<li>Components required in developing  the application</li>
+</ol></li>
+
+<li><p>Screenshots or reports are classified into any of the following 3 complexity levels:</p>
+
+<ol>
+<li>Simple     </li>
+<li>Medium</li>
+<li>Difficult</li>
+</ol></li>
+</ul>
+<h3><a name="cocomo-ii-major-decision-situations" class="heading-anchor" href="#cocomo-ii-major-decision-situations" rel="nofollow" aria-hidden="true"></a>COCOMO II major decision situations</h3>
+<ul>
+<li>Making investment or other financial decisions involving a software development effort</li>
+<li>Setting project budgets and schedules as a basis for planning and control</li>
+<li>Deciding on or negotiating tradeoffs among software cost, schedule, functionality, performance or quality factors</li>
+<li>Making software cost and schedule risk management decisions</li>
+<li>Deciding which parts of a software system to develop, reuse, lease, or purchase</li>
+<li>Making legacy software inventory decisions: what parts to modify, phase out, outsource, etc</li>
+<li>Setting mixed investment strategies to improve organization's software capability, via reuse, tools, process maturity, outsourcing, etc.</li>
+</ul>
+<h2><a name="prototyping-model" class="heading-anchor" href="#prototyping-model" rel="nofollow" aria-hidden="true"></a>Prototyping model</h2>
+<p><img src="../assets/Pasted%20image%2020231128045823.png" alt=""></p>
+
+<p>In this model, at first a prototype of software is developed first which display the behavior of actual software.</p>
+
+<p>This model helps to understand user requirements in early stage of development process.</p>
+<h2><a name="data-flow-diagram-dfd" class="heading-anchor" href="#data-flow-diagram-dfd" rel="nofollow" aria-hidden="true"></a>Data Flow Diagram(DFD)</h2>
+<p><img src="../assets/Pasted%20image%2020231201042037.png" alt=""></p>
+
+<p>Data Flow Diagram (DFD) depicts the flow of information and the transformation applied when a data moves in and out from a system. The overall system is represented and described using input, processing and output in the DFD.</p>
+<h2><a name="spiral-model" class="heading-anchor" href="#spiral-model" rel="nofollow" aria-hidden="true"></a>Spiral Model</h2>
+<p>Combination of waterfall and iterative model has four phases of development.</p>
+
+<p><img src="../assets/Pasted%20image%2020231128044815.png" alt="Spiral Model Diagram"></p>
+
+<p>Software is created through multiple iterations using spiral approach.</p>
+
+<p><img src="../assets/Untitled-2023-10-27-2253.png" alt=""></p>
+
+		</main>
+		<footer>
+			<p style="text-align: center; font-size: small; margin-top: 5em;">
+                <a href="https://anzenkodo.github.io/license">LICENSE</a>
+            </p>
+		</footer>
+	<script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']],
+          }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+	</body>
+</html>
