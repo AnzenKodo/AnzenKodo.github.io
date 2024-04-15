@@ -70,6 +70,7 @@
 			}
 			li {
                 margin-bottom: .5rem;
+                line-height: 1.5rem;
 			}
 			table {
 			    border-collapse: collapse;
@@ -148,7 +149,7 @@
             }
             #table-of-content ul:first-child {
                 padding-left: 1em;
-                margin-top: 1.5em;            
+                margin-top: 1.5em;
             }
             .heading-anchor::before {
                 content: "#";
@@ -1686,11 +1687,7 @@ body { color: #282c34; }
 </body>
 </html>
 </div><h3><a name="random-number-genrator" class="heading-anchor" href="#random-number-genrator" rel="nofollow" aria-hidden="true"></a>Random number genrator</h3>
-<p>```c
-uint FRandom(uint32 Index)
-{</p>
-
-<div class="code-block"><html>
+<div class="code-block"><span class="code-block-language-name">.c</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #282c34 }
 /* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
@@ -1779,14 +1776,15 @@ uint FRandom(uint32 Index)
 /* TextWhitespace */ .chroma .w { color: #c9c9c9 }
 body { color: #282c34; }
 </style><body class="bg">
-<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">Index = (Index &lt;&lt; 13) ^ Index;
-</span></span><span class="line"><span class="cl">return ((Index * (Index * Index * 15731 + 789221) + 1376312589) &amp; 0x7fffffff);
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="n">uint</span> <span class="nf">FRandom</span><span class="p">(</span><span class="n">uint32</span> <span class="n">Index</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Index</span> <span class="o">=</span> <span class="p">(</span><span class="n">Index</span> <span class="o">&lt;&lt;</span> <span class="mi">13</span><span class="p">)</span> <span class="o">^</span> <span class="n">Index</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="p">((</span><span class="n">Index</span> <span class="o">*</span> <span class="p">(</span><span class="n">Index</span> <span class="o">*</span> <span class="n">Index</span> <span class="o">*</span> <span class="mi">15731</span> <span class="o">+</span> <span class="mi">789221</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1376312589</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0x7fffffff</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre>
 </body>
 </html>
 </div>
-<p>}</p>
-
 		</main>
 		<footer>
 			<p style="text-align: center; font-size: small; margin-top: 5em;">
