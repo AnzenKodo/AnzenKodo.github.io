@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>EH & F - AK#Notes</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="description" content="## Describe Mobile hacking with details  ![](assets/Pasted%20image%2020240416023157.png)  Mobile hac">
+  		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
+  		<meta property="og:image:alt" content="AK#Notes logo">
+  		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="EH & F - AK#Notes">
+		<meta property="og:description" content="## Describe Mobile hacking with details  ![](assets/Pasted%20image%2020240416023157.png)  Mobile hac">
+		<meta property="og:url" content="https://AnzenKodo.github.io/">
+		<meta property="og:type" content="website">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+
+            :root {
+                color-scheme: dark light;
+                --theme: #FF6C22;
+			}
+			body {
+                max-width: 40rem;
+                margin: 0 auto;
+                font-family: system-ui;
+                padding: 0 1em;
+                color: inherit !important;
+                word-break: break-word;
+			}
+			h1, h2, h3, h4, h5, h6 {
+                font-family: monospace;
+                margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+                font-size: 2rem;
+			}
+			h3 {
+			    font-size: 1.8rem;
+			}
+			h4 {
+			    font-size: 1.5rem;
+			}
+			h5 {
+			    font-size: 1.3rem;
+			}
+			h6 {
+			    font-size: 1rem;
+			}
+			p, li {
+			    line-height: 1.5rem;
+			}
+			a {
+			    color: var(--theme);
+			    text-decoration: none;
+			}
+			a:hover, a:focus {
+			    text-decoration: underline;
+			}
+			a:active {
+			    background: var(--theme);
+			    color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+                margin-top: .5rem;
+			}
+			li {
+                margin-bottom: .5rem;
+                line-height: 1.5rem;
+			}
+			table {
+			    border-collapse: collapse;
+			}
+            th {
+                font-size: 1.1rem;
+                border: 2px solid;
+                padding: .3rem .3rem;
+            }
+            td {
+                border: 1px solid;
+                padding: .3rem .5rem;
+                line-height: 1.5rem;
+            }
+            blockquote {
+                margin-left: 0;
+                margin-right: 0;
+                border: 1px solid;
+                border-left: 10px solid;
+                padding: 0 1rem;
+            }
+            .code-block {
+                background: black;
+                overflow-x: auto;
+                padding: 0em 1em;
+                border: 1px solid;
+            }
+            .code-block-language-name {
+                position: sticky;
+                left: 95%;
+                top: .5em;
+                font-weight: bold;
+                color: white;
+            }
+            :not(pre.chroma) > code {
+                border: 1px solid;
+                padding: 0 .2rem .2rem .2rem;
+            }
+            img {
+                max-width: 100%;
+                display: block;
+                margin: 0 auto;
+            }
+            [href="#skip-top-main"] {
+                padding: 0.3em;
+                position: absolute;
+                transform: translateY(-200%);
+            }
+            [href="#skip-top-main"]:focus {
+                transform: translateY(0%);
+                background: var(--theme);
+                color: inherit;
+            }
+            #table-of-content {
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+                background: black;
+                padding: 0.5rem 1em;
+                z-index: 1;
+                color: white;
+            }
+            #table-of-content[open] {
+                max-height: 90%;
+                overflow-y: auto;
+                bottom: 50px;
+                margin-left: 1em;
+            }
+            #table-of-content[open] summary {
+                background: black;
+                padding: 0.5em 1em;
+                text-align: center;
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+            }
+            #table-of-content ul:first-child {
+                padding-left: 1em;
+                margin-top: 1.5em;
+            }
+            .heading-anchor::before {
+                content: "#";
+                margin-right: .5rem;
+            }
+		</style>
+	</head>
+	<body>
+	    <a href="#skip-top-main">Skip to main</a>
+		<header>
+			<h1 style="text-align: center;">
+                <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+            </h1>
+            
+			<details id="table-of-content">
+			    <summary>Table of Content</summary>
+                <nav>
+<ul>
+<li><a href="#describe-mobile-hacking-with-details">Describe Mobile hacking with details</a></li>
+<li><a href="#explain-the-ids-in-network-hacking">
+Explain the IDS in network hacking.</a></li>
+<li><a href="#explain-mobile-evidence-acquisition">
+Explain Mobile Evidence Acquisition.</a></li>
+<li><a href="#why-computer-forensic-important">
+Why computer forensic important.</a></li>
+<li><a href="#what-is-network-forensic">
+What is Network Forensic?</a></li>
+<li><a href="#what-is-incident-response">
+What is Incident Response?</a></li>
+<li><a href="#how-many-challenges-in-computer-forensic-explain-it">
+How many challenges in computer forensic explain it.</a></li>
+<li><a href="#explain-the-challenges-of-mobile-forensic">
+Explain the Challenges of Mobile Forensic.</a></li>
+<li><a href="#explain-the-types-of-network-monitoring">
+Explain the Types of Network Monitoring.</a></li>
+<li><a href="#4-cloud-infrastructure-monitoring">
+4. Cloud infrastructure monitoring</a></li>
+<li><a href="#how-to-analysis-a-linux">
+How to analysis a Linux.</a></li>
+</ul>
+</nav>
+
+			</details>
+            
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem">EH & F</h1>
+			<h2><a name="describe-mobile-hacking-with-details" class="heading-anchor" href="#describe-mobile-hacking-with-details" rel="nofollow" aria-hidden="true"></a>Describe Mobile hacking with details</h2>
+<p><img src="assets/Pasted%20image%2020240416023157.png" alt=""></p>
+
+<p>Mobile hacking refers to activities that seek to compromise mobile devices, such as smartphones, tablets, and even entire mobile networks.</p>
+
+<p>These activities can be motivated by various reasons, including financial gain, protest, information gathering (spying), and the thrill of the challenge<a href="https://www.malwarebytes.com/hacker">1</a><a href="https://www.ibm.com/topics/mobile-security">2</a>. </p>
+
+<p>Mobile hacking can take many forms, such as phishing, malware attacks, ransomware, cryptojacking, and man-in-the-middle (MitM) attacks<a href="https://www.ibm.com/topics/mobile-security">2</a>.</p>
+
+<p>Types of Mobile Hacking:</p>
+
+<ol>
+<li><strong>Phishing</strong>: Fraudsters send emails or SMS messages designed to steal users’ credentials or sensitive data, such as credit card numbers<a href="https://www.fortinet.com/resources/cyberglossary/what-is-hacking">1</a>.</li>
+<li><strong>Malware attacks</strong>: Mobile malware is undetected software, such as a malicious app or spyware, created to damage, disrupt or gain illegitimate access to a  device<a href="https://www.crowdstrike.com/cybersecurity-101/malware/mobile-malware/">2</a>.</li>
+<li><strong>Ransomware</strong>: A form of malware that threatens to destroy or withhold a victim’s data or files.</li>
+<li><strong>Cryptojacking</strong>: A form of malware that uses an organization’s computing power or individual’s computer power without their knowledge to mine cryptocurrencies, decreasing a device’s processing abilities and effectiveness<a href="https://www.crowdstrike.com/cybersecurity-101/malware/mobile-malware/">2</a>.</li>
+<li><strong>Man-in-the-middle (MitM) attacks</strong>: These attacks typically require an employee to be connected to an untrusted or compromised network, such as public Wi-Fi or cellular networks. However, the majority of organizations lack policies prohibiting the use of these networks.</li>
+<li><strong>Jailbreaking and rooting</strong>: These attacks take advantage of vulnerabilities in the mobile OSs to achieve root access on these devices, enabling an attacker to gain access to more data and cause more damage than with the limited permissions of a standard user<a href="https://www.kaspersky.com/resource-center/threats/how-to-stop-phone-hacking">4</a>.</li>
+</ol>
+<h2><a name="explain-the-ids-in-network-hacking" class="heading-anchor" href="#explain-the-ids-in-network-hacking" rel="nofollow" aria-hidden="true"></a>Explain the IDS in network hacking.</h2>
+<p><img src="assets/Pasted%20image%2020231025235853.png" alt="IDS Diagram"></p>
+
+<p>An Intrusion Detection System (IDS) is a security system that monitors network traffic for suspicious activity and alerts when such activity is discovered.</p>
+
+<p>IDSs can be classified into two main types:</p>
+
+<ul>
+<li><strong>Network-based IDSs</strong> are installed at the perimeter of the network and monitor traffic on LAN, subnets, or important servers.</li>
+<li><strong>Host-based IDSs</strong> are installed on individual host machines and monitor traffic on that specific machin</li>
+</ul>
+
+<p>IDSs can use two main detection methods:</p>
+
+<p><img src="assets/Pasted%20image%2020231026003108.png" alt="Detection Method of IDS"></p>
+
+<ul>
+<li><strong>Signature-based IDSs</strong> detect attacks based on already known malicious instruction sequences used by malware.</li>
+<li><strong>Anomaly-based IDSs</strong> were introduced to detect unknown malware attacks, as new malware is developed rapidly.
+
+<ul>
+<li>Machine learning-based methods have a better generalized property compared to signature-based IDSs, as these models can detect a wider range of attacks.</li>
+</ul></li>
+</ul>
+
+<p>Benefits of IDS:</p>
+
+<ol>
+<li><strong>Detecting intrusions</strong>: IDS monitors network traffic for signs of unauthorized access, misuse, or compromise, detecting potential threats in real-time.</li>
+<li><strong>Generating alerts</strong>: IDS sends alerts to system administrators or security personnel when it detects suspicious or malicious activity, allowing them to take prompt action to mitigate risks.</li>
+<li><strong>Insights into network traffic</strong>: IDS provides valuable insights into network traffic, helping organizations identify any weaknesses and improve network security.</li>
+<li><strong>Monitoring network activity and generating reports</strong>: IDS helps organizations meet compliance requirements by monitoring network activity and generating reports, providing greater visibility across the network.</li>
+<li><strong>Improve network performance</strong> by providing insights into network traffic and identifying any weaknesses that can be addressed to improve security</li>
+</ol>
+<h2><a name="explain-mobile-evidence-acquisition" class="heading-anchor" href="#explain-mobile-evidence-acquisition" rel="nofollow" aria-hidden="true"></a>Explain Mobile Evidence Acquisition.</h2><h2><a name="why-computer-forensic-important" class="heading-anchor" href="#why-computer-forensic-important" rel="nofollow" aria-hidden="true"></a>Why computer forensic important.</h2><h2><a name="what-is-network-forensic" class="heading-anchor" href="#what-is-network-forensic" rel="nofollow" aria-hidden="true"></a>What is Network Forensic?</h2><h2><a name="what-is-incident-response" class="heading-anchor" href="#what-is-incident-response" rel="nofollow" aria-hidden="true"></a>What is Incident Response?</h2><h2><a name="how-many-challenges-in-computer-forensic-explain-it" class="heading-anchor" href="#how-many-challenges-in-computer-forensic-explain-it" rel="nofollow" aria-hidden="true"></a>How many challenges in computer forensic explain it.</h2><h2><a name="explain-the-challenges-of-mobile-forensic" class="heading-anchor" href="#explain-the-challenges-of-mobile-forensic" rel="nofollow" aria-hidden="true"></a>Explain the Challenges of Mobile Forensic.</h2><h2><a name="explain-the-types-of-network-monitoring" class="heading-anchor" href="#explain-the-types-of-network-monitoring" rel="nofollow" aria-hidden="true"></a>Explain the Types of Network Monitoring.</h2>
+<p>Network monitoring can take many forms, depending on what needs to be examined. As network architectures become more software-centric and decentralized from a hybrid and multi-cloud perspective.</p>
+
+<ul>
+<li><strong>Availability monitoring</strong>
+
+<ul>
+<li>Availability monitoring is the simplest way for network teams to know if a device is up and operational.</li>
+<li>Protocols that monitor network availability include the following:
+
+<ul>
+<li><strong>Internet Control Message Protocol (ICMP).</strong> An ICMP ping is a simple verification test that shows whether a device is accessible on the network.</li>
+<li><strong>Simple Network Management Protocol (SNMP).</strong> SNMP monitors device and interface status.</li>
+<li><strong>Event logs (</strong><strong>syslog).</strong> <a href="https://www.techtarget.com/whatis/definition/syslog">Syslog</a> collection servers can trigger alerts when uplinks, interfaces or routes become unavailable.</li>
+</ul></li>
+</ul></li>
+<li><strong>Configuration monitoring</strong>
+
+<ul>
+<li>This type of monitoring focuses on checking local configuration files to manage traditional network components from both a performance and IT security perspective.</li>
+</ul></li>
+<li>Performance monitoring
+
+<ul>
+<li>Performance monitoring, while similar to availability monitoring, places additional emphasis on the end-user experience and delivered performance.</li>
+</ul></li>
+</ul>
+
+<p>Availability monitoring is more concerned with the operational status of the components that comprise the network infrastructure. <a href="https://www.techtarget.com/searchnetworking/tip/Perform-a-network-health-check-with-network-testing">Health monitoring</a> does this too, but with added emphasis on the end user's performance experience. Thus, performance monitoring focuses more on network utilization, latency and suboptimal path selection.</p>
+
+<p>Examples of performance monitoring protocols include the following:</p>
+
+<ul>
+<li><strong>SNMP.</strong> This sends alerts when interfaces, switch CPU and memory become overutilized.</li>
+<li><strong>Event logs (syslog).</strong> Syslog triggers alerts when utilization reaches specific thresholds or when unexpected routing changes occur.</li>
+<li><strong>Flow-based monitoring.</strong> This provides visibility into specific network flow conversations and the amount of bandwidth consumed by each flow.</li>
+<li><strong>Packet capture analysis.</strong> This provides deep analysis of networked conversations that often point to underlying transport issues, which upper-layer monitoring tools cannot see.</li>
+<li><strong>Streaming telemetry.</strong> This is a collection and analysis of real-time network health and performance data used to quickly identify and resolve complex issues.</li>
+</ul>
+<h2><a name="4-cloud-infrastructure-monitoring" class="heading-anchor" href="#4-cloud-infrastructure-monitoring" rel="nofollow" aria-hidden="true"></a>4. Cloud infrastructure monitoring</h2>
+<p>In many cases, private and public cloud instances can use the same types of network monitoring tools implemented on corporate networks. However, many cloud service providers offer their own suite of built-in network monitoring tools. While these <a href="https://www.techtarget.com/searchnetworking/answer/What-network-tools-are-available-for-public-cloud-monitoring">cloud monitoring tools</a> are often free to customers, they typically can't integrate into other third-party tools organizations already use.</p>
+
+<p>Organizations must weigh the pros and cons of managing multiple, <a href="https://netcraftsmen.com/succeeding-network-management-tools/">distributed network monitoring services</a> versus spending more time and effort to centralize monitoring into a handful of tools. Implementing those tools may be more demanding, but they help provide full visibility across the corporate network and into the cloud.</p>
+<h2><a name="how-to-analysis-a-linux" class="heading-anchor" href="#how-to-analysis-a-linux" rel="nofollow" aria-hidden="true"></a>How to analysis a Linux.</h2>
+		</main>
+		<footer>
+			<p style="text-align: center; font-size: small; margin-top: 5em;">
+                <a href="https://anzenkodo.github.io/license">LICENSE</a>
+            </p>
+		</footer>
+	<script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']],
+          }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+	</body>
+</html>
