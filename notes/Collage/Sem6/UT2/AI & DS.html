@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>AI & DS - AK#Notes</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="description" content="## EDA and it's types  ![](assets/Pasted%20image%2020240419025753.png)  Explanatory Data Analysis (E">
+  		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
+  		<meta property="og:image:alt" content="AK#Notes logo">
+  		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="AI & DS - AK#Notes">
+		<meta property="og:description" content="## EDA and it's types  ![](assets/Pasted%20image%2020240419025753.png)  Explanatory Data Analysis (E">
+		<meta property="og:url" content="https://AnzenKodo.github.io/">
+		<meta property="og:type" content="website">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+
+            :root {
+                color-scheme: dark light;
+                --theme: #FF6C22;
+			}
+			body {
+                max-width: 40rem;
+                margin: 0 auto;
+                font-family: system-ui;
+                padding: 0 1em;
+                color: inherit !important;
+                word-break: break-word;
+			}
+			h1, h2, h3, h4, h5, h6 {
+                font-family: monospace;
+                margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+                font-size: 2rem;
+			}
+			h3 {
+			    font-size: 1.8rem;
+			}
+			h4 {
+			    font-size: 1.5rem;
+			}
+			h5 {
+			    font-size: 1.3rem;
+			}
+			h6 {
+			    font-size: 1rem;
+			}
+			p, li, td, code {
+			    line-height: 1.5rem;
+			}
+			a {
+			    color: var(--theme);
+			    text-decoration: none;
+			}
+			a:hover, a:focus {
+			    text-decoration: underline;
+			}
+			a:active {
+			    background: var(--theme);
+			    color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+                margin-top: .5rem;
+			}
+			li {
+                margin-bottom: .5rem;
+			}
+			table {
+			    border-collapse: collapse;
+                white-space: nowrap;
+                overflow-x: auto;
+                display: block;
+			}
+            th {
+                font-size: 1.1rem;
+                border: 2px solid;
+                padding: .3rem .3rem;
+            }
+            td {
+                border: 1px solid;
+                padding: .3rem .5rem;
+            }
+            blockquote {
+                margin-left: 0;
+                margin-right: 0;
+                border: 1px solid;
+                border-left: 10px solid;
+                padding: 0 1rem;
+            }
+            .code-block {
+                background: black;
+                overflow-x: auto;
+                padding: 0em 1em;
+                border: 1px solid;
+            }
+            .code-block-language-name {
+                position: sticky;
+                left: 95%;
+                top: .5em;
+                font-weight: bold;
+                color: white;
+            }
+            :not(pre.chroma) > code {
+                border: 1px solid;
+                padding: .3rem .2rem .2rem .2rem;
+            }
+            img {
+                max-width: 100%;
+                display: block;
+                margin: 0 auto;
+            }
+            [href="#skip-top-main"] {
+                padding: 0.3em;
+                position: absolute;
+                transform: translateY(-200%);
+            }
+            [href="#skip-top-main"]:focus {
+                transform: translateY(0%);
+                background: var(--theme);
+                color: inherit;
+            }
+            #table-of-content {
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+                background: black;
+                padding: 0.5rem 1em;
+                z-index: 1;
+                color: white;
+            }
+            #table-of-content[open] {
+                max-height: 90%;
+                overflow-y: auto;
+                bottom: 50px;
+                margin-left: 1em;
+            }
+            #table-of-content[open] summary {
+                background: black;
+                padding: 0.5em 1em;
+                text-align: center;
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+            }
+            #table-of-content ul:first-child {
+                padding-left: 1em;
+                margin-top: 1.5em;
+            }
+            .heading-anchor::before {
+                content: "#";
+                margin-right: .5rem;
+            }
+            mjx-container {
+                display: math;
+                overflow-y: hidden;
+                overflow-x: auto;
+                max-width: 100%;
+            }
+		</style>
+	</head>
+	<body>
+	    <a href="#skip-top-main">Skip to main</a>
+		<header>
+			<h1 style="text-align: center;">
+                <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+            </h1>
+            
+			<details id="table-of-content">
+			    <summary>Table of Content</summary>
+                <nav>
+<ul>
+<li><a href="#eda-and-it-s-types">EDA and it's types</a></li>
+<li><a href="#anova">
+Anova</a></li>
+<li><a href="#covariance">
+Covariance</a></li>
+<li><a href="#correlation">
+Correlation</a></li>
+<li><a href="#machine-learning">
+Machine learning</a>
+<ul>
+<li><a href="#types-of-machine-learning">
+Types of Machine Learning:</a></li>
+</ul></li>
+<li><a href="#how-ml-application-is-developed">
+How ML application is developed</a></li>
+<li><a href="#application-of-ml">
+Application of ML</a></li>
+<li><a href="#need-of-ml">
+Need of ML</a></li>
+<li><a href="#ds-vs-big-data-vs-vs-data-analytics">
+DS vs Big data vs vs data analytics</a></li>
+<li><a href="#lifecycle-of-ds">
+Lifecycle of DS</a></li>
+<li><a href="#logistics-regression-vs-linear-regression">
+Logistics regression vs linear regression</a></li>
+</ul>
+</nav>
+
+			</details>
+            
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem">AI & DS</h1>
+			<h2><a name="eda-and-it-s-types" class="heading-anchor" href="#eda-and-it-s-types" rel="nofollow" aria-hidden="true"></a>EDA and it's types</h2>
+<p><img src="assets/Pasted%20image%2020240419025753.png" alt=""></p>
+
+<p>Explanatory Data Analysis (EDA) in machine learning is a way of visualizing, summarizing and interpreting the information that is hidden in row and column format.</p>
+
+<p>Once EDA is complete and insights are draw, its features can be used for supervised and unsupervised Machine Learning modeling.</p>
+
+<p><strong>Purpose of EDA</strong></p>
+
+<ul>
+<li>It helps to look at data before making any assumption.</li>
+<li>Understanding of data can be easy with EDA.</li>
+</ul>
+
+<p><strong>Types of EDA</strong></p>
+
+<p><img src="assets/Pasted%20image%2020240419030107.jpg" alt=""></p>
+
+<ul>
+<li><strong>Univariate Non-graphical</strong>:
+
+<ul>
+<li>Analyzing individual variables without visualizations, using techniques like descriptive statistics and frequency tables.</li>
+<li>Example:
+
+<ul>
+<li><code>
+- 3, 6, 8, 8, 9, 10, 13, 15, 16
+- mean = 9.78
+- median = 9
+- mode = 8
+-</code></li>
+</ul></li>
+</ul></li>
+<li><strong>Univariate graphical</strong>: Visualizing individual variables using charts like histograms, bar charts, and box plots to understand distribution, center, and spread.
+
+<ul>
+<li>Example:
+
+<ul>
+<li>Bar Graph:
+
+<ul>
+<li><img src="assets/Percentage-graph-660.webp" alt=""></li>
+</ul></li>
+<li>Histogram:
+
+<ul>
+<li><img src="assets/Histogram.webp" alt=""></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><strong>Multivariate Non-graphical</strong>: Analyzing relationships between multiple variables without visualizations, using techniques like cross-tabulation and correlation.
+
+<ul>
+<li>Example: MANOVA</li>
+</ul></li>
+<li><strong>Multivariate graphical</strong>: Visualizing relationships between multiple variables using methods like side-by-side box plots, scatter plots, and heatmaps.
+
+<ul>
+<li>Example:
+
+<ul>
+<li>Scatter plot:
+
+<ul>
+<li><img src="assets/Pasted%20image%2020240419030921.png" alt=""></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<h2><a name="anova" class="heading-anchor" href="#anova" rel="nofollow" aria-hidden="true"></a>Anova</h2>
+<p><img src="assets/Pasted%20image%2020240419052613.jpg" alt=""></p>
+
+<ul>
+<li>Stands for Analysis of Variance</li>
+<li>It enables us to test significance of difference among more then two sample means.</li>
+<li>Test statistics for ANOVA is <strong>F-test</strong></li>
+<li>Types of ANOVA:
+
+<ul>
+<li><strong>One Way ANOVA</strong>
+
+<ul>
+<li>One factor of independent variable</li>
+<li>Compares three or more levels of one factor.</li>
+</ul></li>
+<li><strong>Two Way ANOVA</strong>
+
+<ul>
+<li>Extension of One-way ANOVA</li>
+<li>Mone then one factor or independent variable</li>
+</ul></li>
+</ul></li>
+<li><strong>Assumption for ANOVA</strong>
+
+<ul>
+<li>Samples follow normal distribution</li>
+<li>Samples have been selected randomly and independently.</li>
+<li>Each group should have common variance</li>
+<li>Data are independent.</li>
+</ul></li>
+</ul>
+<h2><a name="covariance" class="heading-anchor" href="#covariance" rel="nofollow" aria-hidden="true"></a>Covariance</h2>
+<p>Data:
+$x$ = { 2, 4, 6, 8, 10 }
+$y$ = { 3, 7, 10, 14, 17 }</p>
+
+<p>Formula: $$cov(x, y) = \sum^N (x_i-\bar{x})(y_i-\bar{y}) \over N$$
+Sol:
+$$\bar{x} = {\sum x \over N} = {30 \over 5} = 6$$
+$$\bar{y} = {\sum y \over N} = {51 \over 5} = 10.2$$</p>
+
+<table>
+<thead>
+<tr>
+<th>Sr. No</th>
+<th>$x$</th>
+<th>$y$</th>
+<th>$x-\bar{x}$</th>
+<th>$y-\bar{y}$</th>
+<th>$(x-\bar{x}) (y-\bar{y})$</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>-4</td>
+<td>-7.2</td>
+<td>28.8</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>4</td>
+<td>7</td>
+<td>-2</td>
+<td>-3.2</td>
+<td>6.4</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>6</td>
+<td>10</td>
+<td>0</td>
+<td>-0.2</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>8</td>
+<td>14</td>
+<td>2</td>
+<td>3.8</td>
+<td>7.6</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>10</td>
+<td>17</td>
+<td>4</td>
+<td>6.8</td>
+<td>27.2</td>
+</tr>
+
+<tr>
+<td>$\sum N = 5$</td>
+<td>$\sum x = 30$</td>
+<td>$\sum y = 51$</td>
+<td></td>
+<td></td>
+<td>70</td>
+</tr>
+</tbody>
+</table>
+
+<p>$$cov(x, y) = {\sum(x - \bar{x})(y-\bar{y}) \over N-1} = {70 \over 5-1} = + 17.5$$
+Hence: $x \uparrow y \downarrow$
+<img src="assets/Pasted%20image%2020240419044150.png" alt=""></p>
+<h2><a name="correlation" class="heading-anchor" href="#correlation" rel="nofollow" aria-hidden="true"></a>Correlation</h2>
+<p>Data:
+$x$ = { 2, 4, 6, 8, 10 }
+$y$ = { 3, 7, 10, 14, 17 }</p>
+
+<p>Formula: $$p = {cov(x, y)
+\over
+\sqrt{{\sum(x-\bar{x})^2 \over n-1}} \sqrt{\sum (y-\bar{y})^2 \over n-1}}$$</p>
+<h2><a name="machine-learning" class="heading-anchor" href="#machine-learning" rel="nofollow" aria-hidden="true"></a>Machine learning</h2>
+<p><img src="assets/Pasted%20image%2020240419031440.jpg" alt=""></p>
+
+<p>Machine learning is an application of AI through which the system can learn and improve by itself from experience.</p>
+
+<p>Machine learning is training data into infromation.</p>
+
+<p>Flowchart of ML:</p>
+
+<p><img src="assets/Pasted%20image%2020240419032023.png" alt=""></p>
+<h3><a name="types-of-machine-learning" class="heading-anchor" href="#types-of-machine-learning" rel="nofollow" aria-hidden="true"></a>Types of Machine Learning:</h3>
+<p><img src="assets/Pasted%20image%2020240419033151.png" alt=""></p>
+
+<ol>
+<li><strong>Supervised Learning</strong>: Algorithms are trained with labeled data, where the input and output are known. This type is further divided into two categories: <img src="assets/Pasted%20image%2020240419033824.png" alt="">
+
+<ul>
+<li><strong>Classification</strong>: Predicting categorical target variables, such as spam detection or disease diagnosis.
+
+<ul>
+<li><img src="assets/Pasted%20image%2020240419034236.png" alt=""></li>
+</ul></li>
+<li><strong>Regression</strong>: Predicting continuous target variables, such as stock prices or weather forecasting.
+
+<ul>
+<li><img src="assets/IGU_25__Machine_Learning_Regression_-_Google_Docs.webp" alt=""></li>
+</ul></li>
+</ul></li>
+<li><strong>Unsupervised Learning</strong>: Algorithms are trained with unlabeled data, where the input is known, but the output is not. This type is further divided into two categories: <img src="assets/Pasted%20image%2020240419033932.png" alt="">
+
+<ul>
+<li><strong>Clustering</strong>: Grouping similar data points together, such as customer segmentation or anomaly detection.
+
+<ul>
+<li><img src="assets/Pasted%20image%2020240419034355.jpg" alt=""></li>
+</ul></li>
+<li><strong>Association</strong>: Identifying relationships between data points, such as market basket analysis or recommendation systems.</li>
+</ul></li>
+<li><strong>Semi-Supervised Learning</strong>: Algorithms are trained with a combination of labeled and unlabeled data. This type is useful when obtaining labeled data is difficult or expensive.
+
+<ul>
+<li><img src="assets/Pasted%20image%2020240419034002.png" alt=""></li>
+</ul></li>
+<li><strong>Reinforcement Learning</strong>: Algorithms learn by interacting with an environment and receiving feedback in the form of rewards or penalties. This type is often used in robotics, gaming, or navigation.
+<img src="assets/Pasted%20image%2020240419034153.png" alt=""></li>
+</ol>
+<h2><a name="how-ml-application-is-developed" class="heading-anchor" href="#how-ml-application-is-developed" rel="nofollow" aria-hidden="true"></a>How ML application is developed</h2>
+<p><img src="assets/Pasted%20image%2020240419032023.png" alt=""></p>
+
+<ol>
+<li><strong>Input Data</strong>: Gathering and preparing the data needed for training the machine learning model.</li>
+<li><strong>Analyze Data</strong>: Examining the data to understand its structure, quality, and content.</li>
+<li><strong>Find Patterns</strong>: Identifying patterns and relationships within the data using statistical or machine learning techniques.</li>
+<li><strong>Prediction</strong>: Developing a machine learning model that can make predictions based on the identified patterns.</li>
+<li><strong>Learn from Feedback</strong>: Improving the model's accuracy by providing feedback on its predictions and adjusting the model's parameters accordingly.</li>
+</ol>
+<h2><a name="application-of-ml" class="heading-anchor" href="#application-of-ml" rel="nofollow" aria-hidden="true"></a>Application of ML</h2>
+<ol>
+<li><strong>Image Recognition</strong>: Identifying and detecting objects, people, or places in digital images.</li>
+<li><strong>Speech Recognition</strong>: Converting voice instructions into text, also known as speech-to-text.</li>
+<li><strong>Traffic Prediction</strong>: Predicting traffic conditions using information from users and Google Maps.</li>
+<li><strong>Product Recommendations</strong>: Using machine learning to suggest products based on user behavior and preferences.</li>
+<li><strong>Self-Driving Cars</strong>: Using machine learning to train cars to detect people and objects while driving, such as Tesla's self-driving cars.</li>
+<li><strong>Email Spam and Malware Filtering</strong>: Automatically filtering emails as important, normal, or spam based on machine learning algorithms.</li>
+<li><strong>Online Fraud Detection</strong>: Detecting fraudulent transactions by analyzing patterns in genuine transactions.</li>
+<li><strong>Stock Market Trading</strong>: Using machine learning algorithms to predict stock market trends and make informed trading decisions.</li>
+<li><strong>Medical Diagnosis</strong>: Using machine learning in medical science for disease diagnosis and building 3D models to predict the exact position of lesions.</li>
+<li><strong>Automatic Language Translation</strong>: Converting text into known languages using machine learning algorithms, like Google's GNMT.</li>
+</ol>
+<h2><a name="need-of-ml" class="heading-anchor" href="#need-of-ml" rel="nofollow" aria-hidden="true"></a>Need of ML</h2>
+<p>The need for machine learning (ML) arises from its ability to analyze large amounts of data and make intelligent predictions, transforming various industries. ML is a subset of Artificial Intelligence (AI) that involves training computer systems to learn from data and make decisions. Unlike traditional programming, ML algorithms can identify patterns and relationships within the data to make predictions or take actions.</p>
+
+<p>Some common applications of ML include:</p>
+
+<ol>
+<li><strong>Image Recognition</strong>: Identifying and detecting objects, people, or places in digital images.</li>
+<li><strong>Speech Recognition</strong>: Converting voice instructions into text, also known as speech-to-text.</li>
+<li><strong>Traffic Prediction</strong>: Predicting traffic conditions using information from users and Google Maps.</li>
+<li><strong>Product Recommendations</strong>: Using machine learning to suggest products based on user behavior and preferences.</li>
+<li><strong>Self-Driving Cars</strong>: Using machine learning to train cars to detect people and objects while driving, such as Tesla's self-driving cars.</li>
+<li><strong>Email Spam and Malware Filtering</strong>: Automatically filtering emails as important, normal, or spam based on machine learning algorithms.</li>
+<li><strong>Online Fraud Detection</strong>: Detecting fraudulent transactions by analyzing patterns in genuine transactions.</li>
+<li><strong>Stock Market Trading</strong>: Using machine learning algorithms to predict stock market trends and make informed trading decisions.</li>
+<li><strong>Medical Diagnosis</strong>: Using machine learning in medical science for disease diagnosis and building 3D models to predict the exact position of lesions.</li>
+<li><strong>Automatic Language Translation</strong>: Converting text into known languages using machine learning algorithms, like Google's GNMT.</li>
+</ol>
+<h2><a name="ds-vs-big-data-vs-vs-data-analytics" class="heading-anchor" href="#ds-vs-big-data-vs-vs-data-analytics" rel="nofollow" aria-hidden="true"></a>DS vs Big data vs vs data analytics</h2>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Data Science</th>
+<th>Big Data</th>
+<th>Data Analytics</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>What it is</td>
+<td>An area of study that involves the collection, processing, analysis, and utilization of data</td>
+<td>Technique to collect, maintain, and process huge amounts of information</td>
+<td>The practice of analyzing data to extract valuable insights and support decision-making</td>
+</tr>
+
+<tr>
+<td>What it does</td>
+<td>Involves collection, processing, analyzing, and utilizing data in various operations</td>
+<td>Focuses on extracting vital and valuable information from a large volume of data</td>
+<td>Involves analyzing data to uncover patterns, trends, and insights for informed decision-making</td>
+</tr>
+
+<tr>
+<td>Data Usage</td>
+<td>Utilizes data to predict trends, patterns, and outcomes for informed decision-making</td>
+<td>Focuses on storing, managing, and processing vast amounts of structured and unstructured data</td>
+<td>Utilizes data analysis to drive strategic decisions, improve processes, and enhance performance</td>
+</tr>
+
+<tr>
+<td>Tools &amp; Techniques</td>
+<td>Relies on statistical analysis, machine learning algorithms, and data visualization tools</td>
+<td>Utilizes distributed computing platforms, big data technologies like Hadoop and Spark</td>
+<td>Utilizes tools like data mining, data visualization, and statistical analysis software</td>
+</tr>
+
+<tr>
+<td>Skill Requirements</td>
+<td>Requires strong programming skills, statistical knowledge, and expertise in machine learning</td>
+<td>Demands proficiency in big data technologies, data processing, and storage solutions</td>
+<td>Requires proficiency in data analysis tools, statistical methods, and domain knowledge</td>
+</tr>
+
+<tr>
+<td>Business Impact</td>
+<td>Aims to provide strategic insights, improve decision-making, and drive business growth</td>
+<td>Enables organizations to harness the potential of large datasets for various applications</td>
+<td>Helps organizations make data-driven decisions, optimize processes, and enhance performance</td>
+</tr>
+
+<tr>
+<td>Uses</td>
+<td>Primarily for scientific purposes</td>
+<td>Mainly for business purposes and enhancing customer satisfaction</td>
+<td>Used across industries for optimizing operations, improving customer experiences, and innovation</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="lifecycle-of-ds" class="heading-anchor" href="#lifecycle-of-ds" rel="nofollow" aria-hidden="true"></a>Lifecycle of DS</h2>
+<p><img src="assets/Pasted%20image%2020240419023510.png" alt=""></p>
+
+<ul>
+<li><strong>Business Understanding</strong>: Figuring out the problem and why it's important. This involves planning resources, assessing risks, and meeting stakeholders' expectations.</li>
+<li><strong>Data Collection</strong>: Getting data from different sources and making sure it's good quality. This can involve surveys, interviews, social media, web scraping, and analytics.</li>
+<li><strong>Data Preparation</strong>: Making sense of raw data by organizing, cleaning, and formatting it. This includes fixing errors, removing duplicates, and getting it ready for analysis.</li>
+<li><strong>Exploratory Data Analysis (EDA)</strong>: Searching for patterns and trends in the data. This helps spot insights that can solve the problem at hand.</li>
+<li><strong>Modeling</strong>: Creating visual representations of data patterns using tools like decision trees and neural networks. This helps test ideas and relationships in the data.</li>
+<li><strong>Model Evaluation</strong>: Checking and finalizing the model to ensure it's accurate and useful. This step ensures the model is reliable for decision-making.</li>
+<li><strong>Model Deployment</strong>: Sharing the results with stakeholders for decision-making. The final model is a tool they can use to make informed choices based on the data analysis.</li>
+</ul>
+<h2><a name="logistics-regression-vs-linear-regression" class="heading-anchor" href="#logistics-regression-vs-linear-regression" rel="nofollow" aria-hidden="true"></a>Logistics regression vs linear regression</h2>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Logistic Regression</th>
+<th>Linear Regression</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Purpose</td>
+<td>Used for predicting categorical outcomes, especially when the dependent variable is binary</td>
+<td>Used for predicting continuous outcomes, assuming a linear relationship between variables</td>
+</tr>
+
+<tr>
+<td>Output</td>
+<td>Categorical outcome (e.g., yes/no, 1/0)</td>
+<td>Continuous outcome (e.g., price, temperature)</td>
+</tr>
+
+<tr>
+<td>Model Type</td>
+<td>Classification</td>
+<td>Regression</td>
+</tr>
+
+<tr>
+<td>Error Distribution</td>
+<td>Binomial</td>
+<td>Normal/Gaussian</td>
+</tr>
+
+<tr>
+<td>Sensitivity to Outliers</td>
+<td>Less</td>
+<td>More</td>
+</tr>
+
+<tr>
+<td>Estimation Method</td>
+<td>Maximum Likelihood Estimation (MLE)</td>
+<td>Ordinary Least Squares (OLS)</td>
+</tr>
+
+<tr>
+<td>Equation/Function</td>
+<td>Logistic (Sigmoid) function</td>
+<td>Linear equation</td>
+</tr>
+</tbody>
+</table>
+
+<p><img src="assets/Pasted%20image%2020240419035439.png" alt=""></p>
+
+		</main>
+		<footer>
+			<p style="text-align: center; font-size: small; margin-top: 5em;">
+                <a href="https://anzenkodo.github.io/license">LICENSE</a>
+            </p>
+		</footer>
+	<script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']],
+          }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+	</body>
+</html>
