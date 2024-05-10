@@ -177,9 +177,9 @@ class RSS {
 		// Return the transfer as a string.
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 		// The maximum number of seconds to allow cURL functions to execute.
-		curl_setopt($curl, CURLOPT_TIMEOUT, 60);
+		curl_setopt($curl, CURLOPT_TIMEOUT, 100);
 		// Changes curl useragent
-		curl_setopt($curl, CURLOPT_USERAGENT, self::$useragent);
+		// curl_setopt($curl, CURLOPT_USERAGENT, self::$useragent);
 		// To make cURL follow a redirect
 		curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
 
