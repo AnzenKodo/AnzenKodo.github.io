@@ -163,6 +163,8 @@
                 max-width: 100%;
             }
 		</style>
+	<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0"></script>
+    <script src="{{.website}}assets/circular-audio-wave.js"></script>
 	</head>
 	<body>
 	    <a href="#skip-top-main">Skip to main</a>
@@ -170,17 +172,18 @@
 			<h1 style="text-align: center;">
                 <a href="{{.website}}">AK</a>#<a href="{{.start_url}}">{{.short_name}}</a>
             </h1>
-            {{ if ne .toc "<nav>\n</nav>\n" }}
-			<details id="table-of-content">
-			    <summary>Table of Content</summary>
-                {{.toc}}
-			</details>
-            {{ end }}
 		</header>
+		<div id="music" style="width: 100%; height: 18em;"></div>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem">{{.heading}}</h1>
 			{{.content}}
 		</main>
+        {{ if ne .toc "<nav>\n</nav>\n" }}
+        <details id="table-of-content">
+           <summary>Table of Content</summary>
+                    {{.toc}}
+        </details>
+        {{ end }}
 		<footer>
 			<p style="text-align: center; font-size: small; margin-top: 5em;">
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
@@ -195,6 +198,19 @@
         };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <script>
+    const music = document.getElementById('music');
+    let wave = new CircularAudioWave(music);
+    wave.loadAudio('{{.website}}assets/Music.m4a');
+
+    music.addEventListener("click", () => {
+        if (wave.playing) {
+            wave.pause();
+        } else {
+            wave.play()
+        }
+    })
     </script>
 	</body>
 </html>
