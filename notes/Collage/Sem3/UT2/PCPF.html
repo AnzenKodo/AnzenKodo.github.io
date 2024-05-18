@@ -163,6 +163,8 @@
                 max-width: 100%;
             }
 		</style>
+	<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0"></script>
+    <script src="https://AnzenKodo.github.io/assets/circular-audio-wave.js"></script>
 	</head>
 	<body>
 	    <a href="#skip-top-main">Skip to main</a>
@@ -170,50 +172,8 @@
 			<h1 style="text-align: center;">
                 <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
-            
-			<details id="table-of-content">
-			    <summary>Table of Content</summary>
-                <nav>
-<ul>
-<li><a href="#1-explain-database-manipulation">1. Explain database manipulation.</a>
-<ul>
-<li><a href="#static-database-manipulation">
-Static Database Manipulation.</a></li>
-<li><a href="#dynamic-database-manipulation">
-Dynamic Database Manipulation</a></li>
-</ul></li>
-<li><a href="#2-what-is-imperative-control-flow">
-2. What is imperative control flow?</a></li>
-<li><a href="#3-what-is-dynamic-database-manipulation">
-3. What is dynamic Database manipulation?</a></li>
-<li><a href="#4-what-is-logic-programming">
-4. What is logic programming?</a></li>
-<li><a href="#5-application-of-prolog">
-5. Application of prolog.</a></li>
-<li><a href="#6-what-is-list-in-prolog">
-6. What is List in Prolog?</a></li>
-<li><a href="#7-explain-facts-rules-and-queries-along-with-an-example">
-7. Explain Facts, Rules and Queries along with an example.</a></li>
-<li><a href="#8-explain-the-unification-and-resolution-in-prolog-with-example">
-8. Explain the unification and resolution in prolog with example.</a>
-<ul>
-<li><a href="#unification">
-Unification</a></li>
-<li><a href="#resolution">
-Resolution</a></li>
-</ul></li>
-<li><a href="#9-list-operation-in-prolog">
-9. List operation in Prolog.</a></li>
-<li><a href="#10-lazy-versus-eager-evaluation-order-for-function-parameters">
-10. Lazy versus Eager evaluation order for function parameters.</a></li>
-<li><a href="#11-what-is-dynamic-database">
-11. What is dynamic database.</a></li>
-</ul>
-</nav>
-
-			</details>
-            
 		</header>
+		<div id="music" style="width: 100%; height: 18em;"></div>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem">PCPF</h1>
 			<h2><a name="1-explain-database-manipulation" class="heading-anchor" href="#1-explain-database-manipulation" rel="nofollow" aria-hidden="true"></a>1. Explain database manipulation.</h2>
@@ -2658,6 +2618,49 @@ changing conditions.</p>
 for more.</p>
 
 		</main>
+        
+        <details id="table-of-content">
+           <summary>Table of Content</summary>
+                    <nav>
+<ul>
+<li><a href="#1-explain-database-manipulation">1. Explain database manipulation.</a>
+<ul>
+<li><a href="#static-database-manipulation">
+Static Database Manipulation.</a></li>
+<li><a href="#dynamic-database-manipulation">
+Dynamic Database Manipulation</a></li>
+</ul></li>
+<li><a href="#2-what-is-imperative-control-flow">
+2. What is imperative control flow?</a></li>
+<li><a href="#3-what-is-dynamic-database-manipulation">
+3. What is dynamic Database manipulation?</a></li>
+<li><a href="#4-what-is-logic-programming">
+4. What is logic programming?</a></li>
+<li><a href="#5-application-of-prolog">
+5. Application of prolog.</a></li>
+<li><a href="#6-what-is-list-in-prolog">
+6. What is List in Prolog?</a></li>
+<li><a href="#7-explain-facts-rules-and-queries-along-with-an-example">
+7. Explain Facts, Rules and Queries along with an example.</a></li>
+<li><a href="#8-explain-the-unification-and-resolution-in-prolog-with-example">
+8. Explain the unification and resolution in prolog with example.</a>
+<ul>
+<li><a href="#unification">
+Unification</a></li>
+<li><a href="#resolution">
+Resolution</a></li>
+</ul></li>
+<li><a href="#9-list-operation-in-prolog">
+9. List operation in Prolog.</a></li>
+<li><a href="#10-lazy-versus-eager-evaluation-order-for-function-parameters">
+10. Lazy versus Eager evaluation order for function parameters.</a></li>
+<li><a href="#11-what-is-dynamic-database">
+11. What is dynamic database.</a></li>
+</ul>
+</nav>
+
+        </details>
+        
 		<footer>
 			<p style="text-align: center; font-size: small; margin-top: 5em;">
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
@@ -2672,6 +2675,19 @@ for more.</p>
         };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <script>
+    const music = document.getElementById('music');
+    let wave = new CircularAudioWave(music);
+    wave.loadAudio('https://AnzenKodo.github.io/assets/Music.m4a');
+
+    music.addEventListener("click", () => {
+        if (wave.playing) {
+            wave.pause();
+        } else {
+            wave.play()
+        }
+    })
     </script>
 	</body>
 </html>

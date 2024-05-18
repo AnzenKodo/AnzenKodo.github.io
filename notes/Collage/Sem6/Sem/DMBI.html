@@ -163,6 +163,8 @@
                 max-width: 100%;
             }
 		</style>
+	<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0"></script>
+    <script src="https://AnzenKodo.github.io/assets/circular-audio-wave.js"></script>
 	</head>
 	<body>
 	    <a href="#skip-top-main">Skip to main</a>
@@ -170,108 +172,8 @@
 			<h1 style="text-align: center;">
                 <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
-            
-			<details id="table-of-content">
-			    <summary>Table of Content</summary>
-                <nav>
-<ul>
-<li><a href="#draw-data-warehousing-architecture-q1-5-may-23-q5-10-dec-23-q1-5-dec-22">Draw Data Warehousing Architecture (Q1 / 5 / May 23) (Q5 / 10 / Dec 23) (Q1 / 5 / Dec 22)</a></li>
-<li><a href="#what-is-noisy-data-how-to-handle-noisy-data-q1-5-may-23-q5-10-dec-23">
-What is noisy data? How to handle noisy data? (Q1 / 5 / May 23) (Q5 / 10 / Dec 23)</a></li>
-<li><a href="#compare-and-contrast-between-oltp-and-olap-q1-5-may-23">
-Compare and contrast between OLTP and OLAP (Q1 / 5 / May 23)</a></li>
-<li><a href="#explain-concept-of-information-gain-and-gini-value-used-in-decision-algorithm-q1-5-may-23-q1-5-may-22">
-Explain concept of information gain and gini value used in decision algorithm (Q1 / 5 / May 23) (Q1 / 5 / May 22)</a></li>
-<li><a href="#what-is-data-mining-explain-kdd-process-with-diagram-q2-10-may-23-q4-10-dec-23">
-What is Data mining? Explain KDD process with diagram (Q2 / 10 / May 23) (Q4 / 10 / Dec 23)</a></li>
-<li><a href="#consider-we-have-27-participants-in-a-survey-given-to-us-in-shorted-order-13-15-16-16-19-20-20-21-22-22-25-25-25-25-30-33-33-35-35-35-35-36-40-45-46-52-70-explain-how-to-calculate-mean-median-standard-deviation-1st-and-3rd-quartile-for-the-following-data-and-also-compute-the-same-show-the-box-and-whisker-plot-for-the-data-q2-10-may-23">
-Consider we have 27 participants in a survey given to us in shorted order: 13, 15, 16, 16, 19, 20, 20, 21, 22, 22, 25, 25, 25, 25, 30, 33, 33, 35, 35, 35, 35, 36, 40, 45, 46, 52, 70. Explain how to calculate mean, median, standard deviation, 1st and 3rd quartile for the following data and also compute the same. Show the Box and Whisker plot for the data. (Q2 / 10 / May 23)</a></li>
-<li><a href="#explain-market-basket-analysis-with-example-q3-10-may-23">
-Explain market Basket Analysis with example (Q3 / 10 / May 23)</a></li>
-<li><a href="#consider-training-dataset-as-given-below-use-naive-base-algorithm-to-determine-whether-it-is-advisable-to-play-tennis-on-a-day-with-hot-temperature-rainy-outlook-high-humidity-and-weak-wind-q3-10-may-23-q3-10-dec-23-q2-10-may-22">
-Consider Training Dataset as given below. Use Naive Base Algorithm to determine whether it is advisable to play tennis on a day with hot temperature, rainy outlook, high humidity and weak wind? (Q3 / 10 / May 23) (Q3 / 10 / Dec 23) (Q2 / 10 / May 22)</a></li>
-<li><a href="#what-is-an-outlier-explain-various-methods-for-performing-outlier-analysis-q4-10-may-23-q6-10-dec-23-q4-10-may-22">
-What is an outlier? Explain various methods for performing outlier analysis. (Q4 / 10 / May 23) (Q6 / 10 / Dec 23) (Q4 / 10 / May 22)</a></li>
-<li><a href="#use-the-apriori-algorithm-to-identify-the-frequent-item-sets-in-the-following-database-then-extract-the-strong-association-rules-from-these-sets-assume-min-support-50-min-confidence-75-q4-10-may-23-q4-10-dec-23-q4-10-may-22">
-Use the Apriori algorithm to identify the frequent item-sets in the following database. Then extract the strong association rules from these sets. Assume Min Support 50% Min Confidence 75% (Q4 / 10 / May 23) (Q4 / 10 / Dec 23) (Q4 / 10 / May 22)</a></li>
-<li><a href="#cluster-the-following-eight-points-with-x-y-representing-location-into-three-clusters-a1-2-10-a2-2-5-a3-8-4-a4-5-8-a5-7-5-a6-6-4-a7-1-2-a8-4-9-assume-initial-cluster-centers-are-at-a1-2-10-a4-5-8-and-a7-1-2-the-distance-function-between-two-points-a-x1-y1-and-b-x2-y2-is-defined-as-p-a-b-x2-x1-y2-y1-use-k-means-algorithm-to-find-the-three-cluster-centers-after-the-second-iteration-q5-10-may-23-q2-10-dec-23">
-Cluster the following eight points (with (x, y) representing location) into three clusters: A1(2, 10), A2(2, 5), A3(8, 4), A4(5, 8), A5(7, 5), A6(6, 4), A7(1, 2), A8(4, 9). Assume Initial cluster centers are at: A1(2, 10), A4(5, 8) and A7(1, 2). The distance function between two points a = (x1, y1) and b = (x2, y2) is defined as P(a, b) = | x2 - x1 | + | y2 - y1 |. Use K-Means Algorithm to find the three cluster centers after the second iteration. (Q5 / 10 / May 23) (Q2 / 10 / Dec 23)</a>
-<ul>
-<li><a href="#iteration-01">
-Iteration 01</a></li>
-<li><a href="#iteration-02">
-Iteration 02</a></li>
-</ul></li>
-<li><a href="#compare-star-schema-snow-flakes-schema-and-star-fact-constellation-schema-q5-10-may-23-q2-10-dec-22">
-Compare Star schema, Snow flakes schema and Star/Fact constellation schema (Q5 / 10 / May 23) (Q2 / 10 / Dec 22)</a></li>
-<li><a href="#dimensional-modeling-q6-5-may-23">
-Dimensional Modeling (Q6 / 5 / May 23)</a></li>
-<li><a href="#random-forest-technique-q6-5-may-23">
-Random Forest Technique (Q6 / 5 / May 23)</a></li>
-<li><a href="#decision-tree-induction-q5-5-may-23">
-Decision Tree Induction (Q5 / 5 / May 23)</a></li>
-<li><a href="#cross-validation-q6-5-may-23">
-Cross Validation (Q6 / 5 / May 23)</a></li>
-<li><a href="#dbscan-algorithm-q6-5-may-23-q1-5-may-23">
-DBSCAN Algorithm (Q6 / 5 / May 23) (Q1 / 5 /  May 23)</a></li>
-<li><a href="#explain-the-types-of-attributes-used-in-data-exploration-q1-10-dec-23">
-Explain the types of attributes used in data exploration. (Q1 / 10 / Dec 23)</a></li>
-<li><a href="#explain-k-mean-algorithm-detils-apply-k-mean-algorithm-to-divide-the-given-set-of-values-2-3-4-10-11-12-20-25-30-into-2-cluters-q2-10-dec-23">
-Explain K-Mean algorithm detils. Apply K-Mean algorithm to divide the given set of values { 2, 3, 4, 10, 11, 12, 20, 25, 30 } into 2 cluters. (Q2 / 10 / Dec 23)</a></li>
-<li><a href="#compare-bagging-and-boosting-of-a-classifier-q2-10-dec-23">
-Compare Bagging and Boosting of a classifier (Q2 / 10 / Dec 23)</a></li>
-<li><a href="#explain-multilevel-and-multidimensional-association-rules-with-suitable-examples-q3-10-dec-23-q2-10-may-22">
-Explain Multilevel and Multidimensional Association rules with suitable examples. (Q3 / 10 / Dec 23) (Q2 / 10 / May 22)</a>
-<ul>
-<li><a href="#multilevel-association-rule">
-Multilevel association rule</a></li>
-<li><a href="#multi-dimensional-association-rule">
-Multi-dimensional association rule</a></li>
-</ul></li>
-<li><a href="#numerical-smoothing-by-bin-mean-median-boundary-q5-10-dec-23-q1-05-dec-22-q1-10-may-22">
-Numerical : Smoothing by bin Mean, Median &amp; Boundary (Q5 / 10 / Dec 23) (Q1 / 05 / Dec 22) (Q1 / 10 / May 22)</a></li>
-<li><a href="#design-bi-system-for-fraud-detection-explain-all-steps-from-data-collection-to-decision-making">
-Design BI system for Fraud Detection. Explain all steps from data collection to decision making.</a></li>
-<li><a href="#how-to-calculate-the-correlation-coefficient-for-two-numeric-attributes-and-also-comment-on-the-significance-of-this-value-q1-5-dec-22">
-How to calculate the correlation coefficient for two numeric attributes and also comment on the significance of this value? (Q1 / 5 / Dec 22)</a></li>
-<li><a href="#write-a-short-note-on-support-and-confidence-q1-5-dec-22">
-Write a short note on support and confidence. (Q1 / 5 / Dec 22)</a></li>
-<li><a href="#describe-data-reduction-technique-q2-10-dec-22">
-Describe data reduction technique. (Q2 / 10 / Dec 22)</a></li>
-<li><a href="#write-and-explain-naive-bayes-classification-algorithm-q3-10-dec-22">
-Write and explain Naive Bayes classification algorithm. (Q3 / 10 / Dec 22)</a></li>
-<li><a href="#write-the-steps-of-ada-boost-algorithm-q3-10-dec-22">
-Write the steps of Ada-boost algorithm. (Q3 / 10 / Dec 22)</a></li>
-<li><a href="#how-data-mining-used-in-bi-q4-10-dec-22">
-How data mining used in BI (Q4 / 10 / Dec 22)</a></li>
-<li><a href="#give-an-overview-of-partition-clustering-methods-q4-10-dec-22">
-Give an overview of partition clustering methods. (Q4 / 10 / Dec 22)</a></li>
-<li><a href="#how-can-we-further-improve-the-efficiency-of-apriori-based-mining-q5-10-dec-22">
-How can we further improve the efficiency of Apriori-based mining? (Q5 / 10 / Dec 22)</a></li>
-<li><a href="#explain-olap-operations-with-examples-q5-10-dec-22-q2-10-may-23">
-Explain OLAP operations with examples. (Q5 / 10 / Dec 22) (Q2 / 10 / May 23)</a></li>
-<li><a href="#describe-the-classification-performance-evaluation-measures-that-can-be-obtained-from-a-confusion-matrix-q5-10-dec-22">
-Describe the classification performance evaluation measures that can be obtained from a confusion matrix. (Q5 / 10 / Dec 22)</a></li>
-<li><a href="#normalize-the-following-group-of-data-using-two-methods-min-max-normalization-and-z-score-normalization-1000-2000-3000-5000-9000-use-min-max-normalization-by-setting-min-1000-max-9000-and-z-score-normalization-q5-10-dec-22">
-Normalize the following group of data using two methods: min-max normalization and z-score normalization: 1000, 2000, 3000, 5000, 9000. Use min-max normalization by setting min: 1000 &amp; max: 9000 and z-score normalization. (Q5 / 10 / Dec 22)</a>
-<ul>
-<li><a href="#min-max">
-Min-max</a></li>
-<li><a href="#z-score">
-Z-Score</a></li>
-</ul></li>
-<li><a href="#what-is-bi-explain-architecture-in-detail-q3-10-may-22">
-What is BI? Explain Architecture in detail. (Q3 / 10 / May 22)</a></li>
-<li><a href="#briefly-explain-bagging-and-boosting-q4-10-may-22">
-Briefly explain Bagging and Boosting (Q4 / 10 / May 22)</a></li>
-<li><a href="#suppose-we-have-six-objects-with-names-a-b-c-d-e-and-f-apply-single-linkage-clustering-and-draw-a-dendrogram-for-the-given-data-q3-10-may-22">
-Suppose we have six objects with names A, B, C, D, E and F. Apply single linkage clustering and draw a dendrogram for the given data. (Q3 / 10 / May 22)</a></li>
-</ul>
-</nav>
-
-			</details>
-            
 		</header>
+		<div id="music" style="width: 100%; height: 18em;"></div>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem">DMBI</h1>
 			<h2><a name="draw-data-warehousing-architecture-q1-5-may-23-q5-10-dec-23-q1-5-dec-22" class="heading-anchor" href="#draw-data-warehousing-architecture-q1-5-may-23-q5-10-dec-23-q1-5-dec-22" rel="nofollow" aria-hidden="true"></a>Draw Data Warehousing Architecture (Q1 / 5 / May 23) (Q5 / 10 / Dec 23) (Q1 / 5 / Dec 22)</h2>
@@ -3377,6 +3279,107 @@ body { color: #282c34; }
 </table>
 
 		</main>
+        
+        <details id="table-of-content">
+           <summary>Table of Content</summary>
+                    <nav>
+<ul>
+<li><a href="#draw-data-warehousing-architecture-q1-5-may-23-q5-10-dec-23-q1-5-dec-22">Draw Data Warehousing Architecture (Q1 / 5 / May 23) (Q5 / 10 / Dec 23) (Q1 / 5 / Dec 22)</a></li>
+<li><a href="#what-is-noisy-data-how-to-handle-noisy-data-q1-5-may-23-q5-10-dec-23">
+What is noisy data? How to handle noisy data? (Q1 / 5 / May 23) (Q5 / 10 / Dec 23)</a></li>
+<li><a href="#compare-and-contrast-between-oltp-and-olap-q1-5-may-23">
+Compare and contrast between OLTP and OLAP (Q1 / 5 / May 23)</a></li>
+<li><a href="#explain-concept-of-information-gain-and-gini-value-used-in-decision-algorithm-q1-5-may-23-q1-5-may-22">
+Explain concept of information gain and gini value used in decision algorithm (Q1 / 5 / May 23) (Q1 / 5 / May 22)</a></li>
+<li><a href="#what-is-data-mining-explain-kdd-process-with-diagram-q2-10-may-23-q4-10-dec-23">
+What is Data mining? Explain KDD process with diagram (Q2 / 10 / May 23) (Q4 / 10 / Dec 23)</a></li>
+<li><a href="#consider-we-have-27-participants-in-a-survey-given-to-us-in-shorted-order-13-15-16-16-19-20-20-21-22-22-25-25-25-25-30-33-33-35-35-35-35-36-40-45-46-52-70-explain-how-to-calculate-mean-median-standard-deviation-1st-and-3rd-quartile-for-the-following-data-and-also-compute-the-same-show-the-box-and-whisker-plot-for-the-data-q2-10-may-23">
+Consider we have 27 participants in a survey given to us in shorted order: 13, 15, 16, 16, 19, 20, 20, 21, 22, 22, 25, 25, 25, 25, 30, 33, 33, 35, 35, 35, 35, 36, 40, 45, 46, 52, 70. Explain how to calculate mean, median, standard deviation, 1st and 3rd quartile for the following data and also compute the same. Show the Box and Whisker plot for the data. (Q2 / 10 / May 23)</a></li>
+<li><a href="#explain-market-basket-analysis-with-example-q3-10-may-23">
+Explain market Basket Analysis with example (Q3 / 10 / May 23)</a></li>
+<li><a href="#consider-training-dataset-as-given-below-use-naive-base-algorithm-to-determine-whether-it-is-advisable-to-play-tennis-on-a-day-with-hot-temperature-rainy-outlook-high-humidity-and-weak-wind-q3-10-may-23-q3-10-dec-23-q2-10-may-22">
+Consider Training Dataset as given below. Use Naive Base Algorithm to determine whether it is advisable to play tennis on a day with hot temperature, rainy outlook, high humidity and weak wind? (Q3 / 10 / May 23) (Q3 / 10 / Dec 23) (Q2 / 10 / May 22)</a></li>
+<li><a href="#what-is-an-outlier-explain-various-methods-for-performing-outlier-analysis-q4-10-may-23-q6-10-dec-23-q4-10-may-22">
+What is an outlier? Explain various methods for performing outlier analysis. (Q4 / 10 / May 23) (Q6 / 10 / Dec 23) (Q4 / 10 / May 22)</a></li>
+<li><a href="#use-the-apriori-algorithm-to-identify-the-frequent-item-sets-in-the-following-database-then-extract-the-strong-association-rules-from-these-sets-assume-min-support-50-min-confidence-75-q4-10-may-23-q4-10-dec-23-q4-10-may-22">
+Use the Apriori algorithm to identify the frequent item-sets in the following database. Then extract the strong association rules from these sets. Assume Min Support 50% Min Confidence 75% (Q4 / 10 / May 23) (Q4 / 10 / Dec 23) (Q4 / 10 / May 22)</a></li>
+<li><a href="#cluster-the-following-eight-points-with-x-y-representing-location-into-three-clusters-a1-2-10-a2-2-5-a3-8-4-a4-5-8-a5-7-5-a6-6-4-a7-1-2-a8-4-9-assume-initial-cluster-centers-are-at-a1-2-10-a4-5-8-and-a7-1-2-the-distance-function-between-two-points-a-x1-y1-and-b-x2-y2-is-defined-as-p-a-b-x2-x1-y2-y1-use-k-means-algorithm-to-find-the-three-cluster-centers-after-the-second-iteration-q5-10-may-23-q2-10-dec-23">
+Cluster the following eight points (with (x, y) representing location) into three clusters: A1(2, 10), A2(2, 5), A3(8, 4), A4(5, 8), A5(7, 5), A6(6, 4), A7(1, 2), A8(4, 9). Assume Initial cluster centers are at: A1(2, 10), A4(5, 8) and A7(1, 2). The distance function between two points a = (x1, y1) and b = (x2, y2) is defined as P(a, b) = | x2 - x1 | + | y2 - y1 |. Use K-Means Algorithm to find the three cluster centers after the second iteration. (Q5 / 10 / May 23) (Q2 / 10 / Dec 23)</a>
+<ul>
+<li><a href="#iteration-01">
+Iteration 01</a></li>
+<li><a href="#iteration-02">
+Iteration 02</a></li>
+</ul></li>
+<li><a href="#compare-star-schema-snow-flakes-schema-and-star-fact-constellation-schema-q5-10-may-23-q2-10-dec-22">
+Compare Star schema, Snow flakes schema and Star/Fact constellation schema (Q5 / 10 / May 23) (Q2 / 10 / Dec 22)</a></li>
+<li><a href="#dimensional-modeling-q6-5-may-23">
+Dimensional Modeling (Q6 / 5 / May 23)</a></li>
+<li><a href="#random-forest-technique-q6-5-may-23">
+Random Forest Technique (Q6 / 5 / May 23)</a></li>
+<li><a href="#decision-tree-induction-q5-5-may-23">
+Decision Tree Induction (Q5 / 5 / May 23)</a></li>
+<li><a href="#cross-validation-q6-5-may-23">
+Cross Validation (Q6 / 5 / May 23)</a></li>
+<li><a href="#dbscan-algorithm-q6-5-may-23-q1-5-may-23">
+DBSCAN Algorithm (Q6 / 5 / May 23) (Q1 / 5 /  May 23)</a></li>
+<li><a href="#explain-the-types-of-attributes-used-in-data-exploration-q1-10-dec-23">
+Explain the types of attributes used in data exploration. (Q1 / 10 / Dec 23)</a></li>
+<li><a href="#explain-k-mean-algorithm-detils-apply-k-mean-algorithm-to-divide-the-given-set-of-values-2-3-4-10-11-12-20-25-30-into-2-cluters-q2-10-dec-23">
+Explain K-Mean algorithm detils. Apply K-Mean algorithm to divide the given set of values { 2, 3, 4, 10, 11, 12, 20, 25, 30 } into 2 cluters. (Q2 / 10 / Dec 23)</a></li>
+<li><a href="#compare-bagging-and-boosting-of-a-classifier-q2-10-dec-23">
+Compare Bagging and Boosting of a classifier (Q2 / 10 / Dec 23)</a></li>
+<li><a href="#explain-multilevel-and-multidimensional-association-rules-with-suitable-examples-q3-10-dec-23-q2-10-may-22">
+Explain Multilevel and Multidimensional Association rules with suitable examples. (Q3 / 10 / Dec 23) (Q2 / 10 / May 22)</a>
+<ul>
+<li><a href="#multilevel-association-rule">
+Multilevel association rule</a></li>
+<li><a href="#multi-dimensional-association-rule">
+Multi-dimensional association rule</a></li>
+</ul></li>
+<li><a href="#numerical-smoothing-by-bin-mean-median-boundary-q5-10-dec-23-q1-05-dec-22-q1-10-may-22">
+Numerical : Smoothing by bin Mean, Median &amp; Boundary (Q5 / 10 / Dec 23) (Q1 / 05 / Dec 22) (Q1 / 10 / May 22)</a></li>
+<li><a href="#design-bi-system-for-fraud-detection-explain-all-steps-from-data-collection-to-decision-making">
+Design BI system for Fraud Detection. Explain all steps from data collection to decision making.</a></li>
+<li><a href="#how-to-calculate-the-correlation-coefficient-for-two-numeric-attributes-and-also-comment-on-the-significance-of-this-value-q1-5-dec-22">
+How to calculate the correlation coefficient for two numeric attributes and also comment on the significance of this value? (Q1 / 5 / Dec 22)</a></li>
+<li><a href="#write-a-short-note-on-support-and-confidence-q1-5-dec-22">
+Write a short note on support and confidence. (Q1 / 5 / Dec 22)</a></li>
+<li><a href="#describe-data-reduction-technique-q2-10-dec-22">
+Describe data reduction technique. (Q2 / 10 / Dec 22)</a></li>
+<li><a href="#write-and-explain-naive-bayes-classification-algorithm-q3-10-dec-22">
+Write and explain Naive Bayes classification algorithm. (Q3 / 10 / Dec 22)</a></li>
+<li><a href="#write-the-steps-of-ada-boost-algorithm-q3-10-dec-22">
+Write the steps of Ada-boost algorithm. (Q3 / 10 / Dec 22)</a></li>
+<li><a href="#how-data-mining-used-in-bi-q4-10-dec-22">
+How data mining used in BI (Q4 / 10 / Dec 22)</a></li>
+<li><a href="#give-an-overview-of-partition-clustering-methods-q4-10-dec-22">
+Give an overview of partition clustering methods. (Q4 / 10 / Dec 22)</a></li>
+<li><a href="#how-can-we-further-improve-the-efficiency-of-apriori-based-mining-q5-10-dec-22">
+How can we further improve the efficiency of Apriori-based mining? (Q5 / 10 / Dec 22)</a></li>
+<li><a href="#explain-olap-operations-with-examples-q5-10-dec-22-q2-10-may-23">
+Explain OLAP operations with examples. (Q5 / 10 / Dec 22) (Q2 / 10 / May 23)</a></li>
+<li><a href="#describe-the-classification-performance-evaluation-measures-that-can-be-obtained-from-a-confusion-matrix-q5-10-dec-22">
+Describe the classification performance evaluation measures that can be obtained from a confusion matrix. (Q5 / 10 / Dec 22)</a></li>
+<li><a href="#normalize-the-following-group-of-data-using-two-methods-min-max-normalization-and-z-score-normalization-1000-2000-3000-5000-9000-use-min-max-normalization-by-setting-min-1000-max-9000-and-z-score-normalization-q5-10-dec-22">
+Normalize the following group of data using two methods: min-max normalization and z-score normalization: 1000, 2000, 3000, 5000, 9000. Use min-max normalization by setting min: 1000 &amp; max: 9000 and z-score normalization. (Q5 / 10 / Dec 22)</a>
+<ul>
+<li><a href="#min-max">
+Min-max</a></li>
+<li><a href="#z-score">
+Z-Score</a></li>
+</ul></li>
+<li><a href="#what-is-bi-explain-architecture-in-detail-q3-10-may-22">
+What is BI? Explain Architecture in detail. (Q3 / 10 / May 22)</a></li>
+<li><a href="#briefly-explain-bagging-and-boosting-q4-10-may-22">
+Briefly explain Bagging and Boosting (Q4 / 10 / May 22)</a></li>
+<li><a href="#suppose-we-have-six-objects-with-names-a-b-c-d-e-and-f-apply-single-linkage-clustering-and-draw-a-dendrogram-for-the-given-data-q3-10-may-22">
+Suppose we have six objects with names A, B, C, D, E and F. Apply single linkage clustering and draw a dendrogram for the given data. (Q3 / 10 / May 22)</a></li>
+</ul>
+</nav>
+
+        </details>
+        
 		<footer>
 			<p style="text-align: center; font-size: small; margin-top: 5em;">
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
@@ -3391,6 +3394,19 @@ body { color: #282c34; }
         };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <script>
+    const music = document.getElementById('music');
+    let wave = new CircularAudioWave(music);
+    wave.loadAudio('https://AnzenKodo.github.io/assets/Music.m4a');
+
+    music.addEventListener("click", () => {
+        if (wave.playing) {
+            wave.pause();
+        } else {
+            wave.play()
+        }
+    })
     </script>
 	</body>
 </html>

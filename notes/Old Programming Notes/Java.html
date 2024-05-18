@@ -163,6 +163,8 @@
                 max-width: 100%;
             }
 		</style>
+	<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0"></script>
+    <script src="https://AnzenKodo.github.io/assets/circular-audio-wave.js"></script>
 	</head>
 	<body>
 	    <a href="#skip-top-main">Skip to main</a>
@@ -170,50 +172,8 @@
 			<h1 style="text-align: center;">
                 <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
-            
-			<details id="table-of-content">
-			    <summary>Table of Content</summary>
-                <nav>
-<ul>
-<li><a href="#1-write-a-program-to-check-number-is-even-or-odd-using-if-else">1) Write a program to check number is even or odd using if else.</a></li>
-<li><a href="#2-write-a-program-to-check-switch-case-statement-using-character-datatype">
-2) Write a program to check switch case statement using character datatype.</a></li>
-<li><a href="#3-develop-a-program-to-print-command-line-argument-using-for-loop">
-3) Develop a program to print command line argument using for loop.</a></li>
-<li><a href="#4-develop-a-program-to-show-the-use-of-implicit-typecasting">
-4) Develop a program to show the use of implicit typecasting.</a></li>
-<li><a href="#5-write-a-program-to-implement-different-types-of-constructors-to-perform-addition-of-complex-numbers">
-5) Write a program to implement different types of constructors to perform addition of complex numbers.</a></li>
-<li><a href="#6-write-a-program-to-show-the-use-of-all-methods-of-string-class">
-6) Write a program to show the use of all methods of String class.</a></li>
-<li><a href="#7-write-a-program-to-implement-all-methods-of-stringbuffer-class">
-7) Write a program to implement all methods of StringBuffer class.</a></li>
-<li><a href="#8-write-a-program-to-implement-single-inheritance">
-8) Write a program to implement single inheritance.</a></li>
-<li><a href="#9-write-a-program-to-implement-multilevel-inheritance">
-9) Write a program to implement multilevel inheritance.</a></li>
-<li><a href="#10-develop-a-program-to-find-area-of-rectangle-and-circle-using-interface">
-10) Develop a program to find area of rectangle and circle using interface.</a></li>
-<li><a href="#11-write-a-program-to-implement-user-defined-packages-in-terms-of-creating-a-new-package-and-importing-the-same">
-11) Write a program to implement user defined packages in terms of creating a new package and importing the same.</a></li>
-<li><a href="#12-write-a-program-to-implement-two-thread-use-sleep-method">
-12) Write a program to implement two thread use sleep method.</a></li>
-<li><a href="#13-develop-a-program-to-accept-a-password-from-the-user-and-throw-authentication-failure-exception-if-the-password-is-incorrect">
-13) Develop a program to accept a password from the user and throw &quot;Authentication Failure&quot; exception if the password is incorrect.</a></li>
-<li><a href="#14-develop-a-program-to-draw-a-polygon-using-applet">
-14) Develop a program to draw a polygon using applet.</a></li>
-<li><a href="#15-develop-an-applet-for-drawing-a-human-face">
-15) Develop an applet for drawing a human face.</a></li>
-<li><a href="#16-develop-a-program-to-draw-square-inside-a-circle-using-applet">
-16) Develop a program to draw square inside a circle using applet.</a></li>
-<li><a href="#17-develop-a-program-to-copy-characters-from-one-file-to-another">
-17) Develop a program to copy characters from one file to another.</a></li>
-</ul>
-</nav>
-
-			</details>
-            
 		</header>
+		<div id="music" style="width: 100%; height: 18em;"></div>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem">Java</h1>
 			<h2><a name="1-write-a-program-to-check-number-is-even-or-odd-using-if-else" class="heading-anchor" href="#1-write-a-program-to-check-number-is-even-or-odd-using-if-else" rel="nofollow" aria-hidden="true"></a>1) Write a program to check number is even or odd using if else.</h2>
@@ -3369,6 +3329,49 @@ body { color: #282c34; }
 </html>
 </div>
 		</main>
+        
+        <details id="table-of-content">
+           <summary>Table of Content</summary>
+                    <nav>
+<ul>
+<li><a href="#1-write-a-program-to-check-number-is-even-or-odd-using-if-else">1) Write a program to check number is even or odd using if else.</a></li>
+<li><a href="#2-write-a-program-to-check-switch-case-statement-using-character-datatype">
+2) Write a program to check switch case statement using character datatype.</a></li>
+<li><a href="#3-develop-a-program-to-print-command-line-argument-using-for-loop">
+3) Develop a program to print command line argument using for loop.</a></li>
+<li><a href="#4-develop-a-program-to-show-the-use-of-implicit-typecasting">
+4) Develop a program to show the use of implicit typecasting.</a></li>
+<li><a href="#5-write-a-program-to-implement-different-types-of-constructors-to-perform-addition-of-complex-numbers">
+5) Write a program to implement different types of constructors to perform addition of complex numbers.</a></li>
+<li><a href="#6-write-a-program-to-show-the-use-of-all-methods-of-string-class">
+6) Write a program to show the use of all methods of String class.</a></li>
+<li><a href="#7-write-a-program-to-implement-all-methods-of-stringbuffer-class">
+7) Write a program to implement all methods of StringBuffer class.</a></li>
+<li><a href="#8-write-a-program-to-implement-single-inheritance">
+8) Write a program to implement single inheritance.</a></li>
+<li><a href="#9-write-a-program-to-implement-multilevel-inheritance">
+9) Write a program to implement multilevel inheritance.</a></li>
+<li><a href="#10-develop-a-program-to-find-area-of-rectangle-and-circle-using-interface">
+10) Develop a program to find area of rectangle and circle using interface.</a></li>
+<li><a href="#11-write-a-program-to-implement-user-defined-packages-in-terms-of-creating-a-new-package-and-importing-the-same">
+11) Write a program to implement user defined packages in terms of creating a new package and importing the same.</a></li>
+<li><a href="#12-write-a-program-to-implement-two-thread-use-sleep-method">
+12) Write a program to implement two thread use sleep method.</a></li>
+<li><a href="#13-develop-a-program-to-accept-a-password-from-the-user-and-throw-authentication-failure-exception-if-the-password-is-incorrect">
+13) Develop a program to accept a password from the user and throw &quot;Authentication Failure&quot; exception if the password is incorrect.</a></li>
+<li><a href="#14-develop-a-program-to-draw-a-polygon-using-applet">
+14) Develop a program to draw a polygon using applet.</a></li>
+<li><a href="#15-develop-an-applet-for-drawing-a-human-face">
+15) Develop an applet for drawing a human face.</a></li>
+<li><a href="#16-develop-a-program-to-draw-square-inside-a-circle-using-applet">
+16) Develop a program to draw square inside a circle using applet.</a></li>
+<li><a href="#17-develop-a-program-to-copy-characters-from-one-file-to-another">
+17) Develop a program to copy characters from one file to another.</a></li>
+</ul>
+</nav>
+
+        </details>
+        
 		<footer>
 			<p style="text-align: center; font-size: small; margin-top: 5em;">
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
@@ -3383,6 +3386,19 @@ body { color: #282c34; }
         };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <script>
+    const music = document.getElementById('music');
+    let wave = new CircularAudioWave(music);
+    wave.loadAudio('https://AnzenKodo.github.io/assets/Music.m4a');
+
+    music.addEventListener("click", () => {
+        if (wave.playing) {
+            wave.pause();
+        } else {
+            wave.play()
+        }
+    })
     </script>
 	</body>
 </html>

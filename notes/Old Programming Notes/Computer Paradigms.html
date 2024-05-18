@@ -163,6 +163,8 @@
                 max-width: 100%;
             }
 		</style>
+	<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0"></script>
+    <script src="https://AnzenKodo.github.io/assets/circular-audio-wave.js"></script>
 	</head>
 	<body>
 	    <a href="#skip-top-main">Skip to main</a>
@@ -170,100 +172,8 @@
 			<h1 style="text-align: center;">
                 <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
-            
-			<details id="table-of-content">
-			    <summary>Table of Content</summary>
-                <nav>
-<ul>
-<li><a href="#1-explain-the-difference-between-declarative-and-imperative-programming-paradigm">1. Explain the difference between declarative and imperative programming paradigm.</a>
-<ul>
-<li><a href="#imperative-programing">
-Imperative Programing</a></li>
-<li><a href="#declarative-programming">
-Declarative Programming</a></li>
-</ul></li>
-<li><a href="#2-explain">
-2. Explain</a>
-<ul>
-<li><a href="#names">
-Names</a></li>
-<li><a href="#bindings">
-Bindings</a></li>
-<li><a href="#scopes">
-Scopes</a>
-<ul>
-<li><a href="#static-scope">
-Static Scope</a></li>
-<li><a href="#dynamic-scope">
-Dynamic Scope</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#3-explain-different-storage-allocation-mechanisms">
-3. Explain different storage allocation mechanisms.</a>
-<ul>
-<li><a href="#1-static-stroage-allocation">
-1. Static stroage allocation</a></li>
-<li><a href="#2-stack-storage-allocation">
-2. Stack storage allocation</a></li>
-<li><a href="#3-heap-storage-allocation">
-3. Heap storage allocation</a></li>
-</ul></li>
-<li><a href="#4-what-is-lambda-calculus-explain-free-variable-and-bound-variable">
-4. What is Lambda Calculus? Explain Free variable and Bound variable.</a>
-<ul>
-<li><a href="#free-variable">
-Free variable</a></li>
-<li><a href="#bound-variable">
-Bound variable.</a></li>
-</ul></li>
-<li><a href="#5-different-between">
-5. Different between</a>
-<ul>
-<li><a href="#functional-programming">
-Functional Programming</a></li>
-<li><a href="#object-oriented-programming-oop">
-Object Oriented Programming(OOP).</a></li>
-</ul></li>
-<li><a href="#6-what-is-higher-order-function">
-6. What is higher order function?</a>
-<ul>
-<li><a href="#example">
-Example:</a></li>
-</ul></li>
-<li><a href="#7-difference-between">
-7. Difference between</a>
-<ul>
-<li><a href="#normal-evaluation">
-Normal Evaluation</a></li>
-<li><a href="#application-order-evaluation">
-Application order evaluation</a></li>
-</ul></li>
-<li><a href="#8-what-is-paradigm-and-programming-paradigm">
-8. What is paradigm and programming paradigm?</a>
-<ul>
-<li><a href="#imperative-programing">
-Imperative Programing</a></li>
-<li><a href="#declarative-programming">
-Declarative Programming</a></li>
-<li><a href="#functional-programing">
-Functional Programing</a></li>
-<li><a href="#object-oriented-programing">
-Object-oriented Programing</a></li>
-</ul></li>
-<li><a href="#9-what-is-calling-sequence">
-9. What is calling sequence?</a></li>
-<li><a href="#10-what-is-parameter-passing">
-10. What is parameter passing?</a>
-<ul>
-<li><a href="#example">
-Example</a></li>
-</ul></li>
-</ul>
-</nav>
-
-			</details>
-            
 		</header>
+		<div id="music" style="width: 100%; height: 18em;"></div>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem">Computer Paradigms</h1>
 			<h2><a name="1-explain-the-difference-between-declarative-and-imperative-programming-paradigm" class="heading-anchor" href="#1-explain-the-difference-between-declarative-and-imperative-programming-paradigm" rel="nofollow" aria-hidden="true"></a>1. Explain the difference between declarative and imperative programming paradigm.</h2><h3><a name="imperative-programing" class="heading-anchor" href="#imperative-programing" rel="nofollow" aria-hidden="true"></a>Imperative Programing</h3>
@@ -2049,6 +1959,99 @@ was called.</li>
 </ul>
 
 		</main>
+        
+        <details id="table-of-content">
+           <summary>Table of Content</summary>
+                    <nav>
+<ul>
+<li><a href="#1-explain-the-difference-between-declarative-and-imperative-programming-paradigm">1. Explain the difference between declarative and imperative programming paradigm.</a>
+<ul>
+<li><a href="#imperative-programing">
+Imperative Programing</a></li>
+<li><a href="#declarative-programming">
+Declarative Programming</a></li>
+</ul></li>
+<li><a href="#2-explain">
+2. Explain</a>
+<ul>
+<li><a href="#names">
+Names</a></li>
+<li><a href="#bindings">
+Bindings</a></li>
+<li><a href="#scopes">
+Scopes</a>
+<ul>
+<li><a href="#static-scope">
+Static Scope</a></li>
+<li><a href="#dynamic-scope">
+Dynamic Scope</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#3-explain-different-storage-allocation-mechanisms">
+3. Explain different storage allocation mechanisms.</a>
+<ul>
+<li><a href="#1-static-stroage-allocation">
+1. Static stroage allocation</a></li>
+<li><a href="#2-stack-storage-allocation">
+2. Stack storage allocation</a></li>
+<li><a href="#3-heap-storage-allocation">
+3. Heap storage allocation</a></li>
+</ul></li>
+<li><a href="#4-what-is-lambda-calculus-explain-free-variable-and-bound-variable">
+4. What is Lambda Calculus? Explain Free variable and Bound variable.</a>
+<ul>
+<li><a href="#free-variable">
+Free variable</a></li>
+<li><a href="#bound-variable">
+Bound variable.</a></li>
+</ul></li>
+<li><a href="#5-different-between">
+5. Different between</a>
+<ul>
+<li><a href="#functional-programming">
+Functional Programming</a></li>
+<li><a href="#object-oriented-programming-oop">
+Object Oriented Programming(OOP).</a></li>
+</ul></li>
+<li><a href="#6-what-is-higher-order-function">
+6. What is higher order function?</a>
+<ul>
+<li><a href="#example">
+Example:</a></li>
+</ul></li>
+<li><a href="#7-difference-between">
+7. Difference between</a>
+<ul>
+<li><a href="#normal-evaluation">
+Normal Evaluation</a></li>
+<li><a href="#application-order-evaluation">
+Application order evaluation</a></li>
+</ul></li>
+<li><a href="#8-what-is-paradigm-and-programming-paradigm">
+8. What is paradigm and programming paradigm?</a>
+<ul>
+<li><a href="#imperative-programing">
+Imperative Programing</a></li>
+<li><a href="#declarative-programming">
+Declarative Programming</a></li>
+<li><a href="#functional-programing">
+Functional Programing</a></li>
+<li><a href="#object-oriented-programing">
+Object-oriented Programing</a></li>
+</ul></li>
+<li><a href="#9-what-is-calling-sequence">
+9. What is calling sequence?</a></li>
+<li><a href="#10-what-is-parameter-passing">
+10. What is parameter passing?</a>
+<ul>
+<li><a href="#example">
+Example</a></li>
+</ul></li>
+</ul>
+</nav>
+
+        </details>
+        
 		<footer>
 			<p style="text-align: center; font-size: small; margin-top: 5em;">
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
@@ -2063,6 +2066,19 @@ was called.</li>
         };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <script>
+    const music = document.getElementById('music');
+    let wave = new CircularAudioWave(music);
+    wave.loadAudio('https://AnzenKodo.github.io/assets/Music.m4a');
+
+    music.addEventListener("click", () => {
+        if (wave.playing) {
+            wave.pause();
+        } else {
+            wave.play()
+        }
+    })
     </script>
 	</body>
 </html>

@@ -163,6 +163,8 @@
                 max-width: 100%;
             }
 		</style>
+	<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0"></script>
+    <script src="https://AnzenKodo.github.io/assets/circular-audio-wave.js"></script>
 	</head>
 	<body>
 	    <a href="#skip-top-main">Skip to main</a>
@@ -170,606 +172,8 @@
 			<h1 style="text-align: center;">
                 <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
-            
-			<details id="table-of-content">
-			    <summary>Table of Content</summary>
-                <nav>
-<ul>
-<li><a href="#a-name-different-modes-of-python">a) Name different modes of Python.</a></li>
-<li><a href="#b-list-identity-operators">
-b) List identity Operators</a></li>
-<li><a href="#c-give-two-differences-between-list-and-tuple">
-c) Give two differences between list and tuple.</a>
-<ul>
-<li><a href="#list">
-List</a></li>
-<li><a href="#tuple">
-Tuple</a></li>
-</ul></li>
-<li><a href="#d-explain-local-and-global-variable">
-d) Explain Local and Global variable.</a></li>
-<li><a href="#e-define-class-and-object-in-python">
-e) Define class and object in python.</a>
-<ul>
-<li><a href="#class">
-Class</a></li>
-<li><a href="#object">
-Object</a></li>
-</ul></li>
-<li><a href="#f-how-to-give-single-and-multiline-comment-in-python">
-f) How to give single and multiline comment in python.</a>
-<ul>
-<li><a href="#single-line">
-Single-Line</a></li>
-<li><a href="#multiline">
-Multiline</a></li>
-</ul></li>
-<li><a href="#g-list-different-modes-of-opening-file-in-python">
-g) List different modes of opening file in python.</a></li>
-<li><a href="#a-write-a-program-to-print-following">
-a) Write a program to print following:</a></li>
-<li><a href="#b-explain-four-buit-in-tuple-functions-python-with-example">
-b) Explain four Buit-in tuple functions python with example.</a></li>
-<li><a href="#explain-how-to-use-user-defined-function-in-python-with-example">
-Explain how to use user defined function in python with example.</a></li>
-<li><a href="#d-write-a-program-to-create-class-employee-with-id-and-name-and-display-its-contents">
-d) Write a program to create class EMPLOYEE with ID and NAME and display its contents.</a></li>
-<li><a href="#list-data-types-used-in-python-explain-any-two-with-example">
-List Data types used in python. Explain any two with example.</a>
-<ul>
-<li><a href="#string">
-String</a></li>
-<li><a href="#boolean">
-Boolean</a></li>
-</ul></li>
-<li><a href="#b-explain-membership-and-assignment-operators-with-example">
-b) Explain membership and assignment operators with example.</a></li>
-<li><a href="#c-explain-indexing-and-slicing-in-list-with-example">
-c) Explain indexing and slicing in list with example.</a></li>
-<li><a href="#d-write-a-program-for-importing-module-for-addition-and-substraction-of-two-numbers">
-d) Write a program for importing module for addition and substraction of two numbers.</a></li>
-<li><a href="#a-write-a-program-to-create-dictionary-of-students-that-includes-their-roll-no-and-name">
-a) Write a program to create dictionary of students that includes their ROLL NO. and NAME:</a></li>
-<li><a href="#b-explain-decision-making-statements-if-else-if-elif-else-with-example">
-b) Explain decision making statements If-else, if-elif-else with example.</a></li>
-<li><a href="#c-explain-use-of-format-method-with-example">
-c) Explain use of format () method with example.</a></li>
-<li><a href="#d-explain-building-blocks-of-python">
-d) Explain building blocks of python.</a></li>
-<li><a href="#e-write-a-program-illustrating-use-of-user-defined-package-in-python">
-e) Write a program illustrating use of user defined package in python.</a></li>
-<li><a href="#write-the-output-of-the-following">
-Write the output of the following:</a></li>
-<li><a href="#explain-method-overloading-in-python-with-example">
-Explain method overloading in python with example.</a></li>
-<li><a href="#write-a-program-to-open-a-file-in-write-mode-and-some-contents-at-the-end-of-file">
-Write a program to open a file in write mode and some contents at the end of file.</a></li>
-<li><a href="#a-explain-package-numpy-with-example">
-a) Explain package Numpy with example.</a></li>
-<li><a href="#6-write-a-program-to-implement-the-concept-of-inheritance-in-python">
-6) Write a program to implement the concept of inheritance in python.</a></li>
-<li><a href="#c-explain-try-except-block-used-in-exception-handling-in-python-with-example">
-c) Explain Try-except block used in exception handling in python with example.</a></li>
-</ul><li><a href="#1-introduction-and-syntax-of-python-program">
-1. Introduction and Syntax of Python Program</a>
-<ul>
-<li><a href="#3-enlist-applications-for-python-programming">
-3. Enlist applications for Python programming.</a></li>
-<li><a href="#4-what-are-the-features-of-python">
-4. What are the features of Python?</a></li>
-<li><a href="#5-list-any-four-editors-used-for-python-programming">
-5. List any four editors used for Python programming.</a></li>
-<li><a href="#6-python-programming-language-is-interpreted-an-interactive-comment-this-sentence">
-6. 'Python programming language is interpreted an interactive' comment this sentence.</a>
-<ul>
-<li><a href="#script-mode">
-Script mode</a></li>
-<li><a href="#interactive-mode">
-Interactive mode</a></li>
-</ul></li>
-<li><a href="#7-how-to-run-python-scripts-explain-in-detail">
-7. How to run python scripts? Explain in detail.</a></li>
-<li><a href="#8-what-is-interpreter-how-it-works-9-explain-the-following-features-of-python-programming">
-8. What is interpreter? How it works? 9. Explain the following features of Python programming:</a>
-<ul>
-<li><a href="#i-simple">
-(i) Simple</a></li>
-<li><a href="#ii-platform-independent">
-(ii) Platform independent</a></li>
-<li><a href="#iii-interactive">
-(iii) Interactive</a></li>
-<li><a href="#iv-object-oriented">
-(iv) Object Oriented.</a></li>
-</ul></li>
-<li><a href="#12-write-in-brief-about-characters-set-of-python">
-12. Write in brief about characters set of Python.</a>
-<ul>
-<li><a href="#keywords">
-Keywords</a></li>
-</ul></li>
-<li><a href="#13-write-in-brief-about-any-five-keywords-in-python">
-13. Write in brief about any five keywords in Python.</a></li>
-<li><a href="#15-what-is-the-role-of-indentation-in-python">
-15. What is the role of indentation in Python?</a></li>
-<li><a href="#16-how-to-comment-specific-line-s-in-python-program">
-16. How to comment specific line(s) in Python program?</a></li>
-<li><a href="#17-what-is-variable-what-are-the-rules-and-conventions-for-declaring-a-variables">
-17. What is variable? What are the rules and conventions for declaring a variables?</a></li>
-<li><a href="#18-what-are-the-various-data-types-available-in-python-programming">
-18. What are the various data types available in Python programming.</a>
-<ul>
-<li><a href="#numbers">
-Numbers</a>
-<ul>
-<li><a href="#integers-int">
-Integers(int)</a></li>
-<li><a href="#floating-point-numbers">
-Floating Point Numbers</a></li>
-<li><a href="#complex-number">
-Complex Number</a></li>
-</ul></li>
-<li><a href="#boolean">
-Boolean</a></li>
-<li><a href="#string">
-String</a></li>
-</ul></li>
-<li><a href="#19-what-are-four-built-in-numeric-data-types-in-python-explain">
-19. What are four built-in numeric data types in Python? Explain.</a>
-<ul>
-<li><a href="#numbers">
-Numbers</a></li>
-<li><a href="#integers-int">
-Integers(int)</a></li>
-<li><a href="#floating-point-numbers">
-Floating Point Numbers</a></li>
-<li><a href="#complex-number">
-Complex Number</a></li>
-</ul></li>
-<li><a href="#20-what-is-the-difference-between-interactive-mode-and-script-mode-of-python">
-20. What is the difference between interactive mode and script mode of Python.</a>
-<ul>
-<li><a href="#script-mode">
-Script mode</a></li>
-<li><a href="#interactive-mode">
-Interactive mode</a></li>
-</ul></li>
-<li><a href="#22-define-the-following-terms">
-22. Define the following terms:</a>
-<ul>
-<li><a href="#i-identifier">
-(i) Identifier</a></li>
-<li><a href="#ii-literal">
-(ii) Literal</a></li>
-<li><a href="#iii-data-type">
-(iii) Data type</a></li>
-<li><a href="#iv-tuple">
-(iv) Tuple</a></li>
-<li><a href="#v-list">
-(v) List.</a></li>
-</ul></li>
-<li><a href="#23-explain-dictionary-data-tune-in-detail">
-23. Explain dictionary data tune in detail</a></li>
-<li><a href="#sets">
-Sets</a></li>
-<li><a href="#difference-between-list-set-tuple-and-dictionary">
-Difference between List, Set, Tuple, and Dictionary</a></li>
-<li><a href="#string-methods">
-String methods</a></li>
-</ul><li><a href="#2-python-operators-and-control-flow-statements">
-2. Python Operators and Control Flow Statements</a>
-<ul>
-<li><a href="#1-what-is-operator-which-operators-used-in-python">
-1. What is operator? Which operators used in Python?</a>
-<ul>
-<li><a href="#unary-operators">
-Unary Operators</a></li>
-<li><a href="#binary-operators">
-Binary Operators</a></li>
-</ul></li>
-<li><a href="#2-what-is-meant-by-control-flow-of-a-program">
-2. What is meant by control flow of a program?</a></li>
-<li><a href="#3-define-the-terms">
-3. Define the terms:</a>
-<ul>
-<li><a href="#i-loop">
-(i) Loop</a></li>
-<li><a href="#ii-program">
-(ii) Program</a></li>
-<li><a href="#iii-operator">
-(iii) Operator</a></li>
-<li><a href="#iv-control-flow">
-(iv) Control flow.</a></li>
-</ul></li>
-<li><a href="#4-what-are-the-different-loops-available-in-python">
-4. What are the different loops available in Python?</a></li>
-<li><a href="#5-what-happens-if-a-semicolon-is-placed-at-the-end-of-a-python-statement">
-5. What happens if a semicolon (;) is placed at the end of a Python statement?</a></li>
-<li><a href="#6-explain-about-different-logical-operators-in-python-with-appropriate-examples">
-6. Explain about different logical operators in Python with appropriate examples.</a></li>
-<li><a href="#7-explain-about-different-relational-operators-in-python-with-examples">
-7. Explain about different relational operators in Python with examples.</a></li>
-<li><a href="#8-explain-about-membership-operators-in-python">
-8. Explain about membership operators in Python.</a></li>
-<li><a href="#9-explain-about-identity-operators-in-python-with-appropriate-examples">
-9. Explain about Identity operators in Python with appropriate examples.</a></li>
-<li><a href="#10-explain-about-arithmetic-operators-in-python">
-10. Explain about arithmetic operators in Python.</a></li>
-<li><a href="#11-list-different-conditional-statements-in-python">
-11. List different conditional statements in Python.</a></li>
-<li><a href="#12-what-are-the-different-nested-loops-available-in-python">
-12. What are the different nested loops available in Python?</a></li>
-<li><a href="#13-what-are-the-different-loop-control-manipulation-statements-available-in-python-explain-with-suitable-examples">
-13. What are the different loop control (manipulation) statements available in Python? Explain with suitable examples.</a></li>
-<li><a href="#14-explain-if-else-statement-with-an-example">
-14. Explain if-else statement with an example.</a></li>
-<li><a href="#15-explain-continue-statement-with-an-example">
-15. Explain continue statement with an example.</a></li>
-<li><a href="#16-explain-use-of-break-statement-in-a-loop-with-example">
-16. Explain use of break statement in a loop with example.</a></li>
-<li><a href="#17-predict-output-and-justify-your-answer">
-17. Predict output and justify your answer:</a>
-<ul>
-<li><a href="#i-11-9">
-(i) -11 % 9</a></li>
-<li><a href="#ii-7-7-7">
-(ii) 7.7 // 7</a></li>
-<li><a href="#iii-200-70-10-5">
-(iii) (200 - 70) * 10 / 5</a></li>
-<li><a href="#iv-5-1-2">
-(iv) 5 * 1 ** 2</a></li>
-</ul></li>
-<li><a href="#18-what-the-difference-is-between-and-is-operator-in-python">
-18. What the difference is between == and is operator in Python?</a></li>
-<li><a href="#19-list-different-operators-in-python-in-the-order-of-their-precedence">
-19. List different operators in Python, in the order of their precedence.</a></li>
-<li><a href="#20-write-a-python-program-to-print-factorial-of-a-number-take-input-from-user">
-20. Write a Python program to print factorial of a number. Take input from user.</a></li>
-<li><a href="#21-write-a-python-program-to-calculate-area-of-triangle-and-circle-and-print-the-result">
-21. Write a Python program to calculate area of triangle and circle and print the result.</a></li>
-<li><a href="#22-write-a-python-program-to-check-whether-a-string-is-palindrome">
-22. Write a Python program to check whether a string is palindrome.</a></li>
-<li><a href="#23-write-a-python-program-to-print-fibonacci-series-up-to-n-terms">
-23. Write a Python program to print Fibonacci series up to n terms.</a></li>
-<li><a href="#24-write-a-python-program-to-print-all-prime-numbers-less-than-256">
-24. Write a Python program to print all prime numbers less than 256.</a></li>
-<li><a href="#25-write-a-python-program-to-find-the-best-of-two-test-average-marks-out-of-three-test-s-mark-accepted-from-the-user">
-25. Write a Python program to find the best of two test average marks out of three test's mark accepted from the user.</a></li>
-<li><a href="#assignment-operator">
-Assignment Operator</a></li>
-<li><a href="#relational-or-comparison-operators">
-Relational or Comparison Operators</a></li>
-<li><a href="#bitwise-operators">
-Bitwise Operators</a></li>
-</ul><li><a href="#3-data-structures-in-python">
-3. Data Structures in Python</a>
-<ul>
-<li><a href="#1-what-is-data-structure-which-data-structure-used-by-python">
-1. What is data structure? Which data structure used by Python?</a></li>
-<li><a href="#2-how-to-define-and-access-the-elements-of-list">
-2. How to define and access the elements of list?</a></li>
-<li><a href="#3-what-is-list-how-to-create-list">
-3. What is list? How to create list?</a></li>
-<li><a href="#4-what-are-the-different-operation-that-can-be-performed-on-a-list-explain-with-examples">
-4. What are the different operation that can be performed on a list? Explain with examples</a></li>
-<li><a href="#5-explain-any-two-methods-under-lists-in-python-with-examples">
-5. Explain any two methods under lists in Python with examples.</a>
-<ul>
-<li><a href="#append">
-<code>append()</code></a></li>
-<li><a href="#extend">
-<code>extend()</code></a></li>
-</ul></li>
-<li><a href="#6-write-a-python-program-to-describe-different-ways-of-deleting-an-element-form-the-given-list">
-6. Write a python program to describe different ways of deleting an element form the given List.</a></li>
-<li><a href="#7-what-is-tuple-in-python-how-to-create-and-access-it">
-7. What is tuple in Python? How to create and access it?</a></li>
-<li><a href="#8-what-are-mutable-and-immutable-types">
-8. What are mutable and immutable types?</a></li>
-<li><a href="#9-is-tuple-mutable-demonstrate-any-two-methods-of-tuple">
-9. Is tuple mutable? Demonstrate any two methods of tuple.</a></li>
-<li><a href="#10-write-in-brief-about-tuple-in-python-write-operations-with-suitable-examples">
-10. Write in brief about Tuple in Python. Write operations with suitable examples</a>
-<ul>
-<li><a href="#tuple-operations">
-Tuple Operations</a></li>
-</ul></li>
-<li><a href="#11-write-in-brief-about-set-in-python-write-operations-with-suitable-example">
-11. Write in brief about Set in Python. Write operations with suitable example.</a></li>
-<li><a href="#12-explain-the-properties-of-dictionary-keys">
-12. Explain the properties of dictionary keys.</a></li>
-<li><a href="#13-explain-directory-methods-in-python">
-13. Explain directory methods in Python.</a></li>
-<li><a href="#14-how-to-create-directory-in-python-give-example">
-14. How to create directory in Python? Give example.</a></li>
-<li><a href="#15-write-in-brief-about-dictionary-in-python-write-operation-with-suitable-examples">
-15. Write in brief about Dictionary in Python. Write operation with suitable examples.</a>
-<ul>
-<li><a href="#operation-of-dictionary">
-Operation of Dictionary</a></li>
-</ul></li>
-<li><a href="#16-what-is-the-significant-difference-between-list-and-dictionary">
-16. What is the significant difference between list and dictionary?</a>
-<ul>
-<li><a href="#list">
-List</a></li>
-<li><a href="#dictionary">
-Dictionary</a></li>
-</ul></li>
-<li><a href="#17-compare-list-and-tuple">
-17. Compare List and Tuple.</a>
-<ul>
-<li><a href="#list">
-List</a></li>
-<li><a href="#tuple">
-Tuple</a></li>
-</ul></li>
-<li><a href="#19-how-append-and-extend-are-different-with-reference-to-list-in-python">
-19. How append() and extend() are different with reference to list in Python?</a>
-<ul>
-<li><a href="#append">
-<code>append()</code></a></li>
-<li><a href="#extend">
-<code>extend()</code></a></li>
-</ul></li>
-<li><a href="#20-write-a-program-to-input-any-two-tuples-and-interchange-the-tuple-variable">
-20. Write a program to input any two tuples and interchange the tuple variable.</a></li>
-<li><a href="#21-write-a-python-program-to-multiply-two-matrices">
-21. Write a Python program to multiply two matrices</a></li>
-<li><a href="#22-write-a-python-code-to-get-the-following-dictionary-as-output-1-1-3-9-5-25-7-49-9-81">
-22. Write a Python code to get the following dictionary as output: <code>{1:1, 3:9, 5:25, 7:49, 9:81}</code></a></li>
-<li><a href="#23-write-the-output-for-the-following">
-23. Write the output for the following:</a></li>
-<li><a href="#24-give-the-output-of-python-code">
-24. Give the output of Python code:</a></li>
-<li><a href="#25-give-the-output-of-following-python-code">
-25. Give the output of following Python code:</a></li>
-<li><a href="#26-write-the-output-for-the-following-if-the-variable-fruit-banana">
-26. Write the output for the following if the variable fruit=&quot;banana&quot;:</a></li>
-<li><a href="#27-what-is-string-how-to-create-it-enlist-various-operations-on-strings">
-27. What is string? How to create it? Enlist various operations on strings.</a></li>
-</ul><li><a href="#5-object-oriented-programming-in-python">
-5. Object Oriented Programming in Python</a>
-<ul>
-<li><a href="#1-what-is-oop">
-1. What is OOP?</a></li>
-<li><a href="#2-list-the-features-and-explain-about-different-object-oriented-features-supported-by-python">
-2. List the features and explain about different Object Oriented features supported by Python.</a></li>
-<li><a href="#3-list-and-explain-built-in-class-attributes-with-example">
-3. List and explain built in class attributes with example.</a></li>
-<li><a href="#4-design-a-class-that-store-the-information-of-student-and-display-the-same">
-4. Design a class that store the information of student and display the same.</a></li>
-<li><a href="#5-what-are-basic-overloading-methods">
-5. What are basic overloading methods?</a></li>
-<li><a href="#6-what-is-method-overriding-write-an-example">
-6. What is method overriding? Write an example.</a></li>
-<li><a href="#7-explain-class-inheritance-in-python-with-an-example">
-7. Explain class inheritance in Python with an example.</a></li>
-<li><a href="#8-how-to-declare-a-constructor-method-in-python-explain">
-8. How to declare a constructor method in python? Explain.</a></li>
-<li><a href="#9-how-operator-overloading-can-be-implemented-in-python-give-an-example">
-9. How operator overloading can be implemented in Python? Give an example.</a></li>
-<li><a href="#10-write-a-python-program-to-implement-the-concept-of-inheritance">
-10. Write a Python program to implement the concept of inheritance.</a></li>
-<li><a href="#11-create-a-class-employee-with-data-members-name-department-and-salary-create-suitable-methods-for-reading-and-printing-employee-information">
-11. Create a class employee with data members: name, department and salary. Create suitable methods for reading and printing employee information.</a></li>
-<li><a href="#12-what-is-data-abstraction-explain-in-detail-13-define-the-following-terms">
-12. What is data abstraction? Explain in detail. 13. Define the following terms:</a>
-<ul>
-<li><a href="#1-object">
-(1) Object</a></li>
-<li><a href="#ii-class">
-(ii) Class</a></li>
-<li><a href="#iii-inheritance">
-(iii) Inheritance</a></li>
-<li><a href="#iv-data-abstraction">
-(iv) Data abstraction.</a></li>
-</ul></li>
-<li><a href="#14-describe-the-term-composition-classes-with-example">
-14. Describe the term composition classes with example.</a></li>
-<li><a href="#15-explain-customization-via-inheritance-specializing-inherited-methods">
-15. Explain customization via inheritance specializing inherited methods.</a></li>
-</ul><li><a href="#6-file-i-o-handling-and-exception-handling">
-6. File I/O Handling and Exception Handling</a>
-<ul>
-<li><a href="#1-what-is-file-enlist-types-of-files-in-python-programming">
-1. What is file? Enlist types of files in Python programming.</a>
-<ul>
-<li><a href="#text-files">
-Text Files</a></li>
-<li><a href="#binary-files">
-Binary Files</a></li>
-</ul></li>
-<li><a href="#2-what-is-exception">
-2. What is exception?</a></li>
-<li><a href="#3-explain-the-term-exception-handling-in-detail">
-3. Explain the term exception handling in detail.</a></li>
-<li><a href="#4-explain-different-modes-of-opening-a-file">
-4. Explain different modes of opening a file.</a></li>
-<li><a href="#5-write-the-syntax-of-fopen-with-example">
-5. Write the syntax of <code>fopen()</code> with example.</a></li>
-<li><a href="#6-what-are-various-modes-of-file-object-explain-any-five-as-them">
-6. What are various modes of file object? Explain any five as them.</a></li>
-<li><a href="#7-explain-exception-handling-with-example-using-try-except-raise-keywords">
-7. Explain exception handling with example using try, except, raise keywords.</a></li>
-</ul><li><a href="#python-practical-question-bank-solved">
-Python practical question bank solved</a>
-<ul>
-<li><a href="#1-wap-to-create-3x3-matrix-with-1-at-the-border-and-zero-inside">
-1) WAP to create 3x3 matrix with 1 at the border and zero inside.</a></li>
-<li><a href="#2-wap-to-calculate-area-of-circle-and-area-of-rectangle-using-abstract-class">
-2) WAP to calculate area of circle and area of rectangle using abstract class.</a></li>
-<li><a href="#3-wap-to-create-dictionary-where-key-is-1-to-10-and-value-is-square-of-1-to-10">
-3) WAP to create dictionary where key is 1 to 10 and value is square of 1 to 10.</a></li>
-<li><a href="#4-wap-to-display-result-using-inheritance">
-4) WAP to display result using inheritance.</a></li>
-<li><a href="#5-wap-to-remove-duplicates-from-dictionary">
-5) WAP to remove duplicates from dictionary.</a></li>
-<li><a href="#6-wap-to-print-sum-of-entered-no-using-function-with-arbitrary-argument-arguments">
-6) WAP to print sum of entered no. using function with arbitrary argument arguments.</a></li>
-<li><a href="#8-wap-to-print-following-pattern">
-8) WAP to print following pattern.</a></li>
-<li><a href="#9-wap-to-print-distinction-first-class-second-third-class-and-fail-using-if-else">
-9) WAP to print distinction, first class, second, third class and fail using if else.</a></li>
-<li><a href="#10-wap-to-calculate-area-of-circle-and-rectangle-using-method-overriding">
-10) WAP to calculate area of circle and rectangle using method overriding.</a></li>
-<li><a href="#11-check-entered-password-is-correct-or-not-using-user-defined-exception">
-11) Check entered password is correct or not using user defined exception.</a></li>
-<li><a href="#12-create-list-and-perform-following-operations">
-12) Create list and perform following operations.</a>
-<ul>
-<li><a href="#1-print-elements-using-for-loop">
-1.print elements using for loop</a></li>
-<li><a href="#2-del-elements-3-4">
-2. del elements 3,4</a></li>
-<li><a href="#3-del-4-and-add-o-n-a">
-3. del 4 and add 'o','n' 'a'</a></li>
-<li><a href="#4-acces-element-d-from-orignal-list">
-4. acces element 'd' from orignal list</a></li>
-<li><a href="#5-find-len-of-list">
-5. find len of list</a></li>
-</ul></li>
-<li><a href="#13-wap-using-numpy-to-generate-six-random-integers-between-20-30">
-13) WAP using numpy to generate six random integers between 20-30.</a></li>
-<li><a href="#14-wap-to-concatenate-dictionaries-to-create-new-one">
-14) WAP to concatenate dictionaries to create new one.</a></li>
-<li><a href="#15-wap-to-print-unique-values-of-following-dict">
-15) WAP to print unique values of following dict.</a></li>
-<li><a href="#16-create-3x4-matrix-filled-with-10-21">
-16) Create 3x4 matrix filled with 10-21.</a></li>
-<li><a href="#17-wap-to-create-class-emp-having-data-members-name-salary-use-constructor-to-accept-values-and-display-information">
-17) WAP to create class Emp having data members name, salary use constructor to accept values and display information.</a></li>
-<li><a href="#q1-any-five">
-Q1 Any FIVE</a>
-<ul>
-<li><a href="#a-name-different-modes-of-python">
-a. Name different modes of Python.</a></li>
-<li><a href="#b-list-identity-operators">
-b. List identity Operators</a></li>
-<li><a href="#c-describe-dictionary">
-c. Describe Dictionary</a></li>
-<li><a href="#d-state-use-of-namespace-in-python">
-d. State use of namespace in Python</a></li>
-<li><a href="#e-list-different-object-oriented-features-supported-by-python">
-e. List different object oriented features supported by Python.</a></li>
-<li><a href="#f-write-steps-involved-in-creation-of-a-user-defined-exception">
-f. Write steps involved in creation of a user defined exception?</a></li>
-<li><a href="#g-describe-python-interpreter">
-g. Describe Python Interpreter</a></li>
-<li><a href="#h-list-features-of-python">
-h. List features of Python</a></li>
-</ul></li>
-<li><a href="#q2-any-three">
-Q2 Any THREE</a>
-<ul>
-<li><a href="#a-explain-two-membership-and-two-logical-operators-in-python-with-appropriate-examples">
-a. Explain two Membership and two logical operators in python with appropriate examples.</a>
-<ul>
-<li><a href="#membership-operators">
-Membership Operators</a></li>
-<li><a href="#logical-operators">
-Logical Operators</a></li>
-</ul></li>
-<li><a href="#b-describe-any-four-methods-of-lists-in-python">
-b. Describe any four methods of lists in Python</a></li>
-<li><a href="#c-comparing-between-local-and-global-variable">
-c. Comparing between local and global variable</a></li>
-<li><a href="#d-write-a-python-program-to-print-fibonacci-series-up-to-n-terms">
-d. Write a Python program to print Fibonacci series up to n terms</a></li>
-</ul></li>
-<li><a href="#q3-any-three">
-Q3 Any THREE</a>
-<ul>
-<li><a href="#a-write-a-program-to-input-any-two-and-interchange-the-tuple-variable">
-a. Write a program to input any two and interchange the tuple variable.</a></li>
-<li><a href="#b-explain-different-loops-available-in-python-with-suitable-examples">
-b. Explain different loops available in python with suitable examples.</a>
-<ul>
-<li><a href="#while">
-<code>while</code></a></li>
-<li><a href="#for-loop">
-<code>for loop</code></a></li>
-<li><a href="#nested-loops">
-Nested loops</a></li>
-</ul></li>
-<li><a href="#c-describe-various-modes-of-file-object-explain-any-two-in-detail">
-c. Describe various modes of file object? Explain any two in detail.</a>
-<ul>
-<li><a href="#read-a-file">
-Read a file</a></li>
-<li><a href="#write-a-file">
-Write a file</a></li>
-</ul></li>
-<li><a href="#d-illustrate-the-use-of-method-overriding-explain-with-example">
-d. Illustrate the use of method overriding? Explain with example</a></li>
-</ul></li>
-<li><a href="#q4-any-three">
-Q4 Any THREE</a>
-<ul>
-<li><a href="#a-use-of-any-four-methods-of-tuple-in-python">
-a. Use of any four methods of tuple in Python?</a></li>
-<li><a href="#b-write-a-python-program-to-read-contents-of-first-txt-and-write-same-content-in-second-txt-file">
-b. Write a python Program to read contents of first.txt and write same content in second.txt file</a></li>
-<li><a href="#c-show-how-try-except-block-is-used-for-exception-handling-in-python-with-example">
-c. Show how try...except block is used for exception handling in Python with example.</a></li>
-<li><a href="#d-write-the-output-for-the-following-if-the-variable-fruit-banana">
-d. Write the output for the following if the variable fruit = &quot;banana&quot;</a></li>
-</ul></li>
-<li><a href="#q5-any-two">
-Q5 Any TWO</a>
-<ul>
-<li><a href="#a-determine-various-data-types-available-in-python-with-example">
-a. Determine various data types available in Python with example.</a>
-<ul>
-<li><a href="#numbers">
-Numbers</a></li>
-<li><a href="#string">
-String</a></li>
-<li><a href="#list">
-List</a></li>
-<li><a href="#tuple">
-Tuple</a></li>
-<li><a href="#set">
-Set</a></li>
-<li><a href="#dictionary">
-Dictionary</a></li>
-</ul></li>
-<li><a href="#b-write-a-python-program-to-calculate-factorial-of-given-number-using-function">
-b. Write a python program to calculate factorial of given number using function.</a></li>
-<li><a href="#c-show-the-output-for-the-following">
-c. Show the output for the following:</a></li>
-</ul></li>
-<li><a href="#q6-any-two">
-Q6 Any TWO</a>
-<ul>
-<li><a href="#a-describe-set-in-python-with-suitable-examples">
-a. Describe Set in python with suitable examples.</a>
-<ul>
-<li><a href="#creating-a-set">
-Creating a set</a></li>
-<li><a href="#adding-items-to-the-set">
-Adding items to the set</a></li>
-<li><a href="#removing-items-from-the-set">
-Removing items from the set</a></li>
-<li><a href="#comparison-of-set">
-Comparison of set</a></li>
-</ul></li>
-<li><a href="#b-illustrate-class-inheritance-in-python-with-an-example">
-b. Illustrate class inheritance in Python with an example</a>
-<ul>
-<li><a href="#simple-inheritance">
-Simple Inheritance</a></li>
-<li><a href="#multiple-inheritance">
-Multiple inheritance</a></li>
-</ul></li>
-<li><a href="#c-design-a-class-employee-with-data-members-name-department-and-salary-create-suitable-methods-for-reading-and-printing-employee-information">
-c. Design a class Employee with data members: name, department and salary. Create suitable methods for reading and printing employee information</a></li>
-</ul></li>
-</ul>
-</nav>
-
-			</details>
-            
 		</header>
+		<div id="music" style="width: 100%; height: 18em;"></div>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem">Python</h1>
 			<h2><a name="a-name-different-modes-of-python" class="heading-anchor" href="#a-name-different-modes-of-python" rel="nofollow" aria-hidden="true"></a>a) Name different modes of Python.</h2>
@@ -21525,6 +20929,605 @@ body { color: #282c34; }
 </html>
 </div>
 		</main>
+        
+        <details id="table-of-content">
+           <summary>Table of Content</summary>
+                    <nav>
+<ul>
+<li><a href="#a-name-different-modes-of-python">a) Name different modes of Python.</a></li>
+<li><a href="#b-list-identity-operators">
+b) List identity Operators</a></li>
+<li><a href="#c-give-two-differences-between-list-and-tuple">
+c) Give two differences between list and tuple.</a>
+<ul>
+<li><a href="#list">
+List</a></li>
+<li><a href="#tuple">
+Tuple</a></li>
+</ul></li>
+<li><a href="#d-explain-local-and-global-variable">
+d) Explain Local and Global variable.</a></li>
+<li><a href="#e-define-class-and-object-in-python">
+e) Define class and object in python.</a>
+<ul>
+<li><a href="#class">
+Class</a></li>
+<li><a href="#object">
+Object</a></li>
+</ul></li>
+<li><a href="#f-how-to-give-single-and-multiline-comment-in-python">
+f) How to give single and multiline comment in python.</a>
+<ul>
+<li><a href="#single-line">
+Single-Line</a></li>
+<li><a href="#multiline">
+Multiline</a></li>
+</ul></li>
+<li><a href="#g-list-different-modes-of-opening-file-in-python">
+g) List different modes of opening file in python.</a></li>
+<li><a href="#a-write-a-program-to-print-following">
+a) Write a program to print following:</a></li>
+<li><a href="#b-explain-four-buit-in-tuple-functions-python-with-example">
+b) Explain four Buit-in tuple functions python with example.</a></li>
+<li><a href="#explain-how-to-use-user-defined-function-in-python-with-example">
+Explain how to use user defined function in python with example.</a></li>
+<li><a href="#d-write-a-program-to-create-class-employee-with-id-and-name-and-display-its-contents">
+d) Write a program to create class EMPLOYEE with ID and NAME and display its contents.</a></li>
+<li><a href="#list-data-types-used-in-python-explain-any-two-with-example">
+List Data types used in python. Explain any two with example.</a>
+<ul>
+<li><a href="#string">
+String</a></li>
+<li><a href="#boolean">
+Boolean</a></li>
+</ul></li>
+<li><a href="#b-explain-membership-and-assignment-operators-with-example">
+b) Explain membership and assignment operators with example.</a></li>
+<li><a href="#c-explain-indexing-and-slicing-in-list-with-example">
+c) Explain indexing and slicing in list with example.</a></li>
+<li><a href="#d-write-a-program-for-importing-module-for-addition-and-substraction-of-two-numbers">
+d) Write a program for importing module for addition and substraction of two numbers.</a></li>
+<li><a href="#a-write-a-program-to-create-dictionary-of-students-that-includes-their-roll-no-and-name">
+a) Write a program to create dictionary of students that includes their ROLL NO. and NAME:</a></li>
+<li><a href="#b-explain-decision-making-statements-if-else-if-elif-else-with-example">
+b) Explain decision making statements If-else, if-elif-else with example.</a></li>
+<li><a href="#c-explain-use-of-format-method-with-example">
+c) Explain use of format () method with example.</a></li>
+<li><a href="#d-explain-building-blocks-of-python">
+d) Explain building blocks of python.</a></li>
+<li><a href="#e-write-a-program-illustrating-use-of-user-defined-package-in-python">
+e) Write a program illustrating use of user defined package in python.</a></li>
+<li><a href="#write-the-output-of-the-following">
+Write the output of the following:</a></li>
+<li><a href="#explain-method-overloading-in-python-with-example">
+Explain method overloading in python with example.</a></li>
+<li><a href="#write-a-program-to-open-a-file-in-write-mode-and-some-contents-at-the-end-of-file">
+Write a program to open a file in write mode and some contents at the end of file.</a></li>
+<li><a href="#a-explain-package-numpy-with-example">
+a) Explain package Numpy with example.</a></li>
+<li><a href="#6-write-a-program-to-implement-the-concept-of-inheritance-in-python">
+6) Write a program to implement the concept of inheritance in python.</a></li>
+<li><a href="#c-explain-try-except-block-used-in-exception-handling-in-python-with-example">
+c) Explain Try-except block used in exception handling in python with example.</a></li>
+</ul><li><a href="#1-introduction-and-syntax-of-python-program">
+1. Introduction and Syntax of Python Program</a>
+<ul>
+<li><a href="#3-enlist-applications-for-python-programming">
+3. Enlist applications for Python programming.</a></li>
+<li><a href="#4-what-are-the-features-of-python">
+4. What are the features of Python?</a></li>
+<li><a href="#5-list-any-four-editors-used-for-python-programming">
+5. List any four editors used for Python programming.</a></li>
+<li><a href="#6-python-programming-language-is-interpreted-an-interactive-comment-this-sentence">
+6. 'Python programming language is interpreted an interactive' comment this sentence.</a>
+<ul>
+<li><a href="#script-mode">
+Script mode</a></li>
+<li><a href="#interactive-mode">
+Interactive mode</a></li>
+</ul></li>
+<li><a href="#7-how-to-run-python-scripts-explain-in-detail">
+7. How to run python scripts? Explain in detail.</a></li>
+<li><a href="#8-what-is-interpreter-how-it-works-9-explain-the-following-features-of-python-programming">
+8. What is interpreter? How it works? 9. Explain the following features of Python programming:</a>
+<ul>
+<li><a href="#i-simple">
+(i) Simple</a></li>
+<li><a href="#ii-platform-independent">
+(ii) Platform independent</a></li>
+<li><a href="#iii-interactive">
+(iii) Interactive</a></li>
+<li><a href="#iv-object-oriented">
+(iv) Object Oriented.</a></li>
+</ul></li>
+<li><a href="#12-write-in-brief-about-characters-set-of-python">
+12. Write in brief about characters set of Python.</a>
+<ul>
+<li><a href="#keywords">
+Keywords</a></li>
+</ul></li>
+<li><a href="#13-write-in-brief-about-any-five-keywords-in-python">
+13. Write in brief about any five keywords in Python.</a></li>
+<li><a href="#15-what-is-the-role-of-indentation-in-python">
+15. What is the role of indentation in Python?</a></li>
+<li><a href="#16-how-to-comment-specific-line-s-in-python-program">
+16. How to comment specific line(s) in Python program?</a></li>
+<li><a href="#17-what-is-variable-what-are-the-rules-and-conventions-for-declaring-a-variables">
+17. What is variable? What are the rules and conventions for declaring a variables?</a></li>
+<li><a href="#18-what-are-the-various-data-types-available-in-python-programming">
+18. What are the various data types available in Python programming.</a>
+<ul>
+<li><a href="#numbers">
+Numbers</a>
+<ul>
+<li><a href="#integers-int">
+Integers(int)</a></li>
+<li><a href="#floating-point-numbers">
+Floating Point Numbers</a></li>
+<li><a href="#complex-number">
+Complex Number</a></li>
+</ul></li>
+<li><a href="#boolean">
+Boolean</a></li>
+<li><a href="#string">
+String</a></li>
+</ul></li>
+<li><a href="#19-what-are-four-built-in-numeric-data-types-in-python-explain">
+19. What are four built-in numeric data types in Python? Explain.</a>
+<ul>
+<li><a href="#numbers">
+Numbers</a></li>
+<li><a href="#integers-int">
+Integers(int)</a></li>
+<li><a href="#floating-point-numbers">
+Floating Point Numbers</a></li>
+<li><a href="#complex-number">
+Complex Number</a></li>
+</ul></li>
+<li><a href="#20-what-is-the-difference-between-interactive-mode-and-script-mode-of-python">
+20. What is the difference between interactive mode and script mode of Python.</a>
+<ul>
+<li><a href="#script-mode">
+Script mode</a></li>
+<li><a href="#interactive-mode">
+Interactive mode</a></li>
+</ul></li>
+<li><a href="#22-define-the-following-terms">
+22. Define the following terms:</a>
+<ul>
+<li><a href="#i-identifier">
+(i) Identifier</a></li>
+<li><a href="#ii-literal">
+(ii) Literal</a></li>
+<li><a href="#iii-data-type">
+(iii) Data type</a></li>
+<li><a href="#iv-tuple">
+(iv) Tuple</a></li>
+<li><a href="#v-list">
+(v) List.</a></li>
+</ul></li>
+<li><a href="#23-explain-dictionary-data-tune-in-detail">
+23. Explain dictionary data tune in detail</a></li>
+<li><a href="#sets">
+Sets</a></li>
+<li><a href="#difference-between-list-set-tuple-and-dictionary">
+Difference between List, Set, Tuple, and Dictionary</a></li>
+<li><a href="#string-methods">
+String methods</a></li>
+</ul><li><a href="#2-python-operators-and-control-flow-statements">
+2. Python Operators and Control Flow Statements</a>
+<ul>
+<li><a href="#1-what-is-operator-which-operators-used-in-python">
+1. What is operator? Which operators used in Python?</a>
+<ul>
+<li><a href="#unary-operators">
+Unary Operators</a></li>
+<li><a href="#binary-operators">
+Binary Operators</a></li>
+</ul></li>
+<li><a href="#2-what-is-meant-by-control-flow-of-a-program">
+2. What is meant by control flow of a program?</a></li>
+<li><a href="#3-define-the-terms">
+3. Define the terms:</a>
+<ul>
+<li><a href="#i-loop">
+(i) Loop</a></li>
+<li><a href="#ii-program">
+(ii) Program</a></li>
+<li><a href="#iii-operator">
+(iii) Operator</a></li>
+<li><a href="#iv-control-flow">
+(iv) Control flow.</a></li>
+</ul></li>
+<li><a href="#4-what-are-the-different-loops-available-in-python">
+4. What are the different loops available in Python?</a></li>
+<li><a href="#5-what-happens-if-a-semicolon-is-placed-at-the-end-of-a-python-statement">
+5. What happens if a semicolon (;) is placed at the end of a Python statement?</a></li>
+<li><a href="#6-explain-about-different-logical-operators-in-python-with-appropriate-examples">
+6. Explain about different logical operators in Python with appropriate examples.</a></li>
+<li><a href="#7-explain-about-different-relational-operators-in-python-with-examples">
+7. Explain about different relational operators in Python with examples.</a></li>
+<li><a href="#8-explain-about-membership-operators-in-python">
+8. Explain about membership operators in Python.</a></li>
+<li><a href="#9-explain-about-identity-operators-in-python-with-appropriate-examples">
+9. Explain about Identity operators in Python with appropriate examples.</a></li>
+<li><a href="#10-explain-about-arithmetic-operators-in-python">
+10. Explain about arithmetic operators in Python.</a></li>
+<li><a href="#11-list-different-conditional-statements-in-python">
+11. List different conditional statements in Python.</a></li>
+<li><a href="#12-what-are-the-different-nested-loops-available-in-python">
+12. What are the different nested loops available in Python?</a></li>
+<li><a href="#13-what-are-the-different-loop-control-manipulation-statements-available-in-python-explain-with-suitable-examples">
+13. What are the different loop control (manipulation) statements available in Python? Explain with suitable examples.</a></li>
+<li><a href="#14-explain-if-else-statement-with-an-example">
+14. Explain if-else statement with an example.</a></li>
+<li><a href="#15-explain-continue-statement-with-an-example">
+15. Explain continue statement with an example.</a></li>
+<li><a href="#16-explain-use-of-break-statement-in-a-loop-with-example">
+16. Explain use of break statement in a loop with example.</a></li>
+<li><a href="#17-predict-output-and-justify-your-answer">
+17. Predict output and justify your answer:</a>
+<ul>
+<li><a href="#i-11-9">
+(i) -11 % 9</a></li>
+<li><a href="#ii-7-7-7">
+(ii) 7.7 // 7</a></li>
+<li><a href="#iii-200-70-10-5">
+(iii) (200 - 70) * 10 / 5</a></li>
+<li><a href="#iv-5-1-2">
+(iv) 5 * 1 ** 2</a></li>
+</ul></li>
+<li><a href="#18-what-the-difference-is-between-and-is-operator-in-python">
+18. What the difference is between == and is operator in Python?</a></li>
+<li><a href="#19-list-different-operators-in-python-in-the-order-of-their-precedence">
+19. List different operators in Python, in the order of their precedence.</a></li>
+<li><a href="#20-write-a-python-program-to-print-factorial-of-a-number-take-input-from-user">
+20. Write a Python program to print factorial of a number. Take input from user.</a></li>
+<li><a href="#21-write-a-python-program-to-calculate-area-of-triangle-and-circle-and-print-the-result">
+21. Write a Python program to calculate area of triangle and circle and print the result.</a></li>
+<li><a href="#22-write-a-python-program-to-check-whether-a-string-is-palindrome">
+22. Write a Python program to check whether a string is palindrome.</a></li>
+<li><a href="#23-write-a-python-program-to-print-fibonacci-series-up-to-n-terms">
+23. Write a Python program to print Fibonacci series up to n terms.</a></li>
+<li><a href="#24-write-a-python-program-to-print-all-prime-numbers-less-than-256">
+24. Write a Python program to print all prime numbers less than 256.</a></li>
+<li><a href="#25-write-a-python-program-to-find-the-best-of-two-test-average-marks-out-of-three-test-s-mark-accepted-from-the-user">
+25. Write a Python program to find the best of two test average marks out of three test's mark accepted from the user.</a></li>
+<li><a href="#assignment-operator">
+Assignment Operator</a></li>
+<li><a href="#relational-or-comparison-operators">
+Relational or Comparison Operators</a></li>
+<li><a href="#bitwise-operators">
+Bitwise Operators</a></li>
+</ul><li><a href="#3-data-structures-in-python">
+3. Data Structures in Python</a>
+<ul>
+<li><a href="#1-what-is-data-structure-which-data-structure-used-by-python">
+1. What is data structure? Which data structure used by Python?</a></li>
+<li><a href="#2-how-to-define-and-access-the-elements-of-list">
+2. How to define and access the elements of list?</a></li>
+<li><a href="#3-what-is-list-how-to-create-list">
+3. What is list? How to create list?</a></li>
+<li><a href="#4-what-are-the-different-operation-that-can-be-performed-on-a-list-explain-with-examples">
+4. What are the different operation that can be performed on a list? Explain with examples</a></li>
+<li><a href="#5-explain-any-two-methods-under-lists-in-python-with-examples">
+5. Explain any two methods under lists in Python with examples.</a>
+<ul>
+<li><a href="#append">
+<code>append()</code></a></li>
+<li><a href="#extend">
+<code>extend()</code></a></li>
+</ul></li>
+<li><a href="#6-write-a-python-program-to-describe-different-ways-of-deleting-an-element-form-the-given-list">
+6. Write a python program to describe different ways of deleting an element form the given List.</a></li>
+<li><a href="#7-what-is-tuple-in-python-how-to-create-and-access-it">
+7. What is tuple in Python? How to create and access it?</a></li>
+<li><a href="#8-what-are-mutable-and-immutable-types">
+8. What are mutable and immutable types?</a></li>
+<li><a href="#9-is-tuple-mutable-demonstrate-any-two-methods-of-tuple">
+9. Is tuple mutable? Demonstrate any two methods of tuple.</a></li>
+<li><a href="#10-write-in-brief-about-tuple-in-python-write-operations-with-suitable-examples">
+10. Write in brief about Tuple in Python. Write operations with suitable examples</a>
+<ul>
+<li><a href="#tuple-operations">
+Tuple Operations</a></li>
+</ul></li>
+<li><a href="#11-write-in-brief-about-set-in-python-write-operations-with-suitable-example">
+11. Write in brief about Set in Python. Write operations with suitable example.</a></li>
+<li><a href="#12-explain-the-properties-of-dictionary-keys">
+12. Explain the properties of dictionary keys.</a></li>
+<li><a href="#13-explain-directory-methods-in-python">
+13. Explain directory methods in Python.</a></li>
+<li><a href="#14-how-to-create-directory-in-python-give-example">
+14. How to create directory in Python? Give example.</a></li>
+<li><a href="#15-write-in-brief-about-dictionary-in-python-write-operation-with-suitable-examples">
+15. Write in brief about Dictionary in Python. Write operation with suitable examples.</a>
+<ul>
+<li><a href="#operation-of-dictionary">
+Operation of Dictionary</a></li>
+</ul></li>
+<li><a href="#16-what-is-the-significant-difference-between-list-and-dictionary">
+16. What is the significant difference between list and dictionary?</a>
+<ul>
+<li><a href="#list">
+List</a></li>
+<li><a href="#dictionary">
+Dictionary</a></li>
+</ul></li>
+<li><a href="#17-compare-list-and-tuple">
+17. Compare List and Tuple.</a>
+<ul>
+<li><a href="#list">
+List</a></li>
+<li><a href="#tuple">
+Tuple</a></li>
+</ul></li>
+<li><a href="#19-how-append-and-extend-are-different-with-reference-to-list-in-python">
+19. How append() and extend() are different with reference to list in Python?</a>
+<ul>
+<li><a href="#append">
+<code>append()</code></a></li>
+<li><a href="#extend">
+<code>extend()</code></a></li>
+</ul></li>
+<li><a href="#20-write-a-program-to-input-any-two-tuples-and-interchange-the-tuple-variable">
+20. Write a program to input any two tuples and interchange the tuple variable.</a></li>
+<li><a href="#21-write-a-python-program-to-multiply-two-matrices">
+21. Write a Python program to multiply two matrices</a></li>
+<li><a href="#22-write-a-python-code-to-get-the-following-dictionary-as-output-1-1-3-9-5-25-7-49-9-81">
+22. Write a Python code to get the following dictionary as output: <code>{1:1, 3:9, 5:25, 7:49, 9:81}</code></a></li>
+<li><a href="#23-write-the-output-for-the-following">
+23. Write the output for the following:</a></li>
+<li><a href="#24-give-the-output-of-python-code">
+24. Give the output of Python code:</a></li>
+<li><a href="#25-give-the-output-of-following-python-code">
+25. Give the output of following Python code:</a></li>
+<li><a href="#26-write-the-output-for-the-following-if-the-variable-fruit-banana">
+26. Write the output for the following if the variable fruit=&quot;banana&quot;:</a></li>
+<li><a href="#27-what-is-string-how-to-create-it-enlist-various-operations-on-strings">
+27. What is string? How to create it? Enlist various operations on strings.</a></li>
+</ul><li><a href="#5-object-oriented-programming-in-python">
+5. Object Oriented Programming in Python</a>
+<ul>
+<li><a href="#1-what-is-oop">
+1. What is OOP?</a></li>
+<li><a href="#2-list-the-features-and-explain-about-different-object-oriented-features-supported-by-python">
+2. List the features and explain about different Object Oriented features supported by Python.</a></li>
+<li><a href="#3-list-and-explain-built-in-class-attributes-with-example">
+3. List and explain built in class attributes with example.</a></li>
+<li><a href="#4-design-a-class-that-store-the-information-of-student-and-display-the-same">
+4. Design a class that store the information of student and display the same.</a></li>
+<li><a href="#5-what-are-basic-overloading-methods">
+5. What are basic overloading methods?</a></li>
+<li><a href="#6-what-is-method-overriding-write-an-example">
+6. What is method overriding? Write an example.</a></li>
+<li><a href="#7-explain-class-inheritance-in-python-with-an-example">
+7. Explain class inheritance in Python with an example.</a></li>
+<li><a href="#8-how-to-declare-a-constructor-method-in-python-explain">
+8. How to declare a constructor method in python? Explain.</a></li>
+<li><a href="#9-how-operator-overloading-can-be-implemented-in-python-give-an-example">
+9. How operator overloading can be implemented in Python? Give an example.</a></li>
+<li><a href="#10-write-a-python-program-to-implement-the-concept-of-inheritance">
+10. Write a Python program to implement the concept of inheritance.</a></li>
+<li><a href="#11-create-a-class-employee-with-data-members-name-department-and-salary-create-suitable-methods-for-reading-and-printing-employee-information">
+11. Create a class employee with data members: name, department and salary. Create suitable methods for reading and printing employee information.</a></li>
+<li><a href="#12-what-is-data-abstraction-explain-in-detail-13-define-the-following-terms">
+12. What is data abstraction? Explain in detail. 13. Define the following terms:</a>
+<ul>
+<li><a href="#1-object">
+(1) Object</a></li>
+<li><a href="#ii-class">
+(ii) Class</a></li>
+<li><a href="#iii-inheritance">
+(iii) Inheritance</a></li>
+<li><a href="#iv-data-abstraction">
+(iv) Data abstraction.</a></li>
+</ul></li>
+<li><a href="#14-describe-the-term-composition-classes-with-example">
+14. Describe the term composition classes with example.</a></li>
+<li><a href="#15-explain-customization-via-inheritance-specializing-inherited-methods">
+15. Explain customization via inheritance specializing inherited methods.</a></li>
+</ul><li><a href="#6-file-i-o-handling-and-exception-handling">
+6. File I/O Handling and Exception Handling</a>
+<ul>
+<li><a href="#1-what-is-file-enlist-types-of-files-in-python-programming">
+1. What is file? Enlist types of files in Python programming.</a>
+<ul>
+<li><a href="#text-files">
+Text Files</a></li>
+<li><a href="#binary-files">
+Binary Files</a></li>
+</ul></li>
+<li><a href="#2-what-is-exception">
+2. What is exception?</a></li>
+<li><a href="#3-explain-the-term-exception-handling-in-detail">
+3. Explain the term exception handling in detail.</a></li>
+<li><a href="#4-explain-different-modes-of-opening-a-file">
+4. Explain different modes of opening a file.</a></li>
+<li><a href="#5-write-the-syntax-of-fopen-with-example">
+5. Write the syntax of <code>fopen()</code> with example.</a></li>
+<li><a href="#6-what-are-various-modes-of-file-object-explain-any-five-as-them">
+6. What are various modes of file object? Explain any five as them.</a></li>
+<li><a href="#7-explain-exception-handling-with-example-using-try-except-raise-keywords">
+7. Explain exception handling with example using try, except, raise keywords.</a></li>
+</ul><li><a href="#python-practical-question-bank-solved">
+Python practical question bank solved</a>
+<ul>
+<li><a href="#1-wap-to-create-3x3-matrix-with-1-at-the-border-and-zero-inside">
+1) WAP to create 3x3 matrix with 1 at the border and zero inside.</a></li>
+<li><a href="#2-wap-to-calculate-area-of-circle-and-area-of-rectangle-using-abstract-class">
+2) WAP to calculate area of circle and area of rectangle using abstract class.</a></li>
+<li><a href="#3-wap-to-create-dictionary-where-key-is-1-to-10-and-value-is-square-of-1-to-10">
+3) WAP to create dictionary where key is 1 to 10 and value is square of 1 to 10.</a></li>
+<li><a href="#4-wap-to-display-result-using-inheritance">
+4) WAP to display result using inheritance.</a></li>
+<li><a href="#5-wap-to-remove-duplicates-from-dictionary">
+5) WAP to remove duplicates from dictionary.</a></li>
+<li><a href="#6-wap-to-print-sum-of-entered-no-using-function-with-arbitrary-argument-arguments">
+6) WAP to print sum of entered no. using function with arbitrary argument arguments.</a></li>
+<li><a href="#8-wap-to-print-following-pattern">
+8) WAP to print following pattern.</a></li>
+<li><a href="#9-wap-to-print-distinction-first-class-second-third-class-and-fail-using-if-else">
+9) WAP to print distinction, first class, second, third class and fail using if else.</a></li>
+<li><a href="#10-wap-to-calculate-area-of-circle-and-rectangle-using-method-overriding">
+10) WAP to calculate area of circle and rectangle using method overriding.</a></li>
+<li><a href="#11-check-entered-password-is-correct-or-not-using-user-defined-exception">
+11) Check entered password is correct or not using user defined exception.</a></li>
+<li><a href="#12-create-list-and-perform-following-operations">
+12) Create list and perform following operations.</a>
+<ul>
+<li><a href="#1-print-elements-using-for-loop">
+1.print elements using for loop</a></li>
+<li><a href="#2-del-elements-3-4">
+2. del elements 3,4</a></li>
+<li><a href="#3-del-4-and-add-o-n-a">
+3. del 4 and add 'o','n' 'a'</a></li>
+<li><a href="#4-acces-element-d-from-orignal-list">
+4. acces element 'd' from orignal list</a></li>
+<li><a href="#5-find-len-of-list">
+5. find len of list</a></li>
+</ul></li>
+<li><a href="#13-wap-using-numpy-to-generate-six-random-integers-between-20-30">
+13) WAP using numpy to generate six random integers between 20-30.</a></li>
+<li><a href="#14-wap-to-concatenate-dictionaries-to-create-new-one">
+14) WAP to concatenate dictionaries to create new one.</a></li>
+<li><a href="#15-wap-to-print-unique-values-of-following-dict">
+15) WAP to print unique values of following dict.</a></li>
+<li><a href="#16-create-3x4-matrix-filled-with-10-21">
+16) Create 3x4 matrix filled with 10-21.</a></li>
+<li><a href="#17-wap-to-create-class-emp-having-data-members-name-salary-use-constructor-to-accept-values-and-display-information">
+17) WAP to create class Emp having data members name, salary use constructor to accept values and display information.</a></li>
+<li><a href="#q1-any-five">
+Q1 Any FIVE</a>
+<ul>
+<li><a href="#a-name-different-modes-of-python">
+a. Name different modes of Python.</a></li>
+<li><a href="#b-list-identity-operators">
+b. List identity Operators</a></li>
+<li><a href="#c-describe-dictionary">
+c. Describe Dictionary</a></li>
+<li><a href="#d-state-use-of-namespace-in-python">
+d. State use of namespace in Python</a></li>
+<li><a href="#e-list-different-object-oriented-features-supported-by-python">
+e. List different object oriented features supported by Python.</a></li>
+<li><a href="#f-write-steps-involved-in-creation-of-a-user-defined-exception">
+f. Write steps involved in creation of a user defined exception?</a></li>
+<li><a href="#g-describe-python-interpreter">
+g. Describe Python Interpreter</a></li>
+<li><a href="#h-list-features-of-python">
+h. List features of Python</a></li>
+</ul></li>
+<li><a href="#q2-any-three">
+Q2 Any THREE</a>
+<ul>
+<li><a href="#a-explain-two-membership-and-two-logical-operators-in-python-with-appropriate-examples">
+a. Explain two Membership and two logical operators in python with appropriate examples.</a>
+<ul>
+<li><a href="#membership-operators">
+Membership Operators</a></li>
+<li><a href="#logical-operators">
+Logical Operators</a></li>
+</ul></li>
+<li><a href="#b-describe-any-four-methods-of-lists-in-python">
+b. Describe any four methods of lists in Python</a></li>
+<li><a href="#c-comparing-between-local-and-global-variable">
+c. Comparing between local and global variable</a></li>
+<li><a href="#d-write-a-python-program-to-print-fibonacci-series-up-to-n-terms">
+d. Write a Python program to print Fibonacci series up to n terms</a></li>
+</ul></li>
+<li><a href="#q3-any-three">
+Q3 Any THREE</a>
+<ul>
+<li><a href="#a-write-a-program-to-input-any-two-and-interchange-the-tuple-variable">
+a. Write a program to input any two and interchange the tuple variable.</a></li>
+<li><a href="#b-explain-different-loops-available-in-python-with-suitable-examples">
+b. Explain different loops available in python with suitable examples.</a>
+<ul>
+<li><a href="#while">
+<code>while</code></a></li>
+<li><a href="#for-loop">
+<code>for loop</code></a></li>
+<li><a href="#nested-loops">
+Nested loops</a></li>
+</ul></li>
+<li><a href="#c-describe-various-modes-of-file-object-explain-any-two-in-detail">
+c. Describe various modes of file object? Explain any two in detail.</a>
+<ul>
+<li><a href="#read-a-file">
+Read a file</a></li>
+<li><a href="#write-a-file">
+Write a file</a></li>
+</ul></li>
+<li><a href="#d-illustrate-the-use-of-method-overriding-explain-with-example">
+d. Illustrate the use of method overriding? Explain with example</a></li>
+</ul></li>
+<li><a href="#q4-any-three">
+Q4 Any THREE</a>
+<ul>
+<li><a href="#a-use-of-any-four-methods-of-tuple-in-python">
+a. Use of any four methods of tuple in Python?</a></li>
+<li><a href="#b-write-a-python-program-to-read-contents-of-first-txt-and-write-same-content-in-second-txt-file">
+b. Write a python Program to read contents of first.txt and write same content in second.txt file</a></li>
+<li><a href="#c-show-how-try-except-block-is-used-for-exception-handling-in-python-with-example">
+c. Show how try...except block is used for exception handling in Python with example.</a></li>
+<li><a href="#d-write-the-output-for-the-following-if-the-variable-fruit-banana">
+d. Write the output for the following if the variable fruit = &quot;banana&quot;</a></li>
+</ul></li>
+<li><a href="#q5-any-two">
+Q5 Any TWO</a>
+<ul>
+<li><a href="#a-determine-various-data-types-available-in-python-with-example">
+a. Determine various data types available in Python with example.</a>
+<ul>
+<li><a href="#numbers">
+Numbers</a></li>
+<li><a href="#string">
+String</a></li>
+<li><a href="#list">
+List</a></li>
+<li><a href="#tuple">
+Tuple</a></li>
+<li><a href="#set">
+Set</a></li>
+<li><a href="#dictionary">
+Dictionary</a></li>
+</ul></li>
+<li><a href="#b-write-a-python-program-to-calculate-factorial-of-given-number-using-function">
+b. Write a python program to calculate factorial of given number using function.</a></li>
+<li><a href="#c-show-the-output-for-the-following">
+c. Show the output for the following:</a></li>
+</ul></li>
+<li><a href="#q6-any-two">
+Q6 Any TWO</a>
+<ul>
+<li><a href="#a-describe-set-in-python-with-suitable-examples">
+a. Describe Set in python with suitable examples.</a>
+<ul>
+<li><a href="#creating-a-set">
+Creating a set</a></li>
+<li><a href="#adding-items-to-the-set">
+Adding items to the set</a></li>
+<li><a href="#removing-items-from-the-set">
+Removing items from the set</a></li>
+<li><a href="#comparison-of-set">
+Comparison of set</a></li>
+</ul></li>
+<li><a href="#b-illustrate-class-inheritance-in-python-with-an-example">
+b. Illustrate class inheritance in Python with an example</a>
+<ul>
+<li><a href="#simple-inheritance">
+Simple Inheritance</a></li>
+<li><a href="#multiple-inheritance">
+Multiple inheritance</a></li>
+</ul></li>
+<li><a href="#c-design-a-class-employee-with-data-members-name-department-and-salary-create-suitable-methods-for-reading-and-printing-employee-information">
+c. Design a class Employee with data members: name, department and salary. Create suitable methods for reading and printing employee information</a></li>
+</ul></li>
+</ul>
+</nav>
+
+        </details>
+        
 		<footer>
 			<p style="text-align: center; font-size: small; margin-top: 5em;">
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
@@ -21539,6 +21542,19 @@ body { color: #282c34; }
         };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <script>
+    const music = document.getElementById('music');
+    let wave = new CircularAudioWave(music);
+    wave.loadAudio('https://AnzenKodo.github.io/assets/Music.m4a');
+
+    music.addEventListener("click", () => {
+        if (wave.playing) {
+            wave.pause();
+        } else {
+            wave.play()
+        }
+    })
     </script>
 	</body>
 </html>

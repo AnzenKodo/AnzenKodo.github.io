@@ -163,6 +163,8 @@
                 max-width: 100%;
             }
 		</style>
+	<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0"></script>
+    <script src="https://AnzenKodo.github.io/assets/circular-audio-wave.js"></script>
 	</head>
 	<body>
 	    <a href="#skip-top-main">Skip to main</a>
@@ -170,66 +172,8 @@
 			<h1 style="text-align: center;">
                 <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
-            
-			<details id="table-of-content">
-			    <summary>Table of Content</summary>
-                <nav>
-<ul>
-<li><a href="#peas-representation">PEAS Representation</a></li>
-<li><a href="#types-of-agent">
-Types of Agent</a></li>
-<li><a href="#wumbus-world-problem">
-Wumbus world problem</a></li>
-<li><a href="#propositional-logic">
-Propositional logic</a></li>
-<li><a href="#first-order-logic">
-First order logic</a></li>
-<li><a href="#define-agent">
-Define Agent</a></li>
-<li><a href="#define-ai">
-Define AI</a></li>
-<li><a href="#type-of-search-techniques">
-Type of Search Techniques</a>
-<ul>
-<li><a href="#uniformed-search">
-Uniformed Search</a>
-<ul>
-<li><a href="#breadth-first-search">
-Breadth First Search</a></li>
-<li><a href="#uniform-cost-search">
-Uniform Cost Search</a></li>
-<li><a href="#depth-first-search">
-Depth First Search</a></li>
-<li><a href="#depth-limited-search">
-Depth Limited Search</a></li>
-<li><a href="#iterative-deepening-search-first-search">
-Iterative Deepening Search first search</a></li>
-<li><a href="#bidirectional-search">
-Bidirectional Search</a></li>
-</ul></li>
-<li><a href="#informed-search">
-Informed Search</a>
-<ul>
-<li><a href="#best-first-search">
-Best First Search</a></li>
-<li><a href="#a">
-A*</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#knowledge-based-agent">
-Knowledge-based Agent</a></li>
-<li><a href="#graph-coloring">
-Graph coloring</a></li>
-<li><a href="#water-jug-problem">
-Water Jug Problem</a></li>
-<li><a href="#mini-max-algorithm">
-Mini/Max Algorithm</a></li>
-</ul>
-</nav>
-
-			</details>
-            
 		</header>
+		<div id="music" style="width: 100%; height: 18em;"></div>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem">AI & DS</h1>
 			<h2><a name="peas-representation" class="heading-anchor" href="#peas-representation" rel="nofollow" aria-hidden="true"></a>PEAS Representation</h2>
@@ -586,6 +530,65 @@ Iterative deeping depth first search</p>
 <p><img src="assets/AI%20DS%20S6%20UT1%20Notes%20Diagram.png" alt=""></p>
 
 		</main>
+        
+        <details id="table-of-content">
+           <summary>Table of Content</summary>
+                    <nav>
+<ul>
+<li><a href="#peas-representation">PEAS Representation</a></li>
+<li><a href="#types-of-agent">
+Types of Agent</a></li>
+<li><a href="#wumbus-world-problem">
+Wumbus world problem</a></li>
+<li><a href="#propositional-logic">
+Propositional logic</a></li>
+<li><a href="#first-order-logic">
+First order logic</a></li>
+<li><a href="#define-agent">
+Define Agent</a></li>
+<li><a href="#define-ai">
+Define AI</a></li>
+<li><a href="#type-of-search-techniques">
+Type of Search Techniques</a>
+<ul>
+<li><a href="#uniformed-search">
+Uniformed Search</a>
+<ul>
+<li><a href="#breadth-first-search">
+Breadth First Search</a></li>
+<li><a href="#uniform-cost-search">
+Uniform Cost Search</a></li>
+<li><a href="#depth-first-search">
+Depth First Search</a></li>
+<li><a href="#depth-limited-search">
+Depth Limited Search</a></li>
+<li><a href="#iterative-deepening-search-first-search">
+Iterative Deepening Search first search</a></li>
+<li><a href="#bidirectional-search">
+Bidirectional Search</a></li>
+</ul></li>
+<li><a href="#informed-search">
+Informed Search</a>
+<ul>
+<li><a href="#best-first-search">
+Best First Search</a></li>
+<li><a href="#a">
+A*</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#knowledge-based-agent">
+Knowledge-based Agent</a></li>
+<li><a href="#graph-coloring">
+Graph coloring</a></li>
+<li><a href="#water-jug-problem">
+Water Jug Problem</a></li>
+<li><a href="#mini-max-algorithm">
+Mini/Max Algorithm</a></li>
+</ul>
+</nav>
+
+        </details>
+        
 		<footer>
 			<p style="text-align: center; font-size: small; margin-top: 5em;">
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
@@ -600,6 +603,19 @@ Iterative deeping depth first search</p>
         };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <script>
+    const music = document.getElementById('music');
+    let wave = new CircularAudioWave(music);
+    wave.loadAudio('https://AnzenKodo.github.io/assets/Music.m4a');
+
+    music.addEventListener("click", () => {
+        if (wave.playing) {
+            wave.pause();
+        } else {
+            wave.play()
+        }
+    })
     </script>
 	</body>
 </html>

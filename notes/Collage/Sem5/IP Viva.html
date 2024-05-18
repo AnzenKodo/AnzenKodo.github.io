@@ -163,6 +163,8 @@
                 max-width: 100%;
             }
 		</style>
+	<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0"></script>
+    <script src="https://AnzenKodo.github.io/assets/circular-audio-wave.js"></script>
 	</head>
 	<body>
 	    <a href="#skip-top-main">Skip to main</a>
@@ -170,32 +172,8 @@
 			<h1 style="text-align: center;">
                 <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
-            
-			<details id="table-of-content">
-			    <summary>Table of Content</summary>
-                <nav>
-<ul>
-<li><a href="#explain-the-working-of-web-browser-with-example">Explain the working of Web Browser with example.</a></li>
-<li><a href="#describe-http-protocol-describe-an-http-message">
-Describe HTTP Protocol. Describe an HTTP message.</a></li>
-<li><a href="#what-is-tls-explain-the-needs-of-tls">
-What is TLS? Explain the needs of TLS?</a></li>
-<li><a href="#what-is-xml-compare-xml-and-json">
-What is XML? Compare XML and JSON?</a></li>
-<li><a href="#what-is-json-explain-json-syntax">
-What is JSON? Explain JSON Syntax?</a></li>
-<li><a href="#describe-arrow-function-in-es6-along-with-an-example">
-Describe Arrow function in ES6 along with an example</a></li>
-<li><a href="#conditional-and-looping-statements">
-Conditional and looping statements</a></li>
-<li><a href="#reactjs-example">
-ReactJS example</a></li>
-</ul>
-</nav>
-
-			</details>
-            
 		</header>
+		<div id="music" style="width: 100%; height: 18em;"></div>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem">IP Viva</h1>
 			<h2><a name="explain-the-working-of-web-browser-with-example" class="heading-anchor" href="#explain-the-working-of-web-browser-with-example" rel="nofollow" aria-hidden="true"></a>Explain the working of Web Browser with example.</h2><h2><a name="describe-http-protocol-describe-an-http-message" class="heading-anchor" href="#describe-http-protocol-describe-an-http-message" rel="nofollow" aria-hidden="true"></a>Describe HTTP Protocol. Describe an HTTP message.</h2><h2><a name="what-is-tls-explain-the-needs-of-tls" class="heading-anchor" href="#what-is-tls-explain-the-needs-of-tls" rel="nofollow" aria-hidden="true"></a>What is TLS? Explain the needs of TLS?</h2><h2><a name="what-is-xml-compare-xml-and-json" class="heading-anchor" href="#what-is-xml-compare-xml-and-json" rel="nofollow" aria-hidden="true"></a>What is XML? Compare XML and JSON?</h2>
@@ -880,6 +858,31 @@ body { color: #282c34; }
 </html>
 </div>
 		</main>
+        
+        <details id="table-of-content">
+           <summary>Table of Content</summary>
+                    <nav>
+<ul>
+<li><a href="#explain-the-working-of-web-browser-with-example">Explain the working of Web Browser with example.</a></li>
+<li><a href="#describe-http-protocol-describe-an-http-message">
+Describe HTTP Protocol. Describe an HTTP message.</a></li>
+<li><a href="#what-is-tls-explain-the-needs-of-tls">
+What is TLS? Explain the needs of TLS?</a></li>
+<li><a href="#what-is-xml-compare-xml-and-json">
+What is XML? Compare XML and JSON?</a></li>
+<li><a href="#what-is-json-explain-json-syntax">
+What is JSON? Explain JSON Syntax?</a></li>
+<li><a href="#describe-arrow-function-in-es6-along-with-an-example">
+Describe Arrow function in ES6 along with an example</a></li>
+<li><a href="#conditional-and-looping-statements">
+Conditional and looping statements</a></li>
+<li><a href="#reactjs-example">
+ReactJS example</a></li>
+</ul>
+</nav>
+
+        </details>
+        
 		<footer>
 			<p style="text-align: center; font-size: small; margin-top: 5em;">
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
@@ -894,6 +897,19 @@ body { color: #282c34; }
         };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <script>
+    const music = document.getElementById('music');
+    let wave = new CircularAudioWave(music);
+    wave.loadAudio('https://AnzenKodo.github.io/assets/Music.m4a');
+
+    music.addEventListener("click", () => {
+        if (wave.playing) {
+            wave.pause();
+        } else {
+            wave.play()
+        }
+    })
     </script>
 	</body>
 </html>

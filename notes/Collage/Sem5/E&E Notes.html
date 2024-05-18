@@ -163,6 +163,8 @@
                 max-width: 100%;
             }
 		</style>
+	<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0"></script>
+    <script src="https://AnzenKodo.github.io/assets/circular-audio-wave.js"></script>
 	</head>
 	<body>
 	    <a href="#skip-top-main">Skip to main</a>
@@ -170,108 +172,8 @@
 			<h1 style="text-align: center;">
                 <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
-            
-			<details id="table-of-content">
-			    <summary>Table of Content</summary>
-                <nav>
-<ul>
-<li><a href="#e-commerce">E-Commerce</a></li>
-<li><a href="#entrepreneur">
-Entrepreneur</a></li>
-<li><a href="#supply-chain-management">
-Supply Chain Management</a>
-<ul>
-<li><a href="#component-of-srm">
-Component of SRM</a></li>
-</ul></li>
-<li><a href="#evaluating-new-venture">
-Evaluating new venture</a></li>
-<li><a href="#types-of-entrepreneurs">
-Types of Entrepreneurs</a></li>
-<li><a href="#customer-relationship-management">
-Customer Relationship Management</a>
-<ul>
-<li><a href="#types-of-crm">
-Types of CRM</a></li>
-<li><a href="#functional-areas-of-crm">
-Functional areas of CRM:</a></li>
-</ul></li>
-<li><a href="#various-financing-stage-of-any-organization-or-company">
-Various financing stage of any organization or company.</a></li>
-<li><a href="#enterprises-based-on-ownership-structure">
-Enterprises based on Ownership structure.</a>
-<ul>
-<li><a href="#sole-proprietorship">
-Sole Proprietorship</a></li>
-<li><a href="#partnership">
-Partnership</a></li>
-<li><a href="#corporations">
-Corporations</a></li>
-<li><a href="#limited-liability-company-llc">
-Limited Liability Company (LLC)</a></li>
-<li><a href="#private-limited-company">
-Private Limited Company</a>
-<ul>
-<li><a href="#advantages-of-a-private-limited-company">
-Advantages of a Private Limited Company</a></li>
-<li><a href="#disadvantages-of-a-private-limited-company">
-Disadvantages of a Private Limited Company</a></li>
-</ul></li>
-<li><a href="#public-limited-company">
-Public Limited Company</a>
-<ul>
-<li><a href="#advantages-and-disadvantages-of-a-plc">
-Advantages and Disadvantages of a PLC</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#non-financial-motivational-techniques-that-entrepreneurs-use-to-motivate-their-employees">
-Non-financial motivational techniques that Entrepreneurs use to motivate their employees</a></li>
-<li><a href="#e-procurement">
-E-Procurement</a>
-<ul>
-<li><a href="#key-features-and-benefits-of-e-procurement-include">
-<strong>Key features and benefits of e-procurement include</strong>:</a></li>
-<li><a href="#e-procurement-chain">
-E-Procurement chain</a></li>
-</ul></li>
-<li><a href="#e-government">
-E-Government</a>
-<ul>
-<li><a href="#aim-of-e-government-project">
-AIM OF E-GOVERNMENT PROJECT</a></li>
-<li><a href="#categories-of-e-government">
-Categories Of e-Government</a>
-<ul>
-<li><a href="#1-government-to-citizen-g2c">
-1-Government to Citizen (G2C)</a></li>
-<li><a href="#2-government-to-employee-g2e">
-2-Government to Employee (G2E)</a></li>
-<li><a href="#3-government-to-business-g2b">
-3-Government to Business (G2B)</a></li>
-<li><a href="#4-government-to-government-g2g">
-4-Government to Government(G2G)</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#e-commerce">
-E-Commerce</a></li>
-<li><a href="#acquisition">
-Acquisition</a>
-<ul>
-<li><a href="#types-of-acquisition">
-Types of Acquisition</a></li>
-</ul></li>
-<li><a href="#good-business-plan">
-Good Business Plan</a></li>
-<li><a href="#women-entrepreneur">
-Women Entrepreneur</a></li>
-<li><a href="#scientific-management">
-Scientific Management</a></li>
-</ul>
-</nav>
-
-			</details>
-            
 		</header>
+		<div id="music" style="width: 100%; height: 18em;"></div>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem">E&E Notes</h1>
 			<h2><a name="e-commerce" class="heading-anchor" href="#e-commerce" rel="nofollow" aria-hidden="true"></a>E-Commerce</h2>
@@ -868,6 +770,107 @@ generated in the enterprise to women.</p>
 <p><img src="../assets/Pasted%20image%2020231128094120.png" alt=""></p>
 <h2><a name="scientific-management" class="heading-anchor" href="#scientific-management" rel="nofollow" aria-hidden="true"></a>Scientific Management</h2>
 		</main>
+        
+        <details id="table-of-content">
+           <summary>Table of Content</summary>
+                    <nav>
+<ul>
+<li><a href="#e-commerce">E-Commerce</a></li>
+<li><a href="#entrepreneur">
+Entrepreneur</a></li>
+<li><a href="#supply-chain-management">
+Supply Chain Management</a>
+<ul>
+<li><a href="#component-of-srm">
+Component of SRM</a></li>
+</ul></li>
+<li><a href="#evaluating-new-venture">
+Evaluating new venture</a></li>
+<li><a href="#types-of-entrepreneurs">
+Types of Entrepreneurs</a></li>
+<li><a href="#customer-relationship-management">
+Customer Relationship Management</a>
+<ul>
+<li><a href="#types-of-crm">
+Types of CRM</a></li>
+<li><a href="#functional-areas-of-crm">
+Functional areas of CRM:</a></li>
+</ul></li>
+<li><a href="#various-financing-stage-of-any-organization-or-company">
+Various financing stage of any organization or company.</a></li>
+<li><a href="#enterprises-based-on-ownership-structure">
+Enterprises based on Ownership structure.</a>
+<ul>
+<li><a href="#sole-proprietorship">
+Sole Proprietorship</a></li>
+<li><a href="#partnership">
+Partnership</a></li>
+<li><a href="#corporations">
+Corporations</a></li>
+<li><a href="#limited-liability-company-llc">
+Limited Liability Company (LLC)</a></li>
+<li><a href="#private-limited-company">
+Private Limited Company</a>
+<ul>
+<li><a href="#advantages-of-a-private-limited-company">
+Advantages of a Private Limited Company</a></li>
+<li><a href="#disadvantages-of-a-private-limited-company">
+Disadvantages of a Private Limited Company</a></li>
+</ul></li>
+<li><a href="#public-limited-company">
+Public Limited Company</a>
+<ul>
+<li><a href="#advantages-and-disadvantages-of-a-plc">
+Advantages and Disadvantages of a PLC</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#non-financial-motivational-techniques-that-entrepreneurs-use-to-motivate-their-employees">
+Non-financial motivational techniques that Entrepreneurs use to motivate their employees</a></li>
+<li><a href="#e-procurement">
+E-Procurement</a>
+<ul>
+<li><a href="#key-features-and-benefits-of-e-procurement-include">
+<strong>Key features and benefits of e-procurement include</strong>:</a></li>
+<li><a href="#e-procurement-chain">
+E-Procurement chain</a></li>
+</ul></li>
+<li><a href="#e-government">
+E-Government</a>
+<ul>
+<li><a href="#aim-of-e-government-project">
+AIM OF E-GOVERNMENT PROJECT</a></li>
+<li><a href="#categories-of-e-government">
+Categories Of e-Government</a>
+<ul>
+<li><a href="#1-government-to-citizen-g2c">
+1-Government to Citizen (G2C)</a></li>
+<li><a href="#2-government-to-employee-g2e">
+2-Government to Employee (G2E)</a></li>
+<li><a href="#3-government-to-business-g2b">
+3-Government to Business (G2B)</a></li>
+<li><a href="#4-government-to-government-g2g">
+4-Government to Government(G2G)</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#e-commerce">
+E-Commerce</a></li>
+<li><a href="#acquisition">
+Acquisition</a>
+<ul>
+<li><a href="#types-of-acquisition">
+Types of Acquisition</a></li>
+</ul></li>
+<li><a href="#good-business-plan">
+Good Business Plan</a></li>
+<li><a href="#women-entrepreneur">
+Women Entrepreneur</a></li>
+<li><a href="#scientific-management">
+Scientific Management</a></li>
+</ul>
+</nav>
+
+        </details>
+        
 		<footer>
 			<p style="text-align: center; font-size: small; margin-top: 5em;">
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
@@ -882,6 +885,19 @@ generated in the enterprise to women.</p>
         };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <script>
+    const music = document.getElementById('music');
+    let wave = new CircularAudioWave(music);
+    wave.loadAudio('https://AnzenKodo.github.io/assets/Music.m4a');
+
+    music.addEventListener("click", () => {
+        if (wave.playing) {
+            wave.pause();
+        } else {
+            wave.play()
+        }
+    })
     </script>
 	</body>
 </html>

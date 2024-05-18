@@ -163,6 +163,8 @@
                 max-width: 100%;
             }
 		</style>
+	<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0"></script>
+    <script src="https://AnzenKodo.github.io/assets/circular-audio-wave.js"></script>
 	</head>
 	<body>
 	    <a href="#skip-top-main">Skip to main</a>
@@ -170,69 +172,8 @@
 			<h1 style="text-align: center;">
                 <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
-            
-			<details id="table-of-content">
-			    <summary>Table of Content</summary>
-                <nav>
-<li><a href="#standard-built-in-objects">Standard built-in objects</a>
-<ul>
-<li><a href="#proxy">
-Proxy</a></li>
-<li><a href="#reflect">
-Reflect</a></li>
-<li><a href="#promise">
-Promise</a></li>
-<li><a href="#date">
-Date</a></li>
-<li><a href="#function">
-Function</a></li>
-<li><a href="#array">
-Array</a></li>
-<li><a href="#json">
-JSON</a></li>
-<li><a href="#object">
-Object</a></li>
-<li><a href="#map">
-Map</a></li>
-<li><a href="#math">
-Math</a></li>
-<li><a href="#number">
-Number</a></li>
-<li><a href="#string">
-String</a>
-<ul>
-<li><a href="#foreach-inline-loop">
-<code>forEach()</code> inline loop</a></li>
-</ul></li>
-<li><a href="#global-object">
-Global Object</a></li>
-<li><a href="#symbol">
-Symbol</a></li>
-<li><a href="#error">
-Error</a></li>
-</ul><li><a href="#class">
-Class</a></li>
-<li><a href="#expressions-and-operators">
-Expressions and operators</a></li>
-<li><a href="#statements-and-declarations">
-Statements and declarations</a></li>
-<li><a href="#web-apis">
-Web APIs</a>
-<ul>
-<li><a href="#fetch">
-Fetch</a></li>
-<li><a href="#globaleventhandlers">
-GlobalEventHandlers</a></li>
-<li><a href="#window-or-workerglobalscope">
-Window Or WorkerGlobalScope</a></li>
-<li><a href="#console">
-Console</a></li>
-</ul>
-</nav>
-
-			</details>
-            
 		</header>
+		<div id="music" style="width: 100%; height: 18em;"></div>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem">Language</h1>
 			<h1><a name="standard-built-in-objects" class="heading-anchor" href="#standard-built-in-objects" rel="nofollow" aria-hidden="true"></a>Standard built-in objects</h1><h2><a name="proxy" class="heading-anchor" href="#proxy" rel="nofollow" aria-hidden="true"></a>Proxy</h2>
@@ -21704,6 +21645,68 @@ body { color: #282c34; }
 </ul>
 
 		</main>
+        
+        <details id="table-of-content">
+           <summary>Table of Content</summary>
+                    <nav>
+<li><a href="#standard-built-in-objects">Standard built-in objects</a>
+<ul>
+<li><a href="#proxy">
+Proxy</a></li>
+<li><a href="#reflect">
+Reflect</a></li>
+<li><a href="#promise">
+Promise</a></li>
+<li><a href="#date">
+Date</a></li>
+<li><a href="#function">
+Function</a></li>
+<li><a href="#array">
+Array</a></li>
+<li><a href="#json">
+JSON</a></li>
+<li><a href="#object">
+Object</a></li>
+<li><a href="#map">
+Map</a></li>
+<li><a href="#math">
+Math</a></li>
+<li><a href="#number">
+Number</a></li>
+<li><a href="#string">
+String</a>
+<ul>
+<li><a href="#foreach-inline-loop">
+<code>forEach()</code> inline loop</a></li>
+</ul></li>
+<li><a href="#global-object">
+Global Object</a></li>
+<li><a href="#symbol">
+Symbol</a></li>
+<li><a href="#error">
+Error</a></li>
+</ul><li><a href="#class">
+Class</a></li>
+<li><a href="#expressions-and-operators">
+Expressions and operators</a></li>
+<li><a href="#statements-and-declarations">
+Statements and declarations</a></li>
+<li><a href="#web-apis">
+Web APIs</a>
+<ul>
+<li><a href="#fetch">
+Fetch</a></li>
+<li><a href="#globaleventhandlers">
+GlobalEventHandlers</a></li>
+<li><a href="#window-or-workerglobalscope">
+Window Or WorkerGlobalScope</a></li>
+<li><a href="#console">
+Console</a></li>
+</ul>
+</nav>
+
+        </details>
+        
 		<footer>
 			<p style="text-align: center; font-size: small; margin-top: 5em;">
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
@@ -21718,6 +21721,19 @@ body { color: #282c34; }
         };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <script>
+    const music = document.getElementById('music');
+    let wave = new CircularAudioWave(music);
+    wave.loadAudio('https://AnzenKodo.github.io/assets/Music.m4a');
+
+    music.addEventListener("click", () => {
+        if (wave.playing) {
+            wave.pause();
+        } else {
+            wave.play()
+        }
+    })
     </script>
 	</body>
 </html>

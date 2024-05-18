@@ -163,6 +163,8 @@
                 max-width: 100%;
             }
 		</style>
+	<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0"></script>
+    <script src="https://AnzenKodo.github.io/assets/circular-audio-wave.js"></script>
 	</head>
 	<body>
 	    <a href="#skip-top-main">Skip to main</a>
@@ -170,60 +172,8 @@
 			<h1 style="text-align: center;">
                 <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
-            
-			<details id="table-of-content">
-			    <summary>Table of Content</summary>
-                <nav>
-<ul>
-<li><a href="#differentiate-between-web-1-0-web-2-0-web-3-0">Differentiate between Web 1.0, Web 2.0 &amp; Web 3.0</a></li>
-<li><a href="#short-note-on-clickstream-analysis">
-Short note on clickstream analysis</a></li>
-<li><a href="#explain-characteristics-of-semantic-web">
-Explain characteristics of Semantic Web</a></li>
-<li><a href="#differentiate-between-typescript-javascript">
-Differentiate between TypeScript &amp; JavaScript</a></li>
-<li><a href="#explain-steps-to-install-typescript">
-Explain: Steps to install TypeScript</a></li>
-<li><a href="#explain-typescript-operators-in-details">
-Explain TypeScript operators in details</a>
-<ul>
-<li><a href="#arithmetic-operators">
-Arithmetic Operators</a></li>
-<li><a href="#comparison-relational-operators">
-Comparison (Relational) operators</a></li>
-</ul></li>
-<li><a href="#logical-operators">
-Logical Operators</a>
-<ul>
-<li><a href="#bitwise-operators">
-Bitwise Operators</a></li>
-<li><a href="#assignment-operators">
-Assignment Operators</a></li>
-<li><a href="#conditional-operator">
-Conditional Operator</a></li>
-<li><a href="#concatenation-operator">
-Concatenation operator</a></li>
-<li><a href="#type-operators">
-Type Operators</a></li>
-</ul></li>
-<li><a href="#what-is-need-of-angularjs-in-real-website">
-What is need of AngularJS in real website?</a></li>
-<li><a href="#what-are-the-angularjs-build-in-directives">
-What are the AngularJS build-in directives</a></li>
-<li><a href="#write-typescript-code-for-hello-world">
-Write TypeScript code for &quot;Hello World&quot;</a></li>
-<li><a href="#write-a-angularjs-code-for-calculator">
-Write a AngularJS code for calculator.</a>
-<ul>
-<li><a href="#explain-javascript-dependency-injections">
-Explain JavaScript dependency injections</a></li>
-</ul></li>
-</ul>
-</nav>
-
-			</details>
-            
 		</header>
+		<div id="music" style="width: 100%; height: 18em;"></div>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem">WebX</h1>
 			<h2><a name="differentiate-between-web-1-0-web-2-0-web-3-0" class="heading-anchor" href="#differentiate-between-web-1-0-web-2-0-web-3-0" rel="nofollow" aria-hidden="true"></a>Differentiate between Web 1.0, Web 2.0 &amp; Web 3.0</h2>
@@ -1624,6 +1574,59 @@ body { color: #282c34; }
 </ul>
 
 		</main>
+        
+        <details id="table-of-content">
+           <summary>Table of Content</summary>
+                    <nav>
+<ul>
+<li><a href="#differentiate-between-web-1-0-web-2-0-web-3-0">Differentiate between Web 1.0, Web 2.0 &amp; Web 3.0</a></li>
+<li><a href="#short-note-on-clickstream-analysis">
+Short note on clickstream analysis</a></li>
+<li><a href="#explain-characteristics-of-semantic-web">
+Explain characteristics of Semantic Web</a></li>
+<li><a href="#differentiate-between-typescript-javascript">
+Differentiate between TypeScript &amp; JavaScript</a></li>
+<li><a href="#explain-steps-to-install-typescript">
+Explain: Steps to install TypeScript</a></li>
+<li><a href="#explain-typescript-operators-in-details">
+Explain TypeScript operators in details</a>
+<ul>
+<li><a href="#arithmetic-operators">
+Arithmetic Operators</a></li>
+<li><a href="#comparison-relational-operators">
+Comparison (Relational) operators</a></li>
+</ul></li>
+<li><a href="#logical-operators">
+Logical Operators</a>
+<ul>
+<li><a href="#bitwise-operators">
+Bitwise Operators</a></li>
+<li><a href="#assignment-operators">
+Assignment Operators</a></li>
+<li><a href="#conditional-operator">
+Conditional Operator</a></li>
+<li><a href="#concatenation-operator">
+Concatenation operator</a></li>
+<li><a href="#type-operators">
+Type Operators</a></li>
+</ul></li>
+<li><a href="#what-is-need-of-angularjs-in-real-website">
+What is need of AngularJS in real website?</a></li>
+<li><a href="#what-are-the-angularjs-build-in-directives">
+What are the AngularJS build-in directives</a></li>
+<li><a href="#write-typescript-code-for-hello-world">
+Write TypeScript code for &quot;Hello World&quot;</a></li>
+<li><a href="#write-a-angularjs-code-for-calculator">
+Write a AngularJS code for calculator.</a>
+<ul>
+<li><a href="#explain-javascript-dependency-injections">
+Explain JavaScript dependency injections</a></li>
+</ul></li>
+</ul>
+</nav>
+
+        </details>
+        
 		<footer>
 			<p style="text-align: center; font-size: small; margin-top: 5em;">
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
@@ -1638,6 +1641,19 @@ body { color: #282c34; }
         };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <script>
+    const music = document.getElementById('music');
+    let wave = new CircularAudioWave(music);
+    wave.loadAudio('https://AnzenKodo.github.io/assets/Music.m4a');
+
+    music.addEventListener("click", () => {
+        if (wave.playing) {
+            wave.pause();
+        } else {
+            wave.play()
+        }
+    })
     </script>
 	</body>
 </html>

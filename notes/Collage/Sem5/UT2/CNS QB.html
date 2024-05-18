@@ -163,6 +163,8 @@
                 max-width: 100%;
             }
 		</style>
+	<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0"></script>
+    <script src="https://AnzenKodo.github.io/assets/circular-audio-wave.js"></script>
 	</head>
 	<body>
 	    <a href="#skip-top-main">Skip to main</a>
@@ -170,196 +172,8 @@
 			<h1 style="text-align: center;">
                 <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
-            
-			<details id="table-of-content">
-			    <summary>Table of Content</summary>
-                <nav>
-<ul>
-<li><a href="#module-3">Module 3</a>
-<ul>
-<li><a href="#type-s-of-malicious-software">
-Type's of malicious software</a></li>
-<li><a href="#host-based">
-Host based</a>
-<ul>
-<li><a href="#spam">
-Spam</a>
-<ul>
-<li><a href="#types-of-spam">
-Types of spam</a></li>
-</ul></li>
-<li><a href="#virus">
-Virus</a>
-<ul>
-<li><a href="#phases-of-virus">
-Phases of Virus</a></li>
-</ul></li>
-<li><a href="#trojan-horse">
-Trojan horse</a></li>
-<li><a href="#trapdoor">
-Trapdoor</a></li>
-<li><a href="#logic-bomb">
-Logic bomb</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#module-4">
-Module 4</a>
-<ul>
-<li><a href="#ipsec">
-IPSec</a>
-<ul>
-<li><a href="#ipsec-packet">
-IPSec Packet</a></li>
-<li><a href="#ipsec-3-function-areas">
-IPSec 3 function areas</a></li>
-<li><a href="#use-of-ipsec">
-Use of IPSec</a></li>
-<li><a href="#components-of-ipsec">
-Components of IPSec</a></li>
-<li><a href="#ipsec-tunnel-mode-vs-transport-mode">
-IPSec Tunnel Mode vs Transport Mode</a>
-<ul>
-<li><a href="#tunnel-mode">
-Tunnel Mode</a></li>
-<li><a href="#transport-mode">
-Transport Mode</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#nas">
-NAS</a>
-<ul>
-<li><a href="#top-4-nas-vulnerabilities">
-Top 4 NAS vulnerabilities</a>
-<ul>
-<li><a href="#unsecure-network-configurations">
-Unsecure network configurations</a></li>
-<li><a href="#unprotected-passwords">
-Unprotected passwords</a></li>
-<li><a href="#insufficient-authentication">
-Insufficient authentication</a></li>
-<li><a href="#the-internet">
-The internet</a></li>
-</ul></li>
-<li><a href="#key-components-of-nas-security">
-Key components of NAS security</a>
-<ul>
-<li><a href="#access-controls">
-Access controls</a></li>
-<li><a href="#device-approval">
-Device approval</a></li>
-<li><a href="#network-security">
-Network security</a></li>
-<li><a href="#internet-security-practices">
-Internet security practices</a></li>
-<li><a href="#regular-system-and-software-updates">
-Regular system and software updates</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#vpn">
-VPN</a></li>
-<li><a href="#ssl">
-SSL</a>
-<ul>
-<li><a href="#ssl-protocol-stack">
-SSL Protocol Stack:</a></li>
-<li><a href="#ssl-handshake-protocol">
-SSL Handshake Protocol</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#module-5">
-Module 5</a>
-<ul>
-<li><a href="#nac">
-NAC</a>
-<ul>
-<li><a href="#use-cases-for-network-access-control">
-Use cases for Network Access Control</a></li>
-</ul></li>
-<li><a href="#snmp">
-SNMP</a>
-<ul>
-<li><a href="#snmp-components">
-SNMP components</a>
-<ul>
-<li><a href="#snmp-manager">
-SNMP Manager</a></li>
-</ul></li>
-<li><a href="#snmp-agent">
-SNMP agent</a>
-<ul>
-<li><a href="#management-information-base">
-Management Information Base</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li><a href="#module-6">
-Module 6</a>
-<ul>
-<li><a href="#ids">
-IDS</a>
-<ul>
-<li><a href="#classification-of-intrusion-detection-system">
-Classification of intrusion detection system:</a>
-<ul>
-<li><a href="#network-intrusion-detection-system-nids">
-Network Intrusion Detection System (NIDS)</a></li>
-<li><a href="#host-intrusion-detection-system-hids">
-Host Intrusion Detection System (HIDS)</a></li>
-<li><a href="#protocol-based-intrusion-detection-system-pids">
-Protocol-based Intrusion Detection System (PIDS)</a></li>
-<li><a href="#application-protocol-based-intrusion-detection-system">
-Application Protocol-based Intrusion Detection System</a></li>
-<li><a href="#hybrid-intrusion-detection-system">
-Hybrid Intrusion Detection System</a></li>
-</ul></li>
-<li><a href="#detection-method-of-ids">
-Detection Method of IDS</a>
-<ul>
-<li><a href="#signature-based">
-Signature based</a></li>
-<li><a href="#anomaly-based">
-Anomaly based</a></li>
-</ul></li>
-<li><a href="#comparison-of-ids-with-firewalls">
-Comparison of IDS with Firewalls</a></li>
-</ul></li>
-<li><a href="#firewall">
-Firewall</a>
-<ul>
-<li><a href="#firewall-characteristics">
-Firewall Characteristics</a></li>
-<li><a href="#types-of-firewall">
-Types of Firewall</a>
-<ul>
-<li><a href="#packet-filtering">
-Packet Filtering</a></li>
-<li><a href="#application-proxy">
-Application Proxy</a></li>
-<li><a href="#circuit-gateway">
-Circuit Gateway</a></li>
-</ul></li>
-<li><a href="#firewall-design-principles">
-Firewall Design Principles</a>
-<ul>
-<li><a href="#developing-security-policy">
-Developing Security Policy</a></li>
-<li><a href="#simple-solution-design">
-Simple Solution Design</a></li>
-<li><a href="#choosing-the-right-device">
-Choosing the Right Device</a></li>
-<li><a href="#layered-defense">
-Layered Defense</a></li>
-<li><a href="#consider-internal-threats">
-Consider Internal Threats</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav>
-
-			</details>
-            
 		</header>
+		<div id="music" style="width: 100%; height: 18em;"></div>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem">CNS QB</h1>
 			<h2><a name="module-3" class="heading-anchor" href="#module-3" rel="nofollow" aria-hidden="true"></a>Module 3</h2><h3><a name="type-s-of-malicious-software" class="heading-anchor" href="#type-s-of-malicious-software" rel="nofollow" aria-hidden="true"></a>Type's of malicious software</h3>
@@ -649,6 +463,195 @@ It is a centralized system used to monitor network. It is also known as Network 
 <p>The security becomes weak in case of internal attacks and most of the attacks are done internally as it is easy to access and designed weakly.</p>
 
 		</main>
+        
+        <details id="table-of-content">
+           <summary>Table of Content</summary>
+                    <nav>
+<ul>
+<li><a href="#module-3">Module 3</a>
+<ul>
+<li><a href="#type-s-of-malicious-software">
+Type's of malicious software</a></li>
+<li><a href="#host-based">
+Host based</a>
+<ul>
+<li><a href="#spam">
+Spam</a>
+<ul>
+<li><a href="#types-of-spam">
+Types of spam</a></li>
+</ul></li>
+<li><a href="#virus">
+Virus</a>
+<ul>
+<li><a href="#phases-of-virus">
+Phases of Virus</a></li>
+</ul></li>
+<li><a href="#trojan-horse">
+Trojan horse</a></li>
+<li><a href="#trapdoor">
+Trapdoor</a></li>
+<li><a href="#logic-bomb">
+Logic bomb</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#module-4">
+Module 4</a>
+<ul>
+<li><a href="#ipsec">
+IPSec</a>
+<ul>
+<li><a href="#ipsec-packet">
+IPSec Packet</a></li>
+<li><a href="#ipsec-3-function-areas">
+IPSec 3 function areas</a></li>
+<li><a href="#use-of-ipsec">
+Use of IPSec</a></li>
+<li><a href="#components-of-ipsec">
+Components of IPSec</a></li>
+<li><a href="#ipsec-tunnel-mode-vs-transport-mode">
+IPSec Tunnel Mode vs Transport Mode</a>
+<ul>
+<li><a href="#tunnel-mode">
+Tunnel Mode</a></li>
+<li><a href="#transport-mode">
+Transport Mode</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#nas">
+NAS</a>
+<ul>
+<li><a href="#top-4-nas-vulnerabilities">
+Top 4 NAS vulnerabilities</a>
+<ul>
+<li><a href="#unsecure-network-configurations">
+Unsecure network configurations</a></li>
+<li><a href="#unprotected-passwords">
+Unprotected passwords</a></li>
+<li><a href="#insufficient-authentication">
+Insufficient authentication</a></li>
+<li><a href="#the-internet">
+The internet</a></li>
+</ul></li>
+<li><a href="#key-components-of-nas-security">
+Key components of NAS security</a>
+<ul>
+<li><a href="#access-controls">
+Access controls</a></li>
+<li><a href="#device-approval">
+Device approval</a></li>
+<li><a href="#network-security">
+Network security</a></li>
+<li><a href="#internet-security-practices">
+Internet security practices</a></li>
+<li><a href="#regular-system-and-software-updates">
+Regular system and software updates</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#vpn">
+VPN</a></li>
+<li><a href="#ssl">
+SSL</a>
+<ul>
+<li><a href="#ssl-protocol-stack">
+SSL Protocol Stack:</a></li>
+<li><a href="#ssl-handshake-protocol">
+SSL Handshake Protocol</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#module-5">
+Module 5</a>
+<ul>
+<li><a href="#nac">
+NAC</a>
+<ul>
+<li><a href="#use-cases-for-network-access-control">
+Use cases for Network Access Control</a></li>
+</ul></li>
+<li><a href="#snmp">
+SNMP</a>
+<ul>
+<li><a href="#snmp-components">
+SNMP components</a>
+<ul>
+<li><a href="#snmp-manager">
+SNMP Manager</a></li>
+</ul></li>
+<li><a href="#snmp-agent">
+SNMP agent</a>
+<ul>
+<li><a href="#management-information-base">
+Management Information Base</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="#module-6">
+Module 6</a>
+<ul>
+<li><a href="#ids">
+IDS</a>
+<ul>
+<li><a href="#classification-of-intrusion-detection-system">
+Classification of intrusion detection system:</a>
+<ul>
+<li><a href="#network-intrusion-detection-system-nids">
+Network Intrusion Detection System (NIDS)</a></li>
+<li><a href="#host-intrusion-detection-system-hids">
+Host Intrusion Detection System (HIDS)</a></li>
+<li><a href="#protocol-based-intrusion-detection-system-pids">
+Protocol-based Intrusion Detection System (PIDS)</a></li>
+<li><a href="#application-protocol-based-intrusion-detection-system">
+Application Protocol-based Intrusion Detection System</a></li>
+<li><a href="#hybrid-intrusion-detection-system">
+Hybrid Intrusion Detection System</a></li>
+</ul></li>
+<li><a href="#detection-method-of-ids">
+Detection Method of IDS</a>
+<ul>
+<li><a href="#signature-based">
+Signature based</a></li>
+<li><a href="#anomaly-based">
+Anomaly based</a></li>
+</ul></li>
+<li><a href="#comparison-of-ids-with-firewalls">
+Comparison of IDS with Firewalls</a></li>
+</ul></li>
+<li><a href="#firewall">
+Firewall</a>
+<ul>
+<li><a href="#firewall-characteristics">
+Firewall Characteristics</a></li>
+<li><a href="#types-of-firewall">
+Types of Firewall</a>
+<ul>
+<li><a href="#packet-filtering">
+Packet Filtering</a></li>
+<li><a href="#application-proxy">
+Application Proxy</a></li>
+<li><a href="#circuit-gateway">
+Circuit Gateway</a></li>
+</ul></li>
+<li><a href="#firewall-design-principles">
+Firewall Design Principles</a>
+<ul>
+<li><a href="#developing-security-policy">
+Developing Security Policy</a></li>
+<li><a href="#simple-solution-design">
+Simple Solution Design</a></li>
+<li><a href="#choosing-the-right-device">
+Choosing the Right Device</a></li>
+<li><a href="#layered-defense">
+Layered Defense</a></li>
+<li><a href="#consider-internal-threats">
+Consider Internal Threats</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+
+        </details>
+        
 		<footer>
 			<p style="text-align: center; font-size: small; margin-top: 5em;">
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
@@ -663,6 +666,19 @@ It is a centralized system used to monitor network. It is also known as Network 
         };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <script>
+    const music = document.getElementById('music');
+    let wave = new CircularAudioWave(music);
+    wave.loadAudio('https://AnzenKodo.github.io/assets/Music.m4a');
+
+    music.addEventListener("click", () => {
+        if (wave.playing) {
+            wave.pause();
+        } else {
+            wave.play()
+        }
+    })
     </script>
 	</body>
 </html>

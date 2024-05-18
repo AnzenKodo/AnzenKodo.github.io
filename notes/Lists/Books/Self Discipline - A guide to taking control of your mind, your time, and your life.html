@@ -163,6 +163,8 @@
                 max-width: 100%;
             }
 		</style>
+	<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0"></script>
+    <script src="https://AnzenKodo.github.io/assets/circular-audio-wave.js"></script>
 	</head>
 	<body>
 	    <a href="#skip-top-main">Skip to main</a>
@@ -170,22 +172,8 @@
 			<h1 style="text-align: center;">
                 <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
-            
-			<details id="table-of-content">
-			    <summary>Table of Content</summary>
-                <nav>
-<li><a href="#self-discipline">Self-Discipline</a></li>
-<li><a href="#quote">
-Quote</a></li>
-<li><a href="#points">
-Points</a></li>
-<li><a href="#stores">
-Stores</a></li>
-</nav>
-
-			</details>
-            
 		</header>
+		<div id="music" style="width: 100%; height: 18em;"></div>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem">Self Discipline - A guide to taking control of your mind, your time, and your life</h1>
 			<h1><a name="self-discipline" class="heading-anchor" href="#self-discipline" rel="nofollow" aria-hidden="true"></a>Self-Discipline</h1>
@@ -269,6 +257,21 @@ somebody new, maybe at a party or a conference or being introduced</li>
 </ul>
 
 		</main>
+        
+        <details id="table-of-content">
+           <summary>Table of Content</summary>
+                    <nav>
+<li><a href="#self-discipline">Self-Discipline</a></li>
+<li><a href="#quote">
+Quote</a></li>
+<li><a href="#points">
+Points</a></li>
+<li><a href="#stores">
+Stores</a></li>
+</nav>
+
+        </details>
+        
 		<footer>
 			<p style="text-align: center; font-size: small; margin-top: 5em;">
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
@@ -283,6 +286,19 @@ somebody new, maybe at a party or a conference or being introduced</li>
         };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <script>
+    const music = document.getElementById('music');
+    let wave = new CircularAudioWave(music);
+    wave.loadAudio('https://AnzenKodo.github.io/assets/Music.m4a');
+
+    music.addEventListener("click", () => {
+        if (wave.playing) {
+            wave.pause();
+        } else {
+            wave.play()
+        }
+    })
     </script>
 	</body>
 </html>

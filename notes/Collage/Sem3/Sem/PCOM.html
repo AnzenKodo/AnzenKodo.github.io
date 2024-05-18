@@ -163,6 +163,8 @@
                 max-width: 100%;
             }
 		</style>
+	<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0"></script>
+    <script src="https://AnzenKodo.github.io/assets/circular-audio-wave.js"></script>
 	</head>
 	<body>
 	    <a href="#skip-top-main">Skip to main</a>
@@ -170,108 +172,8 @@
 			<h1 style="text-align: center;">
                 <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
-            
-			<details id="table-of-content">
-			    <summary>Table of Content</summary>
-                <nav>
-<ul>
-<li><a href="#basics-of-analog-communication-and-digital-communication-systems">Basics of analog communication and digital communication systems</a>
-<ul>
-<li><a href="#analog-communication">
-Analog Communication</a>
-<ul>
-<li><a href="#application">
-Application</a></li>
-<li><a href="#advantages">
-Advantages</a></li>
-<li><a href="#disadvantages">
-Disadvantages</a></li>
-</ul></li>
-<li><a href="#digital-communication">
-Digital communication</a>
-<ul>
-<li><a href="#applications">
-Applications</a></li>
-<li><a href="#advantages">
-Advantages</a></li>
-<li><a href="#disadvantages">
-Disadvantages</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#explain-need-of-modulation-justify-it-with-example">
-Explain need of modulation. Justify it with example.</a></li>
-<li><a href="#define-the-following-terms">
-Define the following terms.</a>
-<ul>
-<li><a href="#noise-figure">
-Noise Figure</a></li>
-<li><a href="#noise-temperature">
-Noise Temperature</a></li>
-<li><a href="#noise-bandwidth">
-Noise Bandwidth</a></li>
-<li><a href="#noise-voltage">
-Noise Voltage</a></li>
-<li><a href="#modulation">
-Modulation</a></li>
-</ul></li>
-<li><a href="#type-of-noise">
-Type of Noise</a></li>
-<li><a href="#am-and-fm">
-AM and FM</a>
-<ul>
-<li><a href="#am">
-AM</a></li>
-<li><a href="#fm">
-FM</a></li>
-</ul></li>
-<li><a href="#types-of-communication-channel">
-Types of communication Channel</a>
-<ul>
-<li><a href="#guided-communication-channels">
-Guided communication channels</a></li>
-<li><a href="#unguided-commuication-channls">
-Unguided commuication channls</a></li>
-</ul></li>
-<li><a href="#fourier-series">
-Fourier Series</a>
-<ul>
-<li><a href="#fourier-transform">
-Fourier Transform</a></li>
-</ul></li>
-<li><a href="#explain-electromagnetic-spectrum-and-its-application">
-Explain Electromagnetic Spectrum and its Application</a></li>
-<li><a href="#amplitude-modulation">
-Amplitude Modulation</a>
-<ul>
-<li><a href="#application-of-am">
-Application of AM</a></li>
-<li><a href="#am-transmitter">
-AM Transmitter</a>
-<ul>
-<li><a href="#steps-are-involved-in-the-working-of-an-am-transmitter">
-Steps are involved in the working of an AM transmitter</a></li>
-</ul></li>
-<li><a href="#uses-fo-am">
-Uses fo AM</a></li>
-</ul></li>
-<li><a href="#frequency-modulation-fm">
-Frequency Modulation(FM)</a>
-<ul>
-<li><a href="#pre-emphasis-de-emphasis-in-fm">
-Pre-emphasis &amp; de emphasis in FM</a></li>
-<li><a href="#indirect-method-armstrong-method-of-fm-generation">
-Indirect method (Armstrong method) of FM generation.</a></li>
-<li><a href="#uses-of-fm">
-Uses of FM</a></li>
-<li><a href="#amplitude-modulation-techniques">
-Amplitude Modulation Techniques</a></li>
-</ul></li>
-</ul>
-</nav>
-
-			</details>
-            
 		</header>
+		<div id="music" style="width: 100%; height: 18em;"></div>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem">PCOM</h1>
 			<h2><a name="basics-of-analog-communication-and-digital-communication-systems" class="heading-anchor" href="#basics-of-analog-communication-and-digital-communication-systems" rel="nofollow" aria-hidden="true"></a>Basics of analog communication and digital communication systems</h2>
@@ -726,6 +628,107 @@ talkies, due to its better resistance to interference.</li>
 <iframe src="https://www.youtube.com/embed/qIJGl8RzGMU" title="Amplitude Modulation Techniques (AM, DSB-SC, SSB, VSB)/Double Sideband, Single Sideband, Vestigial" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 		</main>
+        
+        <details id="table-of-content">
+           <summary>Table of Content</summary>
+                    <nav>
+<ul>
+<li><a href="#basics-of-analog-communication-and-digital-communication-systems">Basics of analog communication and digital communication systems</a>
+<ul>
+<li><a href="#analog-communication">
+Analog Communication</a>
+<ul>
+<li><a href="#application">
+Application</a></li>
+<li><a href="#advantages">
+Advantages</a></li>
+<li><a href="#disadvantages">
+Disadvantages</a></li>
+</ul></li>
+<li><a href="#digital-communication">
+Digital communication</a>
+<ul>
+<li><a href="#applications">
+Applications</a></li>
+<li><a href="#advantages">
+Advantages</a></li>
+<li><a href="#disadvantages">
+Disadvantages</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#explain-need-of-modulation-justify-it-with-example">
+Explain need of modulation. Justify it with example.</a></li>
+<li><a href="#define-the-following-terms">
+Define the following terms.</a>
+<ul>
+<li><a href="#noise-figure">
+Noise Figure</a></li>
+<li><a href="#noise-temperature">
+Noise Temperature</a></li>
+<li><a href="#noise-bandwidth">
+Noise Bandwidth</a></li>
+<li><a href="#noise-voltage">
+Noise Voltage</a></li>
+<li><a href="#modulation">
+Modulation</a></li>
+</ul></li>
+<li><a href="#type-of-noise">
+Type of Noise</a></li>
+<li><a href="#am-and-fm">
+AM and FM</a>
+<ul>
+<li><a href="#am">
+AM</a></li>
+<li><a href="#fm">
+FM</a></li>
+</ul></li>
+<li><a href="#types-of-communication-channel">
+Types of communication Channel</a>
+<ul>
+<li><a href="#guided-communication-channels">
+Guided communication channels</a></li>
+<li><a href="#unguided-commuication-channls">
+Unguided commuication channls</a></li>
+</ul></li>
+<li><a href="#fourier-series">
+Fourier Series</a>
+<ul>
+<li><a href="#fourier-transform">
+Fourier Transform</a></li>
+</ul></li>
+<li><a href="#explain-electromagnetic-spectrum-and-its-application">
+Explain Electromagnetic Spectrum and its Application</a></li>
+<li><a href="#amplitude-modulation">
+Amplitude Modulation</a>
+<ul>
+<li><a href="#application-of-am">
+Application of AM</a></li>
+<li><a href="#am-transmitter">
+AM Transmitter</a>
+<ul>
+<li><a href="#steps-are-involved-in-the-working-of-an-am-transmitter">
+Steps are involved in the working of an AM transmitter</a></li>
+</ul></li>
+<li><a href="#uses-fo-am">
+Uses fo AM</a></li>
+</ul></li>
+<li><a href="#frequency-modulation-fm">
+Frequency Modulation(FM)</a>
+<ul>
+<li><a href="#pre-emphasis-de-emphasis-in-fm">
+Pre-emphasis &amp; de emphasis in FM</a></li>
+<li><a href="#indirect-method-armstrong-method-of-fm-generation">
+Indirect method (Armstrong method) of FM generation.</a></li>
+<li><a href="#uses-of-fm">
+Uses of FM</a></li>
+<li><a href="#amplitude-modulation-techniques">
+Amplitude Modulation Techniques</a></li>
+</ul></li>
+</ul>
+</nav>
+
+        </details>
+        
 		<footer>
 			<p style="text-align: center; font-size: small; margin-top: 5em;">
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
@@ -740,6 +743,19 @@ talkies, due to its better resistance to interference.</li>
         };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <script>
+    const music = document.getElementById('music');
+    let wave = new CircularAudioWave(music);
+    wave.loadAudio('https://AnzenKodo.github.io/assets/Music.m4a');
+
+    music.addEventListener("click", () => {
+        if (wave.playing) {
+            wave.pause();
+        } else {
+            wave.play()
+        }
+    })
     </script>
 	</body>
 </html>

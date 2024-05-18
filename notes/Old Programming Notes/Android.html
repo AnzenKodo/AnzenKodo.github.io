@@ -163,6 +163,8 @@
                 max-width: 100%;
             }
 		</style>
+	<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0"></script>
+    <script src="https://AnzenKodo.github.io/assets/circular-audio-wave.js"></script>
 	</head>
 	<body>
 	    <a href="#skip-top-main">Skip to main</a>
@@ -170,577 +172,8 @@
 			<h1 style="text-align: center;">
                 <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
-            
-			<details id="table-of-content">
-			    <summary>Table of Content</summary>
-                <nav>
-<li><a href="#1-attempt-any-five-of-the-following-10">1. Attempt any FIVE of the following: 10</a>
-<ul>
-<li><a href="#a-list-any-four-features-of-android-operating-system">
-a) List any four features of Android operating system.</a></li>
-<li><a href="#b-define-dalvik-virtual-machine-dvm">
-b) Define Dalvik Virtual Machine (DVM).</a></li>
-<li><a href="#c-list-any-four-folders-from-directory-structure-of-android-project-and-elaborate-in-one-line">
-c) List any four folders from directory structure of Android project and elaborate in one line.</a>
-<ul>
-<li><a href="#manifests-folder">
-Manifests Folder</a></li>
-<li><a href="#java-folder">
-Java folder</a></li>
-<li><a href="#resource-res-folder">
-Resource (res) folder</a></li>
-<li><a href="#res-drawable-folder">
-res/drawable folder</a></li>
-</ul></li>
-<li><a href="#d-list-any-four-attributes-of-check-box">
-d) List any four attributes of check box.</a></li>
-<li><a href="#f-state-syntax-to-display-built-in-zoom-control">
-f) State syntax to display built in zoom control.</a></li>
-<li><a href="#g-name-two-classes-used-to-play-audio-and-video-in-android">
-g) Name two classes used to play audio and video in Android.</a></li>
-</ul><li><a href="#2-attempt-any-three-of-the-following-12">
-2. Attempt any THREE of the following: 12</a>
-<ul>
-<li><a href="#a-describe-android-architecture-with-diagram">
-a) Describe Android architecture with diagram.</a></li>
-<li><a href="#b-differentiate-between-dvm-and-jvm">
-b) Differentiate between DVM and JVM</a></li>
-<li><a href="#c-list-and-elaborate-steps-to-deploy-in-android-application-on-google-play-store">
-c) List and elaborate steps to deploy in Android application on Google play store.</a></li>
-<li><a href="#d-describe-with-example-how-to-create-a-simple-database-in-sqlite-assume-suitable-data">
-d) Describe with example, how to create a simple database in SQLite (Assume suitable data).</a></li>
-</ul><li><a href="#3-attempt-any-three-of-the-following-12">
-3. Attempt any THREE of the following: 12</a>
-<ul>
-<li><a href="#a-write-down-the-steps-to-install-and-configure-android-studio">
-a) Write down the steps to install and configure Android studio.</a></li>
-<li><a href="#b-state-syntax-to-create-text-view-and-image-button-with-any-two-attributes-of-each">
-b) State syntax to create Text View and Image button with any two attributes of each.</a>
-<ul>
-<li><a href="#textview">
-TextView</a></li>
-<li><a href="#imagebutton">
-ImageButton</a></li>
-</ul></li>
-<li><a href="#c-describe-android-service-life-cycle-along-with-diagram">
-c) Describe Android service life cycle along with diagram.</a></li>
-<li><a href="#d-state-and-elaborate-the-syntax-of-required-class-and-methods-for-geocoding">
-d) State and elaborate the syntax of required class and methods for Geocoding.</a></li>
-</ul><li><a href="#4-attempt-any-three-of-the-following-12">
-4. Attempt any THREE of the following: 12</a>
-<ul>
-<li><a href="#a-explain-with-example-code-to-create-gui-using-absolute-layout-assume-suitable-data">
-a) Explain with example, code to create GUI using absolute layout (Assume suitable data).</a></li>
-<li><a href="#b-write-a-program-to-demonstrate-date-and-time-picker">
-b) Write a program to demonstrate Date and Time picker.</a>
-<ul>
-<li><a href="#date-picker">
-Date Picker</a></li>
-<li><a href="#timepicker">
-TimePicker</a></li>
-</ul></li>
-<li><a href="#c-describe-multimedia-framework-of-android-with-diagram">
-c) Describe multimedia framework of Android with diagram.</a></li>
-<li><a href="#d-discuss-developer-console-with-at-least-four-features">
-d) Discuss developer console with at least four features.</a></li>
-<li><a href="#e-write-a-program-to-demonstrate-declaring-and-using-permissions-with-any-relevant-example">
-e) Write a program to demonstrate declaring and using permissions with any relevant example.</a></li>
-</ul><li><a href="#android">
-Android</a>
-<ul>
-<li><a href="#1-what-is-mobile-application">
-1. What is Mobile application?</a></li>
-<li><a href="#3-what-is-android">
-3. What is Android?</a></li>
-<li><a href="#4-enlist-features-of-android-os">
-4. Enlist features of Android OS?</a></li>
-<li><a href="#5-state-advantages-and-disadvantages-of-android-os">
-5. State Advantages and Disadvantages of Android OS?</a>
-<ul>
-<li><a href="#advantages">
-Advantages</a></li>
-<li><a href="#disadvantages">
-Disadvantages</a></li>
-</ul></li>
-<li><a href="#6-describe-architecture-of-android-diagrammatically">
-6. Describe Architecture of Android diagrammatically.</a></li>
-<li><a href="#7-what-is-oha">
-7. What is OHA?</a></li>
-<li><a href="#8-explain-the-term-android-ecosystem-in-detail">
-8. Explain the term Android ecosystem in detail.</a></li>
-<li><a href="#9-what-are-the-features-of-android-enlist-any-six-of-them">
-9. What are the features of Android? Enlist any six of them.</a></li>
-<li><a href="#10-explain-the-term-android-ecosystem-in-detail">
-10. Explain the term Android ecosystem in detail.</a></li>
-<li><a href="#11-explain-the-need-of-android">
-11. Explain the need of Android.</a></li>
-<li><a href="#14-explain-the-following-terms">
-14. Explain the following terms:</a>
-<ul>
-<li><a href="#i-android-application">
-(i) Android application</a></li>
-<li><a href="#ii-android-kernel">
-(ii) Android kernel</a></li>
-</ul></li>
-<li><a href="#16-describe-oha-with-the-help-of-digram">
-16. Describe OHA with the Help of Digram.</a></li>
-<li><a href="#17-enlist-and-explain-any-4-features-of-android">
-17. Enlist and explain any 4 features of Android.</a></li>
-<li><a href="#19-explain-the-concept-of-android-ecosystem">
-19. Explain the concept of Android Ecosystem.</a></li>
-<li><a href="#20-explain-any-4-advantages-and-disadvantages-of-android-os">
-20. Explain any 4 advantages and disadvantages of Android OS.</a>
-<ul>
-<li><a href="#advantages">
-Advantages</a></li>
-<li><a href="#disadvantages">
-Disadvantages</a></li>
-</ul></li>
-<li><a href="#21-describe-the-concept-of-anatomy-of-android-application">
-21. Describe the concept of Anatomy of Android Application.</a></li>
-<li><a href="#22-draw-and-explain-the-architecture-of-android">
-22. Draw and explain the architecture of Android.</a>
-<ul>
-<li><a href="#application">
-Application</a></li>
-<li><a href="#application-framework">
-Application Framework</a></li>
-<li><a href="#android-runtime">
-Android Runtime</a></li>
-<li><a href="#platform-libraries">
-Platform Libraries</a></li>
-<li><a href="#linux-kernel">
-Linux Kernel</a></li>
-</ul></li>
-<li><a href="#android-application-components">
-Android Application Components</a></li>
-</ul><li><a href="#2-installing-and-configuration-of-android">
-2. Installing and Configuration of Android</a>
-<ul>
-<li><a href="#1-what-is-os-explain-os-requirements-for-android">
-1. What is OS? Explain OS requirements for Android.</a></li>
-<li><a href="#2-what-is-jdk">
-2. What is JDK?</a></li>
-<li><a href="#3-what-is-sdk">
-3. What is SDK?</a></li>
-<li><a href="#5-describe-dvm-with-diagram">
-5. Describe DVM with diagram.</a></li>
-<li><a href="#what-is-jvm-compare-jvm-and-dvm">
-What is JVM? Compare JVM and DVM?</a></li>
-<li><a href="#7-explain-the-term-emulator-in-detail">
-7. Explain the term emulator in detail.</a></li>
-<li><a href="#8-what-is-adt-describe-in-detail">
-8. What is ADT? Describe in detail.</a></li>
-<li><a href="#10-differentiate-between-jdk-and-sdk">
-10. Differentiate between JDK and SDK.</a></li>
-<li><a href="#11-define-the-terms-jdk-sdk-avd-adt">
-11. Define the terms: JDK, SDK, AVD, ADT</a></li>
-<li><a href="#explain-avd-in-detail">
-Explain AVD in detail.</a></li>
-<li><a href="#18-differentiate-between-jvm-and-dvm">
-18. Differentiate between JVM and DVM.</a></li>
-</ul><li><a href="#3-ui-components-and-layouts">
-3. UI Components and Layouts</a>
-<ul>
-<li><a href="#2-explain-screen-elements-for-android">
-2. Explain screen elements for Android.</a></li>
-<li><a href="#3-what-is-directory">
-3. What is directory?</a></li>
-<li><a href="#4-describe-directory-structure-in-detail">
-4. Describe directory structure in detail.</a></li>
-<li><a href="#5-explain-the-term-fundamentals-of-ui-design-in-detail">
-5. Explain the term fundamentals of UI design in detail.</a></li>
-<li><a href="#6-what-is-meant-by-layout">
-6. What is meant by layout?</a></li>
-<li><a href="#7-explain-linearlayout-with-example">
-7. Explain Linearlayout with example.</a></li>
-<li><a href="#8-describe-framelayout-with-example">
-8. Describe FrameLayout with example.</a></li>
-<li><a href="#9-explain-the-following-terms">
-9. Explain the following terms:</a>
-<ul>
-<li><a href="#i-tablelayout">
-(i) TableLayout</a></li>
-<li><a href="#ii-absolutelayout">
-(ii) AbsoluteLayout</a></li>
-</ul></li>
-<li><a href="#10-define-the-term-layout">
-10. Define the term Layout.</a></li>
-<li><a href="#11-write-down-the-control-flow-of-an-android-application-step-by-step">
-11. Write down the control flow of an Android application step by step.</a></li>
-<li><a href="#13-list-the-different-components-of-a-screen">
-13. List the different components of a screen.</a></li>
-<li><a href="#14-explain-the-term-fundamentals-of-ui-design-in-detail">
-14. Explain the term fundamentals of UI design in detail.</a></li>
-<li><a href="#15-list-various-layouts-used-in-android-ui-design">
-15. List various layouts used in Android UI design.</a></li>
-</ul><li><a href="#4-designing-user-interface-with-view">
-4. Designing User Interface with View</a>
-<ul>
-<li><a href="#1-what-is-ui">
-1. What is UI?</a></li>
-<li><a href="#2-enlist-elements-of-ui">
-2. Enlist elements of UI.</a></li>
-<li><a href="#3-what-is-textview-how-to-create-it-explain-with-example">
-3. What is TextView? How to create it? Explain with example.</a></li>
-<li><a href="#4-explain-the-term-button-with-example">
-4. Explain the term Button with example.</a></li>
-<li><a href="#5-what-is-imagebutton-how-to-create-it-explain-with-example">
-5. What is ImageButton? How to create it? Explain with example.</a></li>
-<li><a href="#6-describe-the-following-ui-elements-with-example">
-6. Describe the following UI elements with example.</a>
-<ul>
-<li><a href="#i-listview">
-(i) ListView</a></li>
-<li><a href="#ii-scrollview">
-(ii) ScrollView</a></li>
-<li><a href="#iii-gridview">
-(iii) GridView</a></li>
-<li><a href="#iv-imageview">
-(iv) imageview.</a></li>
-</ul></li>
-<li><a href="#7-explain-radiogroup-with-example">
-7. explain radiogroup with example.</a></li>
-<li><a href="#8-with-the-help-of-example-describe-togglebutton">
-8. With the help of example describe ToggleButton.</a></li>
-<li><a href="#10-how-to-custom-toast-alert">
-10. How to custom toast alert?</a></li>
-<li><a href="#11-describe-date-and-time-picker-with-example">
-11. Describe Date and Time picker with example.</a>
-<ul>
-<li><a href="#datepicker">
-DatePicker</a></li>
-<li><a href="#timepicker">
-TimePicker</a></li>
-</ul></li>
-<li><a href="#12-what-is-progress-bar-how-to-create-it">
-12. What is progress bar? How to create it?</a></li>
-<li><a href="#14-describe-the-following-with-example">
-14. Describe the following with example:</a>
-<ul>
-<li><a href="#ii-checkbox">
-(ii) CheckBox.</a></li>
-</ul></li>
-<li><a href="#15-draw-the-hierarchy-of-designing-user-interface-ui-with-view">
-15. Draw the hierarchy of designing User Interface (UI) with View.</a></li>
-<li><a href="#16-describe-the-term-edit-text-with-example">
-16. Describe the term &quot;edit text&quot; with example.</a></li>
-</ul><li><a href="#5-activity-multimedia-with-database">
-5. Activity &amp; Multimedia with Database</a>
-<ul>
-<li><a href="#activity">
-Activity</a></li>
-<li><a href="#draw-the-activity-life-cycle">
-Draw the activity life cycle.</a></li>
-<li><a href="#explain-activity-lifecycle">
-Explain activity lifecycle?</a></li>
-<li><a href="#what-are-intents-implict-and-explicit-intent">
-What are intents(<code>Implict</code> and <code>explicit</code> intent)?</a>
-<ul>
-<li><a href="#implicit-intent">
-Implicit intent</a></li>
-<li><a href="#explicit-intent">
-Explicit intent</a></li>
-</ul></li>
-<li><a href="#explain-content-provider">
-Explain content provider?</a></li>
-<li><a href="#list-sensors-in-android-and-explain-anyone-in-detail">
-List sensors in Android and explain anyone in detail.</a>
-<ul>
-<li><a href="#motion-sensors">
-Motion Sensors:</a></li>
-<li><a href="#position-sensors">
-Position Sensors</a></li>
-<li><a href="#environmental-sensors">
-Environmental Sensors</a></li>
-</ul></li>
-<li><a href="#define-services-in-android-os">
-Define Services in Android OS.</a></li>
-<li><a href="#content-uri">
-CONTENT URI</a></li>
-<li><a href="#working-of-the-content-provider">
-WORKING OF THE CONTENT PROVIDER</a></li>
-<li><a href="#create-content-provider">
-CREATE CONTENT PROVIDER</a></li>
-<li><a href="#fragment">
-FRAGMENT</a></li>
-<li><a href="#android-fragment-lifecycle-methods">
-ANDROID FRAGMENT LIFECYCLE METHODS</a></li>
-<li><a href="#mediaplayer-class">
-MEDIAPLAYER CLASS</a></li>
-<li><a href="#texttospeech">
-TEXTTOSPEECH</a></li>
-<li><a href="#android-asynctask-example-and-explanation">
-Android AsyncTask example and explanation</a>
-<ul>
-<li><a href="#methods-of-asynctask">
-Methods of AsyncTask</a></li>
-<li><a href="#generic-types-in-async-task">
-Generic Types in Async Task</a></li>
-</ul></li>
-<li><a href="#location-based-services">
-LOCATION BASED SERVICES</a></li>
-<li><a href="#sms-telephony">
-SMS TELEPHONY</a></li>
-<li><a href="#1-write-a-program-to-place-name-age-mobile-number-linearly-vertical-on-the-display-screen-using-linear-layout">
-1. Write a program to place Name, Age, Mobile number linearly(vertical) on the display screen using Linear layout.</a></li>
-<li><a href="#2-write-a-program-to-place-name-age-mobile-number-linearly-vertical-on-the-display-screen-using-absolute-layout">
-2. Write a program to place Name, Age, Mobile number linearly(vertical) on the display screen using Absolute layout.</a></li>
-<li><a href="#3-write-a-program-to-display-5-students-basic-information-in-a-table-form-using-table-layout">
-3. Write a program to display 5 students basic information in a table form using Table layout.</a></li>
-<li><a href="#4-write-a-program-to-accept-username-and-password-from-the-end-user-using-text-view-and-edit-text">
-4. Write a program to accept username and password from the end user using Text View and edit Text.</a></li>
-<li><a href="#5-write-a-program-to-create-a-toggle-button-to-display-on-off-bluetooth-on-the-display-screen">
-5. Write a program to create a toggle button to display ON/OFF Bluetooth on the display screen.</a></li>
-<li><a href="#6-write-a-program-to-create-a-login-form-for-a-social-networking-site">
-6. Write a program to create a login form for a social networking site.</a></li>
-<li><a href="#7-write-a-program-to-show-five-checkboxes-and-toast-selected-checkbox">
-7. Write a program to show five checkboxes and toast selected checkbox.</a></li>
-<li><a href="#8-write-a-program-to-display-circular-progress-bar">
-8. Write a program to display circular progress bar.</a></li>
-<li><a href="#9-write-a-program-to-display-15-buttons-using-grid-view">
-9. Write a program to display 15 buttons using Grid view.</a></li>
-<li><a href="#10-write-a-program-to-display-a-toast-message">
-10. Write a program to display a toast message</a></li>
-</ul><li><a href="#mad-question-bank">
-MAD QUESTION BANK</a>
-<ul>
-<li><a href="#1-write-the-syntax-for-intent-filter-tag">
-1. Write the syntax for Intent-Filter tag.</a></li>
-<li><a href="#2-define-services-in-android-os">
-2. Define Services in Android OS.</a>
-<ul>
-<li><a href="#1-started">
-1. Started</a></li>
-<li><a href="#2-bound">
-2. Bound</a></li>
-</ul></li>
-<li><a href="#3-enlist-the-steps-to-publish-the-android-application">
-3. Enlist the steps to publish the Android application</a></li>
-<li><a href="#5-what-is-date-and-time-picker-with-its-methods">
-5. What is Date and Time picker with its methods?</a>
-<ul>
-<li><a href="#date-picker">
-Date Picker</a></li>
-<li><a href="#timepicker">
-TimePicker</a></li>
-</ul></li>
-<li><a href="#6-write-a-program-to-display-circular-progress-bar">
-6. Write a program to display circular progress bar.</a></li>
-<li><a href="#7-list-sensors-in-android-and-explain-anyone-in-detail">
-7. List sensors in Android and explain anyone in detail.</a>
-<ul>
-<li><a href="#montion-sensors">
-Montion Sensors:</a></li>
-</ul></li>
-<li><a href="#8-develop-the-registration-form-using-the-following-gui">
-8. Develop the registration form using the following GUI.</a></li>
-<li><a href="#1-what-is-android">
-1) What is android?</a></li>
-<li><a href="#2-enlist-features-of-android">
-2) Enlist Features of android?</a></li>
-<li><a href="#3-explain-android-architecture">
-3) Explain android architecture?</a></li>
-<li><a href="#4-explain-android-sdk">
-4) Explain android sdk?</a></li>
-<li><a href="#5-what-is-android-avd">
-5) What is Android AVD?</a>
-<ul>
-<li><a href="#hardware-profile">
-Hardware profile</a></li>
-<li><a href="#system-image">
-System image</a></li>
-<li><a href="#storage-area">
-Storage Area</a></li>
-</ul></li>
-<li><a href="#6-what-is-emulator">
-6) What is emulator?</a></li>
-<li><a href="#7-difference-between-jvm-and-dvm">
-7) Difference between JVM and dVM?</a></li>
-<li><a href="#8-what-are-activities">
-8) What are activities?</a></li>
-<li><a href="#9-what-are-services">
-9) What are services?</a>
-<ul>
-<li><a href="#foreground-service">
-Foreground service</a></li>
-<li><a href="#backgroud-service">
-Backgroud Service**</a></li>
-<li><a href="#bound-service">
-Bound Service</a></li>
-</ul></li>
-<li><a href="#10-what-are-intents-implict-and-explicit-intent">
-10) What are intents(<code>Implict</code> and <code>explicit</code> intent)?</a>
-<ul>
-<li><a href="#implicit-intent">
-Implicit intent</a></li>
-<li><a href="#explicit-intent">
-Explicit intent</a></li>
-</ul></li>
-<li><a href="#11-explain-main-activity-file-manifest-and-layout-file">
-11) Explain main Activity file ,manifest and layout file?</a></li>
-<li><a href="#12-what-are-different-types-of-ui-compents">
-12) What are different types of UI compents?</a></li>
-<li><a href="#13-what-are-layouts-linearlayout-absolutelayout-tablelayout-framelayout-relativelayout">
-13) What are Layouts (<code>LinearLayout</code>, <code>AbsoluteLayout</code>, <code>TableLayout</code>, <code>FrameLayout</code>, <code>RelativeLayout</code>)?</a></li>
-<li><a href="#14-define-textview-edittextview-button-image-button-checkbox-attributes-and-methods">
-14) Define: <code>textview</code>, <code>Edittextview</code>, <code>Button</code>, <code>Image button</code>, <code>checkbox</code>(attributes and methods)?</a></li>
-<li><a href="#15-explain-listview-gridview-imageview-scrollview">
-15) Explain <code>listview</code>, <code>gridview</code>, <code>imageview</code>, <code>scrollview</code>?</a></li>
-<li><a href="#16-what-is-toast-explain-with-example">
-16) What is toast explain with example?</a></li>
-<li><a href="#17-explain-activity-lifecycle">
-17) Explain activity lifecycle?</a></li>
-<li><a href="#18-explain-broadcast-receivers">
-18) Explain broadcast receivers?</a>
-<ul>
-<li><a href="#creating-the-broadcast-receiver">
-Creating the Broadcast Receiver</a></li>
-<li><a href="#registering-broadcast-receiver">
-Registering Broadcast Receiver</a></li>
-</ul></li>
-<li><a href="#19-explain-content-provider">
-19) Explain content provider?</a></li>
-<li><a href="#20-what-is-sensors">
-20) What is sensors?</a>
-<ul>
-<li><a href="#mostion-sensors">
-Mostion sensors</a></li>
-<li><a href="#environmental-sensors">
-Environmental sensors</a></li>
-<li><a href="#position-sensors">
-Position sensors</a></li>
-</ul></li>
-<li><a href="#21-what-is-location-based-services">
-21) What is location based services?</a></li>
-<li><a href="#22-what-is-geo-code-and-reverse-geo-code">
-22) What is Geo code and reverse Geo code?</a>
-<ul>
-<li><a href="#geo-code">
-Geo code</a></li>
-<li><a href="#reverse-geo-code">
-Reverse Geo code</a></li>
-</ul></li>
-<li><a href="#23-enlist-steps-to-publish-android-application">
-23) Enlist Steps to publish android application?</a></li>
-<li><a href="#24-what-is-date-and-time-picker">
-24) What is Date and time Picker?</a>
-<ul>
-<li><a href="#datepicker">
-Datepicker</a></li>
-<li><a href="#timepicker">
-Timepicker</a></li>
-</ul></li>
-<li><a href="#1-what-is-android">
-1) What is Android?</a></li>
-<li><a href="#2-enlist-features-of-android">
-2) Enlist features of Android?</a></li>
-<li><a href="#3-explain-android-architecture">
-3) Explain Android architecture?</a></li>
-<li><a href="#4-explain-android-sdk">
-4) Explain Android SDK?</a></li>
-<li><a href="#5-what-is-android-avd">
-5) What is Android AVD?</a>
-<ul>
-<li><a href="#hardware-profile">
-Hardware profile</a></li>
-<li><a href="#system-image">
-System image</a></li>
-<li><a href="#storage-area">
-Storage Area</a></li>
-</ul></li>
-<li><a href="#6-what-is-emulator">
-6) What is emulator?</a></li>
-<li><a href="#7-difference-between-jvm-and-dvm">
-7) Difference between JVM and DVM?</a></li>
-<li><a href="#8-what-are-activities">
-8) What are activities?</a></li>
-<li><a href="#9-what-are-services">
-9) What are services?</a>
-<ul>
-<li><a href="#foreground-service">
-Foreground service</a></li>
-<li><a href="#background-service">
-Background Service</a></li>
-<li><a href="#bound-service">
-Bound Service</a></li>
-</ul></li>
-<li><a href="#10-what-are-intents">
-10) What are intents?</a>
-<ul>
-<li><a href="#implicit-intent">
-Implicit intent</a></li>
-<li><a href="#explicit-intent">
-Explicit intent</a></li>
-</ul></li>
-<li><a href="#11-explain-mainactivity-manifest-layout-file">
-11) Explain MainActivity, Manifest &amp; Layout file?</a>
-<ul>
-<li><a href="#mainactivity">
-MainActivity</a></li>
-<li><a href="#manifest">
-Manifest</a></li>
-<li><a href="#layout">
-Layout</a></li>
-</ul></li>
-<li><a href="#12-what-are-different-types-of-ui-components">
-12) What are different types of UI components?</a></li>
-<li><a href="#13-what-are-layouts">
-13) What are Layouts?</a></li>
-<li><a href="#14-define">
-14) Define</a></li>
-<li><a href="#15-explain">
-15) Explain</a></li>
-<li><a href="#16-what-is-toast-explain-with-example">
-16) What is toast explain with example?</a></li>
-<li><a href="#17-explain-activity-life-cycle">
-17) Explain activity life cycle?</a></li>
-<li><a href="#18-explain-broadcast-receivers">
-18) Explain broadcast receivers?</a>
-<ul>
-<li><a href="#creating-the-broadcast-receiver">
-Creating the Broadcast Receiver</a></li>
-<li><a href="#registering-broadcast-receiver">
-Registering Broadcast Receiver</a></li>
-</ul></li>
-<li><a href="#19-explain-content-provider">
-19) Explain content provider?</a></li>
-<li><a href="#20-what-is-sensors">
-20) What is sensors?</a>
-<ul>
-<li><a href="#motion">
-Motion</a></li>
-<li><a href="#environmental">
-Environmental</a></li>
-<li><a href="#position">
-Position</a></li>
-</ul></li>
-<li><a href="#21-what-is-location-based-services">
-21) What is location based services?</a></li>
-<li><a href="#22-what-is-geo-code-and-reverse-geo-code">
-22) What is Geo code and Reverse geo code?</a>
-<ul>
-<li><a href="#geo-code">
-Geo code</a></li>
-<li><a href="#reverse-geo-code">
-Reverse Geo code</a></li>
-</ul></li>
-<li><a href="#23-enlist-steps-to-publish-android-application">
-23) Enlist Steps to publish android application?</a></li>
-<li><a href="#24-what-is-date-and-time-picker">
-24) What is date and time picker?</a>
-<ul>
-<li><a href="#datepicker">
-<code>DatePicker</code></a></li>
-<li><a href="#timepicker">
-<code>TimePicker</code></a></li>
-</ul></li>
-</ul>
-</nav>
-
-			</details>
-            
 		</header>
+		<div id="music" style="width: 100%; height: 18em;"></div>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem">Android</h1>
 			<h1><a name="1-attempt-any-five-of-the-following-10" class="heading-anchor" href="#1-attempt-any-five-of-the-following-10" rel="nofollow" aria-hidden="true"></a>1. Attempt any FIVE of the following: 10</h1><h2><a name="a-list-any-four-features-of-android-operating-system" class="heading-anchor" href="#a-list-any-four-features-of-android-operating-system" rel="nofollow" aria-hidden="true"></a>a) List any four features of Android operating system.</h2>
@@ -9191,6 +8624,576 @@ AM/PM mode or 24h mode.</li>
 </ul>
 
 		</main>
+        
+        <details id="table-of-content">
+           <summary>Table of Content</summary>
+                    <nav>
+<li><a href="#1-attempt-any-five-of-the-following-10">1. Attempt any FIVE of the following: 10</a>
+<ul>
+<li><a href="#a-list-any-four-features-of-android-operating-system">
+a) List any four features of Android operating system.</a></li>
+<li><a href="#b-define-dalvik-virtual-machine-dvm">
+b) Define Dalvik Virtual Machine (DVM).</a></li>
+<li><a href="#c-list-any-four-folders-from-directory-structure-of-android-project-and-elaborate-in-one-line">
+c) List any four folders from directory structure of Android project and elaborate in one line.</a>
+<ul>
+<li><a href="#manifests-folder">
+Manifests Folder</a></li>
+<li><a href="#java-folder">
+Java folder</a></li>
+<li><a href="#resource-res-folder">
+Resource (res) folder</a></li>
+<li><a href="#res-drawable-folder">
+res/drawable folder</a></li>
+</ul></li>
+<li><a href="#d-list-any-four-attributes-of-check-box">
+d) List any four attributes of check box.</a></li>
+<li><a href="#f-state-syntax-to-display-built-in-zoom-control">
+f) State syntax to display built in zoom control.</a></li>
+<li><a href="#g-name-two-classes-used-to-play-audio-and-video-in-android">
+g) Name two classes used to play audio and video in Android.</a></li>
+</ul><li><a href="#2-attempt-any-three-of-the-following-12">
+2. Attempt any THREE of the following: 12</a>
+<ul>
+<li><a href="#a-describe-android-architecture-with-diagram">
+a) Describe Android architecture with diagram.</a></li>
+<li><a href="#b-differentiate-between-dvm-and-jvm">
+b) Differentiate between DVM and JVM</a></li>
+<li><a href="#c-list-and-elaborate-steps-to-deploy-in-android-application-on-google-play-store">
+c) List and elaborate steps to deploy in Android application on Google play store.</a></li>
+<li><a href="#d-describe-with-example-how-to-create-a-simple-database-in-sqlite-assume-suitable-data">
+d) Describe with example, how to create a simple database in SQLite (Assume suitable data).</a></li>
+</ul><li><a href="#3-attempt-any-three-of-the-following-12">
+3. Attempt any THREE of the following: 12</a>
+<ul>
+<li><a href="#a-write-down-the-steps-to-install-and-configure-android-studio">
+a) Write down the steps to install and configure Android studio.</a></li>
+<li><a href="#b-state-syntax-to-create-text-view-and-image-button-with-any-two-attributes-of-each">
+b) State syntax to create Text View and Image button with any two attributes of each.</a>
+<ul>
+<li><a href="#textview">
+TextView</a></li>
+<li><a href="#imagebutton">
+ImageButton</a></li>
+</ul></li>
+<li><a href="#c-describe-android-service-life-cycle-along-with-diagram">
+c) Describe Android service life cycle along with diagram.</a></li>
+<li><a href="#d-state-and-elaborate-the-syntax-of-required-class-and-methods-for-geocoding">
+d) State and elaborate the syntax of required class and methods for Geocoding.</a></li>
+</ul><li><a href="#4-attempt-any-three-of-the-following-12">
+4. Attempt any THREE of the following: 12</a>
+<ul>
+<li><a href="#a-explain-with-example-code-to-create-gui-using-absolute-layout-assume-suitable-data">
+a) Explain with example, code to create GUI using absolute layout (Assume suitable data).</a></li>
+<li><a href="#b-write-a-program-to-demonstrate-date-and-time-picker">
+b) Write a program to demonstrate Date and Time picker.</a>
+<ul>
+<li><a href="#date-picker">
+Date Picker</a></li>
+<li><a href="#timepicker">
+TimePicker</a></li>
+</ul></li>
+<li><a href="#c-describe-multimedia-framework-of-android-with-diagram">
+c) Describe multimedia framework of Android with diagram.</a></li>
+<li><a href="#d-discuss-developer-console-with-at-least-four-features">
+d) Discuss developer console with at least four features.</a></li>
+<li><a href="#e-write-a-program-to-demonstrate-declaring-and-using-permissions-with-any-relevant-example">
+e) Write a program to demonstrate declaring and using permissions with any relevant example.</a></li>
+</ul><li><a href="#android">
+Android</a>
+<ul>
+<li><a href="#1-what-is-mobile-application">
+1. What is Mobile application?</a></li>
+<li><a href="#3-what-is-android">
+3. What is Android?</a></li>
+<li><a href="#4-enlist-features-of-android-os">
+4. Enlist features of Android OS?</a></li>
+<li><a href="#5-state-advantages-and-disadvantages-of-android-os">
+5. State Advantages and Disadvantages of Android OS?</a>
+<ul>
+<li><a href="#advantages">
+Advantages</a></li>
+<li><a href="#disadvantages">
+Disadvantages</a></li>
+</ul></li>
+<li><a href="#6-describe-architecture-of-android-diagrammatically">
+6. Describe Architecture of Android diagrammatically.</a></li>
+<li><a href="#7-what-is-oha">
+7. What is OHA?</a></li>
+<li><a href="#8-explain-the-term-android-ecosystem-in-detail">
+8. Explain the term Android ecosystem in detail.</a></li>
+<li><a href="#9-what-are-the-features-of-android-enlist-any-six-of-them">
+9. What are the features of Android? Enlist any six of them.</a></li>
+<li><a href="#10-explain-the-term-android-ecosystem-in-detail">
+10. Explain the term Android ecosystem in detail.</a></li>
+<li><a href="#11-explain-the-need-of-android">
+11. Explain the need of Android.</a></li>
+<li><a href="#14-explain-the-following-terms">
+14. Explain the following terms:</a>
+<ul>
+<li><a href="#i-android-application">
+(i) Android application</a></li>
+<li><a href="#ii-android-kernel">
+(ii) Android kernel</a></li>
+</ul></li>
+<li><a href="#16-describe-oha-with-the-help-of-digram">
+16. Describe OHA with the Help of Digram.</a></li>
+<li><a href="#17-enlist-and-explain-any-4-features-of-android">
+17. Enlist and explain any 4 features of Android.</a></li>
+<li><a href="#19-explain-the-concept-of-android-ecosystem">
+19. Explain the concept of Android Ecosystem.</a></li>
+<li><a href="#20-explain-any-4-advantages-and-disadvantages-of-android-os">
+20. Explain any 4 advantages and disadvantages of Android OS.</a>
+<ul>
+<li><a href="#advantages">
+Advantages</a></li>
+<li><a href="#disadvantages">
+Disadvantages</a></li>
+</ul></li>
+<li><a href="#21-describe-the-concept-of-anatomy-of-android-application">
+21. Describe the concept of Anatomy of Android Application.</a></li>
+<li><a href="#22-draw-and-explain-the-architecture-of-android">
+22. Draw and explain the architecture of Android.</a>
+<ul>
+<li><a href="#application">
+Application</a></li>
+<li><a href="#application-framework">
+Application Framework</a></li>
+<li><a href="#android-runtime">
+Android Runtime</a></li>
+<li><a href="#platform-libraries">
+Platform Libraries</a></li>
+<li><a href="#linux-kernel">
+Linux Kernel</a></li>
+</ul></li>
+<li><a href="#android-application-components">
+Android Application Components</a></li>
+</ul><li><a href="#2-installing-and-configuration-of-android">
+2. Installing and Configuration of Android</a>
+<ul>
+<li><a href="#1-what-is-os-explain-os-requirements-for-android">
+1. What is OS? Explain OS requirements for Android.</a></li>
+<li><a href="#2-what-is-jdk">
+2. What is JDK?</a></li>
+<li><a href="#3-what-is-sdk">
+3. What is SDK?</a></li>
+<li><a href="#5-describe-dvm-with-diagram">
+5. Describe DVM with diagram.</a></li>
+<li><a href="#what-is-jvm-compare-jvm-and-dvm">
+What is JVM? Compare JVM and DVM?</a></li>
+<li><a href="#7-explain-the-term-emulator-in-detail">
+7. Explain the term emulator in detail.</a></li>
+<li><a href="#8-what-is-adt-describe-in-detail">
+8. What is ADT? Describe in detail.</a></li>
+<li><a href="#10-differentiate-between-jdk-and-sdk">
+10. Differentiate between JDK and SDK.</a></li>
+<li><a href="#11-define-the-terms-jdk-sdk-avd-adt">
+11. Define the terms: JDK, SDK, AVD, ADT</a></li>
+<li><a href="#explain-avd-in-detail">
+Explain AVD in detail.</a></li>
+<li><a href="#18-differentiate-between-jvm-and-dvm">
+18. Differentiate between JVM and DVM.</a></li>
+</ul><li><a href="#3-ui-components-and-layouts">
+3. UI Components and Layouts</a>
+<ul>
+<li><a href="#2-explain-screen-elements-for-android">
+2. Explain screen elements for Android.</a></li>
+<li><a href="#3-what-is-directory">
+3. What is directory?</a></li>
+<li><a href="#4-describe-directory-structure-in-detail">
+4. Describe directory structure in detail.</a></li>
+<li><a href="#5-explain-the-term-fundamentals-of-ui-design-in-detail">
+5. Explain the term fundamentals of UI design in detail.</a></li>
+<li><a href="#6-what-is-meant-by-layout">
+6. What is meant by layout?</a></li>
+<li><a href="#7-explain-linearlayout-with-example">
+7. Explain Linearlayout with example.</a></li>
+<li><a href="#8-describe-framelayout-with-example">
+8. Describe FrameLayout with example.</a></li>
+<li><a href="#9-explain-the-following-terms">
+9. Explain the following terms:</a>
+<ul>
+<li><a href="#i-tablelayout">
+(i) TableLayout</a></li>
+<li><a href="#ii-absolutelayout">
+(ii) AbsoluteLayout</a></li>
+</ul></li>
+<li><a href="#10-define-the-term-layout">
+10. Define the term Layout.</a></li>
+<li><a href="#11-write-down-the-control-flow-of-an-android-application-step-by-step">
+11. Write down the control flow of an Android application step by step.</a></li>
+<li><a href="#13-list-the-different-components-of-a-screen">
+13. List the different components of a screen.</a></li>
+<li><a href="#14-explain-the-term-fundamentals-of-ui-design-in-detail">
+14. Explain the term fundamentals of UI design in detail.</a></li>
+<li><a href="#15-list-various-layouts-used-in-android-ui-design">
+15. List various layouts used in Android UI design.</a></li>
+</ul><li><a href="#4-designing-user-interface-with-view">
+4. Designing User Interface with View</a>
+<ul>
+<li><a href="#1-what-is-ui">
+1. What is UI?</a></li>
+<li><a href="#2-enlist-elements-of-ui">
+2. Enlist elements of UI.</a></li>
+<li><a href="#3-what-is-textview-how-to-create-it-explain-with-example">
+3. What is TextView? How to create it? Explain with example.</a></li>
+<li><a href="#4-explain-the-term-button-with-example">
+4. Explain the term Button with example.</a></li>
+<li><a href="#5-what-is-imagebutton-how-to-create-it-explain-with-example">
+5. What is ImageButton? How to create it? Explain with example.</a></li>
+<li><a href="#6-describe-the-following-ui-elements-with-example">
+6. Describe the following UI elements with example.</a>
+<ul>
+<li><a href="#i-listview">
+(i) ListView</a></li>
+<li><a href="#ii-scrollview">
+(ii) ScrollView</a></li>
+<li><a href="#iii-gridview">
+(iii) GridView</a></li>
+<li><a href="#iv-imageview">
+(iv) imageview.</a></li>
+</ul></li>
+<li><a href="#7-explain-radiogroup-with-example">
+7. explain radiogroup with example.</a></li>
+<li><a href="#8-with-the-help-of-example-describe-togglebutton">
+8. With the help of example describe ToggleButton.</a></li>
+<li><a href="#10-how-to-custom-toast-alert">
+10. How to custom toast alert?</a></li>
+<li><a href="#11-describe-date-and-time-picker-with-example">
+11. Describe Date and Time picker with example.</a>
+<ul>
+<li><a href="#datepicker">
+DatePicker</a></li>
+<li><a href="#timepicker">
+TimePicker</a></li>
+</ul></li>
+<li><a href="#12-what-is-progress-bar-how-to-create-it">
+12. What is progress bar? How to create it?</a></li>
+<li><a href="#14-describe-the-following-with-example">
+14. Describe the following with example:</a>
+<ul>
+<li><a href="#ii-checkbox">
+(ii) CheckBox.</a></li>
+</ul></li>
+<li><a href="#15-draw-the-hierarchy-of-designing-user-interface-ui-with-view">
+15. Draw the hierarchy of designing User Interface (UI) with View.</a></li>
+<li><a href="#16-describe-the-term-edit-text-with-example">
+16. Describe the term &quot;edit text&quot; with example.</a></li>
+</ul><li><a href="#5-activity-multimedia-with-database">
+5. Activity &amp; Multimedia with Database</a>
+<ul>
+<li><a href="#activity">
+Activity</a></li>
+<li><a href="#draw-the-activity-life-cycle">
+Draw the activity life cycle.</a></li>
+<li><a href="#explain-activity-lifecycle">
+Explain activity lifecycle?</a></li>
+<li><a href="#what-are-intents-implict-and-explicit-intent">
+What are intents(<code>Implict</code> and <code>explicit</code> intent)?</a>
+<ul>
+<li><a href="#implicit-intent">
+Implicit intent</a></li>
+<li><a href="#explicit-intent">
+Explicit intent</a></li>
+</ul></li>
+<li><a href="#explain-content-provider">
+Explain content provider?</a></li>
+<li><a href="#list-sensors-in-android-and-explain-anyone-in-detail">
+List sensors in Android and explain anyone in detail.</a>
+<ul>
+<li><a href="#motion-sensors">
+Motion Sensors:</a></li>
+<li><a href="#position-sensors">
+Position Sensors</a></li>
+<li><a href="#environmental-sensors">
+Environmental Sensors</a></li>
+</ul></li>
+<li><a href="#define-services-in-android-os">
+Define Services in Android OS.</a></li>
+<li><a href="#content-uri">
+CONTENT URI</a></li>
+<li><a href="#working-of-the-content-provider">
+WORKING OF THE CONTENT PROVIDER</a></li>
+<li><a href="#create-content-provider">
+CREATE CONTENT PROVIDER</a></li>
+<li><a href="#fragment">
+FRAGMENT</a></li>
+<li><a href="#android-fragment-lifecycle-methods">
+ANDROID FRAGMENT LIFECYCLE METHODS</a></li>
+<li><a href="#mediaplayer-class">
+MEDIAPLAYER CLASS</a></li>
+<li><a href="#texttospeech">
+TEXTTOSPEECH</a></li>
+<li><a href="#android-asynctask-example-and-explanation">
+Android AsyncTask example and explanation</a>
+<ul>
+<li><a href="#methods-of-asynctask">
+Methods of AsyncTask</a></li>
+<li><a href="#generic-types-in-async-task">
+Generic Types in Async Task</a></li>
+</ul></li>
+<li><a href="#location-based-services">
+LOCATION BASED SERVICES</a></li>
+<li><a href="#sms-telephony">
+SMS TELEPHONY</a></li>
+<li><a href="#1-write-a-program-to-place-name-age-mobile-number-linearly-vertical-on-the-display-screen-using-linear-layout">
+1. Write a program to place Name, Age, Mobile number linearly(vertical) on the display screen using Linear layout.</a></li>
+<li><a href="#2-write-a-program-to-place-name-age-mobile-number-linearly-vertical-on-the-display-screen-using-absolute-layout">
+2. Write a program to place Name, Age, Mobile number linearly(vertical) on the display screen using Absolute layout.</a></li>
+<li><a href="#3-write-a-program-to-display-5-students-basic-information-in-a-table-form-using-table-layout">
+3. Write a program to display 5 students basic information in a table form using Table layout.</a></li>
+<li><a href="#4-write-a-program-to-accept-username-and-password-from-the-end-user-using-text-view-and-edit-text">
+4. Write a program to accept username and password from the end user using Text View and edit Text.</a></li>
+<li><a href="#5-write-a-program-to-create-a-toggle-button-to-display-on-off-bluetooth-on-the-display-screen">
+5. Write a program to create a toggle button to display ON/OFF Bluetooth on the display screen.</a></li>
+<li><a href="#6-write-a-program-to-create-a-login-form-for-a-social-networking-site">
+6. Write a program to create a login form for a social networking site.</a></li>
+<li><a href="#7-write-a-program-to-show-five-checkboxes-and-toast-selected-checkbox">
+7. Write a program to show five checkboxes and toast selected checkbox.</a></li>
+<li><a href="#8-write-a-program-to-display-circular-progress-bar">
+8. Write a program to display circular progress bar.</a></li>
+<li><a href="#9-write-a-program-to-display-15-buttons-using-grid-view">
+9. Write a program to display 15 buttons using Grid view.</a></li>
+<li><a href="#10-write-a-program-to-display-a-toast-message">
+10. Write a program to display a toast message</a></li>
+</ul><li><a href="#mad-question-bank">
+MAD QUESTION BANK</a>
+<ul>
+<li><a href="#1-write-the-syntax-for-intent-filter-tag">
+1. Write the syntax for Intent-Filter tag.</a></li>
+<li><a href="#2-define-services-in-android-os">
+2. Define Services in Android OS.</a>
+<ul>
+<li><a href="#1-started">
+1. Started</a></li>
+<li><a href="#2-bound">
+2. Bound</a></li>
+</ul></li>
+<li><a href="#3-enlist-the-steps-to-publish-the-android-application">
+3. Enlist the steps to publish the Android application</a></li>
+<li><a href="#5-what-is-date-and-time-picker-with-its-methods">
+5. What is Date and Time picker with its methods?</a>
+<ul>
+<li><a href="#date-picker">
+Date Picker</a></li>
+<li><a href="#timepicker">
+TimePicker</a></li>
+</ul></li>
+<li><a href="#6-write-a-program-to-display-circular-progress-bar">
+6. Write a program to display circular progress bar.</a></li>
+<li><a href="#7-list-sensors-in-android-and-explain-anyone-in-detail">
+7. List sensors in Android and explain anyone in detail.</a>
+<ul>
+<li><a href="#montion-sensors">
+Montion Sensors:</a></li>
+</ul></li>
+<li><a href="#8-develop-the-registration-form-using-the-following-gui">
+8. Develop the registration form using the following GUI.</a></li>
+<li><a href="#1-what-is-android">
+1) What is android?</a></li>
+<li><a href="#2-enlist-features-of-android">
+2) Enlist Features of android?</a></li>
+<li><a href="#3-explain-android-architecture">
+3) Explain android architecture?</a></li>
+<li><a href="#4-explain-android-sdk">
+4) Explain android sdk?</a></li>
+<li><a href="#5-what-is-android-avd">
+5) What is Android AVD?</a>
+<ul>
+<li><a href="#hardware-profile">
+Hardware profile</a></li>
+<li><a href="#system-image">
+System image</a></li>
+<li><a href="#storage-area">
+Storage Area</a></li>
+</ul></li>
+<li><a href="#6-what-is-emulator">
+6) What is emulator?</a></li>
+<li><a href="#7-difference-between-jvm-and-dvm">
+7) Difference between JVM and dVM?</a></li>
+<li><a href="#8-what-are-activities">
+8) What are activities?</a></li>
+<li><a href="#9-what-are-services">
+9) What are services?</a>
+<ul>
+<li><a href="#foreground-service">
+Foreground service</a></li>
+<li><a href="#backgroud-service">
+Backgroud Service**</a></li>
+<li><a href="#bound-service">
+Bound Service</a></li>
+</ul></li>
+<li><a href="#10-what-are-intents-implict-and-explicit-intent">
+10) What are intents(<code>Implict</code> and <code>explicit</code> intent)?</a>
+<ul>
+<li><a href="#implicit-intent">
+Implicit intent</a></li>
+<li><a href="#explicit-intent">
+Explicit intent</a></li>
+</ul></li>
+<li><a href="#11-explain-main-activity-file-manifest-and-layout-file">
+11) Explain main Activity file ,manifest and layout file?</a></li>
+<li><a href="#12-what-are-different-types-of-ui-compents">
+12) What are different types of UI compents?</a></li>
+<li><a href="#13-what-are-layouts-linearlayout-absolutelayout-tablelayout-framelayout-relativelayout">
+13) What are Layouts (<code>LinearLayout</code>, <code>AbsoluteLayout</code>, <code>TableLayout</code>, <code>FrameLayout</code>, <code>RelativeLayout</code>)?</a></li>
+<li><a href="#14-define-textview-edittextview-button-image-button-checkbox-attributes-and-methods">
+14) Define: <code>textview</code>, <code>Edittextview</code>, <code>Button</code>, <code>Image button</code>, <code>checkbox</code>(attributes and methods)?</a></li>
+<li><a href="#15-explain-listview-gridview-imageview-scrollview">
+15) Explain <code>listview</code>, <code>gridview</code>, <code>imageview</code>, <code>scrollview</code>?</a></li>
+<li><a href="#16-what-is-toast-explain-with-example">
+16) What is toast explain with example?</a></li>
+<li><a href="#17-explain-activity-lifecycle">
+17) Explain activity lifecycle?</a></li>
+<li><a href="#18-explain-broadcast-receivers">
+18) Explain broadcast receivers?</a>
+<ul>
+<li><a href="#creating-the-broadcast-receiver">
+Creating the Broadcast Receiver</a></li>
+<li><a href="#registering-broadcast-receiver">
+Registering Broadcast Receiver</a></li>
+</ul></li>
+<li><a href="#19-explain-content-provider">
+19) Explain content provider?</a></li>
+<li><a href="#20-what-is-sensors">
+20) What is sensors?</a>
+<ul>
+<li><a href="#mostion-sensors">
+Mostion sensors</a></li>
+<li><a href="#environmental-sensors">
+Environmental sensors</a></li>
+<li><a href="#position-sensors">
+Position sensors</a></li>
+</ul></li>
+<li><a href="#21-what-is-location-based-services">
+21) What is location based services?</a></li>
+<li><a href="#22-what-is-geo-code-and-reverse-geo-code">
+22) What is Geo code and reverse Geo code?</a>
+<ul>
+<li><a href="#geo-code">
+Geo code</a></li>
+<li><a href="#reverse-geo-code">
+Reverse Geo code</a></li>
+</ul></li>
+<li><a href="#23-enlist-steps-to-publish-android-application">
+23) Enlist Steps to publish android application?</a></li>
+<li><a href="#24-what-is-date-and-time-picker">
+24) What is Date and time Picker?</a>
+<ul>
+<li><a href="#datepicker">
+Datepicker</a></li>
+<li><a href="#timepicker">
+Timepicker</a></li>
+</ul></li>
+<li><a href="#1-what-is-android">
+1) What is Android?</a></li>
+<li><a href="#2-enlist-features-of-android">
+2) Enlist features of Android?</a></li>
+<li><a href="#3-explain-android-architecture">
+3) Explain Android architecture?</a></li>
+<li><a href="#4-explain-android-sdk">
+4) Explain Android SDK?</a></li>
+<li><a href="#5-what-is-android-avd">
+5) What is Android AVD?</a>
+<ul>
+<li><a href="#hardware-profile">
+Hardware profile</a></li>
+<li><a href="#system-image">
+System image</a></li>
+<li><a href="#storage-area">
+Storage Area</a></li>
+</ul></li>
+<li><a href="#6-what-is-emulator">
+6) What is emulator?</a></li>
+<li><a href="#7-difference-between-jvm-and-dvm">
+7) Difference between JVM and DVM?</a></li>
+<li><a href="#8-what-are-activities">
+8) What are activities?</a></li>
+<li><a href="#9-what-are-services">
+9) What are services?</a>
+<ul>
+<li><a href="#foreground-service">
+Foreground service</a></li>
+<li><a href="#background-service">
+Background Service</a></li>
+<li><a href="#bound-service">
+Bound Service</a></li>
+</ul></li>
+<li><a href="#10-what-are-intents">
+10) What are intents?</a>
+<ul>
+<li><a href="#implicit-intent">
+Implicit intent</a></li>
+<li><a href="#explicit-intent">
+Explicit intent</a></li>
+</ul></li>
+<li><a href="#11-explain-mainactivity-manifest-layout-file">
+11) Explain MainActivity, Manifest &amp; Layout file?</a>
+<ul>
+<li><a href="#mainactivity">
+MainActivity</a></li>
+<li><a href="#manifest">
+Manifest</a></li>
+<li><a href="#layout">
+Layout</a></li>
+</ul></li>
+<li><a href="#12-what-are-different-types-of-ui-components">
+12) What are different types of UI components?</a></li>
+<li><a href="#13-what-are-layouts">
+13) What are Layouts?</a></li>
+<li><a href="#14-define">
+14) Define</a></li>
+<li><a href="#15-explain">
+15) Explain</a></li>
+<li><a href="#16-what-is-toast-explain-with-example">
+16) What is toast explain with example?</a></li>
+<li><a href="#17-explain-activity-life-cycle">
+17) Explain activity life cycle?</a></li>
+<li><a href="#18-explain-broadcast-receivers">
+18) Explain broadcast receivers?</a>
+<ul>
+<li><a href="#creating-the-broadcast-receiver">
+Creating the Broadcast Receiver</a></li>
+<li><a href="#registering-broadcast-receiver">
+Registering Broadcast Receiver</a></li>
+</ul></li>
+<li><a href="#19-explain-content-provider">
+19) Explain content provider?</a></li>
+<li><a href="#20-what-is-sensors">
+20) What is sensors?</a>
+<ul>
+<li><a href="#motion">
+Motion</a></li>
+<li><a href="#environmental">
+Environmental</a></li>
+<li><a href="#position">
+Position</a></li>
+</ul></li>
+<li><a href="#21-what-is-location-based-services">
+21) What is location based services?</a></li>
+<li><a href="#22-what-is-geo-code-and-reverse-geo-code">
+22) What is Geo code and Reverse geo code?</a>
+<ul>
+<li><a href="#geo-code">
+Geo code</a></li>
+<li><a href="#reverse-geo-code">
+Reverse Geo code</a></li>
+</ul></li>
+<li><a href="#23-enlist-steps-to-publish-android-application">
+23) Enlist Steps to publish android application?</a></li>
+<li><a href="#24-what-is-date-and-time-picker">
+24) What is date and time picker?</a>
+<ul>
+<li><a href="#datepicker">
+<code>DatePicker</code></a></li>
+<li><a href="#timepicker">
+<code>TimePicker</code></a></li>
+</ul></li>
+</ul>
+</nav>
+
+        </details>
+        
 		<footer>
 			<p style="text-align: center; font-size: small; margin-top: 5em;">
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
@@ -9205,6 +9208,19 @@ AM/PM mode or 24h mode.</li>
         };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <script>
+    const music = document.getElementById('music');
+    let wave = new CircularAudioWave(music);
+    wave.loadAudio('https://AnzenKodo.github.io/assets/Music.m4a');
+
+    music.addEventListener("click", () => {
+        if (wave.playing) {
+            wave.pause();
+        } else {
+            wave.play()
+        }
+    })
     </script>
 	</body>
 </html>

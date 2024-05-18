@@ -163,6 +163,8 @@
                 max-width: 100%;
             }
 		</style>
+	<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0"></script>
+    <script src="https://AnzenKodo.github.io/assets/circular-audio-wave.js"></script>
 	</head>
 	<body>
 	    <a href="#skip-top-main">Skip to main</a>
@@ -170,245 +172,8 @@
 			<h1 style="text-align: center;">
                 <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
-            
-			<details id="table-of-content">
-			    <summary>Table of Content</summary>
-                <nav>
-<ul>
-<li><a href="#osi-security-model">OSI Security Model</a>
-<ul>
-<li><a href="#goals">
-Goals</a></li>
-<li><a href="#services">
-Services</a></li>
-<li><a href="#mechanisms">
-Mechanisms</a></li>
-</ul></li>
-<li><a href="#compare-hmac-and-cmac">
-Compare HMAC and CMAC</a></li>
-<li><a href="#network-access-control">
-Network Access Control</a>
-<ul>
-<li><a href="#enforcement-nac">
-Enforcement NAC</a></li>
-<li><a href="#key-elements-in-nac">
-Key elements in NAC</a></li>
-<li><a href="#types-of-nac">
-Types of NAC</a></li>
-<li><a href="#use-cases-of-nac">
-Use cases of NAC</a></li>
-</ul></li>
-<li><a href="#ssl-protocol">
-SSL Protocol</a>
-<ul>
-<li><a href="#ssl-protocol-stack">
-SSL Protocol Stack</a>
-<ul>
-<li><a href="#ssl-handshake-protocol">
-SSL Handshake Protocol</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#playfair-cipher">
-Playfair Cipher</a>
-<ul>
-<li><a href="#example">
-Example</a></li>
-</ul></li>
-<li><a href="#block-cipher">
-Block Cipher</a>
-<ul>
-<li>
-<ul>
-<li><a href="#electronic-code-book">
-Electronic Code Book</a></li>
-<li><a href="#cipher-block-chaining">
-Cipher Block Chaining</a></li>
-<li><a href="#cipher-feedback-mode">
-Cipher Feedback Mode</a></li>
-<li><a href="#output-feedback-mode">
-Output Feedback Mode</a></li>
-<li><a href="#counter-mode">
-Counter Mode</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#firewall">
-Firewall</a>
-<ul>
-<li><a href="#types-of-firewall">
-Types of Firewall</a>
-<ul>
-<li><a href="#packet-filtering">
-Packet Filtering</a></li>
-<li><a href="#application-proxy">
-Application Proxy</a></li>
-<li><a href="#circuit-gateway">
-Circuit Gateway</a></li>
-</ul></li>
-<li><a href="#firewall-design-principles">
-Firewall Design Principles</a>
-<ul>
-<li><a href="#developing-security-policy">
-Developing Security Policy</a></li>
-<li><a href="#simple-solution-design">
-Simple Solution Design</a></li>
-<li><a href="#choosing-the-right-device">
-Choosing the Right Device</a></li>
-<li><a href="#layered-defense">
-Layered Defense</a></li>
-<li><a href="#consider-internal-threats">
-Consider Internal Threats</a></li>
-</ul></li>
-<li><a href="#firewall-characteristics">
-Firewall Characteristics</a></li>
-</ul></li>
-<li><a href="#kerberos">
-Kerberos</a></li>
-<li><a href="#ipsec">
-IPSec</a>
-<ul>
-<li><a href="#modes-of-ipsec">
-Modes of IPSec</a>
-<ul>
-<li><a href="#ipsec-packet">
-IPSec Packet</a></li>
-<li><a href="#protocols-of-ipsec">
-Protocols of IPSec</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#network-management-protocol">
-Network Management Protocol</a>
-<ul>
-<li><a href="#snmp">
-SNMP</a></li>
-<li><a href="#snmpv3">
-SNMPv3</a></li>
-</ul></li>
-<li><a href="#ids">
-IDS</a>
-<ul>
-<li>
-<ul>
-<li><a href="#classification-of-intrusion-detection-system">
-Classification of intrusion detection system:</a>
-<ul>
-<li><a href="#network-intrusion-detection-system-nids">
-Network Intrusion Detection System (NIDS)</a></li>
-<li><a href="#host-intrusion-detection-system-hids">
-Host Intrusion Detection System (HIDS)</a></li>
-<li><a href="#protocol-based-intrusion-detection-system-pids">
-Protocol-based Intrusion Detection System (PIDS)</a></li>
-<li><a href="#application-protocol-based-intrusion-detection-system">
-Application Protocol-based Intrusion Detection System</a></li>
-<li><a href="#hybrid-intrusion-detection-system">
-Hybrid Intrusion Detection System</a></li>
-</ul></li>
-<li><a href="#detection-method-of-ids">
-Detection Method of IDS</a>
-<ul>
-<li><a href="#signature-based">
-Signature based</a></li>
-<li><a href="#anomaly-based">
-Anomaly based</a></li>
-</ul></li>
-<li><a href="#comparison-of-ids-with-firewalls">
-Comparison of IDS with Firewalls</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#malware">
-Malware</a>
-<ul>
-<li><a href="#type-s-of-malicious-software">
-Type's of malicious software</a>
-<ul>
-<li><a href="#host-based">
-Host based</a>
-<ul>
-<li><a href="#spam">
-Spam</a>
-<ul>
-<li><a href="#types-of-spam">
-Types of spam</a></li>
-</ul></li>
-<li><a href="#virus">
-Virus</a>
-<ul>
-<li><a href="#phases-of-virus">
-Phases of Virus</a></li>
-</ul></li>
-<li><a href="#trojan-horse">
-Trojan horse</a></li>
-<li><a href="#trapdoor">
-Trapdoor</a></li>
-<li><a href="#logic-bomb">
-Logic bomb</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li><a href="#digital-signature">
-Digital Signature</a>
-<ul>
-<li>
-<ul>
-<li><a href="#dss-digital-signature-standard">
-DSS (Digital Signature Standard)</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#types-of-attacks">
-Types of Attacks</a>
-<ul>
-<li><a href="#passive-attacks">
-Passive Attacks</a></li>
-<li><a href="#active-attacks">
-Active Attacks</a>
-<ul>
-<li><a href="#masquerade">
-Masquerade</a></li>
-<li><a href="#replay">
-Replay</a></li>
-<li><a href="#modification-of-message">
-Modification of Message</a></li>
-<li><a href="#denial-of-service">
-Denial of Service</a>
-<ul>
-<li><a href="#types-of-dos">
-Types of DoS</a>
-<ul>
-<li><a href="#distributed-dos">
-Distributed DoS</a></li>
-<li><a href="#application-layer-attacks">
-Application layer attacks</a></li>
-<li><a href="#advanced-persistent-dos">
-Advanced persistent DoS</a></li>
-<li><a href="#denial-of-service-as-a-service">
-Denial-of-service as a service</a></li>
-<li><a href="#markov-modulated-denial-of-service-attack">
-Markov-Modulated Denial-of-Service Attack</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li><a href="#aes-des">
-AES &amp; DES</a></li>
-<li><a href="#hash-function">
-Hash Function</a>
-<ul>
-<li><a href="#properties-of-hash-functions">
-Properties of Hash Functions</a></li>
-<li><a href="#applications-of-hash-functions">
-<strong>Applications of Hash Functions</strong>:</a></li>
-<li><a href="#classical-encryption-techniques-with-example">
-Classical Encryption Techniques with example</a></li>
-</ul></li>
-<li><a href="#ssh">
-SSH</a></li>
-<li><a href="#rsa">
-RSA</a></li>
-</ul>
-</nav>
-
-			</details>
-            
 		</header>
+		<div id="music" style="width: 100%; height: 18em;"></div>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem">CNS Notes</h1>
 			<h2><a name="osi-security-model" class="heading-anchor" href="#osi-security-model" rel="nofollow" aria-hidden="true"></a>OSI Security Model</h2>
@@ -1181,6 +946,244 @@ $\phi(n)=192$</p>
 <p><img src="../assets/Untitled-2023-11-20-1032.png" alt=""></p>
 
 		</main>
+        
+        <details id="table-of-content">
+           <summary>Table of Content</summary>
+                    <nav>
+<ul>
+<li><a href="#osi-security-model">OSI Security Model</a>
+<ul>
+<li><a href="#goals">
+Goals</a></li>
+<li><a href="#services">
+Services</a></li>
+<li><a href="#mechanisms">
+Mechanisms</a></li>
+</ul></li>
+<li><a href="#compare-hmac-and-cmac">
+Compare HMAC and CMAC</a></li>
+<li><a href="#network-access-control">
+Network Access Control</a>
+<ul>
+<li><a href="#enforcement-nac">
+Enforcement NAC</a></li>
+<li><a href="#key-elements-in-nac">
+Key elements in NAC</a></li>
+<li><a href="#types-of-nac">
+Types of NAC</a></li>
+<li><a href="#use-cases-of-nac">
+Use cases of NAC</a></li>
+</ul></li>
+<li><a href="#ssl-protocol">
+SSL Protocol</a>
+<ul>
+<li><a href="#ssl-protocol-stack">
+SSL Protocol Stack</a>
+<ul>
+<li><a href="#ssl-handshake-protocol">
+SSL Handshake Protocol</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#playfair-cipher">
+Playfair Cipher</a>
+<ul>
+<li><a href="#example">
+Example</a></li>
+</ul></li>
+<li><a href="#block-cipher">
+Block Cipher</a>
+<ul>
+<li>
+<ul>
+<li><a href="#electronic-code-book">
+Electronic Code Book</a></li>
+<li><a href="#cipher-block-chaining">
+Cipher Block Chaining</a></li>
+<li><a href="#cipher-feedback-mode">
+Cipher Feedback Mode</a></li>
+<li><a href="#output-feedback-mode">
+Output Feedback Mode</a></li>
+<li><a href="#counter-mode">
+Counter Mode</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#firewall">
+Firewall</a>
+<ul>
+<li><a href="#types-of-firewall">
+Types of Firewall</a>
+<ul>
+<li><a href="#packet-filtering">
+Packet Filtering</a></li>
+<li><a href="#application-proxy">
+Application Proxy</a></li>
+<li><a href="#circuit-gateway">
+Circuit Gateway</a></li>
+</ul></li>
+<li><a href="#firewall-design-principles">
+Firewall Design Principles</a>
+<ul>
+<li><a href="#developing-security-policy">
+Developing Security Policy</a></li>
+<li><a href="#simple-solution-design">
+Simple Solution Design</a></li>
+<li><a href="#choosing-the-right-device">
+Choosing the Right Device</a></li>
+<li><a href="#layered-defense">
+Layered Defense</a></li>
+<li><a href="#consider-internal-threats">
+Consider Internal Threats</a></li>
+</ul></li>
+<li><a href="#firewall-characteristics">
+Firewall Characteristics</a></li>
+</ul></li>
+<li><a href="#kerberos">
+Kerberos</a></li>
+<li><a href="#ipsec">
+IPSec</a>
+<ul>
+<li><a href="#modes-of-ipsec">
+Modes of IPSec</a>
+<ul>
+<li><a href="#ipsec-packet">
+IPSec Packet</a></li>
+<li><a href="#protocols-of-ipsec">
+Protocols of IPSec</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#network-management-protocol">
+Network Management Protocol</a>
+<ul>
+<li><a href="#snmp">
+SNMP</a></li>
+<li><a href="#snmpv3">
+SNMPv3</a></li>
+</ul></li>
+<li><a href="#ids">
+IDS</a>
+<ul>
+<li>
+<ul>
+<li><a href="#classification-of-intrusion-detection-system">
+Classification of intrusion detection system:</a>
+<ul>
+<li><a href="#network-intrusion-detection-system-nids">
+Network Intrusion Detection System (NIDS)</a></li>
+<li><a href="#host-intrusion-detection-system-hids">
+Host Intrusion Detection System (HIDS)</a></li>
+<li><a href="#protocol-based-intrusion-detection-system-pids">
+Protocol-based Intrusion Detection System (PIDS)</a></li>
+<li><a href="#application-protocol-based-intrusion-detection-system">
+Application Protocol-based Intrusion Detection System</a></li>
+<li><a href="#hybrid-intrusion-detection-system">
+Hybrid Intrusion Detection System</a></li>
+</ul></li>
+<li><a href="#detection-method-of-ids">
+Detection Method of IDS</a>
+<ul>
+<li><a href="#signature-based">
+Signature based</a></li>
+<li><a href="#anomaly-based">
+Anomaly based</a></li>
+</ul></li>
+<li><a href="#comparison-of-ids-with-firewalls">
+Comparison of IDS with Firewalls</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#malware">
+Malware</a>
+<ul>
+<li><a href="#type-s-of-malicious-software">
+Type's of malicious software</a>
+<ul>
+<li><a href="#host-based">
+Host based</a>
+<ul>
+<li><a href="#spam">
+Spam</a>
+<ul>
+<li><a href="#types-of-spam">
+Types of spam</a></li>
+</ul></li>
+<li><a href="#virus">
+Virus</a>
+<ul>
+<li><a href="#phases-of-virus">
+Phases of Virus</a></li>
+</ul></li>
+<li><a href="#trojan-horse">
+Trojan horse</a></li>
+<li><a href="#trapdoor">
+Trapdoor</a></li>
+<li><a href="#logic-bomb">
+Logic bomb</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="#digital-signature">
+Digital Signature</a>
+<ul>
+<li>
+<ul>
+<li><a href="#dss-digital-signature-standard">
+DSS (Digital Signature Standard)</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#types-of-attacks">
+Types of Attacks</a>
+<ul>
+<li><a href="#passive-attacks">
+Passive Attacks</a></li>
+<li><a href="#active-attacks">
+Active Attacks</a>
+<ul>
+<li><a href="#masquerade">
+Masquerade</a></li>
+<li><a href="#replay">
+Replay</a></li>
+<li><a href="#modification-of-message">
+Modification of Message</a></li>
+<li><a href="#denial-of-service">
+Denial of Service</a>
+<ul>
+<li><a href="#types-of-dos">
+Types of DoS</a>
+<ul>
+<li><a href="#distributed-dos">
+Distributed DoS</a></li>
+<li><a href="#application-layer-attacks">
+Application layer attacks</a></li>
+<li><a href="#advanced-persistent-dos">
+Advanced persistent DoS</a></li>
+<li><a href="#denial-of-service-as-a-service">
+Denial-of-service as a service</a></li>
+<li><a href="#markov-modulated-denial-of-service-attack">
+Markov-Modulated Denial-of-Service Attack</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="#aes-des">
+AES &amp; DES</a></li>
+<li><a href="#hash-function">
+Hash Function</a>
+<ul>
+<li><a href="#properties-of-hash-functions">
+Properties of Hash Functions</a></li>
+<li><a href="#applications-of-hash-functions">
+<strong>Applications of Hash Functions</strong>:</a></li>
+<li><a href="#classical-encryption-techniques-with-example">
+Classical Encryption Techniques with example</a></li>
+</ul></li>
+<li><a href="#ssh">
+SSH</a></li>
+<li><a href="#rsa">
+RSA</a></li>
+</ul>
+</nav>
+
+        </details>
+        
 		<footer>
 			<p style="text-align: center; font-size: small; margin-top: 5em;">
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
@@ -1195,6 +1198,19 @@ $\phi(n)=192$</p>
         };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <script>
+    const music = document.getElementById('music');
+    let wave = new CircularAudioWave(music);
+    wave.loadAudio('https://AnzenKodo.github.io/assets/Music.m4a');
+
+    music.addEventListener("click", () => {
+        if (wave.playing) {
+            wave.pause();
+        } else {
+            wave.play()
+        }
+    })
     </script>
 	</body>
 </html>

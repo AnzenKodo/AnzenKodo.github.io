@@ -163,6 +163,8 @@
                 max-width: 100%;
             }
 		</style>
+	<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0"></script>
+    <script src="https://AnzenKodo.github.io/assets/circular-audio-wave.js"></script>
 	</head>
 	<body>
 	    <a href="#skip-top-main">Skip to main</a>
@@ -170,100 +172,8 @@
 			<h1 style="text-align: center;">
                 <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
-            
-			<details id="table-of-content">
-			    <summary>Table of Content</summary>
-                <nav>
-<ul>
-<li><a href="#3-marks-questions">3 Marks Questions:</a>
-<ul>
-<li><a href="#i-explain-useeffect-with-example">
-i) Explain <code>useEffect</code> with example?</a></li>
-<li><a href="#ii-explain-usestate-with-example">
-ii) Explain <code>useState</code> with example?</a></li>
-<li><a href="#iii-explain-mvc-components">
-iii) Explain MVC Components?</a></li>
-<li><a href="#iv-explain-different-libraries-in-nodejs">
-iv) Explain different libraries in NodeJS?</a></li>
-<li><a href="#v-explain-event-loop-with-example">
-v) Explain Event Loop with example?</a>
-<ul>
-<li><a href="#phases-of-the-event-loop">
-Phases of the Event loop:</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#2-marks-questions">
-2 Marks Questions:</a>
-<ul>
-<li><a href="#i-write-short-notes-on-expressjs-authentication">
-i) Write short notes on ExpressJS Authentication?</a></li>
-<li><a href="#ii-write-short-notes-on-expressjs-session">
-ii) Write short notes on ExpressJS Session.</a></li>
-<li><a href="#iii-write-short-notes-on-refs">
-iii) Write short notes on Refs?</a></li>
-<li><a href="#iv-what-is-callback-explain">
-iv) What is callback explain?</a></li>
-<li><a href="#v-write-short-notes-on-mongodb-connection">
-v) Write short notes on MongoDB Connection.</a></li>
-</ul></li>
-<li><a href="#5-marks-questions">
-5 Marks Questions:</a>
-<ul>
-<li><a href="#1-what-is-nodejs-explain-features-of-nodejs-state-different-types-of-nodejs-modules">
-1) What is NodeJS? Explain features of NodeJS. State different types of NodeJS modules?</a>
-<ul>
-<li><a href="#what-is-nodejs">
-What is NodeJS?</a></li>
-<li><a href="#explain-features-of-nodejs">
-Explain features of NodeJS.</a></li>
-<li><a href="#state-different-types-of-nodejs-modules">
-State different types of NodeJS modules?</a></li>
-</ul></li>
-<li><a href="#2-explain-routing-in-expressjs-with-example">
-2) Explain routing in ExpressJS with example?</a></li>
-<li><a href="#3-explain-flux-architecture-in-details">
-3) Explain Flux architecture in details?</a>
-<ul>
-<li><a href="#components-of-flux-architecture">
-Components of Flux architecture</a></li>
-<li><a href="#features-of-the-flux-architecture">
-Features of the Flux architecture</a></li>
-<li><a href="#pros-and-cons-of-the-flux-architecture">
-Pros and Cons of the Flux architecture</a></li>
-</ul></li>
-<li><a href="#4-what-is-asynchronous-programming-explain-in-details">
-4) What is asynchronous programming? Explain in details.</a>
-<ul>
-<li><a href="#key-concepts-of-asynchronous-programming-in-node-js">
-Key concepts of asynchronous programming in Node.js</a></li>
-</ul></li>
-<li><a href="#5-explain-nodejs-web-module-and-what-is-http-connection-explain">
-5) Explain NodeJS web module? And what is HTTP connection explain?</a>
-<ul>
-<li><a href="#nodejs-web-module">
-NodeJS web module</a></li>
-<li><a href="#http-connection">
-HTTP connection</a>
-<ul>
-<li><a href="#types-of-http-connections">
-Types of HTTP connections:</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#6-explain-rest-api-in-details">
-6) Explain REST API in details?</a>
-<ul>
-<li><a href="#rest-api-methods">
-REST API methods</a></li>
-<li><a href="#working">
-<strong>Working</strong></a></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav>
-
-			</details>
-            
 		</header>
+		<div id="music" style="width: 100%; height: 18em;"></div>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem">IP QB</h1>
 			<h2><a name="3-marks-questions" class="heading-anchor" href="#3-marks-questions" rel="nofollow" aria-hidden="true"></a>3 Marks Questions:</h2><h3><a name="i-explain-useeffect-with-example" class="heading-anchor" href="#i-explain-useeffect-with-example" rel="nofollow" aria-hidden="true"></a>i) Explain <code>useEffect</code> with example?</h3>
@@ -1723,6 +1633,99 @@ body { color: #282c34; }
 </ul>
 
 		</main>
+        
+        <details id="table-of-content">
+           <summary>Table of Content</summary>
+                    <nav>
+<ul>
+<li><a href="#3-marks-questions">3 Marks Questions:</a>
+<ul>
+<li><a href="#i-explain-useeffect-with-example">
+i) Explain <code>useEffect</code> with example?</a></li>
+<li><a href="#ii-explain-usestate-with-example">
+ii) Explain <code>useState</code> with example?</a></li>
+<li><a href="#iii-explain-mvc-components">
+iii) Explain MVC Components?</a></li>
+<li><a href="#iv-explain-different-libraries-in-nodejs">
+iv) Explain different libraries in NodeJS?</a></li>
+<li><a href="#v-explain-event-loop-with-example">
+v) Explain Event Loop with example?</a>
+<ul>
+<li><a href="#phases-of-the-event-loop">
+Phases of the Event loop:</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#2-marks-questions">
+2 Marks Questions:</a>
+<ul>
+<li><a href="#i-write-short-notes-on-expressjs-authentication">
+i) Write short notes on ExpressJS Authentication?</a></li>
+<li><a href="#ii-write-short-notes-on-expressjs-session">
+ii) Write short notes on ExpressJS Session.</a></li>
+<li><a href="#iii-write-short-notes-on-refs">
+iii) Write short notes on Refs?</a></li>
+<li><a href="#iv-what-is-callback-explain">
+iv) What is callback explain?</a></li>
+<li><a href="#v-write-short-notes-on-mongodb-connection">
+v) Write short notes on MongoDB Connection.</a></li>
+</ul></li>
+<li><a href="#5-marks-questions">
+5 Marks Questions:</a>
+<ul>
+<li><a href="#1-what-is-nodejs-explain-features-of-nodejs-state-different-types-of-nodejs-modules">
+1) What is NodeJS? Explain features of NodeJS. State different types of NodeJS modules?</a>
+<ul>
+<li><a href="#what-is-nodejs">
+What is NodeJS?</a></li>
+<li><a href="#explain-features-of-nodejs">
+Explain features of NodeJS.</a></li>
+<li><a href="#state-different-types-of-nodejs-modules">
+State different types of NodeJS modules?</a></li>
+</ul></li>
+<li><a href="#2-explain-routing-in-expressjs-with-example">
+2) Explain routing in ExpressJS with example?</a></li>
+<li><a href="#3-explain-flux-architecture-in-details">
+3) Explain Flux architecture in details?</a>
+<ul>
+<li><a href="#components-of-flux-architecture">
+Components of Flux architecture</a></li>
+<li><a href="#features-of-the-flux-architecture">
+Features of the Flux architecture</a></li>
+<li><a href="#pros-and-cons-of-the-flux-architecture">
+Pros and Cons of the Flux architecture</a></li>
+</ul></li>
+<li><a href="#4-what-is-asynchronous-programming-explain-in-details">
+4) What is asynchronous programming? Explain in details.</a>
+<ul>
+<li><a href="#key-concepts-of-asynchronous-programming-in-node-js">
+Key concepts of asynchronous programming in Node.js</a></li>
+</ul></li>
+<li><a href="#5-explain-nodejs-web-module-and-what-is-http-connection-explain">
+5) Explain NodeJS web module? And what is HTTP connection explain?</a>
+<ul>
+<li><a href="#nodejs-web-module">
+NodeJS web module</a></li>
+<li><a href="#http-connection">
+HTTP connection</a>
+<ul>
+<li><a href="#types-of-http-connections">
+Types of HTTP connections:</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#6-explain-rest-api-in-details">
+6) Explain REST API in details?</a>
+<ul>
+<li><a href="#rest-api-methods">
+REST API methods</a></li>
+<li><a href="#working">
+<strong>Working</strong></a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+
+        </details>
+        
 		<footer>
 			<p style="text-align: center; font-size: small; margin-top: 5em;">
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
@@ -1737,6 +1740,19 @@ body { color: #282c34; }
         };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <script>
+    const music = document.getElementById('music');
+    let wave = new CircularAudioWave(music);
+    wave.loadAudio('https://AnzenKodo.github.io/assets/Music.m4a');
+
+    music.addEventListener("click", () => {
+        if (wave.playing) {
+            wave.pause();
+        } else {
+            wave.play()
+        }
+    })
     </script>
 	</body>
 </html>

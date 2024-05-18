@@ -163,6 +163,8 @@
                 max-width: 100%;
             }
 		</style>
+	<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0"></script>
+    <script src="https://AnzenKodo.github.io/assets/circular-audio-wave.js"></script>
 	</head>
 	<body>
 	    <a href="#skip-top-main">Skip to main</a>
@@ -170,42 +172,8 @@
 			<h1 style="text-align: center;">
                 <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
-            
-			<details id="table-of-content">
-			    <summary>Table of Content</summary>
-                <nav>
-<ul>
-<li><a href="#eda-and-it-s-types">EDA and it's types</a></li>
-<li><a href="#anova">
-Anova</a></li>
-<li><a href="#covariance">
-Covariance</a></li>
-<li><a href="#correlation">
-Correlation</a></li>
-<li><a href="#machine-learning">
-Machine learning</a>
-<ul>
-<li><a href="#types-of-machine-learning">
-Types of Machine Learning:</a></li>
-</ul></li>
-<li><a href="#how-ml-application-is-developed">
-How ML application is developed</a></li>
-<li><a href="#application-of-ml">
-Application of ML</a></li>
-<li><a href="#need-of-ml">
-Need of ML</a></li>
-<li><a href="#ds-vs-big-data-vs-vs-data-analytics">
-DS vs Big data vs vs data analytics</a></li>
-<li><a href="#lifecycle-of-ds">
-Lifecycle of DS</a></li>
-<li><a href="#logistics-regression-vs-linear-regression">
-Logistics regression vs linear regression</a></li>
-</ul>
-</nav>
-
-			</details>
-            
 		</header>
+		<div id="music" style="width: 100%; height: 18em;"></div>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem">AI & DS</h1>
 			<h2><a name="eda-and-it-s-types" class="heading-anchor" href="#eda-and-it-s-types" rel="nofollow" aria-hidden="true"></a>EDA and it's types</h2>
@@ -619,6 +587,41 @@ $y$ = { 3, 7, 10, 14, 17 }</p>
 <p><img src="assets/Pasted%20image%2020240419035439.png" alt=""></p>
 
 		</main>
+        
+        <details id="table-of-content">
+           <summary>Table of Content</summary>
+                    <nav>
+<ul>
+<li><a href="#eda-and-it-s-types">EDA and it's types</a></li>
+<li><a href="#anova">
+Anova</a></li>
+<li><a href="#covariance">
+Covariance</a></li>
+<li><a href="#correlation">
+Correlation</a></li>
+<li><a href="#machine-learning">
+Machine learning</a>
+<ul>
+<li><a href="#types-of-machine-learning">
+Types of Machine Learning:</a></li>
+</ul></li>
+<li><a href="#how-ml-application-is-developed">
+How ML application is developed</a></li>
+<li><a href="#application-of-ml">
+Application of ML</a></li>
+<li><a href="#need-of-ml">
+Need of ML</a></li>
+<li><a href="#ds-vs-big-data-vs-vs-data-analytics">
+DS vs Big data vs vs data analytics</a></li>
+<li><a href="#lifecycle-of-ds">
+Lifecycle of DS</a></li>
+<li><a href="#logistics-regression-vs-linear-regression">
+Logistics regression vs linear regression</a></li>
+</ul>
+</nav>
+
+        </details>
+        
 		<footer>
 			<p style="text-align: center; font-size: small; margin-top: 5em;">
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
@@ -633,6 +636,19 @@ $y$ = { 3, 7, 10, 14, 17 }</p>
         };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <script>
+    const music = document.getElementById('music');
+    let wave = new CircularAudioWave(music);
+    wave.loadAudio('https://AnzenKodo.github.io/assets/Music.m4a');
+
+    music.addEventListener("click", () => {
+        if (wave.playing) {
+            wave.pause();
+        } else {
+            wave.play()
+        }
+    })
     </script>
 	</body>
 </html>

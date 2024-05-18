@@ -163,6 +163,8 @@
                 max-width: 100%;
             }
 		</style>
+	<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0"></script>
+    <script src="https://AnzenKodo.github.io/assets/circular-audio-wave.js"></script>
 	</head>
 	<body>
 	    <a href="#skip-top-main">Skip to main</a>
@@ -170,214 +172,8 @@
 			<h1 style="text-align: center;">
                 <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
-            
-			<details id="table-of-content">
-			    <summary>Table of Content</summary>
-                <nav>
-<ul>
-<li><a href="#coupling-3">Coupling (3)</a></li>
-<li><a href="#cohesion-3">
-Cohesion (3)</a>
-<ul>
-<li><a href="#types-of-modules-cohesion">
-Types of Modules Cohesion</a></li>
-</ul></li>
-<li><a href="#software-testing-strategies-3">
-Software Testing Strategies (3)</a>
-<ul>
-<li><a href="#objective-of-software-testing">
-Objective of software testing</a></li>
-<li><a href="#black-box-vs-white-box">
-Black Box vs White Box</a></li>
-</ul></li>
-<li><a href="#software-configuration-management-scm-2">
-Software Configuration Management (SCM) (2)</a>
-<ul>
-<li><a href="#scm-components">
-SCM Components</a></li>
-<li><a href="#scm-repositories">
-SCM Repositories</a></li>
-<li><a href="#scm-process">
-SCM Process</a></li>
-</ul></li>
-<li><a href="#feasibility-study-2">
-Feasibility Study (2)</a></li>
-<li><a href="#risk-2">
-Risk (2)</a>
-<ul>
-<li><a href="#risk-identification">
-RISK IDENTIFICATION</a></li>
-<li><a href="#risk-projection">
-RISK PROJECTION</a></li>
-<li><a href="#risk-assessment">
-RISK ASSESSMENT</a></li>
-</ul></li>
-<li><a href="#mccall-s-quality-factors-2-5m">
-McCall’s Quality Factors (2 5m)</a></li>
-<li><a href="#agile-2">
-Agile (2)</a>
-<ul>
-<li><a href="#principles">
-Principles</a></li>
-</ul></li>
-<li><a href="#evolutionary-process-model">
-Evolutionary Process Model</a>
-<ul>
-<li><a href="#advantages-disadvantages-of-evolutionary-process-model">
-Advantages &amp; Disadvantages of Evolutionary process model</a>
-<ul>
-<li><a href="#advantages">
-Advantages</a></li>
-<li><a href="#disadvantages">
-Disadvantages</a></li>
-<li><a href="#disadvantages">
-Disadvantages</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#kanban">
-Kanban</a></li>
-<li><a href="#agile-and-evolutionary-model">
-Agile and Evolutionary model</a></li>
-<li><a href="#v-model">
-V-model</a>
-<ul>
-<li><a href="#advantages-disadvantages-of-v-model">
-Advantages &amp; Disadvantages of V-Model</a>
-<ul>
-<li><a href="#advantages">
-Advantages</a></li>
-<li><a href="#disadvantages">
-Disadvantages</a></li>
-</ul></li>
-<li><a href="#verification-phase">
-Verification Phase</a></li>
-<li><a href="#validation-phase">
-Validation Phase</a></li>
-</ul></li>
-<li><a href="#software-requirement-specification-srs">
-Software Requirement Specification (SRS)</a></li>
-<li><a href="#rmmm-model-2-comp">
-RMMM Model (2 Comp)</a>
-<ul>
-<li><a href="#risk-mitigation">
-Risk Mitigation</a></li>
-<li><a href="#risk-monitoring">
-Risk Monitoring</a></li>
-<li><a href="#risk-management">
-Risk Management</a></li>
-<li><a href="#drawbacks-of-rmmm">
-Drawbacks of RMMM</a></li>
-</ul></li>
-<li><a href="#user-interface-golden-rules-2-comp">
-User Interface Golden Rules (2 Comp)</a>
-<ul>
-<li><a href="#golden-rules">
-Golden Rules</a></li>
-</ul></li>
-<li><a href="#software-quality-assurance-sqa-2-comp">
-SOFTWARE QUALITY ASSURANCE (SQA) (2 Comp)</a>
-<ul>
-<li><a href="#sqa-task">
-SQA Task</a></li>
-<li><a href="#sqa-task">
-SQA Task</a></li>
-</ul></li>
-<li><a href="#lines-of-code-loc">
-Lines of Code (LOC)</a></li>
-<li><a href="#function-point-fp">
-Function Point (FP)</a></li>
-<li><a href="#re-engineering-bpr">
-Re-Engineering (BPR)</a>
-<ul>
-<li><a href="#process-of-re-engineering">
-Process of Re-Engineering</a></li>
-</ul></li>
-<li><a href="#reverse-engineering">
-Reverse Engineering</a></li>
-<li><a href="#forward-engineering">
-Forward Engineering</a></li>
-<li><a href="#architectural-views-style">
-Architectural Views &amp; Style</a>
-<ul>
-<li><a href="#style">
-Style</a></li>
-<li><a href="#views">
-Views</a></li>
-</ul></li>
-<li><a href="#3-p-s-management-spectrum">
-3 P's Management Spectrum</a>
-<ul>
-<li><a href="#people">
-People</a></li>
-<li><a href="#product">
-Product</a></li>
-<li><a href="#process">
-Process</a></li>
-</ul></li>
-<li><a href="#elicitation">
-Elicitation</a>
-<ul>
-<li><a href="#requirements-elicitation-activities">
-Requirements elicitation Activities:</a></li>
-<li><a href="#requirements-elicitation-methods">
-Requirements elicitation Methods:</a></li>
-<li><a href="#advantages-of-requirements-elicitation">
-Advantages of Requirements Elicitation:</a></li>
-<li><a href="#disadvantages-of-requirements-elicitation">
-Disadvantages of Requirements Elicitation:</a></li>
-</ul></li>
-<li><a href="#scrum">
-SCRUM</a>
-<ul>
-<li><a href="#scrum-framework">
-SCRUM Framework</a>
-<ul>
-<li><a href="#terminologies-used">
-Terminologies Used:</a></li>
-</ul></li>
-<li><a href="#scrum-process">
-Scrum Process</a></li>
-</ul></li>
-<li><a href="#formal-technical-review">
-Formal Technical Review</a>
-<ul>
-<li><a href="#the-review-meeting">
-The Review Meeting</a></li>
-<li><a href="#review-guidelines">
-Review Guidelines</a></li>
-</ul></li>
-<li><a href="#project-tracking">
-Project Tracking</a>
-<ul>
-<li><a href="#features-of-project-scheduling-tools">
-Features of Project Scheduling Tools</a></li>
-<li><a href="#benefits-of-project-scheduling-tools">
-Benefits of Project Scheduling Tools</a></li>
-<li><a href="#criteria-for-selecting-project-scheduling-tools">
-Criteria for Selecting Project Scheduling Tools</a></li>
-<li><a href="#project-scheduling-tools">
-Project Scheduling Tools</a></li>
-</ul></li>
-<li><a href="#cocomo-model">
-COCOMO Model</a>
-<ul>
-<li><a href="#cocomo-ii-models">
-COCOMO II models:</a></li>
-<li><a href="#cocomo-ii-major-decision-situations">
-COCOMO II major decision situations</a></li>
-</ul></li>
-<li><a href="#prototyping-model">
-Prototyping model</a></li>
-<li><a href="#data-flow-diagram-dfd">
-Data Flow Diagram(DFD)</a></li>
-<li><a href="#spiral-model">
-Spiral Model</a></li>
-</ul>
-</nav>
-
-			</details>
-            
 		</header>
+		<div id="music" style="width: 100%; height: 18em;"></div>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem">SE Notes</h1>
 			<h2><a name="coupling-3" class="heading-anchor" href="#coupling-3" rel="nofollow" aria-hidden="true"></a>Coupling (3)</h2>
@@ -1689,6 +1485,213 @@ $FP_{estimated} = \text{count total} \times [0.65 + 0.01 \times \sum(F_t) = 375]
 <p><img src="../assets/Untitled-2023-10-27-2253.png" alt=""></p>
 
 		</main>
+        
+        <details id="table-of-content">
+           <summary>Table of Content</summary>
+                    <nav>
+<ul>
+<li><a href="#coupling-3">Coupling (3)</a></li>
+<li><a href="#cohesion-3">
+Cohesion (3)</a>
+<ul>
+<li><a href="#types-of-modules-cohesion">
+Types of Modules Cohesion</a></li>
+</ul></li>
+<li><a href="#software-testing-strategies-3">
+Software Testing Strategies (3)</a>
+<ul>
+<li><a href="#objective-of-software-testing">
+Objective of software testing</a></li>
+<li><a href="#black-box-vs-white-box">
+Black Box vs White Box</a></li>
+</ul></li>
+<li><a href="#software-configuration-management-scm-2">
+Software Configuration Management (SCM) (2)</a>
+<ul>
+<li><a href="#scm-components">
+SCM Components</a></li>
+<li><a href="#scm-repositories">
+SCM Repositories</a></li>
+<li><a href="#scm-process">
+SCM Process</a></li>
+</ul></li>
+<li><a href="#feasibility-study-2">
+Feasibility Study (2)</a></li>
+<li><a href="#risk-2">
+Risk (2)</a>
+<ul>
+<li><a href="#risk-identification">
+RISK IDENTIFICATION</a></li>
+<li><a href="#risk-projection">
+RISK PROJECTION</a></li>
+<li><a href="#risk-assessment">
+RISK ASSESSMENT</a></li>
+</ul></li>
+<li><a href="#mccall-s-quality-factors-2-5m">
+McCall’s Quality Factors (2 5m)</a></li>
+<li><a href="#agile-2">
+Agile (2)</a>
+<ul>
+<li><a href="#principles">
+Principles</a></li>
+</ul></li>
+<li><a href="#evolutionary-process-model">
+Evolutionary Process Model</a>
+<ul>
+<li><a href="#advantages-disadvantages-of-evolutionary-process-model">
+Advantages &amp; Disadvantages of Evolutionary process model</a>
+<ul>
+<li><a href="#advantages">
+Advantages</a></li>
+<li><a href="#disadvantages">
+Disadvantages</a></li>
+<li><a href="#disadvantages">
+Disadvantages</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#kanban">
+Kanban</a></li>
+<li><a href="#agile-and-evolutionary-model">
+Agile and Evolutionary model</a></li>
+<li><a href="#v-model">
+V-model</a>
+<ul>
+<li><a href="#advantages-disadvantages-of-v-model">
+Advantages &amp; Disadvantages of V-Model</a>
+<ul>
+<li><a href="#advantages">
+Advantages</a></li>
+<li><a href="#disadvantages">
+Disadvantages</a></li>
+</ul></li>
+<li><a href="#verification-phase">
+Verification Phase</a></li>
+<li><a href="#validation-phase">
+Validation Phase</a></li>
+</ul></li>
+<li><a href="#software-requirement-specification-srs">
+Software Requirement Specification (SRS)</a></li>
+<li><a href="#rmmm-model-2-comp">
+RMMM Model (2 Comp)</a>
+<ul>
+<li><a href="#risk-mitigation">
+Risk Mitigation</a></li>
+<li><a href="#risk-monitoring">
+Risk Monitoring</a></li>
+<li><a href="#risk-management">
+Risk Management</a></li>
+<li><a href="#drawbacks-of-rmmm">
+Drawbacks of RMMM</a></li>
+</ul></li>
+<li><a href="#user-interface-golden-rules-2-comp">
+User Interface Golden Rules (2 Comp)</a>
+<ul>
+<li><a href="#golden-rules">
+Golden Rules</a></li>
+</ul></li>
+<li><a href="#software-quality-assurance-sqa-2-comp">
+SOFTWARE QUALITY ASSURANCE (SQA) (2 Comp)</a>
+<ul>
+<li><a href="#sqa-task">
+SQA Task</a></li>
+<li><a href="#sqa-task">
+SQA Task</a></li>
+</ul></li>
+<li><a href="#lines-of-code-loc">
+Lines of Code (LOC)</a></li>
+<li><a href="#function-point-fp">
+Function Point (FP)</a></li>
+<li><a href="#re-engineering-bpr">
+Re-Engineering (BPR)</a>
+<ul>
+<li><a href="#process-of-re-engineering">
+Process of Re-Engineering</a></li>
+</ul></li>
+<li><a href="#reverse-engineering">
+Reverse Engineering</a></li>
+<li><a href="#forward-engineering">
+Forward Engineering</a></li>
+<li><a href="#architectural-views-style">
+Architectural Views &amp; Style</a>
+<ul>
+<li><a href="#style">
+Style</a></li>
+<li><a href="#views">
+Views</a></li>
+</ul></li>
+<li><a href="#3-p-s-management-spectrum">
+3 P's Management Spectrum</a>
+<ul>
+<li><a href="#people">
+People</a></li>
+<li><a href="#product">
+Product</a></li>
+<li><a href="#process">
+Process</a></li>
+</ul></li>
+<li><a href="#elicitation">
+Elicitation</a>
+<ul>
+<li><a href="#requirements-elicitation-activities">
+Requirements elicitation Activities:</a></li>
+<li><a href="#requirements-elicitation-methods">
+Requirements elicitation Methods:</a></li>
+<li><a href="#advantages-of-requirements-elicitation">
+Advantages of Requirements Elicitation:</a></li>
+<li><a href="#disadvantages-of-requirements-elicitation">
+Disadvantages of Requirements Elicitation:</a></li>
+</ul></li>
+<li><a href="#scrum">
+SCRUM</a>
+<ul>
+<li><a href="#scrum-framework">
+SCRUM Framework</a>
+<ul>
+<li><a href="#terminologies-used">
+Terminologies Used:</a></li>
+</ul></li>
+<li><a href="#scrum-process">
+Scrum Process</a></li>
+</ul></li>
+<li><a href="#formal-technical-review">
+Formal Technical Review</a>
+<ul>
+<li><a href="#the-review-meeting">
+The Review Meeting</a></li>
+<li><a href="#review-guidelines">
+Review Guidelines</a></li>
+</ul></li>
+<li><a href="#project-tracking">
+Project Tracking</a>
+<ul>
+<li><a href="#features-of-project-scheduling-tools">
+Features of Project Scheduling Tools</a></li>
+<li><a href="#benefits-of-project-scheduling-tools">
+Benefits of Project Scheduling Tools</a></li>
+<li><a href="#criteria-for-selecting-project-scheduling-tools">
+Criteria for Selecting Project Scheduling Tools</a></li>
+<li><a href="#project-scheduling-tools">
+Project Scheduling Tools</a></li>
+</ul></li>
+<li><a href="#cocomo-model">
+COCOMO Model</a>
+<ul>
+<li><a href="#cocomo-ii-models">
+COCOMO II models:</a></li>
+<li><a href="#cocomo-ii-major-decision-situations">
+COCOMO II major decision situations</a></li>
+</ul></li>
+<li><a href="#prototyping-model">
+Prototyping model</a></li>
+<li><a href="#data-flow-diagram-dfd">
+Data Flow Diagram(DFD)</a></li>
+<li><a href="#spiral-model">
+Spiral Model</a></li>
+</ul>
+</nav>
+
+        </details>
+        
 		<footer>
 			<p style="text-align: center; font-size: small; margin-top: 5em;">
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
@@ -1703,6 +1706,19 @@ $FP_{estimated} = \text{count total} \times [0.65 + 0.01 \times \sum(F_t) = 375]
         };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <script>
+    const music = document.getElementById('music');
+    let wave = new CircularAudioWave(music);
+    wave.loadAudio('https://AnzenKodo.github.io/assets/Music.m4a');
+
+    music.addEventListener("click", () => {
+        if (wave.playing) {
+            wave.pause();
+        } else {
+            wave.play()
+        }
+    })
     </script>
 	</body>
 </html>

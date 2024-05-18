@@ -163,6 +163,8 @@
                 max-width: 100%;
             }
 		</style>
+	<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0"></script>
+    <script src="https://AnzenKodo.github.io/assets/circular-audio-wave.js"></script>
 	</head>
 	<body>
 	    <a href="#skip-top-main">Skip to main</a>
@@ -170,58 +172,8 @@
 			<h1 style="text-align: center;">
                 <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
-            
-			<details id="table-of-content">
-			    <summary>Table of Content</summary>
-                <nav>
-<ul>
-<li><a href="#perspective-waterfall-vs-evolution-prototype">Perspective Waterfall vs Evolution Prototype</a>
-<ul>
-<li><a href="#waterfall-model">
-Waterfall Model</a></li>
-<li><a href="#v-model">
-V - model</a></li>
-</ul></li>
-<li><a href="#requirement-validation-requirement-validation-management-any-one">
-Requirement Validation &amp; Requirement Validation management (any one)</a>
-<ul>
-<li><a href="#requirement-validation">
-Requirement Validation</a></li>
-<li><a href="#requirement-management">
-Requirement Management</a></li>
-</ul></li>
-<li><a href="#feasibility-studies">
-Feasibility studies</a></li>
-<li><a href="#3-p-s-management-spectrum">
-3 P's Management Spectrum</a>
-<ul>
-<li><a href="#people">
-People</a></li>
-<li><a href="#product">
-Product</a></li>
-<li><a href="#process">
-Process</a></li>
-</ul></li>
-<li><a href="#estimation-techniques-loc-or-fp">
-Estimation techniques: LOC or FP</a>
-<ul>
-<li><a href="#line-of-code-loc">
-Line of Code (LOC)</a></li>
-<li><a href="#fp">
-FP</a></li>
-</ul></li>
-<li><a href="#1st-module-advantages-disadvantages-of-any-model">
-1st module - advantages &amp; disadvantages of any model.</a></li>
-<li><a href="#function-non-functional-requirement">
-Function &amp; Non-functional Requirement</a></li>
-<li><a href="#management-spectrum">
-Management spectrum</a></li>
-</ul>
-</nav>
-
-			</details>
-            
 		</header>
+		<div id="music" style="width: 100%; height: 18em;"></div>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem">SE QB</h1>
 			<h2><a name="perspective-waterfall-vs-evolution-prototype" class="heading-anchor" href="#perspective-waterfall-vs-evolution-prototype" rel="nofollow" aria-hidden="true"></a>Perspective Waterfall vs Evolution Prototype</h2><h3><a name="waterfall-model" class="heading-anchor" href="#waterfall-model" rel="nofollow" aria-hidden="true"></a>Waterfall Model</h3>
@@ -375,6 +327,57 @@ Management spectrum</a></li>
 <p><img src="https://hackmd.io/_uploads/Bkeqo_CT2.png" alt="SE Diagrams"></p>
 
 		</main>
+        
+        <details id="table-of-content">
+           <summary>Table of Content</summary>
+                    <nav>
+<ul>
+<li><a href="#perspective-waterfall-vs-evolution-prototype">Perspective Waterfall vs Evolution Prototype</a>
+<ul>
+<li><a href="#waterfall-model">
+Waterfall Model</a></li>
+<li><a href="#v-model">
+V - model</a></li>
+</ul></li>
+<li><a href="#requirement-validation-requirement-validation-management-any-one">
+Requirement Validation &amp; Requirement Validation management (any one)</a>
+<ul>
+<li><a href="#requirement-validation">
+Requirement Validation</a></li>
+<li><a href="#requirement-management">
+Requirement Management</a></li>
+</ul></li>
+<li><a href="#feasibility-studies">
+Feasibility studies</a></li>
+<li><a href="#3-p-s-management-spectrum">
+3 P's Management Spectrum</a>
+<ul>
+<li><a href="#people">
+People</a></li>
+<li><a href="#product">
+Product</a></li>
+<li><a href="#process">
+Process</a></li>
+</ul></li>
+<li><a href="#estimation-techniques-loc-or-fp">
+Estimation techniques: LOC or FP</a>
+<ul>
+<li><a href="#line-of-code-loc">
+Line of Code (LOC)</a></li>
+<li><a href="#fp">
+FP</a></li>
+</ul></li>
+<li><a href="#1st-module-advantages-disadvantages-of-any-model">
+1st module - advantages &amp; disadvantages of any model.</a></li>
+<li><a href="#function-non-functional-requirement">
+Function &amp; Non-functional Requirement</a></li>
+<li><a href="#management-spectrum">
+Management spectrum</a></li>
+</ul>
+</nav>
+
+        </details>
+        
 		<footer>
 			<p style="text-align: center; font-size: small; margin-top: 5em;">
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
@@ -389,6 +392,19 @@ Management spectrum</a></li>
         };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <script>
+    const music = document.getElementById('music');
+    let wave = new CircularAudioWave(music);
+    wave.loadAudio('https://AnzenKodo.github.io/assets/Music.m4a');
+
+    music.addEventListener("click", () => {
+        if (wave.playing) {
+            wave.pause();
+        } else {
+            wave.play()
+        }
+    })
     </script>
 	</body>
 </html>

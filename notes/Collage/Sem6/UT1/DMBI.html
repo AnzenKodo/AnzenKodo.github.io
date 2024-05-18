@@ -163,6 +163,8 @@
                 max-width: 100%;
             }
 		</style>
+	<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0"></script>
+    <script src="https://AnzenKodo.github.io/assets/circular-audio-wave.js"></script>
 	</head>
 	<body>
 	    <a href="#skip-top-main">Skip to main</a>
@@ -170,64 +172,8 @@
 			<h1 style="text-align: center;">
                 <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
-            
-			<details id="table-of-content">
-			    <summary>Table of Content</summary>
-                <nav>
-<ul>
-<li><a href="#dwh-characteristics">DWH characteristics</a></li>
-<li><a href="#olap-v-s-oltp">
-OLAP v/s OLTP</a></li>
-<li><a href="#star-v-s-snowflake-schema">
-Star v/s Snowflake schema</a></li>
-<li><a href="#olap-operations">
-OLAP Operations</a></li>
-<li><a href="#kdd">
-KDD</a></li>
-<li><a href="#numerical-smoothing-by-bin-mean-median-boundary">
-Numerical : Smoothing by bin Mean, Median &amp; Boundary</a>
-<ul>
-<li><a href="#equal-frequency">
-Equal Frequency</a></li>
-<li><a href="#bin-means">
-Bin Means</a></li>
-<li><a href="#bin-boundary">
-Bin Boundary</a></li>
-</ul></li>
-<li><a href="#numerical-normalization-min-max-z-score">
-Numerical : Normalization (min-max, z-score)</a>
-<ul>
-<li><a href="#min-max">
-Min-Max</a></li>
-<li><a href="#z-score">
-Z-Score</a></li>
-</ul></li>
-<li><a href="#numerical-mean-median-mode-standard-deviation-5-points">
-Numerical : Mean, Median, Mode, standard deviation (5 Points)</a></li>
-<li><a href="#summary-box-plot">
-Summary Box Plot</a></li>
-<li><a href="#information-gain-entropy-gini-index">
-Information gain, entropy, gini index</a></li>
-<li><a href="#bagging-boosting">
-Bagging &amp; Boosting</a>
-<ul>
-<li><a href="#bagging">
-Bagging</a></li>
-<li><a href="#boosting">
-Boosting:</a></li>
-</ul></li>
-<li><a href="#error-rate-precision-recall-holdout-random-sampling-cross-validation-bootstrap">
-Error Rate, Precision, Recall, Holdout, Random Sampling, Cross validation, Bootstrap</a></li>
-<li><a href="#numerical-naive-bayes">
-Numerical : Naive Bayes</a></li>
-<li><a href="#linear-regression">
-Linear Regression</a></li>
-</ul>
-</nav>
-
-			</details>
-            
 		</header>
+		<div id="music" style="width: 100%; height: 18em;"></div>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem">DMBI</h1>
 			<h2><a name="dwh-characteristics" class="heading-anchor" href="#dwh-characteristics" rel="nofollow" aria-hidden="true"></a>DWH characteristics</h2>
@@ -722,6 +668,63 @@ $$=2489.97$$</p>
 <p><img src="assets/Untitled-2024-02-21-0154.png" alt=""></p>
 
 		</main>
+        
+        <details id="table-of-content">
+           <summary>Table of Content</summary>
+                    <nav>
+<ul>
+<li><a href="#dwh-characteristics">DWH characteristics</a></li>
+<li><a href="#olap-v-s-oltp">
+OLAP v/s OLTP</a></li>
+<li><a href="#star-v-s-snowflake-schema">
+Star v/s Snowflake schema</a></li>
+<li><a href="#olap-operations">
+OLAP Operations</a></li>
+<li><a href="#kdd">
+KDD</a></li>
+<li><a href="#numerical-smoothing-by-bin-mean-median-boundary">
+Numerical : Smoothing by bin Mean, Median &amp; Boundary</a>
+<ul>
+<li><a href="#equal-frequency">
+Equal Frequency</a></li>
+<li><a href="#bin-means">
+Bin Means</a></li>
+<li><a href="#bin-boundary">
+Bin Boundary</a></li>
+</ul></li>
+<li><a href="#numerical-normalization-min-max-z-score">
+Numerical : Normalization (min-max, z-score)</a>
+<ul>
+<li><a href="#min-max">
+Min-Max</a></li>
+<li><a href="#z-score">
+Z-Score</a></li>
+</ul></li>
+<li><a href="#numerical-mean-median-mode-standard-deviation-5-points">
+Numerical : Mean, Median, Mode, standard deviation (5 Points)</a></li>
+<li><a href="#summary-box-plot">
+Summary Box Plot</a></li>
+<li><a href="#information-gain-entropy-gini-index">
+Information gain, entropy, gini index</a></li>
+<li><a href="#bagging-boosting">
+Bagging &amp; Boosting</a>
+<ul>
+<li><a href="#bagging">
+Bagging</a></li>
+<li><a href="#boosting">
+Boosting:</a></li>
+</ul></li>
+<li><a href="#error-rate-precision-recall-holdout-random-sampling-cross-validation-bootstrap">
+Error Rate, Precision, Recall, Holdout, Random Sampling, Cross validation, Bootstrap</a></li>
+<li><a href="#numerical-naive-bayes">
+Numerical : Naive Bayes</a></li>
+<li><a href="#linear-regression">
+Linear Regression</a></li>
+</ul>
+</nav>
+
+        </details>
+        
 		<footer>
 			<p style="text-align: center; font-size: small; margin-top: 5em;">
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
@@ -736,6 +739,19 @@ $$=2489.97$$</p>
         };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <script>
+    const music = document.getElementById('music');
+    let wave = new CircularAudioWave(music);
+    wave.loadAudio('https://AnzenKodo.github.io/assets/Music.m4a');
+
+    music.addEventListener("click", () => {
+        if (wave.playing) {
+            wave.pause();
+        } else {
+            wave.play()
+        }
+    })
     </script>
 	</body>
 </html>

@@ -163,6 +163,8 @@
                 max-width: 100%;
             }
 		</style>
+	<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0"></script>
+    <script src="https://AnzenKodo.github.io/assets/circular-audio-wave.js"></script>
 	</head>
 	<body>
 	    <a href="#skip-top-main">Skip to main</a>
@@ -170,68 +172,8 @@
 			<h1 style="text-align: center;">
                 <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
-            
-			<details id="table-of-content">
-			    <summary>Table of Content</summary>
-                <nav>
-<li><a href="#browser-document-events-interfaces">Browser: Document, Events, Interfaces</a></li>
-<li><a href="#document">
-Document</a>
-<ul>
-<li><a href="#document-documentelement">
-document.documentElement</a></li>
-<li><a href="#document-body">
-document.body</a></li>
-<li><a href="#document-head">
-document.head</a></li>
-<li><a href="#searching">
-Searching:</a>
-<ul>
-<li><a href="#getelement">
-getElement*</a></li>
-<li><a href="#queryselector">
-querySelector*</a></li>
-</ul></li>
-<li><a href="#table">
-Table</a></li>
-<li><a href="#methods">
-Methods</a></li>
-</ul><li><a href="#documentfragment">
-DocumentFragment</a></li>
-<li><a href="#node">
-Node</a></li>
-<li><a href="#parentnode">
-ParentNode</a>
-<ul>
-<li><a href="#childnode">
-ChildNode</a></li>
-</ul><li><a href="#element">
-Element</a></li>
-<li><a href="#event">
-Event</a></li>
-<li><a href="#eventtarget">
-EventTarget</a></li>
-<li><a href="#window">
-Window</a></li>
-<li><a href="#cssstyledeclaration-csstext">
-CSSStyleDeclaration.cssText</a></li>
-<li><a href="#htmlelement">
-HTMLElement</a></li>
-<li><a href="#htmlinputelement">
-HTMLInputElement</a></li>
-<li><a href="#htmlorforeignelement">
-HTMLOrForeignElement</a></li>
-<li><a href="#globaleventhandlers-onclick">
-GlobalEventHandlers.onclick</a></li>
-<li><a href="#location">
-Location</a></li>
-<li><a href="#web-console-helpers">
-Web Console Helpers</a></li>
-</nav>
-
-			</details>
-            
 		</header>
+		<div id="music" style="width: 100%; height: 18em;"></div>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem">Browser</h1>
 			<h1><a name="browser-document-events-interfaces" class="heading-anchor" href="#browser-document-events-interfaces" rel="nofollow" aria-hidden="true"></a>Browser: Document, Events, Interfaces</h1><h1><a name="document" class="heading-anchor" href="#document" rel="nofollow" aria-hidden="true"></a>Document</h1><h2><a name="document-documentelement" class="heading-anchor" href="#document-documentelement" rel="nofollow" aria-hidden="true"></a>document.documentElement</h2><h2><a name="document-body" class="heading-anchor" href="#document-body" rel="nofollow" aria-hidden="true"></a>document.body</h2>
@@ -7969,6 +7911,67 @@ body { color: #282c34; }
 </ul>
 
 		</main>
+        
+        <details id="table-of-content">
+           <summary>Table of Content</summary>
+                    <nav>
+<li><a href="#browser-document-events-interfaces">Browser: Document, Events, Interfaces</a></li>
+<li><a href="#document">
+Document</a>
+<ul>
+<li><a href="#document-documentelement">
+document.documentElement</a></li>
+<li><a href="#document-body">
+document.body</a></li>
+<li><a href="#document-head">
+document.head</a></li>
+<li><a href="#searching">
+Searching:</a>
+<ul>
+<li><a href="#getelement">
+getElement*</a></li>
+<li><a href="#queryselector">
+querySelector*</a></li>
+</ul></li>
+<li><a href="#table">
+Table</a></li>
+<li><a href="#methods">
+Methods</a></li>
+</ul><li><a href="#documentfragment">
+DocumentFragment</a></li>
+<li><a href="#node">
+Node</a></li>
+<li><a href="#parentnode">
+ParentNode</a>
+<ul>
+<li><a href="#childnode">
+ChildNode</a></li>
+</ul><li><a href="#element">
+Element</a></li>
+<li><a href="#event">
+Event</a></li>
+<li><a href="#eventtarget">
+EventTarget</a></li>
+<li><a href="#window">
+Window</a></li>
+<li><a href="#cssstyledeclaration-csstext">
+CSSStyleDeclaration.cssText</a></li>
+<li><a href="#htmlelement">
+HTMLElement</a></li>
+<li><a href="#htmlinputelement">
+HTMLInputElement</a></li>
+<li><a href="#htmlorforeignelement">
+HTMLOrForeignElement</a></li>
+<li><a href="#globaleventhandlers-onclick">
+GlobalEventHandlers.onclick</a></li>
+<li><a href="#location">
+Location</a></li>
+<li><a href="#web-console-helpers">
+Web Console Helpers</a></li>
+</nav>
+
+        </details>
+        
 		<footer>
 			<p style="text-align: center; font-size: small; margin-top: 5em;">
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
@@ -7983,6 +7986,19 @@ body { color: #282c34; }
         };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <script>
+    const music = document.getElementById('music');
+    let wave = new CircularAudioWave(music);
+    wave.loadAudio('https://AnzenKodo.github.io/assets/Music.m4a');
+
+    music.addEventListener("click", () => {
+        if (wave.playing) {
+            wave.pause();
+        } else {
+            wave.play()
+        }
+    })
     </script>
 	</body>
 </html>

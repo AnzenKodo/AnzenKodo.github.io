@@ -163,6 +163,8 @@
                 max-width: 100%;
             }
 		</style>
+	<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0"></script>
+    <script src="https://AnzenKodo.github.io/assets/circular-audio-wave.js"></script>
 	</head>
 	<body>
 	    <a href="#skip-top-main">Skip to main</a>
@@ -170,76 +172,8 @@
 			<h1 style="text-align: center;">
                 <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
-            
-			<details id="table-of-content">
-			    <summary>Table of Content</summary>
-                <nav>
-<ul>
-<li><a href="#data-warehouse">Data warehouse</a>
-<ul>
-<li><a href="#principles-of-data-warehouse-architecture">
-Principles of Data Warehouse Architecture</a></li>
-<li><a href="#the-three-tiers-of-data-warehouse-architecture">
-The Three Tiers of Data Warehouse Architecture</a></li>
-<li><a href="#best-practices-for-data-warehouse-architecture">
-Best Practices for Data Warehouse Architecture</a></li>
-</ul></li>
-<li><a href="#data-mart">
-Data Mart</a></li>
-<li><a href="#data-mart-and-data-warehouse-difference">
-Data Mart and Data Warehouse Difference</a></li>
-<li><a href="#data-transformation">
-Data transformation</a></li>
-<li><a href="#join-operation">
-Join Operation</a>
-<ul>
-<li><a href="#nested-loop-join">
-Nested-Loop Join</a></li>
-<li><a href="#block-nested-loop-join">
-Block Nested-Loop Join</a></li>
-<li><a href="#indexed-nested-loop-join">
-Indexed Nested-Loop Join</a></li>
-<li><a href="#merge-join">
-Merge Join</a></li>
-</ul></li>
-<li><a href="#cap-theorem">
-CAP theorem</a></li>
-<li><a href="#acid-vs-base">
-ACID vs BASE</a></li>
-<li><a href="#temporal-database">
-Temporal Database</a>
-<ul>
-<li><a href="#terminologies-in-the-temporal-database">
-Terminologies in the temporal database:</a></li>
-<li><a href="#applications-of-temporal-databases">
-Applications of Temporal Databases</a></li>
-<li><a href="#temporal-relation">
-Temporal Relation</a>
-<ul>
-<li><a href="#types-of-temporal-relation">
-Types of Temporal Relation</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#spatial-database">
-Spatial Database</a>
-<ul>
-<li><a href="#computer-aided-design-cad-data">
-Computer-aided design (CAD)data</a></li>
-<li><a href="#geographic-data">
-Geographic data</a>
-<ul>
-<li><a href="#raster-data">
-Raster data</a></li>
-<li><a href="#vector-data">
-Vector data</a></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav>
-
-			</details>
-            
 		</header>
+		<div id="music" style="width: 100%; height: 18em;"></div>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem">ADMT Notes</h1>
 			<h2><a name="data-warehouse" class="heading-anchor" href="#data-warehouse" rel="nofollow" aria-hidden="true"></a>Data warehouse</h2>
@@ -825,6 +759,75 @@ body { color: #282c34; }
 <p>Vector data consist of triangles, lines, and various geometrical objects in two dimensions and cylinders, cuboids, and other polyhedrons in three dimensions. For example, building boundaries and roads.</p>
 
 		</main>
+        
+        <details id="table-of-content">
+           <summary>Table of Content</summary>
+                    <nav>
+<ul>
+<li><a href="#data-warehouse">Data warehouse</a>
+<ul>
+<li><a href="#principles-of-data-warehouse-architecture">
+Principles of Data Warehouse Architecture</a></li>
+<li><a href="#the-three-tiers-of-data-warehouse-architecture">
+The Three Tiers of Data Warehouse Architecture</a></li>
+<li><a href="#best-practices-for-data-warehouse-architecture">
+Best Practices for Data Warehouse Architecture</a></li>
+</ul></li>
+<li><a href="#data-mart">
+Data Mart</a></li>
+<li><a href="#data-mart-and-data-warehouse-difference">
+Data Mart and Data Warehouse Difference</a></li>
+<li><a href="#data-transformation">
+Data transformation</a></li>
+<li><a href="#join-operation">
+Join Operation</a>
+<ul>
+<li><a href="#nested-loop-join">
+Nested-Loop Join</a></li>
+<li><a href="#block-nested-loop-join">
+Block Nested-Loop Join</a></li>
+<li><a href="#indexed-nested-loop-join">
+Indexed Nested-Loop Join</a></li>
+<li><a href="#merge-join">
+Merge Join</a></li>
+</ul></li>
+<li><a href="#cap-theorem">
+CAP theorem</a></li>
+<li><a href="#acid-vs-base">
+ACID vs BASE</a></li>
+<li><a href="#temporal-database">
+Temporal Database</a>
+<ul>
+<li><a href="#terminologies-in-the-temporal-database">
+Terminologies in the temporal database:</a></li>
+<li><a href="#applications-of-temporal-databases">
+Applications of Temporal Databases</a></li>
+<li><a href="#temporal-relation">
+Temporal Relation</a>
+<ul>
+<li><a href="#types-of-temporal-relation">
+Types of Temporal Relation</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#spatial-database">
+Spatial Database</a>
+<ul>
+<li><a href="#computer-aided-design-cad-data">
+Computer-aided design (CAD)data</a></li>
+<li><a href="#geographic-data">
+Geographic data</a>
+<ul>
+<li><a href="#raster-data">
+Raster data</a></li>
+<li><a href="#vector-data">
+Vector data</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+
+        </details>
+        
 		<footer>
 			<p style="text-align: center; font-size: small; margin-top: 5em;">
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
@@ -839,6 +842,19 @@ body { color: #282c34; }
         };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <script>
+    const music = document.getElementById('music');
+    let wave = new CircularAudioWave(music);
+    wave.loadAudio('https://AnzenKodo.github.io/assets/Music.m4a');
+
+    music.addEventListener("click", () => {
+        if (wave.playing) {
+            wave.pause();
+        } else {
+            wave.play()
+        }
+    })
     </script>
 	</body>
 </html>

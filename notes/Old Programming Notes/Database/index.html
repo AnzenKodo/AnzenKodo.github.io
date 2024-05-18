@@ -163,6 +163,8 @@
                 max-width: 100%;
             }
 		</style>
+	<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0"></script>
+    <script src="https://AnzenKodo.github.io/assets/circular-audio-wave.js"></script>
 	</head>
 	<body>
 	    <a href="#skip-top-main">Skip to main</a>
@@ -170,110 +172,8 @@
 			<h1 style="text-align: center;">
                 <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
-            
-			<details id="table-of-content">
-			    <summary>Table of Content</summary>
-                <nav>
-<ul>
-<li><a href="#the-entity-relationship-model">The Entity-Relationship Model</a>
-<ul>
-<li><a href="#conceptual-modeling-of-a-database">
-Conceptual Modeling of a database</a></li>
-<li><a href="#the-entity-relationship-er-model">
-The Entity-Relationship (ER) Model</a></li>
-</ul></li>
-<li><a href="#practice-mysql">
-Practice MySql</a></li>
-<li><a href="#ddl-data-defination-language">
-DDL (Data Defination Language)</a>
-<ul>
-<li><a href="#create">
-Create</a></li>
-<li><a href="#alter">
-Alter</a></li>
-<li><a href="#drop">
-Drop</a></li>
-<li><a href="#truncate">
-Truncate</a></li>
-<li><a href="#rename">
-Rename</a></li>
-</ul></li>
-<li><a href="#dml-data-manipulation-language">
-DML (Data Manipulation Language)</a>
-<ul>
-<li><a href="#select">
-Select</a></li>
-<li><a href="#insert">
-Insert</a></li>
-<li><a href="#update">
-Update</a></li>
-<li><a href="#delete">
-Delete</a></li>
-</ul></li>
-<li><a href="#dcl-data-control-language">
-DCL (Data Control Language)</a>
-<ul>
-<li><a href="#grant">
-Grant</a></li>
-<li><a href="#revoke">
-Revoke</a></li>
-</ul></li>
-<li><a href="#tcl-transaction-control-language">
-TCL (Transaction Control Language)</a>
-<ul>
-<li><a href="#commit">
-Commit</a></li>
-<li><a href="#rollback">
-Rollback</a></li>
-<li><a href="#savepoint">
-Savepoint</a></li>
-</ul></li>
-<li><a href="#features">
-Features</a>
-<ul>
-<li><a href="#entity">
-Entity</a></li>
-<li><a href="#weak-entity">
-Weak Entity</a></li>
-<li><a href="#attribute">
-Attribute</a>
-<ul>
-<li><a href="#multivalued-attribute">
-Multivalued Attribute</a></li>
-<li><a href="#derived-attribute">
-Derived Attribute</a></li>
-</ul></li>
-<li><a href="#relationship">
-Relationship</a>
-<ul>
-<li><a href="#recursive-relationship">
-Recursive Relationship</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#extended-features">
-Extended Features</a>
-<ul>
-<li><a href="#generalization">
-Generalization</a></li>
-<li><a href="#specialization">
-Specialization</a></li>
-<li><a href="#aggregration">
-Aggregration</a></li>
-</ul></li>
-<li><a href="#resources">
-Resources</a></li>
-<li><a href="#primary-key">
-Primary Key</a></li>
-<li><a href="#candidate-key">
-Candidate Key</a></li>
-<li><a href="#super-key">
-Super Key</a></li>
-</ul>
-</nav>
-
-			</details>
-            
 		</header>
+		<div id="music" style="width: 100%; height: 18em;"></div>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem">Database</h1>
 			<h2><a name="the-entity-relationship-model" class="heading-anchor" href="#the-entity-relationship-model" rel="nofollow" aria-hidden="true"></a>The Entity-Relationship Model</h2>
@@ -3765,6 +3665,109 @@ candidate key.</li>
 </ul>
 
 		</main>
+        
+        <details id="table-of-content">
+           <summary>Table of Content</summary>
+                    <nav>
+<ul>
+<li><a href="#the-entity-relationship-model">The Entity-Relationship Model</a>
+<ul>
+<li><a href="#conceptual-modeling-of-a-database">
+Conceptual Modeling of a database</a></li>
+<li><a href="#the-entity-relationship-er-model">
+The Entity-Relationship (ER) Model</a></li>
+</ul></li>
+<li><a href="#practice-mysql">
+Practice MySql</a></li>
+<li><a href="#ddl-data-defination-language">
+DDL (Data Defination Language)</a>
+<ul>
+<li><a href="#create">
+Create</a></li>
+<li><a href="#alter">
+Alter</a></li>
+<li><a href="#drop">
+Drop</a></li>
+<li><a href="#truncate">
+Truncate</a></li>
+<li><a href="#rename">
+Rename</a></li>
+</ul></li>
+<li><a href="#dml-data-manipulation-language">
+DML (Data Manipulation Language)</a>
+<ul>
+<li><a href="#select">
+Select</a></li>
+<li><a href="#insert">
+Insert</a></li>
+<li><a href="#update">
+Update</a></li>
+<li><a href="#delete">
+Delete</a></li>
+</ul></li>
+<li><a href="#dcl-data-control-language">
+DCL (Data Control Language)</a>
+<ul>
+<li><a href="#grant">
+Grant</a></li>
+<li><a href="#revoke">
+Revoke</a></li>
+</ul></li>
+<li><a href="#tcl-transaction-control-language">
+TCL (Transaction Control Language)</a>
+<ul>
+<li><a href="#commit">
+Commit</a></li>
+<li><a href="#rollback">
+Rollback</a></li>
+<li><a href="#savepoint">
+Savepoint</a></li>
+</ul></li>
+<li><a href="#features">
+Features</a>
+<ul>
+<li><a href="#entity">
+Entity</a></li>
+<li><a href="#weak-entity">
+Weak Entity</a></li>
+<li><a href="#attribute">
+Attribute</a>
+<ul>
+<li><a href="#multivalued-attribute">
+Multivalued Attribute</a></li>
+<li><a href="#derived-attribute">
+Derived Attribute</a></li>
+</ul></li>
+<li><a href="#relationship">
+Relationship</a>
+<ul>
+<li><a href="#recursive-relationship">
+Recursive Relationship</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#extended-features">
+Extended Features</a>
+<ul>
+<li><a href="#generalization">
+Generalization</a></li>
+<li><a href="#specialization">
+Specialization</a></li>
+<li><a href="#aggregration">
+Aggregration</a></li>
+</ul></li>
+<li><a href="#resources">
+Resources</a></li>
+<li><a href="#primary-key">
+Primary Key</a></li>
+<li><a href="#candidate-key">
+Candidate Key</a></li>
+<li><a href="#super-key">
+Super Key</a></li>
+</ul>
+</nav>
+
+        </details>
+        
 		<footer>
 			<p style="text-align: center; font-size: small; margin-top: 5em;">
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
@@ -3779,6 +3782,19 @@ candidate key.</li>
         };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <script>
+    const music = document.getElementById('music');
+    let wave = new CircularAudioWave(music);
+    wave.loadAudio('https://AnzenKodo.github.io/assets/Music.m4a');
+
+    music.addEventListener("click", () => {
+        if (wave.playing) {
+            wave.pause();
+        } else {
+            wave.play()
+        }
+    })
     </script>
 	</body>
 </html>

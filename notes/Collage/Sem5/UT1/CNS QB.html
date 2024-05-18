@@ -163,6 +163,8 @@
                 max-width: 100%;
             }
 		</style>
+	<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0"></script>
+    <script src="https://AnzenKodo.github.io/assets/circular-audio-wave.js"></script>
 	</head>
 	<body>
 	    <a href="#skip-top-main">Skip to main</a>
@@ -170,116 +172,8 @@
 			<h1 style="text-align: center;">
                 <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
-            
-			<details id="table-of-content">
-			    <summary>Table of Content</summary>
-                <nav>
-<ul>
-<li><a href="#module-no-01">Module No. 01</a>
-<ul>
-<li><a href="#1-definition-of-computer-network-security">
-1) Definition of Computer &amp; Network security.</a></li>
-<li><a href="#2-write-a-short-on-goals-services-and-mechanisms">
-2) Write a short on goals, services and mechanisms.</a>
-<ul>
-<li><a href="#goals">
-Goals</a></li>
-<li><a href="#services">
-Services</a></li>
-<li><a href="#mechanisms">
-Mechanisms</a></li>
-</ul></li>
-<li><a href="#3-steganography-concept">
-3) Steganography Concept.</a></li>
-<li><a href="#4-defination-of-attack-its-types">
-4) Defination of Attack &amp; its types</a>
-<ul>
-<li><a href="#passive-attacks">
-Passive Attacks</a></li>
-<li><a href="#active-attacks">
-Active Attacks</a>
-<ul>
-<li><a href="#masqurade">
-Masqurade</a></li>
-<li><a href="#replay">
-Replay</a></li>
-<li><a href="#modification-of-message">
-Modification of Message</a></li>
-<li><a href="#denial-of-service">
-Denial of Service</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#5-osi-security-model">
-5) OSI Security model.</a>
-<ul>
-<li><a href="#security-attacks">
-Security Attacks</a></li>
-<li><a href="#security-mechanism">
-Security Mechanism</a></li>
-<li><a href="#security-service">
-Security Service</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#module-no-02">
-Module No. 02</a>
-<ul>
-<li><a href="#1-algorithms-such-as-aes-des-with-diagrams">
-1) Algorithms such as AES &amp; DES with diagrams.</a>
-<ul>
-<li><a href="#aes">
-AES</a></li>
-<li><a href="#des">
-DES</a>
-<ul>
-<li><a href="#initial-and-final-permutation">
-Initial and Final Permutation</a></li>
-<li><a href="#round-function">
-Round Function</a></li>
-<li><a href="#expansion-permutation-box">
-Expansion Permutation Box</a></li>
-<li><a href="#xor">
-XOR</a></li>
-<li><a href="#substitution-boxes">
-Substitution Boxes</a></li>
-<li><a href="#key-generation">
-Key Generation</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#2-digital-signature">
-2) Digital Signature</a>
-<ul>
-<li><a href="#dss-digital-signature-standard">
-DSS (Digital Signature Standard)</a></li>
-</ul></li>
-<li><a href="#3-kerberos">
-3) Kerberos</a>
-<ul>
-<li><a href="#ticket-granting-server-tgs">
-Ticket-Granting Server (TGS)</a></li>
-</ul></li>
-<li><a href="#4-modes-of-operations-of-block-cipher">
-4) Modes of operations of Block Cipher</a>
-<ul>
-<li><a href="#ecb">
-ECB</a></li>
-<li><a href="#cbc">
-CBC</a></li>
-<li><a href="#cfm">
-CFM</a></li>
-<li><a href="#ofm">
-OFM</a></li>
-<li><a href="#ctr">
-CTR</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#numericals-based-on-playfair-rsa">
-Numericals based on Playfair &amp; RSA.</a></li>
-</ul>
-</nav>
-
-			</details>
-            
 		</header>
+		<div id="music" style="width: 100%; height: 18em;"></div>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem">CNS QB</h1>
 			<h2><a name="module-no-01" class="heading-anchor" href="#module-no-01" rel="nofollow" aria-hidden="true"></a>Module No. 01</h2><h3><a name="1-definition-of-computer-network-security" class="heading-anchor" href="#1-definition-of-computer-network-security" rel="nofollow" aria-hidden="true"></a>1) Definition of Computer &amp; Network security.</h3>
@@ -653,6 +547,115 @@ The problem is solved by OFB as it is free from bit errors in the plaintext bloc
 <p><img src="https://hackmd.io/_uploads/By4Dm2Ap2.png" alt="CNS UT1 QB Diagram"></p>
 
 		</main>
+        
+        <details id="table-of-content">
+           <summary>Table of Content</summary>
+                    <nav>
+<ul>
+<li><a href="#module-no-01">Module No. 01</a>
+<ul>
+<li><a href="#1-definition-of-computer-network-security">
+1) Definition of Computer &amp; Network security.</a></li>
+<li><a href="#2-write-a-short-on-goals-services-and-mechanisms">
+2) Write a short on goals, services and mechanisms.</a>
+<ul>
+<li><a href="#goals">
+Goals</a></li>
+<li><a href="#services">
+Services</a></li>
+<li><a href="#mechanisms">
+Mechanisms</a></li>
+</ul></li>
+<li><a href="#3-steganography-concept">
+3) Steganography Concept.</a></li>
+<li><a href="#4-defination-of-attack-its-types">
+4) Defination of Attack &amp; its types</a>
+<ul>
+<li><a href="#passive-attacks">
+Passive Attacks</a></li>
+<li><a href="#active-attacks">
+Active Attacks</a>
+<ul>
+<li><a href="#masqurade">
+Masqurade</a></li>
+<li><a href="#replay">
+Replay</a></li>
+<li><a href="#modification-of-message">
+Modification of Message</a></li>
+<li><a href="#denial-of-service">
+Denial of Service</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#5-osi-security-model">
+5) OSI Security model.</a>
+<ul>
+<li><a href="#security-attacks">
+Security Attacks</a></li>
+<li><a href="#security-mechanism">
+Security Mechanism</a></li>
+<li><a href="#security-service">
+Security Service</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#module-no-02">
+Module No. 02</a>
+<ul>
+<li><a href="#1-algorithms-such-as-aes-des-with-diagrams">
+1) Algorithms such as AES &amp; DES with diagrams.</a>
+<ul>
+<li><a href="#aes">
+AES</a></li>
+<li><a href="#des">
+DES</a>
+<ul>
+<li><a href="#initial-and-final-permutation">
+Initial and Final Permutation</a></li>
+<li><a href="#round-function">
+Round Function</a></li>
+<li><a href="#expansion-permutation-box">
+Expansion Permutation Box</a></li>
+<li><a href="#xor">
+XOR</a></li>
+<li><a href="#substitution-boxes">
+Substitution Boxes</a></li>
+<li><a href="#key-generation">
+Key Generation</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#2-digital-signature">
+2) Digital Signature</a>
+<ul>
+<li><a href="#dss-digital-signature-standard">
+DSS (Digital Signature Standard)</a></li>
+</ul></li>
+<li><a href="#3-kerberos">
+3) Kerberos</a>
+<ul>
+<li><a href="#ticket-granting-server-tgs">
+Ticket-Granting Server (TGS)</a></li>
+</ul></li>
+<li><a href="#4-modes-of-operations-of-block-cipher">
+4) Modes of operations of Block Cipher</a>
+<ul>
+<li><a href="#ecb">
+ECB</a></li>
+<li><a href="#cbc">
+CBC</a></li>
+<li><a href="#cfm">
+CFM</a></li>
+<li><a href="#ofm">
+OFM</a></li>
+<li><a href="#ctr">
+CTR</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#numericals-based-on-playfair-rsa">
+Numericals based on Playfair &amp; RSA.</a></li>
+</ul>
+</nav>
+
+        </details>
+        
 		<footer>
 			<p style="text-align: center; font-size: small; margin-top: 5em;">
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
@@ -667,6 +670,19 @@ The problem is solved by OFB as it is free from bit errors in the plaintext bloc
         };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <script>
+    const music = document.getElementById('music');
+    let wave = new CircularAudioWave(music);
+    wave.loadAudio('https://AnzenKodo.github.io/assets/Music.m4a');
+
+    music.addEventListener("click", () => {
+        if (wave.playing) {
+            wave.pause();
+        } else {
+            wave.play()
+        }
+    })
     </script>
 	</body>
 </html>

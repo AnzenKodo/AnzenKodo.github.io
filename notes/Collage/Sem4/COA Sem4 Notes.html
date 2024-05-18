@@ -163,6 +163,8 @@
                 max-width: 100%;
             }
 		</style>
+	<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0"></script>
+    <script src="https://AnzenKodo.github.io/assets/circular-audio-wave.js"></script>
 	</head>
 	<body>
 	    <a href="#skip-top-main">Skip to main</a>
@@ -170,112 +172,8 @@
 			<h1 style="text-align: center;">
                 <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
-            
-			<details id="table-of-content">
-			    <summary>Table of Content</summary>
-                <nav>
-<ul>
-<li><a href="#k-map-3">K map (3)</a></li>
-<li><a href="#8086-microprocessors">
-8086 microprocessors</a>
-<ul>
-<li><a href="#addressing-modes-of-the-8086-microprocessors-2">
-Addressing modes of the 8086 microprocessors (2)</a></li>
-<li><a href="#8086-assembly-language">
-8086 Assembly Language</a></li>
-<li><a href="#8086-microprocessor-architecture">
-8086 Microprocessor Architecture</a></li>
-<li><a href="#arithmetic-instructions-of-8086">
-Arithmetic instructions of 8086</a></li>
-</ul></li>
-<li><a href="#booth-s-algorithm-2">
-Booth's algorithm (2)</a></li>
-<li><a href="#cache-memory-mapping-techniques-2">
-Cache memory mapping techniques (2)</a></li>
-<li><a href="#division-technique-2">
-Division Technique (2)</a>
-<ul>
-<li><a href="#restoring-division-technique">
-Restoring Division Technique</a></li>
-<li><a href="#non-restoring-division-technique">
-Non Restoring Division Technique</a></li>
-</ul></li>
-<li><a href="#flynn-s-classification">
-Flynn's Classification</a></li>
-<li><a href="#flip-flop-2">
-Flip Flop (2)</a></li>
-<li><a href="#direct-memory-access-2">
-Direct Memory Access (2)</a>
-<ul>
-<li><a href="#modes-of-dma">
-Modes of DMA</a></li>
-</ul></li>
-<li><a href="#computer-memory-2">
-Computer Memory (2)</a>
-<ul>
-<li><a href="#units-of-memory">
-Units of Memory</a></li>
-<li><a href="#types-of-memory">
-Types of Memory</a>
-<ul>
-<li><a href="#primary-memory">
-Primary Memory</a></li>
-<li><a href="#cache-memory">
-Cache Memory</a></li>
-<li><a href="#secondary-memory">
-Secondary Memory</a></li>
-</ul></li>
-<li><a href="#data-transfer-between-memory-and-cpu">
-Data Transfer between Memory and CPU</a></li>
-<li><a href="#memory-hierarchy">
-Memory hierarchy</a></li>
-</ul></li>
-<li><a href="#decoder-and-encoder">
-Decoder and Encoder</a>
-<ul>
-<li><a href="#decoder">
-Decoder</a></li>
-<li><a href="#encoder">
-Encoder</a></li>
-</ul></li>
-<li><a href="#pipeline">
-Pipeline</a>
-<ul>
-<li><a href="#pipeline-hazards">
-Pipeline Hazards</a>
-<ul>
-<li><a href="#data-hazards">
-Data Hazards</a></li>
-<li><a href="#structural-hazards">
-Structural Hazards</a></li>
-<li><a href="#control-hazards">
-Control Hazards</a></li>
-</ul></li>
-<li><a href="#six-stage-of-instruction-pipeline">
-Six Stage of Instruction Pipeline</a></li>
-</ul></li>
-<li><a href="#adder-2">
-Adder (2)</a>
-<ul>
-<li><a href="#half-adder">
-Half Adder</a></li>
-<li><a href="#full-adder">
-Full Adder</a></li>
-</ul></li>
-<li><a href="#ieee-2">
-IEEE (2)</a></li>
-<li><a href="#multiplexer">
-Multiplexer</a>
-<ul>
-<li><a href="#demultiplexer">
-Demultiplexer</a></li>
-</ul></li>
-</ul>
-</nav>
-
-			</details>
-            
 		</header>
+		<div id="music" style="width: 100%; height: 18em;"></div>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem">COA Sem4 Notes</h1>
 			<h2><a name="k-map-3" class="heading-anchor" href="#k-map-3" rel="nofollow" aria-hidden="true"></a>K map (3)</h2>
@@ -3314,6 +3212,111 @@ body { color: #282c34; }
 <p><img src="assets/COA%20Notes%20Diagram.png" alt=""></p>
 
 		</main>
+        
+        <details id="table-of-content">
+           <summary>Table of Content</summary>
+                    <nav>
+<ul>
+<li><a href="#k-map-3">K map (3)</a></li>
+<li><a href="#8086-microprocessors">
+8086 microprocessors</a>
+<ul>
+<li><a href="#addressing-modes-of-the-8086-microprocessors-2">
+Addressing modes of the 8086 microprocessors (2)</a></li>
+<li><a href="#8086-assembly-language">
+8086 Assembly Language</a></li>
+<li><a href="#8086-microprocessor-architecture">
+8086 Microprocessor Architecture</a></li>
+<li><a href="#arithmetic-instructions-of-8086">
+Arithmetic instructions of 8086</a></li>
+</ul></li>
+<li><a href="#booth-s-algorithm-2">
+Booth's algorithm (2)</a></li>
+<li><a href="#cache-memory-mapping-techniques-2">
+Cache memory mapping techniques (2)</a></li>
+<li><a href="#division-technique-2">
+Division Technique (2)</a>
+<ul>
+<li><a href="#restoring-division-technique">
+Restoring Division Technique</a></li>
+<li><a href="#non-restoring-division-technique">
+Non Restoring Division Technique</a></li>
+</ul></li>
+<li><a href="#flynn-s-classification">
+Flynn's Classification</a></li>
+<li><a href="#flip-flop-2">
+Flip Flop (2)</a></li>
+<li><a href="#direct-memory-access-2">
+Direct Memory Access (2)</a>
+<ul>
+<li><a href="#modes-of-dma">
+Modes of DMA</a></li>
+</ul></li>
+<li><a href="#computer-memory-2">
+Computer Memory (2)</a>
+<ul>
+<li><a href="#units-of-memory">
+Units of Memory</a></li>
+<li><a href="#types-of-memory">
+Types of Memory</a>
+<ul>
+<li><a href="#primary-memory">
+Primary Memory</a></li>
+<li><a href="#cache-memory">
+Cache Memory</a></li>
+<li><a href="#secondary-memory">
+Secondary Memory</a></li>
+</ul></li>
+<li><a href="#data-transfer-between-memory-and-cpu">
+Data Transfer between Memory and CPU</a></li>
+<li><a href="#memory-hierarchy">
+Memory hierarchy</a></li>
+</ul></li>
+<li><a href="#decoder-and-encoder">
+Decoder and Encoder</a>
+<ul>
+<li><a href="#decoder">
+Decoder</a></li>
+<li><a href="#encoder">
+Encoder</a></li>
+</ul></li>
+<li><a href="#pipeline">
+Pipeline</a>
+<ul>
+<li><a href="#pipeline-hazards">
+Pipeline Hazards</a>
+<ul>
+<li><a href="#data-hazards">
+Data Hazards</a></li>
+<li><a href="#structural-hazards">
+Structural Hazards</a></li>
+<li><a href="#control-hazards">
+Control Hazards</a></li>
+</ul></li>
+<li><a href="#six-stage-of-instruction-pipeline">
+Six Stage of Instruction Pipeline</a></li>
+</ul></li>
+<li><a href="#adder-2">
+Adder (2)</a>
+<ul>
+<li><a href="#half-adder">
+Half Adder</a></li>
+<li><a href="#full-adder">
+Full Adder</a></li>
+</ul></li>
+<li><a href="#ieee-2">
+IEEE (2)</a></li>
+<li><a href="#multiplexer">
+Multiplexer</a>
+<ul>
+<li><a href="#demultiplexer">
+Demultiplexer</a></li>
+</ul></li>
+</ul>
+</nav>
+
+        </details>
+        
 		<footer>
 			<p style="text-align: center; font-size: small; margin-top: 5em;">
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
@@ -3328,6 +3331,19 @@ body { color: #282c34; }
         };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <script>
+    const music = document.getElementById('music');
+    let wave = new CircularAudioWave(music);
+    wave.loadAudio('https://AnzenKodo.github.io/assets/Music.m4a');
+
+    music.addEventListener("click", () => {
+        if (wave.playing) {
+            wave.pause();
+        } else {
+            wave.play()
+        }
+    })
     </script>
 	</body>
 </html>

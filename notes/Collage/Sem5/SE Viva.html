@@ -163,6 +163,8 @@
                 max-width: 100%;
             }
 		</style>
+	<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0"></script>
+    <script src="https://AnzenKodo.github.io/assets/circular-audio-wave.js"></script>
 	</head>
 	<body>
 	    <a href="#skip-top-main">Skip to main</a>
@@ -170,90 +172,8 @@
 			<h1 style="text-align: center;">
                 <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
-            
-			<details id="table-of-content">
-			    <summary>Table of Content</summary>
-                <nav>
-<ul>
-<li><a href="#architectural-views-style">Architectural Views &amp; Style</a>
-<ul>
-<li><a href="#views">
-Views</a></li>
-<li><a href="#style">
-Style</a></li>
-</ul></li>
-<li><a href="#component-level-design">
-Component-Level Design</a>
-<ul>
-<li><a href="#component-level-design-for-job-management-system">
-Component level design for Job Management System</a></li>
-<li><a href="#conducting-component-level-design">
-Conducting Component Level Design</a></li>
-<li><a href="#component-level-design-design-principle-s">
-Component Level Design Design Principle's</a></li>
-</ul></li>
-<li><a href="#user-interface-golden-rules">
-User Interface Golden Rules</a>
-<ul>
-<li><a href="#golden-rules">
-Golden Rules</a></li>
-</ul></li>
-<li><a href="#risk-identification-risk-assessment-and-risk-projection">
-Risk Identification, Risk Assessment and Risk Projection</a>
-<ul>
-<li><a href="#risk-identification">
-Risk Identification</a></li>
-<li><a href="#risk-assessment">
-Risk Assessment</a></li>
-<li><a href="#risk-projection">
-Risk Projection</a></li>
-</ul></li>
-<li><a href="#rmmm-model">
-RMMM Model</a>
-<ul>
-<li><a href="#risk-mitigation">
-Risk Mitigation</a></li>
-<li><a href="#risk-monitoring">
-Risk Monitoring</a></li>
-<li><a href="#risk-management">
-Risk Management</a></li>
-<li><a href="#drawbacks-of-rmmm">
-Drawbacks of RMMM</a></li>
-</ul></li>
-<li><a href="#scm-process-and-repositories">
-SCM (Process and Repositories)</a>
-<ul>
-<li><a href="#process">
-Process</a></li>
-<li><a href="#repositories">
-Repositories</a></li>
-</ul></li>
-<li><a href="#sqa-task-plans">
-SQA (Task &amp; Plans)</a>
-<ul>
-<li><a href="#tasks">
-Tasks</a></li>
-<li><a href="#planning">
-Planning</a></li>
-</ul></li>
-<li><a href="#software-testing-strategies-and-techniques">
-Software Testing Strategies and techniques.</a></li>
-<li><a href="#re-engineering-bpr">
-Re-Engineering (BPR)</a>
-<ul>
-<li><a href="#process-of-re-engineering">
-Process of Re-Engineering</a></li>
-</ul></li>
-<li><a href="#reverse-engineering">
-Reverse Engineering</a></li>
-<li><a href="#forward-engineering">
-Forward Engineering</a></li>
-</ul>
-</nav>
-
-			</details>
-            
 		</header>
+		<div id="music" style="width: 100%; height: 18em;"></div>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem">SE Viva</h1>
 			<h2><a name="architectural-views-style" class="heading-anchor" href="#architectural-views-style" rel="nofollow" aria-hidden="true"></a>Architectural Views &amp; Style</h2>
@@ -618,6 +538,89 @@ Forward Engineering</a></li>
 </ul>
 
 		</main>
+        
+        <details id="table-of-content">
+           <summary>Table of Content</summary>
+                    <nav>
+<ul>
+<li><a href="#architectural-views-style">Architectural Views &amp; Style</a>
+<ul>
+<li><a href="#views">
+Views</a></li>
+<li><a href="#style">
+Style</a></li>
+</ul></li>
+<li><a href="#component-level-design">
+Component-Level Design</a>
+<ul>
+<li><a href="#component-level-design-for-job-management-system">
+Component level design for Job Management System</a></li>
+<li><a href="#conducting-component-level-design">
+Conducting Component Level Design</a></li>
+<li><a href="#component-level-design-design-principle-s">
+Component Level Design Design Principle's</a></li>
+</ul></li>
+<li><a href="#user-interface-golden-rules">
+User Interface Golden Rules</a>
+<ul>
+<li><a href="#golden-rules">
+Golden Rules</a></li>
+</ul></li>
+<li><a href="#risk-identification-risk-assessment-and-risk-projection">
+Risk Identification, Risk Assessment and Risk Projection</a>
+<ul>
+<li><a href="#risk-identification">
+Risk Identification</a></li>
+<li><a href="#risk-assessment">
+Risk Assessment</a></li>
+<li><a href="#risk-projection">
+Risk Projection</a></li>
+</ul></li>
+<li><a href="#rmmm-model">
+RMMM Model</a>
+<ul>
+<li><a href="#risk-mitigation">
+Risk Mitigation</a></li>
+<li><a href="#risk-monitoring">
+Risk Monitoring</a></li>
+<li><a href="#risk-management">
+Risk Management</a></li>
+<li><a href="#drawbacks-of-rmmm">
+Drawbacks of RMMM</a></li>
+</ul></li>
+<li><a href="#scm-process-and-repositories">
+SCM (Process and Repositories)</a>
+<ul>
+<li><a href="#process">
+Process</a></li>
+<li><a href="#repositories">
+Repositories</a></li>
+</ul></li>
+<li><a href="#sqa-task-plans">
+SQA (Task &amp; Plans)</a>
+<ul>
+<li><a href="#tasks">
+Tasks</a></li>
+<li><a href="#planning">
+Planning</a></li>
+</ul></li>
+<li><a href="#software-testing-strategies-and-techniques">
+Software Testing Strategies and techniques.</a></li>
+<li><a href="#re-engineering-bpr">
+Re-Engineering (BPR)</a>
+<ul>
+<li><a href="#process-of-re-engineering">
+Process of Re-Engineering</a></li>
+</ul></li>
+<li><a href="#reverse-engineering">
+Reverse Engineering</a></li>
+<li><a href="#forward-engineering">
+Forward Engineering</a></li>
+</ul>
+</nav>
+
+        </details>
+        
 		<footer>
 			<p style="text-align: center; font-size: small; margin-top: 5em;">
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
@@ -632,6 +635,19 @@ Forward Engineering</a></li>
         };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <script>
+    const music = document.getElementById('music');
+    let wave = new CircularAudioWave(music);
+    wave.loadAudio('https://AnzenKodo.github.io/assets/Music.m4a');
+
+    music.addEventListener("click", () => {
+        if (wave.playing) {
+            wave.pause();
+        } else {
+            wave.play()
+        }
+    })
     </script>
 	</body>
 </html>

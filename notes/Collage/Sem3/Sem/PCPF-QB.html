@@ -163,6 +163,8 @@
                 max-width: 100%;
             }
 		</style>
+	<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0"></script>
+    <script src="https://AnzenKodo.github.io/assets/circular-audio-wave.js"></script>
 	</head>
 	<body>
 	    <a href="#skip-top-main">Skip to main</a>
@@ -170,148 +172,8 @@
 			<h1 style="text-align: center;">
                 <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
-            
-			<details id="table-of-content">
-			    <summary>Table of Content</summary>
-                <nav>
-<ul>
-<li><a href="#module-1">Module 1</a>
-<ul>
-<li><a href="#1-what-do-you-mean-by-programming-paradigm-explain-with-example-the-difference-between-declarative-and-imperative-programming-paradigm">
-1. What do you mean by Programming Paradigm. Explain with example the difference between declarative and imperative programming paradigm.</a></li>
-<li><a href="#3-explain-type-system-and-type-checking">
-3. Explain type system and type checking.</a></li>
-<li><a href="#4-explain-different-storage-allocation-mechanisms">
-4. Explain different storage allocation mechanisms.</a>
-<ul>
-<li><a href="#static-storage-allocation">
-Static Storage Allocation</a></li>
-<li><a href="#stack-based-storage-allocation">
-Stack Based Storage Allocation</a></li>
-<li><a href="#heap-allocation">
-Heap Allocation</a></li>
-</ul></li>
-<li><a href="#5-static-scoping-vs-dynamic-scoping">
-5. Static Scoping vs. Dynamic Scoping</a></li>
-<li><a href="#6-discuss-call-by-value-vs-call-by-reference">
-6. Discuss Call by value vs. Call by reference.</a>
-<ul>
-<li><a href="#call-by-value">
-Call by value</a></li>
-<li><a href="#call-by-reference">
-Call by reference</a></li>
-<li><a href="#difference-between-call-by-value-and-call-by-reference-in-c">
-Difference Between Call by Value and Call by Reference in C</a></li>
-</ul></li>
-<li><a href="#7-types-of-binding-in-programming-languages">
-7. Types of binding in Programming Languages</a>
-<ul>
-<li><a href="#static-binding">
-Static binding</a></li>
-<li><a href="#dynamic-binding">
-Dynamic binding</a></li>
-</ul></li>
-<li><a href="#8-write-a-note-on-naming-and-scoping-rules-for-scripting-languages">
-8. Write a note on Naming and Scoping rules for scripting languages.</a>
-<ul>
-<li><a href="#naming">
-Naming</a></li>
-<li><a href="#scoping">
-Scoping</a></li>
-</ul></li>
-<li><a href="#9-describe-different-parameter-passing-modes">
-9. Describe different parameter passing modes.</a></li>
-<li><a href="#10-compare-heap-based-and-stack-based-principal-storage-allocation-mechanism">
-10. Compare heap based and stack-based principal storage allocation mechanism.</a></li>
-<li><a href="#11-discuss-scope-with-reference-to-binding-in-program-also-compare-static-and-dynamic-scoping">
-11. Discuss Scope with reference to binding in program. Also compare static and dynamic scoping.</a></li>
-<li><a href="#12-justify-the-following-statement-no-single-factor-determines-whether-a-programming-language-is-good">
-12. Justify the following statement, “No single factor determines whether a programming language is good.”</a></li>
-</ul></li>
-<li><a href="#module-2">
-Module 2</a>
-<ul>
-<li><a href="#1-explain-type-and-type-classes-in-haskell">
-1. Explain Type and Type classes in Haskell.</a></li>
-<li><a href="#2-what-is-composite-data-type-explain-different-composite-data-types-in-haskell">
-2. What is composite data type? Explain different composite data types in Haskell.</a></li>
-<li><a href="#4-lambda-calculus">
-4. Lambda Calculus</a></li>
-<li><a href="#5-what-is-pattern-matching-in-haskell-explain-with-an-example">
-5. What is pattern matching in Haskell. Explain with an example.</a></li>
-<li><a href="#6-higher-order-function">
-6. Higher order function</a></li>
-<li><a href="#7-what-mathematical-formalism-underlies-functional-programming">
-7. What mathematical formalism underlies functional programming?</a></li>
-<li><a href="#8-explain-concept-of-currying-in-haskell-with-an-example">
-8. Explain concept of currying in haskell with an example.</a></li>
-<li><a href="#9-explain-features-of-functional-programming-languages">
-9. Explain features of functional programming languages.</a>
-<ul>
-<li><a href="#immutable-data">
-Immutable Data</a></li>
-<li><a href="#referential-transparency">
-Referential transparency</a></li>
-<li><a href="#modularity">
-Modularity</a></li>
-<li><a href="#maintainability">
-Maintainability</a></li>
-<li><a href="#closure">
-Closure</a></li>
-</ul></li>
-<li><a href="#higher-order-functions">
-Higher-order functions</a></li>
-<li><a href="#pure-function">
-Pure function</a>
-<ul>
-<li><a href="#impure-functions">
-Impure functions</a></li>
-</ul></li>
-<li><a href="#10-what-is-the-difference-between-normal-order-and-applicative-order-evaluation-what-is-lazy-evaluation">
-10. What is the difference between normal-order and applicative-order evaluation? What is lazy evaluation?</a></li>
-<li><a href="#11-the-haskell-function-head-defined-in-prelude-returns-the-first-element-of-a-list-and-throws-an-exception-when-we-try-to-apply-it-on-an-empty-list-define-two-variants-of-this-function-you-can-use-different-names-that-work-exactly-like-head-function-except-in-the-case-of-an-empty-list-input-they-will-show-as-output-instead-of-throwing-an-exception-you-must-use-the-following-constructs-in-haskell-for-defining-the-functions">
-11. The haskell function head defined in prelude, returns the first element of a list and throws an exception when we try to apply it on an empty list. Define two variants of this function (you can use different names) that work exactly like head function except in the case of an empty list input they will show [] as output instead of throwing an exception. You must use the following constructs in Haskell for defining the functions.</a></li>
-<li><a href="#12-define-haskell-function-that-inputs-one-operator-and-two-operands-which-may-be-int-integer-float-or-double-the-function-will-perform-the-operation-and-computes-the-result-clearly-mention-the-type-signature-for-the-function">
-12. Define Haskell function that inputs one operator +,-,*,^ and two operands which may be Int, Integer, Float or Double. The function will perform the operation and computes the result. Clearly mention the type signature for the function.</a></li>
-<li><a href="#13-define-a-haskell-function-named-addus-that-adds-2-input-numbers">
-13. Define a haskell function named “addUs” that adds 2 input numbers.</a></li>
-</ul></li>
-<li><a href="#module-3">
-Module 3</a>
-<ul>
-<li><a href="#2-write-following-english-statements-in-prolog-mention-which-are-facts-and-rules">
-2. Write following English statements in Prolog. Mention which are facts and rules.</a></li>
-<li><a href="#4-explain-what-are-facts-rules-and-queries-in-logic-programming-with-example">
-4. Explain what are facts, rules, and queries in logic programming with example.</a></li>
-<li><a href="#5-describe-the-difference-between-forward-chaining-and-backward-chaining-which-is-used-in-prolog-by-default">
-5. Describe the difference between forward chaining and backward chaining. Which is used in Prolog by default?</a></li>
-<li><a href="#6-list-operations-in-prolog">
-6. List operations in Prolog</a></li>
-<li><a href="#7-explain-prolog-database-manipulation-commands-with-an-example">
-7. Explain prolog database manipulation commands with an example.</a>
-<ul>
-<li><a href="#static-database-manipulation">
-Static Database Manipulation.</a></li>
-<li><a href="#dynamic-database-manipulation">
-Dynamic Database Manipulation</a></li>
-</ul></li>
-<li><a href="#8-why-do-we-use-is-instead-of-in-prolog">
-8. Why do we use “is” instead of &quot;=&quot; in prolog?</a></li>
-<li><a href="#9-write-a-prolog-code-to-find-if-a-list-is-sorted-or-not">
-9. Write a prolog code to find if a list is sorted or not.</a></li>
-<li><a href="#10-briefly-describe-the-process-of-resolution-and-unification-in-logic-programming-with-example">
-10. Briefly describe the process of resolution and unification in logic programming with example.</a></li>
-<li><a href="#11-explain-how-prolog-differs-from-imperative-languages-in-its-handling-of-arithmetic">
-11. Explain how Prolog differs from imperative languages in its handling of arithmetic.</a></li>
-<li><a href="#12-explain-what-are-facts-rules-and-queries-in-logic-programming-with-example">
-12. Explain what are facts, rules, and queries in logic programming with example.</a></li>
-</ul></li>
-</ul>
-</nav>
-
-			</details>
-            
 		</header>
+		<div id="music" style="width: 100%; height: 18em;"></div>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem">PCPF-QB</h1>
 			<h2><a name="module-1" class="heading-anchor" href="#module-1" rel="nofollow" aria-hidden="true"></a>Module 1</h2><h3><a name="1-what-do-you-mean-by-programming-paradigm-explain-with-example-the-difference-between-declarative-and-imperative-programming-paradigm" class="heading-anchor" href="#1-what-do-you-mean-by-programming-paradigm-explain-with-example-the-difference-between-declarative-and-imperative-programming-paradigm" rel="nofollow" aria-hidden="true"></a>1. What do you mean by Programming Paradigm. Explain with example the difference between declarative and imperative programming paradigm.</h3>
@@ -3834,6 +3696,147 @@ body { color: #282c34; }
 <p>In summary, facts are used to assert information, rules are used to express complex relationships, and queries are used to retrieve information from the program. Prolog uses a reasoning engine to deduce the solution based on the facts and rules provided and the queries made by the user.</p>
 
 		</main>
+        
+        <details id="table-of-content">
+           <summary>Table of Content</summary>
+                    <nav>
+<ul>
+<li><a href="#module-1">Module 1</a>
+<ul>
+<li><a href="#1-what-do-you-mean-by-programming-paradigm-explain-with-example-the-difference-between-declarative-and-imperative-programming-paradigm">
+1. What do you mean by Programming Paradigm. Explain with example the difference between declarative and imperative programming paradigm.</a></li>
+<li><a href="#3-explain-type-system-and-type-checking">
+3. Explain type system and type checking.</a></li>
+<li><a href="#4-explain-different-storage-allocation-mechanisms">
+4. Explain different storage allocation mechanisms.</a>
+<ul>
+<li><a href="#static-storage-allocation">
+Static Storage Allocation</a></li>
+<li><a href="#stack-based-storage-allocation">
+Stack Based Storage Allocation</a></li>
+<li><a href="#heap-allocation">
+Heap Allocation</a></li>
+</ul></li>
+<li><a href="#5-static-scoping-vs-dynamic-scoping">
+5. Static Scoping vs. Dynamic Scoping</a></li>
+<li><a href="#6-discuss-call-by-value-vs-call-by-reference">
+6. Discuss Call by value vs. Call by reference.</a>
+<ul>
+<li><a href="#call-by-value">
+Call by value</a></li>
+<li><a href="#call-by-reference">
+Call by reference</a></li>
+<li><a href="#difference-between-call-by-value-and-call-by-reference-in-c">
+Difference Between Call by Value and Call by Reference in C</a></li>
+</ul></li>
+<li><a href="#7-types-of-binding-in-programming-languages">
+7. Types of binding in Programming Languages</a>
+<ul>
+<li><a href="#static-binding">
+Static binding</a></li>
+<li><a href="#dynamic-binding">
+Dynamic binding</a></li>
+</ul></li>
+<li><a href="#8-write-a-note-on-naming-and-scoping-rules-for-scripting-languages">
+8. Write a note on Naming and Scoping rules for scripting languages.</a>
+<ul>
+<li><a href="#naming">
+Naming</a></li>
+<li><a href="#scoping">
+Scoping</a></li>
+</ul></li>
+<li><a href="#9-describe-different-parameter-passing-modes">
+9. Describe different parameter passing modes.</a></li>
+<li><a href="#10-compare-heap-based-and-stack-based-principal-storage-allocation-mechanism">
+10. Compare heap based and stack-based principal storage allocation mechanism.</a></li>
+<li><a href="#11-discuss-scope-with-reference-to-binding-in-program-also-compare-static-and-dynamic-scoping">
+11. Discuss Scope with reference to binding in program. Also compare static and dynamic scoping.</a></li>
+<li><a href="#12-justify-the-following-statement-no-single-factor-determines-whether-a-programming-language-is-good">
+12. Justify the following statement, “No single factor determines whether a programming language is good.”</a></li>
+</ul></li>
+<li><a href="#module-2">
+Module 2</a>
+<ul>
+<li><a href="#1-explain-type-and-type-classes-in-haskell">
+1. Explain Type and Type classes in Haskell.</a></li>
+<li><a href="#2-what-is-composite-data-type-explain-different-composite-data-types-in-haskell">
+2. What is composite data type? Explain different composite data types in Haskell.</a></li>
+<li><a href="#4-lambda-calculus">
+4. Lambda Calculus</a></li>
+<li><a href="#5-what-is-pattern-matching-in-haskell-explain-with-an-example">
+5. What is pattern matching in Haskell. Explain with an example.</a></li>
+<li><a href="#6-higher-order-function">
+6. Higher order function</a></li>
+<li><a href="#7-what-mathematical-formalism-underlies-functional-programming">
+7. What mathematical formalism underlies functional programming?</a></li>
+<li><a href="#8-explain-concept-of-currying-in-haskell-with-an-example">
+8. Explain concept of currying in haskell with an example.</a></li>
+<li><a href="#9-explain-features-of-functional-programming-languages">
+9. Explain features of functional programming languages.</a>
+<ul>
+<li><a href="#immutable-data">
+Immutable Data</a></li>
+<li><a href="#referential-transparency">
+Referential transparency</a></li>
+<li><a href="#modularity">
+Modularity</a></li>
+<li><a href="#maintainability">
+Maintainability</a></li>
+<li><a href="#closure">
+Closure</a></li>
+</ul></li>
+<li><a href="#higher-order-functions">
+Higher-order functions</a></li>
+<li><a href="#pure-function">
+Pure function</a>
+<ul>
+<li><a href="#impure-functions">
+Impure functions</a></li>
+</ul></li>
+<li><a href="#10-what-is-the-difference-between-normal-order-and-applicative-order-evaluation-what-is-lazy-evaluation">
+10. What is the difference between normal-order and applicative-order evaluation? What is lazy evaluation?</a></li>
+<li><a href="#11-the-haskell-function-head-defined-in-prelude-returns-the-first-element-of-a-list-and-throws-an-exception-when-we-try-to-apply-it-on-an-empty-list-define-two-variants-of-this-function-you-can-use-different-names-that-work-exactly-like-head-function-except-in-the-case-of-an-empty-list-input-they-will-show-as-output-instead-of-throwing-an-exception-you-must-use-the-following-constructs-in-haskell-for-defining-the-functions">
+11. The haskell function head defined in prelude, returns the first element of a list and throws an exception when we try to apply it on an empty list. Define two variants of this function (you can use different names) that work exactly like head function except in the case of an empty list input they will show [] as output instead of throwing an exception. You must use the following constructs in Haskell for defining the functions.</a></li>
+<li><a href="#12-define-haskell-function-that-inputs-one-operator-and-two-operands-which-may-be-int-integer-float-or-double-the-function-will-perform-the-operation-and-computes-the-result-clearly-mention-the-type-signature-for-the-function">
+12. Define Haskell function that inputs one operator +,-,*,^ and two operands which may be Int, Integer, Float or Double. The function will perform the operation and computes the result. Clearly mention the type signature for the function.</a></li>
+<li><a href="#13-define-a-haskell-function-named-addus-that-adds-2-input-numbers">
+13. Define a haskell function named “addUs” that adds 2 input numbers.</a></li>
+</ul></li>
+<li><a href="#module-3">
+Module 3</a>
+<ul>
+<li><a href="#2-write-following-english-statements-in-prolog-mention-which-are-facts-and-rules">
+2. Write following English statements in Prolog. Mention which are facts and rules.</a></li>
+<li><a href="#4-explain-what-are-facts-rules-and-queries-in-logic-programming-with-example">
+4. Explain what are facts, rules, and queries in logic programming with example.</a></li>
+<li><a href="#5-describe-the-difference-between-forward-chaining-and-backward-chaining-which-is-used-in-prolog-by-default">
+5. Describe the difference between forward chaining and backward chaining. Which is used in Prolog by default?</a></li>
+<li><a href="#6-list-operations-in-prolog">
+6. List operations in Prolog</a></li>
+<li><a href="#7-explain-prolog-database-manipulation-commands-with-an-example">
+7. Explain prolog database manipulation commands with an example.</a>
+<ul>
+<li><a href="#static-database-manipulation">
+Static Database Manipulation.</a></li>
+<li><a href="#dynamic-database-manipulation">
+Dynamic Database Manipulation</a></li>
+</ul></li>
+<li><a href="#8-why-do-we-use-is-instead-of-in-prolog">
+8. Why do we use “is” instead of &quot;=&quot; in prolog?</a></li>
+<li><a href="#9-write-a-prolog-code-to-find-if-a-list-is-sorted-or-not">
+9. Write a prolog code to find if a list is sorted or not.</a></li>
+<li><a href="#10-briefly-describe-the-process-of-resolution-and-unification-in-logic-programming-with-example">
+10. Briefly describe the process of resolution and unification in logic programming with example.</a></li>
+<li><a href="#11-explain-how-prolog-differs-from-imperative-languages-in-its-handling-of-arithmetic">
+11. Explain how Prolog differs from imperative languages in its handling of arithmetic.</a></li>
+<li><a href="#12-explain-what-are-facts-rules-and-queries-in-logic-programming-with-example">
+12. Explain what are facts, rules, and queries in logic programming with example.</a></li>
+</ul></li>
+</ul>
+</nav>
+
+        </details>
+        
 		<footer>
 			<p style="text-align: center; font-size: small; margin-top: 5em;">
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
@@ -3848,6 +3851,19 @@ body { color: #282c34; }
         };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <script>
+    const music = document.getElementById('music');
+    let wave = new CircularAudioWave(music);
+    wave.loadAudio('https://AnzenKodo.github.io/assets/Music.m4a');
+
+    music.addEventListener("click", () => {
+        if (wave.playing) {
+            wave.pause();
+        } else {
+            wave.play()
+        }
+    })
     </script>
 	</body>
 </html>

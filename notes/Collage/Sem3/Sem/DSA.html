@@ -163,6 +163,8 @@
                 max-width: 100%;
             }
 		</style>
+	<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0"></script>
+    <script src="https://AnzenKodo.github.io/assets/circular-audio-wave.js"></script>
 	</head>
 	<body>
 	    <a href="#skip-top-main">Skip to main</a>
@@ -170,60 +172,8 @@
 			<h1 style="text-align: center;">
                 <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
-            
-			<details id="table-of-content">
-			    <summary>Table of Content</summary>
-                <nav>
-<ul>
-<li><a href="#explain-linear-and-non-linear-data-structures">Explain linear and non-linear data structures.</a>
-<ul>
-<li><a href="#linear-data-structures">
-Linear Data Structures</a></li>
-<li><a href="#non-linear-data-structures">
-Non-Linear Data Structures</a></li>
-</ul></li>
-<li><a href="#what-is-depth-height-and-degree-of-binary-tree">
-What is depth, height and degree of Binary tree?</a></li>
-<li><a href="#what-is-recursion-state-its-advantages-and-disadvantages">
-What is recursion? State its advantages and disadvantages?</a>
-<ul>
-<li><a href="#advantages">
-Advantages</a></li>
-<li><a href="#disadvantages">
-Disadvantages</a></li>
-</ul></li>
-<li><a href="#explain-asymptotic-notations">
-Explain asymptotic notations</a></li>
-<li><a href="#write-an-algorithm-for-implementing-queue-using-array">
-Write an algorithm for implementing queue using array.</a></li>
-<li><a href="#write-an-algorithm-for-merge-sort-and-comment-on-its-comlexity">
-Write an algorithm for merge sort and comment on its comlexity.</a></li>
-<li><a href="#explain-bfs-and-dfs-algorithm-with-example">
-Explain BFS and DFS algorithm with example.</a>
-<ul>
-<li><a href="#dfs">
-DFS</a></li>
-<li><a href="#bfs">
-BFS</a></li>
-</ul></li>
-<li><a href="#traverse-the-following-binary-tree-into-preorder-inorder-postorder-by-giving-its-algorithm">
-Traverse the following binary tree into preorder, inorder, postorder by giving its algorithm.</a></li>
-<li><a href="#what-is-binary-search-tree-construct-binary-search-tree-for-following-elements">
-What is Binary search tree. Construct Binary search tree for following elements.</a></li>
-<li><a href="#what-is-minimum-spanning-tree-draw-the-mst-using-kruskal-s-and-prim-s-algorithm-and-find-out-the-cost-with-all-intermediate-steps">
-What is minimum spanning Tree? Draw the MST using kruskal's and prim's algorithm and find out the cost with all intermediate steps.</a>
-<ul>
-<li><a href="#using-kruskal-s-algo">
-Using Kruskal's algo:</a></li>
-<li><a href="#using-prim-s-algo">
-Using Prim's algo:</a></li>
-</ul></li>
-</ul>
-</nav>
-
-			</details>
-            
 		</header>
+		<div id="music" style="width: 100%; height: 18em;"></div>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem">DSA</h1>
 			<h2><a name="explain-linear-and-non-linear-data-structures" class="heading-anchor" href="#explain-linear-and-non-linear-data-structures" rel="nofollow" aria-hidden="true"></a>Explain linear and non-linear data structures.</h2><h3><a name="linear-data-structures" class="heading-anchor" href="#linear-data-structures" rel="nofollow" aria-hidden="true"></a>Linear Data Structures</h3>
@@ -675,6 +625,59 @@ MST in a graph - Kruskal's algorithm and Prim's algorithm.</p>
 <p><img src="prim-mst.png" alt="Minimum Spanning Tree Diagram using Prims algo"> Cost is 22</p>
 
 		</main>
+        
+        <details id="table-of-content">
+           <summary>Table of Content</summary>
+                    <nav>
+<ul>
+<li><a href="#explain-linear-and-non-linear-data-structures">Explain linear and non-linear data structures.</a>
+<ul>
+<li><a href="#linear-data-structures">
+Linear Data Structures</a></li>
+<li><a href="#non-linear-data-structures">
+Non-Linear Data Structures</a></li>
+</ul></li>
+<li><a href="#what-is-depth-height-and-degree-of-binary-tree">
+What is depth, height and degree of Binary tree?</a></li>
+<li><a href="#what-is-recursion-state-its-advantages-and-disadvantages">
+What is recursion? State its advantages and disadvantages?</a>
+<ul>
+<li><a href="#advantages">
+Advantages</a></li>
+<li><a href="#disadvantages">
+Disadvantages</a></li>
+</ul></li>
+<li><a href="#explain-asymptotic-notations">
+Explain asymptotic notations</a></li>
+<li><a href="#write-an-algorithm-for-implementing-queue-using-array">
+Write an algorithm for implementing queue using array.</a></li>
+<li><a href="#write-an-algorithm-for-merge-sort-and-comment-on-its-comlexity">
+Write an algorithm for merge sort and comment on its comlexity.</a></li>
+<li><a href="#explain-bfs-and-dfs-algorithm-with-example">
+Explain BFS and DFS algorithm with example.</a>
+<ul>
+<li><a href="#dfs">
+DFS</a></li>
+<li><a href="#bfs">
+BFS</a></li>
+</ul></li>
+<li><a href="#traverse-the-following-binary-tree-into-preorder-inorder-postorder-by-giving-its-algorithm">
+Traverse the following binary tree into preorder, inorder, postorder by giving its algorithm.</a></li>
+<li><a href="#what-is-binary-search-tree-construct-binary-search-tree-for-following-elements">
+What is Binary search tree. Construct Binary search tree for following elements.</a></li>
+<li><a href="#what-is-minimum-spanning-tree-draw-the-mst-using-kruskal-s-and-prim-s-algorithm-and-find-out-the-cost-with-all-intermediate-steps">
+What is minimum spanning Tree? Draw the MST using kruskal's and prim's algorithm and find out the cost with all intermediate steps.</a>
+<ul>
+<li><a href="#using-kruskal-s-algo">
+Using Kruskal's algo:</a></li>
+<li><a href="#using-prim-s-algo">
+Using Prim's algo:</a></li>
+</ul></li>
+</ul>
+</nav>
+
+        </details>
+        
 		<footer>
 			<p style="text-align: center; font-size: small; margin-top: 5em;">
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
@@ -689,6 +692,19 @@ MST in a graph - Kruskal's algorithm and Prim's algorithm.</p>
         };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <script>
+    const music = document.getElementById('music');
+    let wave = new CircularAudioWave(music);
+    wave.loadAudio('https://AnzenKodo.github.io/assets/Music.m4a');
+
+    music.addEventListener("click", () => {
+        if (wave.playing) {
+            wave.pause();
+        } else {
+            wave.play()
+        }
+    })
     </script>
 	</body>
 </html>

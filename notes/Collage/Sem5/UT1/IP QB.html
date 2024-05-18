@@ -163,6 +163,8 @@
                 max-width: 100%;
             }
 		</style>
+	<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0"></script>
+    <script src="https://AnzenKodo.github.io/assets/circular-audio-wave.js"></script>
 	</head>
 	<body>
 	    <a href="#skip-top-main">Skip to main</a>
@@ -170,84 +172,8 @@
 			<h1 style="text-align: center;">
                 <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
-            
-			<details id="table-of-content">
-			    <summary>Table of Content</summary>
-                <nav>
-<ul>
-<li><a href="#3-marks-questions">3 Marks Questions:</a>
-<ul>
-<li><a href="#i-write-short-notes-on">
-i) Write short notes on:</a>
-<ul>
-<li><a href="#uri">
-URI</a></li>
-<li><a href="#url">
-URL</a></li>
-<li><a href="#dom">
-DOM</a></li>
-</ul></li>
-<li><a href="#ii-what-is-react-props-give-a-suitable-example">
-ii) What is react props? Give a suitable example?</a></li>
-<li><a href="#iii-what-is-http-and-https-explain">
-iii) What is HTTP and HTTPS explain?</a>
-<ul>
-<li><a href="#http">
-HTTP</a></li>
-<li><a href="#https">
-HTTPS</a></li>
-</ul></li>
-<li><a href="#iv-explain-the-steps-to-create-react-app">
-iv) Explain the steps to create react app?</a></li>
-<li><a href="#v-explain-react-dom">
-v) Explain React DOM?</a></li>
-</ul></li>
-<li><a href="#2-marks-questions">
-2 Marks Questions:</a>
-<ul>
-<li><a href="#i-explain-working-of-web-browser">
-i) Explain working of web Browser?</a></li>
-<li><a href="#ii-write-notes-on-loops-in-javascript">
-ii) Write notes on loops in JavaScript?</a></li>
-<li><a href="#iii-differentiate-es5-and-es6">
-iii) Differentiate ES5 and ES6?</a></li>
-<li><a href="#iv-explain-javascript-dom">
-iv) Explain JavaScript DOM.</a></li>
-</ul></li>
-<li><a href="#5-marks-questions">
-5 Marks Questions:</a>
-<ul>
-<li><a href="#i-explain-arrow-function-in-es6-with-example">
-i) Explain arrow function in ES6 with Example?</a></li>
-<li><a href="#ii-write-notes-on">
-ii) Write notes on:</a>
-<ul>
-<li><a href="#classes-in-javascript">
-Classes in JavaScript</a></li>
-<li><a href="#inheritance">
-Inheritance</a></li>
-<li><a href="#conditions-in-javascript">
-Conditions in JavaScript</a></li>
-</ul></li>
-<li><a href="#iii-explain-react-components-and-its-types-with-examples">
-iii) Explain React components and its types with examples?</a>
-<ul>
-<li><a href="#class-components">
-Class Components</a></li>
-<li><a href="#function-components">
-Function Components</a></li>
-</ul></li>
-<li><a href="#iv-what-is-react-router-explain-with-an-example">
-iv) What is React router. Explain with an example?</a></li>
-<li><a href="#v-explain-react-component-life-cycle">
-v) Explain React Component life cycle?</a></li>
-</ul></li>
-</ul>
-</nav>
-
-			</details>
-            
 		</header>
+		<div id="music" style="width: 100%; height: 18em;"></div>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem">IP QB</h1>
 			<h2><a name="3-marks-questions" class="heading-anchor" href="#3-marks-questions" rel="nofollow" aria-hidden="true"></a>3 Marks Questions:</h2><h3><a name="i-write-short-notes-on" class="heading-anchor" href="#i-write-short-notes-on" rel="nofollow" aria-hidden="true"></a>i) Write short notes on:</h3><h4><a name="uri" class="heading-anchor" href="#uri" rel="nofollow" aria-hidden="true"></a>URI</h4>
@@ -2568,6 +2494,83 @@ body { color: #282c34; }
 </html>
 </div>
 		</main>
+        
+        <details id="table-of-content">
+           <summary>Table of Content</summary>
+                    <nav>
+<ul>
+<li><a href="#3-marks-questions">3 Marks Questions:</a>
+<ul>
+<li><a href="#i-write-short-notes-on">
+i) Write short notes on:</a>
+<ul>
+<li><a href="#uri">
+URI</a></li>
+<li><a href="#url">
+URL</a></li>
+<li><a href="#dom">
+DOM</a></li>
+</ul></li>
+<li><a href="#ii-what-is-react-props-give-a-suitable-example">
+ii) What is react props? Give a suitable example?</a></li>
+<li><a href="#iii-what-is-http-and-https-explain">
+iii) What is HTTP and HTTPS explain?</a>
+<ul>
+<li><a href="#http">
+HTTP</a></li>
+<li><a href="#https">
+HTTPS</a></li>
+</ul></li>
+<li><a href="#iv-explain-the-steps-to-create-react-app">
+iv) Explain the steps to create react app?</a></li>
+<li><a href="#v-explain-react-dom">
+v) Explain React DOM?</a></li>
+</ul></li>
+<li><a href="#2-marks-questions">
+2 Marks Questions:</a>
+<ul>
+<li><a href="#i-explain-working-of-web-browser">
+i) Explain working of web Browser?</a></li>
+<li><a href="#ii-write-notes-on-loops-in-javascript">
+ii) Write notes on loops in JavaScript?</a></li>
+<li><a href="#iii-differentiate-es5-and-es6">
+iii) Differentiate ES5 and ES6?</a></li>
+<li><a href="#iv-explain-javascript-dom">
+iv) Explain JavaScript DOM.</a></li>
+</ul></li>
+<li><a href="#5-marks-questions">
+5 Marks Questions:</a>
+<ul>
+<li><a href="#i-explain-arrow-function-in-es6-with-example">
+i) Explain arrow function in ES6 with Example?</a></li>
+<li><a href="#ii-write-notes-on">
+ii) Write notes on:</a>
+<ul>
+<li><a href="#classes-in-javascript">
+Classes in JavaScript</a></li>
+<li><a href="#inheritance">
+Inheritance</a></li>
+<li><a href="#conditions-in-javascript">
+Conditions in JavaScript</a></li>
+</ul></li>
+<li><a href="#iii-explain-react-components-and-its-types-with-examples">
+iii) Explain React components and its types with examples?</a>
+<ul>
+<li><a href="#class-components">
+Class Components</a></li>
+<li><a href="#function-components">
+Function Components</a></li>
+</ul></li>
+<li><a href="#iv-what-is-react-router-explain-with-an-example">
+iv) What is React router. Explain with an example?</a></li>
+<li><a href="#v-explain-react-component-life-cycle">
+v) Explain React Component life cycle?</a></li>
+</ul></li>
+</ul>
+</nav>
+
+        </details>
+        
 		<footer>
 			<p style="text-align: center; font-size: small; margin-top: 5em;">
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
@@ -2582,6 +2585,19 @@ body { color: #282c34; }
         };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <script>
+    const music = document.getElementById('music');
+    let wave = new CircularAudioWave(music);
+    wave.loadAudio('https://AnzenKodo.github.io/assets/Music.m4a');
+
+    music.addEventListener("click", () => {
+        if (wave.playing) {
+            wave.pause();
+        } else {
+            wave.play()
+        }
+    })
     </script>
 	</body>
 </html>

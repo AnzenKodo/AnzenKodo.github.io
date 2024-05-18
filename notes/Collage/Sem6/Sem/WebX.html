@@ -163,6 +163,8 @@
                 max-width: 100%;
             }
 		</style>
+	<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0"></script>
+    <script src="https://AnzenKodo.github.io/assets/circular-audio-wave.js"></script>
 	</head>
 	<body>
 	    <a href="#skip-top-main">Skip to main</a>
@@ -170,126 +172,8 @@
 			<h1 style="text-align: center;">
                 <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
-            
-			<details id="table-of-content">
-			    <summary>Table of Content</summary>
-                <nav>
-<ul>
-<li><a href="#1-explain-semantic-web-stack">1. Explain Semantic Web Stack</a></li>
-<li><a href="#2-explain-arrow-function-in-typescript">
-2. Explain Arrow Function in TypeScript</a></li>
-<li><a href="#3-what-is-routing-in-angularjs">
-3. What is Routing in AngularJS</a></li>
-<li><a href="#4-default-database-in-mongodb-local-admin-config">
-4. Default database in MongoDB: Local, Admin &amp; Config</a></li>
-<li><a href="#5-technologies-ajax-works-with-to-create-interactive-web-pages">
-5. Technologies AJAX works with to create interactive web pages.</a></li>
-<li><a href="#6-clickstream-analysis-state-its-application">
-6. Clickstream Analysis &amp; State its application</a></li>
-<li><a href="#7-modules-in-typescript-with-example">
-7. Modules in TypeScript with Example</a></li>
-<li><a href="#8-explain-angularjs-ng-app-ng-init-ng-module-directive-with-example">
-8. Explain AngularJS <code>ng-app</code>, <code>ng-init</code>, <code>ng-module</code> directive with example</a></li>
-<li><a href="#9-explain-accessing-manipulating-db-commands-in-mongodb">
-9. Explain Accessing &amp; Manipulating db commands in mongodb</a></li>
-<li><a href="#10-explain-with-example-concept-of-flask-templates">
-10. Explain with example concept of Flask Templates</a></li>
-<li><a href="#11-with-diagram-explain-working-of-ajax-features">
-11. With diagram explain working of AJAX features</a></li>
-<li><a href="#12-what-are-expressions-in-angularjs">
-12. What are expressions in AngularJS</a></li>
-<li><a href="#13-explain-the-concepts-of-collections-documents-in-mongodb-with-example">
-13. Explain the concepts of collections &amp; documents in MongoDB with example?</a></li>
-<li><a href="#14-what-is-flask-url-building">
-14. What is flask URL Building?</a></li>
-<li><a href="#15-angularjs-data-binding">
-15. AngularJS Data Binding</a></li>
-<li><a href="#16-inheritance-in-ts-with-example">
-16. Inheritance in TS with Example</a></li>
-<li><a href="#17-angularjs-custom-directives-with-examples">
-17. AngularJS Custom directives with examples.</a></li>
-<li><a href="#18-features-of-python-flask">
-18. Features of Python Flask</a></li>
-<li><a href="#19-cms-vs-framework">
-19. CMS vs Framework</a></li>
-<li><a href="#20-explain-controllers-and-scope-in-angularjs-with-example">
-20. Explain controllers and scope in AngularJS with example.</a></li>
-<li><a href="#21-explain-mongodb-datatype-along-with-syntax">
-21. Explain MongoDB Datatype along with Syntax</a></li>
-<li><a href="#22-web-1-0-vs-web-2-0-vs-web-3-0">
-22. Web 1.0 vs Web 2.0 vs Web 3.0</a></li>
-<li><a href="#23-explain-routing-using-ng-route-ng-repeat-ng-style-ng-view-with-example">
-23. Explain routing using <code>ng-route</code>, <code>ng-repeat</code>, <code>ng-style</code>, <code>ng-view</code> with example.</a></li>
-<li><a href="#24-define-ria-explain-characteristics-of-ria">
-24. Define RIA &amp; Explain Characteristics of RIA</a></li>
-<li><a href="#25-var-vs-let">
-25. <code>var</code> vs <code>let</code></a></li>
-<li><a href="#26-explain-mongodb-crud-operations-with-example">
-26. Explain MongoDB CRUD Operations with Example</a></li>
-<li><a href="#27-how-to-set-delete-cookies-in-python-flask">
-27. How to set &amp; delete cookies in Python Flask</a></li>
-<li><a href="#28-explain-angularjs-http-service-with-it-get-post-method">
-28. Explain AngularJS HTTP service with it <code>get()</code> &amp; <code>post()</code> method.</a></li>
-<li><a href="#29-list-explain-factors-of-measuring-the-success-of-a-e-commerce-website">
-29. List &amp; Explain factors of measuring the success of a E-Commerce website</a></li>
-<li><a href="#30-function-overloading-in-typescript">
-30. Function Overloading in TypeScript</a></li>
-<li><a href="#31-list-explain-mongo-shell-commands">
-31. List &amp; Explain Mongo Shell commands.</a></li>
-<li><a href="#32-flask-script-to-display-welcome-to-flask-framework">
-32. Flask script to display &quot;Welcome to FlasK Framework&quot;</a></li>
-<li><a href="#33-typescript-vs-javascript">
-33. TypeScript vs JavaScript</a></li>
-<li><a href="#34-evolution-of-web">
-34 Evolution of Web</a></li>
-<li><a href="#35-angularjs-dependency-injection">
-35 AngularJS dependency injection</a></li>
-<li><a href="#37-form-validation-in-angularjs">
-37. Form validation in AngularJS</a></li>
-<li><a href="#38-explain-sharding">
-38. Explain Sharding</a></li>
-<li><a href="#39-explain-rest-api-in-detail">
-39. Explain REST API in detail</a></li>
-<li><a href="#n-triple-turtle">
-* N-Triple &amp; Turtle</a></li>
-<li><a href="#ontology">
-* Ontology</a></li>
-<li><a href="#typescript-internal-architecture">
-* TypeScript Internal Architecture</a></li>
-<li><a href="#typescript-environment-setup">
-* TypeScript Environment Setup</a></li>
-<li><a href="#typescript-types">
-* TypeScript Types</a></li>
-<li><a href="#operators-in-typescript">
-* Operators in TypeScript</a></li>
-<li><a href="#loops-in-typescript">
-* Loops in TypeScript</a></li>
-<li><a href="#typescript-functions">
-* TypeScript Functions</a></li>
-<li><a href="#typescript-class-object">
-* TypeScript Class &amp; Object</a></li>
-<li><a href="#angularjs-filters">
-* AngularJS Filters</a></li>
-<li><a href="#built-in-helper-function-in-angulerjs">
-* Built-in helper function in AngulerJS</a></li>
-<li><a href="#administering-user-account-in-mongodb">
-* Administering User Account in MongoDB</a></li>
-<li><a href="#adding-the-mongodb-driver-to-nodejs">
-* Adding the MongoDB driver to NodeJS</a></li>
-<li><a href="#using-mongoose-for-structured-schema-validation">
-* Using Mongoose for structured schema &amp; Validation</a></li>
-<li><a href="#using-expressjs-mongoose-to-interact-with-mongodb">
-* Using ExpressJS &amp; Mongoose to interact with MongoDB</a></li>
-<li><a href="#flask-request-object">
-* Flask Request Object</a></li>
-<li><a href="#file-uploading-in-flask">
-* File Uploading in Flask</a></li>
-</ul>
-</nav>
-
-			</details>
-            
 		</header>
+		<div id="music" style="width: 100%; height: 18em;"></div>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem">WebX</h1>
 			<h2><a name="1-explain-semantic-web-stack" class="heading-anchor" href="#1-explain-semantic-web-stack" rel="nofollow" aria-hidden="true"></a>1. Explain Semantic Web Stack</h2>
@@ -9737,6 +9621,125 @@ body { color: #282c34; }
 </html>
 </div>
 		</main>
+        
+        <details id="table-of-content">
+           <summary>Table of Content</summary>
+                    <nav>
+<ul>
+<li><a href="#1-explain-semantic-web-stack">1. Explain Semantic Web Stack</a></li>
+<li><a href="#2-explain-arrow-function-in-typescript">
+2. Explain Arrow Function in TypeScript</a></li>
+<li><a href="#3-what-is-routing-in-angularjs">
+3. What is Routing in AngularJS</a></li>
+<li><a href="#4-default-database-in-mongodb-local-admin-config">
+4. Default database in MongoDB: Local, Admin &amp; Config</a></li>
+<li><a href="#5-technologies-ajax-works-with-to-create-interactive-web-pages">
+5. Technologies AJAX works with to create interactive web pages.</a></li>
+<li><a href="#6-clickstream-analysis-state-its-application">
+6. Clickstream Analysis &amp; State its application</a></li>
+<li><a href="#7-modules-in-typescript-with-example">
+7. Modules in TypeScript with Example</a></li>
+<li><a href="#8-explain-angularjs-ng-app-ng-init-ng-module-directive-with-example">
+8. Explain AngularJS <code>ng-app</code>, <code>ng-init</code>, <code>ng-module</code> directive with example</a></li>
+<li><a href="#9-explain-accessing-manipulating-db-commands-in-mongodb">
+9. Explain Accessing &amp; Manipulating db commands in mongodb</a></li>
+<li><a href="#10-explain-with-example-concept-of-flask-templates">
+10. Explain with example concept of Flask Templates</a></li>
+<li><a href="#11-with-diagram-explain-working-of-ajax-features">
+11. With diagram explain working of AJAX features</a></li>
+<li><a href="#12-what-are-expressions-in-angularjs">
+12. What are expressions in AngularJS</a></li>
+<li><a href="#13-explain-the-concepts-of-collections-documents-in-mongodb-with-example">
+13. Explain the concepts of collections &amp; documents in MongoDB with example?</a></li>
+<li><a href="#14-what-is-flask-url-building">
+14. What is flask URL Building?</a></li>
+<li><a href="#15-angularjs-data-binding">
+15. AngularJS Data Binding</a></li>
+<li><a href="#16-inheritance-in-ts-with-example">
+16. Inheritance in TS with Example</a></li>
+<li><a href="#17-angularjs-custom-directives-with-examples">
+17. AngularJS Custom directives with examples.</a></li>
+<li><a href="#18-features-of-python-flask">
+18. Features of Python Flask</a></li>
+<li><a href="#19-cms-vs-framework">
+19. CMS vs Framework</a></li>
+<li><a href="#20-explain-controllers-and-scope-in-angularjs-with-example">
+20. Explain controllers and scope in AngularJS with example.</a></li>
+<li><a href="#21-explain-mongodb-datatype-along-with-syntax">
+21. Explain MongoDB Datatype along with Syntax</a></li>
+<li><a href="#22-web-1-0-vs-web-2-0-vs-web-3-0">
+22. Web 1.0 vs Web 2.0 vs Web 3.0</a></li>
+<li><a href="#23-explain-routing-using-ng-route-ng-repeat-ng-style-ng-view-with-example">
+23. Explain routing using <code>ng-route</code>, <code>ng-repeat</code>, <code>ng-style</code>, <code>ng-view</code> with example.</a></li>
+<li><a href="#24-define-ria-explain-characteristics-of-ria">
+24. Define RIA &amp; Explain Characteristics of RIA</a></li>
+<li><a href="#25-var-vs-let">
+25. <code>var</code> vs <code>let</code></a></li>
+<li><a href="#26-explain-mongodb-crud-operations-with-example">
+26. Explain MongoDB CRUD Operations with Example</a></li>
+<li><a href="#27-how-to-set-delete-cookies-in-python-flask">
+27. How to set &amp; delete cookies in Python Flask</a></li>
+<li><a href="#28-explain-angularjs-http-service-with-it-get-post-method">
+28. Explain AngularJS HTTP service with it <code>get()</code> &amp; <code>post()</code> method.</a></li>
+<li><a href="#29-list-explain-factors-of-measuring-the-success-of-a-e-commerce-website">
+29. List &amp; Explain factors of measuring the success of a E-Commerce website</a></li>
+<li><a href="#30-function-overloading-in-typescript">
+30. Function Overloading in TypeScript</a></li>
+<li><a href="#31-list-explain-mongo-shell-commands">
+31. List &amp; Explain Mongo Shell commands.</a></li>
+<li><a href="#32-flask-script-to-display-welcome-to-flask-framework">
+32. Flask script to display &quot;Welcome to FlasK Framework&quot;</a></li>
+<li><a href="#33-typescript-vs-javascript">
+33. TypeScript vs JavaScript</a></li>
+<li><a href="#34-evolution-of-web">
+34 Evolution of Web</a></li>
+<li><a href="#35-angularjs-dependency-injection">
+35 AngularJS dependency injection</a></li>
+<li><a href="#37-form-validation-in-angularjs">
+37. Form validation in AngularJS</a></li>
+<li><a href="#38-explain-sharding">
+38. Explain Sharding</a></li>
+<li><a href="#39-explain-rest-api-in-detail">
+39. Explain REST API in detail</a></li>
+<li><a href="#n-triple-turtle">
+* N-Triple &amp; Turtle</a></li>
+<li><a href="#ontology">
+* Ontology</a></li>
+<li><a href="#typescript-internal-architecture">
+* TypeScript Internal Architecture</a></li>
+<li><a href="#typescript-environment-setup">
+* TypeScript Environment Setup</a></li>
+<li><a href="#typescript-types">
+* TypeScript Types</a></li>
+<li><a href="#operators-in-typescript">
+* Operators in TypeScript</a></li>
+<li><a href="#loops-in-typescript">
+* Loops in TypeScript</a></li>
+<li><a href="#typescript-functions">
+* TypeScript Functions</a></li>
+<li><a href="#typescript-class-object">
+* TypeScript Class &amp; Object</a></li>
+<li><a href="#angularjs-filters">
+* AngularJS Filters</a></li>
+<li><a href="#built-in-helper-function-in-angulerjs">
+* Built-in helper function in AngulerJS</a></li>
+<li><a href="#administering-user-account-in-mongodb">
+* Administering User Account in MongoDB</a></li>
+<li><a href="#adding-the-mongodb-driver-to-nodejs">
+* Adding the MongoDB driver to NodeJS</a></li>
+<li><a href="#using-mongoose-for-structured-schema-validation">
+* Using Mongoose for structured schema &amp; Validation</a></li>
+<li><a href="#using-expressjs-mongoose-to-interact-with-mongodb">
+* Using ExpressJS &amp; Mongoose to interact with MongoDB</a></li>
+<li><a href="#flask-request-object">
+* Flask Request Object</a></li>
+<li><a href="#file-uploading-in-flask">
+* File Uploading in Flask</a></li>
+</ul>
+</nav>
+
+        </details>
+        
 		<footer>
 			<p style="text-align: center; font-size: small; margin-top: 5em;">
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
@@ -9751,6 +9754,19 @@ body { color: #282c34; }
         };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <script>
+    const music = document.getElementById('music');
+    let wave = new CircularAudioWave(music);
+    wave.loadAudio('https://AnzenKodo.github.io/assets/Music.m4a');
+
+    music.addEventListener("click", () => {
+        if (wave.playing) {
+            wave.pause();
+        } else {
+            wave.play()
+        }
+    })
     </script>
 	</body>
 </html>

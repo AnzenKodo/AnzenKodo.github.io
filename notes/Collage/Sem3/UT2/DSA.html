@@ -163,6 +163,8 @@
                 max-width: 100%;
             }
 		</style>
+	<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0"></script>
+    <script src="https://AnzenKodo.github.io/assets/circular-audio-wave.js"></script>
 	</head>
 	<body>
 	    <a href="#skip-top-main">Skip to main</a>
@@ -170,54 +172,8 @@
 			<h1 style="text-align: center;">
                 <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
-            
-			<details id="table-of-content">
-			    <summary>Table of Content</summary>
-                <nav>
-<ul>
-<li><a href="#1-a-6-marks">1.A. 6 Marks</a>
-<ul>
-<li><a href="#i-correlate-any-3-advantages-of-dfs">
-i) Correlate any 3 advantages of DFS</a></li>
-<li><a href="#ii-reframe-the-short-note-on-hash-table">
-ii) Reframe the short note on hash table</a></li>
-<li><a href="#iii-explain-waht-are-the-different-ways-to-represent-the-graph">
-iii) Explain waht are the different ways to represent the graph.</a>
-<ul>
-<li><a href="#adjacency-matrix-array-representation">
-Adjacency Matrix (Array Representation)</a></li>
-<li><a href="#adjacency-list-linked-list-representation">
-Adjacency List (Linked List Representation)</a></li>
-</ul></li>
-<li><a href="#i-relate-any-2-applications-of-graph">
-i) Relate any 2 applications of Graph.</a></li>
-<li><a href="#ii-write-any-2-disadvantages-of-separate-chaining">
-ii) Write any 2 disadvantages of separate chaining.</a></li>
-<li><a href="#iii-compose-the-concept-of-addition-of-two-polynomials">
-iii) Compose the concept of addition of two polynomials.</a></li>
-</ul></li>
-<li><a href="#2-5-marks">
-2. 5 Marks</a>
-<ul>
-<li><a href="#i-reframe-the-short-note-on-double-hashing">
-i) Reframe the short note on Double Hashing.</a></li>
-</ul></li>
-<li><a href="#ii-translate-the-given-infix-to-postfix-expression-using-stack-a-b-d-e-f">
-ii) Translate the given infix to postfix expression using stack <code>((A+B)*D)^(E-F)</code></a>
-<ul>
-<li><a href="#3-5-marks">
-3. 5 Marks</a></li>
-</ul></li>
-<li><a href="#i-reframe-any-5-characteristics-of-good-hashing-function">
-i) Reframe any 5 characteristics of Good Hashing Function.</a></li>
-<li><a href="#ii-using-kruskal-s-algorithm-find-minimum-spanning-tree-for-the-following-graph">
-ii) Using Kruskal's algorithm find Minimum Spanning Tree for the following graph.</a></li>
-</ul>
-</nav>
-
-			</details>
-            
 		</header>
+		<div id="music" style="width: 100%; height: 18em;"></div>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem">DSA</h1>
 			<h2><a name="1-a-6-marks" class="heading-anchor" href="#1-a-6-marks" rel="nofollow" aria-hidden="true"></a>1.A. 6 Marks</h2><h3><a name="i-correlate-any-3-advantages-of-dfs" class="heading-anchor" href="#i-correlate-any-3-advantages-of-dfs" rel="nofollow" aria-hidden="true"></a>i) Correlate any 3 advantages of DFS</h3>
@@ -442,6 +398,53 @@ identical keys.</li>
 <p>Here how I made it: <a href="https://youtu.be/71UQH7Pr9kU">Kruskal's algorithm</a></p>
 
 		</main>
+        
+        <details id="table-of-content">
+           <summary>Table of Content</summary>
+                    <nav>
+<ul>
+<li><a href="#1-a-6-marks">1.A. 6 Marks</a>
+<ul>
+<li><a href="#i-correlate-any-3-advantages-of-dfs">
+i) Correlate any 3 advantages of DFS</a></li>
+<li><a href="#ii-reframe-the-short-note-on-hash-table">
+ii) Reframe the short note on hash table</a></li>
+<li><a href="#iii-explain-waht-are-the-different-ways-to-represent-the-graph">
+iii) Explain waht are the different ways to represent the graph.</a>
+<ul>
+<li><a href="#adjacency-matrix-array-representation">
+Adjacency Matrix (Array Representation)</a></li>
+<li><a href="#adjacency-list-linked-list-representation">
+Adjacency List (Linked List Representation)</a></li>
+</ul></li>
+<li><a href="#i-relate-any-2-applications-of-graph">
+i) Relate any 2 applications of Graph.</a></li>
+<li><a href="#ii-write-any-2-disadvantages-of-separate-chaining">
+ii) Write any 2 disadvantages of separate chaining.</a></li>
+<li><a href="#iii-compose-the-concept-of-addition-of-two-polynomials">
+iii) Compose the concept of addition of two polynomials.</a></li>
+</ul></li>
+<li><a href="#2-5-marks">
+2. 5 Marks</a>
+<ul>
+<li><a href="#i-reframe-the-short-note-on-double-hashing">
+i) Reframe the short note on Double Hashing.</a></li>
+</ul></li>
+<li><a href="#ii-translate-the-given-infix-to-postfix-expression-using-stack-a-b-d-e-f">
+ii) Translate the given infix to postfix expression using stack <code>((A+B)*D)^(E-F)</code></a>
+<ul>
+<li><a href="#3-5-marks">
+3. 5 Marks</a></li>
+</ul></li>
+<li><a href="#i-reframe-any-5-characteristics-of-good-hashing-function">
+i) Reframe any 5 characteristics of Good Hashing Function.</a></li>
+<li><a href="#ii-using-kruskal-s-algorithm-find-minimum-spanning-tree-for-the-following-graph">
+ii) Using Kruskal's algorithm find Minimum Spanning Tree for the following graph.</a></li>
+</ul>
+</nav>
+
+        </details>
+        
 		<footer>
 			<p style="text-align: center; font-size: small; margin-top: 5em;">
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
@@ -456,6 +459,19 @@ identical keys.</li>
         };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <script>
+    const music = document.getElementById('music');
+    let wave = new CircularAudioWave(music);
+    wave.loadAudio('https://AnzenKodo.github.io/assets/Music.m4a');
+
+    music.addEventListener("click", () => {
+        if (wave.playing) {
+            wave.pause();
+        } else {
+            wave.play()
+        }
+    })
     </script>
 	</body>
 </html>

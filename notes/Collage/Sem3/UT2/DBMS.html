@@ -163,6 +163,8 @@
                 max-width: 100%;
             }
 		</style>
+	<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0"></script>
+    <script src="https://AnzenKodo.github.io/assets/circular-audio-wave.js"></script>
 	</head>
 	<body>
 	    <a href="#skip-top-main">Skip to main</a>
@@ -170,76 +172,8 @@
 			<h1 style="text-align: center;">
                 <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
-            
-			<details id="table-of-content">
-			    <summary>Table of Content</summary>
-                <nav>
-<ul>
-<li><a href="#2-marks">2 Marks</a>
-<ul>
-<li><a href="#1-define-normalization">
-1) Define Normalization?</a></li>
-<li><a href="#2-explain-functional-dependency">
-2) Explain Functional Dependency?</a></li>
-<li><a href="#3-consider-the-table">
-3) Consider the table</a>
-<ul>
-<li><a href="#write-the-sql-for-following">
-Write the SQL for following:</a>
-<ul>
-<li><a href="#a-list-the-employee-record-working-in-production-department">
-a) List the employee record working in Production Department.</a></li>
-<li><a href="#b-list-all-employee-records">
-b) List all Employee records.</a></li>
-<li><a href="#c-list-employee-details-having-the-salary-less-than-90000">
-c) List Employee details having the salary less than 90000.</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#4-explain-default-and-check-constraints">
-4) Explain Default and Check Constraints?</a>
-<ul>
-<li><a href="#default">
-Default</a></li>
-<li><a href="#check-constraint">
-Check Constraint</a></li>
-</ul></li>
-<li><a href="#5-explain-nested-queries-with-examples">
-5) Explain nested queries with examples?</a></li>
-</ul></li>
-<li><a href="#3-marks">
-3 Marks</a>
-<ul>
-<li><a href="#1-write-notes-on-dcl-commands">
-1) Write notes on DCL Commands?</a></li>
-<li><a href="#2-write-short-notes-on-inference-rules-for-functional-dependency">
-2) Write short notes on inference rules for functional dependency?</a></li>
-<li><a href="#3-explain-procedure-with-syntax">
-3) Explain Procedure with syntax?</a></li>
-<li><a href="#4-explain-function-with-syntax">
-4) Explain function with syntax?</a></li>
-<li><a href="#5-create-a-table-student-having-columns-std-id-std-name-class-and-dob-also-add-two-records-into-the-table">
-5) Create a table student having columns std_id, std_name,class and dob. Also add two records into the table?</a></li>
-</ul></li>
-<li><a href="#5-marks">
-5 Marks</a>
-<ul>
-<li><a href="#1-explain-ddl-commands-with-syntax-and-example">
-1) Explain DDL Commands with Syntax and Example?</a></li>
-<li><a href="#2-explain-dml-commands-with-syntax-and-example">
-2) Explain DML Commands with Syntax and Example?</a></li>
-<li><a href="#3-explain-program-for-jdbc-with-example">
-3) Explain Program for JDBC with Example?</a></li>
-<li><a href="#4-explain-need-of-normalization-along-with-all-the-normal-forms">
-4) Explain need of normalization along with all the normal forms?</a></li>
-<li><a href="#5-explain-the-types-of-functional-dependency">
-5) Explain the types of functional dependency?</a></li>
-</ul></li>
-</ul>
-</nav>
-
-			</details>
-            
 		</header>
+		<div id="music" style="width: 100%; height: 18em;"></div>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem">DBMS</h1>
 			<h2><a name="2-marks" class="heading-anchor" href="#2-marks" rel="nofollow" aria-hidden="true"></a>2 Marks</h2><h3><a name="1-define-normalization" class="heading-anchor" href="#1-define-normalization" rel="nofollow" aria-hidden="true"></a>1) Define Normalization?</h3>
@@ -1336,6 +1270,75 @@ is a transitive functional dependency.</li>
 </ol>
 
 		</main>
+        
+        <details id="table-of-content">
+           <summary>Table of Content</summary>
+                    <nav>
+<ul>
+<li><a href="#2-marks">2 Marks</a>
+<ul>
+<li><a href="#1-define-normalization">
+1) Define Normalization?</a></li>
+<li><a href="#2-explain-functional-dependency">
+2) Explain Functional Dependency?</a></li>
+<li><a href="#3-consider-the-table">
+3) Consider the table</a>
+<ul>
+<li><a href="#write-the-sql-for-following">
+Write the SQL for following:</a>
+<ul>
+<li><a href="#a-list-the-employee-record-working-in-production-department">
+a) List the employee record working in Production Department.</a></li>
+<li><a href="#b-list-all-employee-records">
+b) List all Employee records.</a></li>
+<li><a href="#c-list-employee-details-having-the-salary-less-than-90000">
+c) List Employee details having the salary less than 90000.</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#4-explain-default-and-check-constraints">
+4) Explain Default and Check Constraints?</a>
+<ul>
+<li><a href="#default">
+Default</a></li>
+<li><a href="#check-constraint">
+Check Constraint</a></li>
+</ul></li>
+<li><a href="#5-explain-nested-queries-with-examples">
+5) Explain nested queries with examples?</a></li>
+</ul></li>
+<li><a href="#3-marks">
+3 Marks</a>
+<ul>
+<li><a href="#1-write-notes-on-dcl-commands">
+1) Write notes on DCL Commands?</a></li>
+<li><a href="#2-write-short-notes-on-inference-rules-for-functional-dependency">
+2) Write short notes on inference rules for functional dependency?</a></li>
+<li><a href="#3-explain-procedure-with-syntax">
+3) Explain Procedure with syntax?</a></li>
+<li><a href="#4-explain-function-with-syntax">
+4) Explain function with syntax?</a></li>
+<li><a href="#5-create-a-table-student-having-columns-std-id-std-name-class-and-dob-also-add-two-records-into-the-table">
+5) Create a table student having columns std_id, std_name,class and dob. Also add two records into the table?</a></li>
+</ul></li>
+<li><a href="#5-marks">
+5 Marks</a>
+<ul>
+<li><a href="#1-explain-ddl-commands-with-syntax-and-example">
+1) Explain DDL Commands with Syntax and Example?</a></li>
+<li><a href="#2-explain-dml-commands-with-syntax-and-example">
+2) Explain DML Commands with Syntax and Example?</a></li>
+<li><a href="#3-explain-program-for-jdbc-with-example">
+3) Explain Program for JDBC with Example?</a></li>
+<li><a href="#4-explain-need-of-normalization-along-with-all-the-normal-forms">
+4) Explain need of normalization along with all the normal forms?</a></li>
+<li><a href="#5-explain-the-types-of-functional-dependency">
+5) Explain the types of functional dependency?</a></li>
+</ul></li>
+</ul>
+</nav>
+
+        </details>
+        
 		<footer>
 			<p style="text-align: center; font-size: small; margin-top: 5em;">
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
@@ -1350,6 +1353,19 @@ is a transitive functional dependency.</li>
         };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <script>
+    const music = document.getElementById('music');
+    let wave = new CircularAudioWave(music);
+    wave.loadAudio('https://AnzenKodo.github.io/assets/Music.m4a');
+
+    music.addEventListener("click", () => {
+        if (wave.playing) {
+            wave.pause();
+        } else {
+            wave.play()
+        }
+    })
     </script>
 	</body>
 </html>
