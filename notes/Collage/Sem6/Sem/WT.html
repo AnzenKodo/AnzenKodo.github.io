@@ -1,0 +1,2013 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>WT - AK#Notes</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="description" content="## Draw and explain 4G/LTE architecture with its specifications. (10 / Dec 23) (10 / May 23) (10 / D">
+  		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
+  		<meta property="og:image:alt" content="AK#Notes logo">
+  		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="WT - AK#Notes">
+		<meta property="og:description" content="## Draw and explain 4G/LTE architecture with its specifications. (10 / Dec 23) (10 / May 23) (10 / D">
+		<meta property="og:url" content="https://AnzenKodo.github.io/">
+		<meta property="og:type" content="website">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+
+            :root {
+                color-scheme: dark light;
+                --theme: #FF6C22;
+			}
+			body {
+                max-width: 40rem;
+                margin: 0 auto;
+                font-family: system-ui;
+                padding: 0 1em;
+                color: inherit !important;
+                word-break: break-word;
+			}
+			h1, h2, h3, h4, h5, h6 {
+                font-family: monospace;
+                margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+                font-size: 2rem;
+			}
+			h3 {
+			    font-size: 1.8rem;
+			}
+			h4 {
+			    font-size: 1.5rem;
+			}
+			h5 {
+			    font-size: 1.3rem;
+			}
+			h6 {
+			    font-size: 1rem;
+			}
+			p, li, td, code {
+			    line-height: 1.5rem;
+			}
+			a {
+			    color: var(--theme);
+			    text-decoration: none;
+			}
+			a:hover, a:focus {
+			    text-decoration: underline;
+			}
+			a:active {
+			    background: var(--theme);
+			    color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+                margin-top: .5rem;
+			}
+			li {
+                margin-bottom: .5rem;
+			}
+			table {
+			    border-collapse: collapse;
+                overflow-x: auto;
+                display: block;
+                word-break: auto-phrase;
+			}
+            th {
+                font-size: 1.1rem;
+                border: 2px solid;
+                padding: .3rem .3rem;
+            }
+            td {
+                border: 1px solid;
+                padding: .3rem .5rem;
+            }
+            blockquote {
+                margin-left: 0;
+                margin-right: 0;
+                border: 1px solid;
+                border-left: 10px solid;
+                padding: 0 1rem;
+            }
+            .code-block {
+                background: black;
+                overflow-x: auto;
+                padding: 0em 1em;
+                border: 1px solid;
+            }
+            .code-block-language-name {
+                position: sticky;
+                left: 95%;
+                top: .5em;
+                font-weight: bold;
+                color: white;
+            }
+            :not(pre.chroma) > code {
+                border: 1px solid;
+                padding: .3rem .2rem .2rem .2rem;
+            }
+            img {
+                max-width: 100%;
+                display: block;
+                margin: 0 auto;
+            }
+            [href="#skip-top-main"] {
+                padding: 0.3em;
+                position: absolute;
+                transform: translateY(-200%);
+            }
+            [href="#skip-top-main"]:focus {
+                transform: translateY(0%);
+                background: var(--theme);
+                color: inherit;
+            }
+            #table-of-content {
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+                background: black;
+                padding: 0.5rem 1em;
+                z-index: 1;
+                color: white;
+            }
+            #table-of-content[open] {
+                max-height: 90%;
+                overflow-y: auto;
+                bottom: 50px;
+                margin-left: 1em;
+            }
+            #table-of-content[open] summary {
+                background: black;
+                padding: 0.5em 1em;
+                text-align: center;
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+            }
+            #table-of-content ul:first-child {
+                padding-left: 1em;
+                margin-top: 1.5em;
+            }
+            .heading-anchor::before {
+                content: "#";
+                margin-right: .5rem;
+            }
+            mjx-container {
+                display: math;
+                overflow-y: hidden;
+                overflow-x: auto;
+                max-width: 100%;
+            }
+		</style>
+	<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0"></script>
+    <script src="https://AnzenKodo.github.io/assets/circular-audio-wave.js"></script>
+	</head>
+	<body>
+	    <a href="#skip-top-main">Skip to main</a>
+		<header>
+			<h1 style="text-align: center;">
+                <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+            </h1>
+		</header>
+		<div id="music" style="width: 100%; height: 18em;"></div>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem">WT</h1>
+			<h2><a name="draw-and-explain-4g-lte-architecture-with-its-specifications-10-dec-23-10-may-23-10-dec-22" class="heading-anchor" href="#draw-and-explain-4g-lte-architecture-with-its-specifications-10-dec-23-10-may-23-10-dec-22" rel="nofollow" aria-hidden="true"></a>Draw and explain 4G/LTE architecture with its specifications. (10 / Dec 23) (10 / May 23) (10 / Dec 22)</h2>
+<p><img src="assets/Pasted%20image%2020240519084713.png" alt=""></p>
+
+<table>
+<thead>
+<tr>
+<th>Specification</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>Technology</strong></td>
+<td>Primarily LTE (Long Term Evolution)</td>
+</tr>
+
+<tr>
+<td><strong>Frequency Bands</strong></td>
+<td>2 GHz - 8 GHz (varies by region and carrier)</td>
+</tr>
+
+<tr>
+<td><strong>Bandwidth</strong></td>
+<td>5 MHz - 20 MHz (can be aggregated for higher speeds)</td>
+</tr>
+
+<tr>
+<td><strong>Maximum Downlink Data Rate</strong></td>
+<td>Up to 1 Gbps (theoretical)</td>
+</tr>
+
+<tr>
+<td><strong>Typical Downlink Data Rate</strong></td>
+<td>10 - 100 Mbps (depending on network congestion and carrier)</td>
+</tr>
+
+<tr>
+<td><strong>Maximum Uplink Data Rate</strong></td>
+<td>Up to 150 Mbps (theoretical)</td>
+</tr>
+
+<tr>
+<td><strong>Typical Uplink Data Rate</strong></td>
+<td>5 - 50 Mbps (depending on network congestion and carrier)</td>
+</tr>
+
+<tr>
+<td><strong>Access Method</strong></td>
+<td>OFDMA (Orthogonal Frequency-Division Multiple Access)</td>
+</tr>
+
+<tr>
+<td><strong>Latency</strong></td>
+<td>Lower than 3G (around 50 milliseconds)</td>
+</tr>
+
+<tr>
+<td><strong>Features</strong></td>
+<td>* Packet Switched Network * Improved Voice over IP (VoIP) * Mobile Broadband * High-Speed Data Streaming</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="explain-zigbee-protocol-stack-10-dec-23-10-may-23-10-dec-22" class="heading-anchor" href="#explain-zigbee-protocol-stack-10-dec-23-10-may-23-10-dec-22" rel="nofollow" aria-hidden="true"></a>Explain Zigbee protocol stack (10 / Dec 23) (10 / May 23) (10 / Dec 22)</h2>
+<p><img src="assets/Pasted%20image%2020240519104720.png" alt=""></p>
+
+<p>Zigbee is a wireless communication protocol designed for low-cost, low-power machine-to-machine (M2M) and Internet of Things (IoT) networks.</p>
+
+<ul>
+<li><strong>Application:</strong> This layer specifies how applications interact with the Zigbee network.</li>
+<li><strong>ZigBee Specifiication:</strong> is a set of detailed instructions that define how devices using the Zigbee protocol should communicate and work together.
+
+<ul>
+<li><strong>Application Interface (API):</strong> This layer provides a set of services that applications can use to communicate with the Zigbee network.</li>
+<li><strong>Security Services:</strong> This layer specifies the security services that are available to Zigbee devices.
+
+<ul>
+<li><strong>Key Management:</strong> This refers to the practices and processes involved in handling cryptographic keys.</li>
+<li><strong>Confidentiality:</strong> This principle ensures that only authorized users can access sensitive information.</li>
+<li><strong>Integrity:</strong> This principle ensures that data hasn't been altered or tampered with during transmission or storage.</li>
+</ul></li>
+<li><strong>Network Layer:</strong> This layer is responsible for routing data packets between Zigbee devices.
+
+<ul>
+<li><strong>Ad hoc On-Demand Distance Vector (AODV):</strong> It's a routing protocol specifically designed for mobile ad hoc networks (MANETs).</li>
+</ul></li>
+</ul></li>
+<li><strong>(Institute of Electrical and Electronics Engineers) IEEE 802.15.4:</strong> it provides the foundation set of instructions for devices to understand each other.
+
+<ul>
+<li><strong>Media Access Control (MAC) Layer:</strong> This layer is responsible for managing access to the wireless channel. The diagram shows that the CSMA-CA protocol is used in this layer.</li>
+<li><strong>Physical Layer:</strong> This layer is responsible for transmitting and receiving raw data bits over the wireless channel. The diagram shows that Zigbee networks can operate in the 868 MHz, 915 MHz, or 2.4 GHz bands.</li>
+</ul></li>
+</ul>
+<h2><a name="give-the-significance-of-wpa-what-are-the-features-of-wpa2-10-dec-23-10-may-23-10-dec-22" class="heading-anchor" href="#give-the-significance-of-wpa-what-are-the-features-of-wpa2-10-dec-23-10-may-23-10-dec-22" rel="nofollow" aria-hidden="true"></a>Give the significance of WPA. What are the features of WPA2. (10 / Dec 23) (10 / May 23) (10 / Dec 22)</h2>
+<p><img src="assets/Pasted%20image%2020240519101909.png" alt=""></p>
+
+<p><strong>Wi-Fi Protected Access (WPA)</strong> played a crucial role in enhancing the security of wireless networks by addressing the vulnerabilities present in its predecessor, <strong>Wired Equivalent Privacy (WEP)</strong>.</p>
+
+<p>WPA introduced dynamic encryption keys, making it significantly more challenging for attackers to decipher intercepted data.</p>
+
+<p><strong>Wi-Fi Protected Access 2 (WPA2)</strong> emerged as the successor to WPA, building upon its foundations and introducing stronger encryption and enhanced security mechanisms.</p>
+
+<p><strong>Features of WPA2</strong></p>
+
+<ol>
+<li><strong>Encryption:</strong> 
+
+<ol>
+<li>WPA2 employs the Advanced Encryption Standard (AES) for data encryption, offering a higher level of security compared to its predecessors.</li>
+<li>AES is known for its strength and efficiency, operating on data blocks and supporting key lengths of 128, 192, or 256 bits.</li>
+</ol></li>
+<li><strong>Authentication:</strong> WPA2 ensures that only authorized devices can connect to the network by employing robust authentication mechanisms to verify the identity of devices attempting to access the Wi-Fi network.</li>
+<li><strong>Key Management:</strong> WPA2 manages the distribution and periodic rotation of encryption keys, reducing the risk of unauthorized access.</li>
+<li><strong>Personal and Enterprise Modes:</strong> 
+
+<ul>
+<li><img src="../UT2/assets/Pasted%20image%2020240418040943.png" alt=""></li>
+<li><strong>Personal mode:</strong> is suitable for home networks,</li>
+<li><strong>Enterprise mode:</strong> offers additional security features for business and organizational networks.</li>
+</ul></li>
+<li><strong>Password Protection:</strong> WPA2 requires users to enter a secure passphrase or password to access the Wi-Fi network.</li>
+<li><strong>Network Compatibility:</strong> WPA2 is backward compatible with devices supporting older security protocols.</li>
+<li><strong>Continuous Updates:</strong> WPA2 is periodically updated to address emerging vulnerabilities, ensuring that the wireless environment remains secure in the face of evolving cyber threats.</li>
+</ol>
+<h2><a name="draw-and-explain-ieee-802-11-architecture-also-discuss-on-power-management-in-ieee802-11-infrastructure-network-compare-ieee-802-11-ieee-802-16-10-dec-23-10-may-23-10-dec-22" class="heading-anchor" href="#draw-and-explain-ieee-802-11-architecture-also-discuss-on-power-management-in-ieee802-11-infrastructure-network-compare-ieee-802-11-ieee-802-16-10-dec-23-10-may-23-10-dec-22" rel="nofollow" aria-hidden="true"></a>Draw and explain IEEE 802.11 Architecture. Also discuss on power management in IEEE802.11 infrastructure network. Compare IEEE 802.11 &amp;  IEEE 802.16 (10 / Dec 23) (10 / May 23) (10 / Dec 22)</h2>
+<p><img src="assets/Pasted%20image%2020240519112836.png" alt=""></p>
+
+<ul>
+<li><strong>Extended Service Set (ESS):</strong> An ESS is a WLAN consisting of multiple Basic Service Sets (BSS) interconnected by a distribution system (DS), typically a wired network like Ethernet.</li>
+<li><strong>Distributed System (DS):</strong> A DS interconnects multiple BSSes within an ESS, forming a larger wireless network.</li>
+<li><strong>Basic Service Set (BSS):</strong>
+
+<ul>
+<li>It consists of a wireless access point (AP) and its associated stations (STAs) which are usually wireless devices like laptops and smartphones.</li>
+<li><img src="assets/Pasted%20image%2020240519113524.png" alt=""></li>
+</ul></li>
+<li><strong>Access Point (AP):</strong> It acts as a central hub through which wireless devices can communicate with each other or with wired networks like the internet.</li>
+<li><strong>Station (STA):</strong> An STA is a device on a WLAN that communicates with an AP.</li>
+<li><strong>Portal:</strong> Serves as a gateway to other networks.</li>
+</ul>
+
+<p>**Power management in IEEE802.11 Iinfrastructure Network:</p>
+
+<ul>
+<li><strong>Power Saving Modes (PSM):</strong>
+
+<ul>
+<li>IEEE 802.11 defines various Power Saving Modes (PSM) that allow stations to conserve power by entering sleep states when not actively transmitting or receiving data.
+
+<ul>
+<li><strong>Doze Mode (PSM):</strong> In Doze Mode, the station's CPU sleeps while the radio wakes up periodically to check for beacons or traffic directed to the station.</li>
+<li><strong>Idle Mode (PSM):</strong> The radio is completely turned off in Idle Mode. The station wakes up periodically to listen for beacons from the access point.</li>
+<li><strong>Light Sleep Mode (PSM):</strong> The radio remains in a low-power state in Light Sleep Mode. It wakes up upon receiving beacons or packets addressed to the station.</li>
+</ul></li>
+</ul></li>
+<li><strong>Automatic Power Saving Delivery (APSD):</strong>
+
+<ul>
+<li>Automatic Power Saving Delivery (APSD) is a mechanism that allows the access point to buffer data for stations in power-saving mod.</li>
+</ul></li>
+<li><strong>Dynamic Transmit Power Control (DTPC):</strong>
+
+<ul>
+<li>A feature that adjusts the transmission power of Wi-Fi signals based on the distance between the station and the access point.</li>
+</ul></li>
+<li><strong>Antenna Diversity:</strong>
+
+<ul>
+<li>While not directly related to power saving, antenna diversity can improve signal strength between the station and AP.</li>
+</ul></li>
+<li><strong>Quality of Service (QoS):</strong>
+
+<ul>
+<li>Quality of Service (QoS) is a feature within IEEE 802.11e that prioritizes traffic for delay-sensitive applications like voice or video calls.</li>
+</ul></li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>802.11</th>
+<th>802.16</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Define</td>
+<td>WLAN</td>
+<td>WiMAX</td>
+</tr>
+
+<tr>
+<td>Designed</td>
+<td>Limited area</td>
+<td>Distance area</td>
+</tr>
+
+<tr>
+<td>Range</td>
+<td>30m to 100m</td>
+<td>7km to 50km</td>
+</tr>
+
+<tr>
+<td>Usage</td>
+<td>Indoor</td>
+<td>Outdoor</td>
+</tr>
+
+<tr>
+<td>Frequencies</td>
+<td>2.5GHz, 3.5GHz &amp; 5.8GHz</td>
+<td>2.4GHz &amp; 5GHz</td>
+</tr>
+
+<tr>
+<td>Channel</td>
+<td>20MHz</td>
+<td>20MHz</td>
+</tr>
+
+<tr>
+<td>Variants</td>
+<td>802.11a, 802.11b, 802.11c &amp; etc</td>
+<td>802.16a, 802.16b, 802.16c &amp; etc</td>
+</tr>
+
+<tr>
+<td>User Size</td>
+<td>Large</td>
+<td>Limited</td>
+</tr>
+
+<tr>
+<td>Encryption</td>
+<td>AES(Advance Encription Standard)</td>
+<td>Rivest Cipher 4</td>
+</tr>
+
+<tr>
+<td>Bandwidth</td>
+<td>1.5 to 28 MHz</td>
+<td>20 MHz, 40 MHz, 80 MHz and 160 MHz</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="what-do-you-mean-by-massive-mimo-compare-1g-5g-mobile-standards-10-dec-23-5-may-23" class="heading-anchor" href="#what-do-you-mean-by-massive-mimo-compare-1g-5g-mobile-standards-10-dec-23-5-may-23" rel="nofollow" aria-hidden="true"></a>What do you mean by massive MIMO; Compare 1G-5G mobile standards. (10 / Dec 23) (5 / May 23)</h2>
+<p><img src="assets/Pasted%20image%2020240519104322.png" alt=""></p>
+
+<p>Massive MIMO, short for Massive Multiple-Input Multiple-Output, is a cutting-edge wireless communication technology that involves using a large number of antennas at the base station to serve a significantly smaller number of user terminals.</p>
+
+<p>In a massive MIMO system, the number of antennas at the base station far exceeds the number of antennas typically found in traditional MIMO systems.</p>
+
+<p>By utilizing a large number of antennas, massive MIMO systems can provide better coverage, increased capacity, and enhanced reliability in wireless communication networks.</p>
+
+<p><strong>Types of MIMO: Single-User MIMO (SU-MIMO) &amp; Multi-User MIMO (MU-MIMO)</strong></p>
+
+<p><img src="assets/Pasted%20image%2020240519104152.png" alt=""></p>
+
+<p><strong>Compare 1G-5G mobile standards</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Mobile Generation</th>
+<th>Technology</th>
+<th>Year Introduced</th>
+<th>Key Features</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1G</td>
+<td>Analog</td>
+<td>1980</td>
+<td>- Voice calls only  <br>- Low data rates  <br>- Limited security  <br>- Frequency: 800 MHz  <br>- Data speed: 2.4 Kbps</td>
+</tr>
+
+<tr>
+<td>2G</td>
+<td>Digital</td>
+<td>1991</td>
+<td>- Voice calls and SMS  <br>- Digital encrypted communication  <br>- Data rates up to 64 Kbps  <br>- Introduction of GSM and CDMA  <br>- Improved capacity and reduced call drops</td>
+</tr>
+
+<tr>
+<td>3G</td>
+<td>Digital</td>
+<td>2001</td>
+<td>- Higher data speeds than 2G  <br>- Video calls and internet access  <br>- Data transmission up to 2 Mbps  <br>- Introduction of multimedia messaging  <br>- Improved encryption and security</td>
+</tr>
+
+<tr>
+<td>4G</td>
+<td>LTE</td>
+<td>2009</td>
+<td>- Speeds up to 1 Gbps  <br>- Introduction of LTE and VoLTE  <br>- HD video streaming and online gaming  <br>- Enhanced data rates and reliability  <br>- Use of frequencies from 2.0 GHz to 8 GHz</td>
+</tr>
+
+<tr>
+<td>5G</td>
+<td>NR</td>
+<td>2019</td>
+<td>- Speeds up to 10 Gbps  <br>- Low latency  <br>- Use of frequencies from 3 GHz to 10 GHz  <br>- Massive IoT connectivity  <br>- Mission-critical applications support  <br>- Enhanced mobile experiences  <br>- Energy efficiency and sustainability</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="compare-fdma-tdma-and-cdma-5-dec-23-5-dec-22" class="heading-anchor" href="#compare-fdma-tdma-and-cdma-5-dec-23-5-dec-22" rel="nofollow" aria-hidden="true"></a>Compare FDMA, TDMA and CDMA (5 / Dec 23) (5 / Dec 22)</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>FDMA</th>
+<th>TDMA</th>
+<th>CDMA</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Full form</td>
+<td>Frequency division multiple access</td>
+<td>Time division multiple access</td>
+<td>Code Division Multiple Access</td>
+</tr>
+
+<tr>
+<td>Division Method</td>
+<td>Frequency Division</td>
+<td>Time Division</td>
+<td>Code Division</td>
+</tr>
+
+<tr>
+<td>Allocated Bandwidth</td>
+<td>12.5MHz</td>
+<td>12.5MHz</td>
+<td>12.5MHz</td>
+</tr>
+
+<tr>
+<td>Required channel bandwidth</td>
+<td>0.03MHz</td>
+<td>0.03MHz</td>
+<td>1.25MHz</td>
+</tr>
+
+<tr>
+<td>No. of RF Channels</td>
+<td>${12.5 \over 0.03} = 416$</td>
+<td>${12.5 \over 0.03} = 416$</td>
+<td>${12.5 \over 1.25} = 10$</td>
+</tr>
+
+<tr>
+<td>Code word</td>
+<td>Not required</td>
+<td>Not required</td>
+<td>required</td>
+</tr>
+
+<tr>
+<td>Flexibility</td>
+<td>Little flexiable</td>
+<td>Moderate flexiable</td>
+<td>Highly flexiable</td>
+</tr>
+
+<tr>
+<td>Multiplexing</td>
+<td>Frequency</td>
+<td>Time</td>
+<td>Code</td>
+</tr>
+
+<tr>
+<td>Bandwidth Allocation</td>
+<td>Dedicated frequency band</td>
+<td>Time slots in frequency band</td>
+<td>Entire frequency band</td>
+</tr>
+
+<tr>
+<td>User Separation</td>
+<td>Different frequencies</td>
+<td>Different time slots</td>
+<td>Different codes</td>
+</tr>
+
+<tr>
+<td>Synchronization</td>
+<td>Not required</td>
+<td>Required</td>
+<td>Not required</td>
+</tr>
+
+<tr>
+<td>Spectral Efficiency</td>
+<td>Lower</td>
+<td>Higher</td>
+<td>Highest</td>
+</tr>
+
+<tr>
+<td>Capacity</td>
+<td>Lower</td>
+<td>Higher</td>
+<td>Highest</td>
+</tr>
+
+<tr>
+<td>Multipath Interference</td>
+<td>Higher</td>
+<td>Lower</td>
+<td>Lowest</td>
+</tr>
+
+<tr>
+<td>Power Efficiency</td>
+<td>Higher</td>
+<td>Lower</td>
+<td>Lowest</td>
+</tr>
+
+<tr>
+<td>Examples</td>
+<td>AMPS, TACS</td>
+<td>D-AMPS, GSM</td>
+<td>IS-95, CDMA2000, WCDMA</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="outline-the-method-that-supports-mobility-in-cisco-unified-wireless-network-5-dec-23-5-may-23" class="heading-anchor" href="#outline-the-method-that-supports-mobility-in-cisco-unified-wireless-network-5-dec-23-5-may-23" rel="nofollow" aria-hidden="true"></a>Outline the method that supports mobility in CISCO Unified Wireless Network (5 / Dec 23) (5 / May 23)</h2>
+<p><img src="assets/Pasted%20image%2020240519102552.jpg" alt=""></p>
+
+<ul>
+<li>With thie explosion of wireless technology in the enterprise network designers have to create solution that provide the mobility and security necessary to monitor network security.</li>
+<li>The <strong>Cisco Unified Wireless Network</strong> architecture tackles these issues by delivering a converged, secured and manageable network.</li>
+<li>Cisco UWN provides management centralization with control in the infrastructure.</li>
+<li>Features:
+
+<ul>
+<li>Security</li>
+<li>Scalability</li>
+<li>Performance</li>
+</ul></li>
+</ul>
+
+<p><strong>Methods that Support Cisco UWN</strong></p>
+
+<ul>
+<li><strong>Lightweight Access Points (LWAPs):</strong>
+
+<ul>
+<li>LWAPs handle basic radio functions like signal transmission and reception, while offloading authentication, security, and client management to a central controller [1].</li>
+</ul></li>
+<li><strong>Wireless LAN Controllers (WLCs):</strong>
+
+<ul>
+<li>They manage multiple LWAPs, perform client authentication and association, and facilitate roaming between access points [2].</li>
+</ul></li>
+<li><strong>Mobility Groups:</strong>
+
+<ul>
+<li>By creating mobility groups, you configure multiple WLCs to share information and client context.</li>
+<li>This allows devices to roam seamlessly between access points managed by different controllers within the same group [2].</li>
+</ul></li>
+<li><strong>Fast Handoff:</strong>
+
+<ul>
+<li>This is a critical feature for applications like voice over IP (VoIP) calls.</li>
+<li>During handoff, a device transitions from one access point to another with minimal disruption to the ongoing connection.</li>
+</ul></li>
+<li><strong>Centralized Key Management (CCKM) and Proactive Key Caching (PKC):</strong>
+
+<ul>
+<li>These features further enhance roaming security and speed.</li>
+<li>CCKM distributes encryption keys securely to WLCs, while PKC pre-caches keys on controllers, allowing for faster authentication when a device roams [2].</li>
+</ul></li>
+<li><strong>Mobility Anchor (Guest Tunneling):</strong>
+
+<ul>
+<li>This feature is useful for guest networks.</li>
+<li>It directs all guest traffic to a designated WLC (anchor WLC) for centralized control and security policies, even when the device roams across different access points [3].</li>
+</ul></li>
+</ul>
+<h2><a name="draw-and-explain-umts-network-architecture-and-compare-gsm-umts-10-may-23-10-dec-22" class="heading-anchor" href="#draw-and-explain-umts-network-architecture-and-compare-gsm-umts-10-may-23-10-dec-22" rel="nofollow" aria-hidden="true"></a>Draw and explain UMTS network architecture and compare GSM &amp; UMTS (10 / May 23) (10 / Dec 22)</h2>
+<p><img src="assets/Pasted%20image%2020240519174651.png" alt=""></p>
+
+<ul>
+<li><strong>UE (User Equipment)</strong>: This is the mobile device that you use to connect to the network.
+
+<ul>
+<li><strong>Mobile Equipment (ME):</strong> This simply refers to your mobile device itself, like your smartphone or tablet.</li>
+</ul></li>
+<li><strong>UTRAN (UMTS Terrestrial Radio Access Network):</strong> This refers to the entire radio access network for the UMTS system.
+
+<ul>
+<li><strong>Evolved Node B (Node-B)</strong>: This is a base station that provides radio coverage for a small area. It transmits and receives radio signals from the mobile devices in its coverage area.</li>
+<li><strong>RNC (Radio Network Controller)</strong>: This is a device that controls a group of NodeBs. It manages the radio resources in its area and hands off calls between NodeBs.</li>
+</ul></li>
+<li><strong>Core Network:</strong> It manages the core components of  UMTS
+
+<ul>
+<li><strong>MSC (Mobile Switching Center):</strong> This is a switch that is responsible for routing calls between mobile devices and other telephone networks.</li>
+<li><strong>VLR (Visitor Location Register):</strong> This is a database that keeps track of the location of mobile devices that are currently roaming in a network.</li>
+<li><strong>GMSC (Gateway Mobile Switching Center):</strong> This is a switch that routes calls between mobile networks.</li>
+<li><strong>SGSN (Serving GPRS Support Node):</strong> This is a gateway that connects mobile devices to the GPRS network, which is a packet-based data network.</li>
+<li><strong>GGSN (Gateway GPRS Support Node):</strong> This is a gateway that connects the GPRS network to other networks, such as the internet.</li>
+<li><strong>HLR (Home Location Register):</strong> This is a database that contains information about a mobile device, such as its subscription information and its current location area.</li>
+</ul></li>
+<li><strong>Outer Components:</strong>
+
+<ul>
+<li><strong>PSTN (Public Switched Telephone Network):</strong> This is the traditional telephone network.</li>
+<li><strong>ISDN (Integrated Services Digital Network):</strong> This is a type of digital phone service that can carry voice, data, and video.</li>
+<li><strong>PLMN (Public Land Mobile Network):</strong> This refers to the cellular network itself. PLMN identifies a specific mobile network operator, so in the diagram, the UE connects to a particular PLMN operated by a service provider.</li>
+</ul></li>
+<li><strong>Interfaces:</strong>
+
+<ul>
+<li><strong>Uu Interface:</strong> It defines the communication protocols and processes used for transmitting and receiving data between the mobile device and the base station.</li>
+<li><strong>lub Interface:</strong> It's the internal network connection that carries control information and user data between the base station and the RNC, which manages a group of NodeBs.</li>
+<li><strong>lu Interface:</strong> It's responsible for carrying control signaling and user traffic between the RNC and elements like the Mobile Switching Center (MSC) for call routing or the Serving GPRS Support Node (SGSN) for data services.</li>
+</ul></li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>GSM</th>
+<th>UMTS</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Generation</td>
+<td>2G</td>
+<td>3G</td>
+</tr>
+
+<tr>
+<td>Radio Access</td>
+<td>FDMA and TDMA</td>
+<td>Wideband CDMA (WCDMA)</td>
+</tr>
+
+<tr>
+<td>Bandwidth</td>
+<td>200 kHz</td>
+<td>5 MHz</td>
+</tr>
+
+<tr>
+<td>Peak Data Rate</td>
+<td>384 kbps with EDGE</td>
+<td>42 Mbps with HSPA+</td>
+</tr>
+
+<tr>
+<td>Voice Services</td>
+<td>Circuit-Switched</td>
+<td>Circuit-Switched</td>
+</tr>
+
+<tr>
+<td>Data Services</td>
+<td>Packet-Switched</td>
+<td>Packet-Switched</td>
+</tr>
+
+<tr>
+<td>Enhancements</td>
+<td>GPRS, EDGE</td>
+<td>HSPA, HSPA+</td>
+</tr>
+
+<tr>
+<td>Deployment</td>
+<td>Primarily in Europe</td>
+<td>Worldwide</td>
+</tr>
+
+<tr>
+<td>Mobility Support</td>
+<td>Limited</td>
+<td>Enhanced</td>
+</tr>
+
+<tr>
+<td>Spectrum Efficiency</td>
+<td>Lower</td>
+<td>Higher</td>
+</tr>
+
+<tr>
+<td>Data Rates</td>
+<td>Lower</td>
+<td>Higher</td>
+</tr>
+
+<tr>
+<td>Latency</td>
+<td>Higher</td>
+<td>Lower</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="explain-the-layered-architecture-of-wsn-protocol-and-discuss-issues-and-challenges-in-wsn-10-may-23-10-dec-22" class="heading-anchor" href="#explain-the-layered-architecture-of-wsn-protocol-and-discuss-issues-and-challenges-in-wsn-10-may-23-10-dec-22" rel="nofollow" aria-hidden="true"></a>Explain the layered architecture of WSN protocol and discuss issues and challenges in WSN. (10 / May 23) (10 / Dec 22)</h2>
+<p><img src="../UT2/assets/Pasted%20image%2020240418034613.png" alt=""></p>
+
+<p>A Wireless Sensor Network (WSN) is a distributed network comprising a large number of spatially dispersed, tiny, low-powered devices called sensor nodes that communicate wirelessly to monitor physical or environmental conditions such as temperature, sound, vibration, pressure, motion, or pollutants.</p>
+
+<p><img src="../UT2/assets/Pasted%20image%2020240418032445.jpg" alt=""></p>
+
+<p><strong>Protocol Layers</strong>:</p>
+
+<ul>
+<li><strong>Physical Layer</strong>
+
+<ul>
+<li>The objective of physical layer is to increase the reliability by reducing path loss effect and shadowing.</li>
+<li>This layer is responsible for established connection, data rate, modulation, data encryption, signal detection, frequency generation and signal detection.</li>
+</ul></li>
+<li><strong>Data Link Layer</strong>
+
+<ul>
+<li>The objective of Data link layer is to insure interoperability among communication between nodes to nodes. This layer is responsible for error detection, multiplexing. Prevention of Collision of packets, repeated transmission etc.</li>
+</ul></li>
+<li><strong>Network Layer</strong>
+
+<ul>
+<li>The objective of Network layer is to find best path for efficient routing mechanism.</li>
+<li>This layer is responsible for routing the data from node to node, node to sink, node to base station, node to cluster.</li>
+</ul></li>
+<li><strong>Transport Layer</strong>
+
+<ul>
+<li>The objective of Transport Layer is to establish communication for external networks i.e. sensor network connected to the internet.</li>
+</ul></li>
+<li><strong>Application Layer</strong>
+
+<ul>
+<li>The objective of Application Layer is to present final output by ensuring smooth information flow to lower layers.</li>
+<li>This layer is responsible for data collection, management and processing of the data through the application software for getting reliable results.</li>
+</ul></li>
+</ul>
+
+<p><strong>Cross Layer</strong>:</p>
+
+<ul>
+<li><strong>Power Management</strong>: WSNs consist of battery-powered sensors, and power management is crucial to ensure the network can function for long periods without frequent battery replacements.</li>
+<li><strong>Mobility Management</strong>: WSNs can include mobile nodes, and mobility management is essential to ensure reliable communication and data transfer between moving nodes.</li>
+<li><strong>Task Management</strong>: WSNs can be used for various applications, and task management is necessary to ensure that the network can perform the required tasks efficiently and reliably.</li>
+</ul>
+<h2><a name="explain-the-difference-between-an-infrastructures-based-network-and-an-adhoc-network-of-wlan-5-dec-23" class="heading-anchor" href="#explain-the-difference-between-an-infrastructures-based-network-and-an-adhoc-network-of-wlan-5-dec-23" rel="nofollow" aria-hidden="true"></a>Explain the difference between an Infrastructures based Network and an Adhoc Network of WLAN (5 / Dec 23)</h2>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Infrastructure-Based Network</th>
+<th>Ad Hoc Network</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Communication</td>
+<td>Through an access point</td>
+<td>Directly between devices</td>
+</tr>
+
+<tr>
+<td>Security</td>
+<td>More security options</td>
+<td>WEP or no security</td>
+</tr>
+
+<tr>
+<td>Range</td>
+<td>Determined by access points</td>
+<td>Restricted to individual device range</td>
+</tr>
+
+<tr>
+<td>Speed</td>
+<td>Faster</td>
+<td>Slower</td>
+</tr>
+
+<tr>
+<td>Mode set to</td>
+<td>Infrastructure mode</td>
+<td>Ad hoc mode</td>
+</tr>
+
+<tr>
+<td>Same SSID</td>
+<td>Yes, including access point</td>
+<td>Yes</td>
+</tr>
+
+<tr>
+<td>Same channel</td>
+<td>Yes, including access point</td>
+<td>Yes</td>
+</tr>
+
+<tr>
+<td>Interconnecting Device</td>
+<td>Wireless router</td>
+<td>Application level gateway</td>
+</tr>
+
+<tr>
+<td>Data Rate</td>
+<td>Higher</td>
+<td>Lower</td>
+</tr>
+
+<tr>
+<td>Traffic Pattern</td>
+<td>Point-to-point</td>
+<td>Any-to-any, many-to-one, many-to-few, one-to-many</td>
+</tr>
+
+<tr>
+<td>Network Type</td>
+<td>Peer-to-Peer</td>
+<td>Hierarchical or Mesh</td>
+</tr>
+
+<tr>
+<td>Communication Range</td>
+<td>Variable</td>
+<td>Limited by individual device transmission power</td>
+</tr>
+
+<tr>
+<td>Data Type</td>
+<td>General data</td>
+<td>Sensor data</td>
+</tr>
+
+<tr>
+<td>Power Consumption</td>
+<td>High</td>
+<td>Low</td>
+</tr>
+
+<tr>
+<td>Security</td>
+<td>Security protocols can be implemented</td>
+<td>Critical as sensor data can be sensitive</td>
+</tr>
+
+<tr>
+<td>Applications</td>
+<td>General wireless communication</td>
+<td>Environmental monitoring, industrial automation, etc.</td>
+</tr>
+
+<tr>
+<td>Deployment</td>
+<td>Any environment</td>
+<td>Typically remote or hard-to-reach locations</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="explain-direct-sequence-spread-spectrum-5-dec-23" class="heading-anchor" href="#explain-direct-sequence-spread-spectrum-5-dec-23" rel="nofollow" aria-hidden="true"></a>Explain Direct Sequence Spread Spectrum (5 / Dec 23)</h2>
+<p>Direct Sequence Spread Spectrum (DSSS) is a spread-spectrum modulation technique used in wireless communication to enhance signal integrity, resist interference, and provide secure data transmission.</p>
+
+<p><img src="assets/Pasted%20image%2020240519071212.png" alt=""></p>
+
+<p><strong>DSSS Transmitter</strong></p>
+
+<ul>
+<li>Input data is converted into bipolar NRZ format</li>
+<li>This NRZ signal is then given to mixer along with wideband Mixer along with wideband PN code.</li>
+<li>EX-OR operation is performed on this two signals &amp; the output is given to PSK modulator.</li>
+<li>This output of two multiplier is known as spreading code.</li>
+</ul>
+
+<p><strong>DSSS Rreceiver</strong></p>
+
+<ul>
+<li>The receiver in a DSSS system correlates the received signal against the chipping code to de-spread and extract the original data.</li>
+<li>By using the same chipping code as the transmitter, the receiver can accurately recover the transmitted data, even in the presence of noise or interference.</li>
+<li>The receiver's ability to de-spread the signal based on the known chipping code ensures reliable data reception and maintains signal integrity throughout the communication process.</li>
+</ul>
+<h2><a name="state-the-features-of-wi-max-5-dec-23" class="heading-anchor" href="#state-the-features-of-wi-max-5-dec-23" rel="nofollow" aria-hidden="true"></a>State the features of Wi-Max (5 / Dec 23)</h2>
+<p><img src="assets/Pasted%20image%2020240418030410.png" alt=""></p>
+
+<p>WiMAX, which stands for Worldwide Interoperability for Microwave Access, is a wireless broadband technology that offers a range of features that make it a versatile and efficient communication solution.</p>
+
+<p><strong>Key features of WiMAX</strong>:</p>
+
+<ul>
+<li><strong>Broad Coverage</strong>: WiMAX provides wide area coverage, allowing users to access the Internet wirelessly over long distances, with towers capable of broadcasting signals that can cover up to 50 km.</li>
+<li><strong>High Speed</strong>: WiMAX offers high-speed data transmission, comparable to 802.11/Wi-Fi networks, with the ability to deliver performance similar to cellular networks. It supports very high peak data rates, with peak PHY data rates reaching up to 74Mbps using a 20MHz wide spectrum.</li>
+<li><strong>Scalability</strong>: WiMAX features a scalable physical-layer architecture that allows for the data rate to scale easily with the available channel bandwidth.</li>
+<li><strong>Backwards Compatibility</strong>: WiMAX is designed to be backwards compatible, enabling interoperability with existing wireless technologies. This compatibility allows for a smooth transition to WiMAX technology without the need for a complete overhaul of existing infrastructure.</li>
+<li><strong>Scalability:</strong> It can be easily scaled to support a large number of users and devices.</li>
+<li><strong>Interoperability:</strong> It is based on an international standard, allowing for interoperability between different vendors' equipment.</li>
+<li><strong>Cost-Effectiveness:</strong> a cost-effective solution for providing broadband access in areas where wired infrastructure deployment is not economically feasible</li>
+</ul>
+<h2><a name="explain-in-detail-gsm-architecture-with-a-diagram-10-dec-23" class="heading-anchor" href="#explain-in-detail-gsm-architecture-with-a-diagram-10-dec-23" rel="nofollow" aria-hidden="true"></a>Explain in detail GSM Architecture with a diagram (10 / Dec 23)</h2>
+<p><img src="assets/Pasted%20image%2020240519095307.png" alt=""></p>
+
+<ul>
+<li><strong>Mobile Station (MS):</strong> This is the mobile device used by the subscriber, such as a smartphone or a tablet.
+
+<ul>
+<li><strong>Subscriber Identity Module (SIM):</strong> This tiny chip holds important information about your mobile subscription.</li>
+<li><strong>Mobile Equipment (ME):</strong> This simply refers to your mobile device itself, like your smartphone or tablet.</li>
+</ul></li>
+<li><strong>Base Station (BS):</strong> A cell tower is a base station. It's a radio transmitter and receiver that acts as a hub for mobile devices in a specific area.
+
+<ul>
+<li><strong>Base Transceiver Station (BTS):</strong> These are the base stations that the MS connects to. They are responsible for transmitting and receiving radio signals to and from the MS.</li>
+<li><strong>Base Station Controller (BSC):</strong> The BSC controls a group of BTSs and manages handovers between them as the MS moves around the network.</li>
+</ul></li>
+<li><strong>Mobile Switching Center (MSC):</strong> The MSC is the core network element that controls calls and data sessions for mobile subscribers. It is responsible for routing calls, performing handovers between BSCs, and managing authentication and authorization.
+
+<ul>
+<li><strong>Home Location Register (HLR):</strong> This database stores information about subscribers’ home networks and is used for authentication and authorization purposes.</li>
+<li><strong>Visitor Location Register (VLR):</strong> This database stores temporary information about mobile subscribers who are visiting a network other than their home network.</li>
+<li><strong>Authentication Center (AUC):</strong> This element is responsible for generating temporary authentication keys that are used to verify the identity of subscribers.</li>
+<li><strong>Equipment Identity Register (EIR):</strong> This database stores information about the validity of mobile equipment, such as the International Mobile Equipment Identity (IMEI).</li>
+<li><strong>Public Switched Telephone Network (PSTN):</strong> This is the traditional landline telephone network.</li>
+</ul></li>
+<li><strong>Operation and Maintenance Center (OMC):</strong> It is responsible for the operation, administration, and maintenance of the GSM network.</li>
+</ul>
+
+<p><strong>Interfaces:</strong></p>
+
+<ul>
+<li><strong>Radio Frequency (RF):</strong> This refers to the radio waves that are used to transmit and receive signals between the mobile device and the BTS.</li>
+<li><strong>Abis Interface:</strong> This is the interface between the BSC and the MSC. It carries signaling messages related to call control, mobility management, and user data.</li>
+<li><strong>A interface:</strong> This is the interface between the mobile device and the BTS. It carries radio signals that encode user data and signaling information.</li>
+</ul>
+<h2><a name="draw-and-explain-cisco-uwn-lightweight-ap-and-wlc-operation-10-dec-23" class="heading-anchor" href="#draw-and-explain-cisco-uwn-lightweight-ap-and-wlc-operation-10-dec-23" rel="nofollow" aria-hidden="true"></a>Draw and explain Cisco UWN lightweight AP and WLC Operation. (10 / Dec 23)</h2>
+<p><img src="assets/Pasted%20image%2020240519102552.jpg" alt=""></p>
+
+<ul>
+<li>With thie explosion of wireless technology in the enterprise network designers have to create solution that provide the mobility and security necessary to monitor network security.</li>
+<li>The <strong>Cisco Unified Wireless Network</strong> architecture tackles these issues by delivering a converged, secured and manageable network.</li>
+<li>In it lightweight access points (LAPs) operate in conjunction with <strong>wireless LAN controllers (WLCs)</strong> using the <strong>Control and Provisioning of Wireless Access Points (CAPWAP) protocol</strong>.</li>
+</ul>
+
+<p><strong>Lightweight Access Points (LAPs)</strong></p>
+
+<ul>
+<li>LAPs are &quot;lightweight&quot; because they only perform real-time 802.11 wireless operations for clients.</li>
+<li>They handle functions like beacons, probes, authentication, and data frame exchange.</li>
+<li>LAPs cannot function independently and must be connected to a WLC.</li>
+<li>Each LAP is automatically configured and managed by the WLC.</li>
+<li>LAPs tunnel all client traffic to the WLC using CAPWAP.</li>
+</ul>
+
+<p><strong>Wireless LAN Controllers (WLCs)</strong></p>
+
+<ul>
+<li>WLCs manage the configuration and firmware of connected LAPs.</li>
+<li>They provide centralized management, monitoring, and control of the wireless network.</li>
+<li>WLCs handle non-real-time MAC functionality, such as QoS, security, and client authentication.</li>
+<li>Multiple WLCs can be deployed for scalability and redundancy.</li>
+<li>WLCs communicate with LAPs using CAPWAP, which defines the control messaging and tunneling mechanism.</li>
+</ul>
+
+<p><strong>CAPWAP Operation</strong></p>
+
+<ul>
+<li>CAPWAP divides the functionality between the LAP and WLC, known as the &quot;split-MAC architecture&quot;.</li>
+<li>The LAP handles low-level MAC functions like beacons, probes, and data frame exchange.</li>
+<li>The WLC manages higher-level functions like QoS, security, and client authentication.</li>
+<li>CAPWAP tunnels all client traffic from the LAP to the WLC for processing.</li>
+</ul>
+<h2><a name="give-the-features-of-vanet-e-vanet-and-manet-10-dec-23" class="heading-anchor" href="#give-the-features-of-vanet-e-vanet-and-manet-10-dec-23" rel="nofollow" aria-hidden="true"></a>Give the Features of VANET, E-VANET and MANET (10 / Dec 23)</h2>
+<p><strong>VANET (Vehicular Ad Hoc Networks):</strong></p>
+
+<p><img src="assets/Pasted%20image%2020240519111533.png" alt=""></p>
+
+<ul>
+<li><strong>High Mobility:</strong> VANETs involve vehicles moving at high speeds, requiring dynamic network configurations to maintain connectivity[](<a href="https://www.geeksforgeeks.org/difference-between-manet-and-vanet/)[](https://www.mdpi.com/1424-8220/22/18/6934">https://www.geeksforgeeks.org/difference-between-manet-and-vanet/)[](https://www.mdpi.com/1424-8220/22/18/6934</a>).</li>
+<li><strong>Vehicle-to-Vehicle (V2V) Communication:</strong> Enables direct communication between vehicles for safety and traffic management applications[](<a href="https://www.geeksforgeeks.org/difference-between-manet-and-vanet/)[](https://www.mdpi.com/1424-8220/22/18/6934">https://www.geeksforgeeks.org/difference-between-manet-and-vanet/)[](https://www.mdpi.com/1424-8220/22/18/6934</a>).</li>
+<li><strong>Vehicle-to-Infrastructure (V2I) Communication:</strong> Facilitates communication between vehicles and roadside infrastructure for enhanced services like traffic signal control and road safety alerts[](<a href="https://www.geeksforgeeks.org/difference-between-manet-and-vanet/)[](https://www.mdpi.com/1424-8220/22/18/6934">https://www.geeksforgeeks.org/difference-between-manet-and-vanet/)[](https://www.mdpi.com/1424-8220/22/18/6934</a>).</li>
+<li><strong>Intelligent Transportation Systems (ITS):</strong> VANETs contribute to improving traffic flow, reducing congestion, and enhancing road safety through intelligent communication between vehicles and infrastructure[](<a href="https://www.mdpi.com/1424-8220/22/18/6934">https://www.mdpi.com/1424-8220/22/18/6934</a>).</li>
+<li><strong>Entertainment and Infotainment Services:</strong> Provide passengers with entertainment options and real-time information during travel[](<a href="https://www.geeksforgeeks.org/difference-between-manet-and-vanet/">https://www.geeksforgeeks.org/difference-between-manet-and-vanet/</a>).</li>
+<li><strong>Emergency Services:</strong> Enable quick dissemination of emergency messages, enhancing response times in critical situations[](<a href="https://www.geeksforgeeks.org/difference-between-manet-and-vanet/">https://www.geeksforgeeks.org/difference-between-manet-and-vanet/</a>).</li>
+</ul>
+
+<p><strong>E-VANET (Enhanced Vehicular Ad Hoc Networks):</strong></p>
+
+<ul>
+<li>E-VANETs likely incorporate advanced technologies or enhancements to standard VANETs, potentially focusing on improved security, reliability, or performance.</li>
+<li>Specific features may include enhanced encryption, more robust authentication mechanisms, or optimized communication protocols for increased efficiency.</li>
+</ul>
+
+<p><strong>MANET (Mobile Ad Hoc Networks):</strong></p>
+
+<p><img src="../UT2/assets/Pasted%20image%2020240418022731.jpg" alt=""></p>
+
+<ul>
+<li><strong>Dynamic Network Topology:</strong> MANETs consist of mobile devices forming a network without fixed infrastructure, allowing for dynamic changes in network topology[](<a href="https://www.researchgate.net/figure/Characteristics-of-Wireless-Ad-Hoc-Network_fig1_365933497)[](https://www.researchgate.net/publication/258248007_Vehicular_ad-Hoc_networks_VANETs-An_overview_and_challenges">https://www.researchgate.net/figure/Characteristics-of-Wireless-Ad-Hoc-Network_fig1_365933497)[](https://www.researchgate.net/publication/258248007_Vehicular_ad-Hoc_networks_VANETs-An_overview_and_challenges</a>).</li>
+<li><strong>Peer-to-Peer Communication:</strong> Nodes in MANETs communicate directly with each other, enabling decentralized and flexible network configurations[](<a href="https://www.researchgate.net/figure/Characteristics-of-Wireless-Ad-Hoc-Network_fig1_365933497)[](https://www.researchgate.net/publication/258248007_Vehicular_ad-Hoc_networks_VANETs-An_overview_and_challenges">https://www.researchgate.net/figure/Characteristics-of-Wireless-Ad-Hoc-Network_fig1_365933497)[](https://www.researchgate.net/publication/258248007_Vehicular_ad-Hoc_networks_VANETs-An_overview_and_challenges</a>).</li>
+<li><strong>Military Operations:</strong> Used for secure communication and coordination in military settings due to their flexibility and quick deployment capabilities[](<a href="https://www.researchgate.net/figure/Characteristics-of-Wireless-Ad-Hoc-Network_fig1_365933497">https://www.researchgate.net/figure/Characteristics-of-Wireless-Ad-Hoc-Network_fig1_365933497</a>).</li>
+<li><strong>Emergency Response:</strong> Deployed rapidly in emergencies to establish communication networks for rescue and relief operations[](<a href="https://www.researchgate.net/figure/Characteristics-of-Wireless-Ad-Hoc-Network_fig1_365933497">https://www.researchgate.net/figure/Characteristics-of-Wireless-Ad-Hoc-Network_fig1_365933497</a>).</li>
+<li><strong>Rural and Remote Areas:</strong> Provide connectivity in areas with limited traditional communication infrastructure, supporting communication in remote locations[](<a href="https://www.researchgate.net/figure/Characteristics-of-Wireless-Ad-Hoc-Network_fig1_365933497">https://www.researchgate.net/figure/Characteristics-of-Wireless-Ad-Hoc-Network_fig1_365933497</a>).</li>
+<li><strong>Transportation:</strong> Used in transportation systems to offer network connectivity to passengers on buses, trains, and airplanes[](<a href="https://www.researchgate.net/figure/Characteristics-of-Wireless-Ad-Hoc-Network_fig1_365933497">https://www.researchgate.net/figure/Characteristics-of-Wireless-Ad-Hoc-Network_fig1_365933497</a>).</li>
+</ul>
+<h2><a name="explain-umts-and-gsm-security-10-dec-23-5-dec-22" class="heading-anchor" href="#explain-umts-and-gsm-security-10-dec-23-5-dec-22" rel="nofollow" aria-hidden="true"></a>Explain UMTS and GSM security (10 / Dec 23) (5 / Dec 22)</h2>
+<p><strong>Global System for Mobile Communication (GSM)</strong></p>
+
+<p><img src="assets/GSM-1024x536.webp" alt=""></p>
+
+<ul>
+<li>GSM security is based on the SIM (Subscriber Identity Module) card and the Authentication Center (AuC) in the network.</li>
+<li>The SIM contains the subscriber's secret key Ki, which is shared with the AuC.</li>
+<li>Authentication is performed using the COMP128 algorithm, which generates a response value RES and a ciphering key Kc from Ki and a random challenge RAND.</li>
+<li>Traffic is encrypted only on the radio interface between the mobile station and the base station using the A5 algorithm.</li>
+<li>GSM security has some weaknesses, such as optional authentication, lack of mutual authentication, and vulnerability to replay attacks.</li>
+</ul>
+
+<p><strong>Universal Mobile Telecommunications Service (UMTS)</strong></p>
+
+<ul>
+<li>UMTS security is based on the USIM (Universal SIM) card and the Authentication Center (AuC) in the network.</li>
+<li>The USIM and the network authenticate each other, preventing an attacker from faking the home network.</li>
+<li>The authentication mechanism prevents replay attacks by introducing a new authentication sequence number SQN.</li>
+<li>The key generation algorithms produce a response value RES, an encryption key CK, and an integrity key IK.</li>
+<li>Signaling messages exchanged over the radio interface must be marked with a hash derived from the message and the integrity key to prevent tampering.</li>
+<li>UMTS security can also be used over GSM networks by replacing the SIM with a USIM.</li>
+</ul>
+
+<p><strong>The main differences in security between UMTS and GSM are:</strong></p>
+
+<ul>
+<li>UMTS provides mutual authentication between the USIM and the network, while GSM only authenticates the subscriber.</li>
+<li>UMTS uses stronger encryption algorithms and extends encryption from the radio interface to the Node-B to RNC connection.</li>
+<li>UMTS has additional security features such as protection against false base stations and mechanisms for upgrading security features.</li>
+</ul>
+<h2><a name="compare-manet-and-wsn-5-may-23" class="heading-anchor" href="#compare-manet-and-wsn-5-may-23" rel="nofollow" aria-hidden="true"></a>Compare MANET and WSN (5 / May 23)</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>MANET (Mobile Ad Hoc Network)</th>
+<th>WSN (Wireless Sensor Network)</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Nodes</td>
+<td>Mobile nodes</td>
+<td>Sensor nodes</td>
+</tr>
+
+<tr>
+<td>Mobility</td>
+<td>Nodes move randomly</td>
+<td>Nodes are stationary or mobile</td>
+</tr>
+
+<tr>
+<td>Communication</td>
+<td>Peer-to-peer</td>
+<td>Typically point-to-point or point-to-multipoint</td>
+</tr>
+
+<tr>
+<td>Energy Efficiency</td>
+<td>Varied energy consumption</td>
+<td>Energy-efficient design</td>
+</tr>
+
+<tr>
+<td>Application</td>
+<td>General data communication</td>
+<td>Data collection and monitoring</td>
+</tr>
+
+<tr>
+<td>Topology</td>
+<td>Dynamic and changing</td>
+<td>Static or slowly changing</td>
+</tr>
+
+<tr>
+<td>Scalability</td>
+<td>Scalable for dynamic networks</td>
+<td>Scalable for large-scale deployments</td>
+</tr>
+
+<tr>
+<td>Security</td>
+<td>Vulnerable due to mobility</td>
+<td>Security protocols for data integrity and confidentiality</td>
+</tr>
+
+<tr>
+<td>Deployment</td>
+<td>Rapid deployment in dynamic environments</td>
+<td>Planned deployment in specific areas</td>
+</tr>
+
+<tr>
+<td>Data Rate</td>
+<td>Variable based on node mobility</td>
+<td>Lower data rates due to sensor constraints</td>
+</tr>
+
+<tr>
+<td>Redundancy</td>
+<td>Limited redundancy</td>
+<td>High redundancy for data reliability</td>
+</tr>
+
+<tr>
+<td>Communication Range</td>
+<td>Variable based on node mobility</td>
+<td>Limited range due to sensor constraints</td>
+</tr>
+
+<tr>
+<td>Network Size</td>
+<td>Typically smaller networks</td>
+<td>Larger networks with numerous nodes</td>
+</tr>
+
+<tr>
+<td>Use Cases</td>
+<td>Military operations, emergency response</td>
+<td>Environmental monitoring, smart agriculture, infrastructure control</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="write-note-on-lte-frame-structure-in-detail-5-may-23" class="heading-anchor" href="#write-note-on-lte-frame-structure-in-detail-5-may-23" rel="nofollow" aria-hidden="true"></a>Write note on LTE frame structure in detail (5 / May 23)</h2>
+<p>In order that the 3G LTE system can maintain synchronisation and the system is able to manage the different types of information that need to be carried between the base-station or eNodeB and the User Equipment, UE, 3G LTE system has a defined LTE frame and subframe structure for the E-UTRA.</p>
+
+<p><strong>Type 1 LTE Frame Structure</strong></p>
+
+<p>The basic type 1 LTE frame has an overall length of 10 ms. This is then divided into a total of 20 individual slots. LTE Subframes then consist of two slots – in other words there are ten LTE subframes within a frame.</p>
+
+<p><img src="assets/Pasted%20image%2020240519165856.png" alt=""></p>
+
+<p><strong>Type 2 LTE Frame Structure</strong></p>
+
+<p>The frame structure for the type 2 frames used on LTE TDD is somewhat different. The 10 ms frame comprises two half frames, each 5 ms long. The LTE half-frames are further split into five subframes, each 1ms long.</p>
+
+<p><img src="assets/Pasted%20image%2020240519165932.png" alt=""></p>
+
+<p><strong>LTE TDD / TD-LTE subframe allocations</strong></p>
+
+<table>
+<thead>
+<tr>
+<th align="center">UPLINK-DOWNLINK CONFIGURATION</th>
+<th align="center">DOWNLINK TO UPLINK SWITCH PERIODICITY</th>
+<th align="center">SUBFRAME NUMBER</th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><strong>0</strong></td>
+<td align="center"><strong>1</strong></td>
+<td align="center"><strong>2</strong></td>
+<td align="center"><strong>3</strong></td>
+<td align="center"><strong>4</strong></td>
+<td align="center"><strong>5</strong></td>
+<td align="center"><strong>6</strong></td>
+<td align="center"><strong>7</strong></td>
+<td align="center"><strong>8</strong></td>
+<td align="center"><strong>9</strong></td>
+</tr>
+
+<tr>
+<td align="center">0</td>
+<td align="center">5 ms</td>
+<td align="center">D</td>
+<td align="center">S</td>
+<td align="center">U</td>
+<td align="center">U</td>
+<td align="center">U</td>
+<td align="center">D</td>
+<td align="center">S</td>
+<td align="center">U</td>
+<td align="center">U</td>
+<td align="center">U</td>
+</tr>
+
+<tr>
+<td align="center">1</td>
+<td align="center">5 ms</td>
+<td align="center">D</td>
+<td align="center">S</td>
+<td align="center">U</td>
+<td align="center">U</td>
+<td align="center">D</td>
+<td align="center">D</td>
+<td align="center">S</td>
+<td align="center">U</td>
+<td align="center">U</td>
+<td align="center">D</td>
+</tr>
+
+<tr>
+<td align="center">2</td>
+<td align="center">5 ms</td>
+<td align="center">D</td>
+<td align="center">S</td>
+<td align="center">U</td>
+<td align="center">D</td>
+<td align="center">D</td>
+<td align="center">D</td>
+<td align="center">S</td>
+<td align="center">U</td>
+<td align="center">D</td>
+<td align="center">D</td>
+</tr>
+
+<tr>
+<td align="center">3</td>
+<td align="center">10 ms</td>
+<td align="center">D</td>
+<td align="center">S</td>
+<td align="center">U</td>
+<td align="center">U</td>
+<td align="center">U</td>
+<td align="center">D</td>
+<td align="center">D</td>
+<td align="center">D</td>
+<td align="center">D</td>
+<td align="center">D</td>
+</tr>
+
+<tr>
+<td align="center">4</td>
+<td align="center">10 ms</td>
+<td align="center">D</td>
+<td align="center">S</td>
+<td align="center">U</td>
+<td align="center">U</td>
+<td align="center">D</td>
+<td align="center">D</td>
+<td align="center">D</td>
+<td align="center">D</td>
+<td align="center">D</td>
+<td align="center">D</td>
+</tr>
+
+<tr>
+<td align="center">5</td>
+<td align="center">10 ms</td>
+<td align="center">D</td>
+<td align="center">S</td>
+<td align="center">U</td>
+<td align="center">D</td>
+<td align="center">D</td>
+<td align="center">D</td>
+<td align="center">D</td>
+<td align="center">D</td>
+<td align="center">D</td>
+<td align="center">D</td>
+</tr>
+
+<tr>
+<td align="center">6</td>
+<td align="center">5 ms</td>
+<td align="center">D</td>
+<td align="center">S</td>
+<td align="center">U</td>
+<td align="center">U</td>
+<td align="center">U</td>
+<td align="center">D</td>
+<td align="center">S</td>
+<td align="center">U</td>
+<td align="center">U</td>
+<td align="center">D</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li><strong>D</strong> is a subframe for downlink transmission<br></li>
+<li><strong>S</strong> is a “special” subframe used for a guard time<br></li>
+<li><strong>U</strong> is a subframe for uplink transmission</li>
+</ul>
+<h2><a name="write-note-on-cdma-2000-5-may-23" class="heading-anchor" href="#write-note-on-cdma-2000-5-may-23" rel="nofollow" aria-hidden="true"></a>Write note on CDMA 2000 (5 / May 23)</h2>
+<p><img src="assets/Untitled-Diagram-(12).webp" alt=""></p>
+
+<p>Code Division Multiple Access 2000 (CDMA2000) is a third generation (3G) standard developed by the International Telecommunication Union (ITU).</p>
+
+<p>This protocol uses CDMA access to send voice and data and signals between mobile phones and cell sites.</p>
+
+<p>Enhanced services can be provided to CDMA One subscribers through CDMA2000. Data communication speeds ranging from 114 Kbps to 2 Mbps are supported by this standard.</p>
+
+<p>The following are CDMA2000 standards:</p>
+
+<ul>
+<li><strong>CDMA2000 1xRTT</strong>: Supports data as well as voice at up to 144 kbps data speeds.</li>
+<li><strong>CDMA2000 1xEV-DO</strong>: Offers faster data rates, up to 3.1 Mbps, and is primarily used for data services.</li>
+<li><strong>1xEV-DV CDMA2000</strong>: Combines voice and data while also providing high-speed connectivity.</li>
+<li><strong>CDMA2000 3x</strong>**: A portion of IMT-2000, as defined by the ITU Multiple Carrier CDMA</li>
+<li><strong>CDMA2000 1x</strong>: Generally regarded as a 2.5G technology</li>
+</ul>
+<h2><a name="draw-neat-diagram-of-gprs-system-architecture-and-explain-the-function-of-each-block-in-it-10-may-23" class="heading-anchor" href="#draw-neat-diagram-of-gprs-system-architecture-and-explain-the-function-of-each-block-in-it-10-may-23" rel="nofollow" aria-hidden="true"></a>Draw neat diagram of GPRS system architecture and explain the function of each block in it. (10 / May 23)</h2>
+<p><img src="assets/Pasted%20image%2020240519193627.png" alt=""></p>
+
+<ul>
+<li><strong>Mobile Station (MS):</strong> This is the mobile device used by the subscriber, such as a smartphone or a tablet.</li>
+<li><strong>Base Station Controller (BSC):</strong> The BSC controls a group of BTSs and manages handovers between them as the MS moves around the network.</li>
+<li><strong>Passive Uplink Connection (PUC):</strong> A device or module used for data collection and connectivity in various wireless applications:</li>
+<li><strong>SGSN (Serving GPRS Support Node):</strong> This is a gateway that connects mobile devices to the GPRS network, which is a packet-based data network.</li>
+<li><strong>GGSN (Gateway GPRS Support Node):</strong> This is a gateway that connects the GPRS network to other networks, such as the internet.</li>
+<li><strong>MSC (Mobile Switching Center):</strong> This is a switch that is responsible for routing calls between mobile devices and other telephone networks.</li>
+<li><strong>HLR (Home Location Register):</strong> This is a database that contains information about a mobile device, such as its subscription information and its current location area.</li>
+<li><strong>PSTN (Public Switched Telephone Network):</strong> This is the traditional telephone network.</li>
+</ul>
+<h2><a name="draw-and-explain-lorawan-network-architecture-and-technology-stack-in-detail-10-may-23" class="heading-anchor" href="#draw-and-explain-lorawan-network-architecture-and-technology-stack-in-detail-10-may-23" rel="nofollow" aria-hidden="true"></a>Draw and explain LoRaWAN network architecture and technology stack in detail. (10 / May 23)</h2>
+<p><img src="assets/Pasted%20image%2020240519195605.png" alt=""></p>
+
+<ul>
+<li><strong>End Devices:</strong> Sensors or devices that collect data and communicate with gateways.</li>
+<li><strong>Gateways:</strong> Bridge between end devices and the network server, receiving data from end devices and forwarding it to the network server.</li>
+<li><strong>Network Server:</strong> Manages the network, handling end device communication, security, and data routing.</li>
+<li><strong>Application Server:</strong> Receives data from the network server, processes it, and integrates it into applications or systems.</li>
+</ul>
+
+<p><strong>Technology Stack</strong></p>
+
+<p><img src="assets/Pasted%20image%2020240519195847.png" alt=""></p>
+
+<ul>
+<li><strong>Application Layer:</strong> This layer interacts with the application server and manages the data payload. It's responsible for the specific content being transmitted on the LoRaWAN network.</li>
+<li><strong>MAC Layer:</strong> The Media Access Control layer is responsible for managing access to the LoRaWAN network. It includes three classes of operation that define how end devices communicate with the network server:
+
+<ul>
+<li>Class A: In Class A devices, communication is initiated by the end device. After transmitting a message, the device listens for a short downlink window to receive a response message from the network server.</li>
+<li>Class B: Class B devices can transmit messages like Class A devices, but they also open receive windows periodically to listen for downlink messages from the network server.</li>
+<li>Class C: Class C devices continuously listen for downlink messages from the network server. This mode enables the lowest possible latency for downlink communication but uses the most battery power.</li>
+</ul></li>
+<li><strong>PHY Layer:</strong> The Physical layer is the bottom layer and is responsible for physical radio wave transmission and reception. It defines the data rates, spreading factors, and modulation techniques used by LoRa devices.</li>
+<li><strong>LoRa Modulation:</strong> LoRa uses a spread spectrum modulation technique called chirp spread spectrum (CSS). CSS modulates data onto radio waves by spreading the signal over a larger bandwidth than the data itself.</li>
+
+<li><p><strong>Regional ISM (Industrial, Scientific &amp; Medical devices) bands:</strong> are also called <strong>unlicensed bands</strong>, refers to a group of radio bands or parts of the radio spectrum that are internationally reserved for the use of radio frequency (RF) energy intended for scientific, medical and industrial requirements.</p>
+<h2><a name="describe-bluetooth-architecture-and-protocol-stack-also-discuss-its-limitations-10-may-23" class="heading-anchor" href="#describe-bluetooth-architecture-and-protocol-stack-also-discuss-its-limitations-10-may-23" rel="nofollow" aria-hidden="true"></a>Describe Bluetooth architecture and protocol stack. Also discuss its limitations. (10 / May 23)</h2></li>
+</ul>
+
+<p><img src="assets/Pasted%20image%2020240519201453.png" alt=""></p>
+
+<p>It comes under IEEE 802.15.1</p>
+
+<p><strong>Radio</strong>: It provides the electrical interface for transfer of packets. It uses modulated carrier for this purpose.</p>
+
+<table>
+<thead>
+<tr>
+<th>Protocol layer</th>
+<th>Protocols in the stack</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Bluetooth Core Protocols</td>
+<td>Baseband, LMP, L2CAP, SDP</td>
+</tr>
+
+<tr>
+<td>Cable Replacement Protocol</td>
+<td>RFCOMM</td>
+</tr>
+
+<tr>
+<td>Telephony Control Protocols</td>
+<td>TCS Binary, AT-commands</td>
+</tr>
+
+<tr>
+<td>Adopted Protocols</td>
+<td>PPP, UDP/TCP/IP, OBEX, WAP, vCard, vCal, IrMC1, WAE</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li><strong>Bluetooth Core Protocols:</strong> The core protocols of Bluetooth form the foundation of the Bluetooth technology, providing essential functions for communication between devices.
+
+<ul>
+<li><strong>Baseband</strong>: This layer is responsible for addressing scheme, packet frame format, timing and power control algorithms required for establishing connection between Bluetooth devices within a piconet.</li>
+<li><strong>Audio:</strong> Audio data can be transferred between one or more Bluetooth devices.</li>
+<li><strong>Link Manager Protocol (LMP)</strong>:
+
+<ul>
+<li><img src="assets/Pasted%20image%2020240418020729.png" alt=""></li>
+<li>This layer is responsible for establishing and maintaining links between Bluetooth devices.</li>
+<li>It includes authentication and encryption specifications, and handles negotiation of packet sizes between devices.</li>
+</ul></li>
+<li><strong>Logical Link Control and Adaptation Protocol (L2CAP)</strong>: This layer adapts upper layer frames to baseband layer frame format and vice versa. It provides both <strong>connection-oriented and connectionless services</strong>.</li>
+<li><strong>Service Discovery Protocol (SDP)</strong>: It enables a Bluetooth device to join piconet. Allows devices to discover services offered by other devices, facilitating the establishment of connections.</li>
+</ul></li>
+<li><strong>Cable Replacement Protocol:</strong> providing a means for devices to communicate as if connected by a physical cable.
+
+<ul>
+<li><strong>Radio Frequency Communication (RFCOMM):</strong> It is a serial communication protocol.</li>
+</ul></li>
+<li><strong>Telephony Control Protocols</strong>: are responsible for call control signaling, mobility management, and controlling mobile phones.
+
+<ul>
+<li><strong>Telephony Control – Binary (TCS BIN):</strong> a bit-oriented protocol that defines call control signaling for establishing voice and data calls between Bluetooth devices.</li>
+<li><strong>Telephony Control – AT Commands:</strong>
+
+<ul>
+<li><img src="assets/Pasted%20image%2020240418020954.png" alt=""></li>
+<li><img src="assets/Pasted%20image%2020240418021001.png" alt=""></li>
+<li>are a set of instructions and control functions used for telephony control between Bluetooth devices.</li>
+</ul></li>
+</ul></li>
+<li><strong>Adopted Protocols</strong>: standard protocols integrated into Bluetooth technology to enhance its functionality
+
+<ul>
+<li><strong>Point to Point Protocol (PPP):</strong>
+
+<ul>
+<li><img src="assets/Pasted%20image%2020240418021041.png" alt=""></li>
+<li>a data link layer communication protocol between two routers directly without any host or any other networking in between</li>
+</ul></li>
+<li><strong>Object Exchange Protocol (OBEX Protocol):</strong>
+
+<ul>
+<li>It allows for the seamless transfer of various types of data, such as files, contacts, and messages, between Bluetooth-enabled devices, enhancing the interoperability and usability of Bluetooth technology.</li>
+</ul></li>
+<li><strong>Transmission Control Protocol / User Datagram Protocol / Internet Protocol (TCP/UDP/IP):</strong>
+
+<ul>
+<li><img src="assets/Pasted%20image%2020240418021307.png" alt=""></li>
+<li>The implementation of these standards in Bluetooth devices allows for communication with any other device connected to the Internet: The Bluetooth device.</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2><a name="explain-the-different-features-of-vanet-e-vanet-5-may-22" class="heading-anchor" href="#explain-the-different-features-of-vanet-e-vanet-5-may-22" rel="nofollow" aria-hidden="true"></a>Explain the different features of VANET &amp; E-VANET (5 / May 22)</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>VANET</th>
+<th>E-VANET</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Mobility</td>
+<td>Low</td>
+<td>High</td>
+</tr>
+
+<tr>
+<td>Communication</td>
+<td>Vehicle-to-Vehicle (V2V), Vehicle-to-Infrastructure (V2I)</td>
+<td>Enhanced V2V and V2I communication</td>
+</tr>
+
+<tr>
+<td>Energy Consumption</td>
+<td>More</td>
+<td>Less</td>
+</tr>
+
+<tr>
+<td>Applications</td>
+<td>Intelligent Transportation Systems (ITS), navigation, emergency services, entertainment</td>
+<td>Enhanced ITS, navigation, emergency services, and entertainment applications</td>
+</tr>
+
+<tr>
+<td>Topology</td>
+<td>Dynamic and rapidly changing</td>
+<td>Potentially more stable topology with electric vehicles</td>
+</tr>
+
+<tr>
+<td>Scalability</td>
+<td>Less</td>
+<td>More</td>
+</tr>
+
+<tr>
+<td>Security</td>
+<td>Less</td>
+<td>More</td>
+</tr>
+
+<tr>
+<td>Reliability</td>
+<td>Less</td>
+<td>More</td>
+</tr>
+
+<tr>
+<td>Challenges</td>
+<td>High mobility, frequent topology changes, limited bandwidth, security</td>
+<td>Energy consumption, charging infrastructure, standardization</td>
+</tr>
+
+<tr>
+<td>Potential Technologies</td>
+<td>DSRC, LTE, 5G, IEEE 802.11p</td>
+<td>Software-Defined Networking (SDN), Fog Computing, Internet of Vehicles (IoV), Cloud Computing</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="fhss-vs-dsss-5-may-22" class="heading-anchor" href="#fhss-vs-dsss-5-may-22" rel="nofollow" aria-hidden="true"></a>FHSS vs DSSS (5 / May 22)</h2>
+<p><img src="assets/Pasted%20image%2020240418043428.png" alt=""></p>
+
+<p>These are methods used in wireless communication to spread a signal over a wide range of frequencies.</p>
+
+<p>FHSS involves rapidly changing the frequency of the signal in a pattern known to both sender and receiver, making it resistant to interference and eavesdropping.</p>
+
+<p>On the other hand, DSSS divides the signal into smaller parts and mixes it with redundant data bits, making it more secure and resistant to noise.</p>
+
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>FHSS</th>
+<th>DSSS</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Full Form</td>
+<td>Frequency Hopping Spread Spectrum</td>
+<td>Direct Sequence Spread Spectrum</td>
+</tr>
+
+<tr>
+<td>Transmission rate</td>
+<td>Low</td>
+<td>High</td>
+</tr>
+
+<tr>
+<td>Modulation</td>
+<td>Multilevel Frequency Shift Keying (FSK)</td>
+<td>Binary Phase shift keying</td>
+</tr>
+
+<tr>
+<td>Bandwidth utilization</td>
+<td>More</td>
+<td>Less</td>
+</tr>
+
+<tr>
+<td>Used in</td>
+<td>Bluetooth, Mobile Communication, etc</td>
+<td>GPS, Wifi &amp; etc</td>
+</tr>
+
+<tr>
+<td>Interference</td>
+<td>Resistant</td>
+<td>Vulnerable</td>
+</tr>
+
+<tr>
+<td>Efficiency</td>
+<td>More</td>
+<td>Less</td>
+</tr>
+
+<tr>
+<td>Transmission Speed</td>
+<td>Up to 3Mbps</td>
+<td>up to 11Mbps</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="draw-and-explain-gsm-time-slot-hierarchy-10-may-22" class="heading-anchor" href="#draw-and-explain-gsm-time-slot-hierarchy-10-may-22" rel="nofollow" aria-hidden="true"></a>Draw and Explain GSM  time slot hierarchy (10 / May 22)</h2>
+<p><img src="assets/Pasted%20image%2020240520023215.jpg" alt=""></p>
+
+<p>GSM (Global System for Mobile Communications), a standardized, digital cellular network which forms the basis for many of the mobile phone technologies used today.</p>
+
+<p>Here’s a breakdown of the components, starting from the bottom:</p>
+
+<ul>
+<li><strong>Hyperframe</strong>: Not shown in the detailed breakdown but mentioned in the diagram, a hyperframe consists of 20 superframes.
+
+<ul>
+<li><strong>Superframe</strong>: A superframe consists of one BCH multiframe and three TCH multiframes.
+
+<ul>
+<li><strong>TCH Multiframe</strong>: A <strong>Traffic Channel (TCH)</strong> multiframe also consists of 26 frames. TCH channels carry user traffic, such as voice calls or data transmissions.
+
+<ul>
+<li><strong>Frame</strong>: Each frame carries data in a specific format, including control information, training sequence, and user data.
+
+<ul>
+<li><strong>GSM time slot</strong>: A single GSM frame consists of eight time slots, each lasting for roughly 547 microseconds.</li>
+</ul></li>
+</ul></li>
+<li><strong>BCH Multiframe</strong>: A <strong>Broadcast Channel (BCH)</strong> multiframe consists of 26 frames. BCH channels are used to transmit system information and signaling messages to all mobile devices within a cell.</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2><a name="draw-and-explain-the-architecture-of-cisco-uwn-with-its-features-10-may-22" class="heading-anchor" href="#draw-and-explain-the-architecture-of-cisco-uwn-with-its-features-10-may-22" rel="nofollow" aria-hidden="true"></a>Draw and explain the architecture of Cisco UWN with its features. (10 / May 22)</h2>
+<p><img src="assets/Pasted%20image%2020240520024317.png" alt=""></p>
+
+<p><strong>Features of Cisco UWN</strong></p>
+
+<ul>
+<li><strong>Centralized Management:</strong> UWN utilizes a centralized approach with Wireless LAN Controllers (WLANS) managing Lightweight Access Points (LAPs).</li>
+<li><strong>Scalability:</strong> The architecture allows for a large number of access points (up to 512 WLANs) to be controlled by a single WLC, making it suitable for big campuses or dense network environments.</li>
+<li><strong>Robust Security:</strong> UWN offers strong security features including:
+
+<ul>
+<li>Support for industry-standard protocols like WPA2 and EAP for secure encryption.</li>
+<li>Layer 2 security options like MAC filtering to restrict unauthorized devices.</li>
+</ul></li>
+<li><strong>Advanced RF Management:</strong> UWN provides features for optimizing radio frequency (RF) utilization. This includes dynamic channel assignment, power control, and load balancing to ensure optimal performance and minimize co-channel interference.</li>
+<li><strong>Mobility Services:</strong> UWN supports seamless mobility features like voice over IP (VoIP) allowing users to maintain voice calls while roaming between access points.</li>
+<li><strong>Optional Cisco WCS:</strong> The Cisco Wireless Control System (WCS) is an add-on that provides additional functionalities like:
+
+<ul>
+<li>Location tracking for mobile devices within the network.</li>
+<li>Comprehensive WLAN system configuration, monitoring, and troubleshooting.</li>
+</ul></li>
+</ul>
+<h2><a name="draw-and-explain-ofdma-technique-for-multiplexing" class="heading-anchor" href="#draw-and-explain-ofdma-technique-for-multiplexing" rel="nofollow" aria-hidden="true"></a>Draw and Explain OFDMA technique for multiplexing</h2>
+<p><img src="assets/Pasted%20image%2020240520030216.png" alt=""></p>
+
+<p><strong>Orthogonal Frequency-Division Multiple Access (OFDMA)</strong> is a key technology used in wireless communication systems like Wi-Fi 6 and 5G networks to efficiently allocate resources and enable multiple users to transmit and receive data simultaneously:</p>
+
+<p><strong>Here is an explanation of the OFDMA technique for multiplexing</strong></p>
+
+<ol>
+<li><strong>Basic Principle:</strong>
+
+<ul>
+<li>OFDMA is an extension of Orthogonal Frequency-Division Multiplexing (OFDM) that allows for multiple users to share the same frequency band by assigning subsets of subcarriers to individual users.</li>
+</ul></li>
+<li><strong>Resource Allocation:</strong>
+
+<ul>
+<li>OFDMA allocates resources in both the time and frequency domains, enabling multiple users with varying data loads to share the spectrum efficientl.</li>
+</ul></li>
+<li><strong>Efficient Bandwidth Utilization:</strong>
+
+<ul>
+<li>It enables parallel transmission and reception of data from multiple users, enhancing airtime efficiency.</li>
+</ul></li>
+<li><strong>Flexibility and Adaptability:</strong>
+
+<ul>
+<li>It adapts to varying network conditions and user traffic patterns, optimizing the use of available resources.</li>
+</ul></li>
+<li><strong>Benefits of OFDMA:</strong>
+
+<ul>
+<li>Enables simultaneous transmission and reception from multiple users, improving network capacity and efficiency.</li>
+<li>Enhances service in high-density environments like airports, stadiums, and lecture halls by efficiently managing network resources.</li>
+</ul></li>
+</ol>
+<h2><a name="lr-wpans" class="heading-anchor" href="#lr-wpans" rel="nofollow" aria-hidden="true"></a>* LR-WPANs</h2>
+<p><img src="assets/Pasted%20image%2020240520031040.png" alt=""></p>
+
+<p>IEEE 802.15.4 is a low-cost, low-data-rate wireless access technology for devices that are operated or work on batteries. This describes how <strong>low-rate wireless personal area networks (LR-WPANs)</strong> function.</p>
+
+<ul>
+<li><strong>Standardization and alliances:</strong> It specifies low-data-rate PHY and MAC layer requirements for wireless personal area networks (WPAN). <strong>IEEE 802.15</strong>.</li>
+<li><strong>Physical Layer:</strong> This standard enables a wide range of PHY options in ISM bands, ranging from 2.4 GHz to sub-GHz frequencies. <strong>IEEE 802.15.4</strong> enables data transmission speeds of 20 kilobits per second, 40 kilobits per second, 100 kilobits per second, and 250 kilobits per second.</li>
+<li><strong>MAC layer:</strong> The MAC layer provides links to the PHY channel by determining that devices in the same region will share the assigned frequencies.</li>
+</ul>
+
+<p><strong>Security:</strong> </p>
+
+<ul>
+<li>For data security, the IEEE 802.15.4 standard employs the Advanced Encryption Standard (AES) with a 128-bit key length as the basic encryption technique.</li>
+</ul>
+<h2><a name="digital-modulation-techniques-ask-fsk-bpsk-qpsk" class="heading-anchor" href="#digital-modulation-techniques-ask-fsk-bpsk-qpsk" rel="nofollow" aria-hidden="true"></a>* Digital Modulation Techniques – ASK, FSK, BPSK, QPSK</h2>
+<p><img src="assets/Pasted%20image%2020240520031658.png" alt=""></p>
+
+<p><strong>Digital Modulation Techniques:</strong></p>
+
+<ol>
+<li><p><strong>Amplitude Shift Keying (ASK):</strong></p>
+
+<ul>
+<li>ASK is a digital modulation technique where the amplitude of the carrier signal is varied to represent digital data.</li>
+<li>It involves switching the amplitude of the carrier between two levels to encode binary data.</li>
+<li>ASK is simple to implement but is susceptible to noise and interference.
+<br></li>
+</ul></li>
+
+<li><p><strong>Frequency Shift Keying (FSK):</strong></p>
+
+<ul>
+<li>FSK is a modulation scheme where the frequency of the carrier signal is varied to represent digital data.</li>
+<li>It involves switching the frequency of the carrier between two or more discrete values to encode binary data.</li>
+<li>FSK is less susceptible to noise compared to ASK but requires more bandwidth.
+<br></li>
+</ul></li>
+
+<li><p><strong>Binary Phase Shift Keying (BPSK):</strong></p>
+
+<ul>
+<li>BPSK is a type of phase modulation where the phase of the carrier signal is shifted to represent digital data.</li>
+<li>It uses two phase shifts (0° and 180°) to encode binary data (0 and 1).</li>
+<li>BPSK is robust and simple but has a lower data rate compared to other modulation schemes.
+<br></li>
+</ul></li>
+
+<li><p><strong>Quadrature Phase Shift Keying (QPSK):</strong></p>
+
+<ul>
+<li>QPSK is an advanced modulation technique where the carrier signal's phase is varied to represent digital data.</li>
+<li>It uses four phase shifts (0°, 90°, 180°, 270°) to encode two bits per symbol.</li>
+<li>QPSK offers higher data rates compared to BPSK but is more complex and requires careful synchronization.</li>
+</ul></li>
+</ol>
+<h2><a name="electromagnetic-spectrum" class="heading-anchor" href="#electromagnetic-spectrum" rel="nofollow" aria-hidden="true"></a>* Electromagnetic Spectrum</h2>
+<p><img src="assets/Radio-waves-rays-light-gamma-ultraviolet-electromagnetic.webp" alt=""></p>
+<h2><a name="multiplexing-techniques-fdm-tdm-ofdm" class="heading-anchor" href="#multiplexing-techniques-fdm-tdm-ofdm" rel="nofollow" aria-hidden="true"></a>* Multiplexing Techniques – FDM, TDM, OFDM</h2>
+<ol>
+<li><p><strong>Frequency Division Multiplexing (FDM):</strong></p>
+
+<ul>
+<li><strong>Definition:</strong> FDM divides the bandwidth of a communication channel into multiple frequency subchannels, each carrying a separate signal.</li>
+<li><strong>Working Principle:</strong> Signals of different frequencies are combined into a composite signal and transmitted over the channel.</li>
+<li><strong>Advantages:</strong> Allows multiple signals to be transmitted simultaneously, simple demodulation process, and no synchronization required between transmitter and receiver.</li>
+<li><strong>Applications:</strong> Widely used in FM and AM radio broadcasts, television broadcasting, and first-generation cellular phones.
+<br></li>
+</ul></li>
+
+<li><p><strong>Time Division Multiplexing (TDM):</strong></p>
+
+<ul>
+<li><strong>Definition:</strong> TDM allocates time slots to multiple signals, allowing them to share the same channel by transmitting data sequentially.</li>
+<li><strong>Working Principle:</strong> Each signal is transmitted in its allocated time slot, enabling multiple users to share the channel efficiently.</li>
+<li><strong>Advantages:</strong> Efficient use of channel capacity, simple demodulation process, and low susceptibility to interference.</li>
+<li><strong>Applications:</strong> Used in digital communication systems, telecommunication networks, and digital switching systems.
+<br></li>
+</ul></li>
+
+<li><p><strong>Orthogonal Frequency Division Multiplexing (OFDM):</strong></p>
+
+<ul>
+<li><strong>Definition:</strong> OFDM distributes a single data stream over multiple closely spaced subcarriers, allowing parallel transmission of data.</li>
+<li><strong>Working Principle:</strong> Data bits are transmitted in parallel over independent subchannels, reducing interference and improving bandwidth efficiency.</li>
+<li><strong>Advantages:</strong> High data rates, improved spectral efficiency, and robustness against multipath fading.</li>
+<li><strong>Applications:</strong> Commonly used in wireless data transfer, cable, and fiber optic communication systems.</li>
+</ul></li>
+</ol>
+<h2><a name="edge-gprs-umts" class="heading-anchor" href="#edge-gprs-umts" rel="nofollow" aria-hidden="true"></a>* Edge, GPRS, UMTS</h2>
+<p><img src="assets/Pasted%20image%2020240329230845.jpg" alt=""></p>
+
+<ol>
+<li><strong>Edge (Enhanced Data Rates for GSM Evolution)</strong>:
+
+<ul>
+<li><strong>Description</strong>: Edge, also known as 2.75G, is a digital mobile phone technology that enhances data transmission rates as an extension of GSM.</li>
+<li><strong>Speed</strong>: Edge offers higher bit rates per radio channel, resulting in a threefold increase in capacity and performance compared to ordinary GSM/GPRS connections.</li>
+<li><strong>Features</strong>: It delivers higher data rates, making it suitable for packet-switched applications like internet connections.</li>
+<li><strong>Implementation</strong>: Edge is a superset to GPRS and can function on any network with GPRS deployed, requiring no hardware or software changes in GSM core networks.</li>
+</ul></li>
+<li><strong>GPRS (General Packet Radio Service)</strong>:
+
+<ul>
+<li><strong>Description</strong>: GPRS is a packet-based service for data transmission in GSM networks, providing a permanent connection to devices.</li>
+<li><strong>Speed</strong>: GPRS allows for data transmission rates of up to 20-40 Kbps, making it suitable for early mobile websites.</li>
+<li><strong>Features</strong>: It is packet-oriented, converting data into individual packets for transmission and reassembly at the receiver.</li>
+<li><strong>Billing</strong>: GPRS billing is based on the quantity of data transferred rather than connection time, offering more flexibility in data usage.</li>
+</ul></li>
+<li><strong>UMTS (Universal Mobile Telecommunications System)</strong>:
+
+<ul>
+<li><strong>Description</strong>: UMTS is a 3G standard that follows GSM, offering higher data rates and supporting simultaneous voice and data services.</li>
+<li><strong>Speed</strong>: UMTS delivers symmetric data rates of up to 384 Kbps for handsets, significantly higher than 2G technologies.</li>
+<li><strong>Features</strong>: It uses new spectrum at 2GHz, enabling a greater number of digital voice calls and supporting dual-transfer mode for voice and data services.</li>
+<li><strong>Deployment</strong>: UMTS represents a generational leap in mobile communication, providing operators with increased capacity and improved service offerings.</li>
+</ul></li>
+</ol>
+<h2><a name="principle-of-cellular-communication-frequency-reuse-concept-cluster-size-and-system-capacity-cochannel-interference-and-signal-quality" class="heading-anchor" href="#principle-of-cellular-communication-frequency-reuse-concept-cluster-size-and-system-capacity-cochannel-interference-and-signal-quality" rel="nofollow" aria-hidden="true"></a>* Principle of Cellular Communication – Frequency Reuse concept, cluster size and system capacity, cochannel interference and signal quality</h2>
+<p><img src="assets/Pasted%20image%2020240520032629.png" alt=""></p>
+
+<p>The principle of cellular communication relies on the concept of frequency reuse, which allows for efficient utilization of the available spectrum and increased system capacity. Here's an explanation of the key aspects:</p>
+
+<p><strong>Frequency Reuse Concept</strong></p>
+
+<ul>
+<li>Frequency reuse implies that in a given coverage area, there are several cells that use the same set of frequencies[](<a href="https://www.jeppiaarinstitute.org/pdf/lectures/71.pdf)[](https://www.pearsonhighered.com/assets/samplechapter/0/1/3/0/0130422320.pdf">https://www.jeppiaarinstitute.org/pdf/lectures/71.pdf)[](https://www.pearsonhighered.com/assets/samplechapter/0/1/3/0/0130422320.pdf</a>).</li>
+</ul>
+
+<p><strong>Cluster Size and System Capacity</strong></p>
+
+<ul>
+<li>The number of cells in a cluster is denoted by N, which can only have values that satisfy the equation N = i^2 + ij + j^2, where i and j are integers[](<a href="https://www.slideshare.net/slideshow/cellular-concepts-in-wireless-communication/29277681">https://www.slideshare.net/slideshow/cellular-concepts-in-wireless-communication/29277681</a>).</li>
+<li>Reducing the cluster size N while keeping the cell size constant increases the number of clusters required to cover the given area, resulting in higher capacity[](<a href="https://kanchiuniv.ac.in/coursematerials/MobileCommunication.pdf">https://kanchiuniv.ac.in/coursematerials/MobileCommunication.pdf</a>).</li>
+</ul>
+
+<p><strong>Co-channel Interference and Signal Quality</strong></p>
+
+<ul>
+<li>Co-channel interference is caused by the cells that reuse the same frequency set[](<a href="https://kanchiuniv.ac.in/coursematerials/MobileCommunication.pdf">https://kanchiuniv.ac.in/coursematerials/MobileCommunication.pdf</a>).</li>
+<li>To reduce co-channel interference, co-channel cells must be physically separated by a minimum distance to provide sufficient isolation due to propagation[](<a href="https://www.pearsonhighered.com/assets/samplechapter/0/1/3/0/0130422320.pdf">https://www.pearsonhighered.com/assets/samplechapter/0/1/3/0/0130422320.pdf</a>).</li>
+</ul>
+
+		</main>
+        
+        <details id="table-of-content">
+           <summary>Table of Content</summary>
+                    <nav>
+<ul>
+<li><a href="#draw-and-explain-4g-lte-architecture-with-its-specifications-10-dec-23-10-may-23-10-dec-22">Draw and explain 4G/LTE architecture with its specifications. (10 / Dec 23) (10 / May 23) (10 / Dec 22)</a></li>
+<li><a href="#explain-zigbee-protocol-stack-10-dec-23-10-may-23-10-dec-22">
+Explain Zigbee protocol stack (10 / Dec 23) (10 / May 23) (10 / Dec 22)</a></li>
+<li><a href="#give-the-significance-of-wpa-what-are-the-features-of-wpa2-10-dec-23-10-may-23-10-dec-22">
+Give the significance of WPA. What are the features of WPA2. (10 / Dec 23) (10 / May 23) (10 / Dec 22)</a></li>
+<li><a href="#draw-and-explain-ieee-802-11-architecture-also-discuss-on-power-management-in-ieee802-11-infrastructure-network-compare-ieee-802-11-ieee-802-16-10-dec-23-10-may-23-10-dec-22">
+Draw and explain IEEE 802.11 Architecture. Also discuss on power management in IEEE802.11 infrastructure network. Compare IEEE 802.11 &amp;  IEEE 802.16 (10 / Dec 23) (10 / May 23) (10 / Dec 22)</a></li>
+<li><a href="#what-do-you-mean-by-massive-mimo-compare-1g-5g-mobile-standards-10-dec-23-5-may-23">
+What do you mean by massive MIMO; Compare 1G-5G mobile standards. (10 / Dec 23) (5 / May 23)</a></li>
+<li><a href="#compare-fdma-tdma-and-cdma-5-dec-23-5-dec-22">
+Compare FDMA, TDMA and CDMA (5 / Dec 23) (5 / Dec 22)</a></li>
+<li><a href="#outline-the-method-that-supports-mobility-in-cisco-unified-wireless-network-5-dec-23-5-may-23">
+Outline the method that supports mobility in CISCO Unified Wireless Network (5 / Dec 23) (5 / May 23)</a></li>
+<li><a href="#draw-and-explain-umts-network-architecture-and-compare-gsm-umts-10-may-23-10-dec-22">
+Draw and explain UMTS network architecture and compare GSM &amp; UMTS (10 / May 23) (10 / Dec 22)</a></li>
+<li><a href="#explain-the-layered-architecture-of-wsn-protocol-and-discuss-issues-and-challenges-in-wsn-10-may-23-10-dec-22">
+Explain the layered architecture of WSN protocol and discuss issues and challenges in WSN. (10 / May 23) (10 / Dec 22)</a></li>
+<li><a href="#explain-the-difference-between-an-infrastructures-based-network-and-an-adhoc-network-of-wlan-5-dec-23">
+Explain the difference between an Infrastructures based Network and an Adhoc Network of WLAN (5 / Dec 23)</a></li>
+<li><a href="#explain-direct-sequence-spread-spectrum-5-dec-23">
+Explain Direct Sequence Spread Spectrum (5 / Dec 23)</a></li>
+<li><a href="#state-the-features-of-wi-max-5-dec-23">
+State the features of Wi-Max (5 / Dec 23)</a></li>
+<li><a href="#explain-in-detail-gsm-architecture-with-a-diagram-10-dec-23">
+Explain in detail GSM Architecture with a diagram (10 / Dec 23)</a></li>
+<li><a href="#draw-and-explain-cisco-uwn-lightweight-ap-and-wlc-operation-10-dec-23">
+Draw and explain Cisco UWN lightweight AP and WLC Operation. (10 / Dec 23)</a></li>
+<li><a href="#give-the-features-of-vanet-e-vanet-and-manet-10-dec-23">
+Give the Features of VANET, E-VANET and MANET (10 / Dec 23)</a></li>
+<li><a href="#explain-umts-and-gsm-security-10-dec-23-5-dec-22">
+Explain UMTS and GSM security (10 / Dec 23) (5 / Dec 22)</a></li>
+<li><a href="#compare-manet-and-wsn-5-may-23">
+Compare MANET and WSN (5 / May 23)</a></li>
+<li><a href="#write-note-on-lte-frame-structure-in-detail-5-may-23">
+Write note on LTE frame structure in detail (5 / May 23)</a></li>
+<li><a href="#write-note-on-cdma-2000-5-may-23">
+Write note on CDMA 2000 (5 / May 23)</a></li>
+<li><a href="#draw-neat-diagram-of-gprs-system-architecture-and-explain-the-function-of-each-block-in-it-10-may-23">
+Draw neat diagram of GPRS system architecture and explain the function of each block in it. (10 / May 23)</a></li>
+<li><a href="#draw-and-explain-lorawan-network-architecture-and-technology-stack-in-detail-10-may-23">
+Draw and explain LoRaWAN network architecture and technology stack in detail. (10 / May 23)</a></li>
+<li><a href="#describe-bluetooth-architecture-and-protocol-stack-also-discuss-its-limitations-10-may-23">
+Describe Bluetooth architecture and protocol stack. Also discuss its limitations. (10 / May 23)</a></li>
+<li><a href="#explain-the-different-features-of-vanet-e-vanet-5-may-22">
+Explain the different features of VANET &amp; E-VANET (5 / May 22)</a></li>
+<li><a href="#fhss-vs-dsss-5-may-22">
+FHSS vs DSSS (5 / May 22)</a></li>
+<li><a href="#draw-and-explain-gsm-time-slot-hierarchy-10-may-22">
+Draw and Explain GSM  time slot hierarchy (10 / May 22)</a></li>
+<li><a href="#draw-and-explain-the-architecture-of-cisco-uwn-with-its-features-10-may-22">
+Draw and explain the architecture of Cisco UWN with its features. (10 / May 22)</a></li>
+<li><a href="#draw-and-explain-ofdma-technique-for-multiplexing">
+Draw and Explain OFDMA technique for multiplexing</a></li>
+<li><a href="#lr-wpans">
+* LR-WPANs</a></li>
+<li><a href="#digital-modulation-techniques-ask-fsk-bpsk-qpsk">
+* Digital Modulation Techniques – ASK, FSK, BPSK, QPSK</a></li>
+<li><a href="#electromagnetic-spectrum">
+* Electromagnetic Spectrum</a></li>
+<li><a href="#multiplexing-techniques-fdm-tdm-ofdm">
+* Multiplexing Techniques – FDM, TDM, OFDM</a></li>
+<li><a href="#edge-gprs-umts">
+* Edge, GPRS, UMTS</a></li>
+<li><a href="#principle-of-cellular-communication-frequency-reuse-concept-cluster-size-and-system-capacity-cochannel-interference-and-signal-quality">
+* Principle of Cellular Communication – Frequency Reuse concept, cluster size and system capacity, cochannel interference and signal quality</a></li>
+</ul>
+</nav>
+
+        </details>
+        
+		<footer>
+			<p style="text-align: center; font-size: small; margin-top: 5em;">
+                <a href="https://anzenkodo.github.io/license">LICENSE</a>
+            </p>
+		</footer>
+	<script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']],
+          }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <script>
+    const music = document.getElementById('music');
+    let wave = new CircularAudioWave(music);
+    wave.loadAudio('https://AnzenKodo.github.io/assets/Music.m4a');
+
+    music.addEventListener("click", () => {
+        if (wave.playing) {
+            wave.pause();
+        } else {
+            wave.play()
+        }
+    })
+    </script>
+	</body>
+</html>
