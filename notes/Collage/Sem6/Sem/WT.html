@@ -163,8 +163,6 @@
                 max-width: 100%;
             }
 		</style>
-	<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0"></script>
-    <script src="https://AnzenKodo.github.io/assets/circular-audio-wave.js"></script>
 	</head>
 	<body>
 	    <a href="#skip-top-main">Skip to main</a>
@@ -173,7 +171,6 @@
                 <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
 		</header>
-		<div id="music" style="width: 100%; height: 18em;"></div>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem; margin-top: 0;">WT</h1>
 			<h2><a name="draw-and-explain-4g-lte-architecture-with-its-specifications-10-dec-23-10-may-23-10-dec-22" class="heading-anchor" href="#draw-and-explain-4g-lte-architecture-with-its-specifications-10-dec-23-10-may-23-10-dec-22" rel="nofollow" aria-hidden="true"></a>Draw and explain 4G/LTE architecture with its specifications. (10 / Dec 23) (10 / May 23) (10 / Dec 22)</h2>
@@ -1985,27 +1982,14 @@ Draw and Explain OFDMA technique for multiplexing</a></li>
             </p>
 		</footer>
 	<script>
-        MathJax = {
-          tex: {
-            inlineMath: [['$', '$']],
-            displayMath: [['$$', '$$']],
-          }
-        };
-    </script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-    </script>
-    <script>
-    const music = document.getElementById('music');
-    let wave = new CircularAudioWave(music);
-    wave.loadAudio('https://AnzenKodo.github.io/assets/Music.m4a');
-
-    music.addEventListener("click", () => {
-        if (wave.playing) {
-            wave.pause();
-        } else {
-            wave.play()
-        }
-    })
-    </script>
+		MathJax = {
+		  tex: {
+		    inlineMath: [['$', '$']],
+		    displayMath: [['$$', '$$']],
+		  }
+		};
+	</script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+	</script>
 	</body>
 </html>
