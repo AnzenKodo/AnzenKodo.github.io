@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>IOE UT1 - AK#Notes</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="description" content="## Define smart objects  **Smart objects** in the context of the Internet of Things (IoT) exhibit s">
+  		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
+  		<meta property="og:image:alt" content="AK#Notes logo">
+  		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="IOE UT1 - AK#Notes">
+		<meta property="og:description" content="## Define smart objects  **Smart objects** in the context of the Internet of Things (IoT) exhibit s">
+		<meta property="og:url" content="https://AnzenKodo.github.io/">
+		<meta property="og:type" content="website">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+
+            :root {
+                color-scheme: dark light;
+                --theme: #FF6C22;
+			}
+			body {
+                max-width: 40rem;
+                margin: 0 auto;
+                font-family: system-ui;
+                padding: 0 1em;
+                color: inherit !important;
+                word-break: break-word;
+			}
+			h1, h2, h3, h4, h5, h6 {
+                font-family: monospace;
+                margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+                font-size: 2rem;
+			}
+			h3 {
+			    font-size: 1.8rem;
+			}
+			h4 {
+			    font-size: 1.5rem;
+			}
+			h5 {
+			    font-size: 1.3rem;
+			}
+			h6 {
+			    font-size: 1rem;
+			}
+			p, li, td, code {
+			    line-height: 1.5rem;
+			}
+			a {
+			    color: var(--theme);
+			    text-decoration: none;
+			}
+			a:hover, a:focus {
+			    text-decoration: underline;
+			}
+			a:active {
+			    background: var(--theme);
+			    color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+                margin-top: .5rem;
+			}
+			li {
+                margin-bottom: .5rem;
+			}
+			table {
+			    border-collapse: collapse;
+                overflow-x: auto;
+                display: block;
+                word-break: auto-phrase;
+			}
+            th {
+                font-size: 1.1rem;
+                border: 2px solid;
+                padding: .3rem .3rem;
+            }
+            td {
+                border: 1px solid;
+                padding: .3rem .5rem;
+            }
+            blockquote {
+                margin-left: 0;
+                margin-right: 0;
+                border: 1px solid;
+                border-left: 10px solid;
+                padding: 0 1rem;
+            }
+            .code-block {
+                background: black;
+                overflow-x: auto;
+                padding: 0em 1em;
+                border: 1px solid;
+            }
+            .code-block-language-name {
+                position: sticky;
+                left: 95%;
+                top: .5em;
+                font-weight: bold;
+                color: white;
+            }
+            :not(pre.chroma) > code {
+                border: 1px solid;
+                padding: .3rem .2rem .2rem .2rem;
+            }
+            img {
+                max-width: 100%;
+                display: block;
+                margin: 0 auto;
+            }
+            [href="#skip-top-main"] {
+                padding: 0.3em;
+                position: absolute;
+                transform: translateY(-200%);
+            }
+            [href="#skip-top-main"]:focus {
+                transform: translateY(0%);
+                background: var(--theme);
+                color: inherit;
+            }
+            #table-of-content {
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+                background: black;
+                padding: 0.5rem 1em;
+                z-index: 1;
+                color: white;
+            }
+            #table-of-content[open] {
+                max-height: 90%;
+                overflow-y: auto;
+                bottom: 50px;
+                margin-left: 1em;
+            }
+            #table-of-content[open] summary {
+                background: black;
+                padding: 0.5em 1em;
+                text-align: center;
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+            }
+            #table-of-content ul:first-child {
+                padding-left: 1em;
+                margin-top: 1.5em;
+            }
+            .heading-anchor::before {
+                content: "#";
+                margin-right: .5rem;
+            }
+            mjx-container {
+                display: math;
+                overflow-y: hidden;
+                overflow-x: auto;
+                max-width: 100%;
+            }
+		</style>
+	<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0"></script>
+    <script src="https://AnzenKodo.github.io/assets/circular-audio-wave.js"></script>
+	</head>
+	<body>
+	    <a href="#skip-top-main">Skip to main</a>
+		<header>
+			<h1 style="text-align: center;">
+                <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+            </h1>
+		</header>
+		<div id="music" style="width: 100%; height: 18em;"></div>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem; margin-top: 0;">IOE UT1</h1>
+			<h2><a name="define-smart-objects" class="heading-anchor" href="#define-smart-objects" rel="nofollow" aria-hidden="true"></a>Define smart objects</h2>
+<p><strong>Smart objects</strong> in the context of the Internet of Things (IoT) exhibit several key characteristics, which can be summarized as follows:</p>
+
+<ul>
+<li><strong>Processing Unit</strong>: Smart objects have a processing unit for acquiring, processing, and analyzing data from sensors, coordinating control signals to actuators, and managing communication and power systems[](<a href="https://www.studocu.com/in/document/hkbk-college-of-engineering/internet-of-things/iot-2-module-2/30256507)[](https://www.javatpoint.com/iot-smart-objects">https://www.studocu.com/in/document/hkbk-college-of-engineering/internet-of-things/iot-2-module-2/30256507)[](https://www.javatpoint.com/iot-smart-objects</a>).</li>
+<li><strong>Sensors and Actuators</strong>: They interact with the physical world through sensors (to sense the environment) and actuators (to act upon the environment)[](<a href="https://www.studocu.com/in/document/hkbk-college-of-engineering/internet-of-things/iot-2-module-2/30256507)[](https://www.javatpoint.com/iot-smart-objects">https://www.studocu.com/in/document/hkbk-college-of-engineering/internet-of-things/iot-2-module-2/30256507)[](https://www.javatpoint.com/iot-smart-objects</a>).</li>
+<li><strong>Autonomy</strong>: Smart objects can operate to some extent autonomously, making decisions based on the data they collect[](<a href="https://en.wikipedia.org/wiki/Smart_object)[](https://www.javatpoint.com/iot-smart-objects">https://en.wikipedia.org/wiki/Smart_object)[](https://www.javatpoint.com/iot-smart-objects</a>).</li>
+<li><strong>Networked</strong>: They are connected to other devices, systems, or the Internet, enabling data exchange and communication[](<a href="https://en.wikipedia.org/wiki/Smart_object)[](https://www.javatpoint.com/iot-smart-objects)[](https://www.iis.fraunhofer.de/en/ff/lv/dataanalytics/smart-object.html">https://en.wikipedia.org/wiki/Smart_object)[](https://www.javatpoint.com/iot-smart-objects)[](https://www.iis.fraunhofer.de/en/ff/lv/dataanalytics/smart-object.html</a>).</li>
+<li><strong>Reconfigurable</strong>: Smart objects can be reconfigured to adapt to different situations or tasks[](<a href="https://en.wikipedia.org/wiki/Smart_object)[](https://www.javatpoint.com/iot-smart-objects">https://en.wikipedia.org/wiki/Smart_object)[](https://www.javatpoint.com/iot-smart-objects</a>).</li>
+<li><strong>Energy Efficiency</strong>: Often powered by batteries, which can limit their lifetime and power consumption[](<a href="https://www.geeksforgeeks.org/classification-of-smart-objects/)[](https://www.javatpoint.com/iot-smart-objects">https://www.geeksforgeeks.org/classification-of-smart-objects/)[](https://www.javatpoint.com/iot-smart-objects</a>).</li>
+<li><strong>Real-Time Operation</strong>: Frequently operate in real-time mode, which can be a challenge due to power constraints[](<a href="https://www.geeksforgeeks.org/classification-of-smart-objects/">https://www.geeksforgeeks.org/classification-of-smart-objects/</a>).</li>
+<li><strong>Mobility</strong>: Can be mobile or static, depending on their application[](<a href="https://www.geeksforgeeks.org/classification-of-smart-objects/">https://www.geeksforgeeks.org/classification-of-smart-objects/</a>).</li>
+<li><strong>Data Reporting Frequency</strong>: Vary in how frequently they report monitored parameters, affecting power consumption and transmission range[](<a href="https://www.geeksforgeeks.org/classification-of-smart-objects/">https://www.geeksforgeeks.org/classification-of-smart-objects/</a>).</li>
+<li><strong>Data Complexity</strong>: Can exchange simple or rich data, impacting power consumption and transmission requirements[](<a href="https://www.geeksforgeeks.org/classification-of-smart-objects/">https://www.geeksforgeeks.org/classification-of-smart-objects/</a>).</li>
+</ul>
+
+<p>These characteristics enable smart objects to enhance interactions with both people and other smart objects, contributing to various IoT applications such as home automation, industrial monitoring, and smart cities</p>
+
+<p><img src="assets/Pasted%20image%2020240827202456.jpg" alt=""></p>
+<h2><a name="define-iot-explain-characteristics-of-iot" class="heading-anchor" href="#define-iot-explain-characteristics-of-iot" rel="nofollow" aria-hidden="true"></a>Define IOT &amp; Explain characteristics of IOT</h2>
+<p><img src="assets/Pasted%20image%2020240827231309.png" alt=""></p>
+
+<p><strong>Internet of Things (IoT)</strong> refers to a network of physical devices, vehicles, appliances, and other items that are embedded with sensors, software, and network connectivity, enabling them to collect and exchange data with other devices and systems over the Internet or other communication networks[](<a href="https://www.kaspersky.com/resource-center/definitions/what-is-iot)[](https://www.ibm.com/topics/internet-of-things)[](https://en.wikipedia.org/wiki/Internet_of_things">https://www.kaspersky.com/resource-center/definitions/what-is-iot)[](https://www.ibm.com/topics/internet-of-things)[](https://en.wikipedia.org/wiki/Internet_of_things</a>).</p>
+
+<p><strong>Key Characteristics of IoT</strong></p>
+
+<ol>
+<li><strong>Connectivity:</strong> IoT devices are interconnected through various communication protocols.</li>
+<li><strong>Sensors and Actuators:</strong> These devices collect data from the physical environment and take actions based on the data.</li>
+<li><strong>Data:</strong> IoT devices generate vast amounts of data that can be analyzed to improve efficiency and make informed decisions.</li>
+<li><strong>Real-Time:</strong> IoT enables real-time monitoring and control of physical objects.</li>
+<li><strong>Scalability:</strong> IoT systems can be easily scaled to accommodate a growing number of devices and data.</li>
+<li><strong>Interoperability:</strong> IoT devices should be able to communicate and interact with each other, regardless of their manufacturer or technology.</li>
+<li><strong>Security:</strong> Ensuring the security of IoT systems is crucial to protect sensitive data and prevent unauthorized access.</li>
+</ol>
+<h2><a name="limitation-of-iot-challenges" class="heading-anchor" href="#limitation-of-iot-challenges" rel="nofollow" aria-hidden="true"></a>Limitation of IOT challenges</h2><h3><a name="technical-challenges" class="heading-anchor" href="#technical-challenges" rel="nofollow" aria-hidden="true"></a>Technical Challenges</h3>
+<ul>
+<li><strong>Interoperability:</strong> Ensuring seamless communication between devices from different manufacturers can be complex.</li>
+<li><strong>Scalability:</strong> Handling a massive number of interconnected devices can strain network infrastructure and data processing capabilities.</li>
+<li><strong>Security:</strong> IoT devices are vulnerable to cyberattacks, as they often have limited security features and may be connected to unsecured networks.</li>
+<li><strong>Privacy:</strong> Collecting and storing large amounts of data can raise privacy concerns.</li>
+<li><strong>Energy Consumption:</strong> IoT devices often rely on batteries, which can limit their lifespan and increase maintenance costs.</li>
+</ul>
+<h3><a name="operational-challenges" class="heading-anchor" href="#operational-challenges" rel="nofollow" aria-hidden="true"></a>Operational Challenges</h3>
+<ul>
+<li><strong>Complexity:</strong> Implementing and managing IoT systems can be complex, requiring specialized skills and expertise.</li>
+<li><strong>Cost:</strong> The initial investment in IoT technology, including hardware, software, and network infrastructure, can be significant.</li>
+<li><strong>Reliability:</strong> IoT devices can be prone to failures or malfunctions, affecting their reliability and accuracy.</li>
+<li><strong>Data Quality:</strong> Ensuring the quality and accuracy of data collected by IoT devices is essential for making informed decisions.</li>
+<li><strong>Regulatory Compliance:</strong> IoT systems must comply with various regulations, such as data privacy laws and industry standards.</li>
+</ul>
+<h2><a name="high-level-architecture-of-m2m" class="heading-anchor" href="#high-level-architecture-of-m2m" rel="nofollow" aria-hidden="true"></a>High-level Architecture of M2M</h2><h2><a name="compare-iot-m2m" class="heading-anchor" href="#compare-iot-m2m" rel="nofollow" aria-hidden="true"></a>Compare IOT M2M</h2><h2><a name="communication-criteria" class="heading-anchor" href="#communication-criteria" rel="nofollow" aria-hidden="true"></a>Communication criteria</h2><h2><a name="bluetooth-vs-zigbee" class="heading-anchor" href="#bluetooth-vs-zigbee" rel="nofollow" aria-hidden="true"></a>Bluetooth vs ZigBee</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Bluetooth</th>
+<th>ZigBee</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>Range</strong></td>
+<td>Short range (up to 10 meters)</td>
+<td>Longer range (up to 100 meters)</td>
+</tr>
+
+<tr>
+<td><strong>Power Consumption</strong></td>
+<td>Low power consumption</td>
+<td>Very low power consumption</td>
+</tr>
+
+<tr>
+<td><strong>Data Rate</strong></td>
+<td>Higher data rate (up to 24 Mbps)</td>
+<td>Lower data rate (up to 250 kbps)</td>
+</tr>
+
+<tr>
+<td><strong>Topology</strong></td>
+<td>Star, master-slave</td>
+<td>Mesh</td>
+</tr>
+
+<tr>
+<td><strong>Applications</strong></td>
+<td>Wireless headsets, speakers, mobile devices</td>
+<td>Smart home automation, industrial sensors, healthcare devices</td>
+</tr>
+
+<tr>
+<td><strong>Cost</strong></td>
+<td>Lower cost</td>
+<td>Higher cost</td>
+</tr>
+
+<tr>
+<td><strong>Security</strong></td>
+<td>Good security features</td>
+<td>Good security features</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="iot-world-form" class="heading-anchor" href="#iot-world-form" rel="nofollow" aria-hidden="true"></a>IOT World Form</h2><h2><a name="high-level-architecture-of-802-15-4" class="heading-anchor" href="#high-level-architecture-of-802-15-4" rel="nofollow" aria-hidden="true"></a>High-level Architecture of 802.15.4</h2><h2><a name="fog-computing-edge-and-cloud-computing" class="heading-anchor" href="#fog-computing-edge-and-cloud-computing" rel="nofollow" aria-hidden="true"></a>Fog computing, Edge and Cloud computing.</h2><h2><a name="types-of-actuators" class="heading-anchor" href="#types-of-actuators" rel="nofollow" aria-hidden="true"></a>Types of Actuators</h2>
+<ul>
+<li><strong>Pneumatic Actuators</strong>:
+
+<ul>
+<li>Use compressed air or gas to generate motion.</li>
+<li>Fast response, cost-effective, and safe for explosion-proof environments[](<a href="https://www.controleng.com/articles/actuators-explained-types-of-actuators-application-choice-maintenance/)[](https://tameson.com/pages/actuator)[](https://sdcautomation.com/understanding-the-3-types-of-mechanical-actuators/">https://www.controleng.com/articles/actuators-explained-types-of-actuators-application-choice-maintenance/)[](https://tameson.com/pages/actuator)[](https://sdcautomation.com/understanding-the-3-types-of-mechanical-actuators/</a>).</li>
+</ul></li>
+<li><strong>Hydraulic Actuators</strong>:
+
+<ul>
+<li>Use fluid pressure to generate motion.</li>
+<li>High force, durability, and reliability; commonly used in heavy-duty applications.</li>
+</ul></li>
+<li><strong>Electric Actuators</strong>:
+
+<ul>
+<li>Use electrical energy to generate motion.</li>
+<li>Precise control, low noise, and low maintenance; driven by AC or DC motors.</li>
+</ul></li>
+<li><strong>Magnetic Actuators</strong>:
+
+<ul>
+<li>Use magnetic fields to generate force.</li>
+<li>Common in micro-electromechanical systems (MEMS) and other miniaturized applications[](<a href="https://tameson.com/pages/actuator)[](https://www.smlease.com/entries/automation/what-is-an-actuator-types-and-applications/">https://tameson.com/pages/actuator)[](https://www.smlease.com/entries/automation/what-is-an-actuator-types-and-applications/</a>).</li>
+</ul></li>
+<li><strong>Thermal Actuators</strong>:
+
+<ul>
+<li>Use temperature changes to generate motion through material expansion or contraction.</li>
+<li>Used in MEMS and other miniaturized applications[](<a href="https://tameson.com/pages/actuator)[](https://www.smlease.com/entries/automation/what-is-an-actuator-types-and-applications/">https://tameson.com/pages/actuator)[](https://www.smlease.com/entries/automation/what-is-an-actuator-types-and-applications/</a>).</li>
+</ul></li>
+<li><strong>Mechanical Actuators</strong>:
+
+<ul>
+<li>Use physical mechanisms like levers, gears, or cams to generate motion.</li>
+<li>Low cost, simple operation, and durability; examples include hand-crank machines and manual valve systems.</li>
+</ul></li>
+</ul>
+<h2><a name="rfid" class="heading-anchor" href="#rfid" rel="nofollow" aria-hidden="true"></a>RFID</h2><h2><a name="bluetooth-low-eneryg-zwave" class="heading-anchor" href="#bluetooth-low-eneryg-zwave" rel="nofollow" aria-hidden="true"></a>Bluetooth low eneryg + zwave</h2><h2><a name="iot-core-function-stack" class="heading-anchor" href="#iot-core-function-stack" rel="nofollow" aria-hidden="true"></a>IOT core function stack</h2>
+<hr>
+<h2><a name="explain-conceptual-framework-of-iot" class="heading-anchor" href="#explain-conceptual-framework-of-iot" rel="nofollow" aria-hidden="true"></a>Explain conceptual framework of IOT</h2><h2><a name="explain-various-applications-of-iot" class="heading-anchor" href="#explain-various-applications-of-iot" rel="nofollow" aria-hidden="true"></a>Explain various applications of IOT</h2><h2><a name="explain-pysical-and-logical-design-of-iot" class="heading-anchor" href="#explain-pysical-and-logical-design-of-iot" rel="nofollow" aria-hidden="true"></a>Explain pysical and logical design of IOT</h2><h2><a name="draw-and-explain-functional-blocks-of-iot" class="heading-anchor" href="#draw-and-explain-functional-blocks-of-iot" rel="nofollow" aria-hidden="true"></a>Draw and explain functional blocks of IOT</h2><h2><a name="explain-fog-computing" class="heading-anchor" href="#explain-fog-computing" rel="nofollow" aria-hidden="true"></a>Explain fog computing</h2><h2><a name="write-a-short-note-on-edge-computing" class="heading-anchor" href="#write-a-short-note-on-edge-computing" rel="nofollow" aria-hidden="true"></a>Write a short note on edge computing</h2><h2><a name="differentiate-between-data-versus-network-analytics" class="heading-anchor" href="#differentiate-between-data-versus-network-analytics" rel="nofollow" aria-hidden="true"></a>Differentiate between data versus network analytics</h2><h2><a name="compare-data-analytics-versus-business-benifits" class="heading-anchor" href="#compare-data-analytics-versus-business-benifits" rel="nofollow" aria-hidden="true"></a>Compare data analytics versus business benifits.</h2><h2><a name="explain-architecture-of-iotwf" class="heading-anchor" href="#explain-architecture-of-iotwf" rel="nofollow" aria-hidden="true"></a>Explain architecture of IoTWF</h2><h2><a name="explain-iot-functional-stack" class="heading-anchor" href="#explain-iot-functional-stack" rel="nofollow" aria-hidden="true"></a>Explain IOT functional stack</h2><h2><a name="explain-hierarchy-of-edge-fog-and-cloud-computing" class="heading-anchor" href="#explain-hierarchy-of-edge-fog-and-cloud-computing" rel="nofollow" aria-hidden="true"></a>Explain hierarchy of edge fog and cloud computing</h2><h2><a name="explain-it-and-ot-responsibilities-in-iot-reference-models" class="heading-anchor" href="#explain-it-and-ot-responsibilities-in-iot-reference-models" rel="nofollow" aria-hidden="true"></a>Explain IT and OT responsibilities in IOT reference models</h2><h2><a name="explain-simplified-iot-architecture" class="heading-anchor" href="#explain-simplified-iot-architecture" rel="nofollow" aria-hidden="true"></a>Explain simplified IOT architecture</h2>
+<ul>
+<li><a href="https://www.perplexity.ai/search/ioe-ut1-p_ilq.B_S_mlH.yS37zWxg">IOE UT1</a></li>
+</ul>
+
+		</main>
+        
+        <details id="table-of-content">
+           <summary>Table of Content</summary>
+                    <nav>
+<ul>
+<li><a href="#define-smart-objects">Define smart objects</a></li>
+<li><a href="#define-iot-explain-characteristics-of-iot">
+Define IOT &amp; Explain characteristics of IOT</a></li>
+<li><a href="#limitation-of-iot-challenges">
+Limitation of IOT challenges</a>
+<ul>
+<li><a href="#technical-challenges">
+Technical Challenges</a></li>
+<li><a href="#operational-challenges">
+Operational Challenges</a></li>
+</ul></li>
+<li><a href="#high-level-architecture-of-m2m">
+High-level Architecture of M2M</a></li>
+<li><a href="#compare-iot-m2m">
+Compare IOT M2M</a></li>
+<li><a href="#communication-criteria">
+Communication criteria</a></li>
+<li><a href="#bluetooth-vs-zigbee">
+Bluetooth vs ZigBee</a></li>
+<li><a href="#iot-world-form">
+IOT World Form</a></li>
+<li><a href="#high-level-architecture-of-802-15-4">
+High-level Architecture of 802.15.4</a></li>
+<li><a href="#fog-computing-edge-and-cloud-computing">
+Fog computing, Edge and Cloud computing.</a></li>
+<li><a href="#types-of-actuators">
+Types of Actuators</a></li>
+<li><a href="#rfid">
+RFID</a></li>
+<li><a href="#bluetooth-low-eneryg-zwave">
+Bluetooth low eneryg + zwave</a></li>
+<li><a href="#iot-core-function-stack">
+IOT core function stack</a></li>
+<li><a href="#explain-conceptual-framework-of-iot">
+Explain conceptual framework of IOT</a></li>
+<li><a href="#explain-various-applications-of-iot">
+Explain various applications of IOT</a></li>
+<li><a href="#explain-pysical-and-logical-design-of-iot">
+Explain pysical and logical design of IOT</a></li>
+<li><a href="#draw-and-explain-functional-blocks-of-iot">
+Draw and explain functional blocks of IOT</a></li>
+<li><a href="#explain-fog-computing">
+Explain fog computing</a></li>
+<li><a href="#write-a-short-note-on-edge-computing">
+Write a short note on edge computing</a></li>
+<li><a href="#differentiate-between-data-versus-network-analytics">
+Differentiate between data versus network analytics</a></li>
+<li><a href="#compare-data-analytics-versus-business-benifits">
+Compare data analytics versus business benifits.</a></li>
+<li><a href="#explain-architecture-of-iotwf">
+Explain architecture of IoTWF</a></li>
+<li><a href="#explain-iot-functional-stack">
+Explain IOT functional stack</a></li>
+<li><a href="#explain-hierarchy-of-edge-fog-and-cloud-computing">
+Explain hierarchy of edge fog and cloud computing</a></li>
+<li><a href="#explain-it-and-ot-responsibilities-in-iot-reference-models">
+Explain IT and OT responsibilities in IOT reference models</a></li>
+<li><a href="#explain-simplified-iot-architecture">
+Explain simplified IOT architecture</a></li>
+</ul>
+</nav>
+
+        </details>
+        
+		<footer>
+			<p style="text-align: center; font-size: small; margin-top: 5em;">
+                <a href="https://anzenkodo.github.io/license">LICENSE</a>
+            </p>
+		</footer>
+	<script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']],
+          }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <script>
+    const music = document.getElementById('music');
+    let wave = new CircularAudioWave(music);
+    wave.loadAudio('https://AnzenKodo.github.io/assets/Music.m4a');
+
+    music.addEventListener("click", () => {
+        if (wave.playing) {
+            wave.pause();
+        } else {
+            wave.play()
+        }
+    })
+    </script>
+	</body>
+</html>
