@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>STQA - AK#Notes</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="description" content="## Black Box Testing  ![](assets/Black_box_testing_01-2.webp)  Black-box testing is a type of softwa">
+  		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
+  		<meta property="og:image:alt" content="AK#Notes logo">
+  		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="STQA - AK#Notes">
+		<meta property="og:description" content="## Black Box Testing  ![](assets/Black_box_testing_01-2.webp)  Black-box testing is a type of softwa">
+		<meta property="og:url" content="https://AnzenKodo.github.io/">
+		<meta property="og:type" content="website">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+
+            :root {
+                color-scheme: dark light;
+                --theme: #FF6C22;
+			}
+			body {
+                max-width: 40rem;
+                margin: 0 auto;
+                font-family: system-ui;
+                padding: 0 1em;
+                color: inherit !important;
+                word-break: break-word;
+			}
+			h1, h2, h3, h4, h5, h6 {
+                font-family: monospace;
+                margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+                font-size: 2rem;
+			}
+			h3 {
+			    font-size: 1.8rem;
+			}
+			h4 {
+			    font-size: 1.5rem;
+			}
+			h5 {
+			    font-size: 1.3rem;
+			}
+			h6 {
+			    font-size: 1rem;
+			}
+			p, li, td, code {
+			    line-height: 1.5rem;
+			}
+			a {
+			    color: var(--theme);
+			    text-decoration: none;
+			}
+			a:hover, a:focus {
+			    text-decoration: underline;
+			}
+			a:active {
+			    background: var(--theme);
+			    color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+                margin-top: .5rem;
+			}
+			li {
+                margin-bottom: .5rem;
+			}
+			table {
+			    border-collapse: collapse;
+                overflow-x: auto;
+                display: block;
+                word-break: auto-phrase;
+			}
+            th {
+                font-size: 1.1rem;
+                border: 2px solid;
+                padding: .3rem .3rem;
+            }
+            td {
+                border: 1px solid;
+                padding: .3rem .5rem;
+            }
+            blockquote {
+                margin-left: 0;
+                margin-right: 0;
+                border: 1px solid;
+                border-left: 10px solid;
+                padding: 0 1rem;
+            }
+            .code-block {
+                background: black;
+                overflow-x: auto;
+                padding: 0em 1em;
+                border: 1px solid;
+            }
+            .code-block-language-name {
+                position: sticky;
+                left: 95%;
+                top: .5em;
+                font-weight: bold;
+                color: white;
+            }
+            :not(pre.chroma) > code {
+                border: 1px solid;
+                padding: .3rem .2rem .2rem .2rem;
+            }
+            img {
+                max-width: 100%;
+                display: block;
+                margin: 0 auto;
+            }
+            [href="#skip-top-main"] {
+                padding: 0.3em;
+                position: absolute;
+                transform: translateY(-200%);
+            }
+            [href="#skip-top-main"]:focus {
+                transform: translateY(0%);
+                background: var(--theme);
+                color: inherit;
+            }
+            #table-of-content {
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+                background: black;
+                padding: 0.5rem 1em;
+                z-index: 1;
+                color: white;
+            }
+            #table-of-content[open] {
+                max-height: 90%;
+                overflow-y: auto;
+                bottom: 50px;
+                margin-left: 1em;
+            }
+            #table-of-content[open] summary {
+                background: black;
+                padding: 0.5em 1em;
+                text-align: center;
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+            }
+            #table-of-content ul:first-child {
+                padding-left: 1em;
+                margin-top: 1.5em;
+            }
+            .heading-anchor::before {
+                content: "#";
+                margin-right: .5rem;
+            }
+            mjx-container {
+                display: math;
+                overflow-y: hidden;
+                overflow-x: auto;
+                max-width: 100%;
+            }
+            iframe {
+                width: 100%;
+                height: 21rem;
+            }
+		</style>
+	</head>
+	<body>
+	    <a href="#skip-top-main">Skip to main</a>
+		<header>
+			<h1 style="text-align: center;">
+                <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+            </h1>
+            <hr style="margin-top: 2rem;">
+            <p align="center">Sponsored by <code>drift<span style="color: #FFC93D">/net</span></code> (WIP)</p>
+            <hr style="margin-bottom: 2rem;">
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem; margin-top: 0;">STQA</h1>
+			<h2><a name="black-box-testing" class="heading-anchor" href="#black-box-testing" rel="nofollow" aria-hidden="true"></a>Black Box Testing</h2>
+<p><img src="assets/Black_box_testing_01-2.webp" alt=""></p>
+
+<p>Black-box testing is a type of software testing in which the tester is not concerned with the software’s internal knowledge or implementation details but rather focuses on validating the functionality based on the provided specifications or requirements.</p>
+
+<p><strong>Advantages:</strong></p>
+
+<ul>
+<li>Can be used for testing complex systems with unknown internal structures</li>
+<li>Less time-consuming and resource-intensive compared to White Box Testing</li>
+<li>Suitable for testing systems with changing or proprietary internal implementations</li>
+</ul>
+
+<p><strong>Disadvantages:</strong></p>
+
+<ul>
+<li>May not identify internal errors or defects</li>
+<li>Requires thorough understanding of the system’s specifications and requirements</li>
+<li>May not be effective for testing systems with complex logic or algorithms</li>
+</ul>
+
+<p><strong>Types of Black Box Testing</strong></p>
+
+<ul>
+<li>Functional Testing
+
+<ul>
+<li>The test engineer will check all the components systematically against requirement specifications is known as <strong>functional testing</strong>. Functional testing is also known as <strong>Component testing</strong>.</li>
+<li>Types of Functional Testing
+
+<ul>
+<li>Unit Testing</li>
+<li>Integration Testing</li>
+<li>System Testing</li>
+</ul></li>
+</ul></li>
+<li>Non-function Testing
+
+<ul>
+<li>It provides detailed information on software product performance and used technologies. Non-functional testing will help us minimize the risk of production and related costs of the software.</li>
+<li>Types of Non-functional Testing
+
+<ul>
+<li><strong>Performance Testing</strong></li>
+<li><strong>Usability Testing</strong></li>
+<li><strong>Compatibility Testing</strong></li>
+</ul></li>
+</ul></li>
+</ul>
+<h2><a name="white-box-testing" class="heading-anchor" href="#white-box-testing" rel="nofollow" aria-hidden="true"></a>White Box Testing</h2>
+<p>White box testing is a <a href="https://www.geeksforgeeks.org/software-testing-techniques/">software testing technique</a> that involves testing the internal structure and workings of a <a href="https://www.geeksforgeeks.org/what-is-application-software/">software application</a> .</p>
+
+<p>The tester has access to the source code and uses this knowledge to design test cases that can verify the correctness of the software at the code level.</p>
+
+<p>White box testing is also known as <a href="https://www.geeksforgeeks.org/structural-software-testing/">structural testing</a> or <a href="https://www.geeksforgeeks.org/what-is-code-driven-testing-in-software-testing/">code-based testing,</a> and it is used to test the software’s internal logic, flow, and structure.</p>
+
+<p><img src="assets/White-Box-Testing-768.webp" alt=""></p>
+
+<p><strong>Types Of White Box Testing</strong></p>
+
+<ul>
+<li>Unit Testing
+
+<ul>
+<li>Checks if each part or function of the application works correctly.</li>
+<li>Ensures the application meets design requirements during development.</li>
+</ul></li>
+<li>Integration Testing
+
+<ul>
+<li>Examines how different parts of the application work together.</li>
+<li>Done after unit testing to make sure components work well both alone and together.</li>
+</ul></li>
+<li>Regression Testing
+
+<ul>
+<li>Verifies that changes or updates don’t break existing functionality.</li>
+<li>Ensures the application still passes all existing tests after updates.</li>
+</ul></li>
+</ul>
+<h2><a name="gray-box-testing" class="heading-anchor" href="#gray-box-testing" rel="nofollow" aria-hidden="true"></a>Gray Box Testing</h2>
+<p><img src="assets/Pasted%20image%2020240829061413.jpg" alt=""></p>
+
+<p>Greybox testing is a software testing method to test the software application with partial knowledge of the internal working structure.</p>
+
+<p>It is a combination of black box and white box testing because it involves access to internal coding to design test cases as white box testing and testing practices are done at functionality level as black box testing.</p>
+
+<p><strong>Grey Box Testing Techniques</strong></p>
+
+<p><img src="assets/Gray-Box-Testing-Techniques.webp" alt=""></p>
+
+<ul>
+<li><strong>Matrix Testing:</strong> Identifies and removes unused/uninitialized variables to improve readability and speed.</li>
+<li><strong>Regression Testing:</strong> Ensures modifications don't introduce new defects.</li>
+<li><strong>Orthogonal Array Testing (OAT):</strong> Covers maximum code with minimal test cases.</li>
+<li><strong>Pattern Testing:</strong> Identifies and fixes recurring defects in similar software.</li>
+<li><strong>Grey Box Testing Tools:</strong> Pattern testing is applicable to such type of software that is developed by following the same pattern of previous software.</li>
+</ul>
+<h2><a name="mutation-testing" class="heading-anchor" href="#mutation-testing" rel="nofollow" aria-hidden="true"></a>Mutation Testing</h2>
+<p><img src="assets/Pasted%20image%2020240829051313.jpg" alt=""></p>
+
+<p>Mutation testing, also known as code mutation testing, is a form of <a href="https://www.techtarget.com/searchsoftwarequality/definition/white-box">white box testing</a> in which testers change specific components of an application's <a href="https://www.techtarget.com/searchapparchitecture/definition/source-code">source code</a> to ensure a software test suite can detect the changes.</p>
+
+<p>Changes introduced to the software are intended to cause errors in the program.</p>
+
+<p>Mutation testing is designed to ensure the quality of a software testing tool, not the applications it analyzes.</p>
+
+<p><strong>Types of mutation testing</strong></p>
+
+<ul>
+<li><strong>Statement mutation.</strong> Statements are deleted or replaced with a different statement. For example, the statement &quot;A=10 by B=5&quot; is replaced with &quot;A=5 by B=15.&quot;</li>
+<li><strong>Value mutation.</strong> Values are changed to find errors. For example, &quot;A= 15&quot; is changed to &quot;A= 10&quot; or &quot;A=25.&quot;</li>
+<li><strong>Decision mutation.</strong> Arithmetic or logical operators are changed to detect errors. For example, &quot;(A<B)" is changed to "(A>B).&quot;</li>
+</ul>
+
+<p><strong>Advantages:</strong></p>
+
+<ul>
+<li>Helps to ensure the identification of weak tests or code.</li>
+<li>Offers a high level of error detection.</li>
+<li>Increases the use of object-oriented frameworks and unit tests <a href="https://www.forbes.com/sites/forbestechcouncil/2022/10/05/testing-for-startups-how-unit-test-is-the-enemy-of-startups-agility-and-how-you-can-fix-it">if an organization uses them</a>.</li>
+<li>Offers more mutation testing tools due to the increased frameworks and unit tests.</li>
+<li>Helps organizations determine the usefulness of their testing tool through the use of scoring.</li>
+</ul>
+
+<p><strong>Disadvantages:</strong></p>
+
+<ul>
+<li>Isn't practical without the use of an automation tool.</li>
+<li>Can be time-consuming and costly due to the large number of mutants being tested.</li>
+</ul>
+
+<p><strong>Mutation testing tools</strong></p>
+
+<ul>
+<li>Insure++.</li>
+<li>Jester for JUnit.</li>
+<li>PIT for Java and the Java Virtual Machine.</li>
+<li>MuClipse for Eclipse.</li>
+</ul>
+<h2><a name="black-box-vs-white-box-vs-grey-box-testing" class="heading-anchor" href="#black-box-vs-white-box-vs-grey-box-testing" rel="nofollow" aria-hidden="true"></a>Black Box vs. White Box vs. Grey Box Testing</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Black Box Testing</th>
+<th>White Box Testing</th>
+<th>Grey Box Testing</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Focus</td>
+<td>External behavior, user perspective.</td>
+<td>Internal structure, code.</td>
+<td>Combination of both.</td>
+</tr>
+
+<tr>
+<td>Knowledge</td>
+<td>No knowledge of internal code.</td>
+<td>Detailed knowledge of internal code.</td>
+<td>Limited knowledge of internal code.</td>
+</tr>
+
+<tr>
+<td>Testing Approach</td>
+<td>Input-output relationship.</td>
+<td>Code analysis, branch coverage.</td>
+<td>Input-output relationship with some code analysis.</td>
+</tr>
+
+<tr>
+<td>Common Techniques</td>
+<td>Equivalence partitioning, boundary value analysis, decision table testing.</td>
+<td>Control flow analysis, data flow analysis, statement coverage.</td>
+<td>Matrix testing, regression testing, orthogonal array testing.</td>
+</tr>
+
+<tr>
+<td>Advantages</td>
+<td>Independent of implementation, suitable for large systems.</td>
+<td>Thorough code coverage, early defect detection.</td>
+<td>Combines strengths of both, cost-effective.</td>
+</tr>
+
+<tr>
+<td>Disadvantages</td>
+<td>Limited code coverage, potential for missed defects.</td>
+<td>Time-consuming, requires technical expertise.</td>
+<td>May not be as thorough as white box, requires some knowledge of code.</td>
+</tr>
+
+<tr>
+<td>Typical Use Cases</td>
+<td>Functional testing, acceptance testing.</td>
+<td>Unit testing, integration testing.</td>
+<td>System testing, regression testing.</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="acceptance-testing" class="heading-anchor" href="#acceptance-testing" rel="nofollow" aria-hidden="true"></a>Acceptance Testing</h2>
+<p><img src="assets/Pasted%20image%2020240829051959.jpg" alt=""></p>
+
+<p>Acceptance testing is a quality assurance (<a href="https://www.techtarget.com/searchsoftwarequality/definition/quality-assurance">QA</a>) process that determines to what degree an <a href="https://www.techtarget.com/searchsoftwarequality/definition/application">application</a> meets end users' approval.</p>
+
+<p>Depending on the organization, acceptance testing might take the form of <a href="https://www.techtarget.com/whatis/definition/beta-test">beta testing</a>, application testing, field testing or end-user testing.</p>
+
+<p>A QA team conducts acceptance tests to ensure the software or app matches business requirements and end-user needs.</p>
+
+<p>An acceptance test returns either a pass or fail result. A fail suggests that there is a flaw present, and the software should not go into production.</p>
+
+<p><strong>Acceptance testing process</strong></p>
+
+<p>Acceptance testing occurs after system tests, but before deployment.</p>
+
+<p>A QA team writes acceptance tests and sets them up to examine how the software acts in a simulated production environment.</p>
+
+<p>Acceptance testing confirms the software's stability and checks for flaws.</p>
+
+<p>Acceptance testing includes the following phases: plan, test, record, compare and result.</p>
+
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Acceptance Testing</th>
+<th>System Testing</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Purpose</td>
+<td>User acceptance, deployment readiness.</td>
+<td>System functionality, requirements.</td>
+</tr>
+
+<tr>
+<td>Scope</td>
+<td>End-user focus.</td>
+<td>Entire system.</td>
+</tr>
+
+<tr>
+<td>Performed by</td>
+<td>End users.</td>
+<td>Testing team.</td>
+</tr>
+
+<tr>
+<td>Criteria</td>
+<td>User acceptance criteria.</td>
+<td>Functional/non-functional requirements.</td>
+</tr>
+
+<tr>
+<td>Focus</td>
+<td>User experience, business value.</td>
+<td>Correctness, completeness, performance.</td>
+</tr>
+
+<tr>
+<td>Timing</td>
+<td>End of development.</td>
+<td>Throughout development.</td>
+</tr>
+
+<tr>
+<td>Techniques</td>
+<td>User scenarios, use cases.</td>
+<td>Black-box, white-box, gray-box.</td>
+</tr>
+
+<tr>
+<td>Tools</td>
+<td>Acceptance testing tools.</td>
+<td>Testing tools.</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="regression-testing" class="heading-anchor" href="#regression-testing" rel="nofollow" aria-hidden="true"></a>Regression Testing</h2>
+<p><img src="assets/Pasted%20image%2020240829053547.jpg" alt=""></p>
+
+<p>Regression Testing is a type of testing in the <a href="https://www.browserstack.com/guide/learn-software-development-process">software development cycle</a> that runs after every change to ensure that the change introduces no unintended breaks.</p>
+
+<p>Regression testing addresses a common issue that developers face — the emergence of old bugs with the introduction of new changes.</p>
+
+<p>Typically, it involves writing a test for a known bug and re-running this test after every change to the code base. This aims to immediately identify any change that reintroduces a bug.</p>
+
+<p><img src="assets/Regression-testing-tutorual.webp" alt=""></p>
+
+<p><strong>Example:</strong></p>
+
+<p>Consider an example where a software development company is working on releasing a new product for video editing. The primary requirement is to release their first build with only the core features.  Before product release, a regression test is conducted with 1000 test cases to ensure the basic or freemium editing functionalities. Your initial build is ready to hit the market if it passes the tests successfully.</p>
+
+<p>However, with the success of your first product making waves in the video editing landscape, your business team comes back with a requirement to add a few new premium features. Your product team develops those and adds them to the existing app, but with the addition of new codes, a regression test is required again. Hence, you write 100 new test cases to verify the functionality of those new features. However, you will have to run those 1000 old test cases already conducted to ensure essential functions haven’t been broken.</p>
+
+<p><strong>Regression Testing Tools and Frameworks</strong></p>
+
+<ul>
+<li><a href="https://www.browserstack.com/selenium">Selenium</a>: Selenium Browser Automation helps run tests on different browsers and find bugs.</li>
+<li><a href="https://browserstack.com/automate/cypress">Cypress</a>: You can perform <a href="https://www.browserstack.com/guide/cypress-end-to-end-testing">E2E Testing</a> and <a href="https://www.browserstack.com/guide/cypress-component-testing">Components Testing on Cypress</a>.</li>
+<li><a href="https://www.browserstack.com/app-automate/appium">Appium</a>: It is used to run regression tests on iOS and Android apps.</li>
+<li><a href="https://www.browserstack.com/automate/playwright">Playwright</a>: Playwright is used for running regression tests for web applications on different browsers.</li>
+<li><a href="https://www.browserstack.com/automate/puppeteer">Puppeteer</a>: You can use Puppeteer to run regression tests for web applications and check its functionality on different browsers.</li>
+<li><a href="https://www.browserstack.com/automate">BrowserStack Automate</a>: It enables you to run regression tests for your web app on 3000+ real devices and browsers under <a href="https://www.browserstack.com/real-user-conditions-testing-on-browserstack">real user conditions</a>.</li>
+<li><a href="https://www.browserstack.com/app-automate">BrowserStack App Automate</a>:  It helps you run tests on real Android and iOS devices for better accuracy.</li>
+</ul>
+
+<p><strong>Challenges in Regression Testing</strong></p>
+
+<ul>
+<li><strong>Time and Cost Requirements</strong></li>
+</ul>
+
+<p>We have seen that regression testing is incremental — the number of tests changes with each new feature that is added. It involves running older tests with every change. Thus, these tests can take significant time to complete.</p>
+
+<ul>
+<li><strong>Complexity</strong></li>
+</ul>
+
+<p>When a project grows, not only does the number of tests increase, but the complexity too. In the shopping cart example above, the testing of the cart is logically done only after creating a new user and browsing a search page.</p>
+
+<ul>
+<li><strong>Regular Maintenance</strong></li>
+</ul>
+
+<p>To manage the time and complexity of regression testing, one needs to make sure that proper maintenance is done.</p>
+
+<p>For example, if a design change mandates the movement of the shopping cart to the right menu — how does that affect the existing regression tests?</p>
+
+<p>Though the change may only involve minor changes to the front end, the tests would need to be redesigned completely.</p>
+
+<p><strong>Regression Testing Techniques</strong></p>
+
+<p><img src="assets/Pasted%20image%2020240829053702.png" alt=""></p>
+<h3><a name="unit-regression-testing" class="heading-anchor" href="#unit-regression-testing" rel="nofollow" aria-hidden="true"></a>Unit Regression Testing:</h3>
+<p>This is a simple method in which the tester has a list of items to test every time a change occurs. This is the best way to start regression testing in an existing project.</p>
+
+<p>In this, we are going to test only the changed unit, not the impact area, because it may affect the components of the same module.</p>
+
+<p><strong>Example:</strong></p>
+
+<p>In the below application, and in the first build, the developer develops the <strong>Search</strong> button that accepts <strong>1-15 characters</strong>. Then the test engineer tests the Search button with the help of the <strong>test case design technique</strong>.</p>
+
+<p><img src="assets/Pasted%20image%2020240829054147.png" alt=""></p>
+
+<p>Now, the client does some modification in the requirement and also requests that the <strong>Search button</strong> can accept the <strong>1-35 characters</strong>. The test engineer will test only the Search button to verify that it takes 1-35 characters and does not check any further feature of the first build.</p>
+<h3><a name="partial-regression-testing" class="heading-anchor" href="#partial-regression-testing" rel="nofollow" aria-hidden="true"></a>Partial Regression Testing</h3>
+<p>Approach divides the project into logical, coherent units that work together to form the whole application. Select the units that are most critical to the application and define specific test cases for them while performing unit regression testing for the rest of the modules.</p>
+
+<p>It is also called the <strong>Regional Regression testing</strong>.</p>
+
+<p><strong>Example</strong></p>
+
+<p>In the below image as we can see that we have four different modules, such as <strong>Module A, Module B, Module C, and Module D</strong>, which are provided by the developers for the testing during the first build. Now, the test engineer will identify the bugs in <strong>Module D</strong>. The bug report is sent to the developers, and the development team fixes those defects and sends the second build.</p>
+
+<p><img src="assets/Pasted%20image%2020240829054549.png" alt=""></p>
+<h3><a name="full-regression-testing" class="heading-anchor" href="#full-regression-testing" rel="nofollow" aria-hidden="true"></a>### Full Regression Testing</h3>
+<p>It which is the most detailed form of regression testing. In this case, one takes a comprehensive view of the codebase to identify all functionalities that would affect usability on breaking and write detailed tests for each of them.</p>
+
+<p>This technique is time-consuming but highly beneficial if applied from the early stages of project development.</p>
+
+<p><img src="assets/Pasted%20image%2020240829054731.png" alt=""></p>
+<h2><a name="testing-techniques" class="heading-anchor" href="#testing-techniques" rel="nofollow" aria-hidden="true"></a>Testing Techniques</h2>
+<p><img src="assets/Pasted%20image%2020240829055801.png" alt=""></p>
+
+<p><strong>Types Of Software Testing Techniques</strong></p>
+
+<p>There are two main categories of software testing techniques:</p>
+
+<ol>
+<li><a href="https://www.geeksforgeeks.org/types-of-static-testing/"><strong>Static Testing Techniques</strong></a> are testing techniques that are used to find defects in an application under test without executing the code. Static Testing is done to avoid errors at an early stage of the development cycle thus reducing the cost of fixing them.</li>
+<li><a href="https://www.geeksforgeeks.org/software-testing-dynamic-testing/"><strong>Dynamic Testing Techniques</strong></a> are testing techniques that are used to test the dynamic behaviour of the application under test, that is by the execution of the code base.  The main purpose of dynamic testing is to test the application with dynamic inputs- some of which may be allowed as per requirement (Positive testing) and some are not allowed (Negative Testing).</li>
+</ol>
+
+		</main>
+        
+        <details id="table-of-content">
+           <summary>Table of Content</summary>
+                    <nav>
+<ul>
+<li><a href="#black-box-testing">Black Box Testing</a></li>
+<li><a href="#white-box-testing">
+White Box Testing</a></li>
+<li><a href="#gray-box-testing">
+Gray Box Testing</a></li>
+<li><a href="#mutation-testing">
+Mutation Testing</a></li>
+<li><a href="#black-box-vs-white-box-vs-grey-box-testing">
+Black Box vs. White Box vs. Grey Box Testing</a></li>
+<li><a href="#acceptance-testing">
+Acceptance Testing</a></li>
+<li><a href="#regression-testing">
+Regression Testing</a>
+<ul>
+<li><a href="#unit-regression-testing">
+Unit Regression Testing:</a></li>
+<li><a href="#partial-regression-testing">
+Partial Regression Testing</a></li>
+<li><a href="#full-regression-testing">
+### Full Regression Testing</a></li>
+</ul></li>
+<li><a href="#testing-techniques">
+Testing Techniques</a></li>
+</ul>
+</nav>
+
+        </details>
+        
+		<footer>
+			<p style="text-align: center; font-size: small; margin-top: 5em;">
+                <a href="https://anzenkodo.github.io/license">LICENSE</a>
+            </p>
+		</footer>
+	<script>
+		MathJax = {
+		  tex: {
+		    inlineMath: [['$', '$']],
+		    displayMath: [['$$', '$$']],
+		  }
+		};
+	</script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+	</script>
+	</body>
+</html>
