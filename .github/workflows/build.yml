@@ -25,11 +25,7 @@ jobs:
       with:
         rclone_config: ${{ secrets.RCLONE_CONFIG }}
     - run: 'rclone copy Personal:Notes src/note'
-    
-    - name: Clone repo
-      shell: bash
-      run: git clone -b gh-pages https://github.com/AnzenKodo/AnzenKodo.github.io site --depth=1
-      
+          
     - name: Setup Deno
       uses: denoland/setup-deno@004814556e37c54a2f6e31384c9e18e983317366
       with:
