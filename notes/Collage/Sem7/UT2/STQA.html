@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>STQA - AK#Notes</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="description" content="## Explain the McCall’s quality factors.  ![](assets/Mccall-1024.webp)  McCall's Quality Model, in">
+  		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
+  		<meta property="og:image:alt" content="AK#Notes logo">
+  		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="STQA - AK#Notes">
+		<meta property="og:description" content="## Explain the McCall’s quality factors.  ![](assets/Mccall-1024.webp)  McCall's Quality Model, in">
+		<meta property="og:url" content="https://AnzenKodo.github.io/">
+		<meta property="og:type" content="website">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+
+            :root {
+                color-scheme: dark light;
+                --theme: #FF6C22;
+			}
+			body {
+                max-width: 40rem;
+                margin: 0 auto;
+                font-family: system-ui;
+                padding: 0 1em;
+                color: inherit !important;
+                word-break: break-word;
+			}
+			h1, h2, h3, h4, h5, h6 {
+                font-family: monospace;
+                margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+                font-size: 2rem;
+			}
+			h3 {
+			    font-size: 1.8rem;
+			}
+			h4 {
+			    font-size: 1.5rem;
+			}
+			h5 {
+			    font-size: 1.3rem;
+			}
+			h6 {
+			    font-size: 1rem;
+			}
+			p, li, td, code {
+			    line-height: 1.5rem;
+			}
+			a {
+			    color: var(--theme);
+			    text-decoration: none;
+			}
+			a:hover, a:focus {
+			    text-decoration: underline;
+			}
+			a:active {
+			    background: var(--theme);
+			    color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+                margin-top: .5rem;
+			}
+			li {
+                margin-bottom: .5rem;
+			}
+			table {
+			    border-collapse: collapse;
+                overflow-x: auto;
+                display: block;
+                word-break: auto-phrase;
+			}
+            th {
+                font-size: 1.1rem;
+                border: 2px solid;
+                padding: .3rem .3rem;
+            }
+            td {
+                border: 1px solid;
+                padding: .3rem .5rem;
+            }
+            blockquote {
+                margin-left: 0;
+                margin-right: 0;
+                border: 1px solid;
+                border-left: 10px solid;
+                padding: 0 1rem;
+            }
+            .code-block {
+                background: black;
+                overflow-x: auto;
+                padding: 0em 1em;
+                border: 1px solid;
+            }
+            .code-block-language-name {
+                position: sticky;
+                left: 95%;
+                top: .5em;
+                font-weight: bold;
+                color: white;
+            }
+            :not(pre.chroma) > code {
+                border: 1px solid;
+                padding: .3rem .2rem .2rem .2rem;
+            }
+            img {
+                max-width: 100%;
+                display: block;
+                margin: 0 auto;
+            }
+            [href="#skip-top-main"] {
+                padding: 0.3em;
+                position: absolute;
+                transform: translateY(-200%);
+            }
+            [href="#skip-top-main"]:focus {
+                transform: translateY(0%);
+                background: var(--theme);
+                color: inherit;
+            }
+            #table-of-content {
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+                background: black;
+                padding: 0.5rem 1em;
+                z-index: 1;
+                color: white;
+            }
+            #table-of-content[open] {
+                max-height: 90%;
+                overflow-y: auto;
+                bottom: 50px;
+                margin-left: 1em;
+            }
+            #table-of-content[open] summary {
+                background: black;
+                padding: 0.5em 1em;
+                text-align: center;
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+            }
+            #table-of-content ul:first-child {
+                padding-left: 1em;
+                margin-top: 1.5em;
+            }
+            .heading-anchor::before {
+                content: "#";
+                margin-right: .5rem;
+            }
+            mjx-container {
+                display: math;
+                overflow-y: hidden;
+                overflow-x: auto;
+                max-width: 100%;
+            }
+            iframe {
+                width: 100%;
+                height: 21rem;
+            }
+		</style>
+	</head>
+	<body>
+	    <a href="#skip-top-main">Skip to main</a>
+		<header>
+			<h1 style="text-align: center;">
+                <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+            </h1>
+            <hr style="margin-top: 2rem;">
+            <p align="center">Sponsored by <code>drift<span style="color: #FFC93D">/net</span></code> (WIP)</p>
+            <hr style="margin-bottom: 2rem;">
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem; margin-top: 0;">STQA</h1>
+			<h2><a name="explain-the-mccall-s-quality-factors" class="heading-anchor" href="#explain-the-mccall-s-quality-factors" rel="nofollow" aria-hidden="true"></a>Explain the McCall’s quality factors.</h2>
+<p><img src="assets/Mccall-1024.webp" alt=""></p>
+
+<p>McCall's Quality Model, introduced in 1977 by Jim McCall and his colleagues, is a framework for evaluating software quality based on various factors that reflect both user and developer perspectives.</p>
+
+<p>The model identifies several quality factors, categorized into three main areas: Product Operation, Product Revision, and Product Transition.</p>
+
+<p>The model distinguishes between two levels of quality attributes:</p>
+
+<ul>
+<li><strong>Quality Factors:</strong> The higher-level quality attributes that can be accessed directly are called quality factors. These attributes are external. The attributes at this level are given more importance by the users and managers.</li>
+<li><strong>Quality Criteria:</strong> The lower or second-level quality attributes that can be accessed either subjectively or objectively are called Quality Criteria. These attributes are internal. Each quality factor has many second-level quality attributes or quality criteria.</li>
+</ul>
+
+<p><strong>Example:</strong> The usability quality factor is divided into operability, training, communicativeness, input/output volume, and input/output rate. This model classifies all software requirements into 11 software quality factors. The 11 factors are organized into three product quality factors: <strong>Product Operation</strong>, <strong>Product Revision</strong>, and <strong>Product Transition.</strong></p>
+
+<p><strong>McCall’s Quality Factors</strong></p>
+
+<ol>
+<li><strong>Product Operation Factors</strong>: These factors relate to the operational performance of the software and how it meets user requirements.
+
+<ul>
+<li><strong>Correctness</strong></li>
+<li><strong>Reliability</strong></li>
+<li><strong>Efficiency</strong></li>
+<li><strong>Integrity</strong></li>
+<li><strong>Usability</strong></li>
+</ul></li>
+<li><strong>Product Revision Factors</strong>: These factors focus on how easily the software can be modified and maintained.
+
+<ul>
+<li><strong>Maintainability</strong></li>
+<li><strong>Flexibility</strong></li>
+<li><strong>Testability</strong></li>
+</ul></li>
+<li><strong>Product Transition Factors</strong>: These factors assess how well the software can transition between different environments or systems.
+
+<ul>
+<li><strong>Portability</strong></li>
+<li><strong>Reusability</strong></li>
+<li><strong>Interoperability</strong></li>
+</ul></li>
+</ol>
+<h2><a name="what-are-cmm-model-levels" class="heading-anchor" href="#what-are-cmm-model-levels" rel="nofollow" aria-hidden="true"></a>What are CMM model levels.</h2>
+<p><img src="assets/Pasted%20image%2020241022031630.jpg" alt=""></p>
+
+<ol>
+<li><strong>Level 1: Initial</strong>
+
+<ul>
+<li>Processes are ad hoc and chaotic.</li>
+<li>Success depends on individual efforts rather than defined processes.</li>
+<li>There is little to no documentation, making it difficult to replicate successes.</li>
+</ul></li>
+<li><strong>Level 2: Repeatable</strong>
+
+<ul>
+<li>Basic project management processes are established.</li>
+<li>Processes are documented enough to allow for the repetition of earlier successes on similar projects.</li>
+<li>Focus is on planning and tracking project performance.</li>
+</ul></li>
+<li><strong>Level 3: Defined</strong>
+
+<ul>
+<li>Processes are well-defined and documented.</li>
+<li>Standardized processes are established across the organization.</li>
+<li>Emphasis is placed on process consistency and integration.</li>
+</ul></li>
+<li><strong>Level 4: Managed</strong>
+
+<ul>
+<li>Processes are quantitatively managed and controlled.</li>
+<li>Performance metrics are used to ensure that processes meet defined quality standards.</li>
+<li>Management can predict process performance based on data analysis.</li>
+</ul></li>
+<li><strong>Level 5: Optimizing</strong>
+
+<ul>
+<li>Focus is on continuous process improvement through innovative practices.</li>
+<li>Organizations actively seek ways to enhance process performance and efficiency.</li>
+<li>Emphasis on defect prevention and leveraging new technologies for improvement.</li>
+</ul></li>
+</ol>
+<h2><a name="what-is-test-planning" class="heading-anchor" href="#what-is-test-planning" rel="nofollow" aria-hidden="true"></a>What is test planning?</h2>
+<p>Test planning is a crucial aspect of the software testing lifecycle, involving the creation of a detailed document that outlines the objectives, scope, resources, and processes for testing a software product. Here’s a comprehensive overview:</p>
+
+<p><img src="assets/Pasted%20image%2020241022032624.png" alt=""></p>
+
+<p><strong>Testing Process</strong></p>
+
+<ol>
+<li><strong>Analyze the Product</strong>: Conduct in-depth interviews and product walkthroughs to gain a comprehensive understanding of the product's objectives, target audience, and requirements.</li>
+<li><strong>Design the Test Strategy</strong>: Develop a comprehensive test strategy document that outlines the scope of testing, types of tests, risks, and test logistics.</li>
+<li><strong>Define Test Objectives and Expected Results Establish</strong>: clear test objectives and expected outcomes for each aspect of the software.</li>
+<li><strong>Define Test Criteria</strong>: Establish suspension and exit criteria to define the benchmarks for suspending or completing testing activities.</li>
+<li><strong>Plan Resources</strong>: Create a detailed list of all the resources required for project completion and allocate them effectively.</li>
+<li><strong>Plan the Test Environment</strong>: Establish a suitable test environment that closely resembles real-world conditions.</li>
+<li><strong>Schedule and Estimate</strong>: Break down the testing project into smaller tasks, allocate time and effort, and create a detailed schedule.</li>
+<li><strong>Determine Test Deliverables</strong>: Identify the list of documents, tools, and other equipment required for testing activities.</li>
+</ol>
+<h2><a name="explain-the-structure-of-testing-group" class="heading-anchor" href="#explain-the-structure-of-testing-group" rel="nofollow" aria-hidden="true"></a>Explain the structure of testing group.</h2>
+<p><img src="assets/Pasted%20image%2020241022040017.png" alt=""></p>
+
+<ul>
+<li><strong>Usability Test Engineer:</strong> Focuses on evaluating the product's user interface and ensuring it is easy to use and understand.</li>
+<li><strong>Manual Testing Engineer:</strong> Performs manual tests by executing test cases and verifying the product's functionality.</li>
+<li><strong>Automated Test Engineer:</strong> Develops and executes automated test scripts to improve efficiency and test coverage.</li>
+<li><strong>Network Test Engineer:</strong> Tests the product's network performance and compatibility with different network configurations.</li>
+<li><strong>Test Library and Configuration Specialist:</strong> Manages the test environment, including test data and configuration settings.</li>
+<li><strong>Tester:</strong> Performs general testing tasks, including executing test cases and reporting defects.</li>
+</ul>
+<h2><a name="what-are-different-types-of-integration-testing" class="heading-anchor" href="#what-are-different-types-of-integration-testing" rel="nofollow" aria-hidden="true"></a>What are different types of Integration testing?</h2>
+<p><img src="assets/Pasted%20image%2020241022033135.png" alt=""></p>
+
+<ul>
+<li><strong>Integration Testing</strong> is the overall process of combining individual components or modules of a software system and testing them together to verify their interactions and ensure they work as intended.</li>
+<li><strong>Incremental Integration Testing</strong> is a strategy where modules are integrated in a systematic and incremental manner. There are three main approaches within this strategy:
+
+<ul>
+<li><strong>Bottom-up Approach:</strong> Starts with testing the lowest-level modules first and then gradually integrating them with higher-level modules. This approach is suitable for systems with a clear hierarchical structure.</li>
+<li><strong>Top-down Approach:</strong> Starts with testing the highest-level module first and then integrating it with lower-level modules. This approach is useful when the overall system structure is well-defined.</li>
+<li><strong>Sandwich Approach:</strong> Combines both bottom-up and top-down approaches, where both high-level and low-level modules are tested and integrated simultaneously. This approach is effective when the system has a complex structure.</li>
+</ul></li>
+<li><strong>Big Bang Integration Testing</strong> is a strategy where all the modules are integrated at once and tested as a single unit. This approach can be risky as it can be difficult to isolate and identify defects if problems arise. It is often used in smaller projects or when the system has a simple structure.</li>
+</ul>
+<h2><a name="explain-the-process-of-test-suite-prioritization-with-its-type-in-detail-with-example" class="heading-anchor" href="#explain-the-process-of-test-suite-prioritization-with-its-type-in-detail-with-example" rel="nofollow" aria-hidden="true"></a>Explain the process of test suite prioritization with its type in detail with example.</h2>
+<p>Test suite prioritization is a critical process in software testing that involves ranking test cases based on their importance, risk, or other relevant criteria.</p>
+
+<p>This ensures that the most crucial tests are executed first, optimizing the use of limited testing resources and improving overall software quality.</p>
+
+<p><strong>Process of Test Suite Prioritization</strong></p>
+
+<ol>
+<li><strong>Identify Test Cases</strong>: Begin by compiling a comprehensive list of all test cases within the test suite. This includes functional, regression, performance, and other types of tests.</li>
+<li><strong>Define Criteria for Prioritization</strong>: Establish clear criteria for prioritizing test cases. Common criteria include:
+
+<ul>
+<li><strong>Risk</strong>: The potential impact of a defect in the functionality being tested.</li>
+<li><strong>Business Value</strong>: The importance of the feature to end-users or stakeholders.</li>
+<li><strong>Execution Time</strong>: The time required to execute each test case.</li>
+<li><strong>Historical Defect Data</strong>: Past defect rates associated with specific functionalities.</li>
+</ul></li>
+<li><strong>Assign Priority Levels</strong>: Based on the defined criteria, assign priority levels to each test case. This can be done using numerical values (e.g., 1 for high priority, 2 for medium, and 3 for low) or descriptive labels (e.g., critical, important, optional).</li>
+<li><strong>Execute Test Cases</strong>: Begin executing test cases based on their assigned priority levels. Focus on high-priority tests first to ensure critical functionalities are validated early in the testing cycle.</li>
+<li><strong>Review and Adjust Priorities</strong>: Continuously review and adjust priorities based on feedback from testing results, changes in requirements, or new risks identified during the testing process.</li>
+</ol>
+
+<p><strong>Types of Test Case Prioritization</strong></p>
+
+<ol>
+<li><strong>Risk-Based Prioritization</strong>:
+
+<ul>
+<li><strong>Description</strong>: Test cases are prioritized based on the risk associated with the functionality being tested. Higher-risk areas receive higher priority.</li>
+<li><strong>Example</strong>: In an e-commerce application, payment processing features would be prioritized over less critical features like user profile updates due to the higher risk of financial loss if defects occur.</li>
+</ul></li>
+<li><strong>Requirement-Based Prioritization</strong>:
+
+<ul>
+<li><strong>Description</strong>: Test cases are prioritized according to the importance of the requirements they cover. Requirements that are critical to business operations are given precedence.</li>
+<li><strong>Example</strong>: If a new feature allows users to place orders, tests covering this feature would be prioritized over tests for less critical features like user preferences.</li>
+</ul></li>
+<li><strong>Business Value-Based Prioritization</strong>:
+
+<ul>
+<li><strong>Description</strong>: This approach prioritizes test cases based on their business value or impact on revenue generation.</li>
+<li><strong>Example</strong>: A feature that directly affects customer retention or sales would be prioritized higher than a feature that has minimal impact on user experience.</li>
+</ul></li>
+<li><strong>Time-Based Prioritization</strong>:
+
+<ul>
+<li><strong>Description</strong>: Test cases are prioritized based on their execution time; quicker tests are executed first.</li>
+<li><strong>Example</strong>: Simple unit tests that run quickly may be executed before more complex integration tests that take longer to complete.</li>
+</ul></li>
+<li><strong>Version-Specific Prioritization</strong>:
+
+<ul>
+<li><strong>Description</strong>: This type focuses on prioritizing test cases relevant to specific versions of the software after changes have been made.</li>
+<li><strong>Example</strong>: After a new version is released with significant changes in the user interface, tests related to those changes would be prioritized for regression testing.</li>
+</ul></li>
+<li><strong>General Test Case Prioritization</strong>:
+
+<ul>
+<li><strong>Description</strong>: Involves prioritizing test cases that will be useful across multiple future releases without specific knowledge of modifications.</li>
+<li><strong>Example</strong>: Core functionality tests that apply across various versions of an application would be prioritized for execution before any version-specific tests.</li>
+</ul></li>
+</ol>
+<h2><a name="what-is-automation-testing-tool" class="heading-anchor" href="#what-is-automation-testing-tool" rel="nofollow" aria-hidden="true"></a>What is automation testing tool?</h2>
+<p>Automation testing tools are software applications designed to automate the execution of tests in the software development process. These tools enhance testing efficiency, reduce human error, and allow for more extensive test coverage compared to manual testing.</p>
+
+<p><strong>Types of Automation Testing Tools</strong></p>
+
+<ol>
+<li><strong>Functional Testing Tools</strong>:
+
+<ul>
+<li><strong>Selenium</strong>: An open-source tool widely used for automating web applications across different browsers and platforms.</li>
+<li><strong>QTP/UFT (Unified Functional Testing)</strong>: A commercial tool for functional and regression testing of applications.</li>
+</ul></li>
+<li><strong>Performance Testing Tools</strong>:
+
+<ul>
+<li><strong>Apache JMeter</strong>: An open-source tool used for load testing and measuring the performance of web applications.</li>
+<li><strong>LoadRunner</strong>: A commercial performance testing tool that simulates virtual users to test application performance under load.</li>
+</ul></li>
+<li><strong>API Testing Tools</strong>:
+
+<ul>
+<li><strong>Postman</strong>: A popular tool for testing APIs by sending requests and validating responses.</li>
+<li><strong>SoapUI</strong>: An open-source tool for testing SOAP and REST APIs.</li>
+</ul></li>
+<li><strong>Mobile Testing Tools</strong>:
+
+<ul>
+<li><strong>Appium</strong>: An open-source tool for automating mobile applications on both Android and iOS platforms.</li>
+<li><strong>Katalon Studio</strong>: A versatile tool that supports web, mobile, and API testing.</li>
+</ul></li>
+</ol>
+
+<p><strong>Benefits of Automation Testing</strong></p>
+
+<ul>
+<li><strong>Increased Efficiency</strong>: Automated tests can be executed much faster than manual tests, allowing for more tests to be run in less time.</li>
+<li><strong>Consistency and Reliability</strong>: Automated tests eliminate human error, ensuring that tests are executed in the same way every time.</li>
+<li><strong>Enhanced Test Coverage</strong>: Automation allows for a larger number of test cases to be executed, increasing overall test coverage.</li>
+<li><strong>Early Bug Detection</strong>: Automated tests can be integrated into CI/CD pipelines, enabling early detection of defects before they reach production.</li>
+</ul>
+<h2><a name="what-is-jira-testing-tool" class="heading-anchor" href="#what-is-jira-testing-tool" rel="nofollow" aria-hidden="true"></a>What is JIRA testing tool.</h2>
+<p><img src="assets/Pasted%20image%2020241022031935.png" alt=""></p>
+
+<p>JIRA is a powerful tool developed by Atlassian, primarily used for bug tracking, issue tracking, and project management. It is widely adopted in software development environments due to its flexibility and robust features.</p>
+
+<p><strong>Key Features of JIRA:</strong></p>
+
+<ul>
+<li><strong>Issue Tracking</strong>: JIRA allows teams to create, track, and manage issues or bugs throughout the software development lifecycle. Each issue can be assigned a status, priority, and resolution type.</li>
+<li><strong>Project Management</strong>: The tool supports various project management methodologies, including Agile (Scrum and Kanban), enabling teams to plan sprints, track progress, and manage backlogs efficiently.</li>
+<li><strong>Customizable Workflows</strong>: JIRA provides the ability to customize workflows according to the team's processes, allowing for better alignment with organizational needs.</li>
+<li><strong>Integration Capabilities</strong>: JIRA integrates seamlessly with other development tools and platforms, enhancing collaboration between development and testing teams. This includes integration with CI/CD tools, test management tools, and version control systems.</li>
+<li><strong>Reporting and Dashboards</strong>: Users can generate reports and dashboards that provide insights into project performance, team productivity, and issue resolution metrics. This helps in making data-driven decisions.</li>
+<li><strong>Collaboration Tools</strong>: JIRA facilitates communication among team members through comments, notifications, and mentions within issues, ensuring everyone stays informed about project developments.</li>
+</ul>
+<h2><a name="what-is-bugzilla-testing-tool" class="heading-anchor" href="#what-is-bugzilla-testing-tool" rel="nofollow" aria-hidden="true"></a>What is Bugzilla testing tool?</h2>
+<p>Bugzilla is an open-source bug tracking tool developed by the Mozilla Foundation, designed to help software development teams track and manage bugs and issues in their projects. It is widely used for its robust features that facilitate effective communication and collaboration among team members.</p>
+
+<p><strong>Key Features of Bugzilla</strong></p>
+
+<ul>
+<li><strong>Issue Tracking</strong>: Bugzilla allows users to create, manage, and track bugs throughout the software development lifecycle. Each bug can be categorized with details such as status, severity, and resolution.</li>
+<li><strong>Advanced Search Capabilities</strong>: Users can perform simple and advanced searches to find specific bugs based on various criteria, including status, product, and keywords.</li>
+<li><strong>Email Notifications</strong>: The tool provides customizable email notifications to keep users informed about changes or updates related to bugs they are following.</li>
+<li><strong>Time Tracking</strong>: Bugzilla includes features for tracking the time spent on fixing bugs, helping teams manage their workload effectively.</li>
+<li><strong>Customization and Localization</strong>: The tool can be tailored to meet the specific needs of an organization, including custom fields and localization options for different languages.</li>
+<li><strong>Reporting Tools</strong>: Bugzilla offers advanced reporting capabilities that allow users to generate custom reports and graphical representations of bug data, aiding in analysis and decision-making.</li>
+<li><strong>Duplicate Detection</strong>: When users attempt to file a new bug, Bugzilla automatically checks for existing similar bugs to prevent duplicates.</li>
+<li><strong>Role-Based Access Control</strong>: The system supports different access levels for users and administrators, enhancing security and workflow management.</li>
+</ul>
+<h2><a name="explain-selenium-testing-tool-in-detail" class="heading-anchor" href="#explain-selenium-testing-tool-in-detail" rel="nofollow" aria-hidden="true"></a>Explain selenium testing tool in detail.</h2>
+<p><img src="assets/Selenium-features-.webp" alt=""></p>
+
+<p>Selenium is a widely utilized open-source suite of tools designed for automating the testing of web applications. Its flexibility and comprehensive capabilities make it a preferred choice for developers and testers in various environments.</p>
+
+<p>Selenium supports multiple programming languages, including Java, C#, Python, Ruby, and PHP, allowing users to write test scripts in their preferred language. It is compatible with major web browsers such as Chrome, Firefox, Safari, Edge, and Opera, ensuring extensive browser coverage and cross-platform functionality.</p>
+
+<p><img src="assets/SeleniumSuite.webp" alt=""></p>
+
+<p><strong>Components of Selenium:</strong></p>
+
+<ol>
+<li><strong>Selenium IDE (Integrated Development Environment)</strong>:
+
+<ul>
+<li><strong>Description</strong>: A browser extension available for Chrome and Firefox that allows users to record their interactions with web applications and create automated test scripts.</li>
+<li><strong>Features</strong>:
+
+<ul>
+<li><strong>Record and Playback</strong>: Users can record actions like clicks and form submissions, which can be played back as tests.</li>
+<li><strong>User-Friendly Interface</strong>: Designed for ease of use, making it accessible for those without extensive programming knowledge.</li>
+<li><strong>Exporting Options</strong>: Test scripts can be exported to various programming languages such as Java, Python, C#, etc.</li>
+</ul></li>
+<li><strong>Limitations</strong>: Limited functionality compared to other components; primarily suitable for simple tests.</li>
+</ul></li>
+<li><strong>Selenium WebDriver</strong>:
+
+<ul>
+<li><strong>Description</strong>: The core component that provides a programming interface to create and execute test scripts.</li>
+<li><strong>Features</strong>:
+
+<ul>
+<li><strong>Direct Browser Interaction</strong>: Unlike Selenium RC, WebDriver communicates directly with the browser, enabling more reliable and faster test execution.</li>
+<li><strong>Support for Multiple Languages</strong>: Test scripts can be written in various languages, including Java, Python, Ruby, C#, and JavaScript.</li>
+<li><strong>Advanced Automation Capabilities</strong>: Allows for complex interactions with web elements, such as handling alerts, managing cookies, and navigating between pages.</li>
+</ul></li>
+<li><strong>Benefits</strong>: Provides greater control over browser behavior and is more efficient than earlier versions.</li>
+</ul></li>
+<li><strong>Selenium Grid</strong>:
+
+<ul>
+<li><strong>Description</strong>: A tool that allows for parallel execution of tests across multiple machines and browsers.</li>
+<li><strong>Features</strong>
+
+<ul>
+<li><strong>Hub-Node Architecture</strong>: One machine acts as a hub that manages test execution across various nodes (remote machines).</li>
+<li><strong>Cross-Browser Testing</strong>: Enables testing on different browsers and operating systems simultaneously.</li>
+<li><strong>Scalability</strong>: Supports running large test suites in parallel, significantly reducing overall testing time.</li>
+</ul></li>
+<li><strong>Use Cases</strong>: Ideal for large-scale testing environments where multiple configurations need to be validated.</li>
+</ul></li>
+<li><strong>Selenium Remote Control (RC)</strong> (Deprecated):
+
+<ul>
+<li><strong>Description</strong>: An earlier tool that allowed testers to write automated tests in various programming languages by acting as an intermediary between the test scripts and the browser.</li>
+<li><strong>Features</strong>:
+
+<ul>
+<li>Allowed for cross-browser testing using a server-client architecture.</li>
+<li>Provided an API for writing tests in multiple languages.</li>
+</ul></li>
+<li><strong>Limitations</strong>: Largely replaced by WebDriver due to its complexity and performance issues.</li>
+</ul></li>
+</ol>
+<h2><a name="explain-function-point-and-test-point-analysis" class="heading-anchor" href="#explain-function-point-and-test-point-analysis" rel="nofollow" aria-hidden="true"></a>Explain function point and test point analysis.</h2>
+<p>Function Point Analysis (FPA) and Test Point Analysis (TPA) are both measurement techniques used in software engineering to assess different aspects of software development and testing. Here’s a detailed explanation of each:</p>
+
+<p><strong>Function Point Analysis (FPA)</strong></p>
+
+<p><img src="assets/Pasted%20image%2020241022033925.png" alt=""></p>
+
+<ul>
+<li><strong>Definition</strong>: FPA is a standardized method for measuring the functional size of software based on its functionality from the user's perspective. It quantifies the amount of business functionality that the software provides.</li>
+<li><strong>Purpose</strong>: The primary goal of FPA is to estimate the size, complexity, and effort required for software development and maintenance. It helps in project planning, resource allocation, and performance measurement.</li>
+<li><strong>Components</strong>:
+
+<ul>
+<li><strong>Functional Types</strong>: FPA categorizes functions into two main types:
+
+<ul>
+<li><strong>Transactional Functions</strong>:
+
+<ul>
+<li>External Inputs (EI): Data or control information coming from outside the application.</li>
+<li>External Outputs (EO): Data or control information sent outside the application.</li>
+<li>External Inquiries (EQ): Input-output combinations resulting in data retrieval.</li>
+</ul></li>
+<li><strong>Data Functions</strong>:
+
+<ul>
+<li>Internal Logical Files (ILF): User-identifiable groups of related data maintained within the application.</li>
+<li>External Interface Files (EIF): Data files used by the application but maintained by another application.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><strong>Calculation</strong>: Each function is assigned a weight based on its complexity, and the total function points are calculated using a specific formula that considers these weights and complexity factors. This provides an objective measure of the software’s size and complexity, aiding in estimating project timelines and resource requirements.</li>
+</ul>
+
+<p><strong>Test Point Analysis (TPA)</strong></p>
+
+<p><img src="assets/Pasted%20image%2020241022034034.png" alt=""></p>
+
+<ul>
+<li><strong>Definition</strong>: TPA is a technique used to estimate the testing effort required for a software project based on its functional size as measured by function points.</li>
+<li><strong>Purpose</strong>: The main objective of TPA is to provide a systematic approach to estimate testing resources and time based on the functional size derived from FPA. It helps in planning and managing testing activities effectively.</li>
+<li><strong>Components</strong>:
+
+<ul>
+<li>TPA involves analyzing various factors that influence testing effort, such as:
+
+<ul>
+<li>Complexity of functions</li>
+<li>Number of test cases required</li>
+<li>Types of testing to be performed (e.g., functional, regression)</li>
+</ul></li>
+</ul></li>
+<li><strong>Calculation</strong>: Similar to FPA, TPA assigns weights to different types of tests based on their complexity and importance. The total test points are calculated to estimate the overall testing effort needed for the project.</li>
+</ul>
+<h2><a name="agile-vs-waterfall-testing" class="heading-anchor" href="#agile-vs-waterfall-testing" rel="nofollow" aria-hidden="true"></a>Agile Vs Waterfall testing.</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Agile Testing</th>
+<th>Waterfall Testing</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>Approach</strong></td>
+<td>Iterative and incremental</td>
+<td>Sequential and linear</td>
+</tr>
+
+<tr>
+<td><strong>Testing Timing</strong></td>
+<td>Throughout the development lifecycle</td>
+<td>At the end of the development lifecycle</td>
+</tr>
+
+<tr>
+<td><strong>Testing Involvement</strong></td>
+<td>Continuous and collaborative</td>
+<td>Isolated and separate</td>
+</tr>
+
+<tr>
+<td><strong>Documentation</strong></td>
+<td>Minimal and adaptive</td>
+<td>Extensive and upfront</td>
+</tr>
+
+<tr>
+<td><strong>Risk Management</strong></td>
+<td>Proactive and ongoing</td>
+<td>Reactive and limited</td>
+</tr>
+
+<tr>
+<td><strong>Flexibility</strong></td>
+<td>High</td>
+<td>Low</td>
+</tr>
+
+<tr>
+<td><strong>Customer Involvement</strong></td>
+<td>Frequent and active</td>
+<td>Limited and infrequent</td>
+</tr>
+
+<tr>
+<td><strong>Feedback Loop</strong></td>
+<td>Short and frequent</td>
+<td>Long and infrequent</td>
+</tr>
+
+<tr>
+<td><strong>Suitability for Projects</strong></td>
+<td>Small to medium-sized projects with changing requirements</td>
+<td>Large-scale projects with stable requirements</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="what-are-principles-of-agile-testing" class="heading-anchor" href="#what-are-principles-of-agile-testing" rel="nofollow" aria-hidden="true"></a>What are principles of agile testing?</h2>
+<ol>
+<li><strong>Testing Moves the Project Forward</strong>:
+
+<ul>
+<li>Testing is integrated throughout the development process, ensuring that quality is maintained and issues are identified early. This ongoing involvement helps to drive the project toward completion by addressing potential problems as they arise.</li>
+</ul></li>
+<li><strong>Testing is Not a Phase</strong>:
+
+<ul>
+<li>Unlike traditional methodologies where testing occurs as a distinct phase at the end of development, Agile testing is continuous. It begins at the outset of the project and continues throughout each iteration, allowing for immediate feedback and adjustments.</li>
+</ul></li>
+<li><strong>Everyday Tests</strong>:
+
+<ul>
+<li>Agile emphasizes frequent testing, often on a daily basis. This regular testing cycle helps ensure that new code integrates well with existing code and that any defects are caught early, thus minimizing the cost and effort required to fix them later.</li>
+</ul></li>
+<li><strong>Shortening Feedback Loop</strong>:
+
+<ul>
+<li>Quick feedback is essential in Agile environments. Teams aim to reduce the time between development and testing, allowing for rapid iterations based on user input and test results. This principle enhances responsiveness to changing requirements and improves overall product quality.</li>
+</ul></li>
+<li><strong>Keep the Code Clean</strong>:
+
+<ul>
+<li>Maintaining high-quality, clean code is vital in Agile testing. Regular refactoring and adherence to coding standards help prevent technical debt, making it easier to implement changes and conduct tests effectively.</li>
+</ul></li>
+</ol>
+<h2><a name="what-are-different-iso-9000-standards" class="heading-anchor" href="#what-are-different-iso-9000-standards" rel="nofollow" aria-hidden="true"></a>What are different ISO 9000 standards.</h2>
+<p><img src="assets/Pasted%20image%2020241022034925.jpg" alt=""></p>
+
+<table>
+<thead>
+<tr>
+<th><strong>Standard</strong></th>
+<th><strong>Title</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>ISO 9000:2015</strong></td>
+<td>Quality Management Systems – Fundamentals and Vocabulary</td>
+<td>Provides the fundamental concepts, principles, and vocabulary for quality management systems.</td>
+</tr>
+
+<tr>
+<td><strong>ISO 9001:2015</strong></td>
+<td>Quality Management Systems – Requirements</td>
+<td>Specifies the requirements an organization must meet to demonstrate its ability to consistently provide products and services that meet customer and regulatory requirements. This is the only standard in the ISO 9000 family that organizations can be certified against.</td>
+</tr>
+
+<tr>
+<td><strong>ISO 9002:2016</strong></td>
+<td>Quality Management Systems – Guidelines for Application of ISO 9001</td>
+<td>Offers guidelines for organizations seeking to implement ISO 9001 requirements, primarily focused on production and service provision. Note: This standard is often referenced but not currently maintained as a separate certification.</td>
+</tr>
+
+<tr>
+<td><strong>ISO 9004:2009</strong></td>
+<td>Quality Management Systems – Managing for Sustained Success</td>
+<td>Provides guidance on achieving sustained success through a quality management approach, focusing on performance improvement and customer satisfaction.</td>
+</tr>
+
+<tr>
+<td><strong>ISO 19011:2011</strong></td>
+<td>Guidelines for Auditing Management Systems</td>
+<td>Offers guidelines for auditing management systems, including principles of auditing, managing an audit program, and conducting management system audits.</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="references" class="heading-anchor" href="#references" rel="nofollow" aria-hidden="true"></a>References</h2>
+<ul>
+<li><a href="https://www.perplexity.ai/search/explain-selenium-testing-tool-Bq_YR8z5RBiqT10u9I9G8Q">Preplexity</a></li>
+</ul>
+
+		</main>
+        
+        <details id="table-of-content">
+           <summary>Table of Content</summary>
+                    <nav>
+<ul>
+<li><a href="#explain-the-mccall-s-quality-factors">Explain the McCall’s quality factors.</a></li>
+<li><a href="#what-are-cmm-model-levels">
+What are CMM model levels.</a></li>
+<li><a href="#what-is-test-planning">
+What is test planning?</a></li>
+<li><a href="#explain-the-structure-of-testing-group">
+Explain the structure of testing group.</a></li>
+<li><a href="#what-are-different-types-of-integration-testing">
+What are different types of Integration testing?</a></li>
+<li><a href="#explain-the-process-of-test-suite-prioritization-with-its-type-in-detail-with-example">
+Explain the process of test suite prioritization with its type in detail with example.</a></li>
+<li><a href="#what-is-automation-testing-tool">
+What is automation testing tool?</a></li>
+<li><a href="#what-is-jira-testing-tool">
+What is JIRA testing tool.</a></li>
+<li><a href="#what-is-bugzilla-testing-tool">
+What is Bugzilla testing tool?</a></li>
+<li><a href="#explain-selenium-testing-tool-in-detail">
+Explain selenium testing tool in detail.</a></li>
+<li><a href="#explain-function-point-and-test-point-analysis">
+Explain function point and test point analysis.</a></li>
+<li><a href="#agile-vs-waterfall-testing">
+Agile Vs Waterfall testing.</a></li>
+<li><a href="#what-are-principles-of-agile-testing">
+What are principles of agile testing?</a></li>
+<li><a href="#what-are-different-iso-9000-standards">
+What are different ISO 9000 standards.</a></li>
+<li><a href="#references">
+References</a></li>
+</ul>
+</nav>
+
+        </details>
+        
+		<footer>
+			<p style="text-align: center; font-size: small; margin-top: 5em;">
+                <a href="https://anzenkodo.github.io/license">LICENSE</a>
+            </p>
+		</footer>
+	<script>
+		MathJax = {
+		  tex: {
+		    inlineMath: [['$', '$']],
+		    displayMath: [['$$', '$$']],
+		  }
+		};
+	</script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+	</script>
+	</body>
+</html>
