@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>CNS - AK#Notes</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="description" content="## Module 3  ### Type's of malicious software  ![Type's of malicious software](assets/Pasted%20image">
+  		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
+  		<meta property="og:image:alt" content="AK#Notes logo">
+  		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="CNS - AK#Notes">
+		<meta property="og:description" content="## Module 3  ### Type's of malicious software  ![Type's of malicious software](assets/Pasted%20image">
+		<meta property="og:url" content="https://AnzenKodo.github.io/">
+		<meta property="og:type" content="website">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+
+            :root {
+                color-scheme: dark light;
+                --theme: #FF6C22;
+			}
+			body {
+                max-width: 40rem;
+                margin: 0 auto;
+                font-family: system-ui;
+                padding: 0 1em;
+                color: inherit !important;
+                word-break: break-word;
+			}
+			h1, h2, h3, h4, h5, h6 {
+                font-family: monospace;
+                margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+                font-size: 2rem;
+			}
+			h3 {
+			    font-size: 1.8rem;
+			}
+			h4 {
+			    font-size: 1.5rem;
+			}
+			h5 {
+			    font-size: 1.3rem;
+			}
+			h6 {
+			    font-size: 1rem;
+			}
+			p, li, td, code {
+			    line-height: 1.5rem;
+			}
+			a {
+			    color: var(--theme);
+			    text-decoration: none;
+			}
+			a:hover, a:focus {
+			    text-decoration: underline;
+			}
+			a:active {
+			    background: var(--theme);
+			    color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+                margin-top: .5rem;
+			}
+			li {
+                margin-bottom: .5rem;
+			}
+			table {
+			    border-collapse: collapse;
+                overflow-x: auto;
+                display: block;
+                word-break: auto-phrase;
+			}
+            th {
+                font-size: 1.1rem;
+                border: 2px solid;
+                padding: .3rem .3rem;
+            }
+            td {
+                border: 1px solid;
+                padding: .3rem .5rem;
+            }
+            blockquote {
+                margin-left: 0;
+                margin-right: 0;
+                border: 1px solid;
+                border-left: 10px solid;
+                padding: 0 1rem;
+            }
+            .code-block {
+                background: black;
+                overflow-x: auto;
+                padding: 0em 1em;
+                border: 1px solid;
+            }
+            .code-block-language-name {
+                position: sticky;
+                left: 95%;
+                top: .5em;
+                font-weight: bold;
+                color: white;
+            }
+            :not(pre.chroma) > code {
+                border: 1px solid;
+                padding: .3rem .2rem .2rem .2rem;
+            }
+            img {
+                max-width: 100%;
+                display: block;
+                margin: 0 auto;
+            }
+            [href="#skip-top-main"] {
+                padding: 0.3em;
+                position: absolute;
+                transform: translateY(-200%);
+            }
+            [href="#skip-top-main"]:focus {
+                transform: translateY(0%);
+                background: var(--theme);
+                color: inherit;
+            }
+            #table-of-content {
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+                background: black;
+                padding: 0.5rem 1em;
+                z-index: 1;
+                color: white;
+            }
+            #table-of-content[open] {
+                max-height: 90%;
+                overflow-y: auto;
+                bottom: 50px;
+                margin-left: 1em;
+            }
+            #table-of-content[open] summary {
+                background: black;
+                padding: 0.5em 1em;
+                text-align: center;
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+            }
+            #table-of-content ul:first-child {
+                padding-left: 1em;
+                margin-top: 1.5em;
+            }
+            .heading-anchor::before {
+                content: "#";
+                margin-right: .5rem;
+            }
+            mjx-container {
+                display: math;
+                overflow-y: hidden;
+                overflow-x: auto;
+                max-width: 100%;
+            }
+            iframe {
+                width: 100%;
+                height: 21rem;
+            }
+		</style>
+	</head>
+	<body>
+	    <a href="#skip-top-main">Skip to main</a>
+		<header>
+			<h1 style="text-align: center;">
+                <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+            </h1>
+            <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;">
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem; margin-top: 0;">CNS</h1>
+			<h2><a name="module-3" class="heading-anchor" href="#module-3" rel="nofollow" aria-hidden="true"></a>Module 3</h2><h3><a name="type-s-of-malicious-software" class="heading-anchor" href="#type-s-of-malicious-software" rel="nofollow" aria-hidden="true"></a>Type's of malicious software</h3>
+<p><img src="assets/Pasted%20image%2020231025223307.png" alt="Type's of malicious software"></p>
+<h3><a name="host-based" class="heading-anchor" href="#host-based" rel="nofollow" aria-hidden="true"></a>Host based</h3><h4><a name="spam" class="heading-anchor" href="#spam" rel="nofollow" aria-hidden="true"></a>Spam</h4>
+<p>Any kind of unwanted, unsolicited digital communication that gets sent out in bulk.</p>
+
+<p>Spam is sent via email, text messages, phone calls, or social media.</p>
+<h5><a name="types-of-spam" class="heading-anchor" href="#types-of-spam" rel="nofollow" aria-hidden="true"></a>Types of spam</h5>
+<ul>
+<li>Phishing emails
+
+<ul>
+<li>Type of spam cybercriminals sent to many people, hoping to &quot;hook&quot; a few people.</li>
+<li>Phishing email trick victims into giving up sensitive information.</li>
+</ul></li>
+<li>Email Spoofing
+
+<ul>
+<li>Spoofed emails mimic, or spoof, an email from a legitimate sender, and ask you to take some sort of action.</li>
+</ul></li>
+</ul>
+<h4><a name="virus" class="heading-anchor" href="#virus" rel="nofollow" aria-hidden="true"></a>Virus</h4>
+<p>Virus is a malware that relies on someone or something to propagate from one system to another.</p>
+<h5><a name="phases-of-virus" class="heading-anchor" href="#phases-of-virus" rel="nofollow" aria-hidden="true"></a>Phases of Virus</h5>
+<p><img src="assets/Pasted%20image%2020231025224403.png" alt="Phases of Virus"></p>
+<h4><a name="trojan-horse" class="heading-anchor" href="#trojan-horse" rel="nofollow" aria-hidden="true"></a>Trojan horse</h4>
+<p>Programs that performs malicious some harmless activity in addition to some malicious activities.</p>
+
+<p>Examples:</p>
+
+<ul>
+<li>A game could do malicious while the victim is playing.</li>
+<li>Downloading cracked application.</li>
+<li>Opening infected attachment.</li>
+</ul>
+<h4><a name="trapdoor" class="heading-anchor" href="#trapdoor" rel="nofollow" aria-hidden="true"></a>Trapdoor</h4>
+<p>Trapdoor or a backdoor is a vulnerability found in the system where attacker can planned his malicious code and make a secret unauthorized entry to the system.</p>
+<h4><a name="logic-bomb" class="heading-anchor" href="#logic-bomb" rel="nofollow" aria-hidden="true"></a>Logic bomb</h4>
+<p>Only attacks when Boolean logic(true or false) is satisfied.</p>
+
+<p>It has two phases:</p>
+
+<ol>
+<li><strong>Payload:</strong> Malicious code is placed.</li>
+<li><strong>Trigger:</strong> Boolean value is satisfied or the condition is become true.</li>
+</ol>
+<h2><a name="module-4" class="heading-anchor" href="#module-4" rel="nofollow" aria-hidden="true"></a>Module 4</h2><h3><a name="ipsec" class="heading-anchor" href="#ipsec" rel="nofollow" aria-hidden="true"></a>IPSec</h3>
+<p>It is a protocol which resides on the network layer.</p>
+
+<p>It is an <strong>Internet Engineering Task Force (IETF)</strong> standard suite of protocols between two communication points across the IP network.</p>
+
+<p>It defines the encrypted, decrypted, and authenticated packets.</p>
+<h4><a name="ipsec-packet" class="heading-anchor" href="#ipsec-packet" rel="nofollow" aria-hidden="true"></a>IPSec Packet</h4>
+<p><img src="assets/Pasted%20image%2020231026022039.png" alt="IPSec Packet"></p>
+<h4><a name="ipsec-3-function-areas" class="heading-anchor" href="#ipsec-3-function-areas" rel="nofollow" aria-hidden="true"></a>IPSec 3 function areas</h4>
+<p><img src="assets/Pasted%20image%2020231026022505.png" alt="IPSec 3 function areas"></p>
+<h4><a name="use-of-ipsec" class="heading-anchor" href="#use-of-ipsec" rel="nofollow" aria-hidden="true"></a>Use of IPSec</h4>
+<ul>
+<li>To encrypt application layer data.</li>
+<li>To provide security for routers.</li>
+<li>Sending the data across in public network.</li>
+<li>To provide authentication without encryption that the data originated from a known sender.</li>
+</ul>
+<h4><a name="components-of-ipsec" class="heading-anchor" href="#components-of-ipsec" rel="nofollow" aria-hidden="true"></a>Components of IPSec</h4>
+<p><img src="assets/Pasted%20image%2020231026023817.png" alt="Components of IPSec"></p>
+<h4><a name="ipsec-tunnel-mode-vs-transport-mode" class="heading-anchor" href="#ipsec-tunnel-mode-vs-transport-mode" rel="nofollow" aria-hidden="true"></a>IPSec Tunnel Mode vs Transport Mode</h4>
+<p><img src="assets/Pasted%20image%2020231026024027.png" alt="IPSec Tunnel Mode vs Transport Mode"></p>
+<h5><a name="tunnel-mode" class="heading-anchor" href="#tunnel-mode" rel="nofollow" aria-hidden="true"></a>Tunnel Mode</h5>
+<p>In tunnel mode, the entire original IP packet is encapsulated to become the payload of a new IP packet.</p>
+<h5><a name="transport-mode" class="heading-anchor" href="#transport-mode" rel="nofollow" aria-hidden="true"></a>Transport Mode</h5>
+<p>The main difference in transport mode is that it retains the original IP header.</p>
+
+<p>In transport mode, encrypted traffic is sent directly between two hosts that previously established a secure IPsec tunnel.</p>
+<h3><a name="nas" class="heading-anchor" href="#nas" rel="nofollow" aria-hidden="true"></a>NAS</h3>
+<p>Network-attached storage (NAS) security is the measures a company takes to protect critical enterprise and customer data within NAS environments from both internal and external threats.</p>
+
+<p>Rather than a specific, vendor-offered type of software, NAS security is a set of best practices that businesses implement to protect their networked storage.</p>
+<h4><a name="top-4-nas-vulnerabilities" class="heading-anchor" href="#top-4-nas-vulnerabilities" rel="nofollow" aria-hidden="true"></a>Top 4 NAS vulnerabilities</h4><h5><a name="unsecure-network-configurations" class="heading-anchor" href="#unsecure-network-configurations" rel="nofollow" aria-hidden="true"></a>Unsecure network configurations</h5>
+<p>If the network to which the NAS storage devices are connected is an open network, all NAS devices are automatically vulnerable to any threats on that public network</p>
+<h5><a name="unprotected-passwords" class="heading-anchor" href="#unprotected-passwords" rel="nofollow" aria-hidden="true"></a>Unprotected passwords</h5>
+<p>Network access passwords, storage management passwords, and any other credentials left in the open or shared unsafely are at risk of wrongful use.</p>
+<h5><a name="insufficient-authentication" class="heading-anchor" href="#insufficient-authentication" rel="nofollow" aria-hidden="true"></a>Insufficient authentication</h5>
+<p>If users on the network aren’t required to prove their identity and their right to access the system, employees untrained in security practices could wreak havoc on a NAS.</p>
+<h5><a name="the-internet" class="heading-anchor" href="#the-internet" rel="nofollow" aria-hidden="true"></a>The internet</h5>
+<p>Because some NAS systems are connected to the public internet rather than only a company network, they’re exposed to the internet’s vulnerabilities, too</p>
+
+<p>Public internet vulnerabilities include denial of service (DoS) attacks, botnets, and malware-infected web pages.</p>
+<h4><a name="key-components-of-nas-security" class="heading-anchor" href="#key-components-of-nas-security" rel="nofollow" aria-hidden="true"></a>Key components of NAS security</h4><h5><a name="access-controls" class="heading-anchor" href="#access-controls" rel="nofollow" aria-hidden="true"></a>Access controls</h5>
+<p>All users on the network should be required to authenticate their identity at each entry point.</p>
+
+<p>Example, knowing a password, having a generated passcode, or using biometrics like facial recognition.</p>
+<h5><a name="device-approval" class="heading-anchor" href="#device-approval" rel="nofollow" aria-hidden="true"></a>Device approval</h5>
+<p>If a NAS system is connected to a company network, all other non-storage devices that connect to the network, like employee mobile devices, should require approval.</p>
+<h5><a name="network-security" class="heading-anchor" href="#network-security" rel="nofollow" aria-hidden="true"></a>Network security</h5>
+<p>Protecting the network where NAS systems reside is critical to protecting the data.</p>
+<h5><a name="internet-security-practices" class="heading-anchor" href="#internet-security-practices" rel="nofollow" aria-hidden="true"></a>Internet security practices</h5>
+<p>Some NAS systems are connected to the internet and must be protected from internet threats, like website malware and botnets.</p>
+<h5><a name="regular-system-and-software-updates" class="heading-anchor" href="#regular-system-and-software-updates" rel="nofollow" aria-hidden="true"></a>Regular system and software updates</h5>
+<p>NAS management software should be updated immediately when a new update is released.</p>
+<h3><a name="vpn" class="heading-anchor" href="#vpn" rel="nofollow" aria-hidden="true"></a>VPN</h3>
+<p><img src="assets/Pasted%20image%2020231026032146.jpg" alt="VPN Diagram"></p>
+
+<p>A VPN connection disguises your data traffic online and protects it from external access.</p>
+
+<p>Unencrypted data can be viewed by anyone who has network access and wants to see it.</p>
+
+<p>With a VPN, hackers and cyber criminals can’t decipher this data.</p>
+
+<p>Your ISP usually sets up your connection when you connect to the internet.</p>
+
+<p>It tracks you via an IP address. Your network traffic is routed through your ISP's servers, which can log and display everything you do online.</p>
+<h3><a name="ssl" class="heading-anchor" href="#ssl" rel="nofollow" aria-hidden="true"></a>SSL</h3>
+<p>Secure Socket Layer (SSL) provides security to the data that is transferred between web browser and server.</p>
+
+<p>SSL encrypts the link between a web server and a browser which ensures that all data passed between them remain private and free from attack.</p>
+<h4><a name="ssl-protocol-stack" class="heading-anchor" href="#ssl-protocol-stack" rel="nofollow" aria-hidden="true"></a>SSL Protocol Stack:</h4>
+<p><img src="assets/Pasted%20image%2020231026031421.jpg" alt="SSL Protocol Stack"></p>
+<h4><a name="ssl-handshake-protocol" class="heading-anchor" href="#ssl-handshake-protocol" rel="nofollow" aria-hidden="true"></a>SSL Handshake Protocol</h4>
+<p>Handshake Protocol is used to establish sessions.</p>
+
+<p>This protocol allows the client and server to authenticate each other by sending a series of messages to each other.</p>
+
+<p><img src="assets/Pasted%20image%2020231026031539.png" alt=" Handshake Protocol"></p>
+
+<ul>
+<li>*<strong><em>Phase-1:</em></strong>* In Phase-1 both Client and Server send hello-packets to each other. In this IP session, cipher suite and protocol version are exchanged for security purposes. </li>
+<li>*<strong><em>Phase-2:</em></strong>* Server sends his certificate and Server-key-exchange. The server end phase-2 by sending the Server-hello-end packet. </li>
+<li>*<strong><em>Phase-3:</em></strong>* In this phase, Client replies to the server by sending his certificate and Client-exchange-key. </li>
+
+<li><p>*<strong><em>Phase-4:</em></strong>* In Phase-4 Change-cipher suite occurs and after this the Handshake Protocol ends.</p>
+<h2><a name="module-5" class="heading-anchor" href="#module-5" rel="nofollow" aria-hidden="true"></a>Module 5</h2></li>
+</ul>
+<h3><a name="nac" class="heading-anchor" href="#nac" rel="nofollow" aria-hidden="true"></a>NAC</h3>
+<p><img src="assets/Pasted%20image%2020231026025927.png" alt="NAC Diagram"></p>
+
+<p>Network Access Control is a centralized solution to end-point security that focuses on network visibility and strict access management by enforcing policies across all users and devices.</p>
+
+<p>The objective of Network Access Control is to block unauthorized users or devices from entering a private corporate network.</p>
+<h4><a name="use-cases-for-network-access-control" class="heading-anchor" href="#use-cases-for-network-access-control" rel="nofollow" aria-hidden="true"></a>Use cases for Network Access Control</h4>
+<ul>
+<li><strong>IoT</strong>
+
+<ul>
+<li>The right NAC solution will identify and monitor IoT devices, in addition to traditional devices.</li>
+</ul></li>
+<li><strong>BYOD (Bring Your Own Device)</strong>
+
+<ul>
+<li>With employees working remotely from personal computers or accessing the corporate network from personal phones, a proper NAC solution must also be able to handle permissions and authentication of unfamiliar devices attempting to access the network.</li>
+</ul></li>
+<li><strong>Incident Response</strong>
+
+<ul>
+<li>In addition to simply controlling network access, a robust network access control solution should be able to respond to threats quickly and effectively.</li>
+</ul></li>
+
+<li><p><strong>Medicine</strong></p>
+
+<ul>
+<li>In the world of healthcare, there is a growing reliance on the Internet of Medical Things (IoMT) devices.</li>
+
+<li><p>Properly structured NAC solutions can provide the necessary protection of sensitive personal data and medical records in a network with multiple users and IoMT devices.</p>
+<h3><a name="snmp" class="heading-anchor" href="#snmp" rel="nofollow" aria-hidden="true"></a>SNMP</h3></li>
+</ul></li>
+</ul>
+
+<p>SNMP stands for Simple Network Management Protocol.</p>
+
+<p>It is basically an Internet Standard Protocol which is used for monitoring and organizing information about the devices on IP network by sending and receiving requests.</p>
+
+<p>This protocol is used for organizing information from devices like switches, modems, routers, servers, printers etc.</p>
+
+<p>Currently, there are 3 versions of SNMP – SNMPv1, SNMPv2, SNMPv3</p>
+<h4><a name="snmp-components" class="heading-anchor" href="#snmp-components" rel="nofollow" aria-hidden="true"></a>SNMP components</h4><h5><a name="snmp-manager" class="heading-anchor" href="#snmp-manager" rel="nofollow" aria-hidden="true"></a>SNMP Manager</h5>
+<p><img src="assets/Pasted%20image%2020231026031005.png" alt="SNMP Manager">
+It is a centralized system used to monitor network. It is also known as Network Management Station (NMS)</p>
+<h4><a name="snmp-agent" class="heading-anchor" href="#snmp-agent" rel="nofollow" aria-hidden="true"></a>SNMP agent</h4>
+<p>It is a software management software module installed on a managed device. Managed devices can be network devices like PC, routers, switches, servers, etc.</p>
+<h5><a name="management-information-base" class="heading-anchor" href="#management-information-base" rel="nofollow" aria-hidden="true"></a>Management Information Base</h5>
+<p>MIB consists of information on resources that are to be managed.</p>
+
+<p>This information is organized hierarchically.</p>
+
+<p>It consists of objects instances which are essentially variables.</p>
+<h2><a name="module-6" class="heading-anchor" href="#module-6" rel="nofollow" aria-hidden="true"></a>Module 6</h2><h3><a name="ids" class="heading-anchor" href="#ids" rel="nofollow" aria-hidden="true"></a>IDS</h3>
+<p><img src="assets/Pasted%20image%2020231025235853.png" alt="IDS Diagram"></p>
+
+<p>An <strong>Intrusion Detection System (IDS)</strong> is a system that monitors <strong>network traffic</strong> for suspicious activity and issues alerts when such activity is discovered.</p>
+
+<p>It is a software application that scans a network or system for harmful activity or policy breaching.</p>
+
+<p>Any malicious venture or violation is normally reported either to an administrator  or collected centrally using a <strong>Security Information and Event Management (SIEM)</strong> system.</p>
+<h4><a name="classification-of-intrusion-detection-system" class="heading-anchor" href="#classification-of-intrusion-detection-system" rel="nofollow" aria-hidden="true"></a>Classification of intrusion detection system:</h4>
+<p><img src="assets/Pasted%20image%2020231026002613.png" alt="Classification of intrusion detection system"></p>
+<h5><a name="network-intrusion-detection-system-nids" class="heading-anchor" href="#network-intrusion-detection-system-nids" rel="nofollow" aria-hidden="true"></a>Network Intrusion Detection System (NIDS)</h5>
+<p>Set up at a planned point within the network to examine traffic from all devices on the network.</p>
+
+<p>It performs an observation to examine traffic from all devices on the network.</p>
+<h5><a name="host-intrusion-detection-system-hids" class="heading-anchor" href="#host-intrusion-detection-system-hids" rel="nofollow" aria-hidden="true"></a>Host Intrusion Detection System (HIDS)</h5>
+<p>Run on independent hosts or devices on the network.</p>
+
+<p>Monitors the incoming and outgoing packets from the device only and will alert the administrator if malicious activity is detected.</p>
+
+<p>It takes a snapshot of existing system files and compares it with the previous snapshot.</p>
+<h5><a name="protocol-based-intrusion-detection-system-pids" class="heading-anchor" href="#protocol-based-intrusion-detection-system-pids" rel="nofollow" aria-hidden="true"></a>Protocol-based Intrusion Detection System (PIDS)</h5>
+<p>Comprises a system or agent that would consistently resides at the front end of a server, controlling and interpreting the protocol between a user/device and the server.</p>
+
+<p>It is trying to secure the web server by regularly monitoring the HTTPS protocol stream and accept the related HTTP protocol.</p>
+<h5><a name="application-protocol-based-intrusion-detection-system" class="heading-anchor" href="#application-protocol-based-intrusion-detection-system" rel="nofollow" aria-hidden="true"></a>Application Protocol-based Intrusion Detection System</h5>
+<p>It is a system or agent that generally resides within a group of servers.</p>
+
+<p>It identifies the intrusion by monitoring and interpreting the communication on application-specific protocols.</p>
+<h5><a name="hybrid-intrusion-detection-system" class="heading-anchor" href="#hybrid-intrusion-detection-system" rel="nofollow" aria-hidden="true"></a>Hybrid Intrusion Detection System</h5>
+<p>It is made by combination of two or more approaches of the intrusion detection system.</p>
+
+<p>Host agent or system data is combined with network information to develop a complete view of the network system.</p>
+
+<p>It is more effective in comparison to the other IDS.</p>
+<h4><a name="detection-method-of-ids" class="heading-anchor" href="#detection-method-of-ids" rel="nofollow" aria-hidden="true"></a>Detection Method of IDS</h4>
+<p><img src="assets/Pasted%20image%2020231026003108.png" alt="Detection Method of IDS"></p>
+<h5><a name="signature-based" class="heading-anchor" href="#signature-based" rel="nofollow" aria-hidden="true"></a>Signature based</h5>
+<p>Detects the attacks on the bases of the specific patterns such as number of bytes or number of 1's or number of 0's in the network traffic.</p>
+
+<p>It detects on basis of the already known malicious instruction sequence that is used by the malware.</p>
+
+<p>The detected patterns are known as signatures.</p>
+<h5><a name="anomaly-based" class="heading-anchor" href="#anomaly-based" rel="nofollow" aria-hidden="true"></a>Anomaly based</h5>
+<p>It detect unknown malware as new malware are developed rapidly.</p>
+
+<p>Machine Learning is used to develop IDS.</p>
+<h4><a name="comparison-of-ids-with-firewalls" class="heading-anchor" href="#comparison-of-ids-with-firewalls" rel="nofollow" aria-hidden="true"></a>Comparison of IDS with Firewalls</h4>
+<p>Firewall restrict access between networks to prevent intrusion and if an attack is from inside the network it doesn't signal.</p>
+
+<p>An IDS describes a suspected intrusion once it has happened and then signals an alarm.</p>
+<h3><a name="firewall" class="heading-anchor" href="#firewall" rel="nofollow" aria-hidden="true"></a>Firewall</h3>
+<p><img src="assets/Pasted%20image%2020231026004947.png" alt="Firewall Diagram"></p>
+
+<p>A firewall is a network security device that monitors incoming and outgoing network traffic and permits or blocks data packets based on  a set of security rules.</p>
+
+<p>It purpose is  to establish a barrier between your internal network and incoming traffic from external source like internet. In order to block malicious traffic like viruses or hacker.</p>
+<h4><a name="firewall-characteristics" class="heading-anchor" href="#firewall-characteristics" rel="nofollow" aria-hidden="true"></a>Firewall Characteristics</h4>
+<p><img src="assets/Pasted%20image%2020231026010145.png" alt="Firewall Characteristics"></p>
+<h4><a name="types-of-firewall" class="heading-anchor" href="#types-of-firewall" rel="nofollow" aria-hidden="true"></a>Types of Firewall</h4>
+<p><img src="assets/Pasted%20image%2020231026011640.png" alt="Types of Firewall"></p>
+<h5><a name="packet-filtering" class="heading-anchor" href="#packet-filtering" rel="nofollow" aria-hidden="true"></a>Packet Filtering</h5>
+<p>The packet filtering firewall analyses for the source and destination IP address, source &amp; destination port number and protocol IDs of IP packets as per an <strong>Access Control List (ACL)</strong></p>
+
+<p>It create a checkpoint at a traffic route.</p>
+
+<p>It is oldest type of firewall.</p>
+<h5><a name="application-proxy" class="heading-anchor" href="#application-proxy" rel="nofollow" aria-hidden="true"></a>Application Proxy</h5>
+<p>Application proxy is a program running on the firewall the emulates both ends of a network connections.</p>
+
+<p>Computer communicates with each other by passing all network traffic through the proxy program.</p>
+
+<p>The proxy program evaluates the data sent from client and decides which to pass on and which to drop.</p>
+<h5><a name="circuit-gateway" class="heading-anchor" href="#circuit-gateway" rel="nofollow" aria-hidden="true"></a>Circuit Gateway</h5>
+<p>This can be a stand-alone system or it can be the specialized function performed by an application level gateway for certain applications.</p>
+
+<p>It does not permit end-to-end TCP connection. Rather, the gateway sets two TCP connections.</p>
+<h4><a name="firewall-design-principles" class="heading-anchor" href="#firewall-design-principles" rel="nofollow" aria-hidden="true"></a>Firewall Design Principles</h4>
+<p><img src="assets/Pasted%20image%2020231026014034.png" alt="Firewall Design Principles"></p>
+<h5><a name="developing-security-policy" class="heading-anchor" href="#developing-security-policy" rel="nofollow" aria-hidden="true"></a>Developing Security Policy</h5>
+<p>It is a very essential part of firewall design.</p>
+
+<p>It is designed according to requirement of the company or client to know which kind of traffic is allowed to pass.</p>
+
+<p>Without a proper security poly, it is impossible to restrict or allow a specific user or worker in a compony network or anywhere else.</p>
+<h5><a name="simple-solution-design" class="heading-anchor" href="#simple-solution-design" rel="nofollow" aria-hidden="true"></a>Simple Solution Design</h5>
+<p>If the design of the solution is complex, then it will be difficult to implement it.</p>
+
+<p>If the solution is easy, then it will be easier to easier to implement it.</p>
+
+<p>A simple design is easier to maintain.</p>
+
+<p>We can make upgrades in simple design according to the new possible treats leaving it with an efficient but more simple structure.</p>
+<h5><a name="choosing-the-right-device" class="heading-anchor" href="#choosing-the-right-device" rel="nofollow" aria-hidden="true"></a>Choosing the Right Device</h5>
+<p>If we use the wrong device for the wrong problem, the network becomes vulnerable.</p>
+
+<p>If the outdated device is used for a designing firewall, it exposes the network to risk and is almost useless.</p>
+<h5><a name="layered-defense" class="heading-anchor" href="#layered-defense" rel="nofollow" aria-hidden="true"></a>Layered Defense</h5>
+<p>A network defense must be multiple layered in the modern world because if the security is broken, the network will be exposed to external attacks.</p>
+<h5><a name="consider-internal-threats" class="heading-anchor" href="#consider-internal-threats" rel="nofollow" aria-hidden="true"></a>Consider Internal Threats</h5>
+<p>While giving a lot of attention to safeguarding the network or device from external attacks.</p>
+
+<p>The security becomes weak in case of internal attacks and most of the attacks are done internally as it is easy to access and designed weakly.</p>
+
+		</main>
+        
+        <details id="table-of-content">
+           <summary>Table of Content</summary>
+                    <nav>
+<ul>
+<li><a href="#module-3">Module 3</a>
+<ul>
+<li><a href="#type-s-of-malicious-software">
+Type's of malicious software</a></li>
+<li><a href="#host-based">
+Host based</a>
+<ul>
+<li><a href="#spam">
+Spam</a>
+<ul>
+<li><a href="#types-of-spam">
+Types of spam</a></li>
+</ul></li>
+<li><a href="#virus">
+Virus</a>
+<ul>
+<li><a href="#phases-of-virus">
+Phases of Virus</a></li>
+</ul></li>
+<li><a href="#trojan-horse">
+Trojan horse</a></li>
+<li><a href="#trapdoor">
+Trapdoor</a></li>
+<li><a href="#logic-bomb">
+Logic bomb</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#module-4">
+Module 4</a>
+<ul>
+<li><a href="#ipsec">
+IPSec</a>
+<ul>
+<li><a href="#ipsec-packet">
+IPSec Packet</a></li>
+<li><a href="#ipsec-3-function-areas">
+IPSec 3 function areas</a></li>
+<li><a href="#use-of-ipsec">
+Use of IPSec</a></li>
+<li><a href="#components-of-ipsec">
+Components of IPSec</a></li>
+<li><a href="#ipsec-tunnel-mode-vs-transport-mode">
+IPSec Tunnel Mode vs Transport Mode</a>
+<ul>
+<li><a href="#tunnel-mode">
+Tunnel Mode</a></li>
+<li><a href="#transport-mode">
+Transport Mode</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#nas">
+NAS</a>
+<ul>
+<li><a href="#top-4-nas-vulnerabilities">
+Top 4 NAS vulnerabilities</a>
+<ul>
+<li><a href="#unsecure-network-configurations">
+Unsecure network configurations</a></li>
+<li><a href="#unprotected-passwords">
+Unprotected passwords</a></li>
+<li><a href="#insufficient-authentication">
+Insufficient authentication</a></li>
+<li><a href="#the-internet">
+The internet</a></li>
+</ul></li>
+<li><a href="#key-components-of-nas-security">
+Key components of NAS security</a>
+<ul>
+<li><a href="#access-controls">
+Access controls</a></li>
+<li><a href="#device-approval">
+Device approval</a></li>
+<li><a href="#network-security">
+Network security</a></li>
+<li><a href="#internet-security-practices">
+Internet security practices</a></li>
+<li><a href="#regular-system-and-software-updates">
+Regular system and software updates</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#vpn">
+VPN</a></li>
+<li><a href="#ssl">
+SSL</a>
+<ul>
+<li><a href="#ssl-protocol-stack">
+SSL Protocol Stack:</a></li>
+<li><a href="#ssl-handshake-protocol">
+SSL Handshake Protocol</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#module-5">
+Module 5</a>
+<ul>
+<li><a href="#nac">
+NAC</a>
+<ul>
+<li><a href="#use-cases-for-network-access-control">
+Use cases for Network Access Control</a></li>
+</ul></li>
+<li><a href="#snmp">
+SNMP</a>
+<ul>
+<li><a href="#snmp-components">
+SNMP components</a>
+<ul>
+<li><a href="#snmp-manager">
+SNMP Manager</a></li>
+</ul></li>
+<li><a href="#snmp-agent">
+SNMP agent</a>
+<ul>
+<li><a href="#management-information-base">
+Management Information Base</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="#module-6">
+Module 6</a>
+<ul>
+<li><a href="#ids">
+IDS</a>
+<ul>
+<li><a href="#classification-of-intrusion-detection-system">
+Classification of intrusion detection system:</a>
+<ul>
+<li><a href="#network-intrusion-detection-system-nids">
+Network Intrusion Detection System (NIDS)</a></li>
+<li><a href="#host-intrusion-detection-system-hids">
+Host Intrusion Detection System (HIDS)</a></li>
+<li><a href="#protocol-based-intrusion-detection-system-pids">
+Protocol-based Intrusion Detection System (PIDS)</a></li>
+<li><a href="#application-protocol-based-intrusion-detection-system">
+Application Protocol-based Intrusion Detection System</a></li>
+<li><a href="#hybrid-intrusion-detection-system">
+Hybrid Intrusion Detection System</a></li>
+</ul></li>
+<li><a href="#detection-method-of-ids">
+Detection Method of IDS</a>
+<ul>
+<li><a href="#signature-based">
+Signature based</a></li>
+<li><a href="#anomaly-based">
+Anomaly based</a></li>
+</ul></li>
+<li><a href="#comparison-of-ids-with-firewalls">
+Comparison of IDS with Firewalls</a></li>
+</ul></li>
+<li><a href="#firewall">
+Firewall</a>
+<ul>
+<li><a href="#firewall-characteristics">
+Firewall Characteristics</a></li>
+<li><a href="#types-of-firewall">
+Types of Firewall</a>
+<ul>
+<li><a href="#packet-filtering">
+Packet Filtering</a></li>
+<li><a href="#application-proxy">
+Application Proxy</a></li>
+<li><a href="#circuit-gateway">
+Circuit Gateway</a></li>
+</ul></li>
+<li><a href="#firewall-design-principles">
+Firewall Design Principles</a>
+<ul>
+<li><a href="#developing-security-policy">
+Developing Security Policy</a></li>
+<li><a href="#simple-solution-design">
+Simple Solution Design</a></li>
+<li><a href="#choosing-the-right-device">
+Choosing the Right Device</a></li>
+<li><a href="#layered-defense">
+Layered Defense</a></li>
+<li><a href="#consider-internal-threats">
+Consider Internal Threats</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+
+        </details>
+        
+		<footer>
+			<p style="text-align: center; font-size: small; margin-top: 5em;">
+                <a href="https://anzenkodo.github.io/license">LICENSE</a>
+            </p>
+		</footer>
+	<script>
+		MathJax = {
+		  tex: {
+		    inlineMath: [['$', '$']],
+		    displayMath: [['$$', '$$']],
+		  }
+		};
+	</script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+	</script>
+	</body>
+</html>
