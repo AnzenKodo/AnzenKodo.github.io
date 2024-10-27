@@ -4,16 +4,15 @@
 		<title>Hell Yeah or No - AK#Notes</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-		<meta name="description" content="# Hell Yeah or No  Author: Derek Sivers Created time: April 13, 2021 7:14 PM Page No.: 132 Progress:">
   		<meta name="author" content="AnzenKodo">
-		<meta name="theme-color" content="">
+		<meta name="theme-color" content="#FF6C22">
+		<meta name="description" content="# Hell Yeah or No  Author: Derek Sivers Created time: April 13, 2021 7:14 PM Page No.: 132 Progress:">
+		<meta property="og:description" content="# Hell Yeah or No  Author: Derek Sivers Created time: April 13, 2021 7:14 PM Page No.: 132 Progress:">
 		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
   		<meta property="og:image:alt" content="AK#Notes logo">
   		<meta property="og:site_name" content="AK#Notes">
 		<meta property="og:title" content="Hell Yeah or No - AK#Notes">
-		<meta property="og:description" content="# Hell Yeah or No  Author: Derek Sivers Created time: April 13, 2021 7:14 PM Page No.: 132 Progress:">
-		<meta property="og:url" content="https://AnzenKodo.github.io/">
-		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://AnzenKodo.github.io/notes/notes/Lists/Books/Hell Yeah or No.html">
 		<meta property="og:type" content="article">
 		<meta property="og:article:author" content="AnzenKodo">
 		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
@@ -156,6 +155,23 @@
                 content: "#";
                 margin-right: .5rem;
             }
+            .mermaid {
+                background: black;
+                border: 1px solid;
+                margin-top: 1rem;
+                padding: 1rem;
+                font-family: monospace;
+            }
+            .mermaid svg {
+                display: block;
+                margin: auto;
+            }
+            .mermaid:has(svg) {
+                background: none;
+                border: none;
+                margin-top: 1rem;
+                padding: 0;
+            }
             mjx-container {
                 display: math;
                 overflow-y: hidden;
@@ -172,7 +188,7 @@
 	    <a href="#skip-top-main">Skip to main</a>
 		<header>
 			<h1 style="text-align: center;">
-                <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+                <a href="https://AnzenKodo.github.io">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
             <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;">
 		</header>
@@ -599,15 +615,19 @@ Quote</a></li>
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
             </p>
 		</footer>
-	<script>
-		MathJax = {
+	</body>
+	<script id="MathJax-script" async src="https://AnzenKodo.github.io/assets/js/mathjax.js"></script>
+    <script src="https://AnzenKodo.github.io/assets/js/mermaid.js"></script>
+    <script>
+        mermaid.initialize({
+            theme: "neutral"
+        });
+
+        MathJax = {
 		  tex: {
 		    inlineMath: [['$', '$']],
 		    displayMath: [['$$', '$$']],
 		  }
 		};
-	</script>
-	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-	</script>
-	</body>
+    </script>
 </html>

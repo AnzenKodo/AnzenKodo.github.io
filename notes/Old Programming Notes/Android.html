@@ -4,16 +4,15 @@
 		<title>Android - AK#Notes</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-		<meta name="description" content="# 1. Attempt any FIVE of the following: 10  ## a) List any four features of Android operating system">
   		<meta name="author" content="AnzenKodo">
-		<meta name="theme-color" content="">
+		<meta name="theme-color" content="#FF6C22">
+		<meta name="description" content="# 1. Attempt any FIVE of the following: 10  ## a) List any four features of Android operating system">
+		<meta property="og:description" content="# 1. Attempt any FIVE of the following: 10  ## a) List any four features of Android operating system">
 		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
   		<meta property="og:image:alt" content="AK#Notes logo">
   		<meta property="og:site_name" content="AK#Notes">
 		<meta property="og:title" content="Android - AK#Notes">
-		<meta property="og:description" content="# 1. Attempt any FIVE of the following: 10  ## a) List any four features of Android operating system">
-		<meta property="og:url" content="https://AnzenKodo.github.io/">
-		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://AnzenKodo.github.io/notes/notes/Old Programming Notes/Android.html">
 		<meta property="og:type" content="article">
 		<meta property="og:article:author" content="AnzenKodo">
 		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
@@ -156,6 +155,23 @@
                 content: "#";
                 margin-right: .5rem;
             }
+            .mermaid {
+                background: black;
+                border: 1px solid;
+                margin-top: 1rem;
+                padding: 1rem;
+                font-family: monospace;
+            }
+            .mermaid svg {
+                display: block;
+                margin: auto;
+            }
+            .mermaid:has(svg) {
+                background: none;
+                border: none;
+                margin-top: 1rem;
+                padding: 0;
+            }
             mjx-container {
                 display: math;
                 overflow-y: hidden;
@@ -172,7 +188,7 @@
 	    <a href="#skip-top-main">Skip to main</a>
 		<header>
 			<h1 style="text-align: center;">
-                <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+                <a href="https://AnzenKodo.github.io">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
             <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;">
 		</header>
@@ -1174,7 +1190,7 @@ false.</li>
 <li><strong>isEnabled()</strong> - This method returns the enabled status for this view.</li>
 </ul>
 <h2><a name="c-describe-multimedia-framework-of-android-with-diagram" class="heading-anchor" href="#c-describe-multimedia-framework-of-android-with-diagram" rel="nofollow" aria-hidden="true"></a>c) Describe multimedia framework of Android with diagram.</h2>
-<p><img src="https://source.android.com/static/docs/core/media/images/ape_media_buffer_alloc_n.png" alt="Multimedia framework of Android diagram"></p>
+<p><img loading="lazy" src="https://source.android.com/static/docs/core/media/images/ape_media_buffer_alloc_n.png" alt="Multimedia framework of Android diagram" /></p>
 <h2><a name="d-discuss-developer-console-with-at-least-four-features" class="heading-anchor" href="#d-discuss-developer-console-with-at-least-four-features" rel="nofollow" aria-hidden="true"></a>d) Discuss developer console with at least four features.</h2>
 <ul>
 <li>Multiple User Accounts</li>
@@ -8132,7 +8148,7 @@ body { color: #282c34; }
 <li><p>By the help of activity, you can place all your UI components or widgets in a single screen.</p></li>
 </ul>
 
-<p><img src="https://i.imgur.com/VKu9fbr.png" alt="Activity Lifecycle Image">--&gt;</p>
+<p><img loading="lazy" src="https://i.imgur.com/VKu9fbr.png" alt="Activity Lifecycle Image" />--&gt;</p>
 
 <ul>
 <li><strong>7 lifecycle methods of android activity.</strong>
@@ -9201,15 +9217,19 @@ Reverse Geo code</a></li>
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
             </p>
 		</footer>
-	<script>
-		MathJax = {
+	</body>
+	<script id="MathJax-script" async src="https://AnzenKodo.github.io/assets/js/mathjax.js"></script>
+    <script src="https://AnzenKodo.github.io/assets/js/mermaid.js"></script>
+    <script>
+        mermaid.initialize({
+            theme: "neutral"
+        });
+
+        MathJax = {
 		  tex: {
 		    inlineMath: [['$', '$']],
 		    displayMath: [['$$', '$$']],
 		  }
 		};
-	</script>
-	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-	</script>
-	</body>
+    </script>
 </html>

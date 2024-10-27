@@ -4,16 +4,15 @@
 		<title>DMBI - AK#Notes</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-		<meta name="description" content="## DWH characteristics  A data warehouse is a centralized repository for storing and managing large ">
   		<meta name="author" content="AnzenKodo">
-		<meta name="theme-color" content="">
+		<meta name="theme-color" content="#FF6C22">
+		<meta name="description" content="## DWH characteristics  A data warehouse is a centralized repository for storing and managing large ">
+		<meta property="og:description" content="## DWH characteristics  A data warehouse is a centralized repository for storing and managing large ">
 		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
   		<meta property="og:image:alt" content="AK#Notes logo">
   		<meta property="og:site_name" content="AK#Notes">
 		<meta property="og:title" content="DMBI - AK#Notes">
-		<meta property="og:description" content="## DWH characteristics  A data warehouse is a centralized repository for storing and managing large ">
-		<meta property="og:url" content="https://AnzenKodo.github.io/">
-		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://AnzenKodo.github.io/notes/notes/Collage/Sem6/UT1/DMBI.html">
 		<meta property="og:type" content="article">
 		<meta property="og:article:author" content="AnzenKodo">
 		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
@@ -156,6 +155,23 @@
                 content: "#";
                 margin-right: .5rem;
             }
+            .mermaid {
+                background: black;
+                border: 1px solid;
+                margin-top: 1rem;
+                padding: 1rem;
+                font-family: monospace;
+            }
+            .mermaid svg {
+                display: block;
+                margin: auto;
+            }
+            .mermaid:has(svg) {
+                background: none;
+                border: none;
+                margin-top: 1rem;
+                padding: 0;
+            }
             mjx-container {
                 display: math;
                 overflow-y: hidden;
@@ -172,7 +188,7 @@
 	    <a href="#skip-top-main">Skip to main</a>
 		<header>
 			<h1 style="text-align: center;">
-                <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+                <a href="https://AnzenKodo.github.io">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
             <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;">
 		</header>
@@ -181,7 +197,7 @@
 			<h2><a name="dwh-characteristics" class="heading-anchor" href="#dwh-characteristics" rel="nofollow" aria-hidden="true"></a>DWH characteristics</h2>
 <p>A data warehouse is a centralized repository for storing and managing large volumes of data from diverse sources, primarily focused on supporting analytical tasks and decision-making.</p>
 
-<p><img src="assets/Pasted%20image%2020240221025340.png" alt=""></p>
+<p><img loading="lazy" src="assets/Pasted%20image%2020240221025340.png" alt="" /></p>
 <h2><a name="olap-v-s-oltp" class="heading-anchor" href="#olap-v-s-oltp" rel="nofollow" aria-hidden="true"></a>OLAP v/s OLTP</h2>
 <table>
 <thead>
@@ -336,21 +352,21 @@
 <h2><a name="olap-operations" class="heading-anchor" href="#olap-operations" rel="nofollow" aria-hidden="true"></a>OLAP Operations</h2>
 <p><strong>OLAP</strong> stands for _<strong>Online Analytical Processing</strong>_ Server. It is a software technology that allows users to analyze information from multiple database systems at the same time.</p>
 
-<p><img src="assets/Pasted%20image%2020240221030130.png" alt=""></p>
+<p><img loading="lazy" src="assets/Pasted%20image%2020240221030130.png" alt="" /></p>
 
 <ul>
 <li><strong>Drill down</strong>: In drill-down operation, the less detailed data is converted into highly detailed data.
 
 <ul>
 <li><strong>Example:</strong> In the cube given in overview section, the drill down operation is performed by moving down in the concept hierarchy of _Time_ dimension (Quarter -&gt; Month).</li>
-<li><img src="assets/Pasted%20image%2020240221030119.png" alt=""></li>
+<li><img loading="lazy" src="assets/Pasted%20image%2020240221030119.png" alt="" /></li>
 </ul></li>
 
 <li><p><strong>Roll up:</strong> It is just opposite of the drill-down operation.</p>
 
 <ul>
 <li><strong>Example:</strong> In the cube given in the overview section, the roll-up operation is performed by climbing up in the concept hierarchy of _Location_ dimension (City -&gt; Country).</li>
-<li><img src="assets/Pasted%20image%2020240221030357.png" alt=""></li>
+<li><img loading="lazy" src="assets/Pasted%20image%2020240221030357.png" alt="" /></li>
 </ul></li>
 
 <li><p><strong>Dice:</strong> It selects a sub-cube from the OLAP cube by selecting two or more dimensions.</p>
@@ -363,27 +379,27 @@
 <li>Time = “Q1” or “Q2”</li>
 <li>Item = “Car” or “Bus”</li>
 </ul></li>
-<li><img src="assets/Pasted%20image%2020240221030550.png" alt=""></li>
+<li><img loading="lazy" src="assets/Pasted%20image%2020240221030550.png" alt="" /></li>
 </ul></li>
 
 <li><p><strong>Slice:</strong> It selects a single dimension from the OLAP cube which results in a new sub-cube creation.</p>
 
 <ul>
 <li><strong>Example:</strong> Slice is performed on the dimension Time = “Q1”</li>
-<li><img src="assets/Pasted%20image%2020240221030640.png" alt=""></li>
+<li><img loading="lazy" src="assets/Pasted%20image%2020240221030640.png" alt="" /></li>
 </ul></li>
 
 <li><p><strong>Pivot:</strong> It is also known as _rotation_ operation as it rotates the current view to get a new view of the representation.</p>
 
 <ul>
 <li><strong>Example:</strong> In the sub-cube obtained after the slice operation, performing pivot operation gives a new view of it.</li>
-<li><img src="assets/Pasted%20image%2020240221030712.png" alt=""></li>
+<li><img loading="lazy" src="assets/Pasted%20image%2020240221030712.png" alt="" /></li>
 </ul></li>
 </ul>
 <h2><a name="kdd" class="heading-anchor" href="#kdd" rel="nofollow" aria-hidden="true"></a>KDD</h2>
 <p>KDD (Knowledge Discovery in Databases) is a process that involves the extraction of useful, previously unknown, and potentially valuable information from large datasets.</p>
 
-<p><img src="assets/Pasted%20image%2020240221025303.png" alt=""></p>
+<p><img loading="lazy" src="assets/Pasted%20image%2020240221025303.png" alt="" /></p>
 <h2><a name="numerical-smoothing-by-bin-mean-median-boundary" class="heading-anchor" href="#numerical-smoothing-by-bin-mean-median-boundary" rel="nofollow" aria-hidden="true"></a>Numerical : Smoothing by bin Mean, Median &amp; Boundary</h2>
 <p>Video: <a href="https://www.youtube.com/watch?v=dj11rv65L0c">Data Smoothing Methods | Equal Frequency Bin | Bin Mean | Bin Boundary Data Mining by Mahesh Huddar</a></p>
 
@@ -599,7 +615,7 @@ $$ \text{Data mean is: 3000}$$</li>
 $$=\sqrt{\frac{(1000-4000)^2+(2000-4000)^2+(3000-4000)^2+(5000-4000)^2+(9000-4000)^2}{5-1}}$$
 $$=2489.97$$</p>
 <h2><a name="summary-box-plot" class="heading-anchor" href="#summary-box-plot" rel="nofollow" aria-hidden="true"></a>Summary Box Plot</h2><h2><a name="information-gain-entropy-gini-index" class="heading-anchor" href="#information-gain-entropy-gini-index" rel="nofollow" aria-hidden="true"></a>Information gain, entropy, gini index</h2><h2><a name="bagging-boosting" class="heading-anchor" href="#bagging-boosting" rel="nofollow" aria-hidden="true"></a>Bagging &amp; Boosting</h2>
-<p><img src="assets/Pasted%20image%2020240221054736.png" alt=""></p>
+<p><img loading="lazy" src="assets/Pasted%20image%2020240221054736.png" alt="" /></p>
 <h3><a name="bagging" class="heading-anchor" href="#bagging" rel="nofollow" aria-hidden="true"></a>Bagging</h3>
 <ul>
 <li>Bootstrap Aggregating is the full form of Bagging.</li>
@@ -667,7 +683,7 @@ $$=2489.97$$</p>
 </ul></li>
 </ul>
 <h2><a name="numerical-naive-bayes" class="heading-anchor" href="#numerical-naive-bayes" rel="nofollow" aria-hidden="true"></a>Numerical : Naive Bayes</h2><h2><a name="linear-regression" class="heading-anchor" href="#linear-regression" rel="nofollow" aria-hidden="true"></a>Linear Regression</h2>
-<p><img src="assets/Untitled-2024-02-21-0154.png" alt=""></p>
+<p><img loading="lazy" src="assets/Untitled-2024-02-21-0154.png" alt="" /></p>
 
 		</main>
         
@@ -732,15 +748,19 @@ Linear Regression</a></li>
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
             </p>
 		</footer>
-	<script>
-		MathJax = {
+	</body>
+	<script id="MathJax-script" async src="https://AnzenKodo.github.io/assets/js/mathjax.js"></script>
+    <script src="https://AnzenKodo.github.io/assets/js/mermaid.js"></script>
+    <script>
+        mermaid.initialize({
+            theme: "neutral"
+        });
+
+        MathJax = {
 		  tex: {
 		    inlineMath: [['$', '$']],
 		    displayMath: [['$$', '$$']],
 		  }
 		};
-	</script>
-	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-	</script>
-	</body>
+    </script>
 </html>

@@ -4,16 +4,15 @@
 		<title>DSA - AK#Notes</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-		<meta name="description" content="## 1.A. 6 Marks  ### i) Correlate any 3 advantages of DFS  1. **Space efficiency:** One of the main ">
   		<meta name="author" content="AnzenKodo">
-		<meta name="theme-color" content="">
+		<meta name="theme-color" content="#FF6C22">
+		<meta name="description" content="## 1.A. 6 Marks  ### i) Correlate any 3 advantages of DFS  1. **Space efficiency:** One of the main ">
+		<meta property="og:description" content="## 1.A. 6 Marks  ### i) Correlate any 3 advantages of DFS  1. **Space efficiency:** One of the main ">
 		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
   		<meta property="og:image:alt" content="AK#Notes logo">
   		<meta property="og:site_name" content="AK#Notes">
 		<meta property="og:title" content="DSA - AK#Notes">
-		<meta property="og:description" content="## 1.A. 6 Marks  ### i) Correlate any 3 advantages of DFS  1. **Space efficiency:** One of the main ">
-		<meta property="og:url" content="https://AnzenKodo.github.io/">
-		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://AnzenKodo.github.io/notes/notes/Collage/Sem3/UT2/DSA.html">
 		<meta property="og:type" content="article">
 		<meta property="og:article:author" content="AnzenKodo">
 		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
@@ -156,6 +155,23 @@
                 content: "#";
                 margin-right: .5rem;
             }
+            .mermaid {
+                background: black;
+                border: 1px solid;
+                margin-top: 1rem;
+                padding: 1rem;
+                font-family: monospace;
+            }
+            .mermaid svg {
+                display: block;
+                margin: auto;
+            }
+            .mermaid:has(svg) {
+                background: none;
+                border: none;
+                margin-top: 1rem;
+                padding: 0;
+            }
             mjx-container {
                 display: math;
                 overflow-y: hidden;
@@ -172,7 +188,7 @@
 	    <a href="#skip-top-main">Skip to main</a>
 		<header>
 			<h1 style="text-align: center;">
-                <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+                <a href="https://AnzenKodo.github.io">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
             <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;">
 		</header>
@@ -203,7 +219,7 @@ is that it can perform operations, such as insertion, deletion, and search, in
 an average O(1) time complexity. This makes hash tables an efficient data
 structure for searching and indexing large data sets.</p>
 
-<p><img src="https://i.imgur.com/rsn1E3e.png" alt="Hash Table Diagram"></p>
+<p><img loading="lazy" src="https://i.imgur.com/rsn1E3e.png" alt="Hash Table Diagram" /></p>
 
 <p>Resources:</p>
 
@@ -212,7 +228,7 @@ structure for searching and indexing large data sets.</p>
 <li><a href="https://youtu.be/ea8BRGxGmlA">https://youtu.be/ea8BRGxGmlA</a></li>
 </ul>
 <h3><a name="iii-explain-waht-are-the-different-ways-to-represent-the-graph" class="heading-anchor" href="#iii-explain-waht-are-the-different-ways-to-represent-the-graph" rel="nofollow" aria-hidden="true"></a>iii) Explain waht are the different ways to represent the graph.</h3>
-<p><img src="./Matrix-List.png" alt="Matrix List Diagram"></p>
+<p><img loading="lazy" src="./Matrix-List.png" alt="Matrix List Diagram" /></p>
 <h4><a name="adjacency-matrix-array-representation" class="heading-anchor" href="#adjacency-matrix-array-representation" rel="nofollow" aria-hidden="true"></a>Adjacency Matrix (Array Representation)</h4>
 <p>An adjacency matrix is a way to represent a graph using a two-dimensional array,
 where the rows and columns represent the vertices of the graph, and the elements
@@ -392,10 +408,10 @@ small changes in the input and produce different outputs for similar but not
 identical keys.</li>
 </ul>
 <h2><a name="ii-using-kruskal-s-algorithm-find-minimum-spanning-tree-for-the-following-graph" class="heading-anchor" href="#ii-using-kruskal-s-algorithm-find-minimum-spanning-tree-for-the-following-graph" rel="nofollow" aria-hidden="true"></a>ii) Using Kruskal's algorithm find Minimum Spanning Tree for the following graph.</h2>
-<p><img src="./Graph.svg" alt="Graph Diagram"></p>
+<p><img loading="lazy" src="./Graph.svg" alt="Graph Diagram" /></p>
 
 <p>Minimum Spanning Tree using Kruskal's algorithm:
-<img src="./Minimum-Spanning-Tree.svg" alt="Minimum Spanning Tree"></p>
+<img loading="lazy" src="./Minimum-Spanning-Tree.svg" alt="Minimum Spanning Tree" /></p>
 
 <p>Here how I made it: <a href="https://youtu.be/71UQH7Pr9kU">Kruskal's algorithm</a></p>
 
@@ -452,15 +468,19 @@ ii) Using Kruskal's algorithm find Minimum Spanning Tree for the following graph
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
             </p>
 		</footer>
-	<script>
-		MathJax = {
+	</body>
+	<script id="MathJax-script" async src="https://AnzenKodo.github.io/assets/js/mathjax.js"></script>
+    <script src="https://AnzenKodo.github.io/assets/js/mermaid.js"></script>
+    <script>
+        mermaid.initialize({
+            theme: "neutral"
+        });
+
+        MathJax = {
 		  tex: {
 		    inlineMath: [['$', '$']],
 		    displayMath: [['$$', '$$']],
 		  }
 		};
-	</script>
-	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-	</script>
-	</body>
+    </script>
 </html>

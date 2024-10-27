@@ -4,16 +4,15 @@
 		<title>CNS Notes - AK#Notes</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-		<meta name="description" content="## OSI Security Model  ![Goals of Security Traingle](https://hackmd.io/_uploads/r1rkT7sTh.png)  ### ">
   		<meta name="author" content="AnzenKodo">
-		<meta name="theme-color" content="">
+		<meta name="theme-color" content="#FF6C22">
+		<meta name="description" content="## OSI Security Model  ![Goals of Security Traingle](https://hackmd.io/_uploads/r1rkT7sTh.png)  ### ">
+		<meta property="og:description" content="## OSI Security Model  ![Goals of Security Traingle](https://hackmd.io/_uploads/r1rkT7sTh.png)  ### ">
 		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
   		<meta property="og:image:alt" content="AK#Notes logo">
   		<meta property="og:site_name" content="AK#Notes">
 		<meta property="og:title" content="CNS Notes - AK#Notes">
-		<meta property="og:description" content="## OSI Security Model  ![Goals of Security Traingle](https://hackmd.io/_uploads/r1rkT7sTh.png)  ### ">
-		<meta property="og:url" content="https://AnzenKodo.github.io/">
-		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://AnzenKodo.github.io/notes/notes/Collage/Sem5/CNS Notes.html">
 		<meta property="og:type" content="article">
 		<meta property="og:article:author" content="AnzenKodo">
 		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
@@ -156,6 +155,23 @@
                 content: "#";
                 margin-right: .5rem;
             }
+            .mermaid {
+                background: black;
+                border: 1px solid;
+                margin-top: 1rem;
+                padding: 1rem;
+                font-family: monospace;
+            }
+            .mermaid svg {
+                display: block;
+                margin: auto;
+            }
+            .mermaid:has(svg) {
+                background: none;
+                border: none;
+                margin-top: 1rem;
+                padding: 0;
+            }
             mjx-container {
                 display: math;
                 overflow-y: hidden;
@@ -172,14 +188,14 @@
 	    <a href="#skip-top-main">Skip to main</a>
 		<header>
 			<h1 style="text-align: center;">
-                <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+                <a href="https://AnzenKodo.github.io">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
             <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;">
 		</header>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem; margin-top: 0;">CNS Notes</h1>
 			<h2><a name="osi-security-model" class="heading-anchor" href="#osi-security-model" rel="nofollow" aria-hidden="true"></a>OSI Security Model</h2>
-<p><img src="https://hackmd.io/_uploads/r1rkT7sTh.png" alt="Goals of Security Traingle"></p>
+<p><img loading="lazy" src="https://hackmd.io/_uploads/r1rkT7sTh.png" alt="Goals of Security Traingle" /></p>
 <h3><a name="goals" class="heading-anchor" href="#goals" rel="nofollow" aria-hidden="true"></a>Goals</h3>
 <ul>
 <li><strong>Confidentiality</strong> - Privacy from unauthorized access.</li>
@@ -254,7 +270,7 @@
 <h2><a name="network-access-control" class="heading-anchor" href="#network-access-control" rel="nofollow" aria-hidden="true"></a>Network Access Control</h2>
 <p>The objective of Network Access Control (NAC) is to block unauthorized users or devices from entering a private corporate network.</p>
 
-<p><img src="assets/Pasted%20image%2020231026025927.png" alt="NAC Diagram"></p>
+<p><img loading="lazy" src="assets/Pasted%20image%2020231026025927.png" alt="NAC Diagram" /></p>
 <h3><a name="enforcement-nac" class="heading-anchor" href="#enforcement-nac" rel="nofollow" aria-hidden="true"></a>Enforcement NAC</h3>
 <ul>
 <li><strong>802.1x</strong>:
@@ -280,7 +296,7 @@
 </ul></li>
 </ul>
 <h3><a name="key-elements-in-nac" class="heading-anchor" href="#key-elements-in-nac" rel="nofollow" aria-hidden="true"></a>Key elements in NAC</h3>
-<p><img src="../assets/Pasted%20image%2020231124042959.png" alt="Key elements in NAC Diagram"></p>
+<p><img loading="lazy" src="../assets/Pasted%20image%2020231124042959.png" alt="Key elements in NAC Diagram" /></p>
 <h3><a name="types-of-nac" class="heading-anchor" href="#types-of-nac" rel="nofollow" aria-hidden="true"></a>Types of NAC</h3>
 <ol>
 <li><strong>Pre-Admission NAC</strong>:
@@ -324,7 +340,7 @@
 
 <p>SSL encrypts the link between a web server and a browser which ensures that all data passed between them remain private and free from attack.</p>
 <h3><a name="ssl-protocol-stack" class="heading-anchor" href="#ssl-protocol-stack" rel="nofollow" aria-hidden="true"></a>SSL Protocol Stack</h3>
-<p><img src="../assets/Pasted%20image%2020231124010342.png" alt="SSH Protocol Stack"></p>
+<p><img loading="lazy" src="../assets/Pasted%20image%2020231124010342.png" alt="SSH Protocol Stack" /></p>
 
 <ul>
 <li><strong>Handshake Protocol</strong>:
@@ -354,7 +370,7 @@
 
 <p>This protocol allows the client and server to authenticate each other by sending a series of messages to each other.</p>
 
-<p><img src="assets/Pasted%20image%2020231026031539.png" alt=" Handshake Protocol"></p>
+<p><img loading="lazy" src="assets/Pasted%20image%2020231026031539.png" alt=" Handshake Protocol" /></p>
 
 <ul>
 <li>*<strong><em>Phase-1:</em></strong>* In Phase-1 both Client and Server send hello-packets to each other. In this IP session, cipher suite and protocol version are exchanged for security purposes. </li>
@@ -384,7 +400,7 @@
 <h3><a name="example" class="heading-anchor" href="#example" rel="nofollow" aria-hidden="true"></a>Example</h3>
 <p>Keyword: helloworld</p>
 
-<p><img src="../assets/Pasted%20image%2020231124022032.png" alt=""></p>
+<p><img loading="lazy" src="../assets/Pasted%20image%2020231124022032.png" alt="" /></p>
 
 <p>Word: attack
 Diagrams: at ta ck
@@ -392,21 +408,21 @@ Encryption: CQ QC BM</p>
 
 <p>Encryption:</p>
 
-<p><img src="../assets/Pasted%20image%2020231124022155.png" alt=""></p>
+<p><img loading="lazy" src="../assets/Pasted%20image%2020231124022155.png" alt="" /></p>
 
 <p>Decryption:</p>
 
-<p><img src="../assets/Pasted%20image%2020231124022930.png" alt=""></p>
+<p><img loading="lazy" src="../assets/Pasted%20image%2020231124022930.png" alt="" /></p>
 
 <p>Keyword: monarchy</p>
 
-<p><img src="../assets/Pasted%20image%2020231124023932.png" alt=""></p>
+<p><img loading="lazy" src="../assets/Pasted%20image%2020231124023932.png" alt="" /></p>
 
 <p>Word: mosque
 Diagrams: mo sq ue
 Encryption: ON TS LU</p>
 
-<p><img src="../assets/Pasted%20image%2020231124024429.png" alt=""></p>
+<p><img loading="lazy" src="../assets/Pasted%20image%2020231124024429.png" alt="" /></p>
 
 <p>Word: hello
 Diagrams: he lx lo</p>
@@ -427,10 +443,10 @@ Diagrams: si yx</p>
 </ol>
 <h4><a name="electronic-code-book" class="heading-anchor" href="#electronic-code-book" rel="nofollow" aria-hidden="true"></a>Electronic Code Book</h4>
 <p>Encryption
-<img src="https://hackmd.io/_uploads/r1GLvdsa3.png" alt="ECB Encryption Diagram"></p>
+<img loading="lazy" src="https://hackmd.io/_uploads/r1GLvdsa3.png" alt="ECB Encryption Diagram" /></p>
 
 <p>Decryption
-<img src="https://hackmd.io/_uploads/rJ01uujah.png" alt="ECB Decryption Diagram"></p>
+<img loading="lazy" src="https://hackmd.io/_uploads/rJ01uujah.png" alt="ECB Decryption Diagram" /></p>
 
 <p>Advantages:</p>
 
@@ -448,10 +464,10 @@ Diagrams: si yx</p>
 <p>A cipher block is produced by encrypting an XOR output of the previous cipher block and present plaintext block.</p>
 
 <p>Encryption
-<img src="https://hackmd.io/_uploads/By075Oj62.png" alt="CBC Encryption Diagram"></p>
+<img loading="lazy" src="https://hackmd.io/_uploads/By075Oj62.png" alt="CBC Encryption Diagram" /></p>
 
 <p>Decryption
-<img src="https://hackmd.io/_uploads/B12Is_sTh.png" alt="CBC Decryption Diagram"></p>
+<img loading="lazy" src="https://hackmd.io/_uploads/B12Is_sTh.png" alt="CBC Decryption Diagram" /></p>
 
 <p>Advantages:</p>
 
@@ -467,10 +483,10 @@ Diagrams: si yx</p>
 </ul>
 <h4><a name="cipher-feedback-mode" class="heading-anchor" href="#cipher-feedback-mode" rel="nofollow" aria-hidden="true"></a>Cipher Feedback Mode</h4>
 <p>Encryption
-<img src="https://hackmd.io/_uploads/ryxF2siT3.png" alt="CFM Encryption Diagram"></p>
+<img loading="lazy" src="https://hackmd.io/_uploads/ryxF2siT3.png" alt="CFM Encryption Diagram" /></p>
 
 <p>Decryption
-<img src="https://hackmd.io/_uploads/r1KPcsjp2.png" alt="CFM Decryption Diagram"></p>
+<img loading="lazy" src="https://hackmd.io/_uploads/r1KPcsjp2.png" alt="CFM Decryption Diagram" /></p>
 
 <p>Advantages:</p>
 
@@ -479,10 +495,10 @@ Diagrams: si yx</p>
 </ul>
 <h4><a name="output-feedback-mode" class="heading-anchor" href="#output-feedback-mode" rel="nofollow" aria-hidden="true"></a>Output Feedback Mode</h4>
 <p>Encryption
-<img src="https://hackmd.io/_uploads/HyZEpoia2.png" alt="CFM Encryption Diagram"></p>
+<img loading="lazy" src="https://hackmd.io/_uploads/HyZEpoia2.png" alt="CFM Encryption Diagram" /></p>
 
 <p>Decryption
-<img src="https://hackmd.io/_uploads/SyhBaio62.png" alt="CFM Decryption Diagram"></p>
+<img loading="lazy" src="https://hackmd.io/_uploads/SyhBaio62.png" alt="CFM Decryption Diagram" /></p>
 
 <p>Advantages:</p>
 
@@ -492,10 +508,10 @@ The problem is solved by OFB as it is free from bit errors in the plaintext bloc
 </ul>
 <h4><a name="counter-mode" class="heading-anchor" href="#counter-mode" rel="nofollow" aria-hidden="true"></a>Counter Mode</h4>
 <p>Encryption
-<img src="https://hackmd.io/_uploads/r1OTRoja2.png" alt="CTR Encryption Diagram"></p>
+<img loading="lazy" src="https://hackmd.io/_uploads/r1OTRoja2.png" alt="CTR Encryption Diagram" /></p>
 
 <p>Decryption
-<img src="https://hackmd.io/_uploads/H1n60io63.png" alt="CTR Decryption Diagram"></p>
+<img loading="lazy" src="https://hackmd.io/_uploads/H1n60io63.png" alt="CTR Decryption Diagram" /></p>
 
 <p>Advantages:</p>
 
@@ -505,13 +521,13 @@ The problem is solved by OFB as it is free from bit errors in the plaintext bloc
 <li>Parallel execution of encryption is possible as outputs from previous stages are not chained as in the case of CBC.</li>
 </ul>
 <h2><a name="firewall" class="heading-anchor" href="#firewall" rel="nofollow" aria-hidden="true"></a>Firewall</h2>
-<p><img src="assets/Pasted%20image%2020231026004947.png" alt="Firewall Diagram"></p>
+<p><img loading="lazy" src="assets/Pasted%20image%2020231026004947.png" alt="Firewall Diagram" /></p>
 
 <p>A firewall is a network security device that monitors incoming and outgoing network traffic and permits or blocks data packets based on  a set of security rules.</p>
 
 <p>It purpose is  to establish a barrier between your internal network and incoming traffic from external source like internet. In order to block malicious traffic like viruses or hacker.</p>
 <h3><a name="types-of-firewall" class="heading-anchor" href="#types-of-firewall" rel="nofollow" aria-hidden="true"></a>Types of Firewall</h3>
-<p><img src="assets/Pasted%20image%2020231026011640.png" alt="Types of Firewall"></p>
+<p><img loading="lazy" src="assets/Pasted%20image%2020231026011640.png" alt="Types of Firewall" /></p>
 <h4><a name="packet-filtering" class="heading-anchor" href="#packet-filtering" rel="nofollow" aria-hidden="true"></a>Packet Filtering</h4>
 <p>The packet filtering firewall analyses for the source and destination IP address, source &amp; destination port number and protocol IDs of IP packets as per an <strong>Access Control List (ACL)</strong></p>
 
@@ -519,7 +535,7 @@ The problem is solved by OFB as it is free from bit errors in the plaintext bloc
 
 <p>It is oldest type of firewall.</p>
 <h4><a name="application-proxy" class="heading-anchor" href="#application-proxy" rel="nofollow" aria-hidden="true"></a>Application Proxy</h4>
-<p><img src="../assets/Pasted%20image%2020231124035753.png" alt="Application Proxy Diagram"></p>
+<p><img loading="lazy" src="../assets/Pasted%20image%2020231124035753.png" alt="Application Proxy Diagram" /></p>
 
 <p>Application proxy is a program running on the firewall the emulates both ends of a network connections.</p>
 
@@ -527,13 +543,13 @@ The problem is solved by OFB as it is free from bit errors in the plaintext bloc
 
 <p>The proxy program evaluates the data sent from client and decides which to pass on and which to drop.</p>
 <h4><a name="circuit-gateway" class="heading-anchor" href="#circuit-gateway" rel="nofollow" aria-hidden="true"></a>Circuit Gateway</h4>
-<p><img src="../assets/Pasted%20image%2020231124040341.png" alt="Circuit Gateway Firewall"></p>
+<p><img loading="lazy" src="../assets/Pasted%20image%2020231124040341.png" alt="Circuit Gateway Firewall" /></p>
 
 <p>This can be a stand-alone system or it can be the specialized function performed by an application level gateway for certain applications.</p>
 
 <p>It does not permit end-to-end TCP connection. Rather, the gateway sets two TCP connections.</p>
 <h3><a name="firewall-design-principles" class="heading-anchor" href="#firewall-design-principles" rel="nofollow" aria-hidden="true"></a>Firewall Design Principles</h3>
-<p><img src="assets/Pasted%20image%2020231026014034.png" alt="Firewall Design Principles"></p>
+<p><img loading="lazy" src="assets/Pasted%20image%2020231026014034.png" alt="Firewall Design Principles" /></p>
 <h4><a name="developing-security-policy" class="heading-anchor" href="#developing-security-policy" rel="nofollow" aria-hidden="true"></a>Developing Security Policy</h4>
 <p>It is a very essential part of firewall design.</p>
 
@@ -559,7 +575,7 @@ The problem is solved by OFB as it is free from bit errors in the plaintext bloc
 
 <p>The security becomes weak in case of internal attacks and most of the attacks are done internally as it is easy to access and designed weakly.</p>
 <h3><a name="firewall-characteristics" class="heading-anchor" href="#firewall-characteristics" rel="nofollow" aria-hidden="true"></a>Firewall Characteristics</h3>
-<p><img src="assets/Pasted%20image%2020231026010145.png" alt="Firewall Characteristics"></p>
+<p><img loading="lazy" src="assets/Pasted%20image%2020231026010145.png" alt="Firewall Characteristics" /></p>
 
 <ul>
 <li><strong>Service Control</strong>: Determines the types of services that can be accessed.</li>
@@ -574,7 +590,7 @@ The problem is solved by OFB as it is free from bit errors in the plaintext bloc
 
 <p>It is designed to provide strong authentication for client server applications by using secret-key cryptography.</p>
 
-<p><img src="../assets/Pasted%20image%2020231124045856.png" alt="Kerberos Diagram"></p>
+<p><img loading="lazy" src="../assets/Pasted%20image%2020231124045856.png" alt="Kerberos Diagram" /></p>
 <h2><a name="ipsec" class="heading-anchor" href="#ipsec" rel="nofollow" aria-hidden="true"></a>IPSec</h2>
 <p><a href="https://www.youtube.com/watch?v=XsgVqrcP32U">https://www.youtube.com/watch?v=XsgVqrcP32U</a></p>
 
@@ -595,21 +611,21 @@ The problem is solved by OFB as it is free from bit errors in the plaintext bloc
 <h3><a name="modes-of-ipsec" class="heading-anchor" href="#modes-of-ipsec" rel="nofollow" aria-hidden="true"></a>Modes of IPSec</h3>
 <p><a href="https://youtu.be/dTkIs9XR4P0">https://youtu.be/dTkIs9XR4P0</a></p>
 
-<p><img src="../assets/Pasted%20image%2020231124053753.png" alt="IPSec Modes"></p>
+<p><img loading="lazy" src="../assets/Pasted%20image%2020231124053753.png" alt="IPSec Modes" /></p>
 <h4><a name="ipsec-packet" class="heading-anchor" href="#ipsec-packet" rel="nofollow" aria-hidden="true"></a>IPSec Packet</h4>
-<p><img src="assets/Pasted%20image%2020231026022039.png" alt="IPSec Packet"></p>
+<p><img loading="lazy" src="assets/Pasted%20image%2020231026022039.png" alt="IPSec Packet" /></p>
 <h4><a name="protocols-of-ipsec" class="heading-anchor" href="#protocols-of-ipsec" rel="nofollow" aria-hidden="true"></a>Protocols of IPSec</h4>
-<p><img src="assets/Pasted%20image%2020231026023817.png" alt="Components of IPSec"></p>
+<p><img loading="lazy" src="assets/Pasted%20image%2020231026023817.png" alt="Components of IPSec" /></p>
 
 <p><a href="https://youtu.be/EPVwhLFT0tY">https://youtu.be/EPVwhLFT0tY</a></p>
 
 <p><strong>Encapsulating Security</strong></p>
 
-<p><img src="../assets/Pasted%20image%2020231124073755.png" alt="Encapsulating Security"></p>
+<p><img loading="lazy" src="../assets/Pasted%20image%2020231124073755.png" alt="Encapsulating Security" /></p>
 
 <p><strong>Authentication Header</strong></p>
 
-<p><img src="../assets/Pasted%20image%2020231124074636.png" alt="Authentication Header"></p>
+<p><img loading="lazy" src="../assets/Pasted%20image%2020231124074636.png" alt="Authentication Header" /></p>
 <h2><a name="network-management-protocol" class="heading-anchor" href="#network-management-protocol" rel="nofollow" aria-hidden="true"></a>Network Management Protocol</h2>
 <p>The Simple Network Management Protocol (SNMP) is an Internet Standard protocol used for collecting and organizing information about managed devices on IP networks and for modifying that information to change device behavior</p>
 
@@ -617,7 +633,7 @@ The problem is solved by OFB as it is free from bit errors in the plaintext bloc
 <h3><a name="snmp" class="heading-anchor" href="#snmp" rel="nofollow" aria-hidden="true"></a>SNMP</h3>
 <p><a href="https://youtu.be/w3fMajZKrCA">https://youtu.be/w3fMajZKrCA</a></p>
 
-<p><img src="../assets/Pasted%20image%2020231124060724.png" alt="SNMP"></p>
+<p><img loading="lazy" src="../assets/Pasted%20image%2020231124060724.png" alt="SNMP" /></p>
 
 <ul>
 <li>Framework for managing devices on the internet.</li>
@@ -636,9 +652,9 @@ The problem is solved by OFB as it is free from bit errors in the plaintext bloc
 </ul></li>
 </ul>
 <h3><a name="snmpv3" class="heading-anchor" href="#snmpv3" rel="nofollow" aria-hidden="true"></a>SNMPv3</h3>
-<p><img src="../assets/Pasted%20image%2020231124084707.png" alt="SNMPv3 Specs"></p>
+<p><img loading="lazy" src="../assets/Pasted%20image%2020231124084707.png" alt="SNMPv3 Specs" /></p>
 <h2><a name="ids" class="heading-anchor" href="#ids" rel="nofollow" aria-hidden="true"></a>IDS</h2>
-<p><img src="assets/Pasted%20image%2020231025235853.png" alt="IDS Diagram"></p>
+<p><img loading="lazy" src="assets/Pasted%20image%2020231025235853.png" alt="IDS Diagram" /></p>
 
 <p>An <strong>Intrusion Detection System (IDS)</strong> is a system that monitors <strong>network traffic</strong> for suspicious activity and issues alerts when such activity is discovered.</p>
 
@@ -646,7 +662,7 @@ The problem is solved by OFB as it is free from bit errors in the plaintext bloc
 
 <p>Any malicious venture or violation is normally reported either to an administrator  or collected centrally using a <strong>Security Information and Event Management (SIEM)</strong> system.</p>
 <h4><a name="classification-of-intrusion-detection-system" class="heading-anchor" href="#classification-of-intrusion-detection-system" rel="nofollow" aria-hidden="true"></a>Classification of intrusion detection system:</h4>
-<p><img src="assets/Pasted%20image%2020231026002613.png" alt="Classification of intrusion detection system"></p>
+<p><img loading="lazy" src="assets/Pasted%20image%2020231026002613.png" alt="Classification of intrusion detection system" /></p>
 <h5><a name="network-intrusion-detection-system-nids" class="heading-anchor" href="#network-intrusion-detection-system-nids" rel="nofollow" aria-hidden="true"></a>Network Intrusion Detection System (NIDS)</h5>
 <p>Set up at a planned point within the network to examine traffic from all devices on the network.</p>
 
@@ -672,7 +688,7 @@ The problem is solved by OFB as it is free from bit errors in the plaintext bloc
 
 <p>It is more effective in comparison to the other IDS.</p>
 <h4><a name="detection-method-of-ids" class="heading-anchor" href="#detection-method-of-ids" rel="nofollow" aria-hidden="true"></a>Detection Method of IDS</h4>
-<p><img src="assets/Pasted%20image%2020231026003108.png" alt="Detection Method of IDS"></p>
+<p><img loading="lazy" src="assets/Pasted%20image%2020231026003108.png" alt="Detection Method of IDS" /></p>
 <h5><a name="signature-based" class="heading-anchor" href="#signature-based" rel="nofollow" aria-hidden="true"></a>Signature based</h5>
 <p>Detects the attacks on the bases of the specific patterns such as number of bytes or number of 1's or number of 0's in the network traffic.</p>
 
@@ -688,9 +704,9 @@ The problem is solved by OFB as it is free from bit errors in the plaintext bloc
 
 <p>An IDS describes a suspected intrusion once it has happened and then signals an alarm.</p>
 <h2><a name="malware" class="heading-anchor" href="#malware" rel="nofollow" aria-hidden="true"></a>Malware</h2>
-<p><img src="assets/Pasted%20image%2020231025223307.png" alt="Type's of malicious software"></p>
+<p><img loading="lazy" src="assets/Pasted%20image%2020231025223307.png" alt="Type's of malicious software" /></p>
 <h3><a name="type-s-of-malicious-software" class="heading-anchor" href="#type-s-of-malicious-software" rel="nofollow" aria-hidden="true"></a>Type's of malicious software</h3>
-<p><img src="assets/Pasted%20image%2020231025223307.png" alt="Type's of malicious software"></p>
+<p><img loading="lazy" src="assets/Pasted%20image%2020231025223307.png" alt="Type's of malicious software" /></p>
 <h4><a name="host-based" class="heading-anchor" href="#host-based" rel="nofollow" aria-hidden="true"></a>Host based</h4><h5><a name="spam" class="heading-anchor" href="#spam" rel="nofollow" aria-hidden="true"></a>Spam</h5>
 <p>Any kind of unwanted, unsolicited digital communication that gets sent out in bulk.</p>
 
@@ -712,7 +728,7 @@ The problem is solved by OFB as it is free from bit errors in the plaintext bloc
 <h5><a name="virus" class="heading-anchor" href="#virus" rel="nofollow" aria-hidden="true"></a>Virus</h5>
 <p>Virus is a malware that relies on someone or something to propagate from one system to another.</p>
 <h6><a name="phases-of-virus" class="heading-anchor" href="#phases-of-virus" rel="nofollow" aria-hidden="true"></a>Phases of Virus</h6>
-<p><img src="assets/Pasted%20image%2020231025224403.png" alt="Phases of Virus"></p>
+<p><img loading="lazy" src="assets/Pasted%20image%2020231025224403.png" alt="Phases of Virus" /></p>
 <h5><a name="trojan-horse" class="heading-anchor" href="#trojan-horse" rel="nofollow" aria-hidden="true"></a>Trojan horse</h5>
 <p>Programs that performs malicious some harmless activity in addition to some malicious activities.</p>
 
@@ -739,7 +755,7 @@ The problem is solved by OFB as it is free from bit errors in the plaintext bloc
 
 <p>It is a Federal Information Processing Standard (FIPS) which defines algorithms that are used to generate digital signatures with the help of Secure Hash Algorithm (SHA) for authentication of electronic documents.</p>
 <h4><a name="dss-digital-signature-standard" class="heading-anchor" href="#dss-digital-signature-standard" rel="nofollow" aria-hidden="true"></a>DSS (Digital Signature Standard)</h4>
-<p><img src="https://hackmd.io/_uploads/r1O_yjAp3.png" alt="Digital Signature Function Diagram"></p>
+<p><img loading="lazy" src="https://hackmd.io/_uploads/r1O_yjAp3.png" alt="Digital Signature Function Diagram" /></p>
 
 <p><strong>Sender Side</strong></p>
 
@@ -769,7 +785,7 @@ The problem is solved by OFB as it is free from bit errors in the plaintext bloc
 <h2><a name="types-of-attacks" class="heading-anchor" href="#types-of-attacks" rel="nofollow" aria-hidden="true"></a>Types of Attacks</h2>
 <p>An attempt to gain an unauthorized access to information or damage the information.</p>
 
-<p><img src="https://hackmd.io/_uploads/BJJ_BEoT3.png" alt="Types of Acctacks"></p>
+<p><img loading="lazy" src="https://hackmd.io/_uploads/BJJ_BEoT3.png" alt="Types of Acctacks" /></p>
 <h3><a name="passive-attacks" class="heading-anchor" href="#passive-attacks" rel="nofollow" aria-hidden="true"></a>Passive Attacks</h3>
 <p>A Passive attack attempts to learn or make use of information from the system but does not affect system resources.</p>
 
@@ -777,7 +793,7 @@ The problem is solved by OFB as it is free from bit errors in the plaintext bloc
 
 <p>Passive attacks involve an attacker passively monitoring or collecting data without altering or destroying it.</p>
 
-<p><img src="https://hackmd.io/_uploads/HyzxHdsp2.png" alt="Passive Attack diagram"></p>
+<p><img loading="lazy" src="https://hackmd.io/_uploads/HyzxHdsp2.png" alt="Passive Attack diagram" /></p>
 <h3><a name="active-attacks" class="heading-anchor" href="#active-attacks" rel="nofollow" aria-hidden="true"></a>Active Attacks</h3>
 <p>Active attacks are a type of cybersecurity attack in which an attacker attempts to alter, destroy, or disrupt the normal operation of a system or network.</p>
 
@@ -785,19 +801,19 @@ The problem is solved by OFB as it is free from bit errors in the plaintext bloc
 <h4><a name="masquerade" class="heading-anchor" href="#masquerade" rel="nofollow" aria-hidden="true"></a>Masquerade</h4>
 <p>Pretending to be diffeeerent entity.</p>
 
-<p><img src="https://hackmd.io/_uploads/Hkbh23Vjan.png" alt="Masqurade diagram"></p>
+<p><img loading="lazy" src="https://hackmd.io/_uploads/Hkbh23Vjan.png" alt="Masqurade diagram" /></p>
 <h4><a name="replay" class="heading-anchor" href="#replay" rel="nofollow" aria-hidden="true"></a>Replay</h4>
-<p><img src="https://hackmd.io/_uploads/ByoO-Os6n.png" alt="Replay diagram"></p>
+<p><img loading="lazy" src="https://hackmd.io/_uploads/ByoO-Os6n.png" alt="Replay diagram" /></p>
 <h4><a name="modification-of-message" class="heading-anchor" href="#modification-of-message" rel="nofollow" aria-hidden="true"></a>Modification of Message</h4>
-<p><img src="https://hackmd.io/_uploads/SJYBeOsTn.png" alt="Modification of Message diagram"></p>
+<p><img loading="lazy" src="https://hackmd.io/_uploads/SJYBeOsTn.png" alt="Modification of Message diagram" /></p>
 <h4><a name="denial-of-service" class="heading-anchor" href="#denial-of-service" rel="nofollow" aria-hidden="true"></a>Denial of Service</h4>
-<p><img src="https://hackmd.io/_uploads/SJbd1ui62.png" alt="DoS diagram"></p>
+<p><img loading="lazy" src="https://hackmd.io/_uploads/SJbd1ui62.png" alt="DoS diagram" /></p>
 <h5><a name="types-of-dos" class="heading-anchor" href="#types-of-dos" rel="nofollow" aria-hidden="true"></a>Types of DoS</h5><h6><a name="distributed-dos" class="heading-anchor" href="#distributed-dos" rel="nofollow" aria-hidden="true"></a>Distributed DoS</h6>
-<p><img src="../assets/Pasted%20image%2020231124080818.png" alt="Distributed DoS"></p>
+<p><img loading="lazy" src="../assets/Pasted%20image%2020231124080818.png" alt="Distributed DoS" /></p>
 
 <p>A distributed denial-of-service (DDoS) attack occurs when multiple systems flood the bandwidth or resources of a targeted system, usually one or more web servers.</p>
 <h6><a name="application-layer-attacks" class="heading-anchor" href="#application-layer-attacks" rel="nofollow" aria-hidden="true"></a>Application layer attacks</h6>
-<p><img src="../assets/Pasted%20image%2020231124080847.png" alt="Application layer attacks"></p>
+<p><img loading="lazy" src="../assets/Pasted%20image%2020231124080847.png" alt="Application layer attacks" /></p>
 
 <p>An application layer DDoS attack (sometimes referred to as layer 7 DDoS attack) is a form of DDoS attack where attackers target application-layer processes.</p>
 
@@ -877,7 +893,7 @@ The problem is solved by OFB as it is free from bit errors in the plaintext bloc
 </tbody>
 </table>
 <h2><a name="hash-function" class="heading-anchor" href="#hash-function" rel="nofollow" aria-hidden="true"></a>Hash Function</h2>
-<p><img src="../assets/Pasted%20image%2020231124090823.png" alt=""></p>
+<p><img loading="lazy" src="../assets/Pasted%20image%2020231124090823.png" alt="" /></p>
 <h3><a name="properties-of-hash-functions" class="heading-anchor" href="#properties-of-hash-functions" rel="nofollow" aria-hidden="true"></a>Properties of Hash Functions</h3>
 <ul>
 <li><strong>Fixed-length output</strong>: Hash functions convert data of arbitrary length into a fixed-length hash value.</li>
@@ -914,9 +930,9 @@ The problem is solved by OFB as it is free from bit errors in the plaintext bloc
 </ul></li>
 </ul>
 
-<p><img src="../assets/Pasted%20image%2020231124100530.png" alt="Row Column Transposition"></p>
+<p><img loading="lazy" src="../assets/Pasted%20image%2020231124100530.png" alt="Row Column Transposition" /></p>
 <h2><a name="ssh" class="heading-anchor" href="#ssh" rel="nofollow" aria-hidden="true"></a>SSH</h2>
-<p><img src="../assets/Pasted%20image%2020231124090554.png" alt="SSH Stack"></p>
+<p><img loading="lazy" src="../assets/Pasted%20image%2020231124090554.png" alt="SSH Stack" /></p>
 <h2><a name="rsa" class="heading-anchor" href="#rsa" rel="nofollow" aria-hidden="true"></a>RSA</h2>
 <ul>
 <li>Choose two different large random prime no.</li>
@@ -945,7 +961,7 @@ $\phi(n)=192$</p>
 <li>Decryption</li>
 </ul>
 
-<p><img src="../assets/Untitled-2023-11-20-1032.png" alt=""></p>
+<p><img loading="lazy" src="../assets/Untitled-2023-11-20-1032.png" alt="" /></p>
 
 		</main>
         
@@ -1191,15 +1207,19 @@ RSA</a></li>
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
             </p>
 		</footer>
-	<script>
-		MathJax = {
+	</body>
+	<script id="MathJax-script" async src="https://AnzenKodo.github.io/assets/js/mathjax.js"></script>
+    <script src="https://AnzenKodo.github.io/assets/js/mermaid.js"></script>
+    <script>
+        mermaid.initialize({
+            theme: "neutral"
+        });
+
+        MathJax = {
 		  tex: {
 		    inlineMath: [['$', '$']],
 		    displayMath: [['$$', '$$']],
 		  }
 		};
-	</script>
-	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-	</script>
-	</body>
+    </script>
 </html>

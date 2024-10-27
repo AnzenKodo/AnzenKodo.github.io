@@ -4,16 +4,15 @@
 		<title>Database - AK#Notes</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-		<meta name="description" content="## The Entity-Relationship Model  <iframe src="https://www.youtube.com/embed/QpdhBUYk7Kk" title="Ent">
   		<meta name="author" content="AnzenKodo">
-		<meta name="theme-color" content="">
+		<meta name="theme-color" content="#FF6C22">
+		<meta name="description" content="## The Entity-Relationship Model  <iframe src="https://www.youtube.com/embed/QpdhBUYk7Kk" title="Ent">
+		<meta property="og:description" content="## The Entity-Relationship Model  <iframe src="https://www.youtube.com/embed/QpdhBUYk7Kk" title="Ent">
 		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
   		<meta property="og:image:alt" content="AK#Notes logo">
   		<meta property="og:site_name" content="AK#Notes">
 		<meta property="og:title" content="Database - AK#Notes">
-		<meta property="og:description" content="## The Entity-Relationship Model  <iframe src="https://www.youtube.com/embed/QpdhBUYk7Kk" title="Ent">
-		<meta property="og:url" content="https://AnzenKodo.github.io/">
-		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://AnzenKodo.github.io/notes/notes/Old Programming Notes/Database/index.html">
 		<meta property="og:type" content="article">
 		<meta property="og:article:author" content="AnzenKodo">
 		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
@@ -156,6 +155,23 @@
                 content: "#";
                 margin-right: .5rem;
             }
+            .mermaid {
+                background: black;
+                border: 1px solid;
+                margin-top: 1rem;
+                padding: 1rem;
+                font-family: monospace;
+            }
+            .mermaid svg {
+                display: block;
+                margin: auto;
+            }
+            .mermaid:has(svg) {
+                background: none;
+                border: none;
+                margin-top: 1rem;
+                padding: 0;
+            }
             mjx-container {
                 display: math;
                 overflow-y: hidden;
@@ -172,7 +188,7 @@
 	    <a href="#skip-top-main">Skip to main</a>
 		<header>
 			<h1 style="text-align: center;">
-                <a href="https://AnzenKodo.github.io/">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+                <a href="https://AnzenKodo.github.io">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
             <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;">
 		</header>
@@ -190,9 +206,9 @@ data using conventions that describe how these data are related to each other.
 For example, the elements writer, novel, and consumer may be described using ER
 diagrams this way:</p>
 
-<p><img src="er-diagram.png" alt="ER Diegram"></p>
+<p><img loading="lazy" src="er-diagram.png" alt="ER Diegram" /></p>
 
-<p><img src="Data-Types.png" alt="Data Types Diagram"></p>
+<p><img loading="lazy" src="Data-Types.png" alt="Data Types Diagram" /></p>
 <h2><a name="practice-mysql" class="heading-anchor" href="#practice-mysql" rel="nofollow" aria-hidden="true"></a>Practice MySql</h2>
 <p>Enter below commands in above runner line by line to Practice mysql.</p>
 
@@ -3427,7 +3443,7 @@ data using conventions that describe how these data are related to each other.</
 
 <p>Example of ER Diagram:</p>
 
-<p><img src="er.svg" alt="ER Diagram"></p>
+<p><img loading="lazy" src="er.svg" alt="ER Diagram" /></p>
 
 <p>In the diagram, the elements inside rectangles are called entities while the
 items inside diamonds denote the relationships between entities.</p>
@@ -3586,13 +3602,13 @@ attribute.</li>
 <li>It is important to note that this is different to an attribute having it own
 attributes.</li>
 <li>Example: A &quot;customer&quot; entity can have multiple &quot;phone_numbers&quot; values.</li>
-<li>Diagram: <img src="multivalued-attribute.svg" alt="Multivalued Attribute Diagram"></li>
+<li>Diagram: <img loading="lazy" src="multivalued-attribute.svg" alt="Multivalued Attribute Diagram" /></li>
 </ul>
 <h4><a name="derived-attribute" class="heading-anchor" href="#derived-attribute" rel="nofollow" aria-hidden="true"></a>Derived Attribute</h4>
 <ul>
 <li>An attribute based on another attribute.</li>
 <li>Example: &quot;Age&quot; can be derived from &quot;Date of birth&quot;.</li>
-<li>Diagram: <img src="derived-attribute.svg" alt="Derived Attribute Diagram"></li>
+<li>Diagram: <img loading="lazy" src="derived-attribute.svg" alt="Derived Attribute Diagram" /></li>
 </ul>
 <h3><a name="relationship" class="heading-anchor" href="#relationship" rel="nofollow" aria-hidden="true"></a>Relationship</h3>
 <ul>
@@ -3616,7 +3632,7 @@ higher-level entity type called a super type or generic entity.</li>
 type. Subtypes are dependent entities.</li>
 <li>Example: Account is the higher-level entity set and saving account and current
 account are lower-level entity sets.</li>
-<li>Diagram: <img src="generalization.webp" alt="Generalization Diagram"></li>
+<li>Diagram: <img loading="lazy" src="generalization.webp" alt="Generalization Diagram" /></li>
 </ul>
 <h3><a name="specialization" class="heading-anchor" href="#specialization" rel="nofollow" aria-hidden="true"></a>Specialization</h3>
 <ul>
@@ -3626,7 +3642,7 @@ to form lower-level entity sets.</li>
 called the super class of the specialization.</li>
 <li>The process of defining subclass is based on the basis of some distinguish
 characteristics of the entities in the super class.</li>
-<li>Diagram: <img src="specialization.webp" alt="Specialization Diagram"></li>
+<li>Diagram: <img loading="lazy" src="specialization.webp" alt="Specialization Diagram" /></li>
 </ul>
 <h3><a name="aggregration" class="heading-anchor" href="#aggregration" rel="nofollow" aria-hidden="true"></a>Aggregration</h3>
 <ul>
@@ -3634,7 +3650,7 @@ characteristics of the entities in the super class.</li>
 single entity.</li>
 <li>Example: The relationship between Center and Course together, is acting as an
 Entity, which is in relationship with another entity Visitor.</li>
-<li>Diagram: <img src="aggregration.webp" alt="Aggregration Diagram"></li>
+<li>Diagram: <img loading="lazy" src="aggregration.webp" alt="Aggregration Diagram" /></li>
 </ul>
 <h2><a name="resources" class="heading-anchor" href="#resources" rel="nofollow" aria-hidden="true"></a>Resources</h2>
 <ul>
@@ -3775,15 +3791,19 @@ Super Key</a></li>
                 <a href="https://anzenkodo.github.io/license">LICENSE</a>
             </p>
 		</footer>
-	<script>
-		MathJax = {
+	</body>
+	<script id="MathJax-script" async src="https://AnzenKodo.github.io/assets/js/mathjax.js"></script>
+    <script src="https://AnzenKodo.github.io/assets/js/mermaid.js"></script>
+    <script>
+        mermaid.initialize({
+            theme: "neutral"
+        });
+
+        MathJax = {
 		  tex: {
 		    inlineMath: [['$', '$']],
 		    displayMath: [['$$', '$$']],
 		  }
 		};
-	</script>
-	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-	</script>
-	</body>
+    </script>
 </html>
