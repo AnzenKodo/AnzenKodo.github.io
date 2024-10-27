@@ -433,7 +433,7 @@ func main() {
         make_notes()
     } else if arg == "build-notes" {
         make_notes()
-    } else if arg == "build_br" {
+    } else if arg == "build-br" {
         make_br()
     } else {
         fmt.Print(os.Stderr, "Error: Wrong argument provided: ", arg, "\n\n")
