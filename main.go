@@ -145,6 +145,7 @@ func make_index() {
     in := config["template"] + "/index.html"
     out := config["output"] + "/index.html"
 
+    mkdir(config["output"])
     parse_file(in, out, config)
 }
 
@@ -248,7 +249,7 @@ func make_br() {
 
     in_opml_md := os.Getenv("HOME") + "/Online/Notes/Feed.md"
     _, err := os.Stat(in_opml_md)
-    if os.IsNotExist(err) { in_opml_md = "notes/Feed.md" }
+    if os.IsNotExist(err) { in_opml_md = "Feed.md" }
 
     file, err := os.Open(in_opml_md)
     check(err, "can't open file:", in_opml_md)
