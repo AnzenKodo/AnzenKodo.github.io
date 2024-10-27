@@ -1,4 +1,4 @@
-module notes
+module ak-build
 
 go 1.23.2
 

@@ -304,7 +304,7 @@ func make_br() {
 	err = scanner.Err()
 	check(err, "can't reading file:", in_opml_md)
 
-    dir := config["output"] + "/blogroll"
+    dir := config["output"] + ""
     mkdir(dir)
 
     in := config["template"] + "/blogroll.html"
@@ -372,7 +372,6 @@ License: [MIT](https://spdx.org/licenses/MIT)
 }
 
 func main() {
-    // TODO: Github action setup for site
     // TODO: Profile setup
     if len(os.Args) < 2 {
         print_help()
