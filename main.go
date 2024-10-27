@@ -145,7 +145,6 @@ func make_index() {
     in := config["template"] + "/index.html"
     out := config["output"] + "/index.html"
 
-    mkdir(config["output"])
     parse_file(in, out, config)
 }
 
@@ -388,6 +387,9 @@ func main() {
         fmt.Println("Version:", VERSION)
         os.Exit(1)
     }
+
+    config := get_config()
+    mkdir(config["output"])
 
     port := PORT
     if len(os.Args) > 3 {
