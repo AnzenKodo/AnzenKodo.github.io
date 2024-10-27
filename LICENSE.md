@@ -51,12 +51,12 @@ rights in the material. A licensor may make special requests,
 such as asking that all changes be marked or described.
 Although not required by our licenses, you are encouraged to
 respect those requests where reasonable. More considerations
-for the public: 
+for the public:
 https://wiki.creativecommons.org/Considerations_for_licensees
 
 ---
 
-Creative Commons Attribution 4.0 International Public License
+## Creative Commons Attribution 4.0 International Public License
 
 By exercising the Licensed Rights (defined below), You accept and agree
 to be bound by the terms and conditions of this Creative Commons
@@ -235,7 +235,7 @@ apply to Your use of the Licensed Material:
    Rights (but not its individual contents) is Adapted Material; and
 3. You must comply with the conditions in Section 3(a) if You Share
    all or a substantial portion of the contents of the database.
-   
+
 For the avoidance of doubt, this Section 4 supplements and does not
 replace Your obligations under this Public License where the Licensed
 Rights include other Copyright and Similar Rights.

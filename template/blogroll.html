@@ -1,0 +1,103 @@
+<html lang="en">
+    <head>
+        <title>{{.website_name}}</title>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="theme-color" content="{{.theme}}"/>
+        <meta name="description" content="{{.description}}">
+
+        <meta property="og:description" content="{{.description}}">
+        <meta property="og:image" content="{{.favicon}}">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta property="og:type" content="website">
+        <meta property="og:image:alt" content="{{.website_name}} logo">
+        <meta property="og:url" content="{{.start_url}}">
+        <meta property="og:title" content="{{.website_name}}">
+
+        <link rel="icon" href="{{.favicon}}" type="image/png">
+        <link rel="outline" href="feed.opml" type="text/x-opml">
+        <link rel="manifest" href="manifest.json">
+        <style>
+            :root {
+                color-scheme: dark white;
+                --theme: {{.theme}};
+                --bg: {{.bg}};
+                --fg: {{.fg}};
+            }
+            body {
+                font-family: system-ui , Helvetica, Arial, sans-serif;
+                max-width: 40rem;
+                margin: 0 auto;
+                padding: 0 1rem;
+                background: var(--bg);
+                color: var(--fg);
+            }
+            a {
+                text-decoration: none;
+                color: var(--theme);
+            }
+            a:hover, a:focus { text-decoration: underline; }
+            a:active {
+                background: var(--theme);
+                color: inherit;
+            }
+            details { margin-bottom: .5rem; }
+            details[open] {
+                border: 1px solid;
+                padding: 0 .5rem;
+            }
+            details :not(summary) a:visited { color: #0085ff; }
+            details li { margin-top: 0.2em; }
+            details[open] summary { padding-top: 0.5em; }
+            h2 a::before {
+                content: "#";
+                margin-right: .5rem;
+            }
+            footer {
+                text-align: center;
+                font-size: small;
+            }
+            #opml {
+                margin: 1.9rem 0 3rem 0;
+                font-weight: bold;
+                font-size: 1.5rem;
+            }
+            #opml a {
+                background: var(--theme);
+                color: white;
+                padding: .5rem 1rem;
+            }
+            .skip-to-content-link {
+                background: var(--theme);
+                color: var(--fg);
+                padding: .3em;
+                position: absolute;
+                transform: translateY(-200%);
+            }
+            .skip-to-content-link:focus { transform: translateY(0%); }
+            @media (prefers-color-scheme: light) {
+                :root {
+                    --bg: {{.fg}};
+                    --fg: {{.bg}};
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <a class="skip-to-content-link" href="#main">Skip to content</a>
+        <header>
+            <h1><a href="{{.website}}">AK</a>#<a href="{{.start_url}}">Blogroll</a></h1>
+            <p>{{.description}} Get all the site's feed link in <a href="http://opml.org/">OPML</a> file, <a href="#opml">in bottom of the page</a>.</p>
+        </header>
+        <main id="#main">
+            {{.content}}
+        </main>
+        <footer>
+            <p id="opml"><a href="feed.opml">Download OPML</a></p>
+            <p><a href="{{.website}}/license">LICENSE</a></p>
+        </footer>
+    </body>
+</html>
