@@ -141,6 +141,9 @@ func make_index() {
     config["favicon"] = config["website"] + "/assets/favicon/index.png"
     config["description"] = config["name"] + " aka " + config["username"] + " official website."
     config["logo"] = config["website"] + "/assets/img/logo.png"
+    
+    content := read_file("README.md")
+    config["content"] = string(parse_md(content))
 
     in := config["template"] + "/index.html"
     out := config["output"] + "/index.html"
