@@ -284,7 +284,7 @@ func make_br() {
 		    feed, err := gofeed.NewParser().ParseURLWithContext(feed_url, ctx)
 		    if err != nil {
                 config["content"] += `<details>
-    <summary>`+feed_url+` <a href="`+feed_url+`" target="_blank">Feed</a><summary>
+    <summary>`+feed_url+` <a href="`+feed_url+`" target="_blank">Feed</a></summary>
     <p>`+fmt.Sprint(err)+`</p>
 </details>`
                 fmt.Fprint(os.Stderr, "Couldn't parse feed: ", feed_url, "\n", err)
