@@ -287,7 +287,7 @@ func make_br() {
     <summary>`+feed_url+` <a href="`+feed_url+`" target="_blank">Feed</a><summary>
     <p>`+fmt.Sprint(err)+`</p>
 </details>`
-                fmt.Println("Couldn't parse feed:", feed_url)
+                fmt.Fprint(os.Stderr, "Couldn't parse feed: ", feed_url, "\n", err)
                 continue
 		    }
 
@@ -445,7 +445,7 @@ func main() {
     } else if arg == "build-br" {
         make_br()
     } else {
-        fmt.Print(os.Stderr, "Error: Wrong argument provided: ", arg, "\n\n")
+        fmt.Fprint(os.Stderr, "Error: Wrong argument provided: ", arg, "\n\n")
         print_help()
     }
 
