@@ -287,7 +287,7 @@ func make_br() {
     <summary>`+feed_url+` <a href="`+feed_url+`" target="_blank">Feed</a></summary>
     <p>`+fmt.Sprint(err)+`</p>
 </details>`
-                fmt.Fprint(os.Stderr, "Couldn't parse feed: ", feed_url, "\n", err)
+                fmt.Fprint(os.Stderr, "Couldn't parse feed: ", feed_url, "\n", err, "\n")
                 continue
 		    }
 

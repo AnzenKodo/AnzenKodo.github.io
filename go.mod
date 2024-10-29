@@ -12,7 +12,7 @@ require (
 
 require (
 	github.com/PuerkitoBio/goquery v1.8.0 // indirect
-	github.com/andybalholm/cascadia v1.3.1 // indirect
+	github.com/andybalholm/cascadia v1.3.2 // indirect
 	github.com/dlclark/regexp2 v1.4.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/mmcdole/goxpp v1.1.1-0.20240225020742-a0c311522b23 // indirect
@@ -22,9 +22,14 @@ require (
 )
 
 replace (
+	github.com/PuerkitoBio/goquery => ./libs/goquery
 	github.com/alecthomas/chroma => ./libs/chroma
+	github.com/andybalholm/cascadia => ./libs/cascadia
 	github.com/dlclark/regexp2 => ./libs/regexp2
+	github.com/json-iterator/go => ./libs/go
 	github.com/mmcdole/gofeed => ./libs/gofeed
+	github.com/mmcdole/goxpp => ./libs/goxpp
+	github.com/modern-go/reflect2 => ./libs/reflect2
 	github.com/russross/blackfriday => ./libs/blackfriday
 	github.com/shurcooL/sanitized_anchor_name => ./libs/sanitized_anchor_name
 )
