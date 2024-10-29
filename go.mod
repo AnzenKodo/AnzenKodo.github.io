@@ -29,6 +29,7 @@ replace (
 	github.com/json-iterator/go => ./libs/go
 	github.com/mmcdole/gofeed => ./libs/gofeed
 	github.com/mmcdole/goxpp => ./libs/goxpp
+	github.com/modern-go/concurrent => ./libs/concurrent
 	github.com/modern-go/reflect2 => ./libs/reflect2
 	github.com/russross/blackfriday => ./libs/blackfriday
 	github.com/shurcooL/sanitized_anchor_name => ./libs/sanitized_anchor_name
