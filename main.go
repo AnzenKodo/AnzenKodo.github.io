@@ -35,7 +35,7 @@ func get_config() Config {
 
 func check(err error, v ...any) {
 	if err != nil {
-        fmt.Fprintln(os.Stderr, "Error: ", fmt.Sprint(v...), "\n", err)
+        fmt.Fprint(os.Stderr, "Error: ", fmt.Sprint(v...), "\n", err)
         os.Exit(1)
 	}
 }
@@ -141,7 +141,7 @@ func make_index() {
     config["favicon"] = config["website"] + "/assets/favicon/index.png"
     config["description"] = config["name"] + " aka " + config["username"] + " official website."
     config["logo"] = config["website"] + "/assets/img/logo.png"
-    
+
     content := read_file("README.md")
     config["content"] = string(parse_md(content))
 
@@ -282,7 +282,12 @@ func make_br() {
             defer cancel()
 
 		    feed, err := gofeed.NewParser().ParseURLWithContext(feed_url, ctx)
-		    check(err, "can't parse feed: ", feed_url)
+		    if err != nil {
+                config["content"] += `<details>
+    <summary>`+feed_url+` <a href="`+feed_url+`" target="_blank">Feed</a><summary>
+    <p>`+fmt.Sprint(err)+`</p>
+</details>`
+		    }
 
 		    config["content"] += `<details>
 	<summary>`+feed.Title+` <a href="`+feed.Link+`" target="_blank">URL</a> | <a href="`+feed_url+`" target="_blank">Feed</a></summary>
@@ -375,7 +380,6 @@ License: [MIT](https://spdx.org/licenses/MIT)
 }
 
 func main() {
-    // TODO: Profile setup
     if len(os.Args) < 2 {
         print_help()
     }
