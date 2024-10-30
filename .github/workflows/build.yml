@@ -27,7 +27,7 @@ jobs:
     - run: 'rclone copy Personal:Notes notes'
 
     - name: Download README.md
-      run: wget https://raw.githubusercontent.com/AnzenKodo/AnzenKodo/refs/heads/main/README.md
+      run: curl -O https://raw.githubusercontent.com/AnzenKodo/AnzenKodo/refs/heads/main/README.md
 
     - name: Setup Go 1.21.1
       uses: actions/setup-go@v4
