@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>AI & DS 2 - AK#Notes</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="#FF6C22">
+		<meta name="description" content="# 10 Marks  ## How do you explain random forest? Does random forest need pruning, explain in detail?">
+		<meta property="og:description" content="# 10 Marks  ## How do you explain random forest? Does random forest need pruning, explain in detail?">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
+  		<meta property="og:image:alt" content="AK#Notes logo">
+  		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="AI & DS 2 - AK#Notes">
+		<meta property="og:url" content="https://AnzenKodo.github.io/notes/notes/Collage/Sem7/AI & DS 2.html">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+
+            :root {
+                color-scheme: dark light;
+                --theme: #FF6C22;
+			}
+			body {
+                max-width: 40rem;
+                margin: 0 auto;
+                font-family: system-ui;
+                padding: 0 1em;
+                color: inherit !important;
+                word-break: break-word;
+			}
+			h1, h2, h3, h4, h5, h6 {
+                font-family: monospace;
+                margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+                font-size: 2rem;
+			}
+			h3 {
+			    font-size: 1.8rem;
+			}
+			h4 {
+			    font-size: 1.5rem;
+			}
+			h5 {
+			    font-size: 1.3rem;
+			}
+			h6 {
+			    font-size: 1rem;
+			}
+			p, li, td, code {
+			    line-height: 1.5rem;
+			}
+			a {
+			    color: var(--theme);
+			    text-decoration: none;
+			}
+			a:hover, a:focus {
+			    text-decoration: underline;
+			}
+			a:active {
+			    background: var(--theme);
+			    color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+                margin-top: .5rem;
+			}
+			li {
+                margin-bottom: .5rem;
+			}
+			table {
+			    border-collapse: collapse;
+                overflow-x: auto;
+                display: block;
+                word-break: auto-phrase;
+			}
+            th {
+                font-size: 1.1rem;
+                border: 2px solid;
+                padding: .3rem .3rem;
+            }
+            td {
+                border: 1px solid;
+                padding: .3rem .5rem;
+            }
+            blockquote {
+                margin-left: 0;
+                margin-right: 0;
+                border: 1px solid;
+                border-left: 10px solid;
+                padding: 0 1rem;
+            }
+            .code-block {
+                background: black;
+                overflow-x: auto;
+                padding: 0em 1em;
+                border: 1px solid;
+            }
+            .code-block-language-name {
+                position: sticky;
+                left: 95%;
+                top: .5em;
+                font-weight: bold;
+                color: white;
+            }
+            :not(pre.chroma) > code {
+                border: 1px solid;
+                padding: .3rem .2rem .2rem .2rem;
+            }
+            img {
+                max-width: 100%;
+                display: block;
+                margin: 0 auto;
+            }
+            [href="#skip-top-main"] {
+                padding: 0.3em;
+                position: absolute;
+                transform: translateY(-200%);
+            }
+            [href="#skip-top-main"]:focus {
+                transform: translateY(0%);
+                background: var(--theme);
+                color: inherit;
+            }
+            #table-of-content {
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+                background: black;
+                padding: 0.5rem 1em;
+                z-index: 1;
+                color: white;
+            }
+            #table-of-content[open] {
+                max-height: 90%;
+                overflow-y: auto;
+                bottom: 50px;
+                margin-left: 1em;
+            }
+            #table-of-content[open] summary {
+                background: black;
+                padding: 0.5em 1em;
+                text-align: center;
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+            }
+            #table-of-content ul:first-child {
+                padding-left: 1em;
+                margin-top: 1.5em;
+            }
+            .heading-anchor::before {
+                content: "#";
+                margin-right: .5rem;
+            }
+            .mermaid {
+                background: black;
+                border: 1px solid;
+                margin-top: 1rem;
+                padding: 1rem;
+                font-family: monospace;
+            }
+            .mermaid svg {
+                display: block;
+                margin: auto;
+            }
+            .mermaid:has(svg) {
+                background: none;
+                border: none;
+                margin-top: 1rem;
+                padding: 0;
+            }
+            mjx-container {
+                display: math;
+                overflow-y: hidden;
+                overflow-x: auto;
+                max-width: 100%;
+            }
+            iframe {
+                width: 100%;
+                height: 21rem;
+            }
+		</style>
+	</head>
+	<body>
+	    <a href="#skip-top-main">Skip to main</a>
+		<header>
+			<h1 style="text-align: center;">
+                <a href="https://AnzenKodo.github.io">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+            </h1>
+            <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;">
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem; margin-top: 0;">AI & DS 2</h1>
+			<h1><a name="10-marks" class="heading-anchor" href="#10-marks" rel="nofollow" aria-hidden="true"></a>10 Marks</h1><h2><a name="how-do-you-explain-random-forest-does-random-forest-need-pruning-explain-in-detail-2024" class="heading-anchor" href="#how-do-you-explain-random-forest-does-random-forest-need-pruning-explain-in-detail-2024" rel="nofollow" aria-hidden="true"></a>How do you explain random forest? Does random forest need pruning, explain in detail? (2024)</h2><h2><a name="describe-how-cognitive-computing-can-be-applied-in-healthcare-provide-specific-examples-of-tasks-or-problems-that-cognitive-computing-can-help-address-and-explain-the-potential-benefits-2024" class="heading-anchor" href="#describe-how-cognitive-computing-can-be-applied-in-healthcare-provide-specific-examples-of-tasks-or-problems-that-cognitive-computing-can-help-address-and-explain-the-potential-benefits-2024" rel="nofollow" aria-hidden="true"></a>Describe how cognitive computing can be applied in healthcare. Provide specific examples of tasks or problems that cognitive computing can help address, and explain the potential benefits. (2024)</h2><h2><a name="explain-how-an-autoencoder-can-be-used-for-dimensionality-reduction-include-a-brief-description-of-how-the-encoder-and-decoder-parts-of-the-network-work-in-this-context-2024" class="heading-anchor" href="#explain-how-an-autoencoder-can-be-used-for-dimensionality-reduction-include-a-brief-description-of-how-the-encoder-and-decoder-parts-of-the-network-work-in-this-context-2024" rel="nofollow" aria-hidden="true"></a>Explain how an autoencoder can be used for dimensionality reduction. Include a brief description of how the encoder and decoder parts of the network work in this context. (2024)</h2><h2><a name="list-three-industries-where-data-science-is-extensively-used-and-briefly-describe-one-application-in-each-industry-2024" class="heading-anchor" href="#list-three-industries-where-data-science-is-extensively-used-and-briefly-describe-one-application-in-each-industry-2024" rel="nofollow" aria-hidden="true"></a>List three industries where data science is extensively used and briefly describe one application in each industry. (2024)</h2><h2><a name="using-mamdani-fuzzy-model-design-a-fuzzy-logic-controller-to-determine-the-wash-time-of-domestic-washing-machine-assume-the-inputs-are-dirt-and-grease-on-clothes-use-three-descriptors-for-each-input-variable-and-five-descriptor-for-output-variables-derive-necessary-membership-functions-and-required-fuzzy-rules-for-the-application-2024" class="heading-anchor" href="#using-mamdani-fuzzy-model-design-a-fuzzy-logic-controller-to-determine-the-wash-time-of-domestic-washing-machine-assume-the-inputs-are-dirt-and-grease-on-clothes-use-three-descriptors-for-each-input-variable-and-five-descriptor-for-output-variables-derive-necessary-membership-functions-and-required-fuzzy-rules-for-the-application-2024" rel="nofollow" aria-hidden="true"></a>Using Mamdani fuzzy model design a fuzzy logic controller to determine the wash time of domestic washing machine. Assume the inputs are dirt and grease on clothes. Use three descriptors for each input variable and five descriptor for output variables. Derive necessary membership functions and required fuzzy rules for the application. (2024)</h2><h2><a name="what-is-a-markov-decision-process-mdp-list-its-primary-components-explain-in-detail-2024" class="heading-anchor" href="#what-is-a-markov-decision-process-mdp-list-its-primary-components-explain-in-detail-2024" rel="nofollow" aria-hidden="true"></a>What is a Markov Decision Process (MDP)? List its primary components. Explain in detail. (2024)</h2><h2><a name="what-is-cognitive-computing-and-how-does-it-differ-from-traditional-computing-list-the-process-of-building-a-cognitive-application-2024" class="heading-anchor" href="#what-is-cognitive-computing-and-how-does-it-differ-from-traditional-computing-list-the-process-of-building-a-cognitive-application-2024" rel="nofollow" aria-hidden="true"></a>What is cognitive computing, and how does it differ from traditional computing? List the process of building a cognitive application. (2024)</h2><h2><a name="describe-the-architecture-of-a-typical-cnn-what-are-the-main-components-and-how-do-they-contribute-to-the-network-s-performance-in-image-recognition-tasks-2024" class="heading-anchor" href="#describe-the-architecture-of-a-typical-cnn-what-are-the-main-components-and-how-do-they-contribute-to-the-network-s-performance-in-image-recognition-tasks-2024" rel="nofollow" aria-hidden="true"></a>Describe the architecture of a typical CNN. What are the main components, and how do they contribute to the network's performance in image recognition tasks? (2024)</h2><h2><a name="briefly-explain-data-science-for-multimodal-applications-2024" class="heading-anchor" href="#briefly-explain-data-science-for-multimodal-applications-2024" rel="nofollow" aria-hidden="true"></a>Briefly explain Data science for Multimodal applications. (2024)</h2><h2><a name="let-s-consider-a-binary-classification-problem-where-we-have-built-a-classifier-to-predict-whether-a-transaction-is-fraudulent-positive-class-or-legitimate-negative-class-after-training-the-classifier-and-testing-it-on-a-dataset-we-obtain-the-following-confusion-matrix-2024" class="heading-anchor" href="#let-s-consider-a-binary-classification-problem-where-we-have-built-a-classifier-to-predict-whether-a-transaction-is-fraudulent-positive-class-or-legitimate-negative-class-after-training-the-classifier-and-testing-it-on-a-dataset-we-obtain-the-following-confusion-matrix-2024" rel="nofollow" aria-hidden="true"></a>Let's consider a binary classification problem where we have built a classifier to predict whether a transaction is fraudulent (positive class) or legitimate (negative class). After training the classifier and testing it on a dataset, we obtain the following confusion matrix: (2024)</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Actual Legitimate</th>
+<th>Actual Fraudulent</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Predicted Legitimate</td>
+<td>850</td>
+<td>30</td>
+</tr>
+
+<tr>
+<td>Predicted Fraudulent</td>
+<td>20</td>
+<td>100.</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Calculate Accuracy, Precision, Recall and F1-score.</strong></p>
+<h2><a name="state-ensemble-methods-and-describe-any-one-2023-dec" class="heading-anchor" href="#state-ensemble-methods-and-describe-any-one-2023-dec" rel="nofollow" aria-hidden="true"></a>State Ensemble methods and describe any one. (2023 Dec)</h2><h2><a name="illustrate-usage-of-taxonomies-and-ontologies-for-knowledge-representation-in-cognitive-systems-2023-dec" class="heading-anchor" href="#illustrate-usage-of-taxonomies-and-ontologies-for-knowledge-representation-in-cognitive-systems-2023-dec" rel="nofollow" aria-hidden="true"></a>Illustrate usage of taxonomies and ontologies for knowledge representation in cognitive systems. (2023 Dec)</h2><h2><a name="explain-the-components-of-cnn-architecture-2023-dec" class="heading-anchor" href="#explain-the-components-of-cnn-architecture-2023-dec" rel="nofollow" aria-hidden="true"></a>Explain the components of CNN architecture. (2023 Dec)</h2><h2><a name="perform-a-case-study-on-a-book-recommendation-system-data-science-based-2023-dec" class="heading-anchor" href="#perform-a-case-study-on-a-book-recommendation-system-data-science-based-2023-dec" rel="nofollow" aria-hidden="true"></a>Perform a case study on a book recommendation system (data science based). (2023 Dec)</h2><h2><a name="describe-the-properties-of-fuzzy-sets-with-an-example-2023-dec" class="heading-anchor" href="#describe-the-properties-of-fuzzy-sets-with-an-example-2023-dec" rel="nofollow" aria-hidden="true"></a>Describe the properties of Fuzzy Sets with an example. (2023 Dec)</h2><h2><a name="illustrate-inferencing-in-bayesian-belief-network-with-an-example-2023-dec" class="heading-anchor" href="#illustrate-inferencing-in-bayesian-belief-network-with-an-example-2023-dec" rel="nofollow" aria-hidden="true"></a>Illustrate inferencing in Bayesian Belief Network with an example. (2023 Dec)</h2><h2><a name="list-and-explain-the-design-principles-of-cognitive-systems-2023-dec" class="heading-anchor" href="#list-and-explain-the-design-principles-of-cognitive-systems-2023-dec" rel="nofollow" aria-hidden="true"></a>List and explain the design principles of Cognitive Systems. (2023 Dec)</h2><h2><a name="state-and-elaborate-the-applications-of-deep-learning-2023-dec" class="heading-anchor" href="#state-and-elaborate-the-applications-of-deep-learning-2023-dec" rel="nofollow" aria-hidden="true"></a>State and elaborate the applications of deep learning. (2023 Dec)</h2><h2><a name="calculate-accuracy-precision-recall-sensitivity-and-specificity-for-the-given-confusion-matrix-2023-dec-2022" class="heading-anchor" href="#calculate-accuracy-precision-recall-sensitivity-and-specificity-for-the-given-confusion-matrix-2023-dec-2022" rel="nofollow" aria-hidden="true"></a>Calculate Accuracy, Precision, Recall, Sensitivity and Specificity for the given confusion matrix (2023 Dec) (2022)</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020241030210252.png" alt="" /></p>
+<h2><a name="explain-the-xor-function-using-mcculloch-pitts-model-with-binary-data-representation-b-how-do-you-explain-random-forest-does-random-forest-need-pruning-explain-in-detail-2023-may" class="heading-anchor" href="#explain-the-xor-function-using-mcculloch-pitts-model-with-binary-data-representation-b-how-do-you-explain-random-forest-does-random-forest-need-pruning-explain-in-detail-2023-may" rel="nofollow" aria-hidden="true"></a>Explain the XOR function using McCulloch-Pitts model with binary data representation. (b) How do you explain random forest? Does random forest need pruning, explain in detail? (2023 May)</h2><h2><a name="what-is-the-need-of-markov-decision-processes-explain-mdp-in-detail-2023-may" class="heading-anchor" href="#what-is-the-need-of-markov-decision-processes-explain-mdp-in-detail-2023-may" rel="nofollow" aria-hidden="true"></a>What is the need of Markov Decision Processes? Explain MDP in detail.  (2023 May)</h2><h2><a name="explain-the-process-of-building-a-cognitive-application-2023-may" class="heading-anchor" href="#explain-the-process-of-building-a-cognitive-application-2023-may" rel="nofollow" aria-hidden="true"></a>Explain the process of building a cognitive application. (2023 May)</h2><h2><a name="using-mamdani-fuzzy-model-design-a-fuzzy-logic-controller-to-determine-the-wash-time-of-a-domestic-washing-machine-assume-the-inputs-are-dirt-and-grease-on-clothes-use-three-descriptors-for-each-input-variable-and-five-descriptors-for-output-variables-derive-necessary-membership-functions-and-required-fuzzy-rules-for-the-application-b-what-are-the-essential-components-of-an-autoencoder-explain-in-detail-which-activation-function-is-best-for-an-autoencoder-2023-may" class="heading-anchor" href="#using-mamdani-fuzzy-model-design-a-fuzzy-logic-controller-to-determine-the-wash-time-of-a-domestic-washing-machine-assume-the-inputs-are-dirt-and-grease-on-clothes-use-three-descriptors-for-each-input-variable-and-five-descriptors-for-output-variables-derive-necessary-membership-functions-and-required-fuzzy-rules-for-the-application-b-what-are-the-essential-components-of-an-autoencoder-explain-in-detail-which-activation-function-is-best-for-an-autoencoder-2023-may" rel="nofollow" aria-hidden="true"></a>Using Mamdani fuzzy model, design a fuzzy logic controller to determine the wash time of a domestic washing machine. Assume the inputs are dirt and grease on clothes. Use three descriptors for each input variable and five descriptors for output variables. Derive necessary membership functions and required fuzzy rules for the application. (b) What are the essential components of an Autoencoder? Explain in detail. Which activation function is best for an autoencoder? (2023 May)</h2><h2><a name="how-does-class-imbalance-affect-classification-what-are-the-ways-to-solve-class-imbalanced-problems-b-explain-data-science-for-multimodal-applications-2023-may" class="heading-anchor" href="#how-does-class-imbalance-affect-classification-what-are-the-ways-to-solve-class-imbalanced-problems-b-explain-data-science-for-multimodal-applications-2023-may" rel="nofollow" aria-hidden="true"></a>How does class imbalance affect classification? What are the ways to solve class imbalanced problems? (b) Explain Data science for Multimodal applications. (2023 May)</h2><h2><a name="explain-how-to-improve-the-classification-accuracy-of-class-imbalanced-data-with-suitable-examples-2022" class="heading-anchor" href="#explain-how-to-improve-the-classification-accuracy-of-class-imbalanced-data-with-suitable-examples-2022" rel="nofollow" aria-hidden="true"></a>Explain how to improve the classification accuracy of class-imbalanced data, with suitable examples. (2022)</h2><h2><a name="define-cognitive-computing-and-draw-a-diagram-of-the-elements-of-a-cognitive-system-explaining-each-element-2022" class="heading-anchor" href="#define-cognitive-computing-and-draw-a-diagram-of-the-elements-of-a-cognitive-system-explaining-each-element-2022" rel="nofollow" aria-hidden="true"></a>Define Cognitive Computing and draw a diagram of the elements of a cognitive system, explaining each element. (2022)</h2><h2><a name="explain-the-components-of-cnn-architecture-2022" class="heading-anchor" href="#explain-the-components-of-cnn-architecture-2022" rel="nofollow" aria-hidden="true"></a>Explain the components of CNN architecture. (2022)</h2><h2><a name="what-is-a-multimodal-application-explain-the-role-of-data-science-in-multimodal-applications-2022" class="heading-anchor" href="#what-is-a-multimodal-application-explain-the-role-of-data-science-in-multimodal-applications-2022" rel="nofollow" aria-hidden="true"></a>What is a multimodal application? Explain the role of Data Science in multimodal applications. (2022)</h2><h2><a name="find-the-algebraic-sum-algebraic-product-bounded-sum-and-bounded-difference-of-the-given-fuzzy-sets-also-describe-the-properties-of-fuzzy-sets-2022" class="heading-anchor" href="#find-the-algebraic-sum-algebraic-product-bounded-sum-and-bounded-difference-of-the-given-fuzzy-sets-also-describe-the-properties-of-fuzzy-sets-2022" rel="nofollow" aria-hidden="true"></a>Find the algebraic sum, algebraic product, bounded sum, and bounded difference of the given fuzzy sets. Also, describe the properties of fuzzy sets. (2022)</h2><h2><a name="illustrate-inferencing-in-a-bayesian-belief-network-with-an-example-2022" class="heading-anchor" href="#illustrate-inferencing-in-a-bayesian-belief-network-with-an-example-2022" rel="nofollow" aria-hidden="true"></a>Illustrate inferencing in a Bayesian Belief Network with an example. (2022)</h2><h2><a name="list-the-steps-in-building-a-typical-cognitive-application-and-explain-them-for-a-healthcare-application-2022" class="heading-anchor" href="#list-the-steps-in-building-a-typical-cognitive-application-and-explain-them-for-a-healthcare-application-2022" rel="nofollow" aria-hidden="true"></a>List the steps in building a typical cognitive application, and explain them for a Healthcare application. (2022)</h2><h2><a name="illustrate-the-autoencoder-with-an-architecture-diagram-2022" class="heading-anchor" href="#illustrate-the-autoencoder-with-an-architecture-diagram-2022" rel="nofollow" aria-hidden="true"></a>Illustrate the autoencoder with an architecture diagram. (2022)</h2><h2><a name="write-a-short-note-on-trends-in-data-science-2022" class="heading-anchor" href="#write-a-short-note-on-trends-in-data-science-2022" rel="nofollow" aria-hidden="true"></a>Write a short note on Trends in Data Science. (2022)</h2><h1><a name="5-marks" class="heading-anchor" href="#5-marks" rel="nofollow" aria-hidden="true"></a>5 Marks</h1><h2><a name="from-a-standard-deck-of-playing-cards-a-single-card-is-drawn-the-probability-that-the-card-is-king-is-4-52-then-calculate-posterior-probability-p-king-face-which-means-the-drawn-face-card-is-a-king-card-2024" class="heading-anchor" href="#from-a-standard-deck-of-playing-cards-a-single-card-is-drawn-the-probability-that-the-card-is-king-is-4-52-then-calculate-posterior-probability-p-king-face-which-means-the-drawn-face-card-is-a-king-card-2024" rel="nofollow" aria-hidden="true"></a>From a standard deck of playing cards, a single card is drawn. The probability that the card is king is 4/52, then calculate posterior probability P(King|Face), which means the drawn face card is a king card. (2024)</h2><h2><a name="describe-the-centroid-method-of-defuzzification-include-its-formula-and-discuss-its-advantages-and-disadvantages-compared-to-other-defuzzification-methods-2024" class="heading-anchor" href="#describe-the-centroid-method-of-defuzzification-include-its-formula-and-discuss-its-advantages-and-disadvantages-compared-to-other-defuzzification-methods-2024" rel="nofollow" aria-hidden="true"></a>Describe the Centroid method of defuzzification. Include its formula and discuss its advantages and disadvantages compared to other defuzzification methods. (2024)</h2><h2><a name="list-down-different-applications-of-deep-learning-and-explain-it-2024" class="heading-anchor" href="#list-down-different-applications-of-deep-learning-and-explain-it-2024" rel="nofollow" aria-hidden="true"></a>List down different applications of Deep Learning. And explain it (2024)</h2><h2><a name="compare-and-contrast-bagging-and-boosting-with-their-application-2024" class="heading-anchor" href="#compare-and-contrast-bagging-and-boosting-with-their-application-2024" rel="nofollow" aria-hidden="true"></a>Compare and contrast Bagging and Boosting with their application (2024)</h2><h2><a name="find-p-cavity-toothache-from-the-given-probability-distribution-2023-dec-2022" class="heading-anchor" href="#find-p-cavity-toothache-from-the-given-probability-distribution-2023-dec-2022" rel="nofollow" aria-hidden="true"></a>Find P (¬ Cavity | Toothache) from the given probability distribution. (2023 Dec) (2022)</h2>
+<table> <tr> <th rowspan="2"></th> <th colspan="2">Toothache</th> <th colspan="2">¬ Toothache</th> </tr> <tr> <th>Catch</th> <th>¬ Catch</th> <th>Catch</th> <th>¬ Catch</th> </tr> <tr> <th>Cavity</th> <td>0.108</td> <td>0.012</td> <td>0.072</td> <td>0.008</td> </tr> <tr> <th>¬ Cavity</th> <td>0.016</td> <td>0.064</td> <td>0.144</td> <td>0.576</td> </tr> </table>
+<h2><a name="define-defuzzification-and-state-the-necessity-of-the-defuzzification-process-2023-dec" class="heading-anchor" href="#define-defuzzification-and-state-the-necessity-of-the-defuzzification-process-2023-dec" rel="nofollow" aria-hidden="true"></a>Define defuzzification and state the necessity of the defuzzification process. (2023 Dec)</h2><h2><a name="implement-and-function-using-mcculloch-pitts-neuron-with-binary-data-2023-dec" class="heading-anchor" href="#implement-and-function-using-mcculloch-pitts-neuron-with-binary-data-2023-dec" rel="nofollow" aria-hidden="true"></a>Implement AND function using McCulloch-Pitts neuron with binary data. (2023 Dec)</h2><h2><a name="what-is-the-significance-of-roc-curves-2023-dec" class="heading-anchor" href="#what-is-the-significance-of-roc-curves-2023-dec" rel="nofollow" aria-hidden="true"></a>What is the significance of ROC curves? (2023 Dec)</h2><h2><a name="various-metrics-for-evaluating-classifier-performance-2023-may" class="heading-anchor" href="#various-metrics-for-evaluating-classifier-performance-2023-may" rel="nofollow" aria-hidden="true"></a>Various metrics for evaluating classifier performance.  (2023 May)</h2><h2><a name="briefly-explain-cnn-architecture-2023-may" class="heading-anchor" href="#briefly-explain-cnn-architecture-2023-may" rel="nofollow" aria-hidden="true"></a>Briefly explain CNN architecture. (2023 May)</h2><h2><a name="holdout-method-2023-may" class="heading-anchor" href="#holdout-method-2023-may" rel="nofollow" aria-hidden="true"></a>Holdout method (2023 May)</h2><h2><a name="lstm-2023-may" class="heading-anchor" href="#lstm-2023-may" rel="nofollow" aria-hidden="true"></a>LSTM (2023 May)</h2><h2><a name="defuzzification-methods-2023-may" class="heading-anchor" href="#defuzzification-methods-2023-may" rel="nofollow" aria-hidden="true"></a>Defuzzification Methods (2023 May)</h2><h2><a name="design-principles-for-cognitive-systems-2023-may" class="heading-anchor" href="#design-principles-for-cognitive-systems-2023-may" rel="nofollow" aria-hidden="true"></a>Design Principles for Cognitive Systems (2023 May)</h2><h2><a name="bayes-theorem-2023-may" class="heading-anchor" href="#bayes-theorem-2023-may" rel="nofollow" aria-hidden="true"></a>Bayes Theorem (2023 May)</h2><h2><a name="application-of-data-science-for-text-2023-may" class="heading-anchor" href="#application-of-data-science-for-text-2023-may" rel="nofollow" aria-hidden="true"></a>Application of Data science for text (2023 May)</h2><h2><a name="explain-the-centroid-method-of-defuzzification-with-a-suitable-diagram-2022" class="heading-anchor" href="#explain-the-centroid-method-of-defuzzification-with-a-suitable-diagram-2022" rel="nofollow" aria-hidden="true"></a>Explain the Centroid method of Defuzzification with a suitable diagram. (2022)</h2><h2><a name="describe-the-deep-learning-concept-with-an-example-2022" class="heading-anchor" href="#describe-the-deep-learning-concept-with-an-example-2022" rel="nofollow" aria-hidden="true"></a>Describe the Deep Learning concept with an example. (2022)</h2><h2><a name="describe-the-holdout-method-and-random-subsampling-in-detail-2022" class="heading-anchor" href="#describe-the-holdout-method-and-random-subsampling-in-detail-2022" rel="nofollow" aria-hidden="true"></a>Describe the Holdout method and Random subsampling in detail. (2022)</h2>
+		</main>
+        
+        <details id="table-of-content">
+           <summary>Table of Content</summary>
+                    <nav>
+<li><a href="#10-marks">10 Marks</a>
+<ul>
+<li><a href="#how-do-you-explain-random-forest-does-random-forest-need-pruning-explain-in-detail-2024">
+How do you explain random forest? Does random forest need pruning, explain in detail? (2024)</a></li>
+<li><a href="#describe-how-cognitive-computing-can-be-applied-in-healthcare-provide-specific-examples-of-tasks-or-problems-that-cognitive-computing-can-help-address-and-explain-the-potential-benefits-2024">
+Describe how cognitive computing can be applied in healthcare. Provide specific examples of tasks or problems that cognitive computing can help address, and explain the potential benefits. (2024)</a></li>
+<li><a href="#explain-how-an-autoencoder-can-be-used-for-dimensionality-reduction-include-a-brief-description-of-how-the-encoder-and-decoder-parts-of-the-network-work-in-this-context-2024">
+Explain how an autoencoder can be used for dimensionality reduction. Include a brief description of how the encoder and decoder parts of the network work in this context. (2024)</a></li>
+<li><a href="#list-three-industries-where-data-science-is-extensively-used-and-briefly-describe-one-application-in-each-industry-2024">
+List three industries where data science is extensively used and briefly describe one application in each industry. (2024)</a></li>
+<li><a href="#using-mamdani-fuzzy-model-design-a-fuzzy-logic-controller-to-determine-the-wash-time-of-domestic-washing-machine-assume-the-inputs-are-dirt-and-grease-on-clothes-use-three-descriptors-for-each-input-variable-and-five-descriptor-for-output-variables-derive-necessary-membership-functions-and-required-fuzzy-rules-for-the-application-2024">
+Using Mamdani fuzzy model design a fuzzy logic controller to determine the wash time of domestic washing machine. Assume the inputs are dirt and grease on clothes. Use three descriptors for each input variable and five descriptor for output variables. Derive necessary membership functions and required fuzzy rules for the application. (2024)</a></li>
+<li><a href="#what-is-a-markov-decision-process-mdp-list-its-primary-components-explain-in-detail-2024">
+What is a Markov Decision Process (MDP)? List its primary components. Explain in detail. (2024)</a></li>
+<li><a href="#what-is-cognitive-computing-and-how-does-it-differ-from-traditional-computing-list-the-process-of-building-a-cognitive-application-2024">
+What is cognitive computing, and how does it differ from traditional computing? List the process of building a cognitive application. (2024)</a></li>
+<li><a href="#describe-the-architecture-of-a-typical-cnn-what-are-the-main-components-and-how-do-they-contribute-to-the-network-s-performance-in-image-recognition-tasks-2024">
+Describe the architecture of a typical CNN. What are the main components, and how do they contribute to the network's performance in image recognition tasks? (2024)</a></li>
+<li><a href="#briefly-explain-data-science-for-multimodal-applications-2024">
+Briefly explain Data science for Multimodal applications. (2024)</a></li>
+<li><a href="#let-s-consider-a-binary-classification-problem-where-we-have-built-a-classifier-to-predict-whether-a-transaction-is-fraudulent-positive-class-or-legitimate-negative-class-after-training-the-classifier-and-testing-it-on-a-dataset-we-obtain-the-following-confusion-matrix-2024">
+Let's consider a binary classification problem where we have built a classifier to predict whether a transaction is fraudulent (positive class) or legitimate (negative class). After training the classifier and testing it on a dataset, we obtain the following confusion matrix: (2024)</a></li>
+<li><a href="#state-ensemble-methods-and-describe-any-one-2023-dec">
+State Ensemble methods and describe any one. (2023 Dec)</a></li>
+<li><a href="#illustrate-usage-of-taxonomies-and-ontologies-for-knowledge-representation-in-cognitive-systems-2023-dec">
+Illustrate usage of taxonomies and ontologies for knowledge representation in cognitive systems. (2023 Dec)</a></li>
+<li><a href="#explain-the-components-of-cnn-architecture-2023-dec">
+Explain the components of CNN architecture. (2023 Dec)</a></li>
+<li><a href="#perform-a-case-study-on-a-book-recommendation-system-data-science-based-2023-dec">
+Perform a case study on a book recommendation system (data science based). (2023 Dec)</a></li>
+<li><a href="#describe-the-properties-of-fuzzy-sets-with-an-example-2023-dec">
+Describe the properties of Fuzzy Sets with an example. (2023 Dec)</a></li>
+<li><a href="#illustrate-inferencing-in-bayesian-belief-network-with-an-example-2023-dec">
+Illustrate inferencing in Bayesian Belief Network with an example. (2023 Dec)</a></li>
+<li><a href="#list-and-explain-the-design-principles-of-cognitive-systems-2023-dec">
+List and explain the design principles of Cognitive Systems. (2023 Dec)</a></li>
+<li><a href="#state-and-elaborate-the-applications-of-deep-learning-2023-dec">
+State and elaborate the applications of deep learning. (2023 Dec)</a></li>
+<li><a href="#calculate-accuracy-precision-recall-sensitivity-and-specificity-for-the-given-confusion-matrix-2023-dec-2022">
+Calculate Accuracy, Precision, Recall, Sensitivity and Specificity for the given confusion matrix (2023 Dec) (2022)</a></li>
+<li><a href="#explain-the-xor-function-using-mcculloch-pitts-model-with-binary-data-representation-b-how-do-you-explain-random-forest-does-random-forest-need-pruning-explain-in-detail-2023-may">
+Explain the XOR function using McCulloch-Pitts model with binary data representation. (b) How do you explain random forest? Does random forest need pruning, explain in detail? (2023 May)</a></li>
+<li><a href="#what-is-the-need-of-markov-decision-processes-explain-mdp-in-detail-2023-may">
+What is the need of Markov Decision Processes? Explain MDP in detail.  (2023 May)</a></li>
+<li><a href="#explain-the-process-of-building-a-cognitive-application-2023-may">
+Explain the process of building a cognitive application. (2023 May)</a></li>
+<li><a href="#using-mamdani-fuzzy-model-design-a-fuzzy-logic-controller-to-determine-the-wash-time-of-a-domestic-washing-machine-assume-the-inputs-are-dirt-and-grease-on-clothes-use-three-descriptors-for-each-input-variable-and-five-descriptors-for-output-variables-derive-necessary-membership-functions-and-required-fuzzy-rules-for-the-application-b-what-are-the-essential-components-of-an-autoencoder-explain-in-detail-which-activation-function-is-best-for-an-autoencoder-2023-may">
+Using Mamdani fuzzy model, design a fuzzy logic controller to determine the wash time of a domestic washing machine. Assume the inputs are dirt and grease on clothes. Use three descriptors for each input variable and five descriptors for output variables. Derive necessary membership functions and required fuzzy rules for the application. (b) What are the essential components of an Autoencoder? Explain in detail. Which activation function is best for an autoencoder? (2023 May)</a></li>
+<li><a href="#how-does-class-imbalance-affect-classification-what-are-the-ways-to-solve-class-imbalanced-problems-b-explain-data-science-for-multimodal-applications-2023-may">
+How does class imbalance affect classification? What are the ways to solve class imbalanced problems? (b) Explain Data science for Multimodal applications. (2023 May)</a></li>
+<li><a href="#explain-how-to-improve-the-classification-accuracy-of-class-imbalanced-data-with-suitable-examples-2022">
+Explain how to improve the classification accuracy of class-imbalanced data, with suitable examples. (2022)</a></li>
+<li><a href="#define-cognitive-computing-and-draw-a-diagram-of-the-elements-of-a-cognitive-system-explaining-each-element-2022">
+Define Cognitive Computing and draw a diagram of the elements of a cognitive system, explaining each element. (2022)</a></li>
+<li><a href="#explain-the-components-of-cnn-architecture-2022">
+Explain the components of CNN architecture. (2022)</a></li>
+<li><a href="#what-is-a-multimodal-application-explain-the-role-of-data-science-in-multimodal-applications-2022">
+What is a multimodal application? Explain the role of Data Science in multimodal applications. (2022)</a></li>
+<li><a href="#find-the-algebraic-sum-algebraic-product-bounded-sum-and-bounded-difference-of-the-given-fuzzy-sets-also-describe-the-properties-of-fuzzy-sets-2022">
+Find the algebraic sum, algebraic product, bounded sum, and bounded difference of the given fuzzy sets. Also, describe the properties of fuzzy sets. (2022)</a></li>
+<li><a href="#illustrate-inferencing-in-a-bayesian-belief-network-with-an-example-2022">
+Illustrate inferencing in a Bayesian Belief Network with an example. (2022)</a></li>
+<li><a href="#list-the-steps-in-building-a-typical-cognitive-application-and-explain-them-for-a-healthcare-application-2022">
+List the steps in building a typical cognitive application, and explain them for a Healthcare application. (2022)</a></li>
+<li><a href="#illustrate-the-autoencoder-with-an-architecture-diagram-2022">
+Illustrate the autoencoder with an architecture diagram. (2022)</a></li>
+<li><a href="#write-a-short-note-on-trends-in-data-science-2022">
+Write a short note on Trends in Data Science. (2022)</a></li>
+</ul><li><a href="#5-marks">
+5 Marks</a>
+<ul>
+<li><a href="#from-a-standard-deck-of-playing-cards-a-single-card-is-drawn-the-probability-that-the-card-is-king-is-4-52-then-calculate-posterior-probability-p-king-face-which-means-the-drawn-face-card-is-a-king-card-2024">
+From a standard deck of playing cards, a single card is drawn. The probability that the card is king is 4/52, then calculate posterior probability P(King|Face), which means the drawn face card is a king card. (2024)</a></li>
+<li><a href="#describe-the-centroid-method-of-defuzzification-include-its-formula-and-discuss-its-advantages-and-disadvantages-compared-to-other-defuzzification-methods-2024">
+Describe the Centroid method of defuzzification. Include its formula and discuss its advantages and disadvantages compared to other defuzzification methods. (2024)</a></li>
+<li><a href="#list-down-different-applications-of-deep-learning-and-explain-it-2024">
+List down different applications of Deep Learning. And explain it (2024)</a></li>
+<li><a href="#compare-and-contrast-bagging-and-boosting-with-their-application-2024">
+Compare and contrast Bagging and Boosting with their application (2024)</a></li>
+<li><a href="#find-p-cavity-toothache-from-the-given-probability-distribution-2023-dec-2022">
+Find P (¬ Cavity | Toothache) from the given probability distribution. (2023 Dec) (2022)</a></li>
+<li><a href="#define-defuzzification-and-state-the-necessity-of-the-defuzzification-process-2023-dec">
+Define defuzzification and state the necessity of the defuzzification process. (2023 Dec)</a></li>
+<li><a href="#implement-and-function-using-mcculloch-pitts-neuron-with-binary-data-2023-dec">
+Implement AND function using McCulloch-Pitts neuron with binary data. (2023 Dec)</a></li>
+<li><a href="#what-is-the-significance-of-roc-curves-2023-dec">
+What is the significance of ROC curves? (2023 Dec)</a></li>
+<li><a href="#various-metrics-for-evaluating-classifier-performance-2023-may">
+Various metrics for evaluating classifier performance.  (2023 May)</a></li>
+<li><a href="#briefly-explain-cnn-architecture-2023-may">
+Briefly explain CNN architecture. (2023 May)</a></li>
+<li><a href="#holdout-method-2023-may">
+Holdout method (2023 May)</a></li>
+<li><a href="#lstm-2023-may">
+LSTM (2023 May)</a></li>
+<li><a href="#defuzzification-methods-2023-may">
+Defuzzification Methods (2023 May)</a></li>
+<li><a href="#design-principles-for-cognitive-systems-2023-may">
+Design Principles for Cognitive Systems (2023 May)</a></li>
+<li><a href="#bayes-theorem-2023-may">
+Bayes Theorem (2023 May)</a></li>
+<li><a href="#application-of-data-science-for-text-2023-may">
+Application of Data science for text (2023 May)</a></li>
+<li><a href="#explain-the-centroid-method-of-defuzzification-with-a-suitable-diagram-2022">
+Explain the Centroid method of Defuzzification with a suitable diagram. (2022)</a></li>
+<li><a href="#describe-the-deep-learning-concept-with-an-example-2022">
+Describe the Deep Learning concept with an example. (2022)</a></li>
+<li><a href="#describe-the-holdout-method-and-random-subsampling-in-detail-2022">
+Describe the Holdout method and Random subsampling in detail. (2022)</a></li>
+</ul>
+</nav>
+
+        </details>
+        
+		<footer>
+			<p style="text-align: center; font-size: small; margin-top: 5em;">
+                <a href="https://anzenkodo.github.io/license">LICENSE</a>
+            </p>
+		</footer>
+	</body>
+	<script id="MathJax-script" async src="https://AnzenKodo.github.io/assets/js/mathjax.js"></script>
+    <script src="https://AnzenKodo.github.io/assets/js/mermaid.js"></script>
+    <script>
+        mermaid.initialize({
+            theme: "neutral"
+        });
+
+        MathJax = {
+		  tex: {
+		    inlineMath: [['$', '$']],
+		    displayMath: [['$$', '$$']],
+		  }
+		};
+    </script>
+</html>

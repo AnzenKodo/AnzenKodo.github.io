@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>IOE - AK#Notes</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="#FF6C22">
+		<meta name="description" content="# 10 Marks  ## Discuss how IoT analytics can be effectively utilized within IoT-based healthcare sys">
+		<meta property="og:description" content="# 10 Marks  ## Discuss how IoT analytics can be effectively utilized within IoT-based healthcare sys">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
+  		<meta property="og:image:alt" content="AK#Notes logo">
+  		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="IOE - AK#Notes">
+		<meta property="og:url" content="https://AnzenKodo.github.io/notes/notes/Collage/Sem7/IOE.html">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+
+            :root {
+                color-scheme: dark light;
+                --theme: #FF6C22;
+			}
+			body {
+                max-width: 40rem;
+                margin: 0 auto;
+                font-family: system-ui;
+                padding: 0 1em;
+                color: inherit !important;
+                word-break: break-word;
+			}
+			h1, h2, h3, h4, h5, h6 {
+                font-family: monospace;
+                margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+                font-size: 2rem;
+			}
+			h3 {
+			    font-size: 1.8rem;
+			}
+			h4 {
+			    font-size: 1.5rem;
+			}
+			h5 {
+			    font-size: 1.3rem;
+			}
+			h6 {
+			    font-size: 1rem;
+			}
+			p, li, td, code {
+			    line-height: 1.5rem;
+			}
+			a {
+			    color: var(--theme);
+			    text-decoration: none;
+			}
+			a:hover, a:focus {
+			    text-decoration: underline;
+			}
+			a:active {
+			    background: var(--theme);
+			    color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+                margin-top: .5rem;
+			}
+			li {
+                margin-bottom: .5rem;
+			}
+			table {
+			    border-collapse: collapse;
+                overflow-x: auto;
+                display: block;
+                word-break: auto-phrase;
+			}
+            th {
+                font-size: 1.1rem;
+                border: 2px solid;
+                padding: .3rem .3rem;
+            }
+            td {
+                border: 1px solid;
+                padding: .3rem .5rem;
+            }
+            blockquote {
+                margin-left: 0;
+                margin-right: 0;
+                border: 1px solid;
+                border-left: 10px solid;
+                padding: 0 1rem;
+            }
+            .code-block {
+                background: black;
+                overflow-x: auto;
+                padding: 0em 1em;
+                border: 1px solid;
+            }
+            .code-block-language-name {
+                position: sticky;
+                left: 95%;
+                top: .5em;
+                font-weight: bold;
+                color: white;
+            }
+            :not(pre.chroma) > code {
+                border: 1px solid;
+                padding: .3rem .2rem .2rem .2rem;
+            }
+            img {
+                max-width: 100%;
+                display: block;
+                margin: 0 auto;
+            }
+            [href="#skip-top-main"] {
+                padding: 0.3em;
+                position: absolute;
+                transform: translateY(-200%);
+            }
+            [href="#skip-top-main"]:focus {
+                transform: translateY(0%);
+                background: var(--theme);
+                color: inherit;
+            }
+            #table-of-content {
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+                background: black;
+                padding: 0.5rem 1em;
+                z-index: 1;
+                color: white;
+            }
+            #table-of-content[open] {
+                max-height: 90%;
+                overflow-y: auto;
+                bottom: 50px;
+                margin-left: 1em;
+            }
+            #table-of-content[open] summary {
+                background: black;
+                padding: 0.5em 1em;
+                text-align: center;
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+            }
+            #table-of-content ul:first-child {
+                padding-left: 1em;
+                margin-top: 1.5em;
+            }
+            .heading-anchor::before {
+                content: "#";
+                margin-right: .5rem;
+            }
+            .mermaid {
+                background: black;
+                border: 1px solid;
+                margin-top: 1rem;
+                padding: 1rem;
+                font-family: monospace;
+            }
+            .mermaid svg {
+                display: block;
+                margin: auto;
+            }
+            .mermaid:has(svg) {
+                background: none;
+                border: none;
+                margin-top: 1rem;
+                padding: 0;
+            }
+            mjx-container {
+                display: math;
+                overflow-y: hidden;
+                overflow-x: auto;
+                max-width: 100%;
+            }
+            iframe {
+                width: 100%;
+                height: 21rem;
+            }
+		</style>
+	</head>
+	<body>
+	    <a href="#skip-top-main">Skip to main</a>
+		<header>
+			<h1 style="text-align: center;">
+                <a href="https://AnzenKodo.github.io">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+            </h1>
+            <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;">
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem; margin-top: 0;">IOE</h1>
+			<h1><a name="10-marks" class="heading-anchor" href="#10-marks" rel="nofollow" aria-hidden="true"></a>10 Marks</h1><h2><a name="discuss-how-iot-analytics-can-be-effectively-utilized-within-iot-based-healthcare-systems-also-mention-some-essential-parameters-that-should-be-incorporated-into-the-patient-dashboard-for-comprehensive-monitoring-and-management-of-health-data-2024" class="heading-anchor" href="#discuss-how-iot-analytics-can-be-effectively-utilized-within-iot-based-healthcare-systems-also-mention-some-essential-parameters-that-should-be-incorporated-into-the-patient-dashboard-for-comprehensive-monitoring-and-management-of-health-data-2024" rel="nofollow" aria-hidden="true"></a>Discuss how IoT analytics can be effectively utilized within IoT-based healthcare systems. Also, mention some essential parameters that should be incorporated into the patient dashboard for comprehensive monitoring and management of health data. (2024)</h2><h2><a name="evaluate-long-range-communication-systems-and-protocols-like-lte-lte-a-lora-and-lorawan-in-the-context-of-iot-connectivity-discuss-their-suitability-for-different-iot-use-cases-based-on-factors-like-coverage-data-rate-power-consumption-and-scalability-2024" class="heading-anchor" href="#evaluate-long-range-communication-systems-and-protocols-like-lte-lte-a-lora-and-lorawan-in-the-context-of-iot-connectivity-discuss-their-suitability-for-different-iot-use-cases-based-on-factors-like-coverage-data-rate-power-consumption-and-scalability-2024" rel="nofollow" aria-hidden="true"></a>Evaluate long-range communication systems and protocols like LTE, LTE-A, LoRa, and LoRaWAN in the context of IoT connectivity. Discuss their suitability for different IoT use cases based on factors like coverage, data rate, power consumption, and scalability.(2024)</h2><h2><a name="define-the-role-of-analytics-in-iot-technology-and-elaborate-the-challenges-associated-with-it-2024" class="heading-anchor" href="#define-the-role-of-analytics-in-iot-technology-and-elaborate-the-challenges-associated-with-it-2024" rel="nofollow" aria-hidden="true"></a>Define the role of analytics in IoT technology and elaborate the challenges associated with it. (2024)</h2><h2><a name="elaborate-the-need-for-a-new-network-architecture-in-iot-2024" class="heading-anchor" href="#elaborate-the-need-for-a-new-network-architecture-in-iot-2024" rel="nofollow" aria-hidden="true"></a>Elaborate the need for a new network architecture in IoT.(2024)</h2><h2><a name="compare-edge-fog-and-cloud-computing-with-respect-to-their-hierarchy-2024" class="heading-anchor" href="#compare-edge-fog-and-cloud-computing-with-respect-to-their-hierarchy-2024" rel="nofollow" aria-hidden="true"></a>Compare edge, fog and cloud computing with respect to their hierarchy. (2024)</h2><h2><a name="consider-a-smart-smoke-detection-system-elaborate-its-working-and-list-the-different-types-of-sensors-and-actuators-required-during-the-deployment-scenario-2024" class="heading-anchor" href="#consider-a-smart-smoke-detection-system-elaborate-its-working-and-list-the-different-types-of-sensors-and-actuators-required-during-the-deployment-scenario-2024" rel="nofollow" aria-hidden="true"></a>Consider a smart smoke detection system. Elaborate its working and list the different types of sensors and actuators required during the deployment scenario.(2024)</h2><h2><a name="explain-the-role-of-http-websocket-and-mqtt-in-iot-communication-compare-and-contrast-these-protocols-in-terms-of-their-characteristics-suitability-for-different-iot-scenarios-and-support-for-real-time-data-transmission-2024" class="heading-anchor" href="#explain-the-role-of-http-websocket-and-mqtt-in-iot-communication-compare-and-contrast-these-protocols-in-terms-of-their-characteristics-suitability-for-different-iot-scenarios-and-support-for-real-time-data-transmission-2024" rel="nofollow" aria-hidden="true"></a>Explain the role of HTTP, WebSocket, and MQTT in IoT communication. Compare and contrast these protocols in terms of their characteristics, suitability for different IoT scenarios, and support for real-time data transmission. (2024)</h2><h2><a name="discuss-the-functional-blocks-of-iot-architecture-highlighting-their-roles-and-interactions-provide-examples-to-illustrate-the-importance-of-each-block-in-the-overall-functionality-of-iot-systems-2024" class="heading-anchor" href="#discuss-the-functional-blocks-of-iot-architecture-highlighting-their-roles-and-interactions-provide-examples-to-illustrate-the-importance-of-each-block-in-the-overall-functionality-of-iot-systems-2024" rel="nofollow" aria-hidden="true"></a>Discuss the functional blocks of IoT architecture, highlighting their roles and interactions. Provide examples to illustrate the importance of each block in the overall functionality of IoT systems.(2024)</h2><h2><a name="elaborate-on-the-concept-of-smart-objects-including-a-diagram-and-description-of-their-characteristics-2024" class="heading-anchor" href="#elaborate-on-the-concept-of-smart-objects-including-a-diagram-and-description-of-their-characteristics-2024" rel="nofollow" aria-hidden="true"></a>Elaborate on the concept of Smart Objects, including a diagram and description of their characteristics. (2024)</h2><h2><a name="explain-the-following-access-technologies-with-their-application-areas-2024" class="heading-anchor" href="#explain-the-following-access-technologies-with-their-application-areas-2024" rel="nofollow" aria-hidden="true"></a>Explain the following access technologies with their application areas: (2024)</h2>
+<ol>
+<li>IEEE 802.15.4 (2024) (2023 Dec)</li>
+<li>Z-wave (2024)</li>
+<li>LTE-A (2024)</li>
+<li>RFID (2024) (2023 May)</li>
+<li>ZigBee</li>
+<li>6LoWPAN</li>
+<li>CoAP</li>
+</ol>
+<h2><a name="elaborate-in-detail-the-strategies-to-organize-data-for-iot-analytics-2023-dec" class="heading-anchor" href="#elaborate-in-detail-the-strategies-to-organize-data-for-iot-analytics-2023-dec" rel="nofollow" aria-hidden="true"></a>Elaborate in detail the strategies to organize data for IoT analytics. (2023 Dec)</h2><h2><a name="illustrate-the-role-of-data-refineries-in-preventing-data-lakes-from-turning-into-data-swamps-2023-dec" class="heading-anchor" href="#illustrate-the-role-of-data-refineries-in-preventing-data-lakes-from-turning-into-data-swamps-2023-dec" rel="nofollow" aria-hidden="true"></a>Illustrate the role of data refineries in preventing data lakes from turning into data swamps. (2023 Dec)</h2><h2><a name="describe-the-communication-systems-and-protocols-involved-in-the-long-range-communication-system-of-iot-2023-dec" class="heading-anchor" href="#describe-the-communication-systems-and-protocols-involved-in-the-long-range-communication-system-of-iot-2023-dec" rel="nofollow" aria-hidden="true"></a>Describe the communication systems and protocols involved in the long-range communication system of IoT. (2023 Dec)</h2><h2><a name="with-a-neat-diagram-elaborate-briefly-on-the-simplified-3-layered-iot-architecture-2023-dec" class="heading-anchor" href="#with-a-neat-diagram-elaborate-briefly-on-the-simplified-3-layered-iot-architecture-2023-dec" rel="nofollow" aria-hidden="true"></a>With a neat diagram, elaborate briefly on the simplified 3-layered IoT architecture. (2023 Dec)</h2><h2><a name="differentiate-and-provide-the-hierarchy-between-edge-fog-and-cloud-computing-2023-dec" class="heading-anchor" href="#differentiate-and-provide-the-hierarchy-between-edge-fog-and-cloud-computing-2023-dec" rel="nofollow" aria-hidden="true"></a>Differentiate and provide the hierarchy between edge, fog, and cloud computing. (2023 Dec)</h2><h2><a name="consider-a-smart-irrigation-system-elaborate-its-working-with-a-block-diagram-and-list-the-different-types-of-sensors-and-actuators-required-during-the-deployment-scenario-2023-dec" class="heading-anchor" href="#consider-a-smart-irrigation-system-elaborate-its-working-with-a-block-diagram-and-list-the-different-types-of-sensors-and-actuators-required-during-the-deployment-scenario-2023-dec" rel="nofollow" aria-hidden="true"></a>Consider a smart irrigation system. Elaborate its working with a block diagram and list the different types of sensors and actuators required during the deployment scenario. (2023 Dec)</h2><h2><a name="elaborate-on-mqtt-its-working-in-details-and-two-advantages-over-coap-2023-dec" class="heading-anchor" href="#elaborate-on-mqtt-its-working-in-details-and-two-advantages-over-coap-2023-dec" rel="nofollow" aria-hidden="true"></a>Elaborate on MQTT, its working in details, and two advantages over CoAP. (2023 Dec)</h2><h2><a name="illustrate-3-methods-for-effective-data-visualization-2023-dec" class="heading-anchor" href="#illustrate-3-methods-for-effective-data-visualization-2023-dec" rel="nofollow" aria-hidden="true"></a>Illustrate 3 methods for effective data visualization. (2023 Dec)</h2><h2><a name="compare-and-contrast-edge-fog-and-cloud-computing-explain-their-usage-with-an-example-2023-may" class="heading-anchor" href="#compare-and-contrast-edge-fog-and-cloud-computing-explain-their-usage-with-an-example-2023-may" rel="nofollow" aria-hidden="true"></a>Compare and contrast edge, fog, and cloud computing. Explain their usage with an example. (2023 May)</h2><h2><a name="consider-a-smart-farming-system-elaborate-its-working-and-list-the-different-types-of-sensors-and-actuators-required-during-the-deployment-scenario-2023-may" class="heading-anchor" href="#consider-a-smart-farming-system-elaborate-its-working-and-list-the-different-types-of-sensors-and-actuators-required-during-the-deployment-scenario-2023-may" rel="nofollow" aria-hidden="true"></a>Consider a smart farming system. Elaborate its working and list the different types of sensors and actuators required during the deployment scenario. (2023 May)</h2><h2><a name="describe-the-iot-world-forum-iotwf-standardized-architecture-2023-may" class="heading-anchor" href="#describe-the-iot-world-forum-iotwf-standardized-architecture-2023-may" rel="nofollow" aria-hidden="true"></a>Describe the IoT World Forum (IoTWF) standardized architecture. (2023 May)</h2><h2><a name="explain-the-architecture-of-lorawan-with-its-major-characteristics-2023-may" class="heading-anchor" href="#explain-the-architecture-of-lorawan-with-its-major-characteristics-2023-may" rel="nofollow" aria-hidden="true"></a>Explain the architecture of LoRaWAN with its major characteristics. (2023 May)</h2><h2><a name="explain-the-ecosystem-for-an-iot-enabled-smart-home-automation-system-with-respect-to-sensors-actuators-framework-protocols-storage-data-analysis-security-etc-2023-may" class="heading-anchor" href="#explain-the-ecosystem-for-an-iot-enabled-smart-home-automation-system-with-respect-to-sensors-actuators-framework-protocols-storage-data-analysis-security-etc-2023-may" rel="nofollow" aria-hidden="true"></a>Explain the ecosystem for an IoT-enabled smart home automation system with respect to sensors, actuators, framework, protocols, storage, data analysis, security, etc. (2023 May)</h2><h2><a name="state-the-advantages-of-data-visualization-give-different-tools-used-for-it-2023-may" class="heading-anchor" href="#state-the-advantages-of-data-visualization-give-different-tools-used-for-it-2023-may" rel="nofollow" aria-hidden="true"></a>State the advantages of data visualization. Give different tools used for it. (2023 May)</h2><h2><a name="elaborate-on-the-smart-object-concept-including-a-diagram-and-description-of-the-essential-components-required-to-make-an-object-smart-2023-may" class="heading-anchor" href="#elaborate-on-the-smart-object-concept-including-a-diagram-and-description-of-the-essential-components-required-to-make-an-object-smart-2023-may" rel="nofollow" aria-hidden="true"></a>Elaborate on the smart object concept, including a diagram and description of the essential components required to make an object &quot;smart&quot;. (2023 May)</h2><h2><a name="draw-and-explain-the-architecture-of-mqtt-with-a-diagram-2023-may" class="heading-anchor" href="#draw-and-explain-the-architecture-of-mqtt-with-a-diagram-2023-may" rel="nofollow" aria-hidden="true"></a>Draw and explain the architecture of MQTT with a diagram. (2023 May)</h2><h2><a name="elaborate-on-the-need-for-a-new-network-architecture-in-iot-2023-may" class="heading-anchor" href="#elaborate-on-the-need-for-a-new-network-architecture-in-iot-2023-may" rel="nofollow" aria-hidden="true"></a>Elaborate on the need for a new network architecture in IoT. (2023 May)</h2><h2><a name="describe-iot-world-forum-iotwf-standardized-architecture-2022" class="heading-anchor" href="#describe-iot-world-forum-iotwf-standardized-architecture-2022" rel="nofollow" aria-hidden="true"></a>Describe IoT World Forum (IoTWF) Standardized Architecture.  (2022)</h2><h2><a name="explain-the-concept-of-fog-computing-with-diagram-2022" class="heading-anchor" href="#explain-the-concept-of-fog-computing-with-diagram-2022" rel="nofollow" aria-hidden="true"></a>Explain the concept of Fog Computing with Diagram.  (2022)</h2><h2><a name="draw-and-explain-architecture-of-mqtt-with-diagram-2022" class="heading-anchor" href="#draw-and-explain-architecture-of-mqtt-with-diagram-2022" rel="nofollow" aria-hidden="true"></a>Draw and explain Architecture of MQTT with diagram.  (2022)</h2><h2><a name="explain-the-role-of-nosql-in-iot-data-analytics-challenges-2022" class="heading-anchor" href="#explain-the-role-of-nosql-in-iot-data-analytics-challenges-2022" rel="nofollow" aria-hidden="true"></a>Explain the role of NoSQL in IoT Data Analytics Challenges.  (2022)</h2><h2><a name="discuss-various-iot-application-transport-methods-2022" class="heading-anchor" href="#discuss-various-iot-application-transport-methods-2022" rel="nofollow" aria-hidden="true"></a>Discuss Various IoT Application Transport Methods.  (2022)</h2><h2><a name="design-the-forest-fire-detection-system-using-iot-sensors-2022" class="heading-anchor" href="#design-the-forest-fire-detection-system-using-iot-sensors-2022" rel="nofollow" aria-hidden="true"></a>Design the Forest Fire Detection system using IoT sensors.  (2022)</h2><h2><a name="explain-the-architecture-of-lorawan-with-its-major-characteristics-2022" class="heading-anchor" href="#explain-the-architecture-of-lorawan-with-its-major-characteristics-2022" rel="nofollow" aria-hidden="true"></a>Explain the architecture of LoRaWAN with its major Characteristics.  (2022)</h2><h2><a name="what-is-the-purpose-of-using-a-dashboard-for-data-visualization-2022" class="heading-anchor" href="#what-is-the-purpose-of-using-a-dashboard-for-data-visualization-2022" rel="nofollow" aria-hidden="true"></a>What is the purpose of using a dashboard for data visualization?  (2022)</h2><h2><a name="explain-ecosystem-for-iot-enabled-smart-home-with-respect-to-sensors-actuators-framework-protocols-storage-data-analysis-security-etc-2022" class="heading-anchor" href="#explain-ecosystem-for-iot-enabled-smart-home-with-respect-to-sensors-actuators-framework-protocols-storage-data-analysis-security-etc-2022" rel="nofollow" aria-hidden="true"></a>Explain ecosystem for IoT enabled Smart Home with respect to sensors, actuators, framework, protocols,  storage, data analysis, security etc. (2022)</h2><h2><a name="write-short-note-on-i-coap-ii-internet-of-behaviour-2022" class="heading-anchor" href="#write-short-note-on-i-coap-ii-internet-of-behaviour-2022" rel="nofollow" aria-hidden="true"></a>Write short note on i) CoAP ii) Internet of Behaviour.  (2022)</h2><h1><a name="5-marks" class="heading-anchor" href="#5-marks" rel="nofollow" aria-hidden="true"></a>5 Marks</h1><h2><a name="explain-bluetooth-low-energy-ble-role-2024" class="heading-anchor" href="#explain-bluetooth-low-energy-ble-role-2024" rel="nofollow" aria-hidden="true"></a>Explain Bluetooth Low Energy (BLE) role.  (2024)</h2><h2><a name="briefly-elaborate-the-coap-protocol-2024" class="heading-anchor" href="#briefly-elaborate-the-coap-protocol-2024" rel="nofollow" aria-hidden="true"></a>Briefly elaborate the CoAP protocol.  (2024)</h2><h2><a name="explain-data-retention-strategy-2024" class="heading-anchor" href="#explain-data-retention-strategy-2024" rel="nofollow" aria-hidden="true"></a>Explain data retention strategy.  (2024)</h2><h2><a name="explain-the-concept-of-i-iot-and-its-similarity-with-iot-2024" class="heading-anchor" href="#explain-the-concept-of-i-iot-and-its-similarity-with-iot-2024" rel="nofollow" aria-hidden="true"></a>Explain the concept of I-IoT and its similarity with IoT.  (2024)</h2><h2><a name="explain-the-characteristics-of-iot-2024" class="heading-anchor" href="#explain-the-characteristics-of-iot-2024" rel="nofollow" aria-hidden="true"></a>Explain the characteristics of IoT.  (2024)</h2><h2><a name="explain-zigbee-in-brief-2023-dec" class="heading-anchor" href="#explain-zigbee-in-brief-2023-dec" rel="nofollow" aria-hidden="true"></a>Explain ZigBee in brief. (2023 Dec)</h2><h2><a name="explain-the-need-for-lightweight-new-communications-protocols-for-iot-2023-dec" class="heading-anchor" href="#explain-the-need-for-lightweight-new-communications-protocols-for-iot-2023-dec" rel="nofollow" aria-hidden="true"></a>Explain the need for lightweight new communications protocols for IoT. (2023 Dec)</h2><h2><a name="explain-data-retention-strategy-2023-dec" class="heading-anchor" href="#explain-data-retention-strategy-2023-dec" rel="nofollow" aria-hidden="true"></a>Explain data retention strategy. (2023 Dec)</h2><h2><a name="write-a-short-note-on-i-iot-2023-dec" class="heading-anchor" href="#write-a-short-note-on-i-iot-2023-dec" rel="nofollow" aria-hidden="true"></a>Write a short note on I-IoT. (2023 Dec)</h2><h2><a name="explain-the-functional-blocks-of-iot-2023-dec" class="heading-anchor" href="#explain-the-functional-blocks-of-iot-2023-dec" rel="nofollow" aria-hidden="true"></a>Explain the functional blocks of IoT. (2023 Dec)</h2><h2><a name="what-is-the-internet-of-behaviour-iob-and-why-is-it-the-future-2023-may" class="heading-anchor" href="#what-is-the-internet-of-behaviour-iob-and-why-is-it-the-future-2023-may" rel="nofollow" aria-hidden="true"></a>What is the Internet of Behaviour (IoB) and why is it the future? (2023 May)</h2><h2><a name="compare-and-contrast-iot-data-analytics-and-iot-network-analytics-2023-may" class="heading-anchor" href="#compare-and-contrast-iot-data-analytics-and-iot-network-analytics-2023-may" rel="nofollow" aria-hidden="true"></a>Compare and contrast IoT data analytics and IoT network analytics. (2023 May)</h2><h2><a name="briefly-elaborate-the-advanced-message-queuing-protocol-amqp-2023-may" class="heading-anchor" href="#briefly-elaborate-the-advanced-message-queuing-protocol-amqp-2023-may" rel="nofollow" aria-hidden="true"></a>Briefly elaborate the Advanced Message Queuing Protocol (AMQP). (2023 May)</h2><h2><a name="while-designing-an-iot-based-smoke-detection-system-what-parameters-need-to-be-considered-before-choosing-the-required-sensor-2023-may" class="heading-anchor" href="#while-designing-an-iot-based-smoke-detection-system-what-parameters-need-to-be-considered-before-choosing-the-required-sensor-2023-may" rel="nofollow" aria-hidden="true"></a>While designing an IoT-based smoke detection system, what parameters need to be considered before choosing the required sensor? (2023 May)</h2><h2><a name="explain-the-applications-of-bluetooth-low-energy-ble-2023-may" class="heading-anchor" href="#explain-the-applications-of-bluetooth-low-energy-ble-2023-may" rel="nofollow" aria-hidden="true"></a>Explain the applications of Bluetooth Low Energy (BLE). (2023 May)</h2>
+		</main>
+        
+        <details id="table-of-content">
+           <summary>Table of Content</summary>
+                    <nav>
+<li><a href="#10-marks">10 Marks</a>
+<ul>
+<li><a href="#discuss-how-iot-analytics-can-be-effectively-utilized-within-iot-based-healthcare-systems-also-mention-some-essential-parameters-that-should-be-incorporated-into-the-patient-dashboard-for-comprehensive-monitoring-and-management-of-health-data-2024">
+Discuss how IoT analytics can be effectively utilized within IoT-based healthcare systems. Also, mention some essential parameters that should be incorporated into the patient dashboard for comprehensive monitoring and management of health data. (2024)</a></li>
+<li><a href="#evaluate-long-range-communication-systems-and-protocols-like-lte-lte-a-lora-and-lorawan-in-the-context-of-iot-connectivity-discuss-their-suitability-for-different-iot-use-cases-based-on-factors-like-coverage-data-rate-power-consumption-and-scalability-2024">
+Evaluate long-range communication systems and protocols like LTE, LTE-A, LoRa, and LoRaWAN in the context of IoT connectivity. Discuss their suitability for different IoT use cases based on factors like coverage, data rate, power consumption, and scalability.(2024)</a></li>
+<li><a href="#define-the-role-of-analytics-in-iot-technology-and-elaborate-the-challenges-associated-with-it-2024">
+Define the role of analytics in IoT technology and elaborate the challenges associated with it. (2024)</a></li>
+<li><a href="#elaborate-the-need-for-a-new-network-architecture-in-iot-2024">
+Elaborate the need for a new network architecture in IoT.(2024)</a></li>
+<li><a href="#compare-edge-fog-and-cloud-computing-with-respect-to-their-hierarchy-2024">
+Compare edge, fog and cloud computing with respect to their hierarchy. (2024)</a></li>
+<li><a href="#consider-a-smart-smoke-detection-system-elaborate-its-working-and-list-the-different-types-of-sensors-and-actuators-required-during-the-deployment-scenario-2024">
+Consider a smart smoke detection system. Elaborate its working and list the different types of sensors and actuators required during the deployment scenario.(2024)</a></li>
+<li><a href="#explain-the-role-of-http-websocket-and-mqtt-in-iot-communication-compare-and-contrast-these-protocols-in-terms-of-their-characteristics-suitability-for-different-iot-scenarios-and-support-for-real-time-data-transmission-2024">
+Explain the role of HTTP, WebSocket, and MQTT in IoT communication. Compare and contrast these protocols in terms of their characteristics, suitability for different IoT scenarios, and support for real-time data transmission. (2024)</a></li>
+<li><a href="#discuss-the-functional-blocks-of-iot-architecture-highlighting-their-roles-and-interactions-provide-examples-to-illustrate-the-importance-of-each-block-in-the-overall-functionality-of-iot-systems-2024">
+Discuss the functional blocks of IoT architecture, highlighting their roles and interactions. Provide examples to illustrate the importance of each block in the overall functionality of IoT systems.(2024)</a></li>
+<li><a href="#elaborate-on-the-concept-of-smart-objects-including-a-diagram-and-description-of-their-characteristics-2024">
+Elaborate on the concept of Smart Objects, including a diagram and description of their characteristics. (2024)</a></li>
+<li><a href="#explain-the-following-access-technologies-with-their-application-areas-2024">
+Explain the following access technologies with their application areas: (2024)</a></li>
+<li><a href="#elaborate-in-detail-the-strategies-to-organize-data-for-iot-analytics-2023-dec">
+Elaborate in detail the strategies to organize data for IoT analytics. (2023 Dec)</a></li>
+<li><a href="#illustrate-the-role-of-data-refineries-in-preventing-data-lakes-from-turning-into-data-swamps-2023-dec">
+Illustrate the role of data refineries in preventing data lakes from turning into data swamps. (2023 Dec)</a></li>
+<li><a href="#describe-the-communication-systems-and-protocols-involved-in-the-long-range-communication-system-of-iot-2023-dec">
+Describe the communication systems and protocols involved in the long-range communication system of IoT. (2023 Dec)</a></li>
+<li><a href="#with-a-neat-diagram-elaborate-briefly-on-the-simplified-3-layered-iot-architecture-2023-dec">
+With a neat diagram, elaborate briefly on the simplified 3-layered IoT architecture. (2023 Dec)</a></li>
+<li><a href="#differentiate-and-provide-the-hierarchy-between-edge-fog-and-cloud-computing-2023-dec">
+Differentiate and provide the hierarchy between edge, fog, and cloud computing. (2023 Dec)</a></li>
+<li><a href="#consider-a-smart-irrigation-system-elaborate-its-working-with-a-block-diagram-and-list-the-different-types-of-sensors-and-actuators-required-during-the-deployment-scenario-2023-dec">
+Consider a smart irrigation system. Elaborate its working with a block diagram and list the different types of sensors and actuators required during the deployment scenario. (2023 Dec)</a></li>
+<li><a href="#elaborate-on-mqtt-its-working-in-details-and-two-advantages-over-coap-2023-dec">
+Elaborate on MQTT, its working in details, and two advantages over CoAP. (2023 Dec)</a></li>
+<li><a href="#illustrate-3-methods-for-effective-data-visualization-2023-dec">
+Illustrate 3 methods for effective data visualization. (2023 Dec)</a></li>
+<li><a href="#compare-and-contrast-edge-fog-and-cloud-computing-explain-their-usage-with-an-example-2023-may">
+Compare and contrast edge, fog, and cloud computing. Explain their usage with an example. (2023 May)</a></li>
+<li><a href="#consider-a-smart-farming-system-elaborate-its-working-and-list-the-different-types-of-sensors-and-actuators-required-during-the-deployment-scenario-2023-may">
+Consider a smart farming system. Elaborate its working and list the different types of sensors and actuators required during the deployment scenario. (2023 May)</a></li>
+<li><a href="#describe-the-iot-world-forum-iotwf-standardized-architecture-2023-may">
+Describe the IoT World Forum (IoTWF) standardized architecture. (2023 May)</a></li>
+<li><a href="#explain-the-architecture-of-lorawan-with-its-major-characteristics-2023-may">
+Explain the architecture of LoRaWAN with its major characteristics. (2023 May)</a></li>
+<li><a href="#explain-the-ecosystem-for-an-iot-enabled-smart-home-automation-system-with-respect-to-sensors-actuators-framework-protocols-storage-data-analysis-security-etc-2023-may">
+Explain the ecosystem for an IoT-enabled smart home automation system with respect to sensors, actuators, framework, protocols, storage, data analysis, security, etc. (2023 May)</a></li>
+<li><a href="#state-the-advantages-of-data-visualization-give-different-tools-used-for-it-2023-may">
+State the advantages of data visualization. Give different tools used for it. (2023 May)</a></li>
+<li><a href="#elaborate-on-the-smart-object-concept-including-a-diagram-and-description-of-the-essential-components-required-to-make-an-object-smart-2023-may">
+Elaborate on the smart object concept, including a diagram and description of the essential components required to make an object &quot;smart&quot;. (2023 May)</a></li>
+<li><a href="#draw-and-explain-the-architecture-of-mqtt-with-a-diagram-2023-may">
+Draw and explain the architecture of MQTT with a diagram. (2023 May)</a></li>
+<li><a href="#elaborate-on-the-need-for-a-new-network-architecture-in-iot-2023-may">
+Elaborate on the need for a new network architecture in IoT. (2023 May)</a></li>
+<li><a href="#describe-iot-world-forum-iotwf-standardized-architecture-2022">
+Describe IoT World Forum (IoTWF) Standardized Architecture.  (2022)</a></li>
+<li><a href="#explain-the-concept-of-fog-computing-with-diagram-2022">
+Explain the concept of Fog Computing with Diagram.  (2022)</a></li>
+<li><a href="#draw-and-explain-architecture-of-mqtt-with-diagram-2022">
+Draw and explain Architecture of MQTT with diagram.  (2022)</a></li>
+<li><a href="#explain-the-role-of-nosql-in-iot-data-analytics-challenges-2022">
+Explain the role of NoSQL in IoT Data Analytics Challenges.  (2022)</a></li>
+<li><a href="#discuss-various-iot-application-transport-methods-2022">
+Discuss Various IoT Application Transport Methods.  (2022)</a></li>
+<li><a href="#design-the-forest-fire-detection-system-using-iot-sensors-2022">
+Design the Forest Fire Detection system using IoT sensors.  (2022)</a></li>
+<li><a href="#explain-the-architecture-of-lorawan-with-its-major-characteristics-2022">
+Explain the architecture of LoRaWAN with its major Characteristics.  (2022)</a></li>
+<li><a href="#what-is-the-purpose-of-using-a-dashboard-for-data-visualization-2022">
+What is the purpose of using a dashboard for data visualization?  (2022)</a></li>
+<li><a href="#explain-ecosystem-for-iot-enabled-smart-home-with-respect-to-sensors-actuators-framework-protocols-storage-data-analysis-security-etc-2022">
+Explain ecosystem for IoT enabled Smart Home with respect to sensors, actuators, framework, protocols,  storage, data analysis, security etc. (2022)</a></li>
+<li><a href="#write-short-note-on-i-coap-ii-internet-of-behaviour-2022">
+Write short note on i) CoAP ii) Internet of Behaviour.  (2022)</a></li>
+</ul><li><a href="#5-marks">
+5 Marks</a>
+<ul>
+<li><a href="#explain-bluetooth-low-energy-ble-role-2024">
+Explain Bluetooth Low Energy (BLE) role.  (2024)</a></li>
+<li><a href="#briefly-elaborate-the-coap-protocol-2024">
+Briefly elaborate the CoAP protocol.  (2024)</a></li>
+<li><a href="#explain-data-retention-strategy-2024">
+Explain data retention strategy.  (2024)</a></li>
+<li><a href="#explain-the-concept-of-i-iot-and-its-similarity-with-iot-2024">
+Explain the concept of I-IoT and its similarity with IoT.  (2024)</a></li>
+<li><a href="#explain-the-characteristics-of-iot-2024">
+Explain the characteristics of IoT.  (2024)</a></li>
+<li><a href="#explain-zigbee-in-brief-2023-dec">
+Explain ZigBee in brief. (2023 Dec)</a></li>
+<li><a href="#explain-the-need-for-lightweight-new-communications-protocols-for-iot-2023-dec">
+Explain the need for lightweight new communications protocols for IoT. (2023 Dec)</a></li>
+<li><a href="#explain-data-retention-strategy-2023-dec">
+Explain data retention strategy. (2023 Dec)</a></li>
+<li><a href="#write-a-short-note-on-i-iot-2023-dec">
+Write a short note on I-IoT. (2023 Dec)</a></li>
+<li><a href="#explain-the-functional-blocks-of-iot-2023-dec">
+Explain the functional blocks of IoT. (2023 Dec)</a></li>
+<li><a href="#what-is-the-internet-of-behaviour-iob-and-why-is-it-the-future-2023-may">
+What is the Internet of Behaviour (IoB) and why is it the future? (2023 May)</a></li>
+<li><a href="#compare-and-contrast-iot-data-analytics-and-iot-network-analytics-2023-may">
+Compare and contrast IoT data analytics and IoT network analytics. (2023 May)</a></li>
+<li><a href="#briefly-elaborate-the-advanced-message-queuing-protocol-amqp-2023-may">
+Briefly elaborate the Advanced Message Queuing Protocol (AMQP). (2023 May)</a></li>
+<li><a href="#while-designing-an-iot-based-smoke-detection-system-what-parameters-need-to-be-considered-before-choosing-the-required-sensor-2023-may">
+While designing an IoT-based smoke detection system, what parameters need to be considered before choosing the required sensor? (2023 May)</a></li>
+<li><a href="#explain-the-applications-of-bluetooth-low-energy-ble-2023-may">
+Explain the applications of Bluetooth Low Energy (BLE). (2023 May)</a></li>
+</ul>
+</nav>
+
+        </details>
+        
+		<footer>
+			<p style="text-align: center; font-size: small; margin-top: 5em;">
+                <a href="https://anzenkodo.github.io/license">LICENSE</a>
+            </p>
+		</footer>
+	</body>
+	<script id="MathJax-script" async src="https://AnzenKodo.github.io/assets/js/mathjax.js"></script>
+    <script src="https://AnzenKodo.github.io/assets/js/mermaid.js"></script>
+    <script>
+        mermaid.initialize({
+            theme: "neutral"
+        });
+
+        MathJax = {
+		  tex: {
+		    inlineMath: [['$', '$']],
+		    displayMath: [['$$', '$$']],
+		  }
+		};
+    </script>
+</html>
