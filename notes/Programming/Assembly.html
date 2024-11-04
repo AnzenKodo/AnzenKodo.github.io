@@ -75,6 +75,7 @@
                 overflow-x: auto;
                 display: block;
                 word-break: auto-phrase;
+                margin: 1rem 0;
 			}
             th {
                 font-size: 1.1rem;
@@ -177,20 +178,33 @@
                 overflow-y: hidden;
                 overflow-x: auto;
                 max-width: 100%;
+                padding-bottom: .8rem;
             }
             iframe {
                 width: 100%;
                 height: 21rem;
+                margin: 1rem 0;
             }
 		</style>
 	</head>
 	<body>
 	    <a href="#skip-top-main">Skip to main</a>
+	    <img id="audio-img" src="https://i.imgur.com/nle7lDV.png" style="
+	          position: absolute;
+	          top: -1rem;
+	          right: 5%;
+	          transform: scale(-1, 1);
+	          opacity: 0.8;
+	          height: 20rem;
+	         ">
+	    <audio>
+	        <source src="https://anzenkodo.github.io/drive/cosmic.mp3" />
+	    </audio>
 		<header>
 			<h1 style="text-align: center;">
                 <a href="https://AnzenKodo.github.io">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
-            <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;">
+            <!-- <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;"> -->
 		</header>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem; margin-top: 0;">Assembly</h1>
@@ -208,9 +222,18 @@
             </p>
 		</footer>
 	</body>
+    <script async src="https://AnzenKodo.github.io/assets/js/mermaid.js"></script>
 	<script id="MathJax-script" async src="https://AnzenKodo.github.io/assets/js/mathjax.js"></script>
-    <script src="https://AnzenKodo.github.io/assets/js/mermaid.js"></script>
     <script>
+		const audio = document.querySelector('audio');
+		const image = document.getElementById('audio-img').addEventListener('click', () => {
+		     if (audio.paused) {
+		         audio.play();
+		     } else {
+		         audio.pause();
+		     }
+		});
+
         mermaid.initialize({
             theme: "neutral"
         });

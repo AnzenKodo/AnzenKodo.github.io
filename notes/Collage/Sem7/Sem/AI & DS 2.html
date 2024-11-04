@@ -75,6 +75,7 @@
                 overflow-x: auto;
                 display: block;
                 word-break: auto-phrase;
+                margin: 1rem 0;
 			}
             th {
                 font-size: 1.1rem;
@@ -177,20 +178,33 @@
                 overflow-y: hidden;
                 overflow-x: auto;
                 max-width: 100%;
+                padding-bottom: .8rem;
             }
             iframe {
                 width: 100%;
                 height: 21rem;
+                margin: 1rem 0;
             }
 		</style>
 	</head>
 	<body>
 	    <a href="#skip-top-main">Skip to main</a>
+	    <img id="audio-img" src="https://i.imgur.com/nle7lDV.png" style="
+	          position: absolute;
+	          top: -1rem;
+	          right: 5%;
+	          transform: scale(-1, 1);
+	          opacity: 0.8;
+	          height: 20rem;
+	         ">
+	    <audio>
+	        <source src="https://anzenkodo.github.io/drive/cosmic.mp3" />
+	    </audio>
 		<header>
 			<h1 style="text-align: center;">
                 <a href="https://AnzenKodo.github.io">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
             </h1>
-            <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;">
+            <!-- <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;"> -->
 		</header>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem; margin-top: 0;">AI & DS 2</h1>
@@ -289,100 +303,8 @@
 
 <p><strong>Solutions:</strong></p>
 
-<div class="code-block"><html>
-<style type="text/css">
-/* Background */ .bg { color: #282c34 }
-/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
-/* Other */ .chroma .x { color: #c9c9c9 }
-/* Error */ .chroma .err { color: #cf5967 }
-/* CodeLine */ .chroma .cl { color: #c9c9c9 }
-/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
-/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
-/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
-/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
-/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
-/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
-/* Keyword */ .chroma .k { color: #7fbaf5 }
-/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
-/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
-/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
-/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
-/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
-/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
-/* Name */ .chroma .n { color: #c9c9c9 }
-/* NameAttribute */ .chroma .na { color: #bc74c4 }
-/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
-/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
-/* NameClass */ .chroma .nc { color: #ecbe7b }
-/* NameConstant */ .chroma .no { color: #ecbe7b }
-/* NameDecorator */ .chroma .nd { color: #ecbe7b }
-/* NameEntity */ .chroma .ni { color: #c9c9c9 }
-/* NameException */ .chroma .ne { color: #cf5967 }
-/* NameFunction */ .chroma .nf { color: #57c7ff }
-/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
-/* NameLabel */ .chroma .nl { color: #cf5967 }
-/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
-/* NameOther */ .chroma .nx { color: #c9c9c9 }
-/* NameProperty */ .chroma .py { color: #c9c9c9 }
-/* NameTag */ .chroma .nt { color: #bc74c4 }
-/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
-/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
-/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
-/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
-/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
-/* Literal */ .chroma .l { color: #c9c9c9 }
-/* LiteralDate */ .chroma .ld { color: #57c7ff }
-/* LiteralString */ .chroma .s { color: #82cc6a }
-/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
-/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
-/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
-/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
-/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
-/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
-/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
-/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
-/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
-/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
-/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
-/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
-/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
-/* LiteralNumber */ .chroma .m { color: #56b6c2 }
-/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
-/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
-/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
-/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
-/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
-/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
-/* Operator */ .chroma .o { color: #bc74c4 }
-/* OperatorWord */ .chroma .ow { color: #bc74c4 }
-/* Punctuation */ .chroma .p { color: #56b6c2 }
-/* Comment */ .chroma .c { color: #3e4460 }
-/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
-/* CommentMultiline */ .chroma .cm { color: #3e4460 }
-/* CommentSingle */ .chroma .c1 { color: #3e4460 }
-/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
-/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
-/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
-/* Generic */ .chroma .g { color: #c9c9c9 }
-/* GenericDeleted */ .chroma .gd { color: #cf5967 }
-/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
-/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
-/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
-/* GenericInserted */ .chroma .gi { color: #ecbe7b }
-/* GenericOutput */ .chroma .go { color: #43454f }
-/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
-/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
-/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
-/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
-/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
-/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
-body { color: #282c34; }
-</style><body class="bg">
-<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">$$P(\text{Grass Wet, Spinkler, Rain}) = P(\text{Grass Wet | Spinkler, Rain}) \times P(\text{Spinkler | Rain}) \times P(\text{Rain})$$
-</span></span></code></pre>
-</body>
-</html>
-</div>
+<p>$$P(\text{Grass Wet, Spinkler, Rain}) = P(\text{Grass Wet | Spinkler, Rain}) \times P(\text{Spinkler | Rain}) \times P(\text{Rain})$$</p>
+
 <p>$$= 0.99 \times 0.01 \times 0.2$$</p>
 <h2><a name="find-p-cavity-toothache-from-the-given-probability-distribution-2023-dec-2022-5-marks" class="heading-anchor" href="#find-p-cavity-toothache-from-the-given-probability-distribution-2023-dec-2022-5-marks" rel="nofollow" aria-hidden="true"></a>Find P (¬ Cavity | Toothache) from the given probability distribution. (2023 Dec) (2022) 5 Marks</h2>
 <table> <tr> <th rowspan="2"></th> <th colspan="2">Toothache</th> <th colspan="2">¬ Toothache</th> </tr> <tr> <th>Catch</th> <th>¬ Catch</th> <th>Catch</th> <th>¬ Catch</th> </tr> <tr> <th>Cavity</th> <td>0.108</td> <td>0.012</td> <td>0.072</td> <td>0.008</td> </tr> <tr> <th>¬ Cavity</th> <td>0.016</td> <td>0.064</td> <td>0.144</td> <td>0.576</td> </tr> </table>
@@ -398,9 +320,7 @@ body { color: #282c34; }
 
 <p>$$P(A\cup B)=P(A)\cup P(B)-P(A\cup B)$$</p>
 
-<ul>
-<li>$P(Cavity \cup Toothache)=P(Cavity)\cup P(Toothache)¬ P(Cavity\cap Toothache) = 0.2+0.2-(0.108 + 0.12) = 0.172$</li>
-</ul>
+<p>$$P(Cavity \cup Toothache)=P(Cavity)\cup P(Toothache)¬ P(Cavity\cap Toothache) = 0.2+0.2-(0.108 + 0.12) = 0.172$$</p>
 
 <p>Bayes Theorem Formula:</p>
 
@@ -408,11 +328,9 @@ body { color: #282c34; }
 
 <ul>
 <li>$P(Cavity|Toothache)$ = ${P(Cavity \cap Toothache) \over P(Toothache)} = {0.108 + 12 \over 0.2}$</li>
-
-<li><p>$P(Cavity|Toothache \wedge Catch) = {P(Cavity \cap (Toothache \cup Catch) \over P(Toothache \cup Cavity}) = {0.108 +0.012+0.072 \over 0.172}$</p>
-<h2><a name="calculate-accuracy-precision-recall-sensitivity-and-specificity-for-the-given-confusion-matrix-2023-dec-2022-2024" class="heading-anchor" href="#calculate-accuracy-precision-recall-sensitivity-and-specificity-for-the-given-confusion-matrix-2023-dec-2022-2024" rel="nofollow" aria-hidden="true"></a>Calculate Accuracy, Precision, Recall, Sensitivity and Specificity for the given confusion matrix (2023 Dec) (2022) (2024)</h2></li>
+<li>$P(Cavity|Toothache \wedge Catch) = {P(Cavity \cap (Toothache \cup Catch) \over P(Toothache \cup Cavity}) = {0.108 +0.012+0.072 \over 0.172}$</li>
 </ul>
-
+<h2><a name="calculate-accuracy-precision-recall-sensitivity-and-specificity-for-the-given-confusion-matrix-2023-dec-2022-2024" class="heading-anchor" href="#calculate-accuracy-precision-recall-sensitivity-and-specificity-for-the-given-confusion-matrix-2023-dec-2022-2024" rel="nofollow" aria-hidden="true"></a>Calculate Accuracy, Precision, Recall, Sensitivity and Specificity for the given confusion matrix (2023 Dec) (2022) (2024)</h2>
 <p><img loading="lazy" src="assets/Pasted%20image%2020241030210252.png" alt="" /></p>
 
 <p><img loading="lazy" src="assets/Pasted%20image%2020241102181142.png" alt="" /></p>
@@ -483,7 +401,7 @@ $$</p>
 </tbody>
 </table>
 
-<p>Assume the weights are initialized to $W<em>{11} = W</em>{21} = 1$</p>
+<p>Assume the weights are initialized to W1 = W2 = 1</p>
 
 <p>Calculate the net input:</p>
 
@@ -674,7 +592,7 @@ body { color: #282c34; }
 </tbody>
 </table>
 
-<p>Assume the weights are initialized to $W<em>{11} = W</em>{21} = 1$</p>
+<p>Assume the weights are initialized to W1 = W2 = 1</p>
 
 <p>Calculate the net input:</p>
 
@@ -719,7 +637,7 @@ body { color: #282c34; }
 </tbody>
 </table>
 
-<p>Assume the weights are initialized to $W<em>{11} = 1,  W</em>{21} = -1$</p>
+<p>Assume the weights are initialized to W1 = 1,  W2 = -1</p>
 
 <p>Calculate the net input:</p>
 
@@ -911,7 +829,7 @@ body { color: #282c34; }
 </tbody>
 </table>
 
-<p>Assume the weights are initialized to $W<em>{11} = W</em>{21} = 1$</p>
+<p>Assume the weights are initialized to W1 = W2 = 1</p>
 
 <p>Calculate the net input:</p>
 
@@ -956,7 +874,7 @@ body { color: #282c34; }
 </tbody>
 </table>
 
-<p>Assume the weights are initialized to $W<em>{11} = 1,  W</em>{21} = -1$</p>
+<p>Assume the weights are initialized to W2 = 1,  W2 = -1</p>
 
 <p>Calculate the net input:</p>
 
@@ -1544,8 +1462,8 @@ body { color: #282c34; }
 </div><h2><a name="using-mamdani-fuzzy-model-design-a-fuzzy-logic-controller-to-determine-the-wash-time-of-domestic-washing-machine-assume-the-inputs-are-dirt-and-grease-on-clothes-use-three-descriptors-for-each-input-variable-and-five-descriptor-for-output-variables-derive-necessary-membership-functions-and-required-fuzzy-rules-for-the-application-2024-2023-may" class="heading-anchor" href="#using-mamdani-fuzzy-model-design-a-fuzzy-logic-controller-to-determine-the-wash-time-of-domestic-washing-machine-assume-the-inputs-are-dirt-and-grease-on-clothes-use-three-descriptors-for-each-input-variable-and-five-descriptor-for-output-variables-derive-necessary-membership-functions-and-required-fuzzy-rules-for-the-application-2024-2023-may" rel="nofollow" aria-hidden="true"></a>Using Mamdani fuzzy model design a fuzzy logic controller to determine the wash time of domestic washing machine. Assume the inputs are dirt and grease on clothes. Use three descriptors for each input variable and five descriptor for output variables. Derive necessary membership functions and required fuzzy rules for the application. (2024) (2023 May)</h2>
 <iframe src="https://www.youtube.com/embed/THAk1O3HBDc" title="Mamdani Fuzzy model Sum with solved Example  | SOFT COMPUTING" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 <h2><a name="find-the-algebraic-sum-algebraic-product-bounded-sum-and-bounded-difference-of-the-given-fuzzy-sets-2022" class="heading-anchor" href="#find-the-algebraic-sum-algebraic-product-bounded-sum-and-bounded-difference-of-the-given-fuzzy-sets-2022" rel="nofollow" aria-hidden="true"></a>Find the algebraic sum, algebraic product, bounded sum, and bounded difference of the given fuzzy sets. (2022)</h2>
-<p>$$\tilde{A} = \left{ \frac{0.2}{1} + \frac{0.3}{2} + \frac{0.4}{3} + \frac{0.5}{4} \right}$$
-$$\tilde{B} = \left{ \frac{0.1}{1} + \frac{0.2}{2} + \frac{0.2}{3} + \frac{0.1}{4} \right}$$</p>
+<p>$$\tilde{A} = \Bigg\lbrace \frac{0.2}{1} + \frac{0.3}{2} + \frac{0.4}{3} + \frac{0.5}{4} \Bigg\rbrace$$
+$$\tilde{B} = \Bigg\lbrace \frac{0.1}{1} + \frac{0.2}{2} + \frac{0.2}{3} + \frac{0.1}{4} \Bigg\rbrace$$</p>
 
 <iframe src="https://www.youtube.com/embed/6pFdocuBU7c" title="10. Find the algebraic sum &amp; product, bounded  sum &amp; difference given fuzzy Sets by Mahesh Huddar" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -1554,31 +1472,31 @@ $$\tilde{B} = \left{ \frac{0.1}{1} + \frac{0.2}{2} + \frac{0.2}{3} + \frac{0.1}{
 <p>$$=\tilde{A}+\tilde{B} - \tilde{A}\times\tilde{B}$$</p>
 
 <p>$$ =
-\left{ \frac{0.3}{1} + \frac{0.5}{2} + \frac{0.6}{3} + \frac{0.5}{4} \right} -
-\left{ \frac{0.02}{1} + \frac{0.06}{2} + \frac{0.08}{3} + \frac{0.5}{4} \right}
+\Bigg\lbrace \frac{0.3}{1} + \frac{0.5}{2} + \frac{0.6}{3} + \frac{0.5}{4} \Bigg\rbrace -
+\Bigg\lbrace \frac{0.02}{1} + \frac{0.06}{2} + \frac{0.08}{3} + \frac{0.5}{4} \Bigg\rbrace
 $$</p>
 
 <p><strong>Algebraic Product</strong></p>
 
 <p>$$=\tilde{A}\times\tilde{B}$$</p>
 
-<p>$$=\left{ \frac{0.02}{1} + \frac{0.06}{2} + \frac{0.08}{3} + \frac{0.5}{4} \right}$$</p>
+<p>$$=\Bigg\lbrace \frac{0.02}{1} + \frac{0.06}{2} + \frac{0.08}{3} + \frac{0.5}{4} \Bigg\rbrace$$</p>
 
 <p><strong>Bounded Sum</strong></p>
 
-<p>$$=min{1, {\tilde{A}+\tilde{B}}}$$</p>
+<p>$$=min\lbrace 1, {\tilde{A}+\tilde{B}}\rbrace$$</p>
 
-<p>$$=min\left{1, \left{ \frac{0.3}{1} + \frac{0.5}{2} + \frac{0.6}{3} + \frac{1.5}{4} \right}\right}$$</p>
+<p>$$=min\Bigg\lbrace 1, \Bigg\lbrace \frac{0.3}{1} + \frac{0.5}{2} + \frac{0.6}{3} + \frac{1.5}{4} \Bigg\rbrace\Bigg\rbrace$$</p>
 
-<p>$$=\left{ \frac{0.3}{1} + \frac{0.5}{2} + \frac{0.6}{3} + \frac{1}{4} \right}$$</p>
+<p>$$=\Bigg\lbrace \frac{0.3}{1} + \frac{0.5}{2} + \frac{0.6}{3} + \frac{1}{4} \Bigg\rbrace$$</p>
 
 <p><strong>Bounded Difference</strong></p>
 
-<p>$$=min{1, {\tilde{A}-\tilde{B}}}$$</p>
+<p>$$=min\lbrace 1, {\tilde{A}-\tilde{B}}\rbrace$$</p>
 
-<p>$$=min\left{1, \left{ \frac{0.1}{1} + \frac{0.1}{2} + \frac{0.2}{3} + \frac{0.5}{4} \right}\right}$$</p>
+<p>$$=min\Bigg\lbrace 1, \Bigg\lbrace \frac{0.1}{1} + \frac{0.1}{2} + \frac{0.2}{3} + \frac{0.5}{4} \Bigg\rbrace\Bigg\rbrace$$</p>
 
-<p>$$=\left{ \frac{0.1}{1} + \frac{0.1}{2} + \frac{0.2}{3} + \frac{0.5}{4} \right}$$</p>
+<p>$$=\Bigg\lbrace \frac{0.1}{1} + \frac{0.1}{2} + \frac{0.2}{3} + \frac{0.5}{4} \Bigg\rbrace$$</p>
 <h2><a name="from-a-standard-deck-of-playing-cards-a-single-card-is-drawn-the-probability-that-the-card-is-king-is-4-52-then-calculate-posterior-probability-p-king-face-which-means-the-drawn-face-card-is-a-king-card-2024-5-marks" class="heading-anchor" href="#from-a-standard-deck-of-playing-cards-a-single-card-is-drawn-the-probability-that-the-card-is-king-is-4-52-then-calculate-posterior-probability-p-king-face-which-means-the-drawn-face-card-is-a-king-card-2024-5-marks" rel="nofollow" aria-hidden="true"></a>From a standard deck of playing cards, a single card is drawn. The probability that the card is king is 4/52, then calculate posterior probability P(King|Face), which means the drawn face card is a king card. (2024 5 Marks)</h2>
 <ul>
 <li>Total number of card: $52$</li>
@@ -1935,23 +1853,19 @@ $$</p>
 <li><strong>Streamlined Documentation</strong>: Automating the extraction and organization of information from clinical notes saves time for healthcare providers and reduces administrative burdens.</li>
 </ul></li>
 </ul></li>
-
-<li><p><strong>Drug Discovery and Development</strong></p>
+<li><strong>Drug Discovery and Development</strong>
 
 <ul>
 <li><strong>Example</strong>: Cognitive computing can analyze chemical compounds, biological data, and clinical trial results to identify potential new drugs or predict the success of existing drugs in different populations.</li>
-
-<li><p><strong>Benefits</strong>:</p>
+<li><strong>Benefits</strong>:
 
 <ul>
 <li><strong>Accelerated Research</strong>: By rapidly analyzing vast datasets, cognitive systems can significantly reduce the time and cost associated with drug development.</li>
-
-<li><p><strong>Targeted Therapies</strong>: Understanding the genetic and molecular basis of diseases can lead to more effective targeted therapies, improving treatment efficacy.</p>
-<h2><a name="what-is-a-markov-decision-process-mdp-list-its-primary-components-explain-in-detail-2024-2023-may" class="heading-anchor" href="#what-is-a-markov-decision-process-mdp-list-its-primary-components-explain-in-detail-2024-2023-may" rel="nofollow" aria-hidden="true"></a>What is a Markov Decision Process (MDP)? List its primary components. Explain in detail. (2024)  (2023 May)</h2></li>
+<li><strong>Targeted Therapies</strong>: Understanding the genetic and molecular basis of diseases can lead to more effective targeted therapies, improving treatment efficacy.</li>
 </ul></li>
 </ul></li>
 </ol>
-
+<h2><a name="what-is-a-markov-decision-process-mdp-list-its-primary-components-explain-in-detail-2024-2023-may" class="heading-anchor" href="#what-is-a-markov-decision-process-mdp-list-its-primary-components-explain-in-detail-2024-2023-may" rel="nofollow" aria-hidden="true"></a>What is a Markov Decision Process (MDP)? List its primary components. Explain in detail. (2024)  (2023 May)</h2>
 <iframe src="https://www.youtube.com/embed/zC8jkmlCDCU" title="Markov decision process in machine learning | Reinforcement learning | Lec-31 | Machine Learning" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>Markov decision process in machine learning | Reinforcement learning | Lec-31 | Machine Learning</iframe>
 
 <p>A <strong>Markov Decision Process (MDP)</strong> is a mathematical framework used in machine learning to model sequential decision-making processes in stochastic environments.</p>
@@ -2843,9 +2757,18 @@ Describe the Deep Learning concept with an example. (2022)</a></li>
             </p>
 		</footer>
 	</body>
+    <script async src="https://AnzenKodo.github.io/assets/js/mermaid.js"></script>
 	<script id="MathJax-script" async src="https://AnzenKodo.github.io/assets/js/mathjax.js"></script>
-    <script src="https://AnzenKodo.github.io/assets/js/mermaid.js"></script>
     <script>
+		const audio = document.querySelector('audio');
+		const image = document.getElementById('audio-img').addEventListener('click', () => {
+		     if (audio.paused) {
+		         audio.play();
+		     } else {
+		         audio.pause();
+		     }
+		});
+
         mermaid.initialize({
             theme: "neutral"
         });
