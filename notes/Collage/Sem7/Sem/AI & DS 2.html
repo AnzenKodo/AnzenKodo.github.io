@@ -312,10 +312,10 @@
 <iframe src="https://www.youtube.com/embed/ULk_2eTXCzM" title="Toothache and Cavity Solution NTA NET Computer Science Part -I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <ul>
-<li>$P(Cavity) = 0.108 + 0.12 + 0.072 + 0.008 = 0.308$</li>
-<li>$P(¬Cavity) = 0.16 + 0.064 + 0.144 + 0.576 = 0.944$</li>
-<li>$P(Toothache) = 0.108 + 0.012 + 0.016 + 0.064 =$</li>
-<li>$P(¬Toothache) = 0.072 + 0.008 + 0.144 + 0.576 = 0.8$</li>
+<li>P(Cavity) = 0.108 + 0.12 + 0.072 + 0.008 = 0.308</li>
+<li>P(¬Cavity) = 0.16 + 0.064 + 0.144 + 0.576 = 0.944</li>
+<li>P(Toothache) = 0.108 + 0.012 + 0.016 + 0.064 =</li>
+<li>P(¬Toothache) = 0.072 + 0.008 + 0.144 + 0.576 = 0.8</li>
 </ul>
 
 <p>$$P(A\cup B)=P(A)\cup P(B)-P(A\cup B)$$</p>
@@ -324,12 +324,10 @@
 
 <p>Bayes Theorem Formula:</p>
 
-<p>$$P(A|B)= {P(A∩B)\over P(B)}$$</p>
+<p>$$P(A|B)= {P(A∩B)\over P(B)}$$
+$$P(Cavity|Toothache) = {P(Cavity \cap Toothache) \over P(Toothache)} = {0.108 + 12 \over 0.2}$$</p>
 
-<ul>
-<li>$P(Cavity|Toothache)$ = ${P(Cavity \cap Toothache) \over P(Toothache)} = {0.108 + 12 \over 0.2}$</li>
-<li>$P(Cavity|Toothache \wedge Catch) = {P(Cavity \cap (Toothache \cup Catch) \over P(Toothache \cup Cavity}) = {0.108 +0.012+0.072 \over 0.172}$</li>
-</ul>
+<p>$$P(Cavity|Toothache \wedge Catch) = {P(Cavity \cap (Toothache \cup Catch) \over P(Toothache \cup Cavity}) = {0.108 +0.012+0.072 \over 0.172}$$</p>
 <h2><a name="calculate-accuracy-precision-recall-sensitivity-and-specificity-for-the-given-confusion-matrix-2023-dec-2022-2024" class="heading-anchor" href="#calculate-accuracy-precision-recall-sensitivity-and-specificity-for-the-given-confusion-matrix-2023-dec-2022-2024" rel="nofollow" aria-hidden="true"></a>Calculate Accuracy, Precision, Recall, Sensitivity and Specificity for the given confusion matrix (2023 Dec) (2022) (2024)</h2>
 <p><img loading="lazy" src="assets/Pasted%20image%2020241030210252.png" alt="" /></p>
 
@@ -408,10 +406,10 @@ $$</p>
 <table>
 <thead>
 <tr>
-<th>$X_1X_2 =$</th>
-<th>$X_1W_1 +$</th>
-<th>$X_2W_2$</th>
-<th>= $Ans$</th>
+<th>X1 X2 =</th>
+<th>X1 W1 +</th>
+<th>X2 W2</th>
+<th>= Ans</th>
 </tr>
 </thead>
 
@@ -599,10 +597,10 @@ body { color: #282c34; }
 <table>
 <thead>
 <tr>
-<th>$X_1X_2 =$</th>
-<th>$X_1W_1 +$</th>
-<th>$X_2W_2$</th>
-<th>= $Ans$</th>
+<th>X1 X2 =</th>
+<th>X1 W1 +</th>
+<th>X2 W2</th>
+<th>= Ans</th>
 </tr>
 </thead>
 
@@ -644,10 +642,10 @@ body { color: #282c34; }
 <table>
 <thead>
 <tr>
-<th>$X_1X_2 =$</th>
-<th>$X_1W_1 +$</th>
-<th>$X_2W_2$</th>
-<th>= $Ans$</th>
+<th>X1 X2 =</th>
+<th>X1 W1 +</th>
+<th>X2 W2</th>
+<th>= Ans</th>
 </tr>
 </thead>
 
@@ -1271,7 +1269,7 @@ body { color: #282c34; }
 </body>
 </html>
 </div>
-<p><strong>Step 5)</strong> $Y = Z_1$ or $Z_2$</p>
+<p><strong>Step 5)</strong> Y = Z1 or $Z2</p>
 
 <table>
 <thead>
@@ -1319,9 +1317,9 @@ body { color: #282c34; }
 </tbody>
 </table>
 
-<p>Assume the weights are initialized to $V_1 = V_2 = 1$</p>
+<p>Assume the weights are initialized to V1 = V2 = 1</p>
 
-<p>$V_1 = V_2 = 1$</p>
+<p>$$V_1 = V_2 = 1$$</p>
 
 <table>
 <thead>
@@ -1501,22 +1499,25 @@ $$</p>
 <ul>
 <li>Total number of card: $52$</li>
 <li>Total number of King cards: $4$</li>
-<li>Total number of Face cards: $12$ ($4$ kings, $4$ queens, and $4$ jacks)</li>
+
+<li><p>Total number of Face cards: $12$ (4 kings, 4 queens, and 4 jacks)</p></li>
+
+<li><p>P(King): probability that the card is King= 4 / 52 = 0.0769</p></li>
+
+<li><p>P(Face): probability that a card is a face card = 12 / 52 = 0.2307</p></li>
+
+<li><p>P(Face|King): probability of face card when we assume it is a king = 1</p></li>
+
+<li><p>P(King|Face) =</p></li>
 </ul>
 
-<p>$P(King)$: probability that the card is King= $4 \over 52$ = $0.0769$</p>
+<p>$$P(Face|King)P(King) \over P(Face) = {1 \times 0.0769 \over 0.2307} = 0.33$$</p>
 
-<p>$P(Face)$: probability that a card is a face card = $12 \over 52$ = $0.2307$</p>
-
-<p>$P(Face|King)$: probability of face card when we assume it is a king = $1$</p>
-
-<p>$P(King|Face)$ = $P(Face|King)P(King) \over P(Face)$ = ${1 \times 0.0769 \over 0.2307}$ = $0.33$</p>
-
-<p>$0.33$ is probability that a face card is king card.</p>
+<p>0.33 is probability that a face card is king card.</p>
 <h1><a name="10-marks" class="heading-anchor" href="#10-marks" rel="nofollow" aria-hidden="true"></a>10 Marks</h1><h2><a name="describe-the-architecture-of-a-typical-cnn-what-are-the-main-components-and-how-do-they-contribute-to-the-network-s-performance-in-image-recognition-tasks-2024-2023-dec-2022-2023-may-5-marks" class="heading-anchor" href="#describe-the-architecture-of-a-typical-cnn-what-are-the-main-components-and-how-do-they-contribute-to-the-network-s-performance-in-image-recognition-tasks-2024-2023-dec-2022-2023-may-5-marks" rel="nofollow" aria-hidden="true"></a>Describe the architecture of a typical CNN. What are the main components, and how do they contribute to the network's performance in image recognition tasks? (2024) (2023 Dec) (2022) (2023 May 5 Marks)</h2>
 <p>CNN is deep learning algorithm which can take input as image assign importance to various object in the image and able to differentiate one from another.</p>
 
-<p><img loading="lazy" src="../UT2/assets/Pasted%20image%2020241021023219.png" alt="" /></p>
+<p><img loading="lazy" src="assets/Pasted%20image%2020241110205437.png" alt="" /></p>
 
 <p>Components of CNN architecture:</p>
 
@@ -1679,7 +1680,7 @@ $$</p>
 </ul></li>
 </ol>
 <h2><a name="explain-how-an-autoencoder-can-be-used-for-dimensionality-reduction-include-a-brief-description-of-how-the-encoder-and-decoder-parts-of-the-network-work-in-this-context-which-activation-function-is-best-for-an-autoencoder-2024-2023-may-2022" class="heading-anchor" href="#explain-how-an-autoencoder-can-be-used-for-dimensionality-reduction-include-a-brief-description-of-how-the-encoder-and-decoder-parts-of-the-network-work-in-this-context-which-activation-function-is-best-for-an-autoencoder-2024-2023-may-2022" rel="nofollow" aria-hidden="true"></a>Explain how an autoencoder can be used for dimensionality reduction. Include a brief description of how the encoder and decoder parts of the network work in this context. Which activation function is best for an autoencoder?  (2024) (2023 May) (2022)</h2>
-<p><img loading="lazy" src="../UT2/assets/Pasted%20image%2020241020203851.png" alt="" /></p>
+<p><img loading="lazy" src="../Notes/assets/Pasted%20image%2020241111073219.png" alt="" /></p>
 
 <p>An autoencoder is a type of neural network that can be used for dimensionality reduction. It consists of two main parts: an encoder and a decoder.</p>
 
@@ -1712,75 +1713,50 @@ $$</p>
 
 <p><strong>Best Activation Function for Autoencoders:</strong></p>
 
-<ul>
-<li><strong>ReLU (Rectified Linear Unit):</strong>
+<p>It decides how much information should flow through each neuron in neural network. It helps the model learn complex patterns in data by adding non-linearity.</p>
 
 <ul>
-<li>Widely used due to its simplicity and effectiveness.</li>
-<li>It introduces non-linearity to the network, allowing it to learn complex patterns.</li>
-</ul></li>
-<li><strong>Leaky ReLU:</strong>
-
-<ul>
-<li>A variant of ReLU that introduces a small slope for negative inputs.</li>
-<li>This helps prevent the &quot;dying ReLU&quot; problem, where neurons can become inactive.</li>
-</ul></li>
-<li><strong>Sigmoid:</strong>
-
-<ul>
-<li>Often used for output layers in classification tasks.</li>
-<li>It produces outputs between 0 and 1, which can be interpreted as probabilities.</li>
-</ul></li>
+<li><strong>ReLU (Rectified Linear Unit)</strong>: Widely used due to its simplicity and effectiveness.</li>
+<li><strong>Sigmod:</strong> Used in output layer of the autoencoder especially when the data is normalized to the range [0, 1].</li>
+<li><strong>Tanh</strong>: Usind in the hidden layers and output layer when the data is normalized to range of [-1, 1].</li>
 </ul>
 <h2><a name="briefly-explain-data-science-for-multimodal-applications-2024-2023-may-2022" class="heading-anchor" href="#briefly-explain-data-science-for-multimodal-applications-2024-2023-may-2022" rel="nofollow" aria-hidden="true"></a>Briefly explain Data science for Multimodal applications. (2024) (2023 May) (2022)</h2>
 <p>Data science for multimodal applications involves the integration and analysis of data from multiple sources or modalities, such as text, images, audio, and sensor data. This approach allows for richer insights and more comprehensive understanding of complex phenomena.</p>
 
-<p>Here’s a brief overview:</p>
-
-<p><strong>Key Components of Multimodal Data Science</strong></p>
-
-<ol>
-<li><strong>Data Collection</strong>:
+<ul>
+<li><p><strong>Multiple Data Types</strong>:</p>
 
 <ul>
-<li>Gather data from various modalities. For example, in a healthcare context, this might include medical imaging, patient records, and clinical notes.</li>
+<li><strong>Text</strong>: Written language, such as documents, articles, social media posts.</li>
+<li><strong>Images</strong>: Pictures, photos, or visual data.</li>
+<li><strong>Audio</strong>: Speech, sound clips, music.</li>
+<li><strong>Video</strong>: Moving images combined with audio.</li>
+<li><strong>Sensor Data</strong>: Information from devices, like temperature, pressure, or motion sensors.</li>
 </ul></li>
-<li><strong>Data Preprocessing</strong>:
+
+<li><p><strong>Applications</strong>:</p>
 
 <ul>
-<li>Clean and preprocess each type of data to ensure compatibility. This may involve normalization, feature extraction, and conversion to a unified format.</li>
+<li><strong>Healthcare</strong>: Combining medical images (like X-rays or MRIs) with patient records.</li>
+<li><strong>Autonomous Vehicles</strong>: Integrating sensor data (like LIDAR, cameras) with GPS and traffic data.</li>
+<li><strong>Human-Computer Interaction</strong>: Using audio, video, and gestures together to improve voice assistants.</li>
+<li><strong>Social Media Analytics</strong>: Combining text data (tweets or posts) with image and video data to better understand trends.</li>
 </ul></li>
-<li><strong>Feature Fusion</strong>:
+
+<li><p><strong>Process of making Multi model:</strong></p>
 
 <ul>
-<li>Combine features from different modalities. Techniques such as concatenation, attention mechanisms, or more advanced deep learning methods can be used to integrate the information.</li>
+<li><strong>Data Collection</strong>: Gather data from various modalities.</li>
+<li><strong>Data Processing</strong>: Clean and preprocess each type of data to ensure compatibility.</li>
+<li><strong>Model Development</strong>: Develop machine learning or deep learning models that can process multimodal inputs.</li>
+<li><strong>Training and Evaluation</strong>: Train the model on combined datasets, ensuring that the performance is evaluated across all modalities to ensure robust predictions.</li>
+
+<li><p><strong>Deployment and Application</strong>: Deploy the model in real-world scenarios.</p>
+<h2><a name="how-do-you-explain-random-forest-does-random-forest-need-pruning-explain-in-detail-2024-2023-may" class="heading-anchor" href="#how-do-you-explain-random-forest-does-random-forest-need-pruning-explain-in-detail-2024-2023-may" rel="nofollow" aria-hidden="true"></a>How do you explain random forest? Does random forest need pruning, explain in detail? (2024) (2023 May)</h2></li>
 </ul></li>
-<li><strong>Model Development</strong>:
-
-<ul>
-<li>Develop machine learning or deep learning models that can process multimodal inputs. Models may include architectures designed to handle multiple data types, such as CNNs for images and RNNs for text.</li>
-</ul></li>
-<li><strong>Training and Evaluation</strong>:
-
-<ul>
-<li>Train the model on combined datasets, ensuring that the performance is evaluated across all modalities to ensure robust predictions.</li>
-</ul></li>
-<li><strong>Deployment and Application</strong>:
-
-<ul>
-<li>Deploy the model in real-world scenarios, such as healthcare diagnostics, sentiment analysis combining text and audio, or autonomous systems using sensor data.</li>
-</ul></li>
-</ol>
-
-<p><strong>Applications of Multimodal Data Science</strong></p>
-
-<ul>
-<li><strong>Healthcare</strong>: Integrating imaging data (e.g., MRIs) with patient histories and lab results for better diagnostic accuracy.</li>
-<li><strong>Sentiment Analysis</strong>: Analyzing text, voice tone, and facial expressions to gauge customer satisfaction more effectively.</li>
-<li><strong>Autonomous Vehicles</strong>: Combining data from cameras, LIDAR, and radar to enhance perception and decision-making.</li>
 </ul>
-<h2><a name="how-do-you-explain-random-forest-does-random-forest-need-pruning-explain-in-detail-2024-2023-may" class="heading-anchor" href="#how-do-you-explain-random-forest-does-random-forest-need-pruning-explain-in-detail-2024-2023-may" rel="nofollow" aria-hidden="true"></a>How do you explain random forest? Does random forest need pruning, explain in detail? (2024) (2023 May)</h2>
-<p><img loading="lazy" src="../../Sem6/Sem/assets/Pasted%20image%2020240512221449.png" alt="" /></p>
+
+<p><img loading="lazy" src="../Sem/assets/Pasted%20image%2020241111081402.png" alt="" /></p>
 
 <p>Random Forest is an ensemble learning technique primarily used for classification and regression tasks. It operates by constructing multiple decision trees during training and outputs the mode (classification) or mean (regression) of the individual trees’ predictions.</p>
 
@@ -1794,9 +1770,11 @@ $$</p>
 
 <p><strong>Why Pruning Isn't Necessary for Random Forests</strong></p>
 
-<p>Pruning is a technique used to reduce the complexity of a decision tree by removing unnecessary branches. This helps to prevent overfitting, where the model becomes too tailored to the training data and performs poorly on new, unseen data.  </p>
+<p>Pruning is technique used to reduce the complexity of decision tree by removing unnecessary branches.</p>
 
-<p>However, random forests are inherently less prone to overfitting due to two key factors:</p>
+<p>This helps to prevent over-fitting, where the model becomes too tailored to the training data and performs poorly on new, unseen data.</p>
+
+<p>Random forest are inherently less prone to over fitting due to two key factors:</p>
 
 <ol>
 <li><strong>Bagging:</strong>
@@ -1868,6 +1846,8 @@ $$</p>
 <h2><a name="what-is-a-markov-decision-process-mdp-list-its-primary-components-explain-in-detail-2024-2023-may" class="heading-anchor" href="#what-is-a-markov-decision-process-mdp-list-its-primary-components-explain-in-detail-2024-2023-may" rel="nofollow" aria-hidden="true"></a>What is a Markov Decision Process (MDP)? List its primary components. Explain in detail. (2024)  (2023 May)</h2>
 <iframe src="https://www.youtube.com/embed/zC8jkmlCDCU" title="Markov decision process in machine learning | Reinforcement learning | Lec-31 | Machine Learning" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>Markov decision process in machine learning | Reinforcement learning | Lec-31 | Machine Learning</iframe>
 
+<p><img loading="lazy" src="assets/Pasted%20image%2020241111085954.png" alt="" /></p>
+
 <p>A <strong>Markov Decision Process (MDP)</strong> is a mathematical framework used in machine learning to model sequential decision-making processes in stochastic environments.</p>
 
 <p>Here are the key components and concepts associated with MDPs:</p>
@@ -1900,7 +1880,7 @@ $$</p>
 
 <p>Example:</p>
 
-<p><img loading="lazy" src="assets/Pasted%20image%2020240828035224.jpg" alt="" /></p>
+<p><img loading="lazy" src="assets/Pasted%20image%2020241111100343.png" alt="" /></p>
 
 <p>An agent lives in the grid. The above example is a 3x4 grid. The grid has a START state(grid no 1,1). The purpose of the agent is to wander around the grid to finally reach the Blue Diamond (grid no 4,3). Under all circumstances, the agent should avoid the Fire grid (orange color, grid no 4,2). Also, the grid no 2,2 is a blocked grid, it acts as a wall hence the agent cannot enter it.</p>
 
@@ -1927,42 +1907,40 @@ $$</p>
 
 <p><strong>Strategies to Address Class Imbalance:</strong></p>
 
-<ol>
+<p>Techniques to fix Classimbalance:</p>
+
+<ul>
 <li><strong>Data-Level Techniques:</strong>
 
 <ul>
-<li><strong>Oversampling:</strong>
+<li><strong>Oversampling</strong>: Increasing the number of samples in the minority class.</li>
+<li><strong>Random Oversampling</strong>: Duplicates instances from the minority class.</li>
+</ul></li>
+<li><strong>Algorithm-Level Techniques</strong>
 
 <ul>
-<li><strong>Random Oversampling:</strong> Duplicates instances from the minority class.</li>
+<li><strong>Class Weighting</strong>: This method involves assigning higher weights to minority class during model traning.</li>
+<li><strong>Cost-Sensitive Learning</strong>: Adjust the lass function so the misclassifying a minority class instance results in a larger loss then misclassifying a majority class instance.</li>
+<li><strong>Threshold Modification</strong>: Adjusts the classification threshold to improve sensitivity for the minority class.</li>
 </ul></li>
-<li><strong>Undersampling:</strong>
-
-<ul>
-<li>Removes instances from the majority class.</li>
-<li><strong>Random Undersampling:</strong> Randomly removes instances.</li>
-</ul></li>
-</ul></li>
-<li><strong>Algorithm-Level Techniques:</strong>
-
-<ul>
-<li><strong>Cost-Sensitive Learning:</strong> Assigns different costs to errors made on different classes.</li>
-<li><strong>Class Weighting:</strong> Assigns weights to different classes during training.</li>
-<li><strong>Threshold Modification:</strong> Adjusts the classification threshold to improve sensitivity for the minority class.</li>
-</ul></li>
-<li><strong>Ensemble Methods:</strong>
+<li><strong>Ensemble Methods</strong>: Combining multiple models to create a stronger robust model.
 
 <ul>
 <li><strong>Bagging:</strong> Creates multiple models on different subsets of the data and combines their predictions.</li>
 <li><strong>Boosting:</strong> Sequentially trains models, focusing on instances misclassified by previous models.</li>
 </ul></li>
-</ol>
+</ul>
 
 <p><strong>Example:</strong></p>
 
-<p><img loading="lazy" src="assets/1_GkhP_fliGHcijoiyp0I4Wg.webp" alt="" /></p>
+<pre class='mermaid'>xychart-beta
+    x-axis "Class" [No Fraud, Fraud]
+    y-axis "Count" 0 --> 100
+    bar [100, 10]
+</pre>
+<p>Consider a credit card fraud detection dataset where fraudulent transactions are significantly less frequent than legitimate ones.</p>
 
-<p>Consider a credit card fraud detection dataset where fraudulent transactions are significantly less frequent than legitimate ones. Here's how the above techniques can be applied:</p>
+<p>Here's how the above techniques can be applied:</p>
 
 <ul>
 <li><strong>Oversampling:</strong> Generate synthetic fraudulent transaction data using SMOTE.</li>
@@ -2079,32 +2057,55 @@ $$</p>
 </ul></li>
 </ul>
 <h2><a name="illustrate-usage-of-taxonomies-and-ontologies-for-knowledge-representation-in-cognitive-systems-2023-dec" class="heading-anchor" href="#illustrate-usage-of-taxonomies-and-ontologies-for-knowledge-representation-in-cognitive-systems-2023-dec" rel="nofollow" aria-hidden="true"></a>Illustrate usage of taxonomies and ontologies for knowledge representation in cognitive systems. (2023 Dec)</h2>
-<p><strong>Ontology</strong></p>
+<ul>
+<li><p><strong>Taxonomy</strong></p>
 
 <ul>
-<li><strong>Definition</strong>: A taxonomy is a hierarchical structure that categorizes concepts into parent-child relationships, where each child concept is a specific instance of its parent.</li>
-<li><strong>Components:</strong>
+<li>It is hierarchical structure that categorizes concepts into parent-child relationships.</li>
+<li><strong>Components</strong>
 
 <ul>
-<li><strong>Classes (or Concepts):</strong> The basic entities or categories in the domain.</li>
-<li><strong>Relationships:</strong> How classes or concepts are related (e.g., &quot;is a,&quot; &quot;part of&quot;).</li>
-<li><strong>Attributes:</strong> Properties or characteristics of the concepts (e.g., &quot;has color&quot;).</li>
-<li><strong>Instances:</strong> Specific examples of the classes (e.g., a specific car is an instance of the class &quot;Vehicle&quot;).</li>
+<li><strong>Nodes</strong>: Represent categories or concepts.</li>
+<li><strong>Edges</strong>: Represent the hierarchical relationship between nodes.</li>
 </ul></li>
-<li><strong>Example:</strong> In the medical domain, an ontology might include concepts like &quot;Disease,&quot; &quot;Symptom,&quot; &quot;Treatment,&quot; and their relationships (e.g., &quot;Disease has Symptom,&quot; &quot;Treatment addresses Disease&quot;).</li>
-</ul>
 
-<p><strong>Taxonomy</strong></p>
+<li><p><strong>Example:</strong></p>
 
-<ul>
-<li><strong>Definition</strong>: An ontology is a more complex representation that defines a set of concepts within a domain and the relationships between those concepts, including properties and constraints.</li>
-<li><strong>Components:</strong>
+<pre class='mermaid'>graph LR
+A[Animals] --> B[Birds]
+A --> C[Mammals]
+A --> D[Reptiles]
+B --> E[Pigeon]
+B --> F[Parrot]
+C --> G[Dog]
+C --> H[Cat]
+D --> I[Turtle]
+D --> J[Crocodile]
 
-<ul>
-<li><strong>Nodes:</strong> Represent categories or concepts.</li>
-<li><strong>Edges:</strong> Represent the hierarchical relationships between nodes.</li>
+</pre></li>
 </ul></li>
-<li><strong>Example:</strong> A taxonomy in the animal kingdom might have &quot;Animal&quot; as the root, with branches like &quot;Mammal,&quot; &quot;Bird,&quot; &quot;Fish,&quot; etc., and further subcategories under each branch (e.g., &quot;Mammal&quot; could include &quot;Primates,&quot; &quot;Carnivores,&quot; etc.).</li>
+
+<li><p><strong>Ontology</strong></p>
+
+<ul>
+<li>It defines set of concepts within a domain and the relationships between those concepts.</li>
+<li>It is subset of taxonomy.</li>
+<li><strong>Components</strong>
+
+<ul>
+<li><strong>Classes</strong>: It is the type of entity. Eg: people, place, etc.</li>
+<li><strong>Relationships</strong>: It is the link between object.</li>
+<li><strong>Attributes</strong>: Data associated with an object.</li>
+</ul></li>
+
+<li><p><strong>Example:</strong></p>
+
+<pre class='mermaid'>graph LR
+	1[Company]
+	1-->2(Person)
+	1-->3(Phone No.)
+</pre></li>
+</ul></li>
 </ul>
 
 <p><strong>Integration in Cognitive Systems</strong></p>
@@ -2196,20 +2197,19 @@ $$</p>
 
 <p>It combines artificial intelligence (AI), machine learning, natural language processing, and data mining to enable machines to understand, reason, and learn from vast amounts of data.</p>
 
-<pre class='mermaid'>flowchart TD
-    A["Data Sources
-    (Structured & Unstructured Data)"] --> B["Data Processing
-    (Data Cleaning, Transformation)"]
-    B --> C["Machine Learning
-    (Algorithms for Learning Patterns and Insights)"]
-    C --> D["Natural Language Processing
-    (Understanding & Generating Text)"]
-    D --> E["Reasoning & Learning
-    (Inferencing from Data & Knowledge)"]
-    E --> F["User Interface
-    (Interaction with Users through GUI)"]
-    F --> G["Feedback Loop
-    (Learning from User Interactions)"]
+<pre class='mermaid'>flowchart
+    ds[Data Source] --> |Structured
+    Unsructured| dp
+    
+    dp[Data Processing] --> |Data Cleaning
+    Data Transformation| ml
+    
+    ml[Machine Learning] --> |Algorithms| nlp
+    
+    nlp[Natural Language Processing] --> |Understanding
+    Generating Text| ui
+
+    ui[User Interface] --> fp[Feedback Loop]
 </pre>
 <ol>
 <li><strong>Data Sources</strong>:
@@ -2286,18 +2286,33 @@ $$</p>
 <h1><a name="5-marks" class="heading-anchor" href="#5-marks" rel="nofollow" aria-hidden="true"></a>5 Marks</h1><h2><a name="define-defuzzification-and-state-the-necessity-of-the-defuzzification-process-2023-dec-2023-may" class="heading-anchor" href="#define-defuzzification-and-state-the-necessity-of-the-defuzzification-process-2023-dec-2023-may" rel="nofollow" aria-hidden="true"></a>Define defuzzification and state the necessity of the defuzzification process. (2023 Dec)  (2023 May)</h2>
 <iframe src="https://www.youtube.com/embed/_po4FxxE9c8" title="Fuzzification and Defuzzification ll Soft Computing Course Explained in Hindi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>Fuzzification and Defuzzification ll Soft Computing Course Explained in Hindi</iframe>
 
-<p><img loading="lazy" src="assets/Pasted%20image%2020240828043056.png" alt="" /></p>
+<pre class='mermaid'>flowchart LR
+    subgraph External System
+    ci[Crip Input]
+    end
+    ci --> |Crisp Value| ff
 
+    subgraph Fuzzy System
+    ff[Fuzzyfire] --> |Fuzzy Value| fs
+    fs[Fuzzy System] --> |Fuzzy Value| df
+    df[Defuzzfire]
+    end
+    df--> |Crip Value| co
+
+    subgraph External System
+    co[Crisp Output]
+    end
+</pre>
 <p>Defuzzification is the inverse process of fuzzification, where the goal is to map a fuzzy set to a crisp set. This process is necessary because many applications require crisp control actions, and fuzzy results need to be converted into actionable, precise values.</p>
 
 <p>There are several common defuzzification methods:</p>
 
 <ul>
-<li><strong>Centroid:</strong> The centroid method calculates the weighted average of the membership values of all elements in the fuzzy set.</li>
-<li><strong>Mean of Maxima:</strong> This method selects the mean value of all elements with maximum membership values.</li>
-<li><strong>Maximum Membership:</strong> This method simply selects the element with the highest membership value.</li>
-<li><strong>Smallest of Maxima:</strong> This method selects the smallest element among those with maximum membership values.</li>
-<li><strong>Largest of Maxima:</strong> This method selects the largest element among those with maximum membership values.</li>
+<li><strong>Centroid</strong>: Weighted average of the membership values of all elements in fuzzy set.</li>
+<li><strong>Mean of Maxima</strong>: Mean value of all elements.</li>
+<li><strong>Maximum Membership</strong>: highest membership value.</li>
+<li><strong>Smallest of Maxima</strong>: Smallest membership value.</li>
+<li><strong>Largest of Maxima</strong>: Largest element among those with maximum membership values.</li>
 </ul>
 
 <p><strong>Necessity of Defuzzification:</strong></p>
@@ -2321,16 +2336,16 @@ $$</p>
 <p>Where:</p>
 
 <ul>
-<li>$C$ is the defuzzified output (the crisp value).</li>
-<li>$μ(x)$ is the membership function of the fuzzy set.</li>
-<li>$[a,b]$ represents the range over which the fuzzy set is defined.</li>
+<li><strong>C</strong> is the defuzzified output (the crisp value).</li>
+<li><strong>μ(x)</strong> is the membership function of the fuzzy set.</li>
+<li><strong>[a,b]</strong> represents the range over which the fuzzy set is defined.</li>
 </ul>
 
 <p><strong>Advantages:</strong></p>
 
 <ul>
 <li><strong>Simplicity:</strong> It's relatively easy to implement and understand.</li>
-<li><strong>Smooth Output:</strong> The centroid method often produces smooth and continuous output values.</li>
+<li><strong>Smooth Output</strong>: Produces Smooth and continues output values.</li>
 <li><strong>Handles Multiple Peaks:</strong> It can handle membership functions with multiple peaks, unlike some other methods that might get confused.</li>
 </ul>
 
@@ -2338,8 +2353,8 @@ $$</p>
 
 <ul>
 <li><strong>Sensitivity to Outliers:</strong> If the membership function has a long tail, the centroid can be significantly influenced by outliers.</li>
-<li><strong>Computational Cost:</strong> For complex membership functions, calculating the integrals can be computationally expensive.</li>
-<li><strong>Non-intuitive Results:</strong> In some cases, the centroid might not represent the most intuitive crisp value, especially for multimodal membership functions.</li>
+<li><strong>Computational Cost</strong>: Calculating the integrals can be computational expensive.</li>
+<li><strong>Non-intuitive Results</strong>: The centroid might not represent the most intuitive crisp value.</li>
 </ul>
 
 <p><strong>Comparison with Other Methods:</strong></p>
@@ -2377,50 +2392,56 @@ $$</p>
 <tbody>
 <tr>
 <td><strong>Definition</strong></td>
-<td>Trains multiple models independently.</td>
-<td>Trains models sequentially to correct errors.</td>
+<td>Train multiple models</td>
+<td>Trains models sequentially</td>
 </tr>
 
 <tr>
-<td><strong>Model Training</strong></td>
-<td>Parallel training using random subsets.</td>
-<td>Sequential training influenced by prior models.</td>
+<td><strong>Training</strong></td>
+<td>Paraller</td>
+<td>Sequential</td>
 </tr>
 
 <tr>
 <td><strong>Base Learners</strong></td>
-<td>Typically uses the same model type.</td>
-<td>Often uses weaker models combined for strength.</td>
+<td>Same model type</td>
+<td>Weaker models</td>
 </tr>
 
 <tr>
-<td><strong>Error Handling</strong></td>
-<td>Reduces variance; mitigates overfitting.</td>
-<td>Reduces bias; improves accuracy.</td>
+<td><strong>Error</strong></td>
+<td>Reduces variance, mitigates overfitting</td>
+<td>Reduces bias, improve accuracy</td>
 </tr>
 
 <tr>
 <td><strong>Overfitting</strong></td>
-<td>Less prone due to averaging.</td>
-<td>More prone if not regularized.</td>
+<td>Less</td>
+<td>More</td>
 </tr>
 
 <tr>
 <td><strong>Combination Method</strong></td>
-<td>Majority voting or averaging.</td>
-<td>Weighted sum based on model performance.</td>
+<td>Majority voting</td>
+<td>Weighted sum</td>
 </tr>
 
 <tr>
 <td><strong>Complexity</strong></td>
-<td>Simpler and faster to implement.</td>
-<td>More complex; requires careful tuning.</td>
+<td>Simpler</td>
+<td>Complex</td>
 </tr>
 
 <tr>
-<td><strong>Interpretability</strong></td>
-<td>Easier to interpret.</td>
-<td>Less interpretable due to complexity.</td>
+<td><strong>Bias</strong></td>
+<td>More</td>
+<td>Less</td>
+</tr>
+
+<tr>
+<td><strong>Accuracy</strong></td>
+<td>Less</td>
+<td>More</td>
 </tr>
 </tbody>
 </table>
@@ -2463,36 +2484,45 @@ $$</p>
 </tbody>
 </table>
 <h2><a name="what-is-the-significance-of-roc-curves-2023-dec" class="heading-anchor" href="#what-is-the-significance-of-roc-curves-2023-dec" rel="nofollow" aria-hidden="true"></a>What is the significance of ROC curves? (2023 Dec)</h2>
-<p><img loading="lazy" src="assets/AUC-ROC-Curve.webp" alt="" /></p>
+<p><img loading="lazy" src="assets/Pasted%20image%2020241111145645.png" alt="" /></p>
 
-<p>A <strong>Receiver Operating Characteristic (ROC) curve</strong> is a graphical plot that illustrates the diagnostic ability of a binary classifier system as its discrimination threshold is varied. It's a powerful tool to visualize and assess the performance of classification models.</p>
+<p>The <strong>Receiver Operating Characteristic (ROC) curve</strong> is a fundamental tool in machine learning and statistics used to evaluate the performance of <strong>binary classification</strong> models.</p>
+
+<p><strong>Key Elements of an ROC Curve</strong></p>
+
+<ul>
+<li><strong>True Positive Rate (TPR)</strong>, also known as <strong>Sensitivity</strong> or <strong>Recall</strong>:
+
+<ul>
+<li>The proportion of actual positive instances that are correctly identified by the model.</li>
+</ul></li>
+<li><strong>False Positive Rate (FPR)</strong>:
+
+<ul>
+<li>The proportion of actual negative instances that are incorrectly identified as positive by the model.</li>
+</ul></li>
+<li><strong>Area Under Curve (AUC)</strong>:
+
+<ul>
+<li>It's is a single value that summarizes the model's overall performance.</li>
+<li>AUC ranges from 0 to 1.</li>
+</ul></li>
+</ul>
+
+<p><strong>Benefits of ROC Curve</strong></p>
 
 <ol>
-<li><strong>Performance Visualization</strong>:
+<li><strong>Model Comparison</strong>: Compare multiple models; higher <strong>AUC</strong> means better class distinction.</li>
+<li><strong>Performance Evaluation</strong>: Assesses model discrimination across different thresholds.</li>
+<li><strong>Works for Imbalanced Data</strong>: More informative than accuracy in imbalanced datasets.</li>
+</ol>
 
-<ul>
-<li>ROC curves graphically show a model's ability to distinguish between classes at various thresholds.</li>
-</ul></li>
-<li><strong>True Positive vs. False Positive Rates</strong>:
+<p><strong>Example Use Cases for ROC Curves</strong></p>
 
-<ul>
-<li>They plot True Positive Rate (sensitivity) against False Positive Rate, illustrating the trade-off between sensitivity and specificity.</li>
-</ul></li>
-<li><strong>Model Comparison</strong>:
-
-<ul>
-<li>ROC curves allow for easy comparison of classifiers using the area under the curve (AUC); a higher AUC indicates better performance.</li>
-</ul></li>
-<li><strong>Threshold Selection</strong>:
-
-<ul>
-<li>Analyzing the curve helps in choosing an optimal classification threshold based on desired sensitivity and specificity.</li>
-</ul></li>
-<li><strong>Sensitivity to Improvements</strong>:
-
-<ul>
-<li>They highlight model performance improvements, showing how changes affect predictive capabilities.</li>
-</ul></li>
+<ol>
+<li><strong>Medical Diagnosis</strong>: Choose a threshold to minimize false negatives (e.g., undiagnosed diseases).</li>
+<li><strong>Spam Detection</strong>: Balance false positives and negatives for better spam filtering.</li>
+<li><strong>Fraud Detection</strong>: Set a threshold that balances false positives vs. costly false negatives.</li>
 </ol>
 <h2><a name="various-metrics-for-evaluating-classifier-performance-2023-may" class="heading-anchor" href="#various-metrics-for-evaluating-classifier-performance-2023-may" rel="nofollow" aria-hidden="true"></a>Various metrics for evaluating classifier performance.  (2023 May)</h2>
 <p>A confusion matrix is a table that summarizes the performance of a classification model on a set of test data. It provides a detailed breakdown of correct and incorrect predictions, categorized into four key metrics:  </p>
@@ -2532,81 +2562,71 @@ $$</p>
 
 <p><img loading="lazy" src="../UT2/assets/Pasted%20image%2020241020231557.png" alt="" /></p>
 <h2><a name="holdout-method-2023-may-2022" class="heading-anchor" href="#holdout-method-2023-may-2022" rel="nofollow" aria-hidden="true"></a>Holdout method (2023 May) (2022)</h2>
-<p><strong>Holdout Method</strong> is a straightforward technique used to evaluate machine learning models. It involves splitting the dataset into two subsets:</p>
+<p><strong>Holdout Method</strong> is a straightforward technique used to evaluate machine learning model</p>
+
+<p>It involves randomly splitting the dataset into two subset:</p>
 
 <ol>
-<li><strong>Training Set:</strong> Used to train the model.</li>
-<li><strong>Testing Set:</strong> Used to evaluate the model's performance on unseen data.</li>
+<li><strong>Training Set:</strong> Used to train the model.</li>
+<li><strong>Testing Set:</strong> Used to evaluate the model's performance on unseen data.</li>
 </ol>
 
-<p><strong>Process:</strong></p>
+<p>Process:</p>
 
 <ol>
-<li><strong>Data Splitting:</strong> Divide the dataset into two parts, typically a 70-30 or 80-20 split.</li>
-<li><strong>Model Training:</strong> Train the model on the training set.</li>
-<li><strong>Model Evaluation:</strong> Evaluate the model's performance on the testing set using various metrics like accuracy, precision, recall, F1-score, etc.</li>
+<li><strong>Data Split:</strong> Common splits are <strong>70% training, 30% test</strong> or <strong>80% training, 20% test</strong>.</li>
+<li><strong>Model Training:</strong> The model is trained on the training set.</li>
+<li><strong>Model Evaluation:</strong> The trained model is evaluated on the testing set.</li>
 </ol>
 
-<p><strong>Advantages:</strong></p>
+<p>Advantages:</p>
 
 <ul>
-<li><strong>Simplicity:</strong> Easy to implement and understand.</li>
-<li><strong>Quick:</strong> Relatively fast compared to other methods like cross-validation.</li>
-</ul>
-
-<p><strong>Disadvantages:</strong></p>
-
-<ul>
-<li><strong>Sensitivity to Data Split:</strong> The performance of the model can vary depending on how the data is split.</li>
-<li><strong>Limited Data Utilization:</strong> A significant portion of the data is not used for training, which can lead to less accurate models, especially for smaller datasets.</li>
+<li><strong>Fast</strong> and easy to implement.</li>
+<li>Simple way to assess model performance.</li>
 </ul>
 <h2><a name="describe-the-random-subsampling-in-detail-2022" class="heading-anchor" href="#describe-the-random-subsampling-in-detail-2022" rel="nofollow" aria-hidden="true"></a>Describe the Random subsampling in detail. (2022)</h2>
-<p>Random subsampling is a technique used in machine learning to evaluate the performance of a model on unseen data. It involves randomly splitting the dataset into two subsets: a training set and a testing set.</p>
+<p>Random subsampling is technique used in machine learning to evaluate the performance of a model on unseen data.</p>
 
-<p><strong>Process:</strong></p>
+<p>It involves randomly splitting the dataset into two subset:</p>
 
 <ol>
-<li><strong>Random Split:</strong> The dataset is randomly divided into two subsets.  </li>
-<li><strong>Model Training:</strong> The model is trained on the training set.</li>
-<li><strong>Model Evaluation:</strong> The trained model is evaluated on the testing set.</li>
+<li><strong>Training Set:</strong> Used to train the model.</li>
+<li><strong>Testing Set:</strong> Used to evaluate the model's performance on unseen data.</li>
 </ol>
 
-<p><strong>Key Points:</strong></p>
+<p>Process:</p>
+
+<ol>
+<li><strong>Random Split:</strong> The dataset is randomly divided into two subsets.  </li>
+<li><strong>Model Training:</strong> The model is trained on the training set.</li>
+<li><strong>Model Evaluation:</strong> The trained model is evaluated on the testing set.</li>
+</ol>
+
+<p>Advantages:</p>
 
 <ul>
-<li><strong>Randomness:</strong> The split is done randomly to ensure that the training and testing sets are representative of the overall dataset.</li>
-<li><strong>Training and Testing Sets:</strong> The training set is used to train the model, while the testing set is used to evaluate its performance on unseen data.  </li>
-<li><strong>Evaluation Metrics:</strong> Various metrics, such as accuracy, precision, recall, F1-score, and confusion matrix, are used to assess the model's performance.  </li>
-</ul>
-
-<p><strong>Advantages:</strong></p>
-
-<ul>
-<li><strong>Simplicity:</strong> It's a straightforward technique to implement.</li>
-<li><strong>Flexibility:</strong> It can be used with different machine learning algorithms and datasets.</li>
-</ul>
-
-<p><strong>Disadvantages:</strong></p>
-
-<ul>
-<li><strong>Sensitivity to Data Split:</strong> The performance of the model can vary depending on how the data is split.  </li>
-<li><strong>Limited Data Utilization:</strong> A significant portion of the data is not used for training, which can lead to less accurate models, especially for smaller datasets.</li>
+<li><strong>Simplicity</strong>: It's a straightforward technique to implement.</li>
+<li><strong>Flexibility</strong>: It can be used with different ML algorithms and datasets.</li>
 </ul>
 <h2><a name="lstm-2023-may" class="heading-anchor" href="#lstm-2023-may" rel="nofollow" aria-hidden="true"></a>LSTM (2023 May)</h2>
-<p><strong>Long Short-Term Memory (LSTM)</strong> networks are a type of Recurrent Neural Network (RNN) specifically designed to address the vanishing gradient problem that plagues traditional RNNs.</p>
+<p><img loading="lazy" src="assets/Pasted%20image%2020241111235007.png" alt="" /></p>
+
+<p><strong>Long Short-Term Memory (LSTM)</strong> networks are a type of Recurrent Neural Network (RNN) specifically designed to address the problem of RNNs.</p>
 
 <p>Drawbacks of RNN:</p>
 
 <ul>
-<li>RNN goes in loop again and again which results in large update and loop may goes into infinity.</li>
+<li>RNN goes in loop again and again which results in large update.</li>
+<li>Loop may go into infinity.</li>
 <li>Values weight become too large and the result is overflow of data.</li>
 </ul>
 
-<p>Advantages of LSTM</p>
+<p>Advantages of LSTM:</p>
 
 <ul>
-<li><strong>Long-Range Dependencies</strong>: LSTMs can capture relationships over longer time steps, making them more effective than standard RNNs, which struggle with vanishing gradient problems.</li>
-<li><strong>Flexibility</strong>: They can be applied to various types of sequential data, including text, audio, and time series.</li>
+<li>Long-Range Dependencies: LSTM's can capture relationships over longer time.</li>
+<li>Flexibility: They can be applied to various types of sequential data including text, audio and time series.</li>
 </ul>
 
 <p>Application of LSTM:</p>
@@ -2614,8 +2634,7 @@ $$</p>
 <ul>
 <li>Speech Recognition</li>
 <li>Machine Translation</li>
-<li>Time Series Prediction</li>
-<li>Healthcare Applications</li>
+<li>Healthcare Application</li>
 </ul>
 <h2><a name="bayes-theorem-2023-may" class="heading-anchor" href="#bayes-theorem-2023-may" rel="nofollow" aria-hidden="true"></a>Bayes Theorem (2023 May)</h2>
 <p>Bayes' Theorem is a fundamental principle in probability theory and statistics that describes how to update the probability of a hypothesis based on new evidence.</p>
@@ -2629,10 +2648,10 @@ $$</p>
 <p>Where:</p>
 
 <ul>
-<li>$P(H∣E)$: The posterior probability, or the probability of the hypothesis $H$ given the evidence $E$.</li>
-<li>$P(E∣H)$: The likelihood, or the probability of observing evidence $E$ given that $H$ is true.</li>
-<li>$P(H)$: The prior probability, or the initial probability of the hypothesis $H$ before observing the evidence.</li>
-<li>$P(E)$: The marginal probability of the evidence $E$, which can be calculated using the law of total probability.</li>
+<li><strong>P(H∣E)</strong>: The posterior probability, or the probability of the hypothesis <strong>H</strong> given the evidence <strong>E</strong>.</li>
+<li><strong>P(E∣H)</strong>: The likelihood, or the probability of observing evidence <strong>E</strong> given that <strong>H</strong> is true.</li>
+<li><strong>P(H)</strong>: The prior probability, or the initial probability of the hypothesis <strong>H</strong> before observing the evidence.</li>
+<li><strong>P(E)</strong>: The marginal probability of the evidence <strong>E</strong>, which can be calculated using the law of total probability.</li>
 </ul>
 <h2><a name="application-of-data-science-for-text-2023-may" class="heading-anchor" href="#application-of-data-science-for-text-2023-may" rel="nofollow" aria-hidden="true"></a>Application of Data science for text (2023 May)</h2>
 <ol>
@@ -2660,10 +2679,225 @@ $$</p>
 
 <ol>
 <li><strong>Neural Networks</strong>: Deep learning models are built using neural networks, which consist of interconnected nodes (neurons) organized in layers: an input layer, one or more hidden layers, and an output layer.</li>
-<li><strong>Feature Learning</strong>: Unlike traditional machine learning methods that often require manual feature extraction, deep learning networks automatically learn features from the raw data. This ability enables them to capture intricate patterns.</li>
-<li><strong>Large Datasets</strong>: Deep learning thrives on large datasets. The more data available, the better the model can learn and generalize.</li>
+<li><strong>Feature Learning</strong>: deep learning networks automatically learn features from the raw data.</li>
+<li><strong>Large Datasets</strong>: The more data available, the better the model can learn and generalize.</li>
 <li><strong>Backpropagation</strong>: This algorithm is used to update the weights of the network based on the error of the predictions, allowing the model to improve over time.</li>
 </ol>
+<h2><a name="neural-network" class="heading-anchor" href="#neural-network" rel="nofollow" aria-hidden="true"></a>Neural Network</h2>
+<pre class='mermaid'>graph TD
+    nn[Neural Network]
+    
+    nn --> bnn["Biological Neural Network
+    (BNN)"]
+    nn --> ann["Artificial Neural Network
+    (ANN)"]
+    
+    ann --> fnn["Feed-forward Neural Network
+    (FNN)"]
+    ann --> rnn["Recurrent Neural Network
+    (RNN)"]
+    ann --> lstm["Long Short Term Memory
+    (LSTM)"]
+    ann --> cnn["Convolution Neural Network
+    (CNN)"]
+    ann --> Autoencoder
+</pre><h3><a name="biological-neural-network" class="heading-anchor" href="#biological-neural-network" rel="nofollow" aria-hidden="true"></a>Biological Neural Network</h3>
+<p>A <strong>biological neural network</strong> refers to the complex web of neurons (nerve cells) that interact with each other in the brain and nervous system to process and transmit information.</p>
+
+<p><img loading="lazy" src="../Notes/assets/Pasted%20image%2020241111231008.png" alt="" /></p>
+<h3><a name="artificial-neural-network" class="heading-anchor" href="#artificial-neural-network" rel="nofollow" aria-hidden="true"></a>Artificial Neural Network</h3>
+<p>An <strong>Artificial Neural Network (ANN)</strong> is a computational model inspired by the structure and functioning of the biological brain.</p>
+
+<p><img loading="lazy" src="../Notes/assets/Pasted%20image%2020241111231837.png" alt="" /></p>
+<h4><a name="fnn" class="heading-anchor" href="#fnn" rel="nofollow" aria-hidden="true"></a>FNN</h4>
+<p>A <strong>Feedforward Neural Network (FNN)</strong> is one of the simplest and most fundamental types of artificial neural networks.</p>
+
+<p>It consists of layers of neurons (nodes) where information flows in one direction—<strong>from the input layer to the output layer</strong>—without any cycles or loops.</p>
+
+<p><img loading="lazy" src="../Notes/assets/Pasted%20image%2020241111232608.png" alt="" /></p>
+<h4><a name="rnn" class="heading-anchor" href="#rnn" rel="nofollow" aria-hidden="true"></a>RNN</h4>
+<p>RNN was replace with FFN (Feed Forward Network) due to some drawback of FFN.</p>
+
+<p>RNN is a type of neural network where the output from previous step are fed as input to current step in order to predict the output of the layer.</p>
+
+<p>Drawbacks of FNN:</p>
+
+<ul>
+<li>No memory</li>
+<li>Sequential data</li>
+</ul>
+
+<p>Application:</p>
+
+<ul>
+<li><strong>Generating Text:</strong> Find the probability of next word.</li>
+<li><strong>Machine Translation</strong></li>
+<li><strong>Speech Recognition</strong></li>
+<li><strong>Generating Image Description</strong></li>
+<li><strong>Chatbot</strong></li>
+</ul>
+
+<p><strong>RNN Architecture</strong></p>
+
+<p><img loading="lazy" src="../Notes/assets/Pasted%20image%2020241112000521.png" alt="" /></p>
+<h1><a name="ut-questions" class="heading-anchor" href="#ut-questions" rel="nofollow" aria-hidden="true"></a>UT Questions</h1><h2><a name="explain-design-principles-of-cognitive-computing" class="heading-anchor" href="#explain-design-principles-of-cognitive-computing" rel="nofollow" aria-hidden="true"></a>Explain design principles of cognitive computing</h2>
+<p>A cognitive system should be able to understand any kind of data and communicate with multiple data sources to process structured and unstructured data and generate meaningful insights or recommendations.</p>
+
+<p><img loading="lazy" src="assets/Pasted%20image%2020241111201632.png" alt="" /></p>
+<h2><a name="how-nlp-supports-in-cognitive-computing" class="heading-anchor" href="#how-nlp-supports-in-cognitive-computing" rel="nofollow" aria-hidden="true"></a>How NLP supports in cognitive computing.</h2>
+<p><strong>Natural Language Processing (NLP)</strong> is a fundamental component of cognitive computing, enabling machines to understand, interpret, and generate human language.</p>
+
+<p><img loading="lazy" src="../UT1/assets/Pasted%20image%2020240828012513.png" alt="" /></p>
+
+<ul>
+<li><strong>Input</strong>: The system receives unstructured data, like speech or text.</li>
+<li><strong>Speech Recognition</strong>: Converts spoken language into text.</li>
+<li><strong>Natural Language Understanding (NLU)</strong>: Interprets the meaning and intent of the text.</li>
+<li><strong>Natural Language Generation (NLG)</strong>: Produces a human-like response.</li>
+<li><strong>Output</strong>: Delivers the system's response or action based on the processed input.</li>
+</ul>
+<h2><a name="phases-in-nlp" class="heading-anchor" href="#phases-in-nlp" rel="nofollow" aria-hidden="true"></a>Phases in NLP</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020241111203556.png" alt="" /></p>
+<h2><a name="define-uncertainty-in-ai" class="heading-anchor" href="#define-uncertainty-in-ai" rel="nofollow" aria-hidden="true"></a>Define uncertainty in AI.</h2>
+<p><a href="https://intellipaat.com/blog/what-is-artificial-intelligence/">Artificial intelligence</a> (AI) uncertainty is when there’s not enough information or ambiguity in data or decision-making. It is a fundamental concept in AI, as real-world data is often noisy and incomplete. AI systems must account for uncertainty to make informed decisions.</p>
+
+<p><img loading="lazy" src="../UT1/assets/1-5-1.webp" alt="" /></p>
+<h3><a name="analytics-in-cognitive-computing" class="heading-anchor" href="#analytics-in-cognitive-computing" rel="nofollow" aria-hidden="true"></a>Analytics in Cognitive Computing</h3>
+<p>Analytics refers to a collection of techniques and algorithms to identify patterns in large complex or high velocity dataset.</p>
+
+<p><strong>Types of Analytics</strong></p>
+
+<ul>
+<li>Descriptive Analytics
+
+<ul>
+<li><strong>Purpose</strong>: Describes historical data to understand what has happened.</li>
+<li><strong>Example</strong>: Analyzing past sales data to identify which products performed best over the last quarter.</li>
+</ul></li>
+<li>Diagnostic Analytics
+
+<ul>
+<li><strong>Purpose</strong>: Investigates why something happened.</li>
+<li><strong>Example</strong>: Investigating a drop in customer satisfaction by analyzing customer feedback, product returns, and service issues.</li>
+</ul></li>
+<li>Predictive Analytics
+
+<ul>
+<li><strong>Purpose</strong>: Predicts future events or trends based on historical data.</li>
+<li><strong>Example</strong>: Forecasting next month’s sales by analyzing past sales data and external factors like market trends.</li>
+</ul></li>
+<li>Prescriptive Analytics
+
+<ul>
+<li><strong>Purpose</strong>: Recommends actions to achieve desired outcomes.</li>
+<li><strong>Example</strong>: Suggesting the best marketing strategy for a product launch based on predicted customer behaviors, budget constraints, and market conditions.</li>
+</ul></li>
+</ul>
+<h2><a name="explain-architecture-of-fuzzy-logic-system" class="heading-anchor" href="#explain-architecture-of-fuzzy-logic-system" rel="nofollow" aria-hidden="true"></a>Explain architecture of fuzzy logic system.</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020241111213222.png" alt="" /></p>
+
+<ol>
+<li><p>Rule Base:</p>
+
+<ul>
+<li>Stores expert-defined rules.</li>
+<li>Uses &quot;if-then&quot; statements to guide decision-making.</li>
+</ul></li>
+
+<li><p>Fuzzification:</p>
+
+<ul>
+<li>Converts crisp (numerical) inputs into fuzzy terms.</li>
+<li>Inputs are typically measured by sensors.</li>
+<li>Fuzzy terms often include categories
+
+<ul>
+<li><strong>Large Positive (LP):</strong> This indicates a very high value of the variable.</li>
+<li><strong>Medium Positive (MP):</strong> This indicates a moderately high value of the variable.</li>
+<li><strong>Small (S):</strong> This indicates a low value of the variable, but not necessarily a negative value.</li>
+<li><strong>Medium Negative (MN):</strong> This indicates a moderately low value of the variable.</li>
+<li><strong>Large Negative (LN):</strong> This indicates a very low value of the variable.</li>
+</ul></li>
+</ul></li>
+
+<li><p>Inference Engine:</p>
+
+<ul>
+<li>The core of the fuzzy logic system.</li>
+<li>Processes information and matches inputs to rules.</li>
+</ul></li>
+
+<li><p>Defuzzification:</p>
+
+<ul>
+<li>Converts fuzzy outputs back into a crisp (numerical) value.</li>
+<li>This value is usable by the system or user.</li>
+</ul></li>
+</ol>
+<h2><a name="compare-fuzzy-set-and-crisp-set" class="heading-anchor" href="#compare-fuzzy-set-and-crisp-set" rel="nofollow" aria-hidden="true"></a>Compare fuzzy set and crisp set.</h2>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Crisp Set</th>
+<th>Fuzzy Set</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>Value</strong></td>
+<td>0 or 1</td>
+<td>Anything between 0 &amp; 1</td>
+</tr>
+
+<tr>
+<td><strong>Is</strong></td>
+<td>Certern</td>
+<td>Uncerten</td>
+</tr>
+
+<tr>
+<td><strong>Membership</strong></td>
+<td>Full Membership</td>
+<td>Partial Membership</td>
+</tr>
+
+<tr>
+<td><strong>Used in</strong></td>
+<td>Digital design</td>
+<td>Fuzzy controller</td>
+</tr>
+
+<tr>
+<td><strong>Function logic</strong></td>
+<td>Bi-valued</td>
+<td>infinite valued</td>
+</tr>
+
+<tr>
+<td><strong>Means</strong></td>
+<td>True/False, Yes/No, 0/1</td>
+<td>True to False, Yest to No, 0 to 1</td>
+</tr>
+
+<tr>
+<td><strong>Example</strong></td>
+<td>She is 18 years old</td>
+<td>She is about 18 years old</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="reinforcement-learning" class="heading-anchor" href="#reinforcement-learning" rel="nofollow" aria-hidden="true"></a>Reinforcement Learning</h2>
+<p>Algorithms learn by interacting with an environment and receiving feedback in the form of rewards or penalties. This type is often used in robotics, gaming, or navigation.</p>
+
+<p><img loading="lazy" src="assets/Pasted%20image%2020241111214418.png" alt="" /></p>
+<h3><a name="mcculloch-pitts-neuron" class="heading-anchor" href="#mcculloch-pitts-neuron" rel="nofollow" aria-hidden="true"></a>McCulloch-Pitts Neuron</h3>
+<p>The <strong>McCulloch-Pitts neuron</strong> is a simple mathematical model of a biological neuron, introduced by <strong>Warren McCulloch</strong> and <strong>Walter Pitts</strong> in 1943.</p>
+
+<p>It was one of the first formal models of how neurons in the brain might work, and it laid the foundation for the development of artificial neural networks.</p>
+
+<p><img loading="lazy" src="assets/Pasted%20image%2020241111234028.png" alt="" /></p>
 
 		</main>
         
@@ -2746,6 +2980,45 @@ Bayes Theorem (2023 May)</a></li>
 Application of Data science for text (2023 May)</a></li>
 <li><a href="#describe-the-deep-learning-concept-with-an-example-2022">
 Describe the Deep Learning concept with an example. (2022)</a></li>
+<li><a href="#neural-network">
+Neural Network</a>
+<ul>
+<li><a href="#biological-neural-network">
+Biological Neural Network</a></li>
+<li><a href="#artificial-neural-network">
+Artificial Neural Network</a>
+<ul>
+<li><a href="#fnn">
+FNN</a></li>
+<li><a href="#rnn">
+RNN</a></li>
+</ul></li>
+</ul></li>
+</ul><li><a href="#ut-questions">
+UT Questions</a>
+<ul>
+<li><a href="#explain-design-principles-of-cognitive-computing">
+Explain design principles of cognitive computing</a></li>
+<li><a href="#how-nlp-supports-in-cognitive-computing">
+How NLP supports in cognitive computing.</a></li>
+<li><a href="#phases-in-nlp">
+Phases in NLP</a></li>
+<li><a href="#define-uncertainty-in-ai">
+Define uncertainty in AI.</a>
+<ul>
+<li><a href="#analytics-in-cognitive-computing">
+Analytics in Cognitive Computing</a></li>
+</ul></li>
+<li><a href="#explain-architecture-of-fuzzy-logic-system">
+Explain architecture of fuzzy logic system.</a></li>
+<li><a href="#compare-fuzzy-set-and-crisp-set">
+Compare fuzzy set and crisp set.</a></li>
+<li><a href="#reinforcement-learning">
+Reinforcement Learning</a>
+<ul>
+<li><a href="#mcculloch-pitts-neuron">
+McCulloch-Pitts Neuron</a></li>
+</ul></li>
 </ul>
 </nav>
 

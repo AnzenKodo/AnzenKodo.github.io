@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>AI & DS 2 - AK#Notes</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="#FF6C22">
+		<meta name="description" content=" ## Fuzzy  ### Architecture of fuzzy Logic System  ![](../Sem/assets/Pasted%20image%2020241111213222">
+		<meta property="og:description" content=" ## Fuzzy  ### Architecture of fuzzy Logic System  ![](../Sem/assets/Pasted%20image%2020241111213222">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
+  		<meta property="og:image:alt" content="AK#Notes logo">
+  		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="AI & DS 2 - AK#Notes">
+		<meta property="og:url" content="https://AnzenKodo.github.io/notes/notes/Collage/Sem7/Notes/AI & DS 2.html">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+
+            :root {
+                color-scheme: dark light;
+                --theme: #FF6C22;
+			}
+			body {
+                max-width: 40rem;
+                margin: 0 auto;
+                font-family: system-ui;
+                padding: 0 1em;
+                color: inherit !important;
+                word-break: break-word;
+			}
+			h1, h2, h3, h4, h5, h6 {
+                font-family: monospace;
+                margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+                font-size: 2rem;
+			}
+			h3 {
+			    font-size: 1.8rem;
+			}
+			h4 {
+			    font-size: 1.5rem;
+			}
+			h5 {
+			    font-size: 1.3rem;
+			}
+			h6 {
+			    font-size: 1rem;
+			}
+			p, li, td, code {
+			    line-height: 1.5rem;
+			}
+			a {
+			    color: var(--theme);
+			    text-decoration: none;
+			}
+			a:hover, a:focus {
+			    text-decoration: underline;
+			}
+			a:active {
+			    background: var(--theme);
+			    color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+                margin-top: .5rem;
+			}
+			li {
+                margin-bottom: .5rem;
+			}
+			table {
+			    border-collapse: collapse;
+                overflow-x: auto;
+                display: block;
+                word-break: auto-phrase;
+                margin: 1rem 0;
+			}
+            th {
+                font-size: 1.1rem;
+                border: 2px solid;
+                padding: .3rem .3rem;
+            }
+            td {
+                border: 1px solid;
+                padding: .3rem .5rem;
+            }
+            blockquote {
+                margin-left: 0;
+                margin-right: 0;
+                border: 1px solid;
+                border-left: 10px solid;
+                padding: 0 1rem;
+            }
+            .code-block {
+                background: black;
+                overflow-x: auto;
+                padding: 0em 1em;
+                border: 1px solid;
+            }
+            .code-block-language-name {
+                position: sticky;
+                left: 95%;
+                top: .5em;
+                font-weight: bold;
+                color: white;
+            }
+            :not(pre.chroma) > code {
+                border: 1px solid;
+                padding: .3rem .2rem .2rem .2rem;
+            }
+            img {
+                max-width: 100%;
+                display: block;
+                margin: 0 auto;
+            }
+            [href="#skip-top-main"] {
+                padding: 0.3em;
+                position: absolute;
+                transform: translateY(-200%);
+            }
+            [href="#skip-top-main"]:focus {
+                transform: translateY(0%);
+                background: var(--theme);
+                color: inherit;
+            }
+            #table-of-content {
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+                background: black;
+                padding: 0.5rem 1em;
+                z-index: 1;
+                color: white;
+            }
+            #table-of-content[open] {
+                max-height: 90%;
+                overflow-y: auto;
+                bottom: 50px;
+                margin-left: 1em;
+            }
+            #table-of-content[open] summary {
+                background: black;
+                padding: 0.5em 1em;
+                text-align: center;
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+            }
+            #table-of-content ul:first-child {
+                padding-left: 1em;
+                margin-top: 1.5em;
+            }
+            .heading-anchor::before {
+                content: "#";
+                margin-right: .5rem;
+            }
+            .mermaid {
+                background: black;
+                border: 1px solid;
+                margin-top: 1rem;
+                padding: 1rem;
+                font-family: monospace;
+            }
+            .mermaid svg {
+                display: block;
+                margin: auto;
+            }
+            .mermaid:has(svg) {
+                background: none;
+                border: none;
+                margin-top: 1rem;
+                padding: 0;
+            }
+            mjx-container {
+                display: math;
+                overflow-y: hidden;
+                overflow-x: auto;
+                max-width: 100%;
+                padding-bottom: .8rem;
+            }
+            iframe {
+                width: 100%;
+                height: 21rem;
+                margin: 1rem 0;
+            }
+		</style>
+	</head>
+	<body>
+	    <a href="#skip-top-main">Skip to main</a>
+	    <img id="audio-img" src="https://i.imgur.com/nle7lDV.png" style="
+	          position: absolute;
+	          top: -1rem;
+	          right: 5%;
+	          transform: scale(-1, 1);
+	          opacity: 0.8;
+	          height: 30rem;
+	         ">
+	    <audio>
+	        <source src="https://anzenkodo.github.io/drive/cosmic.mp3" />
+	    </audio>
+		<header>
+			<h1 style="text-align: center;">
+                <a href="https://AnzenKodo.github.io">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+            </h1>
+            <!-- <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;"> -->
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem; margin-top: 0;">AI & DS 2</h1>
+			<h2><a name="fuzzy" class="heading-anchor" href="#fuzzy" rel="nofollow" aria-hidden="true"></a>Fuzzy</h2><h3><a name="architecture-of-fuzzy-logic-system" class="heading-anchor" href="#architecture-of-fuzzy-logic-system" rel="nofollow" aria-hidden="true"></a>Architecture of fuzzy Logic System</h3>
+<p><img loading="lazy" src="../Sem/assets/Pasted%20image%2020241111213222.png" alt="" /></p>
+<h3><a name="compare-fuzzy-set-and-crisp-set" class="heading-anchor" href="#compare-fuzzy-set-and-crisp-set" rel="nofollow" aria-hidden="true"></a>Compare fuzzy set and crisp set.</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Crisp Set</th>
+<th>Fuzzy Set</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Value</td>
+<td>0 or 1</td>
+<td>Anything between 0 &amp; 1</td>
+</tr>
+
+<tr>
+<td>Is</td>
+<td>Certern</td>
+<td>Uncerten</td>
+</tr>
+
+<tr>
+<td>Membership</td>
+<td>Full Membership</td>
+<td>Partial Membership</td>
+</tr>
+
+<tr>
+<td>Used in</td>
+<td>Digital design</td>
+<td>Fuzzy controller</td>
+</tr>
+
+<tr>
+<td>Function logic</td>
+<td>Bi-valued</td>
+<td>infinite valued</td>
+</tr>
+
+<tr>
+<td>Means</td>
+<td>True/False, Yes/No, 0/1</td>
+<td>True to False, Yest to No, 0 to 1</td>
+</tr>
+
+<tr>
+<td>Example</td>
+<td>She is 18 years old</td>
+<td>She is about 18 years old</td>
+</tr>
+</tbody>
+</table>
+<h3><a name="defuzzification" class="heading-anchor" href="#defuzzification" rel="nofollow" aria-hidden="true"></a>Defuzzification</h3>
+<p>Desertification is inverse process of fuzzification.</p>
+
+<pre class='mermaid'>flowchart LR
+    subgraph External System
+    ci[Crip Input]
+    end
+    ci --> |Crisp Value| ff
+
+    subgraph Fuzzy System
+    ff[Fuzzyfire] --> |Fuzzy Value| fs
+    fs[Fuzzy System] --> |Fuzzy Value| df
+    df[Defuzzfire]
+    end
+    df--> |Crip Value| co
+
+    subgraph External System
+    co[Crisp Output]
+    end
+</pre>
+<p><strong>Defuzzification Methods</strong></p>
+
+<ul>
+<li><strong>Centroid</strong>: Weighted average of the membership values of all elements in fuzzy set.</li>
+<li><strong>Mean of Maxima</strong>: Mean value of all elements.</li>
+<li><strong>Maximum Membership</strong>: highest membership value.</li>
+<li><strong>Smallest of Maxima</strong>: Smallest membership value.</li>
+<li><strong>Largest of Maxima</strong>: Largest element among those with maximum membership values.</li>
+</ul>
+<h4><a name="necessity-of-defuzzification" class="heading-anchor" href="#necessity-of-defuzzification" rel="nofollow" aria-hidden="true"></a>Necessity of Defuzzification</h4>
+<ul>
+<li><strong>Real world application</strong></li>
+<li><strong>Human Interactions</strong></li>
+<li><strong>Integration with other systems</strong></li>
+<li><strong>Decision Making</strong></li>
+</ul>
+<h4><a name="centroid-method-of-defuzzification" class="heading-anchor" href="#centroid-method-of-defuzzification" rel="nofollow" aria-hidden="true"></a>Centroid Method of defuzzification</h4>
+<p><strong>Formula</strong>:</p>
+
+<p>$$C={∫_a^bx⋅​μ(x)dx \over ∫_a^b​μ(x)dx​}$$</p>
+
+<ul>
+<li><strong>C</strong> is the defuzzified output.</li>
+<li><strong>μ(x)</strong> is the membership function of the fuzzy set.</li>
+<li><strong>[a, b]</strong> represents the range over which fuzzy set is defined.</li>
+</ul>
+
+<p><strong>Advantages</strong></p>
+
+<ul>
+<li><strong>Simplicity</strong></li>
+<li><strong>Smooth Output</strong>: Produces Smooth and continues output values.</li>
+<li><strong>Handles Multiple Peaks</strong></li>
+</ul>
+
+<p><strong>Disadvantages</strong></p>
+
+<ul>
+<li><strong>Sensitivity to Outliers</strong></li>
+<li><strong>Computational Cost</strong>: Calculating the integrals can be computational expensive.</li>
+<li><strong>Non-intuitive Results</strong>: The centroid might not represent the most intuitive crisp value.</li>
+</ul>
+
+<p><strong>Comparison with Other Methods:</strong></p>
+
+<ul>
+<li><strong>Mean of Maxima (MOM):</strong>
+
+<ul>
+<li>Simpler to calculate.</li>
+<li>Can be less accurate, especially for multimodal functions.</li>
+</ul></li>
+<li><strong>Weighted Average:</strong>
+
+<ul>
+<li>Requires careful selection of weights.</li>
+</ul></li>
+<li><strong>Height Method:</strong>
+
+<ul>
+<li>Chooses the crisp value with the highest membership degree.</li>
+<li>Can be less informative, especially when multiple peaks have similar heights.</li>
+</ul></li>
+</ul>
+<h2><a name="neural-network" class="heading-anchor" href="#neural-network" rel="nofollow" aria-hidden="true"></a>Neural Network</h2>
+<pre class='mermaid'>graph TD
+    nn[Neural Network]
+    
+    nn --> bnn["Biological Neural Network
+    (BNN)"]
+    nn --> ann["Artificial Neural Network
+    (ANN)"]
+    
+    ann --> fnn["Feed-forward Neural Network
+    (FNN)"]
+    ann --> rnn["Recurrent Neural Network
+    (RNN)"]
+    ann --> lstm["Long Short Term Memory
+    (LSTM)"]
+    ann --> cnn["Convolution Neural Network
+    (CNN)"]
+    ann --> Autoencoder
+</pre><h3><a name="biological-neural-network" class="heading-anchor" href="#biological-neural-network" rel="nofollow" aria-hidden="true"></a>Biological Neural Network</h3>
+<p>A <strong>biological neural network</strong> refers to the complex web of neurons (nerve cells) that interact with each other in the brain and nervous system to process and transmit information.</p>
+
+<p><img loading="lazy" src="assets/Pasted%20image%2020241111231008.png" alt="" /></p>
+<h3><a name="artificial-neural-network" class="heading-anchor" href="#artificial-neural-network" rel="nofollow" aria-hidden="true"></a>Artificial Neural Network</h3>
+<p>An <strong>Artificial Neural Network (ANN)</strong> is a computational model inspired by the structure and functioning of the biological brain.</p>
+
+<p><img loading="lazy" src="assets/Pasted%20image%2020241111231837.png" alt="" /></p>
+<h4><a name="fnn" class="heading-anchor" href="#fnn" rel="nofollow" aria-hidden="true"></a>FNN</h4>
+<p>A <strong>Feedforward Neural Network (FNN)</strong> is one of the simplest and most fundamental types of artificial neural networks.</p>
+
+<p>It consists of layers of neurons (nodes) where information flows in one direction—<strong>from the input layer to the output layer</strong>—without any cycles or loops.</p>
+
+<p><img loading="lazy" src="assets/Pasted%20image%2020241111232608.png" alt="" /></p>
+<h4><a name="rnn" class="heading-anchor" href="#rnn" rel="nofollow" aria-hidden="true"></a>RNN</h4>
+<p>RNN was replace with FFN (Feed Forward Network) due to some drawback of FFN.</p>
+
+<p>RNN is a type of neural network where the output from previous step are fed as input to current step in order to predict the output of the layer.</p>
+
+<p>Drawbacks of FNN:</p>
+
+<ul>
+<li>No memory</li>
+<li>Sequential data</li>
+</ul>
+
+<p>Application:</p>
+
+<ul>
+<li><strong>Generating Text:</strong> Find the probability of next word.</li>
+<li><strong>Machine Translation</strong></li>
+<li><strong>Speech Recognition</strong></li>
+<li><strong>Generating Image Description</strong></li>
+<li><strong>Chatbot</strong></li>
+</ul>
+
+<p><strong>RNN Architecture</strong></p>
+
+<p><img loading="lazy" src="assets/Pasted%20image%2020241112000521.png" alt="" /></p>
+<h4><a name="lstm" class="heading-anchor" href="#lstm" rel="nofollow" aria-hidden="true"></a>LSTM</h4>
+<p><img loading="lazy" src="../Sem/assets/Pasted%20image%2020241111235007.png" alt="" /></p>
+
+<p><strong>Long Short-Term Memory (LSTM)</strong> networks are a type of Recurrent Neural Network (RNN) specifically designed to address the problem of RNNs.</p>
+
+<p>Drawbacks of RNN:</p>
+
+<ul>
+<li>RNN goes in loop again and again which results in large update.</li>
+<li>Loop may go into infinity.</li>
+<li>Values weight become too large and the result is overflow of data.</li>
+</ul>
+
+<p>Advantages of LSTM:</p>
+
+<ul>
+<li>Long-Range Dependencies: LSTM's can capture relationships over longer time.</li>
+<li>Flexibility: They can be applied to various types of sequential data including text, audio and time series.</li>
+</ul>
+
+<p>Application of LSTM:</p>
+
+<ul>
+<li>Speech Recognition</li>
+<li>Machine Translation</li>
+<li>Healthcare Application</li>
+</ul>
+<h4><a name="cnn" class="heading-anchor" href="#cnn" rel="nofollow" aria-hidden="true"></a>CNN</h4>
+<p><img loading="lazy" src="../Sem/assets/Pasted%20image%2020241110205437.png" alt="" /></p>
+<h4><a name="autoencoder" class="heading-anchor" href="#autoencoder" rel="nofollow" aria-hidden="true"></a>Autoencoder</h4>
+<p><img loading="lazy" src="assets/Pasted%20image%2020241111073219.png" alt="" /></p>
+<h5><a name="activation-function-of-autoencoders" class="heading-anchor" href="#activation-function-of-autoencoders" rel="nofollow" aria-hidden="true"></a>Activation Function of Autoencoders</h5>
+<p>It decides how much information should flow through each neuron in neural network.</p>
+
+<p>It helps the model learn complex patterns in data by adding non-linearity.</p>
+
+<ul>
+<li><strong>ReLU (Rectified Linear Unit)</strong>: Widely used due to its simplicity and effectiveness.</li>
+<li><strong>Sigmod:</strong> Used in output layer of the autoencoder especially when the data is normalized to the range [0, 1].</li>
+<li><strong>Tanh</strong>: Usind in the hidden layers and output layer when the data is normalized to range of [-1, 1].</li>
+</ul>
+<h3><a name="mcculloch-pitts-neuron" class="heading-anchor" href="#mcculloch-pitts-neuron" rel="nofollow" aria-hidden="true"></a>McCulloch-Pitts Neuron</h3>
+<p>The <strong>McCulloch-Pitts neuron</strong> is a simple mathematical model of a biological neuron, introduced by <strong>Warren McCulloch</strong> and <strong>Walter Pitts</strong> in 1943.</p>
+
+<p>It was one of the first formal models of how neurons in the brain might work, and it laid the foundation for the development of artificial neural networks.</p>
+
+<p><img loading="lazy" src="../Sem/assets/Pasted%20image%2020241111234028.png" alt="" /></p>
+<h2><a name="data-science" class="heading-anchor" href="#data-science" rel="nofollow" aria-hidden="true"></a>Data Science</h2><h3><a name="data-science-for-multimodel-application" class="heading-anchor" href="#data-science-for-multimodel-application" rel="nofollow" aria-hidden="true"></a>Data Science for Multimodel Application.</h3>
+<p>Data science for multimodal applications involves the integration and analysis of data from multiple sources or modalities, such as text, images, audio, and sensor data. This approach allows for richer insights and more comprehensive understanding of complex phenomena.</p>
+
+<ul>
+<li><strong>Multiple Data Types</strong>:
+
+<ul>
+<li><strong>Text</strong>: Written language, such as documents, articles, social media posts.</li>
+<li><strong>Images</strong>: Pictures, photos, or visual data.</li>
+<li><strong>Audio</strong>: Speech, sound clips, music.</li>
+<li><strong>Video</strong>: Moving images combined with audio.</li>
+<li><strong>Sensor Data</strong>: Information from devices, like temperature, pressure, or motion sensors.</li>
+</ul></li>
+<li><strong>Applications</strong>:
+
+<ul>
+<li><strong>Healthcare</strong>: Combining medical images (like X-rays or MRIs) with patient records.</li>
+<li><strong>Autonomous Vehicles</strong>: Integrating sensor data (like LIDAR, cameras) with GPS and traffic data.</li>
+<li><strong>Human-Computer Interaction</strong>: Using audio, video, and gestures together to improve voice assistants.</li>
+<li><strong>Social Media Analytics</strong>: Combining text data (tweets or posts) with image and video data to better understand trends.</li>
+</ul></li>
+<li><strong>Process of making Multi model:</strong>
+
+<ul>
+<li><strong>Data Collection</strong>: Gather data from various modalities.</li>
+<li><strong>Data Processing</strong>: Clean and preprocess each type of data to ensure compatibility.</li>
+<li><strong>Model Development</strong>: Develop machine learning or deep learning models that can process multimodal inputs.</li>
+<li><strong>Training and Evaluation</strong>: Train the model on combined datasets, ensuring that the performance is evaluated across all modalities to ensure robust predictions.</li>
+<li><strong>Deployment and Application</strong>: Deploy the model in real-world scenarios.</li>
+</ul></li>
+</ul>
+<h3><a name="application-of-data-science-for-text" class="heading-anchor" href="#application-of-data-science-for-text" rel="nofollow" aria-hidden="true"></a>Application of Data science for text</h3>
+<ul>
+<li>Sentiment Analysis</li>
+<li>Text Classification</li>
+<li>Information Retrieval</li>
+<li>Text Summarize</li>
+<li>Machine Translation</li>
+<li>Chatbots</li>
+<li>Text Generation</li>
+</ul>
+<h2><a name="random-forest" class="heading-anchor" href="#random-forest" rel="nofollow" aria-hidden="true"></a>Random forest</h2>
+<p><img loading="lazy" src="../Sem/assets/Pasted%20image%2020241111081402.png" alt="" /></p>
+<h3><a name="pruning-in-random-forest" class="heading-anchor" href="#pruning-in-random-forest" rel="nofollow" aria-hidden="true"></a>Pruning in Random Forest</h3>
+<p>Pruning is technique used to reduce the complexity of decision tree by removing unnecessary branches.</p>
+
+<p>This helps to prevent over-fitting, where the model becomes too tailored to the training data and performs poorly on new, unseen data.</p>
+
+<p>Random forest are inherently less prone to over fitting due to two key factors:</p>
+
+<ul>
+<li><strong>Bagging</strong></li>
+<li><strong>Feature Randomization</strong>: Limiting the number of features.</li>
+</ul>
+<h2><a name="cognitive-computing" class="heading-anchor" href="#cognitive-computing" rel="nofollow" aria-hidden="true"></a>Cognitive Computing</h2>
+<p>Cognitive computing combines AI, ML, NLP, and Data Analytics to simulate human trough process.</p>
+<h3><a name="cognitive-computing-vs-traditional-computing-vs-artificial-intelligence" class="heading-anchor" href="#cognitive-computing-vs-traditional-computing-vs-artificial-intelligence" rel="nofollow" aria-hidden="true"></a>Cognitive Computing Vs Traditional Computing Vs Artificial Intelligence</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Cognitive Computing</th>
+<th>Tradition Computing</th>
+<th>AI</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Learning</td>
+<td>Learns and Adapts</td>
+<td>Relies on Rules</td>
+<td>Learns from data and adpts</td>
+</tr>
+
+<tr>
+<td>Human Interaction</td>
+<td>Understands Natural Language</td>
+<td>Relies on Structured input</td>
+<td>Machine like response</td>
+</tr>
+
+<tr>
+<td>Contex Undersanding</td>
+<td>Understand Context</td>
+<td>Lacks context</td>
+<td>Context-aware</td>
+</tr>
+
+<tr>
+<td>Problem Solving</td>
+<td>Reasons and sloves</td>
+<td>Follows algorithm</td>
+<td>Solves problem from pattern</td>
+</tr>
+
+<tr>
+<td>Creativity</td>
+<td>Generates new ideas</td>
+<td>Lacks</td>
+<td>Generates novel solutions</td>
+</tr>
+
+<tr>
+<td>Emotions</td>
+<td>Understands</td>
+<td>Lacks</td>
+<td>Simulates</td>
+</tr>
+
+<tr>
+<td>Common Sense</td>
+<td>Applies</td>
+<td>Lacks</td>
+<td>Simulates</td>
+</tr>
+
+<tr>
+<td>Continuous Learning</td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+
+<tr>
+<td>Generalization</td>
+<td>Has</td>
+<td>Lacks</td>
+<td>From the data</td>
+</tr>
+</tbody>
+</table>
+<h3><a name="process-of-building-a-cognitive-application" class="heading-anchor" href="#process-of-building-a-cognitive-application" rel="nofollow" aria-hidden="true"></a>Process of building a Cognitive Application</h3>
+<ul>
+<li>Define the Problem</li>
+<li>Gather Requirements</li>
+<li>Data Collection and Preparation</li>
+<li>Model Development</li>
+<li>Deployment</li>
+<li>Continuous Improvement</li>
+</ul>
+<h3><a name="elements-of-cognitive-system" class="heading-anchor" href="#elements-of-cognitive-system" rel="nofollow" aria-hidden="true"></a>Elements of Cognitive System</h3>
+<pre class='mermaid'>flowchart
+    ds[Data Source] --> |Structured
+    Unsructured| dp
+    
+    dp[Data Processing] --> |Data Cleaning
+    Data Transformation| ml
+    
+    ml[Machine Learning] --> |Algorithms| nlp
+    
+    nlp[Natural Language Processing] --> |Understanding
+    Generating Text| ui
+
+    ui[User Interface] --> fp[Feedback Loop]
+</pre><h3><a name="principles-of-cognitive-computing" class="heading-anchor" href="#principles-of-cognitive-computing" rel="nofollow" aria-hidden="true"></a>Principles of cognitive computing.</h3>
+<p><img loading="lazy" src="../Sem/assets/Pasted%20image%2020241111201632.png" alt="" /></p>
+<h3><a name="cognitive-computing-in-healthcare" class="heading-anchor" href="#cognitive-computing-in-healthcare" rel="nofollow" aria-hidden="true"></a>Cognitive computing in Healthcare.</h3>
+<ul>
+<li><strong>Clinical Decision Support</strong>
+
+<ul>
+<li><strong>Example</strong> Cognitive computing systems can analyze vast amounts of clinical data, including electronic health records, lab results and medical literature, to provide evidence-based recommendations to physicians.</li>
+<li><strong>Benefits</strong>
+
+<ul>
+<li><strong>Improved Diagnosis</strong></li>
+<li><strong>Personalize Treatment Plans</strong></li>
+</ul></li>
+</ul></li>
+<li><strong>Predictive Analytics</strong>
+
+<ul>
+<li><strong>Example</strong>: Cognitive computing can analyze patient data to predict outcomes such as likelihood of readmission or the risk of developing certain conditions.</li>
+<li><strong>Benefits</strong>
+
+<ul>
+<li><strong>Proactive Care</strong></li>
+<li><strong>Resource Optimization</strong></li>
+</ul></li>
+</ul></li>
+<li><strong>NLP</strong>
+
+<ul>
+<li><strong>Example</strong>: NLP can be used to extract valuable insights from unstructured data in clinical notes, research articles, and patient feedback.</li>
+<li><strong>Benefits</strong>
+
+<ul>
+<li><strong>Enhanced Patient Iteration</strong></li>
+<li><strong>Streamline Documentation</strong></li>
+</ul></li>
+</ul></li>
+<li><strong>Drug Discovery and Development</strong>
+
+<ul>
+<li><strong>Benefits</strong>
+
+<ul>
+<li><strong>Accelerate Research</strong></li>
+<li><strong>Targeted Therapies</strong></li>
+</ul></li>
+</ul></li>
+</ul>
+<h3><a name="analytics-in-cognitive-computing" class="heading-anchor" href="#analytics-in-cognitive-computing" rel="nofollow" aria-hidden="true"></a>Analytics in Cognitive Computing</h3>
+<p>Analytics refers to a collection of techniques and algorithms to identify patterns in large complex or high velocity dataset.</p>
+
+<p><strong>Types of Analytics</strong></p>
+
+<ul>
+<li>Descriptive Analytics
+
+<ul>
+<li><strong>Purpose</strong>: Describes historical data to understand what has happened.</li>
+<li><strong>Example</strong>: Analyzing past sales data to identify which products performed best over the last quarter.</li>
+</ul></li>
+<li>Diagnostic Analytics
+
+<ul>
+<li><strong>Purpose</strong>: Investigates why something happened.</li>
+<li><strong>Example</strong>: Investigating a drop in customer satisfaction by analyzing customer feedback, product returns, and service issues.</li>
+</ul></li>
+<li>Predictive Analytics
+
+<ul>
+<li><strong>Purpose</strong>: Predicts future events or trends based on historical data.</li>
+<li><strong>Example</strong>: Forecasting next month’s sales by analyzing past sales data and external factors like market trends.</li>
+</ul></li>
+<li>Prescriptive Analytics
+
+<ul>
+<li><strong>Purpose</strong>: Recommends actions to achieve desired outcomes.</li>
+<li><strong>Example</strong>: Suggesting the best marketing strategy for a product launch based on predicted customer behaviors, budget constraints, and market conditions.</li>
+</ul></li>
+</ul>
+<h3><a name="taxonomy-ontology" class="heading-anchor" href="#taxonomy-ontology" rel="nofollow" aria-hidden="true"></a>Taxonomy &amp; Ontology</h3>
+<ul>
+<li><p><strong>Taxonomy</strong></p>
+
+<ul>
+<li>It is hierarchical structure that categorizes concepts into parent-child relationships.</li>
+<li><strong>Components</strong>
+
+<ul>
+<li><strong>Nodes</strong>: Represent categories or concepts.</li>
+<li><strong>Edges</strong>: Represent the hierarchical relationship between nodes.</li>
+</ul></li>
+
+<li><p><strong>Example:</strong></p>
+
+<pre class='mermaid'>graph LR
+A[Animals] --> B[Birds]
+A --> C[Mammals]
+A --> D[Reptiles]
+B --> E[Pigeon]
+B --> F[Parrot]
+C --> G[Dog]
+C --> H[Cat]
+D --> I[Turtle]
+D --> J[Crocodile]
+
+</pre></li>
+</ul></li>
+
+<li><p><strong>Ontology</strong></p>
+
+<ul>
+<li>It defines set of concepts within a domain and the relationships between those concepts.</li>
+<li>It is subset of taxonomy.</li>
+<li><strong>Components</strong>
+
+<ul>
+<li><strong>Classes</strong>: It is the type of entity. Eg: people, place, etc.</li>
+<li><strong>Relationships</strong>: It is the link between object.</li>
+<li><strong>Attributes</strong>: Data associated with an object.</li>
+</ul></li>
+
+<li><p><strong>Example:</strong></p>
+
+<pre class='mermaid'>graph LR
+	1[Company]
+	1-->2(Person)
+	1-->3(Phone No.)
+</pre></li>
+</ul></li>
+</ul>
+
+<p><strong>Integration in Cognitive Systems</strong></p>
+
+<ol>
+<li><strong>Knowledge Representation</strong>: Taxonomies provide a straightforward structure for organizing knowledge, while ontologies add depth by defining relationships and properties.</li>
+<li><strong>Inference and Reasoning</strong></li>
+<li><strong>Natural Language Processing</strong></li>
+<li><strong>Machine Learning</strong></li>
+</ol>
+<h3><a name="nlp" class="heading-anchor" href="#nlp" rel="nofollow" aria-hidden="true"></a>NLP</h3>
+<p><strong>Natural Language Processing (NLP)</strong> it enabling machines to understand, interpret, and generate human language.</p>
+
+<p><img loading="lazy" src="../UT1/assets/Pasted%20image%2020240828012513.png" alt="" /></p>
+
+<p><strong>Phases in NLP</strong></p>
+
+<p><img loading="lazy" src="../Sem/assets/Pasted%20image%2020241111203556.png" alt="" /></p>
+<h2><a name="mdp" class="heading-anchor" href="#mdp" rel="nofollow" aria-hidden="true"></a>MDP</h2>
+<p><img loading="lazy" src="../Sem/assets/Pasted%20image%2020241111085954.png" alt="" /></p>
+
+<p>A <strong>Markov Decision Process (MDP)</strong> is mathematical framework used in machine learning to model sequential decision-making processing in stochastic environments.</p>
+
+<p><strong>Key components and concepts associated with MDPs</strong></p>
+
+<ul>
+<li><strong>(S) States</strong>: Represents all possible situation the agent can be in.</li>
+<li><strong>(A) Actions</strong>: Represents all possible actions the agent can take in each state.</li>
+<li><strong>(P) Probability</strong>: Probability of moving from one state to another given a specific action.</li>
+<li><strong>(R) Reward Function</strong>: Reward received after transition between states due to an action.</li>
+</ul>
+
+<p><strong>Example</strong></p>
+
+<p><img loading="lazy" src="../Sem/assets/Pasted%20image%2020241111100343.png" alt="" /></p>
+<h2><a name="imbalance-classification" class="heading-anchor" href="#imbalance-classification" rel="nofollow" aria-hidden="true"></a>Imbalance Classification</h2>
+<p>Classimbalance occurs when the distribution of classes in a dataset is uneven.</p>
+
+<pre class='mermaid'>xychart-beta
+    x-axis "Class" [No Fraud, Fraud]
+    y-axis "Count" 0 --> 100
+    bar [100, 10]
+</pre>
+<p>Techniques to fix Classimbalance:</p>
+
+<ul>
+<li><strong>Data-Level Techniques:</strong>
+
+<ul>
+<li><strong>Oversampling</strong>: Increasing the number of samples in the minority class.</li>
+<li><strong>Random Oversampling</strong>: Duplicates instances from the minority class.</li>
+</ul></li>
+<li><strong>Algorithm-Level Techniques</strong>
+
+<ul>
+<li><strong>Class Weighting</strong>: This method involves assigning higher weights to minority class during model traning.</li>
+<li><strong>Cost-Sensitive Learning</strong>: Adjust the lass function so the misclassifying a minority class instance results in a larger loss then misclassifying a majority class instance.</li>
+<li><strong>Threshold Modification</strong>: Adjusts the classification threshold to improve sensitivity for the minority class.</li>
+</ul></li>
+<li><strong>Ensemble Methods</strong>: Combining multiple models to create a stronger robust model.
+
+<ul>
+<li><strong>Bagging</strong></li>
+<li><strong>Boosting</strong></li>
+</ul></li>
+</ul>
+<h2><a name="deep-learning" class="heading-anchor" href="#deep-learning" rel="nofollow" aria-hidden="true"></a>Deep Learning</h2>
+<p>Deep learning is a subset of machine learning that uses artificial neural networks with multiple layers (hence &quot;deep&quot;) to model complex patterns in data.</p>
+
+<p>Deep learning is a type of machine learning that uses artificial neural networks to learn from data. It can be used to solve a wide variety of problems, including image recognition, natural language processing, and speech recognition.</p>
+<h3><a name="deep-learning-vs-machine-learning" class="heading-anchor" href="#deep-learning-vs-machine-learning" rel="nofollow" aria-hidden="true"></a>Deep learning vs. machine learning</h3>
+<p>Machine learning and deep learning are both applicable to tasks such as image recognition, speech recognition, and natural language processing.</p>
+
+<p>However, deep learning often outperforms traditional machine learning in complex pattern recognition tasks like image classification and object detection due to its ability to learn hierarchical representations of data.</p>
+<h3><a name="application-of-deep-learning" class="heading-anchor" href="#application-of-deep-learning" rel="nofollow" aria-hidden="true"></a>Application of Deep Learning</h3>
+<p><img loading="lazy" src="assets/Pasted%20image%2020241111102604.jpg" alt="" /></p>
+<h3><a name="deep-learning-concepts" class="heading-anchor" href="#deep-learning-concepts" rel="nofollow" aria-hidden="true"></a>Deep Learning Concepts</h3>
+<ol>
+<li><strong>Neural Networks</strong>: Deep learning models are built using neural networks.</li>
+<li><strong>Feature Learning</strong>: deep learning networks automatically learn features from the raw data.</li>
+<li><strong>Large Datasets</strong>: The more data available, the better the model can learn and generalize.</li>
+<li><strong>Backpropagation</strong>: This algorithm is used to update the weights of the network based on the error of the predictions, allowing the model to improve over time.</li>
+</ol>
+<h2><a name="ensemble-learning" class="heading-anchor" href="#ensemble-learning" rel="nofollow" aria-hidden="true"></a>Ensemble Learning</h2>
+<p>Ensemble Learning is machine learning technique where multiple models (often called &quot;learners&quot; or &quot;weak learners&quot;) are combined to solve a problem and produce better results then any individual model could.</p>
+
+<p><strong>Type of Ensemble Classifiers</strong></p>
+
+<p><img loading="lazy" src="../../Sem6/UT1/assets/Pasted%20image%2020240221054736.png" alt="" /></p>
+
+<ul>
+<li><strong>Bagging</strong>
+
+<ul>
+<li>Bootstrap Aggregating is the full form of Bagging.</li>
+<li>Bagging generates multiple classifiers that are combined using average or majority voting.</li>
+</ul></li>
+<li><strong>Boosting</strong>
+
+<ul>
+<li>Boosting is done in a sequential manner which focus on weights on the dataset.</li>
+</ul></li>
+<li><strong>Ada Boosting</strong>
+
+<ul>
+<li>It stands for <strong>Adoptive Boosting</strong></li>
+<li>It combines multiple weak classifier into one strong classifier.</li>
+<li><strong>Algorithm</strong>
+
+<ul>
+<li>Initialize one data</li>
+<li>Assign equal weight to each item.</li>
+<li>Provide this input to the model and identify from wrongly classified data points.</li>
+<li>Increase the weight of wrongly classified data points &amp; again start processing the data until the results are satisfied.</li>
+</ul></li>
+</ul></li>
+<li><strong>Random Forest</strong></li>
+</ul>
+<h3><a name="bagging-vs-boosting" class="heading-anchor" href="#bagging-vs-boosting" rel="nofollow" aria-hidden="true"></a>Bagging vs Boosting</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Bagging</th>
+<th>Boosting</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>Definition</strong></td>
+<td>Train multiple models</td>
+<td>Trains models sequentially</td>
+</tr>
+
+<tr>
+<td><strong>Training</strong></td>
+<td>Paraller</td>
+<td>Sequential</td>
+</tr>
+
+<tr>
+<td><strong>Base Learners</strong></td>
+<td>Same model type</td>
+<td>Weaker models</td>
+</tr>
+
+<tr>
+<td><strong>Error</strong></td>
+<td>Reduces variance, mitigates overfitting</td>
+<td>Reduces bias, improve accuracy</td>
+</tr>
+
+<tr>
+<td><strong>Overfitting</strong></td>
+<td>Less</td>
+<td>More</td>
+</tr>
+
+<tr>
+<td><strong>Combination Method</strong></td>
+<td>Majority voting</td>
+<td>Weighted sum</td>
+</tr>
+
+<tr>
+<td><strong>Complexity</strong></td>
+<td>Simpler</td>
+<td>Complex</td>
+</tr>
+
+<tr>
+<td><strong>Bias</strong></td>
+<td>More</td>
+<td>Less</td>
+</tr>
+
+<tr>
+<td><strong>Accuracy</strong></td>
+<td>Less</td>
+<td>More</td>
+</tr>
+</tbody>
+</table>
+<h3><a name="application-of-bagging-boosting" class="heading-anchor" href="#application-of-bagging-boosting" rel="nofollow" aria-hidden="true"></a>Application of Bagging &amp; Boosting</h3>
+<ul>
+<li>Healthcare</li>
+<li>Finance</li>
+<li>Marketing</li>
+<li>Image Recognition</li>
+</ul>
+<h2><a name="roc-curve" class="heading-anchor" href="#roc-curve" rel="nofollow" aria-hidden="true"></a>ROC Curve</h2>
+<p><img loading="lazy" src="../Sem/assets/Pasted%20image%2020241111145645.png" alt="" /></p>
+
+<p><strong>Benefits of ROC Curve</strong></p>
+
+<ol>
+<li><strong>Model Comparison</strong></li>
+<li><strong>Performance Evaluation</strong></li>
+<li><strong>Works for Imbalanced Data</strong></li>
+</ol>
+
+<p><strong>Example Use Cases for ROC Curves</strong></p>
+
+<ol>
+<li><strong>Medical Diagnosis</strong></li>
+<li><strong>Spam Detection</strong></li>
+<li><strong>Fraud Detection</strong></li>
+</ol>
+<h2><a name="random-sub-sampling" class="heading-anchor" href="#random-sub-sampling" rel="nofollow" aria-hidden="true"></a>Random Sub-sampling</h2>
+<p>Random subsampling is technique used in machine learning to evaluate the performance of a model on unseen data.</p>
+
+<p>It involves randomly splitting the dataset into two subset:</p>
+
+<ol>
+<li><strong>Training Set:</strong> Used to train the model.</li>
+<li><strong>Testing Set:</strong> Used to evaluate the model's performance on unseen data.</li>
+</ol>
+
+<p>Process:</p>
+
+<ol>
+<li><strong>Random Split:</strong> The dataset is randomly divided into two subsets.  </li>
+<li><strong>Model Training:</strong> The model is trained on the training set.</li>
+<li><strong>Model Evaluation:</strong> The trained model is evaluated on the testing set.</li>
+</ol>
+
+<p>Advantages:</p>
+
+<ul>
+<li><strong>Simplicity</strong>: It's a straightforward technique to implement.</li>
+<li><strong>Flexibility</strong>: It can be used with different ML algorithms and datasets.</li>
+</ul>
+<h2><a name="holdout-method" class="heading-anchor" href="#holdout-method" rel="nofollow" aria-hidden="true"></a>Holdout Method</h2>
+<p><strong>Holdout Method</strong> is a straightforward technique used to evaluate machine learning model</p>
+
+<p>It involves randomly splitting the dataset into two subset:</p>
+
+<ol>
+<li><strong>Training Set:</strong> Used to train the model.</li>
+<li><strong>Testing Set:</strong> Used to evaluate the model's performance on unseen data.</li>
+</ol>
+
+<p>Process:</p>
+
+<ol>
+<li><strong>Data Split:</strong> Common splits are <strong>70% training, 30% test</strong> or <strong>80% training, 20% test</strong>.</li>
+<li><strong>Model Training:</strong> The model is trained on the training set.</li>
+<li><strong>Model Evaluation:</strong> The trained model is evaluated on the testing set.</li>
+</ol>
+
+<p>Advantages:</p>
+
+<ul>
+<li><strong>Fast</strong> and easy to implement.</li>
+<li>Simple way to assess model performance.</li>
+</ul>
+<h2><a name="uncertainty-in-ai" class="heading-anchor" href="#uncertainty-in-ai" rel="nofollow" aria-hidden="true"></a>Uncertainty in AI</h2>
+<ul>
+<li>Data Uncertainty</li>
+<li>Model Uncertainty</li>
+<li>Algorithmic Uncertainty</li>
+<li>Environmental Uncertainty</li>
+<li>Human Uncertainty</li>
+</ul>
+<h2><a name="reinforcement-learning" class="heading-anchor" href="#reinforcement-learning" rel="nofollow" aria-hidden="true"></a>Reinforcement Learning</h2>
+<p>Algorithms learn by interacting with an environment and receiving feedback in the form of rewards or penalties. This type is often used in robotics, gaming, or navigation.</p>
+
+<p><img loading="lazy" src="assets/Pasted%20image%2020241111214418.png" alt="" /></p>
+
+		</main>
+        
+        <details id="table-of-content">
+           <summary>Table of Content</summary>
+                    <nav>
+<ul>
+<li><a href="#fuzzy">Fuzzy</a>
+<ul>
+<li><a href="#architecture-of-fuzzy-logic-system">
+Architecture of fuzzy Logic System</a></li>
+<li><a href="#compare-fuzzy-set-and-crisp-set">
+Compare fuzzy set and crisp set.</a></li>
+<li><a href="#defuzzification">
+Defuzzification</a>
+<ul>
+<li><a href="#necessity-of-defuzzification">
+Necessity of Defuzzification</a></li>
+<li><a href="#centroid-method-of-defuzzification">
+Centroid Method of defuzzification</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#neural-network">
+Neural Network</a>
+<ul>
+<li><a href="#biological-neural-network">
+Biological Neural Network</a></li>
+<li><a href="#artificial-neural-network">
+Artificial Neural Network</a>
+<ul>
+<li><a href="#fnn">
+FNN</a></li>
+<li><a href="#rnn">
+RNN</a></li>
+<li><a href="#lstm">
+LSTM</a></li>
+<li><a href="#cnn">
+CNN</a></li>
+<li><a href="#autoencoder">
+Autoencoder</a>
+<ul>
+<li><a href="#activation-function-of-autoencoders">
+Activation Function of Autoencoders</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#mcculloch-pitts-neuron">
+McCulloch-Pitts Neuron</a></li>
+</ul></li>
+<li><a href="#data-science">
+Data Science</a>
+<ul>
+<li><a href="#data-science-for-multimodel-application">
+Data Science for Multimodel Application.</a></li>
+<li><a href="#application-of-data-science-for-text">
+Application of Data science for text</a></li>
+</ul></li>
+<li><a href="#random-forest">
+Random forest</a>
+<ul>
+<li><a href="#pruning-in-random-forest">
+Pruning in Random Forest</a></li>
+</ul></li>
+<li><a href="#cognitive-computing">
+Cognitive Computing</a>
+<ul>
+<li><a href="#cognitive-computing-vs-traditional-computing-vs-artificial-intelligence">
+Cognitive Computing Vs Traditional Computing Vs Artificial Intelligence</a></li>
+<li><a href="#process-of-building-a-cognitive-application">
+Process of building a Cognitive Application</a></li>
+<li><a href="#elements-of-cognitive-system">
+Elements of Cognitive System</a></li>
+<li><a href="#principles-of-cognitive-computing">
+Principles of cognitive computing.</a></li>
+<li><a href="#cognitive-computing-in-healthcare">
+Cognitive computing in Healthcare.</a></li>
+<li><a href="#analytics-in-cognitive-computing">
+Analytics in Cognitive Computing</a></li>
+<li><a href="#taxonomy-ontology">
+Taxonomy &amp; Ontology</a></li>
+<li><a href="#nlp">
+NLP</a></li>
+</ul></li>
+<li><a href="#mdp">
+MDP</a></li>
+<li><a href="#imbalance-classification">
+Imbalance Classification</a></li>
+<li><a href="#deep-learning">
+Deep Learning</a>
+<ul>
+<li><a href="#deep-learning-vs-machine-learning">
+Deep learning vs. machine learning</a></li>
+<li><a href="#application-of-deep-learning">
+Application of Deep Learning</a></li>
+<li><a href="#deep-learning-concepts">
+Deep Learning Concepts</a></li>
+</ul></li>
+<li><a href="#ensemble-learning">
+Ensemble Learning</a>
+<ul>
+<li><a href="#bagging-vs-boosting">
+Bagging vs Boosting</a></li>
+<li><a href="#application-of-bagging-boosting">
+Application of Bagging &amp; Boosting</a></li>
+</ul></li>
+<li><a href="#roc-curve">
+ROC Curve</a></li>
+<li><a href="#random-sub-sampling">
+Random Sub-sampling</a></li>
+<li><a href="#holdout-method">
+Holdout Method</a></li>
+<li><a href="#uncertainty-in-ai">
+Uncertainty in AI</a></li>
+<li><a href="#reinforcement-learning">
+Reinforcement Learning</a></li>
+</ul>
+</nav>
+
+        </details>
+        
+		<footer>
+			<p style="text-align: center; font-size: small; margin-top: 5em;">
+                <a href="https://anzenkodo.github.io/license">LICENSE</a>
+            </p>
+		</footer>
+	</body>
+    <script async src="https://AnzenKodo.github.io/assets/js/mermaid.js"></script>
+	<script id="MathJax-script" async src="https://AnzenKodo.github.io/assets/js/mathjax.js"></script>
+    <script>
+		const audio = document.querySelector('audio');
+		const image = document.getElementById('audio-img').addEventListener('click', () => {
+		     if (audio.paused) {
+		         audio.play();
+		     } else {
+		         audio.pause();
+		     }
+		});
+
+        mermaid.initialize({
+            theme: "neutral"
+        });
+
+        MathJax = {
+		  tex: {
+		    inlineMath: [['$', '$']],
+		    displayMath: [['$$', '$$']],
+		  }
+		};
+    </script>
+</html>
