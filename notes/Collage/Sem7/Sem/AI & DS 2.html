@@ -222,14 +222,12 @@
 <thead>
 <tr>
 <th>Rain</th>
-<th>Not Rain</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td>0.2</td>
-<td>0.8</td>
 </tr>
 </tbody>
 </table>
@@ -542,7 +540,7 @@ $$</p>
 body { color: #282c34; }
 </style><body class="bg">
 <pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">0 &gt;= nw - p
-</span></span><span class="line"><span class="cl">2 &gt;= 2(1) - p
+</span></span><span class="line"><span class="cl">2 &gt;= 2(1) - 0
 </span></span><span class="line"><span class="cl">2 &gt;= 2
 </span></span></code></pre>
 </body>
@@ -1355,7 +1353,7 @@ body { color: #282c34; }
 
 <tr>
 <td>(1, 1)</td>
-<td>1 x 1</td>
+<td>0 x 1</td>
 <td>0 x 1</td>
 <td>0</td>
 </tr>
@@ -1511,7 +1509,7 @@ $$</p>
 <li><p>P(King|Face) =</p></li>
 </ul>
 
-<p>$$P(Face|King)P(King) \over P(Face) = {1 \times 0.0769 \over 0.2307} = 0.33$$</p>
+<p>$${P(Face|King)P(King) \over P(Face)} = {1 \times 0.0769 \over 0.2307} = 0.33$$</p>
 
 <p>0.33 is probability that a face card is king card.</p>
 <h3><a name="calculate-y-from-net-input-use-binary-bipolar-activation-function" class="heading-anchor" href="#calculate-y-from-net-input-use-binary-bipolar-activation-function" rel="nofollow" aria-hidden="true"></a>Calculate Y from Net input use binary &amp; bipolar activation function.</h3>
@@ -1530,8 +1528,8 @@ $$
 Binary</p>
 
 <p>$$y=
-\Bigg({1 \over 1+e^{-y_{in}}}\Bigg) - 1 =
-\Bigg({1 \over 1+e^{-0.53}}\Bigg) - 1 = 0.62
+\Bigg({1 \over 1+e^{-y_{in}}}\Bigg) =
+\Bigg({1 \over 1+e^{-0.53}}\Bigg) = 0.62
 $$</p>
 <h1><a name="10-marks" class="heading-anchor" href="#10-marks" rel="nofollow" aria-hidden="true"></a>10 Marks</h1><h2><a name="describe-the-architecture-of-a-typical-cnn-what-are-the-main-components-and-how-do-they-contribute-to-the-network-s-performance-in-image-recognition-tasks-2024-2023-dec-2022-2023-may-5-marks" class="heading-anchor" href="#describe-the-architecture-of-a-typical-cnn-what-are-the-main-components-and-how-do-they-contribute-to-the-network-s-performance-in-image-recognition-tasks-2024-2023-dec-2022-2023-may-5-marks" rel="nofollow" aria-hidden="true"></a>Describe the architecture of a typical CNN. What are the main components, and how do they contribute to the network's performance in image recognition tasks? (2024) (2023 Dec) (2022) (2023 May 5 Marks)</h2>
 <p>CNN is deep learning algorithm which can take input as image assign importance to various object in the image and able to differentiate one from another.</p>
