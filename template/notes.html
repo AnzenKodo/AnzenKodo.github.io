@@ -199,8 +199,8 @@
 			<h1 style="text-align: center;">
 				<a href="{{.website}}">AK</a>#<a href="{{.start_url}}">{{.short_name}}</a>
 			</h1>
-		<video id="video" style="display: inherit;">
-			<source src="https://anzenkodo.github.io/drive/music.webm" />
+		<video id="video" style="display: inherit;" controls>
+			<source src="https://anzenkodo.github.io/drive/humble.webm" />
 		</video><nav style="border-top: 1px solid gray;border-bottom: 1px solid gray;padding: .5rem 0;text-align: center;margin: 0 0 2rem 0;color: gray;">
 				<a href="{{.start_url}}">Home</a> | <a href="{{.website}}">About</a> | <a href="{{.website}}/blogroll">Blogroll</a> | <a href="https://github.com/{{.username}}">Github</a> | <a href="https://x.com/{{.username}}">𝕏</a>
 			</nav>
@@ -225,13 +225,13 @@
 	<script async src="{{.website}}/assets/js/mermaid.js"></script>
 	<script id="MathJax-script" async src="{{.website}}/assets/js/mathjax.js"></script>
 	<script>
-		document.getElementById('video').addEventListener('click', (ele) => {
+		/* document.getElementById('video').addEventListener('click', (ele) => {
 			 if (ele.target.paused) {
 				 ele.target.play();
 			 } else {
 				 ele.target.pause();
 			 }
-		});
+		}); */
 
 		mermaid.initialize({
 			theme: "neutral"
