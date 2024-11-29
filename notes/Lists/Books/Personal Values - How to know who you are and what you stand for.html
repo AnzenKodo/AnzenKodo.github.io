@@ -398,7 +398,7 @@ FAIL</a></li>
 			</p>
 		</footer>
 	</body>
-	<script async src="https://AnzenKodo.github.io/assets/js/mermaid.js"></script>
+	<script src="https://AnzenKodo.github.io/assets/js/mermaid.js"></script>
 	<script id="MathJax-script" async src="https://AnzenKodo.github.io/assets/js/mathjax.js"></script>
 	<script>
 		/* document.getElementById('video').addEventListener('click', (ele) => {
@@ -410,7 +410,10 @@ FAIL</a></li>
 		}); */
 
 		mermaid.initialize({
-			theme: "neutral"
+			theme: "neutral",
+			themeVariables: {
+			    lineColor: "#939598",
+			}
 		});
 
 		MathJax = {

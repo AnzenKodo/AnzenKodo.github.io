@@ -330,14 +330,14 @@ body { color: #282c34; }
 <p><strong>Calculate the individual cyclomatic complexity number for <code>main()</code> and <code>fact()</code> and then, the cyclomatic complexity for the whole program.</strong>  </p>
 
 <ul>
-<li>$e$ = edges</li>
-<li>$n$ = total number of nodes</li>
-<li>$p$ = components</li>
+<li><strong>e</strong> = edges</li>
+<li><strong>n</strong> = total number of nodes</li>
+<li><strong>p</strong> = components</li>
 </ul>
 
 <p>For <code>main()</code>:</p>
 
-<p>$$v(main) = e-n+2(p) = 4-4+2(1)=2$$
+<p>$$v(main) = e-n+2(p) = 5-5+2(1)=2$$
 For <code>fact()</code>:</p>
 
 <p>$$v(fact)=e-n+2(p) = 4-4+2(1) = 2$$
@@ -438,38 +438,41 @@ body { color: #282c34; }
 </style><body class="bg">
 <pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">number</span><span class="p">,</span> <span class="n">index</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;Enter a number:&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">	<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">number</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">	<span class="n">index</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">	<span class="k">while</span> <span class="p">(</span><span class="n">index</span> <span class="o">&lt;=</span> <span class="n">number</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">number</span><span class="o">%</span><span class="n">index</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">			<span class="n">printf</span><span class="p">(</span><span class="s">&#34;Not a prime number&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">			<span class="k">break</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">		<span class="p">}</span>
-</span></span><span class="line"><span class="cl">		<span class="n">index</span><span class="o">++</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
-</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">index</span> <span class="o">==</span> <span class="n">number</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="n">printf</span><span class="p">(</span><span class="s">&#34;Prime number&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="mf">1.</span>  <span class="n">printf</span><span class="p">(</span><span class="s">&#34;Enter a number:&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="mf">2.</span>  <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">number</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="mf">3.</span>  <span class="n">index</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="mf">4.</span>  <span class="k">while</span> <span class="p">(</span><span class="n">index</span> <span class="o">&lt;=</span> <span class="n">number</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl"><span class="mf">5.</span>  <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="mf">6.</span>      <span class="k">if</span> <span class="p">(</span><span class="n">number</span><span class="o">%</span><span class="n">index</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl"><span class="mf">7.</span>      <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="mf">8.</span>          <span class="n">printf</span><span class="p">(</span><span class="s">&#34;Not a prime number&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="mf">9.</span>          <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="mf">10.</span>     <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="mf">11.</span>     <span class="n">index</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="mf">12.</span>  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="mf">13.</span>  <span class="k">if</span> <span class="p">(</span><span class="n">index</span> <span class="o">==</span> <span class="n">number</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="mf">14.</span>      <span class="n">printf</span><span class="p">(</span><span class="s">&#34;Prime number&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="mf">15.</span><span class="p">}</span>
 </span></span></code></pre>
 </body>
 </html>
 </div>
 <p><strong>Draw the DD graph for the program.</strong></p>
 
-<p><img loading="lazy" src="assets/Pasted%20image%2020241101142239.png" alt="" /></p>
+<p><img loading="lazy" src="./assets/Pasted%20image%2020241129224906.webp" alt="" /></p>
 
 <p><strong>Calculate the individual cyclomatic complexity number for <code>main()</code> and <code>fact()</code> and then, the cyclomatic complexity for the whole program.</strong>  </p>
 
 <ul>
-<li>$e$ = edges</li>
-<li>$n$ = total number of nodes</li>
-<li>$p$ = components</li>
+<li><strong>e</strong> = edges</li>
+<li><strong>n</strong> = total number of nodes</li>
+<li><strong>p</strong> = components</li>
 </ul>
 
 <p>$$v(n) = e-n+2(p) = 10 - 8 + 2(1) = 4 $$</p>
 <h2><a name="what-is-agile-testing-explain-challenges-in-agile-testing-2023-2022" class="heading-anchor" href="#what-is-agile-testing-explain-challenges-in-agile-testing-2023-2022" rel="nofollow" aria-hidden="true"></a>What is Agile testing? Explain challenges in Agile Testing. (2023) (2022)</h2>
+<p><img loading="lazy" src="./assets/Pasted%20image%2020241129230808.webp" alt="" /></p>
+
 <p>Agile testing is a software testing practice that aligns with the principles of Agile development, emphasizing collaboration, flexibility, and rapid feedback.</p>
 
 <p>It involves continuous testing throughout the development lifecycle, allowing teams to identify and address issues early and often.</p>
@@ -492,11 +495,7 @@ body { color: #282c34; }
 <li><strong>Continuous Integration and Deployment (CI/CD):</strong> Frequent releases require efficient test automation and quick feedback loops.</li>
 <li><strong>Test Automation Challenges</strong>: Tool selection, maintenance, and effectiveness are key concerns.</li>
 <li><strong>Skillset Requirements</strong>: Agile testers need a diverse skill set and adaptability.</li>
-<li><strong>Early Testing and Feedback:</strong> Shift-left testing and effective collaboration are essential.</li>
 <li><strong>Test Environment Challenges</strong>: Complex environments and maintenance are significant hurdles.</li>
-<li><strong>Performance Testing</strong>: Fitting performance testing into short sprints and ensuring scalability are challenges.</li>
-<li><strong>Security Testing</strong>: Rapid development and vulnerability identification are crucial.</li>
-<li><strong>Lack of Documentation</strong>: Agile principles often prioritize working software over documentation, which can impact testing efforts.</li>
 </ol>
 <h2><a name="what-are-the-key-elements-of-test-management-explain-the-structure-of-testing-group-2023-2022-5-marks" class="heading-anchor" href="#what-are-the-key-elements-of-test-management-explain-the-structure-of-testing-group-2023-2022-5-marks" rel="nofollow" aria-hidden="true"></a>What are the Key elements of Test Management? Explain the structure of testing group. (2023) (2022 5 Marks)</h2>
 <p><strong>Key Elements of Test Management</strong></p>
@@ -543,8 +542,22 @@ body { color: #282c34; }
 
 <p><strong>Structure of a Testing Group</strong></p>
 
-<p><img loading="lazy" src="../UT2/assets/Pasted%20image%2020241022040017.png" alt="" /></p>
+<pre class='mermaid'>flowchart TD
+    ql[QA Lead] --> tl[Team Lead]
+    
+    tl --> ut[Usability Testing
+    Engineer]
+    tl --> mt[Manual Testing
+    Engineer]
+    tl --> at[Automated Testing
+    Engineer]
 
+    mt --> nt[Network Test
+    Engineer] -->
+    tc[Test Library &
+    Configuration Specialist]-->
+    Tester
+</pre>
 <ul>
 <li><strong>Usability Test Engineer:</strong> Focuses on evaluating the product's user interface and ensuring it is easy to use and understand.</li>
 <li><strong>Manual Testing Engineer:</strong> Performs manual tests by executing test cases and verifying the product's functionality.</li>
@@ -559,11 +572,11 @@ body { color: #282c34; }
 <p>Automation in testing is a powerful tool that brings several advantages:</p>
 
 <ul>
-<li><strong>Increased Efficiency:</strong> Automated tests can be executed rapidly and repeatedly, significantly reducing testing time.  </li>
-<li><strong>Enhanced Accuracy:</strong> Automated tests eliminate human error, leading to more accurate and reliable results.  </li>
-<li><strong>Early Bug Detection:</strong> By running tests frequently, automation helps identify and fix bugs early in the development cycle.  </li>
-<li><strong>Reduced Cost:</strong> While there's an initial investment in setting up automation, long-term cost savings are achieved through reduced manual effort and faster time to market.  </li>
-<li><strong>Reusability:</strong> Automated test scripts can be reused across different test cycles and projects.  </li>
+<li><strong>Increased Efficiency:</strong> Automated tests can be executed rapidly and repeatedly, significantly reducing testing time.</li>
+<li><strong>Enhanced Accuracy:</strong> Automated tests eliminate human error, leading to more accurate and reliable results.</li>
+<li><strong>Early Bug Detection:</strong> By running tests frequently, automation helps identify and fix bugs early in the development cycle.</li>
+<li><strong>Reduced Cost:</strong> While there's an initial investment in setting up automation, long-term cost savings are achieved through reduced manual effort and faster time to market.</li>
+<li><strong>Reusability:</strong> Automated test scripts can be reused across different test cycles and projects.</li>
 </ul>
 
 <p><strong>Guidelines for Selecting Testing Tools</strong></p>
@@ -588,6 +601,20 @@ body { color: #282c34; }
 <li><strong>Path Length</strong>: The number of edges in the shortest path between two vertices.</li>
 <li><strong>Clustering Coefficient</strong>: Measures how connected a vertex's neighbors are to each other.</li>
 </ol>
+
+<p><strong>Example</strong></p>
+
+<p><img loading="lazy" src="./assets/Pasted%20image%2020241129224906.webp" alt="" /></p>
+
+<p><strong>Calculate the individual cyclomatic complexity number for <code>main()</code> and <code>fact()</code> and then, the cyclomatic complexity for the whole program.</strong>  </p>
+
+<ul>
+<li><strong>e</strong> = edges</li>
+<li><strong>n</strong> = total number of nodes</li>
+<li><strong>p</strong> = components</li>
+</ul>
+
+<p>$$v(n) = e-n+2(p) = 10 - 8 + 2(1) = 4 $$</p>
 <h2><a name="what-is-mutation-testing-explain-primary-mutant-with-an-example-differentiate-between-primary-and-secondary-mutants-2023-2022-5-marks" class="heading-anchor" href="#what-is-mutation-testing-explain-primary-mutant-with-an-example-differentiate-between-primary-and-secondary-mutants-2023-2022-5-marks" rel="nofollow" aria-hidden="true"></a>What is Mutation Testing? Explain primary mutant with an example. Differentiate between primary and secondary Mutants. (2023) (2022 5 Marks)</h2>
 <p><img loading="lazy" src="../UT1/assets/Pasted%20image%2020240829051313.jpg" alt="" /></p>
 
@@ -616,7 +643,7 @@ body { color: #282c34; }
 <li><strong>Statement Deletion Mutation:</strong> Removing a statement from the code.</li>
 </ul>
 
-<p><strong>Example:</strong></p>
+<p>Example:</p>
 
 <p>Consider the following simple JavaScript code:</p>
 
@@ -810,6 +837,207 @@ body { color: #282c34; }
 </body>
 </html>
 </div>
+<p><strong>Secondary Mutants</strong>:</p>
+
+<ul>
+<li>Created by applying a mutation operator to an already mutated program (i.e., a primary mutant).</li>
+<li>This introduces another layer of change, making the mutant potentially more complex.</li>
+</ul>
+
+<p>Example</p>
+
+<p>Consider the following simple JavaScript code:</p>
+
+<div class="code-block"><span class="code-block-language-name">.js</span><html>
+<style type="text/css">
+/* Background */ .bg { color: #282c34 }
+/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
+/* Other */ .chroma .x { color: #c9c9c9 }
+/* Error */ .chroma .err { color: #cf5967 }
+/* CodeLine */ .chroma .cl { color: #c9c9c9 }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
+/* Keyword */ .chroma .k { color: #7fbaf5 }
+/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
+/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
+/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
+/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
+/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
+/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
+/* Name */ .chroma .n { color: #c9c9c9 }
+/* NameAttribute */ .chroma .na { color: #bc74c4 }
+/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
+/* NameClass */ .chroma .nc { color: #ecbe7b }
+/* NameConstant */ .chroma .no { color: #ecbe7b }
+/* NameDecorator */ .chroma .nd { color: #ecbe7b }
+/* NameEntity */ .chroma .ni { color: #c9c9c9 }
+/* NameException */ .chroma .ne { color: #cf5967 }
+/* NameFunction */ .chroma .nf { color: #57c7ff }
+/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
+/* NameLabel */ .chroma .nl { color: #cf5967 }
+/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
+/* NameOther */ .chroma .nx { color: #c9c9c9 }
+/* NameProperty */ .chroma .py { color: #c9c9c9 }
+/* NameTag */ .chroma .nt { color: #bc74c4 }
+/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
+/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
+/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
+/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
+/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
+/* Literal */ .chroma .l { color: #c9c9c9 }
+/* LiteralDate */ .chroma .ld { color: #57c7ff }
+/* LiteralString */ .chroma .s { color: #82cc6a }
+/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
+/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
+/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
+/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
+/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
+/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
+/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
+/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
+/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
+/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
+/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
+/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
+/* LiteralNumber */ .chroma .m { color: #56b6c2 }
+/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
+/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
+/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
+/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
+/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
+/* Operator */ .chroma .o { color: #bc74c4 }
+/* OperatorWord */ .chroma .ow { color: #bc74c4 }
+/* Punctuation */ .chroma .p { color: #56b6c2 }
+/* Comment */ .chroma .c { color: #3e4460 }
+/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #3e4460 }
+/* CommentSingle */ .chroma .c1 { color: #3e4460 }
+/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
+/* Generic */ .chroma .g { color: #c9c9c9 }
+/* GenericDeleted */ .chroma .gd { color: #cf5967 }
+/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
+/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
+/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #ecbe7b }
+/* GenericOutput */ .chroma .go { color: #43454f }
+/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
+/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
+/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
+/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
+/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
+body { color: #282c34; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nx">x</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;x is greater than 10&#34;</span><span class="p">);</span> <span class="p">}</span>
+</span></span></code></pre>
+</body>
+</html>
+</div>
+<p>Let's introduce a mutant by changing the <code>&gt;</code> operator to <code>&gt;=</code>:</p>
+
+<div class="code-block"><span class="code-block-language-name">.js</span><html>
+<style type="text/css">
+/* Background */ .bg { color: #282c34 }
+/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
+/* Other */ .chroma .x { color: #c9c9c9 }
+/* Error */ .chroma .err { color: #cf5967 }
+/* CodeLine */ .chroma .cl { color: #c9c9c9 }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
+/* Keyword */ .chroma .k { color: #7fbaf5 }
+/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
+/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
+/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
+/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
+/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
+/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
+/* Name */ .chroma .n { color: #c9c9c9 }
+/* NameAttribute */ .chroma .na { color: #bc74c4 }
+/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
+/* NameClass */ .chroma .nc { color: #ecbe7b }
+/* NameConstant */ .chroma .no { color: #ecbe7b }
+/* NameDecorator */ .chroma .nd { color: #ecbe7b }
+/* NameEntity */ .chroma .ni { color: #c9c9c9 }
+/* NameException */ .chroma .ne { color: #cf5967 }
+/* NameFunction */ .chroma .nf { color: #57c7ff }
+/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
+/* NameLabel */ .chroma .nl { color: #cf5967 }
+/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
+/* NameOther */ .chroma .nx { color: #c9c9c9 }
+/* NameProperty */ .chroma .py { color: #c9c9c9 }
+/* NameTag */ .chroma .nt { color: #bc74c4 }
+/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
+/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
+/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
+/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
+/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
+/* Literal */ .chroma .l { color: #c9c9c9 }
+/* LiteralDate */ .chroma .ld { color: #57c7ff }
+/* LiteralString */ .chroma .s { color: #82cc6a }
+/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
+/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
+/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
+/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
+/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
+/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
+/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
+/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
+/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
+/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
+/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
+/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
+/* LiteralNumber */ .chroma .m { color: #56b6c2 }
+/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
+/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
+/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
+/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
+/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
+/* Operator */ .chroma .o { color: #bc74c4 }
+/* OperatorWord */ .chroma .ow { color: #bc74c4 }
+/* Punctuation */ .chroma .p { color: #56b6c2 }
+/* Comment */ .chroma .c { color: #3e4460 }
+/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #3e4460 }
+/* CommentSingle */ .chroma .c1 { color: #3e4460 }
+/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
+/* Generic */ .chroma .g { color: #c9c9c9 }
+/* GenericDeleted */ .chroma .gd { color: #cf5967 }
+/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
+/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
+/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #ecbe7b }
+/* GenericOutput */ .chroma .go { color: #43454f }
+/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
+/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
+/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
+/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
+/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
+body { color: #282c34; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nx">x</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;x is greater than or equal to 10&#34;</span><span class="p">);</span> <span class="p">}</span>
+</span></span></code></pre>
+</body>
+</html>
+</div>
 <p><strong>Primary Vs Secondary Mutants</strong></p>
 
 <table>
@@ -830,14 +1058,14 @@ body { color: #282c34; }
 
 <tr>
 <td><strong>Complexity</strong></td>
-<td>Less complex</td>
-<td>More complex</td>
+<td>Less</td>
+<td>More</td>
 </tr>
 
 <tr>
 <td><strong>Detection</strong></td>
-<td>Easier</td>
-<td>More difficult</td>
+<td>Easy</td>
+<td>More</td>
 </tr>
 
 <tr>
@@ -873,615 +1101,52 @@ body { color: #282c34; }
 </table>
 <h2><a name="classify-different-types-of-bugs-based-on-the-software-development-lifecycle-with-example-2023-2022" class="heading-anchor" href="#classify-different-types-of-bugs-based-on-the-software-development-lifecycle-with-example-2023-2022" rel="nofollow" aria-hidden="true"></a>Classify different types of bugs based on the Software development lifecycle with example. (2023) (2022)</h2>
 <pre class='mermaid'>flowchart
-	a[Requirement Phase Bugs]-->b
-	b[Design Phase Bugs]-->c
-	c[Implementation Phase Bugs]-->c1
-	c-->c2
-	c-->c3
-		c1[Sntax Bug]-->d
-		c2[Logical Bugs]-->d
-		c3[Calculation Bugs]-->d
-	d[Testing Phase Bugs]-->d1
-	d-->d2
-	d-->d3
-		d1[Functional Bugs]-->e
-		d2[Integration Bugs]-->e
-		d3[Peromance Bugs]-->e
+	a[Requirement Phase Bugs]-->
+	b[Design Phase Bugs]-->
+	c[Implementation Phase Bugs]-->
+	d[Testing Phase Bugs]-->
 	e[Deployment Phase Bugs]-->f
 	f[Maintenance Phase Bugs]
 </pre>
-<p>1. <strong>Requirement Phase Bugs</strong></p>
+<ul>
+<li><strong>Requirement Phase Bugs</strong>
 
-<div class="code-block"><html>
-<style type="text/css">
-/* Background */ .bg { color: #282c34 }
-/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
-/* Other */ .chroma .x { color: #c9c9c9 }
-/* Error */ .chroma .err { color: #cf5967 }
-/* CodeLine */ .chroma .cl { color: #c9c9c9 }
-/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
-/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
-/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
-/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
-/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
-/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
-/* Keyword */ .chroma .k { color: #7fbaf5 }
-/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
-/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
-/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
-/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
-/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
-/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
-/* Name */ .chroma .n { color: #c9c9c9 }
-/* NameAttribute */ .chroma .na { color: #bc74c4 }
-/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
-/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
-/* NameClass */ .chroma .nc { color: #ecbe7b }
-/* NameConstant */ .chroma .no { color: #ecbe7b }
-/* NameDecorator */ .chroma .nd { color: #ecbe7b }
-/* NameEntity */ .chroma .ni { color: #c9c9c9 }
-/* NameException */ .chroma .ne { color: #cf5967 }
-/* NameFunction */ .chroma .nf { color: #57c7ff }
-/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
-/* NameLabel */ .chroma .nl { color: #cf5967 }
-/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
-/* NameOther */ .chroma .nx { color: #c9c9c9 }
-/* NameProperty */ .chroma .py { color: #c9c9c9 }
-/* NameTag */ .chroma .nt { color: #bc74c4 }
-/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
-/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
-/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
-/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
-/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
-/* Literal */ .chroma .l { color: #c9c9c9 }
-/* LiteralDate */ .chroma .ld { color: #57c7ff }
-/* LiteralString */ .chroma .s { color: #82cc6a }
-/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
-/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
-/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
-/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
-/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
-/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
-/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
-/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
-/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
-/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
-/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
-/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
-/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
-/* LiteralNumber */ .chroma .m { color: #56b6c2 }
-/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
-/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
-/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
-/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
-/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
-/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
-/* Operator */ .chroma .o { color: #bc74c4 }
-/* OperatorWord */ .chroma .ow { color: #bc74c4 }
-/* Punctuation */ .chroma .p { color: #56b6c2 }
-/* Comment */ .chroma .c { color: #3e4460 }
-/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
-/* CommentMultiline */ .chroma .cm { color: #3e4460 }
-/* CommentSingle */ .chroma .c1 { color: #3e4460 }
-/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
-/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
-/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
-/* Generic */ .chroma .g { color: #c9c9c9 }
-/* GenericDeleted */ .chroma .gd { color: #cf5967 }
-/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
-/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
-/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
-/* GenericInserted */ .chroma .gi { color: #ecbe7b }
-/* GenericOutput */ .chroma .go { color: #43454f }
-/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
-/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
-/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
-/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
-/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
-/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
-body { color: #282c34; }
-</style><body class="bg">
-<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">- **Description**: These bugs arise from unclear, incomplete, or incorrect requirements.
-</span></span><span class="line"><span class="cl">- **Example**: A requirement states that a user must be able to log in using either an email or a username.
-</span></span></code></pre>
-</body>
-</html>
-</div>
-<p>2. <strong>Design Phase Bugs</strong></p>
+<ul>
+<li><strong>Description</strong>: These bugs arise from unclear, incomplete, or incorrect requirements.</li>
+<li><strong>Example</strong>: A requirement states that a user must be able to log in using either an email or a username.</li>
+</ul></li>
+<li><strong>Design Phase Bugs</strong>
 
-<div class="code-block"><html>
-<style type="text/css">
-/* Background */ .bg { color: #282c34 }
-/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
-/* Other */ .chroma .x { color: #c9c9c9 }
-/* Error */ .chroma .err { color: #cf5967 }
-/* CodeLine */ .chroma .cl { color: #c9c9c9 }
-/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
-/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
-/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
-/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
-/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
-/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
-/* Keyword */ .chroma .k { color: #7fbaf5 }
-/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
-/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
-/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
-/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
-/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
-/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
-/* Name */ .chroma .n { color: #c9c9c9 }
-/* NameAttribute */ .chroma .na { color: #bc74c4 }
-/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
-/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
-/* NameClass */ .chroma .nc { color: #ecbe7b }
-/* NameConstant */ .chroma .no { color: #ecbe7b }
-/* NameDecorator */ .chroma .nd { color: #ecbe7b }
-/* NameEntity */ .chroma .ni { color: #c9c9c9 }
-/* NameException */ .chroma .ne { color: #cf5967 }
-/* NameFunction */ .chroma .nf { color: #57c7ff }
-/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
-/* NameLabel */ .chroma .nl { color: #cf5967 }
-/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
-/* NameOther */ .chroma .nx { color: #c9c9c9 }
-/* NameProperty */ .chroma .py { color: #c9c9c9 }
-/* NameTag */ .chroma .nt { color: #bc74c4 }
-/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
-/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
-/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
-/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
-/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
-/* Literal */ .chroma .l { color: #c9c9c9 }
-/* LiteralDate */ .chroma .ld { color: #57c7ff }
-/* LiteralString */ .chroma .s { color: #82cc6a }
-/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
-/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
-/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
-/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
-/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
-/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
-/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
-/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
-/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
-/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
-/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
-/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
-/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
-/* LiteralNumber */ .chroma .m { color: #56b6c2 }
-/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
-/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
-/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
-/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
-/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
-/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
-/* Operator */ .chroma .o { color: #bc74c4 }
-/* OperatorWord */ .chroma .ow { color: #bc74c4 }
-/* Punctuation */ .chroma .p { color: #56b6c2 }
-/* Comment */ .chroma .c { color: #3e4460 }
-/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
-/* CommentMultiline */ .chroma .cm { color: #3e4460 }
-/* CommentSingle */ .chroma .c1 { color: #3e4460 }
-/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
-/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
-/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
-/* Generic */ .chroma .g { color: #c9c9c9 }
-/* GenericDeleted */ .chroma .gd { color: #cf5967 }
-/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
-/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
-/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
-/* GenericInserted */ .chroma .gi { color: #ecbe7b }
-/* GenericOutput */ .chroma .go { color: #43454f }
-/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
-/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
-/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
-/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
-/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
-/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
-body { color: #282c34; }
-</style><body class="bg">
-<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">- **Description**: Bugs that occur due to design flaws or misinterpretations of requirements.
-</span></span><span class="line"><span class="cl">- **Example**: If the design does not account for session management properly, it may lead to security vulnerabilities allowing multiple sessions.
-</span></span></code></pre>
-</body>
-</html>
-</div>
-<p>3. <strong>Implementation Phase Bugs</strong></p>
+<ul>
+<li><strong>Description</strong>: Bugs that occur due to design flaws or misinterpretations of requirements.</li>
+<li><strong>Example</strong>: If the design does not account for session management properly, it may lead to security vulnerabilities allowing multiple sessions.</li>
+</ul></li>
+<li><strong>Implementation Phase Bugs</strong>
 
-<div class="code-block"><html>
-<style type="text/css">
-/* Background */ .bg { color: #282c34 }
-/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
-/* Other */ .chroma .x { color: #c9c9c9 }
-/* Error */ .chroma .err { color: #cf5967 }
-/* CodeLine */ .chroma .cl { color: #c9c9c9 }
-/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
-/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
-/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
-/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
-/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
-/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
-/* Keyword */ .chroma .k { color: #7fbaf5 }
-/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
-/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
-/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
-/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
-/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
-/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
-/* Name */ .chroma .n { color: #c9c9c9 }
-/* NameAttribute */ .chroma .na { color: #bc74c4 }
-/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
-/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
-/* NameClass */ .chroma .nc { color: #ecbe7b }
-/* NameConstant */ .chroma .no { color: #ecbe7b }
-/* NameDecorator */ .chroma .nd { color: #ecbe7b }
-/* NameEntity */ .chroma .ni { color: #c9c9c9 }
-/* NameException */ .chroma .ne { color: #cf5967 }
-/* NameFunction */ .chroma .nf { color: #57c7ff }
-/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
-/* NameLabel */ .chroma .nl { color: #cf5967 }
-/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
-/* NameOther */ .chroma .nx { color: #c9c9c9 }
-/* NameProperty */ .chroma .py { color: #c9c9c9 }
-/* NameTag */ .chroma .nt { color: #bc74c4 }
-/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
-/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
-/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
-/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
-/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
-/* Literal */ .chroma .l { color: #c9c9c9 }
-/* LiteralDate */ .chroma .ld { color: #57c7ff }
-/* LiteralString */ .chroma .s { color: #82cc6a }
-/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
-/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
-/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
-/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
-/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
-/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
-/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
-/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
-/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
-/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
-/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
-/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
-/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
-/* LiteralNumber */ .chroma .m { color: #56b6c2 }
-/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
-/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
-/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
-/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
-/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
-/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
-/* Operator */ .chroma .o { color: #bc74c4 }
-/* OperatorWord */ .chroma .ow { color: #bc74c4 }
-/* Punctuation */ .chroma .p { color: #56b6c2 }
-/* Comment */ .chroma .c { color: #3e4460 }
-/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
-/* CommentMultiline */ .chroma .cm { color: #3e4460 }
-/* CommentSingle */ .chroma .c1 { color: #3e4460 }
-/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
-/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
-/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
-/* Generic */ .chroma .g { color: #c9c9c9 }
-/* GenericDeleted */ .chroma .gd { color: #cf5967 }
-/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
-/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
-/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
-/* GenericInserted */ .chroma .gi { color: #ecbe7b }
-/* GenericOutput */ .chroma .go { color: #43454f }
-/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
-/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
-/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
-/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
-/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
-/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
-body { color: #282c34; }
-</style><body class="bg">
-<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">- **Types of Bugs**:
-</span></span><span class="line"><span class="cl">    - **Syntax Bugs**: Errors in the code that violate the syntax rules of the programming language.
-</span></span><span class="line"><span class="cl">        - **Example**: Missing a semicolon in Java or C++.    
-</span></span><span class="line"><span class="cl">    - **Logical Bugs**: Issues that occur when the code does not execute as intended due to incorrect logic.
-</span></span><span class="line"><span class="cl">        - **Example**: Using `==` instead of `=` in an assignment statement in languages like JavaScript.
-</span></span><span class="line"><span class="cl">    - **Calculation Bugs**: Errors in mathematical calculations or algorithms.
-</span></span><span class="line"><span class="cl">        - **Example**: Incorrectly implementing a formula that results in wrong calculations (e.g., using integer division instead of floating-point division).
-</span></span></code></pre>
-</body>
-</html>
-</div>
-<p>4. <strong>Testing Phase Bugs</strong></p>
+<ul>
+<li><strong>Description:</strong> Occur due to programming errors, logical flaws, or misunderstandings of the design specifications.</li>
+<li><strong>Examples:</strong> Incorrect use of programming language syntax, such as missing semicolons or mismatched parentheses.</li>
+</ul></li>
+<li><strong>Testing Phase Bugs</strong>
 
-<div class="code-block"><html>
-<style type="text/css">
-/* Background */ .bg { color: #282c34 }
-/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
-/* Other */ .chroma .x { color: #c9c9c9 }
-/* Error */ .chroma .err { color: #cf5967 }
-/* CodeLine */ .chroma .cl { color: #c9c9c9 }
-/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
-/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
-/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
-/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
-/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
-/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
-/* Keyword */ .chroma .k { color: #7fbaf5 }
-/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
-/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
-/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
-/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
-/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
-/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
-/* Name */ .chroma .n { color: #c9c9c9 }
-/* NameAttribute */ .chroma .na { color: #bc74c4 }
-/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
-/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
-/* NameClass */ .chroma .nc { color: #ecbe7b }
-/* NameConstant */ .chroma .no { color: #ecbe7b }
-/* NameDecorator */ .chroma .nd { color: #ecbe7b }
-/* NameEntity */ .chroma .ni { color: #c9c9c9 }
-/* NameException */ .chroma .ne { color: #cf5967 }
-/* NameFunction */ .chroma .nf { color: #57c7ff }
-/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
-/* NameLabel */ .chroma .nl { color: #cf5967 }
-/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
-/* NameOther */ .chroma .nx { color: #c9c9c9 }
-/* NameProperty */ .chroma .py { color: #c9c9c9 }
-/* NameTag */ .chroma .nt { color: #bc74c4 }
-/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
-/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
-/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
-/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
-/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
-/* Literal */ .chroma .l { color: #c9c9c9 }
-/* LiteralDate */ .chroma .ld { color: #57c7ff }
-/* LiteralString */ .chroma .s { color: #82cc6a }
-/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
-/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
-/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
-/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
-/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
-/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
-/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
-/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
-/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
-/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
-/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
-/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
-/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
-/* LiteralNumber */ .chroma .m { color: #56b6c2 }
-/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
-/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
-/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
-/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
-/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
-/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
-/* Operator */ .chroma .o { color: #bc74c4 }
-/* OperatorWord */ .chroma .ow { color: #bc74c4 }
-/* Punctuation */ .chroma .p { color: #56b6c2 }
-/* Comment */ .chroma .c { color: #3e4460 }
-/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
-/* CommentMultiline */ .chroma .cm { color: #3e4460 }
-/* CommentSingle */ .chroma .c1 { color: #3e4460 }
-/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
-/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
-/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
-/* Generic */ .chroma .g { color: #c9c9c9 }
-/* GenericDeleted */ .chroma .gd { color: #cf5967 }
-/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
-/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
-/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
-/* GenericInserted */ .chroma .gi { color: #ecbe7b }
-/* GenericOutput */ .chroma .go { color: #43454f }
-/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
-/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
-/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
-/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
-/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
-/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
-body { color: #282c34; }
-</style><body class="bg">
-<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">- **Types of Bugs**:
-</span></span><span class="line"><span class="cl">    - **Functional Bugs**: Occur when the software does not behave as expected under specified conditions.
-</span></span><span class="line"><span class="cl">        - **Example**: A &#34;Submit&#34; button on a form does not work when clicked.        
-</span></span><span class="line"><span class="cl">    - **Integration Bugs**: Arise when different modules or components fail to interact correctly.
-</span></span><span class="line"><span class="cl">        - **Example**: A payment module fails to communicate with an inventory module, causing incorrect stock levels after a purchase.    
-</span></span><span class="line"><span class="cl">    - **Performance Bugs**: Issues related to the software&#39;s performance under load.
-</span></span><span class="line"><span class="cl">        - **Example**: The application crashes or slows down significantly when handling more than 100 simultaneous users.
-</span></span></code></pre>
-</body>
-</html>
-</div>
-<p>5. <strong>Deployment Phase Bugs</strong></p>
+<ul>
+<li><strong>Description:</strong> These bugs are identified during the testing phase, often through manual or automated testing.</li>
+<li><strong>Examples:</strong> The software does not perform as expected according to the specified requirements.</li>
+</ul></li>
+<li><strong>Deployment Phase Bugs</strong>
 
-<div class="code-block"><html>
-<style type="text/css">
-/* Background */ .bg { color: #282c34 }
-/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
-/* Other */ .chroma .x { color: #c9c9c9 }
-/* Error */ .chroma .err { color: #cf5967 }
-/* CodeLine */ .chroma .cl { color: #c9c9c9 }
-/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
-/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
-/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
-/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
-/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
-/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
-/* Keyword */ .chroma .k { color: #7fbaf5 }
-/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
-/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
-/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
-/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
-/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
-/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
-/* Name */ .chroma .n { color: #c9c9c9 }
-/* NameAttribute */ .chroma .na { color: #bc74c4 }
-/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
-/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
-/* NameClass */ .chroma .nc { color: #ecbe7b }
-/* NameConstant */ .chroma .no { color: #ecbe7b }
-/* NameDecorator */ .chroma .nd { color: #ecbe7b }
-/* NameEntity */ .chroma .ni { color: #c9c9c9 }
-/* NameException */ .chroma .ne { color: #cf5967 }
-/* NameFunction */ .chroma .nf { color: #57c7ff }
-/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
-/* NameLabel */ .chroma .nl { color: #cf5967 }
-/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
-/* NameOther */ .chroma .nx { color: #c9c9c9 }
-/* NameProperty */ .chroma .py { color: #c9c9c9 }
-/* NameTag */ .chroma .nt { color: #bc74c4 }
-/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
-/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
-/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
-/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
-/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
-/* Literal */ .chroma .l { color: #c9c9c9 }
-/* LiteralDate */ .chroma .ld { color: #57c7ff }
-/* LiteralString */ .chroma .s { color: #82cc6a }
-/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
-/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
-/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
-/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
-/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
-/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
-/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
-/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
-/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
-/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
-/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
-/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
-/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
-/* LiteralNumber */ .chroma .m { color: #56b6c2 }
-/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
-/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
-/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
-/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
-/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
-/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
-/* Operator */ .chroma .o { color: #bc74c4 }
-/* OperatorWord */ .chroma .ow { color: #bc74c4 }
-/* Punctuation */ .chroma .p { color: #56b6c2 }
-/* Comment */ .chroma .c { color: #3e4460 }
-/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
-/* CommentMultiline */ .chroma .cm { color: #3e4460 }
-/* CommentSingle */ .chroma .c1 { color: #3e4460 }
-/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
-/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
-/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
-/* Generic */ .chroma .g { color: #c9c9c9 }
-/* GenericDeleted */ .chroma .gd { color: #cf5967 }
-/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
-/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
-/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
-/* GenericInserted */ .chroma .gi { color: #ecbe7b }
-/* GenericOutput */ .chroma .go { color: #43454f }
-/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
-/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
-/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
-/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
-/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
-/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
-body { color: #282c34; }
-</style><body class="bg">
-<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">- **Description**: Bugs that appear when software is deployed in a production environment but were not detected during testing.
-</span></span><span class="line"><span class="cl">- **Example**: A configuration issue that prevents users from accessing certain features after deployment, such as server mis-configurations leading to downtime.
-</span></span></code></pre>
-</body>
-</html>
-</div>
-<p>6. <strong>Maintenance Phase Bugs</strong></p>
+<ul>
+<li><strong>Description</strong>: Bugs that appear when software is deployed in a production environment but were not detected during testing.</li>
+<li><strong>Example</strong>: A configuration issue that prevents users from accessing certain features after deployment, such as server mis-configurations leading to downtime.</li>
+</ul></li>
+<li><strong>Maintenance Phase Bugs</strong>
 
-<div class="code-block"><html>
-<style type="text/css">
-/* Background */ .bg { color: #282c34 }
-/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
-/* Other */ .chroma .x { color: #c9c9c9 }
-/* Error */ .chroma .err { color: #cf5967 }
-/* CodeLine */ .chroma .cl { color: #c9c9c9 }
-/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
-/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
-/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
-/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
-/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
-/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
-/* Keyword */ .chroma .k { color: #7fbaf5 }
-/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
-/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
-/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
-/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
-/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
-/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
-/* Name */ .chroma .n { color: #c9c9c9 }
-/* NameAttribute */ .chroma .na { color: #bc74c4 }
-/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
-/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
-/* NameClass */ .chroma .nc { color: #ecbe7b }
-/* NameConstant */ .chroma .no { color: #ecbe7b }
-/* NameDecorator */ .chroma .nd { color: #ecbe7b }
-/* NameEntity */ .chroma .ni { color: #c9c9c9 }
-/* NameException */ .chroma .ne { color: #cf5967 }
-/* NameFunction */ .chroma .nf { color: #57c7ff }
-/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
-/* NameLabel */ .chroma .nl { color: #cf5967 }
-/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
-/* NameOther */ .chroma .nx { color: #c9c9c9 }
-/* NameProperty */ .chroma .py { color: #c9c9c9 }
-/* NameTag */ .chroma .nt { color: #bc74c4 }
-/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
-/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
-/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
-/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
-/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
-/* Literal */ .chroma .l { color: #c9c9c9 }
-/* LiteralDate */ .chroma .ld { color: #57c7ff }
-/* LiteralString */ .chroma .s { color: #82cc6a }
-/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
-/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
-/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
-/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
-/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
-/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
-/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
-/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
-/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
-/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
-/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
-/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
-/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
-/* LiteralNumber */ .chroma .m { color: #56b6c2 }
-/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
-/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
-/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
-/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
-/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
-/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
-/* Operator */ .chroma .o { color: #bc74c4 }
-/* OperatorWord */ .chroma .ow { color: #bc74c4 }
-/* Punctuation */ .chroma .p { color: #56b6c2 }
-/* Comment */ .chroma .c { color: #3e4460 }
-/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
-/* CommentMultiline */ .chroma .cm { color: #3e4460 }
-/* CommentSingle */ .chroma .c1 { color: #3e4460 }
-/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
-/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
-/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
-/* Generic */ .chroma .g { color: #c9c9c9 }
-/* GenericDeleted */ .chroma .gd { color: #cf5967 }
-/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
-/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
-/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
-/* GenericInserted */ .chroma .gi { color: #ecbe7b }
-/* GenericOutput */ .chroma .go { color: #43454f }
-/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
-/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
-/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
-/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
-/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
-/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
-body { color: #282c34; }
-</style><body class="bg">
-<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">- **Description**: These bugs may arise from updates or changes made after the initial deployment.
-</span></span><span class="line"><span class="cl">- **Example**: A new feature introduced in an update inadvertently breaks existing functionality, such as altering how user permissions are handled and causing access issues.
-</span></span></code></pre>
-</body>
-</html>
-</div><h2><a name="explain-the-process-of-test-suite-prioritization-with-its-type-in-detail-with-example-2023" class="heading-anchor" href="#explain-the-process-of-test-suite-prioritization-with-its-type-in-detail-with-example-2023" rel="nofollow" aria-hidden="true"></a>Explain the process of test suite prioritization with its type in detail with example. (2023)</h2>
+<ul>
+<li><strong>Description</strong>: These bugs may arise from updates or changes made after the initial deployment.</li>
+<li><strong>Example</strong>: A new feature introduced in an update inadvertently breaks existing functionality, such as altering how user permissions are handled and causing access issues.</li>
+</ul></li>
+</ul>
+<h2><a name="explain-the-process-of-test-suite-prioritization-with-its-type-in-detail-with-example-2023" class="heading-anchor" href="#explain-the-process-of-test-suite-prioritization-with-its-type-in-detail-with-example-2023" rel="nofollow" aria-hidden="true"></a>Explain the process of test suite prioritization with its type in detail with example. (2023)</h2>
 <p>Test suite prioritization is a crucial strategy in software testing that involves ranking test cases based on their importance and risk. By prioritizing test cases, teams can optimize their testing efforts, reduce testing time, and increase test coverage.</p>
 
 <p><strong>Process of Test Suite Prioritization</strong></p>
@@ -1529,6 +1194,18 @@ body { color: #282c34; }
 <ul>
 <li>Provides guidelines for improving the performance of a quality management system.</li>
 </ul></li>
+</ul>
+
+<p>Quality Management Principles:</p>
+
+<ul>
+<li>Customer focus</li>
+<li>Leadership</li>
+<li>Engagement of People</li>
+<li>Process Approach</li>
+<li>Improvement</li>
+<li>Evidence based</li>
+<li>Relationship Management</li>
 </ul>
 <h2><a name="what-is-performance-testing-why-is-performance-testing-important-2023" class="heading-anchor" href="#what-is-performance-testing-why-is-performance-testing-important-2023" rel="nofollow" aria-hidden="true"></a>What is performance testing? Why is performance testing important? (2023)</h2>
 <p>Performance testing encompasses a variety of testing methods aimed at assessing the <strong>speed, responsiveness, and stability of software applications, networks, and systems</strong> when subjected to different conditions.</p>
@@ -1594,7 +1271,9 @@ body { color: #282c34; }
 <p>To calculate the defect spoilage for the project based on the provided data, we can use the formula for defect spoilage:</p>
 
 <p>$$\text{Defect Spoilage} = \sum (\text{Defects} \times \text{Defect Age})$$</p>
-<h3><a name="step-by-step-calculation" class="heading-anchor" href="#step-by-step-calculation" rel="nofollow" aria-hidden="true"></a>Step-by-Step Calculation</h3>
+
+<p><strong>Step-by-Step Calculation</strong></p>
+
 <p>We'll calculate the total defect spoilage by multiplying the number of defects by their respective defect ages for each SDLC phase and then summing these values.</p>
 
 <ol>
@@ -1603,168 +1282,422 @@ body { color: #282c34; }
 <ul>
 <li>Defects: 34</li>
 <li>Defect Age: 2</li>
-<li>Contribution to Spoilage: $34×2=6834 \times 2 = 6834×2=68$</li>
+<li>Contribution to Spoilage: 34×2 = 68</li>
 </ul></li>
 <li><strong>HLD</strong>:
 
 <ul>
 <li>Defects: 25</li>
 <li>Defect Age: 3</li>
-<li>Contribution to Spoilage: $25×3=7525 \times 3 = 7525×3=75$</li>
+<li>Contribution to Spoilage: 25×3= 75`</li>
 </ul></li>
 <li><strong>LLD</strong>:
 
 <ul>
 <li>Defects: 17</li>
 <li>Defect Age: 7</li>
-<li>Contribution to Spoilage: $17×7=11917 \times 7 = 11917×7=119$</li>
+<li>Contribution to Spoilage: 17×7 = 119</li>
 </ul></li>
 <li><strong>Coding</strong>:
 
 <ul>
 <li>Defects: 10</li>
 <li>Defect Age: 8</li>
-<li>Contribution to Spoilage: $10×8=8010 \times 8 = 8010×8=80$</li>
+<li>Contribution to Spoilage: 10×8=80</li>
 </ul></li>
 </ol>
-<h3><a name="total-defect-spoilage-calculation" class="heading-anchor" href="#total-defect-spoilage-calculation" rel="nofollow" aria-hidden="true"></a>Total Defect Spoilage Calculation</h3>
+
+<p><strong>Total Defect Spoilage Calculation</strong></p>
+
 <p>Now, summing all contributions:</p>
 
 <p>$$\text{Total Spoilage} = 68 + 75 + 119 + 80 = 342$$</p>
-<h2><a name="a-program-reads-three-numbers-a-b-and-c-within-the-range-1-100-and-prints-the-minimum-number-design-test-cases-for-this-program-using-bvc-and-robust-testing-methods-2022" class="heading-anchor" href="#a-program-reads-three-numbers-a-b-and-c-within-the-range-1-100-and-prints-the-minimum-number-design-test-cases-for-this-program-using-bvc-and-robust-testing-methods-2022" rel="nofollow" aria-hidden="true"></a>A program reads three numbers A, B and C, within the range [1,100] and prints the minimum number. Design test cases for this program using BVC and Robust testing methods.  (2022)</h2>
+<h2><a name="a-program-read-an-integer-number-within-range-1-100-and-determines-whether-it-is-prime-number-or-not-design-test-cases-for-this-program-using-bvc-robust-and-worst-case-testing-method" class="heading-anchor" href="#a-program-read-an-integer-number-within-range-1-100-and-determines-whether-it-is-prime-number-or-not-design-test-cases-for-this-program-using-bvc-robust-and-worst-case-testing-method" rel="nofollow" aria-hidden="true"></a>A Program read an integer number within range [1, 100] and determines whether it is prime number or not. Design test cases for this program using BVC, Robust and Worst-case testing method.</h2>
+<iframe src="https://www.youtube.com/embed/ui-J-5Lvr9M" title="Design test cases for this program using BVC and Robust testing 
+method | STQA | Sem 7 INFT" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 <p><strong>Boundary Value Coverage (BVC)</strong></p>
 
 <ol>
-<li><strong>Lower Bound Tests</strong>:
-
-<ul>
-<li><strong>Test Case 1</strong>: $A=1,B=1,C=1A = 1, B = 1, C = 1A=1,B=1,C=1$ (All at lower boundary)
-
-<ul>
-<li><strong>Expected Output</strong>: 1</li>
-</ul></li>
-<li><strong>Test Case 2</strong>: $A=1,B=1,C=2A = 1, B = 1, C = 2A=1,B=1,C=2$ (One above lower boundary)
-
-<ul>
-<li><strong>Expected Output</strong>: 1</li>
-</ul></li>
-<li><strong>Test Case 3</strong>: $A=1,B=2,C=1A = 1, B = 2, C = 1A=1,B=2,C=1$ (Mixed inputs)
-
-<ul>
-<li><strong>Expected Output</strong>: 1</li>
-</ul></li>
-<li><strong>Test Case 4</strong>: $A=0,B=1,C=1A = 0, B = 1, C = 1A=0,B=1,C=1$ (Invalid input below range)
-
-<ul>
-<li><strong>Expected Output</strong>: Error/Invalid Input</li>
-</ul></li>
-<li><strong>Test Case 5</strong>: $A=1,B=1,C=0A = 1, B = 1, C = 0A=1,B=1,C=0$ (Invalid input below range)
-
-<ul>
-<li><strong>Expected Output</strong>: Error/Invalid Input</li>
-</ul></li>
-</ul></li>
-<li><strong>Upper Bound Tests</strong>:
-
-<ul>
-<li><strong>Test Case 6</strong>: $A=100,B=100,C=100A = 100, B = 100, C = 100A=100,B=100,C=100$ (All at upper boundary)
-
-<ul>
-<li><strong>Expected Output</strong>: 100</li>
-</ul></li>
-<li><strong>Test Case 7</strong>: $A=100,B=99,C=100A = 100, B = 99, C = 100A=100,B=99,C=100$ (One below upper boundary)
-
-<ul>
-<li><strong>Expected Output</strong>: 99</li>
-</ul></li>
-<li><strong>Test Case 8</strong>: $A=100,B=100,C=99A = 100, B = 100, C = 99A=100,B=100,C=99$ (Mixed inputs)
-
-<ul>
-<li><strong>Expected Output</strong>: 99</li>
-</ul></li>
-<li><strong>Test Case 9</strong>: $A=101,B=100,C=100A = 101, B = 100, C = 100A=101,B=100,C=100$ (Invalid input above range)
-
-<ul>
-<li><strong>Expected Output</strong>: Error/Invalid Input</li>
-</ul></li>
-<li><strong>Test Case 10</strong>: $A=100,B=100,C=101A = 100, B = 100, C = 101A=100,B=100,C=101$ (Invalid input above range)
-
-<ul>
-<li><strong>Expected Output</strong>: Error/Invalid Input</li>
-</ul></li>
-</ul></li>
+<li>Min = 1</li>
+<li>Min+1 = 2</li>
+<li>Max = 100</li>
+<li>Max - 1 = 99</li>
+<li>Nominal = (52-55)</li>
 </ol>
+
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Integer</th>
+<th>Output</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>Not prime number</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>2</td>
+<td>Prime number</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>100</td>
+<td>Not prime number</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>99</td>
+<td>Not prime number</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>52</td>
+<td>Not prime number</td>
+</tr>
+</tbody>
+</table>
 
 <p><strong>Robust Testing</strong></p>
 
 <ol>
-<li><strong>Valid Inputs</strong>:
-
-<ul>
-<li><strong>Test Case 1</strong>: $A=25,B=30,C=20A = 25, B = 30, C = 20A=25,B=30,C=20$
-
-<ul>
-<li><strong>Expected Output</strong>: 20</li>
-</ul></li>
-<li><strong>Test Case 2</strong>: $A=10,B=10,C=15A = 10, B = 10, C = 15A=10,B=10,C=15$
-
-<ul>
-<li><strong>Expected Output</strong>: 10</li>
-</ul></li>
-<li><strong>Test Case 3</strong>: $A=50,B=100,C=75A = 50, B = 100, C = 75A=50,B=100,C=75$
-
-<ul>
-<li><strong>Expected Output</strong>: 50</li>
-</ul></li>
-</ul></li>
-<li><strong>Boundary Values</strong>:
-
-<ul>
-<li><strong>Test Case 4</strong>: $A=1,B=100,C=50A = 1, B = 100, C = 50A=1,B=100,C=50$
-
-<ul>
-<li><strong>Expected Output</strong>: 1</li>
-</ul></li>
-<li><strong>Test Case 5</strong>: $A=99,B=1,C=100A = 99, B = 1, C = 100A=99,B=1,C=100$
-
-<ul>
-<li><strong>Expected Output</strong>: 1</li>
-</ul></li>
-</ul></li>
-<li><strong>Invalid Inputs</strong>:
-
-<ul>
-<li><strong>Test Case 6</strong>: $A=−5,B=50,C=75A = -5, B = 50, C = 75A=−5,B=50,C=75$ (Negative number)
-
-<ul>
-<li><strong>Expected Output</strong>: Error/Invalid Input</li>
-</ul></li>
-<li><strong>Test Case 7</strong>: $A=50,B=110,C=75A = 50, B = 110, C = 75A=50,B=110,C=75$ (Above range)
-
-<ul>
-<li><strong>Expected Output</strong>: Error/Invalid Input</li>
-</ul></li>
-<li><strong>Test Case 8</strong>: $A=50,B=′a′,C=75A = 50, B = 'a', C = 75A=50,B=′a′,C=75$ (Non-numeric input)
-
-<ul>
-<li><strong>Expected Output</strong>: Error/Invalid Input</li>
-</ul></li>
-</ul></li>
-<li><strong>Edge Cases</strong>:
-
-<ul>
-<li><strong>Test Case 9</strong>: $A=1,B=100,C=1A = 1, B = 100, C = 1A=1,B=100,C=1$
-
-<ul>
-<li><strong>Expected Output</strong>: 1</li>
-</ul></li>
-<li><strong>Test Case 10</strong>: $A=100,B=100,C=1A = 100, B = 100, C = 1A=100,B=100,C=1$
-
-<ul>
-<li><strong>Expected Output</strong>: 1</li>
-</ul></li>
-</ul></li>
+<li>Min = 1</li>
+<li>Min - 1 = 0</li>
+<li>Min + 1 = 2</li>
+<li>Max = 100</li>
+<li>Max - 1 = 99</li>
+<li>Max + 1 = 101</li>
+<li>Nominal = (50-55)</li>
 </ol>
+
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Integer</th>
+<th>Output</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>Not prime number</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>0</td>
+<td>Invalid</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>2</td>
+<td>Prime number</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>100</td>
+<td>Not prime number</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>99</td>
+<td>Not prime number</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>101</td>
+<td>Invalid</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>52</td>
+<td>Not prime number</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="a-program-reads-three-numbers-a-b-and-c-within-the-range-1-100-and-prints-the-minimum-number-design-test-cases-for-this-program-using-bvc-and-robust-testing-methods-2022" class="heading-anchor" href="#a-program-reads-three-numbers-a-b-and-c-within-the-range-1-100-and-prints-the-minimum-number-design-test-cases-for-this-program-using-bvc-and-robust-testing-methods-2022" rel="nofollow" aria-hidden="true"></a>A program reads three numbers A, B and C, within the range [1,100] and prints the minimum number. Design test cases for this program using BVC and Robust testing methods.  (2022)</h2>
+<iframe src="https://www.youtube.com/embed/ui-J-5Lvr9M" title="Design test cases for this program using BVC and Robust testing 
+method | STQA | Sem 7 INFT" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<p><strong>Boundary Value Coverage (BVC)</strong></p>
+
+<ol>
+<li>Min = 1</li>
+<li>Min+1 = 2</li>
+<li>Max = 100</li>
+<li>Max - 1 = 99</li>
+<li>Nominal = (52-55)</li>
+</ol>
+
+<ul>
+<li>Formula for number of inputs: 4n+1 = 4(3)+1 = 13</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>Output</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>50</td>
+<td>A is min</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>1</td>
+<td>50</td>
+<td>99</td>
+<td>A is min</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+<td>50</td>
+<td>B is min</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>50</td>
+<td>55</td>
+<td>100</td>
+<td>A is min</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>55</td>
+<td>2</td>
+<td>1</td>
+<td>C is min</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>99</td>
+<td>20</td>
+<td>5</td>
+<td>C is min</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>69</td>
+<td>53</td>
+<td>3</td>
+<td>C is min</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>23</td>
+<td>69</td>
+<td>1</td>
+<td>C is min</td>
+</tr>
+
+<tr>
+<td>9</td>
+<td>5</td>
+<td>2</td>
+<td>69</td>
+<td>B is min</td>
+</tr>
+
+<tr>
+<td>10</td>
+<td>1</td>
+<td>6</td>
+<td>90</td>
+<td>A is min</td>
+</tr>
+
+<tr>
+<td>11</td>
+<td>6</td>
+<td>21</td>
+<td>23</td>
+<td>A is min</td>
+</tr>
+
+<tr>
+<td>12</td>
+<td>10</td>
+<td>53</td>
+<td>23</td>
+<td>A is min</td>
+</tr>
+
+<tr>
+<td>13</td>
+<td>11</td>
+<td>1</td>
+<td>60</td>
+<td>B is min</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Robust Testing</strong></p>
+
+<ol>
+<li>Min = 1</li>
+<li>Min - 1 = 0</li>
+<li>Min + 1 = 2</li>
+<li>Max = 100</li>
+<li>Max - 1 = 99</li>
+<li>Max + 1 = 101</li>
+<li>Nominal = (50-55)</li>
+</ol>
+
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>Output</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>100</td>
+<td>A is min</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>0</td>
+<td>50</td>
+<td>99</td>
+<td>Invalid</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+<td>50</td>
+<td>B is min</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>2</td>
+<td>55</td>
+<td>100</td>
+<td>A is min</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>100</td>
+<td>2</td>
+<td>1</td>
+<td>C is min</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>55</td>
+<td>20</td>
+<td>5</td>
+<td>C is min</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>101</td>
+<td>53</td>
+<td>3</td>
+<td>Invalid</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>23</td>
+<td>69</td>
+<td>1</td>
+<td>C is min</td>
+</tr>
+
+<tr>
+<td>9</td>
+<td>5</td>
+<td>2</td>
+<td>69</td>
+<td>B is min</td>
+</tr>
+
+<tr>
+<td>10</td>
+<td>1</td>
+<td>6</td>
+<td>90</td>
+<td>A is min</td>
+</tr>
+
+<tr>
+<td>11</td>
+<td>6</td>
+<td>21</td>
+<td>0</td>
+<td>Invalid</td>
+</tr>
+
+<tr>
+<td>12</td>
+<td>10</td>
+<td>53</td>
+<td>23</td>
+<td>A is min</td>
+</tr>
+
+<tr>
+<td>13</td>
+<td>11</td>
+<td>1</td>
+<td>60</td>
+<td>B is min</td>
+</tr>
+</tbody>
+</table>
 <h2><a name="what-is-the-need-of-software-measurement-discuss-the-various-types-of-software-metrics-2022" class="heading-anchor" href="#what-is-the-need-of-software-measurement-discuss-the-various-types-of-software-metrics-2022" rel="nofollow" aria-hidden="true"></a>What is the need of software measurement? Discuss the various types of software metrics. (2022)</h2>
 <p>Software measurement is the process of quantifying software attributes to understand, evaluate, and improve software development processes and products.</p>
 
@@ -1806,8 +1739,7 @@ body { color: #282c34; }
 <li><strong>Resource Utilization:</strong> Measures how efficiently the software system uses system resources such as CPU, memory, and disk space.</li>
 </ul></li>
 </ul></li>
-
-<li><p><strong>Process Metrics:</strong> These metrics measure the effectiveness of the software development process.</p>
+<li><strong>Process Metrics:</strong> These metrics measure the effectiveness of the software development process.
 
 <ul>
 <li><strong>Productivity Metrics:</strong>
@@ -1828,18 +1760,15 @@ body { color: #282c34; }
 <li><strong>Schedule Slippage:</strong> This metric measures the amount of time by which a project is delayed compared to its original schedule.</li>
 <li><strong>Percentage of Tasks Completed on Time:</strong> This metric measures the percentage of tasks that are completed on schedule.</li>
 </ul></li>
-
-<li><p><strong>Cost Metrics:</strong></p>
+<li><strong>Cost Metrics:</strong>
 
 <ul>
 <li><strong>Cost per Function Point:</strong> This metric measures the cost of developing a function point of software.</li>
-
-<li><p><strong>Cost per Line of Code:</strong> This metric measures the cost of developing a line of code.</p>
-<h2><a name="differentiate-between-static-and-dynamic-tools-2022" class="heading-anchor" href="#differentiate-between-static-and-dynamic-tools-2022" rel="nofollow" aria-hidden="true"></a>Differentiate between static and dynamic tools. (2022)</h2></li>
+<li><strong>Cost per Line of Code:</strong> This metric measures the cost of developing a line of code.</li>
 </ul></li>
 </ul></li>
 </ul>
-
+<h2><a name="differentiate-between-static-and-dynamic-tools-2022" class="heading-anchor" href="#differentiate-between-static-and-dynamic-tools-2022" rel="nofollow" aria-hidden="true"></a>Differentiate between static and dynamic tools. (2022)</h2>
 <table>
 <thead>
 <tr>
@@ -1893,14 +1822,14 @@ body { color: #282c34; }
 </tr>
 
 <tr>
-<td><strong>Skill Requirement</strong></td>
-<td>Less technical</td>
-<td>More technical</td>
+<td><strong>Technical Skill Requirement</strong></td>
+<td>Less</td>
+<td>More</td>
 </tr>
 
 <tr>
 <td><strong>Automation</strong></td>
-<td>Highly automatable</td>
+<td>Highly</td>
 <td>Can be automated</td>
 </tr>
 
@@ -1933,7 +1862,7 @@ body { color: #282c34; }
 <li><strong>Determine Test Deliverables</strong>: Identify the list of documents, tools, and other equipment required for testing activities.</li>
 </ol>
 <h2><a name="explain-mccall-s-quality-factors-and-criteria-2022" class="heading-anchor" href="#explain-mccall-s-quality-factors-and-criteria-2022" rel="nofollow" aria-hidden="true"></a>Explain McCall's Quality factors and Criteria. (2022)</h2>
-<p><img loading="lazy" src="../UT2/assets/Mccall-1024.webp" alt="" /></p>
+<p><img loading="lazy" src="./assets/Pasted%20image%2020241130022500.webp" alt="" /></p>
 
 <p>McCall's Quality Model, introduced in 1977 by Jim McCall and his colleagues, is a framework for evaluating software quality based on various factors that reflect both user and developer perspectives.</p>
 
@@ -2049,9 +1978,17 @@ body { color: #282c34; }
 </tr>
 </tbody>
 </table>
-<h1><a name="5-marks" class="heading-anchor" href="#5-marks" rel="nofollow" aria-hidden="true"></a>5 Marks</h1><h2><a name="what-are-different-types-of-integration-testing-explain-bottom-up-integration-testing-with-one-example-2023" class="heading-anchor" href="#what-are-different-types-of-integration-testing-explain-bottom-up-integration-testing-with-one-example-2023" rel="nofollow" aria-hidden="true"></a>What are different types of Integration testing?Explain Bottom-up Integration Testing with one example. (2023)</h2>
-<p><img loading="lazy" src="../UT2/assets/Pasted%20image%2020241022033135.png" alt="" /></p>
+<h1><a name="5-marks" class="heading-anchor" href="#5-marks" rel="nofollow" aria-hidden="true"></a>5 Marks</h1><h2><a name="what-are-different-types-of-integration-testing-explain-bottom-up-integration-testing-with-one-example-2023" class="heading-anchor" href="#what-are-different-types-of-integration-testing-explain-bottom-up-integration-testing-with-one-example-2023" rel="nofollow" aria-hidden="true"></a>What are different types of Integration testing? Explain Bottom-up Integration Testing with one example. (2023)</h2>
+<pre class='mermaid'>flowchart
+    it[Integration Testing]
+    
+    it --> iit[Incremental Integration Testing]
+    it --> bbt[Big Bang Integration Testing]
 
+    iit --> bua[Bottom-Up Approach]
+    iit --> tda[Top-Down Approach]
+    iit --> sa[Sandwich Approach]
+</pre>
 <ul>
 <li><strong>Integration Testing</strong> is the overall process of combining individual components or modules of a software system and testing them together to verify their interactions and ensure they work as intended.</li>
 <li><strong>Incremental Integration Testing</strong> is a strategy where modules are integrated in a systematic and incremental manner. There are three main approaches within this strategy:
@@ -2086,7 +2023,6 @@ body { color: #282c34; }
 <li><strong>Example:</strong> In a small standalone application, all modules (UI, business logic, and data access) might be integrated and tested together.</li>
 <li><img loading="lazy" src="assets/Pasted%20image%2020241101174237.png" alt="" /></li>
 </ul></li>
-<li></li>
 </ul>
 <h2><a name="how-to-test-simple-loop-in-a-program-2023" class="heading-anchor" href="#how-to-test-simple-loop-in-a-program-2023" rel="nofollow" aria-hidden="true"></a>How to test simple loop in a program? (2023)</h2>
 <p>Simple loops are fundamental programming constructs that execute a block of code repeatedly until a certain condition is met. Common types include:</p>
@@ -2262,7 +2198,7 @@ $$</li>
 
 <p><strong>Six Sigma Belts</strong></p>
 
-<p><img loading="lazy" src="assets/Pasted%20image%2020241101171112.png" alt="" /></p>
+<p><img loading="lazy" src="./assets/Pasted%20image%2020241130031113.webp" alt="" /></p>
 
 <p>Six Sigma practitioners are often referred to by color-coded belts, similar to martial arts:</p>
 
@@ -2273,6 +2209,8 @@ $$</li>
 <li><strong>Black Belt:</strong> Highly trained Six Sigma experts who can lead large-scale improvement projects.</li>
 <li><strong>Master Black Belt:</strong> Highly experienced Six Sigma leaders who mentor Black Belts and lead strategic initiatives.</li>
 </ul>
+
+<p><img loading="lazy" src="./assets/Pasted%20image%2020241130031612.webp" alt="" /></p>
 <h2><a name="define-each-software-testing-terminology-2022" class="heading-anchor" href="#define-each-software-testing-terminology-2022" rel="nofollow" aria-hidden="true"></a>Define each software testing terminology: (2022)</h2>
 <p>i) Failure
 ii) Defect
@@ -2304,7 +2242,15 @@ v) Test oracle</p>
 <h3><a name="testware" class="heading-anchor" href="#testware" rel="nofollow" aria-hidden="true"></a>Testware</h3>
 <p><strong>Testware</strong> refers to all the artifacts produced during the testing process.</p>
 
-<p>This includes test plans, test cases, test scripts, test data, and any other documentation or tools that support testing activities.</p>
+<p>This includes:</p>
+
+<ul>
+<li>Test plans</li>
+<li>Test cases</li>
+<li>Test scripts</li>
+<li>Test data</li>
+<li>any other documentation or tools that support testing activitie</li>
+</ul>
 
 <p>Testware is essential for organizing and executing tests effectively.</p>
 
@@ -2416,8 +2362,12 @@ v) Test oracle</p>
 <li><strong>Grey Box Testing Tools:</strong> Pattern testing is applicable to such type of software that is developed by following the same pattern of previous software.</li>
 </ul>
 <h2><a name="acceptance-testing" class="heading-anchor" href="#acceptance-testing" rel="nofollow" aria-hidden="true"></a>Acceptance Testing</h2>
-<p><img loading="lazy" src="../UT1/assets/Pasted%20image%2020240829051959.jpg" alt="" /></p>
-
+<pre class='mermaid'>flowchart BT
+    ut[Unit Testing] -->
+    it[Integration Testing] -->
+    st[System Testing] -->
+    at[Acceptance Testing]
+</pre>
 <p>Acceptance testing is a quality assurance (<a href="https://www.techtarget.com/searchsoftwarequality/definition/quality-assurance">QA</a>) process that determines to what degree an <a href="https://www.techtarget.com/searchsoftwarequality/definition/application">application</a> meets end users' approval.</p>
 
 <p>Depending on the organization, acceptance testing might take the form of <a href="https://www.techtarget.com/whatis/definition/beta-test">beta testing</a>, application testing, field testing or end-user testing.</p>
@@ -2444,7 +2394,7 @@ v) Test oracle</p>
 
 <p>Typically, it involves writing a test for a known bug and re-running this test after every change to the code base. This aims to immediately identify any change that reintroduces a bug.</p>
 
-<p><img loading="lazy" src="Sem/assets%201/Regression-testing-tutorual.webp" alt="" /></p>
+<p><img loading="lazy" src="./assets/Pasted%20image%2020241130024826.webp" alt="" /></p>
 
 <p><strong>Example:</strong></p>
 
@@ -2520,8 +2470,20 @@ v) Test oracle</p>
 <h2><a name="explain-selenium-testing-tool-in-detail" class="heading-anchor" href="#explain-selenium-testing-tool-in-detail" rel="nofollow" aria-hidden="true"></a>Explain selenium testing tool in detail.</h2>
 <p>Selenium is a widely utilized open-source suite of tools designed for automating the testing of web applications. Its flexibility and comprehensive capabilities make it a preferred choice for developers and testers in various environments.</p>
 
-<p><img loading="lazy" src="../UT2/assets/SeleniumSuite.webp" alt="" /></p>
+<pre class='mermaid'>flowchart TD
 
+    subgraph Selenium Suite
+        ide[Selenium 
+        IDE]
+        rc[Selenium 
+        RC]
+        wd[Web Driver]
+        g[Selenium Grid]
+    end
+    rc --> |Merged| s2[Selenium 2]
+    wd --> s2
+    s2 --> |New & Improved| s3[Selenium 3]
+</pre>
 <p><strong>Components of Selenium:</strong></p>
 
 <ol>
@@ -2647,13 +2609,9 @@ Explain ISO 9000:2000 standard. (2023)</a></li>
 <li><a href="#what-is-performance-testing-why-is-performance-testing-important-2023">
 What is performance testing? Why is performance testing important? (2023)</a></li>
 <li><a href="#consider-a-project-with-the-following-distribution-of-data-and-calculate-its-defect-spoilage-2022">
-Consider a project with the following distribution of data and calculate its defect spoilage. (2022)</a>
-<ul>
-<li><a href="#step-by-step-calculation">
-Step-by-Step Calculation</a></li>
-<li><a href="#total-defect-spoilage-calculation">
-Total Defect Spoilage Calculation</a></li>
-</ul></li>
+Consider a project with the following distribution of data and calculate its defect spoilage. (2022)</a></li>
+<li><a href="#a-program-read-an-integer-number-within-range-1-100-and-determines-whether-it-is-prime-number-or-not-design-test-cases-for-this-program-using-bvc-robust-and-worst-case-testing-method">
+A Program read an integer number within range [1, 100] and determines whether it is prime number or not. Design test cases for this program using BVC, Robust and Worst-case testing method.</a></li>
 <li><a href="#a-program-reads-three-numbers-a-b-and-c-within-the-range-1-100-and-prints-the-minimum-number-design-test-cases-for-this-program-using-bvc-and-robust-testing-methods-2022">
 A program reads three numbers A, B and C, within the range [1,100] and prints the minimum number. Design test cases for this program using BVC and Robust testing methods.  (2022)</a></li>
 <li><a href="#what-is-the-need-of-software-measurement-discuss-the-various-types-of-software-metrics-2022">
@@ -2672,7 +2630,7 @@ Differentiate between Effective Software Testing and Exhaustive Software Testing
 5 Marks</a>
 <ul>
 <li><a href="#what-are-different-types-of-integration-testing-explain-bottom-up-integration-testing-with-one-example-2023">
-What are different types of Integration testing?Explain Bottom-up Integration Testing with one example. (2023)</a></li>
+What are different types of Integration testing? Explain Bottom-up Integration Testing with one example. (2023)</a></li>
 <li><a href="#how-to-test-simple-loop-in-a-program-2023">
 How to test simple loop in a program? (2023)</a></li>
 <li><a href="#explain-logic-coverage-criteria-for-statement-coverage-2023">
@@ -2731,7 +2689,7 @@ Agile Vs Waterfall testing.</a></li>
 			</p>
 		</footer>
 	</body>
-	<script async src="https://AnzenKodo.github.io/assets/js/mermaid.js"></script>
+	<script src="https://AnzenKodo.github.io/assets/js/mermaid.js"></script>
 	<script id="MathJax-script" async src="https://AnzenKodo.github.io/assets/js/mathjax.js"></script>
 	<script>
 		/* document.getElementById('video').addEventListener('click', (ele) => {
@@ -2743,7 +2701,10 @@ Agile Vs Waterfall testing.</a></li>
 		}); */
 
 		mermaid.initialize({
-			theme: "neutral"
+			theme: "neutral",
+			themeVariables: {
+			    lineColor: "#939598",
+			}
 		});
 
 		MathJax = {
