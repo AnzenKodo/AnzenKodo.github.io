@@ -199,9 +199,59 @@
 			<h1 style="text-align: center;">
 				<a href="https://AnzenKodo.github.io">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
 			</h1>
-		<video id="video" style="display: inherit;" controls>
-			<source src="https://anzenkodo.github.io/drive/humble.webm" />
-		</video><nav style="border-top: 1px solid gray;border-bottom: 1px solid gray;padding: .5rem 0;text-align: center;margin: 0 0 2rem 0;color: gray;">
+            <div id="music" style="font-family: serif">
+                <img
+                    src="https://i.pinimg.com/736x/ae/e8/13/aee8139ce7d5f4d6cccd6cded42d4ef8.jpg"
+                    width="45%" align="left" style="padding-right: 1rem"
+                />
+                <p style="font-size: 1.5rem">Young and Beautiful</br>
+                  <small>Released in 23 April 2013</small></p>
+                <div id="singers" style="line-height: 1.5rem">
+                    <input type="radio" name="music_name" value="og" checked/>
+                    <label for="og">Lana Del Ray - Original</label><br />
+                    <input type="radio" name="music_name" value="kurt" />
+                    <label for="kurt">Kurt Cobain - AI (Died in 5 April 1994)</label><br />
+                    <input type="radio" name="music_name" value="rose" />
+                    <label for="rose">Rose from BLACKPINK - AI (Korean Singer)</label><br />
+                    <input type="radio" name="music_name" value="marina" />
+                    <label for="marina">Marina Diamandis - AI</label>
+                </div>
+                <button onclick="play(this)" style="margin-top: 1rem; font-size: 1.4rem; background: #D8472B; color: white; border: #D8472B; padding: .2rem 1rem; text-align: center">Play</button>
+                <audio src="https://anzenkodo.github.io/drive/og.mp3"></audio>
+                <script>
+                    const music_urls = {
+                      "og": "https://anzenkodo.github.io/drive/og.mp3",
+                      "kurt": "https://anzenkodo.github.io/drive/kurt.mp3",
+                      "rose": "https://anzenkodo.github.io/drive/rose.mp3",
+                      "marina": "https://anzenkodo.github.io/drive/marina.mp3",
+                    }
+                    const audio = document.querySelector("#music audio");
+                    const button = document.querySelector("#music button");
+                    function play(ele) {
+                      if (audio.paused) {
+                        audio.play();
+                        button.textContent = "Pause";
+                      } else {
+                        audio.pause();
+                        button.textContent  = "Play"
+                      }
+                    }
+
+                    const singers = document.querySelectorAll("#singers input");
+                    for (const singer of singers) {
+                      singer.addEventListener("click", (ele) => {
+                          ele.checked = true;
+                          if (ele.target.checked) {
+                            const current_time = audio.currentTime;
+                            audio.src = music_urls[ele.target.value];
+                            audio.currentTime = current_time;
+                            audio.play()
+                            button.textContent = "Pause";
+                        }
+                      })
+                    }
+                </script>
+            </div><nav style="border-top: 1px solid gray;border-bottom: 1px solid gray;padding: .5rem 0;text-align: center;margin: 0 0 2rem 0;color: gray;clear: left;">
 				<a href="https://AnzenKodo.github.io/notes">Home</a> | <a href="https://AnzenKodo.github.io">About</a> | <a href="https://AnzenKodo.github.io/blogroll">Blogroll</a> | <a href="https://github.com/AnzenKodo">Github</a> | <a href="https://x.com/AnzenKodo">𝕏</a>
 			</nav>
 			<!-- <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;"> -->
@@ -430,8 +480,41 @@
 <li><strong>Reduction of Query Ambiguity:</strong> Feedback helps to resolve ambiguities in queries, providing more accurate and context-aware results.</li>
 <li><strong>Better Understanding of User Intent:</strong> By analyzing feedback trends, systems can better understand user intent, improving future searches.</li>
 </ol>
+
+<p><strong>Relevance Feedback Process</strong></p>
+
+<pre class='mermaid'>flowchart TB
+	iq[Initial Query] --> ir[Initial Result] -->
+	fq[Feedback Phase] --> qr[Query refiresment] -->
+	rr[Revised Results]
+</pre>
+<ul>
+<li><strong>Initial Query</strong>: This is where the user inputs their search query into the system. The system then uses this query to retrieve initial results based on relevance algorithms or rules.</li>
+<li><strong>Initial Result</strong>: After processing the initial query, the system returns a set of documents or results deemed relevant.</li>
+<li><strong>Feedback Phase</strong>: This stage involves the user reviewing the initial results and providing feedback on which documents are relevant or irrelevant.</li>
+<li><strong>Query Refinement</strong>: This might involve adding new terms from relevant documents, adjusting the weights of existing terms, or even removing terms that led to irrelevant results.</li>
+<li><strong>Revised Results</strong>: After refining the query, the system conducts another search, ideally returning results more aligned with the user's actual information need, thus improving the precision and recall of the search.</li>
+</ul>
+
+<p><strong>Types of Relevance Feedback</strong></p>
+
+<ol>
+<li>Explicit Relevance Feedback:
+
+<ul>
+<li><strong>Positive Feedback</strong>: The system then uses this information to modify the query, often by adding terms from these documents or increasing the weight of terms already in the query that appear in these documents.</li>
+<li><strong>Negative Feedback</strong>: The system can then adjust by lowering the weight of terms from these documents or removing them from the query vector.</li>
+</ul></li>
+<li>Implicit Relevance Feedback:
+
+<ul>
+<li><strong>Click-through Behavior</strong>: Observing which results users click on can imply relevance. Systems can infer that clicked documents are relevant, although this can be noisy due to users clicking out of curiosity or by mistake.</li>
+<li><strong>Dwell Time</strong>: The amount of time spent on a document might indicate its relevance. Longer dwell times could suggest that the document was useful to the user.</li>
+<li><strong>Scrolling and Navigation Patterns</strong>: How far a user scrolls or navigates through results can provide feedback on the relevance of the results presented.</li>
+</ul></li>
+</ol>
 <h2><a name="sequential-searching-explain-any-one-algorithm-used-in-sequential-searching-2024-2023-dec-2022" class="heading-anchor" href="#sequential-searching-explain-any-one-algorithm-used-in-sequential-searching-2024-2023-dec-2022" rel="nofollow" aria-hidden="true"></a>Sequential searching. Explain any one algorithm used in sequential searching. (2024) (2023 Dec) (2022)</h2>
-<p><img loading="lazy" src="assets/Pasted%20image%2020241103203542.png" alt="" /></p>
+<p><img loading="lazy" src="assets/Pasted%20image%2020241103203542.png" alt="|772" /></p>
 
 <p><strong>Sequential searching</strong>, also known as linear searching, is a fundamental method for finding a target value within a list or array. The approach involves checking each element in the list one at a time until the desired element is found or the end of the list is reached. This method is straightforward and doesn't require the data to be sorted.</p>
 
@@ -550,16 +633,20 @@
 <h2><a name="discuss-various-phases-of-text-preprocessing-within-a-document-discuss-any-one-application-for-the-same-2024-2022" class="heading-anchor" href="#discuss-various-phases-of-text-preprocessing-within-a-document-discuss-any-one-application-for-the-same-2024-2022" rel="nofollow" aria-hidden="true"></a>Discuss various phases of text preprocessing within a document. Discuss any one application for the same. (2024) (2022)</h2>
 <p>Document pre-processing is a crucial step in preparing text data for analysis, particularly in fields like Natural Language Processing (NLP) and machine learning. This process involves cleaning and transforming raw text into a format that can be effectively analyzed and utilized by algorithms.</p>
 
-<p><img loading="lazy" src="../UT2/assets/Pasted%20image%2020241022042351.png" alt="" /></p>
+<ul>
+<li><strong>Tokenization</strong>: Breaks down text into individual words or tokens. It's essential for understanding the structure of text and for most NLP tasks.</li>
+<li><strong>Stemming</strong>: Reduces words to their root form by removing suffixes (e.g., &quot;running&quot; to &quot;run&quot;). It's a less precise but faster method than lemmatization.</li>
+<li><strong>Lemmatization</strong>: Converts words to their base or dictionary form (e.g., &quot;better&quot; to &quot;good&quot;).</li>
+<li><strong>Stop-word removal</strong>: Removes common words (like &quot;the&quot;, &quot;is&quot;, &quot;at&quot;) that usually do not contribute to the meaning in many contexts, reducing noise in data.</li>
+<li><strong>Lowercasing</strong>: Converts all text to lowercase to ensure case-insensitive analysis. This step helps in normalizing text where &quot;Text&quot; and &quot;text&quot; would otherwise be treated as different.</li>
+<li><strong>Normalization</strong>: Adjusts text to a common format, which might include:
 
-<ol>
-<li><strong>Data Profiling</strong>: Examines and analyzes data quality through a survey of its characteristics.</li>
-<li><strong>Data Cleansing</strong>: Rectifies quality issues by removing bad data and filling in missing values for feature engineering.</li>
-<li><strong>Data Reduction</strong>: Eliminates redundant or irrelevant data using techniques like principal component analysis to simplify datasets.</li>
-<li><strong>Data Transformation</strong>: Organizes data for clarity and relevance, structuring unstructured data and combining variables as needed.</li>
-<li><strong>Data Enrichment</strong>: Applies feature engineering techniques to enhance data with desired transformations.</li>
-<li><strong>Data Validation</strong>: Splits data into training and testing sets to train machine learning models and evaluate their accuracy.</li>
-</ol>
+<ul>
+<li>Converting numbers to words or vice versa.</li>
+<li>Handling contractions (e.g., &quot;don't&quot; to &quot;do not&quot;).</li>
+<li>Standardizing date formats or other special formats.</li>
+</ul></li>
+</ul>
 <h2><a name="discuss-automatic-local-analysis-with-suitable-examples-2024-2023-may" class="heading-anchor" href="#discuss-automatic-local-analysis-with-suitable-examples-2024-2023-may" rel="nofollow" aria-hidden="true"></a>Discuss automatic local analysis, with suitable examples. (2024) (2023 May)</h2>
 <p><strong>Automatic local analysis</strong> is a technique used in natural language processing (NLP) to analyze the meaning of words and phrases in the context of a specific sentence or document. It involves identifying the syntactic and semantic roles of words and their relationships with other words.</p>
 
@@ -611,6 +698,19 @@
 <li><strong>Description</strong>: Uses special characters (like <code>*</code> or <code>?</code>) to represent one or more unknown characters, allowing for broader searches.</li>
 <li><strong>Example</strong>: A query like &quot;bio*&quot; would return results for &quot;biography,&quot; &quot;biomedical,&quot; &quot;biotechnology,&quot; etc., enabling users to capture variations of a root word.</li>
 </ul></li>
+<li><strong>Single-Word Queries</strong>:
+
+<ul>
+<li>A query is formulated by a word.</li>
+<li>A document is formulated by long sequences of words.</li>
+<li>Word queries return a list of documents that contains at least of the query word.</li>
+</ul></li>
+<li><strong>Proximity Queries</strong>
+
+<ul>
+<li>Proximity refers to search that accounts for how close within a record multiple items should be to each other.</li>
+<li>Most commonly used proximity search option is a phase search that requires terms to be in exact order.</li>
+</ul></li>
 </ol>
 <h2><a name="summarize-two-visualization-techniques-with-respect-to-user-interface-design-2024" class="heading-anchor" href="#summarize-two-visualization-techniques-with-respect-to-user-interface-design-2024" rel="nofollow" aria-hidden="true"></a>Summarize two visualization techniques with respect to user interface design. (2024)</h2>
 <p>Visualization techniques are graphical representations of information and data. They play a crucial role in user interface design by making complex information more accessible and understandable.</p>
@@ -656,7 +756,7 @@
 </ul></li>
 </ol>
 <h2><a name="document-clustering-2024-2022" class="heading-anchor" href="#document-clustering-2024-2022" rel="nofollow" aria-hidden="true"></a>Document clustering (2024) (2022)</h2>
-<p><img loading="lazy" src="assets/Pasted%20image%2020241103143630.png" alt="" /></p>
+<p><img loading="lazy" src="./assets/Pasted%20image%2020241212224931.webp" alt="" /></p>
 
 <p>Document clustering involves the use of descriptors and descriptor extraction. Descriptors are sets of words that describe the contents within the cluster. Document clustering is generally considered to be a centralized process. Examples of document clustering include web document clustering for search users.</p>
 
@@ -671,6 +771,8 @@
 <li><strong>Evaluation/Visualization:</strong> Assess cluster quality and visualize results.</li>
 </ol>
 <h2><a name="state-the-different-types-of-queries-explain-the-pattern-matching-query-concept-with-an-example-2023-dec" class="heading-anchor" href="#state-the-different-types-of-queries-explain-the-pattern-matching-query-concept-with-an-example-2023-dec" rel="nofollow" aria-hidden="true"></a>State the different types of queries. Explain the pattern matching query concept with an example. (2023 Dec)</h2>
+<p>Pattern matching queries in Information Retrieval (IR) are used to search for specific patterns within textual data, often involving the use of wildcard characters, regular expressions, or proximity operators.</p>
+
 <p>Different types of queries in information retrieval and database systems include:</p>
 
 <ol>
@@ -683,7 +785,7 @@
 
 <p><strong>Example: Pattern Matching Query Concept</strong></p>
 
-<p><img loading="lazy" src="assets/Pasted%20image%2020241022051434.png" alt="" /></p>
+<p><img loading="lazy" src="../UT2/assets/Pasted%20image%2020241022051434.png" alt="" /></p>
 <h2><a name="explain-the-taxonomy-of-information-retrieval-model-with-classification-diagram-2023-dec-2022" class="heading-anchor" href="#explain-the-taxonomy-of-information-retrieval-model-with-classification-diagram-2023-dec-2022" rel="nofollow" aria-hidden="true"></a>Explain the taxonomy of Information retrieval model with classification diagram. (2023 Dec) (2022)</h2>
 <p>The taxonomy of Information Retrieval (IR) models can be organized based on several criteria, including the underlying assumptions, data representation methods, and retrieval mechanisms.</p>
 
@@ -695,19 +797,28 @@
 <ul>
 <li>Uses Boolean logic (AND, OR, NOT) for query formulation.</li>
 <li>Documents are represented as sets of keywords.</li>
+<li><img loading="lazy" src="./assets/Boolean-operators-1.webp" alt="" /></li>
 </ul></li>
 <li><strong>Vector Space Model</strong>:
 
 <ul>
 <li>Represents documents and queries as vectors in a multi-dimensional space.</li>
 <li>Uses cosine similarity to measure relevance.</li>
+<li><img loading="lazy" src="./assets/Pasted%20image%2020241212200841.webp" alt="" /></li>
 </ul></li>
-<li>- <strong>Probabilistic Model</strong>:
-    - Models uncertainty in relevance based on probability theory.
-    - Assumes a probability distribution over documents for a given query.</li>
-<li>- <strong>Text-Based Models</strong>:
-    - Focus on textual data.
-    - Include models like the Boolean and Vector Space models.</li>
+<li><strong>Probabilistic Model</strong>:
+
+<ul>
+<li>Models uncertainty in relevance based on probability theory.</li>
+<li>Assumes a probability distribution over documents for a given query.</li>
+<li><img loading="lazy" src="./assets/Pasted%20image%2020241212200954.webp" alt="" /></li>
+</ul></li>
+<li><strong>Text-Based Models</strong>:
+
+<ul>
+<li>Focus on textual data.</li>
+<li>Include models like the Boolean and Vector Space models.</li>
+</ul></li>
 
 <li><p><strong>Multimedia Models</strong>:</p>
 
@@ -750,7 +861,40 @@ Models]
 </pre></li>
 </ul></li>
 </ul>
-<h2><a name="explain-ranking-and-similarity-measures-with-suitable-example-2023-dec" class="heading-anchor" href="#explain-ranking-and-similarity-measures-with-suitable-example-2023-dec" rel="nofollow" aria-hidden="true"></a>Explain ranking and similarity measures with suitable example. (2023 Dec)</h2><h2><a name="what-is-flat-browsing-and-hypertext-browsing-explain-2023-dec" class="heading-anchor" href="#what-is-flat-browsing-and-hypertext-browsing-explain-2023-dec" rel="nofollow" aria-hidden="true"></a>What is flat browsing and hypertext browsing? Explain. (2023 Dec)</h2>
+<h2><a name="explain-ranking-and-similarity-measures-with-suitable-example-2023-dec" class="heading-anchor" href="#explain-ranking-and-similarity-measures-with-suitable-example-2023-dec" rel="nofollow" aria-hidden="true"></a>Explain ranking and similarity measures with suitable example. (2023 Dec)</h2>
+<p><strong>Ranking and Similarity Measures</strong> are fundamental concepts in information retrieval, machine learning, and data analysis, used to assess how items relate to each other or to a query. Here's an explanation with examples:</p>
+
+<p><strong>Ranking</strong></p>
+
+<p><strong>Definition:</strong> Ranking is the process of ordering items based on some criteria or score. In the context of information retrieval, this often means ordering search results by relevance to a query.</p>
+
+<p>Purpose:</p>
+
+<ul>
+<li>To present the most relevant items first.</li>
+<li>To help users quickly find what they're looking for among potentially vast amounts of data.</li>
+</ul>
+
+<p>Example:</p>
+
+<p>Consider a search engine where you type &quot;machine learning books.&quot; The search engine would then rank results based on:</p>
+
+<ul>
+<li>Relevance: How closely each book matches the query (title, content, metadata).</li>
+<li>Popularity: Number of reviews, ratings, or sales.</li>
+<li>Recency: Recently published books might rank higher for certain queries.</li>
+</ul>
+
+<p><strong>Similarity Measures</strong></p>
+
+<p><strong>Definition:</strong> Measures how similar two items are, often used to rank items by their similarity to a query or each other.</p>
+
+<p>Example:</p>
+
+<p><strong>Recommendation Systems</strong>: Netflix might use similarity measures to find movies similar to ones you've enjoyed, ranking them by how closely they match your viewing history or preferences.</p>
+<h2><a name="what-is-flat-browsing-and-hypertext-browsing-explain-2023-dec" class="heading-anchor" href="#what-is-flat-browsing-and-hypertext-browsing-explain-2023-dec" rel="nofollow" aria-hidden="true"></a>What is flat browsing and hypertext browsing? Explain. (2023 Dec)</h2>
+<p><img loading="lazy" src="./assets/Pasted%20image%2020241212230010.webp" alt="" /></p>
+
 <ul>
 <li><strong>Flat Browsing</strong>
 
@@ -779,6 +923,74 @@ Models]
 <li><strong>Example:</strong>  The World Wide Web is the most common example of hypertext browsing, where clicking on hyperlinks within a webpage can lead users to entirely different pages or resources related to the topic.</li>
 </ul></li>
 </ul>
+
+<p><strong>Flat Browsing Vs Hypertext Browsing</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Flat Browsing</th>
+<th>Hypertext Browsing</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Structure</td>
+<td>Linear, sequential</td>
+<td>Non-linear, interconnected with hyperlinks</td>
+</tr>
+
+<tr>
+<td>Navigation</td>
+<td>Scrolling/paging</td>
+<td>Clicking hyperlinks</td>
+</tr>
+
+<tr>
+<td>User Experience</td>
+<td>Simpler, for organized data</td>
+<td>More engaging for complex, linked info</td>
+</tr>
+
+<tr>
+<td>Access</td>
+<td>Sequential search</td>
+<td>Direct via links</td>
+</tr>
+
+<tr>
+<td>Search</td>
+<td>Limited</td>
+<td>Enhanced with link analysis</td>
+</tr>
+
+<tr>
+<td>Examples</td>
+<td>Directory lists, simple docs</td>
+<td>Wikipedia, modern websites</td>
+</tr>
+
+<tr>
+<td>Complexity</td>
+<td>Lower</td>
+<td>Higher</td>
+</tr>
+
+<tr>
+<td>Discovery</td>
+<td>Deliberate</td>
+<td>Serendipitous</td>
+</tr>
+
+<tr>
+<td>Maintenance</td>
+<td>Easier</td>
+<td>More complex</td>
+</tr>
+</tbody>
+</table>
 <h2><a name="information-retrieval-in-digital-libraries-2023-dec" class="heading-anchor" href="#information-retrieval-in-digital-libraries-2023-dec" rel="nofollow" aria-hidden="true"></a>Information Retrieval in digital libraries. (2023 Dec)</h2>
 <p><strong>Information Retrieval (IR)</strong> in digital libraries is the process of finding relevant information within a vast collection of digital documents. It involves indexing, searching, and ranking documents to meet user information needs.  </p>
 
@@ -882,6 +1094,16 @@ Models]
 </pre>
 <p>OODBMS are designed to store and manage complex data, especially object-oriented data. They are based on object-oriented programming concepts like encapsulation, inheritance, and polymorphism.</p>
 
+<p>Components of OODBMS:</p>
+
+<ul>
+<li><strong>Object Storage</strong>: Directly stores complex objects, including their methods and relationships, in the database.<br></li>
+<li><strong>Inheritance</strong>: Supports class hierarchies where objects can inherit attributes and methods from parent classes.</li>
+<li><strong>Encapsulation</strong>: Data and methods are bundled together, ensuring that the internal state of objects is protected.</li>
+<li><strong>Polymorphism</strong>: Allows objects of different classes to be treated as objects of a common superclass.</li>
+<li><strong>Query Language</strong>: Often uses an extended version of SQL or proprietary languages that understand object concepts, like OQL (Object Query Language).</li>
+</ul>
+
 <p>Applications of OODBMS:</p>
 
 <ul>
@@ -921,7 +1143,7 @@ Models]
     Project "1" -- "*" Task : Contains
 
 </pre>
-<p>ORDBMS extend traditional relational databases to support object-oriented features while maintaining the relational model.</p>
+<p>An ORDBMS extends the relational database model to include object-oriented features, thereby bridging the gap between relational databases and object-oriented programming.</p>
 
 <p>Applications of ORDBMS:</p>
 
@@ -1002,7 +1224,25 @@ Models]
 <h2><a name="what-is-query-specification-describe-direct-manipulation-and-natural-language-in-the-context-to-boolean-query-formulation-2023-may" class="heading-anchor" href="#what-is-query-specification-describe-direct-manipulation-and-natural-language-in-the-context-to-boolean-query-formulation-2023-may" rel="nofollow" aria-hidden="true"></a>What is Query Specification? Describe direct manipulation and natural language in the context to Boolean query formulation. (2023 May)</h2>
 <p>Query specification is the process of defining the criteria used to search for information in a database or information retrieval system. It involves translating a user's information need into a precise query that the system can understand and process.</p>
 
-<p><strong>Boolean Query Formulation:</strong> In the context of query formulation, especially for search engines and databases, users can express their information needs using different methods. Two common approaches are <strong>direct manipulation</strong> and <strong>natural language</strong>.</p>
+<p><strong>Boolean Query Formulation</strong></p>
+
+<p>In the context of query formulation, especially for search engines and databases, users can express their information needs using different methods.</p>
+
+<p><img loading="lazy" src="./assets/Boolean-operators-1.webp" alt="" />
+Basic Concepts:</p>
+
+<ul>
+<li><strong>Keywords</strong>: The basic units of a Boolean query are the search terms or keywords you're looking for.</li>
+<li><strong>Operators</strong>:
+
+<ul>
+<li><strong>AND</strong>: Returns only documents that contain all the specified terms.</li>
+<li><strong>OR</strong>: Returns documents that contain at least one of the specified terms.</li>
+<li><strong>NOT</strong>: Excludes documents that contain the specified term following NOT.</li>
+</ul></li>
+</ul>
+
+<p>Common approaches for Boolean Query Formulation:</p>
 
 <ol>
 <li><strong>Direct Manipulation:</strong>
@@ -1059,11 +1299,9 @@ Models]
 <li>H: 1110</li>
 <li>E: 1111</li>
 </ul></li>
-
-<li><p><strong>Encoded Text:</strong> 01011111010110000011110111010001</p>
-<h1><a name="5-marks" class="heading-anchor" href="#5-marks" rel="nofollow" aria-hidden="true"></a>5 Marks</h1></li>
+<li><strong>Encoded Text:</strong> 01011111010110000011110111010001</li>
 </ul>
-<h2><a name="discuss-objective-of-irs-2024" class="heading-anchor" href="#discuss-objective-of-irs-2024" rel="nofollow" aria-hidden="true"></a>Discuss Objective of IRS. (2024)</h2>
+<h1><a name="5-marks" class="heading-anchor" href="#5-marks" rel="nofollow" aria-hidden="true"></a>5 Marks</h1><h2><a name="discuss-objective-of-irs-2024" class="heading-anchor" href="#discuss-objective-of-irs-2024" rel="nofollow" aria-hidden="true"></a>Discuss Objective of IRS. (2024)</h2>
 <p>The primary objective of an Information Retrieval System (IRS) is to efficiently locate and retrieve relevant information from a vast collection of documents.</p>
 
 <p>This is achieved by:</p>
@@ -1103,7 +1341,7 @@ Models]
 <li><strong>Entity-Relationship Model (ER Model)</strong>:
 
 <ul>
-<li><img loading="lazy" src="assets/Pasted%20image%2020241103142916.jpg" alt="" /></li>
+<li><img loading="lazy" src="./assets/Pasted%20image%2020241212222853.webp" alt="" /></li>
 <li><strong>Definition</strong>: The ER model is a high-level conceptual data model that represents data as entities (objects) and their relationships.</li>
 <li><strong>Components</strong>:
 
@@ -1114,10 +1352,22 @@ Models]
 </ul></li>
 <li><strong>Usage</strong>: Commonly used in database design to visually map out the structure and relationships before implementing a physical database.</li>
 </ul></li>
-<li><strong>Relational Model</strong>:
 
+<li><p><strong>Relational Model</strong>:</p>
+
+<pre class='mermaid'>classDiagram
+    direction RL
+    Table3 <|-- Table2
+    Table3 <|-- Table1
+    Table3 <|-- Table4
+    class Table2{
+    }
+    class Table1{
+    }
+    class Table4{
+    }
+</pre>
 <ul>
-<li><img loading="lazy" src="assets/Pasted%20image%2020241103142948.png" alt="" /></li>
 <li><strong>Definition</strong>: The relational model organizes data into tables (relations) where each table consists of rows (records) and columns (attributes).</li>
 <li><strong>Components</strong>:
 
@@ -1210,7 +1460,7 @@ Models]
 </tbody>
 </table>
 <h2><a name="what-is-the-purpose-of-a-search-engine-list-the-steps-of-search-operation-by-search-engine-how-does-search-engine-retrieves-the-information-explain-search-engine-architecture-discuss-concept-of-text-search-engine-2024-2023-dec-2023-may-2022" class="heading-anchor" href="#what-is-the-purpose-of-a-search-engine-list-the-steps-of-search-operation-by-search-engine-how-does-search-engine-retrieves-the-information-explain-search-engine-architecture-discuss-concept-of-text-search-engine-2024-2023-dec-2023-may-2022" rel="nofollow" aria-hidden="true"></a>What is the purpose of a search engine? List the steps of search operation by search engine. How does search engine retrieves the information? Explain search engine Architecture. Discuss concept of Text search engine (2024) (2023 Dec) (2023 May) (2022)</h2>
-<p><img loading="lazy" src="assets/Architecture-of-Search-Engine-copy.webp" alt="" /></p>
+<p><img loading="lazy" src="./assets/Architecture-of-Search-Engine-copy.webp" alt="" /></p>
 
 <p>A <strong>search engine</strong> is a software system designed to help users find information stored on the internet or within specific databases. It works by indexing and cataloging content from various sources and providing users with a list of relevant results based on their search queries.</p>
 
@@ -1321,31 +1571,36 @@ Models]
 <ul>
 <li>Uses Boolean logic (AND, OR, NOT) for exact matches.</li>
 <li>Pros: Simple. Cons: No ranking; may miss relevant docs.</li>
+<li><img loading="lazy" src="./assets/Boolean-operators-1.webp" alt="" /></li>
 </ul></li>
-<li><strong>Vector Space Model (VSM)</strong>:
+<li><strong>Vector Space Model</strong>:
 
 <ul>
 <li>Represents documents and queries as vectors, using TF-IDF for weighting.</li>
 <li>Ranks based on cosine similarity.</li>
 <li>Pros: Allows partial matches. Cons: Assumes term independence.</li>
+<li><img loading="lazy" src="./assets/Pasted%20image%2020241212200841.webp" alt="" /></li>
 </ul></li>
 <li><strong>Probabilistic Model</strong>:
 
 <ul>
 <li>Estimates relevance probabilities, with BM25 as a common method.</li>
 <li>Pros: Good at ranking. Cons: Complex and needs tuning.</li>
+<li><img loading="lazy" src="./assets/Pasted%20image%2020241212200954.webp" alt="" /></li>
 </ul></li>
 <li><strong>Latent Semantic Analysis (LSA)</strong>:
 
 <ul>
 <li>Reduces dimensionality to find relationships between terms.</li>
 <li>Pros: Captures meaning and context. Cons: Computationally intensive.</li>
+<li><img loading="lazy" src="./assets/Image1_dz0yfl.webp" alt="" /></li>
 </ul></li>
 <li><strong>Language Model</strong>:
 
 <ul>
 <li>Views retrieval as generating a query from a document.</li>
 <li>Pros: Flexible. Cons: Requires extensive training data.</li>
+<li><img loading="lazy" src="./assets/Pasted%20image%2020241212201051.webp" alt="" /></li>
 </ul></li>
 </ol>
 <h2><a name="compare-boolean-model-and-vector-model-2023-dec" class="heading-anchor" href="#compare-boolean-model-and-vector-model-2023-dec" rel="nofollow" aria-hidden="true"></a>Compare boolean model and vector model (2023 Dec)</h2>
@@ -1693,11 +1948,18 @@ body { color: #282c34; }
 </ul></li>
 </ul>
 <h2><a name="automatic-feature-extraction-2023-may" class="heading-anchor" href="#automatic-feature-extraction-2023-may" rel="nofollow" aria-hidden="true"></a>Automatic feature extraction. (2023 May)</h2>
-<p><img loading="lazy" src="assets/Pasted%20image%2020241103134025.png" alt="" /></p>
+<p><img loading="lazy" src="./assets/Pasted%20image%2020241212200020.webp" alt="" /></p>
 
 <p>Automatic feature extraction is a powerful technique in machine learning that automates the process of identifying and extracting relevant features from raw data. This approach eliminates the need for manual feature engineering, which can be time-consuming and requires domain expertise.</p>
 
 <p>It achieved through the use of deep learning techniques, such as convolutional neural networks (CNNs) for images and recurrent neural networks (RNNs) for text.</p>
+
+<p>Types of Local strategy</p>
+
+<ul>
+<li><strong>Local Clustering</strong>: : This approach involves identifying clusters or groups within a local neighborhood of data points or features.</li>
+<li><strong>Local context analysis</strong>: This method looks at the context surrounding a feature or data point to extract meaningful information, considering the relationships or dependencies between elements in a localized area.</li>
+</ul>
 
 <p><strong>How Does it Work?</strong></p>
 
@@ -1708,15 +1970,85 @@ body { color: #282c34; }
 <li><strong>Model Training:</strong> The extracted features are used to train a machine learning model, such as a classifier or regression model.</li>
 </ol>
 <h2><a name="statistical-text-compression-and-dictionary-based-text-compression-2023-may" class="heading-anchor" href="#statistical-text-compression-and-dictionary-based-text-compression-2023-may" rel="nofollow" aria-hidden="true"></a>Statistical text compression and Dictionary based text compression (2023 May)</h2>
-<p>Statistical text compression leverages statistical models to predict and encode text efficiently. It analyzes the frequency of occurrence of characters, words, or phrases within a given text to identify patterns. By assigning shorter codes to frequently occurring elements and longer codes to less frequent ones, it achieves data reduction.</p>
+<p>Text compression is the process of reducing the size of a text file while preserving its original content.</p>
 
-<p><strong>Key Techniques:</strong></p>
+<p><strong>Statistical Text Compression</strong></p>
+
+<p>Statistical compression uses probabilistic models to assign shorter codes to frequently occurring characters or patterns in the text.</p>
+
+<p>Techniques:</p>
 
 <ol>
-<li><strong>Huffman Coding:</strong> Assigns variable-length codes to symbols based on their frequency. More frequent symbols get shorter codes.</li>
-<li><strong>Arithmetic Coding:</strong> Represents a message as a single number within a range, with more probable messages occupying larger subranges.</li>
-<li><strong>Lempel-Ziv (LZ) Algorithms:</strong> Exploits repeated patterns within the text. LZ77 and LZ78 are common variations.</li>
+<li><strong>Huffman Coding</strong>:
+
+<ul>
+<li>Builds a binary tree where more frequent characters are represented with shorter binary codes.</li>
+</ul></li>
+<li><strong>Arithmetic Coding</strong>:
+
+<ul>
+<li>Encodes the entire text as a single number between 0 and 1.</li>
+</ul></li>
+<li><strong>Prediction by Partial Matching (PPM)</strong>:
+
+<ul>
+<li>Utilizes Markov models to predict the probability of the next symbol based on preceding symbols.</li>
+</ul></li>
 </ol>
+
+<p><strong>Dictionary-Based Text Compression</strong></p>
+
+<p>Dictionary-based methods replace repeated substrings with shorter references to entries in a dictionary.</p>
+
+<p><strong>Comparison of Statistical and Dictionary-Based Compression</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Statistical Compression</th>
+<th>Dictionary-Based Compression</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>Approach</strong></td>
+<td>Probabilistic modeling</td>
+<td>Pattern matching and substitution</td>
+</tr>
+
+<tr>
+<td><strong>Best Use Case</strong></td>
+<td>Text with predictable symbol probabilities</td>
+<td>Highly repetitive text</td>
+</tr>
+
+<tr>
+<td><strong>Encoding Speed</strong></td>
+<td>Slower</td>
+<td>Faster</td>
+</tr>
+
+<tr>
+<td><strong>Decoding Speed</strong></td>
+<td>Slower</td>
+<td>Faster</td>
+</tr>
+
+<tr>
+<td><strong>Compression Ratio</strong></td>
+<td>High for predictable data</td>
+<td>High for repetitive data</td>
+</tr>
+
+<tr>
+<td><strong>Complexity</strong></td>
+<td>Computationally intensive</td>
+<td>Simpler</td>
+</tr>
+</tbody>
+</table>
 <h2><a name="explain-logical-view-of-a-document-with-diagram-2022" class="heading-anchor" href="#explain-logical-view-of-a-document-with-diagram-2022" rel="nofollow" aria-hidden="true"></a>Explain logical view of a document with diagram. (2022)</h2>
 <p>The <strong>logical view of a document</strong> in information retrieval refers to how documents are represented and structured for effective searching and retrieval. This view focuses on the organization of document content, often using index terms or keywords to facilitate efficient access to information.</p>
 
@@ -1751,25 +2083,8 @@ body { color: #282c34; }
 
 <p><strong>Diagrammatic Representation of a Logical View:</strong></p>
 
-<pre class='mermaid'>classDiagram
-    class Document {
-        - indexTerms : Set<String>
-        - metadata : Map<String, String>
-        - structure : HierarchicalStructure
-    }
-
-    class HierarchicalStructure {
-        - rootNode : Node
-    }
-
-    class Node {
-        - content : String
-        - children : List<Node>
-    }
-
-    Document "1" -- "1" HierarchicalStructure
-    HierarchicalStructure "1" -- "*" Node
-</pre><h2><a name="differentiate-between-data-retrieval-and-information-retrieval-2022" class="heading-anchor" href="#differentiate-between-data-retrieval-and-information-retrieval-2022" rel="nofollow" aria-hidden="true"></a>Differentiate between data retrieval and information retrieval. (2022)</h2>
+<p><img loading="lazy" src="./assets/Pasted%20image%2020241212234318.webp" alt="" /></p>
+<h2><a name="differentiate-between-data-retrieval-and-information-retrieval-2022" class="heading-anchor" href="#differentiate-between-data-retrieval-and-information-retrieval-2022" rel="nofollow" aria-hidden="true"></a>Differentiate between data retrieval and information retrieval. (2022)</h2>
 <table>
 <thead>
 <tr>

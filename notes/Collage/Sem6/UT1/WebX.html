@@ -199,9 +199,59 @@
 			<h1 style="text-align: center;">
 				<a href="https://AnzenKodo.github.io">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
 			</h1>
-		<video id="video" style="display: inherit;" controls>
-			<source src="https://anzenkodo.github.io/drive/humble.webm" />
-		</video><nav style="border-top: 1px solid gray;border-bottom: 1px solid gray;padding: .5rem 0;text-align: center;margin: 0 0 2rem 0;color: gray;">
+            <div id="music" style="font-family: serif">
+                <img
+                    src="https://i.pinimg.com/736x/ae/e8/13/aee8139ce7d5f4d6cccd6cded42d4ef8.jpg"
+                    width="45%" align="left" style="padding-right: 1rem"
+                />
+                <p style="font-size: 1.5rem">Young and Beautiful</br>
+                  <small>Released in 23 April 2013</small></p>
+                <div id="singers" style="line-height: 1.5rem">
+                    <input type="radio" name="music_name" value="og" checked/>
+                    <label for="og">Lana Del Ray - Original</label><br />
+                    <input type="radio" name="music_name" value="kurt" />
+                    <label for="kurt">Kurt Cobain - AI (Died in 5 April 1994)</label><br />
+                    <input type="radio" name="music_name" value="rose" />
+                    <label for="rose">Rose from BLACKPINK - AI (Korean Singer)</label><br />
+                    <input type="radio" name="music_name" value="marina" />
+                    <label for="marina">Marina Diamandis - AI</label>
+                </div>
+                <button onclick="play(this)" style="margin-top: 1rem; font-size: 1.4rem; background: #D8472B; color: white; border: #D8472B; padding: .2rem 1rem; text-align: center">Play</button>
+                <audio src="https://anzenkodo.github.io/drive/og.mp3"></audio>
+                <script>
+                    const music_urls = {
+                      "og": "https://anzenkodo.github.io/drive/og.mp3",
+                      "kurt": "https://anzenkodo.github.io/drive/kurt.mp3",
+                      "rose": "https://anzenkodo.github.io/drive/rose.mp3",
+                      "marina": "https://anzenkodo.github.io/drive/marina.mp3",
+                    }
+                    const audio = document.querySelector("#music audio");
+                    const button = document.querySelector("#music button");
+                    function play(ele) {
+                      if (audio.paused) {
+                        audio.play();
+                        button.textContent = "Pause";
+                      } else {
+                        audio.pause();
+                        button.textContent  = "Play"
+                      }
+                    }
+
+                    const singers = document.querySelectorAll("#singers input");
+                    for (const singer of singers) {
+                      singer.addEventListener("click", (ele) => {
+                          ele.checked = true;
+                          if (ele.target.checked) {
+                            const current_time = audio.currentTime;
+                            audio.src = music_urls[ele.target.value];
+                            audio.currentTime = current_time;
+                            audio.play()
+                            button.textContent = "Pause";
+                        }
+                      })
+                    }
+                </script>
+            </div><nav style="border-top: 1px solid gray;border-bottom: 1px solid gray;padding: .5rem 0;text-align: center;margin: 0 0 2rem 0;color: gray;clear: left;">
 				<a href="https://AnzenKodo.github.io/notes">Home</a> | <a href="https://AnzenKodo.github.io">About</a> | <a href="https://AnzenKodo.github.io/blogroll">Blogroll</a> | <a href="https://github.com/AnzenKodo">Github</a> | <a href="https://x.com/AnzenKodo">𝕏</a>
 			</nav>
 			<!-- <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;"> -->
