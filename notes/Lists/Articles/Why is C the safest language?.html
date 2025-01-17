@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Why is C the safest language? - AK#Notes</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="#FF6C22">
+		<meta name="description" content="By Eskil Steenberg Hald 2025  Representative of Sweden in iso Wg14  eskil at quelsolaar dot com @esk">
+		<meta property="og:description" content="By Eskil Steenberg Hald 2025  Representative of Sweden in iso Wg14  eskil at quelsolaar dot com @esk">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<meta property="og:image:alt" content="AK#Notes logo">
+		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="Why is C the safest language? - AK#Notes">
+		<meta property="og:url" content="https://AnzenKodo.github.io/notes/notes/Lists/Articles/Why is C the safest language?.html">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+
+			:root {
+				/* color-scheme: dark light; */
+				color-scheme: dark;
+				--theme: #FF6C22;
+			}
+			body {
+				max-width: 40rem;
+				margin: 0 auto;
+				font-family: system-ui;
+				padding: 0 1em;
+				color: inherit !important;
+				word-break: break-word;
+			}
+			h1, h2, h3, h4, h5, h6 {
+				font-family: monospace;
+				margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+				font-size: 2rem;
+			}
+			h3 {
+				font-size: 1.8rem;
+			}
+			h4 {
+				font-size: 1.5rem;
+			}
+			h5 {
+				font-size: 1.3rem;
+			}
+			h6 {
+				font-size: 1rem;
+			}
+			p, li, td, code {
+				line-height: 1.5rem;
+			}
+			a {
+				color: var(--theme);
+				text-decoration: none;
+			}
+			a:hover, a:focus {
+				text-decoration: underline;
+			}
+			a:active {
+				background: var(--theme);
+				color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+				margin-top: .5rem;
+			}
+			li {
+				margin-bottom: .5rem;
+			}
+			table {
+				border-collapse: collapse;
+				overflow-x: auto;
+				display: block;
+				word-break: auto-phrase;
+				margin: 1rem 0;
+			}
+			th {
+				font-size: 1.1rem;
+				border: 2px solid;
+				padding: .3rem .3rem;
+			}
+			td {
+				border: 1px solid;
+				padding: .3rem .5rem;
+			}
+			blockquote {
+				margin-left: 0;
+				margin-right: 0;
+				border: 1px solid;
+				border-left: 10px solid;
+				padding: 0 1rem;
+			}
+				.code-block {
+				background: black;
+				overflow-x: auto;
+				padding: 0em 1em;
+				border: 1px solid;
+			}
+			.code-block-language-name {
+				position: sticky;
+				left: 95%;
+				top: .5em;
+				font-weight: bold;
+				color: white;
+			}
+			:not(pre.chroma) > code {
+				border: 1px solid;
+				padding: .3rem .2rem .2rem .2rem;
+			}
+			img {
+				max-width: 100%;
+				display: block;
+				margin: 0 auto;
+			}
+			[href="#skip-top-main"] {
+				padding: 0.3em;
+				position: absolute;
+				transform: translateY(-1000%);
+			}
+			[href="#skip-top-main"]:focus {
+				transform: translateY(0%);
+				background: var(--theme);
+				color: inherit;
+			}
+			#table-of-content {
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+				background: black;
+				padding: 0.5rem 1em;
+				z-index: 1;
+				color: white;
+			}
+			#table-of-content[open] {
+				max-height: 90%;
+				overflow-y: auto;
+				bottom: 50px;
+				margin-left: 1em;
+			}
+			#table-of-content[open] summary {
+				background: black;
+				padding: 0.5em 1em;
+				text-align: center;
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+			}
+			#table-of-content ul:first-child {
+				padding-left: 1em;
+				margin-top: 1.5em;
+			}
+			.heading-anchor::before {
+				content: "#";
+				margin-right: .5rem;
+			}
+			.mermaid {
+				background: black;
+				border: 1px solid;
+				margin-top: 1rem;
+				padding: 1rem;
+				font-family: monospace;
+			}
+			.mermaid svg {
+				display: block;
+				margin: auto;
+			}
+			.mermaid:has(svg) {
+				background: none;
+				border: none;
+				margin-top: 1rem;
+				padding: 0;
+			}
+			mjx-container {
+				display: math;
+				overflow-y: hidden;
+				overflow-x: auto;
+				max-width: 100%;
+				padding-bottom: .8rem;
+			}
+			iframe {
+				width: 100%;
+				height: 21rem;
+				margin: 1rem 0;
+			}
+			video {
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<a href="#skip-top-main">Skip to main</a>
+		<header>
+<!--		<h1 style="text-align: center;">-->
+			<h1 style="text-align: center;">
+				<a href="https://AnzenKodo.github.io">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+			</h1>
+            <div id="music" style="font-family: serif">
+                <img
+                    src="https://i.pinimg.com/736x/ae/e8/13/aee8139ce7d5f4d6cccd6cded42d4ef8.jpg"
+                    align="left" style="padding-right: 1rem; margin-bottom: 1rem;"
+                />
+                <p style="font-size: 1.5rem">Young and Beautiful</br>
+                  <small>Released in 23 April 2013</small></p>
+                <div id="singers" style="line-height: 1.5rem">
+                    <span><input type="radio" name="music_name" value="og" checked/> <label for="og">Lana Del Ray - Original</label></span>
+                    <span><input type="radio" name="music_name" value="kurt" /> <label for="kurt">Kurt Cobain - AI (Died in 5 April 1994)</label></span>
+                    <span><input type="radio" name="music_name" value="rose" /> <label for="rose">Rose from BLACKPINK - AI (Korean Singer)</label></span>
+                    <span><input type="radio" name="music_name" value="marina" /> <label for="marina">Marina Diamandis - AI</label><span>
+                </div>
+
+                <p><button onclick="play(this)" style="margin-top: 1rem; font-size: 1.4rem; background: #D8472B; color: white; border: #D8472B; padding: .2rem 1rem; text-align: center">Play</button></p>
+                <audio src="https://anzenkodo.github.io/drive/og.mp3"></audio>
+                <style>
+                    #singers span { display: block }
+                </style>
+                <script>
+                    const music_urls = {
+                      "og": "https://anzenkodo.github.io/drive/og.mp3",
+                      "kurt": "https://anzenkodo.github.io/drive/kurt.mp3",
+                      "rose": "https://anzenkodo.github.io/drive/rose.mp3",
+                      "marina": "https://anzenkodo.github.io/drive/marina.mp3",
+                    }
+                    const audio = document.querySelector("#music audio");
+                    const button = document.querySelector("#music button");
+                    function play(ele) {
+                      if (audio.paused) {
+                        audio.play();
+                        button.textContent = "Pause";
+                      } else {
+                        audio.pause();
+                        button.textContent  = "Play"
+                      }
+                    }
+
+                    const singers = document.querySelectorAll("#singers span");
+                    for (const singer of singers) {
+                      singer.addEventListener("click", () => {
+                          const ele = singer.childNodes[0];
+                          ele.checked = true;
+                          if (ele.checked) {
+                            const current_time = audio.currentTime;
+                            audio.src = music_urls[ele.value];
+                            audio.currentTime = current_time;
+                            audio.play()
+                            button.textContent = "Pause";
+                        }
+                      })
+                    }
+                </script>
+            </div><nav style="border-top: 1px solid gray;border-bottom: 1px solid gray;padding: .5rem 0;text-align: center;margin: 0 0 2rem 0;color: gray;clear: left;">
+				<a href="https://AnzenKodo.github.io/notes">Home</a> | <a href="https://AnzenKodo.github.io">About</a> | <a href="https://AnzenKodo.github.io/blogroll">Blogroll</a> | <a href="https://github.com/AnzenKodo">Github</a> | <a href="https://x.com/AnzenKodo">𝕏</a>
+			</nav>
+			<!-- <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;"> -->
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem; margin-top: 0;">Why is C the safest language?</h1>
+			<p>By Eskil Steenberg Hald 2025</p>
+
+<p>Representative of Sweden in iso Wg14</p>
+
+<p>eskil at quelsolaar dot com @eskilsteenberg</p>
+
+<p>The most trusted software in the world like OpenSSL, Apache, SQLite, Curl,CPython, FFMpeg, PHP, the GNU free software collection, most OS kernels,and most flesystems are all written in C. No other language has managed to produce anywhere near the same amount of safety and security critical software deployed the world over as C. In evolutionary terms, it is clear that security critical C projects have a much higher survival rate than security critical projects written in any other language.</p>
+
+<p>Despite the overwhelming success of C as a language for developing security critical software, many security researchers claim that C is an unsafe language that should be avoided for security critical software. They take it as a given that C is unsafe, because of some of C features, most notably the lack of required bounds checking. It is a very unscientifc to assume this feature would outweigh possible other benefts of using C, when clearly this feature hasn’t stopped C from being the most successful language in security. When assumption says one thing but real world experience says something completely diferent, its time to re-evaluate ones assumptions.</p>
+
+<p>If security researchers are interested in research that is based on the scientifc method, they should clearly want to investigate why C has produced so many successful security critical projects, instead of dismissing C as an insecure lan guage, against clear evidence. Security researchers should investigate various explanations for why C has been so successful, despite the reasons for why someone may think it shouldn’t be. To simply dismiss all the people who have chosen C as their language, and then have gone on to produce some of the most trusted software on the planet (and other planets), as simply not know ing what they are doing, is both disrespectful and ignorant, and should not be part of scientifc discord with the ultimate goal of fnding the truth and making progress.</p>
+
+<p>Actual research in to why C has been so successful for security critical software could have great impact on future security policy, possible language design,how we see Cs future, and generally how we think about software development.Simply ignoring C developers success, or worse trying to gaslight the world into thinking C developer have not had great contribution to the security of software,robs the world of valuable insights in to how successful software is developed.</p>
+
+<p>As an experienced C developer, I have a number of hypotheses as to why C has been so successful, that warrants further research. I want to be clear, I am not a researcher, nor am I claiming to present quantitative evidence for these theories. I do however think they are among theories that should be thoroughly</p>
+
+<p>investigated.As part of this list of theories, I also want to point out some possible ramifcations for how we should view software development if they are shown to pan out.</p>
+<h2><a name="theory-1-its-about-readability" class="heading-anchor" href="#theory-1-its-about-readability" rel="nofollow" aria-hidden="true"></a>Theory 1: Its about readability.</h2>
+<p>C is language with very few abstractions. This makes it very easy to read and reason about the code. The diﬀculty in writing code is almost always to close the gap between, what the code does, and what the code is meant to do. There for being able to follow every step of execution, and have each step be explicit aids greatly. C code becomes safe, because it is easy to reason about, and easy to audit. Most things are written in place, and therefor require less knowledge of a larger system in order to be understood. This lack of interconnectedness that abstractions create also makes it harder for changes in one part of the code to break other parts of the code. C is a verbose, explicit language and while this creates a less convenient programming experience, it creates trustworthy soft ware. An interesting observations is that other “unsafe” C derived languages like C++ and Objective-C, have produced has less trusted safety critical software.This indicates that the simplicity and lack of features of C are contributing fac tors. Another observation is that the successful software projects that do use C, tend to use older versions of C and restrict the use of features. The recent success of Python and Lua over more complex languages like Perl also indicates that simple readable languages with fewer features are in fact more reliable.</p>
+
+<p>Potential lesson:A general focus on clarity over expressiveness and clever ness in language design could lead to safer and simpler code. We should start looking at abstractions with a more critical eye in computer science. For C developers, this means avoiding complex macros, and using long and expressive naming.There are also many opportunities here to improve tooling.Com pilers reason about code in order to optimize it, but rarely do they show the programmer its reasoning. It would be very valuable if code paths that are opti mized away, assumptions made about values possible ranges, or memory model assumptions where presented to the user.</p>
+<h2><a name="theory-2-c-is-fun" class="heading-anchor" href="#theory-2-c-is-fun" rel="nofollow" aria-hidden="true"></a>Theory 2: C is fun.</h2>
+<p>Many C programmers claim that C is a programming language they enjoy us ing. The fun factor is an underestimated factor in programming. An enjoyable programming experience leads to more engagement and long term maintenance of software project. A weak software project that is consistently updated and improved over a long period of time will eventually surpass a good software project that no one cares to improve. Something that speaks for this theory is that so many of the mentioned C projects are open-source project mainly maintained by volunteers. For a volunteer project to succeed motivation is key.</p>
+
+<p>Potential lesson:From a security perspective, we need to fnd the right bal ance between safety procedures and the joy and agility of programming. If every change results in onerous re-certifcation processes, and pointless warnings and procedures that need to be addressed, software will not be maintained properly.We need to fnd ways to better triage where the risks are and spend our time accordingly and avoid making necessary changes hard to make.</p>
+
+<p>For other languages, we may also consider where the fun lies. C++ is a program ming language that many people greatly enjoy architecting code in. It has a rich set of features to choose from, to build intricate structures. These structures,while fun to invent, are less fun to maintain, hence mostC++programmers have never seen anyC++code they did not want to rearchitect. It is an open question how to design languages that remains fun to program in as projects grow, but it should be explored seriously.</p>
+<h2><a name="theory-3-control-matters" class="heading-anchor" href="#theory-3-control-matters" rel="nofollow" aria-hidden="true"></a>Theory 3: Control matters</h2>
+<p>C gives the programmer a very high degree of control. As I am fond of saying:$^ { 4 4 } I n$the beginning all you want is results, in the end all you want is control”.Because C ofers little in terms of pre-made facilities and a minimal standard library, you have to do most things yourself. This means that if you complete a project in C, you have a much more complete understanding of your software,than if it were written in a higher level language.This deep understanding is critical for identifying potential security vulnerabilities. Linus Torvalds once observed that when he writes C, he can in his mind see the assembly instructions being executed.</p>
+<h2><a name="theory-4-c-is-somewhat-uniform" class="heading-anchor" href="#theory-4-c-is-somewhat-uniform" rel="nofollow" aria-hidden="true"></a>Theory 4: C is somewhat uniform</h2>
+<p>Compared to a language such as C++ where many diferent styles and paradigms exist, C is relatively simple. Because so many other languages like C++, Java and others borrow syntax from C, many non-C programmers are able to read and understand C to some degree. This lingua franca of computing aids in getting many more eyes on critical code and therefore makes C code more secure. Unlike languages like C++there is less divergence in the options of how the language should be programmed, simply because there are fewer ways to do things. This also makes it easier for open source projects to attract more developer who can contribute.</p>
+
+<p>Potential lesson:We should put higher weight on writing plain code, and avoid clever tricks or new language features. We can create new guidelines and tools that evaluate code according to these guidelines. MISRA, and CERT are such guidelines focusing on safety and security, but additional guidelines that focus on simplicity, readability, and portability could be created.</p>
+<h2><a name="theory-5-security-doesn-t-matter-as-much-you-think" class="heading-anchor" href="#theory-5-security-doesn-t-matter-as-much-you-think" rel="nofollow" aria-hidden="true"></a>Theory 5: Security doesn’t matter as much you think</h2>
+<p>It is possible that C is successful despite its apparent security shortcomings, sim ply because users have diferent priorities. The main priority that could override security is Cs performance. Performance isn’t just about how long something takes to execute it also translates in to battery life, power consumption, hard ware scale, cooling costs, CO2 emissions, and directly to cost of operation. For a large scale cloud operations a few percentage points of performance degradation,translates in to hundreds of millions in added capex for hardware, power and cooling. Data centres alone are estimated to use 3-4% of all generated power by the end of the decade, and added to this is all the power consumed by other devices running C based software. Even a small degradation of eﬀciency at this scale results in large costs and CO2 emissions.</p>
+
+<p>Switching from trusted legacy C software, to new comparably untested software written in an other language, with substantially higher running cost, with the promise of better future security is a substantial leap of faith.</p>
+
+<p>Further evidence for this theory is that, C does not have to be memory unsafe.The C standard clearly states that any implementation is free to defne a safe and documented behaviour for anything left undefned by the standard. Such implementations exist such as UBSan and Valgrind. It is entirely possible for anyone who prioritizes security to run any C software in these implementations.Yet, few people do (outside of debugging), this indicates that the majority of users have other priorities.</p>
+
+<p>If things like performance and memory usage are highly valued properties of C software, perhaps this popularity afords C projects more time to mature and therefor address other issues like security issues.</p>
+
+<p>Potential lesson:Security professionals need to learn to accept that they live in a world where other considerations often take precedence over security.An example of this is various speculative execution mitigations that have been needlessly forced on most users. These mitigations have probably cost untold billions. These costs are rarely taken in to consideration when security is being discussed, and while many security changes have negligible impact on a specifc system, in the aggregate, and when staked on to of layers of security protections,on a global scale have very large impacts.</p>
+<h2><a name="theory-6-c-is-old" class="heading-anchor" href="#theory-6-c-is-old" rel="nofollow" aria-hidden="true"></a>Theory 6: C Is old</h2>
+<p>C enjoys some advantages of being old, in that many projects have had time to mature and people have had time build up skills and knowledge about the language. Similarly C has wide range of tools and implementations that are mature and ofers a lot of advantages. Most safety critical software have had years to mature and gain trust. While this factor can explain some of Cs success,many languages like C++ or Java are now old enough that if they would have</p>
+
+<p>ofered signifcant advantage over C, they should have supplanted C by now,this clearly hasn’t happened.</p>
+
+<p>Potential lesson:Computer science needs to stop equating new with better.You can not prove a negative, and therefor there is no way to prove that software is free from faws. In fact, the best way we have of evaluating if something is good, is its longevity. This goes for languages, and code bases a like.</p>
+<h2><a name="theory-7-c-programmers-are-diferent" class="heading-anchor" href="#theory-7-c-programmers-are-diferent" rel="nofollow" aria-hidden="true"></a>Theory 7: C programmers are diferent.</h2>
+<p>It is possible that C programmers are so used to dealing with things like memory management that, it becomes a natural part of how they think, and therefore presents far less far fewer issues than an outsider may suspect.</p>
+
+<p>For a pedestrian who is not used to cars, living in a city where 2 tone metal boxes race down the streets at 50kph may seem like an extremely dangerous environment where inhabitants are contently under immense stress to avoid being hit by cars. For anyone who have coexisted with cars in a city for a long time, its a known risk, but one that one that represent an insignifcant portion of lives worries. To developers coming from languages where memory is handled for you, the task can feel daunting, but to long time C developers it is a natural part of development that take up very little brainpower to maintain. On the scale of things C experienced programmers worry about memory management ranks low as there are other much more challenging tasks that needs to be completed.</p>
+
+<p>Partly this is a result of experience, but its also that, people who seek out C,and chose to program in C are wired in a way that fts well with Cs design. C programmers do tend to be a diferent bread of programmers, who want to get close to the metal, and value control over convenience.</p>
+
+<p>Potential lesson:Perhaps we should consider C programmers separate, and recognize that C is a language that requires a diferent mindset to master than another languages. While many programmers tend to be able to switch lan guages often, maybe we should be more careful about who is assigned to pro gram C. Instead of teaching C as yet another language, perhaps it should be treated more as a specialty. Advertising for C/C++ programmers isn’t very helpful when the two languages require very diferent skills and mindsets.</p>
+<h2><a name="theory-8-c-developers-are-self-selecting-good-program-mers" class="heading-anchor" href="#theory-8-c-developers-are-self-selecting-good-program-mers" rel="nofollow" aria-hidden="true"></a>Theory 8: C developers are self selecting good program mers.</h2>
+<p>Perhaps the language C has the advantage that it simply attracts good pro grammers. It is even conceivable that the perceived challenge of writing C code contributes to its popularity among seasoned programmers. This would mean that C projects are in part successful, because C programmers tend to be good</p>
+
+<p>programmers, and that these projects would see similar success with the same people using a diferent language. Linus torvalds famously pronounced that he wont let C++ in to the Linux Kernel, for the simple reason that he doesn’t want to work with people who likeC++.</p>
+
+<p>Potential lesson:If many of the best programmers choose C, then maybe C isn’t that bad.</p>
+<h2><a name="theory-9-its-about-tooling" class="heading-anchor" href="#theory-9-its-about-tooling" rel="nofollow" aria-hidden="true"></a>Theory 9: Its about tooling</h2>
+<p>Most languages only have one or very few implementations, while C enjoys a wide range of implementations with very diferent aims. C also has many diferent debuggers, linters, fuzzes and static analysis tools that aid in debugging.The range, quality and maturity of C tools greatly aids in development or robust software.</p>
+
+<p>Potential lesson:Many other languages would do very well to focus more on tooling then syntax. IMO having a good debugger is by far the most important tool for a programmer, yet many programmers don’t use debuggers, and many languages have very few debugging tools. While C has a lot of tools, there are still great improvements that can be made.</p>
+<h3><a name="theory-10-c-fails-fast-and-hard" class="heading-anchor" href="#theory-10-c-fails-fast-and-hard" rel="nofollow" aria-hidden="true"></a>Theory 10: C fails fast and hard.</h3>
+<p>C is famous for its unforgiving nature. Because so many C bugs cause segfaults or other showstopping issues, much fewer bugs survive debugging.Modern C tools often make C even more unforgiving by detecting things like reads of uninitialized variables. This is a much stricter requirement than a language that may automatically initialize all values, and this forces developers to explicitly state their intention, as compilers do not assume that the user wants a default initialization. Many languages in the name of convenience, lets the programmer get away with things that do create hard to fnd bugs. For example java script lets you access object members without frst declaring them. You can easily write object-&gt;member=42; and then by mistake try to access the value x = object-&gt;Member; Java script will then assign x a default value, instead of issuing an error. Yes its convenient to not have to declare members in advance,but saving a few seconds of typing and then loosing hours to debugging or worse shipping broken software is much worse.</p>
+
+<p>Potential lesson:Policies that force programmers to engage with issues and ambiguities, instead of issuing warnings, or worse make assumptions about the users intentions are important to improve security. Most C compilers can be confgured to fail compilation when it encounters selected warnings. This could be made much stricter, where more code is rejected, even though it technically is standard compliant. Implicit type conversions is one such feature that should</p>
+
+<p>not have been made part of C, but can easily be detected and remedied with tools.</p>
+<h2><a name="theory-11-the-issues-are-known" class="heading-anchor" href="#theory-11-the-issues-are-known" rel="nofollow" aria-hidden="true"></a>Theory 11: The issues are known.</h2>
+<p>As an old and well known language the issues in C are mostly well known.The fact that the language is smaller than many other languages, means that compilers and other infrastructure is less likely to encounter code that trigger an unexplored corner case. Most of the security issues are well known and easy to audit for. Because C is so wide spread there is also a large amount of people who are able to review and read C code.</p>
+<h2><a name="theory-12-survivorship-bias" class="heading-anchor" href="#theory-12-survivorship-bias" rel="nofollow" aria-hidden="true"></a>Theory 12: Survivorship bias</h2>
+<p>Given that C code has been so successful, any issue in this widely deployed C code gets and outsized impact. A security vulnerability in OpenSSL has far greater ramifcations, than another SSL implementation that don’t have nearly as many users, no matter what language it was implemented in. Other languages like javascript, and SQL code, that have well known exploits have a much more difuse attack surface. There are numerous websites that have a wide range of exploits, and may have lots of vulnerabilities, yet the fnding of an exploit would not raise the headlines that an exploit in a widely used C system like the Linux kernel. Given the size and scope of projects like the Linux kernel and the number of people who have eyes of the project, its surprising how seldom serious exploits are found.</p>
+
+<p>Potential lesson:Its worth appreciating how seldom major security issues appear in major security critical software’s written in C.</p>
+<h2><a name="theory-13-the-roads-not-taken" class="heading-anchor" href="#theory-13-the-roads-not-taken" rel="nofollow" aria-hidden="true"></a>Theory 13: The roads not taken.</h2>
+<p>Any person who fnds bugs in someone else’s code, will have a bias against the design decisions that made the bugs possible or likely. This is another form of survivorship bias. However what they do not see are the issues that the design prevented.All engineering is inherently about trade-ofs.Any decision will make some issues more likely and some other issues less likely. It is possible that while the design trade-ofs in C creates some classes of bugs that reoccur,it on balance prevents much more issues, then it creates.</p>
+
+<p>A good engineer, in any feld, knows that she has to weigh the potential risks and benefts of any decision. Trying to cover for all risks, no matter how miniscule is to not properly allocate time, efort and resources on the problems that are likely to cause problems. Security researches have along track record of raising security issues that have a extremely low probability of being exploited.</p>
+
+		</main>
+		
+		<details id="table-of-content">
+		   <summary>Table of Content</summary>
+		<nav>
+<ul>
+<li><a href="#theory-1-its-about-readability">
+Theory 1: Its about readability.</a></li>
+<li><a href="#theory-2-c-is-fun">
+Theory 2: C is fun.</a></li>
+<li><a href="#theory-3-control-matters">
+Theory 3: Control matters</a></li>
+<li><a href="#theory-4-c-is-somewhat-uniform">
+Theory 4: C is somewhat uniform</a></li>
+<li><a href="#theory-5-security-doesn-t-matter-as-much-you-think">
+Theory 5: Security doesn’t matter as much you think</a></li>
+<li><a href="#theory-6-c-is-old">
+Theory 6: C Is old</a></li>
+<li><a href="#theory-7-c-programmers-are-diferent">
+Theory 7: C programmers are diferent.</a></li>
+<li><a href="#theory-8-c-developers-are-self-selecting-good-program-mers">
+Theory 8: C developers are self selecting good program mers.</a></li>
+<li><a href="#theory-9-its-about-tooling">
+Theory 9: Its about tooling</a>
+<ul>
+<li><a href="#theory-10-c-fails-fast-and-hard">
+Theory 10: C fails fast and hard.</a></li>
+</ul></li>
+<li><a href="#theory-11-the-issues-are-known">
+Theory 11: The issues are known.</a></li>
+<li><a href="#theory-12-survivorship-bias">
+Theory 12: Survivorship bias</a></li>
+<li><a href="#theory-13-the-roads-not-taken">
+Theory 13: The roads not taken.</a></li>
+</ul>
+</nav>
+
+		</details>
+		
+		<footer>
+			<p style="text-align: center; font-size: small; margin-top: 5em;">
+				<a href="https://anzenkodo.github.io/license">LICENSE</a>
+			</p>
+		</footer>
+	</body>
+	<script src="https://AnzenKodo.github.io/assets/js/mermaid.js"></script>
+	<script id="MathJax-script" async src="https://AnzenKodo.github.io/assets/js/mathjax.js"></script>
+	<script>
+		/* document.getElementById('video').addEventListener('click', (ele) => {
+			 if (ele.target.paused) {
+				 ele.target.play();
+			 } else {
+				 ele.target.pause();
+			 }
+		}); */
+
+		mermaid.initialize({
+			theme: "neutral",
+			themeVariables: {
+			    lineColor: "#939598",
+			}
+		});
+
+		MathJax = {
+		  tex: {
+			inlineMath: [['$', '$']],
+			displayMath: [['$$', '$$']],
+		  }
+		};
+	</script>
+</html>
