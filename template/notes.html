@@ -199,60 +199,9 @@
 			<h1 style="text-align: center;">
 				<a href="{{.website}}">AK</a>#<a href="{{.start_url}}">{{.short_name}}</a>
 			</h1>
-            <div id="music" style="font-family: serif">
-                <img
-                    src="https://i.pinimg.com/736x/ae/e8/13/aee8139ce7d5f4d6cccd6cded42d4ef8.jpg"
-                    align="left" style="padding-right: 1rem; margin-bottom: 1rem;"
-                />
-                <p style="font-size: 1.5rem">Young and Beautiful</br>
-                  <small>Released in 23 April 2013</small></p>
-                <div id="singers" style="line-height: 1.5rem">
-                    <span><input type="radio" name="music_name" value="og" checked/> <label for="og">Lana Del Ray - Original</label></span>
-                    <span><input type="radio" name="music_name" value="kurt" /> <label for="kurt">Kurt Cobain - AI (Died in 5 April 1994)</label></span>
-                    <span><input type="radio" name="music_name" value="rose" /> <label for="rose">Rose from BLACKPINK - AI (Korean Singer)</label></span>
-                    <span><input type="radio" name="music_name" value="marina" /> <label for="marina">Marina Diamandis - AI</label><span>
-                </div>
-
-                <p><button onclick="play(this)" style="margin-top: 1rem; font-size: 1.4rem; background: #D8472B; color: white; border: #D8472B; padding: .2rem 1rem; text-align: center">Play</button></p>
-                <audio src="https://anzenkodo.github.io/drive/og.mp3"></audio>
-                <style>
-                    #singers span { display: block }
-                </style>
-                <script>
-                    const music_urls = {
-                      "og": "https://anzenkodo.github.io/drive/og.mp3",
-                      "kurt": "https://anzenkodo.github.io/drive/kurt.mp3",
-                      "rose": "https://anzenkodo.github.io/drive/rose.mp3",
-                      "marina": "https://anzenkodo.github.io/drive/marina.mp3",
-                    }
-                    const audio = document.querySelector("#music audio");
-                    const button = document.querySelector("#music button");
-                    function play(ele) {
-                      if (audio.paused) {
-                        audio.play();
-                        button.textContent = "Pause";
-                      } else {
-                        audio.pause();
-                        button.textContent  = "Play"
-                      }
-                    }
-
-                    const singers = document.querySelectorAll("#singers span");
-                    for (const singer of singers) {
-                      singer.addEventListener("click", () => {
-                          const ele = singer.childNodes[0];
-                          ele.checked = true;
-                          if (ele.checked) {
-                            const current_time = audio.currentTime;
-                            audio.src = music_urls[ele.value];
-                            audio.currentTime = current_time;
-                            audio.play()
-                            button.textContent = "Pause";
-                        }
-                      })
-                    }
-                </script>
-            </div><nav style="border-top: 1px solid gray;border-bottom: 1px solid gray;padding: .5rem 0;text-align: center;margin: 0 0 2rem 0;color: gray;clear: left;line-height: 1.6rem;">
+            <video width="100%" controls>
+                <source src="https://anzenkodo.github.io/drive/vod.webm" type="video/webm">
+            </video><nav style="border-top: 1px solid gray;border-bottom: 1px solid gray;padding: .5rem 0;text-align: center;margin: 0 0 2rem 0;color: gray;clear: left;line-height: 1.6rem;">
 				<a href="{{.start_url}}">Home</a> | <a href="{{.website}}">About</a> | <a href="{{.website}}/blogroll">Blogroll</a> | <a href="https://github.com/{{.username}}">Github</a> | <a href="https://x.com/{{.username}}">𝕏</a></br>
 				<a href="https://instagram.com/skotox">Follow my OnlyGang</a>
 			</nav>
