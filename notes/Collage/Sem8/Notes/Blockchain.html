@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Blockchain - AK#Notes</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="#FF6C22">
+		<meta name="description" content="## SPV  - Simplified Payment Verification Nodes also known as SPV - Don't have full copy of the bloc">
+		<meta property="og:description" content="## SPV  - Simplified Payment Verification Nodes also known as SPV - Don't have full copy of the bloc">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<meta property="og:image:alt" content="AK#Notes logo">
+		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="Blockchain - AK#Notes">
+		<meta property="og:url" content="https://AnzenKodo.github.io/notes/notes/Collage/Sem8/Notes/Blockchain.html">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+
+			:root {
+				/* color-scheme: dark light; */
+				color-scheme: dark;
+				--theme: #FF6C22;
+			}
+			body {
+				max-width: 40rem;
+				margin: 0 auto;
+				font-family: system-ui;
+				padding: 0 1em;
+				color: inherit !important;
+				word-break: break-word;
+			}
+			h1, h2, h3, h4, h5, h6 {
+				font-family: monospace;
+				margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+				font-size: 2rem;
+			}
+			h3 {
+				font-size: 1.8rem;
+			}
+			h4 {
+				font-size: 1.5rem;
+			}
+			h5 {
+				font-size: 1.3rem;
+			}
+			h6 {
+				font-size: 1rem;
+			}
+			p, li, td, code {
+				line-height: 1.5rem;
+			}
+			a {
+				color: var(--theme);
+				text-decoration: none;
+			}
+			a:hover, a:focus {
+				text-decoration: underline;
+			}
+			a:active {
+				background: var(--theme);
+				color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+				margin-top: .5rem;
+			}
+			li {
+				margin-bottom: .5rem;
+			}
+			table {
+				border-collapse: collapse;
+				overflow-x: auto;
+				display: block;
+				word-break: auto-phrase;
+				margin: 1rem 0;
+			}
+			th {
+				font-size: 1.1rem;
+				border: 2px solid;
+				padding: .3rem .3rem;
+			}
+			td {
+				border: 1px solid;
+				padding: .3rem .5rem;
+			}
+			blockquote {
+				margin-left: 0;
+				margin-right: 0;
+				border: 1px solid;
+				border-left: 10px solid;
+				padding: 0 1rem;
+			}
+				.code-block {
+				background: black;
+				overflow-x: auto;
+				padding: 0em 1em;
+				border: 1px solid;
+			}
+			.code-block-language-name {
+				position: sticky;
+				left: 95%;
+				top: .5em;
+				font-weight: bold;
+				color: white;
+			}
+			:not(pre.chroma) > code {
+				border: 1px solid;
+				padding: .3rem .2rem .2rem .2rem;
+			}
+			img {
+				max-width: 100%;
+				display: block;
+				margin: 0 auto;
+			}
+			[href="#skip-top-main"] {
+				padding: 0.3em;
+				position: absolute;
+				transform: translateY(-1000%);
+			}
+			[href="#skip-top-main"]:focus {
+				transform: translateY(0%);
+				background: var(--theme);
+				color: inherit;
+			}
+			#table-of-content {
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+				background: black;
+				padding: 0.5rem 1em;
+				z-index: 1;
+				color: white;
+			}
+			#table-of-content[open] {
+				max-height: 90%;
+				overflow-y: auto;
+				bottom: 50px;
+				margin-left: 1em;
+			}
+			#table-of-content[open] summary {
+				background: black;
+				padding: 0.5em 1em;
+				text-align: center;
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+			}
+			#table-of-content ul:first-child {
+				padding-left: 1em;
+				margin-top: 1.5em;
+			}
+			.heading-anchor::before {
+				content: "#";
+				margin-right: .5rem;
+			}
+			.mermaid {
+				background: black;
+				border: 1px solid;
+				margin-top: 1rem;
+				padding: 1rem;
+				font-family: monospace;
+			}
+			.mermaid svg {
+				display: block;
+				margin: auto;
+			}
+			.mermaid:has(svg) {
+				background: none;
+				border: none;
+				margin-top: 1rem;
+				padding: 0;
+			}
+			mjx-container {
+				display: math;
+				overflow-y: hidden;
+				overflow-x: auto;
+				max-width: 100%;
+				padding-bottom: .8rem;
+			}
+			iframe {
+				width: 100%;
+				height: 21rem;
+				margin: 1rem 0;
+			}
+			video {
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<a href="#skip-top-main">Skip to main</a>
+		<header>
+<!--		<h1 style="text-align: center;">-->
+			<h1 style="text-align: center;">
+				<a href="https://AnzenKodo.github.io">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+			</h1>
+            <video width="100%" controls>
+                <source src="https://anzenkodo.github.io/drive/vod.mp3" type="video/webm">
+            </video><nav style="border-top: 1px solid gray;border-bottom: 1px solid gray;padding: .5rem 0;text-align: center;margin: 0 0 2rem 0;color: gray;clear: left;line-height: 1.6rem;">
+				<a href="https://AnzenKodo.github.io/notes">Home</a> | <a href="https://AnzenKodo.github.io">About</a> | <a href="https://AnzenKodo.github.io/blogroll">Blogroll</a> | <a href="https://github.com/AnzenKodo">Github</a> | <a href="https://x.com/AnzenKodo">𝕏</a>
+			</nav>
+			<!-- <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;"> -->
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem; margin-top: 0;">Blockchain</h1>
+			<h2><a name="spv" class="heading-anchor" href="#spv" rel="nofollow" aria-hidden="true"></a>SPV</h2>
+<ul>
+<li>Simplified Payment Verification Nodes also known as SPV</li>
+<li>Don't have full copy of the blockchain, instead relays on full node for data.</li>
+<li>Uses block headers and Merkle proofs for verification.</li>
+<li>Efficient, Resource-light.</li>
+</ul>
+
+<p><strong>Privacy Solution for SPV nodes</strong></p>
+
+<ul>
+<li>Reduced Data Exposure</li>
+<li>Random connections</li>
+<li>Tor Network</li>
+<li>Bloom filter</li>
+</ul>
+<h2><a name="merkle-tree" class="heading-anchor" href="#merkle-tree" rel="nofollow" aria-hidden="true"></a>Merkle Tree</h2>
+<pre class='mermaid'>flowchart TD
+    th["Top Hash
+    *hash(hash0 + hash1)*"] --> h0["Hash 0
+    *hash(hash0-0 + hash0-1)*"]
+    th --> h1["Hash 1
+    *hash(hash1-0 + hash1-1)*"]
+    subgraph Data Blocks
+    L1 
+    L2
+    L3
+    L4
+    end
+    h0 --> h00["Hash 0-0
+    *hash(L1)*"] --> L1
+    h0 --> h01["Hash 0-1
+    *hash(L2)*"] --> L2
+    h1 --> h10["Hash 1-0
+    *hash(L3)*"] --> L3
+    h1 --> h11["Hash 1-1
+    *hash(L4)*"] --> L4
+</pre>
+<p><strong>Merkle Root</strong></p>
+
+<ul>
+<li>Data Integrity</li>
+<li>Efficient Verification</li>
+</ul>
+
+<p><strong>Merkel Proof</strong></p>
+
+<ol>
+<li>Start with the transaction hash: <code>Hash(L3)</code>.</li>
+<li>Combine it with its sibling hash (<code>Hash(L4)</code>) to compute:<br>
+<code>Hash(Hash(L3) + Hash(L4))</code> → Parent Node 2.</li>
+<li>Combine Parent Node 2 with its sibling (Parent Node 1) to compute:<br>
+<code>Hash(Parent Node 1 + Parent Node 2)</code> → Merkle Root.</li>
+<li>Compare the computed Merkle Root with the one in the block header. A match confirms the transaction's validity.</li>
+</ol>
+<h2><a name="mining-pool-pool-server" class="heading-anchor" href="#mining-pool-pool-server" rel="nofollow" aria-hidden="true"></a>Mining Pool &amp; Pool Server</h2>
+<p><img loading="lazy" src="../UT1/assets/Pasted%20image%2020250228093840.webp" alt="" /></p>
+<h2><a name="transaction-pool-aka-mempool-memory-pool" class="heading-anchor" href="#transaction-pool-aka-mempool-memory-pool" rel="nofollow" aria-hidden="true"></a>Transaction Pool aka Mempool (Memory Pool)</h2>
+<p><img loading="lazy" src="../UT1/assets/Pasted%20image%2020250228085332.webp" alt="" /></p>
+<h2><a name="types-of-blockchain" class="heading-anchor" href="#types-of-blockchain" rel="nofollow" aria-hidden="true"></a>Types of blockchain</h2>
+<p><img loading="lazy" src="../UT1/assets/Pasted%20image%2020250228095153.webp" alt="" /></p>
+
+<p>Examples:</p>
+
+<ul>
+<li>Public: Bitcoin, Ethereum</li>
+<li>Private: Hyperledger</li>
+<li>Consortium: Energy Web Foundation</li>
+<li>Hybrid: XinFin, Dragonchain</li>
+</ul>
+<h3><a name="bgp" class="heading-anchor" href="#bgp" rel="nofollow" aria-hidden="true"></a>BGP</h3>
+<ul>
+<li>Byzantine General Problem</li>
+<li>Malicious actors &amp; Unreliable communication</li>
+<li>Example: Imagine generals surrounding a city, needing to coordinate an attack via messengers. Some generals are traitors who send false orders. The loyal generals must agree on a plan despite deception.</li>
+<li>How Consensus Mechanisms Solve Byzantine General Problem:
+
+<ol>
+<li><strong>Proof of Work (PoW)</strong>
+
+<ul>
+<li><strong>Mechanism</strong>: Miners solve cryptographic puzzles to validate blocks.<br></li>
+<li><strong>BFT</strong>: Attackers need &gt;51% of computational power to disrupt consensus.</li>
+</ul></li>
+<li><strong>Proof of Stake (PoS)</strong>
+
+<ul>
+<li><strong>Mechanism</strong>: Validators are chosen based on their staked tokens.</li>
+<li><strong>BFT</strong>: Malicious validators risk losing their stake (&quot;slashing&quot;).</li>
+</ul></li>
+</ol></li>
+</ul>
+<h2><a name="dlt" class="heading-anchor" href="#dlt" rel="nofollow" aria-hidden="true"></a>DLT</h2>
+<p><img loading="lazy" src="../UT1/assets/Pasted%20image%2020250228101801.webp" alt="" /></p>
+
+<ul>
+<li>Distributed Ledger Technology</li>
+<li>Features:
+
+<ul>
+<li>Decentralize</li>
+<li>Distributed copies</li>
+<li><strong>Consensus</strong>: Nodes use consensus methods, like voting or solving puzzles, to agree on what’s true, ensuring everyone sees the same thing.</li>
+<li>Locked with Codes</li>
+<li>Immutable</li>
+</ul></li>
+</ul>
+<h3><a name="types-of-dlt" class="heading-anchor" href="#types-of-dlt" rel="nofollow" aria-hidden="true"></a>Types of DLT</h3>
+<ul>
+<li><strong>Blockchain</strong>
+
+<ul>
+<li><img loading="lazy" src="../UT1/assets/Pasted%20image%2020250227221950.webp" alt="|573" /></li>
+</ul></li>
+<li><strong>DAG</strong> (Directed Acyclic Graph)
+
+<ul>
+<li>Instead of a linear chain, DAG-based DLT organizes transactions in a graph structure where each transaction confirms one or more previous transactions, forming a web-like network with no cycles (hence “acyclic”).</li>
+<li><img loading="lazy" src="../UT1/assets/Pasted%20image%2020250228102605.webp" alt="" /></li>
+</ul></li>
+<li><strong>Holochain</strong>
+
+<ul>
+<li>Each participant has their own chain which contains the list of actions (create, delete, update) performed by the participant (also called personal data journal or source chain), and data is validated through a distributed hash table (DHT).</li>
+<li><strong>Example</strong>:
+
+<ul>
+<li>Holo: A platform for decentralized apps and hosting.</li>
+</ul></li>
+<li><img loading="lazy" src="../UT1/assets/Pasted%20image%2020250228103205.webp" alt="" /></li>
+</ul></li>
+<li><strong>Hashgraph</strong>
+
+<ul>
+<li>A specific flavor of DLT (sometimes grouped with DAGs) that uses a gossip protocol and virtual voting to achieve consensus.</li>
+<li><img loading="lazy" src="../UT1/assets/Pasted%20image%2020250228103610.webp" alt="" /></li>
+</ul></li>
+<li><strong>Tempo</strong> (Radix)
+
+<ul>
+<li>Uses a tempo ledger that combines elements of blockchain and DAG.</li>
+<li>It stores the transactions in blockchain as well as DAG format. Blockchain helps to provide the audit trail. DAG allows for parallel processing thereby enabling network scalability and efficiency.</li>
+</ul></li>
+</ul>
+<h3><a name="proof-of-work-proof-of-stake" class="heading-anchor" href="#proof-of-work-proof-of-stake" rel="nofollow" aria-hidden="true"></a>Proof of Work &amp; Proof of Stake</h3>
+<p><img loading="lazy" src="../UT1/assets/Pasted%20image%2020250227215625.webp" alt="" /></p>
+<h3><a name="gossip-protocol" class="heading-anchor" href="#gossip-protocol" rel="nofollow" aria-hidden="true"></a>Gossip Protocol</h3>
+<p><img loading="lazy" src="../UT1/assets/Pasted%20image%2020250228100621.webp" alt="" /></p>
+<h2><a name="block-header-in-blockchain" class="heading-anchor" href="#block-header-in-blockchain" rel="nofollow" aria-hidden="true"></a>Block Header in Blockchain</h2>
+<p><img loading="lazy" src="../UT1/assets/Pasted%20image%2020250227221311.webp" alt="" /></p>
+
+<p>Nonce:</p>
+
+<ul>
+<li>A nonce is short for &quot;number only used once.&quot;</li>
+<li>It’s used to generate a unique hash output when combined with other block data, like transactions, the previous block’s hash, and a timestamp.</li>
+</ul>
+<h3><a name="data-integrity-in-blockchain" class="heading-anchor" href="#data-integrity-in-blockchain" rel="nofollow" aria-hidden="true"></a>Data Integrity in Blockchain</h3>
+<ol>
+<li>Cryptographic Hashing
+
+<ul>
+<li><strong>Each Block’s Identity</strong></li>
+<li><strong>Merkle Root</strong></li>
+</ul></li>
+<li>Proof of Work (PoW)
+
+<ul>
+<li><strong>Mining Process</strong>:
+
+<ul>
+<li>Miners compete to find a nonce that produces a block hash below the <strong>difficulty target</strong>.</li>
+<li>Requires massive computational effort, making tampering economically impractical.</li>
+</ul></li>
+<li><strong>Security</strong>:
+
+<ul>
+<li>Attackers would need &gt;51% of the network’s computational power to rewrite history.</li>
+</ul></li>
+</ul></li>
+<li>Decentralized Consensus
+
+<ul>
+<li><strong>Network Agreement</strong>:
+
+<ul>
+<li>Nodes validate new blocks by checking:
+
+<ul>
+<li>The previous block hash matches the chain’s history.</li>
+<li>The Merkle root is valid.</li>
+<li>The PoW nonce meets the difficulty target.</li>
+</ul></li>
+</ul></li>
+<li><strong>Rejection of Invalid Blocks</strong>
+
+<ul>
+<li>Blocks failing these checks are rejected by honest nodes.</li>
+</ul></li>
+</ul></li>
+</ol>
+<h2><a name="utxo" class="heading-anchor" href="#utxo" rel="nofollow" aria-hidden="true"></a>UTXO</h2>
+<ul>
+<li><strong>Unspent Transaction Output</strong></li>
+<li>Represents the amount of digital currency remaining after a cryptocurrency transaction.</li>
+<li>It is the &quot;change&quot; that is left over and can be used in future transactions.</li>
+</ul>
+
+<p>Lets assume a scenario where Anu sends 2 btc and Radha sends 3 btc to me. Then I send forward 4 btc to Komal. How does the UTXO set look like:</p>
+
+<pre class='mermaid'>flowchart LR
+    Anu --> |#t1 2btc| Me
+    Radha --> |#t2 3btc| Me
+  subgraph Me
+    direction RL
+    t1[#t1 2btc]
+    t2[#t2 3btc]
+  end
+  Me --> |#t3 4btc| t3[Input
+  #t1 2btc from Anu
+  #t2 3btc from Radha
+  Output
+  #t3 4btc to Komal
+  #t4 1btc back to me]
+</pre><h3><a name="p2pkh-p2kh-p2sh-bitcoin-transaction-types" class="heading-anchor" href="#p2pkh-p2kh-p2sh-bitcoin-transaction-types" rel="nofollow" aria-hidden="true"></a>P2PKH, P2KH, P2SH bitcoin transaction types</h3>
+<pre class='mermaid'>flowchart BT
+    subgraph "Pay to Public Key Hash (P2PKH)"
+        prik2[🔑 Private Key] 
+        --> pubk2[🔑 Public Key]
+        --> pkh[🔑 Public Key Hash]
+        --> spk2[📃 Script Public Key]
+    end
+    subgraph "Pay to Public Key (P2PK)"
+        prik1[🔑 Private Key] 
+        --> pubk1[🔑 Public Key]
+        --> spk1[📃 Script Public Key]
+    end
+</pre>
+<ul>
+<li>Pay-to-PubKey (P2PK)
+
+<ul>
+<li>Bitcoins are sent directly to a recipient public key</li>
+<li>The recipient must provide a signature to spend the bitcoins</li>
+</ul></li>
+<li>Pay-to-PubKeyHash (P2PKH)
+
+<ul>
+<li>The most common type, where bitcoins are sent to a public key hash (address).</li>
+<li>The recipient must provide a signature and public key to spend the bitcoins.</li>
+</ul></li>
+<li>Pay-to-ScriptHash (P2SH)
+
+<ul>
+<li><img loading="lazy" src="../UT1/assets/Pasted%20image%2020250228111804.webp" alt="" /></li>
+<li>Bitcoins are sent to a script hash, allowing for more complex spending conditions like multi-signature.</li>
+<li>Supports complex scripts like multi-signature (e.g., 2-of-3) or time-locks.</li>
+</ul></li>
+</ul>
+<h3><a name="segregated-witness" class="heading-anchor" href="#segregated-witness" rel="nofollow" aria-hidden="true"></a>Segregated Witness</h3>
+<ul>
+<li>BIP 141</li>
+<li>Separates witness data (signatures and public key) from main transaction data.</li>
+<li>Bypass 1MB limit</li>
+<li>Impact on Transaction Per Second
+
+<ul>
+<li><strong>Increased Block Capacity</strong></li>
+<li><strong>Smaller Transactions</strong></li>
+<li><strong>Higher Throughput</strong></li>
+<li><strong>Lightning Network</strong></li>
+</ul></li>
+</ul>
+<h2><a name="private-key-public-key-and-bitcoin-address" class="heading-anchor" href="#private-key-public-key-and-bitcoin-address" rel="nofollow" aria-hidden="true"></a>Private key, Public Key and Bitcoin address</h2>
+<pre class='mermaid'>flowchart TB
+    pubkey[🔑 Public Key] 
+    --> SHA256([SHA256])
+    --> RIPEMD160([RIPEMD160])
+    --> prikey[🔑 Private Key]
+    --> Base58([Base58 Encoding])
+    --> add[📃 Address]
+</pre><h3><a name="types-of-wallet-technologies" class="heading-anchor" href="#types-of-wallet-technologies" rel="nofollow" aria-hidden="true"></a>Types of Wallet Technologies</h3>
+<ul>
+<li><strong>Software Wallets</strong>: Apps on your computer or phone, like Bitcoin Core or Electrum, convenient but need antivirus protection.</li>
+<li><strong>Web Wallets</strong>: Accessed online, like Blockchain.com, easy but less secure as they’re managed by third parties.</li>
+<li><strong>Hardware Wallets</strong>: Physical devices like Trezor or Ledger, great for security as they store keys offline.</li>
+<li><strong>Paper Wallets</strong>: Printed keys on paper, secure for cold storage but risky if lost or damaged.<br></li>
+<li><strong>HD Wallets</strong>: Use a seed phrase to generate many addresses, offering backup ease and privacy, like in modern apps.</li>
+</ul>
+<h3><a name="hd-wallet" class="heading-anchor" href="#hd-wallet" rel="nofollow" aria-hidden="true"></a>HD Wallet</h3>
+<pre class='mermaid'>flowchart TD
+    Ms[Master Seed] --> mk([Master Key])
+    mk --> ck1([Child Key 1])
+    mk --> ck2([Child Key 2])
+    ck1 --> gk1([Grandchild Key 1])
+    ck1 --> gk2([Grandchild Key 2])
+    ck2 --> gk3([Grandchild Key 3])
+    ck2 --> gk4([Grandchild Key 4])
+</pre>
+<ul>
+<li><strong>Hierarchical Deterministic</strong> wallets</li>
+<li>Advantages:
+
+<ul>
+<li>Simple backup</li>
+<li>Multiple Addresses</li>
+<li>Better Privacy</li>
+<li>Organized Management</li>
+</ul></li>
+</ul>
+<h2><a name="what-is-a-blockchain-fork" class="heading-anchor" href="#what-is-a-blockchain-fork" rel="nofollow" aria-hidden="true"></a>What is a Blockchain fork?</h2>
+<p>[-](&lt;- <strong>Accidental Forks</strong></p>
+
+<div class="code-block"><html>
+<style type="text/css">
+/* Background */ .bg { color: #282c34 }
+/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
+/* Other */ .chroma .x { color: #c9c9c9 }
+/* Error */ .chroma .err { color: #cf5967 }
+/* CodeLine */ .chroma .cl { color: #c9c9c9 }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
+/* Keyword */ .chroma .k { color: #7fbaf5 }
+/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
+/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
+/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
+/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
+/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
+/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
+/* Name */ .chroma .n { color: #c9c9c9 }
+/* NameAttribute */ .chroma .na { color: #bc74c4 }
+/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
+/* NameClass */ .chroma .nc { color: #ecbe7b }
+/* NameConstant */ .chroma .no { color: #ecbe7b }
+/* NameDecorator */ .chroma .nd { color: #ecbe7b }
+/* NameEntity */ .chroma .ni { color: #c9c9c9 }
+/* NameException */ .chroma .ne { color: #cf5967 }
+/* NameFunction */ .chroma .nf { color: #57c7ff }
+/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
+/* NameLabel */ .chroma .nl { color: #cf5967 }
+/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
+/* NameOther */ .chroma .nx { color: #c9c9c9 }
+/* NameProperty */ .chroma .py { color: #c9c9c9 }
+/* NameTag */ .chroma .nt { color: #bc74c4 }
+/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
+/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
+/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
+/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
+/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
+/* Literal */ .chroma .l { color: #c9c9c9 }
+/* LiteralDate */ .chroma .ld { color: #57c7ff }
+/* LiteralString */ .chroma .s { color: #82cc6a }
+/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
+/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
+/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
+/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
+/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
+/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
+/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
+/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
+/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
+/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
+/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
+/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
+/* LiteralNumber */ .chroma .m { color: #56b6c2 }
+/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
+/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
+/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
+/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
+/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
+/* Operator */ .chroma .o { color: #bc74c4 }
+/* OperatorWord */ .chroma .ow { color: #bc74c4 }
+/* Punctuation */ .chroma .p { color: #56b6c2 }
+/* Comment */ .chroma .c { color: #3e4460 }
+/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #3e4460 }
+/* CommentSingle */ .chroma .c1 { color: #3e4460 }
+/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
+/* Generic */ .chroma .g { color: #c9c9c9 }
+/* GenericDeleted */ .chroma .gd { color: #cf5967 }
+/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
+/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
+/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #ecbe7b }
+/* GenericOutput */ .chroma .go { color: #43454f }
+/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
+/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
+/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
+/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
+/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
+body { color: #282c34; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">- ![](../UT1/assets/Pasted%20image%2020250228081332.webp)
+</span></span></code></pre>
+</body>
+</html>
+</div>
+<ul>
+<li><strong>Intentional Forks</strong>
+    - <img loading="lazy" src="../UT1/assets/Pasted%20image%2020250228082234.webp" alt="" /></li>
+</ul>
+<h3><a name="differentiate-between-different-types-of-blockchain-forks" class="heading-anchor" href="#differentiate-between-different-types-of-blockchain-forks" rel="nofollow" aria-hidden="true"></a>Differentiate between different types of blockchain forks?</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Compatibility</strong></th>
+<th><strong>Impact on Chain</strong></th>
+<th><strong>Examples</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>Accidental Fork</strong></td>
+<td>Temporary split due to network issues, resolved by longest chain rule</td>
+<td>N/A (resolved automatically)</td>
+<td>Temporary, no permanent split</td>
+<td>Two miners finding blocks simultaneously</td>
+</tr>
+
+<tr>
+<td><strong>Soft Fork</strong></td>
+<td>Backward compatible, new rules subset of old, old nodes accept new blocks</td>
+<td>Backward compatible</td>
+<td>No permanent split, network upgrade</td>
+<td>Bitcoin’s SegWit upgrade</td>
+</tr>
+
+<tr>
+<td><strong>Hard Fork</strong></td>
+<td>Not backward compatible, creates separate chains with new and old rules</td>
+<td>Not backward compatible</td>
+<td>Permanent split, potentially new coin</td>
+<td>Bitcoin Cash, Ethereum/Ethereum Classic</td>
+</tr>
+</tbody>
+</table>
+
+		</main>
+		
+		<details id="table-of-content">
+		   <summary>Table of Content</summary>
+		<nav>
+<ul>
+<li><a href="#spv">SPV</a></li>
+<li><a href="#merkle-tree">
+Merkle Tree</a></li>
+<li><a href="#mining-pool-pool-server">
+Mining Pool &amp; Pool Server</a></li>
+<li><a href="#transaction-pool-aka-mempool-memory-pool">
+Transaction Pool aka Mempool (Memory Pool)</a></li>
+<li><a href="#types-of-blockchain">
+Types of blockchain</a>
+<ul>
+<li><a href="#bgp">
+BGP</a></li>
+</ul></li>
+<li><a href="#dlt">
+DLT</a>
+<ul>
+<li><a href="#types-of-dlt">
+Types of DLT</a></li>
+<li><a href="#proof-of-work-proof-of-stake">
+Proof of Work &amp; Proof of Stake</a></li>
+<li><a href="#gossip-protocol">
+Gossip Protocol</a></li>
+</ul></li>
+<li><a href="#block-header-in-blockchain">
+Block Header in Blockchain</a>
+<ul>
+<li><a href="#data-integrity-in-blockchain">
+Data Integrity in Blockchain</a></li>
+</ul></li>
+<li><a href="#utxo">
+UTXO</a>
+<ul>
+<li><a href="#p2pkh-p2kh-p2sh-bitcoin-transaction-types">
+P2PKH, P2KH, P2SH bitcoin transaction types</a></li>
+<li><a href="#segregated-witness">
+Segregated Witness</a></li>
+</ul></li>
+<li><a href="#private-key-public-key-and-bitcoin-address">
+Private key, Public Key and Bitcoin address</a>
+<ul>
+<li><a href="#types-of-wallet-technologies">
+Types of Wallet Technologies</a></li>
+<li><a href="#hd-wallet">
+HD Wallet</a></li>
+</ul></li>
+<li><a href="#what-is-a-blockchain-fork">
+What is a Blockchain fork?</a>
+<ul>
+<li><a href="#differentiate-between-different-types-of-blockchain-forks">
+Differentiate between different types of blockchain forks?</a></li>
+</ul></li>
+</ul>
+</nav>
+
+		</details>
+		
+		<footer>
+			<p style="text-align: center; font-size: small; margin-top: 5em;">
+				<a href="https://anzenkodo.github.io/license">LICENSE</a>
+			</p>
+		</footer>
+	</body>
+	<script src="https://AnzenKodo.github.io/assets/js/mermaid.js"></script>
+	<script id="MathJax-script" async src="https://AnzenKodo.github.io/assets/js/mathjax.js"></script>
+	<script>
+		/* document.getElementById('video').addEventListener('click', (ele) => {
+			 if (ele.target.paused) {
+				 ele.target.play();
+			 } else {
+				 ele.target.pause();
+			 }
+		}); */
+
+		mermaid.initialize({
+			theme: "neutral",
+			themeVariables: {
+			    lineColor: "#939598",
+			}
+		});
+
+		MathJax = {
+		  tex: {
+			inlineMath: [['$', '$']],
+			displayMath: [['$$', '$$']],
+		  }
+		};
+	</script>
+</html>
