@@ -244,24 +244,24 @@
 <h2><a name="explain-how-merkle-tree-is-created-how-merkle-root-is-used-what-is-merkle-proof" class="heading-anchor" href="#explain-how-merkle-tree-is-created-how-merkle-root-is-used-what-is-merkle-proof" rel="nofollow" aria-hidden="true"></a>Explain how Merkle Tree is created, how Merkle Root is used. What is Merkle Proof?</h2>
 <pre class='mermaid'>flowchart TD
     th["Top Hash
-    *hash(hash0 + hash1)*"] --> h0["Hash 0
-    *hash(hash0-0 + hash0-1)*"]
+    *hash(Hash 0 + Hash 1)*"] --> h0["Hash 0
+    *hash(Hash 0-0 + Hash 0-1)*"]
     th --> h1["Hash 1
-    *hash(hash1-0 + hash1-1)*"]
-    subgraph Data Blocks
-    L1 
-    L2
-    L3
-    L4
+    *hash(Hash 1-0 + Hash 1-1)*"]
+    subgraph Block
+    t1 
+    t2
+    t3
+    t4
     end
     h0 --> h00["Hash 0-0
-    *hash(L1)*"] --> L1
+    *hash(Transaction 1)*"] --> t1[Transaction 1]
     h0 --> h01["Hash 0-1
-    *hash(L2)*"] --> L2
+    *hash(Transaction 2)*"] --> t2[Transaction 2]
     h1 --> h10["Hash 1-0
-    *hash(L3)*"] --> L3
+    *hash(Transaction 3)*"] --> t3[Transaction 3]
     h1 --> h11["Hash 1-1
-    *hash(L4)*"] --> L4
+    *hash(Transaction 4)*"] --> t4[Transaction 4]
 </pre>
 <p><strong>Creation of a Merkle Tree</strong></p>
 
