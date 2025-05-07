@@ -20,20 +20,41 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - name: Cache Notes Folder
+      uses: actions/cache@v3
+      with:
+        path: notes
+        key: notes-${{ hashFiles('notes_checksum.txt') }}
+        restore-keys: |
+          notes-
+      continue-on-error: true
+
     - name: Download Notes from Google Drive
       uses: AnimMouse/setup-rclone@v1
       with:
         rclone_config: ${{ secrets.RCLONE_CONFIG }}
-    - run: 'rclone copy Personal:Notes notes'
+    - run: |
+        rclone copy Personal:Notes notes
+        find notes -type f -exec sha256sum {} \; | sort > notes_checksum.txt
 
     - name: Download README.md
       run: curl -O https://raw.githubusercontent.com/AnzenKodo/AnzenKodo/refs/heads/main/README.md
+
+    - name: Cache Go Dependencies
+      uses: actions/cache@v3
+      with:
+        path: |
+          ~/.cache/go-build
+          ~/go/pkg/mod
+        key: go-${{ runner.os }}-${{ hashFiles('**/go.mod', '**/go.sum') }}
+        restore-keys: |
+          go-${{ runner.os }}-
 
     - name: Setup Go 1.21.1
       uses: actions/setup-go@v4
       with:
         go-version: '1.21.1'
-
+        
     - name: Build
       run: go run . build
 
