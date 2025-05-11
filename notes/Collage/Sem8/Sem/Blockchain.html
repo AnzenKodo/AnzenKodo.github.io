@@ -261,7 +261,7 @@
 
 <ul>
 <li><img loading="lazy" src="../Premium/UT1/assets/Pasted%20image%2020250228081332.webp" alt="" /></li>
-<li>These are temporary splits, often due to network issues, like when two miners find a block at the same time. The network resolves this by choosing the longest chain, and the other chain is discarded. You might not expect this, but these forks are usually resolved quickly and don’t create lasting changes.</li>
+<li>These are temporary splits, often due to network issues, like when two miners find a block at the same time. The network resolves this by choosing the longest chain, and the other chain is discarded.</li>
 </ul></li>
 <li><strong>Intentional Forks</strong>
 
@@ -300,6 +300,7 @@
 
 <ol>
 <li><strong>Hyperledger Fabric:</strong> An open-source, enterprise-grade permissioned distributed ledger framework hosted by the Linux Foundation.</li>
+<li><strong>Private Ethereum Blockchain</strong>: Unlike the public Ethereum mainnet, a private Ethereum blockchain restricts access to a select group of participants.</li>
 <li><strong>R3 Corda:</strong> A permissioned distributed ledger technology designed specifically for businesses, particularly in the financial services industry.</li>
 </ol>
 <h2><a name="discuss-simplified-payment-verification-spv-nodes-with-its-privacy-issue-and-solution-10-marks-5-marks-2024-december-2023-may" class="heading-anchor" href="#discuss-simplified-payment-verification-spv-nodes-with-its-privacy-issue-and-solution-10-marks-5-marks-2024-december-2023-may" rel="nofollow" aria-hidden="true"></a>Discuss Simplified Payment Verification (SPV) Nodes with its Privacy issue and solution. (10 Marks, 5 Marks) (2024 December, 2023 May)</h2>
@@ -341,10 +342,56 @@
 <li>SPV nodes can use Bloom filters to request transactions without revealing the exact transactions of interest, providing a layer of privacy.</li>
 </ul></li>
 </ol>
-
-<hr>
 <h2><a name="explain-in-block-in-a-blockchain-with-terminologies-as-structure-of-a-block-block-header-hash-block-height-the-genesis-block-linking-blocks-in-the-blockchain-10-marks-5-marks-2024-december-2023-may" class="heading-anchor" href="#explain-in-block-in-a-blockchain-with-terminologies-as-structure-of-a-block-block-header-hash-block-height-the-genesis-block-linking-blocks-in-the-blockchain-10-marks-5-marks-2024-december-2023-may" rel="nofollow" aria-hidden="true"></a>Explain in Block in a Blockchain with terminologies as: Structure of a Block, Block Header Hash, Block Height, The Genesis Block, Linking Blocks in the Blockchain. (10 Marks, 5 Marks) (2024 December, 2023 May)</h2>
-<hr>
+<p><img loading="lazy" src="./assets/Pasted%20image%2020250510200423.webp" alt="" /></p>
+
+<p>A Block in a Blockchain is a fundamental data structure that stores a collection of transactions and metadata, forming a single unit in the blockchain's sequential chain.</p>
+
+<p><strong>Structure of a Block</strong>: A block is a data structure containing:</p>
+
+<ul>
+<li><strong>Block Header</strong>: Metadata about the block.
+
+<ul>
+<li><strong>Previous Block</strong>: Hash of previous block.</li>
+<li><strong>Timestamp</strong>: Creation time of block in Unix timestamp format.</li>
+<li><strong>Nonce</strong>: A number miners adjust to find a valid hash for PoW.</li>
+<li><strong>Difficulty Target</strong>: The mining difficulty required for the block’s Proof of Work (PoW).</li>
+</ul></li>
+<li><strong>Transaction Data</strong>: List of transactions included in the block.</li>
+<li><strong>Other Data</strong>: Optional fields like block size or version.</li>
+</ul>
+
+<p><strong>Block Header Hash</strong>:</p>
+
+<ul>
+<li>A unique cryptographic hash (e.g., SHA-256) of the block header.</li>
+<li>Acts as the block's identifier.</li>
+<li>Ensures integrity; any change in the block alters the hash.</li>
+</ul>
+
+<p><strong>Block Height</strong>:</p>
+
+<ul>
+<li>The position of a block in the blockchain, starting from 0 (genesis block).</li>
+<li>Example: The 100th block has a block height of 99.</li>
+</ul>
+
+<p><strong>The Genesis Block</strong>:</p>
+
+<ul>
+<li>The first block in a blockchain (block height 0).</li>
+<li>Hardcoded into the blockchain protocol.</li>
+<li>Has no previous block hash, as it’s the starting point.</li>
+</ul>
+
+<p><strong>Linking Blocks in the Blockchain</strong>:</p>
+
+<ul>
+<li>Blocks are linked in a chain via the <strong>previous block hash</strong> in the block header.</li>
+<li>Each block references the hash of the previous block, forming a chronological sequence.</li>
+<li>Ensures immutability; altering a block breaks the chain, as subsequent hashes mismatch.</li>
+</ul>
 <h2><a name="enumerate-the-interoperability-and-scalability-issues-in-hyperledger-fabric-10-marks-5-marks-2024-may-2023-may" class="heading-anchor" href="#enumerate-the-interoperability-and-scalability-issues-in-hyperledger-fabric-10-marks-5-marks-2024-may-2023-may" rel="nofollow" aria-hidden="true"></a>Enumerate the interoperability and scalability issues in Hyperledger Fabric. (10 Marks, 5 Marks) (2024 May, 2023 May)</h2>
 <p><strong>Interoperability challenge</strong></p>
 
@@ -372,8 +419,25 @@
 </ol></li>
 </ul>
 <h2><a name="explain-bitcoin-mining-process-in-details-5-marks-10-marks-2024-december-2023-december" class="heading-anchor" href="#explain-bitcoin-mining-process-in-details-5-marks-10-marks-2024-december-2023-december" rel="nofollow" aria-hidden="true"></a>Explain Bitcoin Mining Process in details (5 Marks, 10 Marks) (2024 December, 2023 December)</h2>
-<p><img loading="lazy" src="./assets/Pasted%20image%2020250506002225.webp" alt="" /></p>
-
+<pre class='mermaid'>graph TD
+    A[Start: New Transactions] --> 
+    B[Collect Transactions
+    form Mempool]
+    --> C[Create Block Header]
+    C --> D[Hash Block Header
+    SHA-256]
+    D --> E{Is 
+    Hash < Target Difficulty}
+    E -->|No| F[
+    Increment Nonce
+    Try Again]
+    F --> D
+    E -->|Yes| G[Broadcast Block
+    to Network]
+    G --> H[Nodes Validate Block]
+    H --> I[Block Added to Blockchain
+    Miner Rewarded]
+</pre>
 <p>Bitcoin mining is the process by which</p>
 
 <ul>
@@ -405,8 +469,14 @@
 <li><strong>Hyperledger Ursa:</strong> A shared cryptographic library to avoid duplicating cryptographic work across projects.</li>
 </ol>
 <h2><a name="what-is-nonce-in-blockchain-and-how-does-it-work-5-marks-10-marks-2023-may-2023-december" class="heading-anchor" href="#what-is-nonce-in-blockchain-and-how-does-it-work-5-marks-10-marks-2023-may-2023-december" rel="nofollow" aria-hidden="true"></a>What is nonce in blockchain and how does it work? (5 Marks, 10 Marks) (2023 May, 2023 December)</h2>
-<p><img loading="lazy" src="./assets/Pasted%20image%2020250505234646.webp" alt="" /></p>
-
+<pre class='mermaid'>graph TD
+    A[Start Mining] --> C[Set Initial Nonce = 0]
+    C --> D[Hash Block Header]
+    D --> E{Hash < Target?}
+    E -->|Yes| F[Block Valid, Broadcast]
+    E -->|No| G[Increment Nonce]
+    G --> D
+</pre>
 <ul>
 <li><strong>Definition:</strong> A &quot;number only used once&quot; that miners adjust to find a valid hash for a block in Proof of Work (PoW) systems.</li>
 <li><strong>Purpose:</strong>
@@ -448,7 +518,7 @@
 <li><strong>Partition Tolerance:</strong> The system continues to operate despite an arbitrary number of messages being dropped or delayed by the network between nodes.</li>
 </ul>
 <h2><a name="byzantine-generals-problem-consensus-mechanism-5-marks-5-marks-2024-december-2024-may" class="heading-anchor" href="#byzantine-generals-problem-consensus-mechanism-5-marks-5-marks-2024-december-2024-may" rel="nofollow" aria-hidden="true"></a>Byzantine Generals Problem Consensus Mechanism (5 Marks, 5 Marks) (2024 December, 2024 May)</h2>
-<p><img loading="lazy" src="./assets/Pasted%20image%2020250505105831.webp" alt="" /></p>
+<p><img loading="lazy" src="./assets/Pasted%20image%2020250511030552.webp" alt="" /></p>
 
 <p>A theoretical problem in distributed systems where <strong>nodes must agree on a unified action</strong> despite:</p>
 
@@ -519,7 +589,7 @@
   #t3 4btc to Komal
   #t4 1btc back to me]
 </pre><h2><a name="ico-launching-mechanism-5-marks-5-marks-2024-may-2023-may" class="heading-anchor" href="#ico-launching-mechanism-5-marks-5-marks-2024-may-2023-may" rel="nofollow" aria-hidden="true"></a>ICO Launching Mechanism (5 Marks, 5 Marks) (2024 May, 2023 May)</h2>
-<p><img loading="lazy" src="../Premium/UT2/assets/Pasted%20image%2020250414172950.webp" alt="" /></p>
+<p><img loading="lazy" src="./assets/Pasted%20image%2020250511031457.webp" alt="" /></p>
 
 <p>An ICO is a fundraising method used by cryptocurrency startups to raise capital.During an ICO, a company issues a new digital token or cryptocurrency to investors in exchange for established cryptocurrencies like Bitcoin or Ethereum.</p>
 
@@ -580,17 +650,16 @@
 <li><strong>Supply Chain Management:</strong> Tracking goods across the supply chain with IoT sensors and recording their location, temperature, and other relevant data on a blockchain provides transparency and accountability.</li>
 <li><strong>Healthcare:</strong> Wearable IoT devices collecting patient health data can securely store and share this information on a blockchain, giving patients control over their data and facilitating secure data exchange with healthcare providers.  </li>
 <li><strong>Smart Cities:</strong> Managing and securing data from various IoT devices like traffic sensors, smart meters, and environmental monitors using blockchain can improve efficiency and transparency in city operations.</li>
+<li><strong>Energy Management:</strong> IoT-enabled smart grids can use blockchain for secure peer-to-peer energy trading and transparent tracking of energy consumption and generation.  </li>
+</ul>
 
-<li><p><strong>Energy Management:</strong> IoT-enabled smart grids can use blockchain for secure peer-to-peer energy trading and transparent tracking of energy consumption and generation.  
-<strong>Challenges in Implementation:</strong></p></li>
+<p><strong>Challenges in Implementation:</strong></p>
 
-<li><p><strong>Scalability:</strong> Handling the massive volume of data generated by numerous IoT devices can be challenging for some blockchain architectures.  </p></li>
-
-<li><p><strong>Interoperability:</strong> Integrating different blockchain platforms and ensuring seamless communication between diverse IoT devices and blockchain networks can be complex.</p></li>
-
-<li><p><strong>Standardization:</strong> The lack of common standards for integrating blockchain with IoT hinders widespread adoption.  </p></li>
-
-<li><p><strong>Regulatory Uncertainty:</strong> The legal and regulatory landscape surrounding blockchain and IoT is still evolving.</p></li>
+<ul>
+<li><strong>Scalability:</strong> Handling the massive volume of data generated by numerous IoT devices can be challenging for some blockchain architectures.  </li>
+<li><strong>Interoperability:</strong> Integrating different blockchain platforms and ensuring seamless communication between diverse IoT devices and blockchain networks can be complex.</li>
+<li><strong>Standardization:</strong> The lack of common standards for integrating blockchain with IoT hinders widespread adoption.  </li>
+<li><strong>Regulatory Uncertainty:</strong> The legal and regulatory landscape surrounding blockchain and IoT is still evolving.</li>
 </ul>
 
 <p><strong>Benefits of Combining Blockchain and IoT Technologies:</strong></p>
@@ -664,7 +733,7 @@
 <li><strong>Ethereum 1.0:</strong> The first version of Ethereum, it introduced key features like smart contracts and decentralized applications (DApps) and uses a Proof of Work (PoW) consensus mechanism.</li>
 <li><strong>Ethereum 2.0:</strong> An upgrade to Ethereum designed to improve scalability, security, and sustainability, it transitions to a Proof of Stake (PoS) consensus mechanism and introduces sharding.</li>
 <li><strong>Beacon Chain:</strong> A central component of Ethereum 2.0 that manages the PoS consensus mechanism and coordinates shard chains.</li>
-<li><strong>Shard Chains:</strong> Individual chains that store portions of data and transactions, increasing the network's scalability by distributing the load.</li>
+<li><strong>Shard Chains:</strong> Parallel blockchains to scale Ethereum by distributing transaction processing across multiple chains.</li>
 <li><strong>EVM (Ethereum Virtual Machine):</strong> The runtime environment for executing smart contracts on the Ethereum blockchain.</li>
 <li><strong>Ether (ETH):</strong> The native cryptocurrency of the Ethereum network, used to pay for transaction fees and computational services.</li>
 <li><strong>Ethereum Wallets:</strong> Digital tools for storing, managing, and interacting with Ether and ERC-20 tokens.</li>
@@ -774,7 +843,7 @@
 </tbody>
 </table>
 <h2><a name="discuss-the-different-consensus-algorithms-applied-in-hyperledger-blockchain-10-marks-2024-may" class="heading-anchor" href="#discuss-the-different-consensus-algorithms-applied-in-hyperledger-blockchain-10-marks-2024-may" rel="nofollow" aria-hidden="true"></a>Discuss the different consensus algorithms applied in Hyperledger blockchain. (10 Marks) (2024 May)</h2>
-<p><img loading="lazy" src="./assets/Pasted%20image%2020250505112213.webp" alt="" /></p>
+<p><img loading="lazy" src="./assets/Pasted%20image%2020250511041529.webp" alt="" /></p>
 
 <p><strong>Solo</strong></p>
 
@@ -903,7 +972,7 @@
 
 <p><strong>How Transactions are Validated</strong></p>
 
-<p><img loading="lazy" src="./assets/Pasted%20image%2020250505233604.webp" alt="" /></p>
+<p><img loading="lazy" src="./assets/Pasted%20image%2020250511044228.webp" alt="" /></p>
 
 <ul>
 <li>Process:
@@ -1026,12 +1095,13 @@
 <p><strong>EVM Memory Components:</strong></p>
 
 <ol>
-<li><strong>Storage (Block)</strong> Persistent key-value store for smart contract data between executions. Allocated within a blockchain block.</li>
 <li><strong>Memory (Temporary)</strong> Volatile, byte-addressable storage cleared after transaction execution. Used for temporary data manipulation within a single transaction.</li>
 <li><strong>Stack (Temporary)</strong> Last-in, first-out (LIFO) storage holding data during EVM instruction execution.</li>
-<li><strong>Call Data (Transaction)</strong> Data supplied to a smart contract upon invocation, including function signatures and parameters. Part of the transaction within the block.</li>
-<li><strong>Code (Contract)</strong>  Immutable bytecode of the smart contract executed by the EVM. Result of operation codes (opcodes) derived from languages like Solidity. Each opcode has an associated gas cost. Larger contracts have more opcodes and higher gas prices.</li>
-<li><strong>Logs (Block)</strong>  Event logs generated during contract execution and stored in the blockchain.</li>
+<li><strong>Program Counter (PC):</strong> A pointer to the current instruction (opcode) being executed in the EVM’s bytecode</li>
+<li><strong>World State:</strong> A global mapping of all Ethereum accounts to their states (balance, nonce, code, storage).</li>
+<li><strong>Machine State:</strong> The current state of the EVM during transaction execution.</li>
+<li><strong>Account Storage:</strong> A key-value store (256-bit keys and values) associated with an account.</li>
+<li><strong>Virtual ROM:</strong> Refers to the EVM’s code storage for smart contracts, which is immutable once deployed.</li>
 </ol>
 <h2><a name="with-the-help-of-diagram-explain-the-life-cycle-of-a-smart-contract-in-ethereum-10-marks-2023-may" class="heading-anchor" href="#with-the-help-of-diagram-explain-the-life-cycle-of-a-smart-contract-in-ethereum-10-marks-2023-may" rel="nofollow" aria-hidden="true"></a>With the help of diagram explain the life-cycle of a smart contract in Ethereum. (10 Marks) (2023 May)</h2>
 <p><img loading="lazy" src="../Premium/UT2/assets/Pasted%20image%2020250414172614.webp" alt="" /></p>
@@ -1198,7 +1268,7 @@
 </ul></li>
 </ul>
 <h2><a name="what-are-the-essential-tools-and-frameworks-for-setting-up-a-development-environment-for-solidity-programming-discuss-the-role-of-tools-like-remix-and-truffle-in-the-development-process-10-marks-2023-december" class="heading-anchor" href="#what-are-the-essential-tools-and-frameworks-for-setting-up-a-development-environment-for-solidity-programming-discuss-the-role-of-tools-like-remix-and-truffle-in-the-development-process-10-marks-2023-december" rel="nofollow" aria-hidden="true"></a>What are the essential tools and frameworks for setting up a development environment for Solidity programming? Discuss the role of tools like Remix and Truffle in the development process. (10 Marks) (2023 December)</h2>
-<p>Essential Tools and Frameworks:**</p>
+<p>Essential Tools and Frameworks:</p>
 
 <ul>
 <li><strong>Node.js and npm (or yarn):</strong> Node.js is a JavaScript runtime environment, and npm (Node Package Manager) or yarn is a package manager for JavaScript.</li>

@@ -6,8 +6,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 		<meta name="author" content="AnzenKodo">
 		<meta name="theme-color" content="#FF6C22">
-		<meta name="description" content="## What is clique percolation method Write an algorithm on (CPM). Also show how the CPM finds clique">
-		<meta property="og:description" content="## What is clique percolation method Write an algorithm on (CPM). Also show how the CPM finds clique">
+		<meta name="description" content="## NoSQL  > (10 Marks) (5 Marks) (10 Marks, 5 Marks, 10 Marks, 5 Marks, 10 Marks)  > (2024 May, 2023">
+		<meta property="og:description" content="## NoSQL  > (10 Marks) (5 Marks) (10 Marks, 5 Marks, 10 Marks, 5 Marks, 10 Marks)  > (2024 May, 2023">
 		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
 		<meta property="og:image:alt" content="AK#Notes logo">
 		<meta property="og:site_name" content="AK#Notes">
@@ -208,9 +208,210 @@
 		</header>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem; margin-top: 0;">BDA</h1>
-			<h2><a name="what-is-clique-percolation-method-write-an-algorithm-on-cpm-also-show-how-the-cpm-finds-clique-for-the-following-graph-explain-with-steps-10-marks-10-marks-10-marks-2024-december-2024-may-2023-december" class="heading-anchor" href="#what-is-clique-percolation-method-write-an-algorithm-on-cpm-also-show-how-the-cpm-finds-clique-for-the-following-graph-explain-with-steps-10-marks-10-marks-10-marks-2024-december-2024-may-2023-december" rel="nofollow" aria-hidden="true"></a>What is clique percolation method Write an algorithm on (CPM). Also show how the CPM finds clique for the following graph. Explain with steps (10 Marks, 10 Marks, 10 Marks) (2024 December, 2024 May, 2023 December)</h2>
-<hr>
+			<h2><a name="nosql" class="heading-anchor" href="#nosql" rel="nofollow" aria-hidden="true"></a>NoSQL</h2>
+<blockquote>
+<p>(10 Marks) (5 Marks) (10 Marks, 5 Marks, 10 Marks, 5 Marks, 10 Marks)
+(2024 May, 2023 December, 2023 December, 2023 May, 2023 May) (2024 May) (2024 December)</p>
+</blockquote>
+
+<p><strong>Types:</strong></p>
+
+<ul>
+<li><strong>Key-Value Store:</strong></li>
+<li><strong>Document Database:</strong></li>
+<li><strong>Column-Family Database:</strong></li>
+<li><strong>Graph Database:</strong></li>
+</ul>
+
+<p><strong>CAP Theorem</strong>:</p>
+
+<ul>
+<li>The CAP theorem states that it is impossible for a distributed system to simultaneously provide all three of the following guarantees:
+
+<ul>
+<li><strong>Consistency:</strong> Every read receives the most recent write or an error
+
+<ul>
+<li>RDBMS</li>
+</ul></li>
+<li><strong>Availability:</strong> Every request receives a response, without the guarantee that it contains the most recent write
+
+<ul>
+<li>MongoDB, HBase</li>
+</ul></li>
+<li><strong>Partition Tolerance:</strong> system continues to operate despite arbitrary partitioning due to network failures
+
+<ul>
+<li>Cassandra, CouchDB</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p><strong>BASE Property:</strong></p>
+
+<ul>
+<li><strong>Basically Available:</strong>
+
+<ul>
+<li>If one node fails, other nodes can still serve read and write requests.</li>
+</ul></li>
+<li><strong>Soft State:</strong>
+
+<ul>
+<li>Data changes might take time to be replicated across all nodes.</li>
+<li>During this time, different clients might see different versions of the data.</li>
+<li>The system is in a state of flux (&quot;soft&quot;) until consistency is achieved.  </li>
+</ul></li>
+<li><strong>Eventually Consistent</strong></li>
+</ul>
+
+<p><strong>SQL vs NoSQL</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>SQL</th>
+<th>NoSQL</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>Data Type</strong></td>
+<td>Structured</td>
+<td>Unstructured, semi-structured, and structured</td>
+</tr>
+
+<tr>
+<td><strong>Volume</strong></td>
+<td>Gigabytes to Terabytes</td>
+<td>Petabytes to Zettabytes or Exabytes</td>
+</tr>
+
+<tr>
+<td><strong>Generation Frequency</strong></td>
+<td>Per hour or day</td>
+<td>Per second</td>
+</tr>
+
+<tr>
+<td><strong>Management</strong></td>
+<td>Centralized</td>
+<td>Distributed</td>
+</tr>
+
+<tr>
+<td><strong>Data Relationship</strong></td>
+<td>Stable, known relationships</td>
+<td>Unstable, unknown relationships</td>
+</tr>
+
+<tr>
+<td><strong>Integration</strong></td>
+<td>Difficult</td>
+<td>Easy</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="big-data" class="heading-anchor" href="#big-data" rel="nofollow" aria-hidden="true"></a>Big Data</h2>
+<blockquote>
+<p>(5 Marks, 5 Marks, 5 Marks, 5 Marks, 5 Marks)
+(2024 December, 2024 May, 2023 December, 2023 May, 2023 May)</p>
+</blockquote>
+
+<p>Big Data is term used for collection of data sets that are large and complex, which is difficult to store and process using available database management tools.</p>
+
+<p><strong>Characteristics</strong></p>
+
+<ul>
+<li><strong>Volume</strong></li>
+<li><strong>Velocity</strong>: Incoming data speed.</li>
+<li><strong>Variety</strong></li>
+<li><strong>Veracity</strong>: Trustworthiness and quality of the data.</li>
+<li><strong>Value</strong></li>
+</ul>
+
+<p><strong>Type</strong></p>
+
+<ul>
+<li><strong>Structured Data</strong></li>
+<li><strong>Unstructured Data</strong></li>
+<li><strong>Semi-Structured Data</strong></li>
+</ul>
+<h3><a name="distance-measures-for-big-data" class="heading-anchor" href="#distance-measures-for-big-data" rel="nofollow" aria-hidden="true"></a>Distance Measures for Big Data</h3>
+<blockquote>
+<p>(5 Marks)
+(2024 December)</p>
+</blockquote>
+
+<p>Quantify the dissimilarity or similarity between data points.</p>
+
+<p>These measures are fundamental to various data mining and machine learning tasks:</p>
+
+<ul>
+<li>Clustering</li>
+<li>Classification</li>
+<li><strong>Nearest Neighbor Search</strong>: Finding the data points most similer to a query point.</li>
+<li><strong>Anomaly Detection</strong></li>
+</ul>
+<h2><a name="hadoop" class="heading-anchor" href="#hadoop" rel="nofollow" aria-hidden="true"></a>Hadoop</h2>
+<blockquote>
+<p>(10 Marks) (10 Marks) (5 Marks) (5 Marks) (2023 December) (2024 May) (2024 December)  (2023 May)</p>
+</blockquote>
+
+<p>Hadoop is an open-source framework used for distributed storage and processing of large datasets.</p>
+
+<p><strong>Components</strong></p>
+
+<ul>
+<li>Storage
+
+<ul>
+<li><strong>HDFS</strong></li>
+<li><strong>HBase</strong>: NoSQL Database</li>
+</ul></li>
+<li>Processing
+
+<ul>
+<li><strong>YARN (Yet Another Resource Negotiator)</strong>: Resource scheduling</li>
+<li><strong>MapReduce</strong>: parallel processing of large datasets.</li>
+</ul></li>
+<li>Access
+
+<ul>
+<li>*<strong>Hive</strong>: SQL for data warehousing*</li>
+<li>*<strong>Pig</strong>: dataflow language for parallel processing*</li>
+<li><strong>Mahout</strong>: Machine Learing Algorithm</li>
+<li><strong>Sqoop</strong>: transferring data between Hadoop and relational databases</li>
+</ul></li>
+<li>Management
+
+<ul>
+<li><strong>Zookeeper</strong>: Maintains config info</li>
+<li><strong>Oozie</strong>: schedules Hadoop jobs</li>
+<li><strong>Chukwa</strong>:Monitoring large system</li>
+<li><strong>Flume</strong>: Collect logs</li>
+</ul></li>
+</ul>
+
+<p><strong>Advantages</strong>: Scalability, Cost-Effective, Parallel Processing, Flexibility, Open Source</p>
+
+<p><strong>Limitations</strong>:Complexity, Resource Intensive, Not for small database, Security Concerns</p>
+<h3><a name="hadoop-distributed-file-system-hdfs-architecture" class="heading-anchor" href="#hadoop-distributed-file-system-hdfs-architecture" rel="nofollow" aria-hidden="true"></a>Hadoop Distributed File System (HDFS) architecture</h3>
+<p><img loading="lazy" src="../Premium/assets/Pasted%20image%2020250510062842.webp" alt="" /></p>
+
+<ul>
+<li><strong>NameNode:</strong> central coordinator and manager</li>
+<li><strong>DataNodes:</strong> Responsible for storing the actual <strong>Individual Data Blocks</strong></li>
+<li><strong>Secondary NameNode:</strong> Periodically takes snapshots of the NameNode</li>
+</ul>
 <h2><a name="recommendation-system" class="heading-anchor" href="#recommendation-system" rel="nofollow" aria-hidden="true"></a>Recommendation System</h2>
+<blockquote>
+<p>(10 Marks, 10 Marks, 10 Marks, 10 Marks)
+(2024 December, 2024 May, 2023 December, 2023 May)</p>
+</blockquote>
+
 <p>A recommendation system is a type of machine learning system that provides personalized recommendations to users based on their past behaviors, preferences, and patterns.</p>
 
 <p>Types:</p>
@@ -224,14 +425,358 @@
 <li><strong>Item-Item collaborative filtering</strong>:</li>
 </ul></li>
 </ul>
-
-<hr>
-<h2><a name="explain-dgim-algorithm-10-marks-10-marks-10-marks-5-marks-2024-december-2024-may-2023-december-2023-may" class="heading-anchor" href="#explain-dgim-algorithm-10-marks-10-marks-10-marks-5-marks-2024-december-2024-may-2023-december-2023-may" rel="nofollow" aria-hidden="true"></a>Explain DGIM algorithm (10 Marks, 10 Marks, 10 Marks, 5 Marks) (2024 December, 2024 May, 2023 December, 2023 May)</h2><h2><a name="explain-cure-algorithm-clearly-stating-its-advantages-over-traditional-clustering-algorithm-10-marks-10-marks-10-marks-10-marks-2024-december-2024-may-2023-december-2023-may" class="heading-anchor" href="#explain-cure-algorithm-clearly-stating-its-advantages-over-traditional-clustering-algorithm-10-marks-10-marks-10-marks-10-marks-2024-december-2024-may-2023-december-2023-may" rel="nofollow" aria-hidden="true"></a>Explain CURE algorithm, clearly stating its advantages over traditional clustering algorithm (10 Marks, 10 Marks, 10 Marks, 10 Marks) (2024 December, 2024 May, 2023 December, 2023 May)</h2>
-<hr>
 <h2><a name="data-stream" class="heading-anchor" href="#data-stream" rel="nofollow" aria-hidden="true"></a>Data Stream</h2>
+<blockquote>
+<p>(10 Marks, 5 Marks)
+(2024 December, 2023 December)</p>
+</blockquote>
+
 <p>A data stream is a flow of data which arrives at uncertain intervals of time.</p>
 
 <p>A Data Stream Management System (DSMS) is a software system designed to manage, process, and analyze continuous, high-velocity data streams in real time.</p>
+
+<p><img loading="lazy" src="../Premium/assets/Pasted%20image%2020250510030501.webp" alt="" /></p>
+
+<p><strong>Data stream query processing Issues</strong></p>
+
+<ul>
+<li><strong>Continuous Data Arrival</strong></li>
+<li><strong>High Data Arrival Rates</strong></li>
+<li><strong>Limited Memory</strong></li>
+<li><strong>Latency</strong></li>
+<li><strong>Scalability</strong></li>
+</ul>
+
+<p><strong>Data Stream Sources</strong></p>
+
+<ol>
+<li><strong>Sensor Imagery Data</strong></li>
+<li><strong>Graphical Image Data</strong></li>
+<li><strong>Internet Data</strong></li>
+</ol>
+
+<p><strong>Stream Queries</strong></p>
+
+<ol>
+<li><strong>Standing Queries:</strong>
+
+<ul>
+<li>Permanently stored queries in the stream processor.</li>
+<li>Answered at regular intervals.</li>
+<li><strong>Examples:</strong>
+
+<ul>
+<li>Maximum temperature from an ocean sensor (update maximum on new readings).</li>
+<li>Average temperature of all stream values (update average and count on new readings).</li>
+</ul></li>
+</ul></li>
+<li><strong>Ad-Hoc Queries:</strong>
+
+<ul>
+<li>Stores some part of data only.</li>
+<li>Answering may involve storing parts or summaries.</li>
+<li><strong>Example:</strong> Number of registrations for a social networking site in the past three months (requires storing registration time).</li>
+</ul></li>
+</ol>
+<h2><a name="structure-of-the-web" class="heading-anchor" href="#structure-of-the-web" rel="nofollow" aria-hidden="true"></a>Structure of the Web</h2>
+<blockquote>
+<p>(10 Marks) (2023 December)</p>
+</blockquote>
+
+<p><img loading="lazy" src="../Premium/assets/Pasted%20image%2020250510074809.webp" alt="" /></p>
+<h1><a name="numericals" class="heading-anchor" href="#numericals" rel="nofollow" aria-hidden="true"></a>Numericals</h1><h2><a name="dgim-algorithm" class="heading-anchor" href="#dgim-algorithm" rel="nofollow" aria-hidden="true"></a>DGIM algorithm</h2>
+<blockquote>
+<p>(10 Marks, 10 Marks, 10 Marks, 5 Marks)
+(2024 December, 2024 May, 2023 December, 2023 May)</p>
+</blockquote>
+
+<p>he <strong>Datar-Gionis-Indyk-Motwani</strong> (DGIM) Algorithm is used to estimate the number of 1's in a stream within a window of N bits.</p>
+
+<p><strong>Rules</strong></p>
+
+<ol>
+<li>The right end of a bucket is always a position with a 1.</li>
+<li>Every position with a 1 is in some bucket.</li>
+<li>No position (1's, 0's) can be in more then one bucket.</li>
+<li>There are one or two buckets of any given size (which must be a power of 2).</li>
+<li>All buckets should be power of 2.</li>
+<li>Buckets cannot decrease in size as we move to the left (back in time).</li>
+</ol>
+
+<p><img loading="lazy" src="../Premium/assets/Pasted%20image%2020250510091942.webp" alt="" /></p>
+
+<p>$$\text{No of 1's: } 2^2 + 2^2 + 2^1 = 4 + 4 + 2 = 10 $$
+There are 10 bits of 1's in the given dataset.</p>
+<h2><a name="mapreduce" class="heading-anchor" href="#mapreduce" rel="nofollow" aria-hidden="true"></a>MapReduce</h2>
+<blockquote>
+<p>(5 Marks, 5 Marks)
+(2024 May, 2024 December)</p>
+</blockquote>
+
+<p>The MapReduce programming model is a framework for processing large datasets in parallel across a distributed computing environment.</p>
+
+<ul>
+<li>Map
+
+<ul>
+<li>Divide into <strong>key-value</strong> pairs.</li>
+<li><strong>Example</strong>
+
+<ul>
+<li>(&quot;the&quot;, 1)</li>
+<li>(&quot;quick&quot;, 1)</li>
+<li>(&quot;the&quot;, 1)</li>
+<li>(&quot;brow&quot;, 1)</li>
+</ul></li>
+</ul></li>
+<li>Reduce
+
+<ul>
+<li><strong>Example</strong>
+
+<ul>
+<li>(&quot;the&quot;, 2)</li>
+<li>(&quot;quick&quot;, 1)</li>
+<li>(&quot;brow&quot;, 1)</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2><a name="modified-pagerank-algorithm" class="heading-anchor" href="#modified-pagerank-algorithm" rel="nofollow" aria-hidden="true"></a>Modified PageRank Algorithm</h2>
+<blockquote>
+</blockquote>
+
+<p>Upgraded PageRank algorithm.</p>
+
+<p><strong>Modification</strong></p>
+
+<ul>
+<li><strong>Weighted Links</strong></li>
+<li><strong>Personalization</strong></li>
+<li><strong>Content Relevance</strong></li>
+<li><strong>Prefer Recent Pages</strong></li>
+<li><strong>User Behavior</strong></li>
+</ul>
+<h2><a name="park-chen-yu-pcy-algorithm" class="heading-anchor" href="#park-chen-yu-pcy-algorithm" rel="nofollow" aria-hidden="true"></a>Park-Chen-Yu(PCY) algorithm</h2>
+<p><img loading="lazy" src="../Premium/assets/Pasted%20image%2020250510063911.webp" alt="" /></p>
+
+<ul>
+<li><strong>Bitmap</strong>: the count of pairs that hash to a particular bucket exceeds a certain threshold (support count), the corresponding bit in the bitmap is set to 1; otherwise, it's set to 0.</li>
+<li><strong>Counts of candidate pairs:</strong> For the candidate pairs that pass the bitmap check, the algorithm counts their actual occurrences in the transaction data during the second pass.</li>
+</ul>
+<h2><a name="relational-algebra-operations" class="heading-anchor" href="#relational-algebra-operations" rel="nofollow" aria-hidden="true"></a>Relational Algebra Operations</h2>
+<blockquote>
+<p>(10 Marks) (10 Marks)
+(2024 May) (2023 December)</p>
+</blockquote>
+
+<p>Relational algebra is a formal query language used to manipulate and query data in relational databases.</p>
+
+<p><strong>Examples:</strong></p>
+
+<p>Student Table:</p>
+
+<table>
+<thead>
+<tr>
+<th>SID</th>
+<th>Name</th>
+<th>Age</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>Alice</td>
+<td>20</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Bob</td>
+<td>22</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>Carol</td>
+<td>19</td>
+</tr>
+</tbody>
+</table>
+
+<p>Course Table:</p>
+
+<table>
+<thead>
+<tr>
+<th>SID</th>
+<th>CourseID</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>CS101</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>MATH101</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>CS101</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Solution:</strong></p>
+
+<ol>
+<li><strong>Selection σ</strong>:</li>
+</ol>
+
+<table>
+<thead>
+<tr>
+<th>SID</th>
+<th>Name</th>
+<th>Age</th>
+</tr>
+</thead>
+
+<tbody>
+</tbody>
+</table>
+
+<ol>
+<li><strong>Projection Π</strong>:</li>
+</ol>
+
+<table>
+<thead>
+<tr>
+<th>SID</th>
+<th>Name</th>
+<th>Age</th>
+</tr>
+</thead>
+
+<tbody>
+</tbody>
+</table>
+
+<ol>
+<li><strong>Union ∪</strong>:</li>
+</ol>
+
+<table>
+<thead>
+<tr>
+<th>SID</th>
+<th>Name</th>
+<th>Age</th>
+</tr>
+</thead>
+
+<tbody>
+</tbody>
+</table>
+
+<ol>
+<li><strong>Intersection ∩</strong>:</li>
+</ol>
+
+<table>
+<thead>
+<tr>
+<th>SID</th>
+<th>Name</th>
+<th>Age</th>
+</tr>
+</thead>
+
+<tbody>
+</tbody>
+</table>
+
+<ol>
+<li><strong>Join ⨝</strong>:</li>
+</ol>
+
+<table>
+<thead>
+<tr>
+<th>SID</th>
+<th>Name</th>
+<th>Age</th>
+</tr>
+</thead>
+
+<tbody>
+</tbody>
+</table>
+
+<ol>
+<li><strong>Difference -</strong>:</li>
+</ol>
+
+<table>
+<thead>
+<tr>
+<th>SID</th>
+<th>Name</th>
+<th>Age</th>
+</tr>
+</thead>
+
+<tbody>
+</tbody>
+</table>
+<h1><a name="ut" class="heading-anchor" href="#ut" rel="nofollow" aria-hidden="true"></a>UT</h1><h2><a name="support-vector-machine-svm" class="heading-anchor" href="#support-vector-machine-svm" rel="nofollow" aria-hidden="true"></a>Support Vector Machine (SVM)</h2>
+<p><img loading="lazy" src="../Premium/UT2/assets/Pasted%20image%2020250415235829.webp" alt="" /></p>
+
+<p>SVM stands for , which is a supervised machine learning algorithm used for classification and regression tasks.</p>
+
+<p>SVMs can be used for a variety of tasks, such as text classification, image classification, spam detection, handwriting identification, gene expression analysis, face detection, and anomaly detection</p>
+
+<p><strong>Types of Support Vector Machine</strong></p>
+
+<ul>
+<li><strong>Linear SVM:</strong> 
+
+<ul>
+<li>Linear SVMs use a linear decision boundary to separate the data points of different classes.</li>
+</ul></li>
+<li><strong>Non-Linear SVM:</strong> 
+
+<ul>
+<li>Non-Linear SVM can be used to classify data when it cannot be separated into two classes by a straight line (in the case of 2D).</li>
+</ul></li>
+</ul>
+
+<p><strong>Support Vector Machine Terminology</strong></p>
+
+<ol>
+<li><strong>Data Points</strong></li>
+<li><strong>Hyperplane</strong> A hyperplane is like a decision boundary that separates different classes in the data.</li>
+<li><strong>Positive Hyperplane and Negative Hyperplane</strong>: The positive hyperplane passes through the support vectors of the positive class, and the negative hyperplane passes through the support vectors of the negative class.</li>
+<li><strong>Support Vectors</strong>: Support vectors are the data points closest to the hyperplane.</li>
+<li><strong>Maximum Margin</strong>: The margin is the distance between the hyperplane and the closest data points.</li>
+</ol>
+
+<p><strong>Parallel SVM</strong></p>
+
+<p><img loading="lazy" src="../Premium/UT2/assets/Pasted%20image%2020250416000502.webp" alt="" /></p>
+<h2><a name="10-k-nearest-neighbors-knn-algorithm" class="heading-anchor" href="#10-k-nearest-neighbors-knn-algorithm" rel="nofollow" aria-hidden="true"></a>10. K-Nearest Neighbors(KNN) algorithm</h2>
+<p><img loading="lazy" src="../Premium/UT2/assets/Pasted%20image%2020250416000735.webp" alt="" /></p>
+
+<p>Supervised learning method used for both classification and regression tasks in machine learning.</p>
+
+<p><img loading="lazy" src="../Premium/assets/Pasted%20image%2020250510075706.webp" alt="" /></p>
 
 		</main>
 		
@@ -239,15 +784,45 @@
 		   <summary>Table of Content</summary>
 		<nav>
 <ul>
-<li><a href="#what-is-clique-percolation-method-write-an-algorithm-on-cpm-also-show-how-the-cpm-finds-clique-for-the-following-graph-explain-with-steps-10-marks-10-marks-10-marks-2024-december-2024-may-2023-december">What is clique percolation method Write an algorithm on (CPM). Also show how the CPM finds clique for the following graph. Explain with steps (10 Marks, 10 Marks, 10 Marks) (2024 December, 2024 May, 2023 December)</a></li>
+<li><a href="#nosql">NoSQL</a></li>
+<li><a href="#big-data">
+Big Data</a>
+<ul>
+<li><a href="#distance-measures-for-big-data">
+Distance Measures for Big Data</a></li>
+</ul></li>
+<li><a href="#hadoop">
+Hadoop</a>
+<ul>
+<li><a href="#hadoop-distributed-file-system-hdfs-architecture">
+Hadoop Distributed File System (HDFS) architecture</a></li>
+</ul></li>
 <li><a href="#recommendation-system">
 Recommendation System</a></li>
-<li><a href="#explain-dgim-algorithm-10-marks-10-marks-10-marks-5-marks-2024-december-2024-may-2023-december-2023-may">
-Explain DGIM algorithm (10 Marks, 10 Marks, 10 Marks, 5 Marks) (2024 December, 2024 May, 2023 December, 2023 May)</a></li>
-<li><a href="#explain-cure-algorithm-clearly-stating-its-advantages-over-traditional-clustering-algorithm-10-marks-10-marks-10-marks-10-marks-2024-december-2024-may-2023-december-2023-may">
-Explain CURE algorithm, clearly stating its advantages over traditional clustering algorithm (10 Marks, 10 Marks, 10 Marks, 10 Marks) (2024 December, 2024 May, 2023 December, 2023 May)</a></li>
 <li><a href="#data-stream">
 Data Stream</a></li>
+<li><a href="#structure-of-the-web">
+Structure of the Web</a></li>
+</ul><li><a href="#numericals">
+Numericals</a>
+<ul>
+<li><a href="#dgim-algorithm">
+DGIM algorithm</a></li>
+<li><a href="#mapreduce">
+MapReduce</a></li>
+<li><a href="#modified-pagerank-algorithm">
+Modified PageRank Algorithm</a></li>
+<li><a href="#park-chen-yu-pcy-algorithm">
+Park-Chen-Yu(PCY) algorithm</a></li>
+<li><a href="#relational-algebra-operations">
+Relational Algebra Operations</a></li>
+</ul><li><a href="#ut">
+UT</a>
+<ul>
+<li><a href="#support-vector-machine-svm">
+Support Vector Machine (SVM)</a></li>
+<li><a href="#10-k-nearest-neighbors-knn-algorithm">
+10. K-Nearest Neighbors(KNN) algorithm</a></li>
 </ul>
 </nav>
 
