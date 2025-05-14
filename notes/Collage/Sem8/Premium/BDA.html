@@ -271,32 +271,6 @@
 <li>③---------②</li>
 </ul></li>
 </ul>
-<h2><a name="recommendation-system-types" class="heading-anchor" href="#recommendation-system-types" rel="nofollow" aria-hidden="true"></a>Recommendation system &amp; Types</h2>
-<p>A recommendation system is a type of machine learning system that provides personalized recommendations to users based on their past behaviors, preferences, and patterns.</p>
-
-<p>Recommendation systems are widely used in e-commerce, social media, entertainment, and other online platforms to increase user engagement and retention, improve customer satisfaction, and drive sales and revenue</p>
-
-<p><strong>Types</strong></p>
-
-<ul>
-<li><strong>Content-Based Filtering:</strong>
-
-<ul>
-<li>Content-based recommendation systems recommend items to users based on their past preferences and behaviors.</li>
-<li>This type of system analyzes the user’s historical data, such as their search history, browsing history, or purchase history, and recommends items that are similar to the ones the user has interacted with before.</li>
-</ul></li>
-<li><strong>Collaborative Filtering</strong>
-
-<ul>
-<li>Collaborative filtering recommendation systems recommend items to users based on the preferences and behaviors of other similar users.</li>
-<li>Two kinds of collaborative filtering techniques used are
-
-<ul>
-<li><strong>User-User collaborative filtering</strong> is a type of recommendation system that makes predictions for a user based on the preferences of similar users.</li>
-<li><strong>Item-Item collaborative filtering</strong>, on the other hand, recommends items to a user based on the preferences for similar items.</li>
-</ul></li>
-</ul></li>
-</ul>
 <h2><a name="explain-dgim-algorithm-10-marks-10-marks-10-marks-5-marks-2024-december-2024-may-2023-december-2023-may" class="heading-anchor" href="#explain-dgim-algorithm-10-marks-10-marks-10-marks-5-marks-2024-december-2024-may-2023-december-2023-may" rel="nofollow" aria-hidden="true"></a>Explain DGIM algorithm (10 Marks, 10 Marks, 10 Marks, 5 Marks) (2024 December, 2024 May, 2023 December, 2023 May)</h2>
 <p>The <strong>Datar-Gionis-Indyk-Motwani</strong> (DGIM) Algorithm is used to estimate the number of 1's in a stream within a window of N bits. It uses <code>O(log² N)</code> bits to represent a window of N bits and estimates the number of 1's with an error of no more than 50%.</p>
 
@@ -361,6 +335,119 @@ There are 10 bits of 1's in the given dataset.</p>
 <li>The shrinking of representative points reduces the impact of outliers.  </li>
 <li>CURE is more scalable due to its sampling and partitioning techniques.  </li>
 </ul>
+<h2><a name="explain-collaborative-filtering-system-how-is-it-different-from-content-based-system-10-marks-10-marks-10-marks-2024-december-2023-december-2023-may" class="heading-anchor" href="#explain-collaborative-filtering-system-how-is-it-different-from-content-based-system-10-marks-10-marks-10-marks-2024-december-2023-december-2023-may" rel="nofollow" aria-hidden="true"></a>Explain Collaborative filtering system. How is it different from content based system (10 Marks, 10 Marks, 10 Marks) (2024 December, 2023 December, 2023 May)</h2>
+<p>Collaborative filtering recommendation systems recommend items to users based on the preferences and behaviors of other similar users.</p>
+
+<p>There are four types of algorithms/techniques to build this filtering recommended system:</p>
+
+<ul>
+<li>Memory-Based</li>
+<li>Model-Based</li>
+<li>Hybrid</li>
+<li>Deep Learning</li>
+</ul>
+
+<p><strong>Example:</strong> Measuring Similarity</p>
+
+<table>
+<thead>
+<tr>
+<th>Users</th>
+<th>Movie 1</th>
+<th>Movie 2</th>
+<th>Movie 3</th>
+<th>Movie 4</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>User 1</td>
+<td>5</td>
+<td>4</td>
+<td></td>
+<td>5</td>
+</tr>
+
+<tr>
+<td>User 2</td>
+<td>4</td>
+<td></td>
+<td>3</td>
+<td></td>
+</tr>
+
+<tr>
+<td>User 3</td>
+<td></td>
+<td>1</td>
+<td></td>
+<td>2</td>
+</tr>
+
+<tr>
+<td>User 4</td>
+<td>1</td>
+<td>2</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li>User 1 and User 2 give nearly similar ratings to movie 1, based on this we can say that movie 3 is also going to be averagely liked by user 1 &amp; movie 4 will be a good recommendation to user 2.</li>
+</ul>
+
+<p><strong>Differences from Content-Based System</strong></p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Feature</th>
+<th align="left">Collaborative Filtering</th>
+<th align="left">Content-Based System</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong>Data Source</strong></td>
+<td align="left">User-item interactions (ratings, clicks, purchases)</td>
+<td align="left">Item attributes (genre, keywords, features)</td>
+</tr>
+
+<tr>
+<td align="left"><strong>Recommendation Basis</strong></td>
+<td align="left">Similarity between users</td>
+<td align="left">Similarity between items</td>
+</tr>
+
+<tr>
+<td align="left"><strong>Cold Start Problem</strong></td>
+<td align="left">Struggles with new users or items with no interactions</td>
+<td align="left">Can recommend new items based on their attributes</td>
+</tr>
+
+<tr>
+<td align="left"><strong>Limited Info</strong></td>
+<td align="left">Performance can be affected by a lack of user-item data</td>
+<td align="left">Less affected as it relies on item features</td>
+</tr>
+
+<tr>
+<td align="left"><strong>Input</strong></td>
+<td align="left">User-item matrix</td>
+<td align="left">Item features and user profiles</td>
+</tr>
+
+<tr>
+<td align="left"><strong>Knowledge Domain</strong></td>
+<td align="left">Does not require explicit domain knowledge</td>
+<td align="left">Requires domain knowledge to define item features effectively</td>
+</tr>
+</tbody>
+</table>
 <h2><a name="explain-issues-in-data-stream-query-processing-10-marks-5-marks-2024-december-2023-december" class="heading-anchor" href="#explain-issues-in-data-stream-query-processing-10-marks-5-marks-2024-december-2023-december" rel="nofollow" aria-hidden="true"></a>Explain Issues in Data stream query processing (10 Marks, 5 Marks) (2024 December, 2023 December)</h2>
 <p>Issues in Data Stream Query Processing:</p>
 
@@ -1054,6 +1141,179 @@ body { color: #282c34; }
 <iframe src="https://www.youtube.com/embed/SP6yMOGLfPc" title="Flajolet Martin Algorithm 🔥" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <p><img loading="lazy" src="UT2/assets/Pasted%20image%2020250415220133.webp" alt="" /></p>
+<h2><a name="define-hub-and-authority-compute-the-hub-and-authority-scores-for-the-web-graph-provided-10-marks-2023-december" class="heading-anchor" href="#define-hub-and-authority-compute-the-hub-and-authority-scores-for-the-web-graph-provided-10-marks-2023-december" rel="nofollow" aria-hidden="true"></a>Define Hub and Authority. Compute the hub and Authority scores for the web graph provided (10 Marks) (2023 December)</h2>
+<p><img loading="lazy" src="./assets/Pasted%20image%2020250514081042.webp" alt="" /></p>
+
+<p>The hubs and authorities is an extension to the concept of page ranking.</p>
+
+<ul>
+<li><strong>Hub:</strong> A page that points to many authoritative pages on a topic.</li>
+<li><strong>Authority:</strong> A page that contains high-quality, relevant information on a topic and is linked to by many hub pages.</li>
+</ul>
+
+<p><strong>Solution</strong></p>
+
+<p>$$
+M = \begin{array}{c|ccc}
+  &amp; A &amp; B &amp; C \
+\hline
+A &amp; 0 &amp; 1 &amp; 0 \
+B &amp; 0 &amp; 0 &amp; 1 \
+C &amp; 1 &amp; 1 &amp; 0 \
+\end{array}
+$$
+| Node | Hub (Out) | Authority (In) |
+| ---- | --------- | -------------- |
+| A    | 1         | 1              |
+| B    | 1         | 2              |
+| C    | 2         | 1              |</p>
+
+<p>Tie the Node which has same value:</p>
+
+<ul>
+<li>Hub = C, (A, B, tie)</li>
+<li>Authority = B, (A, C, tie)</li>
+</ul>
+
+<p><strong>For <code>k=1</code></strong></p>
+
+<p><em>Here we Transpose the matrix, so the first row of M becomes the first column of M^T, the second row of M becomes the second column of M^T, and the third row of M becomes the third column of M^T.</em></p>
+
+<p>$$
+M^T = \begin{bmatrix}
+0 &amp; 0 &amp; 1 \
+1 &amp; 0 &amp; 1 \
+0 &amp; 1 &amp; 0
+\end{bmatrix}
+$$</p>
+
+<p>Assume initial Hub weight vector of 1.</p>
+
+<p>$$V = M^T \times u$$
+$$
+V =
+\begin{bmatrix}
+0 &amp; 0 &amp; 1 \
+0 &amp; 0 &amp; 1 \
+1 &amp; 1 &amp; 0
+\end{bmatrix}
+\begin{bmatrix}
+1 \
+1 \
+1
+\end{bmatrix}
+$$</p>
+
+<p>$$
+V =
+\begin{bmatrix}
+1 \
+2 \
+1
+\end{bmatrix}
+$$</p>
+
+<p>Now, U = AM x V</p>
+
+<p>$$
+U =
+\begin{bmatrix}
+0 &amp; 0 &amp; 1 \
+0 &amp; 0 &amp; 1 \
+1 &amp; 1 &amp; 0
+\end{bmatrix}
+\begin{bmatrix}
+1 \
+2 \
+1
+\end{bmatrix}
+$$</p>
+
+<p>$$
+U = \begin{bmatrix}
+2 \
+1 \
+3
+\end{bmatrix}
+$$</p>
+
+<p>U becomes Hub and V become Authority, and redraw same question diagram with Hub and Authority.</p>
+
+<p><img loading="lazy" src="./assets/Pasted%20image%2020250514091303.webp" alt="" /></p>
+
+<table>
+<thead>
+<tr>
+<th>Node</th>
+<th>Hub</th>
+<th>Authority</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>A</td>
+<td>2</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>B</td>
+<td>1</td>
+<td>2</td>
+</tr>
+
+<tr>
+<td>C</td>
+<td>3</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li>Hub = C, A, B</li>
+<li>Authority = B, (A, C, tie)</li>
+</ul>
+
+<p><strong>For, k=2</strong></p>
+
+<p>$$V_1 = 1^2 + 2^2 + 1^2 = 6$$
+$$ V_1 = \frac{1}{\sqrt{6}}, \frac{2}{\sqrt{6}}, \frac{1}{\sqrt{6}} $$
+$$ V_1 = \text{0.41, 0.82, 0.41} $$
+$$ U_1 = 2^2 + 1^2 + 3^2 = 14 $$
+$$ U_1 = \frac{2}{\sqrt{14}}, \frac{1}{\sqrt{14}}, \frac{3}{\sqrt{14}} $$
+$$ U_1 = \text{0.53, 0.26, 0.80} $$</p>
+
+<table>
+<thead>
+<tr>
+<th>Node</th>
+<th>Hub</th>
+<th>Authority</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>A</td>
+<td>0.53</td>
+<td>0.41</td>
+</tr>
+
+<tr>
+<td>B</td>
+<td>0.26</td>
+<td>0.82</td>
+</tr>
+
+<tr>
+<td>C</td>
+<td>0.20</td>
+<td>0.41</td>
+</tr>
+</tbody>
+</table>
 <h2><a name="what-are-the-advantages-and-limitations-of-hadoop-5-marks-2023-december" class="heading-anchor" href="#what-are-the-advantages-and-limitations-of-hadoop-5-marks-2023-december" rel="nofollow" aria-hidden="true"></a>What are the advantages and limitations of Hadoop (5 Marks) (2023 December)</h2>
 <p>Advantages of Hadoop:</p>
 
@@ -1377,6 +1637,52 @@ body { color: #282c34; }
 <li><strong>Flume:</strong> A distributed, reliable, and available service for efficiently collecting, aggregating, and moving large amounts of streaming data.  </li>
 </ul></li>
 </ul>
+<h2><a name="summarize-bloom-s-filter-with-example-and-its-applications-10-marks-2023-december" class="heading-anchor" href="#summarize-bloom-s-filter-with-example-and-its-applications-10-marks-2023-december" rel="nofollow" aria-hidden="true"></a>Summarize Bloom's filter with example and its applications (10 Marks) (2023 December)</h2>
+<p>Bloom filter is a filtering technique which is used for eliminating or rejecting most of the tuples which do satisfy the criteria.</p>
+
+<p><strong>Components</strong></p>
+
+<ul>
+<li><strong>Bit Array</strong>: An array of n bits initialized to 0's</li>
+<li><strong>Hash Function</strong>: A set 'H' of 'k' hash functions each of which maps a key to one of the 'n' bit locations <code>h1, h2,...hk</code></li>
+<li><strong>Insertion:</strong> To add an element, it's passed through each hash function.</li>
+<li><strong>Membership Testing:</strong> To check if an element is in the set, it's passed through the same hash functions
+
+<ul>
+<li>If any of these bits are 0, the element is definitely not in the set.</li>
+<li>If all these bits are 1, the element might be in the set (a true positive) or the bits could have been set by other elements (a false positive).</li>
+</ul></li>
+</ul>
+
+<p><strong>Diagram</strong></p>
+
+<p><img loading="lazy" src="./assets/Pasted%20image%2020250514071931.webp" alt="" /></p>
+
+<ul>
+<li>Initially all the locations in the array are set to 0.</li>
+<li>Each key 'k' is taken from S and one by one all of the 'k' hash functions in H are applied to this K.</li>
+<li>All the bit locations produced by n1(k) are set to 1.</li>
+</ul>
+
+<p><strong>Example</strong></p>
+
+<p>Imagine a Bloom filter with a bit array of 10 bits and 3 hash functions. We want to add the words &quot;apple&quot;.</p>
+
+<ul>
+<li><code>hash1(&quot;apple&quot;) % 10</code> might give 2.</li>
+<li><code>hash2(&quot;apple&quot;) % 10</code> might give 5.</li>
+<li><code>hash3(&quot;apple&quot;) % 10</code> might give 8.</li>
+<li>The bits at indices 2, 5, and 8 are set to 1.</li>
+</ul>
+
+<p><strong>Application</strong></p>
+
+<ul>
+<li><strong>Database Systems:</strong> Reducing disk lookups for non-existent keys.</li>
+<li><strong>Network Security:</strong> Identifying malicious URLs or blocked IP addresses.</li>
+<li><strong>Content Delivery Networks (CDNs):</strong> Determining if a requested piece of content is likely present in a cache.</li>
+<li><strong>Recommendation Systems:</strong> Filtering out already seen items to avoid redundant recommendations.</li>
+</ul>
 <h1><a name="ut-questions" class="heading-anchor" href="#ut-questions" rel="nofollow" aria-hidden="true"></a>UT Questions</h1><h2><a name="data-stream-management-system" class="heading-anchor" href="#data-stream-management-system" rel="nofollow" aria-hidden="true"></a>Data stream Management system.</h2>
 <p>A data stream is a flow of data which arrives at uncertain intervals of time.</p>
 
@@ -1605,7 +1911,6 @@ body { color: #282c34; }
 </span></span><span class="line"><span class="cl">## Describe the pseudocode for one-step matrix multiplication using mapreduce. Apply the same to determine the product of matrices M = 1 2 and N = 1 2 3 4 5 6. Show output of each stage distinctly (10 Marks) (2023 December) 
 </span></span><span class="line"><span class="cl">     3 4        
 </span></span><span class="line"><span class="cl">     5 6        
-</span></span><span class="line"><span class="cl">## Summarize Bloom&#39;s filter with example and its applications (10 Marks) (2023 December) 
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">## Define Hub and Authority. Compute the hub and Authority scores for the web graph provided (10 Marks) (2023 December)
 </span></span><span class="line"><span class="cl">
@@ -2223,12 +2528,12 @@ body { color: #282c34; }
 		<nav>
 <ul>
 <li><a href="#what-is-clique-percolation-method-write-an-algorithm-on-cpm-also-show-how-the-cpm-finds-clique-for-the-following-graph-explain-with-steps-10-marks-10-marks-10-marks-2024-december-2024-may-2023-december">What is clique percolation method Write an algorithm on (CPM). Also show how the CPM finds clique for the following graph. Explain with steps (10 Marks, 10 Marks, 10 Marks) (2024 December, 2024 May, 2023 December)</a></li>
-<li><a href="#recommendation-system-types">
-Recommendation system &amp; Types</a></li>
 <li><a href="#explain-dgim-algorithm-10-marks-10-marks-10-marks-5-marks-2024-december-2024-may-2023-december-2023-may">
 Explain DGIM algorithm (10 Marks, 10 Marks, 10 Marks, 5 Marks) (2024 December, 2024 May, 2023 December, 2023 May)</a></li>
 <li><a href="#explain-cure-algorithm-clearly-stating-its-advantages-over-traditional-clustering-algorithm-10-marks-10-marks-10-marks-10-marks-2024-december-2024-may-2023-december-2023-may">
 Explain CURE algorithm, clearly stating its advantages over traditional clustering algorithm (10 Marks, 10 Marks, 10 Marks, 10 Marks) (2024 December, 2024 May, 2023 December, 2023 May)</a></li>
+<li><a href="#explain-collaborative-filtering-system-how-is-it-different-from-content-based-system-10-marks-10-marks-10-marks-2024-december-2023-december-2023-may">
+Explain Collaborative filtering system. How is it different from content based system (10 Marks, 10 Marks, 10 Marks) (2024 December, 2023 December, 2023 May)</a></li>
 <li><a href="#explain-issues-in-data-stream-query-processing-10-marks-5-marks-2024-december-2023-december">
 Explain Issues in Data stream query processing (10 Marks, 5 Marks) (2024 December, 2023 December)</a></li>
 <li><a href="#explain-big-data-its-characteristics-and-types-of-big-data-5-marks-5-marks-5-marks-5-marks-5-marks-2024-december-2024-may-2023-december-2023-may-2023-may">
@@ -2259,6 +2564,8 @@ Find the frequent itemset using PCY algorithm with minimum support 3 and h(i,j)=
 Find PAGERANK of each page in the following figure after 3rd iteration (10 Marks) (2024 May)</a></li>
 <li><a href="#fm-algorithm-10-marks-10-marks-2024-may-2023-may">
 FM algorithm (10 Marks, 10 Marks) (2024 May, 2023 May)</a></li>
+<li><a href="#define-hub-and-authority-compute-the-hub-and-authority-scores-for-the-web-graph-provided-10-marks-2023-december">
+Define Hub and Authority. Compute the hub and Authority scores for the web graph provided (10 Marks) (2023 December)</a></li>
 <li><a href="#what-are-the-advantages-and-limitations-of-hadoop-5-marks-2023-december">
 What are the advantages and limitations of Hadoop (5 Marks) (2023 December)</a></li>
 <li><a href="#show-any-5-different-relational-algebra-operations-with-example-10-marks-10-marks-2024-may-2023-december">
@@ -2267,6 +2574,8 @@ Show any 5 different relational algebra operations with example (10 Marks) (10 M
 Structure of the web (10 Marks) (2023 December)</a></li>
 <li><a href="#explain-the-distributed-storage-system-of-hadoop-with-the-help-of-a-neat-diagram-10-marks-2023-may">
 Explain the distributed storage system of Hadoop with the help of a neat diagram (10 Marks) (2023 May)</a></li>
+<li><a href="#summarize-bloom-s-filter-with-example-and-its-applications-10-marks-2023-december">
+Summarize Bloom's filter with example and its applications (10 Marks) (2023 December)</a></li>
 </ul><li><a href="#ut-questions">
 UT Questions</a>
 <ul>

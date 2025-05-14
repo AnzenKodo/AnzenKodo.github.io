@@ -736,7 +736,7 @@ There are 10 bits of 1's in the given dataset.</p>
 <tbody>
 </tbody>
 </table>
-<h1><a name="ut" class="heading-anchor" href="#ut" rel="nofollow" aria-hidden="true"></a>UT</h1><h2><a name="support-vector-machine-svm" class="heading-anchor" href="#support-vector-machine-svm" rel="nofollow" aria-hidden="true"></a>Support Vector Machine (SVM)</h2>
+<h2><a name="bloom-filter" class="heading-anchor" href="#bloom-filter" rel="nofollow" aria-hidden="true"></a>Bloom filter</h2><h1><a name="ut" class="heading-anchor" href="#ut" rel="nofollow" aria-hidden="true"></a>UT</h1><h2><a name="support-vector-machine-svm" class="heading-anchor" href="#support-vector-machine-svm" rel="nofollow" aria-hidden="true"></a>Support Vector Machine (SVM)</h2>
 <p><img loading="lazy" src="../Premium/UT2/assets/Pasted%20image%2020250415235829.webp" alt="" /></p>
 
 <p>SVM stands for , which is a supervised machine learning algorithm used for classification and regression tasks.</p>
@@ -777,7 +777,102 @@ There are 10 bits of 1's in the given dataset.</p>
 <p>Supervised learning method used for both classification and regression tasks in machine learning.</p>
 
 <p><img loading="lazy" src="../Premium/assets/Pasted%20image%2020250510075706.webp" alt="" /></p>
-
+<h2><a name="discuss-1-step-matrix-matrix-multiplication-mapreduce-algorithm-and-apply-to-the-following-problem-2-3-0-2-10-marks-2024-may" class="heading-anchor" href="#discuss-1-step-matrix-matrix-multiplication-mapreduce-algorithm-and-apply-to-the-following-problem-2-3-0-2-10-marks-2024-may" rel="nofollow" aria-hidden="true"></a>Discuss 1-step Matrix-Matrix Multiplication MapReduce algorithm and apply to the following problem 2 3 * 0 2 (10 Marks) (2024 May)</h2>
+<div class="code-block"><html>
+<style type="text/css">
+/* Background */ .bg { color: #282c34 }
+/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
+/* Other */ .chroma .x { color: #c9c9c9 }
+/* Error */ .chroma .err { color: #cf5967 }
+/* CodeLine */ .chroma .cl { color: #c9c9c9 }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
+/* Keyword */ .chroma .k { color: #7fbaf5 }
+/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
+/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
+/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
+/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
+/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
+/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
+/* Name */ .chroma .n { color: #c9c9c9 }
+/* NameAttribute */ .chroma .na { color: #bc74c4 }
+/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
+/* NameClass */ .chroma .nc { color: #ecbe7b }
+/* NameConstant */ .chroma .no { color: #ecbe7b }
+/* NameDecorator */ .chroma .nd { color: #ecbe7b }
+/* NameEntity */ .chroma .ni { color: #c9c9c9 }
+/* NameException */ .chroma .ne { color: #cf5967 }
+/* NameFunction */ .chroma .nf { color: #57c7ff }
+/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
+/* NameLabel */ .chroma .nl { color: #cf5967 }
+/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
+/* NameOther */ .chroma .nx { color: #c9c9c9 }
+/* NameProperty */ .chroma .py { color: #c9c9c9 }
+/* NameTag */ .chroma .nt { color: #bc74c4 }
+/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
+/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
+/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
+/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
+/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
+/* Literal */ .chroma .l { color: #c9c9c9 }
+/* LiteralDate */ .chroma .ld { color: #57c7ff }
+/* LiteralString */ .chroma .s { color: #82cc6a }
+/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
+/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
+/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
+/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
+/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
+/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
+/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
+/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
+/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
+/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
+/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
+/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
+/* LiteralNumber */ .chroma .m { color: #56b6c2 }
+/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
+/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
+/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
+/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
+/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
+/* Operator */ .chroma .o { color: #bc74c4 }
+/* OperatorWord */ .chroma .ow { color: #bc74c4 }
+/* Punctuation */ .chroma .p { color: #56b6c2 }
+/* Comment */ .chroma .c { color: #3e4460 }
+/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #3e4460 }
+/* CommentSingle */ .chroma .c1 { color: #3e4460 }
+/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
+/* Generic */ .chroma .g { color: #c9c9c9 }
+/* GenericDeleted */ .chroma .gd { color: #cf5967 }
+/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
+/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
+/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #ecbe7b }
+/* GenericOutput */ .chroma .go { color: #43454f }
+/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
+/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
+/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
+/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
+/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
+body { color: #282c34; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">       2 3     3 4
+</span></span><span class="line"><span class="cl">       4 2  *  0 2
+</span></span></code></pre>
+</body>
+</html>
+</div>
 		</main>
 		
 		<details id="table-of-content">
@@ -816,6 +911,8 @@ Modified PageRank Algorithm</a></li>
 Park-Chen-Yu(PCY) algorithm</a></li>
 <li><a href="#relational-algebra-operations">
 Relational Algebra Operations</a></li>
+<li><a href="#bloom-filter">
+Bloom filter</a></li>
 </ul><li><a href="#ut">
 UT</a>
 <ul>
@@ -823,6 +920,8 @@ UT</a>
 Support Vector Machine (SVM)</a></li>
 <li><a href="#10-k-nearest-neighbors-knn-algorithm">
 10. K-Nearest Neighbors(KNN) algorithm</a></li>
+<li><a href="#discuss-1-step-matrix-matrix-multiplication-mapreduce-algorithm-and-apply-to-the-following-problem-2-3-0-2-10-marks-2024-may">
+Discuss 1-step Matrix-Matrix Multiplication MapReduce algorithm and apply to the following problem 2 3 * 0 2 (10 Marks) (2024 May)</a></li>
 </ul>
 </nav>
 
