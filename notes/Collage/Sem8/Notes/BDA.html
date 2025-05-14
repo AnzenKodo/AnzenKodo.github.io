@@ -217,13 +217,13 @@
 <p><strong>Types:</strong></p>
 
 <ul>
-<li><strong>Key-Value Store:</strong></li>
-<li><strong>Document Database:</strong></li>
-<li><strong>Column-Family Database:</strong></li>
-<li><strong>Graph Database:</strong></li>
+<li><strong>Key-Value Store</strong></li>
+<li><strong>Document Database</strong></li>
+<li><strong>Column-Family Database</strong></li>
+<li><strong>Graph Database</strong></li>
 </ul>
 
-<p><strong>CAP Theorem</strong>:</p>
+<p><strong>CAP Theorem</strong></p>
 
 <ul>
 <li>The CAP theorem states that it is impossible for a distributed system to simultaneously provide all three of the following guarantees:
@@ -247,15 +247,15 @@
 </ul></li>
 </ul>
 
-<p><strong>BASE Property:</strong></p>
+<p><strong>BASE Property</strong></p>
 
 <ul>
-<li><strong>Basically Available:</strong>
+<li><strong>Basically Available</strong>
 
 <ul>
 <li>If one node fails, other nodes can still serve read and write requests.</li>
 </ul></li>
-<li><strong>Soft State:</strong>
+<li><strong>Soft State</strong>
 
 <ul>
 <li>Data changes might take time to be replicated across all nodes.</li>
@@ -325,11 +325,11 @@
 <p><strong>Characteristics</strong></p>
 
 <ul>
-<li><strong>Volume</strong></li>
+<li><strong>Volume</strong>: Large amount of data.</li>
 <li><strong>Velocity</strong>: Incoming data speed.</li>
-<li><strong>Variety</strong></li>
+<li><strong>Variety</strong>: Data in multiple formats</li>
 <li><strong>Veracity</strong>: Trustworthiness and quality of the data.</li>
-<li><strong>Value</strong></li>
+<li><strong>Value</strong>: Important data</li>
 </ul>
 
 <p><strong>Type</strong></p>
@@ -368,7 +368,7 @@
 <li>Storage
 
 <ul>
-<li><strong>HDFS</strong></li>
+<li><strong>HDFS (Hadoop File System)</strong></li>
 <li><strong>HBase</strong>: NoSQL Database</li>
 </ul></li>
 <li>Processing
@@ -406,24 +406,168 @@
 <li><strong>DataNodes:</strong> Responsible for storing the actual <strong>Individual Data Blocks</strong></li>
 <li><strong>Secondary NameNode:</strong> Periodically takes snapshots of the NameNode</li>
 </ul>
-<h2><a name="recommendation-system" class="heading-anchor" href="#recommendation-system" rel="nofollow" aria-hidden="true"></a>Recommendation System</h2>
+<h2><a name="collaborative-filtering" class="heading-anchor" href="#collaborative-filtering" rel="nofollow" aria-hidden="true"></a>Collaborative filtering</h2>
 <blockquote>
 <p>(10 Marks, 10 Marks, 10 Marks, 10 Marks)
 (2024 December, 2024 May, 2023 December, 2023 May)</p>
 </blockquote>
 
-<p>A recommendation system is a type of machine learning system that provides personalized recommendations to users based on their past behaviors, preferences, and patterns.</p>
+<p>Collaborative filtering recommendation system recommends items to users based on the preferences and behaviors of other similar users.</p>
 
-<p>Types:</p>
-
-<ul>
-<li><strong>Content-Based</strong>: Recommends items to users based on their past preferences and behaviors.</li>
-<li><strong>Collaborative Filtering</strong>: recommendation systems recommend items to users based on the preferences and behaviors of other slimier users.
+<p>Algorithms/Techniques to build this filtering recommended system:</p>
 
 <ul>
-<li><strong>User-User collaborative filtering</strong>: makes prediction for a user based on the preferences of slimier users.</li>
-<li><strong>Item-Item collaborative filtering</strong>:</li>
+<li>Memory-Based</li>
+<li>Model-Based</li>
+<li>Hybrid</li>
+<li>Deep Learning</li>
+</ul>
+
+<p><strong>Example</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>User</th>
+<th>Movie 1</th>
+<th>Movie 2</th>
+<th>Move 3</th>
+<th>Movie 4</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>User 1</strong></td>
+<td>5</td>
+<td>4</td>
+<td></td>
+<td>5</td>
+</tr>
+
+<tr>
+<td><strong>User 2</strong></td>
+<td>4</td>
+<td></td>
+<td>3</td>
+<td></td>
+</tr>
+
+<tr>
+<td><strong>User 3</strong></td>
+<td></td>
+<td>1</td>
+<td></td>
+<td>2</td>
+</tr>
+
+<tr>
+<td><strong>User 4</strong></td>
+<td>1</td>
+<td>2</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p>User 1 and User 2 give nearly similar rating to movie 1, based on this we can say that movie 3 is also going to be liked by user 1.</p>
+
+<p><strong>Differences from Content-Based System</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Features</th>
+<th>Collaborative Filtering</th>
+<th>Content-Based System</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Data Source</td>
+<td>User-item interactions</td>
+<td>Iteam attributes</td>
+</tr>
+
+<tr>
+<td>Sources</td>
+<td>Rating, Clicks, Purchases</td>
+<td>Genre, Keywords, Features</td>
+</tr>
+
+<tr>
+<td>Recommendation Basis</td>
+<td>Similarity between users</td>
+<td>Similarity between items</td>
+</tr>
+
+<tr>
+<td>Cold Start Problem</td>
+<td>Yes, User with no previous purchase history</td>
+<td>No. Recommends new item based on their attributes</td>
+</tr>
+
+<tr>
+<td>Limited info</td>
+<td>Performance can be affected by a lack of user-item data</td>
+<td>Less affected as it relies on item features</td>
+</tr>
+
+<tr>
+<td>Input</td>
+<td>User-item Matrix</td>
+<td>Item features and User profiles</td>
+</tr>
+
+<tr>
+<td>Knowledge Domain</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="cure" class="heading-anchor" href="#cure" rel="nofollow" aria-hidden="true"></a>CURE</h2>
+<ul>
+<li>Full name <strong>Clustering Using Representatives</strong></li>
+<li>Clustering is classification of objects into groups.</li>
+<li>Works with outliers.</li>
+<li>Efficient with large datasets.</li>
+<li>It is hierarchical algorithm, it starts from single point and merges clusters until number is reached.
+
+<ul>
+<li><img loading="lazy" src="../Premium/assets/Pasted%20image%2020250515023809.webp" alt="" /></li>
 </ul></li>
+
+<li><p>CURE Architecture:</p>
+
+<pre class='mermaid'>flowchart TB
+	0[(Data)] -->
+	1[Draw Random Sample] -->
+	2[Partion Sample] -->
+	3[Partially Cluster's
+	Partitions] -->
+	4[Eliminate Outliers] -->
+	5[Cluster Partial Clusters] -->
+	6[Label Disk Data] -->
+	7[(Clusters)]
+</pre></li>
+
+<li><p><strong>Partition Sample:</strong> The random sample is divided into smaller partitions or groups</p></li>
+
+<li><p><strong>Partially Cluster's Partitions:</strong> Clustering is applied to each of the individual partitions</p></li>
+
+<li><p><strong>Cluster Partial Cluster:</strong> The results from the partially clustered and outlier-cleaned partitions are combined and clustered again</p></li>
+</ul>
+
+<p><strong>Advantages over traditional clustering algorithm</strong></p>
+
+<ul>
+<li>Handles Non-Spherical Shapes</li>
+<li>Robust to Outliers</li>
+<li>Scalability for Large Datasets</li>
+<li><strong>Better Cluster Boundary Recognition:</strong> Using multiple representative points helps CURE to better recognize and define the boundaries between clusters</li>
 </ul>
 <h2><a name="data-stream" class="heading-anchor" href="#data-stream" rel="nofollow" aria-hidden="true"></a>Data Stream</h2>
 <blockquote>
@@ -454,37 +598,59 @@
 <li><strong>Graphical Image Data</strong></li>
 <li><strong>Internet Data</strong></li>
 </ol>
-
-<p><strong>Stream Queries</strong></p>
-
-<ol>
-<li><strong>Standing Queries:</strong>
-
-<ul>
-<li>Permanently stored queries in the stream processor.</li>
-<li>Answered at regular intervals.</li>
-<li><strong>Examples:</strong>
-
-<ul>
-<li>Maximum temperature from an ocean sensor (update maximum on new readings).</li>
-<li>Average temperature of all stream values (update average and count on new readings).</li>
-</ul></li>
-</ul></li>
-<li><strong>Ad-Hoc Queries:</strong>
-
-<ul>
-<li>Stores some part of data only.</li>
-<li>Answering may involve storing parts or summaries.</li>
-<li><strong>Example:</strong> Number of registrations for a social networking site in the past three months (requires storing registration time).</li>
-</ul></li>
-</ol>
 <h2><a name="structure-of-the-web" class="heading-anchor" href="#structure-of-the-web" rel="nofollow" aria-hidden="true"></a>Structure of the Web</h2>
 <blockquote>
 <p>(10 Marks) (2023 December)</p>
 </blockquote>
 
 <p><img loading="lazy" src="../Premium/assets/Pasted%20image%2020250510074809.webp" alt="" /></p>
-<h1><a name="numericals" class="heading-anchor" href="#numericals" rel="nofollow" aria-hidden="true"></a>Numericals</h1><h2><a name="dgim-algorithm" class="heading-anchor" href="#dgim-algorithm" rel="nofollow" aria-hidden="true"></a>DGIM algorithm</h2>
+<h2><a name="bloom-filter" class="heading-anchor" href="#bloom-filter" rel="nofollow" aria-hidden="true"></a>Bloom filter</h2>
+<ul>
+<li>Inventor Burton Howard Bloom in 1970.</li>
+<li>Quickly determine if an element might be in a set or is definitely not.</li>
+<li>It use less memory the traditional data structures (hash table &amp; lists).</li>
+</ul>
+
+<p><strong>Components</strong></p>
+
+<ul>
+<li><strong>Bit Array</strong>: <code>n</code> bits of 0's</li>
+<li><strong>Hash Function</strong>: <code>h1, h2, h3...hk</code></li>
+<li><strong>Insertion:</strong> To add element it passed through hash function.</li>
+<li><strong>Membership Testing</strong>: Check if element is in set.
+
+<ul>
+<li>0 is not set</li>
+<li>1 is in the set
+
+<ul>
+<li>It could be <strong>true positive</strong></li>
+<li>It could be <strong>false positive</strong></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p><strong>Diagram</strong></p>
+
+<p><img loading="lazy" src="../Premium/assets/Pasted%20image%2020250514071931.webp" alt="" /></p>
+
+<p><strong>Example</strong>:</p>
+
+<ul>
+<li><code>hash1(&quot;apple&quot;) % 10</code> gives 10</li>
+<li><code>hash2(&quot;apple&quot;) % 10</code> gives 5</li>
+<li>The bits 10 and 5 are set to 1.</li>
+</ul>
+
+<p><strong>Application</strong></p>
+
+<ul>
+<li>Database System</li>
+<li>Network Security</li>
+<li>Content Delivery Network (CDNs)</li>
+<li>Recommendation Systems</li>
+</ul>
+<h1><a name="numerical" class="heading-anchor" href="#numerical" rel="nofollow" aria-hidden="true"></a>Numerical</h1><h2><a name="dgim-algorithm" class="heading-anchor" href="#dgim-algorithm" rel="nofollow" aria-hidden="true"></a>DGIM algorithm</h2>
 <blockquote>
 <p>(10 Marks, 10 Marks, 10 Marks, 5 Marks)
 (2024 December, 2024 May, 2023 December, 2023 May)</p>
@@ -541,8 +707,464 @@ There are 10 bits of 1's in the given dataset.</p>
 </ul></li>
 </ul></li>
 </ul>
-<h2><a name="modified-pagerank-algorithm" class="heading-anchor" href="#modified-pagerank-algorithm" rel="nofollow" aria-hidden="true"></a>Modified PageRank Algorithm</h2>
+<h2><a name="park-chen-yu-pcy-algorithm" class="heading-anchor" href="#park-chen-yu-pcy-algorithm" rel="nofollow" aria-hidden="true"></a>Park-Chen-Yu(PCY) algorithm</h2>
 <blockquote>
+<p>(10 Marks) (10 Marks) (10 Marks) (10 Marks)
+(2023 May) (2023 December) (2024 May) (2024 December)</p>
+</blockquote>
+
+<p><img loading="lazy" src="../Premium/assets/Pasted%20image%2020250510063911.webp" alt="" /></p>
+
+<p>It reduces the size of candidate sets in the A-Priori algorithm by utilizing unused space in main memory.</p>
+
+<ul>
+<li><strong>Bitmap</strong>: the count of pairs that hash to a particular bucket exceeds a certain threshold (support count), the corresponding bit in the bitmap is set to 1; otherwise, it's set to 0.</li>
+<li><strong>Counts of candidate pairs:</strong> For the candidate pairs that pass the bitmap check, the algorithm counts their actual occurrences in the transaction data during the second pass.</li>
+</ul>
+
+<p>**Find the frequent itemset using PCY algorithm with minimum support 3 and h(i,j)=i x j mod 10 for given transactions. (10 Marks) (2024 May) **</p>
+
+<div class="code-block"><html>
+<style type="text/css">
+/* Background */ .bg { color: #282c34 }
+/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
+/* Other */ .chroma .x { color: #c9c9c9 }
+/* Error */ .chroma .err { color: #cf5967 }
+/* CodeLine */ .chroma .cl { color: #c9c9c9 }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
+/* Keyword */ .chroma .k { color: #7fbaf5 }
+/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
+/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
+/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
+/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
+/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
+/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
+/* Name */ .chroma .n { color: #c9c9c9 }
+/* NameAttribute */ .chroma .na { color: #bc74c4 }
+/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
+/* NameClass */ .chroma .nc { color: #ecbe7b }
+/* NameConstant */ .chroma .no { color: #ecbe7b }
+/* NameDecorator */ .chroma .nd { color: #ecbe7b }
+/* NameEntity */ .chroma .ni { color: #c9c9c9 }
+/* NameException */ .chroma .ne { color: #cf5967 }
+/* NameFunction */ .chroma .nf { color: #57c7ff }
+/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
+/* NameLabel */ .chroma .nl { color: #cf5967 }
+/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
+/* NameOther */ .chroma .nx { color: #c9c9c9 }
+/* NameProperty */ .chroma .py { color: #c9c9c9 }
+/* NameTag */ .chroma .nt { color: #bc74c4 }
+/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
+/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
+/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
+/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
+/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
+/* Literal */ .chroma .l { color: #c9c9c9 }
+/* LiteralDate */ .chroma .ld { color: #57c7ff }
+/* LiteralString */ .chroma .s { color: #82cc6a }
+/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
+/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
+/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
+/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
+/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
+/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
+/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
+/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
+/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
+/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
+/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
+/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
+/* LiteralNumber */ .chroma .m { color: #56b6c2 }
+/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
+/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
+/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
+/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
+/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
+/* Operator */ .chroma .o { color: #bc74c4 }
+/* OperatorWord */ .chroma .ow { color: #bc74c4 }
+/* Punctuation */ .chroma .p { color: #56b6c2 }
+/* Comment */ .chroma .c { color: #3e4460 }
+/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #3e4460 }
+/* CommentSingle */ .chroma .c1 { color: #3e4460 }
+/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
+/* Generic */ .chroma .g { color: #c9c9c9 }
+/* GenericDeleted */ .chroma .gd { color: #cf5967 }
+/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
+/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
+/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #ecbe7b }
+/* GenericOutput */ .chroma .go { color: #43454f }
+/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
+/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
+/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
+/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
+/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
+body { color: #282c34; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">Transactions:
+</span></span><span class="line"><span class="cl">	- T1 = {1, 2, 3}
+</span></span><span class="line"><span class="cl">	- T2 = {2, 3, 4}
+</span></span><span class="line"><span class="cl">	- T3 = {3, 4, 5}
+</span></span><span class="line"><span class="cl">	- T4 = {4, 5, 6}
+</span></span><span class="line"><span class="cl">	- T5 = {1, 3, 5}
+</span></span><span class="line"><span class="cl">	- T6 = {2, 4, 6}
+</span></span><span class="line"><span class="cl">	- T7 = {1, 3, 4}
+</span></span><span class="line"><span class="cl">	- T8 = {2, 4, 5}
+</span></span><span class="line"><span class="cl">	- T9 = {3, 5, 6}
+</span></span><span class="line"><span class="cl">	- T10 = {1, 2, 4}
+</span></span><span class="line"><span class="cl">	- T11 = {2, 3, 5}
+</span></span><span class="line"><span class="cl">	- T12 = {3, 4, 6}
+</span></span></code></pre>
+</body>
+</html>
+</div>
+<ul>
+<li><strong>Step 1</strong>: Map all elements
+
+<ul>
+<li>Iteams = {1, 2, 3, 4, 5, 6}</li>
+</ul></li>
+<li><strong>Step 2</strong>: Find there frequencies</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Items</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>Frequencies</strong></td>
+<td>4</td>
+<td>6</td>
+<td>8</td>
+<td>8</td>
+<td>6</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li><strong>Step 3</strong>: Reduce, remove elements that have less then 1.
+
+<ul>
+<li>Candidate Set = { 1, 2, 3, 4, 5, 6 }</li>
+</ul></li>
+<li><strong>Step 4</strong>: Count how many times pairs appear
+
+<ul>
+<li>T1 = {(1, 2), (1, 3), (2, 3)} = {2, 3, 3}</li>
+<li>T2 = {(2, 4), (3, 4)} = {4, 4}</li>
+<li>T3 = {(3, 5), (4, 5)} = {4, 3}</li>
+<li>T4 = {(4, 6), (5, 6)} = {3, 2}</li>
+<li>T5 = {(1, 5)} = {1}</li>
+<li>T6 = {(2, 6)} = {1}</li>
+<li>T7 = {(1, 4)} = {1}</li>
+<li>T8 = {(2, 5)} = {2}</li>
+<li>T9 = {(3, 6)} = {2}</li>
+<li>T10 = {} = {}</li>
+<li>T11 = {} = {}</li>
+<li>T12 = {} = {}</li>
+</ul></li>
+<li><strong>Step 5</strong>: Set having minimum support 3
+
+<ul>
+<li>Hash Function = (i x j) mod 10
+
+<ul>
+<li>(1, 3) = (1 x 3) mod 10 = 3</li>
+<li>(2, 3) = (2 x 3) mod 10 = 6</li>
+<li>(2, 4) = (2 x 4) mod 10 = 8</li>
+<li>(3, 4) = (3 x 4) mod 10 = 2</li>
+<li>(3, 5) = (3 x 5) mod 10 = 5</li>
+<li>(4, 5) = (4 x 5) mod 10 = 0</li>
+<li>(4, 6) = (4 x 6) mod 10 = 4</li>
+</ul></li>
+</ul></li>
+<li><strong>Step 6</strong>: Arrange pair according to ascending order of Bucket No.</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Bucket No.</th>
+<th>Pair</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>0</td>
+<td>(4, 5)</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>(3, 4)</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>(1, 3)</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>(4, 6)</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>(3, 5)</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>(2, 3)</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>(2, 4)</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li><strong>Step 6</strong>: Preparing table (candidate set table)</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Bit Vector</th>
+<th>Bucket</th>
+<th>Highest Support Count</th>
+<th>Pair</th>
+<th>Candidate Set</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>3</td>
+<td>(4, 5)</td>
+<td>(4, 5)</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>2</td>
+<td>4</td>
+<td>(3, 4)</td>
+<td>(3, 4)</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>3</td>
+<td>3</td>
+<td>(1, 3)</td>
+<td>(1, 3)</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>4</td>
+<td>3</td>
+<td>(4, 6)</td>
+<td>(4, 6)</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>5</td>
+<td>4</td>
+<td>(3, 5)</td>
+<td>(3, 5)</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>6</td>
+<td>3</td>
+<td>(2, 3)</td>
+<td>(2, 3)</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>8</td>
+<td>4</td>
+<td>(2, 4)</td>
+<td>(2, 4)</td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td>&gt;= Threshold Value</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2><a name="fm-algorithm" class="heading-anchor" href="#fm-algorithm" rel="nofollow" aria-hidden="true"></a>FM algorithm</h2>
+<p><strong>Suppose a data stream counts of integers 1, 3, 5, 4, 6, 1, 5, 9, 3, 2. Let the hash function used by</strong></p>
+
+<ul>
+<li><strong>Data Stream</strong>: 1, 3, 5, 4, 6, 1, 5, 9, 3, 2</li>
+<li><strong>Hash functions</strong>:
+
+<ul>
+<li>h(x) =  x + 1 mod 16</li>
+<li>h(x) = 2x + 3 mod 16</li>
+<li>h(x) = 3x + 1 mod 16</li>
+</ul></li>
+</ul>
+
+<p><strong>Sol:</strong></p>
+
+<ul>
+<li>h(x) = x + 1 mod 16
+
+<ul>
+<li>Apply hash function, it used 8, 4, 2, 1 to find binary equivalent
+
+<ul>
+<li>h(1) = 1 + 1 mod 16 = 2 = 0010</li>
+<li>h(3) = 3 + 1 mod 16 = 4 = 0100</li>
+<li>h(5) = 5 + 1 mod 16 = 6 = 0110</li>
+<li>h(4) = 5 + 1 mod 16 = 5 = 0101</li>
+<li>h(6) = 6 + 1 mod 16 = 7 = 0111</li>
+<li>h(1) = 1 + 1 mod 16 = 2 = 0010</li>
+<li>h(5) = 5 + 1 mod 16 = 6 = 0110</li>
+<li>h(9) = 9 + 1 mod 16 = 10 = 1010</li>
+<li>h(3) = 3 + 1 mod 16 = 4 = 0100</li>
+<li>h(2) = 2 + 1 mod 16 = 3 = 0011</li>
+</ul></li>
+<li>Trailing Zeros
+
+<ul>
+<li>{1, 2, 1, 0, 0, 1, 1, 1, 2, 0}</li>
+</ul></li>
+<li>Maximum numbers of trailing zeros
+
+<ul>
+<li>r = 2</li>
+</ul></li>
+<li>The distinct value of R = 2^r
+
+<ul>
+<li>R = 2^2 = 4</li>
+</ul></li>
+</ul></li>
+<li>h(x) = 2x + 3 mod 16
+
+<ul>
+<li>Apply hash function, it used 8, 4, 2, 1 to find binary equivalent
+
+<ul>
+<li>h(1) = (2 x 1) + 3 mod 16 = 5  = 0101</li>
+<li>h(3) = (2 x 3) + 3 mod 16 = 9  = 1001</li>
+<li>h(5) = (2 x 5) + 3 mod 16 = 13 = 1101</li>
+<li>h(4) = (2 x 5) + 3 mod 16 = 11 = 1011</li>
+<li>h(6) = (2 x 6) + 3 mod 16 = 15 = 1111</li>
+<li>h(1) = (2 x 1) + 3 mod 16 = 5  = 0101</li>
+<li>h(5) = (2 x 5) + 3 mod 16 = 13 = 1101</li>
+<li>h(9) = (2 x 9) + 3 mod 16 = 21 = 0101</li>
+<li>h(3) = (2 x 3) + 3 mod 16 = 9  = 1001</li>
+<li>h(2) = (2 x 2) + 3 mod 16 = 7  = 0111</li>
+</ul></li>
+<li>Trailing Zeros
+
+<ul>
+<li>{0, 0, 0, 0, 0, 0, 0, 0, 0, 0}</li>
+</ul></li>
+<li>Maximum numbers of trailing zeros
+
+<ul>
+<li>r = 0</li>
+</ul></li>
+<li>The distinct value of R = 2^r
+
+<ul>
+<li>R = 2^0 = 1</li>
+</ul></li>
+</ul></li>
+<li>h(x) = 3x + 1 mod 16
+
+<ul>
+<li>Apply hash function, it used 8, 4, 2, 1 to find binary equivalent
+
+<ul>
+<li>h(1) = (3 x 1) + 1 mod 16 = 4  = 0100</li>
+<li>h(3) = (3 x 3) + 1 mod 16 = 10 = 1010</li>
+<li>h(5) = (3 x 5) + 1 mod 16 = 16 = 0000</li>
+<li>h(4) = (3 x 5) + 1 mod 16 = 13 = 1101</li>
+<li>h(6) = (3 x 6) + 1 mod 16 = 19 = 0000</li>
+<li>h(1) = (3 x 1) + 1 mod 16 = 4  = 0100</li>
+<li>h(5) = (3 x 5) + 1 mod 16 = 16 = 0000</li>
+<li>h(9) = (3 x 9) + 1 mod 16 = 21 = 1100</li>
+<li>h(3) = (3 x 3) + 1 mod 16 = 10 = 1010</li>
+<li>h(2) = (3 x 2) + 1 mod 16 = 6  = 0111</li>
+</ul></li>
+<li>Trailing Zeros
+
+<ul>
+<li>{2, 1, 4, 0, 4, 2, 4, 2, 1, 0}</li>
+</ul></li>
+<li>Maximum numbers of trailing zeros
+
+<ul>
+<li>r = 4</li>
+</ul></li>
+<li>The distinct value of R = 2^r
+
+<ul>
+<li>R = 2^4 = 16</li>
+</ul></li>
+</ul></li>
+<li>So, the average distinct element will be,
+
+<ul>
+<li>Average = median(1, 4, 16) = 4</li>
+<li>There are 4 distinct elements in the stream.</li>
+</ul></li>
+</ul>
+<h2><a name="pagerank" class="heading-anchor" href="#pagerank" rel="nofollow" aria-hidden="true"></a>PageRank</h2>
+<p>Page rank is an algorithm used by Google Search to rank websites in their search engine results. Page Rank is basically a way of finding importance of website pages.</p>
+
+<p><strong>Find PAGERANK of each page in the following figure after 3rd iteration</strong></p>
+
+<p><img loading="lazy" src="./assets/Pasted%20image%2020250515032826.webp" alt="" /></p>
+<h3><a name="modified-pagerank-algorithm" class="heading-anchor" href="#modified-pagerank-algorithm" rel="nofollow" aria-hidden="true"></a>Modified PageRank Algorithm**</h3>
+<blockquote>
+<p>(5 Marks)
+(2024 December)</p>
 </blockquote>
 
 <p>Upgraded PageRank algorithm.</p>
@@ -556,13 +1178,179 @@ There are 10 bits of 1's in the given dataset.</p>
 <li><strong>Prefer Recent Pages</strong></li>
 <li><strong>User Behavior</strong></li>
 </ul>
-<h2><a name="park-chen-yu-pcy-algorithm" class="heading-anchor" href="#park-chen-yu-pcy-algorithm" rel="nofollow" aria-hidden="true"></a>Park-Chen-Yu(PCY) algorithm</h2>
-<p><img loading="lazy" src="../Premium/assets/Pasted%20image%2020250510063911.webp" alt="" /></p>
+<h2><a name="define-hub-and-authority-compute-the-hub-and-authority-scores-for-the-web-graph-provided-10-marks-2023-december" class="heading-anchor" href="#define-hub-and-authority-compute-the-hub-and-authority-scores-for-the-web-graph-provided-10-marks-2023-december" rel="nofollow" aria-hidden="true"></a>Define Hub and Authority. Compute the hub and Authority scores for the web graph provided (10 Marks) (2023 December)</h2>
+<p><img loading="lazy" src="../Premium/assets/Pasted%20image%2020250514081042.webp" alt="" /></p>
+
+<p>The hubs and authorities is an extension to the concept of page ranking.</p>
 
 <ul>
-<li><strong>Bitmap</strong>: the count of pairs that hash to a particular bucket exceeds a certain threshold (support count), the corresponding bit in the bitmap is set to 1; otherwise, it's set to 0.</li>
-<li><strong>Counts of candidate pairs:</strong> For the candidate pairs that pass the bitmap check, the algorithm counts their actual occurrences in the transaction data during the second pass.</li>
+<li><strong>Hub:</strong> A page that points to many authoritative pages on a topic.</li>
+<li><strong>Authority:</strong> A page that contains high-quality, relevant information on a topic and is linked to by many hub pages.</li>
 </ul>
+
+<p><strong>Solution</strong></p>
+
+<p>$$
+M = \begin{array}{c|ccc}
+  &amp; A &amp; B &amp; C \
+\hline
+A &amp; 0 &amp; 1 &amp; 0 \
+B &amp; 0 &amp; 0 &amp; 1 \
+C &amp; 1 &amp; 1 &amp; 0 \
+\end{array}
+$$
+| Node | Hub (Out) | Authority (In) |
+| ---- | --------- | -------------- |
+| A    | 1         | 1              |
+| B    | 1         | 2              |
+| C    | 2         | 1              |</p>
+
+<p>Tie the Node which has same value:</p>
+
+<ul>
+<li>Hub = C, (A, B, tie)</li>
+<li>Authority = B, (A, C, tie)</li>
+</ul>
+
+<p><strong>For k=1</strong></p>
+
+<p><em>Here we Transpose the matrix, so the first row of M becomes the first column of M^T, the second row of M becomes the second column of M^T, and the third row of M becomes the third column of M^T.</em></p>
+
+<p>$$
+M^T = \begin{bmatrix}
+0 &amp; 0 &amp; 1 \
+1 &amp; 0 &amp; 1 \
+0 &amp; 1 &amp; 0
+\end{bmatrix}
+$$</p>
+
+<p>Assume initial Hub weight vector of 1.</p>
+
+<p>$$V = M^T \times u$$
+$$
+V =
+\begin{bmatrix}
+0 &amp; 0 &amp; 1 \
+1 &amp; 0 &amp; 1 \
+0 &amp; 1 &amp; 0
+\end{bmatrix}
+\begin{bmatrix}
+1 \
+1 \
+1
+\end{bmatrix}
+$$</p>
+
+<p>$$
+V =
+\begin{bmatrix}
+1 \
+2 \
+1
+\end{bmatrix}
+$$</p>
+
+<p>Now, U = AM x V</p>
+
+<p>$$
+U =
+\begin{bmatrix}
+0 &amp; 1 &amp; 1 \
+0 &amp; 0 &amp; 1 \
+1 &amp; 1 &amp; 0
+\end{bmatrix}
+\begin{bmatrix}
+1 \
+2 \
+1
+\end{bmatrix}
+$$</p>
+
+<p>$$
+U = \begin{bmatrix}
+2 \
+1 \
+3
+\end{bmatrix}
+$$</p>
+
+<p>U becomes Hub and V become Authority, and redraw same question diagram with Hub and Authority.</p>
+
+<p><img loading="lazy" src="../Premium/assets/Pasted%20image%2020250514081042.webp" alt="" /></p>
+
+<table>
+<thead>
+<tr>
+<th>Node</th>
+<th>Hub</th>
+<th>Authority</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>A</td>
+<td>2</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>B</td>
+<td>1</td>
+<td>2</td>
+</tr>
+
+<tr>
+<td>C</td>
+<td>3</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li>Hub = C, A, B</li>
+<li>Authority = B, (A, C, tie)</li>
+</ul>
+
+<p><strong>For, k=2</strong></p>
+
+<p>$$V_1 = 1^2 + 2^2 + 1^2 = 6$$
+$$ V_1 = \frac{1}{\sqrt{6}}, \frac{2}{\sqrt{6}}, \frac{1}{\sqrt{6}} $$
+$$ V_1 = \text{0.41, 0.82, 0.41} $$
+$$ U_1 = 2^2 + 1^2 + 3^2 = 14 $$
+$$ U_1 = \frac{2}{\sqrt{14}}, \frac{1}{\sqrt{14}}, \frac{3}{\sqrt{14}} $$
+$$ U_1 = \text{0.53, 0.26, 0.80} $$</p>
+
+<table>
+<thead>
+<tr>
+<th>Node</th>
+<th>Hub</th>
+<th>Authority</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>A</td>
+<td>0.53</td>
+<td>0.41</td>
+</tr>
+
+<tr>
+<td>B</td>
+<td>0.26</td>
+<td>0.82</td>
+</tr>
+
+<tr>
+<td>C</td>
+<td>0.20</td>
+<td>0.41</td>
+</tr>
+</tbody>
+</table>
 <h2><a name="relational-algebra-operations" class="heading-anchor" href="#relational-algebra-operations" rel="nofollow" aria-hidden="true"></a>Relational Algebra Operations</h2>
 <blockquote>
 <p>(10 Marks) (10 Marks)
@@ -636,7 +1424,12 @@ There are 10 bits of 1's in the given dataset.</p>
 <p><strong>Solution:</strong></p>
 
 <ol>
-<li><strong>Selection σ</strong>:</li>
+<li><strong>Selection σ</strong>:
+
+<ul>
+<li>Chooses rows</li>
+<li><code>σ age&gt;19(Students)</code> (Get students who age is more then 19)</li>
+</ul></li>
 </ol>
 
 <table>
@@ -649,62 +1442,116 @@ There are 10 bits of 1's in the given dataset.</p>
 </thead>
 
 <tbody>
+<tr>
+<td>1</td>
+<td>Alice</td>
+<td>20</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Bob</td>
+<td>22</td>
+</tr>
 </tbody>
 </table>
 
 <ol>
-<li><strong>Projection Π</strong>:</li>
+<li><strong>Projection Π</strong>:
+
+<ul>
+<li>Chooses columns</li>
+<li><code>Π CourseID(Course)</code>  (Print all CoursesID's)</li>
+</ul></li>
 </ol>
 
 <table>
 <thead>
 <tr>
-<th>SID</th>
-<th>Name</th>
-<th>Age</th>
+<th>CourseID</th>
 </tr>
 </thead>
 
 <tbody>
+<tr>
+<td>CS101</td>
+</tr>
+
+<tr>
+<td>MATH101</td>
+</tr>
+
+<tr>
+<td>CS101</td>
+</tr>
 </tbody>
 </table>
 
 <ol>
-<li><strong>Union ∪</strong>:</li>
+<li><strong>Union ∪</strong>:
+
+<ul>
+<li>Combines columns</li>
+<li><code>π SID(Student) ∪ π SID(Course)</code> (Combines both table SID)</li>
+</ul></li>
 </ol>
 
 <table>
 <thead>
 <tr>
 <th>SID</th>
-<th>Name</th>
-<th>Age</th>
 </tr>
 </thead>
 
 <tbody>
+<tr>
+<td>1</td>
+</tr>
+
+<tr>
+<td>2</td>
+</tr>
+
+<tr>
+<td>3</td>
+</tr>
 </tbody>
 </table>
 
 <ol>
-<li><strong>Intersection ∩</strong>:</li>
+<li><strong>Intersection ∩</strong>:
+
+<ul>
+<li>Keeps common columns</li>
+<li><code>πSID(Student) ∩ πSID(Course)</code> (Finds students who are also enrolled)</li>
+</ul></li>
 </ol>
 
 <table>
 <thead>
 <tr>
 <th>SID</th>
-<th>Name</th>
-<th>Age</th>
 </tr>
 </thead>
 
 <tbody>
+<tr>
+<td>1</td>
+</tr>
+
+<tr>
+<td>2</td>
+</tr>
 </tbody>
 </table>
 
 <ol>
-<li><strong>Join ⨝</strong>:</li>
+<li><strong>Join ⨝</strong>:
+
+<ul>
+<li>Join both the table.</li>
+<li><code>Student ⨝ Course</code> (Finds students who are also enrolled)</li>
+</ul></li>
 </ol>
 
 <table>
@@ -713,30 +1560,57 @@ There are 10 bits of 1's in the given dataset.</p>
 <th>SID</th>
 <th>Name</th>
 <th>Age</th>
+<th>CourseID</th>
 </tr>
 </thead>
 
 <tbody>
+<tr>
+<td>1</td>
+<td>Alice</td>
+<td>20</td>
+<td>CS101</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>Alice</td>
+<td>20</td>
+<td>MATH101</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Bob</td>
+<td>22</td>
+<td>CS101</td>
+</tr>
 </tbody>
 </table>
 
 <ol>
-<li><strong>Difference -</strong>:</li>
+<li><strong>Difference -</strong>:
+
+<ul>
+<li>Remove the row that are not either table.</li>
+<li><code>π SID(Student) − π SID(Course)</code> (Find students who are not enrolled)</li>
+</ul></li>
 </ol>
 
 <table>
 <thead>
 <tr>
 <th>SID</th>
-<th>Name</th>
-<th>Age</th>
 </tr>
 </thead>
 
 <tbody>
+<tr>
+<td>3</td>
+</tr>
 </tbody>
 </table>
-<h2><a name="bloom-filter" class="heading-anchor" href="#bloom-filter" rel="nofollow" aria-hidden="true"></a>Bloom filter</h2><h1><a name="ut" class="heading-anchor" href="#ut" rel="nofollow" aria-hidden="true"></a>UT</h1><h2><a name="support-vector-machine-svm" class="heading-anchor" href="#support-vector-machine-svm" rel="nofollow" aria-hidden="true"></a>Support Vector Machine (SVM)</h2>
+<h1><a name="ut" class="heading-anchor" href="#ut" rel="nofollow" aria-hidden="true"></a>UT</h1><h2><a name="support-vector-machine-svm" class="heading-anchor" href="#support-vector-machine-svm" rel="nofollow" aria-hidden="true"></a>Support Vector Machine (SVM)</h2>
 <p><img loading="lazy" src="../Premium/UT2/assets/Pasted%20image%2020250415235829.webp" alt="" /></p>
 
 <p>SVM stands for , which is a supervised machine learning algorithm used for classification and regression tasks.</p>
@@ -892,27 +1766,37 @@ Hadoop</a>
 <li><a href="#hadoop-distributed-file-system-hdfs-architecture">
 Hadoop Distributed File System (HDFS) architecture</a></li>
 </ul></li>
-<li><a href="#recommendation-system">
-Recommendation System</a></li>
+<li><a href="#collaborative-filtering">
+Collaborative filtering</a></li>
+<li><a href="#cure">
+CURE</a></li>
 <li><a href="#data-stream">
 Data Stream</a></li>
 <li><a href="#structure-of-the-web">
 Structure of the Web</a></li>
-</ul><li><a href="#numericals">
-Numericals</a>
+<li><a href="#bloom-filter">
+Bloom filter</a></li>
+</ul><li><a href="#numerical">
+Numerical</a>
 <ul>
 <li><a href="#dgim-algorithm">
 DGIM algorithm</a></li>
 <li><a href="#mapreduce">
 MapReduce</a></li>
-<li><a href="#modified-pagerank-algorithm">
-Modified PageRank Algorithm</a></li>
 <li><a href="#park-chen-yu-pcy-algorithm">
 Park-Chen-Yu(PCY) algorithm</a></li>
+<li><a href="#fm-algorithm">
+FM algorithm</a></li>
+<li><a href="#pagerank">
+PageRank</a>
+<ul>
+<li><a href="#modified-pagerank-algorithm">
+Modified PageRank Algorithm**</a></li>
+</ul></li>
+<li><a href="#define-hub-and-authority-compute-the-hub-and-authority-scores-for-the-web-graph-provided-10-marks-2023-december">
+Define Hub and Authority. Compute the hub and Authority scores for the web graph provided (10 Marks) (2023 December)</a></li>
 <li><a href="#relational-algebra-operations">
 Relational Algebra Operations</a></li>
-<li><a href="#bloom-filter">
-Bloom filter</a></li>
 </ul><li><a href="#ut">
 UT</a>
 <ul>
