@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>DBM-Pai - AK#Notes</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="#FF6C22">
+		<meta name="description" content="## Explain Different types of cryptographic algorithms with a suitable example.   > (10, 2023 May) >">
+		<meta property="og:description" content="## Explain Different types of cryptographic algorithms with a suitable example.   > (10, 2023 May) >">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<meta property="og:image:alt" content="AK#Notes logo">
+		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="DBM-Pai - AK#Notes">
+		<meta property="og:url" content="https://AnzenKodo.github.io/notes/notes/Collage/Sem8/Sem/DBM-Pai.html">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+
+			:root {
+				/* color-scheme: dark light; */
+				color-scheme: dark;
+				--theme: #FF6C22;
+			}
+			body {
+				max-width: 40rem;
+				margin: 0 auto;
+				font-family: system-ui;
+				padding: 0 1em;
+				color: inherit !important;
+				word-break: break-word;
+			}
+			h1, h2, h3, h4, h5, h6 {
+				margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+				font-size: 2rem;
+			}
+			h3 {
+				font-size: 1.8rem;
+			}
+			h4 {
+				font-size: 1.5rem;
+			}
+			h5 {
+				font-size: 1.3rem;
+			}
+			h6 {
+				font-size: 1rem;
+			}
+			p, li, td, code {
+				line-height: 1.5rem;
+			}
+			a {
+				color: var(--theme);
+				text-decoration: none;
+			}
+			a:hover, a:focus {
+				text-decoration: underline;
+			}
+			a:active {
+				background: var(--theme);
+				color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+				margin-top: .5rem;
+			}
+			li {
+				margin-bottom: .5rem;
+			}
+			table {
+				border-collapse: collapse;
+				overflow-x: auto;
+				display: block;
+				word-break: auto-phrase;
+				margin: 1rem 0;
+			}
+			th {
+				font-size: 1.1rem;
+				border: 2px solid;
+				padding: .3rem .3rem;
+			}
+			td {
+				border: 1px solid;
+				padding: .3rem .5rem;
+			}
+			blockquote {
+				margin-left: 0;
+				margin-right: 0;
+				border: 1px solid;
+				border-left: 10px solid;
+				padding: 0 1rem;
+			}
+				.code-block {
+				background: black;
+				overflow-x: auto;
+				padding: 0em 1em;
+				border: 1px solid;
+			}
+			.code-block-language-name {
+				position: sticky;
+				left: 95%;
+				top: .5em;
+				font-weight: bold;
+				color: white;
+			}
+			:not(pre.chroma) > code {
+				border: 1px solid;
+				padding: .3rem .2rem .2rem .2rem;
+			}
+			img {
+				max-width: 100%;
+				display: block;
+				margin: 0 auto;
+			}
+			[href="#skip-top-main"] {
+				padding: 0.3em;
+				position: absolute;
+				transform: translateY(-1000%);
+			}
+			[href="#skip-top-main"]:focus {
+				transform: translateY(0%);
+				background: var(--theme);
+				color: inherit;
+			}
+			#table-of-content {
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+				background: black;
+				padding: 0.5rem 1em;
+				z-index: 1;
+				color: white;
+			}
+			#table-of-content[open] {
+				max-height: 90%;
+				overflow-y: auto;
+				bottom: 50px;
+				margin-left: 1em;
+			}
+			#table-of-content[open] summary {
+				background: black;
+				padding: 0.5em 1em;
+				text-align: center;
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+			}
+			#table-of-content ul:first-child {
+				padding-left: 1em;
+				margin-top: 1.5em;
+			}
+			.heading-anchor::before {
+				margin-right: .5rem;
+			}
+		    h2 .heading-anchor::before {
+    			content: "#";
+    			margin-right: .5rem;
+		    }
+            h3 .heading-anchor::before {
+				content: "##";
+				margin-right: .5rem;
+			}
+            h4 .heading-anchor::before {
+				content: "###";
+				margin-right: .5rem;
+			}
+            h5 .heading-anchor::before {
+				content: "####";
+				margin-right: .5rem;
+			}
+            h6 .heading-anchor::before {
+				content: "#####";
+				margin-right: .5rem;
+			}
+			.mermaid {
+				background: black;
+				border: 1px solid;
+				margin-top: 1rem;
+				padding: 1rem;
+				font-family: monospace;
+			}
+			.mermaid svg {
+				display: block;
+				margin: auto;
+			}
+			.mermaid:has(svg) {
+				background: none;
+				border: none;
+				margin-top: 1rem;
+				padding: 0;
+			}
+			mjx-container {
+				display: math;
+				overflow-y: hidden;
+				overflow-x: auto;
+				max-width: 100%;
+				padding-bottom: .8rem;
+			}
+			iframe {
+				width: 100%;
+				height: 21rem;
+				margin: 1rem 0;
+			}
+			video {
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<a href="#skip-top-main">Skip to main</a>
+		<header>
+<!--		<h1 style="text-align: center;">-->
+			<h1 style="text-align: center;">
+				<a href="https://AnzenKodo.github.io">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+			</h1>
+            <video width="100%" controls>
+                <source src="https://anzenkodo.github.io/drive/london.mp4" type="video/mp4">
+            </video><nav style="border-top: 1px solid gray;border-bottom: 1px solid gray;padding: .5rem 0;text-align: center;margin: 0 0 2rem 0;color: gray;clear: left;line-height: 1.6rem;">
+				<a href="https://AnzenKodo.github.io/notes">Home</a> | <a href="https://AnzenKodo.github.io">About</a> | <a href="https://AnzenKodo.github.io/blogroll">Blogroll</a> | <a href="https://github.com/AnzenKodo">Github</a> | <a href="https://x.com/AnzenKodo">𝕏</a>
+			</nav>
+			<!-- <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;"> -->
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem; margin-top: 0;">DBM-Pai</h1>
+			<h2><a name="explain-different-types-of-cryptographic-algorithms-with-a-suitable-example" class="heading-anchor" href="#explain-different-types-of-cryptographic-algorithms-with-a-suitable-example" rel="nofollow" aria-hidden="true"></a>Explain Different types of cryptographic algorithms with a suitable example.</h2>
+<blockquote>
+<p>(10, 2023 May)
+Explain SSL and PKI? (10, 2023 May)
+Explain digital signature (5, 2024 May)</p>
+</blockquote>
+
+<p>Cryptographic algorithms are mathematical functions used to encrypt (scramble) plaintext into ciphertext and decrypt ciphertext back into plaintext.</p>
+
+<ol>
+<li><strong>Digital Signatures:</strong>
+
+<ul>
+<li><img loading="lazy" src="../Premium/UT2/assets/Pasted%20image%2020250419015459.webp" alt="" /></li>
+<li>Mathematical schemes that demonstrate the authenticity and integrity of a digital message or document.</li>
+<li><strong>Example:</strong> Alice uses her private key to create a digital signature for a document. Bob receives the document and verifies the signature using Alice's public key, confirming that Alice sent the document and that it hasn't been altered.</li>
+</ul></li>
+<li><strong>Digital Certificates:</strong>
+
+<ul>
+<li><img loading="lazy" src="../Premium/UT2/assets/Pasted%20image%2020250419015352.webp" alt="" /></li>
+<li>Electronic documents that associate a public key with an identity (e.g., a person, organization, server). They are issued by a trusted third party called a Certificate Authority (CA).</li>
+<li><strong>Example:</strong> A website obtains an SSL certificate from a CA. This certificate contains the website's public key and identity information, allowing users' browsers to verify the website's authenticity and establish a secure connection.</li>
+</ul></li>
+<li><strong>Public Key Infrastructure (PKI) for Security:</strong>
+
+<ul>
+<li><img loading="lazy" src="./assets/Pasted%20image%2020250517202356.webp" alt="" /></li>
+<li>A system for creating, managing, distributing, using, storing, and revoking digital certificates. It provides a framework for secure communication and authentication.</li>
+<li><strong>Example</strong>: A company uses a PKI to issue digital certificates to its employees for secure email communication and access to internal resources. The PKI includes CAs, registration authorities, and certificate repositories.</li>
+</ul></li>
+<li><strong>SSL:</strong>
+
+<ul>
+<li><img loading="lazy" src="./assets/Pasted%20image%2020250517201822.webp" alt="" /></li>
+<li>SSL (Secure Sockets Layer)/TLS (Transport Layer Security): A cryptographic protocol that provides secure communication over a network, often used for web browsing (HTTPS).</li>
+</ul></li>
+</ol>
+<h2><a name="what-do-you-mean-by-digital-business-infrastructure-name-the-different-hardware-and-software-that-are-used-in-the-e-infrastructure" class="heading-anchor" href="#what-do-you-mean-by-digital-business-infrastructure-name-the-different-hardware-and-software-that-are-used-in-the-e-infrastructure" rel="nofollow" aria-hidden="true"></a>What do you mean by digital business infrastructure? Name the different hardware and software that are used in the e-infrastructure.</h2>
+<blockquote>
+<p>(10, 2024 May) (10, 2023 May)</p>
+</blockquote>
+
+<p>Digital business infrastructure refers to the fundamental hardware and software technologies that enable a business to operate in the digital environment. It's the backbone that supports online interactions, data management, communication, and various digital processes.</p>
+
+<p><strong>Hardware used in e-infrastructure:</strong></p>
+
+<ul>
+<li><strong>Servers:</strong> Powerful computers that store and manage data, run applications, and host websites.</li>
+<li><strong>Networking Equipment:</strong> Routers, switches, firewalls, and cables that facilitate data transmission and connectivity.</li>
+<li><strong>Client Devices:</strong> Computers, laptops, tablets, and smartphones used by employees and customers to access digital services.</li>
+<li><strong>Data Storage Devices:</strong> Hard drives, solid-state drives (SSDs), and network-attached storage (NAS) for storing digital information.</li>
+</ul>
+
+<p><strong>Software used in e-infrastructure:</strong></p>
+
+<ul>
+<li><strong>E-commerce Platforms:</strong> Software that enables online selling and buying (e.g., Shopify, Magento).</li>
+<li><strong>Database Management Systems (DBMS):</strong> Software for organizing, storing, and managing data (e.g., MySQL, PostgreSQL).</li>
+<li><strong>Enterprise Resource Planning (ERP) Systems:</strong> Integrated software for managing core business processes.</li>
+<li><strong>Customer Relationship Management (CRM) Systems:</strong> Software for managing interactions with customers.</li>
+</ul>
+<h2><a name="explain-legal-societal-and-ethics-impact-of-e-commerce" class="heading-anchor" href="#explain-legal-societal-and-ethics-impact-of-e-commerce" rel="nofollow" aria-hidden="true"></a>Explain legal societal and ethics impact of E commerce.</h2>
+<blockquote>
+<p>(10, 2024 May) (10, 2023 May)</p>
+</blockquote>
+
+<p><strong>Legal Impact:</strong></p>
+
+<ul>
+<li><strong>Data Privacy and Security:</strong> E-commerce businesses must comply with data protection laws (e.g., GDPR, CCPA, Digital Personal Data Protection Act in India) regarding the collection, storage, and use of customer data.</li>
+<li><strong>Consumer Protection:</strong> Laws protect online consumers from unfair trade practices, misleading advertisements, and defective products, requiring clear disclosure of product details, return policies, and grievance redressal mechanisms.</li>
+<li><strong>Intellectual Property Rights:</strong> E-commerce platforms must address issues like trademark infringement, copyright violations, and the sale of counterfeit goods.</li>
+</ul>
+
+<p><strong>Societal Impact:</strong></p>
+
+<ul>
+<li><strong>Increased Accessibility and Convenience:</strong> E-commerce provides 24/7 access to a wide range of goods and services for consumers globally.</li>
+<li><strong>Price Competition and Affordability:</strong> Online marketplaces often lead to greater price competition, making products more affordable.</li>
+<li><strong>Empowerment of Small Businesses and Entrepreneurship:</strong> E-commerce lowers entry barriers for new businesses, allowing them to reach a wider customer base.</li>
+<li><strong>Job Creation and Transformation:</strong> While some traditional retail jobs may be affected, new jobs are created in logistics, warehousing, and digital marketing.</li>
+</ul>
+
+<p><strong>Ethical Impact:</strong></p>
+
+<ul>
+<li><strong>Online Privacy:</strong> Ethical considerations involve transparency about data collection practices and obtaining informed consent from users.</li>
+<li><strong>Data Security:</strong> Businesses have an ethical responsibility to protect customer data from breaches and unauthorized access.</li>
+<li><strong>Fair Pricing and Transparency:</strong> Avoiding predatory pricing, hidden fees, and misleading discounts is crucial for ethical e-commerce.</li>
+</ul>
+<h2><a name="explain-how-b2b-e-commerce-selling-and-buying-in-private-e-markets" class="heading-anchor" href="#explain-how-b2b-e-commerce-selling-and-buying-in-private-e-markets" rel="nofollow" aria-hidden="true"></a>Explain how B2B-E-Commerce-selling and buying in private e-markets.</h2>
+<blockquote>
+<p>(10, 2024 May)
+Explain selling and buying in private e-markets with respect to business-to-business E-Commerce. (10, 2023 May)</p>
+</blockquote>
+
+<p>Private e-markets in B2B e-commerce are online platforms owned and operated by a single company for its exclusive use. They facilitate selling to selected customers (sell-side) or buying from approved suppliers (buy-side).</p>
+
+<p><strong>Selling in Private E-markets (Sell-Side):</strong></p>
+
+<ul>
+<li><strong>Control:</strong> The selling company has complete control over the platform, including product listings, pricing, and branding.</li>
+<li><strong>Customer Relationships:</strong> Enables stronger relationships with key customers through tailored offerings and direct communication.</li>
+<li><strong>Efficiency:</strong> Streamlines the sales process, order management, and potentially reduces sales costs.</li>
+<li><strong>Customization:</strong> Allows for customized catalogs and pricing based on individual customer needs.</li>
+</ul>
+
+<p><strong>Buying in Private E-markets (Buy-Side):</strong></p>
+
+<ul>
+<li><strong>Control:</strong> The buying company controls the platform and the pool of invited suppliers.</li>
+<li><strong>Cost Reduction:</strong> Can lead to better pricing through negotiated contracts and competitive bidding among approved suppliers.</li>
+<li><strong>Compliance:</strong> Ensures adherence to internal procurement policies and preferred supplier agreements.</li>
+<li><strong>Visibility:</strong> Offers better visibility into spending and purchasing activities across the organization.</li>
+</ul>
+<h2><a name="what-is-business-plan-why-it-is-required-in-any-business-organization" class="heading-anchor" href="#what-is-business-plan-why-it-is-required-in-any-business-organization" rel="nofollow" aria-hidden="true"></a>What is business plan? Why it is required in any business organization?</h2>
+<blockquote>
+<p>(10, 2024 May) (10, 2023 May)</p>
+</blockquote>
+
+<p>An E-business strategic plan is a comprehensive roadmap that outlines how an organization will leverage digital technologies, online platforms, and internet-driven processes to achieve its business objectives.</p>
+
+<p>A business plan is required in any business organization for several key reasons:</p>
+
+<ul>
+<li><strong>Provides Direction:</strong> It acts as a guide for the business, outlining objectives and how to reach them.</li>
+<li><strong>Secures Funding:</strong> It is often essential for attracting investors and securing loans.</li>
+<li><strong>Identifies Potential Problems:</strong> The planning process helps anticipate challenges and develop solutions.</li>
+<li><strong>Attracts Talent:</strong> A well-articulated plan can attract skilled employees who believe in the company's vision.</li>
+<li><strong>Measures Success:</strong> It provides benchmarks to track progress and evaluate performance.</li>
+</ul>
+<h2><a name="explain-opportunities-and-challenges-in-digital-business" class="heading-anchor" href="#explain-opportunities-and-challenges-in-digital-business" rel="nofollow" aria-hidden="true"></a>Explain Opportunities and Challenges in Digital Business.</h2>
+<blockquote>
+<p>(10, 2023 May) (5, 2024 May)</p>
+</blockquote>
+
+<p><strong>Opportunities</strong></p>
+
+<p><img loading="lazy" src="../Premium/UT1/assets/Pasted%20image%2020250303014521.webp" alt="" /></p>
+
+<ul>
+<li><strong>Digital Disruption from Within</strong>:
+
+<ul>
+<li>Established companies can disrupt themselves by embracing digital transformation.</li>
+<li>For example, Steve Jobs disrupted Apple's own successful iPod by introducing the iPhone. Companies need to innovate internally to stay ahead of digital-native competitors.</li>
+</ul></li>
+<li><strong>Showrooming and Webrooming</strong>:
+
+<ul>
+<li><strong>Showrooming</strong>: Consumers browse products in physical stores but buy them online.</li>
+<li><strong>Webrooming</strong>: Consumers research products online but purchase them in-store.</li>
+</ul></li>
+<li><strong>Digital Workforces and New Ways of Working</strong>:
+
+<ul>
+<li>Startups and even established companies can leverage small, agile teams that work on a project basis.</li>
+<li>This approach allows employees to work on projects they are passionate about, leading to higher engagement and better outcomes.</li>
+</ul></li>
+<li><strong>The Internet of Things (IoT)</strong>:
+
+<ul>
+<li> IoT connects devices, enabling data-driven decision-making, automation, and new revenue streams.</li>
+</ul></li>
+</ul>
+
+<p><strong>Challenges</strong></p>
+
+<ul>
+<li><strong>Rising Customer Expectations</strong>:
+
+<ul>
+<li>Customers demand faster, more personalized, and seamless digital experiences.</li>
+</ul></li>
+<li><strong>Talent Shortage</strong>:
+
+<ul>
+<li>The rapid pace of digital transformation has created a skills gap, with businesses struggling to find and retain talent with expertise in areas like data science, AI, cybersecurity, and digital marketing.</li>
+</ul></li>
+<li><strong>Omni-Channel Complexity</strong>:
+
+<ul>
+<li>Delivering a consistent and integrated experience across multiple channels (e.g., online, mobile, in-store) is complex and resource-intensive.</li>
+</ul></li>
+<li><strong>Big Data and Privacy</strong>:
+
+<ul>
+<li>While big data offers valuable insights, managing and protecting it poses significant challenges, especially with increasing regulatory scrutiny and consumer concerns about privacy.</li>
+</ul></li>
+</ul>
+<h2><a name="explain-erp-and-its-components" class="heading-anchor" href="#explain-erp-and-its-components" rel="nofollow" aria-hidden="true"></a>Explain ERP and its components.</h2>
+<blockquote>
+<p>(10, 2023 May)</p>
+</blockquote>
+
+<pre class='mermaid'>graph TD
+    B(ERP);
+    B --> D{Finance};
+    B --> E{Human Resources};
+    B --> F{Manufacturing};
+    B --> G{Supply Chain};
+    B --> H{Sales};
+    B --> I{Procurement};
+</pre>
+<p>In <strong>ERP (Enterprise Resource Planning)</strong> is a type of software that organizations use to manage day-to-day business activities such as:</p>
+
+<p>Globalization and IT advancements are transforming Indian business, driving ERP system implementation for enhanced efficiency, quality, productivity, and profitability.</p>
+
+<p><strong>Key Components:</strong></p>
+
+<ul>
+<li><strong>Finance:</strong> Manages accounting, budgeting, and financial reporting.</li>
+<li><strong>Human Resources:</strong> Oversees employee data, payroll, and recruitment.</li>
+<li><strong>Manufacturing:</strong> Handles production planning and scheduling.</li>
+<li><strong>Supply Chain Management:</strong> Manages inventory, procurement, and logistics.</li>
+<li><strong>Customer Relationship Management:</strong> Tracks customer interactions and sales.</li>
+</ul>
+<h2><a name="explain-key-business-processes-that-the-erp-system-will-support" class="heading-anchor" href="#explain-key-business-processes-that-the-erp-system-will-support" rel="nofollow" aria-hidden="true"></a>Explain key business processes that the ERP system will support?</h2>
+<blockquote>
+<p>(10, 2024 May)</p>
+</blockquote>
+
+<p><img loading="lazy" src="./assets/Pasted%20image%2020250517185743.webp" alt="" /></p>
+
+<ul>
+<li><strong>Inventory Management:</strong> An ERP helps optimize inventory levels, reduce storage costs, and ensure timely availability of stock.</li>
+<li><strong>Supply Chain Management:</strong> An ERP provides visibility and control over the supply chain, improving efficiency and responsiveness.</li>
+<li><strong>Finance:</strong> This area covers all financial transactions and reporting, including accounting, budgeting, accounts payable and receivable, and financial analysis.</li>
+<li><strong>Human Resources:</strong> An ERP streamlines HR processes and helps manage the workforce effectively.</li>
+<li><strong>Time &amp; Projects:</strong> This focuses on tracking employee time, managing project resources, scheduling tasks, and monitoring project progress and costs.</li>
+<li><strong>CRM &amp; Sales (Customer Relationship Management &amp; Sales):</strong> An ERP helps build stronger customer relationships and drive sales growth.</li>
+</ul>
+<h2><a name="explain-in-detail-what-are-the-most-prevalent-security-threats-to-e-businesses-today" class="heading-anchor" href="#explain-in-detail-what-are-the-most-prevalent-security-threats-to-e-businesses-today" rel="nofollow" aria-hidden="true"></a>Explain in detail what are the most prevalent security threats to e-businesses today?</h2>
+<blockquote>
+<p>(10, 2024 May)</p>
+</blockquote>
+
+<p><img loading="lazy" src="./assets/Pasted%20image%2020250517193808.webp" alt="" /></p>
+
+<p>E-commerce involves online buying and selling. Threats arise from using the internet for theft, fraud, and security breaches. These threats can be accidental, intentional, or due to human error.</p>
+
+<ul>
+<li><strong>Electronic Payment System Risks:</strong> Electronic payment systems are crucial for e-commerce, enabling paperless transactions and reducing costs. However, they pose several risks:
+
+<ul>
+<li><strong>Fraud:</strong> Authentication methods like passwords and security questions can be compromised, allowing unauthorized access to funds.</li>
+<li><strong>Tax Evasion:</strong> The digital nature of electronic payments can complicate tax compliance verification for revenue services.</li>
+<li><strong>Payment Conflicts:</strong> Automated systems handling frequent, large-volume transactions with multiple recipients are prone to errors and technical glitches.</li>
+</ul></li>
+<li><strong>E-cash Threats:</strong> E-cash is an anonymous paperless fund transfer system. While convenient, storing financial information digitally makes it vulnerable to hackers. Major threats include:
+
+<ul>
+<li><strong>Backdoor Attacks:</strong> Attackers gain unauthorized system access, bypassing normal authentication and remaining hidden.</li>
+<li><strong>Denial of Service (DoS) Attacks:</strong> Attackers disrupt access for legitimate users by overwhelming network resources.</li>
+<li><strong>Eavesdropping:</strong> Unauthorized interception of private online communications occurs without detection.</li>
+</ul></li>
+<li><strong>Credit/Debit Card Fraud:</strong> Credit cards allow borrowing for purchases, while debit cards use deposited funds. Associated threats include:
+
+<ul>
+<li><strong>ATM Skimming:</strong> Devices attached to card readers steal card details (number, name, CVV, expiry).</li>
+<li><strong>Vishing/Phishing:</strong> Attackers deceive users via phone calls (vishing) or SMS (smishing) posing as legitimate entities to obtain sensitive information like PINs and account details.</li>
+</ul></li>
+</ul>
+<h2><a name="explain-how-does-the-e-business-strategy-align-with-the-overall-business-vision-and-mission" class="heading-anchor" href="#explain-how-does-the-e-business-strategy-align-with-the-overall-business-vision-and-mission" rel="nofollow" aria-hidden="true"></a>Explain how does the e-business strategy align with the overall business vision and mission?</h2>
+<blockquote>
+<p>(10, 2024 May)</p>
+</blockquote>
+
+<p>The e-business strategy serves as the digital roadmap for an organization, outlining how technology will be used to achieve its overarching goals.</p>
+
+<p>Its alignment with the overall business vision and mission is crucial for a cohesive and effective organizational strategy.</p>
+
+<ul>
+<li><strong>Vision Alignment:</strong> The e-business strategy identifies how digital initiatives can contribute to the long-term aspirations and desired future state articulated in the business vision.</li>
+<li><strong>Mission Support:</strong> The e-business strategy details the specific digital tactics and operational changes required to fulfill the organization's core purpose and values stated in the mission.</li>
+<li><strong>Resource Allocation:</strong> The e-business strategy guides the allocation of technological and financial resources in a way that supports the overall strategic priorities of the business.</li>
+<li><strong>Goal Congruence:</strong> The objectives of the e-business strategy should directly support the broader business goals.</li>
+<li><strong>Maintaining brand consistency:</strong> All online activities, from marketing to customer service, should project a consistent brand image that aligns with the overall business identity.</li>
+</ul>
+<h1><a name="describe-how-amazon-used-data-analytics-to-enhance-its-business" class="heading-anchor" href="#describe-how-amazon-used-data-analytics-to-enhance-its-business" rel="nofollow" aria-hidden="true"></a>Describe how Amazon used data analytics to enhance its business:</h1>
+<blockquote>
+<p>(10, 2024 May)</p>
+</blockquote>
+
+<p>Amazon.com, Inc., doing business as Amazon, is a multinational technology company based in Seattle, Washington. Founded by Jeff Bezos on July 5, 1994, initially as an online bookstore, Amazon has grown into a vast global enterprise involved.</p>
+
+<p>Amazon utilizes data analytics to enhance its business in several key ways:</p>
+
+<ul>
+<li><strong>Personalized Recommendations:</strong> Analyzing browsing history, purchase patterns, and ratings to suggest relevant products to individual customers, increasing sales and customer satisfaction.</li>
+<li><strong>Demand Forecasting:</strong> Predicting future demand by analyzing historical sales data, seasonal trends, and other factors to optimize inventory levels, reduce stockouts, and minimize holding costs.</li>
+<li><strong>Supply Chain Optimization:</strong> Using data to improve logistics, delivery routes, and warehouse management, leading to faster delivery times and reduced operational costs.</li>
+<li><strong>Dynamic Pricing:</strong> Adjusting prices in real-time based on factors like demand, competitor pricing, and inventory levels to maximize revenue and maintain price competitiveness.</li>
+<li><strong>Customer Behavior Analysis:</strong> Gaining insights into how customers interact with the platform, what they search for, and their purchasing habits to improve website design, marketing efforts, and overall customer experience.</li>
+</ul>
+<h2><a name="explain-what-is-the-key-action-steps-required-to-implement-our-e-business-strategy" class="heading-anchor" href="#explain-what-is-the-key-action-steps-required-to-implement-our-e-business-strategy" rel="nofollow" aria-hidden="true"></a>Explain what is the key action steps required to implement our e-business strategy?</h2>
+<blockquote>
+<p>(10, 2024 May)</p>
+</blockquote>
+
+<p>The e-business strategic formulation process involves a structured approach to align a company's online activities with its overall business goals. Here are the key steps:</p>
+
+<p><strong>Traditional Model Alignment:</strong></p>
+
+<ol>
+<li><strong>Analyze External and Internal Environments:</strong> Identify the company's strengths, weaknesses, opportunities, and threats in the e-business context, mirroring traditional strategic planning.</li>
+<li><strong>Select an E-business Strategy:</strong> Leverage knowledge of how e-business creates economic value. Define the scope of online activities, target products, clients, and geographic markets, and set clear, measurable goals.</li>
+<li><strong>Implement the E-business Strategy:</strong> Plan the execution of the chosen strategy, deciding on technological solutions and supply chain adoption for new or existing products and target markets.</li>
+<li><strong>Evaluate E-business Success:</strong> Finalize objectives for sales growth, cost reduction, and profitability. Select key indicators (financial, client, internal process, learning, and growth) to assess the e-business solution's success using scorecards.</li>
+</ol>
+
+<p><strong>IT/E-Business Strategy Formulation:</strong></p>
+
+<p>To maintain competitiveness, particularly in international markets or with large clients, SMEs need to continuously improve their IT/e-business capabilities through a structured strategy formulation process.</p>
+
+<ol>
+<li><strong>Review Your Business Strategy:</strong> Ensure your IT and e-business initiatives directly support your overarching business strategy.</li>
+<li><strong>Identify Business Problems for IT Solutions:</strong> Pinpoint business issues (e.g., stockouts, long lead times, reporting inefficiencies) that improved IT usage could address. Also, consider potential competitive advantages from novel IT applications.</li>
+<li><strong>Identify Possible Projects:</strong> Brainstorm potential IT projects to tackle the identified problems and opportunities. This might involve new technology, process changes, or staff training.</li>
+<li><strong>Prioritize:</strong> Make strategic choices, considering both the importance and the necessary order of projects due to technical or practical constraints.</li>
+</ol>
+<h2><a name="explain-drivers-of-digital-business-big-data-analytics-mobile-cloud-computing-social-media" class="heading-anchor" href="#explain-drivers-of-digital-business-big-data-analytics-mobile-cloud-computing-social-media" rel="nofollow" aria-hidden="true"></a>Explain Drivers of digital business- Big Data Analytics, Mobile, Cloud Computing, Social media</h2>
+<blockquote>
+<p>(10, 2023 May)</p>
+</blockquote>
+
+<ul>
+<li><strong>Big Data Analytics:</strong>
+
+<ul>
+<li>Enables businesses to extract valuable insights from vast amounts of data.</li>
+<li>Supports informed decision-making, improved customer understanding, and personalized offerings.</li>
+<li>Facilitates predictive analysis for forecasting trends and optimizing operations.</li>
+</ul></li>
+<li><strong>Mobile:</strong>
+
+<ul>
+<li>Provides ubiquitous connectivity and access to digital services.</li>
+<li>Drives new channels for customer interaction, sales, and service delivery.</li>
+<li>Supports mobile-first strategies for enhanced user experience and engagement.</li>
+</ul></li>
+<li><strong>Cloud Computing:</strong>
+
+<ul>
+<li>Offers scalable and flexible IT infrastructure and services.</li>
+<li>Reduces capital expenditure on hardware and software.</li>
+<li>Enables agility, faster deployment of applications, and remote accessibility.</li>
+</ul></li>
+<li><strong>Social Media:</strong>
+
+<ul>
+<li>Creates platforms for direct engagement with customers and stakeholders.</li>
+<li>Facilitates marketing, brand building, and customer support.</li>
+<li>Provides real-time feedback and insights into customer sentiment and market trends.</li>
+</ul></li>
+</ul>
+<h2><a name="describe-the-use-of-firewalls-and-their-types" class="heading-anchor" href="#describe-the-use-of-firewalls-and-their-types" rel="nofollow" aria-hidden="true"></a>Describe the use of firewalls and their types.</h2>
+<blockquote>
+<p>(10, 2023 May)</p>
+</blockquote>
+
+<p><img loading="lazy" src="../Premium/UT2/assets/Pasted%20image%2020250419015524.webp" alt="" /></p>
+
+<p>A firewall is a network security system that acts as a barrier between a trusted internal network and an untrusted external network, such as the internet. Functioning like a gatekeeper, it monitors incoming and outgoing network traffic based on a predefined set of security rules.  </p>
+
+<p>Types of Firewalls:</p>
+
+<ul>
+<li><strong>Packet Filtering Firewall:</strong> Examines individual packets based on source/destination IP addresses, ports, and protocols.</li>
+<li><strong>Stateful Inspection Firewall:</strong> Monitors the state of active connections and allows traffic based on the context of these connections.</li>
+<li><strong>Proxy Firewall (Application-Level Gateway):</strong> Acts as an intermediary between networks, inspecting traffic at the application layer.</li>
+<li><strong>Next-Generation Firewall (NGFW):</strong> Combines traditional firewall features with advanced capabilities like deep packet inspection, intrusion prevention, and application awareness.</li>
+<li><strong>Hardware Firewall:</strong> A physical appliance deployed at the network perimeter.</li>
+<li><strong>Software Firewall:</strong> Runs as software on a host device.</li>
+</ul>
+<h2><a name="explain-the-use-of-mobile-computing-as-a-digital-driver-of-the-digital-economy" class="heading-anchor" href="#explain-the-use-of-mobile-computing-as-a-digital-driver-of-the-digital-economy" rel="nofollow" aria-hidden="true"></a>Explain the use of mobile computing as a digital driver of the digital economy.</h2>
+<blockquote>
+<p>(5, 2024 May)</p>
+</blockquote>
+
+<p><img loading="lazy" src="./assets/Pasted%20image%2020250517203237.webp" alt="" /></p>
+
+<p>Mobile Computing refers to the ability to use computing devices without a fixed physical connection. Involves mobile communication, mobile hardware, and mobile software. Enables users to access information and perform computing tasks from virtually any location.</p>
+
+<ul>
+<li><strong>Enhanced Connectivity and Access:</strong> Mobile devices and networks provide widespread internet access, connecting individuals and businesses to the digital economy regardless of location.</li>
+<li><strong>Increased Productivity and Efficiency:</strong> Mobile computing enables remote work, on-the-go collaboration, and access to information and tools, boosting individual and organizational productivity.</li>
+<li><strong>Facilitation of E-commerce and M-commerce:</strong> Mobile devices are central to online shopping, digital payments, and mobile-based transactions, driving economic activity and creating new business models.</li>
+<li><strong>Empowerment of Digital Services:</strong> Mobile platforms enable the delivery of a wide range of digital services, including banking, healthcare, education, and entertainment, reaching broader populations.</li>
+</ul>
+<h2><a name="what-is-the-primary-goal-of-the-digital-application-or-digital-infrastructure" class="heading-anchor" href="#what-is-the-primary-goal-of-the-digital-application-or-digital-infrastructure" rel="nofollow" aria-hidden="true"></a>What is the primary goal of the digital application or digital infrastructure?</h2>
+<blockquote>
+<p>(5, 2024 May)</p>
+</blockquote>
+
+<p>The primary goal of any digital application or digital infrastructure is to <strong>solve a problem or fulfill a need effectively and efficiently using digital technologies.</strong></p>
+
+<ul>
+<li><strong>Improving efficiency and productivity:</strong> Automating tasks, streamlining workflows, and providing quicker access to information.</li>
+<li><strong>Enhancing user experience:</strong> Creating intuitive, accessible, and engaging interfaces and interactions.</li>
+<li><strong>Providing access to information and services:</strong> Making resources and functionalities available to a wider audience, regardless of location or time.</li>
+<li><strong>Improving decision-making:</strong> Providing data-driven insights and analytical capabilities.</li>
+<li><strong>Increasing security and reliability:</strong> Protecting data and ensuring consistent and dependable operation.</li>
+</ul>
+<h2><a name="what-are-the-pillars-of-e-commerce-network" class="heading-anchor" href="#what-are-the-pillars-of-e-commerce-network" rel="nofollow" aria-hidden="true"></a>What are the pillars of e-commerce network?</h2>
+<blockquote>
+<p>(5, 2024 May)</p>
+</blockquote>
+
+<p><img loading="lazy" src="./assets/Pasted%20image%2020250517204521.webp" alt="" /></p>
+
+<p>The pillars of an e-commerce network are the fundamental components and capabilities that work together to create a successful online business. While different sources might categorize them slightly differently, here's a comprehensive view of the key pillars:</p>
+
+<ul>
+<li><strong>Domain:</strong> This refers to your online presence, including your website, brand name, and overall online identity.</li>
+<li><strong>Marketing:</strong> This pillar encompasses all the strategies and tactics you use to attract customers to your online store and promote your products or services.</li>
+<li><strong>Payment:</strong> This involves the secure and efficient processing of transactions, offering customers various payment options.</li>
+<li><strong>Logistics:</strong> This crucial pillar deals with the storage, packaging, and delivery of products to customers.</li>
+</ul>
+<h2><a name="explain-internet-of-things-driver-for-digital-business" class="heading-anchor" href="#explain-internet-of-things-driver-for-digital-business" rel="nofollow" aria-hidden="true"></a>Explain Internet of Things - driver for digital business</h2>
+<blockquote>
+<p>(5, 2023 May)</p>
+</blockquote>
+
+<p>The Internet of Things (IoT) is a network of physical objects embedded with sensors, software, and other technologies that enable them to collect and exchange data. It acts as a significant driver for digital business by:</p>
+
+<ul>
+<li><strong>Enabling Data-Driven Insights:</strong> IoT devices generate vast amounts of real-time data, which, when analyzed, provides valuable insights into operations, customer behavior, and market trends, leading to better decision-making.</li>
+<li><strong>Enhancing Customer Experience:</strong> IoT enables personalized services, proactive support, and the development of innovative products and services tailored to customer needs.</li>
+<li><strong>Creating New Business Models:</strong> The connectivity and data exchange facilitated by IoT open up opportunities for novel business models, such as subscription-based services, pay-per-use models, and data monetization.</li>
+<li><strong>Driving Innovation:</strong> IoT technologies, combined with AI and analytics, foster innovation by enabling the creation of smart products, intelligent systems, and interconnected ecosystems.</li>
+</ul>
+<h2><a name="explain-different-factors-that-affect-consumer-behavior" class="heading-anchor" href="#explain-different-factors-that-affect-consumer-behavior" rel="nofollow" aria-hidden="true"></a>Explain different factors that affect consumer behavior</h2>
+<blockquote>
+<p>(5, 2023 May)</p>
+</blockquote>
+
+<p><strong>Affecting consumer behavior</strong> refers to the various factors that influence how individuals make decisions when purchasing goods or services to satisfy their needs and wants.</p>
+
+<ul>
+<li><strong>Cultural Factors:</strong> These encompass the broad values, beliefs, customs, and traditions shared by a society. Subcultures (e.g., religion, ethnicity, geographic region) and social class also play a significant role.</li>
+<li><strong>Social Factors:</strong> These involve the influence of other people and groups. Key social factors include:
+
+<ul>
+<li><strong>Reference Groups:</strong> Groups that individuals identify with and whose opinions they value (e.g., family, friends, colleagues).</li>
+<li><strong>Family:</strong> Family members can strongly influence purchasing decisions.</li>
+</ul></li>
+<li><strong>Psychological Factors:</strong> These are internal factors specific to an individual that influence their buying decisions. These include:
+
+<ul>
+<li><strong>Motivation:</strong> The driving force behind a consumer's actions.</li>
+<li><strong>Learning:</strong> Changes in behavior resulting from experience.</li>
+<li><strong>Personality:</strong> Individual characteristics that influence responses to marketing stimuli.</li>
+</ul></li>
+<li><strong>Personal Factors:</strong> These are characteristics unique to an individual, such as:
+
+<ul>
+<li><strong>Occupation:</strong> A person's job can influence what they buy.</li>
+<li><strong>Economic Situation:</strong> Income, savings, and borrowing power affect purchasing ability.</li>
+<li><strong>Lifestyle:</strong> An individual's pattern of living as expressed in their activities, interests, and opinions.</li>
+</ul></li>
+</ul>
+<h2><a name="describe-the-need-for-security-in-e-commerce" class="heading-anchor" href="#describe-the-need-for-security-in-e-commerce" rel="nofollow" aria-hidden="true"></a>Describe the need for security in e-commerce</h2>
+<blockquote>
+<p>(5, 2023 May)</p>
+</blockquote>
+
+<p>Security in e-commerce refers to the measures and protocols implemented to protect online transactions, customer data, and the overall integrity of an e-commerce platform.</p>
+
+<ul>
+<li><strong>Protection of Customer Data:</strong> E-commerce platforms handle sensitive information like names, addresses, and payment details, requiring robust security to prevent data breaches and identity theft.</li>
+<li><strong>Maintaining Customer Trust:</strong> Security breaches can severely damage a business's reputation and erode customer trust, leading to a loss of business.</li>
+<li><strong>Avoiding Financial Loss:</strong> Cyberattacks can result in direct financial losses through fraud, legal penalties, and the costs associated with recovering from security incidents.</li>
+<li><strong>Ensuring Business Continuity:</strong> Security measures protect against disruptions like DDoS attacks, ensuring the website remains accessible and operational.</li>
+<li><strong>Legal and Regulatory Compliance:</strong> Various regulations mandate the protection of customer data, and implementing security measures helps businesses comply with these requirements.</li>
+</ul>
+<h2><a name="explain-different-types-of-e-business-5-2023-may" class="heading-anchor" href="#explain-different-types-of-e-business-5-2023-may" rel="nofollow" aria-hidden="true"></a>Explain different types of e-business (5, 2023 May)</h2>
+<p><img loading="lazy" src="../../Sem5/assets/Pasted%20image%2020231028005629.png" alt="Type of E-commerce" /></p>
+
+<p>E-commerce, short for electronic commerce, refers to the buying and selling of goods and services over the internet. It involves the exchange of data or currency to process a transaction between a buyer and a seller.</p>
+
+<p>E-commerce operates in different forms, and here are the different types of e-commerce:</p>
+
+<ul>
+<li><strong>Business-to-Consumer (B2C)</strong>:
+
+<ul>
+<li>This type of e-commerce involves companies selling their products or services directly to the end-user, the consumer who needs it.</li>
+<li>This is the most common type of e-commerce, and it includes online retailers such as Amazon, Walmart, and Target.</li>
+</ul></li>
+<li><strong>Business-to-Business (B2B)</strong>:
+
+<ul>
+<li>This type of e-commerce involves businesses selling their products or services to other businesses. The buyer often resells the products to the consumer. B2B e-commerce includes companies such as Alibaba, which connects businesses with suppliers.</li>
+</ul></li>
+<li><strong>Consumer-to-Consumer (C2C)</strong>:
+
+<ul>
+<li>This type of e-commerce involves consumers selling products or services to other consumers.</li>
+<li>This type of e-commerce is facilitated by online marketplaces such as eBay, Etsy, and Craigslist.</li>
+</ul></li>
+<li><strong>Consumer-to-Business (C2B)</strong>:
+
+<ul>
+<li>This type of e-commerce involves consumers selling their products or services to businesses.</li>
+<li>This type of e-commerce is common in the freelance industry, where individuals offer their services to businesses that need them.</li>
+</ul></li>
+<li><strong>Business-to-Government (B2G)</strong>:
+
+<ul>
+<li>This type of e-commerce involves businesses selling their products or services to government agencies.</li>
+<li>This type of e-commerce is common in the defense industry, where businesses sell their products to the government.</li>
+</ul></li>
+<li><strong>Consumer-to-Government (C2G)</strong>:
+
+<ul>
+<li>This type of e-commerce involves consumers selling their products or services to government agencies.</li>
+<li>This type of e-commerce is common in the freelance industry, where individuals offer their services to government agencies that need them.</li>
+</ul></li>
+</ul>
+<h2><a name="explain-building-blocks-of-mobile-commerce-5-2023-may" class="heading-anchor" href="#explain-building-blocks-of-mobile-commerce-5-2023-may" rel="nofollow" aria-hidden="true"></a>Explain building blocks of mobile commerce. (5, 2023 May)</h2>
+<p><img loading="lazy" src="./assets/Pasted%20image%2020250517210405.webp" alt="" /></p>
+
+<p>Mobile commerce, also known as m-commerce, refers to the buying and selling of goods and services through wireless handheld devices such as smartphones and tablets.</p>
+
+<ul>
+<li><strong>Mobile Devices:</strong> Smartphones and tablets with internet connectivity are the primary interface for mobile commerce.</li>
+<li><strong>Mobile Networks:</strong> Reliable and secure wireless networks (e.g., 4G, 5G, Wi-Fi) are essential for seamless transactions.</li>
+<li><strong>Mobile Commerce Platforms:</strong> Software applications and websites optimized for mobile devices enable browsing, purchasing, and payments.</li>
+<li><strong>Payment Gateways:</strong> Secure systems for processing mobile payments, including digital wallets, credit/debit cards, and mobile billing.</li>
+<li><strong>Security Protocols:</strong> Measures like encryption and authentication to protect sensitive data and ensure secure transactions.</li>
+</ul>
+
+<hr>
+<h1><a name="ut-questions" class="heading-anchor" href="#ut-questions" rel="nofollow" aria-hidden="true"></a>UT Questions</h1><h2><a name="what-are-different-needs-to-be-considered-for-the-analysis-of-company-s-internal-and-external-environment" class="heading-anchor" href="#what-are-different-needs-to-be-considered-for-the-analysis-of-company-s-internal-and-external-environment" rel="nofollow" aria-hidden="true"></a>What are different needs to be considered for the analysis of Company's internal and external environment?</h2>
+<p>To succeed, businesses must understand factors impacting their development. Identifying internal strengths and weaknesses, and external opportunities and threats, allows for effective strategic planning. Analyzing these factors is crucial before launching any strategic marketing plan.</p>
+
+<p><strong>Internal Environment Factors</strong></p>
+
+<p>Internal factors are controllable elements within the company, categorized as strengths (positive impact) or weaknesses (hindering development).</p>
+
+<p>Key internal factors include:</p>
+
+<ol>
+<li>Plans &amp; Policies</li>
+<li>Value Proposition</li>
+<li>Human Resources</li>
+<li>Financial and Marketing Resources</li>
+<li>Corporate Image and Brand Equity</li>
+</ol>
+
+<p><strong>External Environmental Factors</strong></p>
+
+<p>External factors are uncontrollable elements outside the company. Understanding the external environment enables businesses to adapt their marketing plans. Key external factors include the current economic situation, laws, surrounding infrastructure, and customer demands.</p>
+
+<p><strong>Micro Factors:</strong></p>
+
+<ol>
+<li>Customers</li>
+<li>Suppliers</li>
+<li>Competitors</li>
+<li>Public</li>
+<li>Marketing &amp; Media</li>
+</ol>
+
+<p><strong>Macro Factors:</strong></p>
+
+<ol>
+<li>Economic</li>
+<li>Political/Legal</li>
+<li>Technology</li>
+<li>Social</li>
+<li>Natural</li>
+</ol>
+<h2><a name="what-are-the-different-skills-required-to-manage-e-business-02-marks" class="heading-anchor" href="#what-are-the-different-skills-required-to-manage-e-business-02-marks" rel="nofollow" aria-hidden="true"></a>What are the different skills required to manage E-Business? (02 Marks)</h2>
+<p>E-commerce platforms require both marketing/sales and IT expertise. Here are key technical skills:</p>
+
+<ol>
+<li><strong>UX Design:</strong> Focusing on front-end design and engineering to create user-friendly and intuitive e-commerce software.</li>
+<li><strong>Search Engine Optimization (SEO):</strong> Optimizing online platforms with strategic keywords to rank higher in search engine results and social media, increasing visibility.</li>
+<li><strong>Digital Marketing:</strong> Utilizing online strategies like email campaigns, mobile marketing, social media, and search engine advertising.</li>
+<li><strong>Data Analytics:</strong> Analyzing cleaned data to identify trends and insights for improving product/service interest, requiring technical skills (data procurement, visualization, machine learning/AI) and soft skills (business understanding, organization, conceptualization).</li>
+<li><strong>Artificial Intelligence (AI):</strong> Implementing AI for purchase recommendations, virtual assistants, anti-counterfeiting, automated analytics, and customer profiling. Requires skills in programming, data collection/curation, data analysis, and software modeling.</li>
+</ol>
+<h2><a name="define-digital-economy" class="heading-anchor" href="#define-digital-economy" rel="nofollow" aria-hidden="true"></a>Define Digital economy.</h2>
+<p><img loading="lazy" src="assets/What_is_Digital_Economy_768x431_1_OLVV24-1.webp" alt="" /></p>
+
+<p>The digital economy refers to an economy that is based on digital technologies, particularly the internet, and the various activities, transactions, and interactions that occur within it.</p>
+
+<p>At its core, the digital economy includes online commerce (e.g., e-commerce platforms like Amazon or Alibaba), digital services (e.g., streaming platforms like Netflix, cloud computing, or software-as-a-service), and the infrastructure that supports them (e.g., telecommunications, data centers, and internet connectivity.</p>
+
+<p><strong>Advantages</strong></p>
+
+<ul>
+<li><strong>Greater Information Access</strong>: Consumers gain more choice and information through the internet, easily comparing prices and accessing details instantly, such as for travel or shopping.</li>
+<li><strong>Time Savings</strong>: Online ordering and delivery (e.g., office supplies arriving next day) reduce the need for physical trips, cutting labor costs and boosting efficiency.</li>
+<li><strong>Reduced Costs</strong>: Businesses save on physical infrastructure by operating online, bypassing retail middlemen and offering lower prices direct from warehouses.<br></li>
+<li><strong>Personalization</strong>: Digital platforms enable tailored products (e.g., custom clothes via 3D printing), meeting individual preferences beyond what traditional stores can stock.</li>
+</ul>
+
+<p><strong>Disadvantages</strong></p>
+
+<ul>
+<li><strong>Monopoly Power</strong>: Giants like Amazon, Google, and Facebook dominate markets, using their influence to charge high rates or undercut competitors, reducing fair competition.</li>
+<li><strong>Less Community</strong>: Online shopping replaces local hubs like bookstores, diminishing physical interactions and community experiences tied to traditional commerce.<br></li>
+<li><strong>Addictive Technology</strong>: Excessive time on social media or browsing can outweigh time-saving benefits, overwhelming users with information and hindering decision-making.</li>
+<li><strong>Privacy Issues</strong>: Data harvesting by companies like Facebook raises concerns, as personal information is exploited for targeted ads, often without full user consent.</li>
+</ul>
+<h2><a name="explain-five-value-delivery-methods-for-e-commerce" class="heading-anchor" href="#explain-five-value-delivery-methods-for-e-commerce" rel="nofollow" aria-hidden="true"></a>Explain five value delivery methods for E-commerce.</h2>
+<ul>
+<li><strong>Direct-to-Customer (D2C)</strong>:
+
+<ul>
+<li>Brands sell directly to consumers online, bypassing middlemen, fostering loyalty and rapid growth.</li>
+<li><strong>Example</strong>: New-generation consumer brands cutting out intermediaries.</li>
+</ul></li>
+<li><strong>White Label and Private Label</strong>:
+
+<ul>
+<li>White labeling applies a brand to a distributor’s product, while private labeling creates exclusive products via manufacturers.</li>
+<li><strong>Example</strong>: Retailers branding generic goods.</li>
+</ul></li>
+<li><strong>Wholesaling</strong>:
+
+<ul>
+<li>Retailers offer bulk products at discounted rates, traditionally B2B but now also B2C for budget-conscious buyers.</li>
+<li><strong>Example</strong>: Online stores providing wholesale deals to consumers.</li>
+</ul></li>
+<li><strong>Drop Shipping</strong>:
+
+<ul>
+<li>Retailers sell products fulfilled by third-party suppliers, acting as middlemen without holding inventory. Easy-to-use tools integrate global supplier inventories.</li>
+<li><strong>Example</strong>: Drop shippers on platforms like Shopify.</li>
+</ul></li>
+<li><strong>Subscription Service</strong>:
+
+<ul>
+<li>Businesses offer recurring deliveries of goods/services (e.g., groceries, media) for convenience and savings.</li>
+<li><strong>Example</strong>: Monthly book or grocery subscriptions adapted to modern industries.</li>
+</ul></li>
+</ul>
+<h2><a name="define-marketplace" class="heading-anchor" href="#define-marketplace" rel="nofollow" aria-hidden="true"></a>Define Marketplace.</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020250303012321.webp" alt="" /></p>
+
+<p>A <strong>marketplace</strong>, in the context of e-commerce, is an online platform that connects buyers and sellers, facilitating the exchange of goods, services, or information.</p>
+
+<p>It serves as a digital environment where multiple vendors or individuals can list their offerings, and customers can browse, compare, and purchase them, typically all within a single platform.</p>
+<h2><a name="explain-marketing-research" class="heading-anchor" href="#explain-marketing-research" rel="nofollow" aria-hidden="true"></a>Explain Marketing Research.</h2>
+<p>Market research is the systematic process of gathering, analyzing, and interpreting information to help businesses or individuals assess the viability of a product or service and make informed decisions.</p>
+
+<p><strong>Purpose and Importance</strong></p>
+
+<ul>
+<li><strong>Understanding Consumer Behavior</strong>: It builds a picture of how consumers think, choose, and interact with products or services.</li>
+<li><strong>Evaluating Market Fit</strong>: It determines how well a product or service meets market demands.</li>
+<li><strong>Sizing the Market</strong>: It estimates the potential market size for a specific offering.</li>
+<li><strong>Strategic Planning</strong>: It aids in business planning, marketing strategy development, and identifying growth opportunities.</li>
+<li><strong>Competitive Analysis</strong>: It helps identify major competitors and establish a unique value proposition (UVP) to stand out.</li>
+<li><strong>Problem-Solving</strong>: It addresses marketing challenges and uncovers actionable insights.</li>
+</ul>
+<h2><a name="explain-types-of-marketing-research" class="heading-anchor" href="#explain-types-of-marketing-research" rel="nofollow" aria-hidden="true"></a>Explain Types of Marketing Research.</h2>
+<p>Marketing research encompasses various methods to gather insights about markets, customers, and competitors. These methods can be used individually for specific purposes or combined for a comprehensive understanding.</p>
+
+<ol>
+<li><strong>Competitor Analysis</strong><br>
+
+<ul>
+<li><strong>What it is</strong>: A method to study competitors offering similar products or services, or those with potential to do so.<br></li>
+<li><strong>Example</strong>: Comparing your product’s price and quality to a rival’s to adjust your offerings or marketing.<br></li>
+<li><strong>Benefit</strong>: Helps anticipate competitors’ moves and build a competitive edge.</li>
+</ul></li>
+<li><strong>Interviews</strong><br>
+
+<ul>
+<li><strong>What it is</strong>: A qualitative, one-on-one method between an interviewer and participant.<br></li>
+<li><strong>How it works</strong>: Conducted via phone, online, or face-to-face; can be open-ended or structured with specific questions.<br></li>
+<li><strong>Purpose</strong>: Gathers in-depth insights into customer needs, opinions, or feedback, ideal for exploratory research like new product development or market evaluation.<br></li>
+<li><strong>Example</strong>: Interviewing customers post-launch to assess satisfaction.<br></li>
+</ul></li>
+<li><strong>Focus Groups</strong><br>
+
+<ul>
+<li><strong>What it is</strong>: A moderated group discussion where participants interact and share ideas on a topic.<br></li>
+<li><strong>Purpose</strong>: Generates collective insights and brainstorming, useful for testing concepts or understanding group dynamics.<br></li>
+<li><strong>Example</strong>: A focus group discussing reactions to a new ad campaign.<br></li>
+</ul></li>
+<li><strong>Surveys</strong><br>
+
+<ul>
+<li><strong>What it is</strong>: A scalable, often quantitative method to collect data from a targeted audience.<br></li>
+<li><strong>Purpose</strong>: Measures brand awareness, customer preferences, market trends, or competitive standing; supports segmentation and campaign planning.<br></li>
+<li><strong>Example</strong>: An online survey gauging interest in a new product feature.<br></li>
+</ul></li>
+</ol>
+<h2><a name="how-to-conduct-market-research" class="heading-anchor" href="#how-to-conduct-market-research" rel="nofollow" aria-hidden="true"></a>How to Conduct Market Research.</h2>
+<ul>
+<li><strong>Define Objectives</strong>
+
+<ul>
+<li><strong>What to do</strong>: Clearly outline what you want to learn (e.g., customer preferences, market size, competitor strengths).</li>
+<li><strong>Example</strong>: “Understand why customers prefer competitor X’s product.”</li>
+</ul></li>
+<li><strong>Collect Data</strong>
+
+<ul>
+<li><strong>Primary Data</strong>: Gather your own data through:<br>
+
+<ul>
+<li><strong>Surveys</strong>: Online or phone questionnaires.</li>
+<li><strong>Interviews</strong>: One-on-one discussions (phone, online, or in-person).</li>
+<li><strong>Focus Groups</strong>: Moderated group sessions.</li>
+</ul></li>
+<li><strong>Secondary Data</strong>: Use existing sources like:<br>
+
+<ul>
+<li>Online reports, government sites (e.g., Census.gov), or industry studies.</li>
+</ul></li>
+</ul></li>
+<li><strong>Analyze Data</strong>
+
+<ul>
+<li><strong>What to do</strong>: Organize and interpret findings using tools or techniques.</li>
+<li><strong>Example</strong>: Identify that 70% of respondents value price over quality, per survey results.</li>
+</ul></li>
+<li><strong>Apply Insights</strong>
+
+<ul>
+<li><strong>What to do</strong>: Use findings to make decisions—adjust products, target new segments, or refine marketing strategies.</li>
+<li><strong>Example</strong>: Lower prices based on survey feedback to attract budget-conscious customers.</li>
+</ul></li>
+<li><strong>Monitor and Refine</strong>
+
+<ul>
+<li><strong>What to do</strong>: Track results (e.g., sales, web traffic) post-implementation and adjust if needed.</li>
+<li><strong>Example</strong>: If sales don’t rise after price cuts, survey again to tweak the approach.</li>
+</ul></li>
+</ul>
+<h2><a name="explain-e-learning" class="heading-anchor" href="#explain-e-learning" rel="nofollow" aria-hidden="true"></a>Explain E-Learning.</h2>
+<p>E-Learning, short for &quot;electronic learning,&quot; refers to the use of digital technologies, primarily the internet, to deliver educational content and facilitate learning outside of traditional classroom settings.</p>
+
+<p><strong>Key Features of E-Learning</strong>:</p>
+
+<ol>
+<li><strong>Digital Delivery</strong>: Content is delivered via electronic devices such as computers, tablets, or smartphones, typically through online platforms, apps, or software.</li>
+<li><strong>Variety of Formats</strong>: E-Learning can include text-based lessons, videos, interactive quizzes, webinars, podcasts, virtual simulations, and more.</li>
+<li><strong>Accessibility</strong>: Learners can access materials anytime, anywhere, as long as they have an internet connection, making it highly convenient compared to physical classrooms.</li>
+<li><strong>Interactivity</strong>: Many e-learning systems incorporate tools like discussion forums, live chats, or gamified elements to engage learners.</li>
+<li><strong>Scalability</strong>: It allows institutions or instructors to reach a global audience without the limitations of physical space.</li>
+</ol>
+
+<p><strong>E-Learning platforms</strong></p>
+
+<ul>
+<li>Coursera</li>
+<li>Udemy</li>
+<li>NPTEL</li>
+<li>EdX</li>
+</ul>
+<h2><a name="digital-five-forces-in-details" class="heading-anchor" href="#digital-five-forces-in-details" rel="nofollow" aria-hidden="true"></a>Digital Five Forces in details.</h2>
+<p>The <strong>Digital Five Forces</strong> framework is an adaptation of Michael Porter's traditional <strong>Five Forces</strong> model, tailored to analyze the competitive dynamics in the digital economy.</p>
+
+<p>This framework helps businesses understand the impact of digital technologies on their industry and how to navigate the challenges and opportunities they present.</p>
+
+<ul>
+<li><strong>Digital Substitutes</strong>
+
+<ul>
+<li><strong>Definition:</strong> Digital substitutes refer to alternative products or services that are enabled by digital technologies and can replace traditional offerings</li>
+<li><strong>Example:</strong> Streaming services like Netflix have become digital substitutes for traditional cable TV.</li>
+</ul></li>
+<li><strong>Digital New Entrants</strong>
+
+<ul>
+<li><strong>Definition:</strong> Digital new entrants are <strong>new companies or startups</strong> that leverage digital technologies to enter a market, often with lower barriers to entry compared to traditional businesses.</li>
+<li><strong>Example:</strong> Airbnb entering the hospitality industry without owning any physical properties.</li>
+</ul></li>
+<li><strong>Digital Rivalry</strong>
+
+<ul>
+<li><strong>Definition:</strong> Digital rivalry refers to the intensity of competition among existing players in a market, amplified by digital tools and platforms.</li>
+<li><strong>Example:</strong> E-commerce platforms like Amazon and Walmart competing fiercely in online retail, leveraging data analytics and AI to enhance customer experience.</li>
+</ul></li>
+<li><strong>Digital Supplier Power</strong>
+
+<ul>
+<li><strong>Definition:</strong> Digital supplier power refers to the influence that suppliers of digital technologies, platforms, or services have over businesses.</li>
+<li><strong>Example:</strong> Businesses relying on AWS (Amazon Web Services) for cloud infrastructure may face challenges if AWS changes its pricing or service terms.</li>
+</ul></li>
+<li> <strong>Digital Buyer Power</strong>
+
+<ul>
+<li><strong>Definition:</strong> Digital buyer power refers to the increased influence that customers have due to the availability of information, comparison tools, and digital platforms.</li>
+<li><strong>Example:</strong> Online shoppers using price comparison websites to find the best deals, putting pressure on retailers to offer competitive pricing.</li>
+</ul></li>
+</ul>
+<h2><a name="explain-e-government" class="heading-anchor" href="#explain-e-government" rel="nofollow" aria-hidden="true"></a>Explain E-Government.</h2>
+<p><img loading="lazy" src="../../assets/Pasted%20image%2020231128091656.png" alt="" /></p>
+
+<p><strong>E-Government</strong> (short for <strong>Electronic Government</strong>) refers to the use of digital technologies, particularly the internet, to deliver government services, information, and interactions to citizens, businesses, and other government entities.</p>
+
+<p><strong>Categories Of E-Government</strong></p>
+
+<ul>
+<li>Government-to-Citizen (G2C)</li>
+<li>Government-to-Business (G2B)</li>
+<li>Government-to-Government (G2G)</li>
+<li>Government-to-Employee (G2E)</li>
+</ul>
+
+		</main>
+		
+		<details id="table-of-content">
+		   <summary>Table of Content</summary>
+		<nav>
+<ul>
+<li><a href="#explain-different-types-of-cryptographic-algorithms-with-a-suitable-example">Explain Different types of cryptographic algorithms with a suitable example.</a></li>
+<li><a href="#what-do-you-mean-by-digital-business-infrastructure-name-the-different-hardware-and-software-that-are-used-in-the-e-infrastructure">
+What do you mean by digital business infrastructure? Name the different hardware and software that are used in the e-infrastructure.</a></li>
+<li><a href="#explain-legal-societal-and-ethics-impact-of-e-commerce">
+Explain legal societal and ethics impact of E commerce.</a></li>
+<li><a href="#explain-how-b2b-e-commerce-selling-and-buying-in-private-e-markets">
+Explain how B2B-E-Commerce-selling and buying in private e-markets.</a></li>
+<li><a href="#what-is-business-plan-why-it-is-required-in-any-business-organization">
+What is business plan? Why it is required in any business organization?</a></li>
+<li><a href="#explain-opportunities-and-challenges-in-digital-business">
+Explain Opportunities and Challenges in Digital Business.</a></li>
+<li><a href="#explain-erp-and-its-components">
+Explain ERP and its components.</a></li>
+<li><a href="#explain-key-business-processes-that-the-erp-system-will-support">
+Explain key business processes that the ERP system will support?</a></li>
+<li><a href="#explain-in-detail-what-are-the-most-prevalent-security-threats-to-e-businesses-today">
+Explain in detail what are the most prevalent security threats to e-businesses today?</a></li>
+<li><a href="#explain-how-does-the-e-business-strategy-align-with-the-overall-business-vision-and-mission">
+Explain how does the e-business strategy align with the overall business vision and mission?</a></li>
+</ul><li><a href="#describe-how-amazon-used-data-analytics-to-enhance-its-business">
+Describe how Amazon used data analytics to enhance its business:</a>
+<ul>
+<li><a href="#explain-what-is-the-key-action-steps-required-to-implement-our-e-business-strategy">
+Explain what is the key action steps required to implement our e-business strategy?</a></li>
+<li><a href="#explain-drivers-of-digital-business-big-data-analytics-mobile-cloud-computing-social-media">
+Explain Drivers of digital business- Big Data Analytics, Mobile, Cloud Computing, Social media</a></li>
+<li><a href="#describe-the-use-of-firewalls-and-their-types">
+Describe the use of firewalls and their types.</a></li>
+<li><a href="#explain-the-use-of-mobile-computing-as-a-digital-driver-of-the-digital-economy">
+Explain the use of mobile computing as a digital driver of the digital economy.</a></li>
+<li><a href="#what-is-the-primary-goal-of-the-digital-application-or-digital-infrastructure">
+What is the primary goal of the digital application or digital infrastructure?</a></li>
+<li><a href="#what-are-the-pillars-of-e-commerce-network">
+What are the pillars of e-commerce network?</a></li>
+<li><a href="#explain-internet-of-things-driver-for-digital-business">
+Explain Internet of Things - driver for digital business</a></li>
+<li><a href="#explain-different-factors-that-affect-consumer-behavior">
+Explain different factors that affect consumer behavior</a></li>
+<li><a href="#describe-the-need-for-security-in-e-commerce">
+Describe the need for security in e-commerce</a></li>
+<li><a href="#explain-different-types-of-e-business-5-2023-may">
+Explain different types of e-business (5, 2023 May)</a></li>
+<li><a href="#explain-building-blocks-of-mobile-commerce-5-2023-may">
+Explain building blocks of mobile commerce. (5, 2023 May)</a></li>
+</ul><li><a href="#ut-questions">
+UT Questions</a>
+<ul>
+<li><a href="#what-are-different-needs-to-be-considered-for-the-analysis-of-company-s-internal-and-external-environment">
+What are different needs to be considered for the analysis of Company's internal and external environment?</a></li>
+<li><a href="#what-are-the-different-skills-required-to-manage-e-business-02-marks">
+What are the different skills required to manage E-Business? (02 Marks)</a></li>
+<li><a href="#define-digital-economy">
+Define Digital economy.</a></li>
+<li><a href="#explain-five-value-delivery-methods-for-e-commerce">
+Explain five value delivery methods for E-commerce.</a></li>
+<li><a href="#define-marketplace">
+Define Marketplace.</a></li>
+<li><a href="#explain-marketing-research">
+Explain Marketing Research.</a></li>
+<li><a href="#explain-types-of-marketing-research">
+Explain Types of Marketing Research.</a></li>
+<li><a href="#how-to-conduct-market-research">
+How to Conduct Market Research.</a></li>
+<li><a href="#explain-e-learning">
+Explain E-Learning.</a></li>
+<li><a href="#digital-five-forces-in-details">
+Digital Five Forces in details.</a></li>
+<li><a href="#explain-e-government">
+Explain E-Government.</a></li>
+</ul>
+</nav>
+
+		</details>
+		
+		<footer>
+			<p style="text-align: center; font-size: small; margin-top: 5em;">
+				<a href="https://anzenkodo.github.io/license">LICENSE</a>
+			</p>
+		</footer>
+	</body>
+	<script src="https://AnzenKodo.github.io/assets/js/mermaid.js"></script>
+	<script id="MathJax-script" async src="https://AnzenKodo.github.io/assets/js/mathjax.js"></script>
+	<script>
+		/* document.getElementById('video').addEventListener('click', (ele) => {
+			 if (ele.target.paused) {
+				 ele.target.play();
+			 } else {
+				 ele.target.pause();
+			 }
+		}); */
+
+		mermaid.initialize({
+			theme: "neutral",
+			themeVariables: {
+			    lineColor: "#939598",
+			}
+		});
+
+		MathJax = {
+		  tex: {
+			inlineMath: [['$', '$']],
+			displayMath: [['$$', '$$']],
+		  }
+		};
+	</script>
+</html>

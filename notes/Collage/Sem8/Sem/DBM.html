@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>DBM - AK#Notes</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="#FF6C22">
+		<meta name="description" content="## Explain Different types of cryptographic algorithms with a suitable example.   > (10, 2023 May) >">
+		<meta property="og:description" content="## Explain Different types of cryptographic algorithms with a suitable example.   > (10, 2023 May) >">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<meta property="og:image:alt" content="AK#Notes logo">
+		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="DBM - AK#Notes">
+		<meta property="og:url" content="https://AnzenKodo.github.io/notes/notes/Collage/Sem8/Sem/DBM.html">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+
+			:root {
+				/* color-scheme: dark light; */
+				color-scheme: dark;
+				--theme: #FF6C22;
+			}
+			body {
+				max-width: 40rem;
+				margin: 0 auto;
+				font-family: system-ui;
+				padding: 0 1em;
+				color: inherit !important;
+				word-break: break-word;
+			}
+			h1, h2, h3, h4, h5, h6 {
+				margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+				font-size: 2rem;
+			}
+			h3 {
+				font-size: 1.8rem;
+			}
+			h4 {
+				font-size: 1.5rem;
+			}
+			h5 {
+				font-size: 1.3rem;
+			}
+			h6 {
+				font-size: 1rem;
+			}
+			p, li, td, code {
+				line-height: 1.5rem;
+			}
+			a {
+				color: var(--theme);
+				text-decoration: none;
+			}
+			a:hover, a:focus {
+				text-decoration: underline;
+			}
+			a:active {
+				background: var(--theme);
+				color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+				margin-top: .5rem;
+			}
+			li {
+				margin-bottom: .5rem;
+			}
+			table {
+				border-collapse: collapse;
+				overflow-x: auto;
+				display: block;
+				word-break: auto-phrase;
+				margin: 1rem 0;
+			}
+			th {
+				font-size: 1.1rem;
+				border: 2px solid;
+				padding: .3rem .3rem;
+			}
+			td {
+				border: 1px solid;
+				padding: .3rem .5rem;
+			}
+			blockquote {
+				margin-left: 0;
+				margin-right: 0;
+				border: 1px solid;
+				border-left: 10px solid;
+				padding: 0 1rem;
+			}
+				.code-block {
+				background: black;
+				overflow-x: auto;
+				padding: 0em 1em;
+				border: 1px solid;
+			}
+			.code-block-language-name {
+				position: sticky;
+				left: 95%;
+				top: .5em;
+				font-weight: bold;
+				color: white;
+			}
+			:not(pre.chroma) > code {
+				border: 1px solid;
+				padding: .3rem .2rem .2rem .2rem;
+			}
+			img {
+				max-width: 100%;
+				display: block;
+				margin: 0 auto;
+			}
+			[href="#skip-top-main"] {
+				padding: 0.3em;
+				position: absolute;
+				transform: translateY(-1000%);
+			}
+			[href="#skip-top-main"]:focus {
+				transform: translateY(0%);
+				background: var(--theme);
+				color: inherit;
+			}
+			#table-of-content {
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+				background: black;
+				padding: 0.5rem 1em;
+				z-index: 1;
+				color: white;
+			}
+			#table-of-content[open] {
+				max-height: 90%;
+				overflow-y: auto;
+				bottom: 50px;
+				margin-left: 1em;
+			}
+			#table-of-content[open] summary {
+				background: black;
+				padding: 0.5em 1em;
+				text-align: center;
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+			}
+			#table-of-content ul:first-child {
+				padding-left: 1em;
+				margin-top: 1.5em;
+			}
+			.heading-anchor::before {
+				margin-right: .5rem;
+			}
+		    h2 .heading-anchor::before {
+    			content: "#";
+    			margin-right: .5rem;
+		    }
+            h3 .heading-anchor::before {
+				content: "##";
+				margin-right: .5rem;
+			}
+            h4 .heading-anchor::before {
+				content: "###";
+				margin-right: .5rem;
+			}
+            h5 .heading-anchor::before {
+				content: "####";
+				margin-right: .5rem;
+			}
+            h6 .heading-anchor::before {
+				content: "#####";
+				margin-right: .5rem;
+			}
+			.mermaid {
+				background: black;
+				border: 1px solid;
+				margin-top: 1rem;
+				padding: 1rem;
+				font-family: monospace;
+			}
+			.mermaid svg {
+				display: block;
+				margin: auto;
+			}
+			.mermaid:has(svg) {
+				background: none;
+				border: none;
+				margin-top: 1rem;
+				padding: 0;
+			}
+			mjx-container {
+				display: math;
+				overflow-y: hidden;
+				overflow-x: auto;
+				max-width: 100%;
+				padding-bottom: .8rem;
+			}
+			iframe {
+				width: 100%;
+				height: 21rem;
+				margin: 1rem 0;
+			}
+			video {
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<a href="#skip-top-main">Skip to main</a>
+		<header>
+<!--		<h1 style="text-align: center;">-->
+			<h1 style="text-align: center;">
+				<a href="https://AnzenKodo.github.io">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+			</h1>
+            <video width="100%" controls>
+                <source src="https://anzenkodo.github.io/drive/london.mp4" type="video/mp4">
+            </video><nav style="border-top: 1px solid gray;border-bottom: 1px solid gray;padding: .5rem 0;text-align: center;margin: 0 0 2rem 0;color: gray;clear: left;line-height: 1.6rem;">
+				<a href="https://AnzenKodo.github.io/notes">Home</a> | <a href="https://AnzenKodo.github.io">About</a> | <a href="https://AnzenKodo.github.io/blogroll">Blogroll</a> | <a href="https://github.com/AnzenKodo">Github</a> | <a href="https://x.com/AnzenKodo">𝕏</a>
+			</nav>
+			<!-- <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;"> -->
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem; margin-top: 0;">DBM</h1>
+			<h2><a name="explain-different-types-of-cryptographic-algorithms-with-a-suitable-example" class="heading-anchor" href="#explain-different-types-of-cryptographic-algorithms-with-a-suitable-example" rel="nofollow" aria-hidden="true"></a>Explain Different types of cryptographic algorithms with a suitable example.</h2>
+<blockquote>
+<p>(10, 2023 May)
+Explain SSL and PKI? (10, 2023 May)
+Explain digital signature (5, 2024 May)</p>
+</blockquote>
+
+<p>Cryptographic algorithms are mathematical functions used to encrypt (scramble) plaintext into ciphertext and decrypt ciphertext back into plaintext.</p>
+
+<ol>
+<li><strong>Digital Signatures:</strong>
+
+<ul>
+<li><img loading="lazy" src="../Premium/UT2/assets/Pasted%20image%2020250419015459.webp" alt="" /></li>
+<li>Mathematical schemes that demonstrate the authenticity and integrity of a digital message or document.</li>
+<li><strong>Example:</strong> Alice uses her private key to create a digital signature for a document. Bob receives the document and verifies the signature using Alice's public key, confirming that Alice sent the document and that it hasn't been altered.</li>
+</ul></li>
+<li><strong>Digital Certificates:</strong>
+
+<ul>
+<li><img loading="lazy" src="../Premium/UT2/assets/Pasted%20image%2020250419015352.webp" alt="" /></li>
+<li>Electronic documents that associate a public key with an identity (e.g., a person, organization, server). They are issued by a trusted third party called a Certificate Authority (CA).</li>
+<li><strong>Example:</strong> A website obtains an SSL certificate from a CA. This certificate contains the website's public key and identity information, allowing users' browsers to verify the website's authenticity and establish a secure connection.</li>
+</ul></li>
+<li><strong>Public Key Infrastructure (PKI) for Security:</strong>
+
+<ul>
+<li><img loading="lazy" src="./assets/Pasted%20image%2020250517202356.webp" alt="" /></li>
+<li>A system for creating, managing, distributing, using, storing, and revoking digital certificates. It provides a framework for secure communication and authentication.</li>
+<li><strong>Example</strong>: A company uses a PKI to issue digital certificates to its employees for secure email communication and access to internal resources. The PKI includes CAs, registration authorities, and certificate repositories.</li>
+</ul></li>
+<li><strong>SSL:</strong>
+
+<ul>
+<li><img loading="lazy" src="./assets/Pasted%20image%2020250517201822.webp" alt="" /></li>
+<li>SSL (Secure Sockets Layer)/TLS (Transport Layer Security): A cryptographic protocol that provides secure communication over a network, often used for web browsing (HTTPS).</li>
+</ul></li>
+</ol>
+<h2><a name="what-are-the-pillars-of-e-commerce-network" class="heading-anchor" href="#what-are-the-pillars-of-e-commerce-network" rel="nofollow" aria-hidden="true"></a>What are the pillars of e-commerce network?</h2>
+<blockquote>
+<p>(5, 2024 May)</p>
+</blockquote>
+
+<p><img loading="lazy" src="./assets/Pasted%20image%2020250517204521.webp" alt="" /></p>
+
+<p>The pillars of an e-commerce network are the fundamental components and capabilities that work together to create a successful online business. While different sources might categorize them slightly differently, here's a comprehensive view of the key pillars:</p>
+
+<ul>
+<li><strong>Domain:</strong> This refers to your online presence, including your website, brand name, and overall online identity.</li>
+<li><strong>Marketing:</strong> This pillar encompasses all the strategies and tactics you use to attract customers to your online store and promote your products or services.</li>
+<li><strong>Payment:</strong> This involves the secure and efficient processing of transactions, offering customers various payment options.</li>
+<li><strong>Logistics:</strong> This crucial pillar deals with the storage, packaging, and delivery of products to customers.</li>
+</ul>
+<h2><a name="explain-the-use-of-mobile-computing-as-a-digital-driver-of-the-digital-economy" class="heading-anchor" href="#explain-the-use-of-mobile-computing-as-a-digital-driver-of-the-digital-economy" rel="nofollow" aria-hidden="true"></a>Explain the use of mobile computing as a digital driver of the digital economy.</h2>
+<blockquote>
+<p>(5, 2024 May)</p>
+</blockquote>
+
+<p><img loading="lazy" src="./assets/Pasted%20image%2020250517203237.webp" alt="" /></p>
+
+<p>Mobile Computing refers to the ability to use computing devices without a fixed physical connection. Involves mobile communication, mobile hardware, and mobile software. Enables users to access information and perform computing tasks from virtually any location.</p>
+
+<ul>
+<li><strong>Enhanced Connectivity and Access:</strong> Mobile devices and networks provide widespread internet access, connecting individuals and businesses to the digital economy regardless of location.</li>
+<li><strong>Increased Productivity and Efficiency:</strong> Mobile computing enables remote work, on-the-go collaboration, and access to information and tools, boosting individual and organizational productivity.</li>
+<li><strong>Facilitation of E-commerce and M-commerce:</strong> Mobile devices are central to online shopping, digital payments, and mobile-based transactions, driving economic activity and creating new business models.</li>
+<li><strong>Empowerment of Digital Services:</strong> Mobile platforms enable the delivery of a wide range of digital services, including banking, healthcare, education, and entertainment, reaching broader populations.</li>
+</ul>
+
+<details style="border: 3px solid orange; text-align: center; font-size: 1.2rem; margin-bottom: 1rem;">
+    <summary style="padding: 1rem; font-weight: bold; background: orange; color: black;">Buy Full Questions and Answers</summary>
+    <p>Send Rs. 25 to <code>kiarstler@oksbi</code></p>
+    <p>Scan with your UPI app</p>
+    <img width="500px" src="../Premium/assets/Pasted%20image%2020250517030628.webp">
+</details>
+
+<details style="border: 3px solid orange; text-align: center; font-size: 1.2rem; margin-bottom: 1rem;">
+    <summary style="padding: 1rem; font-weight: bold; background: orange; color: black;">For People who already brought BDA/CC Q&A</summary>
+ <p>Send Rs. 15 to <code>kiarstler@oksbi</code></p>
+    <p>Scan with your UPI app</p>
+    <img width="500px" src="./assets/Pasted%20image%2020250517223718.webp">
+</details>
+
+		</main>
+		
+		<details id="table-of-content">
+		   <summary>Table of Content</summary>
+		<nav>
+<ul>
+<li><a href="#explain-different-types-of-cryptographic-algorithms-with-a-suitable-example">Explain Different types of cryptographic algorithms with a suitable example.</a></li>
+<li><a href="#what-are-the-pillars-of-e-commerce-network">
+What are the pillars of e-commerce network?</a></li>
+<li><a href="#explain-the-use-of-mobile-computing-as-a-digital-driver-of-the-digital-economy">
+Explain the use of mobile computing as a digital driver of the digital economy.</a></li>
+</ul>
+</nav>
+
+		</details>
+		
+		<footer>
+			<p style="text-align: center; font-size: small; margin-top: 5em;">
+				<a href="https://anzenkodo.github.io/license">LICENSE</a>
+			</p>
+		</footer>
+	</body>
+	<script src="https://AnzenKodo.github.io/assets/js/mermaid.js"></script>
+	<script id="MathJax-script" async src="https://AnzenKodo.github.io/assets/js/mathjax.js"></script>
+	<script>
+		/* document.getElementById('video').addEventListener('click', (ele) => {
+			 if (ele.target.paused) {
+				 ele.target.play();
+			 } else {
+				 ele.target.pause();
+			 }
+		}); */
+
+		mermaid.initialize({
+			theme: "neutral",
+			themeVariables: {
+			    lineColor: "#939598",
+			}
+		});
+
+		MathJax = {
+		  tex: {
+			inlineMath: [['$', '$']],
+			displayMath: [['$$', '$$']],
+		  }
+		};
+	</script>
+</html>
