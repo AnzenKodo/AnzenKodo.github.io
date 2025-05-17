@@ -192,7 +192,7 @@ func make_notes() {
     config["start_url"] = config["website"] + "/notes"
     config["short_name"] = "Notes"
 
-    in_dir := os.Getenv("HOME") + "/Online/Notes/Online"
+    in_dir := os.Getenv("HOME") + "/Drive/Notes/Online"
     _, err := os.Stat(in_dir)
     if os.IsNotExist(err) { in_dir = "./notes/Online" }
 
