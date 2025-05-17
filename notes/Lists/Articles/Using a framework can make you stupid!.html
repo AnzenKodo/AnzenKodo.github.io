@@ -33,7 +33,6 @@
 				word-break: break-word;
 			}
 			h1, h2, h3, h4, h5, h6 {
-				font-family: monospace;
 				margin: 2rem 0 0.5rem 0;
 			}
 			h2 {
@@ -154,7 +153,26 @@
 				margin-top: 1.5em;
 			}
 			.heading-anchor::before {
-				content: "#";
+				margin-right: .5rem;
+			}
+		    h2 .heading-anchor::before {
+    			content: "#";
+    			margin-right: .5rem;
+		    }
+            h3 .heading-anchor::before {
+				content: "##";
+				margin-right: .5rem;
+			}
+            h4 .heading-anchor::before {
+				content: "###";
+				margin-right: .5rem;
+			}
+            h5 .heading-anchor::before {
+				content: "####";
+				margin-right: .5rem;
+			}
+            h6 .heading-anchor::before {
+				content: "#####";
 				margin-right: .5rem;
 			}
 			.mermaid {
