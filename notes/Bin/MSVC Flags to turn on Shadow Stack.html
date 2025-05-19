@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>The Art of Seduction - AK#Notes</title>
+		<title>MSVC Flags to turn on Shadow Stack - AK#Notes</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 		<meta name="author" content="AnzenKodo">
 		<meta name="theme-color" content="#FF6C22">
-		<meta name="description" content="- Getting to your targets through other people is extremely effective; infiltrate their circle and y">
-		<meta property="og:description" content="- Getting to your targets through other people is extremely effective; infiltrate their circle and y">
+		<meta name="description" content="```sh $protection="-GS -EHa /guard:cf -sdl -Qspectre -fsanitize=address" $checks="-W4 -analyze" cl m">
+		<meta property="og:description" content="```sh $protection="-GS -EHa /guard:cf -sdl -Qspectre -fsanitize=address" $checks="-W4 -analyze" cl m">
 		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
 		<meta property="og:image:alt" content="AK#Notes logo">
 		<meta property="og:site_name" content="AK#Notes">
-		<meta property="og:title" content="The Art of Seduction - AK#Notes">
-		<meta property="og:url" content="https://AnzenKodo.github.io/notes/notes/Track/Books/The Art of Seduction.html">
+		<meta property="og:title" content="MSVC Flags to turn on Shadow Stack - AK#Notes">
+		<meta property="og:url" content="https://AnzenKodo.github.io/notes/notes/Bin/MSVC Flags to turn on Shadow Stack.html">
 		<meta property="og:type" content="article">
 		<meta property="og:article:author" content="AnzenKodo">
 		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
@@ -225,21 +225,106 @@
 			<!-- <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;"> -->
 		</header>
 		<main id="skip-top-main">
-			<h1 style="font-size: 2.3rem; margin-top: 0;">The Art of Seduction</h1>
-			<ul>
-<li>Getting to your targets through other people is extremely effective; infiltrate their circle and you are no longer a stranger.
-
-<ul>
-<li>Before the seventeenth century seducer Count de Grammont made a move, he would befriend his target’s chambermaid, her valet, a friend, even a lover. In this way he could gather information, finding a way to approach her in an unthreatening manner. He could also plant ideas, saying things the third party was likely to repeat, things that would intrigue the lady, particularly when they came from someone she knew.</li>
-</ul></li>
-<li>Send Mixed Signals
-
-<ul>
-<li>both tough and tender, both spiritual and earthy, both innocent and cunning. A mix of qualities suggests depth, which fascinates even as it confuses. An elusive, enigmatic aura will make people want to know more, drawing them into your circle. Create such a power by hinting at something contradictory within you .</li>
-</ul></li>
-<li>The illusion that you are desired by others will make you more attractive to your victims than your beautiful face or your perfect body.</li>
-</ul>
-
+			<h1 style="font-size: 2.3rem; margin-top: 0;">MSVC Flags to turn on Shadow Stack</h1>
+			<div class="code-block"><span class="code-block-language-name">.sh</span><html>
+<style type="text/css">
+/* Background */ .bg { color: #282c34 }
+/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
+/* Other */ .chroma .x { color: #c9c9c9 }
+/* Error */ .chroma .err { color: #cf5967 }
+/* CodeLine */ .chroma .cl { color: #c9c9c9 }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
+/* Keyword */ .chroma .k { color: #7fbaf5 }
+/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
+/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
+/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
+/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
+/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
+/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
+/* Name */ .chroma .n { color: #c9c9c9 }
+/* NameAttribute */ .chroma .na { color: #bc74c4 }
+/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
+/* NameClass */ .chroma .nc { color: #ecbe7b }
+/* NameConstant */ .chroma .no { color: #ecbe7b }
+/* NameDecorator */ .chroma .nd { color: #ecbe7b }
+/* NameEntity */ .chroma .ni { color: #c9c9c9 }
+/* NameException */ .chroma .ne { color: #cf5967 }
+/* NameFunction */ .chroma .nf { color: #57c7ff }
+/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
+/* NameLabel */ .chroma .nl { color: #cf5967 }
+/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
+/* NameOther */ .chroma .nx { color: #c9c9c9 }
+/* NameProperty */ .chroma .py { color: #c9c9c9 }
+/* NameTag */ .chroma .nt { color: #bc74c4 }
+/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
+/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
+/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
+/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
+/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
+/* Literal */ .chroma .l { color: #c9c9c9 }
+/* LiteralDate */ .chroma .ld { color: #57c7ff }
+/* LiteralString */ .chroma .s { color: #82cc6a }
+/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
+/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
+/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
+/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
+/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
+/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
+/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
+/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
+/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
+/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
+/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
+/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
+/* LiteralNumber */ .chroma .m { color: #56b6c2 }
+/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
+/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
+/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
+/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
+/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
+/* Operator */ .chroma .o { color: #bc74c4 }
+/* OperatorWord */ .chroma .ow { color: #bc74c4 }
+/* Punctuation */ .chroma .p { color: #56b6c2 }
+/* Comment */ .chroma .c { color: #3e4460 }
+/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #3e4460 }
+/* CommentSingle */ .chroma .c1 { color: #3e4460 }
+/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
+/* Generic */ .chroma .g { color: #c9c9c9 }
+/* GenericDeleted */ .chroma .gd { color: #cf5967 }
+/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
+/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
+/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #ecbe7b }
+/* GenericOutput */ .chroma .go { color: #43454f }
+/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
+/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
+/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
+/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
+/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
+body { color: #282c34; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nv">$protection</span><span class="o">=</span><span class="s2">&#34;-GS -EHa /guard:cf -sdl -Qspectre -fsanitize=address&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$checks</span><span class="o">=</span><span class="s2">&#34;-W4 -analyze&#34;</span>
+</span></span><span class="line"><span class="cl">cl main.c -c -nolog -Z7 <span class="nv">$protection</span> <span class="nv">$checks</span> -I&lt;include_path&gt; -Fo&lt;obj_path&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">$protection</span><span class="o">=</span><span class="s2">&#34;-CETCOMPAT -DYNAMICBASE -HIGHENTROPYVA&#34;</span>
+</span></span><span class="line"><span class="cl">link &lt;obj_path&gt; &lt;libs_path&gt; -DEBUG -OUT:&lt;output_path&gt; <span class="nv">$protection</span> -logo
+</span></span></code></pre>
+</body>
+</html>
+</div>
 		</main>
 		
 		<footer>
