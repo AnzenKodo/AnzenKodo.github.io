@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>DBM - AK#Notes</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="#FF6C22">
+		<meta name="description" content="## Cryptographic Algorithms  ### Digital Signature  Mathematical schemes that demonstrate the authen">
+		<meta property="og:description" content="## Cryptographic Algorithms  ### Digital Signature  Mathematical schemes that demonstrate the authen">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<meta property="og:image:alt" content="AK#Notes logo">
+		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="DBM - AK#Notes">
+		<meta property="og:url" content="https://AnzenKodo.github.io/notes/notes/Collage/Sem8/Notes/DBM.html">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+
+			:root {
+				/* color-scheme: dark light; */
+				color-scheme: dark;
+				--theme: #FF6C22;
+			}
+			body {
+				max-width: 40rem;
+				margin: 0 auto;
+				font-family: system-ui;
+				padding: 0 1em;
+				color: inherit !important;
+				word-break: break-word;
+			}
+			h1, h2, h3, h4, h5, h6 {
+				margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+				font-size: 2rem;
+			}
+			h3 {
+				font-size: 1.8rem;
+			}
+			h4 {
+				font-size: 1.5rem;
+			}
+			h5 {
+				font-size: 1.3rem;
+			}
+			h6 {
+				font-size: 1rem;
+			}
+			p, li, td, code {
+				line-height: 1.5rem;
+			}
+			a {
+				color: var(--theme);
+				text-decoration: none;
+			}
+			a:hover, a:focus {
+				text-decoration: underline;
+			}
+			a:active {
+				background: var(--theme);
+				color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+				margin-top: .5rem;
+			}
+			li {
+				margin-bottom: .5rem;
+			}
+			table {
+				border-collapse: collapse;
+				overflow-x: auto;
+				display: block;
+				word-break: auto-phrase;
+				margin: 1rem 0;
+			}
+			th {
+				font-size: 1.1rem;
+				border: 2px solid;
+				padding: .3rem .3rem;
+			}
+			td {
+				border: 1px solid;
+				padding: .3rem .5rem;
+			}
+			blockquote {
+				margin-left: 0;
+				margin-right: 0;
+				border: 1px solid;
+				border-left: 10px solid;
+				padding: 0 1rem;
+			}
+				.code-block {
+				background: black;
+				overflow-x: auto;
+				padding: 0em 1em;
+				border: 1px solid;
+			}
+			.code-block-language-name {
+				position: sticky;
+				left: 95%;
+				top: .5em;
+				font-weight: bold;
+				color: white;
+			}
+			:not(pre.chroma) > code {
+				border: 1px solid;
+				padding: .3rem .2rem .2rem .2rem;
+			}
+			img {
+				max-width: 100%;
+				display: block;
+				margin: 0 auto;
+			}
+			[href="#skip-top-main"] {
+				padding: 0.3em;
+				position: absolute;
+				transform: translateY(-1000%);
+			}
+			[href="#skip-top-main"]:focus {
+				transform: translateY(0%);
+				background: var(--theme);
+				color: inherit;
+			}
+			#table-of-content {
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+				background: black;
+				padding: 0.5rem 1em;
+				z-index: 1;
+				color: white;
+			}
+			#table-of-content[open] {
+				max-height: 90%;
+				overflow-y: auto;
+				bottom: 50px;
+				margin-left: 1em;
+			}
+			#table-of-content[open] summary {
+				background: black;
+				padding: 0.5em 1em;
+				text-align: center;
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+			}
+			#table-of-content ul:first-child {
+				padding-left: 1em;
+				margin-top: 1.5em;
+			}
+			.heading-anchor::before {
+				margin-right: .5rem;
+			}
+		    h2 .heading-anchor::before {
+    			content: "#";
+    			margin-right: .5rem;
+		    }
+            h3 .heading-anchor::before {
+				content: "##";
+				margin-right: .5rem;
+			}
+            h4 .heading-anchor::before {
+				content: "###";
+				margin-right: .5rem;
+			}
+            h5 .heading-anchor::before {
+				content: "####";
+				margin-right: .5rem;
+			}
+            h6 .heading-anchor::before {
+				content: "#####";
+				margin-right: .5rem;
+			}
+			.mermaid {
+				background: black;
+				border: 1px solid;
+				margin-top: 1rem;
+				padding: 1rem;
+				font-family: monospace;
+			}
+			.mermaid svg {
+				display: block;
+				margin: auto;
+			}
+			.mermaid:has(svg) {
+				background: none;
+				border: none;
+				margin-top: 1rem;
+				padding: 0;
+			}
+			mjx-container {
+				display: math;
+				overflow-y: hidden;
+				overflow-x: auto;
+				max-width: 100%;
+				padding-bottom: .8rem;
+			}
+			iframe {
+				width: 100%;
+				height: 21rem;
+				margin: 1rem 0;
+			}
+			video {
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<a href="#skip-top-main">Skip to main</a>
+		<header>
+<!--		<h1 style="text-align: center;">-->
+			<h1 style="text-align: center;">
+				<a href="https://AnzenKodo.github.io">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+			</h1>
+            <video width="100%" controls>
+                <source src="https://anzenkodo.github.io/drive/london.mp4" type="video/mp4">
+            </video><nav style="border-top: 1px solid gray;border-bottom: 1px solid gray;padding: .5rem 0;text-align: center;margin: 0 0 2rem 0;color: gray;clear: left;line-height: 1.6rem;">
+				<a href="https://AnzenKodo.github.io/notes">Home</a> | <a href="https://AnzenKodo.github.io">About</a> | <a href="https://AnzenKodo.github.io/blogroll">Blogroll</a> | <a href="https://github.com/AnzenKodo">Github</a> | <a href="https://x.com/AnzenKodo">𝕏</a>
+			</nav>
+			<!-- <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;"> -->
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem; margin-top: 0;">DBM</h1>
+			<h2><a name="cryptographic-algorithms" class="heading-anchor" href="#cryptographic-algorithms" rel="nofollow" aria-hidden="true"></a>Cryptographic Algorithms</h2><h3><a name="digital-signature" class="heading-anchor" href="#digital-signature" rel="nofollow" aria-hidden="true"></a>Digital Signature</h3>
+<p>Mathematical schemes that demonstrate the authenticity and integrity of  document.</p>
+
+<p><strong>Example</strong>: Alice uses her private key to create a digital signature for a document.
+Bob receives the document and verifies the signature using Alice's public key, confirming that Alice sent the document and it hasn't been altered.</p>
+
+<pre class='mermaid'>flowchart TB
+	s([Signer]) --> Data --> e[Private Key
+	Encryption] --> dsd[Digital Signed 
+	Document] --> h([Hash]) --> d[Private Key
+	Decryption] --> hv["Hash Value
+	(Signature is valid if hash values match)"] --> r([Reciver])
+</pre><h3><a name="digital-certificates" class="heading-anchor" href="#digital-certificates" rel="nofollow" aria-hidden="true"></a>Digital Certificates</h3>
+<p>Digital certificates are electronic credentials that verify the identity of entities (people, organizations, or devices) online.</p>
+
+<p>Issued by trusted CA, they’re used in HTTPS, email encryption, and VPNs.</p>
+
+<p><strong>Example:</strong> A website obtains an SSL certificate from a CA. This certificate contains the website public key and identity information, allowing user browser to verify the website authenticity and establish a secure connection.</p>
+
+<p><img loading="lazy" src="./assets/Pasted%20image%2020250520154103.webp" alt="" /></p>
+<h3><a name="public-key-infrastructure-pki" class="heading-anchor" href="#public-key-infrastructure-pki" rel="nofollow" aria-hidden="true"></a>Public Key Infrastructure (PKI)</h3>
+<pre class='mermaid'>flowchart LR
+	c([Client]) --> PublicKey -- Cipher Text --> PrivateKey --> s([Server])
+</pre>
+<p>It's a framework for managing digital certificates and public-private key pairs.</p>
+
+<p><strong>Example</strong> A company uses a PKI to issue digital certificates to its employees for secure email communication and access to internal resources.</p>
+<h3><a name="ssl" class="heading-anchor" href="#ssl" rel="nofollow" aria-hidden="true"></a>SSL</h3>
+<p>HTTP</p>
+
+<pre class='mermaid'>flowchart LR
+	Client -- Insecure Connection --> Server
+</pre>
+<p>HTTPS</p>
+
+<pre class='mermaid'>flowchart LR
+Client -- 🔒 Secure Connection --> Server
+</pre><h2><a name="e-commerce" class="heading-anchor" href="#e-commerce" rel="nofollow" aria-hidden="true"></a>E-Commerce</h2><h3><a name="legal-societal-and-ethics-impact-of-e-commerce" class="heading-anchor" href="#legal-societal-and-ethics-impact-of-e-commerce" rel="nofollow" aria-hidden="true"></a>Legal, Societal and Ethics impact of E-Commerce</h3>
+<ul>
+<li>Legal Impact
+
+<ul>
+<li>Data Privacy and Security</li>
+<li>Consumer Protection</li>
+<li>Intellectual Property Rights</li>
+</ul></li>
+<li>Societal Impact
+
+<ul>
+<li>Job Creation</li>
+<li>Price Competition &amp; Affordability</li>
+<li>Empowerment of Small Businesses and Entrepreneurship</li>
+</ul></li>
+<li>Ethical Impact
+
+<ul>
+<li>Online Privacy</li>
+<li>Data Security</li>
+<li>Fair Pricing and Transparency</li>
+</ul></li>
+</ul>
+<h3><a name="b2b-e-commerce-private-e-markets" class="heading-anchor" href="#b2b-e-commerce-private-e-markets" rel="nofollow" aria-hidden="true"></a>B2B E-Commerce Private E-Markets</h3>
+<p>Private e-markets in B2B e-commerce are online platform owned and operated by single compnay for its exclusive use.</p>
+
+<p><strong>Company</strong>: Alibaba, IndiaMART</p>
+
+<pre class='mermaid'>graph TD
+    A[Company] -->|Private E-Market| B[E-Market Platform]
+    B --> C[Suppliers]
+    A -->|Orders| B
+    C -->|Goods| A
+</pre>
+<ul>
+<li>Selling
+
+<ul>
+<li>Control</li>
+<li>Customer Relationship</li>
+<li>Efficiency</li>
+<li>Customization</li>
+</ul></li>
+<li>Buying
+
+<ul>
+<li>Control</li>
+<li>Cost Reduction</li>
+<li>Compliance</li>
+<li>Visibility</li>
+</ul></li>
+</ul>
+<h3><a name="five-value-delivery-methods-for-e-commerce" class="heading-anchor" href="#five-value-delivery-methods-for-e-commerce" rel="nofollow" aria-hidden="true"></a>Five Value delivery methods for E-Commerce</h3>
+<ul>
+<li>D2C</li>
+<li>White Label and Private Label</li>
+<li>Wholesaling</li>
+<li>Drop Shipping</li>
+<li>Subscription Service</li>
+</ul>
+<h3><a name="pillars-of-e-commerce" class="heading-anchor" href="#pillars-of-e-commerce" rel="nofollow" aria-hidden="true"></a>Pillars of E-Commerce</h3>
+<p><img loading="lazy" src="./assets/Pasted%20image%2020250520180221.webp" alt="" /></p>
+
+<ul>
+<li><strong>Domain:</strong> This refers to your online presence, including your website, brand name, and overall online identity.</li>
+<li><strong>Logistics:</strong> This crucial pillar deals with the storage, packaging, and delivery of products to customers.</li>
+</ul>
+<h3><a name="security-in-e-commerce" class="heading-anchor" href="#security-in-e-commerce" rel="nofollow" aria-hidden="true"></a>Security in E-Commerce</h3>
+<ul>
+<li><strong>Protection of Customer Data</strong></li>
+<li><strong>Maintaining Customer Trust</strong></li>
+<li><strong>Avoiding Financial Loss</strong></li>
+<li><strong>Legal and Regulatory Compliance</strong></li>
+</ul>
+<h2><a name="e-businesses" class="heading-anchor" href="#e-businesses" rel="nofollow" aria-hidden="true"></a>E-businesses</h2>
+<ul>
+<li>Opportunities
+
+<ul>
+<li>Digital Disruption from Within</li>
+<li><strong>Showrooming</strong>: Consumers browse products in physical stores but buy them online.</li>
+<li><strong>Webrooming</strong>: Consumers research products online but purchase them in-store.</li>
+<li>Digital Workforce and New Ways of Working</li>
+<li>IoT</li>
+</ul></li>
+<li>Challenges
+
+<ul>
+<li>Rising Customer Expections</li>
+<li>Talent Shortage</li>
+<li>Omni-Channel Complexity</li>
+<li>Big Data and Privacy</li>
+</ul></li>
+</ul>
+<h3><a name="threats-to-e-businesses" class="heading-anchor" href="#threats-to-e-businesses" rel="nofollow" aria-hidden="true"></a>Threats to E-Businesses</h3>
+<ul>
+<li>Electronic Payment System Risks
+
+<ul>
+<li>Fraud</li>
+<li><strong>Tax Evasion:</strong> Payment can complicate tax compliance verification for revenue services.</li>
+<li>Payment Conflicts</li>
+</ul></li>
+<li><strong>E-Cash Threats</strong>: Crypto
+
+<ul>
+<li>Backdoor Attacks</li>
+<li>Denial of Service (DoS) Attacks</li>
+<li>Eavesdropping</li>
+</ul></li>
+<li>Credit/Debit Card Fraud
+
+<ul>
+<li><strong>ATM Skimming</strong>: Devices attached to card readers steal card details</li>
+<li>Vishing/Phishing</li>
+</ul></li>
+</ul>
+<h3><a name="e-business-strategy-align-with-the-overall-business-vision-and-mission" class="heading-anchor" href="#e-business-strategy-align-with-the-overall-business-vision-and-mission" rel="nofollow" aria-hidden="true"></a>E-Business strategy align with the overall business vision and mission</h3>
+<ul>
+<li>Vision Alignment</li>
+<li>Mission Support</li>
+<li>Resource Allocation</li>
+<li>Goal Congruence</li>
+<li>Maintain brand consistency</li>
+</ul>
+<h3><a name="steps-required-to-implement-our-e-business-strategy" class="heading-anchor" href="#steps-required-to-implement-our-e-business-strategy" rel="nofollow" aria-hidden="true"></a>Steps required to implement our E-Business strategy</h3>
+<ul>
+<li>Traditional Model Aligment
+
+<ul>
+<li>Analyze External and Internal Enviroment</li>
+<li>Select an E-Business Starategy</li>
+<li>Implement the E-Business Strategy</li>
+<li>Evaluate E-Business Success</li>
+</ul></li>
+<li>IT/E-Business Strategy Formulation
+
+<ul>
+<li>Review your business strategy</li>
+<li>Identify Business Problem for IT Solutions</li>
+<li>Identify Possible Projects</li>
+<li>Prioritize</li>
+</ul></li>
+</ul>
+<h3><a name="drivers-of-digital-business" class="heading-anchor" href="#drivers-of-digital-business" rel="nofollow" aria-hidden="true"></a>Drivers of Digital Business</h3>
+<ul>
+<li>Big Data Analytics</li>
+<li>Mobile</li>
+<li>Cloud Computing</li>
+<li>Social media</li>
+</ul>
+<h3><a name="skills-required-to-manage-e-business" class="heading-anchor" href="#skills-required-to-manage-e-business" rel="nofollow" aria-hidden="true"></a>Skills required to manage E-Business</h3>
+<ul>
+<li>UX Design</li>
+<li>SEO</li>
+<li>Marketing</li>
+<li>Analytics</li>
+<li>AI</li>
+</ul>
+<h3><a name="types-of-e-business" class="heading-anchor" href="#types-of-e-business" rel="nofollow" aria-hidden="true"></a>Types of E-Business</h3>
+<p><img loading="lazy" src="../../Sem5/assets/Pasted%20image%2020231028005629.png" alt="Type of E-commerce" /></p>
+<h2><a name="firewalls" class="heading-anchor" href="#firewalls" rel="nofollow" aria-hidden="true"></a>Firewalls</h2>
+<p><img loading="lazy" src="../../Sem5/assets/Pasted%20image%2020231026004947.png" alt="Firewall Diagram" /></p>
+
+<p><img loading="lazy" src="../../Sem5/assets/Pasted%20image%2020231026011640.png" alt="Types of Firewall" /></p>
+
+<ul>
+<li><strong>Hardware Firewall:</strong> A physical appliance deployed at the network perimeter.</li>
+<li><strong>Software Firewall:</strong> Runs as software on a host device.</li>
+</ul>
+
+<p><img loading="lazy" src="../../Sem5/assets/Pasted%20image%2020231026010145.png" alt="Firewall Characteristics" /></p>
+<h2><a name="mobile-computing" class="heading-anchor" href="#mobile-computing" rel="nofollow" aria-hidden="true"></a>Mobile Computing</h2>
+<p><img loading="lazy" src="../Premium/UT2/assets/Pasted%20image%2020250417030653.webp" alt="" /></p>
+
+<p>Mobile Computing refers to the ability to use computing devices without a fixed physical connection.</p>
+
+<p>MCC is combination of Mobile Computing(MC), Cloud Computing (CC) &amp; Wireless Network (WN).</p>
+
+<ul>
+<li><strong>Enhanced Connectivity and Access</strong></li>
+<li><strong>Increased Productivity and Efficiency</strong></li>
+<li><strong>Facilitation of E-commerce and M-commerce</strong></li>
+<li><strong>Empowerment of Digital Services</strong></li>
+</ul>
+<h2><a name="enterprise-resource-planning-erp" class="heading-anchor" href="#enterprise-resource-planning-erp" rel="nofollow" aria-hidden="true"></a>Enterprise Resource Planning (ERP)</h2>
+<p>Software that organization use to manage day-to-day business activities</p>
+
+<p>Components</p>
+
+<ul>
+<li>Customer Relationship Management (CRM)</li>
+<li>Finance</li>
+<li>Home Resources</li>
+<li>Manufacturing</li>
+<li>Supply Chain Management</li>
+<li>Time &amp; Project</li>
+</ul>
+<h2><a name="goal-of-the-digital-application-or-digital-infrastructure" class="heading-anchor" href="#goal-of-the-digital-application-or-digital-infrastructure" rel="nofollow" aria-hidden="true"></a>Goal of the Digital Application or Digital Infrastructure</h2>
+<ul>
+<li>Improving efficiency and productivity</li>
+<li>Enhancing UX</li>
+<li>Providing access to information and services</li>
+<li>Improving decision-making</li>
+<li>Increasing security and reliability</li>
+</ul>
+<h2><a name="factors-that-affect-consumer-behavior" class="heading-anchor" href="#factors-that-affect-consumer-behavior" rel="nofollow" aria-hidden="true"></a>Factors that affect Consumer Behavior</h2>
+<ul>
+<li>Cultural Factors</li>
+<li>Social Factors</li>
+<li>Psychological Factors</li>
+<li>Personal Factors</li>
+</ul>
+<h2><a name="mobile-commerce" class="heading-anchor" href="#mobile-commerce" rel="nofollow" aria-hidden="true"></a>Mobile Commerce</h2>
+<p>Mobile commerce, also known as m-commerce, refers to the buying and selling of goods and services through wireless handheld devices such as smartphones and tablets.</p>
+
+<p>Building Blocks:</p>
+
+<ul>
+<li>Mobile Devices</li>
+<li>Mobile Networks</li>
+<li>Commerce Platforms</li>
+<li>Payment Gateways</li>
+<li>Security Protocols</li>
+</ul>
+
+<hr>
+<h1><a name="ut-questions" class="heading-anchor" href="#ut-questions" rel="nofollow" aria-hidden="true"></a>UT Questions</h1><h2><a name="analysis-of-company-s-internal-and-external-environment" class="heading-anchor" href="#analysis-of-company-s-internal-and-external-environment" rel="nofollow" aria-hidden="true"></a>Analysis of Company's Internal and External environment?</h2>
+<p><strong>Internal Environment Factors</strong></p>
+
+<ol>
+<li>Plans &amp; Policies</li>
+<li>Value Proposition</li>
+<li>Human Resources</li>
+<li>Financial and Marketing Resources</li>
+<li>Corporate Image and Brand Equity</li>
+</ol>
+
+<p><strong>External Environmental Factors</strong></p>
+
+<ul>
+<li>current economic situation</li>
+<li>laws</li>
+<li>surrounding infrastructure</li>
+<li>customer demands</li>
+</ul>
+<h2><a name="digital-economy" class="heading-anchor" href="#digital-economy" rel="nofollow" aria-hidden="true"></a>Digital Economy</h2>
+<pre class='mermaid'>flowchart LR
+	ea[Economic Activites] -- Internet --> Digitalized
+</pre>
+<p>The digital economy refers to an economy that is based on digital technologies, and the various activities, transactions, and interactions that occur within it.</p>
+<h2><a name="marketplace" class="heading-anchor" href="#marketplace" rel="nofollow" aria-hidden="true"></a>Marketplace</h2>
+<p><img loading="lazy" src="./assets/Pasted%20image%2020250520170240.webp" alt="" /></p>
+
+<p>It's online platform that connects buyers and sellers, facilitating the exchange of goods, services or information.</p>
+<h2><a name="marketing-research" class="heading-anchor" href="#marketing-research" rel="nofollow" aria-hidden="true"></a>Marketing Research</h2>
+<p>Market research is the systematic process of gathering, analyzing, and interpreting information to help businesses or individuals assess the viability of a product or service and make informed decisions.</p>
+<h3><a name="types-of-marketing-research" class="heading-anchor" href="#types-of-marketing-research" rel="nofollow" aria-hidden="true"></a>Types of Marketing Research</h3>
+<ul>
+<li>Competitor Analysis</li>
+<li>Interview</li>
+<li>Focus Groups</li>
+<li>Surverys</li>
+</ul>
+<h3><a name="conduct-market-research" class="heading-anchor" href="#conduct-market-research" rel="nofollow" aria-hidden="true"></a>Conduct Market Research</h3>
+<ul>
+<li>Collect Data</li>
+<li>Analyze Data</li>
+<li>Apply Insights</li>
+<li>Monitor and Refine</li>
+</ul>
+<h2><a name="e-learning" class="heading-anchor" href="#e-learning" rel="nofollow" aria-hidden="true"></a>E-Learning</h2>
+<p>E-Learning, short for &quot;electronic learning,&quot; refers to the use of digital technologies to deliver educational content and facilitate learning outside of traditional classroom settings.</p>
+
+<p><strong>Key Features</strong></p>
+
+<ul>
+<li>Digital Delivery</li>
+<li>Variety of Formats</li>
+<li>Accessibility</li>
+<li>Interactivity</li>
+<li>Scalability</li>
+</ul>
+
+<p><strong>E-Learning platforms</strong></p>
+
+<ul>
+<li>Coursera</li>
+<li>Udemy</li>
+<li>NPTEL</li>
+<li>EdX</li>
+</ul>
+<h2><a name="digital-five-forces" class="heading-anchor" href="#digital-five-forces" rel="nofollow" aria-hidden="true"></a>Digital Five Forces</h2>
+<ul>
+<li><strong>Substitutes</strong>: alternative products or services.</li>
+<li><strong>New Entrants</strong>: <strong>new companies or startups</strong> that leverage digital technologies to enter a market.</li>
+<li>Rivalry</li>
+<li>Supplier</li>
+<li>Buyer</li>
+</ul>
+<h2><a name="e-government" class="heading-anchor" href="#e-government" rel="nofollow" aria-hidden="true"></a>E-Government</h2>
+<p><strong>E-Government</strong> (short for <strong>Electronic Government</strong>) refers to the use of digital technologies to deliver government services, information</p>
+
+<p><strong>Categories Of E-Government</strong></p>
+
+<ul>
+<li>Government-to-Citizen (G2C)</li>
+<li>Government-to-Business (G2B)</li>
+<li>Government-to-Government (G2G)</li>
+<li>Government-to-Employee (G2E)</li>
+</ul>
+
+		</main>
+		
+		<details id="table-of-content">
+		   <summary>Table of Content</summary>
+		<nav>
+<ul>
+<li><a href="#cryptographic-algorithms">Cryptographic Algorithms</a>
+<ul>
+<li><a href="#digital-signature">
+Digital Signature</a></li>
+<li><a href="#digital-certificates">
+Digital Certificates</a></li>
+<li><a href="#public-key-infrastructure-pki">
+Public Key Infrastructure (PKI)</a></li>
+<li><a href="#ssl">
+SSL</a></li>
+</ul></li>
+<li><a href="#e-commerce">
+E-Commerce</a>
+<ul>
+<li><a href="#legal-societal-and-ethics-impact-of-e-commerce">
+Legal, Societal and Ethics impact of E-Commerce</a></li>
+<li><a href="#b2b-e-commerce-private-e-markets">
+B2B E-Commerce Private E-Markets</a></li>
+<li><a href="#five-value-delivery-methods-for-e-commerce">
+Five Value delivery methods for E-Commerce</a></li>
+<li><a href="#pillars-of-e-commerce">
+Pillars of E-Commerce</a></li>
+<li><a href="#security-in-e-commerce">
+Security in E-Commerce</a></li>
+</ul></li>
+<li><a href="#e-businesses">
+E-businesses</a>
+<ul>
+<li><a href="#threats-to-e-businesses">
+Threats to E-Businesses</a></li>
+<li><a href="#e-business-strategy-align-with-the-overall-business-vision-and-mission">
+E-Business strategy align with the overall business vision and mission</a></li>
+<li><a href="#steps-required-to-implement-our-e-business-strategy">
+Steps required to implement our E-Business strategy</a></li>
+<li><a href="#drivers-of-digital-business">
+Drivers of Digital Business</a></li>
+<li><a href="#skills-required-to-manage-e-business">
+Skills required to manage E-Business</a></li>
+<li><a href="#types-of-e-business">
+Types of E-Business</a></li>
+</ul></li>
+<li><a href="#firewalls">
+Firewalls</a></li>
+<li><a href="#mobile-computing">
+Mobile Computing</a></li>
+<li><a href="#enterprise-resource-planning-erp">
+Enterprise Resource Planning (ERP)</a></li>
+<li><a href="#goal-of-the-digital-application-or-digital-infrastructure">
+Goal of the Digital Application or Digital Infrastructure</a></li>
+<li><a href="#factors-that-affect-consumer-behavior">
+Factors that affect Consumer Behavior</a></li>
+<li><a href="#mobile-commerce">
+Mobile Commerce</a></li>
+</ul><li><a href="#ut-questions">
+UT Questions</a>
+<ul>
+<li><a href="#analysis-of-company-s-internal-and-external-environment">
+Analysis of Company's Internal and External environment?</a></li>
+<li><a href="#digital-economy">
+Digital Economy</a></li>
+<li><a href="#marketplace">
+Marketplace</a></li>
+<li><a href="#marketing-research">
+Marketing Research</a>
+<ul>
+<li><a href="#types-of-marketing-research">
+Types of Marketing Research</a></li>
+<li><a href="#conduct-market-research">
+Conduct Market Research</a></li>
+</ul></li>
+<li><a href="#e-learning">
+E-Learning</a></li>
+<li><a href="#digital-five-forces">
+Digital Five Forces</a></li>
+<li><a href="#e-government">
+E-Government</a></li>
+</ul>
+</nav>
+
+		</details>
+		
+		<footer>
+			<p style="text-align: center; font-size: small; margin-top: 5em;">
+				<a href="https://anzenkodo.github.io/license">LICENSE</a>
+			</p>
+		</footer>
+	</body>
+	<script src="https://AnzenKodo.github.io/assets/js/mermaid.js"></script>
+	<script id="MathJax-script" async src="https://AnzenKodo.github.io/assets/js/mathjax.js"></script>
+	<script>
+		/* document.getElementById('video').addEventListener('click', (ele) => {
+			 if (ele.target.paused) {
+				 ele.target.play();
+			 } else {
+				 ele.target.pause();
+			 }
+		}); */
+
+		mermaid.initialize({
+			theme: "neutral",
+			themeVariables: {
+			    lineColor: "#939598",
+			}
+		});
+
+		MathJax = {
+		  tex: {
+			inlineMath: [['$', '$']],
+			displayMath: [['$$', '$$']],
+		  }
+		};
+	</script>
+</html>
