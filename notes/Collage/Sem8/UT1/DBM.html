@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>DBM - AK#Notes</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="#FF6C22">
+		<meta name="description" content="## Building blocks of the digital economy.  - **The Internet**:    - Enables firms to offer goods fo">
+		<meta property="og:description" content="## Building blocks of the digital economy.  - **The Internet**:    - Enables firms to offer goods fo">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<meta property="og:image:alt" content="AK#Notes logo">
+		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="DBM - AK#Notes">
+		<meta property="og:url" content="https://AnzenKodo.github.io/notes/notes/Collage/Sem8/UT1/DBM.html">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+
+			:root {
+				/* color-scheme: dark light; */
+				color-scheme: dark;
+				--theme: #FF6C22;
+			}
+			body {
+				max-width: 40rem;
+				margin: 0 auto;
+				font-family: system-ui;
+				padding: 0 1em;
+				color: inherit !important;
+				word-break: break-word;
+			}
+			h1, h2, h3, h4, h5, h6 {
+				margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+				font-size: 2rem;
+			}
+			h3 {
+				font-size: 1.8rem;
+			}
+			h4 {
+				font-size: 1.5rem;
+			}
+			h5 {
+				font-size: 1.3rem;
+			}
+			h6 {
+				font-size: 1rem;
+			}
+			p, li, td, code {
+				line-height: 1.5rem;
+			}
+			a {
+				color: var(--theme);
+				text-decoration: none;
+			}
+			a:hover, a:focus {
+				text-decoration: underline;
+			}
+			a:active {
+				background: var(--theme);
+				color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+				margin-top: .5rem;
+			}
+			li {
+				margin-bottom: .5rem;
+			}
+			table {
+				border-collapse: collapse;
+				overflow-x: auto;
+				display: block;
+				word-break: auto-phrase;
+				margin: 1rem 0;
+			}
+			th {
+				font-size: 1.1rem;
+				border: 2px solid;
+				padding: .3rem .3rem;
+			}
+			td {
+				border: 1px solid;
+				padding: .3rem .5rem;
+			}
+			blockquote {
+				margin-left: 0;
+				margin-right: 0;
+				border: 1px solid;
+				border-left: 10px solid;
+				padding: 0 1rem;
+			}
+				.code-block {
+				background: black;
+				overflow-x: auto;
+				padding: 0em 1em;
+				border: 1px solid;
+			}
+			.code-block-language-name {
+				position: sticky;
+				left: 95%;
+				top: .5em;
+				font-weight: bold;
+				color: white;
+			}
+			:not(pre.chroma) > code {
+				border: 1px solid;
+				padding: .3rem .2rem .2rem .2rem;
+			}
+			img {
+				max-width: 100%;
+				display: block;
+				margin: 0 auto;
+			}
+			[href="#skip-top-main"] {
+				padding: 0.3em;
+				position: absolute;
+				transform: translateY(-1000%);
+			}
+			[href="#skip-top-main"]:focus {
+				transform: translateY(0%);
+				background: var(--theme);
+				color: inherit;
+			}
+			#table-of-content {
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+				background: black;
+				padding: 0.5rem 1em;
+				z-index: 1;
+				color: white;
+			}
+			#table-of-content[open] {
+				max-height: 90%;
+				overflow-y: auto;
+				bottom: 50px;
+				margin-left: 1em;
+			}
+			#table-of-content[open] summary {
+				background: black;
+				padding: 0.5em 1em;
+				text-align: center;
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+			}
+			#table-of-content ul:first-child {
+				padding-left: 1em;
+				margin-top: 1.5em;
+			}
+			.heading-anchor::before {
+				margin-right: .5rem;
+			}
+		    h2 .heading-anchor::before {
+    			content: "#";
+    			margin-right: .5rem;
+		    }
+            h3 .heading-anchor::before {
+				content: "##";
+				margin-right: .5rem;
+			}
+            h4 .heading-anchor::before {
+				content: "###";
+				margin-right: .5rem;
+			}
+            h5 .heading-anchor::before {
+				content: "####";
+				margin-right: .5rem;
+			}
+            h6 .heading-anchor::before {
+				content: "#####";
+				margin-right: .5rem;
+			}
+			.mermaid {
+				background: black;
+				border: 1px solid;
+				margin-top: 1rem;
+				padding: 1rem;
+				font-family: monospace;
+			}
+			.mermaid svg {
+				display: block;
+				margin: auto;
+			}
+			.mermaid:has(svg) {
+				background: none;
+				border: none;
+				margin-top: 1rem;
+				padding: 0;
+			}
+			mjx-container {
+				display: math;
+				overflow-y: hidden;
+				overflow-x: auto;
+				max-width: 100%;
+				padding-bottom: .8rem;
+			}
+			iframe {
+				width: 100%;
+				height: 21rem;
+				margin: 1rem 0;
+			}
+			video {
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<a href="#skip-top-main">Skip to main</a>
+		<header>
+<!--		<h1 style="text-align: center;">-->
+			<h1 style="text-align: center;">
+				<a href="https://AnzenKodo.github.io">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+			</h1>
+            <video width="100%" controls>
+                <source src="https://anzenkodo.github.io/drive/london.mp4" type="video/mp4">
+            </video><nav style="border-top: 1px solid gray;border-bottom: 1px solid gray;padding: .5rem 0;text-align: center;margin: 0 0 2rem 0;color: gray;clear: left;line-height: 1.6rem;">
+				<a href="https://AnzenKodo.github.io/notes">Home</a> | <a href="https://AnzenKodo.github.io">About</a> | <a href="https://AnzenKodo.github.io/blogroll">Blogroll</a> | <a href="https://github.com/AnzenKodo">Github</a> | <a href="https://x.com/AnzenKodo">𝕏</a>
+			</nav>
+			<!-- <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;"> -->
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem; margin-top: 0;">DBM</h1>
+			<h2><a name="building-blocks-of-the-digital-economy" class="heading-anchor" href="#building-blocks-of-the-digital-economy" rel="nofollow" aria-hidden="true"></a>Building blocks of the digital economy.</h2>
+<ul>
+<li><strong>The Internet</strong>:<br>
+
+<ul>
+<li>Enables firms to offer goods for sale and allows consumers to browse and purchase products they need.</li>
+</ul></li>
+<li><strong>E-mail</strong>:<br>
+
+<ul>
+<li>It is used to send information, requests, and correspondence, enhancing business efficiency.</li>
+</ul></li>
+<li><strong>Digital Automation</strong>:<br>
+
+<ul>
+<li>This automation streamlines operations and reduces manual effort.</li>
+</ul></li>
+<li><strong>Digital Payments</strong>:<br>
+
+<ul>
+<li>Includes methods like credit cards, Apple Pay, Google Pay, Bitcoin, and bank transfers. These facilitate a shift toward a cashless society, making transactions seamless and efficient.<br></li>
+</ul></li>
+<li><strong>Automation (AI and Advanced Technologies)</strong>:<br>
+
+<ul>
+<li>Relies on artificial intelligence, mass electronic data, and automated technologies to enhance productivity and decision-making.</li>
+</ul></li>
+<li><strong>Social Media</strong>:<br>
+
+<ul>
+<li>Acts as a platform for sharing recommendations and reviews about businesses, influencing consumer behavior.</li>
+</ul></li>
+</ul>
+<h2><a name="define-digital-economy" class="heading-anchor" href="#define-digital-economy" rel="nofollow" aria-hidden="true"></a>Define Digital economy.</h2>
+<p><img loading="lazy" src="assets/What_is_Digital_Economy_768x431_1_OLVV24-1.webp" alt="" /></p>
+
+<p>The digital economy refers to an economy that is based on digital technologies, particularly the internet, and the various activities, transactions, and interactions that occur within it.</p>
+
+<p>At its core, the digital economy includes online commerce (e.g., e-commerce platforms like Amazon or Alibaba), digital services (e.g., streaming platforms like Netflix, cloud computing, or software-as-a-service), and the infrastructure that supports them (e.g., telecommunications, data centers, and internet connectivity.</p>
+<h2><a name="advantages-of-digital-economy" class="heading-anchor" href="#advantages-of-digital-economy" rel="nofollow" aria-hidden="true"></a>Advantages of digital economy.</h2>
+<ul>
+<li><strong>Greater Information Access</strong>: Consumers gain more choice and information through the internet, easily comparing prices and accessing details instantly, such as for travel or shopping.</li>
+<li><strong>Time Savings</strong>: Online ordering and delivery (e.g., office supplies arriving next day) reduce the need for physical trips, cutting labor costs and boosting efficiency.</li>
+<li><strong>Reduced Costs</strong>: Businesses save on physical infrastructure by operating online, bypassing retail middlemen and offering lower prices direct from warehouses.<br></li>
+<li><strong>Personalization</strong>: Digital platforms enable tailored products (e.g., custom clothes via 3D printing), meeting individual preferences beyond what traditional stores can stock.</li>
+<li><strong>Lower Barriers to Entry</strong>: New firms can enter markets with innovative ideas, creating services like online grocery delivery or dating apps, challenging established players.</li>
+<li><strong>Data Insights</strong>: Mass data collection provides governments and businesses with real-time economic and social insights, such as tracking COVID-19 hotspots.</li>
+<li><strong>Global Opportunities</strong>: Developing regions, like India, benefit from job creation (e.g., programming), as digital work transcends geographic limits.</li>
+<li><strong>Work Flexibility</strong>: Remote work, enabled by digital tools, reduces commuting, supports work-life balance, and proved vital during COVID lockdowns, cutting congestion and pollution.</li>
+</ul>
+<h2><a name="disadvantages-of-the-digital-economy" class="heading-anchor" href="#disadvantages-of-the-digital-economy" rel="nofollow" aria-hidden="true"></a>Disadvantages of the digital economy.</h2>
+<ul>
+<li><strong>Monopoly Power</strong>: Giants like Amazon, Google, and Facebook dominate markets, using their influence to charge high rates or undercut competitors, reducing fair competition.</li>
+<li><strong>Less Community</strong>: Online shopping replaces local hubs like bookstores, diminishing physical interactions and community experiences tied to traditional commerce.<br></li>
+<li><strong>Addictive Technology</strong>: Excessive time on social media or browsing can outweigh time-saving benefits, overwhelming users with information and hindering decision-making.</li>
+<li><strong>Privacy Issues</strong>: Data harvesting by companies like Facebook raises concerns, as personal information is exploited for targeted ads, often without full user consent.</li>
+<li><strong>Labor Law Gaps</strong>: The rise of freelancers (e.g., Uber, Deliveroo drivers) on zero-hour contracts cuts costs but leaves workers without protections like sick pay.<br></li>
+<li><strong>Graphic Content Spread</strong>: Social media’s anonymity fuels the spread of harmful content, such as conspiracy theories or violence, impacting well-being.</li>
+<li><strong>Job Disruption</strong>: Rapid digitalization and AI threaten traditional jobs (e.g., retail), causing structural unemployment and widening inequality between skilled and unskilled workers.</li>
+<li><strong>Environmental Costs</strong>: Data centers consume significant electricity, and planned obsolescence (e.g., frequent phone upgrades) increases resource use and waste, countering &quot;green&quot; assumptions.</li>
+</ul>
+<h2><a name="define-e-commerce" class="heading-anchor" href="#define-e-commerce" rel="nofollow" aria-hidden="true"></a>Define E-Commerce.</h2>
+<p>E-commerce, short for electronic commerce, refers to the buying and selling of goods and services over the internet. It involves the exchange of data or currency to process a transaction between a buyer and a seller.</p>
+
+<p><strong>Key Characteristics of E-commerce:</strong></p>
+
+<ul>
+<li><strong>Platform</strong>: Operates via the internet, enabling businesses to offer goods (e.g., via websites like Amazon) and consumers to browse and purchase them.</li>
+<li><strong>Transactions</strong>: Facilitated by digital payment methods such as credit cards, Apple Pay, or bank transfers, supporting a cashless exchange.</li>
+<li><strong>Scope</strong>: Includes business-to-consumer (B2C) sales (e.g., online shopping), business-to-business (B2B) transactions, and even consumer-to-consumer (C2C) interactions (e.g., eBay).</li>
+</ul>
+<h2><a name="explain-types-of-e-commerce" class="heading-anchor" href="#explain-types-of-e-commerce" rel="nofollow" aria-hidden="true"></a>Explain Types of E-Commerce.</h2>
+<p><img loading="lazy" src="../../Sem5/assets/Pasted%20image%2020231028005629.png" alt="Type of E-commerce" /></p>
+
+<p>E-commerce, short for electronic commerce, refers to the buying and selling of goods and services over the internet. It involves the exchange of data or currency to process a transaction between a buyer and a seller.</p>
+
+<p>E-commerce operates in different forms, and here are the different types of e-commerce:</p>
+
+<ul>
+<li><strong>Business-to-Consumer (B2C)</strong>:
+
+<ul>
+<li>This type of e-commerce involves companies selling their products or services directly to the end-user, the consumer who needs it.</li>
+<li>This is the most common type of e-commerce, and it includes online retailers such as Amazon, Walmart, and Target.</li>
+</ul></li>
+<li><strong>Business-to-Business (B2B)</strong>:
+
+<ul>
+<li>This type of e-commerce involves businesses selling their products or services to other businesses. The buyer often resells the products to the consumer. B2B e-commerce includes companies such as Alibaba, which connects businesses with suppliers.</li>
+</ul></li>
+<li><strong>Consumer-to-Consumer (C2C)</strong>:
+
+<ul>
+<li>This type of e-commerce involves consumers selling products or services to other consumers.</li>
+<li>This type of e-commerce is facilitated by online marketplaces such as eBay, Etsy, and Craigslist.</li>
+</ul></li>
+<li><strong>Consumer-to-Business (C2B)</strong>:
+
+<ul>
+<li>This type of e-commerce involves consumers selling their products or services to businesses.</li>
+<li>This type of e-commerce is common in the freelance industry, where individuals offer their services to businesses that need them.</li>
+</ul></li>
+<li><strong>Business-to-Government (B2G)</strong>:
+
+<ul>
+<li>This type of e-commerce involves businesses selling their products or services to government agencies.</li>
+<li>This type of e-commerce is common in the defense industry, where businesses sell their products to the government.</li>
+</ul></li>
+<li><strong>Consumer-to-Government (C2G)</strong>:
+
+<ul>
+<li>This type of e-commerce involves consumers selling their products or services to government agencies.</li>
+<li>This type of e-commerce is common in the freelance industry, where individuals offer their services to government agencies that need them.</li>
+</ul></li>
+</ul>
+<h2><a name="explain-advantages-and-disadvantages-of-e-commerce" class="heading-anchor" href="#explain-advantages-and-disadvantages-of-e-commerce" rel="nofollow" aria-hidden="true"></a>Explain advantages and disadvantages of E-Commerce.</h2>
+<p><strong>Advantages of E-Commerce</strong></p>
+
+<ol>
+<li><strong>Wider Market Reach</strong>: E-commerce allows businesses to reach a global audience, breaking geographical barriers that limit traditional retail. This capability is particularly beneficial for small businesses looking to expand their customer base without the significant investment required for physical stores.</li>
+<li><strong>Cost-Effectiveness</strong>: Operating online typically incurs lower overhead costs compared to maintaining a physical storefront. Businesses can save on rent, utilities, and staffing, allowing them to allocate resources more efficiently.</li>
+<li><strong>Convenience</strong>: E-commerce offers 24/7 accessibility, enabling customers to shop at any time from anywhere. This convenience enhances customer satisfaction and can lead to increased sales.</li>
+<li><strong>Improved Customer Engagement</strong>: Online platforms facilitate real-time interaction with customers through personalized marketing strategies, such as targeted advertisements and product recommendations based on browsing history.</li>
+<li><strong>Scalability</strong>: E-commerce businesses can scale operations more easily than traditional retailers, allowing them to adapt quickly to market demands and expand their product offerings without significant logistical challenges.</li>
+</ol>
+
+<p><strong>Disadvantages of E-Commerce</strong></p>
+
+<ol>
+<li><strong>Security Risks</strong>: E-commerce faces significant threats from cyber criminals, including hacking and phishing attacks that can compromise sensitive customer data. This poses a risk not only to customers but also to the business's reputation.</li>
+<li><strong>Dependence on Technology</strong>: E-commerce operations rely heavily on technology, which can be costly and complex to maintain. Technical issues or downtime can disrupt sales and affect customer trust.</li>
+<li><strong>Lack of Physical Interaction</strong>: Customers cannot physically inspect products before purchase, which may lead to dissatisfaction if the items do not meet expectations upon delivery. This aspect can deter some consumers from online shopping.</li>
+<li><strong>Privacy Concerns</strong>: The requirement for personal information during transactions raises privacy issues. Customers may hesitate to share sensitive data due to fears of misuse or data breaches.</li>
+<li><strong>Increased Competition</strong>: The low barrier to entry in e-commerce means that businesses face fierce competition, making it challenging to stand out in a crowded marketplace.</li>
+</ol>
+<h2><a name="explain-five-value-delivery-methods-for-e-commerce" class="heading-anchor" href="#explain-five-value-delivery-methods-for-e-commerce" rel="nofollow" aria-hidden="true"></a>Explain five value delivery methods for E-commerce.</h2>
+<ul>
+<li><strong>Direct-to-Customer (D2C)</strong>:
+
+<ul>
+<li>Brands sell directly to consumers online, bypassing middlemen, fostering loyalty and rapid growth.</li>
+<li><strong>Example</strong>: New-generation consumer brands cutting out intermediaries.</li>
+</ul></li>
+<li><strong>White Label and Private Label</strong>:
+
+<ul>
+<li>White labeling applies a brand to a distributor’s product, while private labeling creates exclusive products via manufacturers.</li>
+<li><strong>Example</strong>: Retailers branding generic goods.</li>
+</ul></li>
+<li><strong>Wholesaling</strong>:
+
+<ul>
+<li>Retailers offer bulk products at discounted rates, traditionally B2B but now also B2C for budget-conscious buyers.</li>
+<li><strong>Example</strong>: Online stores providing wholesale deals to consumers.</li>
+</ul></li>
+<li><strong>Drop Shipping</strong>:
+
+<ul>
+<li>Retailers sell products fulfilled by third-party suppliers, acting as middlemen without holding inventory. Easy-to-use tools integrate global supplier inventories.</li>
+<li><strong>Example</strong>: Drop shippers on platforms like Shopify.</li>
+</ul></li>
+<li><strong>Subscription Service</strong>:
+
+<ul>
+<li>Businesses offer recurring deliveries of goods/services (e.g., groceries, media) for convenience and savings.</li>
+<li><strong>Example</strong>: Monthly book or grocery subscriptions adapted to modern industries.</li>
+</ul></li>
+</ul>
+<h2><a name="define-marketplace" class="heading-anchor" href="#define-marketplace" rel="nofollow" aria-hidden="true"></a>Define Marketplace.</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020250303012321.webp" alt="" /></p>
+
+<p>A <strong>marketplace</strong>, in the context of e-commerce, is an online platform that connects buyers and sellers, facilitating the exchange of goods, services, or information.</p>
+
+<p>It serves as a digital environment where multiple vendors or individuals can list their offerings, and customers can browse, compare, and purchase them, typically all within a single platform.</p>
+<h2><a name="explain-marketing-research" class="heading-anchor" href="#explain-marketing-research" rel="nofollow" aria-hidden="true"></a>Explain Marketing Research.</h2>
+<p>Market research is the systematic process of gathering, analyzing, and interpreting information to help businesses or individuals assess the viability of a product or service and make informed decisions.</p>
+
+<p><strong>Purpose and Importance</strong></p>
+
+<ul>
+<li><strong>Understanding Consumer Behavior</strong>: It builds a picture of how consumers think, choose, and interact with products or services.</li>
+<li><strong>Evaluating Market Fit</strong>: It determines how well a product or service meets market demands.</li>
+<li><strong>Sizing the Market</strong>: It estimates the potential market size for a specific offering.</li>
+<li><strong>Strategic Planning</strong>: It aids in business planning, marketing strategy development, and identifying growth opportunities.</li>
+<li><strong>Competitive Analysis</strong>: It helps identify major competitors and establish a unique value proposition (UVP) to stand out.</li>
+<li><strong>Problem-Solving</strong>: It addresses marketing challenges and uncovers actionable insights.</li>
+</ul>
+<h2><a name="explain-types-of-marketing-research" class="heading-anchor" href="#explain-types-of-marketing-research" rel="nofollow" aria-hidden="true"></a>Explain Types of Marketing Research.</h2>
+<p>Marketing research encompasses various methods to gather insights about markets, customers, and competitors. These methods can be used individually for specific purposes or combined for a comprehensive understanding.</p>
+
+<ol>
+<li><strong>Competitor Analysis</strong><br>
+
+<ul>
+<li><strong>What it is</strong>: A method to study competitors offering similar products or services, or those with potential to do so.<br></li>
+<li><strong>Example</strong>: Comparing your product’s price and quality to a rival’s to adjust your offerings or marketing.<br></li>
+<li><strong>Benefit</strong>: Helps anticipate competitors’ moves and build a competitive edge.</li>
+</ul></li>
+<li><strong>Interviews</strong><br>
+
+<ul>
+<li><strong>What it is</strong>: A qualitative, one-on-one method between an interviewer and participant.<br></li>
+<li><strong>How it works</strong>: Conducted via phone, online, or face-to-face; can be open-ended or structured with specific questions.<br></li>
+<li><strong>Purpose</strong>: Gathers in-depth insights into customer needs, opinions, or feedback, ideal for exploratory research like new product development or market evaluation.<br></li>
+<li><strong>Example</strong>: Interviewing customers post-launch to assess satisfaction.<br></li>
+</ul></li>
+<li><strong>Focus Groups</strong><br>
+
+<ul>
+<li><strong>What it is</strong>: A moderated group discussion where participants interact and share ideas on a topic.<br></li>
+<li><strong>Purpose</strong>: Generates collective insights and brainstorming, useful for testing concepts or understanding group dynamics.<br></li>
+<li><strong>Example</strong>: A focus group discussing reactions to a new ad campaign.<br></li>
+</ul></li>
+<li><strong>Surveys</strong><br>
+
+<ul>
+<li><strong>What it is</strong>: A scalable, often quantitative method to collect data from a targeted audience.<br></li>
+<li><strong>Purpose</strong>: Measures brand awareness, customer preferences, market trends, or competitive standing; supports segmentation and campaign planning.<br></li>
+<li><strong>Example</strong>: An online survey gauging interest in a new product feature.<br></li>
+</ul></li>
+</ol>
+<h2><a name="how-to-conduct-market-research" class="heading-anchor" href="#how-to-conduct-market-research" rel="nofollow" aria-hidden="true"></a>How to Conduct Market Research.</h2>
+<ul>
+<li><strong>Define Objectives</strong>
+
+<ul>
+<li><strong>What to do</strong>: Clearly outline what you want to learn (e.g., customer preferences, market size, competitor strengths).</li>
+<li><strong>Example</strong>: “Understand why customers prefer competitor X’s product.”</li>
+</ul></li>
+<li><strong>Collect Data</strong>
+
+<ul>
+<li><strong>Primary Data</strong>: Gather your own data through:<br>
+
+<ul>
+<li><strong>Surveys</strong>: Online or phone questionnaires.</li>
+<li><strong>Interviews</strong>: One-on-one discussions (phone, online, or in-person).</li>
+<li><strong>Focus Groups</strong>: Moderated group sessions.</li>
+</ul></li>
+<li><strong>Secondary Data</strong>: Use existing sources like:<br>
+
+<ul>
+<li>Online reports, government sites (e.g., Census.gov), or industry studies.</li>
+</ul></li>
+</ul></li>
+<li><strong>Analyze Data</strong>
+
+<ul>
+<li><strong>What to do</strong>: Organize and interpret findings using tools or techniques.</li>
+<li><strong>Example</strong>: Identify that 70% of respondents value price over quality, per survey results.</li>
+</ul></li>
+<li><strong>Apply Insights</strong>
+
+<ul>
+<li><strong>What to do</strong>: Use findings to make decisions—adjust products, target new segments, or refine marketing strategies.</li>
+<li><strong>Example</strong>: Lower prices based on survey feedback to attract budget-conscious customers.</li>
+</ul></li>
+<li><strong>Monitor and Refine</strong>
+
+<ul>
+<li><strong>What to do</strong>: Track results (e.g., sales, web traffic) post-implementation and adjust if needed.</li>
+<li><strong>Example</strong>: If sales don’t rise after price cuts, survey again to tweak the approach.</li>
+</ul></li>
+</ul>
+<h2><a name="explain-e-learning" class="heading-anchor" href="#explain-e-learning" rel="nofollow" aria-hidden="true"></a>Explain E-Learning.</h2>
+<p>E-Learning, short for &quot;electronic learning,&quot; refers to the use of digital technologies, primarily the internet, to deliver educational content and facilitate learning outside of traditional classroom settings.</p>
+
+<p><strong>Key Features of E-Learning</strong>:</p>
+
+<ol>
+<li><strong>Digital Delivery</strong>: Content is delivered via electronic devices such as computers, tablets, or smartphones, typically through online platforms, apps, or software.</li>
+<li><strong>Variety of Formats</strong>: E-Learning can include text-based lessons, videos, interactive quizzes, webinars, podcasts, virtual simulations, and more.</li>
+<li><strong>Accessibility</strong>: Learners can access materials anytime, anywhere, as long as they have an internet connection, making it highly convenient compared to physical classrooms.</li>
+<li><strong>Interactivity</strong>: Many e-learning systems incorporate tools like discussion forums, live chats, or gamified elements to engage learners.</li>
+<li><strong>Scalability</strong>: It allows institutions or instructors to reach a global audience without the limitations of physical space.</li>
+</ol>
+
+<p><strong>E-Learning platforms</strong></p>
+
+<ul>
+<li>Coursera</li>
+<li>Udemy</li>
+<li>NPTEL</li>
+<li>EdX</li>
+</ul>
+<h2><a name="digital-five-forces-in-details" class="heading-anchor" href="#digital-five-forces-in-details" rel="nofollow" aria-hidden="true"></a>Digital Five Forces in details.</h2>
+<p>The <strong>Digital Five Forces</strong> framework is an adaptation of Michael Porter's traditional <strong>Five Forces</strong> model, tailored to analyze the competitive dynamics in the digital economy.</p>
+
+<p>This framework helps businesses understand the impact of digital technologies on their industry and how to navigate the challenges and opportunities they present.</p>
+
+<ul>
+<li><strong>Digital Substitutes</strong>
+
+<ul>
+<li><strong>Definition:</strong> Digital substitutes refer to alternative products or services that are enabled by digital technologies and can replace traditional offerings</li>
+<li><strong>Example:</strong> Streaming services like Netflix have become digital substitutes for traditional cable TV.</li>
+</ul></li>
+<li><strong>Digital New Entrants</strong>
+
+<ul>
+<li><strong>Definition:</strong> Digital new entrants are <strong>new companies or startups</strong> that leverage digital technologies to enter a market, often with lower barriers to entry compared to traditional businesses.</li>
+<li><strong>Example:</strong> Airbnb entering the hospitality industry without owning any physical properties.</li>
+</ul></li>
+<li><strong>Digital Rivalry</strong>
+
+<ul>
+<li><strong>Definition:</strong> Digital rivalry refers to the intensity of competition among existing players in a market, amplified by digital tools and platforms.</li>
+<li><strong>Example:</strong> E-commerce platforms like Amazon and Walmart competing fiercely in online retail, leveraging data analytics and AI to enhance customer experience.</li>
+</ul></li>
+<li><strong>Digital Supplier Power</strong>
+
+<ul>
+<li><strong>Definition:</strong> Digital supplier power refers to the influence that suppliers of digital technologies, platforms, or services have over businesses.</li>
+<li><strong>Example:</strong> Businesses relying on AWS (Amazon Web Services) for cloud infrastructure may face challenges if AWS changes its pricing or service terms.</li>
+</ul></li>
+<li> <strong>Digital Buyer Power</strong>
+
+<ul>
+<li><strong>Definition:</strong> Digital buyer power refers to the increased influence that customers have due to the availability of information, comparison tools, and digital platforms.</li>
+<li><strong>Example:</strong> Online shoppers using price comparison websites to find the best deals, putting pressure on retailers to offer competitive pricing.</li>
+</ul></li>
+</ul>
+<h2><a name="explain-e-government" class="heading-anchor" href="#explain-e-government" rel="nofollow" aria-hidden="true"></a>Explain E-Government.</h2>
+<p><img loading="lazy" src="../../assets/Pasted%20image%2020231128091656.png" alt="" /></p>
+
+<p><strong>E-Government</strong> (short for <strong>Electronic Government</strong>) refers to the use of digital technologies, particularly the internet, to deliver government services, information, and interactions to citizens, businesses, and other government entities.</p>
+
+<p><strong>Categories Of E-Government</strong></p>
+
+<ul>
+<li>Government-to-Citizen (G2C)</li>
+<li>Government-to-Business (G2B)</li>
+<li>Government-to-Government (G2G)</li>
+<li>Government-to-Employee (G2E)</li>
+</ul>
+<h2><a name="opportunities-in-digital-business" class="heading-anchor" href="#opportunities-in-digital-business" rel="nofollow" aria-hidden="true"></a>Opportunities in Digital Business..</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020250303014521.webp" alt="" /></p>
+
+<ol>
+<li><strong>Digital Disruption from Within</strong>:
+
+<ul>
+<li>Established companies can disrupt themselves by embracing digital transformation.</li>
+<li>For example, Steve Jobs disrupted Apple's own successful iPod by introducing the iPhone. Companies need to innovate internally to stay ahead of digital-native competitors.</li>
+</ul></li>
+<li><strong>Showrooming and Webrooming</strong>:
+
+<ul>
+<li><strong>Showrooming</strong>: Consumers browse products in physical stores but buy them online.</li>
+<li><strong>Webrooming</strong>: Consumers research products online but purchase them in-store.</li>
+</ul></li>
+<li><strong>Digital Workforces and New Ways of Working</strong>:
+
+<ul>
+<li>Startups and even established companies can leverage small, agile teams that work on a project basis.</li>
+<li>This approach allows employees to work on projects they are passionate about, leading to higher engagement and better outcomes.</li>
+</ul></li>
+<li><strong>The Internet of Things (IoT)</strong>:
+
+<ul>
+<li> IoT connects devices, enabling data-driven decision-making, automation, and new revenue streams.</li>
+</ul></li>
+<li><strong>Micromoments</strong>:
+
+<ul>
+<li>Micromoments are instances when consumers turn to their devices to act on a need (e.g., to learn, discover, or buy). Businesses can capitalize on these moments by being present and relevant.</li>
+<li>For example, 50% of consumers who conduct a local search on their smartphone visit a store within a day, and nearly 20% make a purchase within a day.</li>
+</ul></li>
+</ol>
+<h2><a name="challenges-in-digital-business" class="heading-anchor" href="#challenges-in-digital-business" rel="nofollow" aria-hidden="true"></a>Challenges in Digital Business..</h2>
+<ul>
+<li><strong>Rising Customer Expectations</strong>:
+
+<ul>
+<li>Customers demand faster, more personalized, and seamless digital experiences.</li>
+</ul></li>
+<li><strong>Talent Shortage</strong>:
+
+<ul>
+<li>The rapid pace of digital transformation has created a skills gap, with businesses struggling to find and retain talent with expertise in areas like data science, AI, cybersecurity, and digital marketing.</li>
+</ul></li>
+<li><strong>Omni-Channel Complexity</strong>:
+
+<ul>
+<li>Delivering a consistent and integrated experience across multiple channels (e.g., online, mobile, in-store) is complex and resource-intensive.</li>
+</ul></li>
+<li><strong>Big Data and Privacy</strong>:
+
+<ul>
+<li>While big data offers valuable insights, managing and protecting it poses significant challenges, especially with increasing regulatory scrutiny and consumer concerns about privacy.</li>
+</ul></li>
+</ul>
+
+		</main>
+		
+		<details id="table-of-content">
+		   <summary>Table of Content</summary>
+		<nav>
+<ul>
+<li><a href="#building-blocks-of-the-digital-economy">Building blocks of the digital economy.</a></li>
+<li><a href="#define-digital-economy">
+Define Digital economy.</a></li>
+<li><a href="#advantages-of-digital-economy">
+Advantages of digital economy.</a></li>
+<li><a href="#disadvantages-of-the-digital-economy">
+Disadvantages of the digital economy.</a></li>
+<li><a href="#define-e-commerce">
+Define E-Commerce.</a></li>
+<li><a href="#explain-types-of-e-commerce">
+Explain Types of E-Commerce.</a></li>
+<li><a href="#explain-advantages-and-disadvantages-of-e-commerce">
+Explain advantages and disadvantages of E-Commerce.</a></li>
+<li><a href="#explain-five-value-delivery-methods-for-e-commerce">
+Explain five value delivery methods for E-commerce.</a></li>
+<li><a href="#define-marketplace">
+Define Marketplace.</a></li>
+<li><a href="#explain-marketing-research">
+Explain Marketing Research.</a></li>
+<li><a href="#explain-types-of-marketing-research">
+Explain Types of Marketing Research.</a></li>
+<li><a href="#how-to-conduct-market-research">
+How to Conduct Market Research.</a></li>
+<li><a href="#explain-e-learning">
+Explain E-Learning.</a></li>
+<li><a href="#digital-five-forces-in-details">
+Digital Five Forces in details.</a></li>
+<li><a href="#explain-e-government">
+Explain E-Government.</a></li>
+<li><a href="#opportunities-in-digital-business">
+Opportunities in Digital Business..</a></li>
+<li><a href="#challenges-in-digital-business">
+Challenges in Digital Business..</a></li>
+</ul>
+</nav>
+
+		</details>
+		
+		<footer>
+			<p style="text-align: center; font-size: small; margin-top: 5em;">
+				<a href="https://anzenkodo.github.io/license">LICENSE</a>
+			</p>
+		</footer>
+	</body>
+	<script src="https://AnzenKodo.github.io/assets/js/mermaid.js"></script>
+	<script id="MathJax-script" async src="https://AnzenKodo.github.io/assets/js/mathjax.js"></script>
+	<script>
+		/* document.getElementById('video').addEventListener('click', (ele) => {
+			 if (ele.target.paused) {
+				 ele.target.play();
+			 } else {
+				 ele.target.pause();
+			 }
+		}); */
+
+		mermaid.initialize({
+			theme: "neutral",
+			themeVariables: {
+			    lineColor: "#939598",
+			}
+		});
+
+		MathJax = {
+		  tex: {
+			inlineMath: [['$', '$']],
+			displayMath: [['$$', '$$']],
+		  }
+		};
+	</script>
+</html>
