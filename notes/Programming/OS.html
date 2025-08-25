@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Vim - AK#Notes</title>
+		<title>OS - AK#Notes</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 		<meta name="author" content="AnzenKodo">
 		<meta name="theme-color" content="#FF6C22">
-		<meta name="description" content="## Keymaps  - Spells 	- `z=`: suggest correctly spelled words. 	- `]s` & `[s`: Move to misspelled wo">
-		<meta property="og:description" content="## Keymaps  - Spells 	- `z=`: suggest correctly spelled words. 	- `]s` & `[s`: Move to misspelled wo">
+		<meta name="description" content="## Threads - **Context Switch**: Act of stopping one thread and starting other thread called context">
+		<meta property="og:description" content="## Threads - **Context Switch**: Act of stopping one thread and starting other thread called context">
 		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
 		<meta property="og:image:alt" content="AK#Notes logo">
 		<meta property="og:site_name" content="AK#Notes">
-		<meta property="og:title" content="Vim - AK#Notes">
-		<meta property="og:url" content="https://AnzenKodo.github.io/notes/notes/Code/Vim.html">
+		<meta property="og:title" content="OS - AK#Notes">
+		<meta property="og:url" content="https://AnzenKodo.github.io/notes/notes/Programming/OS.html">
 		<meta property="og:type" content="article">
 		<meta property="og:article:author" content="AnzenKodo">
 		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
@@ -222,60 +222,51 @@
 			<!-- <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;"> -->
 		</header>
 		<main id="skip-top-main">
-			<h1 style="font-size: 2.3rem; margin-top: 0;">Vim</h1>
-			<h2><a name="keymaps" class="heading-anchor" href="#keymaps" rel="nofollow" aria-hidden="true"></a>Keymaps</h2>
+			<h1 style="font-size: 2.3rem; margin-top: 0;">OS</h1>
+			<h2><a name="threads" class="heading-anchor" href="#threads" rel="nofollow" aria-hidden="true"></a>Threads</h2>
 <ul>
-<li>Spells
+<li><strong>Context Switch</strong>: Act of stopping one thread and starting other thread called context switch.
 
 <ul>
-<li><code>z=</code>: suggest correctly spelled words.</li>
-<li><code>]s</code> &amp; <code>[s</code>: Move to misspelled words.</li>
-<li><code>zg</code>: add to dictionary</li>
-<li><code>zw</code>: remove to dictionary</li>
+<li><img loading="lazy" src="assets/Pasted%20image%2020250804163411.webp" alt="" /></li>
+<li>Process can't effectively share resources, while threads can.</li>
+<li>Context switch is not cheap.</li>
+<li><img loading="lazy" src="assets/Pasted%20image%2020250804163720.webp" alt="" /></li>
+<li><img loading="lazy" src="assets/Pasted%20image%2020250804163752.webp" alt="" /></li>
+<li><img loading="lazy" src="assets/Pasted%20image%2020250804163848.webp" alt="" /></li>
 </ul></li>
-<li>Autocomplete
+<li><strong>Latency</strong>: The time to completion of a task. Measured in time units.</li>
+<li><strong>Throughput</strong>: The amount tasks completed in a given period. Measured in tasks/time unit.</li>
+<li><img loading="lazy" src="assets/race_condition.webp" alt="" />
 
 <ul>
-<li><code>Alt-o</code>: Omni-completion</li>
-<li><code>Alt-d</code>: Dictionary completion</li>
-<li><code>Alt-f</code>: Filename completion</li>
-<li><code>Alt-l</code>: Whole line completion</li>
-<li><code>Alt-n</code>: Next identifier from current file</li>
-<li><code>Alt-i</code>: Next identifier from included files</li>
+<li><img loading="lazy" src="assets/memory_regions_preview.webp" alt="" /></li>
 </ul></li>
-<li>Tag Jump
+<li><img loading="lazy" src="assets/deadlock.webp" alt="" /></li>
+<li>Thread
 
 <ul>
-<li><code>]g</code>: Jump to definiton</li>
-<li><code>g]</code>: List all tags</li>
-<li><code>[g</code>: Return to Jump</li>
+<li><img loading="lazy" src="assets/semaphore.webp" alt="" /></li>
+<li><img loading="lazy" src="assets/thread_join.webp" alt="" /></li>
+<li><img loading="lazy" src="assets/iter-thread.webp" alt="" /></li>
 </ul></li>
-<li>LSP
+<li>Thread Pooling
 
 <ul>
-<li><code>Shfit-k</code>: Show definition.</li>
-<li><code>grr</code>: Show references</li>
-<li><code>grn</code>: Rename</li>
+<li><img loading="lazy" src="file:///C:%5CUsers%5Caman.v%5CDownloads%5Cpooling.png" alt="pooling.png" /></li>
 </ul></li>
-<li>Diagnostics
+</ul>
+<h2><a name="general" class="heading-anchor" href="#general" rel="nofollow" aria-hidden="true"></a>General</h2>
+<ul>
+<li><strong>IO</strong>
 
 <ul>
-<li><code>Shift-L</code>: Show Diagnostics</li>
-<li><code>]d</code> next diagnostic in the current buffer</li>
-<li><code>[d</code> previous diagnostic in the current buffer</li>
+<li><img loading="lazy" src="assets/io.webp" alt="" /></li>
 </ul></li>
-<li>Telescope
+<li>Memory Region
 
 <ul>
-<li><code>&lt;leader&gt;sh</code>: Help</li>
-<li><code>&lt;leader&gt;sk</code>: Keymaps</li>
-<li><code>&lt;leader&gt;sf</code>: Find Files</li>
-<li><code>&lt;leader&gt;sg</code>: Grep</li>
-<li><code>&lt;leader&gt;st</code>: Search Tags</li>
-<li><code>&lt;leader&gt;s.</code>: Recent Files</li>
-<li><code>&lt;leader&gt;/</code>: Search current file</li>
-<li><code>&lt;leader&gt;&lt;leader&gt;</code>: Search open buffers</li>
-<li><code>&lt;leader&gt;s\</code>: Live Grep in Open Files</li>
+<li><img loading="lazy" src="assets/memory_regions.webp" alt="" /></li>
 </ul></li>
 </ul>
 
@@ -285,7 +276,9 @@
 		   <summary>Table of Content</summary>
 		<nav>
 <ul>
-<li><a href="#keymaps">Keymaps</a></li>
+<li><a href="#threads">Threads</a></li>
+<li><a href="#general">
+General</a></li>
 </ul>
 </nav>
 

@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>C - AK#Notes</title>
+		<title>Vim - AK#Notes</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 		<meta name="author" content="AnzenKodo">
 		<meta name="theme-color" content="#FF6C22">
-		<meta name="description" content="# Libraries  - X11: [XCB Information](https://github.com/valignatev/jai-on-linux/blob/master/generat">
-		<meta property="og:description" content="# Libraries  - X11: [XCB Information](https://github.com/valignatev/jai-on-linux/blob/master/generat">
+		<meta name="description" content="## Keymaps  - Spells 	- `z=`: suggest correctly spelled words. 	- `]s` & `[s`: Move to misspelled wo">
+		<meta property="og:description" content="## Keymaps  - Spells 	- `z=`: suggest correctly spelled words. 	- `]s` & `[s`: Move to misspelled wo">
 		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
 		<meta property="og:image:alt" content="AK#Notes logo">
 		<meta property="og:site_name" content="AK#Notes">
-		<meta property="og:title" content="C - AK#Notes">
-		<meta property="og:url" content="https://AnzenKodo.github.io/notes/notes/Code/C.html">
+		<meta property="og:title" content="Vim - AK#Notes">
+		<meta property="og:url" content="https://AnzenKodo.github.io/notes/notes/Programming/Vim.html">
 		<meta property="og:type" content="article">
 		<meta property="og:article:author" content="AnzenKodo">
 		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
@@ -222,37 +222,61 @@
 			<!-- <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;"> -->
 		</header>
 		<main id="skip-top-main">
-			<h1 style="font-size: 2.3rem; margin-top: 0;">C</h1>
-			<h1><a name="libraries" class="heading-anchor" href="#libraries" rel="nofollow" aria-hidden="true"></a>Libraries</h1>
+			<h1 style="font-size: 2.3rem; margin-top: 0;">Vim</h1>
+			<h2><a name="keymaps" class="heading-anchor" href="#keymaps" rel="nofollow" aria-hidden="true"></a>Keymaps</h2>
 <ul>
-<li>X11: <a href="https://github.com/valignatev/jai-on-linux/blob/master/generated/xcb.jai">XCB Information</a></li>
-</ul>
-<h1><a name="functions" class="heading-anchor" href="#functions" rel="nofollow" aria-hidden="true"></a>Functions</h1>
-<ul>
-<li><a href="https://github.com/skywind3000/FastMemcpy/blob/master/FastMemcpy.h">Fast MemCpy</a></li>
-</ul>
-<h1><a name="projects" class="heading-anchor" href="#projects" rel="nofollow" aria-hidden="true"></a>Projects</h1>
-<ul>
-<li><a href="https://github.com/rsvargas/handmade_hero">handmade_hero</a></li>
-</ul>
+<li>Spells
 
-<p>How to protect C Programs:</p>
+<ul>
+<li><code>z=</code>: suggest correctly spelled words.</li>
+<li><code>]s</code> &amp; <code>[s</code>: Move to misspelled words.</li>
+<li><code>zg</code>: add to dictionary</li>
+<li><code>zw</code>: remove to dictionary</li>
+</ul></li>
+<li>Autocomplete
 
-<p><a href="https://developers.redhat.com/articles/2022/06/02/use-compiler-flags-stack-protection-gcc-and-clang#">Use compiler flags for stack protection in GCC and Clang</a></p>
-<h2><a name="examples" class="heading-anchor" href="#examples" rel="nofollow" aria-hidden="true"></a>Examples</h2>
 <ul>
-<li><a href="https://croakingkero.com/tutorials/opening_a_window_with_xlib/">Opening a Window With Xlib</a></li>
-</ul>
-<h2><a name="tools" class="heading-anchor" href="#tools" rel="nofollow" aria-hidden="true"></a>Tools</h2>
+<li><code>Alt-o</code>: Omni-completion</li>
+<li><code>Alt-d</code>: Dictionary completion</li>
+<li><code>Alt-f</code>: Filename completion</li>
+<li><code>Alt-l</code>: Whole line completion</li>
+<li><code>Alt-n</code>: Next identifier from current file</li>
+<li><code>Alt-i</code>: Next identifier from included files</li>
+</ul></li>
+<li>Tag Jump
+
 <ul>
-<li><a href="https://db.in.tum.de/~finis/x86%20intrinsics%20cheat%20sheet%20v1.0.pdf">x86 Intrinsics Cheat Sheet</a></li>
-<li><a href="https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#">Intel® Intrinsics Guide</a></li>
-<li><a href="https://web.stanford.edu/class/cs107/resources/x86-64-reference.pdf">x86-64 Assembly Reference Sheet</a></li>
-</ul>
-<h2><a name="learn" class="heading-anchor" href="#learn" rel="nofollow" aria-hidden="true"></a>Learn</h2>
+<li><code>]g</code>: Jump to definiton</li>
+<li><code>g]</code>: List all tags</li>
+<li><code>[g</code>: Return to Jump</li>
+</ul></li>
+<li>LSP
+
 <ul>
-<li><a href="https://www.youtube.com/watch?v=ebIXo9OaNRg">Shadow Stack</a></li>
-<li><a href="https://www.youtube.com/watch?v=N7kGd76evsM">Stack Canary</a></li>
+<li><code>Shfit-k</code>: Show definition.</li>
+<li><code>grr</code>: Show references</li>
+<li><code>grn</code>: Rename</li>
+</ul></li>
+<li>Diagnostics
+
+<ul>
+<li><code>Shift-L</code>: Show Diagnostics</li>
+<li><code>]d</code> next diagnostic in the current buffer</li>
+<li><code>[d</code> previous diagnostic in the current buffer</li>
+</ul></li>
+<li>Telescope
+
+<ul>
+<li><code>&lt;leader&gt;sh</code>: Help</li>
+<li><code>&lt;leader&gt;sk</code>: Keymaps</li>
+<li><code>&lt;leader&gt;sf</code>: Find Files</li>
+<li><code>&lt;leader&gt;sg</code>: Grep</li>
+<li><code>&lt;leader&gt;st</code>: Search Tags</li>
+<li><code>&lt;leader&gt;s.</code>: Recent Files</li>
+<li><code>&lt;leader&gt;/</code>: Search current file</li>
+<li><code>&lt;leader&gt;&lt;leader&gt;</code>: Search open buffers</li>
+<li><code>&lt;leader&gt;s\</code>: Live Grep in Open Files</li>
+</ul></li>
 </ul>
 
 		</main>
@@ -260,18 +284,8 @@
 		<details id="table-of-content">
 		   <summary>Table of Content</summary>
 		<nav>
-<li><a href="#libraries">Libraries</a></li>
-<li><a href="#functions">
-Functions</a></li>
-<li><a href="#projects">
-Projects</a>
 <ul>
-<li><a href="#examples">
-Examples</a></li>
-<li><a href="#tools">
-Tools</a></li>
-<li><a href="#learn">
-Learn</a></li>
+<li><a href="#keymaps">Keymaps</a></li>
 </ul>
 </nav>
 

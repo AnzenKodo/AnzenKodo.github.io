@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>OS - AK#Notes</title>
+		<title>C - AK#Notes</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 		<meta name="author" content="AnzenKodo">
 		<meta name="theme-color" content="#FF6C22">
-		<meta name="description" content="## Threads - **Context Switch**: Act of stopping one thread and starting other thread called context">
-		<meta property="og:description" content="## Threads - **Context Switch**: Act of stopping one thread and starting other thread called context">
+		<meta name="description" content="# Libraries  - X11: [XCB Information](https://github.com/valignatev/jai-on-linux/blob/master/generat">
+		<meta property="og:description" content="# Libraries  - X11: [XCB Information](https://github.com/valignatev/jai-on-linux/blob/master/generat">
 		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
 		<meta property="og:image:alt" content="AK#Notes logo">
 		<meta property="og:site_name" content="AK#Notes">
-		<meta property="og:title" content="OS - AK#Notes">
-		<meta property="og:url" content="https://AnzenKodo.github.io/notes/notes/Code/OS.html">
+		<meta property="og:title" content="C - AK#Notes">
+		<meta property="og:url" content="https://AnzenKodo.github.io/notes/notes/Programming/Languages/C.html">
 		<meta property="og:type" content="article">
 		<meta property="og:article:author" content="AnzenKodo">
 		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
@@ -222,52 +222,37 @@
 			<!-- <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;"> -->
 		</header>
 		<main id="skip-top-main">
-			<h1 style="font-size: 2.3rem; margin-top: 0;">OS</h1>
-			<h2><a name="threads" class="heading-anchor" href="#threads" rel="nofollow" aria-hidden="true"></a>Threads</h2>
+			<h1 style="font-size: 2.3rem; margin-top: 0;">C</h1>
+			<h1><a name="libraries" class="heading-anchor" href="#libraries" rel="nofollow" aria-hidden="true"></a>Libraries</h1>
 <ul>
-<li><strong>Context Switch</strong>: Act of stopping one thread and starting other thread called context switch.
-
-<ul>
-<li><img loading="lazy" src="./assets/Pasted%20image%2020250804163411.webp" alt="" /></li>
-<li>Process can't effectively share resources, while threads can.</li>
-<li>Context switch is not cheap.</li>
-<li><img loading="lazy" src="./assets/Pasted%20image%2020250804163720.webp" alt="" /></li>
-<li><img loading="lazy" src="./assets/Pasted%20image%2020250804163752.webp" alt="" /></li>
-<li><img loading="lazy" src="./assets/Pasted%20image%2020250804163848.webp" alt="" /></li>
-</ul></li>
-<li><strong>Latency</strong>: The time to completion of a task. Measured in time units.</li>
-<li><strong>Throughput</strong>: The amount tasks completed in a given period. Measured in tasks/time unit.</li>
-<li><img loading="lazy" src="./assets/race_condition.webp" alt="" />
-
-<ul>
-<li><img loading="lazy" src="./assets/memory_regions_preview.webp" alt="" /></li>
-</ul></li>
-<li><img loading="lazy" src="./assets/deadlock.webp" alt="" /></li>
-<li>Thread
-
-<ul>
-<li><img loading="lazy" src="./assets/semaphore.webp" alt="" /></li>
-<li><img loading="lazy" src="./assets/thread_join.webp" alt="" /></li>
-<li><img loading="lazy" src="./assets/iter-thread.webp" alt="" /></li>
-</ul></li>
-<li>Thread Pooling
-
-<ul>
-<li><img loading="lazy" src="file:///C:%5CUsers%5Caman.v%5CDownloads%5Cpooling.png" alt="pooling.png" /></li>
-</ul></li>
+<li>X11: <a href="https://github.com/valignatev/jai-on-linux/blob/master/generated/xcb.jai">XCB Information</a></li>
 </ul>
-<h2><a name="general" class="heading-anchor" href="#general" rel="nofollow" aria-hidden="true"></a>General</h2>
+<h1><a name="functions" class="heading-anchor" href="#functions" rel="nofollow" aria-hidden="true"></a>Functions</h1>
 <ul>
-<li><strong>IO</strong>
+<li><a href="https://github.com/skywind3000/FastMemcpy/blob/master/FastMemcpy.h">Fast MemCpy</a></li>
+</ul>
+<h1><a name="projects" class="heading-anchor" href="#projects" rel="nofollow" aria-hidden="true"></a>Projects</h1>
+<ul>
+<li><a href="https://github.com/rsvargas/handmade_hero">handmade_hero</a></li>
+</ul>
 
-<ul>
-<li><img loading="lazy" src="./assets/io.webp" alt="" /></li>
-</ul></li>
-<li>Memory Region
+<p>How to protect C Programs:</p>
 
+<p><a href="https://developers.redhat.com/articles/2022/06/02/use-compiler-flags-stack-protection-gcc-and-clang#">Use compiler flags for stack protection in GCC and Clang</a></p>
+<h2><a name="examples" class="heading-anchor" href="#examples" rel="nofollow" aria-hidden="true"></a>Examples</h2>
 <ul>
-<li><img loading="lazy" src="./assets/memory_regions.webp" alt="" /></li>
-</ul></li>
+<li><a href="https://croakingkero.com/tutorials/opening_a_window_with_xlib/">Opening a Window With Xlib</a></li>
+</ul>
+<h2><a name="tools" class="heading-anchor" href="#tools" rel="nofollow" aria-hidden="true"></a>Tools</h2>
+<ul>
+<li><a href="https://db.in.tum.de/~finis/x86%20intrinsics%20cheat%20sheet%20v1.0.pdf">x86 Intrinsics Cheat Sheet</a></li>
+<li><a href="https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#">Intel® Intrinsics Guide</a></li>
+<li><a href="https://web.stanford.edu/class/cs107/resources/x86-64-reference.pdf">x86-64 Assembly Reference Sheet</a></li>
+</ul>
+<h2><a name="learn" class="heading-anchor" href="#learn" rel="nofollow" aria-hidden="true"></a>Learn</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=ebIXo9OaNRg">Shadow Stack</a></li>
+<li><a href="https://www.youtube.com/watch?v=N7kGd76evsM">Stack Canary</a></li>
 </ul>
 
 		</main>
@@ -275,10 +260,18 @@
 		<details id="table-of-content">
 		   <summary>Table of Content</summary>
 		<nav>
+<li><a href="#libraries">Libraries</a></li>
+<li><a href="#functions">
+Functions</a></li>
+<li><a href="#projects">
+Projects</a>
 <ul>
-<li><a href="#threads">Threads</a></li>
-<li><a href="#general">
-General</a></li>
+<li><a href="#examples">
+Examples</a></li>
+<li><a href="#tools">
+Tools</a></li>
+<li><a href="#learn">
+Learn</a></li>
 </ul>
 </nav>
 

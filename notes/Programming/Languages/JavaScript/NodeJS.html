@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>CSS - AK#Notes</title>
+		<title>NodeJS - AK#Notes</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 		<meta name="author" content="AnzenKodo">
 		<meta name="theme-color" content="#FF6C22">
-		<meta name="description" content="# CSS  [SASS](CSS%208946e12a95f04e3490bd9c09bfb99d1e/SASS%20d57c9cbb233644a3a615a487f4cdf949.md)  - ">
-		<meta property="og:description" content="# CSS  [SASS](CSS%208946e12a95f04e3490bd9c09bfb99d1e/SASS%20d57c9cbb233644a3a615a487f4cdf949.md)  - ">
+		<meta name="description" content="# NodeJS  From [Internshala Training NodeJS Course](https://trainings.internshala.com/nodejs-trainin">
+		<meta property="og:description" content="# NodeJS  From [Internshala Training NodeJS Course](https://trainings.internshala.com/nodejs-trainin">
 		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
 		<meta property="og:image:alt" content="AK#Notes logo">
 		<meta property="og:site_name" content="AK#Notes">
-		<meta property="og:title" content="CSS - AK#Notes">
-		<meta property="og:url" content="https://AnzenKodo.github.io/notes/notes/Code/Old/CSS.html">
+		<meta property="og:title" content="NodeJS - AK#Notes">
+		<meta property="og:url" content="https://AnzenKodo.github.io/notes/notes/Programming/Languages/JavaScript/NodeJS.html">
 		<meta property="og:type" content="article">
 		<meta property="og:article:author" content="AnzenKodo">
 		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
@@ -222,14 +222,228 @@
 			<!-- <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;"> -->
 		</header>
 		<main id="skip-top-main">
-			<h1 style="font-size: 2.3rem; margin-top: 0;">CSS</h1>
-			<h1><a name="css" class="heading-anchor" href="#css" rel="nofollow" aria-hidden="true"></a>CSS</h1>
-<p><a href="CSS%208946e12a95f04e3490bd9c09bfb99d1e/SASS%20d57c9cbb233644a3a615a487f4cdf949.html">SASS</a></p>
+			<h1 style="font-size: 2.3rem; margin-top: 0;">NodeJS</h1>
+			<h1><a name="nodejs" class="heading-anchor" href="#nodejs" rel="nofollow" aria-hidden="true"></a>NodeJS</h1>
+<p>From <a href="https://trainings.internshala.com/nodejs-training">Internshala Training NodeJS Course</a></p>
+<h1><a name="require" class="heading-anchor" href="#require" rel="nofollow" aria-hidden="true"></a>Require</h1>
+<ul>
+<li><p>Import node module</p>
+
+<div class="code-block"><span class="code-block-language-name">.jsx</span><html>
+<style type="text/css">
+/* Background */ .bg { color: #282c34 }
+/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
+/* Other */ .chroma .x { color: #c9c9c9 }
+/* Error */ .chroma .err { color: #cf5967 }
+/* CodeLine */ .chroma .cl { color: #c9c9c9 }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
+/* Keyword */ .chroma .k { color: #7fbaf5 }
+/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
+/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
+/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
+/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
+/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
+/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
+/* Name */ .chroma .n { color: #c9c9c9 }
+/* NameAttribute */ .chroma .na { color: #bc74c4 }
+/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
+/* NameClass */ .chroma .nc { color: #ecbe7b }
+/* NameConstant */ .chroma .no { color: #ecbe7b }
+/* NameDecorator */ .chroma .nd { color: #ecbe7b }
+/* NameEntity */ .chroma .ni { color: #c9c9c9 }
+/* NameException */ .chroma .ne { color: #cf5967 }
+/* NameFunction */ .chroma .nf { color: #57c7ff }
+/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
+/* NameLabel */ .chroma .nl { color: #cf5967 }
+/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
+/* NameOther */ .chroma .nx { color: #c9c9c9 }
+/* NameProperty */ .chroma .py { color: #c9c9c9 }
+/* NameTag */ .chroma .nt { color: #bc74c4 }
+/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
+/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
+/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
+/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
+/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
+/* Literal */ .chroma .l { color: #c9c9c9 }
+/* LiteralDate */ .chroma .ld { color: #57c7ff }
+/* LiteralString */ .chroma .s { color: #82cc6a }
+/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
+/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
+/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
+/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
+/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
+/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
+/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
+/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
+/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
+/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
+/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
+/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
+/* LiteralNumber */ .chroma .m { color: #56b6c2 }
+/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
+/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
+/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
+/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
+/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
+/* Operator */ .chroma .o { color: #bc74c4 }
+/* OperatorWord */ .chroma .ow { color: #bc74c4 }
+/* Punctuation */ .chroma .p { color: #56b6c2 }
+/* Comment */ .chroma .c { color: #3e4460 }
+/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #3e4460 }
+/* CommentSingle */ .chroma .c1 { color: #3e4460 }
+/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
+/* Generic */ .chroma .g { color: #c9c9c9 }
+/* GenericDeleted */ .chroma .gd { color: #cf5967 }
+/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
+/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
+/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #ecbe7b }
+/* GenericOutput */ .chroma .go { color: #43454f }
+/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
+/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
+/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
+/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
+/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
+body { color: #282c34; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="kr">const</span> <span class="p">{</span> <span class="nx">readFs</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&#34;fs&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="p">{</span> <span class="nx">readHttps</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&#34;https&#34;</span><span class="p">);</span>
+</span></span></code></pre>
+</body>
+</html>
+</div></li>
+
+<li><p>Input the string in <code>console.log</code>.</p>
+
+<div class="code-block"><span class="code-block-language-name">.jsx</span><html>
+<style type="text/css">
+/* Background */ .bg { color: #282c34 }
+/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
+/* Other */ .chroma .x { color: #c9c9c9 }
+/* Error */ .chroma .err { color: #cf5967 }
+/* CodeLine */ .chroma .cl { color: #c9c9c9 }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
+/* Keyword */ .chroma .k { color: #7fbaf5 }
+/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
+/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
+/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
+/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
+/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
+/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
+/* Name */ .chroma .n { color: #c9c9c9 }
+/* NameAttribute */ .chroma .na { color: #bc74c4 }
+/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
+/* NameClass */ .chroma .nc { color: #ecbe7b }
+/* NameConstant */ .chroma .no { color: #ecbe7b }
+/* NameDecorator */ .chroma .nd { color: #ecbe7b }
+/* NameEntity */ .chroma .ni { color: #c9c9c9 }
+/* NameException */ .chroma .ne { color: #cf5967 }
+/* NameFunction */ .chroma .nf { color: #57c7ff }
+/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
+/* NameLabel */ .chroma .nl { color: #cf5967 }
+/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
+/* NameOther */ .chroma .nx { color: #c9c9c9 }
+/* NameProperty */ .chroma .py { color: #c9c9c9 }
+/* NameTag */ .chroma .nt { color: #bc74c4 }
+/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
+/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
+/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
+/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
+/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
+/* Literal */ .chroma .l { color: #c9c9c9 }
+/* LiteralDate */ .chroma .ld { color: #57c7ff }
+/* LiteralString */ .chroma .s { color: #82cc6a }
+/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
+/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
+/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
+/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
+/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
+/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
+/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
+/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
+/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
+/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
+/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
+/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
+/* LiteralNumber */ .chroma .m { color: #56b6c2 }
+/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
+/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
+/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
+/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
+/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
+/* Operator */ .chroma .o { color: #bc74c4 }
+/* OperatorWord */ .chroma .ow { color: #bc74c4 }
+/* Punctuation */ .chroma .p { color: #56b6c2 }
+/* Comment */ .chroma .c { color: #3e4460 }
+/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #3e4460 }
+/* CommentSingle */ .chroma .c1 { color: #3e4460 }
+/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
+/* Generic */ .chroma .g { color: #c9c9c9 }
+/* GenericDeleted */ .chroma .gd { color: #cf5967 }
+/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
+/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
+/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #ecbe7b }
+/* GenericOutput */ .chroma .go { color: #43454f }
+/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
+/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
+/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
+/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
+/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
+body { color: #282c34; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nx">st</span> <span class="nx">readLine</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&#34;readline&#34;</span><span class="p">).</span><span class="nx">createInterface</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">output</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">stdout</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">input</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">stdin</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">readLine</span><span class="p">.</span><span class="nx">question</span><span class="p">(</span><span class="s2">&#34;What is your name?\n&#34;</span><span class="p">,</span> <span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Welcome </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">readLine</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// What is your name?
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Jimmin &lt;= Ask to input here
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Welcome Jimmin
+</span></span></span></code></pre>
+</body>
+</html>
+</div></li>
+</ul>
+<h1><a name="module" class="heading-anchor" href="#module" rel="nofollow" aria-hidden="true"></a>Module</h1>
+<ul>
+<li><p>Process</p>
+
+<p>The <code>process</code> object in Node.js is a global object that can be accessed inside any module without requiring it.</p>
 
 <ul>
-<li><p>BEM Method</p>
+<li><p><code>process.on</code></p>
 
-<div class="code-block"><span class="code-block-language-name">.css</span><html>
+<div class="code-block"><span class="code-block-language-name">.jsx</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #282c34 }
 /* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
@@ -318,21 +532,18 @@
 /* TextWhitespace */ .chroma .w { color: #c9c9c9 }
 body { color: #282c34; }
 </style><body class="bg">
-<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="c">/* Block component */</span>
-</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">btn</span> <span class="p">{}</span>
-</span></span><span class="line"><span class="cl"><span class="c">/* Element that depends upon the block */</span>
-</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">btn__price</span> <span class="p">{}</span>
-</span></span><span class="line"><span class="cl"><span class="c">/* Modifier that changes the style of the block */</span>
-</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">btn--orange</span> <span class="p">{}</span>
-</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">btn--big</span> <span class="p">{}</span>
-</span></span></code></pre>
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nx">process</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;beforeExit&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">code</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Process beforeExit event with code: &#39;</span><span class="p">,</span> <span class="nx">code</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Process beforeExit event with code:  0                                                                                             /0.3s
+</span></span></span></code></pre>
 </body>
 </html>
 </div></li>
 
-<li><p>Dark Mode Setting</p>
+<li><p>Process expressions</p>
 
-<div class="code-block"><span class="code-block-language-name">.css</span><html>
+<div class="code-block"><span class="code-block-language-name">.jsx</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #282c34 }
 /* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
@@ -421,221 +632,31 @@ body { color: #282c34; }
 /* TextWhitespace */ .chroma .w { color: #c9c9c9 }
 body { color: #282c34; }
 </style><body class="bg">
-<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="p">:</span><span class="nd">root</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="n">color-scheme</span><span class="p">:</span> <span class="n">light</span> <span class="n">dark</span><span class="p">;</span> <span class="c">/* both supported */</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre>
-</body>
-</html>
-</div></li>
-
-<li><p>Image Dark</p>
-
-<ul>
-<li><p>Apply the filter directly on the body tag.</p>
-
-<div class="code-block"><span class="code-block-language-name">.css</span><html>
-<style type="text/css">
-/* Background */ .bg { color: #282c34 }
-/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
-/* Other */ .chroma .x { color: #c9c9c9 }
-/* Error */ .chroma .err { color: #cf5967 }
-/* CodeLine */ .chroma .cl { color: #c9c9c9 }
-/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
-/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
-/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
-/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
-/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
-/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
-/* Keyword */ .chroma .k { color: #7fbaf5 }
-/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
-/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
-/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
-/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
-/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
-/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
-/* Name */ .chroma .n { color: #c9c9c9 }
-/* NameAttribute */ .chroma .na { color: #bc74c4 }
-/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
-/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
-/* NameClass */ .chroma .nc { color: #ecbe7b }
-/* NameConstant */ .chroma .no { color: #ecbe7b }
-/* NameDecorator */ .chroma .nd { color: #ecbe7b }
-/* NameEntity */ .chroma .ni { color: #c9c9c9 }
-/* NameException */ .chroma .ne { color: #cf5967 }
-/* NameFunction */ .chroma .nf { color: #57c7ff }
-/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
-/* NameLabel */ .chroma .nl { color: #cf5967 }
-/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
-/* NameOther */ .chroma .nx { color: #c9c9c9 }
-/* NameProperty */ .chroma .py { color: #c9c9c9 }
-/* NameTag */ .chroma .nt { color: #bc74c4 }
-/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
-/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
-/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
-/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
-/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
-/* Literal */ .chroma .l { color: #c9c9c9 }
-/* LiteralDate */ .chroma .ld { color: #57c7ff }
-/* LiteralString */ .chroma .s { color: #82cc6a }
-/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
-/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
-/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
-/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
-/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
-/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
-/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
-/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
-/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
-/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
-/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
-/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
-/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
-/* LiteralNumber */ .chroma .m { color: #56b6c2 }
-/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
-/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
-/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
-/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
-/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
-/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
-/* Operator */ .chroma .o { color: #bc74c4 }
-/* OperatorWord */ .chroma .ow { color: #bc74c4 }
-/* Punctuation */ .chroma .p { color: #56b6c2 }
-/* Comment */ .chroma .c { color: #3e4460 }
-/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
-/* CommentMultiline */ .chroma .cm { color: #3e4460 }
-/* CommentSingle */ .chroma .c1 { color: #3e4460 }
-/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
-/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
-/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
-/* Generic */ .chroma .g { color: #c9c9c9 }
-/* GenericDeleted */ .chroma .gd { color: #cf5967 }
-/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
-/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
-/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
-/* GenericInserted */ .chroma .gi { color: #ecbe7b }
-/* GenericOutput */ .chroma .go { color: #43454f }
-/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
-/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
-/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
-/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
-/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
-/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
-body { color: #282c34; }
-</style><body class="bg">
-<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nt">body</span><span class="p">.</span><span class="nc">dark-theme</span> <span class="nt">img</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="k">filter</span><span class="p">:</span> <span class="nb">brightness</span><span class="p">(</span><span class="mf">.8</span><span class="p">)</span> <span class="nb">contrast</span><span class="p">(</span><span class="mf">1.2</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre>
-</body>
-</html>
-</div></li>
-
-<li><p>Or apply it via media query.</p>
-
-<div class="code-block"><span class="code-block-language-name">.css</span><html>
-<style type="text/css">
-/* Background */ .bg { color: #282c34 }
-/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
-/* Other */ .chroma .x { color: #c9c9c9 }
-/* Error */ .chroma .err { color: #cf5967 }
-/* CodeLine */ .chroma .cl { color: #c9c9c9 }
-/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
-/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
-/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
-/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
-/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
-/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
-/* Keyword */ .chroma .k { color: #7fbaf5 }
-/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
-/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
-/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
-/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
-/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
-/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
-/* Name */ .chroma .n { color: #c9c9c9 }
-/* NameAttribute */ .chroma .na { color: #bc74c4 }
-/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
-/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
-/* NameClass */ .chroma .nc { color: #ecbe7b }
-/* NameConstant */ .chroma .no { color: #ecbe7b }
-/* NameDecorator */ .chroma .nd { color: #ecbe7b }
-/* NameEntity */ .chroma .ni { color: #c9c9c9 }
-/* NameException */ .chroma .ne { color: #cf5967 }
-/* NameFunction */ .chroma .nf { color: #57c7ff }
-/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
-/* NameLabel */ .chroma .nl { color: #cf5967 }
-/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
-/* NameOther */ .chroma .nx { color: #c9c9c9 }
-/* NameProperty */ .chroma .py { color: #c9c9c9 }
-/* NameTag */ .chroma .nt { color: #bc74c4 }
-/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
-/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
-/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
-/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
-/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
-/* Literal */ .chroma .l { color: #c9c9c9 }
-/* LiteralDate */ .chroma .ld { color: #57c7ff }
-/* LiteralString */ .chroma .s { color: #82cc6a }
-/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
-/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
-/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
-/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
-/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
-/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
-/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
-/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
-/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
-/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
-/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
-/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
-/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
-/* LiteralNumber */ .chroma .m { color: #56b6c2 }
-/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
-/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
-/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
-/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
-/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
-/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
-/* Operator */ .chroma .o { color: #bc74c4 }
-/* OperatorWord */ .chroma .ow { color: #bc74c4 }
-/* Punctuation */ .chroma .p { color: #56b6c2 }
-/* Comment */ .chroma .c { color: #3e4460 }
-/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
-/* CommentMultiline */ .chroma .cm { color: #3e4460 }
-/* CommentSingle */ .chroma .c1 { color: #3e4460 }
-/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
-/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
-/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
-/* Generic */ .chroma .g { color: #c9c9c9 }
-/* GenericDeleted */ .chroma .gd { color: #cf5967 }
-/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
-/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
-/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
-/* GenericInserted */ .chroma .gi { color: #ecbe7b }
-/* GenericOutput */ .chroma .go { color: #43454f }
-/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
-/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
-/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
-/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
-/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
-/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
-body { color: #282c34; }
-</style><body class="bg">
-<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="p">@</span><span class="k">media</span> <span class="o">(</span><span class="nt">prefers-color-scheme</span><span class="o">:</span> <span class="nt">dark</span><span class="o">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">img</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">filter</span><span class="p">:</span> <span class="nb">brightness</span><span class="p">(</span><span class="mf">.8</span><span class="p">)</span> <span class="nb">contrast</span><span class="p">(</span><span class="mf">1.2</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre>
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">ppid</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 21321
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">argv</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// [
+</span></span></span><span class="line"><span class="cl"><span class="c1">//  &#39;/snap/node/5148/bin/node&#39;,
+</span></span></span><span class="line"><span class="cl"><span class="c1">//  &#39;/home/kurama/Documents/Projects/Node JS/app.js&#39;
+</span></span></span><span class="line"><span class="cl"><span class="c1">//]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Reports are compact? </span><span class="si">${</span><span class="nx">process</span><span class="p">.</span><span class="nx">report</span><span class="p">.</span><span class="nx">compact</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Reports are compact? false                                                                                                         /0.3s
+</span></span></span></code></pre>
 </body>
 </html>
 </div></li>
 </ul></li>
 
-<li><p>Image prefer Dark</p>
+<li><p>Module</p>
 
-<div class="code-block"><span class="code-block-language-name">.html</span><html>
+<p>The <code>module</code> is same as process but you can only access within the file information.</p></li>
+
+<li><p>Event</p>
+
+<ul>
+<li><p>EventEmitter</p>
+
+<div class="code-block"><span class="code-block-language-name">.jsx</span><html>
 <style type="text/css">
 /* Background */ .bg { color: #282c34 }
 /* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
@@ -724,138 +745,39 @@ body { color: #282c34; }
 /* TextWhitespace */ .chroma .w { color: #c9c9c9 }
 body { color: #282c34; }
 </style><body class="bg">
-<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">picture</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="c">&lt;!-- Use this image if the user&#39;s OS setting is light or unset --&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">source</span> <span class="na">srcset</span><span class="o">=</span><span class="s">&#34;photo-light.png&#34;</span> <span class="na">media</span><span class="o">=</span><span class="s">&#34;(prefers-color-scheme: light) or (prefers-color-scheme: no-preference)&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="c">&lt;!-- Use this image if the user&#39;s OS setting is dark --&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">source</span> <span class="na">srcset</span><span class="o">=</span><span class="s">&#34;photo-dark.png&#34;</span> <span class="na">media</span><span class="o">=</span><span class="s">&#34;(prefers-color-scheme: dark)&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">picture</span><span class="p">&gt;</span>
-</span></span></code></pre>
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">events</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&#34;events&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">eEmitter</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">events</span><span class="p">.</span><span class="nx">EventEmitter</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">getParty</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;Time to party&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">ran</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">10</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Party starts in </span><span class="si">${</span><span class="nx">ran</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">tester</span><span class="p">(</span><span class="nx">ran</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">eEmitter</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&#34;music&#34;</span><span class="p">,</span> <span class="nx">getParty</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">tester</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">tester</span><span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">setTimeout</span><span class="p">((</span><span class="nx">e</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">eEmitter</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s2">&#34;music&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span> <span class="nx">val</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Time to party
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Party starts in 5
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Time to party
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Party starts in 8
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Time to party
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Party starts in 3
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Time to party
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Party starts in 9
+</span></span></span></code></pre>
 </body>
 </html>
 </div></li>
-
-<li><p>Non-standard attributes, dataset</p>
-
-<div class="code-block"><span class="code-block-language-name">.css</span><html>
-<style type="text/css">
-/* Background */ .bg { color: #282c34 }
-/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
-/* Other */ .chroma .x { color: #c9c9c9 }
-/* Error */ .chroma .err { color: #cf5967 }
-/* CodeLine */ .chroma .cl { color: #c9c9c9 }
-/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
-/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
-/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
-/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
-/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
-/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
-/* Keyword */ .chroma .k { color: #7fbaf5 }
-/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
-/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
-/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
-/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
-/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
-/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
-/* Name */ .chroma .n { color: #c9c9c9 }
-/* NameAttribute */ .chroma .na { color: #bc74c4 }
-/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
-/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
-/* NameClass */ .chroma .nc { color: #ecbe7b }
-/* NameConstant */ .chroma .no { color: #ecbe7b }
-/* NameDecorator */ .chroma .nd { color: #ecbe7b }
-/* NameEntity */ .chroma .ni { color: #c9c9c9 }
-/* NameException */ .chroma .ne { color: #cf5967 }
-/* NameFunction */ .chroma .nf { color: #57c7ff }
-/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
-/* NameLabel */ .chroma .nl { color: #cf5967 }
-/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
-/* NameOther */ .chroma .nx { color: #c9c9c9 }
-/* NameProperty */ .chroma .py { color: #c9c9c9 }
-/* NameTag */ .chroma .nt { color: #bc74c4 }
-/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
-/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
-/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
-/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
-/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
-/* Literal */ .chroma .l { color: #c9c9c9 }
-/* LiteralDate */ .chroma .ld { color: #57c7ff }
-/* LiteralString */ .chroma .s { color: #82cc6a }
-/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
-/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
-/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
-/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
-/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
-/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
-/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
-/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
-/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
-/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
-/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
-/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
-/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
-/* LiteralNumber */ .chroma .m { color: #56b6c2 }
-/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
-/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
-/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
-/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
-/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
-/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
-/* Operator */ .chroma .o { color: #bc74c4 }
-/* OperatorWord */ .chroma .ow { color: #bc74c4 }
-/* Punctuation */ .chroma .p { color: #56b6c2 }
-/* Comment */ .chroma .c { color: #3e4460 }
-/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
-/* CommentMultiline */ .chroma .cm { color: #3e4460 }
-/* CommentSingle */ .chroma .c1 { color: #3e4460 }
-/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
-/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
-/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
-/* Generic */ .chroma .g { color: #c9c9c9 }
-/* GenericDeleted */ .chroma .gd { color: #cf5967 }
-/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
-/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
-/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
-/* GenericInserted */ .chroma .gi { color: #ecbe7b }
-/* GenericOutput */ .chroma .go { color: #43454f }
-/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
-/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
-/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
-/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
-/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
-/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
-body { color: #282c34; }
-</style><body class="bg">
-<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="o">&lt;</span><span class="nt">style</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="c">/* styles rely on the custom attribute &#34;order-state&#34; */</span>
-</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">order</span><span class="o">[</span><span class="nt">order-state</span><span class="o">=</span><span class="s2">&#34;new&#34;</span><span class="o">]</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">color</span><span class="p">:</span> <span class="kc">green</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">order</span><span class="o">[</span><span class="nt">order-state</span><span class="o">=</span><span class="s2">&#34;pending&#34;</span><span class="o">]</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">color</span><span class="p">:</span> <span class="kc">blue</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">order</span><span class="o">[</span><span class="nt">order-state</span><span class="o">=</span><span class="s2">&#34;canceled&#34;</span><span class="o">]</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="o">&lt;/</span><span class="nt">style</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="nt">div</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&#34;order&#34;</span> <span class="nt">order-state</span><span class="o">=</span><span class="s2">&#34;new&#34;</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">A</span> <span class="nt">new</span> <span class="nt">order</span><span class="o">.</span>
-</span></span><span class="line"><span class="cl"><span class="o">&lt;/</span><span class="nt">div</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="nt">div</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&#34;order&#34;</span> <span class="nt">order-state</span><span class="o">=</span><span class="s2">&#34;pending&#34;</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">A</span> <span class="nt">pending</span> <span class="nt">order</span><span class="o">.</span>
-</span></span><span class="line"><span class="cl"><span class="o">&lt;/</span><span class="nt">div</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="nt">div</span> <span class="nt">class</span><span class="o">=</span><span class="s2">&#34;order&#34;</span> <span class="nt">order-state</span><span class="o">=</span><span class="s2">&#34;canceled&#34;</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">A</span> <span class="nt">canceled</span> <span class="nt">order</span><span class="o">.</span>
-</span></span><span class="line"><span class="cl"><span class="o">&lt;/</span><span class="nt">div</span><span class="o">&gt;</span>
-</span></span></code></pre>
-</body>
-</html>
-</div></li>
+</ul></li>
 </ul>
 
 		</main>
@@ -863,7 +785,11 @@ body { color: #282c34; }
 		<details id="table-of-content">
 		   <summary>Table of Content</summary>
 		<nav>
-<li><a href="#css">CSS</a></li>
+<li><a href="#nodejs">NodeJS</a></li>
+<li><a href="#require">
+Require</a></li>
+<li><a href="#module">
+Module</a></li>
 </nav>
 
 		</details>
