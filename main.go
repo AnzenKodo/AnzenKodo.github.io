@@ -11,8 +11,10 @@ import (
 	"strings"
 	"bufio"
 	"time"
-    "context"
 	"net/http"
+    "context"
+    "strconv"
+    // "sort"
 
 	"github.com/mmcdole/gofeed"
 )
@@ -233,9 +235,74 @@ func make_notes() {
     })
 }
 
+type Feed_Item struct {
+    url string
+    title string
+    date string
+}
+type Feed struct {
+    url string
+    title string
+    feed_url string
+    description string
+    feed_type string
+    items []Feed_Item
+}
+type Feeds_List struct {
+    title string
+    level int
+    feeds []Feed
+}
+func countCharInStartOfString(c rune, s string) int {
+    count := 0
+    for _, c := range s {
+        if c == '#' {
+            count++
+        } else {
+            break
+        }
+    }
+    return count
+}
+func parseMdListItem(line string) (name, url string, ok bool) {
+    if len(line) < 5 || line[0] != '-' || line[1] != ' ' || line[2] != '[' {
+        return "", "", false
+    }
+    // Find the closing bracket "]"
+    closeBracketIdx := -1
+    for i := 3; i < len(line); i++ {
+        if line[i] == ']' {
+            closeBracketIdx = i
+            break
+        }
+    }
+    if closeBracketIdx == -1 {
+        return "", "", false
+    }
+    name = line[3:closeBracketIdx]
+    // Verify the next character after ] is '('
+    if closeBracketIdx+1 >= len(line) || line[closeBracketIdx+1] != '(' {
+        return "", "", false
+    }
+    // Find the closing parenthesis ')'
+    closeParenIdx := -1
+    for i := closeBracketIdx + 2; i < len(line); i++ {
+        if line[i] == ')' {
+            closeParenIdx = i
+            break
+        }
+    }
+    if closeParenIdx == -1 {
+        return "", "", false
+    }
+    // The url is between ( and )
+    url = line[closeBracketIdx+2 : closeParenIdx]
+    return name, url, true
+}
 func make_br() {
     config := get_config()
     config_opml := get_config()
+    date_format := "02-January-2006"
 
     config["theme"] = "#2fafff"
     config["favicon"] = config["website"] + "/assets/favicon/blogroll.png"
@@ -257,58 +324,95 @@ func make_br() {
     check(err, "can't open file:", in_opml_md)
     defer file.Close()
 
+    // Feed AST
     scanner := bufio.NewScanner(file)
-    ran := false
+    feed_lists := []Feeds_List{}
+    feeds_index := -1
     for scanner.Scan() {
 		line := scanner.Text()
-
         if len(line) == 0 {
             continue
         }
-        if line[0] == '#' {
-            topic := line[3:]
-            topic_id := strings.Replace(strings.ToLower(topic), " ", "_", -1)
-
-            config["content"] += "<h2 id='" + topic_id + "'><a href='#" + topic_id + "' aria-hidden='true'></a>" + topic + "</h2>"
-            if ran {
-                config_opml["content"] += "\n\t\t</outline>\n"
+        hashCount := countCharInStartOfString('#', line);
+        if (hashCount > 1) {
+            feeds_index++;
+            if feeds_index >= len(feed_lists) {
+                feed_lists = append(feed_lists, Feeds_List{})
             }
-            config_opml["content"] += "\t\t" + `<outline title="` + topic + `" text="` + topic + `">`;
+            feed_lists[feeds_index].level = hashCount
+            feed_lists[feeds_index].title = line[hashCount+1:]
         }
+
 		if line[0] == '-' {
-		    feed_url := line[2:]
+            var feed Feed
+		    feed.feed_url = line[2:]
+
+            item_name, item_url, is_md_list := parseMdListItem(line)
+            if is_md_list {
+                feed.feed_url = item_url
+                feed.title = item_name
+            }
 
             ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
             defer cancel()
-
-		    feed, err := gofeed.NewParser().ParseURLWithContext(feed_url, ctx)
+		    feed_parsed, err := gofeed.NewParser().ParseURLWithContext(feed.feed_url, ctx)
 		    if err != nil {
-                config["content"] += `<details>
-    <summary>`+feed_url+` <a href="`+feed_url+`" target="_blank">Feed</a></summary>
-    <p>`+fmt.Sprint(err)+`</p>
-</details>`
-                fmt.Fprint(os.Stderr, "Couldn't parse feed: ", feed_url, "\n", err, "\n")
-                continue
-		    }
-
-		    config["content"] += `<details>
-	<summary>`+feed.Title+` <a href="`+feed.Link+`" target="_blank">URL</a> | <a href="`+feed_url+`" target="_blank">Feed</a></summary>
-	<p>`+feed.Description+`</p>
-	<ul>`
-
-            for _, item := range feed.Items {
-                config["content"] += `<li><a href="`+item.Link+`" target="_blank">`+item.Title+`</a> `+item.Published+`</li>`
+                feed.url = feed.feed_url
+                if !is_md_list {
+                    feed.title = feed.feed_url
+                }
+                fmt.Fprint(os.Stderr, "Couldn't parse feed: ", feed.feed_url, "\n", err, "\n")
+            } else {
+                feed.url = feed_parsed.Link
+                feed.description = feed_parsed.Description
+                feed.feed_type = feed_parsed.FeedType
+                if !is_md_list {
+                    feed.title = feed_parsed.Title
+                }
+                for _, item_parsed := range feed_parsed.Items {
+                    var item Feed_Item
+                    item.url = item_parsed.Link
+                    item.title = item_parsed.Title
+                    item.date = item_parsed.PublishedParsed.Format(date_format)
+                    feed.items = append(feed.items, item)
+                }
+                fmt.Println("Parsed feed:", feed.feed_url)
             }
+            feed_lists[feeds_index].feeds = append(feed_lists[feeds_index].feeds, feed)
+        }
+    }
 
+    // Build Feed HTML
+    ran := false
+    for _, feeds_list := range feed_lists {
+        feeds_list_id := strings.Replace(strings.ToLower(feeds_list.title), " ", "_", -1)
+        config["content"] += "<h"+strconv.Itoa(feeds_list.level)+" id='" + feeds_list_id + "'><a href='#" + feeds_list_id + "' aria-hidden='true'></a>" + feeds_list.title + "</h2>"
+
+        if ran {
+            config_opml["content"] += "\n\t\t</outline>\n"
+        }
+        config_opml["content"] += "\t\t" + `<outline title="` + feeds_list.title + `" text="` + feeds_list.title + `">`;
+
+        // sort.Slice(feeds_list.feeds, func(i, j int) bool {
+        //     dateI, _ := time.Parse(date_format, feeds_list.feeds[i].items[0].date)
+        //     dateJ, _ := time.Parse(date_format, feeds_list.feeds[j].items[0].date)
+        //     return dateI.After(dateJ) // ascending order
+        // })
+        for _, feed := range feeds_list.feeds {
+            config["content"] += `<details>
+	<summary>`+feed.title+` <a href="`+feed.url+`" target="_blank">URL</a> | <a href="`+feed.feed_url+`" target="_blank">Feed</a></summary>
+	<p>`+feed.description+`</p>
+	<ul>`
+            for _, item := range feed.items {
+                config["content"] += `<li><a href="`+item.url+`" target="_blank">`+item.title+`</a> `+item.date +`</li>`
+            }
             config["content"] += `</ul>
 </details>`
 
-            config_opml["content"] += "\n\t\t\t" + `<outline text="`+feed.Title+`" title="`+feed.Title+`" htmlUrl="`+feed.Link+`" language="english" type="`+feed.FeedType+`" xmlUrl="`+feed_url+`" />`
-
-            fmt.Println("Parsed feed:", feed_url)
-		}
+            config_opml["content"] += "\n\t\t\t" + `<outline text="`+feed.title+`" title="`+feed.title+`" htmlUrl="`+feed.url+`" language="english" type="`+feed.feed_type+`" xmlUrl="`+feed.feed_url+`" />`
+        }
 		ran = true
-	}
+    }
     config_opml["content"] += "\n\t\t</outline>"
 
 	err = scanner.Err()
@@ -321,13 +425,13 @@ func make_br() {
     out := dir + "/index.html"
     parse_file(in, out, config)
 
-    in_mf := config["template"] + "/manifest.json"
-    out_mf := dir + "/manifest.json"
-    parse_file(in_mf, out_mf, config)
+    in = config["template"] + "/manifest.json"
+    out = dir + "/manifest.json"
+    parse_file(in, out, config)
 
-    in_opml := config_opml["template"] + "/feed.opml"
-    out_opml := dir + "/feed.opml"
-    parse_file(in_opml, out_opml, config_opml)
+    in = config_opml["template"] + "/feed.opml"
+    out = dir + "/feed.opml"
+    parse_file(in, out, config_opml)
 }
 
 func make_brave_reward_verification() {
@@ -382,6 +486,10 @@ License: [MIT](https://spdx.org/licenses/MIT)
 }
 
 func main() {
+    make_br();
+}
+
+func main2() {
     if len(os.Args) < 2 {
         print_help()
     }
