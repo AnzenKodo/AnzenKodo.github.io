@@ -366,6 +366,7 @@ func make_br() {
                 feed.parsed = false
                 fmt.Fprint(os.Stderr, "Couldn't parse feed: ", feed.feed_url, "\n", err, "\n")
             } else {
+                fmt.Println("Parsing feed:", feed.feed_url)
                 feed.url = feed_parsed.Link
                 feed.description = feed_parsed.Description
                 feed.feed_type = feed_parsed.FeedType
@@ -380,7 +381,6 @@ func make_br() {
                     feed.items = append(feed.items, item)
                     feed.parsed = true
                 }
-                fmt.Println("Parsed feed:", feed.feed_url)
             }
             feed_lists[feeds_index].feeds = append(feed_lists[feeds_index].feeds, feed)
         }
