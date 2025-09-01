@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>ADMT Notes - AK#Notes</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="#FF6C22">
+		<meta name="description" content="## Data warehouse  ![](../assets/data-warehousing1-1024x505.webp)  A data warehouse is a type of dat">
+		<meta property="og:description" content="## Data warehouse  ![](../assets/data-warehousing1-1024x505.webp)  A data warehouse is a type of dat">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<meta property="og:image:alt" content="AK#Notes logo">
+		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="ADMT Notes - AK#Notes">
+		<meta property="og:url" content="https://AnzenKodo.github.io/notes/notes/Collage/Sem5/ADMT Notes.html">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+
+			:root {
+				/* color-scheme: dark light; */
+				color-scheme: dark;
+				--theme: #FF6C22;
+			}
+			body {
+				max-width: 40rem;
+				margin: 0 auto;
+				font-family: system-ui;
+				padding: 0 1em;
+				color: inherit !important;
+				word-break: break-word;
+			}
+			h1, h2, h3, h4, h5, h6 {
+				margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+				font-size: 2rem;
+			}
+			h3 {
+				font-size: 1.8rem;
+			}
+			h4 {
+				font-size: 1.5rem;
+			}
+			h5 {
+				font-size: 1.3rem;
+			}
+			h6 {
+				font-size: 1rem;
+			}
+			p, li, td, code {
+				line-height: 1.5rem;
+			}
+			a {
+				color: var(--theme);
+				text-decoration: none;
+			}
+			a:hover, a:focus {
+				text-decoration: underline;
+			}
+			a:active {
+				background: var(--theme);
+				color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+				margin-top: .5rem;
+			}
+			li {
+				margin-bottom: .5rem;
+			}
+			table {
+				border-collapse: collapse;
+				overflow-x: auto;
+				display: block;
+				word-break: auto-phrase;
+				margin: 1rem 0;
+			}
+			th {
+				font-size: 1.1rem;
+				border: 2px solid;
+				padding: .3rem .3rem;
+			}
+			td {
+				border: 1px solid;
+				padding: .3rem .5rem;
+			}
+			blockquote {
+				margin-left: 0;
+				margin-right: 0;
+				border: 1px solid;
+				border-left: 10px solid;
+				padding: 0 1rem;
+			}
+				.code-block {
+				background: black;
+				overflow-x: auto;
+				padding: 0em 1em;
+				border: 1px solid;
+			}
+			.code-block-language-name {
+				position: sticky;
+				left: 95%;
+				top: .5em;
+				font-weight: bold;
+				color: white;
+			}
+			:not(pre.chroma) > code {
+				border: 1px solid;
+				padding: .3rem .2rem .2rem .2rem;
+			}
+			img {
+				max-width: 100%;
+				display: block;
+				margin: 0 auto;
+			}
+			[href="#skip-top-main"] {
+				padding: 0.3em;
+				position: absolute;
+				transform: translateY(-1000%);
+			}
+			[href="#skip-top-main"]:focus {
+				transform: translateY(0%);
+				background: var(--theme);
+				color: inherit;
+			}
+			#table-of-content {
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+				background: black;
+				padding: 0.5rem 1em;
+				z-index: 1;
+				color: white;
+			}
+			#table-of-content[open] {
+				max-height: 90%;
+				overflow-y: auto;
+				bottom: 50px;
+				margin-left: 1em;
+			}
+			#table-of-content[open] summary {
+				background: black;
+				padding: 0.5em 1em;
+				text-align: center;
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+			}
+			#table-of-content ul:first-child {
+				padding-left: 1em;
+				margin-top: 1.5em;
+			}
+			.heading-anchor::before {
+				margin-right: .5rem;
+			}
+		    h2 .heading-anchor::before {
+    			content: "#";
+    			margin-right: .5rem;
+		    }
+            h3 .heading-anchor::before {
+				content: "##";
+				margin-right: .5rem;
+			}
+            h4 .heading-anchor::before {
+				content: "###";
+				margin-right: .5rem;
+			}
+            h5 .heading-anchor::before {
+				content: "####";
+				margin-right: .5rem;
+			}
+            h6 .heading-anchor::before {
+				content: "#####";
+				margin-right: .5rem;
+			}
+			.mermaid {
+				background: black;
+				border: 1px solid;
+				margin-top: 1rem;
+				padding: 1rem;
+				font-family: monospace;
+			}
+			.mermaid svg {
+				display: block;
+				margin: auto;
+			}
+			.mermaid:has(svg) {
+				background: none;
+				border: none;
+				margin-top: 1rem;
+				padding: 0;
+			}
+			mjx-container {
+				display: math;
+				overflow-y: hidden;
+				overflow-x: auto;
+				max-width: 100%;
+				padding-bottom: .8rem;
+			}
+			iframe {
+				width: 100%;
+				height: 21rem;
+				margin: 1rem 0;
+			}
+			video {
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<a href="#skip-top-main">Skip to main</a>
+		<header>
+<!--		<h1 style="text-align: center;">-->
+			<h1 style="text-align: center;">
+				<a href="https://AnzenKodo.github.io">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+			</h1><nav style="border-top: 1px solid gray;border-bottom: 1px solid gray;padding: .5rem 0;text-align: center;margin: 0 0 2rem 0;color: gray;clear: left;line-height: 1.6rem;">
+				<a href="https://AnzenKodo.github.io/notes">Home</a> | <a href="https://AnzenKodo.github.io">About</a> | <a href="https://AnzenKodo.github.io/blogroll">Blogroll</a> | <a href="https://github.com/AnzenKodo">Github</a> | <a href="https://x.com/AnzenKodo">𝕏</a>
+			</nav>
+			<!-- <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;"> -->
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem; margin-top: 0;">ADMT Notes</h1>
+			<h2><a name="data-warehouse" class="heading-anchor" href="#data-warehouse" rel="nofollow" aria-hidden="true"></a>Data warehouse</h2>
+<p><img loading="lazy" src="../assets/data-warehousing1-1024x505.webp" alt="" /></p>
+
+<p>A data warehouse is a type of data management system that is designed to enable and support business intelligence (BI) activities, especially analytics.</p>
+<h3><a name="principles-of-data-warehouse-architecture" class="heading-anchor" href="#principles-of-data-warehouse-architecture" rel="nofollow" aria-hidden="true"></a>Principles of Data Warehouse Architecture</h3>
+<ul>
+<li>Separation of layers</li>
+<li>Scalable</li>
+<li>Resilient to change</li>
+<li>Extensive and support new integrations</li>
+<li>Secure</li>
+<li>Manageable</li>
+</ul>
+<h3><a name="the-three-tiers-of-data-warehouse-architecture" class="heading-anchor" href="#the-three-tiers-of-data-warehouse-architecture" rel="nofollow" aria-hidden="true"></a>The Three Tiers of Data Warehouse Architecture</h3>
+<ul>
+<li>Single-tiered architecture</li>
+<li>Two-tiered architecture
+
+<ul>
+<li>Metadata layer</li>
+<li>Data staging</li>
+<li>Data warehouse layer</li>
+</ul></li>
+<li>Three-tiered architecture</li>
+</ul>
+<h3><a name="best-practices-for-data-warehouse-architecture" class="heading-anchor" href="#best-practices-for-data-warehouse-architecture" rel="nofollow" aria-hidden="true"></a>Best Practices for Data Warehouse Architecture</h3>
+<ul>
+<li>Utilize materialized views to reduce latency and improve performance</li>
+<li>Separate compute and storage duties</li>
+<li>Know your data model</li>
+<li>Determine your organization’s data flow</li>
+<li>Employ automation for faster and agile operations</li>
+<li>The integration layer should be source agnostic</li>
+</ul>
+<h2><a name="data-mart" class="heading-anchor" href="#data-mart" rel="nofollow" aria-hidden="true"></a>Data Mart</h2>
+<p><img loading="lazy" src="../assets/Pasted%20image%2020231203223030.jpg" alt="" /></p>
+
+<p>A data mart is a subset of a data warehouse oriented to a specific business line. Data marts contain repositories of summarized data collected for analysis on a specific section or unit within an organization, for example, the sales department</p>
+<h2><a name="data-mart-and-data-warehouse-difference" class="heading-anchor" href="#data-mart-and-data-warehouse-difference" rel="nofollow" aria-hidden="true"></a>Data Mart and Data Warehouse Difference</h2>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Data Mart</th>
+<th>Data Warehouse</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Focus</td>
+<td>A single subject or functional organization area</td>
+<td>Enterprise-wide repository of disparate data sources</td>
+</tr>
+
+<tr>
+<td>Data Sources</td>
+<td>Relatively few sources linked to one line of business</td>
+<td>Many external and internal sources from different areas of an organization</td>
+</tr>
+
+<tr>
+<td>Size</td>
+<td>Less than 100 GB</td>
+<td>100 GB minimum but often in the range of terabytes for large organizations</td>
+</tr>
+
+<tr>
+<td>Normalization</td>
+<td>No preference between a normalized and denormalized structure</td>
+<td>Modern warehouses are mostly denormalized for quicker data querying and read performance</td>
+</tr>
+
+<tr>
+<td>Decision Types</td>
+<td>Tactical decisions pertaining to particular business lines and ways of doing things</td>
+<td>Strategic decisions that affect the entire enterprise</td>
+</tr>
+
+<tr>
+<td>Cost</td>
+<td>Typically from $10,000 upwards</td>
+<td>Varies but often greater than $100,000; for cloud solutions costs can be dramatically lower as organizations pay per use</td>
+</tr>
+
+<tr>
+<td>Setup Time</td>
+<td>3-6 months</td>
+<td>At least a year for on-premise warehouses; cloud data warehouses are much quicker to set up</td>
+</tr>
+
+<tr>
+<td>Data Held</td>
+<td>Typically summarized data</td>
+<td>Raw data, metadata, and summary data</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="data-transformation" class="heading-anchor" href="#data-transformation" rel="nofollow" aria-hidden="true"></a>Data transformation</h2>
+<p>Data transformation typically involves several steps, including:</p>
+
+<ol>
+<li><strong>Data cleaning:</strong> Removing or correcting errors, inconsistencies, and missing values in the data.</li>
+<li><strong>Data integration:</strong> Combining data from multiple sources, such as databases and spreadsheets, into a single format.</li>
+<li><strong>Data normalization</strong></li>
+<li><strong>Data reduction:</strong> Reducing the dimensionality of the data by selecting a subset of relevant features or attributes.</li>
+<li><strong>Data discretization</strong>: Converting continuous data into discrete categories or bins.</li>
+<li><strong>Data aggregation:</strong> Combining data at different levels of granularity, such as by summing or averaging, to create new features or attributes.</li>
+<li><strong>Data transformation</strong> is an important step in the data mining process as it helps to ensure that the data is in a format that is suitable for analysis and modeling, and that it is free of errors and inconsistencies.</li>
+</ol>
+
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Advantages</th>
+<th>Disadvantages</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Data Quality</td>
+<td>Improves data quality by removing errors, inconsistencies, and missing values</td>
+<td>Time-consuming process, especially when dealing with large datasets</td>
+</tr>
+
+<tr>
+<td>Data Integration</td>
+<td>Facilitates data integration from multiple sources, which can improve the accuracy and completeness of the data</td>
+<td>Can be a complex process, requiring specialized skills and knowledge to implement and interpret the results</td>
+</tr>
+
+<tr>
+<td>Data Analysis</td>
+<td>Improves data analysis by preparing the data for analysis and modeling through normalization, dimensionality reduction, and discretization</td>
+<td>Data loss, such as when discretizing continuous data, or when removing attributes or features from the data</td>
+</tr>
+
+<tr>
+<td>Data Security</td>
+<td>Increases data security by masking sensitive data or removing sensitive information from the data</td>
+<td>Data transformation can result in bias if the data is not properly understood or used</td>
+</tr>
+
+<tr>
+<td>Algorithm Performance</td>
+<td>Enhances data mining algorithm performance by reducing the dimensionality of the data and scaling the data to a common range of values</td>
+<td>Can be an expensive process, requiring significant investments in hardware, software, and personnel</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="join-operation" class="heading-anchor" href="#join-operation" rel="nofollow" aria-hidden="true"></a>Join Operation</h2>
+<p>Join operations are used in databases to combine data from two or more tables. There are several types of join operations, including nested-loop join, block nested-loop join, indexed nested-loop join, and merge join.</p>
+<h3><a name="nested-loop-join" class="heading-anchor" href="#nested-loop-join" rel="nofollow" aria-hidden="true"></a>Nested-Loop Join</h3>
+<p>The nested-loop join is the simplest physical implementation of joining two tables.</p>
+
+<div class="code-block"><html>
+<style type="text/css">
+/* Background */ .bg { color: #282c34 }
+/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
+/* Other */ .chroma .x { color: #c9c9c9 }
+/* Error */ .chroma .err { color: #cf5967 }
+/* CodeLine */ .chroma .cl { color: #c9c9c9 }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
+/* Keyword */ .chroma .k { color: #7fbaf5 }
+/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
+/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
+/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
+/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
+/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
+/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
+/* Name */ .chroma .n { color: #c9c9c9 }
+/* NameAttribute */ .chroma .na { color: #bc74c4 }
+/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
+/* NameClass */ .chroma .nc { color: #ecbe7b }
+/* NameConstant */ .chroma .no { color: #ecbe7b }
+/* NameDecorator */ .chroma .nd { color: #ecbe7b }
+/* NameEntity */ .chroma .ni { color: #c9c9c9 }
+/* NameException */ .chroma .ne { color: #cf5967 }
+/* NameFunction */ .chroma .nf { color: #57c7ff }
+/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
+/* NameLabel */ .chroma .nl { color: #cf5967 }
+/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
+/* NameOther */ .chroma .nx { color: #c9c9c9 }
+/* NameProperty */ .chroma .py { color: #c9c9c9 }
+/* NameTag */ .chroma .nt { color: #bc74c4 }
+/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
+/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
+/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
+/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
+/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
+/* Literal */ .chroma .l { color: #c9c9c9 }
+/* LiteralDate */ .chroma .ld { color: #57c7ff }
+/* LiteralString */ .chroma .s { color: #82cc6a }
+/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
+/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
+/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
+/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
+/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
+/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
+/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
+/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
+/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
+/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
+/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
+/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
+/* LiteralNumber */ .chroma .m { color: #56b6c2 }
+/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
+/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
+/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
+/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
+/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
+/* Operator */ .chroma .o { color: #bc74c4 }
+/* OperatorWord */ .chroma .ow { color: #bc74c4 }
+/* Punctuation */ .chroma .p { color: #56b6c2 }
+/* Comment */ .chroma .c { color: #3e4460 }
+/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #3e4460 }
+/* CommentSingle */ .chroma .c1 { color: #3e4460 }
+/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
+/* Generic */ .chroma .g { color: #c9c9c9 }
+/* GenericDeleted */ .chroma .gd { color: #cf5967 }
+/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
+/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
+/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #ecbe7b }
+/* GenericOutput */ .chroma .go { color: #43454f }
+/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
+/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
+/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
+/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
+/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
+body { color: #282c34; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">for each tuple tr in do begin
+</span></span><span class="line"><span class="cl">	for each tuple ts in s begin
+</span></span><span class="line"><span class="cl">		test pair(tr, ts) to see if they satisfy the join condition
+</span></span><span class="line"><span class="cl">		if they do, add tr . ts to the result;
+</span></span><span class="line"><span class="cl">	end
+</span></span><span class="line"><span class="cl">end
+</span></span></code></pre>
+</body>
+</html>
+</div><h3><a name="block-nested-loop-join" class="heading-anchor" href="#block-nested-loop-join" rel="nofollow" aria-hidden="true"></a>Block Nested-Loop Join</h3>
+<p>If the buffer is too small to hold either relation entirely in memory.</p>
+
+<p>We can still obtain a major saving in block accesses if we process the relations on a per-block basis, rather than on a per tuple basis.</p>
+
+<div class="code-block"><html>
+<style type="text/css">
+/* Background */ .bg { color: #282c34 }
+/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
+/* Other */ .chroma .x { color: #c9c9c9 }
+/* Error */ .chroma .err { color: #cf5967 }
+/* CodeLine */ .chroma .cl { color: #c9c9c9 }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
+/* Keyword */ .chroma .k { color: #7fbaf5 }
+/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
+/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
+/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
+/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
+/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
+/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
+/* Name */ .chroma .n { color: #c9c9c9 }
+/* NameAttribute */ .chroma .na { color: #bc74c4 }
+/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
+/* NameClass */ .chroma .nc { color: #ecbe7b }
+/* NameConstant */ .chroma .no { color: #ecbe7b }
+/* NameDecorator */ .chroma .nd { color: #ecbe7b }
+/* NameEntity */ .chroma .ni { color: #c9c9c9 }
+/* NameException */ .chroma .ne { color: #cf5967 }
+/* NameFunction */ .chroma .nf { color: #57c7ff }
+/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
+/* NameLabel */ .chroma .nl { color: #cf5967 }
+/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
+/* NameOther */ .chroma .nx { color: #c9c9c9 }
+/* NameProperty */ .chroma .py { color: #c9c9c9 }
+/* NameTag */ .chroma .nt { color: #bc74c4 }
+/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
+/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
+/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
+/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
+/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
+/* Literal */ .chroma .l { color: #c9c9c9 }
+/* LiteralDate */ .chroma .ld { color: #57c7ff }
+/* LiteralString */ .chroma .s { color: #82cc6a }
+/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
+/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
+/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
+/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
+/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
+/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
+/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
+/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
+/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
+/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
+/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
+/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
+/* LiteralNumber */ .chroma .m { color: #56b6c2 }
+/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
+/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
+/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
+/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
+/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
+/* Operator */ .chroma .o { color: #bc74c4 }
+/* OperatorWord */ .chroma .ow { color: #bc74c4 }
+/* Punctuation */ .chroma .p { color: #56b6c2 }
+/* Comment */ .chroma .c { color: #3e4460 }
+/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #3e4460 }
+/* CommentSingle */ .chroma .c1 { color: #3e4460 }
+/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
+/* Generic */ .chroma .g { color: #c9c9c9 }
+/* GenericDeleted */ .chroma .gd { color: #cf5967 }
+/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
+/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
+/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #ecbe7b }
+/* GenericOutput */ .chroma .go { color: #43454f }
+/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
+/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
+/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
+/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
+/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
+body { color: #282c34; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">for each block Br of r do begin
+</span></span><span class="line"><span class="cl">	for each block Bs of s do begin
+</span></span><span class="line"><span class="cl">		for each tupled tr in Br do begin
+</span></span><span class="line"><span class="cl">			for each tuple tr in Bs do begin
+</span></span><span class="line"><span class="cl">				test pair(tr, ts) to see if they satisfty the join condition
+</span></span><span class="line"><span class="cl">				if they do, add tr . ts to the result
+</span></span><span class="line"><span class="cl">			end
+</span></span><span class="line"><span class="cl">		end
+</span></span><span class="line"><span class="cl">	end
+</span></span><span class="line"><span class="cl">end
+</span></span></code></pre>
+</body>
+</html>
+</div><h3><a name="indexed-nested-loop-join" class="heading-anchor" href="#indexed-nested-loop-join" rel="nofollow" aria-hidden="true"></a>Indexed Nested-Loop Join</h3>
+<p>Nested-loop join, if an index is available on the inner loop’s join attribute, index lookups can replace file scans.</p>
+
+<div class="code-block"><html>
+<style type="text/css">
+/* Background */ .bg { color: #282c34 }
+/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
+/* Other */ .chroma .x { color: #c9c9c9 }
+/* Error */ .chroma .err { color: #cf5967 }
+/* CodeLine */ .chroma .cl { color: #c9c9c9 }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
+/* Keyword */ .chroma .k { color: #7fbaf5 }
+/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
+/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
+/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
+/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
+/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
+/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
+/* Name */ .chroma .n { color: #c9c9c9 }
+/* NameAttribute */ .chroma .na { color: #bc74c4 }
+/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
+/* NameClass */ .chroma .nc { color: #ecbe7b }
+/* NameConstant */ .chroma .no { color: #ecbe7b }
+/* NameDecorator */ .chroma .nd { color: #ecbe7b }
+/* NameEntity */ .chroma .ni { color: #c9c9c9 }
+/* NameException */ .chroma .ne { color: #cf5967 }
+/* NameFunction */ .chroma .nf { color: #57c7ff }
+/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
+/* NameLabel */ .chroma .nl { color: #cf5967 }
+/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
+/* NameOther */ .chroma .nx { color: #c9c9c9 }
+/* NameProperty */ .chroma .py { color: #c9c9c9 }
+/* NameTag */ .chroma .nt { color: #bc74c4 }
+/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
+/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
+/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
+/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
+/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
+/* Literal */ .chroma .l { color: #c9c9c9 }
+/* LiteralDate */ .chroma .ld { color: #57c7ff }
+/* LiteralString */ .chroma .s { color: #82cc6a }
+/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
+/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
+/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
+/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
+/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
+/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
+/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
+/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
+/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
+/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
+/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
+/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
+/* LiteralNumber */ .chroma .m { color: #56b6c2 }
+/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
+/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
+/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
+/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
+/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
+/* Operator */ .chroma .o { color: #bc74c4 }
+/* OperatorWord */ .chroma .ow { color: #bc74c4 }
+/* Punctuation */ .chroma .p { color: #56b6c2 }
+/* Comment */ .chroma .c { color: #3e4460 }
+/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #3e4460 }
+/* CommentSingle */ .chroma .c1 { color: #3e4460 }
+/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
+/* Generic */ .chroma .g { color: #c9c9c9 }
+/* GenericDeleted */ .chroma .gd { color: #cf5967 }
+/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
+/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
+/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #ecbe7b }
+/* GenericOutput */ .chroma .go { color: #43454f }
+/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
+/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
+/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
+/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
+/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
+body { color: #282c34; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">for each tuple r in R do
+</span></span><span class="line"><span class="cl">	for each tuple s in S in the index lookup do
+</span></span><span class="line"><span class="cl">		yield tuple &lt;r,s&gt;
+</span></span><span class="line"><span class="cl">	end
+</span></span><span class="line"><span class="cl">end
+</span></span></code></pre>
+</body>
+</html>
+</div><h3><a name="merge-join" class="heading-anchor" href="#merge-join" rel="nofollow" aria-hidden="true"></a>Merge Join</h3>
+<p>The merge join is the most effective of all join operators.</p>
+<h2><a name="cap-theorem" class="heading-anchor" href="#cap-theorem" rel="nofollow" aria-hidden="true"></a>CAP theorem</h2>
+<p><img loading="lazy" src="../assets/Pasted%20image%2020231203231051.png" alt="" /></p>
+
+<p>The CAP theorem, also known as <strong>Brewer's theorem</strong>, is a fundamental principle in distributed systems that states that it is impossible for a distributed data store to simultaneously provide more than two out of the following three guarantees:</p>
+
+<ol>
+<li><strong>Consistency</strong>: All nodes in the system have the same data at the same time.</li>
+<li><strong>Availability</strong>: Every request to the system receives a response, even if some nodes are failing.</li>
+<li><strong>Partition Tolerance</strong>: The system continues to operate despite network failures or split-brain scenarios.</li>
+</ol>
+<h2><a name="acid-vs-base" class="heading-anchor" href="#acid-vs-base" rel="nofollow" aria-hidden="true"></a>ACID vs BASE</h2>
+<p><img loading="lazy" src="../assets/Pasted%20image%2020231203231354.png" alt="" /></p>
+
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>ACID</th>
+<th>BASE</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Full Form</td>
+<td>Atomicity Consistency Isolation Durability</td>
+<td>Basically Available Soft state Eventual consistency</td>
+</tr>
+
+<tr>
+<td>Consistency</td>
+<td>Emphasizes immediate consistency of data</td>
+<td>Allows for eventual consistency of data</td>
+</tr>
+
+<tr>
+<td>Availability</td>
+<td>May sacrifice availability for consistency</td>
+<td>Emphasizes high availability, even at the cost of consistency</td>
+</tr>
+
+<tr>
+<td>Partition Tolerance</td>
+<td>May not handle network partitions well</td>
+<td>Handles network partitions well</td>
+</tr>
+
+<tr>
+<td>Use Cases</td>
+<td>Critical applications requiring strict consistency, e.g., financial systems</td>
+<td>Applications requiring high availability and scalability, e.g., social media platforms, e-commerce websites</td>
+</tr>
+
+<tr>
+<td>Trade-offs</td>
+<td>Prioritizes consistency over availability</td>
+<td>Prioritizes availability over consistency</td>
+</tr>
+
+<tr>
+<td>Examples</td>
+<td>SQL databases are typically ACID compliant</td>
+<td>NoSQL databases like MongoDB, Cassandra, and Redis adhere to BASE principles</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="temporal-database" class="heading-anchor" href="#temporal-database" rel="nofollow" aria-hidden="true"></a>Temporal Database</h2>
+<p><img loading="lazy" src="../assets/bitemporal.gif" alt="" /></p>
+
+<p>A temporal database is a database that needs some aspect of time for the organization of information.</p>
+
+<p>In the temporal database, each tuple in relation is associated with time.</p>
+
+<p>It stores information about the states of the real world and time.</p>
+<h3><a name="terminologies-in-the-temporal-database" class="heading-anchor" href="#terminologies-in-the-temporal-database" rel="nofollow" aria-hidden="true"></a>Terminologies in the temporal database:</h3>
+<ul>
+<li><strong>Valid Time:</strong> The valid time is a time in which the facts are true with respect to the real world.</li>
+<li><strong>Transaction Time:</strong> The transaction time of the database is the time at which the fact is currently present in the database.</li>
+<li><strong>Decision Time:</strong> Decision time in the temporal database is the time at which the decision is made about the fact.</li>
+</ul>
+<h3><a name="applications-of-temporal-databases" class="heading-anchor" href="#applications-of-temporal-databases" rel="nofollow" aria-hidden="true"></a>Applications of Temporal Databases</h3>
+<ul>
+<li><strong>Finance:</strong> It is used to maintain the <strong>stock price</strong> histories.</li>
+<li><strong>Healthcare</strong>: The histories of the patient need to be maintained for giving the right treatment.</li>
+<li><strong>Banking</strong>: For maintaining the credit histories of the user.</li>
+</ul>
+<h3><a name="temporal-relation" class="heading-anchor" href="#temporal-relation" rel="nofollow" aria-hidden="true"></a>Temporal Relation</h3>
+<p>A temporal relation is defined as a relation in which each tuple in a table of the database is associated with time, the time can be either transaction time or valid time.</p>
+<h4><a name="types-of-temporal-relation" class="heading-anchor" href="#types-of-temporal-relation" rel="nofollow" aria-hidden="true"></a>Types of Temporal Relation</h4>
+<ol>
+<li><strong>Uni-Temporal Relation:</strong> The relation which is associated with valid or transaction time is called Uni-Temporal relation. It is related to only one time.</li>
+<li><strong>Bi-Temporal Relation:</strong> The relation which is associated with both valid time and transaction time is called a Bi-Temporal relation. Valid time has two parts namely start time and end time, similar in the case of transaction time.</li>
+<li><strong>Tri-Temporal Relation:</strong> The relation which is associated with three aspects of time namely Valid time, Transaction time, and Decision time called as Tri-Temporal relation.</li>
+</ol>
+<h2><a name="spatial-database" class="heading-anchor" href="#spatial-database" rel="nofollow" aria-hidden="true"></a>Spatial Database</h2>
+<p><img loading="lazy" src="../assets/Pasted%20image%2020231203233458.jpg" alt="" /></p>
+
+<p>Spatial data support in database is important for efficiently storing, indexing and querying of data on the basis of spatial location.</p>
+
+<p>Two types of Spatial data are particularly important:</p>
+<h3><a name="computer-aided-design-cad-data" class="heading-anchor" href="#computer-aided-design-cad-data" rel="nofollow" aria-hidden="true"></a>Computer-aided design (CAD)data</h3>
+<p>Which include spatial information about how objects-such as building, cars, or aircraft-are constructed. Other important examples of computer-aided-design databases are integrated-circuit and electronic-device layouts.</p>
+<h3><a name="geographic-data" class="heading-anchor" href="#geographic-data" rel="nofollow" aria-hidden="true"></a>Geographic data</h3>
+<p>Such as road maps, land-usage maps, topographic elevation maps, political maps showing boundaries, land-ownership maps, and so on. </p>
+
+<p>Geographical information system are special purpose databases for storing geographical data.</p>
+
+<p>Types of geographical data :</p>
+
+<ul>
+<li>Raster data</li>
+<li>Vector data </li>
+</ul>
+<h4><a name="raster-data" class="heading-anchor" href="#raster-data" rel="nofollow" aria-hidden="true"></a>Raster data</h4>
+<p>Raster data consist of pixels also known as grid cells in two or more dimensions. For example, image of Satellites , digital pictures, and scanned maps.</p>
+<h4><a name="vector-data" class="heading-anchor" href="#vector-data" rel="nofollow" aria-hidden="true"></a>Vector data</h4>
+<p>Vector data consist of triangles, lines, and various geometrical objects in two dimensions and cylinders, cuboids, and other polyhedrons in three dimensions. For example, building boundaries and roads.</p>
+
+		</main>
+		
+		<details id="table-of-content">
+		   <summary>Table of Content</summary>
+		<nav>
+<ul>
+<li><a href="#data-warehouse">Data warehouse</a>
+<ul>
+<li><a href="#principles-of-data-warehouse-architecture">
+Principles of Data Warehouse Architecture</a></li>
+<li><a href="#the-three-tiers-of-data-warehouse-architecture">
+The Three Tiers of Data Warehouse Architecture</a></li>
+<li><a href="#best-practices-for-data-warehouse-architecture">
+Best Practices for Data Warehouse Architecture</a></li>
+</ul></li>
+<li><a href="#data-mart">
+Data Mart</a></li>
+<li><a href="#data-mart-and-data-warehouse-difference">
+Data Mart and Data Warehouse Difference</a></li>
+<li><a href="#data-transformation">
+Data transformation</a></li>
+<li><a href="#join-operation">
+Join Operation</a>
+<ul>
+<li><a href="#nested-loop-join">
+Nested-Loop Join</a></li>
+<li><a href="#block-nested-loop-join">
+Block Nested-Loop Join</a></li>
+<li><a href="#indexed-nested-loop-join">
+Indexed Nested-Loop Join</a></li>
+<li><a href="#merge-join">
+Merge Join</a></li>
+</ul></li>
+<li><a href="#cap-theorem">
+CAP theorem</a></li>
+<li><a href="#acid-vs-base">
+ACID vs BASE</a></li>
+<li><a href="#temporal-database">
+Temporal Database</a>
+<ul>
+<li><a href="#terminologies-in-the-temporal-database">
+Terminologies in the temporal database:</a></li>
+<li><a href="#applications-of-temporal-databases">
+Applications of Temporal Databases</a></li>
+<li><a href="#temporal-relation">
+Temporal Relation</a>
+<ul>
+<li><a href="#types-of-temporal-relation">
+Types of Temporal Relation</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#spatial-database">
+Spatial Database</a>
+<ul>
+<li><a href="#computer-aided-design-cad-data">
+Computer-aided design (CAD)data</a></li>
+<li><a href="#geographic-data">
+Geographic data</a>
+<ul>
+<li><a href="#raster-data">
+Raster data</a></li>
+<li><a href="#vector-data">
+Vector data</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+
+		</details>
+		
+		<footer>
+			<p style="text-align: center; font-size: small; margin-top: 5em;">
+				<a href="https://anzenkodo.github.io/license">LICENSE</a>
+			</p>
+		</footer>
+	</body>
+	<script src="https://AnzenKodo.github.io/assets/js/mermaid.js"></script>
+	<script id="MathJax-script" async src="https://AnzenKodo.github.io/assets/js/mathjax.js"></script>
+	<script>
+		/* document.getElementById('video').addEventListener('click', (ele) => {
+			 if (ele.target.paused) {
+				 ele.target.play();
+			 } else {
+				 ele.target.pause();
+			 }
+		}); */
+
+		mermaid.initialize({
+			theme: "neutral",
+			themeVariables: {
+			    lineColor: "#939598",
+			}
+		});
+
+		MathJax = {
+		  tex: {
+			inlineMath: [['$', '$']],
+			displayMath: [['$$', '$$']],
+		  }
+		};
+	</script>
+</html>

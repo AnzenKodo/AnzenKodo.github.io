@@ -1,0 +1,2964 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>AI & DS - AK#Notes</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="#FF6C22">
+		<meta name="description" content="## Describe PEAS and also write down the PEAS representations. (10 / Dec 23) (5 / May 23) (10 / Dec ">
+		<meta property="og:description" content="## Describe PEAS and also write down the PEAS representations. (10 / Dec 23) (5 / May 23) (10 / Dec ">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<meta property="og:image:alt" content="AK#Notes logo">
+		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="AI & DS - AK#Notes">
+		<meta property="og:url" content="https://AnzenKodo.github.io/notes/notes/Collage/Sem6/Sem/AI & DS.html">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+
+			:root {
+				/* color-scheme: dark light; */
+				color-scheme: dark;
+				--theme: #FF6C22;
+			}
+			body {
+				max-width: 40rem;
+				margin: 0 auto;
+				font-family: system-ui;
+				padding: 0 1em;
+				color: inherit !important;
+				word-break: break-word;
+			}
+			h1, h2, h3, h4, h5, h6 {
+				margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+				font-size: 2rem;
+			}
+			h3 {
+				font-size: 1.8rem;
+			}
+			h4 {
+				font-size: 1.5rem;
+			}
+			h5 {
+				font-size: 1.3rem;
+			}
+			h6 {
+				font-size: 1rem;
+			}
+			p, li, td, code {
+				line-height: 1.5rem;
+			}
+			a {
+				color: var(--theme);
+				text-decoration: none;
+			}
+			a:hover, a:focus {
+				text-decoration: underline;
+			}
+			a:active {
+				background: var(--theme);
+				color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+				margin-top: .5rem;
+			}
+			li {
+				margin-bottom: .5rem;
+			}
+			table {
+				border-collapse: collapse;
+				overflow-x: auto;
+				display: block;
+				word-break: auto-phrase;
+				margin: 1rem 0;
+			}
+			th {
+				font-size: 1.1rem;
+				border: 2px solid;
+				padding: .3rem .3rem;
+			}
+			td {
+				border: 1px solid;
+				padding: .3rem .5rem;
+			}
+			blockquote {
+				margin-left: 0;
+				margin-right: 0;
+				border: 1px solid;
+				border-left: 10px solid;
+				padding: 0 1rem;
+			}
+				.code-block {
+				background: black;
+				overflow-x: auto;
+				padding: 0em 1em;
+				border: 1px solid;
+			}
+			.code-block-language-name {
+				position: sticky;
+				left: 95%;
+				top: .5em;
+				font-weight: bold;
+				color: white;
+			}
+			:not(pre.chroma) > code {
+				border: 1px solid;
+				padding: .3rem .2rem .2rem .2rem;
+			}
+			img {
+				max-width: 100%;
+				display: block;
+				margin: 0 auto;
+			}
+			[href="#skip-top-main"] {
+				padding: 0.3em;
+				position: absolute;
+				transform: translateY(-1000%);
+			}
+			[href="#skip-top-main"]:focus {
+				transform: translateY(0%);
+				background: var(--theme);
+				color: inherit;
+			}
+			#table-of-content {
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+				background: black;
+				padding: 0.5rem 1em;
+				z-index: 1;
+				color: white;
+			}
+			#table-of-content[open] {
+				max-height: 90%;
+				overflow-y: auto;
+				bottom: 50px;
+				margin-left: 1em;
+			}
+			#table-of-content[open] summary {
+				background: black;
+				padding: 0.5em 1em;
+				text-align: center;
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+			}
+			#table-of-content ul:first-child {
+				padding-left: 1em;
+				margin-top: 1.5em;
+			}
+			.heading-anchor::before {
+				margin-right: .5rem;
+			}
+		    h2 .heading-anchor::before {
+    			content: "#";
+    			margin-right: .5rem;
+		    }
+            h3 .heading-anchor::before {
+				content: "##";
+				margin-right: .5rem;
+			}
+            h4 .heading-anchor::before {
+				content: "###";
+				margin-right: .5rem;
+			}
+            h5 .heading-anchor::before {
+				content: "####";
+				margin-right: .5rem;
+			}
+            h6 .heading-anchor::before {
+				content: "#####";
+				margin-right: .5rem;
+			}
+			.mermaid {
+				background: black;
+				border: 1px solid;
+				margin-top: 1rem;
+				padding: 1rem;
+				font-family: monospace;
+			}
+			.mermaid svg {
+				display: block;
+				margin: auto;
+			}
+			.mermaid:has(svg) {
+				background: none;
+				border: none;
+				margin-top: 1rem;
+				padding: 0;
+			}
+			mjx-container {
+				display: math;
+				overflow-y: hidden;
+				overflow-x: auto;
+				max-width: 100%;
+				padding-bottom: .8rem;
+			}
+			iframe {
+				width: 100%;
+				height: 21rem;
+				margin: 1rem 0;
+			}
+			video {
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<a href="#skip-top-main">Skip to main</a>
+		<header>
+<!--		<h1 style="text-align: center;">-->
+			<h1 style="text-align: center;">
+				<a href="https://AnzenKodo.github.io">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+			</h1><nav style="border-top: 1px solid gray;border-bottom: 1px solid gray;padding: .5rem 0;text-align: center;margin: 0 0 2rem 0;color: gray;clear: left;line-height: 1.6rem;">
+				<a href="https://AnzenKodo.github.io/notes">Home</a> | <a href="https://AnzenKodo.github.io">About</a> | <a href="https://AnzenKodo.github.io/blogroll">Blogroll</a> | <a href="https://github.com/AnzenKodo">Github</a> | <a href="https://x.com/AnzenKodo">𝕏</a>
+			</nav>
+			<!-- <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;"> -->
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem; margin-top: 0;">AI & DS</h1>
+			<h2><a name="describe-peas-and-also-write-down-the-peas-representations-10-dec-23-5-may-23-10-dec-22" class="heading-anchor" href="#describe-peas-and-also-write-down-the-peas-representations-10-dec-23-5-may-23-10-dec-22" rel="nofollow" aria-hidden="true"></a>Describe PEAS and also write down the PEAS representations. (10 / Dec 23) (5 / May 23) (10 / Dec 22)</h2>
+<p><strong>PEAS</strong> is an acronym used in the field of artificial intelligence to define the key components of an intelligent agent's design. Each letter represents a different aspect that contributes to the agent's behavior and decision-making process:</p>
+
+<ol>
+<li><strong>Performance Measure (P)</strong>:
+
+<ul>
+<li>This component defines how the agent's success is measured. It specifies the criteria or metrics used to evaluate the agent's performance in achieving its goals.</li>
+</ul></li>
+<li><strong>Environment (E)</strong>:
+
+<ul>
+<li>The environment refers to the external context in which the agent operates. It includes everything the agent interacts with, perceives, and affects while carrying out its tasks.</li>
+</ul></li>
+<li><strong>Actuators (A)</strong>:
+
+<ul>
+<li>Actuators are the mechanisms through which the agent can act upon the environment. They enable the agent to perform actions based on its decision-making process.</li>
+</ul></li>
+<li><strong>Sensors (S)</strong>:
+
+<ul>
+<li>Sensors are the means by which the agent perceives and gathers information about its environment. They provide input to the agent, allowing it to make informed decisions.</li>
+</ul></li>
+</ol>
+
+<table>
+<thead>
+<tr>
+<th>Agent</th>
+<th>Performance</th>
+<th>Environment</th>
+<th>Actuator</th>
+<th>Sensor</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Soccer player robot</td>
+<td>Number of goals,<br>penalties scored,<br>Speed of players</td>
+<td>Team mates,<br>opposition ground goal,<br>referee</td>
+<td>Joint angles,<br>motors</td>
+<td>Camera proximity sensor,<br>infrared sensor</td>
+</tr>
+
+<tr>
+<td>Part picking robot</td>
+<td>Percentage of parts in correct bins</td>
+<td>Conveyor belt with parts bins</td>
+<td>Jointed arm and hand</td>
+<td>Camera, joint angle sensors</td>
+</tr>
+
+<tr>
+<td>Medical diagnosis system</td>
+<td>Healthy patient minimized cost</td>
+<td>Patient,<br>hospital staff</td>
+<td>Perscription diagnosis,<br>scan report</td>
+<td>Symptoms patient response</td>
+</tr>
+
+<tr>
+<td>Auto mated car</td>
+<td>Comfortable trip safety maximum</td>
+<td>Roads, <br>traffic vehicles</td>
+<td>Wheel,<br>accelerator break mirror</td>
+<td>Camera,<br>GPS,<br>odometer</td>
+</tr>
+
+<tr>
+<td>Subject tutoring</td>
+<td>Maximize scores,<br>improvement in students</td>
+<td>Classroom,<br>Desk,<br>chair,<br>Board,<br>staff,<br>Students</td>
+<td>Smart displays,<br>corrections</td>
+<td>Eyes,<br>ears note books</td>
+</tr>
+
+<tr>
+<td>Taxi Driver</td>
+<td>Safe,<br>fast,<br>legal,<br>comfortable trip,<br>maximize profits</td>
+<td>Roads,<br>other traffic,<br>pedestrians,<br>custormers</td>
+<td>Steering wheel,<br>accelerator,<br>break,<br>signal,<br>horn</td>
+<td>Cameras,<br>sonar,<br>speedometer,<br>GPS,<br>engine sensors,<br>keyboard</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="what-are-the-different-types-of-machine-learning-10-may-23-5-dec-22" class="heading-anchor" href="#what-are-the-different-types-of-machine-learning-10-may-23-5-dec-22" rel="nofollow" aria-hidden="true"></a>What are the Different Types of Machine Learning? (10 / May 23) (5 / Dec 22)</h2>
+<p><img loading="lazy" src="../UT2/assets/Pasted%20image%2020240419033151.png" alt="" /></p>
+
+<ol>
+<li><strong>Supervised Learning</strong>: Algorithms are trained with labeled data, where the input and output are known. This type is further divided into two categories: <img loading="lazy" src="../UT2/assets/Pasted%20image%2020240419033824.png" alt="" />
+
+<ul>
+<li><strong>Classification</strong>: Predicting categorical target variables, such as spam detection or disease diagnosis.
+
+<ul>
+<li><img loading="lazy" src="../UT2/assets/Pasted%20image%2020240419034236.png" alt="" /></li>
+</ul></li>
+<li><strong>Regression</strong>: Predicting continuous target variables, such as stock prices or weather forecasting.
+
+<ul>
+<li><img loading="lazy" src="../UT2/assets/IGU_25__Machine_Learning_Regression_-_Google_Docs.webp" alt="" /></li>
+</ul></li>
+</ul></li>
+<li><strong>Unsupervised Learning</strong>: Algorithms are trained with unlabeled data, where the input is known, but the output is not. This type is further divided into two categories: <img loading="lazy" src="../UT2/assets/Pasted%20image%2020240419033932.png" alt="" />
+
+<ul>
+<li><strong>Clustering</strong>: Grouping similar data points together, such as customer segmentation or anomaly detection.
+
+<ul>
+<li><img loading="lazy" src="../UT2/assets/Pasted%20image%2020240419034355.jpg" alt="" /></li>
+</ul></li>
+<li><strong>Association</strong>: Identifying relationships between data points, such as market basket analysis or recommendation systems.</li>
+</ul></li>
+<li><strong>Semi-Supervised Learning</strong>: Algorithms are trained with a combination of labeled and unlabeled data. This type is useful when obtaining labeled data is difficult or expensive.
+
+<ul>
+<li><img loading="lazy" src="../UT2/assets/Pasted%20image%2020240419034002.png" alt="" /></li>
+</ul></li>
+<li><strong>Reinforcement Learning</strong>: Algorithms learn by interacting with an environment and receiving feedback in the form of rewards or penalties. This type is often used in robotics, gaming, or navigation.
+<img loading="lazy" src="../UT2/assets/Pasted%20image%2020240419034153.png" alt="" /></li>
+</ol>
+<h2><a name="explain-what-role-is-played-by-correlation-and-covariance-in-eda-5-dec-23-5-dec-22" class="heading-anchor" href="#explain-what-role-is-played-by-correlation-and-covariance-in-eda-5-dec-23-5-dec-22" rel="nofollow" aria-hidden="true"></a>Explain what role is played by Correlation and Covariance in EDA? (5 / Dec 23) (5 / Dec 22)</h2>
+<p><img loading="lazy" src="assets/covariance-and-correlation-in-eda.webp" alt="" /></p>
+
+<p>Correlation and covariance play important roles in Exploratory Data Analysis (EDA) by providing insights into the relationships between variables in a dataset:</p>
+
+<p><strong>Covariance</strong></p>
+
+<p>Covariance measures how two variables vary together.</p>
+
+<p>A positive covariance means the variables tend to move in the same direction, while a negative covariance indicates they move in opposite directions.</p>
+
+<p>In EDA, covariance is used to:</p>
+
+<ul>
+<li>Identify variables that vary together and may be related</li>
+<li>Understand the magnitude of the relationship between variables, as covariance is not standardized and depends on the units of the variables</li>
+<li>Determine the direction of the relationship, which can be positive or negative</li>
+</ul>
+
+<p><strong>Correlation</strong></p>
+
+<p>Correlation is a standardized measure of the linear relationship between two variables. </p>
+
+<p>It ranges from -1 to 1, with -1 indicating a perfect negative correlation, 0 indicating no linear correlation, and 1 indicating a perfect positive correlation</p>
+
+<p>In EDA, correlation is used to:</p>
+
+<ul>
+<li>Identify strongly correlated variables that may be redundant or useful for prediction.</li>
+<li>Understand the strength and direction of the linear relationship between variables.</li>
+<li>Identify variables that may be good candidates for further analysis or inclusion in predictive models.</li>
+</ul>
+<h2><a name="explain-various-measures-of-the-central-tendencies-of-a-statistical-distribution-5-may-23-5-dec-23" class="heading-anchor" href="#explain-various-measures-of-the-central-tendencies-of-a-statistical-distribution-5-may-23-5-dec-23" rel="nofollow" aria-hidden="true"></a>Explain various measures of the central tendencies of a statistical distribution. (5 / May 23) (5 / Dec 23)</h2>
+<p><img loading="lazy" src="assets/Central-Tendency.webp" alt="" /></p>
+
+<p><strong>Mean</strong></p>
+
+<p>The mean is the arithmetic average of the values in the dataset.</p>
+
+<p>It is calculated by summing up all the values and dividing by the total number of observations.</p>
+
+<p>The mean is a good measure when the data is normally distributed and there are no extreme values or outliers.</p>
+
+<p><strong>Median</strong></p>
+
+<p>The median is the middle value when the data is arranged in order from smallest to largest. If there is an even number of values, the median is the average of the two middle values.</p>
+
+<p>The median is a good measure when the data is skewed or has extreme values.</p>
+
+<p><strong>Mode</strong></p>
+
+<p>The mode is the value that appears most frequently in the dataset.</p>
+
+<p>A dataset can have more than one mode if there are multiple values tied for the highest frequency.</p>
+
+<p>The mode is useful for categorical data and when there are clear peaks in the frequency distribution.</p>
+
+<p>Some other measures of central tendency include:</p>
+
+<ul>
+<li><strong>Geometric mean</strong> - the central tendency of a set of positive numbers, calculated by taking the nth root of the product of the numbers</li>
+<li><strong>Harmonic mean</strong> - the reciprocal of the arithmetic mean of the reciprocals</li>
+<li><strong>Midrange</strong> - the average of the smallest and largest values</li>
+</ul>
+<h2><a name="explain-steps-in-the-data-science-project-10-dec-23-10-may-22" class="heading-anchor" href="#explain-steps-in-the-data-science-project-10-dec-23-10-may-22" rel="nofollow" aria-hidden="true"></a>Explain steps in the Data Science Project (10 / Dec 23) (10 / May 22)</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020240520123535.png" alt="" /></p>
+<h2><a name="what-is-rational-agent-explain-with-diagram-5-dec-23-5-dec-23" class="heading-anchor" href="#what-is-rational-agent-explain-with-diagram-5-dec-23-5-dec-23" rel="nofollow" aria-hidden="true"></a>What is rational agent? Explain with diagram. (5 / Dec 23) (5 / Dec 23)</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020240520041542.png" alt="" /></p>
+
+<p>A <strong>rational agent</strong> or <strong>rational being</strong> is a person or entity that always aims to perform <a href="https://en.wikipedia.org/wiki/Optimization_(mathematics) "Optimization (mathematics">optimal</a>&quot;) actions based on given premises and information. A rational agent can be anything that makes decisions, typically a <a href="https://en.wikipedia.org/wiki/Person">person</a>, <a href="https://en.wikipedia.org/wiki/Firm">firm</a>, <a href="https://en.wikipedia.org/wiki/Machine">machine</a>, or <a href="https://en.wikipedia.org/wiki/Software">software</a>.</p>
+
+<p>It's a theoretical entity that considers realistic models of how people think, with preferences for advantageous outcomes and an ability to learn. In other words, it's what most people would call &quot;you.&quot;</p>
+<h2><a name="write-a-detailed-note-on-hypothesis-testing-what-are-type-i-and-type-ii-errors-10-dec-23-10-may-23" class="heading-anchor" href="#write-a-detailed-note-on-hypothesis-testing-what-are-type-i-and-type-ii-errors-10-dec-23-10-may-23" rel="nofollow" aria-hidden="true"></a>Write a detailed note on Hypothesis Testing. What are type I and type II errors? (10 / Dec 23) (10 / May 23)</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020240520050729.jpg" alt="" /></p>
+
+<p>Hypothesis Testing is a type of <a href="https://www.simplilearn.com/what-is-statistical-analysis-article">statistical analysis</a> in which you put your assumptions about a population parameter to the test. It is used to estimate the relationship between 2 statistical variables.</p>
+
+<p>Examples of statistical hypothesis from real-life:</p>
+
+<ul>
+<li>A teacher assumes that 60% of his college's students come from lower-middle-class families.</li>
+<li>A doctor believes that 3D (Diet, Dose, and Discipline) is 90% effective for diabetic patients.</li>
+</ul>
+
+<p>Hypothesis Testing Formula: <strong>Z = ( x̅ – μ0 ) / (σ /√n)</strong></p>
+
+<ul>
+<li>Here, x̅ is the sample mean,</li>
+<li>μ0 is the population mean,</li>
+<li>σ is the standard deviation,</li>
+<li>n is the sample size.</li>
+</ul>
+
+<p>A hypothesis test can result in two types of errors:</p>
+
+<ul>
+<li><strong>Type I Error (False Positive)</strong>
+
+<ul>
+<li>A type I error occurs when the null hypothesis is true, but it is rejected. In other words, it is the error of incorrectly concluding that there is a significant effect or difference when there isn't one in reality.</li>
+</ul></li>
+<li><strong>Type II Error (False Negative)</strong>
+
+<ul>
+<li>A type II error occurs when the null hypothesis is false, but it is not rejected. It is the error of failing to detect an effect or difference that is present in the population.</li>
+</ul></li>
+</ul>
+<h2><a name="write-comparison-between-business-intelligence-data-science-big-data-5-dec-23" class="heading-anchor" href="#write-comparison-between-business-intelligence-data-science-big-data-5-dec-23" rel="nofollow" aria-hidden="true"></a>Write comparison between Business Intelligence, Data Science &amp; Big Data (5 / Dec 23)</h2>
+<table>
+<thead>
+<tr>
+<th>Factor</th>
+<th>Business Intelligence</th>
+<th>Data Science</th>
+<th>Big Data</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Definition</td>
+<td>Technologies, applications for business data analysis</td>
+<td>Extraction of insights from data using scientific methods</td>
+<td>Large volumes of data that require specialized tools</td>
+</tr>
+
+<tr>
+<td>Focus</td>
+<td>Past and present data analysis</td>
+<td>Future trends and patterns prediction</td>
+<td>Handling and analysis of massive datasets</td>
+</tr>
+
+<tr>
+<td>Data</td>
+<td>structured data</td>
+<td>structured and unstructured data</td>
+<td>large and complex datasets</td>
+</tr>
+
+<tr>
+<td>Flexibility</td>
+<td>Less flexible, pre-planned data sources</td>
+<td>More flexible</td>
+<td>Requires scalable and flexible data processing</td>
+</tr>
+
+<tr>
+<td>Method</td>
+<td>Analytic method</td>
+<td>Scientific method</td>
+<td>Utilizes specialized tools and technologies</td>
+</tr>
+
+<tr>
+<td>Expertise</td>
+<td>Business user</td>
+<td>Data scientist</td>
+<td>Requires expertise in handling large datasets</td>
+</tr>
+
+<tr>
+<td>Questions</td>
+<td>What happened</td>
+<td>What will happen, what if</td>
+<td>Focuses on how to handle and analyze data</td>
+</tr>
+
+<tr>
+<td>Storage</td>
+<td>Data warehouse</td>
+<td>Real-time clusters</td>
+<td>Specialized storage solutions for massive data</td>
+</tr>
+
+<tr>
+<td>Integration of Data</td>
+<td>ETL process</td>
+<td>ELT process</td>
+<td>Specialized processes for handling big data</td>
+</tr>
+
+<tr>
+<td>Tools</td>
+<td>InsightSquared, Klipfolio, etc.</td>
+<td>SAS, BigML, Excel, etc.</td>
+<td>Hadoop, evolving technologies for big data</td>
+</tr>
+
+<tr>
+<td>Handling Data Sets</td>
+<td>Limited tools for large datasets</td>
+<td>Evolving technologies for large data handling</td>
+<td>Specialized tools and technologies for big data</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="what-are-heuristic-functions-where-are-they-used-5-dec-23" class="heading-anchor" href="#what-are-heuristic-functions-where-are-they-used-5-dec-23" rel="nofollow" aria-hidden="true"></a>What are heuristic functions? Where are they used? (5 / Dec 23)</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020240520043123.jpg" alt="" /></p>
+
+<p>If there are no specific answers to a problem or the time required to find one is too great, a heuristic function is used to solve the problem.</p>
+
+<p>The aim is to find a quicker or more approximate answer, even if it is not ideal.</p>
+
+<p>Put another way, utilizing a heuristic means trading accuracy for speed.</p>
+
+<p>A heuristic is a function that determines how near a state is to the desired state.</p>
+
+<p><strong>Different Categories of Heuristic Search Techniques in AI</strong></p>
+
+<ul>
+<li><strong>Direct Heuristic Search Techniques</strong>
+
+<ul>
+<li>Direct heuristic search techniques may also be called blind control strategy, blind search, and uninformed search. </li>
+<li>These include <a href="https://www.simplilearn.com/tutorials/data-structure-tutorial/dfs-algorithm "Depth First Search (DFS">Depth First Search (DFS)</a>&quot;) and <a href="https://www.simplilearn.com/tutorials/data-structure-tutorial/bfs-algorithm "Breadth First Search (BFS">Breadth First Search (BFS)</a>&quot;).</li>
+<li>BFS is a heuristic search method to diagram data or quickly scan intersection or tree structures.</li>
+</ul></li>
+<li><strong>Weak Heuristic Techniques</strong>
+
+<ul>
+<li>Weak heuristic techniques are known as a Heuristic control strategy, informed search, and Heuristic search.</li>
+<li>A heuristic function is connected to each node. </li>
+</ul></li>
+</ul>
+
+<p><strong>Types of heuristic functions in ai are:</strong></p>
+
+<ul>
+<li>Breadth-First Search (BFS)</li>
+<li>Depth First Search (DFS)</li>
+<li>Bidirectional Search</li>
+<li>A*</li>
+<li>Hill Climbing</li>
+<li>Best First search</li>
+<li>Beam search.</li>
+</ul>
+
+<p><strong>Heuristic functions are used in:</strong></p>
+
+<ul>
+<li><strong>Artificial Intelligence (AI)</strong>
+
+<ul>
+<li>In AI, heuristic functions are commonly used in search algorithms like A* (A-star) to guide the search towards the most promising paths, reducing the search space and improving efficiency</li>
+</ul></li>
+<li><strong>Optimization</strong>
+
+<ul>
+<li>Heuristic functions play a crucial role in optimization problems, where they help in finding near-optimal solutions in complex scenarios where exhaustive search is not feasible.</li>
+</ul></li>
+<li><strong>Decision Making</strong>
+
+<ul>
+<li>Heuristics are employed in decision-making processes to simplify complex problems by using rules of thumb or strategies that are not guaranteed to be optimal.</li>
+</ul></li>
+<li><strong>Electronic Design Automation (EDA)</strong>
+
+<ul>
+<li>In the context of EDA, heuristic functions are utilized in algorithms like the Kernighan-Lin heuristic for circuit partitioning and placement, aiding in optimizing the layout of electronic circuits efficiently.</li>
+</ul></li>
+</ul>
+<h2><a name="what-is-unification-give-example-5-dec-23" class="heading-anchor" href="#what-is-unification-give-example-5-dec-23" rel="nofollow" aria-hidden="true"></a>What is Unification? Give example (5 / Dec 23)</h2>
+<p>Unification in AI is a fundamental operation used in various applications like logic programming, natural language processing, and automated reasoning.</p>
+
+<p>It involves making two different logical expressions identical by finding a substitution that satisfies both expressions.</p>
+
+<p><strong>Example 1:</strong></p>
+
+<p>Suppose we have the following expressions:</p>
+
+<ul>
+<li>Expression 1: f(a, X, g(Y))<br></li>
+<li>Expression 2: f(Z, b, g(h))<br>
+<br></li>
+</ul>
+
+<p>To unify these expressions, we need to find a substitution that makes them equal. The unification process involves matching corresponding parts and finding a set of variable assignments that satisfy both expressions:</p>
+
+<p>Match f(a, X, g(Y)) with f(Z, b, g(h)):</p>
+
+<ul>
+<li>X unifies with b (X/b)<br></li>
+<li>Y unifies with h (Y/h)<br></li>
+<li>Z unifies with a (Z/a)<br>
+<br></li>
+</ul>
+
+<p>The resulting substitution is: {X/b, Y/h, Z/a}. Applying this substitution to both expressions gives us:  <strong>f(a, b, g(h)) = f(a, b, g(h))</strong></p>
+
+<p>The expressions are now unified.</p>
+<h2><a name="what-is-skolemization-explain-skolem-constant-and-skolem-function-5-dec-23" class="heading-anchor" href="#what-is-skolemization-explain-skolem-constant-and-skolem-function-5-dec-23" rel="nofollow" aria-hidden="true"></a>What is Skolemization? Explain Skolem constant and Skolem function. (5 / Dec 23)</h2>
+<p>Skolemization is a process used in Artificial Intelligence to transform first-order logic formulas into their Skolem normal form</p>
+
+<p>This procedure is essential for theorem proving in programming, aiming to eliminate quantifiers from the resulting form.</p>
+
+<p>Skolemization can't happen without removing quantifiers.</p>
+
+<ul>
+<li><strong>Skolem Constant</strong>:
+
+<ul>
+<li>A Skolem constant is a new constant introduced to substitute an existential variable when eliminating an existential quantifier from a logical formula. </li>
+<li>It is used to name the existing object that satisfies the formula, ensuring soundness in the proof process.</li>
+</ul></li>
+<li><strong>Skolem Function</strong>:
+
+<ul>
+<li>A Skolem function is a function introduced to replace an existentially quantified variable when the existential quantifier occurs in the scope of one or more universal quantifiers. </li>
+<li>It involves creating a function applied to free and universally quantified variables to maintain the logical structure of the formula.</li>
+</ul></li>
+</ul>
+<h2><a name="the-law-says-that-it-is-a-crime-for-an-american-to-sell-weapons-to-hostile-nations-the-country-nono-an-enemy-of-america-has-some-missiles-and-all-of-its-missiles-were-sold-to-it-by-colonel-west-who-is-american-prove-that-col-west-is-a-criminal-10-dec-23" class="heading-anchor" href="#the-law-says-that-it-is-a-crime-for-an-american-to-sell-weapons-to-hostile-nations-the-country-nono-an-enemy-of-america-has-some-missiles-and-all-of-its-missiles-were-sold-to-it-by-colonel-west-who-is-american-prove-that-col-west-is-a-criminal-10-dec-23" rel="nofollow" aria-hidden="true"></a>The law says that it is a crime for an American to sell weapons to hostile nations. The country Nono, an enemy of America, has some missiles, and all of its missiles were sold to it by Colonel West, who is American. Prove that Col. West is a criminal! (10 / Dec 23)</h2>
+<p><strong>Some Fact</strong></p>
+
+<ul>
+<li>It is crime for Americans to sell the weapon to the enemy of America</li>
+<li>Country Nono is an enemy of America</li>
+<li>Nono has some Missiles</li>
+<li>All missiles were sold to Nono by Colonel</li>
+<li>Colonel is American</li>
+<li>Missile is a weapon</li>
+</ul>
+
+<p><strong>Goal:</strong></p>
+
+<ul>
+<li>Colonel is criminal</li>
+</ul>
+
+<p><strong>Steps to be followed :</strong> </p>
+
+<p>Fact conversion to Forward chaining with First-order Logic(FOL):</p>
+
+<p><strong>Step1 :</strong>  It is crime for Americans to sell the weapon to the enemy of America</p>
+
+<p><img loading="lazy" src="assets/Pasted%20image%2020240520051535.png" alt="" /></p>
+
+<p><strong>Step2 :</strong>  Country Nono is enemy of America</p>
+
+<div class="code-block"><html>
+<style type="text/css">
+/* Background */ .bg { color: #282c34 }
+/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
+/* Other */ .chroma .x { color: #c9c9c9 }
+/* Error */ .chroma .err { color: #cf5967 }
+/* CodeLine */ .chroma .cl { color: #c9c9c9 }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
+/* Keyword */ .chroma .k { color: #7fbaf5 }
+/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
+/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
+/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
+/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
+/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
+/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
+/* Name */ .chroma .n { color: #c9c9c9 }
+/* NameAttribute */ .chroma .na { color: #bc74c4 }
+/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
+/* NameClass */ .chroma .nc { color: #ecbe7b }
+/* NameConstant */ .chroma .no { color: #ecbe7b }
+/* NameDecorator */ .chroma .nd { color: #ecbe7b }
+/* NameEntity */ .chroma .ni { color: #c9c9c9 }
+/* NameException */ .chroma .ne { color: #cf5967 }
+/* NameFunction */ .chroma .nf { color: #57c7ff }
+/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
+/* NameLabel */ .chroma .nl { color: #cf5967 }
+/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
+/* NameOther */ .chroma .nx { color: #c9c9c9 }
+/* NameProperty */ .chroma .py { color: #c9c9c9 }
+/* NameTag */ .chroma .nt { color: #bc74c4 }
+/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
+/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
+/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
+/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
+/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
+/* Literal */ .chroma .l { color: #c9c9c9 }
+/* LiteralDate */ .chroma .ld { color: #57c7ff }
+/* LiteralString */ .chroma .s { color: #82cc6a }
+/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
+/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
+/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
+/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
+/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
+/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
+/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
+/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
+/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
+/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
+/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
+/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
+/* LiteralNumber */ .chroma .m { color: #56b6c2 }
+/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
+/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
+/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
+/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
+/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
+/* Operator */ .chroma .o { color: #bc74c4 }
+/* OperatorWord */ .chroma .ow { color: #bc74c4 }
+/* Punctuation */ .chroma .p { color: #56b6c2 }
+/* Comment */ .chroma .c { color: #3e4460 }
+/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #3e4460 }
+/* CommentSingle */ .chroma .c1 { color: #3e4460 }
+/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
+/* Generic */ .chroma .g { color: #c9c9c9 }
+/* GenericDeleted */ .chroma .gd { color: #cf5967 }
+/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
+/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
+/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #ecbe7b }
+/* GenericOutput */ .chroma .go { color: #43454f }
+/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
+/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
+/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
+/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
+/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
+body { color: #282c34; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">FOL: Enemy(Nono, America)
+</span></span></code></pre>
+</body>
+</html>
+</div>
+<p><strong>Step3 :</strong>  Nono has some Missile</p>
+
+<div class="code-block"><html>
+<style type="text/css">
+/* Background */ .bg { color: #282c34 }
+/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
+/* Other */ .chroma .x { color: #c9c9c9 }
+/* Error */ .chroma .err { color: #cf5967 }
+/* CodeLine */ .chroma .cl { color: #c9c9c9 }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
+/* Keyword */ .chroma .k { color: #7fbaf5 }
+/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
+/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
+/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
+/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
+/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
+/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
+/* Name */ .chroma .n { color: #c9c9c9 }
+/* NameAttribute */ .chroma .na { color: #bc74c4 }
+/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
+/* NameClass */ .chroma .nc { color: #ecbe7b }
+/* NameConstant */ .chroma .no { color: #ecbe7b }
+/* NameDecorator */ .chroma .nd { color: #ecbe7b }
+/* NameEntity */ .chroma .ni { color: #c9c9c9 }
+/* NameException */ .chroma .ne { color: #cf5967 }
+/* NameFunction */ .chroma .nf { color: #57c7ff }
+/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
+/* NameLabel */ .chroma .nl { color: #cf5967 }
+/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
+/* NameOther */ .chroma .nx { color: #c9c9c9 }
+/* NameProperty */ .chroma .py { color: #c9c9c9 }
+/* NameTag */ .chroma .nt { color: #bc74c4 }
+/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
+/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
+/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
+/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
+/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
+/* Literal */ .chroma .l { color: #c9c9c9 }
+/* LiteralDate */ .chroma .ld { color: #57c7ff }
+/* LiteralString */ .chroma .s { color: #82cc6a }
+/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
+/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
+/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
+/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
+/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
+/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
+/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
+/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
+/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
+/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
+/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
+/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
+/* LiteralNumber */ .chroma .m { color: #56b6c2 }
+/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
+/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
+/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
+/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
+/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
+/* Operator */ .chroma .o { color: #bc74c4 }
+/* OperatorWord */ .chroma .ow { color: #bc74c4 }
+/* Punctuation */ .chroma .p { color: #56b6c2 }
+/* Comment */ .chroma .c { color: #3e4460 }
+/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #3e4460 }
+/* CommentSingle */ .chroma .c1 { color: #3e4460 }
+/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
+/* Generic */ .chroma .g { color: #c9c9c9 }
+/* GenericDeleted */ .chroma .gd { color: #cf5967 }
+/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
+/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
+/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #ecbe7b }
+/* GenericOutput */ .chroma .go { color: #43454f }
+/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
+/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
+/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
+/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
+/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
+body { color: #282c34; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">FOL : Owns(Nono ,x)
+</span></span><span class="line"><span class="cl">      Missile(x)
+</span></span></code></pre>
+</body>
+</html>
+</div>
+<p><strong>Step4 :</strong>  All missiles were sold to Nono by Colonel</p>
+
+<div class="code-block"><html>
+<style type="text/css">
+/* Background */ .bg { color: #282c34 }
+/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
+/* Other */ .chroma .x { color: #c9c9c9 }
+/* Error */ .chroma .err { color: #cf5967 }
+/* CodeLine */ .chroma .cl { color: #c9c9c9 }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
+/* Keyword */ .chroma .k { color: #7fbaf5 }
+/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
+/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
+/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
+/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
+/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
+/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
+/* Name */ .chroma .n { color: #c9c9c9 }
+/* NameAttribute */ .chroma .na { color: #bc74c4 }
+/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
+/* NameClass */ .chroma .nc { color: #ecbe7b }
+/* NameConstant */ .chroma .no { color: #ecbe7b }
+/* NameDecorator */ .chroma .nd { color: #ecbe7b }
+/* NameEntity */ .chroma .ni { color: #c9c9c9 }
+/* NameException */ .chroma .ne { color: #cf5967 }
+/* NameFunction */ .chroma .nf { color: #57c7ff }
+/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
+/* NameLabel */ .chroma .nl { color: #cf5967 }
+/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
+/* NameOther */ .chroma .nx { color: #c9c9c9 }
+/* NameProperty */ .chroma .py { color: #c9c9c9 }
+/* NameTag */ .chroma .nt { color: #bc74c4 }
+/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
+/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
+/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
+/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
+/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
+/* Literal */ .chroma .l { color: #c9c9c9 }
+/* LiteralDate */ .chroma .ld { color: #57c7ff }
+/* LiteralString */ .chroma .s { color: #82cc6a }
+/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
+/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
+/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
+/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
+/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
+/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
+/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
+/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
+/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
+/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
+/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
+/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
+/* LiteralNumber */ .chroma .m { color: #56b6c2 }
+/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
+/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
+/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
+/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
+/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
+/* Operator */ .chroma .o { color: #bc74c4 }
+/* OperatorWord */ .chroma .ow { color: #bc74c4 }
+/* Punctuation */ .chroma .p { color: #56b6c2 }
+/* Comment */ .chroma .c { color: #3e4460 }
+/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #3e4460 }
+/* CommentSingle */ .chroma .c1 { color: #3e4460 }
+/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
+/* Generic */ .chroma .g { color: #c9c9c9 }
+/* GenericDeleted */ .chroma .gd { color: #cf5967 }
+/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
+/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
+/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #ecbe7b }
+/* GenericOutput */ .chroma .go { color: #43454f }
+/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
+/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
+/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
+/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
+/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
+body { color: #282c34; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">FOL : Missile(x) ^ Owns(Nono,x) → Sell(Colonel,x,Nono)
+</span></span></code></pre>
+</body>
+</html>
+</div>
+<p><strong>Step5 :</strong>  Colonel is American</p>
+
+<div class="code-block"><html>
+<style type="text/css">
+/* Background */ .bg { color: #282c34 }
+/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
+/* Other */ .chroma .x { color: #c9c9c9 }
+/* Error */ .chroma .err { color: #cf5967 }
+/* CodeLine */ .chroma .cl { color: #c9c9c9 }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
+/* Keyword */ .chroma .k { color: #7fbaf5 }
+/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
+/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
+/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
+/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
+/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
+/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
+/* Name */ .chroma .n { color: #c9c9c9 }
+/* NameAttribute */ .chroma .na { color: #bc74c4 }
+/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
+/* NameClass */ .chroma .nc { color: #ecbe7b }
+/* NameConstant */ .chroma .no { color: #ecbe7b }
+/* NameDecorator */ .chroma .nd { color: #ecbe7b }
+/* NameEntity */ .chroma .ni { color: #c9c9c9 }
+/* NameException */ .chroma .ne { color: #cf5967 }
+/* NameFunction */ .chroma .nf { color: #57c7ff }
+/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
+/* NameLabel */ .chroma .nl { color: #cf5967 }
+/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
+/* NameOther */ .chroma .nx { color: #c9c9c9 }
+/* NameProperty */ .chroma .py { color: #c9c9c9 }
+/* NameTag */ .chroma .nt { color: #bc74c4 }
+/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
+/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
+/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
+/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
+/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
+/* Literal */ .chroma .l { color: #c9c9c9 }
+/* LiteralDate */ .chroma .ld { color: #57c7ff }
+/* LiteralString */ .chroma .s { color: #82cc6a }
+/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
+/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
+/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
+/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
+/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
+/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
+/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
+/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
+/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
+/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
+/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
+/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
+/* LiteralNumber */ .chroma .m { color: #56b6c2 }
+/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
+/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
+/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
+/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
+/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
+/* Operator */ .chroma .o { color: #bc74c4 }
+/* OperatorWord */ .chroma .ow { color: #bc74c4 }
+/* Punctuation */ .chroma .p { color: #56b6c2 }
+/* Comment */ .chroma .c { color: #3e4460 }
+/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #3e4460 }
+/* CommentSingle */ .chroma .c1 { color: #3e4460 }
+/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
+/* Generic */ .chroma .g { color: #c9c9c9 }
+/* GenericDeleted */ .chroma .gd { color: #cf5967 }
+/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
+/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
+/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #ecbe7b }
+/* GenericOutput */ .chroma .go { color: #43454f }
+/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
+/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
+/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
+/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
+/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
+body { color: #282c34; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">FOL : American(Colonel)
+</span></span></code></pre>
+</body>
+</html>
+</div>
+<p><strong>Step6 :</strong> Missile is weapon</p>
+
+<div class="code-block"><html>
+<style type="text/css">
+/* Background */ .bg { color: #282c34 }
+/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
+/* Other */ .chroma .x { color: #c9c9c9 }
+/* Error */ .chroma .err { color: #cf5967 }
+/* CodeLine */ .chroma .cl { color: #c9c9c9 }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
+/* Keyword */ .chroma .k { color: #7fbaf5 }
+/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
+/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
+/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
+/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
+/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
+/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
+/* Name */ .chroma .n { color: #c9c9c9 }
+/* NameAttribute */ .chroma .na { color: #bc74c4 }
+/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
+/* NameClass */ .chroma .nc { color: #ecbe7b }
+/* NameConstant */ .chroma .no { color: #ecbe7b }
+/* NameDecorator */ .chroma .nd { color: #ecbe7b }
+/* NameEntity */ .chroma .ni { color: #c9c9c9 }
+/* NameException */ .chroma .ne { color: #cf5967 }
+/* NameFunction */ .chroma .nf { color: #57c7ff }
+/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
+/* NameLabel */ .chroma .nl { color: #cf5967 }
+/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
+/* NameOther */ .chroma .nx { color: #c9c9c9 }
+/* NameProperty */ .chroma .py { color: #c9c9c9 }
+/* NameTag */ .chroma .nt { color: #bc74c4 }
+/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
+/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
+/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
+/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
+/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
+/* Literal */ .chroma .l { color: #c9c9c9 }
+/* LiteralDate */ .chroma .ld { color: #57c7ff }
+/* LiteralString */ .chroma .s { color: #82cc6a }
+/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
+/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
+/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
+/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
+/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
+/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
+/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
+/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
+/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
+/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
+/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
+/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
+/* LiteralNumber */ .chroma .m { color: #56b6c2 }
+/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
+/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
+/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
+/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
+/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
+/* Operator */ .chroma .o { color: #bc74c4 }
+/* OperatorWord */ .chroma .ow { color: #bc74c4 }
+/* Punctuation */ .chroma .p { color: #56b6c2 }
+/* Comment */ .chroma .c { color: #3e4460 }
+/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #3e4460 }
+/* CommentSingle */ .chroma .c1 { color: #3e4460 }
+/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
+/* Generic */ .chroma .g { color: #c9c9c9 }
+/* GenericDeleted */ .chroma .gd { color: #cf5967 }
+/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
+/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
+/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #ecbe7b }
+/* GenericOutput */ .chroma .go { color: #43454f }
+/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
+/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
+/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
+/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
+/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
+body { color: #282c34; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">FOL : Missile(x)  → Weapon (x)
+</span></span></code></pre>
+</body>
+</html>
+</div>
+<p><strong>Proof:</strong></p>
+
+<p><strong>Iteration 1:</strong></p>
+
+<ul>
+<li>Start with the knowledge base/known facts : The facts that are not deduced from any other [ present in LHS of the statements ]</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>American(Colonel)</th>
+<th>Missile(x)</th>
+<th>Owns(Nono , x)</th>
+<th>Enemy(Nono , America)</th>
+</tr>
+</thead>
+
+<tbody>
+</tbody>
+</table>
+
+<ul>
+<li>Add inferences one by one to link the connections
+
+<ul>
+<li>Rule (1) doesn’t satisfy the so it will not be added</li>
+<li>Rule (2) and Rule(3) FOL are already added</li>
+<li>Rule (4) matches the inference so we will add it.                                 </li>
+</ul></li>
+</ul>
+
+<p><img loading="lazy" src="https://media.geeksforgeeks.org/wp-content/uploads/20220831134649/C149ForwardchaininginAIwithFOLproofIMGAWATING.png" alt="" /></p>
+
+<ul>
+<li>Rule(5) doesn’t have RHS so nothing added</li>
+<li>Rule (6) has weapon in RHS derived from Missile(x) , which is already a part so we will add weapon in our next state</li>
+</ul>
+
+<p><img loading="lazy" src="https://media.geeksforgeeks.org/wp-content/uploads/20220912111459/C149ForwardchaininginAIwithFOLproofIMGAWATING1.png" alt="" /></p>
+
+<p>That completes our first iteration</p>
+
+<p><strong>Iteration 2:</strong></p>
+
+<ul>
+<li>Rule(1) has all the LHS conditions satisfied as we can see in the first iteration. So all the four FOL in LHS are available, now we can add Criminal(x) from RHS in our next state</li>
+</ul>
+
+<p><img loading="lazy" src="https://media.geeksforgeeks.org/wp-content/uploads/20220909173405/ForwardingchainingRevised.jpg" alt="" /></p>
+
+<p>We reached the goal state to deduce that: <strong>Colonel is a criminal</strong></p>
+<h2><a name="explain-uniform-cost-search-and-best-first-search-in-detail-with-examples-and-compare-10-dec-23" class="heading-anchor" href="#explain-uniform-cost-search-and-best-first-search-in-detail-with-examples-and-compare-10-dec-23" rel="nofollow" aria-hidden="true"></a>Explain uniform cost search and best first search in detail with examples and compare (10 / Dec 23)</h2>
+<p><strong>Uniform Cost Search (UCS)</strong></p>
+
+<p><img loading="lazy" src="assets/Pasted%20image%2020240520052726.png" alt="" /></p>
+
+<ul>
+<li><strong>Definition</strong>: Uniform Cost Search is an uninformed search algorithm that aims to find the lowest-cost path from the start node to the goal node.</li>
+<li><strong>Approach</strong>: It expands nodes based on the actual cost of the path from the initial node to the current node.</li>
+<li><strong>Priority Queue</strong>: Utilizes a priority queue to sort nodes based on the cost of the path, selecting nodes with the lowest cost for expansion.</li>
+<li><strong>Optimality</strong>: When all edges have equal costs, UCS finds the optimal solution.</li>
+<li><strong>Example</strong>: Consider a map where each edge represents a road with a specific cost. UCS would find the path with the lowest total cost from one location to another.</li>
+</ul>
+
+<p><strong>Best-First Search</strong></p>
+
+<p><img loading="lazy" src="assets/Pasted%20image%2020240520053648.png" alt="" /></p>
+
+<ul>
+<li><strong>Definition</strong>: Best-First Search is an informed search algorithm that uses a heuristic function to estimate the cost from the current node to the goal node.</li>
+<li><strong>Heuristic Function</strong>: Incorporates domain-specific knowledge to guide the search towards the most promising nodes.</li>
+<li><strong>Selection Criteria</strong>: Nodes are expanded based on the estimated cost to the goal, not the actual path cost.</li>
+<li><strong>Optimality</strong>: Best-First Search does not guarantee optimality but focuses on exploring nodes that are likely closer to the goal.</li>
+<li><strong>Example</strong>: In a maze-solving scenario, Best-First Search would prioritize nodes that are closer to the exit based on the heuristic estimate.</li>
+</ul>
+
+<p><strong>Comparison of Uniform Cost Search and Best-First Search</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Uniform Cost Search (UCS)</th>
+<th>Best-First Search (BFS)</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>Type of Search</strong></td>
+<td>Uninformed</td>
+<td>Informed</td>
+</tr>
+
+<tr>
+<td><strong>Evaluation Function (f(n))</strong></td>
+<td>g(n)</td>
+<td>h(n)</td>
+</tr>
+
+<tr>
+<td><strong>Expands Nodes</strong></td>
+<td>Lowest actual cost path cost</td>
+<td>Node with the most promising path to the goal (based on heuristic)</td>
+</tr>
+
+<tr>
+<td><strong>Completeness</strong></td>
+<td>Guaranteed</td>
+<td>Not guaranteed,</td>
+</tr>
+
+<tr>
+<td><strong>Optimality</strong></td>
+<td>Finds the lowest cost solution</td>
+<td>May not find the optimal solution</td>
+</tr>
+
+<tr>
+<td><strong>Time Complexity</strong></td>
+<td>Exponential (worst case)</td>
+<td>Exponential (worst case)</td>
+</tr>
+
+<tr>
+<td><strong>Space Complexity</strong></td>
+<td>Exponential (worst case)</td>
+<td>Exponential (worst case)</td>
+</tr>
+
+<tr>
+<td><strong>Use Case</strong></td>
+<td>When actual cost is the only relevant factor</td>
+<td>When an informative heuristic is available to guide the search</td>
+</tr>
+
+<tr>
+<td><strong>Advantages</strong></td>
+<td>Guaranteed to find optimal solution, easy to implement</td>
+<td>Potentially faster search with a good heuristic</td>
+</tr>
+
+<tr>
+<td><strong>Disadvantages</strong></td>
+<td>Can be slow for large search spaces, may explore irrelevant paths</td>
+<td>May miss the optimal solution, requires a good heuristic function</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="explain-various-stages-in-the-data-analytics-lifecycle-10-dec-23" class="heading-anchor" href="#explain-various-stages-in-the-data-analytics-lifecycle-10-dec-23" rel="nofollow" aria-hidden="true"></a>Explain various stages in the Data analytics Lifecycle. (10 / Dec 23)</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020240520054400.png" alt="" /></p>
+
+<ul>
+<li><strong>Define the problem:</strong> This is the initial step where you identify the question you are trying to answer using the data. A well-defined problem will guide the data collection and analysis process.</li>
+<li><strong>Collect data:</strong> In this stage, you gather the data required to address the problem you defined. Data can be collected from various sources such as surveys, experiments, or databases.</li>
+<li><strong>Clean data:</strong> The data you collect may contain errors or inconsistencies. This step involves cleaning the data to ensure its accuracy and usability for analysis.</li>
+<li><strong>Analyze data:</strong> This stage involves performing statistical analysis on the cleaned data to extract patterns and insights that answer your question.</li>
+<li><strong>Data Visualization:</strong> Here, you represent the analyzed data in a visual format such as charts or graphs to make it easier to understand and interpret the patterns.</li>
+<li><strong>Present the findings:</strong> This is the final step where you communicate the results of your data analysis to the audience. You can present the findings in reports, presentations or dashboards.</li>
+</ul>
+<h2><a name="explain-svm-in-detail-10-dec-23" class="heading-anchor" href="#explain-svm-in-detail-10-dec-23" rel="nofollow" aria-hidden="true"></a>Explain SVM in detail (10 / Dec 23)</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020240520061947.png" alt="" /></p>
+
+<p>SVM stands for Support Vector Machine, which is a supervised machine learning algorithm used for classification and regression tasks.</p>
+
+<p>SVMs can be used for a variety of tasks, such as text classification, image classification, spam detection, handwriting identification, gene expression analysis, face detection, and anomaly detection</p>
+
+<p><strong>Types of Support Vector Machine</strong></p>
+
+<ul>
+<li><strong>Linear SVM:</strong> 
+
+<ul>
+<li>Linear SVMs use a linear decision boundary to separate the data points of different classes.</li>
+</ul></li>
+<li><strong>Non-Linear SVM:</strong> 
+
+<ul>
+<li>Non-Linear SVM can be used to classify data when it cannot be separated into two classes by a straight line (in the case of 2D).</li>
+</ul></li>
+</ul>
+
+<p><strong>Support Vector Machine Terminology</strong></p>
+
+<ol>
+<li><strong>Hyperplane</strong>:
+
+<ul>
+<li><strong>Definition</strong>: A hyperplane is like a decision boundary that separates different classes in the data.</li>
+<li><strong>Simple Explanation</strong>: Imagine it as a line or surface that divides data points into groups.</li>
+</ul></li>
+<li><strong>Support Vectors</strong>:
+
+<ul>
+<li><strong>Definition</strong>: Support vectors are the data points closest to the hyperplane.</li>
+<li><strong>Simple Explanation</strong>: They are the key points that help define the boundary between different groups.</li>
+</ul></li>
+<li><strong>Margin</strong>:
+
+<ul>
+<li><strong>Definition</strong>: The margin is the distance between the hyperplane and the closest data points.</li>
+<li><strong>Simple Explanation</strong>: It's like the safety buffer or gap between the groups, making the classification more reliable.</li>
+</ul></li>
+<li><strong>Kernel</strong>:
+
+<ul>
+<li><strong>Definition</strong>: A kernel is a function that measures similarity between data points.</li>
+<li><strong>Simple Explanation</strong>: It's a way to transform data to make it easier to separate into groups.</li>
+</ul></li>
+<li><strong>Hard Margin</strong>:
+
+<ul>
+<li><strong>Definition</strong>: Hard margin SVM aims for a strict separation of data points.</li>
+<li><strong>Simple Explanation</strong>: It's like drawing a clear line between groups without any errors.</li>
+</ul></li>
+<li><strong>Soft Margin</strong>:
+
+<ul>
+<li><strong>Definition</strong>: Soft margin SVM allows for some errors in classification.</li>
+<li><strong>Simple Explanation</strong>: It's more flexible, allowing for a few mistakes to find a better overall solution.</li>
+</ul></li>
+<li><strong>C</strong>:
+
+<ul>
+<li><strong>Definition</strong>: C is a parameter that controls the trade-off between smooth decision boundaries and classifying points correctly.</li>
+<li><strong>Simple Explanation</strong>: It's like a knob that adjusts how strict the SVM should be in classifying data.</li>
+</ul></li>
+<li><strong>Hinge Loss</strong>:
+
+<ul>
+<li><strong>Definition</strong>: Hinge loss is a loss function that penalizes misclassifications.</li>
+<li><strong>Simple Explanation</strong>: It's a way to measure how wrong the SVM is in its predictions.</li>
+</ul></li>
+<li><strong>Dual Problem</strong>:
+
+<ul>
+<li><strong>Definition</strong>: The dual problem is an alternative way to solve the optimization problem in SVMs.</li>
+<li><strong>Simple Explanation</strong>: It's like looking at the problem from a different angle to find the best solution.</li>
+</ul></li>
+</ol>
+<h2><a name="write-in-detail-issues-in-machine-learning-10-dec-23" class="heading-anchor" href="#write-in-detail-issues-in-machine-learning-10-dec-23" rel="nofollow" aria-hidden="true"></a>Write in detail issues in machine learning. (10 / Dec 23)</h2>
+<ul>
+<li><p><strong>Inadequate Training Data</strong></p>
+
+<ul>
+<li>The major issue that comes while using machine learning algorithms is the lack of quality as well as quantity of data.</li>
+<li>Although data plays a vital role in the processing of machine learning algorithms, many data scientists claim that inadequate data, noisy data, and unclean data are extremely exhausting the machine learning algorithms.</li>
+<li>Data quality can be affected by some factors as follows:
+
+<ul>
+<li><strong>Noisy Data-</strong> It is responsible for an inaccurate prediction that affects the decision as well as accuracy in classification tasks.</li>
+<li><strong>Incorrect data-</strong> It is also responsible for faulty programming and results obtained in machine learning models. Hence, incorrect data may affect the accuracy of the results also.</li>
+<li><strong>Generalizing of output data-</strong> Sometimes, it is also found that generalizing output data becomes complex, which results in comparatively poor future actions.</li>
+</ul></li>
+</ul></li>
+
+<li><p><strong>Poor quality of data</strong></p>
+
+<ul>
+<li>As we have discussed above, data plays a significant role in machine learning, and it must be of good quality as well.</li>
+<li>Noisy data, incomplete data, inaccurate data, and unclean data lead to less accuracy in classification and low-quality results.</li>
+</ul></li>
+
+<li><p><strong>Overfitting</strong></p>
+
+<ul>
+<li>Overfitting is one of the most common issues faced by Machine Learning engineers and data scientists.</li>
+<li>Whenever a machine learning model is trained with a huge amount of data, it starts capturing noise and inaccurate data into the training data set.</li>
+<li>It negatively affects the performance of the model.</li>
+<li>Example:
+
+<ul>
+<li>We have a few training data sets such as 1000 mangoes, 1000 apples, 1000 bananas, and 5000 papayas.</li>
+<li>Then there is a considerable probability of identification of an apple as papaya because we have a massive amount of biased data in the training data set; hence prediction got negatively affected.</li>
+</ul></li>
+</ul></li>
+
+<li><p><strong>Underfitting:</strong></p>
+
+<ul>
+<li>Underfitting is just the opposite of overfitting.</li>
+<li>Whenever a machine learning model is trained with fewer amounts of data, and as a result, it provides incomplete and inaccurate data and destroys the accuracy of the machine learning model.</li>
+<li>Underfitting occurs when our model is too simple to understand the base structure of the data, just like an undersized pant.</li>
+<li>This generally happens when we have limited data into the data set, and we try to build a linear model with non-linear data.</li>
+</ul></li>
+
+<li><p><strong>Monitoring and maintenance</strong></p>
+
+<ul>
+<li>As we know that generalized output data is mandatory for any machine learning model; hence, regular monitoring and maintenance become compulsory for the same.</li>
+<li>Different results for different actions require data change; hence editing of codes as well as resources for monitoring them also become necessary.</li>
+</ul></li>
+
+<li><p><strong>Getting bad recommendations</strong></p>
+
+<ul>
+<li>A machine learning model operates under a specific context which results in bad recommendations and concept drift in the model.</li>
+<li><strong>Example:</strong>
+
+<ul>
+<li>A specific time customer is looking for some gadgets, but now customer requirement changed over time but still machine learning model showing same recommendations to the customer while customer expectation has been changed.</li>
+</ul></li>
+<li>This incident is called a Data Drift. It generally occurs when new data is introduced or interpretation of data changes.</li>
+<li>However, we can overcome this by regularly updating and monitoring data according to the expectations.</li>
+</ul></li>
+
+<li><p><strong>Lack of skilled resources</strong></p>
+
+<ul>
+<li>The absence of skilled resources in the form of manpower is also an issue.</li>
+<li>Hence, we need manpower having in-depth knowledge of mathematics, science, and technologies for developing and managing scientific substances for machine learning.</li>
+</ul></li>
+
+<li><p><strong>Process Complexity of Machine Learning</strong></p>
+
+<ul>
+<li>The machine learning process is very complex, which is also another major issue faced by machine learning engineers and data scientists.</li>
+<li>However, Machine Learning and Artificial Intelligence are very new technologies but are still in an experimental phase and continuously being changing over time. There is the majority of hits and trial experiments; hence the probability of error is higher than expected.</li>
+</ul></li>
+
+<li><p><strong>Data Bias</strong></p>
+
+<ul>
+<li>Data Biasing is also found a big challenge in Machine Learning.</li>
+<li>These errors exist when certain elements of the dataset are heavily weighted or need more importance than others.</li>
+<li>Biased data leads to inaccurate results, skewed outcomes, and other analytical errors.</li>
+</ul></li>
+
+<li><p><strong>Irrelevant features</strong></p>
+
+<ul>
+<li>Although machine learning models are intended to give the best possible outcome, if we feed garbage data as input, then the result will also be garbage.</li>
+<li>Hence, we should use relevant features in our training sample.</li>
+<li>A machine learning model is said to be good if training data has a good set of features or less to no irrelevant features.</li>
+</ul></li>
+</ul>
+<h2><a name="elaborate-in-detail-the-steps-in-developing-a-machine-learning-application-with-architectural-diagram-10-dec-23" class="heading-anchor" href="#elaborate-in-detail-the-steps-in-developing-a-machine-learning-application-with-architectural-diagram-10-dec-23" rel="nofollow" aria-hidden="true"></a>Elaborate in detail the steps in developing a Machine Learning application with architectural diagram. (10 / Dec 23)</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020240520082631.png" alt="" /></p>
+
+<ol>
+<li><strong>Online/Offline Feature Store</strong>:
+
+<ul>
+<li>It's a place where features (important data) are stored and shared.</li>
+<li>Having an online store helps get features quickly for real-time predictions.</li>
+<li>The offline store keeps a history of features, which is useful for training models and making predictions in batches.</li>
+</ul></li>
+<li><strong>Model Registry</strong>:
+
+<ul>
+<li>It's like a library where trained models and their information are kept.</li>
+<li>It helps keep track of how models were made and changed over time, like a version control system.</li>
+</ul></li>
+<li><strong>Performance Feedback Loop</strong>:
+
+<ul>
+<li>It's a way to improve the data used to train models based on how well the model performs.</li>
+<li>If the model doesn't do well, it can help figure out how to make the data better.</li>
+</ul></li>
+<li><strong>Model Drift Feedback Loop</strong>:
+
+<ul>
+<li>It's similar to the performance feedback loop, but it checks if the model is still working well after it's been used for a while.</li>
+<li>If the model starts making more mistakes, it can help update the data to fix the problem.</li>
+</ul></li>
+<li><strong>Alarm Manager</strong>:
+
+<ul>
+<li>It's like a watchdog that barks when something goes wrong with the model.</li>
+<li>When the model monitoring system detects an issue, the alarm manager sends alerts to the right people or systems.</li>
+<li>One of those systems is the model re-training pipeline, which can fix the model if needed.</li>
+</ul></li>
+<li><strong>Scheduler</strong>:
+
+<ul>
+<li>It's a timekeeper that tells the system to re-train the model at regular intervals.</li>
+<li>This helps keep the model up-to-date and performing well over time.</li>
+</ul></li>
+<li><strong>Lineage Tracker</strong>:
+
+<ul>
+<li>It's like a time machine for the machine learning process.</li>
+<li>It records all the versions of the data, code, and environment used to create the model.</li>
+<li>This allows going back in time and recreating the exact conditions used to train the model.</li>
+</ul></li>
+</ol>
+<h2><a name="what-do-you-mean-by-covariance-and-correlation-explain-the-range-of-coefficients-of-correlation-and-covariance-calculate-cov-observed-value1-observed-value2-and-corrcov-observed-value1-observed-value2-for-following-data-how-do-you-interpret-these-values-10-dec-23" class="heading-anchor" href="#what-do-you-mean-by-covariance-and-correlation-explain-the-range-of-coefficients-of-correlation-and-covariance-calculate-cov-observed-value1-observed-value2-and-corrcov-observed-value1-observed-value2-for-following-data-how-do-you-interpret-these-values-10-dec-23" rel="nofollow" aria-hidden="true"></a>What do you mean by covariance and correlation? Explain the range of coefficients of correlation and covariance. Calculate COV(Observed Value1, Observed Value2) and CORRCOV(Observed Value1, Observed Value2) for following data. How do you interpret these values? (10 / Dec 23)</h2>
+<table>
+<thead>
+<tr>
+<th>Experiment No</th>
+<th>Observed Value1</th>
+<th>Observed Value2</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>38</td>
+<td>20</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>62</td>
+<td>15</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>22</td>
+<td>30</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>38</td>
+<td>21</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>45</td>
+<td>18</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>69</td>
+<td>12</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>75</td>
+<td>14</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>38</td>
+<td>28</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Experiment No</th>
+<th>Observed Value1</th>
+<th>Observed Value2</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>9</td>
+<td>80</td>
+<td>9</td>
+</tr>
+
+<tr>
+<td>10</td>
+<td>32</td>
+<td>22</td>
+</tr>
+
+<tr>
+<td>11</td>
+<td>51</td>
+<td>20</td>
+</tr>
+
+<tr>
+<td>12</td>
+<td>56</td>
+<td>19</td>
+</tr>
+
+<tr>
+<td>13</td>
+<td>21</td>
+<td>28</td>
+</tr>
+
+<tr>
+<td>14</td>
+<td>34</td>
+<td>23</td>
+</tr>
+
+<tr>
+<td>15</td>
+<td>76</td>
+<td>14</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="differentiate-between-forward-and-backward-chaining-5-may-23" class="heading-anchor" href="#differentiate-between-forward-and-backward-chaining-5-may-23" rel="nofollow" aria-hidden="true"></a>Differentiate Between Forward and Backward chaining (5 / May 23)</h2>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Forward Chaining</th>
+<th>Backward Chaining</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Strategy</td>
+<td>Data-driven</td>
+<td>Goal-driven</td>
+</tr>
+
+<tr>
+<td>Starting Point</td>
+<td>Known Facts/Data</td>
+<td>Goal</td>
+</tr>
+
+<tr>
+<td>Technique</td>
+<td>Works from available data towards the final decision</td>
+<td>Works from the goal towards the initial state</td>
+</tr>
+
+<tr>
+<td>Approach</td>
+<td>Bottom-up strategy</td>
+<td>Top-down strategy</td>
+</tr>
+
+<tr>
+<td>Search Strategy</td>
+<td>Breadth-First Strategy</td>
+<td>Depth-First Strategy</td>
+</tr>
+
+<tr>
+<td>Goal</td>
+<td>Focuses on reaching the conclusion</td>
+<td>Aims to determine the possible facts or required data</td>
+</tr>
+
+<tr>
+<td>Speed</td>
+<td>Slower</td>
+<td>Faster</td>
+</tr>
+
+<tr>
+<td>Efficiency</td>
+<td>Slower</td>
+<td>Faster</td>
+</tr>
+
+<tr>
+<td>Direction</td>
+<td>Forward</td>
+<td>Backward</td>
+</tr>
+
+<tr>
+<td>Application</td>
+<td>Used for planning, monitoring, control, and interpretation</td>
+<td>Utilized in automated inference engines, theorem proofs, and other AI applications</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="compare-different-search-techniques-based-on-their-time-complexities-5-may-23" class="heading-anchor" href="#compare-different-search-techniques-based-on-their-time-complexities-5-may-23" rel="nofollow" aria-hidden="true"></a>Compare different search techniques based on their time complexities. (5 / May 23)</h2>
+<table>
+<thead>
+<tr>
+<th>Search Algorithm</th>
+<th>Best Case</th>
+<th>Average Case</th>
+<th>Worst Case</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Linear Search</td>
+<td>O(1)</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+
+<tr>
+<td>Binary Search</td>
+<td>O(1)</td>
+<td>O(log n)</td>
+<td>O(log n)</td>
+</tr>
+
+<tr>
+<td>Depth-First Search (DFS)</td>
+<td>O(1)</td>
+<td>O(b^d)</td>
+<td>O(b^m)</td>
+</tr>
+
+<tr>
+<td>Breadth-First Search (BFS)</td>
+<td>O(1)</td>
+<td>O(b^d)</td>
+<td>O(b^d)</td>
+</tr>
+
+<tr>
+<td>Uniform-Cost Search</td>
+<td>O(1)</td>
+<td>O(b^(C*/ε))</td>
+<td>O(b^(C*/ε))</td>
+</tr>
+
+<tr>
+<td>Iterative Deepening DFS</td>
+<td>O(1)</td>
+<td>O(b^d)</td>
+<td>O(b^d)</td>
+</tr>
+
+<tr>
+<td>Bidirectional Search</td>
+<td>O(1)</td>
+<td>O(b^(d/2))</td>
+<td>O(b^(d/2))</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="what-is-a-histogram-can-we-perform-univariate-graphical-analysis-using-histogram-5-may-23" class="heading-anchor" href="#what-is-a-histogram-can-we-perform-univariate-graphical-analysis-using-histogram-5-may-23" rel="nofollow" aria-hidden="true"></a>What is a histogram? Can we perform univariate graphical analysis using histogram? (5 / May 23)</h2>
+<p>A <strong>histogram</strong> is a graphical representation commonly used to visualize the distribution of numerical data.</p>
+
+<p>It consists of bars, each representing the frequency or count of observations falling within specific intervals, known as bins.</p>
+
+<p>Histograms provide insights into the frequency of different data points, the center of data, the spread of the dataset, skewness/variance, and the presence of outliers.</p>
+
+<p><strong>Univariate graphical analysis</strong> can indeed be performed using a histogram. Here is example:</p>
+
+<p><img loading="lazy" src="assets/Pasted%20image%2020240520124613.png" alt="" /></p>
+<h2><a name="what-are-the-different-ways-of-knowledge-representation-5-may-23" class="heading-anchor" href="#what-are-the-different-ways-of-knowledge-representation-5-may-23" rel="nofollow" aria-hidden="true"></a>What are the different ways of knowledge representation? (5 / May 23)</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020240520124939.png" alt="" /></p>
+
+<ul>
+<li><strong>Logical Representation</strong>:
+
+<ul>
+<li>Logical representation uses rules and conditions to draw conclusions without any ambiguity.</li>
+<li>It follows specific communication rules and has clear syntax and semantics for sound inference.</li>
+<li><img loading="lazy" src="assets/Pasted%20image%2020240520125257.jpg" alt="" /></li>
+</ul></li>
+<li><strong>Semantic Network Representation</strong>:
+
+<ul>
+<li>Semantic networks represent knowledge using graphical networks with nodes (objects) connected by arcs (relationships).</li>
+<li>This visual representation makes it easy to understand relationships between objects.</li>
+<li><img loading="lazy" src="assets/Pasted%20image%2020240520125230.png" alt="" /></li>
+</ul></li>
+<li><strong>Frame Representation</strong>:
+
+<ul>
+<li>Frames are like records that describe entities with attributes and values.</li>
+<li>They organize knowledge into substructures, representing stereotypical situations.</li>
+<li>Frames store information about objects or events in a structured way.</li>
+<li>Example of a book frame:</li>
+</ul></li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Slots</th>
+<th>Filters</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Title</td>
+<td>Operating System</td>
+</tr>
+
+<tr>
+<td>Genre</td>
+<td>Computer Science</td>
+</tr>
+
+<tr>
+<td>Author</td>
+<td>Vivek Sahu</td>
+</tr>
+
+<tr>
+<td>Edition</td>
+<td>Sixth Edition</td>
+</tr>
+
+<tr>
+<td>Year</td>
+<td>1999</td>
+</tr>
+
+<tr>
+<td>Page</td>
+<td>982</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li><strong>Production Rules</strong>:
+
+<ul>
+<li>Production rules involve conditions and actions.</li>
+<li>When a condition is met, a rule fires, triggering a specific action.</li>
+<li>This system helps in problem-solving by recognizing conditions and executing corresponding actions.</li>
+</ul></li>
+</ul>
+<h2><a name="can-1-liter-water-be-measured-using-10-liter-and-4-liter-jug-justify-10-may-23-10-dec-22" class="heading-anchor" href="#can-1-liter-water-be-measured-using-10-liter-and-4-liter-jug-justify-10-may-23-10-dec-22" rel="nofollow" aria-hidden="true"></a>Can 1 Liter water be measured using 10 Liter and 4 liter jug? Justify. (10 / May 23) (10 / Dec 22)</h2><h2><a name="compare-linear-regression-vs-logistics-regression-with-suitable-diagrams-and-formulas-10-may-23" class="heading-anchor" href="#compare-linear-regression-vs-logistics-regression-with-suitable-diagrams-and-formulas-10-may-23" rel="nofollow" aria-hidden="true"></a>Compare Linear Regression Vs Logistics Regression with suitable diagrams and formulas (10 / May 23)</h2>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Logistic Regression</th>
+<th>Linear Regression</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Purpose</td>
+<td>Used for predicting categorical outcomes, especially when the dependent variable is binary</td>
+<td>Used for predicting continuous outcomes, assuming a linear relationship between variables</td>
+</tr>
+
+<tr>
+<td>Equation</td>
+<td>𝑦=𝑎+𝑏𝑥y=a+bx</td>
+<td>𝑝=11+𝑒−(𝑎+𝑏𝑥)p=1+e−(a+bx)1​</td>
+</tr>
+
+<tr>
+<td>Output</td>
+<td>Categorical outcome (e.g., yes/no, 1/0)</td>
+<td>Continuous outcome (e.g., price, temperature)</td>
+</tr>
+
+<tr>
+<td>Model Type</td>
+<td>Classification</td>
+<td>Regression</td>
+</tr>
+
+<tr>
+<td>Error Distribution</td>
+<td>Binomial</td>
+<td>Normal/Gaussian</td>
+</tr>
+
+<tr>
+<td>Sensitivity to Outliers</td>
+<td>Less</td>
+<td>More</td>
+</tr>
+
+<tr>
+<td>Estimation Method</td>
+<td>Maximum Likelihood Estimation (MLE)</td>
+<td>Ordinary Least Squares (OLS)</td>
+</tr>
+
+<tr>
+<td>Equation/Function</td>
+<td>Logistic (Sigmoid) function</td>
+<td>Linear equation</td>
+</tr>
+</tbody>
+</table>
+
+<p><img loading="lazy" src="assets/Pasted%20image%2020240419035439.png" alt="" /></p>
+<h2><a name="state-a-algorithm-and-explain-with-example-how-a-searching-algorithm-helps-in-finding-the-goal-with-optimal-path-10-may-23" class="heading-anchor" href="#state-a-algorithm-and-explain-with-example-how-a-searching-algorithm-helps-in-finding-the-goal-with-optimal-path-10-may-23" rel="nofollow" aria-hidden="true"></a>State A* algorithm and explain with example how A* searching algorithm helps in finding the goal with optimal path. (10 / May 23)</h2>
+<p>The <strong>A</strong>* algorithm, pronounced as &quot;A-star,&quot; is a widely used and powerful graph traversal and pathfinding algorithm in artificial intelligence.</p>
+
+<p>It efficiently finds the shortest path between two nodes in a graph by considering both the actual cost incurred so far and an estimate of the remaining cost.</p>
+
+<p>Here's how A* works and its significance in finding optimal paths:</p>
+
+<iframe width="100%" height="400rem" src="https://www.youtube.com/embed/PzEWHH2v3TE" title="A Star algorithm | Example | Informed search | Artificial intelligence | Lec-21 | Bhanu Priya" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<p><img loading="lazy" src="assets/Pasted%20image%2020240520133820.png" alt="" /></p>
+
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>h(n)</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>S</td>
+<td>5</td>
+</tr>
+
+<tr>
+<td>A</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>B</td>
+<td>4</td>
+</tr>
+
+<tr>
+<td>C</td>
+<td>2</td>
+</tr>
+
+<tr>
+<td>D</td>
+<td>6</td>
+</tr>
+
+<tr>
+<td>G</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li><strong>S-&gt;A =&gt; F(n) = g(n) + h(n) = 1 + 3 = 4</strong></li>
+
+<li><p>S-&gt;G =&gt; F(n) = 10 + 0 = 10 - <strong>Hold</strong></p></li>
+
+<li><p>S-&gt;A-&gt;B = (1 + 2) + 4 = 7 - <strong>Hold</strong></p></li>
+
+<li><p><strong>S-&gt;A-&gt;C = (1 + 1) + 2 =</strong> 4</p></li>
+
+<li><p>S-&gt;A-&gt;C-&gt;D = (1 + 1 + 3) + 6 = 11 - <strong>Hold</strong></p></li>
+
+<li><p><strong>S-&gt;A-&gt;C-&gt;G = (1 + 1 + 4) + 0 = 6 - Stop reached the goal</strong></p></li>
+</ul>
+<h2><a name="with-respect-to-quantitative-data-analysis-explain-following-i-measure-of-central-tendencies-ii-measure-of-spread-iii-skewness-and-kurtosis-10-may-23" class="heading-anchor" href="#with-respect-to-quantitative-data-analysis-explain-following-i-measure-of-central-tendencies-ii-measure-of-spread-iii-skewness-and-kurtosis-10-may-23" rel="nofollow" aria-hidden="true"></a>With respect to Quantitative data analysis explain following: i. Measure of central tendencies, ii. Measure of spread, iii. Skewness and Kurtosis (10 / May 23)</h2>
+<p><strong>Measures of Central Tendency</strong></p>
+
+<p><img loading="lazy" src="assets/Central-Tendency.webp" alt="" /></p>
+
+<p>The measures of central tendency describe the central or typical value in a dataset. The three main measures are:</p>
+
+<ol>
+<li><strong>Mean</strong>: The arithmetic average, calculated by summing all values and dividing by the total number of values. It is suitable for symmetric distributions but sensitive to outliers.</li>
+<li><strong>Median</strong>: The middle value when data is arranged in order. For even datasets, it is the average of the two middle values. The median is a robust measure for skewed distributions</li>
+<li><strong>Mode</strong>: The value that appears most frequently in the dataset. The mode is useful for categorical data and can identify multiple peaks in a distribution</li>
+</ol>
+
+<p><strong>Measures of Spread</strong></p>
+
+<p>Measures of spread describe how dispersed the data is around the central tendency. Common measures include:</p>
+
+<ul>
+<li><strong>Range</strong>: The difference between the highest and lowest values</li>
+<li><strong>Variance</strong>: The average squared deviation from the mean</li>
+<li><strong>Standard Deviation</strong>: The square root of the variance, measuring the expected deviation from the mean</li>
+</ul>
+
+<p><strong>Skewness</strong></p>
+
+<p><img loading="lazy" src="assets/Pasted%20image%2020240520135205.jpg" alt="" /></p>
+
+<ul>
+<li><strong>Positive Skewness (Right-Skewed)</strong>
+
+<ul>
+<li>The distribution has a longer tail on the right side</li>
+<li>Most of the data is concentrated on the left side</li>
+</ul></li>
+<li><strong>No Skewness (Symmetric)</strong>
+
+<ul>
+<li>The distribution is symmetric, with equal tails on both sides</li>
+<li>The mean, median and mode are equal</li>
+</ul></li>
+<li><strong>Negative Skewness (Left-Skewed)</strong>
+
+<ul>
+<li>The distribution has a longer tail on the left side</li>
+<li>Most of the data is concentrated on the right side</li>
+</ul></li>
+</ul>
+
+<p><strong>Kurtosis</strong></p>
+
+<p><img loading="lazy" src="assets/Pasted%20image%2020240520135213.jpg" alt="" /></p>
+
+<ul>
+<li><strong>Mesokurtic</strong>: This distribution is balanced and symmetrical, like a normal distribution where both ends of the graph look similar.</li>
+<li><strong>Leptokurtic</strong>: In this distribution, the tails are longer than in a balanced distribution. This means more data points are far from the average, making the tails stretch out.</li>
+<li><strong>Platykurtic</strong>: This distribution has shorter tails compared to a balanced one. It means there are fewer data points far from the average, making the tails flatter.</li>
+</ul>
+<h2><a name="was-marcus-loyal-to-casear-solve-using-resolution-10-may-23" class="heading-anchor" href="#was-marcus-loyal-to-casear-solve-using-resolution-10-may-23" rel="nofollow" aria-hidden="true"></a>Was Marcus loyal to Casear ? Solve using resolution. (10 / May 23)</h2>
+<div class="code-block"><html>
+<style type="text/css">
+/* Background */ .bg { color: #282c34 }
+/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
+/* Other */ .chroma .x { color: #c9c9c9 }
+/* Error */ .chroma .err { color: #cf5967 }
+/* CodeLine */ .chroma .cl { color: #c9c9c9 }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
+/* Keyword */ .chroma .k { color: #7fbaf5 }
+/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
+/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
+/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
+/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
+/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
+/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
+/* Name */ .chroma .n { color: #c9c9c9 }
+/* NameAttribute */ .chroma .na { color: #bc74c4 }
+/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
+/* NameClass */ .chroma .nc { color: #ecbe7b }
+/* NameConstant */ .chroma .no { color: #ecbe7b }
+/* NameDecorator */ .chroma .nd { color: #ecbe7b }
+/* NameEntity */ .chroma .ni { color: #c9c9c9 }
+/* NameException */ .chroma .ne { color: #cf5967 }
+/* NameFunction */ .chroma .nf { color: #57c7ff }
+/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
+/* NameLabel */ .chroma .nl { color: #cf5967 }
+/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
+/* NameOther */ .chroma .nx { color: #c9c9c9 }
+/* NameProperty */ .chroma .py { color: #c9c9c9 }
+/* NameTag */ .chroma .nt { color: #bc74c4 }
+/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
+/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
+/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
+/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
+/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
+/* Literal */ .chroma .l { color: #c9c9c9 }
+/* LiteralDate */ .chroma .ld { color: #57c7ff }
+/* LiteralString */ .chroma .s { color: #82cc6a }
+/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
+/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
+/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
+/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
+/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
+/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
+/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
+/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
+/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
+/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
+/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
+/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
+/* LiteralNumber */ .chroma .m { color: #56b6c2 }
+/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
+/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
+/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
+/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
+/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
+/* Operator */ .chroma .o { color: #bc74c4 }
+/* OperatorWord */ .chroma .ow { color: #bc74c4 }
+/* Punctuation */ .chroma .p { color: #56b6c2 }
+/* Comment */ .chroma .c { color: #3e4460 }
+/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #3e4460 }
+/* CommentSingle */ .chroma .c1 { color: #3e4460 }
+/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
+/* Generic */ .chroma .g { color: #c9c9c9 }
+/* GenericDeleted */ .chroma .gd { color: #cf5967 }
+/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
+/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
+/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #ecbe7b }
+/* GenericOutput */ .chroma .go { color: #43454f }
+/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
+/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
+/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
+/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
+/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
+body { color: #282c34; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">1. Marcus was a man.
+</span></span><span class="line"><span class="cl">2. Marcus was a Pompeian.
+</span></span><span class="line"><span class="cl">3. All Pompeians were Romans.
+</span></span><span class="line"><span class="cl">4. Caesar was a ruler.
+</span></span><span class="line"><span class="cl">5. All Pompeians were either loyal to Caesar or hated him.
+</span></span><span class="line"><span class="cl">6. Every one is loyal to someone.
+</span></span><span class="line"><span class="cl">7. People only try to assassinate rulers they are not loyal to.
+</span></span><span class="line"><span class="cl">8. Marcus tried to assassinate Caesar.
+</span></span><span class="line"><span class="cl">
+</span></span></code></pre>
+</body>
+</html>
+</div>
+<iframe width="100%" height="400rem" src="https://www.youtube.com/embed/Z0vTGofo2n8" title="Was Marcus Loyalto Ceasar? Was Marcus Hates Ceasar? using Predicate Logic in AI by Mahesh Huddar" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<h2><a name="can-min-max-be-used-for-team-games-draw-sample-trees-for-2-and-3-teams-10-may-23" class="heading-anchor" href="#can-min-max-be-used-for-team-games-draw-sample-trees-for-2-and-3-teams-10-may-23" rel="nofollow" aria-hidden="true"></a>Can min-max be used for team games? Draw sample trees for 2 and 3 teams (10 / May 23)</h2>
+<p>Min-max can be used for team games with some limitations. Here's why:</p>
+
+<p><strong>Limitations of Min-Max for Team Games:</strong></p>
+
+<ul>
+<li><strong>Non-Zero-Sum Games:</strong> Min-max is designed for zero-sum games where one player's gain is another player's loss (e.t., chess). Team games often involve cooperation and achieving a common goal, making them non-zero-sum.</li>
+<li><strong>Hidden Information:</strong> Min-max assumes perfect information about the opponent's moves. In team games, teammates' strategies might be hidden, and communication can be limited.</li>
+</ul>
+
+<p><strong>Example</strong></p>
+
+<p><img loading="lazy" src="assets/Pasted%20image%2020240520142221.png" alt="" /></p>
+<h2><a name="consider-you-are-performing-ml-for-predicting-housing-prices-you-have-trained-three-models-and-following-data-summarizes-the-predicted-house-price-by-each-model-for-5-different-trial-runs-10-may-23-10-dec-22" class="heading-anchor" href="#consider-you-are-performing-ml-for-predicting-housing-prices-you-have-trained-three-models-and-following-data-summarizes-the-predicted-house-price-by-each-model-for-5-different-trial-runs-10-may-23-10-dec-22" rel="nofollow" aria-hidden="true"></a>Consider you are performing ML for predicting housing prices you have trained three models and following data summarizes the predicted house price by each model for 5 different trial runs. (10 / May 23) (10 / Dec 22)</h2>
+<table>
+<thead>
+<tr>
+<th>Model Code</th>
+<th>Trial 1</th>
+<th>Trial 2</th>
+<th>Trial 3</th>
+<th>Trial 4</th>
+<th>Trial 5</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>A</td>
+<td>3.5</td>
+<td>3.4</td>
+<td>3.8</td>
+<td>3.5</td>
+<td>3.4</td>
+</tr>
+
+<tr>
+<td>B</td>
+<td>3.9</td>
+<td>3.8</td>
+<td>3.7</td>
+<td>3.9</td>
+<td>3.6</td>
+</tr>
+
+<tr>
+<td>C</td>
+<td>3.5</td>
+<td>3.3</td>
+<td>3.6</td>
+<td>3.5</td>
+<td>3.8</td>
+</tr>
+</tbody>
+</table>
+
+<p>Perform One way ANOVA F Test on this data and comment on whether the mean house price predicted by models A, B, C are same with level of significance 0.05.</p>
+<h2><a name="what-are-the-rules-of-conversion-from-predicate-to-cnf-explain-each-rule-with-proper-example-10-may-23" class="heading-anchor" href="#what-are-the-rules-of-conversion-from-predicate-to-cnf-explain-each-rule-with-proper-example-10-may-23" rel="nofollow" aria-hidden="true"></a>What are the rules of conversion from predicate to CNF? Explain each rule with proper example. (10 / May 23)</h2>
+<ol>
+<li><strong>Remove the Biconditional Using a Rule</strong>:
+
+<ul>
+<li><strong>Rule</strong>: Replace biconditionals (⇔) with conjunctions of implications.</li>
+<li><strong>Example</strong>: Convert α ⇔ β to (α ⇒ β) ∧ (β ⇒ α).</li>
+</ul></li>
+<li><strong>Remove the Implication Using a Rule</strong>:
+
+<ul>
+<li><strong>Rule</strong>: Replace implications (⇒) with disjunctions.</li>
+<li><strong>Example</strong>: Convert α ⇒ β to ¬α ∨ β.</li>
+</ul></li>
+<li><strong>Move the Negation Inwards</strong>:
+
+<ul>
+<li><strong>Rule</strong>: Apply De Morgan's laws to move negations inside the expressions.</li>
+<li><strong>Example</strong>: Convert ¬(α ∧ β) to ¬α ∨ ¬β.</li>
+</ul></li>
+<li><strong>Apply Distributive and/or Commutative Laws</strong>:
+
+<ul>
+<li><strong>Distributive Law</strong>: a ∧ (b ∨ c) ≡ (a ∧ b) ∨ (a ∧ c)</li>
+<li><strong>Commutative Law</strong>: a ∧ b ≡ b ∧ a, a ∨ b ≡ b ∨ a</li>
+<li><strong>Example</strong>: Convert (α ∧ β) ∨ γ to (α ∨ γ) ∧ (β ∨ γ) using the distributive law.</li>
+</ul></li>
+</ol>
+<h2><a name="what-is-bidirectional-search-5-dec-22" class="heading-anchor" href="#what-is-bidirectional-search-5-dec-22" rel="nofollow" aria-hidden="true"></a>What is bidirectional search? (5 / Dec 22)</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020240520145317.png" alt="" /></p>
+
+<p>Bidirectional search is a graph search algorithm that finds the shortest path from a source vertex to a goal vertex by running two simultaneous searches:</p>
+
+<ul>
+<li>one forward from the source</li>
+<li>one backward from the goal.</li>
+</ul>
+<h2><a name="what-is-the-difference-between-univariate-bivariate-and-multivariate-analysis-5-dec-22" class="heading-anchor" href="#what-is-the-difference-between-univariate-bivariate-and-multivariate-analysis-5-dec-22" rel="nofollow" aria-hidden="true"></a>What is the Difference between Univariate, Bivariate, and Multivariate analysis? (5 / Dec 22)</h2>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Univariate Analysis</th>
+<th>Bivariate Analysis</th>
+<th>Multivariate Analysis</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Number of Variables</td>
+<td>Focuses on a single variable</td>
+<td>Two variables simultaneously</td>
+<td>Three or more variables simultaneously</td>
+</tr>
+
+<tr>
+<td>Purpose</td>
+<td>Describes and summarizes the distribution of a single variable</td>
+<td>Explores the relationship between two variables</td>
+<td>Understands complex relationships among multiple variables</td>
+</tr>
+
+<tr>
+<td>Examples</td>
+<td>Mean, median, mode, histograms, box plots</td>
+<td>Scatter plots, correlation coefficients, contingency tables</td>
+<td>Multiple regression, principal component analysis, cluster analysis</td>
+</tr>
+
+<tr>
+<td>Relationship Analysis</td>
+<td>Does not explore relationships between variables</td>
+<td>Focuses on understanding the relationship between two variables</td>
+<td>Examines how multiple variables interact and influence each other</td>
+</tr>
+
+<tr>
+<td>Visualization Techniques</td>
+<td>Histograms, frequency polygons, bar charts</td>
+<td>Scatter plots, bar charts, correlation matrices</td>
+<td>Heatmaps, scatter plots, factor analysis</td>
+</tr>
+
+<tr>
+<td>Dependent Variable</td>
+<td>Not applicable</td>
+<td>Typically one</td>
+<td>Can have multiple<br><br>pen_spark</td>
+</tr>
+
+<tr>
+<td>Number of Variables Analyzed</td>
+<td>One</td>
+<td>Two</td>
+<td>More than Two</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="explain-the-confusion-matrix-with-respect-to-machine-learning-algorithms-10-dec-22" class="heading-anchor" href="#explain-the-confusion-matrix-with-respect-to-machine-learning-algorithms-10-dec-22" rel="nofollow" aria-hidden="true"></a>Explain the Confusion Matrix with respect to Machine Learning Algorithms. (10 / Dec 22)</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020240520123139.png" alt="" /></p>
+
+<p>A *<strong><em>confusion matrix</em></strong>* is a matrix that summarizes the performance of a machine learning model on a set of test data.</p>
+
+<p>It is a means of displaying the number of accurate and inaccurate instances based on the model’s predictions.</p>
+
+<p>It is often used to measure the performance of classification models, which aim to predict a categorical label for each input instance.</p>
+
+<p>The matrix displays the number of instances produced by the model on the test data.</p>
+
+<ul>
+<li><strong>True positives (TP):</strong> occur when the model accurately predicts a positive data point.</li>
+<li><strong>True negatives (TN)</strong>: occur when the model accurately predicts a negative data point.</li>
+<li><strong>False positives (FP)</strong>: occur when the model predicts a positive data point incorrectly.</li>
+<li><strong>False negatives (FN)</strong>: occur when the model mispredicts a negative data point.</li>
+</ul>
+<h2><a name="write-a-note-on-hill-climbing-explain-an-application-of-it-10-dec-22" class="heading-anchor" href="#write-a-note-on-hill-climbing-explain-an-application-of-it-10-dec-22" rel="nofollow" aria-hidden="true"></a>Write a note on Hill climbing. Explain an application of it. (10 / Dec 22)</h2>
+<p>Hill climbing is a simple optimization algorithm used in Artificial Intelligence (AI) to find the best possible solution for a given problem.</p>
+
+<p><img loading="lazy" src="assets/Pasted%20image%2020240520151907.png" alt="" /></p>
+
+<ul>
+<li><strong>Local maximum:</strong> This state is better because here the value of the objective function is higher than its neighbors. </li>
+<li><strong>Global maximum:</strong> It is the best possible state in the state space diagram. This is because, at this stage, the objective function has the highest value.</li>
+<li><strong>Plateau/flat local maximum:</strong> It is a flat region of state space where neighboring states have the same value.</li>
+<li><strong>Ridge:</strong> It is a region that is higher than its neighbors but itself has a slope. It is a special kind of local maximum.</li>
+<li><strong>Current state:</strong> The region of the state space diagram where we are currently present during the search.</li>
+<li><strong>Shoulder:</strong> It is a plateau that has an uphill edge.</li>
+</ul>
+
+<p><strong>Types of Hill Climbing</strong></p>
+
+<ol>
+<li><strong>Simple Hill Climbing</strong>:
+
+<ul>
+<li>This is the simplest form of Hill Climbing.</li>
+<li>It examines the current node's neighbors and selects the first neighbor that improves upon the current node as the next step.</li>
+<li>It's efficient but can get stuck at local maxima.</li>
+</ul></li>
+<li><strong>Steepest-Ascent Hill Climbing</strong>:
+
+<ul>
+<li>This algorithm examines all the neighboring nodes of the current state</li>
+<li>It selects the neighbor that is closest to the goal state as the next step.</li>
+<li>It's more thorough than simple Hill Climbing but takes more time since it checks multiple neighbors.</li>
+</ul></li>
+<li><strong>Stochastic Hill Climbing</strong>:
+
+<ul>
+<li>This algorithm randomly selects a neighbor node to move to, rather than examining all neighbors.</li>
+<li>It decides whether to accept the randomly selected neighbor as the new current state or explore another neighbor.</li>
+<li>It's less systematic than the other two approaches but can help avoid getting stuck in local maxima.</li>
+</ul></li>
+</ol>
+
+<p><strong>Application of Hill Climbing</strong></p>
+
+<p>Travelling Salesman Problem (TSP)</p>
+
+<p>In this problem, the goal is to find the shortest possible route that visits each city exactly once and returns to the starting city.</p>
+
+<p>Here's how the Hill Climbing algorithm can be applied to solve the TSP:</p>
+
+<ol>
+<li><strong>Construct an initial solution</strong>: Start with a sub-optimal solution that visits all the cities exactly once. This initial solution may not be optimal, but it serves as a starting point for the algorithm.</li>
+<li><strong>Improve the solution iteratively</strong>: Apply the Hill Climbing algorithm to improve the solution step-by-step. In each iteration, select a pair of cities and swap their positions in the current route. If the new route is shorter than the current route, accept the change and make it the new current route.</li>
+<li><strong>Continue until no further improvement is possible</strong>: Keep applying the Hill Climbing algorithm until no more swaps can be made that result in a shorter route. At this point, the algorithm has reached a local minimum, and the current route is the best solution found so far.</li>
+</ol>
+<h2><a name="what-are-the-steps-of-exploratory-data-analysis-10-dec-22" class="heading-anchor" href="#what-are-the-steps-of-exploratory-data-analysis-10-dec-22" rel="nofollow" aria-hidden="true"></a>What are the steps of Exploratory Data Analysis? (10 / Dec 22)</h2>
+<p><img loading="lazy" src="../UT2/assets/Pasted%20image%2020240419025753.png" alt="" /></p>
+
+<p>Explanatory Data Analysis (EDA) in machine learning is a way of visualizing, summarizing and interpreting the information that is hidden in row and column format.</p>
+
+<p>Once EDA is complete and insights are draw, its features can be used for supervised and unsupervised Machine Learning modeling.</p>
+
+<p><strong>Purpose of EDA</strong></p>
+
+<ul>
+<li>It helps to look at data before making any assumption.</li>
+<li>Understanding of data can be easy with EDA.</li>
+</ul>
+
+<p><strong>Types of EDA</strong></p>
+
+<p><img loading="lazy" src="../UT2/assets/Pasted%20image%2020240419030107.jpg" alt="" /></p>
+
+<ul>
+<li><strong>Univariate Non-graphical</strong>:
+
+<ul>
+<li>Analyzing individual variables without visualizations, using techniques like descriptive statistics and frequency tables.</li>
+<li>Example:
+
+<ul>
+<li><code>
+- 3, 6, 8, 8, 9, 10, 13, 15, 16
+- mean = 9.78
+- median = 9
+- mode = 8
+-</code></li>
+</ul></li>
+</ul></li>
+<li><strong>Univariate graphical</strong>: Visualizing individual variables using charts like histograms, bar charts, and box plots to understand distribution, center, and spread.
+
+<ul>
+<li>Example:
+
+<ul>
+<li>Bar Graph:
+
+<ul>
+<li><img loading="lazy" src="../UT2/assets/Percentage-graph-660.webp" alt="" /></li>
+</ul></li>
+<li>Histogram:
+
+<ul>
+<li><img loading="lazy" src="../UT2/assets/Histogram.webp" alt="" /></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><strong>Multivariate Non-graphical</strong>: Analyzing relationships between multiple variables without visualizations, using techniques like cross-tabulation and correlation.
+
+<ul>
+<li>Example: MANOVA</li>
+</ul></li>
+<li><strong>Multivariate graphical</strong>: Visualizing relationships between multiple variables using methods like side-by-side box plots, scatter plots, and heatmaps.
+
+<ul>
+<li>Example:
+
+<ul>
+<li>Scatter plot:
+
+<ul>
+<li><img loading="lazy" src="../UT2/assets/Pasted%20image%2020240419030921.png" alt="" /></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<h2><a name="what-is-anova-technique-explain-different-types-of-anova-10-dec-22" class="heading-anchor" href="#what-is-anova-technique-explain-different-types-of-anova-10-dec-22" rel="nofollow" aria-hidden="true"></a>What is ANOVA technique? Explain different types of ANOVA. (10 / Dec 22)</h2>
+<p><img loading="lazy" src="../UT2/assets/Pasted%20image%2020240419052613.jpg" alt="" /></p>
+
+<ul>
+<li>Stands for Analysis of Variance</li>
+<li>It enables us to test significance of difference among more then two sample means.</li>
+<li>Test statistics for ANOVA is <strong>F-test</strong></li>
+<li><strong>Assumption for ANOVA</strong>
+
+<ul>
+<li>Samples follow normal distribution</li>
+<li>Samples have been selected randomly and independently.</li>
+<li>Each group should have common variance</li>
+<li>Data are independent.</li>
+</ul></li>
+</ul>
+
+<p><strong>Types of ANOVA</strong></p>
+
+<ul>
+<li><strong>One-Way ANOVA</strong>
+
+<ul>
+<li>Compares the means of three or more groups</li>
+<li>Determines if there are differences between the groups</li>
+<li>Used when there is one independent variable with two or more levels</li>
+<li>Tests for differences in means between groups and the impact of a single factor</li>
+</ul></li>
+<li><strong>Two-Way ANOVA</strong>
+
+<ul>
+<li>Extends One-Way ANOVA by analyzing the effects of two independent variables</li>
+<li>Used when there are two explanatory variables influencing a continuous outcome</li>
+<li>Involves two factors, each with multiple levels</li>
+<li>Allows for the analysis of interactions between the two factors</li>
+</ul></li>
+<li><strong>Three-Way ANOVA (and higher):</strong>
+
+<ul>
+<li>Similar to two-way ANOVA, this type examines the effects of <strong>three or more independent variables</strong> on a dependent variable.</li>
+<li>It's used in complex studies with multiple factors influencing the outcome.</li>
+</ul></li>
+</ul>
+<h2><a name="what-are-the-different-types-of-plans" class="heading-anchor" href="#what-are-the-different-types-of-plans" rel="nofollow" aria-hidden="true"></a>What are the different types of plans?</h2>
+<p><img loading="lazy" src="assets/Types-of-Plans-copy.webp" alt="" /></p>
+
+<p>Plans can be classified into standing plans (used repeatedly) and single-use plans (one-time).</p>
+
+<p>Plans can be categorized based on their scope and time frame, such as operational, tactical, and strategic plans.</p>
+
+<p>Contingency plans are developed to handle unexpected situations.</p>
+
+<ul>
+<li><strong>Standing plans</strong> are ongoing plans that provide guidance for repetitive activities. Examples include policies, procedures, rules, methods, and budgets.
+
+<ul>
+<li><strong>Policies</strong> are general guidelines that outline the acceptable course of action in a situation.</li>
+<li><strong>Procedures</strong> are detailed, step-by-step instructions for completing a specific task.</li>
+<li><strong>Rules</strong> are specific regulations that must be followed.</li>
+<li><strong>Methods</strong> are recommended ways to perform a task.</li>
+<li><strong>Budgets</strong> are financial plans that project future income and expenses.</li>
+</ul></li>
+<li><strong>Single-use plans</strong> are created to address a specific situation or problem and are not intended to be used repeatedly. Examples include programs and projects.
+
+<ul>
+<li><strong>Programs</strong> are a set of interrelated projects designed to achieve a common goal.</li>
+<li><strong>Projects</strong> are temporary endeavors undertaken to create a specific outcome.</li>
+</ul></li>
+</ul>
+
+<p>At the top of the hierarchy are <strong>objectives and goals</strong>. These are the desired outcomes that all plans aim to achieve.</p>
+
+<ul>
+<li><strong>Objectives</strong> are broad statements of what needs to be accomplished.</li>
+<li><strong>Goals</strong> are specific, measurable, achievable, relevant, and time-bound (SMART) objectives.</li>
+</ul>
+
+<p><strong>Strategy</strong> refers to the overall approach for achieving the objectives and goals. It outlines the specific course of action that will be taken.</p>
+<h2><a name="explain-data-visualization-and-its-importance-in-data-analytics" class="heading-anchor" href="#explain-data-visualization-and-its-importance-in-data-analytics" rel="nofollow" aria-hidden="true"></a>Explain Data Visualization and its importance in data analytics?</h2>
+<p><strong>Data visualization</strong> is the graphical representation of data to facilitate exploration and communication of insights.</p>
+
+<p>It involves creating visual representations like charts, graphs, and maps to present complex data in an easily understandable format.</p>
+
+<p>Data visualization plays a crucial role in <strong>data analytics</strong> by enabling analysts to derive meaningful patterns and insights from data.</p>
+
+<p><strong>Importance of Data Visualization in Data Analytics:</strong></p>
+
+<ol>
+<li><p><strong>Analyzing Complex Data</strong>:</p>
+
+<ul>
+<li>Data visualization simplifies complex information, making it easier to analyze and understand vast amounts of data.</li>
+<li>It helps in identifying patterns, trends, and outliers that may not be apparent from raw data.
+<br></li>
+</ul></li>
+
+<li><p><strong>Faster Decision Making</strong>:</p>
+
+<ul>
+<li>Visual representations help decision-makers process information more quickly and make informed decisions.</li>
+<li>By presenting data visually, complex insights can be understood at a glance, accelerating decision-making processes.
+<br></li>
+</ul></li>
+
+<li><p><strong>Making Sense of Data</strong>:</p>
+
+<ul>
+<li>Data visualization allows users to gain insights into data, recognize patterns, and identify errors.</li>
+<li>It helps in spotting trends, clusters, and outliers, enabling users to focus on critical areas for further analysis.
+<br></li>
+</ul></li>
+
+<li><p><strong>Effective Communication</strong>:</p>
+
+<ul>
+<li>Visualizations aid in communicating insights and findings to stakeholders in a clear and compelling manner.</li>
+<li>They facilitate storytelling by creating a narrative around the data that resonates with the audience.
+<br></li>
+</ul></li>
+
+<li><p><strong>Exploring Business Insights</strong>:</p>
+
+<ul>
+<li>Data visualization helps in exploring business insights, correlating data, and understanding critical metrics.</li>
+<li>It allows analysts to gain a holistic view of data and extract valuable information for decision-making.</li>
+</ul></li>
+</ol>
+<h2><a name="types-of-agent" class="heading-anchor" href="#types-of-agent" rel="nofollow" aria-hidden="true"></a>* Types of Agent</h2>
+<p><img loading="lazy" src="../UT1/assets/Pasted%20image%2020240222013057.png" alt="" /></p>
+<h2><a name="wumbus-world-problem" class="heading-anchor" href="#wumbus-world-problem" rel="nofollow" aria-hidden="true"></a>* Wumbus world problem</h2>
+<p><img loading="lazy" src="../UT1/assets/Pasted%20image%2020240222013408.png" alt="" /></p>
+
+<ul>
+<li>The Wumpus world's agent is an example of a knowledge-based agent that represents knowledge representation, reasoning and planning.</li>
+<li><strong>Problem statement</strong> - The wumpus world is a cave with 16 rooms (4x4). Each room is connected to others through walkways (no rooms are connected diagonally). The knowledge-based agent starts from Room.
+
+<ul>
+<li>The cave has some pits, a treasure and a beast named Wumpus.</li>
+<li>The wumpus can not move but eats the one who enters its room.</li>
+<li>If the agent is rewarded, when the goal conditions are met.</li>
+<li>The agent is penalized, when it falls into a pit or being eaten by the weimpus.</li>
+<li>Some elements support the agent to explore the cave like - The wumpu's adjacent rooms are stench</li>
+</ul></li>
+<li>PEAS representation of Wumpus world proble
+
+<ul>
+<li>Performance
+
+<ul>
+<li>Agent gets the gold &amp; return back safe = +1000 points</li>
+<li>Each move of the agent = -1 point</li>
+<li>Agent dies = -1000 points</li>
+<li>Agent uses the arrow = -10 point</li>
+</ul></li>
+<li>Environment
+
+<ul>
+<li>A cave with 16(4x4) rooms</li>
+<li>Rooms adjacent to the wumpus are stinking</li>
+<li>Rooms adjacent to the pit are breezy</li>
+<li>The room with gold glitters</li>
+<li>Agent's initial position-room [1, 1] &amp; facing right side.</li>
+<li>Location of wumpus, gold and 3 pits can be anywhere except in room [1, 1].</li>
+</ul></li>
+<li>Actuators
+
+<ul>
+<li>Devices that allows the agent to perform the following action in the environment.
+
+<ul>
+<li>Move forward</li>
+<li>Turn right</li>
+<li>Turn left</li>
+<li>Shoot</li>
+<li>Grab</li>
+<li>Release</li>
+</ul></li>
+</ul></li>
+<li>Sensors
+
+<ul>
+<li>Devices which helps the agent in sensing the following the environment.
+
+<ul>
+<li>Breeze</li>
+<li>Stench</li>
+<li>Glitter</li>
+<li>Scream (When the Wumpus is killed)</li>
+<li>Bump (When agent hits a wall)</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<h2><a name="type-of-search-techniques" class="heading-anchor" href="#type-of-search-techniques" rel="nofollow" aria-hidden="true"></a>* Type of Search Techniques</h2>
+<p><img loading="lazy" src="../UT1/assets/Pasted%20image%2020240222034424.png" alt="" />
+Iterative deeping depth first search</p>
+<h3><a name="uniformed-search" class="heading-anchor" href="#uniformed-search" rel="nofollow" aria-hidden="true"></a>Uniformed Search</h3>
+<p>Uninformed search in AI, also known as blind search, refers to a type of search algorithm that explores a problem space without using any specific knowledge or heuristics about the problem.</p>
+
+<p><strong>Breadth First Search</strong></p>
+
+<ul>
+<li>Uses FIFO (First in First Out) queue.</li>
+<li>Unlike depth first search, the breadth first search completes 1 level fist then go to next level.</li>
+<li>It always complete the answer.</li>
+<li>Example:</li>
+</ul>
+
+<p><img loading="lazy" src="../UT1/assets/Pasted%20image%2020240222035723.png" alt="" /></p>
+
+<p><strong>Uniform Cost Search</strong></p>
+
+<ul>
+<li>Uniform cost search considers the expense.</li>
+<li>When there are multiple paths to achieving the desired objective, the optimal solution of uniform cost algorithms is the one with the lowest cost.</li>
+</ul>
+
+<p><img loading="lazy" src="../UT1/assets/Pasted%20image%2020240222033920.png" alt="" /></p>
+
+<p>$=S-A \to A-D \to D-G$</p>
+
+<p>$=1+2+3$</p>
+
+<p>$=6$</p>
+
+<p><strong>Depth First Search</strong></p>
+
+<ul>
+<li>Unlike breath first search, the depth first search goes to all way to the depth instead of completing one level.</li>
+<li>It can go to infinity loop.</li>
+<li>Example:</li>
+</ul>
+
+<p><img loading="lazy" src="../UT1/assets/DFS-(1)-copy-660.webp" alt="" /></p>
+
+<p><img loading="lazy" src="../UT1/assets/DFS-(2)-copy-660.webp" alt="" /></p>
+
+<p><img loading="lazy" src="../UT1/assets/DFS-(3)-copy-660.webp" alt="" /></p>
+
+<p><img loading="lazy" src="../UT1/assets/DFS-(4)-copy-660.webp" alt="" /></p>
+
+<p><img loading="lazy" src="../UT1/assets/DFS-(5)-copy-660.webp" alt="" /></p>
+
+<p><img loading="lazy" src="../UT1/assets/DFS-(6)-copy-660.webp" alt="" /></p>
+
+<p><strong>Depth Limited Search</strong></p>
+
+<ul>
+<li>It work like Depth first search.</li>
+<li>But has depth limit how low it can search.</li>
+<li>After reaching depth limit, if it can't find the goal node then will jump to other side of node.</li>
+</ul>
+
+<p><img loading="lazy" src="../UT1/assets/Pasted%20image%2020240222040855.png" alt="" /></p>
+
+<p><strong>Iterative Deepening Search first search</strong></p>
+
+<p><a href="https://www.youtube.com/@MaheshHuddar">Iterative Deepening Search | IDS Search | DFS Algorithm in Artificial Intelligence by Mahesh Huddar</a></p>
+
+<p><img loading="lazy" src="../UT1/assets/Pasted%20image%2020240222041559.png" alt="" /></p>
+
+<p><img loading="lazy" src="../UT1/assets/Pasted%20image%2020240222041629.png" alt="" /></p>
+
+<p><img loading="lazy" src="../UT1/assets/Pasted%20image%2020240222041742.png" alt="" /></p>
+
+<p><strong>Bidirectional Search</strong></p>
+
+<ul>
+<li>Two simultaneous search from on initial node to goal and backward from goal to initial, stopping when two meet.</li>
+<li>Time Complexity: $2(b^{\frac{d}{2}})$</li>
+<li>Complete in breadth first search.</li>
+<li>Not in depth first search.
+<img loading="lazy" src="../UT1/assets/Pasted%20image%2020240222042354.png" alt="" /></li>
+</ul>
+<h3><a name="informed-search" class="heading-anchor" href="#informed-search" rel="nofollow" aria-hidden="true"></a>Informed Search</h3>
+<p>Informed search in AI is a type of search algorithm that uses additional information, such as heuristics or cost estimates, to guide the search process and prioritize which nodes to expand and explore.</p>
+
+<p><strong>Best First Search</strong></p>
+
+<p>Source: <a href="https://www.youtube.com/watch?v=7ffDUDjwz5E">Best First Search Algorithm in Artificial Intelligence | How it Works | All Imp Points(Pros &amp; Cons)</a></p>
+
+<ul>
+<li>Also know as greedy search.</li>
+<li>This algorithm does not involve past knowledge.</li>
+<li>BFS (Best First Search) = F(n) = g(n)</li>
+</ul>
+
+<p><img loading="lazy" src="../UT1/assets/Pasted%20image%2020240222043557.png" alt="" /></p>
+
+<p>*<em>A</em></p>
+
+<ul>
+<li>This search algorithm involve past knowledge.</li>
+<li>A* search is optimal as the path found is always optimal.</li>
+<li>A* = g(n) + h(n)</li>
+</ul>
+
+<p><img loading="lazy" src="../UT1/assets/Pasted%20image%2020240222044748.png" alt="" /></p>
+<h2><a name="propositional-logic" class="heading-anchor" href="#propositional-logic" rel="nofollow" aria-hidden="true"></a>* Propositional logic</h2>
+<p>Source: <a href="https://www.youtube.com/@nesoacademy">Propositional Logic, Propositional Variables &amp; Compound Propositions</a></p>
+
+<p>Proposition is a declarative sentence which can be either TRUE or FALSE but cant be both.</p>
+
+<p><strong>Examples</strong>:</p>
+
+<ul>
+<li><strong>Statement that are propositional logic</strong> (because they are stating a fact and are either true or false but not both).
+
+<ul>
+<li>Delhi is the capital of India.</li>
+<li>Water Froze this morning.</li>
+<li>1+1=2</li>
+</ul></li>
+<li><strong>Statement that not propositional logic</strong>
+
+<ul>
+<li>What time is it? (Not stating a fact and not declarative sentence)</li>
+<li>x + 1 = 2 (can be both TRUE or FALSE)</li>
+</ul></li>
+</ul>
+
+<p><img loading="lazy" src="../UT1/assets/Pasted%20image%2020240222030708.png" alt="" /></p>
+
+<p><img loading="lazy" src="../UT1/assets/Pasted%20image%2020240222030459.png" alt="" /></p>
+
+<p><img loading="lazy" src="../UT1/assets/Pasted%20image%2020240222030738.png" alt="" /></p>
+<h2><a name="first-order-logic" class="heading-anchor" href="#first-order-logic" rel="nofollow" aria-hidden="true"></a>* First order logic</h2>
+<p>Source: <a href="https://www.youtube.com/@nesoacademy">Introduction to First Order Logic</a></p>
+
+<p>First-order logic (FOL) is a type of mathematical logic that allows you to reason about properties of objects using quantifiers like &quot;all&quot; (represented as ∀) and &quot;some&quot; (represented as ∃).</p>
+
+<p>Unlike propositional logic, which deals with true or false statements, FOL works with both.</p>
+
+<p><strong>Predicates</strong>:</p>
+
+<p><img loading="lazy" src="../UT1/assets/Pasted%20image%2020240222031452.png" alt="" /></p>
+
+<p><img loading="lazy" src="../UT1/assets/Pasted%20image%2020240222031556.png" alt="" /></p>
+
+<p><strong>Examples</strong>:</p>
+
+<p><img loading="lazy" src="../UT1/assets/Pasted%20image%2020240222031656.png" alt="" /></p>
+<h2><a name="graph-coloring" class="heading-anchor" href="#graph-coloring" rel="nofollow" aria-hidden="true"></a>* Graph coloring</h2>
+<ul>
+<li>Let G be graph 8m be a given positive number.</li>
+<li>With m colors we have to check whether the nodes of G can be colored in such a way that no two adjacent nodes have same color.</li>
+<li>Chromatic Number (m): The m color-ability optimization asks for the smallest integer (m) from which the graph G can be colored.</li>
+</ul>
+
+<p>Example:</p>
+
+<p><img loading="lazy" src="../UT1/assets/Pasted%20image%2020240222051320.png" alt="" /></p>
+
+		</main>
+		
+		<details id="table-of-content">
+		   <summary>Table of Content</summary>
+		<nav>
+<ul>
+<li><a href="#describe-peas-and-also-write-down-the-peas-representations-10-dec-23-5-may-23-10-dec-22">Describe PEAS and also write down the PEAS representations. (10 / Dec 23) (5 / May 23) (10 / Dec 22)</a></li>
+<li><a href="#what-are-the-different-types-of-machine-learning-10-may-23-5-dec-22">
+What are the Different Types of Machine Learning? (10 / May 23) (5 / Dec 22)</a></li>
+<li><a href="#explain-what-role-is-played-by-correlation-and-covariance-in-eda-5-dec-23-5-dec-22">
+Explain what role is played by Correlation and Covariance in EDA? (5 / Dec 23) (5 / Dec 22)</a></li>
+<li><a href="#explain-various-measures-of-the-central-tendencies-of-a-statistical-distribution-5-may-23-5-dec-23">
+Explain various measures of the central tendencies of a statistical distribution. (5 / May 23) (5 / Dec 23)</a></li>
+<li><a href="#explain-steps-in-the-data-science-project-10-dec-23-10-may-22">
+Explain steps in the Data Science Project (10 / Dec 23) (10 / May 22)</a></li>
+<li><a href="#what-is-rational-agent-explain-with-diagram-5-dec-23-5-dec-23">
+What is rational agent? Explain with diagram. (5 / Dec 23) (5 / Dec 23)</a></li>
+<li><a href="#write-a-detailed-note-on-hypothesis-testing-what-are-type-i-and-type-ii-errors-10-dec-23-10-may-23">
+Write a detailed note on Hypothesis Testing. What are type I and type II errors? (10 / Dec 23) (10 / May 23)</a></li>
+<li><a href="#write-comparison-between-business-intelligence-data-science-big-data-5-dec-23">
+Write comparison between Business Intelligence, Data Science &amp; Big Data (5 / Dec 23)</a></li>
+<li><a href="#what-are-heuristic-functions-where-are-they-used-5-dec-23">
+What are heuristic functions? Where are they used? (5 / Dec 23)</a></li>
+<li><a href="#what-is-unification-give-example-5-dec-23">
+What is Unification? Give example (5 / Dec 23)</a></li>
+<li><a href="#what-is-skolemization-explain-skolem-constant-and-skolem-function-5-dec-23">
+What is Skolemization? Explain Skolem constant and Skolem function. (5 / Dec 23)</a></li>
+<li><a href="#the-law-says-that-it-is-a-crime-for-an-american-to-sell-weapons-to-hostile-nations-the-country-nono-an-enemy-of-america-has-some-missiles-and-all-of-its-missiles-were-sold-to-it-by-colonel-west-who-is-american-prove-that-col-west-is-a-criminal-10-dec-23">
+The law says that it is a crime for an American to sell weapons to hostile nations. The country Nono, an enemy of America, has some missiles, and all of its missiles were sold to it by Colonel West, who is American. Prove that Col. West is a criminal! (10 / Dec 23)</a></li>
+<li><a href="#explain-uniform-cost-search-and-best-first-search-in-detail-with-examples-and-compare-10-dec-23">
+Explain uniform cost search and best first search in detail with examples and compare (10 / Dec 23)</a></li>
+<li><a href="#explain-various-stages-in-the-data-analytics-lifecycle-10-dec-23">
+Explain various stages in the Data analytics Lifecycle. (10 / Dec 23)</a></li>
+<li><a href="#explain-svm-in-detail-10-dec-23">
+Explain SVM in detail (10 / Dec 23)</a></li>
+<li><a href="#write-in-detail-issues-in-machine-learning-10-dec-23">
+Write in detail issues in machine learning. (10 / Dec 23)</a></li>
+<li><a href="#elaborate-in-detail-the-steps-in-developing-a-machine-learning-application-with-architectural-diagram-10-dec-23">
+Elaborate in detail the steps in developing a Machine Learning application with architectural diagram. (10 / Dec 23)</a></li>
+<li><a href="#what-do-you-mean-by-covariance-and-correlation-explain-the-range-of-coefficients-of-correlation-and-covariance-calculate-cov-observed-value1-observed-value2-and-corrcov-observed-value1-observed-value2-for-following-data-how-do-you-interpret-these-values-10-dec-23">
+What do you mean by covariance and correlation? Explain the range of coefficients of correlation and covariance. Calculate COV(Observed Value1, Observed Value2) and CORRCOV(Observed Value1, Observed Value2) for following data. How do you interpret these values? (10 / Dec 23)</a></li>
+<li><a href="#differentiate-between-forward-and-backward-chaining-5-may-23">
+Differentiate Between Forward and Backward chaining (5 / May 23)</a></li>
+<li><a href="#compare-different-search-techniques-based-on-their-time-complexities-5-may-23">
+Compare different search techniques based on their time complexities. (5 / May 23)</a></li>
+<li><a href="#what-is-a-histogram-can-we-perform-univariate-graphical-analysis-using-histogram-5-may-23">
+What is a histogram? Can we perform univariate graphical analysis using histogram? (5 / May 23)</a></li>
+<li><a href="#what-are-the-different-ways-of-knowledge-representation-5-may-23">
+What are the different ways of knowledge representation? (5 / May 23)</a></li>
+<li><a href="#can-1-liter-water-be-measured-using-10-liter-and-4-liter-jug-justify-10-may-23-10-dec-22">
+Can 1 Liter water be measured using 10 Liter and 4 liter jug? Justify. (10 / May 23) (10 / Dec 22)</a></li>
+<li><a href="#compare-linear-regression-vs-logistics-regression-with-suitable-diagrams-and-formulas-10-may-23">
+Compare Linear Regression Vs Logistics Regression with suitable diagrams and formulas (10 / May 23)</a></li>
+<li><a href="#state-a-algorithm-and-explain-with-example-how-a-searching-algorithm-helps-in-finding-the-goal-with-optimal-path-10-may-23">
+State A* algorithm and explain with example how A* searching algorithm helps in finding the goal with optimal path. (10 / May 23)</a></li>
+<li><a href="#with-respect-to-quantitative-data-analysis-explain-following-i-measure-of-central-tendencies-ii-measure-of-spread-iii-skewness-and-kurtosis-10-may-23">
+With respect to Quantitative data analysis explain following: i. Measure of central tendencies, ii. Measure of spread, iii. Skewness and Kurtosis (10 / May 23)</a></li>
+<li><a href="#was-marcus-loyal-to-casear-solve-using-resolution-10-may-23">
+Was Marcus loyal to Casear ? Solve using resolution. (10 / May 23)</a></li>
+<li><a href="#can-min-max-be-used-for-team-games-draw-sample-trees-for-2-and-3-teams-10-may-23">
+Can min-max be used for team games? Draw sample trees for 2 and 3 teams (10 / May 23)</a></li>
+<li><a href="#consider-you-are-performing-ml-for-predicting-housing-prices-you-have-trained-three-models-and-following-data-summarizes-the-predicted-house-price-by-each-model-for-5-different-trial-runs-10-may-23-10-dec-22">
+Consider you are performing ML for predicting housing prices you have trained three models and following data summarizes the predicted house price by each model for 5 different trial runs. (10 / May 23) (10 / Dec 22)</a></li>
+<li><a href="#what-are-the-rules-of-conversion-from-predicate-to-cnf-explain-each-rule-with-proper-example-10-may-23">
+What are the rules of conversion from predicate to CNF? Explain each rule with proper example. (10 / May 23)</a></li>
+<li><a href="#what-is-bidirectional-search-5-dec-22">
+What is bidirectional search? (5 / Dec 22)</a></li>
+<li><a href="#what-is-the-difference-between-univariate-bivariate-and-multivariate-analysis-5-dec-22">
+What is the Difference between Univariate, Bivariate, and Multivariate analysis? (5 / Dec 22)</a></li>
+<li><a href="#explain-the-confusion-matrix-with-respect-to-machine-learning-algorithms-10-dec-22">
+Explain the Confusion Matrix with respect to Machine Learning Algorithms. (10 / Dec 22)</a></li>
+<li><a href="#write-a-note-on-hill-climbing-explain-an-application-of-it-10-dec-22">
+Write a note on Hill climbing. Explain an application of it. (10 / Dec 22)</a></li>
+<li><a href="#what-are-the-steps-of-exploratory-data-analysis-10-dec-22">
+What are the steps of Exploratory Data Analysis? (10 / Dec 22)</a></li>
+<li><a href="#what-is-anova-technique-explain-different-types-of-anova-10-dec-22">
+What is ANOVA technique? Explain different types of ANOVA. (10 / Dec 22)</a></li>
+<li><a href="#what-are-the-different-types-of-plans">
+What are the different types of plans?</a></li>
+<li><a href="#explain-data-visualization-and-its-importance-in-data-analytics">
+Explain Data Visualization and its importance in data analytics?</a></li>
+<li><a href="#types-of-agent">
+* Types of Agent</a></li>
+<li><a href="#wumbus-world-problem">
+* Wumbus world problem</a></li>
+<li><a href="#type-of-search-techniques">
+* Type of Search Techniques</a>
+<ul>
+<li><a href="#uniformed-search">
+Uniformed Search</a></li>
+<li><a href="#informed-search">
+Informed Search</a></li>
+</ul></li>
+<li><a href="#propositional-logic">
+* Propositional logic</a></li>
+<li><a href="#first-order-logic">
+* First order logic</a></li>
+<li><a href="#graph-coloring">
+* Graph coloring</a></li>
+</ul>
+</nav>
+
+		</details>
+		
+		<footer>
+			<p style="text-align: center; font-size: small; margin-top: 5em;">
+				<a href="https://anzenkodo.github.io/license">LICENSE</a>
+			</p>
+		</footer>
+	</body>
+	<script src="https://AnzenKodo.github.io/assets/js/mermaid.js"></script>
+	<script id="MathJax-script" async src="https://AnzenKodo.github.io/assets/js/mathjax.js"></script>
+	<script>
+		/* document.getElementById('video').addEventListener('click', (ele) => {
+			 if (ele.target.paused) {
+				 ele.target.play();
+			 } else {
+				 ele.target.pause();
+			 }
+		}); */
+
+		mermaid.initialize({
+			theme: "neutral",
+			themeVariables: {
+			    lineColor: "#939598",
+			}
+		});
+
+		MathJax = {
+		  tex: {
+			inlineMath: [['$', '$']],
+			displayMath: [['$$', '$$']],
+		  }
+		};
+	</script>
+</html>

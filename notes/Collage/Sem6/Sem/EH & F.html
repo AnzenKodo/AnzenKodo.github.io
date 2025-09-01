@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>EH & F - AK#Notes</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="#FF6C22">
+		<meta name="description" content="## Explain Mobile forensic. What are various challenges in mobile forensics (5 / May 23) (5 / Dec 23">
+		<meta property="og:description" content="## Explain Mobile forensic. What are various challenges in mobile forensics (5 / May 23) (5 / Dec 23">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<meta property="og:image:alt" content="AK#Notes logo">
+		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="EH & F - AK#Notes">
+		<meta property="og:url" content="https://AnzenKodo.github.io/notes/notes/Collage/Sem6/Sem/EH & F.html">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+
+			:root {
+				/* color-scheme: dark light; */
+				color-scheme: dark;
+				--theme: #FF6C22;
+			}
+			body {
+				max-width: 40rem;
+				margin: 0 auto;
+				font-family: system-ui;
+				padding: 0 1em;
+				color: inherit !important;
+				word-break: break-word;
+			}
+			h1, h2, h3, h4, h5, h6 {
+				margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+				font-size: 2rem;
+			}
+			h3 {
+				font-size: 1.8rem;
+			}
+			h4 {
+				font-size: 1.5rem;
+			}
+			h5 {
+				font-size: 1.3rem;
+			}
+			h6 {
+				font-size: 1rem;
+			}
+			p, li, td, code {
+				line-height: 1.5rem;
+			}
+			a {
+				color: var(--theme);
+				text-decoration: none;
+			}
+			a:hover, a:focus {
+				text-decoration: underline;
+			}
+			a:active {
+				background: var(--theme);
+				color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+				margin-top: .5rem;
+			}
+			li {
+				margin-bottom: .5rem;
+			}
+			table {
+				border-collapse: collapse;
+				overflow-x: auto;
+				display: block;
+				word-break: auto-phrase;
+				margin: 1rem 0;
+			}
+			th {
+				font-size: 1.1rem;
+				border: 2px solid;
+				padding: .3rem .3rem;
+			}
+			td {
+				border: 1px solid;
+				padding: .3rem .5rem;
+			}
+			blockquote {
+				margin-left: 0;
+				margin-right: 0;
+				border: 1px solid;
+				border-left: 10px solid;
+				padding: 0 1rem;
+			}
+				.code-block {
+				background: black;
+				overflow-x: auto;
+				padding: 0em 1em;
+				border: 1px solid;
+			}
+			.code-block-language-name {
+				position: sticky;
+				left: 95%;
+				top: .5em;
+				font-weight: bold;
+				color: white;
+			}
+			:not(pre.chroma) > code {
+				border: 1px solid;
+				padding: .3rem .2rem .2rem .2rem;
+			}
+			img {
+				max-width: 100%;
+				display: block;
+				margin: 0 auto;
+			}
+			[href="#skip-top-main"] {
+				padding: 0.3em;
+				position: absolute;
+				transform: translateY(-1000%);
+			}
+			[href="#skip-top-main"]:focus {
+				transform: translateY(0%);
+				background: var(--theme);
+				color: inherit;
+			}
+			#table-of-content {
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+				background: black;
+				padding: 0.5rem 1em;
+				z-index: 1;
+				color: white;
+			}
+			#table-of-content[open] {
+				max-height: 90%;
+				overflow-y: auto;
+				bottom: 50px;
+				margin-left: 1em;
+			}
+			#table-of-content[open] summary {
+				background: black;
+				padding: 0.5em 1em;
+				text-align: center;
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+			}
+			#table-of-content ul:first-child {
+				padding-left: 1em;
+				margin-top: 1.5em;
+			}
+			.heading-anchor::before {
+				margin-right: .5rem;
+			}
+		    h2 .heading-anchor::before {
+    			content: "#";
+    			margin-right: .5rem;
+		    }
+            h3 .heading-anchor::before {
+				content: "##";
+				margin-right: .5rem;
+			}
+            h4 .heading-anchor::before {
+				content: "###";
+				margin-right: .5rem;
+			}
+            h5 .heading-anchor::before {
+				content: "####";
+				margin-right: .5rem;
+			}
+            h6 .heading-anchor::before {
+				content: "#####";
+				margin-right: .5rem;
+			}
+			.mermaid {
+				background: black;
+				border: 1px solid;
+				margin-top: 1rem;
+				padding: 1rem;
+				font-family: monospace;
+			}
+			.mermaid svg {
+				display: block;
+				margin: auto;
+			}
+			.mermaid:has(svg) {
+				background: none;
+				border: none;
+				margin-top: 1rem;
+				padding: 0;
+			}
+			mjx-container {
+				display: math;
+				overflow-y: hidden;
+				overflow-x: auto;
+				max-width: 100%;
+				padding-bottom: .8rem;
+			}
+			iframe {
+				width: 100%;
+				height: 21rem;
+				margin: 1rem 0;
+			}
+			video {
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<a href="#skip-top-main">Skip to main</a>
+		<header>
+<!--		<h1 style="text-align: center;">-->
+			<h1 style="text-align: center;">
+				<a href="https://AnzenKodo.github.io">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+			</h1><nav style="border-top: 1px solid gray;border-bottom: 1px solid gray;padding: .5rem 0;text-align: center;margin: 0 0 2rem 0;color: gray;clear: left;line-height: 1.6rem;">
+				<a href="https://AnzenKodo.github.io/notes">Home</a> | <a href="https://AnzenKodo.github.io">About</a> | <a href="https://AnzenKodo.github.io/blogroll">Blogroll</a> | <a href="https://github.com/AnzenKodo">Github</a> | <a href="https://x.com/AnzenKodo">𝕏</a>
+			</nav>
+			<!-- <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;"> -->
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem; margin-top: 0;">EH & F</h1>
+			<h2><a name="explain-mobile-forensic-what-are-various-challenges-in-mobile-forensics-5-may-23-5-dec-23-5-dec-22" class="heading-anchor" href="#explain-mobile-forensic-what-are-various-challenges-in-mobile-forensics-5-may-23-5-dec-23-5-dec-22" rel="nofollow" aria-hidden="true"></a>Explain Mobile forensic. What are various challenges in mobile forensics (5 / May 23) (5 / Dec 23) (5 / Dec 22)</h2>
+<p>Mobile forensics is a critical area of digital forensics that deals with the recovery of digital evidence from mobile devices.</p>
+
+<ol>
+<li><strong>Rapid growth in mobile technology</strong>: New types of mobile devices are developed every week, making it challenging for forensic investigators to keep up with the latest devices and technologies.</li>
+<li><strong>Lack of free tools</strong>: There are no free tools available that can investigate every single mobile device on the market, making it necessary for forensic investigators to have access to a range of specialized tools.</li>
+<li><strong>Expensive and evolving technologies</strong>: Mobile forensics technologies, methodologies, and training are becoming more expensive, requiring significant financial resources to sustain professional readiness and perform quality mobile device forensic investigations.</li>
+<li><strong>Multiple data locations</strong>: Data on mobile devices can be located in different locations, such as on SIM cards, a device's embedded and removable memory, and with the service provider, making it challenging to ensure that all relevant data is collected and analyzed.</li>
+<li><strong>Complex data storage systems</strong>: Mobile devices use a variety of data storage systems, including proprietary and encrypted systems, making it challenging to extract and analyze data.</li>
+<li><strong>Legal and ethical challenges</strong>: Mobile forensics investigations often involve legal and ethical challenges, such as obtaining consent to search a device, dealing with data privacy issues, and ensuring that evidence is collected and analyzed in a forensically sound manner.</li>
+<li><strong>Training and expertise</strong>: Mobile forensics investigations require specialized knowledge and skills, making it essential for investigators to receive appropriate training and have access to adequate budgets to maintain their level of expertise.</li>
+<li><strong>Data integrity</strong>: Ensuring the integrity of data during the forensic acquisition process can be challenging, particularly when using forensic tools that require a communication vector with the mobile device.</li>
+<li><strong>Malicious apps</strong>: Malicious apps can pose a significant challenge in mobile forensics investigations, particularly when they are designed to hide in plain sight or to evade detection.</li>
+<li><strong>Multiple platforms and operating systems</strong>: Mobile devices use a variety of platforms and operating systems, each with its own unique features and challenges, making it necessary for investigators to have a broad range of skills and knowledge.</li>
+</ol>
+<h2><a name="explain-forensic-duplicates-as-admissible-evidence-5-may-23-5-dec-22" class="heading-anchor" href="#explain-forensic-duplicates-as-admissible-evidence-5-may-23-5-dec-22" rel="nofollow" aria-hidden="true"></a>Explain Forensic Duplicates as Admissible Evidence. (5 / May 23) (5 / Dec 22)</h2>
+<p>Forensic duplicates are crucial in legal proceedings as they are admissible evidence.</p>
+
+<p>A forensic duplication is an accurate copy of data created to be used as evidence in court.</p>
+
+<p>According to Rule 1003, a duplicate is admissible to the same extent as an original unless there is a genuine question about the original's authenticity or if it would be unfair to admit it.</p>
+
+<p>Forensic duplicates contain every bit of information from the source in a raw bit stream format and are created using tools like the Unix dd command</p>
+
+<p>These duplicates are essential for maintaining the integrity and authenticity of evidence, as any alteration in the data would generate a new hash value, raising concerns about tampering.</p>
+<h2><a name="what-is-evidence-handling-procedure-5-may-23-5-dec-23-5-dec-22" class="heading-anchor" href="#what-is-evidence-handling-procedure-5-may-23-5-dec-23-5-dec-22" rel="nofollow" aria-hidden="true"></a>What is evidence handling procedure? (5 / May 23) (5 / Dec 23) (5 / Dec 22)</h2>
+<ul>
+<li><strong>Document the condition</strong> of the device or evidence, including taking photos. Record its physical condition and location.</li>
+<li><strong>Wear gloves</strong> to prevent contamination when collecting evidence. Change gloves between items.</li>
+<li><strong>Secure the evidence</strong> to prevent further access or contamination.</li>
+<li><strong>Preserve the evidence</strong> in an appropriate environment to maintain its usefulness.</li>
+<li><strong>Label the evidence</strong> with the case details, date, time, location, and an evidence number.</li>
+<li><strong>Maintain a clear chain of custody</strong> by documenting the transfer of evidence between each person who handles it.</li>
+<li><strong>Avoid altering the power state</strong> of digital devices if possible during collection.</li>
+<li><strong>Collect a sample</strong> of liquid or trace evidence on a sterile swab and place in a sealed bag.</li>
+<li><strong>Limit the number of people</strong> who handle the evidence.</li>
+<li><strong>Store evidence in properly sealed</strong>, tamper-proof containers in a secure evidence room or locker.</li>
+</ul>
+<h2><a name="what-are-challenges-in-network-forensics-5-may-23-5-dec-23-5-dec-22" class="heading-anchor" href="#what-are-challenges-in-network-forensics-5-may-23-5-dec-23-5-dec-22" rel="nofollow" aria-hidden="true"></a>What are Challenges in network forensics? (5 / May 23) (5 / Dec 23) (5 / Dec 22)</h2>
+<p><img loading="lazy" src="../UT2/assets/Pasted%20image%2020240416044127.png" alt="" /></p>
+
+<ul>
+<li><strong>Access to IP Address:</strong> Network forensic investigations often rely on IP addresses to track down the source of malicious activity. However, it can be difficult to obtain access to IP address information, especially if it is located in a different jurisdiction.</li>
+<li><strong>Data Integrity:</strong> We focus on methods to ensure data remains uncorrupted throughout its lifecycle.</li>
+<li><strong>Data Privacy:</strong> Data privacy laws can restrict the collection and analysis of network data. This can make it difficult to investigate crimes without violating someone's privacy.</li>
+<li><strong>Data Extraction Locations:</strong> Network data can be stored in a variety of locations, including servers, routers, and mobile devices. This can make it difficult to identify and extract the data that is needed for an investigation.</li>
+<li><strong>High Speed Data Transmission:</strong> Modern networks can transmit data at very high speeds. This can make it difficult to capture and store all of the data that is needed for an investigation.</li>
+<li><strong>Data Storage Devices:</strong> This section shows various physical devices where data is stored, such as hard disk drives (HDDs), solid-state drives (SSDs), and tape libraries.</li>
+</ul>
+<h2><a name="explain-incident-response-process-and-its-methodology-10-may-23-10-dec-23-10-dec-22" class="heading-anchor" href="#explain-incident-response-process-and-its-methodology-10-may-23-10-dec-23-10-dec-22" rel="nofollow" aria-hidden="true"></a>Explain Incident Response Process and its methodology. (10 / May 23) (10 / Dec 23) (10 / Dec 22)</h2>
+<p>The Incident Response Process (IRP) is a structured methodology organizations follow to identify, contain, eradicate, and recover from a cybersecurity incident.</p>
+
+<p>It's a critical plan to minimize damage, maintain business continuity, and learn from the experience to improve future defenses. Here's a breakdown of the IRP and its methodology:</p>
+
+<p><img loading="lazy" src="../UT2/assets/Pasted%20image%2020240416041737.png" alt="" /></p>
+
+<ul>
+<li><strong>Preparation</strong>
+
+<ul>
+<li>Identify critical data and systems</li>
+<li>Establish an Incident Response Team (IRT) with defined roles</li>
+<li>Develop a communication plan</li>
+<li>Create a playbook for detection, containment, eradication, and recovery</li>
+<li>Perform risk and vulnerability assessments</li>
+</ul></li>
+<li><strong>Identification</strong>
+
+<ul>
+<li>Monitor logs and security alerts for suspicious activity</li>
+<li>Investigate reported incidents</li>
+<li>Identify the type and scope of the incident</li>
+</ul></li>
+<li><strong>Containment</strong>
+
+<ul>
+<li>Disable compromised accounts or systems</li>
+<li>Isolate infected devices</li>
+<li>Stop malware spread</li>
+</ul></li>
+<li><strong>Eradication</strong>
+
+<ul>
+<li>Remove malware</li>
+<li>Patch vulnerabilities</li>
+<li>Conduct security sweep for lingering threats</li>
+</ul></li>
+<li><strong>Recovery</strong>
+
+<ul>
+<li>Restore systems and data from backups</li>
+<li>Validate recovery process</li>
+</ul></li>
+<li><strong>Conclusion</strong>
+
+<ul>
+<li>Document the incident</li>
+<li>Conduct post-mortem analysis</li>
+<li>Update Incident Response Plan (IRP)</li>
+</ul></li>
+</ul>
+
+<p><strong>Methodology:</strong></p>
+
+<ul>
+<li><strong>Incident Classification:</strong> Incidents are categorized based on severity and potential impact.</li>
+<li><strong>Teamwork:</strong> A dedicated incident response team (IRT) is established with defined roles and responsibilities.</li>
+<li><strong>Communication:</strong> Clear communication protocols are established to ensure timely information sharing between the IRT, management, legal counsel, and potentially law enforcement.</li>
+<li><strong>Evidence Collection and Preservation:</strong> Digital evidence is collected and preserved for forensic analysis and potential legal proceedings.</li>
+</ul>
+<h2><a name="compare-active-attacks-vs-passive-attacks-classify-the-cybercrimes-and-explain-any-one-briefly-10-may-23-10-dec-23-10-dec-22" class="heading-anchor" href="#compare-active-attacks-vs-passive-attacks-classify-the-cybercrimes-and-explain-any-one-briefly-10-may-23-10-dec-23-10-dec-22" rel="nofollow" aria-hidden="true"></a>Compare active attacks vs Passive attacks. Classify the cybercrimes and explain any one briefly (10 / May 23) (10 / Dec 23) (10 / Dec 22)</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020240520174320.jpg" alt="" /></p>
+
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Active Attacks</th>
+<th>Passive Attacks</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>Goal</strong></td>
+<td>Modify data, disrupt availability, or impersonate users</td>
+<td>Steal data or eavesdrop on communication</td>
+</tr>
+
+<tr>
+<td><strong>Data Modification</strong></td>
+<td>Modified, Deleted, or Created</td>
+<td>Unchanged</td>
+</tr>
+
+<tr>
+<td><strong>Victim Awareness</strong></td>
+<td>Aware</td>
+<td>Unaware</td>
+</tr>
+
+<tr>
+<td><strong>Impact</strong></td>
+<td>Integrity &amp; Availability</td>
+<td>Confidentiality</td>
+</tr>
+
+<tr>
+<td><strong>Detection</strong></td>
+<td>Easier</td>
+<td>Difficult</td>
+</tr>
+
+<tr>
+<td><strong>Prevention</strong></td>
+<td>Focuses on intrusion detection/prevention systems (IDS/IPS), strong authentication, and data integrity checks</td>
+<td>Focuses on encryption, network segmentation, and traffic analysis</td>
+</tr>
+
+<tr>
+<td><strong>Examples</strong></td>
+<td>Man-in-the-middle attacks, denial-of-service attacks</td>
+<td>Eavesdropping, sniffing, traffic analysis</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Active Attacks</strong></p>
+
+<p>Active attacks involve the attacker directly modifying or disrupting the target system or network. Some key characteristics of active attacks:</p>
+
+<ul>
+<li>The attacker attempts to change or modify the content of messages</li>
+<li>They are dangerous to both integrity and availability of data</li>
+<li>The victim is informed about the attack</li>
+<li>System resources can be changed or damaged</li>
+<li>Examples include masquerade, message modification, replay, and denial of service attacks</li>
+</ul>
+
+<p><strong>Passive Attacks</strong></p>
+
+<p>In passive attacks, the attacker simply observes and gathers information without altering anything. Key points about passive attacks:</p>
+
+<ul>
+<li>The attacker monitors and copies message contents without modifying them</li>
+<li>They are a threat to confidentiality but not integrity or availability</li>
+<li>The victim is not informed about the attack</li>
+<li>System resources remain unchanged</li>
+<li>Examples include eavesdropping and traffic analysis</li>
+</ul>
+<h2><a name="discuss-basic-security-precautions-to-be-taken-to-safeguard-laptops-and-wireless-devices-and-what-are-the-devices-related-to-security-issues-10-may-23-10-dec-23-10-dec-22" class="heading-anchor" href="#discuss-basic-security-precautions-to-be-taken-to-safeguard-laptops-and-wireless-devices-and-what-are-the-devices-related-to-security-issues-10-may-23-10-dec-23-10-dec-22" rel="nofollow" aria-hidden="true"></a>Discuss basic security precautions to be taken to safeguard Laptops and wireless devices and What are the devices related to security issues? (10 / May 23) (10 / Dec 23) (10 / Dec 22)</h2>
+<p><strong>Basic Security Precautions for Laptops and Wireless Devices</strong></p>
+
+<p>To safeguard laptops and wireless devices, several basic security precautions should be taken:</p>
+
+<ul>
+<li><strong>Use Strong Passwords</strong>: Employ strong passwords with a mix of characters to prevent unauthorized access.</li>
+<li><strong>Beware of Malware</strong>: Avoid opening malicious attachments or clicking on suspicious links to prevent malware infections.</li>
+<li><strong>Secure External Devices</strong>: Exercise caution when connecting external devices to prevent malware risks and unauthorized access.</li>
+<li><strong>Implement Individual User Accounts</strong>: Use individual user accounts to enhance security and control access.</li>
+<li><strong>Encrypt Your Hard Drive</strong>: Encrypting your hard drive can prevent unauthorized access to data if the device is stolen.</li>
+<li><strong>Use a Virtual Private Network (VPN):</strong> When using public networks, encrypt your data with a VPN to protect it from interception.</li>
+<li><strong>Keep Software Updated</strong>: Regularly update antivirus software, operating systems, and applications to protect against the latest threats.</li>
+<li><strong>Backup Your Data</strong>: Regularly back up important data to prevent data loss in case of theft or security issues.</li>
+<li><strong>Disable Booting from CD or USB</strong>: Prevent unauthorized access by disabling the ability to boot from external devices.</li>
+<li><strong>Maintain Anonymity Online</strong>: Keep your online identity hidden to prevent cyber-attacks and safeguard personal information.</li>
+</ul>
+
+<p>Devices related to security issues include:</p>
+
+<ul>
+<li><strong>External Devices</strong>: Pen drives and external hard drives can carry malware, leading to data compromise.</li>
+<li><strong>Public Wi-Fi Networks</strong>: Public networks can be insecure, making them vulnerable to unauthorized access and data interception.</li>
+<li><strong>Mobile Devices</strong>: Smartphones and tablets, like laptops, are susceptible to cyber threats and require similar security measures.</li>
+<li><strong>Wireless Networks</strong>: Insecure wireless networks can be targeted by hackers for unauthorized access and data theft.</li>
+<li><strong>Hardware Components</strong>: Components like hard drives can be targeted for data theft if not properly encrypted.</li>
+</ul>
+<h2><a name="explain-volatile-data-collection-from-windows-system-10-may-23-10-dec-23-10-dec-22" class="heading-anchor" href="#explain-volatile-data-collection-from-windows-system-10-may-23-10-dec-23-10-dec-22" rel="nofollow" aria-hidden="true"></a>Explain Volatile Data Collection from Windows system (10 / May 23) (10 / Dec 23) (10 / Dec 22)</h2>
+<p>Volatile data is the data that is usually stored in cache memory or <a href="https://www.geeksforgeeks.org/different-types-ram-random-access-memory/">RAM</a>.</p>
+
+<p>This volatile data is not permanent this is temporary and this data can be lost if the power is lost i.e., when computer looses its connection.</p>
+
+<p>By collecting volatile data, forensic investigators can analyze active processes, network connections, open files, and memory artifacts.</p>
+
+<p><strong>The main purposes of collecting volatile data from a Windows system are:</strong></p>
+
+<ul>
+<li><strong>Forensic Investigation</strong>
+
+<ul>
+<li>Capturing the system's RAM allows analyzing volatile data present in memory, providing insights into active processes, network connections, and open files at the time of an incident</li>
+</ul></li>
+<li><strong>Evidence Preservation</strong>
+
+<ul>
+<li>RAM captures preserve potential evidence that may be lost once the system is powered off, ensuring critical information is not lost for further analysis</li>
+</ul></li>
+<li><strong>Live System Analysis</strong>
+
+<ul>
+<li>Analyzing RAM in real-time provides a snapshot of the system's current state, helping identify running processes, active network connections, malicious activities, or unauthorized access</li>
+</ul></li>
+<li><strong>Memory Artifacts</strong>
+
+<ul>
+<li>RAM contains artifacts like passwords, encryption keys, clipboard data, and recently accessed files not available through file system analysis</li>
+</ul></li>
+<li><strong>Malware Detection</strong>
+
+<ul>
+<li>Volatile data collection can help identify and analyze malware residing in memory by examining memory structures, code injection, or abnormal behavior patterns</li>
+</ul></li>
+<li><strong>Incident Response</strong>
+
+<ul>
+<li>Capturing volatile data provides real-time visibility into system activities, helping incident response teams understand the scope and impact of an incident to make informed decisions</li>
+</ul></li>
+</ul>
+<h2><a name="what-do-you-understand-by-social-engineering-give-classification-10-may-23-10-dec-23-10-dec-22" class="heading-anchor" href="#what-do-you-understand-by-social-engineering-give-classification-10-may-23-10-dec-23-10-dec-22" rel="nofollow" aria-hidden="true"></a>What do you understand by social engineering? Give classification (10 / May 23) (10 / Dec 23) (10 / Dec 22)</h2>
+<p>Social engineering is the tactic of manipulating, influencing, or deceiving a victim in order to gain control over a computer system, or to steal personal and financial information. It uses psychological manipulation to trick users into making security mistakes or giving away sensitive data.</p>
+
+<p><strong>Types of Social Engineering Attacks</strong></p>
+
+<ul>
+<li><strong>Phishing</strong>
+
+<ul>
+<li>Phishing involves attempting to acquire sensitive information like usernames, passwords and credit card details by masquerading as a trustworthy entity in an email, SMS or phone call.</li>
+</ul></li>
+<li><strong>Baiting</strong>
+
+<ul>
+<li>Baiting uses physical media like malware-infected flash drives left in public places. When the victim inserts the drive, malware is installed.</li>
+</ul></li>
+<li><strong>Tailgating</strong>
+
+<ul>
+<li>Also called &quot;piggybacking&quot;, tailgating is a physical breach where an attacker manipulates their way into a restricted area by following an authorized person through a door.</li>
+</ul></li>
+<li><strong>Scareware</strong>
+
+<ul>
+<li>Scareware bombards victims with false alarms about malware infections to trick them into installing software that grants remote access or paying a ransom.</li>
+</ul></li>
+<li><strong>Dumpster Diving</strong>
+
+<ul>
+<li>Scammers search through garbage for sensitive information like bank statements, credit cards, and account details that haven't been properly destroyed.</li>
+</ul></li>
+</ul>
+<h2><a name="briefly-explain-types-of-digital-evidence-with-examples-10-may-23-10-dec-23-10-dec-22" class="heading-anchor" href="#briefly-explain-types-of-digital-evidence-with-examples-10-may-23-10-dec-23-10-dec-22" rel="nofollow" aria-hidden="true"></a>Briefly explain Types of digital Evidence with examples. (10 / May 23) (10 / Dec 23) (10 / Dec 22)</h2>
+<ul>
+<li>Volatile Data
+
+<ul>
+<li>Volatile data refers to information stored in RAM that is lost when the power is turned off</li>
+<li>Examples: Running processes, open network connections, cached data</li>
+</ul></li>
+<li>Non-Volatile Data
+
+<ul>
+<li>Non-volatile data is stored on physical media like hard drives and persists even without power</li>
+<li>Examples: Files, emails, databases, logs</li>
+</ul></li>
+<li>Active Data
+
+<ul>
+<li>Active data is information currently in use by an application or the operating system</li>
+<li>Examples: Open documents, running processes, cached web pages</li>
+</ul></li>
+<li>Archival Data
+
+<ul>
+<li>Archival data is stored for long-term retention, often on backup media</li>
+<li>Examples: Backup tapes, optical discs, cloud storage</li>
+</ul></li>
+<li>Metadata
+
+<ul>
+<li>Metadata is data about data, providing information about a file or document</li>
+<li>Examples: File creation/modification dates, author, geolocation data</li>
+</ul></li>
+<li>Residual Data
+
+<ul>
+<li>Residual data is leftover information from deleted or overwritten files</li>
+<li>Examples: Fragments of deleted emails, documents, browsing history</li>
+</ul></li>
+<li>Logs
+
+<ul>
+<li>Logs record events, transactions and activities on a system</li>
+<li>Examples: Web server logs, firewall logs, application logs</li>
+</ul></li>
+<li>Video Footage and Images
+
+<ul>
+<li>Digital photos and videos captured by cameras can serve as evidence</li>
+<li>Examples: Surveillance footage, photos of crime scenes, digital images</li>
+</ul></li>
+</ul>
+<h2><a name="explain-process-for-collecting-network-based-evidence-10-may-23-10-dec-23-10-dec-22" class="heading-anchor" href="#explain-process-for-collecting-network-based-evidence-10-may-23-10-dec-23-10-dec-22" rel="nofollow" aria-hidden="true"></a>Explain process for collecting Network Based Evidence. (10 / May 23) (10 / Dec 23) (10 / Dec 22)</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020240520175542.jpg" alt="" /></p>
+
+<ul>
+<li><strong>Identify and locate relevant network devices and logs</strong>
+
+<ul>
+<li>Determine which devices, servers, and applications may contain evidence</li>
+<li>Identify network taps, port mirrors, and logging capabilities</li>
+</ul></li>
+<li><strong>Preserve and collect volatile data</strong>
+
+<ul>
+<li>Capture RAM, running processes, open connections, and cached data</li>
+<li>Use live forensics tools to image memory and disk without altering evidence</li>
+</ul></li>
+<li><strong>Gather non-volatile data</strong>
+
+<ul>
+<li>Collect hard drives, removable media, and backup tapes</li>
+<li>Image disks using forensic tools to preserve data integrity</li>
+</ul></li>
+<li><strong>Obtain relevant logs</strong>
+
+<ul>
+<li>Collect logs from firewalls, routers, servers, and applications</li>
+<li>Ensure logs are preserved and not overwritten</li>
+</ul></li>
+<li><strong>Document the chain of custody</strong>
+
+<ul>
+<li>Maintain a detailed record of who collected the evidence and when</li>
+<li>Ensure evidence remains secure and unaltered</li>
+</ul></li>
+<li><strong>Transport and store evidence properly</strong>
+
+<ul>
+<li>Package evidence to prevent damage or contamination</li>
+<li>Store in a secure location with restricted access</li>
+</ul></li>
+<li><strong>Analyze thecollected data</strong>
+
+<ul>
+<li>Use forensic to ols to examine network traffic, logs, and artifacts</li>
+<li>Correlate data from multiple sources to reconstruct events</li>
+</ul></li>
+<li><strong>Present findings</strong>
+
+<ul>
+<li>Prepare reports and exhibits summarizing the analysis</li>
+<li>Provide expert testimony if required in legal proceedings</li>
+</ul></li>
+</ul>
+<h2><a name="explain-various-guidelines-for-digital-forensic-report-writing-along-with-its-goals-10-may-23-10-dec-23-10-dec-22" class="heading-anchor" href="#explain-various-guidelines-for-digital-forensic-report-writing-along-with-its-goals-10-may-23-10-dec-23-10-dec-22" rel="nofollow" aria-hidden="true"></a>Explain various guidelines for digital forensic report writing along with its goals. (10 / May 23) (10 / Dec 23) (10 / Dec 22)</h2>
+<p><strong>Goals of a Digital Forensic Report:</strong></p>
+
+<ul>
+<li><strong>Present Findings:</strong> Clearly communicate the results of the digital forensic investigation, including identified evidence, analysis, and conclusions.</li>
+<li><strong>Maintain Objectivity:</strong> The report should be factual and unbiased, avoiding speculation or personal opinions.</li>
+<li><strong>Support Legal Proceedings:</strong> The report should be written in a way that is admissible in court and can be understood by legal professionals and non-technical audiences.</li>
+<li><strong>Reproducibility:</strong> The report should document the methodology used in the investigation, allowing others to understand and potentially repeat the process.</li>
+</ul>
+
+<p><strong>Essential Guidelines for Writing a Digital Forensic Report:</strong></p>
+
+<ul>
+<li><strong>Structure:</strong> Follow a well-defined structure, typically including sections like:
+
+<ul>
+<li><strong>Executive Summary:</strong> Briefly summarizes the investigation, findings, and conclusions.</li>
+<li><strong>Introduction:</strong> Provides context for the investigation and outlines the objectives.</li>
+<li><strong>Methodology:</strong> Describes the tools and techniques used during the examination.</li>
+<li><strong>Analysis:</strong> Details the examination process, including the analysis of evidence.</li>
+<li><strong>Results:</strong> Presents the findings of the investigation, including extracted data and conclusions.</li>
+<li><strong>Conclusion:</strong> Summarizes the key findings and their significance.</li>
+<li><strong>Appendix:</strong> Includes detailed logs, chain-of-custody documentation, and other relevant data.</li>
+</ul></li>
+<li><strong>Clarity and Conciseness:</strong> Use clear and concise language, avoiding technical jargon unless necessary. Define technical terms when used.</li>
+<li><strong>Accuracy:</strong> Ensure all information is accurate and verified. Proofread the report carefully before finalizing it.</li>
+<li><strong>Chain of Custody:</strong> Document the chain of custody for all evidence, demonstrating its secure handling throughout the investigation.</li>
+<li><strong>Admissibility:</strong> Write the report with the potential for court presentation in mind. Follow any specific legal requirements for evidence presentation.</li>
+</ul>
+<h2><a name="tools-used-in-network-forensics-10-may-23-10-dec-23-10-dec-22" class="heading-anchor" href="#tools-used-in-network-forensics-10-may-23-10-dec-23-10-dec-22" rel="nofollow" aria-hidden="true"></a>Tools used in network forensics (10 / May 23) (10 / Dec 23) (10 / Dec 22)</h2>
+<p><strong>Packet Capture and Analysis Tools:</strong></p>
+
+<ul>
+<li><strong>Packet Sniffers (WireShark, tcpdump):</strong> These tools capture network traffic flowing across a network segment, allowing detailed examination of individual packets.</li>
+<li><strong>Network Protocol Analyzers:</strong> These tools go beyond simple packet capture, offering deeper analysis of specific protocols (e.g., TCP/IP, HTTP, DNS) to identify anomalies or suspicious activity.</li>
+</ul>
+
+<p><strong>Network Traffic Recorders:</strong></p>
+
+<ul>
+<li><strong>Network Traffic Recorders (NTRs):</strong> These tools continuously capture and store all network traffic on a specific segment, providing a comprehensive record for later analysis.</li>
+</ul>
+
+<p><strong>Log Analysis Tools:</strong></p>
+
+<ul>
+<li><strong>Security Information and Event Management (SIEM) Systems:</strong> These systems collect and analyze logs from various network devices and security tools, offering a centralized view of security events and potential incidents.</li>
+<li><strong>Log Analysis Tools:</strong> Dedicated log analysis tools allow for in-depth examination of logs from firewalls, intrusion detection systems (IDS), and other network devices, helping identify suspicious patterns or activities.</li>
+</ul>
+
+<p><strong>Memory Forensics Tools:</strong></p>
+
+<ul>
+<li><strong>Memory Acquisition Tools:</strong>
+
+<ul>
+<li>In some investigations, capturing a network device's volatile memory (RAM) can be crucial.</li>
+<li>These tools allow for forensic acquisition of memory content, potentially revealing information about malware or ongoing network activity.</li>
+</ul></li>
+</ul>
+<h2><a name="roles-of-csirt-in-handling-incident-10-may-23-10-dec-23-10-dec-22" class="heading-anchor" href="#roles-of-csirt-in-handling-incident-10-may-23-10-dec-23-10-dec-22" rel="nofollow" aria-hidden="true"></a>Roles of CSIRT in handling incident (10 / May 23) (10 / Dec 23) (10 / Dec 22)</h2>
+<p>The Computer Security Incident Response Team (CSIRT) plays a crucial role in handling incidents by detecting, responding to, and managing cyber security threats.</p>
+
+<p>The CSIRT's primary objective is to minimize the impact of security incidents on an organization by quickly identifying and containing the incident, eradicating the root cause, recovering affected systems, and restoring normal operations.</p>
+
+<p><strong>Key Roles and Responsibilities</strong></p>
+
+<ul>
+<li><strong>CSIRT Team Lead</strong>: Oversees the CSIRT's efforts, communicates with executive leadership, and coordinates the budget</li>
+<li><strong>Incident Manager</strong>: Coordinates CSIRT meetings, ensures accountability, and determines whether incident findings should be disclosed</li>
+<li><strong>Supporting CSIRT Staff</strong>: Includes technical roles like security analysts, incident handlers, shift leads, and forensic investigators</li>
+<li><strong>Incident Analyst</strong>: Analyzes incident data, discusses prevention methods, and shares insights with the organization</li>
+<li><strong>Incident Responder</strong>: Coordinates individual responses to incidents, often the most experienced team member in the area of the incident</li>
+<li><strong>IT Administrator</strong>: Provides technical support and ensures the smooth operation of IT systems</li>
+<li><strong>Malware/Forensic Analyst</strong>: Analyzes malware and conducts forensic investigations to understand the incident's root cause</li>
+</ul>
+<h2><a name="email-tracing-internet-fraud-10-may-23-10-dec-23-10-dec-22" class="heading-anchor" href="#email-tracing-internet-fraud-10-may-23-10-dec-23-10-dec-22" rel="nofollow" aria-hidden="true"></a>Email Tracing- Internet Fraud (10 / May 23) (10 / Dec 23) (10 / Dec 22)</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020240520181503.png" alt="" /></p>
+
+<p>Email tracing is a crucial process in investigating internet fraud.</p>
+
+<p>It involves tracking the origin of emails to identify the sender's location, IP address, and other key details.</p>
+
+<p>This process is essential in combating internet fraud, particularly in cases of phishing, cyber stalking, and email threats.</p>
+
+<p>By tracing emails, investigators can gather evidence to identify and prosecute individuals involved in fraudulent activities online.</p>
+
+<p>Email tracing helps in uncovering the source of fraudulent emails, enabling authorities to take legal action against cybercriminals and protect individuals and organizations from falling victim to internet fraud schemes.</p>
+
+		</main>
+		
+		<details id="table-of-content">
+		   <summary>Table of Content</summary>
+		<nav>
+<ul>
+<li><a href="#explain-mobile-forensic-what-are-various-challenges-in-mobile-forensics-5-may-23-5-dec-23-5-dec-22">Explain Mobile forensic. What are various challenges in mobile forensics (5 / May 23) (5 / Dec 23) (5 / Dec 22)</a></li>
+<li><a href="#explain-forensic-duplicates-as-admissible-evidence-5-may-23-5-dec-22">
+Explain Forensic Duplicates as Admissible Evidence. (5 / May 23) (5 / Dec 22)</a></li>
+<li><a href="#what-is-evidence-handling-procedure-5-may-23-5-dec-23-5-dec-22">
+What is evidence handling procedure? (5 / May 23) (5 / Dec 23) (5 / Dec 22)</a></li>
+<li><a href="#what-are-challenges-in-network-forensics-5-may-23-5-dec-23-5-dec-22">
+What are Challenges in network forensics? (5 / May 23) (5 / Dec 23) (5 / Dec 22)</a></li>
+<li><a href="#explain-incident-response-process-and-its-methodology-10-may-23-10-dec-23-10-dec-22">
+Explain Incident Response Process and its methodology. (10 / May 23) (10 / Dec 23) (10 / Dec 22)</a></li>
+<li><a href="#compare-active-attacks-vs-passive-attacks-classify-the-cybercrimes-and-explain-any-one-briefly-10-may-23-10-dec-23-10-dec-22">
+Compare active attacks vs Passive attacks. Classify the cybercrimes and explain any one briefly (10 / May 23) (10 / Dec 23) (10 / Dec 22)</a></li>
+<li><a href="#discuss-basic-security-precautions-to-be-taken-to-safeguard-laptops-and-wireless-devices-and-what-are-the-devices-related-to-security-issues-10-may-23-10-dec-23-10-dec-22">
+Discuss basic security precautions to be taken to safeguard Laptops and wireless devices and What are the devices related to security issues? (10 / May 23) (10 / Dec 23) (10 / Dec 22)</a></li>
+<li><a href="#explain-volatile-data-collection-from-windows-system-10-may-23-10-dec-23-10-dec-22">
+Explain Volatile Data Collection from Windows system (10 / May 23) (10 / Dec 23) (10 / Dec 22)</a></li>
+<li><a href="#what-do-you-understand-by-social-engineering-give-classification-10-may-23-10-dec-23-10-dec-22">
+What do you understand by social engineering? Give classification (10 / May 23) (10 / Dec 23) (10 / Dec 22)</a></li>
+<li><a href="#briefly-explain-types-of-digital-evidence-with-examples-10-may-23-10-dec-23-10-dec-22">
+Briefly explain Types of digital Evidence with examples. (10 / May 23) (10 / Dec 23) (10 / Dec 22)</a></li>
+<li><a href="#explain-process-for-collecting-network-based-evidence-10-may-23-10-dec-23-10-dec-22">
+Explain process for collecting Network Based Evidence. (10 / May 23) (10 / Dec 23) (10 / Dec 22)</a></li>
+<li><a href="#explain-various-guidelines-for-digital-forensic-report-writing-along-with-its-goals-10-may-23-10-dec-23-10-dec-22">
+Explain various guidelines for digital forensic report writing along with its goals. (10 / May 23) (10 / Dec 23) (10 / Dec 22)</a></li>
+<li><a href="#tools-used-in-network-forensics-10-may-23-10-dec-23-10-dec-22">
+Tools used in network forensics (10 / May 23) (10 / Dec 23) (10 / Dec 22)</a></li>
+<li><a href="#roles-of-csirt-in-handling-incident-10-may-23-10-dec-23-10-dec-22">
+Roles of CSIRT in handling incident (10 / May 23) (10 / Dec 23) (10 / Dec 22)</a></li>
+<li><a href="#email-tracing-internet-fraud-10-may-23-10-dec-23-10-dec-22">
+Email Tracing- Internet Fraud (10 / May 23) (10 / Dec 23) (10 / Dec 22)</a></li>
+</ul>
+</nav>
+
+		</details>
+		
+		<footer>
+			<p style="text-align: center; font-size: small; margin-top: 5em;">
+				<a href="https://anzenkodo.github.io/license">LICENSE</a>
+			</p>
+		</footer>
+	</body>
+	<script src="https://AnzenKodo.github.io/assets/js/mermaid.js"></script>
+	<script id="MathJax-script" async src="https://AnzenKodo.github.io/assets/js/mathjax.js"></script>
+	<script>
+		/* document.getElementById('video').addEventListener('click', (ele) => {
+			 if (ele.target.paused) {
+				 ele.target.play();
+			 } else {
+				 ele.target.pause();
+			 }
+		}); */
+
+		mermaid.initialize({
+			theme: "neutral",
+			themeVariables: {
+			    lineColor: "#939598",
+			}
+		});
+
+		MathJax = {
+		  tex: {
+			inlineMath: [['$', '$']],
+			displayMath: [['$$', '$$']],
+		  }
+		};
+	</script>
+</html>

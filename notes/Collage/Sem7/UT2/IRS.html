@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>IRS - AK#Notes</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="#FF6C22">
+		<meta name="description" content="## Explain Document pre-processing in detail. *  Document pre-processing is a crucial step in prepar">
+		<meta property="og:description" content="## Explain Document pre-processing in detail. *  Document pre-processing is a crucial step in prepar">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<meta property="og:image:alt" content="AK#Notes logo">
+		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="IRS - AK#Notes">
+		<meta property="og:url" content="https://AnzenKodo.github.io/notes/notes/Collage/Sem7/UT2/IRS.html">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+
+			:root {
+				/* color-scheme: dark light; */
+				color-scheme: dark;
+				--theme: #FF6C22;
+			}
+			body {
+				max-width: 40rem;
+				margin: 0 auto;
+				font-family: system-ui;
+				padding: 0 1em;
+				color: inherit !important;
+				word-break: break-word;
+			}
+			h1, h2, h3, h4, h5, h6 {
+				margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+				font-size: 2rem;
+			}
+			h3 {
+				font-size: 1.8rem;
+			}
+			h4 {
+				font-size: 1.5rem;
+			}
+			h5 {
+				font-size: 1.3rem;
+			}
+			h6 {
+				font-size: 1rem;
+			}
+			p, li, td, code {
+				line-height: 1.5rem;
+			}
+			a {
+				color: var(--theme);
+				text-decoration: none;
+			}
+			a:hover, a:focus {
+				text-decoration: underline;
+			}
+			a:active {
+				background: var(--theme);
+				color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+				margin-top: .5rem;
+			}
+			li {
+				margin-bottom: .5rem;
+			}
+			table {
+				border-collapse: collapse;
+				overflow-x: auto;
+				display: block;
+				word-break: auto-phrase;
+				margin: 1rem 0;
+			}
+			th {
+				font-size: 1.1rem;
+				border: 2px solid;
+				padding: .3rem .3rem;
+			}
+			td {
+				border: 1px solid;
+				padding: .3rem .5rem;
+			}
+			blockquote {
+				margin-left: 0;
+				margin-right: 0;
+				border: 1px solid;
+				border-left: 10px solid;
+				padding: 0 1rem;
+			}
+				.code-block {
+				background: black;
+				overflow-x: auto;
+				padding: 0em 1em;
+				border: 1px solid;
+			}
+			.code-block-language-name {
+				position: sticky;
+				left: 95%;
+				top: .5em;
+				font-weight: bold;
+				color: white;
+			}
+			:not(pre.chroma) > code {
+				border: 1px solid;
+				padding: .3rem .2rem .2rem .2rem;
+			}
+			img {
+				max-width: 100%;
+				display: block;
+				margin: 0 auto;
+			}
+			[href="#skip-top-main"] {
+				padding: 0.3em;
+				position: absolute;
+				transform: translateY(-1000%);
+			}
+			[href="#skip-top-main"]:focus {
+				transform: translateY(0%);
+				background: var(--theme);
+				color: inherit;
+			}
+			#table-of-content {
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+				background: black;
+				padding: 0.5rem 1em;
+				z-index: 1;
+				color: white;
+			}
+			#table-of-content[open] {
+				max-height: 90%;
+				overflow-y: auto;
+				bottom: 50px;
+				margin-left: 1em;
+			}
+			#table-of-content[open] summary {
+				background: black;
+				padding: 0.5em 1em;
+				text-align: center;
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+			}
+			#table-of-content ul:first-child {
+				padding-left: 1em;
+				margin-top: 1.5em;
+			}
+			.heading-anchor::before {
+				margin-right: .5rem;
+			}
+		    h2 .heading-anchor::before {
+    			content: "#";
+    			margin-right: .5rem;
+		    }
+            h3 .heading-anchor::before {
+				content: "##";
+				margin-right: .5rem;
+			}
+            h4 .heading-anchor::before {
+				content: "###";
+				margin-right: .5rem;
+			}
+            h5 .heading-anchor::before {
+				content: "####";
+				margin-right: .5rem;
+			}
+            h6 .heading-anchor::before {
+				content: "#####";
+				margin-right: .5rem;
+			}
+			.mermaid {
+				background: black;
+				border: 1px solid;
+				margin-top: 1rem;
+				padding: 1rem;
+				font-family: monospace;
+			}
+			.mermaid svg {
+				display: block;
+				margin: auto;
+			}
+			.mermaid:has(svg) {
+				background: none;
+				border: none;
+				margin-top: 1rem;
+				padding: 0;
+			}
+			mjx-container {
+				display: math;
+				overflow-y: hidden;
+				overflow-x: auto;
+				max-width: 100%;
+				padding-bottom: .8rem;
+			}
+			iframe {
+				width: 100%;
+				height: 21rem;
+				margin: 1rem 0;
+			}
+			video {
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<a href="#skip-top-main">Skip to main</a>
+		<header>
+<!--		<h1 style="text-align: center;">-->
+			<h1 style="text-align: center;">
+				<a href="https://AnzenKodo.github.io">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+			</h1><nav style="border-top: 1px solid gray;border-bottom: 1px solid gray;padding: .5rem 0;text-align: center;margin: 0 0 2rem 0;color: gray;clear: left;line-height: 1.6rem;">
+				<a href="https://AnzenKodo.github.io/notes">Home</a> | <a href="https://AnzenKodo.github.io">About</a> | <a href="https://AnzenKodo.github.io/blogroll">Blogroll</a> | <a href="https://github.com/AnzenKodo">Github</a> | <a href="https://x.com/AnzenKodo">𝕏</a>
+			</nav>
+			<!-- <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;"> -->
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem; margin-top: 0;">IRS</h1>
+			<h2><a name="explain-document-pre-processing-in-detail" class="heading-anchor" href="#explain-document-pre-processing-in-detail" rel="nofollow" aria-hidden="true"></a>Explain Document pre-processing in detail. *</h2>
+<p>Document pre-processing is a crucial step in preparing text data for analysis, particularly in fields like Natural Language Processing (NLP) and machine learning. This process involves cleaning and transforming raw text into a format that can be effectively analyzed and utilized by algorithms.</p>
+
+<p><strong>Steps in data preprocessing:</strong></p>
+
+<p><img loading="lazy" src="assets/Pasted%20image%2020241022042351.png" alt="" /></p>
+
+<ol>
+<li><strong>Data profiling</strong>: 
+
+<ul>
+<li>Data profiling is the process of examining, analyzing and reviewing data to collect statistics about its quality.</li>
+<li>It starts with a survey of existing data and its characteristics.</li>
+</ul></li>
+<li><strong>Data cleansing</strong>:
+
+<ul>
+<li>The aim here is to find the easiest way to rectify quality issues, such as eliminating bad data, filling in missing data or otherwise ensuring the raw data is suitable for feature engineering.</li>
+</ul></li>
+<li><strong>Data reduction</strong>:
+
+<ul>
+<li>Raw data sets often include redundant data that arise from characterizing phenomena in different ways or data that is not relevant to a particular ML, AI or analytics task.</li>
+<li>Data reduction uses techniques like principal component analysis to transform the raw data into a simpler form suitable for particular use cases.</li>
+</ul></li>
+<li><strong>Data transformation</strong>:
+
+<ul>
+<li>Here, data scientists think about how different aspects of the data need to be organized to make the most sense for the goal.</li>
+<li>This could include things like structuring unstructured data, combining salient variables when it makes sense or identifying important ranges to focus on.</li>
+</ul></li>
+<li><strong>Data enrichment</strong>:
+
+<ul>
+<li>In this step, data scientists apply the various feature engineering libraries to the data to effect the desired transformations.</li>
+</ul></li>
+<li><strong>Data validation</strong>:
+
+<ul>
+<li>At this stage, the data is split into two sets.</li>
+<li>The first set is used to train a machine learning or deep learning model.</li>
+<li>The second set is the testing data that is used to gauge the accuracy and robustness of the resulting model.</li>
+</ul></li>
+</ol>
+<h2><a name="explain-metadata-with-an-example" class="heading-anchor" href="#explain-metadata-with-an-example" rel="nofollow" aria-hidden="true"></a>Explain metadata with an example.</h2>
+<p>Metadata is defined as <strong>data about data</strong>, providing structured information that describes, explains, or gives context to other data.</p>
+
+<p>This additional layer of information helps in identifying, managing, and retrieving data more efficiently.</p>
+
+<p><strong>Example of Metadata</strong></p>
+
+<p>Consider a <strong>digital photograph</strong>. The photograph itself is the primary data, while the metadata associated with it can include:</p>
+
+<ul>
+<li><strong>File Name:</strong> &quot;vacation_photo.jpg&quot;</li>
+<li><strong>Date Taken:</strong> &quot;2024-10-15&quot;</li>
+<li><strong>Camera Model:</strong> &quot;Canon EOS 90D&quot;</li>
+<li><strong>Location:</strong> &quot;Paris, France&quot;</li>
+<li><strong>Dimensions:</strong> &quot;1920 x 1080 pixels&quot;</li>
+<li><strong>File Size:</strong> &quot;2.5 MB&quot;</li>
+</ul>
+
+<p><strong>Types of Metadata</strong></p>
+
+<p>There are various types of metadata that serve different purposes:</p>
+
+<ol>
+<li><strong>Descriptive Metadata:</strong> Identifies the content, such as titles, authors, and keywords.</li>
+<li><strong>Structural Metadata:</strong> Describes how different parts of a dataset relate to one another (e.g., chapters in a book).</li>
+<li><strong>Administrative Metadata:</strong> Provides information on how to manage resources, including rights and preservation details.</li>
+</ol>
+<h2><a name="list-different-types-of-markup-languages" class="heading-anchor" href="#list-different-types-of-markup-languages" rel="nofollow" aria-hidden="true"></a>List different types of markup languages.</h2>
+<p>Markup languages are specialized computer languages used to define the structure, presentation, and semantics of text documents through the use of tags or symbols.</p>
+
+<p>They are essential in various fields, including web development, document processing, and data interchange.</p>
+
+<ol>
+<li>HTML (HyperText Markup Language)
+
+<ul>
+<li><strong>Purpose:</strong> The standard language for creating web pages and web applications.</li>
+<li><strong>Example Tags:</strong> <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>, <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>.</li>
+<li><strong>Usage:</strong> Structures content on the web, allowing for hyperlinks and multimedia integration.</li>
+</ul></li>
+<li>XML (Extensible Markup Language)
+
+<ul>
+<li><strong>Purpose:</strong> Designed for storing and transporting data; allows users to create custom tags.</li>
+<li><strong>Example Tags:</strong> <code>&lt;note&gt;</code>, <code>&lt;to&gt;</code>, <code>&lt;from&gt;</code>, <code>&lt;heading&gt;</code>.</li>
+<li><strong>Usage:</strong> Facilitates data sharing across different systems, particularly on the Internet.</li>
+</ul></li>
+<li>XHTML (eXtensible HyperText Markup Language)
+
+<ul>
+<li><strong>Purpose:</strong> A stricter variant of HTML that adheres to XML syntax rules.</li>
+<li><strong>Example Tags:</strong> Similar to HTML but requires proper nesting and case sensitivity (e.g., <code>&lt;br /&gt;</code> instead of <code>&lt;br&gt;</code>).</li>
+<li><strong>Usage:</strong> Ensures compatibility with XML tools while maintaining web content structure.</li>
+</ul></li>
+<li>Markdown
+
+<ul>
+<li><strong>Purpose:</strong> A lightweight markup language designed for formatting plain text.</li>
+<li><strong>Example Syntax:</strong> <code># Heading 1</code>, <code>*italic*</code>, <code>**bold**</code>.</li>
+<li><strong>Usage:</strong> Commonly used in documentation and content management systems due to its simplicity.</li>
+</ul></li>
+<li>LaTeX
+
+<ul>
+<li><strong>Purpose:</strong> A high-quality typesetting system commonly used for technical and scientific documents.</li>
+<li><strong>Example Syntax:</strong> <code>\documentclass{article}</code>, <code>\begin{document}</code>, <code>\end{document}</code>.</li>
+<li><strong>Usage:</strong> Produces well-formatted documents, especially those containing complex mathematical expressions.</li>
+</ul></li>
+</ol>
+<h2><a name="what-are-the-types-of-compression-models" class="heading-anchor" href="#what-are-the-types-of-compression-models" rel="nofollow" aria-hidden="true"></a>What are the types of compression models?</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020241022043138.jpg" alt="" /></p>
+
+<p>Data compression techniques can be broadly categorized into two main types: <strong>lossy</strong> and <strong>lossless</strong> compression. Each type employs different models and algorithms to reduce the size of data while serving distinct purposes.</p>
+
+<p><strong>Types of Compression Models</strong></p>
+
+<ul>
+<li><strong>Lossless Compression</strong>
+
+<ul>
+<li>Lossless compression techniques allow for the original data to be perfectly reconstructed from the compressed data.</li>
+<li>This is essential when the integrity of the data must be maintained, such as with text files or critical data archives.</li>
+<li><strong>Common Lossless Compression Models</strong>:
+
+<ul>
+<li><strong>Run-Length Encoding (RLE):</strong> Compresses data by reducing sequences of repeated values.</li>
+<li><strong>Huffman Coding:</strong> Uses variable-length codes for encoding symbols based on their frequencies.</li>
+<li><strong>Arithmetic Encoding:</strong> Represents the entire message as a single number in a range defined by the probabilities of the symbols.</li>
+<li><strong>Bzip2:</strong> Utilizes the Burrows-Wheeler transform and Huffman coding for high compression ratios.</li>
+</ul></li>
+</ul></li>
+<li><strong>Lossy Compression</strong>
+
+<ul>
+<li>Lossy compression techniques achieve higher compression ratios by permanently removing some data deemed less important.</li>
+<li>This is often acceptable in multimedia applications where some loss of quality may not be noticeable to users.</li>
+<li><strong>Common Lossy Compression Models:</strong>
+
+<ul>
+<li><strong>Transform Coding:</strong> Used in audio and video encoding, such as JPEG for images and MP3 for audio.</li>
+<li><strong>Discrete Cosine Transform (DCT):</strong> Commonly used in JPEG image compression.</li>
+<li><strong>Discrete Wavelet Transform (DWT):</strong> Utilized in video compression formats like MPEG.</li>
+<li><strong>Fractal Compression:</strong> Uses mathematical fractals to compress images, focusing on self-similarity within images.</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2><a name="what-is-hci-what-are-the-goals-of-hci" class="heading-anchor" href="#what-is-hci-what-are-the-goals-of-hci" rel="nofollow" aria-hidden="true"></a>What is HCI ?What are the goals of HCI? *</h2>
+<p>Human-Computer Interaction (HCI) is a multidisciplinary field focused on the design, evaluation, and implementation of interactive computing systems for human use.</p>
+
+<p>It encompasses various aspects of how people interact with computers and aims to improve the usability and user experience of technology.</p>
+
+<p><strong>Goals of HCI</strong></p>
+
+<ol>
+<li><strong>Usability:</strong>
+
+<ul>
+<li>Ensure that systems are easy to use, allowing users to accomplish their tasks with minimal effort and errors.</li>
+</ul></li>
+<li><strong>Accessibility:</strong>
+
+<ul>
+<li>Make technology usable for a diverse range of users, including those with disabilities.</li>
+</ul></li>
+<li><strong>User Satisfaction:</strong>
+
+<ul>
+<li>Enhance the overall user experience by creating engaging and visually appealing interfaces.</li>
+</ul></li>
+<li><strong>Efficiency:</strong>
+
+<ul>
+<li>Design systems that streamline workflows and reduce cognitive load, thereby increasing productivity.</li>
+</ul></li>
+<li><strong>Error Reduction:</strong>
+
+<ul>
+<li>Identify potential sources of user errors and frustration through careful design and usability testing.</li>
+</ul></li>
+<li><strong>Safety and Security:</strong>
+
+<ul>
+<li>Develop interfaces that prioritize user safety, especially in critical systems such as medical devices or autonomous vehicles.</li>
+</ul></li>
+<li><strong>Ethical Considerations:</strong>
+
+<ul>
+<li>Address the ethical implications of technology use, including privacy concerns and digital inequality.</li>
+</ul></li>
+</ol>
+<h2><a name="explain-the-suffix-array-with-an-example" class="heading-anchor" href="#explain-the-suffix-array-with-an-example" rel="nofollow" aria-hidden="true"></a>Explain the suffix array with an example.</h2>
+<p>A <strong>suffix array</strong> is a data structure that represents the starting indices of all suffixes of a given string, sorted in lexicographical order. It is widely used in string processing, pattern matching, and various applications in computer science, such as bioinformatics and data compression.</p>
+
+<p><strong>Definition and Construction</strong></p>
+
+<p>Given a string $s$ of length $n$, the suffix array consists of the indices of all suffixes of ss sorted in lexicographical order. The $i-th$ suffix of $s$ is defined as the substring starting from index $i$ to the end of the string.</p>
+
+<p><strong>Example</strong></p>
+
+<p>Let's consider the string <strong>&quot;banana&quot;</strong>. The suffixes of this string are:</p>
+
+<ol>
+<li><strong>0:</strong> &quot;banana&quot;</li>
+<li><strong>1:</strong> &quot;anana&quot;</li>
+<li><strong>2:</strong> &quot;nana&quot;</li>
+<li><strong>3:</strong> &quot;ana&quot;</li>
+<li><strong>4:</strong> &quot;na&quot;</li>
+<li><strong>5:</strong> &quot;a&quot;</li>
+</ol>
+
+<p>Now, we sort these suffixes lexicographically:</p>
+
+<ol>
+<li>&quot;a&quot; (index 5)</li>
+<li>&quot;ana&quot; (index 3)</li>
+<li>&quot;anana&quot; (index 1)</li>
+<li>&quot;banana&quot; (index 0)</li>
+<li>&quot;na&quot; (index 4)</li>
+<li>&quot;nana&quot; (index 2)</li>
+</ol>
+
+<p>The sorted order gives us the following indices for the suffix array:</p>
+
+<ul>
+<li>Suffix Array: <strong>[5, 3, 1, 0, 4, 2]</strong></li>
+</ul>
+
+<p>This means:</p>
+
+<ul>
+<li>The suffix starting at index <strong>5</strong> (&quot;a&quot;) comes first,</li>
+<li>Followed by the suffix starting at index <strong>3</strong> (&quot;ana&quot;),</li>
+<li>And so on.</li>
+</ul>
+
+<p><strong>Applications</strong></p>
+
+<ul>
+<li><strong>Substring Search:</strong> Quickly locating substrings within a larger text.</li>
+<li><strong>Pattern Matching:</strong> Efficiently finding occurrences of a pattern in a text.</li>
+<li><strong>Data Compression:</strong> Enhancing algorithms for compressing strings by utilizing their structure.</li>
+<li><strong>Bioinformatics:</strong> Analyzing DNA sequences and other biological data where string manipulation is critical.</li>
+</ul>
+<h2><a name="explain-the-brute-force-algorithm-with-an-example" class="heading-anchor" href="#explain-the-brute-force-algorithm-with-an-example" rel="nofollow" aria-hidden="true"></a>Explain the Brute-force algorithm with an example.</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020241022045121.png" alt="" /></p>
+
+<p>The <strong>brute-force algorithm</strong> is a straightforward approach to problem-solving that involves systematically exploring all possible solutions until the correct one is found.</p>
+
+<p>This method is often simple to implement and guarantees finding a solution, but it can be inefficient, especially for large problem spaces.</p>
+
+<p>This method ensures that every element in the array is checked, leading to the correct maximum value.</p>
+
+<p>The time complexity of this brute-force approach is $O(n)$, where $n$ is the number of elements in the array.</p>
+
+<p><strong>Example of a Brute-Force Algorithm</strong></p>
+
+<p><strong>Problem</strong>: Finding the Maximum Value in an Array</p>
+
+<p>Consider the array:</p>
+
+<p>$$Array=[3,7,2,9,5]$$</p>
+
+<p>Steps of the Brute-Force Algorithm:</p>
+
+<ol>
+<li><strong>Initialize a Variable:</strong> Start by setting a variable <code>max_value</code> to the first element of the array:
+
+<ul>
+<li><code>max_value = 3</code></li>
+</ul></li>
+<li><strong>Iterate Through the Array:</strong>
+
+<ul>
+<li>Compare each element with <code>max_value</code> and update <code>max_value</code> if a larger element is found.</li>
+<li><strong>Iterations:</strong>
+
+<ul>
+<li>Compare 7 with 3: Update <code>max_value</code> to 7.</li>
+<li>Compare 2 with 7: No update (7 is greater).</li>
+<li>Compare 9 with 7: Update <code>max_value</code> to 9.</li>
+<li>Compare 5 with 9: No update (9 is greater).</li>
+</ul></li>
+</ul></li>
+<li><strong>Result:</strong> After checking all elements, <code>max_value</code> will be:
+
+<ul>
+<li><code>max_value = 9</code></li>
+</ul></li>
+</ol>
+<h2><a name="describe-signature-files-in-detail" class="heading-anchor" href="#describe-signature-files-in-detail" rel="nofollow" aria-hidden="true"></a>Describe Signature Files in detail.</h2>
+<p><strong>Signature files</strong> are specialized data structures used primarily in information retrieval systems to facilitate efficient searching and filtering of text data.</p>
+
+<p>They provide a compact representation of documents, allowing for quick identification of potentially relevant documents based on search queries. The main purpose of signature files is to minimize disk access during query processing, thereby enhancing search performance.</p>
+
+<p><strong>Key Features of Signature Files</strong></p>
+
+<ol>
+<li><strong>Compact Representation:</strong> Signature files store a concise representation of documents, which reduces the amount of data that needs to be scanned during searches.</li>
+<li><strong>Two-Stage Query Processing:</strong>
+
+<ul>
+<li><strong>Filtering Stage:</strong> This initial stage identifies candidate documents that may contain the query terms. It guarantees no false negatives (i.e., relevant documents will not be missed) but may produce false positives (irrelevant documents may be included).</li>
+<li><strong>Refinement Stage:</strong> In this stage, the candidate documents identified in the filtering stage are checked to eliminate false positives, ensuring that only relevant documents are returned.</li>
+</ul></li>
+<li><strong>Efficiency:</strong> By using signature files, systems can perform linear scans rather than full-text searches, significantly improving search speed, especially in large datasets.</li>
+</ol>
+
+<p><strong>Example of Signature File Usage</strong></p>
+
+<p>Consider a simple example where we have three documents:</p>
+
+<ul>
+<li><strong>Doc 1:</strong> &quot;The cat sat on the mat.&quot;</li>
+<li><strong>Doc 2:</strong> &quot;Dogs are great pets.&quot;</li>
+<li><strong>Doc 3:</strong> &quot;Cats and dogs can be friends.&quot;</li>
+</ul>
+
+<p><strong>Step 1: Create Signatures</strong></p>
+
+<p>Each document is processed to generate a signature based on its content. For simplicity, let's assume we use a binary signature where each bit represents the presence or absence of specific keywords (e.g., &quot;cat,&quot; &quot;dog,&quot; &quot;pet&quot;).</p>
+
+<ul>
+<li><strong>Signature for Doc 1:</strong> <code>110</code> (indicating the presence of &quot;cat&quot; and absence of &quot;dog&quot; or &quot;pet&quot;)</li>
+<li><strong>Signature for Doc 2:</strong> <code>001</code> (indicating absence of &quot;cat&quot; and presence of &quot;pet&quot;)</li>
+<li><strong>Signature for Doc 3:</strong> <code>101</code> (indicating presence of &quot;cat&quot; and &quot;dog&quot;)</li>
+</ul>
+
+<p><strong>Step 2: Query Processing</strong></p>
+
+<p>Suppose a user queries for the term &quot;cat.&quot; The system will:</p>
+
+<ol>
+<li>Scan the signature file:
+
+<ul>
+<li>Doc 1: <code>110</code> (matches)</li>
+<li>Doc 2: <code>001</code> (does not match)</li>
+<li>Doc 3: <code>101</code> (matches)</li>
+</ul></li>
+<li>Identify candidates: Documents 1 and 3 are potential matches.</li>
+<li>Perform a detailed check on these documents to confirm relevance, eliminating any false positives.</li>
+</ol>
+<h2><a name="explain-horspool-algorithm-with-an-example" class="heading-anchor" href="#explain-horspool-algorithm-with-an-example" rel="nofollow" aria-hidden="true"></a>Explain Horspool algorithm with an example.</h2>
+<p>The <strong>Horspool algorithm</strong>, also known as the Boyer-Moore-Horspool algorithm, is an efficient string-searching algorithm that improves upon the naive search method by skipping sections of the text that cannot possibly match the pattern.</p>
+
+<p>It was developed by <strong>Nigel Horspool</strong> in <strong>1980</strong> and is particularly effective for searching substrings within larger strings.</p>
+
+<p><strong>Example</strong></p>
+
+<div class="code-block"><html>
+<style type="text/css">
+/* Background */ .bg { color: #282c34 }
+/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
+/* Other */ .chroma .x { color: #c9c9c9 }
+/* Error */ .chroma .err { color: #cf5967 }
+/* CodeLine */ .chroma .cl { color: #c9c9c9 }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
+/* Keyword */ .chroma .k { color: #7fbaf5 }
+/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
+/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
+/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
+/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
+/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
+/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
+/* Name */ .chroma .n { color: #c9c9c9 }
+/* NameAttribute */ .chroma .na { color: #bc74c4 }
+/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
+/* NameClass */ .chroma .nc { color: #ecbe7b }
+/* NameConstant */ .chroma .no { color: #ecbe7b }
+/* NameDecorator */ .chroma .nd { color: #ecbe7b }
+/* NameEntity */ .chroma .ni { color: #c9c9c9 }
+/* NameException */ .chroma .ne { color: #cf5967 }
+/* NameFunction */ .chroma .nf { color: #57c7ff }
+/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
+/* NameLabel */ .chroma .nl { color: #cf5967 }
+/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
+/* NameOther */ .chroma .nx { color: #c9c9c9 }
+/* NameProperty */ .chroma .py { color: #c9c9c9 }
+/* NameTag */ .chroma .nt { color: #bc74c4 }
+/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
+/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
+/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
+/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
+/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
+/* Literal */ .chroma .l { color: #c9c9c9 }
+/* LiteralDate */ .chroma .ld { color: #57c7ff }
+/* LiteralString */ .chroma .s { color: #82cc6a }
+/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
+/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
+/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
+/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
+/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
+/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
+/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
+/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
+/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
+/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
+/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
+/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
+/* LiteralNumber */ .chroma .m { color: #56b6c2 }
+/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
+/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
+/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
+/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
+/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
+/* Operator */ .chroma .o { color: #bc74c4 }
+/* OperatorWord */ .chroma .ow { color: #bc74c4 }
+/* Punctuation */ .chroma .p { color: #56b6c2 }
+/* Comment */ .chroma .c { color: #3e4460 }
+/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #3e4460 }
+/* CommentSingle */ .chroma .c1 { color: #3e4460 }
+/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
+/* Generic */ .chroma .g { color: #c9c9c9 }
+/* GenericDeleted */ .chroma .gd { color: #cf5967 }
+/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
+/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
+/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #ecbe7b }
+/* GenericOutput */ .chroma .go { color: #43454f }
+/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
+/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
+/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
+/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
+/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
+body { color: #282c34; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">Input:  txt[] = “THIS IS A TEST TEXT”
+</span></span><span class="line"><span class="cl">        pat[] = “TEST”
+</span></span><span class="line"><span class="cl">Output: Pattern found at index 10
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Input:  txt[] =  “AABAACAADAABAABA”
+</span></span><span class="line"><span class="cl">        pat[] =  “AABA”
+</span></span><span class="line"><span class="cl">Output: Pattern found at index 0
+</span></span><span class="line"><span class="cl">        Pattern found at index 9
+</span></span><span class="line"><span class="cl">        Pattern found at index 12
+</span></span></code></pre>
+</body>
+</html>
+</div>
+<p><img loading="lazy" src="assets/Pasted%20image%2020241022052604.png" alt="" /></p>
+<h2><a name="describe-sequential-searching" class="heading-anchor" href="#describe-sequential-searching" rel="nofollow" aria-hidden="true"></a>Describe Sequential searching. *</h2>
+<p><strong>Sequential searching</strong>, also known as linear searching, is a straightforward search algorithm used to find a specific element within a list or array.</p>
+
+<p>This method involves checking each element in the collection one by one until the desired element is found or all elements have been checked.</p>
+
+<p><strong>How Sequential Searching Works</strong></p>
+
+<ol>
+<li><strong>Start from the First Element:</strong> The search begins at the first element of the list.</li>
+<li><strong>Compare Each Element:</strong> Each element is compared to the target value.</li>
+<li><strong>Return Result:</strong>
+
+<ul>
+<li>If a match is found, the algorithm returns the index of the matching element.</li>
+<li>If no match is found after checking all elements, it indicates that the target is not present in the list.</li>
+</ul></li>
+</ol>
+
+<p><strong>Example of Sequential Searching</strong></p>
+
+<p>Consider an array:</p>
+
+<p>$$Array=[10,20,30,40,50]$$</p>
+
+<p>Suppose we want to find the element <strong>30</strong>.</p>
+
+<ol>
+<li>Start at index <strong>0</strong>:
+
+<ul>
+<li>Compare <strong>10</strong> with <strong>30</strong>: No match.</li>
+</ul></li>
+<li>Move to index <strong>1</strong>:
+
+<ul>
+<li>Compare <strong>20</strong> with <strong>30</strong>: No match.</li>
+</ul></li>
+<li>Move to index <strong>2</strong>:
+
+<ul>
+<li>Compare <strong>30</strong> with <strong>30</strong>: Match found!</li>
+</ul></li>
+</ol>
+
+<p>The search concludes successfully at index <strong>2</strong>, indicating that the element is present.</p>
+<h2><a name="discuss-about-using-relevance-judgement" class="heading-anchor" href="#discuss-about-using-relevance-judgement" rel="nofollow" aria-hidden="true"></a>Discuss about using relevance judgement.</h2>
+<p>Relevance judgment is a critical concept in information retrieval, particularly in evaluating how well retrieved documents meet the information needs of users.</p>
+
+<p>It involves assessing the relevance of documents based on specific queries or topics, which is essential for improving search engine performance and ensuring users receive the most pertinent information.</p>
+
+<p><strong>Types of Relevance:</strong></p>
+
+<ul>
+<li><strong>Topical Relevance:</strong> This refers to how closely the content of a document matches the subject matter of the query.</li>
+<li><strong>User Relevance:</strong> This considers the user's specific needs and context, which may affect their perception of what is relevant.</li>
+</ul>
+
+<p><strong>Applications</strong></p>
+
+<ol>
+<li><strong>Search Engines:</strong> Relevance judgments are foundational for search engines like Google, where they help rank search results based on how well they match user queries.</li>
+<li><strong>Recommendation Systems:</strong> In systems that suggest content (like movies or articles), relevance judgments help tailor recommendations to individual user preferences.</li>
+<li><strong>Legal and Academic Research:</strong> In specialized fields, such as legal case retrieval, understanding relevance helps ensure that practitioners find the most applicable precedents or statutes.</li>
+</ol>
+<h2><a name="discuss-suffix-tree-in-detail" class="heading-anchor" href="#discuss-suffix-tree-in-detail" rel="nofollow" aria-hidden="true"></a>Discuss suffix tree in detail.</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020241022051110.png" alt="" /></p>
+
+<p>A <strong>suffix tree</strong> is a specialized data structure that represents all the suffixes of a given string in a compressed trie format.</p>
+
+<p>It is widely used in various applications of computer science, particularly in string processing, pattern matching, and bioinformatics.</p>
+
+<p><strong>Example of Suffix Tree Construction</strong></p>
+
+<p>Let's construct a suffix tree for the string &quot;ababa$&quot;:</p>
+
+<ol>
+<li><strong>Suffixes:</strong>
+
+<ul>
+<li>&quot;ababa$&quot;</li>
+<li>&quot;baba$&quot;</li>
+<li>&quot;aba$&quot;</li>
+<li>&quot;a$&quot;</li>
+<li>&quot;$&quot;</li>
+</ul></li>
+<li><strong>Building Process:</strong>
+
+<ul>
+<li>Start with the longest suffix: Insert &quot;ababa$&quot; as a single edge.</li>
+<li>Insert &quot;baba$&quot;: Since it doesn't share a prefix with &quot;ababa$&quot;, create a new edge.</li>
+<li>Insert &quot;aba$&quot;: This shares a prefix with &quot;ababa$&quot;, so branch off from there.</li>
+<li>Continue this process until all suffixes are added.</li>
+</ul></li>
+</ol>
+
+<p><strong>Applications of Suffix Trees</strong></p>
+
+<ol>
+<li><strong>Substring Search:</strong> Quickly find occurrences of substrings within larger texts.</li>
+<li><strong>Longest Common Substring:</strong> Identify the longest common substring between two strings efficiently.</li>
+<li><strong>Pattern Matching:</strong> Facilitate fast pattern matching algorithms.</li>
+<li><strong>Bioinformatics:</strong> Analyze genetic sequences where substring searches are crucial.</li>
+<li><strong>Data Compression:</strong> Enhance algorithms for compressing strings by utilizing their structure.</li>
+</ol>
+<h2><a name="discuss-pattern-matching-in-detail" class="heading-anchor" href="#discuss-pattern-matching-in-detail" rel="nofollow" aria-hidden="true"></a>Discuss pattern matching in detail. *</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020241022051434.png" alt="" /></p>
+
+<p>Pattern matching is a fundamental technique in computer science used to search for specific patterns or substrings within larger datasets, such as text or binary data.</p>
+
+<p>This technique is crucial in various applications, including text processing, data mining, and bioinformatics.</p>
+
+<p><strong>Types of Patterns</strong></p>
+
+<ol>
+<li><strong>Literal Patterns:</strong> Exact matches of sequences (e.g., finding &quot;apple&quot; in a sentence).</li>
+<li><strong>Wildcard Patterns:</strong> Flexible matches that allow for variations (e.g., &quot;*.txt&quot; matches any text file).</li>
+<li><strong>Regular Expressions:</strong> A powerful way to describe complex search patterns using specific syntax.</li>
+<li><strong>Complex Patterns:</strong> Involves nested or recursive structures (e.g., parsing XML).</li>
+</ol>
+
+<p><strong>Applications of Pattern Matching</strong></p>
+
+<ol>
+<li><strong>Text Processing:</strong> Used in search engines and word processors for finding specific words or phrases.</li>
+<li><strong>Data Mining:</strong> Helps extract useful information from large datasets by identifying trends or specific patterns.</li>
+<li><strong>Bioinformatics:</strong> Essential for DNA sequence analysis, where specific gene sequences need to be identified within larger genomic data.</li>
+<li><strong>Computer Vision:</strong> Used to recognize shapes and objects within images based on predefined templates.</li>
+<li><strong>Natural Language Processing (NLP):</strong> Assists in tasks like sentiment analysis and entity recognition by identifying relevant phrases or terms.</li>
+</ol>
+
+<p><strong>Pattern Matching Algorithms</strong></p>
+
+<ul>
+<li><strong>Brute Force Algorithm:</strong> This is the simplest approach where each character of the pattern is compared with every character of the text.</li>
+<li><strong>Naive Pattern Matching:</strong> Similar to brute force but may skip some comparisons based on previous matches.</li>
+<li><strong>Knuth-Morris-Pratt (KMP) Algorithm</strong>: This algorithm preprocesses the pattern to create a table that allows it to skip unnecessary comparisons.</li>
+</ul>
+<h2><a name="define-inverted-files-explain-with-an-example" class="heading-anchor" href="#define-inverted-files-explain-with-an-example" rel="nofollow" aria-hidden="true"></a>Define inverted files. Explain with an example. *</h2>
+<p>An <strong>inverted file</strong>, also known as an <strong>inverted index</strong>, is a data structure used in information retrieval systems to facilitate efficient full-text searches. It maps content, such as words or terms, to their locations within a set of documents.</p>
+
+<p>This structure allows for quick lookups of documents containing specific terms, making it essential for search engines and database systems.</p>
+
+<p><strong>Example</strong></p>
+
+<p>Consider a simple example with three documents:</p>
+
+<ul>
+<li><strong>Document 1:</strong> &quot;The quick brown fox.&quot;</li>
+<li><strong>Document 2:</strong> &quot;The lazy dog.&quot;</li>
+<li><strong>Document 3:</strong> &quot;The quick blue hare.&quot;</li>
+</ul>
+
+<p><strong>Step 1</strong>: Tokenization</p>
+
+<p>First, we tokenize the documents into individual words (terms):</p>
+
+<ul>
+<li><strong>Doc 1:</strong> The, quick, brown, fox</li>
+<li><strong>Doc 2:</strong> The, lazy, dog</li>
+<li><strong>Doc 3:</strong> The, quick, blue, hare</li>
+</ul>
+
+<p><strong>Step 2</strong>: Building the Vocabulary</p>
+
+<p>Next, we create a vocabulary from the unique terms across all documents:</p>
+
+<ul>
+<li>Vocabulary: {the, quick, brown, fox, lazy, dog, blue, hare}</li>
+</ul>
+
+<p><strong>Step 3</strong>: Creating the Inverted List</p>
+
+<p>Now we build the inverted list for each term:</p>
+
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Document IDs</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>the</td>
+<td>[1, 2, 3]</td>
+</tr>
+
+<tr>
+<td>quick</td>
+<td>[1, 3]</td>
+</tr>
+
+<tr>
+<td>brown</td>
+<td></td>
+</tr>
+
+<tr>
+<td>fox</td>
+<td></td>
+</tr>
+
+<tr>
+<td>lazy</td>
+<td></td>
+</tr>
+
+<tr>
+<td>dog</td>
+<td></td>
+</tr>
+
+<tr>
+<td>blue</td>
+<td></td>
+</tr>
+
+<tr>
+<td>hare</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p>In this table:</p>
+
+<ul>
+<li>The term &quot;the&quot; appears in Documents 1, 2, and 3.</li>
+<li>The term &quot;quick&quot; appears in Documents 1 and 3.</li>
+<li>The term &quot;brown&quot; appears only in Document 1.</li>
+</ul>
+<h2><a name="references" class="heading-anchor" href="#references" rel="nofollow" aria-hidden="true"></a>References</h2>
+<ul>
+<li><a href="https://www.perplexity.ai/search/explain-document-pre-processin-z3O9ZAPtQSKUeuyq3_oWog">Perplexity</a></li>
+</ul>
+
+		</main>
+		
+		<details id="table-of-content">
+		   <summary>Table of Content</summary>
+		<nav>
+<ul>
+<li><a href="#explain-document-pre-processing-in-detail">Explain Document pre-processing in detail. *</a></li>
+<li><a href="#explain-metadata-with-an-example">
+Explain metadata with an example.</a></li>
+<li><a href="#list-different-types-of-markup-languages">
+List different types of markup languages.</a></li>
+<li><a href="#what-are-the-types-of-compression-models">
+What are the types of compression models?</a></li>
+<li><a href="#what-is-hci-what-are-the-goals-of-hci">
+What is HCI ?What are the goals of HCI? *</a></li>
+<li><a href="#explain-the-suffix-array-with-an-example">
+Explain the suffix array with an example.</a></li>
+<li><a href="#explain-the-brute-force-algorithm-with-an-example">
+Explain the Brute-force algorithm with an example.</a></li>
+<li><a href="#describe-signature-files-in-detail">
+Describe Signature Files in detail.</a></li>
+<li><a href="#explain-horspool-algorithm-with-an-example">
+Explain Horspool algorithm with an example.</a></li>
+<li><a href="#describe-sequential-searching">
+Describe Sequential searching. *</a></li>
+<li><a href="#discuss-about-using-relevance-judgement">
+Discuss about using relevance judgement.</a></li>
+<li><a href="#discuss-suffix-tree-in-detail">
+Discuss suffix tree in detail.</a></li>
+<li><a href="#discuss-pattern-matching-in-detail">
+Discuss pattern matching in detail. *</a></li>
+<li><a href="#define-inverted-files-explain-with-an-example">
+Define inverted files. Explain with an example. *</a></li>
+<li><a href="#references">
+References</a></li>
+</ul>
+</nav>
+
+		</details>
+		
+		<footer>
+			<p style="text-align: center; font-size: small; margin-top: 5em;">
+				<a href="https://anzenkodo.github.io/license">LICENSE</a>
+			</p>
+		</footer>
+	</body>
+	<script src="https://AnzenKodo.github.io/assets/js/mermaid.js"></script>
+	<script id="MathJax-script" async src="https://AnzenKodo.github.io/assets/js/mathjax.js"></script>
+	<script>
+		/* document.getElementById('video').addEventListener('click', (ele) => {
+			 if (ele.target.paused) {
+				 ele.target.play();
+			 } else {
+				 ele.target.pause();
+			 }
+		}); */
+
+		mermaid.initialize({
+			theme: "neutral",
+			themeVariables: {
+			    lineColor: "#939598",
+			}
+		});
+
+		MathJax = {
+		  tex: {
+			inlineMath: [['$', '$']],
+			displayMath: [['$$', '$$']],
+		  }
+		};
+	</script>
+</html>

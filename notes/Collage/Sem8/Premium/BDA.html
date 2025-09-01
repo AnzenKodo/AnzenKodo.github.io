@@ -1,0 +1,2220 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>BDA - AK#Notes</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="#FF6C22">
+		<meta name="description" content="## What is clique percolation method Write an algorithm on (CPM). Also show how the CPM finds clique">
+		<meta property="og:description" content="## What is clique percolation method Write an algorithm on (CPM). Also show how the CPM finds clique">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<meta property="og:image:alt" content="AK#Notes logo">
+		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="BDA - AK#Notes">
+		<meta property="og:url" content="https://AnzenKodo.github.io/notes/notes/Collage/Sem8/Premium/BDA.html">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+
+			:root {
+				/* color-scheme: dark light; */
+				color-scheme: dark;
+				--theme: #FF6C22;
+			}
+			body {
+				max-width: 40rem;
+				margin: 0 auto;
+				font-family: system-ui;
+				padding: 0 1em;
+				color: inherit !important;
+				word-break: break-word;
+			}
+			h1, h2, h3, h4, h5, h6 {
+				margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+				font-size: 2rem;
+			}
+			h3 {
+				font-size: 1.8rem;
+			}
+			h4 {
+				font-size: 1.5rem;
+			}
+			h5 {
+				font-size: 1.3rem;
+			}
+			h6 {
+				font-size: 1rem;
+			}
+			p, li, td, code {
+				line-height: 1.5rem;
+			}
+			a {
+				color: var(--theme);
+				text-decoration: none;
+			}
+			a:hover, a:focus {
+				text-decoration: underline;
+			}
+			a:active {
+				background: var(--theme);
+				color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+				margin-top: .5rem;
+			}
+			li {
+				margin-bottom: .5rem;
+			}
+			table {
+				border-collapse: collapse;
+				overflow-x: auto;
+				display: block;
+				word-break: auto-phrase;
+				margin: 1rem 0;
+			}
+			th {
+				font-size: 1.1rem;
+				border: 2px solid;
+				padding: .3rem .3rem;
+			}
+			td {
+				border: 1px solid;
+				padding: .3rem .5rem;
+			}
+			blockquote {
+				margin-left: 0;
+				margin-right: 0;
+				border: 1px solid;
+				border-left: 10px solid;
+				padding: 0 1rem;
+			}
+				.code-block {
+				background: black;
+				overflow-x: auto;
+				padding: 0em 1em;
+				border: 1px solid;
+			}
+			.code-block-language-name {
+				position: sticky;
+				left: 95%;
+				top: .5em;
+				font-weight: bold;
+				color: white;
+			}
+			:not(pre.chroma) > code {
+				border: 1px solid;
+				padding: .3rem .2rem .2rem .2rem;
+			}
+			img {
+				max-width: 100%;
+				display: block;
+				margin: 0 auto;
+			}
+			[href="#skip-top-main"] {
+				padding: 0.3em;
+				position: absolute;
+				transform: translateY(-1000%);
+			}
+			[href="#skip-top-main"]:focus {
+				transform: translateY(0%);
+				background: var(--theme);
+				color: inherit;
+			}
+			#table-of-content {
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+				background: black;
+				padding: 0.5rem 1em;
+				z-index: 1;
+				color: white;
+			}
+			#table-of-content[open] {
+				max-height: 90%;
+				overflow-y: auto;
+				bottom: 50px;
+				margin-left: 1em;
+			}
+			#table-of-content[open] summary {
+				background: black;
+				padding: 0.5em 1em;
+				text-align: center;
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+			}
+			#table-of-content ul:first-child {
+				padding-left: 1em;
+				margin-top: 1.5em;
+			}
+			.heading-anchor::before {
+				margin-right: .5rem;
+			}
+		    h2 .heading-anchor::before {
+    			content: "#";
+    			margin-right: .5rem;
+		    }
+            h3 .heading-anchor::before {
+				content: "##";
+				margin-right: .5rem;
+			}
+            h4 .heading-anchor::before {
+				content: "###";
+				margin-right: .5rem;
+			}
+            h5 .heading-anchor::before {
+				content: "####";
+				margin-right: .5rem;
+			}
+            h6 .heading-anchor::before {
+				content: "#####";
+				margin-right: .5rem;
+			}
+			.mermaid {
+				background: black;
+				border: 1px solid;
+				margin-top: 1rem;
+				padding: 1rem;
+				font-family: monospace;
+			}
+			.mermaid svg {
+				display: block;
+				margin: auto;
+			}
+			.mermaid:has(svg) {
+				background: none;
+				border: none;
+				margin-top: 1rem;
+				padding: 0;
+			}
+			mjx-container {
+				display: math;
+				overflow-y: hidden;
+				overflow-x: auto;
+				max-width: 100%;
+				padding-bottom: .8rem;
+			}
+			iframe {
+				width: 100%;
+				height: 21rem;
+				margin: 1rem 0;
+			}
+			video {
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<a href="#skip-top-main">Skip to main</a>
+		<header>
+<!--		<h1 style="text-align: center;">-->
+			<h1 style="text-align: center;">
+				<a href="https://AnzenKodo.github.io">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+			</h1><nav style="border-top: 1px solid gray;border-bottom: 1px solid gray;padding: .5rem 0;text-align: center;margin: 0 0 2rem 0;color: gray;clear: left;line-height: 1.6rem;">
+				<a href="https://AnzenKodo.github.io/notes">Home</a> | <a href="https://AnzenKodo.github.io">About</a> | <a href="https://AnzenKodo.github.io/blogroll">Blogroll</a> | <a href="https://github.com/AnzenKodo">Github</a> | <a href="https://x.com/AnzenKodo">𝕏</a>
+			</nav>
+			<!-- <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;"> -->
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem; margin-top: 0;">BDA</h1>
+			<h2><a name="what-is-clique-percolation-method-write-an-algorithm-on-cpm-also-show-how-the-cpm-finds-clique-for-the-following-graph-explain-with-steps-10-marks-10-marks-10-marks-2024-december-2024-may-2023-december" class="heading-anchor" href="#what-is-clique-percolation-method-write-an-algorithm-on-cpm-also-show-how-the-cpm-finds-clique-for-the-following-graph-explain-with-steps-10-marks-10-marks-10-marks-2024-december-2024-may-2023-december" rel="nofollow" aria-hidden="true"></a>What is clique percolation method Write an algorithm on (CPM). Also show how the CPM finds clique for the following graph. Explain with steps (10 Marks, 10 Marks, 10 Marks) (2024 December, 2024 May, 2023 December)</h2>
+<p>The Clique Percolation Method (CPM) is an algorithm used to find overlapping communities in networks. It identifies communities based on the concept of <em>k</em>-cliques, where a <em>k</em>-clique is a complete subgraph of <em>k</em> nodes.</p>
+
+<p><strong>Algorithm for CPM:</strong></p>
+
+<ol>
+<li><strong>Find all maximal cliques</strong> in the graph.  </li>
+<li><strong>Identify <em>k</em>-cliques:</strong> Extract all cliques of size <em>k</em>.  </li>
+<li><strong>Create a clique graph:</strong> Construct a graph where each node represents a <em>k</em>-clique, and an edge connects two nodes if the corresponding <em>k</em>-cliques share <em>k</em>-1 nodes.  </li>
+<li><strong>Find connected components:</strong> The connected components in the clique graph represent the communities.</li>
+</ol>
+
+<p><strong>Example</strong></p>
+
+<p><img loading="lazy" src="UT2/assets/Pasted%20image%2020250416005811.webp" alt="" /></p>
+
+<p><strong>Step 1:</strong> Find all clique. (K=3)</p>
+
+<ul>
+<li>① {1, 2, 3}</li>
+<li>② {1, 2, 8}</li>
+<li>③ {2, 4, 6}</li>
+<li>④ {2, 5, 6}</li>
+<li>⑤ {2, 6, 5}</li>
+<li>⑥ {2, 5, 4}</li>
+</ul>
+
+<p><strong>Step 2:</strong> Find all community (i.e. K-1 nodes is common)</p>
+
+<ul>
+<li>Community 1 = {1, 2}
+
+<ul>
+<li>①---------②</li>
+</ul></li>
+<li>Community 2 = {3, 6, 4, 5}
+
+<ul>
+<li><img loading="lazy" src="UT2/assets/Pasted%20image%2020250416010628.webp" alt="" /></li>
+</ul></li>
+</ul>
+
+<p><strong>Question 2</strong>: For the graph given below use Clique percalation and find all communities.</p>
+
+<p><img loading="lazy" src="UT2/assets/Pasted%20image%2020250416010734.webp" alt="" /></p>
+
+<p><strong>Step 1:</strong> Find all clique. (K=3)</p>
+
+<ul>
+<li>① {A, B, C}</li>
+<li>② {D, C, E}</li>
+<li>③ {D, E, F}</li>
+</ul>
+
+<p><strong>Step 2:</strong> Find all community (i.e. K-1 nodes is common)</p>
+
+<ul>
+<li>Community 1 = {3, 2}
+
+<ul>
+<li>③---------②</li>
+</ul></li>
+</ul>
+<h2><a name="recommendation-system-types-10-marks-10-marks-10-marks-10-marks-2024-december-2024-may-2023-december-2023-may" class="heading-anchor" href="#recommendation-system-types-10-marks-10-marks-10-marks-10-marks-2024-december-2024-may-2023-december-2023-may" rel="nofollow" aria-hidden="true"></a>Recommendation system &amp; Types (10 Marks, 10 Marks, 10 Marks, 10 Marks) (2024 December, 2024 May, 2023 December, 2023 May)</h2>
+<p>A recommendation system is a type of machine learning system that provides personalized recommendations to users based on their past behaviors, preferences, and patterns.</p>
+
+<p>Recommendation systems are widely used in e-commerce, social media, entertainment, and other online platforms to increase user engagement and retention, improve customer satisfaction, and drive sales and revenue</p>
+
+<p><strong>Types</strong></p>
+
+<ul>
+<li><strong>Content-Based Filtering:</strong>
+
+<ul>
+<li>Content-based recommendation systems recommend items to users based on their past preferences and behaviors.</li>
+<li>This type of system analyzes the user’s historical data, such as their search history, browsing history, or purchase history, and recommends items that are similar to the ones the user has interacted with before.</li>
+</ul></li>
+<li><strong>Collaborative Filtering</strong>
+
+<ul>
+<li>Collaborative filtering recommendation systems recommend items to users based on the preferences and behaviors of other similar users.</li>
+<li>Two kinds of collaborative filtering techniques used are
+
+<ul>
+<li><strong>User-User collaborative filtering</strong> is a type of recommendation system that makes predictions for a user based on the preferences of similar users.</li>
+<li><strong>Item-Item collaborative filtering</strong>, on the other hand, recommends items to a user based on the preferences for similar items.</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2><a name="explain-dgim-algorithm-10-marks-10-marks-10-marks-5-marks-2024-december-2024-may-2023-december-2023-may" class="heading-anchor" href="#explain-dgim-algorithm-10-marks-10-marks-10-marks-5-marks-2024-december-2024-may-2023-december-2023-may" rel="nofollow" aria-hidden="true"></a>Explain DGIM algorithm (10 Marks, 10 Marks, 10 Marks, 5 Marks) (2024 December, 2024 May, 2023 December, 2023 May)</h2>
+<p>The <strong>Datar-Gionis-Indyk-Motwani</strong> (DGIM) Algorithm is used to estimate the number of 1's in a stream within a window of N bits. It uses <code>O(log² N)</code> bits to represent a window of N bits and estimates the number of 1's with an error of no more than 50%.</p>
+
+<iframe src="https://www.youtube.com/embed/uFKWc2YR5MU" title="Datar Gionis Indyk Motwani ( DGIM ) Algorithm 🔥" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<p>There are six rules that must be followed when representing a stream by
+buckets.</p>
+
+<ul>
+<li>The right end of a bucket is always a position with a 1.</li>
+<li>Every position with a 1 is in some bucket.</li>
+<li>No position is in more than one bucket.</li>
+<li>There are one or two buckets of any given size, up to some maximum size.</li>
+<li>All sizes must be a power of 2.</li>
+<li>Buckets cannot decrease in size as we move to the left (back in time).</li>
+</ul>
+
+<p><img loading="lazy" src="UT2/assets/Pasted%20image%2020250415214744.webp" alt="" /></p>
+
+<p>There are 10 bits of 1's in the given dataset.</p>
+<h2><a name="explain-cure-algorithm-clearly-stating-its-advantages-over-traditional-clustering-algorithm-10-marks-10-marks-10-marks-10-marks-2024-december-2024-may-2023-december-2023-may" class="heading-anchor" href="#explain-cure-algorithm-clearly-stating-its-advantages-over-traditional-clustering-algorithm-10-marks-10-marks-10-marks-10-marks-2024-december-2024-may-2023-december-2023-may" rel="nofollow" aria-hidden="true"></a>Explain CURE algorithm, clearly stating its advantages over traditional clustering algorithm (10 Marks, 10 Marks, 10 Marks, 10 Marks) (2024 December, 2024 May, 2023 December, 2023 May)</h2>
+<iframe  src="https://www.youtube.com/embed/FEAznKQFzSY" title="Cure Algorithm in Hindi | Big data analytics Tutorials" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<ul>
+<li>This algorithm, called <strong>Clustering Using Representatives</strong> (CURE)</li>
+<li>Clustering is classification of objects into groups</li>
+<li>CURE algorithm is hierarchical, which means it starts with single point cluster and move upward to merge cluster until desired number is reached.
+
+<ul>
+<li><img loading="lazy" src="UT2/assets/Pasted%20image%2020250415230851.webp" alt="" /></li>
+</ul></li>
+<li>It can detect cluster with non-spherical shape.</li>
+<li>Works very nicely with outliers.</li>
+<li>Efficient for working with large dataset.</li>
+<li>Architecture:
+
+<ul>
+<li><img loading="lazy" src="UT2/assets/Pasted%20image%2020250415231435.webp" alt="" /></li>
+</ul></li>
+<li>Procedure:
+
+<ol>
+<li>Select target sample numbers.</li>
+<li>Choose C well scattered points in a cluster.</li>
+<li>Those scattered point are strunk toward centroid.</li>
+<li>Then these points are used as representatives of clusters.</li>
+<li>After merging the points new sample points will be selected.</li>
+<li>Cluster merging will stop until target k is reached.
+
+<ul>
+<li><img loading="lazy" src="UT2/assets/Pasted%20image%2020250415231901.webp" alt="" /></li>
+</ul></li>
+</ol></li>
+</ul>
+
+<p><strong>Advantages of CURE:</strong></p>
+
+<ul>
+<li>CURE can effectively identify clusters with complex shapes, not limited to spherical or equally distributed clusters.  </li>
+<li>It uses multiple representative points to better capture the geometry of clusters.  </li>
+<li>The shrinking of representative points reduces the impact of outliers.  </li>
+<li>CURE is more scalable due to its sampling and partitioning techniques.  </li>
+</ul>
+<h2><a name="explain-issues-in-data-stream-query-processing-10-marks-5-marks-2024-december-2023-december" class="heading-anchor" href="#explain-issues-in-data-stream-query-processing-10-marks-5-marks-2024-december-2023-december" rel="nofollow" aria-hidden="true"></a>Explain Issues in Data stream query processing (10 Marks, 5 Marks) (2024 December, 2023 December)</h2>
+<p>Issues in Data Stream Query Processing:</p>
+
+<ul>
+<li><strong>Continuous Data Arrival:</strong> Streams are unbounded and continuous, requiring queries to process data in real-time as it arrives, unlike traditional batch processing of finite datasets.</li>
+<li><strong>High Data Arrival Rates:</strong> Data can arrive at very high velocities, demanding efficient processing techniques to keep up with the flow and avoid data loss or significant delays.</li>
+<li><strong>Limited Memory:</strong> Processing large volumes of streaming data typically requires algorithms that use limited memory, as storing the entire stream is often infeasible. This necessitates techniques like windowing and summarization.</li>
+<li><strong>Latency:</strong> Many stream processing applications have strict latency requirements, demanding query processing with minimal delay from data arrival to result generation.</li>
+<li><strong>Scalability:</strong> As data rates and volumes can vary significantly, stream processing systems and query processing techniques must be highly scalable to handle these fluctuations.</li>
+</ul>
+<h2><a name="explain-big-data-its-characteristics-and-types-of-big-data-5-marks-5-marks-5-marks-5-marks-5-marks-2024-december-2024-may-2023-december-2023-may-2023-may" class="heading-anchor" href="#explain-big-data-its-characteristics-and-types-of-big-data-5-marks-5-marks-5-marks-5-marks-5-marks-2024-december-2024-may-2023-december-2023-may-2023-may" rel="nofollow" aria-hidden="true"></a>Explain Big Data, its characteristics, and types of Big Data (5 Marks, 5 Marks, 5 Marks, 5 Marks, 5 Marks) (2024 December, 2024 May, 2023 December, 2023 May, 2023 May)</h2>
+<p>Big Data is a term used for a collection of data sets that are large and complex, which is difficult to store and process using available database management tools or traditional data processing applications.</p>
+
+<p><strong>Characteristics</strong></p>
+
+<ul>
+<li><strong>Volume:</strong> The data should be of huge volume. Big Data has the solution to maintain a large amount of data which is in Terabyte or Petabyte.</li>
+<li><strong>Velocity</strong>: Velocity is defined as the pace at which different sources generate the data every day. This flow of data is massive and continuous.</li>
+<li><strong>Variety</strong>: Big Data encompasses a wide range of data types. This includes:
+
+<ul>
+<li>Structured data (like data in relational databases)</li>
+<li>Semi-structured data (like XML and JSON files)</li>
+<li>Unstructured data (like text, images, audio, and video)</li>
+</ul></li>
+<li><strong>Veracity:</strong> This refers to the trustworthiness and quality of the data.</li>
+<li><strong>Value:</strong> Ultimately, the goal of dealing with Big Data is to extract meaningful insights and create value for businesses and organizations.</li>
+</ul>
+
+<p><strong>Types of BigData</strong></p>
+
+<ul>
+<li><strong>Structured Data:</strong>
+
+<ul>
+<li>Highly organized data with a predefined format.  <br></li>
+<li>Easily stored, processed, and analyzed in traditional databases.</li>
+<li>Examples: Relational database tables, spreadsheets (like CSV files).</li>
+</ul></li>
+<li><strong>Unstructured Data:</strong>
+
+<ul>
+<li>Data that does not have a predefined format or organization.  </li>
+<li>Can be challenging to process and analyze directly.  </li>
+<li>Examples: Text documents, emails, social media posts, images, videos, audio recordings.  </li>
+</ul></li>
+
+<li><p><strong>Semi-structured Data:</strong></p>
+
+<ul>
+<li><p>Data that has some organizational properties, making it easier to analyze than unstructured data, but it does not conform to the rigid structure of relational databases.</p></li>
+
+<li><p>Examples: XML files, JSON files, log files, NoSQL databases (like document databases).  </p></li>
+</ul></li>
+</ul>
+<h2><a name="explain-mapreduce-programming-model-in-detail-5-marks-5-marks-2024-may-2024-december" class="heading-anchor" href="#explain-mapreduce-programming-model-in-detail-5-marks-5-marks-2024-may-2024-december" rel="nofollow" aria-hidden="true"></a>Explain MapReduce programming model in detail (5 Marks, 5 Marks) (2024 May, 2024 December)</h2>
+<p>The MapReduce programming model is a framework for processing large datasets in parallel across a distributed computing environment. It involves two primary functions:</p>
+
+<ol>
+<li><strong>The Map Task:</strong>
+
+<ul>
+<li><strong>Input:</strong> The Map task takes a portion of the input data as its input. This input data is typically split into chunks.</li>
+<li><strong>Processing:</strong> This function processes each input key-value pair independently.</li>
+<li><strong>Output:</strong> The Map function emits a set of intermediate <strong>key-value pairs</strong>.</li>
+<li><strong>Example</strong>:
+
+<ul>
+<li>(&quot;the&quot;, 1)</li>
+<li>(&quot;quick&quot;, 1)</li>
+<li>(&quot;brown&quot;, 1)</li>
+<li>(&quot;the&quot;, 1)</li>
+</ul></li>
+</ul></li>
+<li><strong>The Reduce Task:</strong>
+
+<ul>
+<li><strong>Input:</strong> Before reaching the Reduce task, all the intermediate key-value pairs generated by the various Map tasks are:
+
+<ul>
+<li><strong>Shuffled:</strong> Grouped together based on their intermediate keys.</li>
+<li><strong>Sorted:</strong> Within each group of the same key, the values are typically sorted.</li>
+</ul></li>
+<li><strong>Processing:</strong>  This function takes an intermediate key and an iterator of all the values associated with that key as its input.</li>
+<li><strong>Output:</strong> The Reduce function generates the final output, which is also in the form of key-value pairs.</li>
+<li><strong>Example:</strong>
+
+<ul>
+<li>(&quot;the&quot;, 2)</li>
+<li>(&quot;quick&quot;, 1)</li>
+<li>(&quot;brown&quot;, 1)</li>
+</ul></li>
+</ul></li>
+</ol>
+<h2><a name="explain-distance-measures-for-big-data-5-marks-2024-december" class="heading-anchor" href="#explain-distance-measures-for-big-data-5-marks-2024-december" rel="nofollow" aria-hidden="true"></a>Explain Distance measures for Big Data (5 Marks) (2024 December)</h2>
+<p>Distance measures quantify the dissimilarity or similarity between data points. A smaller distance typically indicates higher similarity, while a larger distance suggests greater dissimilarity. These measures are fundamental to various data mining and machine learning tasks, including:  </p>
+
+<ul>
+<li><strong>Clustering:</strong> Grouping similar data points together.  <br></li>
+<li><strong>Classification:</strong> Assigning data points to predefined categories based on their similarity to labeled examples.</li>
+<li><strong>Nearest Neighbor Search:</strong> Finding the data points most similar to a query point.  </li>
+<li><strong>Anomaly Detection:</strong> Identifying data points that are significantly different from the rest.</li>
+</ul>
+<h2><a name="explain-modified-pagerank-algorithm-5-marks-2024-december" class="heading-anchor" href="#explain-modified-pagerank-algorithm-5-marks-2024-december" rel="nofollow" aria-hidden="true"></a>Explain Modified PageRank algorithm (5 Marks) (2024 December)</h2>
+<p>Modified PageRank algorithms are variations of the original PageRank algorithm that incorporate additional factors or make adjustments to improve the ranking of web pages in specific contexts.</p>
+
+<p><strong>Common Modifications and Considerations:</strong></p>
+
+<ul>
+<li><strong>Weighted Links:</strong> Instead of treating all links equally, modified algorithms might assign different weights to links based on the source page's authority, topic relevance, or the position of the link on the page.</li>
+<li><strong>Personalization:</strong> They might give higher weight to links from pages that the user has previously visited or that are related to their interests.</li>
+<li><strong>Content Relevance:</strong> Certain modified algorithms integrate content analysis. They might boost the rank of pages whose content is highly relevant to the pages linking to them.</li>
+<li><strong>Time:</strong> Newer, actively updated pages might receive a higher rank.</li>
+<li><strong>User Behavior:</strong> Some advanced modifications might incorporate data about how users interact with search results, such as click-through rates, to influence page rankings.</li>
+</ul>
+<h2><a name="draw-and-explain-hdfs-architecture-showing-all-components-10-marks-2024-december" class="heading-anchor" href="#draw-and-explain-hdfs-architecture-showing-all-components-10-marks-2024-december" rel="nofollow" aria-hidden="true"></a>Draw and explain HDFS architecture showing all components (10 Marks) (2024 December)</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020250502230851.webp" alt="" /></p>
+
+<p>The Hadoop Distributed File System (HDFS) architecture, as depicted in the image, comprises the following key components:</p>
+
+<ul>
+<li><strong>NameNode:</strong>
+
+<ul>
+<li>The central coordinator and manager of the HDFS.</li>
+<li>Stores the <strong>File Metadata</strong>, which includes:
+
+<ul>
+<li>File Name</li>
+<li>File Permissions</li>
+<li>Block IDs</li>
+<li>Block Locations (on DataNodes)</li>
+<li>Number of Replicas</li>
+</ul></li>
+</ul></li>
+<li><strong>DataNodes:</strong>
+
+<ul>
+<li>Worker nodes in the HDFS cluster.</li>
+<li>Responsible for storing the actual <strong>Individual Data Blocks</strong> of files.</li>
+<li>Report their status and the blocks they store to the NameNode periodically.</li>
+</ul></li>
+<li><strong>Client:</strong>
+
+<ul>
+<li>The interface through which users or applications interact with the HDFS.</li>
+</ul></li>
+<li><strong>Secondary NameNode:</strong>
+
+<ul>
+<li>Periodically takes snapshots of the NameNode's metadata (fsimage and edits log).</li>
+<li>Helps to prevent the NameNode from being overwhelmed by a large edits log upon startup by merging the edits log with the fsimage.</li>
+</ul></li>
+</ul>
+<h2><a name="explain-column-family-store-and-graph-store-nosql-architectural-pattern-with-example-10-marks-2024-december" class="heading-anchor" href="#explain-column-family-store-and-graph-store-nosql-architectural-pattern-with-example-10-marks-2024-december" rel="nofollow" aria-hidden="true"></a>Explain Column family store and Graph Store NoSQL architectural pattern with example (10 Marks) (2024 December)</h2>
+<p><strong>Column Family Store</strong></p>
+
+<ul>
+<li><img loading="lazy" src="assets/Pasted%20image%2020250502232147.webp" alt="" /></li>
+<li>Column family stores are NoSQL databases that organize data into columns and column families. A column family is a collection of related columns. Unlike relational databases where you have rows and fixed columns, column family stores offer a flexible schema where different rows can have different columns.</li>
+<li><strong>Key characteristics:</strong>
+
+<ul>
+<li>Data is stored in column families, which are similar to tables in relational databases.</li>
+<li>Within a column family, data is organized into rows, each with a unique key.</li>
+<li>Each row consists of a set of columns, which can vary from row to row.</li>
+<li>Columns are grouped into column families for storage and retrieval.</li>
+</ul></li>
+</ul>
+
+<p><strong>Graph Store</strong></p>
+
+<ul>
+<li><img loading="lazy" src="assets/Pasted%20image%2020250502232235.webp" alt="" /></li>
+<li>Graph stores are NoSQL databases that use a graph data model to represent and store data. A graph data model focuses on relationships between data points.</li>
+<li><strong>Key characteristics:</strong>
+
+<ul>
+<li>Data is represented as nodes (entities) and edges (relationships)</li>
+<li>Nodes store data entities, similar to rows in a table.</li>
+<li>Edges represent the connections between nodes.</li>
+<li>Graph databases are optimized for traversing and querying relationships.</li>
+</ul></li>
+</ul>
+<h2><a name="explain-pcy-algorithm-and-its-2-types-with-neat-labeled-diagram-10-marks-10-marks-10-marks-2024-december-2023-december-2023-may" class="heading-anchor" href="#explain-pcy-algorithm-and-its-2-types-with-neat-labeled-diagram-10-marks-10-marks-10-marks-2024-december-2023-december-2023-may" rel="nofollow" aria-hidden="true"></a>Explain PCY algorithm and its 2 types with neat labeled diagram (10 Marks, 10 Marks, 10 Marks) (2024 December, 2023 December, 2023 May)</h2>
+<p>The PCY algorithm is used to reduce the size of candidate sets in the A-Priori algorithm by utilizing unused space in main memory during the first pass. It employs a hash table to count pairs of items and identifies frequent buckets to more accurately determine candidate pairs.  </p>
+
+<p><strong>Types of the PCY Algorithm:</strong></p>
+
+<ul>
+<li><strong>Pass 1:</strong>
+
+<ul>
+<li><strong>Item counts:</strong> During the first pass over the transaction data, the algorithm counts the occurrences of each individual item.</li>
+<li><strong>Hash table for pairs:</strong> Simultaneously, as transactions are read, the algorithm considers all pairs of items within each transaction.</li>
+<li><strong>Bitmap:</strong> Each bucket in the hash table corresponds to a bit in the bitmap. If the count of pairs that hash to a particular bucket exceeds a certain threshold (support count), the corresponding bit in the bitmap is set to 1; otherwise, it's set to 0.</li>
+</ul></li>
+<li><strong>Pass 2:</strong>
+
+<ul>
+<li><strong>Frequent items:</strong> The frequent items identified in Pass 1 (those meeting the minimum support count) are used to generate candidate pairs for the second pass.</li>
+<li><strong>Bitmap (used for pruning):</strong> A candidate pair (i,j) is only considered for counting in the second pass if both i and j were frequent in the first pass <em>and</em> their hash bucket in Pass 1 had a count above the threshold (i.e., the corresponding bit in the bitmap is 1).</li>
+<li><strong>Counts of candidate pairs:</strong> For the candidate pairs that pass the bitmap check, the algorithm counts their actual occurrences in the transaction data during the second pass.</li>
+</ul></li>
+</ul>
+
+<p><img loading="lazy" src="UT2/assets/Pasted%20image%2020250415220825.webp" alt="" /></p>
+<h2><a name="explain-hadoop-ecosystem-components-hive-and-pig-5-marks-2024-may" class="heading-anchor" href="#explain-hadoop-ecosystem-components-hive-and-pig-5-marks-2024-may" rel="nofollow" aria-hidden="true"></a>Explain Hadoop ecosystem components - Hive and Pig (5 Marks) (2024 May)</h2>
+<p>Hadoop is an open-source framework used for distributed storage and processing of large datasets. It enables the parallel processing of data across a cluster of computers.  </p>
+
+<p><strong>Hive:</strong></p>
+
+<ul>
+<li>A data warehousing tool built on top of Hadoop.  </li>
+<li>Provides an SQL-like interface (HiveQL) to query and analyze data stored in Hadoop.  </li>
+<li>Translates HiveQL queries into MapReduce or Tez jobs for execution on the cluster.  </li>
+<li>Useful for data summarization, querying, and analysis of large datasets.  </li>
+</ul>
+
+<p><strong>Pig:</strong></p>
+
+<ul>
+<li>A high-level data flow language and execution framework for parallel data processing in Hadoop.  </li>
+<li>Uses a simple, SQL-like scripting language called Pig Latin.  </li>
+<li>Abstracts the complexity of MapReduce programming.  </li>
+<li>Focuses on transforming and analyzing data through a series of operations.</li>
+</ul>
+<h2><a name="differentiate-between-sql-and-nosql-system-5-marks-2024-may" class="heading-anchor" href="#differentiate-between-sql-and-nosql-system-5-marks-2024-may" rel="nofollow" aria-hidden="true"></a>Differentiate between SQL and NoSQL system (5 Marks) (2024 May)</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>SQL</th>
+<th>NoSQL</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>Data Type</strong></td>
+<td>Structured</td>
+<td>Unstructured, semi-structured, and structured</td>
+</tr>
+
+<tr>
+<td><strong>Volume</strong></td>
+<td>Gigabytes to Terabytes</td>
+<td>Petabytes to Zettabytes or Exabytes</td>
+</tr>
+
+<tr>
+<td><strong>Generation Frequency</strong></td>
+<td>Per hour or day</td>
+<td>Per second</td>
+</tr>
+
+<tr>
+<td><strong>Management</strong></td>
+<td>Centralized</td>
+<td>Distributed</td>
+</tr>
+
+<tr>
+<td><strong>Data Relationship</strong></td>
+<td>Stable, known relationships</td>
+<td>Unstable, unknown relationships</td>
+</tr>
+
+<tr>
+<td><strong>Integration</strong></td>
+<td>Difficult</td>
+<td>Easy</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="recall-all-nosql-design-patterns-with-example-justify-cap-property-10-marks-5-marks-10-marks-5-marks-10-marks-2024-may-2023-december-2023-december-2023-may-2023-may" class="heading-anchor" href="#recall-all-nosql-design-patterns-with-example-justify-cap-property-10-marks-5-marks-10-marks-5-marks-10-marks-2024-may-2023-december-2023-december-2023-may-2023-may" rel="nofollow" aria-hidden="true"></a>Recall all NoSQL design patterns with example. Justify CAP property (10 Marks, 5 Marks, 10 Marks, 5 Marks, 10 Marks) (2024 May, 2023 December, 2023 December, 2023 May, 2023 May)</h2>
+<ul>
+<li><strong>Key-Value Store:</strong>
+
+<ul>
+<li>Simple pattern using keys to retrieve associated values. Optimized for lookups.</li>
+<li><strong>Example:</strong> Session management in web applications where session IDs are keys and session objects are values.</li>
+</ul></li>
+<li><strong>Document Database:</strong>
+
+<ul>
+<li>Stores data as JSON-like documents with flexible schemas. Good for semi-structured data.</li>
+<li><strong>Example:</strong> Product catalogs where each product is a document with attributes like name, description, price, and reviews.</li>
+</ul></li>
+<li><strong>Column-Family Database:</strong>
+
+<ul>
+<li>Organizes data into column families, which are groups of related columns. Efficient for sparse data.</li>
+<li><strong>Example:</strong> Storing user profiles where column families might include personal information, contact details, and purchase history.</li>
+</ul></li>
+<li><strong>Graph Database:</strong>
+
+<ul>
+<li>Models data as nodes and relationships (edges). Ideal for interconnected data.</li>
+<li><strong>Example:</strong> Social networks where users are nodes and friendships are edges, enabling efficient traversal of relationships.</li>
+</ul></li>
+</ul>
+
+<p><strong>The CAP Theorem</strong>:</p>
+
+<ul>
+<li>The CAP theorem states that it is impossible for a distributed system to simultaneously provide all three of the following guarantees:
+
+<ul>
+<li><strong>Consistency:</strong>
+
+<ul>
+<li>Every read receives the most recent write or an error</li>
+<li>RDBMS</li>
+</ul></li>
+<li><strong>Availability:</strong>
+
+<ul>
+<li>Every request receives a (non-error)3 response, without the guarantee that it contains the most recent write</li>
+<li>MongoDB, HBase</li>
+</ul></li>
+<li><strong>Partition Tolerance:</strong>
+
+<ul>
+<li>The system continues to operate despite4 arbitrary partitioning due to network failures</li>
+<li>Cassandra, CouchDB</li>
+</ul></li>
+</ul></li>
+<li>In simpler terms, in the presence of a network partition, one has to choose between consistency and availability.</li>
+<li>Basically, you can't have it all. No distributed database system can guarantee all three.</li>
+</ul>
+<h2><a name="how-nosql-systems-guarantees-base-property-5-marks-5-marks-2023-december-2023-may" class="heading-anchor" href="#how-nosql-systems-guarantees-base-property-5-marks-5-marks-2023-december-2023-may" rel="nofollow" aria-hidden="true"></a>How NoSQL systems guarantees BASE property (5 Marks, 5 Marks) (2023 December, 2023 May)</h2>
+<p>BASE stands for <strong>Basically Available, Soft state, Eventually consistent</strong></p>
+
+<p>BASE property is an acronym describing characteristics of some NoSQL databases, contrasting with ACID (Atomicity, Consistency, Isolation, Durability) properties often associated with traditional relational databases.</p>
+
+<p>How NoSQL Systems Guarantee BASE Property:</p>
+
+<ul>
+<li><strong>Basically Available:</strong>
+
+<ul>
+<li>NoSQL systems often achieve high availability through techniques like replication and distributed architectures.</li>
+<li>If one node fails, other nodes can still serve read and write requests.</li>
+</ul></li>
+<li><strong>Soft State:</strong>
+
+<ul>
+<li>Data changes might take time to be replicated across all nodes.</li>
+<li>During this time, different clients might see different versions of the data.</li>
+<li>The system is in a state of flux (&quot;soft&quot;) until consistency is achieved.  </li>
+</ul></li>
+<li><strong>Eventually Consistent:</strong> The system guarantees that if no new updates are made to the data item, eventually all accesses to that item will return the latest updated value.</li>
+</ul>
+<h2><a name="find-the-frequent-itemset-using-pcy-algorithm-with-minimum-support-3-and-h-i-j-i-x-j-mod-10-for-given-transactions-10-marks-2024-may" class="heading-anchor" href="#find-the-frequent-itemset-using-pcy-algorithm-with-minimum-support-3-and-h-i-j-i-x-j-mod-10-for-given-transactions-10-marks-2024-may" rel="nofollow" aria-hidden="true"></a>Find the frequent itemset using PCY algorithm with minimum support 3 and h(i,j)=i x j mod 10 for given transactions. (10 Marks) (2024 May)</h2>
+<div class="code-block"><html>
+<style type="text/css">
+/* Background */ .bg { color: #282c34 }
+/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
+/* Other */ .chroma .x { color: #c9c9c9 }
+/* Error */ .chroma .err { color: #cf5967 }
+/* CodeLine */ .chroma .cl { color: #c9c9c9 }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
+/* Keyword */ .chroma .k { color: #7fbaf5 }
+/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
+/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
+/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
+/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
+/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
+/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
+/* Name */ .chroma .n { color: #c9c9c9 }
+/* NameAttribute */ .chroma .na { color: #bc74c4 }
+/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
+/* NameClass */ .chroma .nc { color: #ecbe7b }
+/* NameConstant */ .chroma .no { color: #ecbe7b }
+/* NameDecorator */ .chroma .nd { color: #ecbe7b }
+/* NameEntity */ .chroma .ni { color: #c9c9c9 }
+/* NameException */ .chroma .ne { color: #cf5967 }
+/* NameFunction */ .chroma .nf { color: #57c7ff }
+/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
+/* NameLabel */ .chroma .nl { color: #cf5967 }
+/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
+/* NameOther */ .chroma .nx { color: #c9c9c9 }
+/* NameProperty */ .chroma .py { color: #c9c9c9 }
+/* NameTag */ .chroma .nt { color: #bc74c4 }
+/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
+/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
+/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
+/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
+/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
+/* Literal */ .chroma .l { color: #c9c9c9 }
+/* LiteralDate */ .chroma .ld { color: #57c7ff }
+/* LiteralString */ .chroma .s { color: #82cc6a }
+/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
+/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
+/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
+/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
+/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
+/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
+/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
+/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
+/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
+/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
+/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
+/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
+/* LiteralNumber */ .chroma .m { color: #56b6c2 }
+/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
+/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
+/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
+/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
+/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
+/* Operator */ .chroma .o { color: #bc74c4 }
+/* OperatorWord */ .chroma .ow { color: #bc74c4 }
+/* Punctuation */ .chroma .p { color: #56b6c2 }
+/* Comment */ .chroma .c { color: #3e4460 }
+/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #3e4460 }
+/* CommentSingle */ .chroma .c1 { color: #3e4460 }
+/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
+/* Generic */ .chroma .g { color: #c9c9c9 }
+/* GenericDeleted */ .chroma .gd { color: #cf5967 }
+/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
+/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
+/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #ecbe7b }
+/* GenericOutput */ .chroma .go { color: #43454f }
+/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
+/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
+/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
+/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
+/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
+body { color: #282c34; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">Transactions:
+</span></span><span class="line"><span class="cl">	- T1 = {1, 2, 3}
+</span></span><span class="line"><span class="cl">	- T2 = {2, 3, 4}
+</span></span><span class="line"><span class="cl">	- T3 = {3, 4, 5}
+</span></span><span class="line"><span class="cl">	- T4 = {4, 5, 6}
+</span></span><span class="line"><span class="cl">	- T5 = {1, 3, 5}
+</span></span><span class="line"><span class="cl">	- T6 = {2, 4, 6}
+</span></span><span class="line"><span class="cl">	- T7 = {1, 3, 4}
+</span></span><span class="line"><span class="cl">	- T8 = {2, 4, 5}
+</span></span><span class="line"><span class="cl">	- T9 = {3, 5, 6}
+</span></span><span class="line"><span class="cl">	- T10 = {1, 2, 4}
+</span></span><span class="line"><span class="cl">	- T11 = {2, 3, 5}
+</span></span><span class="line"><span class="cl">	- T12 = {3, 4, 6}
+</span></span></code></pre>
+</body>
+</html>
+</div>
+<p><strong>Sol:</strong></p>
+
+<ul>
+<li><strong>Step 1</strong>: map all elements and finding their length.
+
+<ul>
+<li>Items = {1, 2, 3, 4, 5, 6}</li>
+</ul></li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Items</th>
+<th><strong>1</strong></th>
+<th><strong>2</strong></th>
+<th><strong>3</strong></th>
+<th><strong>4</strong></th>
+<th><strong>5</strong></th>
+<th><strong>6</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Frequencies</td>
+<td>4</td>
+<td>6</td>
+<td>8</td>
+<td>8</td>
+<td>6</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li><strong>Step 2</strong>: Reduce
+
+<ul>
+<li>Removing elements having value less than 1.</li>
+<li>Candidate set = {1, 2, 3, 4, 5, 6}</li>
+</ul></li>
+<li><strong>Step 3:</strong>
+
+<ul>
+<li>Count how many times pairs appear in the Transactions.
+
+<ul>
+<li>T1 = {(1,2), (1,3), (2,3)} = {2, 3, 3}</li>
+<li>T2 = {(2,4), (3,4)} = {4, 4}</li>
+<li>T3 = {(3, 5), (4, 5)} = {4, 3}</li>
+<li>T4 = {(4,6), (5, 6)} = {3, 2}</li>
+<li>T5 = {(1, 5)} = 1</li>
+<li>T6 = {(2, 6)} = 1</li>
+<li>T7 = {(1, 4)} = 1</li>
+<li>T8 = {(2, 5)} = 2</li>
+<li>T9 = {(3, 6)} = 2</li>
+<li>T10 = -</li>
+<li>T11 = -</li>
+<li>T12 = -</li>
+</ul></li>
+<li>Sets having length greater than or equal to threshold = 3
+
+<ul>
+<li>{(1,3), (2,3), (2,4), (3,4), (3,5), (2,5), (4,5), (4,6)}</li>
+</ul></li>
+</ul></li>
+<li><strong>Step 4</strong>: Applying hash function.
+
+<ul>
+<li>Hash function = (i x j) mod 10
+
+<ul>
+<li>(1,3) = (1 x 3) mod 10 = 3</li>
+<li>(2,3) = (2 x 3) mod 10 = 6</li>
+<li>(2,4) = (2 x 4) mod 10 = 8</li>
+<li>(3,4) = (3 x 4) mod 10 = 2</li>
+<li>(3,5) = (3 x 5) mod 10 = 5</li>
+<li>(4, 5) = (4 x 5) mod 10 = 0</li>
+<li>(4, 6) = (4 x 6) mod 10 = 4</li>
+</ul></li>
+<li>Arrange pairs according to ascending order of bucket no.</li>
+</ul></li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Bucket No.</th>
+<th>Pair</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>0</td>
+<td>(4,5)</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>(3,4)</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>(1,3)</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>(4,6)</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>(3,5)</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>(2,3)</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>(2,4)</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li><strong>Step 5</strong>: Preparing table (candidate set table)</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Bit Vector</th>
+<th>Bucket No.</th>
+<th>Highest Support Count</th>
+<th>Pairs</th>
+<th>Candidate Set</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>3</td>
+<td>(4,5)</td>
+<td>(4,5)</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>2</td>
+<td>4</td>
+<td>(3,4)</td>
+<td>(3,4)</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>3</td>
+<td>3</td>
+<td>(1,3)</td>
+<td>(1,3)</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>4</td>
+<td>3</td>
+<td>(4,6)</td>
+<td>(4,6)</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>5</td>
+<td>4</td>
+<td>(3,5)</td>
+<td>(3,5)</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>6</td>
+<td>3</td>
+<td>(2,3)</td>
+<td>(2,3)</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>8</td>
+<td>4</td>
+<td>(2,4)</td>
+<td>(2,4)</td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td>&gt;= Threshold Value</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2><a name="find-pagerank-of-each-page-in-the-following-figure-after-3rd-iteration-10-marks-2024-may" class="heading-anchor" href="#find-pagerank-of-each-page-in-the-following-figure-after-3rd-iteration-10-marks-2024-may" rel="nofollow" aria-hidden="true"></a>Find PAGERANK of each page in the following figure after 3rd iteration (10 Marks) (2024 May)</h2>
+<iframe src="https://www.youtube.com/embed/QxNxCw7hkig?start=322" title="PageRank Algorithm | Solved Example | Link Analysis | Big Data Analytics Tutorial #bigdata" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<p>Page rank is an algorithm used by Google Search to rank websites in their search engine results. Page Rank is basically a way of finding importance of website pages.</p>
+
+<p>PageRank works by counting the number and quality of links to a page to determine a rough estimate of how important the website is.</p>
+
+<p><strong>Example:</strong> Compute the PageRank of each page in the following graph after 3 iterations.</p>
+
+<p><img loading="lazy" src="UT2/assets/Pasted%20image%2020250416001959.webp" alt="" />
+<img loading="lazy" src="UT2/assets/Pasted%20image%2020250416002020.webp" alt="" />
+<img loading="lazy" src="UT2/assets/Pasted%20image%2020250416002037.webp" alt="" />
+<img loading="lazy" src="UT2/assets/Pasted%20image%2020250416002054.webp" alt="" /></p>
+
+<p>Therefore, <strong>Node C</strong> has the highest PageRank value.</p>
+<h2><a name="fm-algorithm-10-marks-10-marks-2024-may-2023-may" class="heading-anchor" href="#fm-algorithm-10-marks-10-marks-2024-may-2023-may" rel="nofollow" aria-hidden="true"></a>FM algorithm (10 Marks, 10 Marks) (2024 May, 2023 May)</h2>
+<iframe src="https://www.youtube.com/embed/SP6yMOGLfPc" title="Flajolet Martin Algorithm 🔥" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<p><img loading="lazy" src="UT2/assets/Pasted%20image%2020250415220133.webp" alt="" /></p>
+<h2><a name="what-are-the-advantages-and-limitations-of-hadoop-5-marks-2023-december" class="heading-anchor" href="#what-are-the-advantages-and-limitations-of-hadoop-5-marks-2023-december" rel="nofollow" aria-hidden="true"></a>What are the advantages and limitations of Hadoop (5 Marks) (2023 December)</h2>
+<p>Advantages of Hadoop:</p>
+
+<ul>
+<li><strong>Scalability:</strong> Can handle petabytes or even exabytes of data by adding more nodes to the cluster.</li>
+<li><strong>Cost-Effective:</strong> Uses commodity hardware, making it a relatively inexpensive solution for storing and processing large datasets.</li>
+<li><strong>Parallel Processing:</strong> MapReduce framework enables parallel processing of data across the cluster, significantly reducing processing time.</li>
+<li><strong>Flexibility:</strong> Can store various types of data, including structured, semi-structured, and unstructured data.</li>
+<li><strong>Open Source:</strong> Large and active community support, with continuous development and a wide range of tools and libraries available.</li>
+</ul>
+
+<p>Limitations of Hadoop:</p>
+
+<ul>
+<li><strong>Complexity:</strong> Setting up, configuring, and managing a Hadoop cluster can be complex.</li>
+<li><strong>Resource Intensive:</strong> MapReduce jobs can be resource-intensive, requiring significant disk I/O and network bandwidth.</li>
+<li><strong>Not Ideal for Small Datasets:</strong> Overhead of distributing tasks across the cluster can make it inefficient for processing small amounts of data.</li>
+<li><strong>Security Concerns:</strong> While security features exist, configuring and managing them properly can be challenging.</li>
+</ul>
+<h2><a name="show-any-5-different-relational-algebra-operations-with-example-10-marks-2023-december" class="heading-anchor" href="#show-any-5-different-relational-algebra-operations-with-example-10-marks-2023-december" rel="nofollow" aria-hidden="true"></a>Show any 5 different relational algebra operations with example (10 Marks) (2023 December)</h2>
+<p>Relational algebra is a formal query language used to manipulate and query data in relational databases.</p>
+
+<p>Student Table:</p>
+
+<table>
+<thead>
+<tr>
+<th>SID</th>
+<th>Name</th>
+<th>Age</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>Alice</td>
+<td>20</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Bob</td>
+<td>22</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>Carol</td>
+<td>19</td>
+</tr>
+</tbody>
+</table>
+
+<p>Course Table:</p>
+
+<table>
+<thead>
+<tr>
+<th>SID</th>
+<th>CourseID</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>CS101</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>MATH101</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>CS101</td>
+</tr>
+</tbody>
+</table>
+
+<ol>
+<li><strong>Selection (σ)</strong>:
+
+<ul>
+<li><strong>Purpose</strong>: Filters rows based on a condition.</li>
+<li><strong>Example</strong>: <code>σ age&gt;20​(Students)</code> (Select students who are older than 20)</li>
+<li><strong>Result</strong>:</li>
+</ul></li>
+</ol>
+
+<table>
+<thead>
+<tr>
+<th>SID</th>
+<th>Name</th>
+<th>Age</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>2</td>
+<td>Bob</td>
+<td>22</td>
+</tr>
+</tbody>
+</table>
+
+<ol>
+<li><strong>Projection (Π)</strong>:
+
+<ul>
+<li><strong>Purpose</strong>: Chooses specific columns.</li>
+<li><strong>Example</strong>: <code>Π name​(Students)</code> (Get the names of all students)</li>
+<li><strong>Result</strong>:</li>
+</ul></li>
+</ol>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Alice</td>
+</tr>
+
+<tr>
+<td>Bob</td>
+</tr>
+
+<tr>
+<td>Carol</td>
+</tr>
+</tbody>
+</table>
+
+<ol>
+<li><strong>Union (∪)</strong>:
+
+<ul>
+<li><strong>Purpose</strong>: Combines rows from two tables.</li>
+<li><strong>Example</strong>: <code>π_SID(Student) ∪ π_SID(Course)</code> (Get a list of all SIDs from both Student and Course)</li>
+<li><strong>Result</strong>:</li>
+</ul></li>
+</ol>
+
+<table>
+<thead>
+<tr>
+<th>SID</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+</tr>
+
+<tr>
+<td>2</td>
+</tr>
+
+<tr>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+
+<ol>
+<li><strong>Intersection (∩)</strong>:
+
+<ul>
+<li><strong>Purpose</strong>: Keeps only common rows from two tables.</li>
+<li><strong>Example</strong>: <code>π_SID(Student) ∩ π_SID(Course)</code> (Finds students who are also enrolled)</li>
+<li>Result:</li>
+</ul></li>
+</ol>
+
+<table>
+<thead>
+<tr>
+<th>SID</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+</tr>
+
+<tr>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+
+<ol>
+<li><strong>Join (⨝)</strong>:
+
+<ul>
+<li><strong>Purpose</strong>: Combines two relations based on a condition, matching tuples where the condition holds.</li>
+<li><strong>Example</strong>: <code>**[π_SID(Student) − π_SID(Course)](&lt;Student ⨝_Student.SID = Course.SID Course&gt;)**</code> (Find students who are not enrolled in any course)</li>
+<li><strong>Result</strong>:</li>
+</ul></li>
+</ol>
+
+<table>
+<thead>
+<tr>
+<th>SID</th>
+<th>Name</th>
+<th>Age</th>
+<th>CourseID</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>Alice</td>
+<td>20</td>
+<td>CS101</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>Alice</td>
+<td>20</td>
+<td>MATH101</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Bob</td>
+<td>22</td>
+<td>CS101</td>
+</tr>
+</tbody>
+</table>
+
+<ol>
+<li><strong>Difference (-)</strong>:
+
+<ul>
+<li><strong>Purpose</strong>: Removes rows from one table that are in another.</li>
+<li><strong>Example</strong>: <code>**π_SID(Student) − π_SID(Course)**</code> (Find students who are not enrolled in any course)</li>
+<li>Result:</li>
+</ul></li>
+</ol>
+
+<table>
+<thead>
+<tr>
+<th>SID</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="structure-of-the-web-10-marks-2023-december" class="heading-anchor" href="#structure-of-the-web-10-marks-2023-december" rel="nofollow" aria-hidden="true"></a>Structure of the web (10 Marks) (2023 December)</h2>
+<p>Recently, a new map of cyberspace shows that the Web resembles a bow tie, with divisive boundaries that cherspace shows that between regions is difficult or even impossible, according to a new study conducted and published by researchers at AltaVista, Compaq, and IBM.</p>
+
+<p>Previous theories had a belief that the Web is highly connected, with no more than 19 degrees of separation from any one site to another.</p>
+
+<p>Links are basically acts as the glue that connect pages on the Web, and they're a vital source for navigation.</p>
+
+<p><img loading="lazy" src="UT2/assets/Pasted%20image%2020250416002938.webp" alt="" /></p>
+
+<ul>
+<li><strong>Strongly Connected Component (SCC)</strong>: This is the central part of the bow-tie structure, where every page can reach every other page through a directed path.</li>
+<li><strong>IN (Origination) Component</strong>: This component consists of web pages that can reach the SCC by following hyperlinks, but cannot be reached <em>from</em> the SCC.</li>
+<li><strong>OUT (Termination) Component</strong>: his component includes web pages that can be reached from the SCC by following hyperlinks, but cannot link back <em>to</em> the SCC.</li>
+<li><strong>Tendrils</strong>: These are pages that can reach or be reached by either the IN or OUT components but not both.</li>
+<li><strong>Disconnected Components</strong>: These are pages that neither link to nor are linked from the SCC or any other components.</li>
+</ul>
+<h2><a name="explain-the-distributed-storage-system-of-hadoop-with-the-help-of-a-neat-diagram-10-marks-2023-may" class="heading-anchor" href="#explain-the-distributed-storage-system-of-hadoop-with-the-help-of-a-neat-diagram-10-marks-2023-may" rel="nofollow" aria-hidden="true"></a>Explain the distributed storage system of Hadoop with the help of a neat diagram (10 Marks) (2023 May)</h2>
+<p>Hadoop is an open source software programming framework for storing a large amount of data and performing the computation. Its framework is based on Java programming with some native code in C and shell scripts.</p>
+
+<p>Hadoop is a framework that uses distributed storage and parallel processing to store and manage big data. It is the software most used by data analysts to handle big data.</p>
+
+<p><img loading="lazy" src="assets/Pasted%20image%2020250504165023.webp" alt="" /></p>
+
+<ul>
+<li>Data Storage
+
+<ul>
+<li><strong>HDFS (HaDoop File System):</strong> A distributed file system providing scalable and fault-tolerant storage.</li>
+<li><strong>HBase:</strong> A NoSQL column-oriented database for random, real-time read/write access.</li>
+</ul></li>
+<li>Data Processing
+
+<ul>
+<li><strong>YARN (Yet Another Resource Negotiator):</strong> A cluster management and resource scheduling framework.</li>
+<li><strong>MapReduce:</strong> A programming model for parallel processing of large datasets.</li>
+</ul></li>
+<li>Data Access
+
+<ul>
+<li><strong>Hive:</strong> A data warehousing tool providing SQL-like querying for Hadoop data.</li>
+<li><strong>Pig:</strong> A high-level dataflow language and execution framework for parallel data processing.</li>
+<li><strong>Mahout:</strong> A library of scalable machine learning algorithms.</li>
+<li><strong>Avro:</strong> A data serialization system providing rich data structures and compact, fast binary data format.</li>
+<li><strong>Sqoop:</strong> A tool for transferring data between Hadoop and relational databases.</li>
+</ul></li>
+<li>Data Management
+
+<ul>
+<li><strong>Zookeeper:</strong> A centralized service for maintaining configuration information, naming, providing distributed synchronization, and providing group services.  </li>
+<li><strong>Oozie:</strong> A workflow scheduler system to manage Hadoop jobs.</li>
+<li><strong>Chukwa:</strong> A data collection system for managing and monitoring large distributed systems.</li>
+<li><strong>Flume:</strong> A distributed, reliable, and available service for efficiently collecting, aggregating, and moving large amounts of streaming data.  </li>
+</ul></li>
+</ul>
+<h1><a name="ut-questions" class="heading-anchor" href="#ut-questions" rel="nofollow" aria-hidden="true"></a>UT Questions</h1><h2><a name="1-data-stream-management-system" class="heading-anchor" href="#1-data-stream-management-system" rel="nofollow" aria-hidden="true"></a>1. Data stream Management system.</h2>
+<p>A data stream is a flow of data which arrives at uncertain intervals of time.</p>
+
+<p>A Data Stream Management System (DSMS) is a software system designed to manage, process, and analyze continuous, high-velocity data streams in real time.</p>
+
+<p><img loading="lazy" src="UT2/assets/Pasted%20image%2020250415234150.webp" alt="" /></p>
+
+<ol>
+<li><strong>Input Streams:</strong> One or more streams with varying data types and flow rates.</li>
+<li><strong>Stream Processor:</strong> Performs operations like sampling, cleaning, filtering, and querying on input streams.</li>
+<li><strong>Working Storage:</strong> Holds essential parts of input streams for fast query processing.</li>
+<li><strong>Archival Storage:</strong> Large storage for archiving streams.</li>
+
+<li><p><strong>Output Streams:</strong> Consists of processed streams and query results.</p>
+
+<div class="code-block"><html>
+<style type="text/css">
+/* Background */ .bg { color: #282c34 }
+/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
+/* Other */ .chroma .x { color: #c9c9c9 }
+/* Error */ .chroma .err { color: #cf5967 }
+/* CodeLine */ .chroma .cl { color: #c9c9c9 }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
+/* Keyword */ .chroma .k { color: #7fbaf5 }
+/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
+/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
+/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
+/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
+/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
+/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
+/* Name */ .chroma .n { color: #c9c9c9 }
+/* NameAttribute */ .chroma .na { color: #bc74c4 }
+/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
+/* NameClass */ .chroma .nc { color: #ecbe7b }
+/* NameConstant */ .chroma .no { color: #ecbe7b }
+/* NameDecorator */ .chroma .nd { color: #ecbe7b }
+/* NameEntity */ .chroma .ni { color: #c9c9c9 }
+/* NameException */ .chroma .ne { color: #cf5967 }
+/* NameFunction */ .chroma .nf { color: #57c7ff }
+/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
+/* NameLabel */ .chroma .nl { color: #cf5967 }
+/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
+/* NameOther */ .chroma .nx { color: #c9c9c9 }
+/* NameProperty */ .chroma .py { color: #c9c9c9 }
+/* NameTag */ .chroma .nt { color: #bc74c4 }
+/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
+/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
+/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
+/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
+/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
+/* Literal */ .chroma .l { color: #c9c9c9 }
+/* LiteralDate */ .chroma .ld { color: #57c7ff }
+/* LiteralString */ .chroma .s { color: #82cc6a }
+/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
+/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
+/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
+/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
+/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
+/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
+/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
+/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
+/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
+/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
+/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
+/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
+/* LiteralNumber */ .chroma .m { color: #56b6c2 }
+/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
+/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
+/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
+/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
+/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
+/* Operator */ .chroma .o { color: #bc74c4 }
+/* OperatorWord */ .chroma .ow { color: #bc74c4 }
+/* Punctuation */ .chroma .p { color: #56b6c2 }
+/* Comment */ .chroma .c { color: #3e4460 }
+/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #3e4460 }
+/* CommentSingle */ .chroma .c1 { color: #3e4460 }
+/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
+/* Generic */ .chroma .g { color: #c9c9c9 }
+/* GenericDeleted */ .chroma .gd { color: #cf5967 }
+/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
+/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
+/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #ecbe7b }
+/* GenericOutput */ .chroma .go { color: #43454f }
+/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
+/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
+/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
+/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
+/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
+body { color: #282c34; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">## Explain HITS algorithm (10 Marks) (2024 December) 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">## Recall HITS algorithm. Generate Hub and Authority score after 2 iterations for the graph given (10 Marks) (2023 May)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">## Discuss 1-step Matrix-Matrix Multiplication MapReduce algorithm and apply to the following problem 2 3 * 0 2 (10 Marks) (2024 May) 
+</span></span><span class="line"><span class="cl">       2 3     3 4
+</span></span><span class="line"><span class="cl">       4 2  *  0 2
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">## For the graph given below use Clique percolation and find all communities (10 Marks) (2023 May)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">## Discuss Matrix-Matrix Multiplication. Perform Matrix Multiplication with 1-step Map Reduce method for 1 2 * 5 6 (10 Marks) (2023 May)
+</span></span><span class="line"><span class="cl">       3 4   2 3
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">## Illustrate different Relational Algebra operations with suitable example (10 Marks) (2024 May)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">## Describe the pseudocode for one-step matrix multiplication using mapreduce. Apply the same to determine the product of matrices M = 1 2 and N = 1 2 3 4 5 6. Show output of each stage distinctly (10 Marks) (2023 December) 
+</span></span><span class="line"><span class="cl">     3 4        
+</span></span><span class="line"><span class="cl">     5 6        
+</span></span><span class="line"><span class="cl">## Summarize Bloom&#39;s filter with example and its applications (10 Marks) (2023 December) 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">## Define Hub and Authority. Compute the hub and Authority scores for the web graph provided (10 Marks) (2023 December)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">## Explain Grouping and Aggregation algorithm using MapReduce. Support your answer with a suitable example (10 Marks) (2023 May)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">## Write a Map reduce pseudo code to multiply two matrices. Illustrate with an example showing all the steps (10 Marks) (2024 December) 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">### MapReduce Pseudo Code for Matrix Multiplication
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Let&#39;s say we want to multiply two matrices, A (of size m×n) and B (of size n×p), resulting in a matrix C (of size m×p).
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">**Map Function:**
+</span></span><span class="line"><span class="cl">
+</span></span></code></pre>
+</body>
+</html>
+</div></li>
+</ol>
+
+<p>MAP(matrix_name, row_index, column_index, value):
+  IF matrix_name == A:</p>
+
+<div class="code-block"><html>
+<style type="text/css">
+/* Background */ .bg { color: #282c34 }
+/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
+/* Other */ .chroma .x { color: #c9c9c9 }
+/* Error */ .chroma .err { color: #cf5967 }
+/* CodeLine */ .chroma .cl { color: #c9c9c9 }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
+/* Keyword */ .chroma .k { color: #7fbaf5 }
+/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
+/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
+/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
+/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
+/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
+/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
+/* Name */ .chroma .n { color: #c9c9c9 }
+/* NameAttribute */ .chroma .na { color: #bc74c4 }
+/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
+/* NameClass */ .chroma .nc { color: #ecbe7b }
+/* NameConstant */ .chroma .no { color: #ecbe7b }
+/* NameDecorator */ .chroma .nd { color: #ecbe7b }
+/* NameEntity */ .chroma .ni { color: #c9c9c9 }
+/* NameException */ .chroma .ne { color: #cf5967 }
+/* NameFunction */ .chroma .nf { color: #57c7ff }
+/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
+/* NameLabel */ .chroma .nl { color: #cf5967 }
+/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
+/* NameOther */ .chroma .nx { color: #c9c9c9 }
+/* NameProperty */ .chroma .py { color: #c9c9c9 }
+/* NameTag */ .chroma .nt { color: #bc74c4 }
+/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
+/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
+/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
+/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
+/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
+/* Literal */ .chroma .l { color: #c9c9c9 }
+/* LiteralDate */ .chroma .ld { color: #57c7ff }
+/* LiteralString */ .chroma .s { color: #82cc6a }
+/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
+/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
+/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
+/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
+/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
+/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
+/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
+/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
+/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
+/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
+/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
+/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
+/* LiteralNumber */ .chroma .m { color: #56b6c2 }
+/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
+/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
+/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
+/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
+/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
+/* Operator */ .chroma .o { color: #bc74c4 }
+/* OperatorWord */ .chroma .ow { color: #bc74c4 }
+/* Punctuation */ .chroma .p { color: #56b6c2 }
+/* Comment */ .chroma .c { color: #3e4460 }
+/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #3e4460 }
+/* CommentSingle */ .chroma .c1 { color: #3e4460 }
+/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
+/* Generic */ .chroma .g { color: #c9c9c9 }
+/* GenericDeleted */ .chroma .gd { color: #cf5967 }
+/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
+/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
+/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #ecbe7b }
+/* GenericOutput */ .chroma .go { color: #43454f }
+/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
+/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
+/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
+/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
+/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
+body { color: #282c34; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">FOR k FROM 1 TO p:
+</span></span><span class="line"><span class="cl">  EMIT ( (row_index, k), (matrix_name, column_index, value) )
+</span></span></code></pre>
+</body>
+</html>
+</div>
+<p>ELSE IF matrix_name == B:</p>
+
+<div class="code-block"><html>
+<style type="text/css">
+/* Background */ .bg { color: #282c34 }
+/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
+/* Other */ .chroma .x { color: #c9c9c9 }
+/* Error */ .chroma .err { color: #cf5967 }
+/* CodeLine */ .chroma .cl { color: #c9c9c9 }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
+/* Keyword */ .chroma .k { color: #7fbaf5 }
+/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
+/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
+/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
+/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
+/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
+/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
+/* Name */ .chroma .n { color: #c9c9c9 }
+/* NameAttribute */ .chroma .na { color: #bc74c4 }
+/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
+/* NameClass */ .chroma .nc { color: #ecbe7b }
+/* NameConstant */ .chroma .no { color: #ecbe7b }
+/* NameDecorator */ .chroma .nd { color: #ecbe7b }
+/* NameEntity */ .chroma .ni { color: #c9c9c9 }
+/* NameException */ .chroma .ne { color: #cf5967 }
+/* NameFunction */ .chroma .nf { color: #57c7ff }
+/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
+/* NameLabel */ .chroma .nl { color: #cf5967 }
+/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
+/* NameOther */ .chroma .nx { color: #c9c9c9 }
+/* NameProperty */ .chroma .py { color: #c9c9c9 }
+/* NameTag */ .chroma .nt { color: #bc74c4 }
+/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
+/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
+/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
+/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
+/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
+/* Literal */ .chroma .l { color: #c9c9c9 }
+/* LiteralDate */ .chroma .ld { color: #57c7ff }
+/* LiteralString */ .chroma .s { color: #82cc6a }
+/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
+/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
+/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
+/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
+/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
+/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
+/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
+/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
+/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
+/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
+/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
+/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
+/* LiteralNumber */ .chroma .m { color: #56b6c2 }
+/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
+/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
+/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
+/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
+/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
+/* Operator */ .chroma .o { color: #bc74c4 }
+/* OperatorWord */ .chroma .ow { color: #bc74c4 }
+/* Punctuation */ .chroma .p { color: #56b6c2 }
+/* Comment */ .chroma .c { color: #3e4460 }
+/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #3e4460 }
+/* CommentSingle */ .chroma .c1 { color: #3e4460 }
+/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
+/* Generic */ .chroma .g { color: #c9c9c9 }
+/* GenericDeleted */ .chroma .gd { color: #cf5967 }
+/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
+/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
+/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #ecbe7b }
+/* GenericOutput */ .chroma .go { color: #43454f }
+/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
+/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
+/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
+/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
+/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
+body { color: #282c34; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">FOR i FROM 1 TO m:
+</span></span><span class="line"><span class="cl">  EMIT ( (i, column_index), (matrix_name, row_index, value) )
+</span></span></code></pre>
+</body>
+</html>
+</div>
+<div class="code-block"><html>
+<style type="text/css">
+/* Background */ .bg { color: #282c34 }
+/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
+/* Other */ .chroma .x { color: #c9c9c9 }
+/* Error */ .chroma .err { color: #cf5967 }
+/* CodeLine */ .chroma .cl { color: #c9c9c9 }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
+/* Keyword */ .chroma .k { color: #7fbaf5 }
+/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
+/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
+/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
+/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
+/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
+/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
+/* Name */ .chroma .n { color: #c9c9c9 }
+/* NameAttribute */ .chroma .na { color: #bc74c4 }
+/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
+/* NameClass */ .chroma .nc { color: #ecbe7b }
+/* NameConstant */ .chroma .no { color: #ecbe7b }
+/* NameDecorator */ .chroma .nd { color: #ecbe7b }
+/* NameEntity */ .chroma .ni { color: #c9c9c9 }
+/* NameException */ .chroma .ne { color: #cf5967 }
+/* NameFunction */ .chroma .nf { color: #57c7ff }
+/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
+/* NameLabel */ .chroma .nl { color: #cf5967 }
+/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
+/* NameOther */ .chroma .nx { color: #c9c9c9 }
+/* NameProperty */ .chroma .py { color: #c9c9c9 }
+/* NameTag */ .chroma .nt { color: #bc74c4 }
+/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
+/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
+/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
+/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
+/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
+/* Literal */ .chroma .l { color: #c9c9c9 }
+/* LiteralDate */ .chroma .ld { color: #57c7ff }
+/* LiteralString */ .chroma .s { color: #82cc6a }
+/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
+/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
+/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
+/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
+/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
+/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
+/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
+/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
+/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
+/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
+/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
+/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
+/* LiteralNumber */ .chroma .m { color: #56b6c2 }
+/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
+/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
+/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
+/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
+/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
+/* Operator */ .chroma .o { color: #bc74c4 }
+/* OperatorWord */ .chroma .ow { color: #bc74c4 }
+/* Punctuation */ .chroma .p { color: #56b6c2 }
+/* Comment */ .chroma .c { color: #3e4460 }
+/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #3e4460 }
+/* CommentSingle */ .chroma .c1 { color: #3e4460 }
+/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
+/* Generic */ .chroma .g { color: #c9c9c9 }
+/* GenericDeleted */ .chroma .gd { color: #cf5967 }
+/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
+/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
+/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #ecbe7b }
+/* GenericOutput */ .chroma .go { color: #43454f }
+/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
+/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
+/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
+/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
+/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
+body { color: #282c34; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">**Reduce Function:**
+</span></span><span class="line"><span class="cl">
+</span></span></code></pre>
+</body>
+</html>
+</div>
+<p>REDUCE(key (row, col), list of values [(matrix, index, value)]):
+  Initialize product = 0
+  Initialize a_values = an empty list
+  Initialize b_values = an empty list</p>
+
+<p>FOR each (matrix, index, value) in list of values:</p>
+
+<div class="code-block"><html>
+<style type="text/css">
+/* Background */ .bg { color: #282c34 }
+/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
+/* Other */ .chroma .x { color: #c9c9c9 }
+/* Error */ .chroma .err { color: #cf5967 }
+/* CodeLine */ .chroma .cl { color: #c9c9c9 }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
+/* Keyword */ .chroma .k { color: #7fbaf5 }
+/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
+/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
+/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
+/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
+/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
+/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
+/* Name */ .chroma .n { color: #c9c9c9 }
+/* NameAttribute */ .chroma .na { color: #bc74c4 }
+/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
+/* NameClass */ .chroma .nc { color: #ecbe7b }
+/* NameConstant */ .chroma .no { color: #ecbe7b }
+/* NameDecorator */ .chroma .nd { color: #ecbe7b }
+/* NameEntity */ .chroma .ni { color: #c9c9c9 }
+/* NameException */ .chroma .ne { color: #cf5967 }
+/* NameFunction */ .chroma .nf { color: #57c7ff }
+/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
+/* NameLabel */ .chroma .nl { color: #cf5967 }
+/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
+/* NameOther */ .chroma .nx { color: #c9c9c9 }
+/* NameProperty */ .chroma .py { color: #c9c9c9 }
+/* NameTag */ .chroma .nt { color: #bc74c4 }
+/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
+/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
+/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
+/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
+/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
+/* Literal */ .chroma .l { color: #c9c9c9 }
+/* LiteralDate */ .chroma .ld { color: #57c7ff }
+/* LiteralString */ .chroma .s { color: #82cc6a }
+/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
+/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
+/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
+/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
+/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
+/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
+/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
+/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
+/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
+/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
+/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
+/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
+/* LiteralNumber */ .chroma .m { color: #56b6c2 }
+/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
+/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
+/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
+/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
+/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
+/* Operator */ .chroma .o { color: #bc74c4 }
+/* OperatorWord */ .chroma .ow { color: #bc74c4 }
+/* Punctuation */ .chroma .p { color: #56b6c2 }
+/* Comment */ .chroma .c { color: #3e4460 }
+/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #3e4460 }
+/* CommentSingle */ .chroma .c1 { color: #3e4460 }
+/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
+/* Generic */ .chroma .g { color: #c9c9c9 }
+/* GenericDeleted */ .chroma .gd { color: #cf5967 }
+/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
+/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
+/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #ecbe7b }
+/* GenericOutput */ .chroma .go { color: #43454f }
+/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
+/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
+/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
+/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
+/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
+body { color: #282c34; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">IF matrix == A:
+</span></span><span class="line"><span class="cl">  Add (index, value) to a_values
+</span></span><span class="line"><span class="cl">ELSE IF matrix == B:
+</span></span><span class="line"><span class="cl">  Add (index, value) to b_values
+</span></span></code></pre>
+</body>
+</html>
+</div>
+<p>Sort a_values by index
+  Sort b_values by index</p>
+
+<p>FOR i FROM 1 TO length(a_values):</p>
+
+<div class="code-block"><html>
+<style type="text/css">
+/* Background */ .bg { color: #282c34 }
+/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
+/* Other */ .chroma .x { color: #c9c9c9 }
+/* Error */ .chroma .err { color: #cf5967 }
+/* CodeLine */ .chroma .cl { color: #c9c9c9 }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
+/* Keyword */ .chroma .k { color: #7fbaf5 }
+/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
+/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
+/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
+/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
+/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
+/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
+/* Name */ .chroma .n { color: #c9c9c9 }
+/* NameAttribute */ .chroma .na { color: #bc74c4 }
+/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
+/* NameClass */ .chroma .nc { color: #ecbe7b }
+/* NameConstant */ .chroma .no { color: #ecbe7b }
+/* NameDecorator */ .chroma .nd { color: #ecbe7b }
+/* NameEntity */ .chroma .ni { color: #c9c9c9 }
+/* NameException */ .chroma .ne { color: #cf5967 }
+/* NameFunction */ .chroma .nf { color: #57c7ff }
+/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
+/* NameLabel */ .chroma .nl { color: #cf5967 }
+/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
+/* NameOther */ .chroma .nx { color: #c9c9c9 }
+/* NameProperty */ .chroma .py { color: #c9c9c9 }
+/* NameTag */ .chroma .nt { color: #bc74c4 }
+/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
+/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
+/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
+/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
+/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
+/* Literal */ .chroma .l { color: #c9c9c9 }
+/* LiteralDate */ .chroma .ld { color: #57c7ff }
+/* LiteralString */ .chroma .s { color: #82cc6a }
+/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
+/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
+/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
+/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
+/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
+/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
+/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
+/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
+/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
+/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
+/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
+/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
+/* LiteralNumber */ .chroma .m { color: #56b6c2 }
+/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
+/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
+/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
+/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
+/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
+/* Operator */ .chroma .o { color: #bc74c4 }
+/* OperatorWord */ .chroma .ow { color: #bc74c4 }
+/* Punctuation */ .chroma .p { color: #56b6c2 }
+/* Comment */ .chroma .c { color: #3e4460 }
+/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #3e4460 }
+/* CommentSingle */ .chroma .c1 { color: #3e4460 }
+/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
+/* Generic */ .chroma .g { color: #c9c9c9 }
+/* GenericDeleted */ .chroma .gd { color: #cf5967 }
+/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
+/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
+/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #ecbe7b }
+/* GenericOutput */ .chroma .go { color: #43454f }
+/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
+/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
+/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
+/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
+/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
+body { color: #282c34; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">product = product + a_values[i].value * b_values[i].value
+</span></span></code></pre>
+</body>
+</html>
+</div>
+<p>EMIT (key (row, col), product)</p>
+
+<div class="code-block"><html>
+<style type="text/css">
+/* Background */ .bg { color: #282c34 }
+/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
+/* Other */ .chroma .x { color: #c9c9c9 }
+/* Error */ .chroma .err { color: #cf5967 }
+/* CodeLine */ .chroma .cl { color: #c9c9c9 }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
+/* Keyword */ .chroma .k { color: #7fbaf5 }
+/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
+/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
+/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
+/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
+/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
+/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
+/* Name */ .chroma .n { color: #c9c9c9 }
+/* NameAttribute */ .chroma .na { color: #bc74c4 }
+/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
+/* NameClass */ .chroma .nc { color: #ecbe7b }
+/* NameConstant */ .chroma .no { color: #ecbe7b }
+/* NameDecorator */ .chroma .nd { color: #ecbe7b }
+/* NameEntity */ .chroma .ni { color: #c9c9c9 }
+/* NameException */ .chroma .ne { color: #cf5967 }
+/* NameFunction */ .chroma .nf { color: #57c7ff }
+/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
+/* NameLabel */ .chroma .nl { color: #cf5967 }
+/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
+/* NameOther */ .chroma .nx { color: #c9c9c9 }
+/* NameProperty */ .chroma .py { color: #c9c9c9 }
+/* NameTag */ .chroma .nt { color: #bc74c4 }
+/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
+/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
+/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
+/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
+/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
+/* Literal */ .chroma .l { color: #c9c9c9 }
+/* LiteralDate */ .chroma .ld { color: #57c7ff }
+/* LiteralString */ .chroma .s { color: #82cc6a }
+/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
+/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
+/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
+/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
+/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
+/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
+/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
+/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
+/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
+/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
+/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
+/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
+/* LiteralNumber */ .chroma .m { color: #56b6c2 }
+/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
+/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
+/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
+/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
+/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
+/* Operator */ .chroma .o { color: #bc74c4 }
+/* OperatorWord */ .chroma .ow { color: #bc74c4 }
+/* Punctuation */ .chroma .p { color: #56b6c2 }
+/* Comment */ .chroma .c { color: #3e4460 }
+/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #3e4460 }
+/* CommentSingle */ .chroma .c1 { color: #3e4460 }
+/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
+/* Generic */ .chroma .g { color: #c9c9c9 }
+/* GenericDeleted */ .chroma .gd { color: #cf5967 }
+/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
+/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
+/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #ecbe7b }
+/* GenericOutput */ .chroma .go { color: #43454f }
+/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
+/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
+/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
+/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
+/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
+body { color: #282c34; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">**Example**
+</span></span></code></pre>
+</body>
+</html>
+</div>
+		</main>
+		
+		<details id="table-of-content">
+		   <summary>Table of Content</summary>
+		<nav>
+<ul>
+<li><a href="#what-is-clique-percolation-method-write-an-algorithm-on-cpm-also-show-how-the-cpm-finds-clique-for-the-following-graph-explain-with-steps-10-marks-10-marks-10-marks-2024-december-2024-may-2023-december">What is clique percolation method Write an algorithm on (CPM). Also show how the CPM finds clique for the following graph. Explain with steps (10 Marks, 10 Marks, 10 Marks) (2024 December, 2024 May, 2023 December)</a></li>
+<li><a href="#recommendation-system-types-10-marks-10-marks-10-marks-10-marks-2024-december-2024-may-2023-december-2023-may">
+Recommendation system &amp; Types (10 Marks, 10 Marks, 10 Marks, 10 Marks) (2024 December, 2024 May, 2023 December, 2023 May)</a></li>
+<li><a href="#explain-dgim-algorithm-10-marks-10-marks-10-marks-5-marks-2024-december-2024-may-2023-december-2023-may">
+Explain DGIM algorithm (10 Marks, 10 Marks, 10 Marks, 5 Marks) (2024 December, 2024 May, 2023 December, 2023 May)</a></li>
+<li><a href="#explain-cure-algorithm-clearly-stating-its-advantages-over-traditional-clustering-algorithm-10-marks-10-marks-10-marks-10-marks-2024-december-2024-may-2023-december-2023-may">
+Explain CURE algorithm, clearly stating its advantages over traditional clustering algorithm (10 Marks, 10 Marks, 10 Marks, 10 Marks) (2024 December, 2024 May, 2023 December, 2023 May)</a></li>
+<li><a href="#explain-issues-in-data-stream-query-processing-10-marks-5-marks-2024-december-2023-december">
+Explain Issues in Data stream query processing (10 Marks, 5 Marks) (2024 December, 2023 December)</a></li>
+<li><a href="#explain-big-data-its-characteristics-and-types-of-big-data-5-marks-5-marks-5-marks-5-marks-5-marks-2024-december-2024-may-2023-december-2023-may-2023-may">
+Explain Big Data, its characteristics, and types of Big Data (5 Marks, 5 Marks, 5 Marks, 5 Marks, 5 Marks) (2024 December, 2024 May, 2023 December, 2023 May, 2023 May)</a></li>
+<li><a href="#explain-mapreduce-programming-model-in-detail-5-marks-5-marks-2024-may-2024-december">
+Explain MapReduce programming model in detail (5 Marks, 5 Marks) (2024 May, 2024 December)</a></li>
+<li><a href="#explain-distance-measures-for-big-data-5-marks-2024-december">
+Explain Distance measures for Big Data (5 Marks) (2024 December)</a></li>
+<li><a href="#explain-modified-pagerank-algorithm-5-marks-2024-december">
+Explain Modified PageRank algorithm (5 Marks) (2024 December)</a></li>
+<li><a href="#draw-and-explain-hdfs-architecture-showing-all-components-10-marks-2024-december">
+Draw and explain HDFS architecture showing all components (10 Marks) (2024 December)</a></li>
+<li><a href="#explain-column-family-store-and-graph-store-nosql-architectural-pattern-with-example-10-marks-2024-december">
+Explain Column family store and Graph Store NoSQL architectural pattern with example (10 Marks) (2024 December)</a></li>
+<li><a href="#explain-pcy-algorithm-and-its-2-types-with-neat-labeled-diagram-10-marks-10-marks-10-marks-2024-december-2023-december-2023-may">
+Explain PCY algorithm and its 2 types with neat labeled diagram (10 Marks, 10 Marks, 10 Marks) (2024 December, 2023 December, 2023 May)</a></li>
+<li><a href="#explain-hadoop-ecosystem-components-hive-and-pig-5-marks-2024-may">
+Explain Hadoop ecosystem components - Hive and Pig (5 Marks) (2024 May)</a></li>
+<li><a href="#differentiate-between-sql-and-nosql-system-5-marks-2024-may">
+Differentiate between SQL and NoSQL system (5 Marks) (2024 May)</a></li>
+<li><a href="#recall-all-nosql-design-patterns-with-example-justify-cap-property-10-marks-5-marks-10-marks-5-marks-10-marks-2024-may-2023-december-2023-december-2023-may-2023-may">
+Recall all NoSQL design patterns with example. Justify CAP property (10 Marks, 5 Marks, 10 Marks, 5 Marks, 10 Marks) (2024 May, 2023 December, 2023 December, 2023 May, 2023 May)</a></li>
+<li><a href="#how-nosql-systems-guarantees-base-property-5-marks-5-marks-2023-december-2023-may">
+How NoSQL systems guarantees BASE property (5 Marks, 5 Marks) (2023 December, 2023 May)</a></li>
+<li><a href="#find-the-frequent-itemset-using-pcy-algorithm-with-minimum-support-3-and-h-i-j-i-x-j-mod-10-for-given-transactions-10-marks-2024-may">
+Find the frequent itemset using PCY algorithm with minimum support 3 and h(i,j)=i x j mod 10 for given transactions. (10 Marks) (2024 May)</a></li>
+<li><a href="#find-pagerank-of-each-page-in-the-following-figure-after-3rd-iteration-10-marks-2024-may">
+Find PAGERANK of each page in the following figure after 3rd iteration (10 Marks) (2024 May)</a></li>
+<li><a href="#fm-algorithm-10-marks-10-marks-2024-may-2023-may">
+FM algorithm (10 Marks, 10 Marks) (2024 May, 2023 May)</a></li>
+<li><a href="#what-are-the-advantages-and-limitations-of-hadoop-5-marks-2023-december">
+What are the advantages and limitations of Hadoop (5 Marks) (2023 December)</a></li>
+<li><a href="#show-any-5-different-relational-algebra-operations-with-example-10-marks-2023-december">
+Show any 5 different relational algebra operations with example (10 Marks) (2023 December)</a></li>
+<li><a href="#structure-of-the-web-10-marks-2023-december">
+Structure of the web (10 Marks) (2023 December)</a></li>
+<li><a href="#explain-the-distributed-storage-system-of-hadoop-with-the-help-of-a-neat-diagram-10-marks-2023-may">
+Explain the distributed storage system of Hadoop with the help of a neat diagram (10 Marks) (2023 May)</a></li>
+</ul><li><a href="#ut-questions">
+UT Questions</a>
+<ul>
+<li><a href="#1-data-stream-management-system">
+1. Data stream Management system.</a></li>
+</ul>
+</nav>
+
+		</details>
+		
+		<footer>
+			<p style="text-align: center; font-size: small; margin-top: 5em;">
+				<a href="https://anzenkodo.github.io/license">LICENSE</a>
+			</p>
+		</footer>
+	</body>
+	<script src="https://AnzenKodo.github.io/assets/js/mermaid.js"></script>
+	<script id="MathJax-script" async src="https://AnzenKodo.github.io/assets/js/mathjax.js"></script>
+	<script>
+		/* document.getElementById('video').addEventListener('click', (ele) => {
+			 if (ele.target.paused) {
+				 ele.target.play();
+			 } else {
+				 ele.target.pause();
+			 }
+		}); */
+
+		mermaid.initialize({
+			theme: "neutral",
+			themeVariables: {
+			    lineColor: "#939598",
+			}
+		});
+
+		MathJax = {
+		  tex: {
+			inlineMath: [['$', '$']],
+			displayMath: [['$$', '$$']],
+		  }
+		};
+	</script>
+</html>

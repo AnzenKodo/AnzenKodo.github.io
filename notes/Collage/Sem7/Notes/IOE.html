@@ -1,0 +1,1788 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>IOE - AK#Notes</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="#FF6C22">
+		<meta name="description" content="## Shorts  - **RFID** (Radio Frequency Identification) - **IEEE 802.15.4** (ZigBee): Low power - **I">
+		<meta property="og:description" content="## Shorts  - **RFID** (Radio Frequency Identification) - **IEEE 802.15.4** (ZigBee): Low power - **I">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<meta property="og:image:alt" content="AK#Notes logo">
+		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="IOE - AK#Notes">
+		<meta property="og:url" content="https://AnzenKodo.github.io/notes/notes/Collage/Sem7/Notes/IOE.html">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+
+			:root {
+				/* color-scheme: dark light; */
+				color-scheme: dark;
+				--theme: #FF6C22;
+			}
+			body {
+				max-width: 40rem;
+				margin: 0 auto;
+				font-family: system-ui;
+				padding: 0 1em;
+				color: inherit !important;
+				word-break: break-word;
+			}
+			h1, h2, h3, h4, h5, h6 {
+				margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+				font-size: 2rem;
+			}
+			h3 {
+				font-size: 1.8rem;
+			}
+			h4 {
+				font-size: 1.5rem;
+			}
+			h5 {
+				font-size: 1.3rem;
+			}
+			h6 {
+				font-size: 1rem;
+			}
+			p, li, td, code {
+				line-height: 1.5rem;
+			}
+			a {
+				color: var(--theme);
+				text-decoration: none;
+			}
+			a:hover, a:focus {
+				text-decoration: underline;
+			}
+			a:active {
+				background: var(--theme);
+				color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+				margin-top: .5rem;
+			}
+			li {
+				margin-bottom: .5rem;
+			}
+			table {
+				border-collapse: collapse;
+				overflow-x: auto;
+				display: block;
+				word-break: auto-phrase;
+				margin: 1rem 0;
+			}
+			th {
+				font-size: 1.1rem;
+				border: 2px solid;
+				padding: .3rem .3rem;
+			}
+			td {
+				border: 1px solid;
+				padding: .3rem .5rem;
+			}
+			blockquote {
+				margin-left: 0;
+				margin-right: 0;
+				border: 1px solid;
+				border-left: 10px solid;
+				padding: 0 1rem;
+			}
+				.code-block {
+				background: black;
+				overflow-x: auto;
+				padding: 0em 1em;
+				border: 1px solid;
+			}
+			.code-block-language-name {
+				position: sticky;
+				left: 95%;
+				top: .5em;
+				font-weight: bold;
+				color: white;
+			}
+			:not(pre.chroma) > code {
+				border: 1px solid;
+				padding: .3rem .2rem .2rem .2rem;
+			}
+			img {
+				max-width: 100%;
+				display: block;
+				margin: 0 auto;
+			}
+			[href="#skip-top-main"] {
+				padding: 0.3em;
+				position: absolute;
+				transform: translateY(-1000%);
+			}
+			[href="#skip-top-main"]:focus {
+				transform: translateY(0%);
+				background: var(--theme);
+				color: inherit;
+			}
+			#table-of-content {
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+				background: black;
+				padding: 0.5rem 1em;
+				z-index: 1;
+				color: white;
+			}
+			#table-of-content[open] {
+				max-height: 90%;
+				overflow-y: auto;
+				bottom: 50px;
+				margin-left: 1em;
+			}
+			#table-of-content[open] summary {
+				background: black;
+				padding: 0.5em 1em;
+				text-align: center;
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+			}
+			#table-of-content ul:first-child {
+				padding-left: 1em;
+				margin-top: 1.5em;
+			}
+			.heading-anchor::before {
+				margin-right: .5rem;
+			}
+		    h2 .heading-anchor::before {
+    			content: "#";
+    			margin-right: .5rem;
+		    }
+            h3 .heading-anchor::before {
+				content: "##";
+				margin-right: .5rem;
+			}
+            h4 .heading-anchor::before {
+				content: "###";
+				margin-right: .5rem;
+			}
+            h5 .heading-anchor::before {
+				content: "####";
+				margin-right: .5rem;
+			}
+            h6 .heading-anchor::before {
+				content: "#####";
+				margin-right: .5rem;
+			}
+			.mermaid {
+				background: black;
+				border: 1px solid;
+				margin-top: 1rem;
+				padding: 1rem;
+				font-family: monospace;
+			}
+			.mermaid svg {
+				display: block;
+				margin: auto;
+			}
+			.mermaid:has(svg) {
+				background: none;
+				border: none;
+				margin-top: 1rem;
+				padding: 0;
+			}
+			mjx-container {
+				display: math;
+				overflow-y: hidden;
+				overflow-x: auto;
+				max-width: 100%;
+				padding-bottom: .8rem;
+			}
+			iframe {
+				width: 100%;
+				height: 21rem;
+				margin: 1rem 0;
+			}
+			video {
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<a href="#skip-top-main">Skip to main</a>
+		<header>
+<!--		<h1 style="text-align: center;">-->
+			<h1 style="text-align: center;">
+				<a href="https://AnzenKodo.github.io">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+			</h1><nav style="border-top: 1px solid gray;border-bottom: 1px solid gray;padding: .5rem 0;text-align: center;margin: 0 0 2rem 0;color: gray;clear: left;line-height: 1.6rem;">
+				<a href="https://AnzenKodo.github.io/notes">Home</a> | <a href="https://AnzenKodo.github.io">About</a> | <a href="https://AnzenKodo.github.io/blogroll">Blogroll</a> | <a href="https://github.com/AnzenKodo">Github</a> | <a href="https://x.com/AnzenKodo">𝕏</a>
+			</nav>
+			<!-- <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;"> -->
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem; margin-top: 0;">IOE</h1>
+			<h2><a name="shorts" class="heading-anchor" href="#shorts" rel="nofollow" aria-hidden="true"></a>Shorts</h2>
+<ul>
+<li><strong>RFID</strong> (Radio Frequency Identification)</li>
+<li><strong>IEEE 802.15.4</strong> (ZigBee): Low power</li>
+<li><strong>IEEE 802.11</strong> WLANs (Wireless local area networks) aka Wifi</li>
+<li><strong>Z-Wave</strong>: Smart homes communication protocol.</li>
+<li><strong>BLE</strong> (Bluetooth Low Energy)</li>
+<li><strong>CoAP</strong> (Constrained Application Protocol): Used for constrained devices (e.g: IOT devices)</li>
+<li><strong>MQTT</strong> (Message Queuing Telemetry Transport): Is a messaging protocol focused on asynchronous. for lightweight IoT applications.</li>
+<li><strong>AMQP</strong> (Advance Message Queuing Protocol): designed for enterprise messaging</li>
+<li><strong>LoRA</strong> (Long Range): low-power, wide-area networking protocol designed for long-range communication.</li>
+<li><strong>LoRAWAN</strong> (Long Range Wide Area Network): Slimier to LoRA with advance features.</li>
+<li><strong>LTE</strong> Long Term Evolution</li>
+<li><strong>OT</strong> Operational Technology: Physical processes of IoT</li>
+<li><strong>IT</strong> Information Technology: Primary concerned with technology of IoT system.</li>
+<li><strong>IoTWF</strong> IoT World Form: Provides a framework for designing IoT system.</li>
+<li><strong>IOB</strong> Internet of Behavior: focuses on how data influences human behavior and decision-making.</li>
+<li><strong>STOMP</strong> Streaming Text Oriented Message Protocol: It provides a way for clients to send and receive messages in real-time.</li>
+<li><strong>Irrigation</strong>: Solution that optimizes water usage in agriculture and landscaping.</li>
+<li><strong>Hadoop</strong> is an open-source framework that stores and processes large amounts of data for applications.</li>
+<li><strong>Data Refineries</strong>: Cleaning data swamp.</li>
+<li><strong>Data Retention</strong>: Backup data.</li>
+</ul>
+<h2><a name="smart-device" class="heading-anchor" href="#smart-device" rel="nofollow" aria-hidden="true"></a>Smart Device</h2>
+<p><strong>Smart Objects</strong> are physical items equipped with sensors, actuators, and communication capabilities, enabling them to connect to the Internet and interact with other devices and systems.</p>
+
+<p><img loading="lazy" src="../Sem/assets/Pasted%20image%2020241104225740.png" alt="" /></p>
+<h3><a name="actuators" class="heading-anchor" href="#actuators" rel="nofollow" aria-hidden="true"></a>Actuators</h3>
+<p>An actuator is a mechanical device for moving or controlling something.</p>
+
+<p>An actuator converts one energy to other energy.</p>
+
+<ul>
+<li><strong>Pneumatic Actuators</strong>:
+
+<ul>
+<li>Use compressed air or gas to generate motion.</li>
+<li><strong>Example</strong>: Packaging Machines</li>
+</ul></li>
+<li><strong>Hydraulic Actuators</strong>:
+
+<ul>
+<li>Use fluid pressure to generate motion.</li>
+<li><strong>Example</strong>: Car jack</li>
+</ul></li>
+<li><strong>Electric Actuators</strong>:
+
+<ul>
+<li>Use electrical energy to generate motion.</li>
+<li><strong>Example</strong>: Electric window opener in a car</li>
+</ul></li>
+<li><strong>Magnetic Actuators</strong>:
+
+<ul>
+<li>Use magnetic fields to generate force.</li>
+<li><strong>Example:</strong> Refrigerator door seal</li>
+</ul></li>
+<li><strong>Thermal Actuators</strong>:
+
+<ul>
+<li>Use temperature changes to generate motion through material expansion or contraction.</li>
+<li><strong>Example:</strong> Automatic coffee machine</li>
+</ul></li>
+<li><strong>Mechanical Actuators</strong>:
+
+<ul>
+<li>Use physical mechanisms like levers, gears, or cams to generate motion.</li>
+<li><strong>Example</strong>: Mechanical pencil</li>
+</ul></li>
+</ul>
+<h3><a name="sensors" class="heading-anchor" href="#sensors" rel="nofollow" aria-hidden="true"></a>Sensors</h3>
+<p>A device that responds to a physical stimulus(such as heat, light, gas pressure) and transmits a resulting impule.</p>
+
+<table>
+<thead>
+<tr>
+<th>Type of Sensor</th>
+<th>Definition</th>
+<th>Power Requirement</th>
+<th>Output Type</th>
+<th>Example</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>Active Sensor</strong></td>
+<td>Sensors that emit energy (like light, sound, or radio waves) and measure the reflected or returned signal.</td>
+<td>Requires external power</td>
+<td>Emission of energy, measure response (e.g., light, sound)</td>
+<td>LIDAR, Radar, Ultrasonic</td>
+</tr>
+
+<tr>
+<td><strong>Passive Sensor</strong></td>
+<td>Sensors that detect energy that is naturally emitted or reflected by an object (e.g., heat, light, radiation).</td>
+<td>No external power required</td>
+<td>Measures natural energy (e.g., light, heat)</td>
+<td>Infrared sensors, Photodetectors</td>
+</tr>
+
+<tr>
+<td><strong>Analog Sensor</strong></td>
+<td>Sensors that output a continuous, variable signal that is proportional to the measured physical quantity.</td>
+<td>May require external power</td>
+<td>Continuous voltage or current</td>
+<td>Thermistor, Analog pressure sensor</td>
+</tr>
+
+<tr>
+<td><strong>Digital Sensor</strong></td>
+<td>Sensors include internal circuits to convert the analog signal to a digital format</td>
+<td>May require external power</td>
+<td>Discrete signal (binary or digital)</td>
+<td>Digital thermometer, Hall effect sensor</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="protocols" class="heading-anchor" href="#protocols" rel="nofollow" aria-hidden="true"></a>Protocols</h2><h3><a name="zigbee-ieee-802-15-4" class="heading-anchor" href="#zigbee-ieee-802-15-4" rel="nofollow" aria-hidden="true"></a>ZigBee (IEEE 802.15.4)</h3>
+<p><img loading="lazy" src="../Sem/assets/Pasted%20image%2020241113154942.webp" alt="" /></p>
+
+<p>A family of standards for wireless personal area networks (WPANs). It offers low data rates, low power consumption, and long battery life.</p>
+
+<p><strong>Application Areas:</strong></p>
+
+<ul>
+<li>Home automation</li>
+<li>Sensor networks</li>
+<li>Industrial automation</li>
+<li>Smart agriculture</li>
+</ul>
+<h3><a name="rfid" class="heading-anchor" href="#rfid" rel="nofollow" aria-hidden="true"></a>RFID</h3>
+<p><strong>Radio Frequency Identification</strong> is a technology that uses radio waves to identify and track objects.</p>
+
+<pre class='mermaid'>flowchart LR
+    A[Processing Center]
+    B[RFID Reader] --> |Process receive info| A
+    B -.-> |Continuous Radio Signal| C[RFID Tag]
+    C --> |Send RF tag info| B
+</pre>
+<ol>
+<li><strong>RFID Tag</strong>: A device attached to an object that stores data (like an ID number) and communicates with a reader. Tags can be <strong>passive</strong> (no battery, powered by the reader) or <strong>active</strong> (battery-powered, can transmit signals).</li>
+<li><strong>RFID Reader</strong>: A device that emits radio waves to communicate with RFID tags and collect data. It can be handheld or fixed and connects to a system for data processing.</li>
+<li><strong>Processing Center</strong>: The system that processes and stores the data from the RFID reader, often integrating with business software like inventory management.</li>
+</ol>
+
+<table>
+<thead>
+<tr>
+<th><strong>Aspect</strong></th>
+<th><strong>RFID</strong></th>
+<th><strong>Bluetooth</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>Purpose</strong></td>
+<td>Identification and tracking.</td>
+<td>Short-range communication.</td>
+</tr>
+
+<tr>
+<td><strong>Range</strong></td>
+<td>Up to hundreds of meters.</td>
+<td>Typically up to 100 meters.</td>
+</tr>
+
+<tr>
+<td><strong>Communication Type</strong></td>
+<td>One-way or two-way (active).</td>
+<td>Two-way communication.</td>
+</tr>
+
+<tr>
+<td><strong>Speed</strong></td>
+<td>Up to 640 Kbps.</td>
+<td>Up to 3 Mbps.</td>
+</tr>
+
+<tr>
+<td><strong>Power</strong></td>
+<td>Passive (no power); active (battery).</td>
+<td>Requires power for both.</td>
+</tr>
+
+<tr>
+<td><strong>Data Capacity</strong></td>
+<td>Limited.</td>
+<td>Higher</td>
+</tr>
+
+<tr>
+<td><strong>Cost</strong></td>
+<td>Low</td>
+<td>High</td>
+</tr>
+
+<tr>
+<td><strong>Use Cases</strong></td>
+<td>Inventory, access control.</td>
+<td>File sharing, audio streaming.</td>
+</tr>
+
+<tr>
+<td><strong>Security</strong></td>
+<td>Basic</td>
+<td>Strong</td>
+</tr>
+
+<tr>
+<td><strong>Interference</strong></td>
+<td>Metal, Liquid.</td>
+<td>Other devices</td>
+</tr>
+</tbody>
+</table>
+<h3><a name="z-wave" class="heading-anchor" href="#z-wave" rel="nofollow" aria-hidden="true"></a>Z-Wave</h3>
+<pre class='mermaid'>flowchart LR
+    pc[Primary Contoller]
+    sc[Secondary Controller]
+    pc --> s1((Slave1)) --> 
+    s4((Slave4)) --> s5((Slave5))
+    s4 --> s3((Slave3))
+    sc --> s2((Slave2)) --> s3
+</pre>
+<p><strong>Components of Z-Wave:</strong></p>
+
+<ul>
+<li><strong>Home ID</strong>: Protocol uses ID field to separate the network from each other.</li>
+<li><strong>Controller</strong>: Device can communicate with all the nodes of z-wave network.</li>
+<li><strong>Slaves</strong>: Nodes receive the command and performs action based on the commands.</li>
+</ul>
+<h3><a name="mqtt-vs-coap" class="heading-anchor" href="#mqtt-vs-coap" rel="nofollow" aria-hidden="true"></a>MQTT vs CoAP</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>MQTT</th>
+<th>CoAP</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Full Form</td>
+<td>Message Queuing Telemetry Transport</td>
+<td>Constrained Application Protocol</td>
+</tr>
+
+<tr>
+<td>Definition</td>
+<td>Used for constrained devices (e.g: IOT devices)</td>
+<td>Is a <strong>messaging protocol</strong> focused on asynchronous</td>
+</tr>
+
+<tr>
+<td>Communication Model</td>
+<td>Publish-Subscribe</td>
+<td>Request-Response</td>
+</tr>
+
+<tr>
+<td>Transport Protocol</td>
+<td>TCP</td>
+<td>UDP</td>
+</tr>
+
+<tr>
+<td>Reliability/QoS</td>
+<td>QoS Levels (0, 1, 2)</td>
+<td>Confirmable/Non-confirmable</td>
+</tr>
+
+<tr>
+<td>Overhead</td>
+<td>Higher</td>
+<td>Lower</td>
+</tr>
+
+<tr>
+<td>Security</td>
+<td>TLS</td>
+<td>DTLS</td>
+</tr>
+
+<tr>
+<td>Best Use Cases</td>
+<td>Centralized IoT, messaging</td>
+<td>Low-power, direct IoT</td>
+</tr>
+
+<tr>
+<td>HTTP Compatibility</td>
+<td>Limited</td>
+<td>High</td>
+</tr>
+</tbody>
+</table>
+<h4><a name="mqtt" class="heading-anchor" href="#mqtt" rel="nofollow" aria-hidden="true"></a>MQTT</h4>
+<p>Is a <strong>messaging protocol</strong> focused on asynchronous.</p>
+
+<p>Uses a <strong>publish-subscribe</strong> model, where devices (clients) publish messages to topics, and other devices subscribe to these topics to receive messages.</p>
+
+<p>General purpose protocol.</p>
+
+<p>Works over TCP/IP</p>
+
+<pre class='mermaid'>flowchart LR
+    p[Publisher] -.-> |Message| b((Broker))
+    b --> |Message| Subscriber1
+    b --> |Message| Subscriber2
+</pre><h5><a name="mqtt-sn" class="heading-anchor" href="#mqtt-sn" rel="nofollow" aria-hidden="true"></a>MQTT-SN</h5>
+<pre class='mermaid'>flowchart LR
+    p[Publisher] -.-> |Message| g([Gateway])
+    p2[Publisher] -.-> |Message| g
+    g --> b((Broker))
+    b --> |Message| Subscriber1
+    b --> |Message| Subscriber2
+</pre>
+<p>Optimized for low-power, low-resource sensor networks.</p>
+
+<p>Works over UDP</p>
+
+<p><img loading="lazy" src="../Sem/assets/Pasted%20image%2020241114024149.webp" alt="" /></p>
+<h4><a name="coap" class="heading-anchor" href="#coap" rel="nofollow" aria-hidden="true"></a>CoAP</h4>
+<p>Uses a <strong>request-response</strong> model, similar to HTTP.</p>
+
+<p>Designed for direct <strong>device-to-device</strong> communication without an intermediary, which is suited for simple, constrained networks.</p>
+
+<pre class='mermaid'>flowchart LR
+    s1([Server])
+    s2([Server])
+
+    
+    c1[Client] --> |Request| s1
+    s1 -.-> |Response| c1
+    c2[Client] --> |Request| s1
+    c3[Client] --> |Request| s1
+    c3 --> |Request| s2
+    s1 -.-> |Response| c3
+    s2 -.-> |Response| c3
+    c4[Client] --> |Request| s1
+</pre>
+<p><strong>Layers of CoAP</strong></p>
+
+<pre class='mermaid'>flowchart TB
+    Application --> r
+
+    subgraph CoAP Layer
+        r[Request / Response] -->
+        m[Message]
+    end
+
+    m --> UDP
+</pre>
+<p><strong>CoAP Messaging Modes</strong></p>
+
+<ul>
+<li><p><strong>Confirmable:</strong> Used when reliable delivery is needed.</p>
+
+<pre class='mermaid'>sequenceDiagram
+    Client->>Server: Confirmable
+    Server->>Client: ACK
+</pre></li>
+
+<li><p><strong>Non-Conformable</strong>: Used for messages that don’t require guaranteed delivery.</p>
+
+<pre class='mermaid'>sequenceDiagram
+    Client->>Server: Non Message
+</pre></li>
+
+<li><p><strong>Piggybank</strong>: Provide an immediate response to a Confirmable (CON) request in the same ACK message.</p>
+
+<pre class='mermaid'>sequenceDiagram
+    Client->>Server: Confirmable
+    Server->>Client: ACK + Message
+</pre></li>
+
+<li><p><strong>Separate</strong>: Used when the server cannot respond to a request immediately and needs more time to generate a response.</p>
+
+<pre class='mermaid'>sequenceDiagram
+    Client->>Server: Confirmable
+    Server->>Client: Empty ACK
+    Server->>Client: Separate Confirmable Message
+    Client->>Server: ACK for Response
+</pre></li>
+</ul>
+<h3><a name="amqp" class="heading-anchor" href="#amqp" rel="nofollow" aria-hidden="true"></a>AMQP</h3>
+<p>Designed for enterprise messaging with high reliability and flexibility.</p>
+
+<p>AMQP supports multiple patterns like <strong>Point-to-Point</strong> (one-to-one message delivery) and <strong>Publish/Subscribe</strong> (many-to-many message delivery).</p>
+
+<pre class='mermaid'>flowchart LR
+    p([Publisher]) --> Exchange
+
+    subgraph AMQP Broker
+        Queue1 -.- 
+        Exchange --> |Rotue Message 
+        besed on binding 1| Queue1
+        
+        Queue2 -.-
+        Exchange --> |Rotue Message
+        based on binding 2| Queue2
+    end
+
+    Consumer1 -.- |Subscribe to 
+    the queue| Queue1
+    Queue1 --> |Send message| Consumer1
+
+    Consumer2 --> |Request message| Queue2
+    Queue2 --> |Send Message| Consumer2
+</pre><h3><a name="html-vs-websocket" class="heading-anchor" href="#html-vs-websocket" rel="nofollow" aria-hidden="true"></a>HTML vs WebSocket</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Characteristic</strong></th>
+<th><strong>HTTP</strong></th>
+<th><strong>WebSocket</strong></th>
+<th><strong>MQTT</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>Connection Type</strong></td>
+<td>Stateless</td>
+<td>Persistent</td>
+<td>Persistent</td>
+</tr>
+
+<tr>
+<td><strong>Connection</strong></td>
+<td>Request &amp; Response</td>
+<td>Full duplex</td>
+<td>Publish-Subscribe</td>
+</tr>
+
+<tr>
+<td><strong>Overhead</strong></td>
+<td>High</td>
+<td>Low</td>
+<td>Very low</td>
+</tr>
+
+<tr>
+<td><strong>Latency</strong></td>
+<td>Higher</td>
+<td>Low</td>
+<td>Low</td>
+</tr>
+
+<tr>
+<td><strong>Message Delivery</strong></td>
+<td>Reliable, but slower</td>
+<td>Reliable, with some overhead</td>
+<td>QoS levels for guaranteed delivery</td>
+</tr>
+
+<tr>
+<td><strong>Use Cases</strong></td>
+<td>Infrequent updates</td>
+<td>Real-time dashboards, chat apps</td>
+<td>Remote sensors, telemetry</td>
+</tr>
+</tbody>
+</table>
+<h4><a name="html" class="heading-anchor" href="#html" rel="nofollow" aria-hidden="true"></a>HTML</h4>
+<pre class='mermaid'>sequenceDiagram
+    Client->>Server: Request
+    Server->>Client: Response
+    Client->>Server: Request
+    Server->>Client: Response
+</pre><h4><a name="websocket" class="heading-anchor" href="#websocket" rel="nofollow" aria-hidden="true"></a>WebSocket</h4>
+<pre class='mermaid'>sequenceDiagram
+    Client->>Server: Request
+    Server->>Client: Response
+    Server->>Client: 
+    Server->>Client: 
+
+    Client->>Server: Request
+    Server->>Client: Response
+    Server->>Client: 
+    Server->>Client: 
+    Server->>Client: Connection Closed
+</pre><h3><a name="lorawan" class="heading-anchor" href="#lorawan" rel="nofollow" aria-hidden="true"></a>LoRaWAN</h3>
+<p><strong>LoRaWAN</strong> is a Low-Power Wide-Area Network (LPWAN) protocol designed for long-range, low-power, bidirectional communication.</p>
+
+<p><strong>Network Server</strong>: Manages the network, handling end device communication, security, and data routing.</p>
+
+<pre class='mermaid'>flowchart LR
+    Device1 --> Gateway1
+    Device2 --> Gateway1
+    Device2 --> Gateway2
+    Device3 --> Gateway2
+
+    Gateway1 --> Internet
+    Gateway2 --> Internet
+
+    Internet --> ns[Network 
+    Server]
+
+    ns --> as1[Application
+    Server]
+    ns --> as2[Application
+    Server]
+    ns --> as3[Application
+    Server]
+</pre><h3><a name="lte-lte-a-lora-and-lorawan" class="heading-anchor" href="#lte-lte-a-lora-and-lorawan" rel="nofollow" aria-hidden="true"></a>LTE, LTE-A, LoRa, and LoRaWAN</h3>
+<table>
+<thead>
+<tr>
+<th>Features</th>
+<th>LTE</th>
+<th>LTA-A</th>
+<th>LoRA</th>
+<th>LoRaWAN</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>Full Form</strong></td>
+<td>Long Term Evolution</td>
+<td>Long Term Evolution Advance</td>
+<td>Long Range</td>
+<td>Long Range Wide Area Network</td>
+</tr>
+
+<tr>
+<td><strong>Defination</strong></td>
+<td>wireless communication standard for mobile devices. Used in 4G</td>
+<td>Improved version of LTE.</td>
+<td>low-power, wide-area networking protocol designed for long-range communication.</td>
+<td>Slimier to LoRA but suitable for large-scale IoT networks.</td>
+</tr>
+
+<tr>
+<td><strong>Coverage</strong></td>
+<td>Extensive</td>
+<td>Improved</td>
+<td>Excellent</td>
+<td>Excellent</td>
+</tr>
+
+<tr>
+<td><strong>Data Rate</strong></td>
+<td>Up to 300 Mbps</td>
+<td>Up to 1 Gbps</td>
+<td>Up to 50 kbps</td>
+<td>0.3 - 50 kbps</td>
+</tr>
+
+<tr>
+<td><strong>Power Consumption</strong></td>
+<td>Moderate</td>
+<td>Moderate</td>
+<td>Very Low</td>
+<td>Very Low</td>
+</tr>
+
+<tr>
+<td><strong>Scalability</strong></td>
+<td>Moderate</td>
+<td>High</td>
+<td>High</td>
+<td>Very High</td>
+</tr>
+
+<tr>
+<td><strong>Use Cases</strong></td>
+<td>Smart cities, vehicles, health monitoring</td>
+<td>Advanced smart city applications, AR, real-time health data</td>
+<td>Smart agriculture, environmental monitoring, asset tracking</td>
+<td>Smart metering, industrial IoT, smart cities</td>
+</tr>
+</tbody>
+</table>
+<h3><a name="bluetooth-low-energy" class="heading-anchor" href="#bluetooth-low-energy" rel="nofollow" aria-hidden="true"></a>Bluetooth Low Energy</h3>
+<p><img loading="lazy" src="../Sem/assets/Pasted%20image%2020241104220436.png" alt="|422" /></p>
+
+<p><img loading="lazy" src="../Sem/assets/Pasted%20image%2020241113164650.webp" alt="|572" /></p>
+
+<div class="code-block"><span class="code-block-language-name">.ascii</span><html>
+<style type="text/css">
+/* Background */ .bg { color: #282c34 }
+/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
+/* Other */ .chroma .x { color: #c9c9c9 }
+/* Error */ .chroma .err { color: #cf5967 }
+/* CodeLine */ .chroma .cl { color: #c9c9c9 }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
+/* Keyword */ .chroma .k { color: #7fbaf5 }
+/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
+/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
+/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
+/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
+/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
+/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
+/* Name */ .chroma .n { color: #c9c9c9 }
+/* NameAttribute */ .chroma .na { color: #bc74c4 }
+/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
+/* NameClass */ .chroma .nc { color: #ecbe7b }
+/* NameConstant */ .chroma .no { color: #ecbe7b }
+/* NameDecorator */ .chroma .nd { color: #ecbe7b }
+/* NameEntity */ .chroma .ni { color: #c9c9c9 }
+/* NameException */ .chroma .ne { color: #cf5967 }
+/* NameFunction */ .chroma .nf { color: #57c7ff }
+/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
+/* NameLabel */ .chroma .nl { color: #cf5967 }
+/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
+/* NameOther */ .chroma .nx { color: #c9c9c9 }
+/* NameProperty */ .chroma .py { color: #c9c9c9 }
+/* NameTag */ .chroma .nt { color: #bc74c4 }
+/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
+/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
+/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
+/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
+/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
+/* Literal */ .chroma .l { color: #c9c9c9 }
+/* LiteralDate */ .chroma .ld { color: #57c7ff }
+/* LiteralString */ .chroma .s { color: #82cc6a }
+/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
+/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
+/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
+/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
+/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
+/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
+/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
+/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
+/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
+/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
+/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
+/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
+/* LiteralNumber */ .chroma .m { color: #56b6c2 }
+/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
+/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
+/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
+/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
+/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
+/* Operator */ .chroma .o { color: #bc74c4 }
+/* OperatorWord */ .chroma .ow { color: #bc74c4 }
+/* Punctuation */ .chroma .p { color: #56b6c2 }
+/* Comment */ .chroma .c { color: #3e4460 }
+/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #3e4460 }
+/* CommentSingle */ .chroma .c1 { color: #3e4460 }
+/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
+/* Generic */ .chroma .g { color: #c9c9c9 }
+/* GenericDeleted */ .chroma .gd { color: #cf5967 }
+/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
+/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
+/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #ecbe7b }
+/* GenericOutput */ .chroma .go { color: #43454f }
+/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
+/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
+/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
+/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
+/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
+body { color: #282c34; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">+----------------------------------+
+</span></span><span class="line"><span class="cl">|              Host                |
+</span></span><span class="line"><span class="cl">| +----------+   +----------+      |
+</span></span><span class="line"><span class="cl">| |  Generic |   |  Generic |      |
+</span></span><span class="line"><span class="cl">| | Access   |   | Attribute|      |
+</span></span><span class="line"><span class="cl">| | Profile  |   | Profile  |      |
+</span></span><span class="line"><span class="cl">| | (GAP)    |   | (GATT)   |      |
+</span></span><span class="line"><span class="cl">| +----------+   +----------+      |
+</span></span><span class="line"><span class="cl">| +-----------------------------+  |
+</span></span><span class="line"><span class="cl">| |      Security Manager (SM)  |  |
+</span></span><span class="line"><span class="cl">| +-----------------------------+  |
+</span></span><span class="line"><span class="cl">| +-----------------------------+  |
+</span></span><span class="line"><span class="cl">| |     Attribute Protocol      |  |
+</span></span><span class="line"><span class="cl">| |          (ATT)              |  |
+</span></span><span class="line"><span class="cl">| +-----------------------------+  |
+</span></span><span class="line"><span class="cl">| +-----------------------------+  |
+</span></span><span class="line"><span class="cl">| | Logical Link Control and    |  |
+</span></span><span class="line"><span class="cl">| | Adaptation Protocol (L2CAP) |  |
+</span></span><span class="line"><span class="cl">| +-----------------------------+  |
+</span></span><span class="line"><span class="cl">+----------------------------------+
+</span></span><span class="line"><span class="cl">|            Controller            |
+</span></span><span class="line"><span class="cl">| +-----------------------------+  |
+</span></span><span class="line"><span class="cl">| | Host - Controller Interface |  |
+</span></span><span class="line"><span class="cl">| |              (HCI)          |  |
+</span></span><span class="line"><span class="cl">| +-----------------------------+  |
+</span></span><span class="line"><span class="cl">| +-----------------------------+  |
+</span></span><span class="line"><span class="cl">| |         Link Layer (LL)     |  |
+</span></span><span class="line"><span class="cl">| +-----------------------------+  |
+</span></span><span class="line"><span class="cl">| +-----------------------------+  |
+</span></span><span class="line"><span class="cl">| |        Physical Layer (PHY) |  |
+</span></span><span class="line"><span class="cl">| +-----------------------------+  |
+</span></span><span class="line"><span class="cl">+----------------------------------+
+</span></span></code></pre>
+</body>
+</html>
+</div>
+<ul>
+<li>Host Layer
+
+<ul>
+<li><strong>GAP (Generic Access Profile)</strong>: Manages device discovery, connection.</li>
+<li><strong>GATT (Generic Attribute Profile)</strong>: Used for services like data synchronization.</li>
+<li><strong>SM (Security Manager)</strong>: Manages pairing, authentication, and encryption of communication.</li>
+<li><strong>ATT (Attribute Protocol)</strong>: Defines how GATT data is organized and accessed.</li>
+<li><strong>L2CAP (Logical Link Control and Adaptation Protocol)</strong>: Handles channel management for multiple data streams.</li>
+</ul></li>
+<li>Controller Layer
+
+<ul>
+<li><strong>HCI (Host-Controller Interface)</strong>: Interface for communication between software and hardware functions.</li>
+<li><strong>LL (Link Layer)</strong>: Manages functions like advertising, scanning, and maintaining Bluetooth connections.</li>
+<li><strong>PHY (Physical Layer)</strong>: Handles the actual transmission of radio signals over the air.</li>
+</ul></li>
+</ul>
+<h3><a name="bluetooth-vs-zigbee" class="heading-anchor" href="#bluetooth-vs-zigbee" rel="nofollow" aria-hidden="true"></a>Bluetooth vs ZigBee</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Bluetooth</th>
+<th>ZigBee</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>Range</strong></td>
+<td>Short range (up to 10 meters)</td>
+<td>Longer range (up to 100 meters)</td>
+</tr>
+
+<tr>
+<td><strong>Power Consumption</strong></td>
+<td>Low power consumption</td>
+<td>Very low power consumption</td>
+</tr>
+
+<tr>
+<td><strong>Data Rate</strong></td>
+<td>Higher data rate (up to 24 Mbps)</td>
+<td>Lower data rate (up to 250 kbps)</td>
+</tr>
+
+<tr>
+<td><strong>Topology</strong></td>
+<td>Star, master-slave</td>
+<td>Mesh</td>
+</tr>
+
+<tr>
+<td><strong>Applications</strong></td>
+<td>Wireless headsets, speakers, mobile devices</td>
+<td>Smart home automation, industrial sensors, healthcare devices</td>
+</tr>
+
+<tr>
+<td><strong>Cost</strong></td>
+<td>Lower</td>
+<td>Higher</td>
+</tr>
+
+<tr>
+<td><strong>Security</strong></td>
+<td>Good security features</td>
+<td>Good security features</td>
+</tr>
+</tbody>
+</table>
+<h3><a name="ieee-802-11-wifi" class="heading-anchor" href="#ieee-802-11-wifi" rel="nofollow" aria-hidden="true"></a>IEEE 802.11 Wifi</h3>
+<p><strong>IEEE 802.11</strong> is a set of standards for wireless local area networks (WLANs), commonly known as Wi-Fi.</p>
+
+<p><img loading="lazy" src="../Sem/assets/Pasted%20image%2020241114013206.webp" alt="" /></p>
+<h3><a name="stomp" class="heading-anchor" href="#stomp" rel="nofollow" aria-hidden="true"></a>STOMP</h3>
+<p><strong>Streaming Text Oriented Message Protocol</strong> provides a way for clients to send and receive messages in real-time.</p>
+
+<p><img loading="lazy" src="../Sem/assets/Pasted%20image%2020241114024149.webp" alt="|543" /></p>
+<h2><a name="iot" class="heading-anchor" href="#iot" rel="nofollow" aria-hidden="true"></a>IOT</h2>
+<p><strong>IoT (Internet of Things)</strong> refers to the network of physical objects or &quot;things&quot; that are embedded with sensors, software, and other technologies, enabling them to connect, collect, and exchange data over the internet or other networks.</p>
+
+<ul>
+<li>Characteristics of IOT Cloud
+
+<ul>
+<li>On-demand self-service</li>
+<li>Broad Network Access</li>
+<li>Resource pooling</li>
+<li>Monitoring</li>
+<li>Scalability</li>
+</ul></li>
+<li>IoT Application Transport Methods
+
+<ul>
+<li><strong>Wi-Fi</strong></li>
+<li><strong>Bluetooth</strong></li>
+<li><strong>Zigbee</strong></li>
+<li><strong>Z-Wave</strong></li>
+<li><strong>Cellular Networks (2G, 3G, 4G, 5G)</strong></li>
+</ul></li>
+</ul>
+<h3><a name="iot-functional-block" class="heading-anchor" href="#iot-functional-block" rel="nofollow" aria-hidden="true"></a>IoT Functional Block</h3>
+<p><img loading="lazy" src="./assets/Pasted%20image%2020241113225925.webp" alt="" /></p>
+<h3><a name="iot-architecture" class="heading-anchor" href="#iot-architecture" rel="nofollow" aria-hidden="true"></a>IoT architecture</h3>
+<p><img loading="lazy" src="../Sem/assets/Pasted%20image%2020241113230649.webp" alt="" /></p>
+<h3><a name="iot-communication-model" class="heading-anchor" href="#iot-communication-model" rel="nofollow" aria-hidden="true"></a>IOT Communication Model</h3>
+<p><strong>Request-Response</strong></p>
+
+<pre class='mermaid'>flowchart LR
+    Client --> |Request| Server
+    Server --> |Response| Client
+    Server --> |Request| Resources
+    Resources --> |Response| Server
+</pre>
+<p><strong>Publish-Subscribe</strong></p>
+
+<pre class='mermaid'>flowchart LR
+    p[Publisher] -.-> |Message| b((Broker))
+    b --> |Message| Subscriber1
+    b --> |Message| Subscriber2
+</pre>
+<p><strong>Push-Pull</strong></p>
+
+<pre class='mermaid'>flowchart LR
+    Publisher --> |Message pushed to Queue| q1([Queue])
+    Publisher --> q2([Queue])
+    q1 --> |Message pulled from queue| Consumer1
+    q2 --> Consumer2
+</pre>
+<p><strong>Exclusive Pair</strong></p>
+
+<pre class='mermaid'>sequenceDiagram
+    Client->>Server: Request
+    Server->>Client: Response
+    Server->>Client: 
+    Server->>Client: 
+
+    Client->>Server: Request
+    Server->>Client: Response
+    Server->>Client: 
+    Server->>Client: 
+    Server->>Client: Connection Closed
+</pre><h3><a name="iot-data-visualization" class="heading-anchor" href="#iot-data-visualization" rel="nofollow" aria-hidden="true"></a>IoT Data Visualization</h3>
+<p>Data visualization in IoT refers to the graphical representation of data collected from various IoT devices and sensors.</p>
+
+<p><strong>Tools for Data Visualization in IoT</strong></p>
+
+<ul>
+<li><strong>Tableau</strong></li>
+<li><strong>Power BI</strong></li>
+<li><strong>QlikView</strong></li>
+<li><strong>Matplotlib</strong></li>
+<li><strong>D3.js</strong></li>
+<li><strong>Chart.js</strong></li>
+<li><strong>Cloud-Based Platforms</strong>
+
+<ul>
+<li><strong>Google Data Studio</strong></li>
+<li><strong>Amazon QuickSight</strong></li>
+<li><strong>Microsoft Power BI</strong></li>
+</ul></li>
+</ul>
+<h3><a name="nosql-in-iot" class="heading-anchor" href="#nosql-in-iot" rel="nofollow" aria-hidden="true"></a>NoSQL in IoT</h3>
+<p><img loading="lazy" src="../Sem/assets/Pasted%20image%2020241114015801.webp" alt="" /></p>
+<h3><a name="need-of-new-network-architecture-protocol-in-iot" class="heading-anchor" href="#need-of-new-network-architecture-protocol-in-iot" rel="nofollow" aria-hidden="true"></a>Need of new network architecture/protocol in IoT</h3>
+<p>As the number of connected devices continues to skyrocket, traditional network architectures are struggling to meet the unique demands of IoT.</p>
+
+<p>Key factors driving the need for a new network architecture:</p>
+
+<ul>
+<li>Large Number of Devices</li>
+<li>Low Latency Requirements</li>
+<li>Real-Time Requirements</li>
+<li>Security and Privacy Concerns</li>
+<li>Power Constraints</li>
+</ul>
+
+<p>New network architectures:</p>
+
+<ul>
+<li>5G</li>
+<li>LPWAN (Low-Power Wide-Area Networks)</li>
+<li>MQTT</li>
+<li>CoAP</li>
+<li>Edge Computing</li>
+<li>Fog Computing</li>
+</ul>
+<h3><a name="iot-analytics" class="heading-anchor" href="#iot-analytics" rel="nofollow" aria-hidden="true"></a>IOT Analytics</h3>
+<pre class='mermaid'>flowchart TB
+    s[Sensing &
+    Delivery Network] --> | Raw IOT Data | dg
+    dg[Data Aggreation] --> |Actionable insights| s
+    da[Data Analytics] --> |Feedback| dg
+    dg --> |Actionable
+    insights| da
+</pre>
+<ul>
+<li>Process flow in IOT analytics
+
+<ul>
+<li>Data collection</li>
+<li>Data Pre-processing</li>
+<li>Analysis of data</li>
+<li>Train</li>
+<li>Deployment</li>
+</ul></li>
+<li>Challenges of IOT Analytics
+
+<ul>
+<li>Data Volume &amp; Velocity</li>
+<li>Data Variety</li>
+<li>Scalility</li>
+<li>Data Quality</li>
+</ul></li>
+<li>Strategies to organize data
+
+<ul>
+<li>Data Collection</li>
+<li>Data Integration</li>
+<li>Data Storage
+
+<ul>
+<li>Hierarchical Storage
+
+<ul>
+<li>Edge Storage</li>
+<li>Cloud Storage</li>
+</ul></li>
+<li>Database Options
+
+<ul>
+<li>NoSQL</li>
+<li>Relational Database</li>
+</ul></li>
+</ul></li>
+<li>Data Preprocessing</li>
+<li>Data Visualization</li>
+<li>Data Reporting</li>
+</ul></li>
+<li>Types of IoT Analytics
+
+<ul>
+<li><strong>Descriptive</strong>: Understanding past treands</li>
+<li><strong>Diagnostic</strong>: Why something happen</li>
+<li><strong>Predictive</strong>: Forecasting future</li>
+<li><strong>Prescriptive</strong>: Recommending actions</li>
+</ul></li>
+</ul>
+<h4><a name="iot-analytics-in-healthcare" class="heading-anchor" href="#iot-analytics-in-healthcare" rel="nofollow" aria-hidden="true"></a>IOT Analytics in Healthcare</h4>
+<ul>
+<li>Utilization of IoT Analytics in Healthcare
+
+<ul>
+<li>Real-time monitoring</li>
+<li>Analytics</li>
+<li>Personalize</li>
+<li>Decision Making</li>
+</ul></li>
+<li>Essential Dashboard Parameters
+
+<ul>
+<li><strong>Medication Adherence</strong>: Monitoring of medication schedules and adherence levels.</li>
+<li><strong>Physical Activity</strong>: Data on steps and exercise to encourage healthy lifestyles.</li>
+<li><strong>Sleep Patterns</strong>: Insights into sleep quality and duration.</li>
+<li><strong>Emergency Alerts</strong>: Notifications for critical health changes.</li>
+<li><strong>Historical Data Trends</strong></li>
+</ul></li>
+</ul>
+<h4><a name="iot-data-analytics-vs-iot-network-analytics" class="heading-anchor" href="#iot-data-analytics-vs-iot-network-analytics" rel="nofollow" aria-hidden="true"></a>IoT data analytics vs IoT network analytics</h4>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Data Analytics</th>
+<th>Business Benefits</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Focus</td>
+<td>Identifying patterns.</td>
+<td>Using insights for outcomes.</td>
+</tr>
+
+<tr>
+<td>Objective</td>
+<td>Uncover data insights.</td>
+<td>Drive growth and profit.</td>
+</tr>
+
+<tr>
+<td>Tasks</td>
+<td>Data collection, analysis &amp; visualization.</td>
+<td>Planning and decision-making.</td>
+</tr>
+
+<tr>
+<td>Tools</td>
+<td>Statistical and visualization.</td>
+<td>BI, reporting, forecasting.</td>
+</tr>
+
+<tr>
+<td>Outcomes</td>
+<td>Insights and predictions.</td>
+<td>Increased revenue, reduced costs.</td>
+</tr>
+
+<tr>
+<td>Example</td>
+<td>Customer segmentation based on behavior.</td>
+<td>Tailoring marketing to boost sales.</td>
+</tr>
+</tbody>
+</table>
+<h3><a name="i-iot" class="heading-anchor" href="#i-iot" rel="nofollow" aria-hidden="true"></a>I-IoT</h3>
+<p><img loading="lazy" src="../Sem/assets/Pasted%20image%2020241104232911.png" alt="" /></p>
+
+<p><strong>Similarities Between I-IoT and IoT</strong></p>
+
+<ul>
+<li>Connectivity</li>
+<li>Data-Driven Insights</li>
+<li>Use of Cloud Computing</li>
+<li>Automation and Efficiency</li>
+<li>Protocol and Standards</li>
+</ul>
+
+<p><strong>Differences Between I-IoT and IoT</strong></p>
+
+<table>
+<thead>
+<tr>
+<th><strong>Feature</strong></th>
+<th><strong>IoT</strong></th>
+<th><strong>IIoT</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>Definition</strong></td>
+<td>Connects consumer devices online.</td>
+<td>IoT applied in industrial settings.</td>
+</tr>
+
+<tr>
+<td><strong>Use Case</strong></td>
+<td>Consumer</td>
+<td>Industry</td>
+</tr>
+
+<tr>
+<td><strong>Devices</strong></td>
+<td>Consumer gadgets</td>
+<td>Industrial equipment</td>
+</tr>
+
+<tr>
+<td><strong>Network</strong></td>
+<td>Low latency, Wi-Fi, Bluetooth.</td>
+<td>High reliability, Ethernet, 5G.</td>
+</tr>
+
+<tr>
+<td><strong>Security</strong></td>
+<td>Basic security.</td>
+<td>Advanced, operation-critical.</td>
+</tr>
+
+<tr>
+<td><strong>Scalability</strong></td>
+<td>Small scale.</td>
+<td>Large, complex systems.</td>
+</tr>
+
+<tr>
+<td><strong>Data Volume</strong></td>
+<td>Low, fewer devices.</td>
+<td>High, continuous data.</td>
+</tr>
+
+<tr>
+<td><strong>Reliability</strong></td>
+<td>Lower</td>
+<td>High</td>
+</tr>
+
+<tr>
+<td><strong>Examples</strong></td>
+<td>Smart homes, wearables.</td>
+<td>Smart factories, predictive systems. Sensors</td>
+</tr>
+
+<tr>
+<td><strong>Setup</strong></td>
+<td>Simple</td>
+<td>Complex</td>
+</tr>
+
+<tr>
+<td><strong>Maintenance</strong></td>
+<td>Easy</td>
+<td>Hard</td>
+</tr>
+
+<tr>
+<td><strong>Cost</strong></td>
+<td>Lower cost.</td>
+<td>Higher</td>
+</tr>
+</tbody>
+</table>
+<h3><a name="iot-world-forum-iotwf" class="heading-anchor" href="#iot-world-forum-iotwf" rel="nofollow" aria-hidden="true"></a>IoT World Forum (IoTWF)</h3>
+<p>The IoT World Forum (IoTWF) Standardized Architecture is a seven-layer model that provides a framework for understanding and designing IoT systems.</p>
+
+<pre class='mermaid'>flowchart TB
+    Application -->
+    Service -->
+    dm[Device Management] -->
+    Network -->
+    ds[Data Storage] -->
+    Device -->
+    Physical
+</pre>
+<ul>
+<li><strong>Service Layer:</strong> This layer provides the services that enable the IoT system to function. It includes services like data analytics, machine learning, and security.</li>
+<li><strong>Network Layer:</strong> This layer provides the connectivity between devices and the cloud. It includes technologies like Wi-Fi, Bluetooth, cellular networks, and LPWANs.</li>
+<li><strong>Data Storage Layer:</strong> This layer stores the data generated by IoT devices. It can be stored on-device, on-edge devices, or in the cloud.</li>
+<li><strong>Device Layer:</strong> This layer consists of the physical devices that collect data from the environment. It includes sensors, actuators, and other devices.</li>
+</ul>
+<h3><a name="internet-of-behavior-iob" class="heading-anchor" href="#internet-of-behavior-iob" rel="nofollow" aria-hidden="true"></a>Internet of Behavior (IOB)</h3>
+<p>It extends the concepts of the Internet of Things (IoT) by focusing not just on the devices and data they generate, but also on how that data influences human behavior and decision-making.</p>
+<h2><a name="smart-devices" class="heading-anchor" href="#smart-devices" rel="nofollow" aria-hidden="true"></a>Smart Devices</h2><h3><a name="smart-home" class="heading-anchor" href="#smart-home" rel="nofollow" aria-hidden="true"></a>Smart Home</h3>
+<p><img loading="lazy" src="../Sem/assets/sensors-21-03784-g001.webp" alt="" /></p>
+<h3><a name="smart-smoke-detection-system" class="heading-anchor" href="#smart-smoke-detection-system" rel="nofollow" aria-hidden="true"></a>Smart Smoke detection system</h3>
+<p><img loading="lazy" src="../Sem/assets/Pasted%20image%2020241113223335.webp" alt="" /></p>
+
+<p><strong>Sensor:</strong></p>
+
+<ul>
+<li><strong>Temperature</strong></li>
+<li><strong>Humidity Sensors:</strong></li>
+<li><strong>Smoke Detectors</strong></li>
+<li><strong>Gas Sensors</strong></li>
+<li><strong>Camera Sensors</strong></li>
+</ul>
+
+<p><strong>Actuators</strong></p>
+
+<ul>
+<li>Alarm system</li>
+<li>Smart ventilation</li>
+<li>Smart locks</li>
+<li>Smart lighting</li>
+</ul>
+<h3><a name="smart-irrigation-system" class="heading-anchor" href="#smart-irrigation-system" rel="nofollow" aria-hidden="true"></a>Smart Irrigation System</h3>
+<pre class='mermaid'>flowchart LR
+    ss[Sensing 
+    System] -->
+    cc[Control
+    Circuit] -->
+    wp[Water
+    Pump] -->
+    Soil --> ss
+    ps[Power Supply] --> cc
+</pre>
+<p>Solution that optimizes water usage in agriculture and landscaping.</p>
+<h3><a name="smart-farming" class="heading-anchor" href="#smart-farming" rel="nofollow" aria-hidden="true"></a>Smart Farming</h3>
+<pre class='mermaid'>flowchart LR
+    Oscillator --> cc[Control
+    Circuit]
+    ps[Power Supply] --> cc
+    cc --> LCD
+    cc --> Motor
+    cc --> Network
+</pre>
+<p><strong>Oscillator:</strong> Generates a clock signal, essential for timing and synchronization within the microcontroller</p>
+<h2><a name="cloud" class="heading-anchor" href="#cloud" rel="nofollow" aria-hidden="true"></a>Cloud</h2><h3><a name="cloud-vs-fog-vs-edge-computing" class="heading-anchor" href="#cloud-vs-fog-vs-edge-computing" rel="nofollow" aria-hidden="true"></a>Cloud vs Fog vs Edge Computing</h3>
+<pre class='mermaid'>flowchart TD
+	1[Cloud Computing]-->2[Fog Computing]
+	2-->3[Edge Computing]
+</pre>
+<table>
+<thead>
+<tr>
+<th><strong>Aspect</strong></th>
+<th><strong>Edge Computing</strong></th>
+<th><strong>Fog Computing</strong></th>
+<th><strong>Cloud Computing</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>Location</strong></td>
+<td>Local devices</td>
+<td>Intermediate layer</td>
+<td>Centralized data centers</td>
+</tr>
+
+<tr>
+<td><strong>Latency</strong></td>
+<td>Very low</td>
+<td>Low</td>
+<td>Higher</td>
+</tr>
+
+<tr>
+<td><strong>Bandwidth Usage</strong></td>
+<td>Minimize</td>
+<td>Reduces usage</td>
+<td>Higher usage</td>
+</tr>
+
+<tr>
+<td><strong>Scalability</strong></td>
+<td>Limited</td>
+<td>More scalable</td>
+<td>Highly scalable</td>
+</tr>
+
+<tr>
+<td><strong>Data Storage</strong></td>
+<td>Minimal storage</td>
+<td>Temporary storage</td>
+<td>Extensive storage</td>
+</tr>
+
+<tr>
+<td><strong>Use Cases</strong></td>
+<td>Real-time apps</td>
+<td>Low-latency applications</td>
+<td>Heavy processing</td>
+</tr>
+
+<tr>
+<td><strong>Management</strong></td>
+<td>Limited management</td>
+<td>Requires managing fog and edge</td>
+<td>Centralized management</td>
+</tr>
+
+<tr>
+<td><strong>Security</strong></td>
+<td>Device-level risks</td>
+<td>Enhanced but still risky</td>
+<td>Robust protocols, potential risks</td>
+</tr>
+</tbody>
+</table>
+<h3><a name="types-of-cloud" class="heading-anchor" href="#types-of-cloud" rel="nofollow" aria-hidden="true"></a>Types of Cloud</h3>
+<p><strong>Public Cloud</strong></p>
+
+<pre class='mermaid'>flowchart TB
+    c((Cloud Service
+    Provider))
+    Enterprise1 <--> c
+    Enterprise2 <--> c
+    c --> User1
+    c --> User2
+</pre>
+<p><strong>Private Cloud</strong></p>
+
+<pre class='mermaid'>flowchart TB
+    c((Cloud Service
+    Provider))
+    Enterprise1 <--> c
+    c --> |Dedicated Server| Enterpirse2
+</pre>
+<p><strong>Hybrid Cloud</strong></p>
+
+<p>Combination of Public and Private cloud.</p>
+
+<p><strong>Community Cloud</strong></p>
+
+<p>Fulfill specific need of community of a business sector.</p>
+
+<pre class='mermaid'>flowchart TB
+    c --> Enterprise1
+    c --> Enterpirse2
+    c --> Enterpirse3
+
+    subgraph Dedicated to Community
+        c((Cloud Service
+        Provider))
+    end
+
+    subgraph Community User
+        Enterprise1
+        Enterpirse2
+        Enterpirse3
+    end
+</pre><h3><a name="cloud-computing" class="heading-anchor" href="#cloud-computing" rel="nofollow" aria-hidden="true"></a>Cloud Computing</h3>
+<p>The practice of using a network of remote server hosted on the internet to store manage and process data.</p>
+
+<ul>
+<li><strong>Software as a Service (SaaS)</strong>
+
+<ul>
+<li>Delivering application over the internet.</li>
+<li>Example: Slack, Salesforce, Google Drive</li>
+</ul></li>
+<li><strong>Platform as a Service (PaaS)</strong>
+
+<ul>
+<li>Platform and enviroment to allow developers to build over internet</li>
+<li>Example: AWS, Azure, Google Cloud</li>
+</ul></li>
+<li><strong>Infrastructure as a Service (IaaS)</strong>
+
+<ul>
+<li>Provides on-demand access to computing resources: storage, netwroking, servers and more.</li>
+<li>Example: AWS, Azure, Google Cloud</li>
+</ul></li>
+<li><strong>Function as a Service (FaaS)</strong>
+
+<ul>
+<li>Allows developers to run and manage code without needing to build and maintain the infrastructure.</li>
+<li>Example: AWS Lambda, Azure Functions, Google Cloud Functions, Cloudflare Workers</li>
+</ul></li>
+</ul>
+<h2><a name="data" class="heading-anchor" href="#data" rel="nofollow" aria-hidden="true"></a>Data</h2><h3><a name="data-retention" class="heading-anchor" href="#data-retention" rel="nofollow" aria-hidden="true"></a>Data Retention</h3>
+<p>A <strong>data retention strategy</strong> outlines how an organization manages the storage, archiving, and deletion of data over time.</p>
+
+<ul>
+<li>Data Identification</li>
+<li>Data Classification</li>
+<li>Retention Period
+
+<ul>
+<li>Legal</li>
+<li>Business</li>
+<li>Industry</li>
+</ul></li>
+<li>Storage Location
+
+<ul>
+<li>Local</li>
+<li>Cloud</li>
+<li>Hybrid</li>
+</ul></li>
+<li>Data Security and Privacy</li>
+<li>Data Deletion</li>
+</ul>
+<h3><a name="data-refineries" class="heading-anchor" href="#data-refineries" rel="nofollow" aria-hidden="true"></a>Data Refineries</h3>
+<p>A data lake, while a powerful tool for storing vast amounts of raw data, can quickly turn into a data swamp if not properly managed.</p>
+
+<p>They are essentially data processing pipelines that transform raw data into refined, usable information.</p>
+
+<p><strong>How Data Refineries Work</strong></p>
+
+<ol>
+<li><strong>Data Ingestion</strong></li>
+<li><strong>Data Cleaning and Standardization:</strong> </li>
+<li><strong>Data Transformation</strong></li>
+<li><strong>Data Security and Privacy</strong></li>
+</ol>
+
+<p><strong>The Role of Data Refineries</strong></p>
+
+<ul>
+<li><strong>Prevent Data Swamp</strong></li>
+<li><strong>Improve Data Quality</strong></li>
+<li><strong>Enhance Data Accessibility</strong> </li>
+<li><strong>Protect Data Privacy</strong></li>
+</ul>
+<h3><a name="data-visualization" class="heading-anchor" href="#data-visualization" rel="nofollow" aria-hidden="true"></a>Data Visualization</h3>
+<p><strong>IoT Visualization</strong>_ refers to the process of representing data from connected IoT devices in visual formats like graphs, charts, and maps.</p>
+
+<p>Types of Visualization formats:</p>
+
+<ul>
+<li>Graphs</li>
+<li>Charts</li>
+<li>Maps</li>
+<li>Table</li>
+</ul>
+
+<p>Types of Visualizations:</p>
+
+<ul>
+<li><strong>Time Series Visualization</strong></li>
+<li><strong>Geospatial Visualization</strong></li>
+<li><strong>Interactive Visualization</strong></li>
+<li><strong>Dashboard Creation</strong></li>
+</ul>
+<h3><a name="hadoop" class="heading-anchor" href="#hadoop" rel="nofollow" aria-hidden="true"></a>Hadoop</h3>
+<p>Hadoop is an open-source framework that stores and processes large amounts of data for applications</p>
+
+<p><img loading="lazy" src="../Sem/assets/How-Hadoop-Works-1.webp" alt="" /></p>
+
+		</main>
+		
+		<details id="table-of-content">
+		   <summary>Table of Content</summary>
+		<nav>
+<ul>
+<li><a href="#shorts">Shorts</a></li>
+<li><a href="#smart-device">
+Smart Device</a>
+<ul>
+<li><a href="#actuators">
+Actuators</a></li>
+<li><a href="#sensors">
+Sensors</a></li>
+</ul></li>
+<li><a href="#protocols">
+Protocols</a>
+<ul>
+<li><a href="#zigbee-ieee-802-15-4">
+ZigBee (IEEE 802.15.4)</a></li>
+<li><a href="#rfid">
+RFID</a></li>
+<li><a href="#z-wave">
+Z-Wave</a></li>
+<li><a href="#mqtt-vs-coap">
+MQTT vs CoAP</a>
+<ul>
+<li><a href="#mqtt">
+MQTT</a>
+<ul>
+<li><a href="#mqtt-sn">
+MQTT-SN</a></li>
+</ul></li>
+<li><a href="#coap">
+CoAP</a></li>
+</ul></li>
+<li><a href="#amqp">
+AMQP</a></li>
+<li><a href="#html-vs-websocket">
+HTML vs WebSocket</a>
+<ul>
+<li><a href="#html">
+HTML</a></li>
+<li><a href="#websocket">
+WebSocket</a></li>
+</ul></li>
+<li><a href="#lorawan">
+LoRaWAN</a></li>
+<li><a href="#lte-lte-a-lora-and-lorawan">
+LTE, LTE-A, LoRa, and LoRaWAN</a></li>
+<li><a href="#bluetooth-low-energy">
+Bluetooth Low Energy</a></li>
+<li><a href="#bluetooth-vs-zigbee">
+Bluetooth vs ZigBee</a></li>
+<li><a href="#ieee-802-11-wifi">
+IEEE 802.11 Wifi</a></li>
+<li><a href="#stomp">
+STOMP</a></li>
+</ul></li>
+<li><a href="#iot">
+IOT</a>
+<ul>
+<li><a href="#iot-functional-block">
+IoT Functional Block</a></li>
+<li><a href="#iot-architecture">
+IoT architecture</a></li>
+<li><a href="#iot-communication-model">
+IOT Communication Model</a></li>
+<li><a href="#iot-data-visualization">
+IoT Data Visualization</a></li>
+<li><a href="#nosql-in-iot">
+NoSQL in IoT</a></li>
+<li><a href="#need-of-new-network-architecture-protocol-in-iot">
+Need of new network architecture/protocol in IoT</a></li>
+<li><a href="#iot-analytics">
+IOT Analytics</a>
+<ul>
+<li><a href="#iot-analytics-in-healthcare">
+IOT Analytics in Healthcare</a></li>
+<li><a href="#iot-data-analytics-vs-iot-network-analytics">
+IoT data analytics vs IoT network analytics</a></li>
+</ul></li>
+<li><a href="#i-iot">
+I-IoT</a></li>
+<li><a href="#iot-world-forum-iotwf">
+IoT World Forum (IoTWF)</a></li>
+<li><a href="#internet-of-behavior-iob">
+Internet of Behavior (IOB)</a></li>
+</ul></li>
+<li><a href="#smart-devices">
+Smart Devices</a>
+<ul>
+<li><a href="#smart-home">
+Smart Home</a></li>
+<li><a href="#smart-smoke-detection-system">
+Smart Smoke detection system</a></li>
+<li><a href="#smart-irrigation-system">
+Smart Irrigation System</a></li>
+<li><a href="#smart-farming">
+Smart Farming</a></li>
+</ul></li>
+<li><a href="#cloud">
+Cloud</a>
+<ul>
+<li><a href="#cloud-vs-fog-vs-edge-computing">
+Cloud vs Fog vs Edge Computing</a></li>
+<li><a href="#types-of-cloud">
+Types of Cloud</a></li>
+<li><a href="#cloud-computing">
+Cloud Computing</a></li>
+</ul></li>
+<li><a href="#data">
+Data</a>
+<ul>
+<li><a href="#data-retention">
+Data Retention</a></li>
+<li><a href="#data-refineries">
+Data Refineries</a></li>
+<li><a href="#data-visualization">
+Data Visualization</a></li>
+<li><a href="#hadoop">
+Hadoop</a></li>
+</ul></li>
+</ul>
+</nav>
+
+		</details>
+		
+		<footer>
+			<p style="text-align: center; font-size: small; margin-top: 5em;">
+				<a href="https://anzenkodo.github.io/license">LICENSE</a>
+			</p>
+		</footer>
+	</body>
+	<script src="https://AnzenKodo.github.io/assets/js/mermaid.js"></script>
+	<script id="MathJax-script" async src="https://AnzenKodo.github.io/assets/js/mathjax.js"></script>
+	<script>
+		/* document.getElementById('video').addEventListener('click', (ele) => {
+			 if (ele.target.paused) {
+				 ele.target.play();
+			 } else {
+				 ele.target.pause();
+			 }
+		}); */
+
+		mermaid.initialize({
+			theme: "neutral",
+			themeVariables: {
+			    lineColor: "#939598",
+			}
+		});
+
+		MathJax = {
+		  tex: {
+			inlineMath: [['$', '$']],
+			displayMath: [['$$', '$$']],
+		  }
+		};
+	</script>
+</html>

@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Blockchain - AK#Notes</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="#FF6C22">
+		<meta name="description" content="## Explain Simplified Payment Verification Nodes.  SPV Nodes, or Simplified Payment Verification Nod">
+		<meta property="og:description" content="## Explain Simplified Payment Verification Nodes.  SPV Nodes, or Simplified Payment Verification Nod">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<meta property="og:image:alt" content="AK#Notes logo">
+		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="Blockchain - AK#Notes">
+		<meta property="og:url" content="https://AnzenKodo.github.io/notes/notes/Collage/Sem8/UT1/Blockchain.html">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+
+			:root {
+				/* color-scheme: dark light; */
+				color-scheme: dark;
+				--theme: #FF6C22;
+			}
+			body {
+				max-width: 40rem;
+				margin: 0 auto;
+				font-family: system-ui;
+				padding: 0 1em;
+				color: inherit !important;
+				word-break: break-word;
+			}
+			h1, h2, h3, h4, h5, h6 {
+				margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+				font-size: 2rem;
+			}
+			h3 {
+				font-size: 1.8rem;
+			}
+			h4 {
+				font-size: 1.5rem;
+			}
+			h5 {
+				font-size: 1.3rem;
+			}
+			h6 {
+				font-size: 1rem;
+			}
+			p, li, td, code {
+				line-height: 1.5rem;
+			}
+			a {
+				color: var(--theme);
+				text-decoration: none;
+			}
+			a:hover, a:focus {
+				text-decoration: underline;
+			}
+			a:active {
+				background: var(--theme);
+				color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+				margin-top: .5rem;
+			}
+			li {
+				margin-bottom: .5rem;
+			}
+			table {
+				border-collapse: collapse;
+				overflow-x: auto;
+				display: block;
+				word-break: auto-phrase;
+				margin: 1rem 0;
+			}
+			th {
+				font-size: 1.1rem;
+				border: 2px solid;
+				padding: .3rem .3rem;
+			}
+			td {
+				border: 1px solid;
+				padding: .3rem .5rem;
+			}
+			blockquote {
+				margin-left: 0;
+				margin-right: 0;
+				border: 1px solid;
+				border-left: 10px solid;
+				padding: 0 1rem;
+			}
+				.code-block {
+				background: black;
+				overflow-x: auto;
+				padding: 0em 1em;
+				border: 1px solid;
+			}
+			.code-block-language-name {
+				position: sticky;
+				left: 95%;
+				top: .5em;
+				font-weight: bold;
+				color: white;
+			}
+			:not(pre.chroma) > code {
+				border: 1px solid;
+				padding: .3rem .2rem .2rem .2rem;
+			}
+			img {
+				max-width: 100%;
+				display: block;
+				margin: 0 auto;
+			}
+			[href="#skip-top-main"] {
+				padding: 0.3em;
+				position: absolute;
+				transform: translateY(-1000%);
+			}
+			[href="#skip-top-main"]:focus {
+				transform: translateY(0%);
+				background: var(--theme);
+				color: inherit;
+			}
+			#table-of-content {
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+				background: black;
+				padding: 0.5rem 1em;
+				z-index: 1;
+				color: white;
+			}
+			#table-of-content[open] {
+				max-height: 90%;
+				overflow-y: auto;
+				bottom: 50px;
+				margin-left: 1em;
+			}
+			#table-of-content[open] summary {
+				background: black;
+				padding: 0.5em 1em;
+				text-align: center;
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+			}
+			#table-of-content ul:first-child {
+				padding-left: 1em;
+				margin-top: 1.5em;
+			}
+			.heading-anchor::before {
+				margin-right: .5rem;
+			}
+		    h2 .heading-anchor::before {
+    			content: "#";
+    			margin-right: .5rem;
+		    }
+            h3 .heading-anchor::before {
+				content: "##";
+				margin-right: .5rem;
+			}
+            h4 .heading-anchor::before {
+				content: "###";
+				margin-right: .5rem;
+			}
+            h5 .heading-anchor::before {
+				content: "####";
+				margin-right: .5rem;
+			}
+            h6 .heading-anchor::before {
+				content: "#####";
+				margin-right: .5rem;
+			}
+			.mermaid {
+				background: black;
+				border: 1px solid;
+				margin-top: 1rem;
+				padding: 1rem;
+				font-family: monospace;
+			}
+			.mermaid svg {
+				display: block;
+				margin: auto;
+			}
+			.mermaid:has(svg) {
+				background: none;
+				border: none;
+				margin-top: 1rem;
+				padding: 0;
+			}
+			mjx-container {
+				display: math;
+				overflow-y: hidden;
+				overflow-x: auto;
+				max-width: 100%;
+				padding-bottom: .8rem;
+			}
+			iframe {
+				width: 100%;
+				height: 21rem;
+				margin: 1rem 0;
+			}
+			video {
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<a href="#skip-top-main">Skip to main</a>
+		<header>
+<!--		<h1 style="text-align: center;">-->
+			<h1 style="text-align: center;">
+				<a href="https://AnzenKodo.github.io">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+			</h1><nav style="border-top: 1px solid gray;border-bottom: 1px solid gray;padding: .5rem 0;text-align: center;margin: 0 0 2rem 0;color: gray;clear: left;line-height: 1.6rem;">
+				<a href="https://AnzenKodo.github.io/notes">Home</a> | <a href="https://AnzenKodo.github.io">About</a> | <a href="https://AnzenKodo.github.io/blogroll">Blogroll</a> | <a href="https://github.com/AnzenKodo">Github</a> | <a href="https://x.com/AnzenKodo">𝕏</a>
+			</nav>
+			<!-- <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;"> -->
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem; margin-top: 0;">Blockchain</h1>
+			<h2><a name="explain-simplified-payment-verification-nodes" class="heading-anchor" href="#explain-simplified-payment-verification-nodes" rel="nofollow" aria-hidden="true"></a>Explain Simplified Payment Verification Nodes.</h2>
+<p>SPV Nodes, or Simplified Payment Verification Nodes, are a type of node in blockchain networks, often referred to as light nodes.</p>
+
+<p><strong>Simplified Payment Verification</strong> (SPV) Nodes are light nodes in blockchain networks that verify transactions without storing the entire blockchain, relying on full nodes for data.</p>
+
+<p>SPV Nodes use block headers and Merkle proofs for efficient, resource-light verification, suitable for devices like smartphones.</p>
+<h3><a name="what-is-the-privacy-solution-for-spv-nodes" class="heading-anchor" href="#what-is-the-privacy-solution-for-spv-nodes" rel="nofollow" aria-hidden="true"></a>What is the Privacy solution for SPV nodes?</h3>
+<ul>
+<li>Reduced Data Exposure
+
+<ul>
+<li>SPV nodes use Merkle proofs to verify transactions.</li>
+<li>They request only the block headers and the necessary Merkle branches, reducing the amount of data they need to download and store.</li>
+</ul></li>
+<li>Random Connections
+
+<ul>
+<li>To prevent attacks like Denial of Service (DoS) or double-spending, SPV nodes make random connections to different full nodes. This increases the likelihood of communicating with at least one honest node.</li>
+<li>Also connecting to random set of nodes reduces the risk of being tracked by a single entity.</li>
+</ul></li>
+<li>Tor Network
+
+<ul>
+<li>Using the Tor network can help anonymize the connections between SPV nodes and full nodes, enhancing privacy.</li>
+</ul></li>
+<li>.<a href="https://www.youtube.com/watch?v=V3pzxngeLqw">Bloom filters</a>
+
+<ul>
+<li>Bloom filters allow SPV nodes to request a set of transactions without revealing the exact transactions they are interested in, providing a layer of privacy.</li>
+<li>Essentially the Bloom filter contains the position for every transaction in the mempool. By marking the desired position as 1 and sending the request to full node, the full node is able to determine which transactions have been requested.</li>
+<li><img loading="lazy" src="assets/item-not-membership-bloom-filter-1.webp" alt="" /></li>
+</ul></li>
+</ul>
+<h2><a name="explain-how-merkle-tree-is-created-how-merkle-root-is-used-what-is-merkle-proof" class="heading-anchor" href="#explain-how-merkle-tree-is-created-how-merkle-root-is-used-what-is-merkle-proof" rel="nofollow" aria-hidden="true"></a>Explain how Merkle Tree is created, how Merkle Root is used. What is Merkle Proof?</h2>
+<pre class='mermaid'>flowchart TD
+    th["Top Hash
+    *hash(Hash 0 + Hash 1)*"] --> h0["Hash 0
+    *hash(Hash 0-0 + Hash 0-1)*"]
+    th --> h1["Hash 1
+    *hash(Hash 1-0 + Hash 1-1)*"]
+    subgraph Block
+    t1 
+    t2
+    t3
+    t4
+    end
+    h0 --> h00["Hash 0-0
+    *hash(Transaction 1)*"] --> t1[Transaction 1]
+    h0 --> h01["Hash 0-1
+    *hash(Transaction 2)*"] --> t2[Transaction 2]
+    h1 --> h10["Hash 1-0
+    *hash(Transaction 3)*"] --> t3[Transaction 3]
+    h1 --> h11["Hash 1-1
+    *hash(Transaction 4)*"] --> t4[Transaction 4]
+</pre>
+<p><strong>Creation of a Merkle Tree</strong></p>
+
+<p>A Merkle Tree is a hierarchical data structure used to verify the integrity of data efficiently. Here's how it is constructed:</p>
+
+<ul>
+<li><strong>Step 1: Leaf Nodes</strong><br>
+Each data block (e.g., transactions in a blockchain) is hashed individually using a cryptographic hash function (e.g., SHA-256).<br></li>
+<li><strong>Step 2: Pairing and Hashing</strong>
+
+<ul>
+<li><strong>Even Number of Leaves</strong>: Pair adjacent hashes and hash them together.<br></li>
+<li><strong>Odd Number of Leaves</strong>: Duplicate the last hash to form a pair.<br></li>
+</ul></li>
+<li><strong>Step 3: Building the Tree</strong><br>
+Repeat the pairing process recursively until a single root hash remains:
+
+<ul>
+<li>Combine parent nodes to form higher-level nodes.</li>
+<li>Final root hash is the <strong>Merkle Root</strong>.</li>
+</ul></li>
+</ul>
+
+<p><strong>Merkle Root: Usage and Importance</strong></p>
+
+<ul>
+<li><strong>Data Integrity</strong>
+
+<ul>
+<li>Any alteration to a transaction (e.g., changing L1) changes its hash, propagating up the tree and altering the Merkle Root.</li>
+<li>The Merkle Root is embedded in the <strong>block header</strong> (e.g., in Bitcoin), making tampering evident.</li>
+</ul></li>
+<li><strong>Efficient Verification</strong>
+
+<ul>
+<li>Nodes can verify the inclusion of a transaction without downloading the entire dataset.</li>
+<li>Used in <strong>Simplified Payment Verification (SPV)</strong> for lightweight clients (e.g., mobile wallets).</li>
+</ul></li>
+</ul>
+
+<p><strong>Merkle Proof: Efficient Transaction Verification</strong></p>
+
+<p>A <strong>Merkle Proof</strong> is a cryptographic proof that a specific transaction is included in a block.</p>
+
+<p><strong>Steps to Verify a Merkle Proof</strong> (using L3 as an example):</p>
+
+<ol>
+<li>Start with the transaction hash: <code>Hash(L3)</code>.</li>
+<li>Combine it with its sibling hash (<code>Hash(L4)</code>) to compute:<br>
+<code>Hash(Hash(L3) + Hash(L4))</code> → Parent Node 2.</li>
+<li>Combine Parent Node 2 with its sibling (Parent Node 1) to compute:<br>
+<code>Hash(Parent Node 1 + Parent Node 2)</code> → Merkle Root.</li>
+<li>Compare the computed Merkle Root with the one in the block header. A match confirms the transaction's validity.</li>
+</ol>
+<h2><a name="explain-the-difference-between-mining-pool-transaction-pool-and-pool-server" class="heading-anchor" href="#explain-the-difference-between-mining-pool-transaction-pool-and-pool-server" rel="nofollow" aria-hidden="true"></a>Explain the difference between Mining Pool, Transaction Pool and Pool Server.</h2>
+<ul>
+<li><strong>Mining Pool</strong>
+
+<ul>
+<li><img loading="lazy" src="assets/Pasted%20image%2020250228093840.webp" alt="" /></li>
+<li><strong>Definition</strong>: A collaborative group of miners who combine computational resources to increase their chances of mining a block.</li>
+<li><strong>Purpose</strong>: Enhances profitability by pooling hash power, making block rewards more consistent for participants.</li>
+<li><strong>Operation</strong>:
+
+<ul>
+<li>Miners contribute computational power to solve cryptographic puzzles.</li>
+<li>Rewards (block subsidies + transaction fees) are distributed based on contributed work (e.g., shares).</li>
+</ul></li>
+<li><strong>Examples</strong>: Slush Pool, F2Pool.</li>
+</ul></li>
+<li><strong>Transaction Pool (Mempool)</strong><br>
+
+<ul>
+<li><img loading="lazy" src="assets/Pasted%20image%2020250228085332.webp" alt="" /></li>
+<li><strong>Definition</strong>: A decentralized, node-specific storage of unconfirmed transactions waiting to be included in a block.</li>
+<li><strong>Purpose</strong>: Acts as a temporary buffer where transactions are validated and prioritized (e.g., by fee rate).</li>
+<li><strong>Operation</strong>:
+
+<ul>
+<li>Each node maintains its own transaction pool.</li>
+<li>Miners select transactions from their pool to include in blocks, often prioritizing higher fees.</li>
+</ul></li>
+<li><strong>Key Feature</strong>: Dynamic and varies across nodes due to network latency and transaction selection strategies.<br></li>
+</ul></li>
+<li><strong>Pool Server</strong>
+
+<ul>
+<li><img loading="lazy" src="assets/Pasted%20image%2020250228094000.webp" alt="" /></li>
+<li><strong>Definition</strong>: The central server managing a <strong>mining pool</strong>, coordinating tasks and rewards for participating miners.</li>
+<li><strong>Purpose</strong>: Ensures efficient collaboration within the mining pool by assigning work and tracking contributions.</li>
+<li><strong>Operation</strong>:
+
+<ul>
+<li>Distributes block templates (transactions to mine) to miners.</li>
+<li>Aggregates computational results (&quot;shares&quot;) and validates successful blocks.</li>
+<li>Distributes rewards proportionally to miners’ contributions.</li>
+</ul></li>
+<li><strong>Key Feature</strong>: Centralized within the mining pool infrastructure but optional for miners (they can choose solo mining).</li>
+</ul></li>
+</ul>
+<h2><a name="explain-different-types-of-blockchain" class="heading-anchor" href="#explain-different-types-of-blockchain" rel="nofollow" aria-hidden="true"></a>Explain different types of Blockchain.</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020250228095153.webp" alt="" /></p>
+
+<ul>
+<li><strong>Public Blockchain</strong> (permissionless)
+
+<ul>
+<li><strong>Open Access</strong>: Anyone can join as a node and participate in the network upon consensus</li>
+<li><strong>Decentralized</strong> – No central authority; all nodes have equal rights.</li>
+<li><strong>Transparency</strong> – All transactions are visible to everyone on the network.</li>
+<li><strong>Examples</strong>: – Bitcoin, Ethereum.</li>
+<li><strong>Use Cases</strong>: – Cryptocurrencies, decentralized applications (dApps), and public records</li>
+</ul></li>
+<li><strong>Private Blockchain</strong> (permissioned)
+
+<ul>
+<li><strong>Restricted Access</strong>: Only authorized participants can join the network.</li>
+<li><strong>Centralized Control</strong>: Managed by a single organization or entity.</li>
+<li><strong>Privacy</strong>: Transactions are only visible to authorized participants.</li>
+<li><strong>Examples</strong>: – Hyperledger Fabric, R3 Corda.</li>
+<li><strong>Use Cases</strong>: – Supply chain management, internal audits, and enterprise solutions</li>
+</ul></li>
+<li><strong>Consortium Blockchain</strong> (Federated)
+
+<ul>
+<li><strong>Controlled Access</strong>: – Managed by a group of organizations.</li>
+<li><strong>Semi-Decentralized</strong>: – Multiple organizations share control, but not fully decentralized</li>
+<li><strong>Privacy and Transparency</strong> – Transactions are visible to consortium members.</li>
+<li><strong>Examples</strong>: – Quorum, Energy Web Foundation.</li>
+<li><strong>Use Cases</strong>: – Interbank settlements, trade finance, and collaborative projects.</li>
+</ul></li>
+<li><strong>Hybrid Blockchain</strong> (permissionless &amp; permissioned)
+
+<ul>
+<li><strong>Combination of Public and Private</strong>: – Features of both public and private blockchains</li>
+<li><strong>Controlled Access</strong>: – Certain data is public, while sensitive data is kept private.</li>
+<li><strong>Flexibility</strong>: – Organizations can customize the level of transparency and control.</li>
+<li><strong>Examples</strong>: – Dragonchain, XinFin</li>
+<li><strong>Use Cases</strong>: – Real estate, healthcare, and government services</li>
+</ul></li>
+</ul>
+<h3><a name="explain-what-is-a-byzantine-general-problem-and-how-is-it-relevant-in-any-consensus-mechanism" class="heading-anchor" href="#explain-what-is-a-byzantine-general-problem-and-how-is-it-relevant-in-any-consensus-mechanism" rel="nofollow" aria-hidden="true"></a>Explain what is a Byzantine General Problem and how is it relevant in any consensus mechanism.</h3>
+<p>A theoretical problem in distributed systems where <strong>nodes must agree on a unified action</strong> despite:</p>
+
+<ul>
+<li><strong>Malicious actors</strong> (traitors) spreading conflicting information.</li>
+<li><strong>Unreliable communication</strong> (messages delayed or lost).</li>
+</ul>
+
+<p><strong>Example</strong>:</p>
+
+<p>Imagine generals surrounding a city, needing to coordinate an attack via messengers. Some generals are traitors who send false orders. The loyal generals must agree on a plan despite deception.</p>
+
+<p><strong>Relevance to Blockchain Consensus</strong></p>
+
+<p>Blockchains are decentralized networks where nodes must agree on transaction validity. The BGP highlights the need for <strong>Byzantine Fault Tolerance (BFT)</strong> to ensure consensus even if some nodes:</p>
+
+<ul>
+<li><strong>Lie</strong> (e.g., double-spend attacks).</li>
+<li><strong>Fail</strong> (e.g., go offline).</li>
+</ul>
+
+<p><strong>How Consensus Mechanisms Solve Byzantine General Problem</strong></p>
+
+<ol>
+<li><strong>Proof of Work (PoW)</strong>
+
+<ul>
+<li><strong>Mechanism</strong>: Miners solve cryptographic puzzles to validate blocks.</li>
+<li><strong>BFT</strong>: Attackers need &gt;51% of computational power to disrupt consensus.</li>
+</ul></li>
+<li><strong>Proof of Stake (PoS)</strong>
+
+<ul>
+<li><strong>Mechanism</strong>: Validators are chosen based on their staked tokens.</li>
+<li><strong>BFT</strong>: Malicious validators risk losing their stake (&quot;slashing&quot;).</li>
+</ul></li>
+</ol>
+<h2><a name="explain-bitcoin-mining-and-transaction-life-cycle-with-the-help-of-a-neat-diagram" class="heading-anchor" href="#explain-bitcoin-mining-and-transaction-life-cycle-with-the-help-of-a-neat-diagram" rel="nofollow" aria-hidden="true"></a>Explain bitcoin mining and transaction life cycle with the help of a neat diagram.</h2>
+<pre class='mermaid'>sequenceDiagram
+    participant User
+    participant FullNode as Full Node
+    participant MinerNode as Miner Node (Mempool)
+    participant OtherMiners as Other Miner Nodes
+
+    User->>FullNode: creates unconfirmed transaction
+    FullNode->>FullNode: validates the transaction
+    FullNode->>MinerNode: broadcast valid unconfirmed transaction
+    MinerNode->>FullNode: fetches the list of unconfirmed transactions
+    MinerNode->>MinerNode: receives difficulty target, nonce
+    MinerNode->>MinerNode: validates transaction
+    MinerNode->>MinerNode: creates the block hash
+    MinerNode->>MinerNode: solve the PoW puzzle (block created)
+    alt if it fulfills the longest chain rule
+        MinerNode->>OtherMiners: broadcasts the block to other miners
+    end
+    OtherMiners->>OtherMiners: validates confirmed transaction
+    OtherMiners->>OtherMiners: validates blocks
+    alt if it fulfills the longest chain rule
+        OtherMiners->>OtherMiners: adds the block to its blockchain
+        OtherMiners->>OtherMiners: broadcasts the block to other miners
+    end
+</pre><h2><a name="explain-the-key-features-of-any-distributed-ledger-technology" class="heading-anchor" href="#explain-the-key-features-of-any-distributed-ledger-technology" rel="nofollow" aria-hidden="true"></a>Explain the key features of any Distributed Ledger Technology.</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020250228101801.webp" alt="" /></p>
+
+<p><strong>Distributed Ledger Technology</strong> (DLT) is a way to record and share data across many computers, called nodes, where each node has a full copy of the ledger. It’s like a shared, digital notebook that everyone in the network can see and agree on, used for things like tracking transactions in cryptocurrencies or supply chains.</p>
+
+<ul>
+<li><strong>Decentralize</strong>: There’s no central authority; control is shared among all participants, making it harder for one party to manipulate the data.</li>
+<li><strong>Distributed Copies</strong>: Each node keeps its own version of the ledger, so if one fails, others still have the data, keeping things running smoothly.</li>
+<li><strong>Consensus</strong>: Nodes use consensus methods, like voting or solving puzzles, to agree on what’s true, ensuring everyone sees the same thing.</li>
+<li><strong>Locked with Codes</strong>: It uses cryptography, like secret codes, to secure data, so it’s tough for hackers to change anything without permission.</li>
+<li><strong>Immutable</strong>: Once something is written, it’s hard to alter, like carving in stone, preserving the history of all actions.</li>
+</ul>
+<h2><a name="what-are-the-different-types-of-dlt" class="heading-anchor" href="#what-are-the-different-types-of-dlt" rel="nofollow" aria-hidden="true"></a>What are the different types of DLT?</h2>
+<ul>
+<li><strong>Blockchain</strong>
+
+<ul>
+<li>The most famous type of DLT, where data is organized into a chain of blocks. Each block contains a list of transactions or records, linked to the previous block via a cryptographic hash.</li>
+<li>Examples:
+
+<ul>
+<li>Bitcoin: A public blockchain for decentralized currency.</li>
+<li>Ethereum: A public blockchain with smart contract functionality.</li>
+</ul></li>
+<li><img loading="lazy" src="assets/Pasted%20image%2020250227221950.webp" alt="|573" /></li>
+</ul></li>
+<li><strong>DAG</strong> (Directed Acyclic Graph)
+
+<ul>
+<li>Instead of a linear chain, DAG-based DLT organizes transactions in a graph structure where each transaction confirms one or more previous transactions, forming a web-like network with no cycles (hence “acyclic”).</li>
+<li>Example:</li>
+<li><img loading="lazy" src="assets/Pasted%20image%2020250228102605.webp" alt="" /></li>
+</ul></li>
+<li><strong>Holochain</strong>
+
+<ul>
+<li>Each participant has their own chain which contains the list of actions (create, delete, update) performed by the participant (also called personal data journal or source chain), and data is validated through a distributed hash table (DHT).</li>
+<li><strong>Example</strong>:
+
+<ul>
+<li>Holo: A platform for decentralized apps and hosting.</li>
+</ul></li>
+<li><img loading="lazy" src="assets/Pasted%20image%2020250228103205.webp" alt="" /></li>
+</ul></li>
+<li><strong>Hashgraph</strong>
+
+<ul>
+<li>A specific flavor of DLT (sometimes grouped with DAGs) that uses a gossip protocol and virtual voting to achieve consensus.</li>
+<li><img loading="lazy" src="assets/Pasted%20image%2020250228103610.webp" alt="" /></li>
+</ul></li>
+<li><strong>Tempo</strong> (Radix)
+
+<ul>
+<li>Uses a tempo ledger that combines elements of blockchain and DAG.</li>
+<li>It stores the transactions in blockchain as well as DAG format. Blockchain helps to provide the audit trail. DAG allows for parallel processing thereby enabling network scalability and efficiency.</li>
+</ul></li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th><strong>Type</strong></th>
+<th><strong>Blockchain</strong></th>
+<th><strong>DAG</strong></th>
+<th><strong>Holochain</strong></th>
+<th><strong>Hashgraph</strong></th>
+<th><strong>Tempo (Radix)</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>Data Structure</strong></td>
+<td>Blockchain</td>
+<td>Graph structure</td>
+<td>DHT chain</td>
+<td>Graph structure (Array of Gossip History)</td>
+<td>Blockchain + DAG (history + transaction)</td>
+</tr>
+
+<tr>
+<td><strong>Mining Nodes</strong></td>
+<td>Allocated Miners</td>
+<td>All nodes are miners</td>
+<td>Random set of peers</td>
+<td>Gossiping peers</td>
+<td>Gossiping peers</td>
+</tr>
+
+<tr>
+<td><strong>Consensus Mechanism</strong></td>
+<td>PoW, PoS</td>
+<td>Gossip of Gossip voting, aBFT</td>
+<td>Gossip protocol DNA (hApp App specific validation rules), Local consensus</td>
+<td>Gossip of Gossip Virtual voting, aBFT</td>
+<td>Consensus between nodes representing parties</td>
+</tr>
+
+<tr>
+<td><strong>Designed for</strong></td>
+<td>Classical DLTs</td>
+<td>Performance</td>
+<td>App Development</td>
+<td>Real-time apps</td>
+<td>Private business collaborations</td>
+</tr>
+</tbody>
+</table>
+<h3><a name="explain-the-difference-between-proof-of-work-proof-of-stake-and-gossip-protocol-consensus-techniques" class="heading-anchor" href="#explain-the-difference-between-proof-of-work-proof-of-stake-and-gossip-protocol-consensus-techniques" rel="nofollow" aria-hidden="true"></a>Explain the difference between Proof of Work, Proof of Stake and Gossip protocol consensus techniques.</h3>
+<p><img loading="lazy" src="assets/Pasted%20image%2020250227215625.webp" alt="" /></p>
+
+<iframe src="https://www.youtube.com/embed/ua3vkzS3jUM" title="IS HASHGRAPH THE NEW BLOCKCHAIN ? WTF IS GOSSIP PROTOCOL?!?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<iframe src="https://www.youtube.com/embed/8OUoyCFZHbQ" title="Gossip Protocol | System Design Concepts | System Design Interview #gossipprotocol #systemdesign" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<ol>
+<li><strong>Proof of Work (PoW)</strong>
+
+<ul>
+<li><strong>Mechanism</strong>: Miners compete to solve cryptographic puzzles using computational power. The first to solve the puzzle validates transactions and adds a block to the blockchain.</li>
+<li><strong>Key Characteristics</strong>:
+
+<ul>
+<li><strong>Energy-Intensive</strong>: High electricity consumption due to computational competition.</li>
+<li><strong>Security</strong>: Secured by the cost of acquiring hardware and energy; attacks are prohibitively expensive.</li>
+<li><strong>Decentralization</strong>: Open to anyone with hardware, but risks centralization via mining pools.</li>
+</ul></li>
+<li><strong>Examples</strong>: Bitcoin, Litecoin.</li>
+</ul></li>
+<li><strong>Proof of Stake (PoS)</strong>
+
+<ul>
+<li><strong>Mechanism</strong>: Validators are chosen based on the amount of cryptocurrency they &quot;stake&quot; (lock up as collateral). Selection often combines stake size with randomness.</li>
+<li><strong>Key Characteristics</strong>:
+
+<ul>
+<li><strong>Energy Efficiency</strong>: Minimal computational work compared to PoW.</li>
+<li><strong>Security</strong>: Validators risk losing their stake (slashing) for malicious acts.</li>
+<li><strong>Decentralization</strong>: Potential centralization if large stakeholders dominate.</li>
+</ul></li>
+<li><strong>Examples</strong>: Ethereum 2.0, Cardano.</li>
+</ul></li>
+<li><strong>Gossip Protocol-Based Consensus</strong>
+
+<ul>
+<li><img loading="lazy" src="assets/Pasted%20image%2020250228100621.webp" alt="" /></li>
+<li><img loading="lazy" src="assets/Pasted%20image%2020250228104155.webp" alt="" /></li>
+<li><strong>Mechanism</strong>: Nodes propagate information through random peer-to-peer communication (gossip). Consensus is achieved via structured voting or historical data sharing.</li>
+<li><strong>Key Characteristics</strong>:
+
+<ul>
+<li><strong>Efficiency</strong>: Information spreads exponentially, enabling fast agreement.</li>
+<li><strong>Scalability</strong>: High throughput with low latency due to parallel communication.</li>
+<li><strong>Security</strong>: Relies on redundancy and cryptographic checks; resistant to Sybil attacks.</li>
+</ul></li>
+<li><strong>Examples</strong>: Hedera Hashgraph (gossip about gossip + virtual voting), Apache Cassandra (for data dissemination).</li>
+</ul></li>
+</ol>
+<h2><a name="explain-the-block-header-data-structure-in-detail" class="heading-anchor" href="#explain-the-block-header-data-structure-in-detail" rel="nofollow" aria-hidden="true"></a>Explain the block header data structure in detail?</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020250227221311.webp" alt="" /></p>
+
+<table>
+<thead>
+<tr>
+<th><strong>Field</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>Version</strong></td>
+<td>Protocol version (e.g., Bitcoin v0.1).</td>
+</tr>
+
+<tr>
+<td><strong>Previous Block Hash</strong></td>
+<td>Cryptographic hash of the previous block’s header. Links blocks in a chain.</td>
+</tr>
+
+<tr>
+<td><strong>Merkle Root</strong></td>
+<td>Hash of all transactions in the block, organized into a Merkle tree.</td>
+</tr>
+
+<tr>
+<td><strong>Timestamp</strong></td>
+<td>Unix timestamp of block creation (seconds since Jan 1, 1970).</td>
+</tr>
+
+<tr>
+<td><strong>Difficulty Target</strong></td>
+<td>The mining difficulty required for the block’s Proof of Work (PoW).</td>
+</tr>
+
+<tr>
+<td><strong>Nonce</strong></td>
+<td>A number miners adjust to find a valid hash for PoW.</td>
+</tr>
+</tbody>
+</table>
+<h3><a name="how-are-blocks-linked-in-blockchain-and-how-does-it-ensure-data-integrity" class="heading-anchor" href="#how-are-blocks-linked-in-blockchain-and-how-does-it-ensure-data-integrity" rel="nofollow" aria-hidden="true"></a>How are blocks linked in blockchain and how does it ensure data integrity?</h3>
+<p><img loading="lazy" src="assets/Pasted%20image%2020250227221950.webp" alt="|573" /></p>
+
+<p>Blocks are linked cryptographically via the <strong>Previous Block Hash</strong> field:</p>
+
+<ol>
+<li><strong>Chain Formation</strong>:
+
+<ul>
+<li>Each block’s header contains the hash of the previous block’s header.</li>
+<li>Example: Block 2’s header includes the hash of Block 1’s header.</li>
+</ul></li>
+<li><strong>Hash Function</strong>:
+
+<ul>
+<li>A cryptographic hash (e.g., SHA-256 in Bitcoin) converts the block header into a fixed-length string.</li>
+<li>Even a tiny change in the header (e.g., altering a transaction) completely changes the hash.</li>
+</ul></li>
+<li><strong>Immutable Chain</strong>:
+
+<ul>
+<li>Altering a single block requires recalculating all subsequent blocks’ hashes, which is computationally infeasible in a decentralized network.</li>
+</ul></li>
+</ol>
+
+<p>The blockchain uses three core mechanisms to ensure data integrity:</p>
+
+<ol>
+<li>Cryptographic Hashing
+
+<ul>
+<li><strong>Each Block’s Identity</strong>:
+
+<ul>
+<li>The block header is hashed to create a unique identifier (e.g., <code>000000000019d6...</code> in Bitcoin).</li>
+<li>Any modification to the header or transactions changes this hash, breaking the chain.</li>
+</ul></li>
+<li><strong>Merkle Root</strong>:
+
+<ul>
+<li>Transactions in the block are hashed pairwise to form a <strong>Merkle tree</strong>.</li>
+<li>The root hash (in the header) summarizes all transactions.</li>
+<li>Tampering with a single transaction changes the Merkle root, invalidating the block.</li>
+</ul></li>
+</ul></li>
+<li>Proof of Work (PoW)
+
+<ul>
+<li><strong>Mining Process</strong>:
+
+<ul>
+<li>Miners compete to find a nonce that produces a block hash below the <strong>difficulty target</strong>.</li>
+<li>Requires massive computational effort, making tampering economically impractical.</li>
+</ul></li>
+<li><strong>Security</strong>:
+
+<ul>
+<li>Attackers would need &gt;51% of the network’s computational power to rewrite history.</li>
+</ul></li>
+</ul></li>
+<li>Decentralized Consensus
+
+<ul>
+<li><strong>Network Agreement</strong>:
+
+<ul>
+<li>Nodes validate new blocks by checking:
+
+<ul>
+<li>The previous block hash matches the chain’s history.</li>
+<li>The Merkle root is valid.</li>
+<li>The PoW nonce meets the difficulty target.</li>
+</ul></li>
+</ul></li>
+<li><strong>Rejection of Invalid Blocks</strong>
+
+<ul>
+<li>Blocks failing these checks are rejected by honest nodes.</li>
+</ul></li>
+</ul></li>
+</ol>
+<h2><a name="what-are-the-different-data-stored-in-bitcoin-transaction" class="heading-anchor" href="#what-are-the-different-data-stored-in-bitcoin-transaction" rel="nofollow" aria-hidden="true"></a>What are the different data stored in Bitcoin Transaction.</h2>
+<p>See <strong>Explain the block header data structure in detail?</strong></p>
+<h3><a name="explain-how-utxo-data-works-in-every-transaction" class="heading-anchor" href="#explain-how-utxo-data-works-in-every-transaction" rel="nofollow" aria-hidden="true"></a>Explain how UTXO data works in every transaction.</h3>
+<p>UTXO <strong>(Unspent Transaction Output)</strong> represents the amount of digital currency remaining after a cryptocurrency transaction.</p>
+
+<p>It is the &quot;change&quot; that is left over and can be used in future transactions.</p>
+
+<p>Function:</p>
+
+<ul>
+<li>UTXOs are used to track the ownership of bitcoins.</li>
+<li>Each transaction consumes UTXOs as inputs and creates new UTXOs as outputs</li>
+</ul>
+
+<p>UTXOs (Unspent Transaction Outputs) are stored in a separate data structure called the <strong>UTXO set</strong>.</p>
+
+<p><strong>Example</strong></p>
+
+<p>Lets assume a scenario where Anu sends 2 btc and Radha sends 3 btc to me. Then I send forward 4 btc to Komal. How does the UTXO set look like:</p>
+
+<pre class='mermaid'>flowchart LR
+    Anu --> |#t1 2btc| Me
+    Radha --> |#t2 3btc| Me
+  subgraph Me
+    direction RL
+    t1[#t1 2btc]
+    t2[#t2 3btc]
+  end
+  Me --> |#t3 4btc| t3[Input
+  #t1 2btc from Anu
+  #t2 3btc from Radha
+  Output
+  #t3 4btc to Komal
+  #t4 1btc back to me]
+</pre><h2><a name="explain-the-difference-between-p2pkh-p2kh-p2sh-bitcoin-transaction-types" class="heading-anchor" href="#explain-the-difference-between-p2pkh-p2kh-p2sh-bitcoin-transaction-types" rel="nofollow" aria-hidden="true"></a>Explain the difference between P2PKH, P2KH, P2SH bitcoin transaction types.</h2>
+<pre class='mermaid'>flowchart BT
+    subgraph "Pay to Public Key Hash (P2PKH)"
+        prik2[🔑 Private Key] 
+        --> pubk2[🔑 Public Key]
+        --> pkh[🔑 Public Key Hash]
+        --> spk2[📃 Script Public Key]
+    end
+    subgraph "Pay to Public Key (P2PK)"
+        prik1[🔑 Private Key] 
+        --> pubk1[🔑 Public Key]
+        --> spk1[📃 Script Public Key]
+    end
+</pre>
+<ul>
+<li>Pay-to-PubKey (P2PK)
+
+<ul>
+<li>Bitcoins are sent directly to a recipient public key</li>
+<li>The recipient must provide a signature to spend the bitcoins</li>
+</ul></li>
+<li>Pay-to-PubKeyHash (P2PKH)
+
+<ul>
+<li>The most common type, where bitcoins are sent to a public key hash (address).</li>
+<li>The recipient must provide a signature and public key to spend the bitcoins.</li>
+</ul></li>
+<li>Pay-to-ScriptHash (P2SH)
+
+<ul>
+<li><img loading="lazy" src="assets/Pasted%20image%2020250228111804.webp" alt="" /></li>
+<li>Bitcoins are sent to a script hash, allowing for more complex spending conditions like multisignature.</li>
+<li>Supports complex scripts like multi-signature (e.g., 2-of-3) or timelocks.</li>
+</ul></li>
+</ul>
+<h3><a name="what-is-a-segregated-witness-in-a-transaction-and-how-does-it-help-to-increase-the-transaction-per-second-tps" class="heading-anchor" href="#what-is-a-segregated-witness-in-a-transaction-and-how-does-it-help-to-increase-the-transaction-per-second-tps" rel="nofollow" aria-hidden="true"></a>What is a Segregated Witness in a Transaction and how does it help to increase the Transaction Per Second (TPS)?</h3>
+<p><img loading="lazy" src="assets/Pasted%20image%2020250228000712.webp" alt="" /></p>
+
+<ul>
+<li>Definition:
+
+<ul>
+<li>Introduced in 2017 via BIP 141</li>
+<li>Segregated Witness (SegWit) separates the &quot;witness&quot; data (signatures and public keys) from the main transaction data (inputs, outputs, etc.).</li>
+<li>This witness data is stored in a separate section of the block, not counted fully toward the traditional 1 MB block size limit.</li>
+</ul></li>
+<li>Impact on TPS:
+
+<ul>
+<li><strong>Increased Block Capacity</strong>: By segregating witness data, SegWit effectively raises the block size limit to approximately 4 MB.</li>
+<li><strong>Smaller Transactions</strong>: Removing signatures from the main data reduces transaction size, allowing more to fit in each block.</li>
+<li><strong>Higher Throughput</strong>: While Bitcoin’s base TPS is around 7 (due to 10-minute block intervals), SegWit increases on-chain capacity and supports off-chain scaling, indirectly raising the effective TPS.</li>
+<li><strong>Lightning Network</strong>
+<br></li>
+</ul></li>
+</ul>
+
+<p><strong>Example</strong>: A pre-SegWit block might fit 2,000 transactions, while a SegWit block could fit 3,000+, enhancing throughput and supporting scalable solutions.</p>
+<h2><a name="explain-the-difference-between-private-key-public-key-and-bitcoin-address" class="heading-anchor" href="#explain-the-difference-between-private-key-public-key-and-bitcoin-address" rel="nofollow" aria-hidden="true"></a>Explain the difference between Private key, Public Key and Bitcoin address.</h2>
+<ul>
+<li><strong>Private Key</strong><br>
+
+<ul>
+<li>A private key is like your secret password for your Bitcoin. It’s a long, random number you keep hidden, used to sign transactions to prove you own the funds. If someone gets your private key, they can spend your Bitcoin, so it’s critical to keep it safe.</li>
+</ul></li>
+<li><strong>Public Key</strong><br>
+
+<ul>
+<li>Think of the public key as a lock that matches your private key, the key. It’s derived from the private key and used to verify that transactions are signed by you. You can share it, and it’s used to create your Bitcoin address.</li>
+</ul></li>
+
+<li><p><strong>Bitcoin Address</strong></p>
+
+<ul>
+<li><p>This is like your Bitcoin bank account number, a shorter version of the public key made by hashing it. People use it to send Bitcoin to you. It starts with numbers or letters, like “1” or “3,” depending on the type.</p>
+
+<pre class='mermaid'>flowchart TB
+pubkey[🔑 Public Key] 
+--> SHA256([SHA256])
+--> RIPEMD160([RIPEMD160])
+--> prikey[🔑 Private Key]
+--> Base58([Base58 Encoding])
+--> add[📃 Address]
+</pre></li>
+</ul></li>
+</ul>
+<h3><a name="explain-different-types-of-wallet-technologies" class="heading-anchor" href="#explain-different-types-of-wallet-technologies" rel="nofollow" aria-hidden="true"></a>Explain different types of wallet technologies.</h3>
+<ul>
+<li><strong>Software Wallets</strong>: Apps on your computer or phone, like Bitcoin Core or Electrum, convenient but need antivirus protection.</li>
+<li><strong>Web Wallets</strong>: Accessed online, like Blockchain.com, easy but less secure as they’re managed by third parties.</li>
+<li><strong>Hardware Wallets</strong>: Physical devices like Trezor or Ledger, great for security as they store keys offline.</li>
+<li><strong>Paper Wallets</strong>: Printed keys on paper, secure for cold storage but risky if lost or damaged.<br></li>
+<li><strong>HD Wallets</strong>: Use a seed phrase to generate many addresses, offering backup ease and privacy, like in modern apps.</li>
+</ul>
+<h3><a name="explain-how-does-hd-wallet-works-and-what-are-its-advantages" class="heading-anchor" href="#explain-how-does-hd-wallet-works-and-what-are-its-advantages" rel="nofollow" aria-hidden="true"></a>Explain how does HD Wallet works and what are its advantages.</h3>
+<pre class='mermaid'>flowchart TD
+    Ms[Master Seed] --> mk([Master Key])
+    mk --> ck1([Child Key 1])
+    mk --> ck2([Child Key 2])
+    ck1 --> gk1([Grandchild Key 1])
+    ck1 --> gk2([Grandchild Key 2])
+    ck2 --> gk3([Grandchild Key 3])
+    ck2 --> gk4([Grandchild Key 4])
+</pre>
+<p>HD wallets, or <strong>Hierarchical Deterministic</strong> wallets, use a seed phrase (a set of words, usually 12 or 24) to create a master key, from which many private and public keys are derived in a tree-like structure.</p>
+
+<p>It seems likely that this allows for unlimited address generation, organized systematically, using standards like BIP32.</p>
+
+<p>The evidence leans toward advantages like easy backup, enhanced privacy, and convenience, though securing the seed phrase is critical.</p>
+
+<p><strong>Advantages of HD Wallets</strong></p>
+
+<ol>
+<li><strong>Simple Backup</strong>: With an HD wallet, you only need to save one thing—a seed phrase (a short list of words). This phrase can restore all your wallet’s addresses and funds if your device is lost or broken. It’s much easier than backing up multiple keys separately.</li>
+<li><strong>Lots of Addresses</strong>: HD wallets can create as many addresses as you need from that single seed. This means you don’t have to manually make new keys every time you want a new address, saving time and effort.</li>
+<li><strong>Better Privacy</strong>: Every time you receive cryptocurrency, you can use a new address. This makes it harder for others to track your transactions or figure out how much you own, keeping your activity more private.</li>
+<li><strong>Organized Management</strong>: The wallet creates addresses in a structured way, like a tree with branches. You can use different branches for different purposes—like one for savings and another for spending—which keeps everything neat and easy to handle.</li>
+</ol>
+<h2><a name="what-is-a-blockchain-fork" class="heading-anchor" href="#what-is-a-blockchain-fork" rel="nofollow" aria-hidden="true"></a>What is a Blockchain fork?</h2>
+<p>A blockchain fork happens when a blockchain splits into two or more separate chains.</p>
+
+<p>This can occur in two main ways:</p>
+
+<ul>
+<li><strong>Accidental Forks</strong>
+
+<ul>
+<li><img loading="lazy" src="assets/Pasted%20image%2020250228081332.webp" alt="" /></li>
+<li>These are temporary splits, often due to network issues, like when two miners find a block at the same time. The network resolves this by choosing the longest chain, and the other chain is discarded. You might not expect this, but these forks are usually resolved quickly and don’t create lasting changes.</li>
+</ul></li>
+<li><strong>Intentional Forks</strong>
+
+<ul>
+<li>These are planned changes to the blockchain’s rules. There are two types:
+
+<ul>
+<li><img loading="lazy" src="assets/Pasted%20image%2020250228082234.webp" alt="" /></li>
+<li><strong>Soft Forks</strong>: These are upgrades where the new rules are a subset of the old ones, meaning old nodes can still accept new blocks. An example is Bitcoin’s Segregated Witness (SegWit) upgrade, which didn’t create a new chain.</li>
+<li><strong>Hard Forks</strong>: These are changes that aren’t backward compatible, creating a new chain separate from the old one. This can lead to a new cryptocurrency, like Bitcoin Cash, which split from Bitcoin in 2017 over block size disagreements.</li>
+</ul></li>
+</ul></li>
+</ul>
+<h3><a name="differentiate-between-different-types-of-blockchain-forks" class="heading-anchor" href="#differentiate-between-different-types-of-blockchain-forks" rel="nofollow" aria-hidden="true"></a>Differentiate between different types of blockchain forks?</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Compatibility</strong></th>
+<th><strong>Impact on Chain</strong></th>
+<th><strong>Examples</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>Accidental Fork</strong></td>
+<td>Temporary split due to network issues, resolved by longest chain rule</td>
+<td>N/A (resolved automatically)</td>
+<td>Temporary, no permanent split</td>
+<td>Two miners finding blocks simultaneously</td>
+</tr>
+
+<tr>
+<td><strong>Soft Fork</strong></td>
+<td>Backward compatible, new rules subset of old, old nodes accept new blocks</td>
+<td>Backward compatible</td>
+<td>No permanent split, network upgrade</td>
+<td>Bitcoin’s SegWit upgrade</td>
+</tr>
+
+<tr>
+<td><strong>Hard Fork</strong></td>
+<td>Not backward compatible, creates separate chains with new and old rules</td>
+<td>Not backward compatible</td>
+<td>Permanent split, potentially new coin</td>
+<td>Bitcoin Cash, Ethereum/Ethereum Classic</td>
+</tr>
+</tbody>
+</table>
+
+		</main>
+		
+		<details id="table-of-content">
+		   <summary>Table of Content</summary>
+		<nav>
+<ul>
+<li><a href="#explain-simplified-payment-verification-nodes">Explain Simplified Payment Verification Nodes.</a>
+<ul>
+<li><a href="#what-is-the-privacy-solution-for-spv-nodes">
+What is the Privacy solution for SPV nodes?</a></li>
+</ul></li>
+<li><a href="#explain-how-merkle-tree-is-created-how-merkle-root-is-used-what-is-merkle-proof">
+Explain how Merkle Tree is created, how Merkle Root is used. What is Merkle Proof?</a></li>
+<li><a href="#explain-the-difference-between-mining-pool-transaction-pool-and-pool-server">
+Explain the difference between Mining Pool, Transaction Pool and Pool Server.</a></li>
+<li><a href="#explain-different-types-of-blockchain">
+Explain different types of Blockchain.</a>
+<ul>
+<li><a href="#explain-what-is-a-byzantine-general-problem-and-how-is-it-relevant-in-any-consensus-mechanism">
+Explain what is a Byzantine General Problem and how is it relevant in any consensus mechanism.</a></li>
+</ul></li>
+<li><a href="#explain-bitcoin-mining-and-transaction-life-cycle-with-the-help-of-a-neat-diagram">
+Explain bitcoin mining and transaction life cycle with the help of a neat diagram.</a></li>
+<li><a href="#explain-the-key-features-of-any-distributed-ledger-technology">
+Explain the key features of any Distributed Ledger Technology.</a></li>
+<li><a href="#what-are-the-different-types-of-dlt">
+What are the different types of DLT?</a>
+<ul>
+<li><a href="#explain-the-difference-between-proof-of-work-proof-of-stake-and-gossip-protocol-consensus-techniques">
+Explain the difference between Proof of Work, Proof of Stake and Gossip protocol consensus techniques.</a></li>
+</ul></li>
+<li><a href="#explain-the-block-header-data-structure-in-detail">
+Explain the block header data structure in detail?</a>
+<ul>
+<li><a href="#how-are-blocks-linked-in-blockchain-and-how-does-it-ensure-data-integrity">
+How are blocks linked in blockchain and how does it ensure data integrity?</a></li>
+</ul></li>
+<li><a href="#what-are-the-different-data-stored-in-bitcoin-transaction">
+What are the different data stored in Bitcoin Transaction.</a>
+<ul>
+<li><a href="#explain-how-utxo-data-works-in-every-transaction">
+Explain how UTXO data works in every transaction.</a></li>
+</ul></li>
+<li><a href="#explain-the-difference-between-p2pkh-p2kh-p2sh-bitcoin-transaction-types">
+Explain the difference between P2PKH, P2KH, P2SH bitcoin transaction types.</a>
+<ul>
+<li><a href="#what-is-a-segregated-witness-in-a-transaction-and-how-does-it-help-to-increase-the-transaction-per-second-tps">
+What is a Segregated Witness in a Transaction and how does it help to increase the Transaction Per Second (TPS)?</a></li>
+</ul></li>
+<li><a href="#explain-the-difference-between-private-key-public-key-and-bitcoin-address">
+Explain the difference between Private key, Public Key and Bitcoin address.</a>
+<ul>
+<li><a href="#explain-different-types-of-wallet-technologies">
+Explain different types of wallet technologies.</a></li>
+<li><a href="#explain-how-does-hd-wallet-works-and-what-are-its-advantages">
+Explain how does HD Wallet works and what are its advantages.</a></li>
+</ul></li>
+<li><a href="#what-is-a-blockchain-fork">
+What is a Blockchain fork?</a>
+<ul>
+<li><a href="#differentiate-between-different-types-of-blockchain-forks">
+Differentiate between different types of blockchain forks?</a></li>
+</ul></li>
+</ul>
+</nav>
+
+		</details>
+		
+		<footer>
+			<p style="text-align: center; font-size: small; margin-top: 5em;">
+				<a href="https://anzenkodo.github.io/license">LICENSE</a>
+			</p>
+		</footer>
+	</body>
+	<script src="https://AnzenKodo.github.io/assets/js/mermaid.js"></script>
+	<script id="MathJax-script" async src="https://AnzenKodo.github.io/assets/js/mathjax.js"></script>
+	<script>
+		/* document.getElementById('video').addEventListener('click', (ele) => {
+			 if (ele.target.paused) {
+				 ele.target.play();
+			 } else {
+				 ele.target.pause();
+			 }
+		}); */
+
+		mermaid.initialize({
+			theme: "neutral",
+			themeVariables: {
+			    lineColor: "#939598",
+			}
+		});
+
+		MathJax = {
+		  tex: {
+			inlineMath: [['$', '$']],
+			displayMath: [['$$', '$$']],
+		  }
+		};
+	</script>
+</html>

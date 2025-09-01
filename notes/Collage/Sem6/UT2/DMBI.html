@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>DMBI - AK#Notes</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="#FF6C22">
+		<meta name="description" content="## K-Mean clustering  **Definition:**  K-means clustering is simple unsupervised learning algorithm ">
+		<meta property="og:description" content="## K-Mean clustering  **Definition:**  K-means clustering is simple unsupervised learning algorithm ">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<meta property="og:image:alt" content="AK#Notes logo">
+		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="DMBI - AK#Notes">
+		<meta property="og:url" content="https://AnzenKodo.github.io/notes/notes/Collage/Sem6/UT2/DMBI.html">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+
+			:root {
+				/* color-scheme: dark light; */
+				color-scheme: dark;
+				--theme: #FF6C22;
+			}
+			body {
+				max-width: 40rem;
+				margin: 0 auto;
+				font-family: system-ui;
+				padding: 0 1em;
+				color: inherit !important;
+				word-break: break-word;
+			}
+			h1, h2, h3, h4, h5, h6 {
+				margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+				font-size: 2rem;
+			}
+			h3 {
+				font-size: 1.8rem;
+			}
+			h4 {
+				font-size: 1.5rem;
+			}
+			h5 {
+				font-size: 1.3rem;
+			}
+			h6 {
+				font-size: 1rem;
+			}
+			p, li, td, code {
+				line-height: 1.5rem;
+			}
+			a {
+				color: var(--theme);
+				text-decoration: none;
+			}
+			a:hover, a:focus {
+				text-decoration: underline;
+			}
+			a:active {
+				background: var(--theme);
+				color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+				margin-top: .5rem;
+			}
+			li {
+				margin-bottom: .5rem;
+			}
+			table {
+				border-collapse: collapse;
+				overflow-x: auto;
+				display: block;
+				word-break: auto-phrase;
+				margin: 1rem 0;
+			}
+			th {
+				font-size: 1.1rem;
+				border: 2px solid;
+				padding: .3rem .3rem;
+			}
+			td {
+				border: 1px solid;
+				padding: .3rem .5rem;
+			}
+			blockquote {
+				margin-left: 0;
+				margin-right: 0;
+				border: 1px solid;
+				border-left: 10px solid;
+				padding: 0 1rem;
+			}
+				.code-block {
+				background: black;
+				overflow-x: auto;
+				padding: 0em 1em;
+				border: 1px solid;
+			}
+			.code-block-language-name {
+				position: sticky;
+				left: 95%;
+				top: .5em;
+				font-weight: bold;
+				color: white;
+			}
+			:not(pre.chroma) > code {
+				border: 1px solid;
+				padding: .3rem .2rem .2rem .2rem;
+			}
+			img {
+				max-width: 100%;
+				display: block;
+				margin: 0 auto;
+			}
+			[href="#skip-top-main"] {
+				padding: 0.3em;
+				position: absolute;
+				transform: translateY(-1000%);
+			}
+			[href="#skip-top-main"]:focus {
+				transform: translateY(0%);
+				background: var(--theme);
+				color: inherit;
+			}
+			#table-of-content {
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+				background: black;
+				padding: 0.5rem 1em;
+				z-index: 1;
+				color: white;
+			}
+			#table-of-content[open] {
+				max-height: 90%;
+				overflow-y: auto;
+				bottom: 50px;
+				margin-left: 1em;
+			}
+			#table-of-content[open] summary {
+				background: black;
+				padding: 0.5em 1em;
+				text-align: center;
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+			}
+			#table-of-content ul:first-child {
+				padding-left: 1em;
+				margin-top: 1.5em;
+			}
+			.heading-anchor::before {
+				margin-right: .5rem;
+			}
+		    h2 .heading-anchor::before {
+    			content: "#";
+    			margin-right: .5rem;
+		    }
+            h3 .heading-anchor::before {
+				content: "##";
+				margin-right: .5rem;
+			}
+            h4 .heading-anchor::before {
+				content: "###";
+				margin-right: .5rem;
+			}
+            h5 .heading-anchor::before {
+				content: "####";
+				margin-right: .5rem;
+			}
+            h6 .heading-anchor::before {
+				content: "#####";
+				margin-right: .5rem;
+			}
+			.mermaid {
+				background: black;
+				border: 1px solid;
+				margin-top: 1rem;
+				padding: 1rem;
+				font-family: monospace;
+			}
+			.mermaid svg {
+				display: block;
+				margin: auto;
+			}
+			.mermaid:has(svg) {
+				background: none;
+				border: none;
+				margin-top: 1rem;
+				padding: 0;
+			}
+			mjx-container {
+				display: math;
+				overflow-y: hidden;
+				overflow-x: auto;
+				max-width: 100%;
+				padding-bottom: .8rem;
+			}
+			iframe {
+				width: 100%;
+				height: 21rem;
+				margin: 1rem 0;
+			}
+			video {
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<a href="#skip-top-main">Skip to main</a>
+		<header>
+<!--		<h1 style="text-align: center;">-->
+			<h1 style="text-align: center;">
+				<a href="https://AnzenKodo.github.io">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+			</h1><nav style="border-top: 1px solid gray;border-bottom: 1px solid gray;padding: .5rem 0;text-align: center;margin: 0 0 2rem 0;color: gray;clear: left;line-height: 1.6rem;">
+				<a href="https://AnzenKodo.github.io/notes">Home</a> | <a href="https://AnzenKodo.github.io">About</a> | <a href="https://AnzenKodo.github.io/blogroll">Blogroll</a> | <a href="https://github.com/AnzenKodo">Github</a> | <a href="https://x.com/AnzenKodo">𝕏</a>
+			</nav>
+			<!-- <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;"> -->
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem; margin-top: 0;">DMBI</h1>
+			<h2><a name="k-mean-clustering" class="heading-anchor" href="#k-mean-clustering" rel="nofollow" aria-hidden="true"></a>K-Mean clustering</h2>
+<p><strong>Definition:</strong></p>
+
+<p>K-means clustering is simple unsupervised learning algorithm develooped by J. MacQueen in 1976 and J.A Hartigan &amp; M.A wong in 1975.</p>
+
+<p>K-means tries to partition x data points into the set of K clusters where each data point is assigned to its closest cluster.</p>
+
+<p><strong>Algorithm</strong></p>
+
+<p>Input:</p>
+
+<div class="code-block"><html>
+<style type="text/css">
+/* Background */ .bg { color: #282c34 }
+/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
+/* Other */ .chroma .x { color: #c9c9c9 }
+/* Error */ .chroma .err { color: #cf5967 }
+/* CodeLine */ .chroma .cl { color: #c9c9c9 }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
+/* Keyword */ .chroma .k { color: #7fbaf5 }
+/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
+/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
+/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
+/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
+/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
+/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
+/* Name */ .chroma .n { color: #c9c9c9 }
+/* NameAttribute */ .chroma .na { color: #bc74c4 }
+/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
+/* NameClass */ .chroma .nc { color: #ecbe7b }
+/* NameConstant */ .chroma .no { color: #ecbe7b }
+/* NameDecorator */ .chroma .nd { color: #ecbe7b }
+/* NameEntity */ .chroma .ni { color: #c9c9c9 }
+/* NameException */ .chroma .ne { color: #cf5967 }
+/* NameFunction */ .chroma .nf { color: #57c7ff }
+/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
+/* NameLabel */ .chroma .nl { color: #cf5967 }
+/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
+/* NameOther */ .chroma .nx { color: #c9c9c9 }
+/* NameProperty */ .chroma .py { color: #c9c9c9 }
+/* NameTag */ .chroma .nt { color: #bc74c4 }
+/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
+/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
+/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
+/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
+/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
+/* Literal */ .chroma .l { color: #c9c9c9 }
+/* LiteralDate */ .chroma .ld { color: #57c7ff }
+/* LiteralString */ .chroma .s { color: #82cc6a }
+/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
+/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
+/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
+/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
+/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
+/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
+/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
+/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
+/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
+/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
+/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
+/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
+/* LiteralNumber */ .chroma .m { color: #56b6c2 }
+/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
+/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
+/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
+/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
+/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
+/* Operator */ .chroma .o { color: #bc74c4 }
+/* OperatorWord */ .chroma .ow { color: #bc74c4 }
+/* Punctuation */ .chroma .p { color: #56b6c2 }
+/* Comment */ .chroma .c { color: #3e4460 }
+/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #3e4460 }
+/* CommentSingle */ .chroma .c1 { color: #3e4460 }
+/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
+/* Generic */ .chroma .g { color: #c9c9c9 }
+/* GenericDeleted */ .chroma .gd { color: #cf5967 }
+/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
+/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
+/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #ecbe7b }
+/* GenericOutput */ .chroma .go { color: #43454f }
+/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
+/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
+/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
+/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
+/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
+body { color: #282c34; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">K: number of clusters
+</span></span><span class="line"><span class="cl">D: a dataset containig &#39;n&#39; objects
+</span></span></code></pre>
+</body>
+</html>
+</div>
+<p>Output:</p>
+
+<div class="code-block"><html>
+<style type="text/css">
+/* Background */ .bg { color: #282c34 }
+/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
+/* Other */ .chroma .x { color: #c9c9c9 }
+/* Error */ .chroma .err { color: #cf5967 }
+/* CodeLine */ .chroma .cl { color: #c9c9c9 }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
+/* Keyword */ .chroma .k { color: #7fbaf5 }
+/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
+/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
+/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
+/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
+/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
+/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
+/* Name */ .chroma .n { color: #c9c9c9 }
+/* NameAttribute */ .chroma .na { color: #bc74c4 }
+/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
+/* NameClass */ .chroma .nc { color: #ecbe7b }
+/* NameConstant */ .chroma .no { color: #ecbe7b }
+/* NameDecorator */ .chroma .nd { color: #ecbe7b }
+/* NameEntity */ .chroma .ni { color: #c9c9c9 }
+/* NameException */ .chroma .ne { color: #cf5967 }
+/* NameFunction */ .chroma .nf { color: #57c7ff }
+/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
+/* NameLabel */ .chroma .nl { color: #cf5967 }
+/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
+/* NameOther */ .chroma .nx { color: #c9c9c9 }
+/* NameProperty */ .chroma .py { color: #c9c9c9 }
+/* NameTag */ .chroma .nt { color: #bc74c4 }
+/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
+/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
+/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
+/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
+/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
+/* Literal */ .chroma .l { color: #c9c9c9 }
+/* LiteralDate */ .chroma .ld { color: #57c7ff }
+/* LiteralString */ .chroma .s { color: #82cc6a }
+/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
+/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
+/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
+/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
+/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
+/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
+/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
+/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
+/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
+/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
+/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
+/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
+/* LiteralNumber */ .chroma .m { color: #56b6c2 }
+/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
+/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
+/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
+/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
+/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
+/* Operator */ .chroma .o { color: #bc74c4 }
+/* OperatorWord */ .chroma .ow { color: #bc74c4 }
+/* Punctuation */ .chroma .p { color: #56b6c2 }
+/* Comment */ .chroma .c { color: #3e4460 }
+/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #3e4460 }
+/* CommentSingle */ .chroma .c1 { color: #3e4460 }
+/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
+/* Generic */ .chroma .g { color: #c9c9c9 }
+/* GenericDeleted */ .chroma .gd { color: #cf5967 }
+/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
+/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
+/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #ecbe7b }
+/* GenericOutput */ .chroma .go { color: #43454f }
+/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
+/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
+/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
+/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
+/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
+body { color: #282c34; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">A set &#39;k&#39; clusters
+</span></span></code></pre>
+</body>
+</html>
+</div>
+<p><strong>Methods</strong></p>
+
+<ol>
+<li>Randomly partition the given dataset 'D' into 'k' clusters &amp; final the cluster mean.</li>
+<li>Repeat</li>
+<li>Re-assign the data points to each cluster and find again the cluster mean.</li>
+<li>Update the cluster mean.</li>
+<li>Until no change.</li>
+</ol>
+
+<p><strong>Sum</strong></p>
+
+<p>Using K-means clustering cluster the following data into two clusters and show each step: ${ 2, 4, 10, 12, 3, 20, 30, 11, 25 }$</p>
+
+<p>Sort: ${ 2, 3, 4, 10, 11, 12, 20, 25, 30 }$</p>
+
+<p><strong>Step 1:</strong> Randomly partition the dataset into two clusters and find the cluster mean:</p>
+
+<p>$m_1 = 10, m_2 =25$</p>
+
+<p>$K_1 = { 2, 3, 4, 10, 11, 12 }, K_2 = {20, 25, 30 }$</p>
+
+<p>$m_1^1 = 10, m_2^1 = 25$</p>
+
+<p><strong>Step 2:</strong> Reassign the data points of each clusters and find again the cluster mean</p>
+
+<p>$K_1 = { 2, 3, 4, 10, 11, 12}, K_2 = { 20, 25, 30}$</p>
+
+<p>$m_1^1 = 1, m_2^1 = 25$</p>
+
+<p><strong>Step 3:</strong> Stop the cluster in step 1 and 2 are same</p>
+
+<p><strong>Final Answer</strong></p>
+
+<p>$K_1 = { 2, 3, 4, 10, 11, 12 }$</p>
+
+<p>$K_2 = { 20, 25, 30 }$</p>
+<h2><a name="k-medoid" class="heading-anchor" href="#k-medoid" rel="nofollow" aria-hidden="true"></a>K-medoid</h2>
+<p>A medoid can be defined as the point in cluster, whose dissimilarities with all the other points in the cluster is minimum.</p>
+
+<p>The dissimilarity of medoid(Ci) and object(Pi) is calculated by using.</p>
+
+<p>$E=|P_i - C_i|$ -&gt; manhatt in distance</p>
+
+<p><strong>Algorithm:</strong> $|x_2-x_1| + |y_2 - y_1|$</p>
+
+<p><strong>Input</strong></p>
+
+<ol>
+<li>K: the number of clusters</li>
+<li>D: a dataset containing 'n' objects</li>
+</ol>
+
+<p><strong>Output:</strong> A set of K clusters.</p>
+
+<p><strong>Method</strong></p>
+
+<ol>
+<li>Randomly choose K-objects as medoids</li>
+<li>Repeat</li>
+<li>Find the dissimilarity (difference) of each object from each medoids.</li>
+<li>Find the cost by adding all min-values.</li>
+<li>Replace one of the medoid with another object.</li>
+</ol>
+<h2><a name="birch-algorithm" class="heading-anchor" href="#birch-algorithm" rel="nofollow" aria-hidden="true"></a>BIRCH algorithm</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020240415045914.png" alt="" /></p>
+
+<p>BIRCH (balanced iterative reducing and clustering using hierarchies) is an unsupervised data mining algorithm that performs hierarchical clustering over large data sets.</p>
+
+<p>It overcomes the two difficulties of agglomeration clustering methods:</p>
+
+<ul>
+<li>Scalability</li>
+<li>The inability to undo what was done in previous step.</li>
+</ul>
+
+<p>BIRCH introduces two concepts:</p>
+<h3><a name="clustering-feature-cf" class="heading-anchor" href="#clustering-feature-cf" rel="nofollow" aria-hidden="true"></a><strong>Clustering feature (CF)</strong></h3>
+<p>CF is a 3 dimensional vector summarize information about clusters of objects.</p>
+
+<p>$CF = (n, LS, SS)$</p>
+
+<p>where,
+$$\displaylines{
+n \rightarrow \text{No. of points in cluster.} \
+LS \rightarrow \text{Linear sum 'n' points}}$$
+$$LS = \sum^n_{L=1}{x_i}$$
+$$SS \rightarrow \text{Square sum of data points}$$</p>
+
+<p>$$SS = \sum^n_{L=1}{x_i^2}$$</p>
+
+<p><strong>Example:</strong></p>
+
+<p>Suppose there are three points $(1, 3), (2, 6), (3, 4)$ in a cluster $C_1$</p>
+
+<p>$CF_1 = [ 3, (1+2+3, 3+6+9), (1^2+2^2+3^2, 3^2+6^2+9^2)]$</p>
+
+<p>$CF_1 = [3, (6, 18), (14, 126)]$</p>
+
+<p>If $C_1$ disjoint to second cluster, $C_2$. Where,</p>
+
+<p>$CF_2 = [3, (7, 10), (21, 38)]$</p>
+
+<p>We can form $C_3$ by merging $C_1$ &amp; $C_2$</p>
+
+<p>$CF_3 = [3 + 3, (6 + 7, 18 + 10), (14 + 21, 126 + 38)]$</p>
+
+<p>$= [6, (13, 28), (35, 164)]$</p>
+<h3><a name="clustering-feature-tree-cf-tree" class="heading-anchor" href="#clustering-feature-tree-cf-tree" rel="nofollow" aria-hidden="true"></a>Clustering Feature Tree (CF Tree)</h3>
+<p>A CF tree is a height balanced tree that stores the clustering features of a hierarchical clustering.</p>
+
+<p><img loading="lazy" src="assets/Pasted%20image%2020240415051911.png" alt="" /></p>
+<h2><a name="dbscan-algorithm" class="heading-anchor" href="#dbscan-algorithm" rel="nofollow" aria-hidden="true"></a>DBSCAN algorithm</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020240415045500.jpg" alt="" /></p>
+
+<p>DBSCAN is a density based clustering based on connected region with high density.</p>
+
+<p>Parameters Required For DBSCAN Algorithm</p>
+
+<ol>
+<li><strong>Epsilon($\epsilon$)</strong>: A distance measure that will be used to locate the points in the neighborhood of any point.</li>
+<li><strong>MinPts</strong>: The minimum number of points clustered together for a region to be considered dense.</li>
+</ol>
+
+<p>There parameters can understood if we explore two concepts called density reachability and density connectivity.</p>
+
+<ol>
+<li><strong>Reachability:</strong> It tells weather a point is reachable or not from another point.</li>
+<li><strong>Connectivity</strong>: It involves a transitivity based chaining-approach to determine whether points are located in a particular cluster.
+
+<ul>
+<li>E.g: $p &amp; q$ points would be connected if $p \rightarrow r \rightarrow s \rightarrow t \rightarrow q$.</li>
+<li>where $p \rightarrow q$ implies $q$ is neighbor of $p$.</li>
+</ul></li>
+</ol>
+
+<p>There are 3 types of points after the DBSCAN clustering is complete.</p>
+
+<ol>
+<li><strong>Core:</strong> This is a point that has at least $m$ points within distance $n$ form itself.</li>
+<li><strong>Border:</strong> This a point that has atlest core point at a distance $n$</li>
+<li><strong>Noise:</strong> This is a point that is neither a core nor a border.</li>
+</ol>
+<h2><a name="clustering-methods" class="heading-anchor" href="#clustering-methods" rel="nofollow" aria-hidden="true"></a>Clustering methods</h2>
+<p>*<em><img loading="lazy" src="https://lh7-us.googleusercontent.com/k4wIgxvPrI_UakihZzOzEnLTQPGX-3xtbbgWQcm5slD21ZBEXcOcIxBTnnAnF6VvYPrDDrQsZBNFaa-yDah9YzseTOrk9PArhcJxgzy2bGZc-NwpTd1FcIuwOiOUyryzZGKB3mQ8k03X-UjvtOcDnIg" alt="" /></em></p>
+
+<p>Clustering or Cluster analysis is the method of grouping the entities based on similarities.</p>
+
+<p>It is the process of finding similar structures in a set of unlabeled data to make it more understandable and manipulative.</p>
+
+<ul>
+<li>Partitioning Method
+
+<ul>
+<li><img loading="lazy" src="assets/Pasted%20image%2020240415015529.jpg" alt="" /></li>
+<li>Divides the data into non-hierarchical group.</li>
+<li>Also known as centroid-based method.</li>
+<li>This technique utilizes centroids, which are the centers of each cluster, to minimize the sum of distances between the data points and their corresponding cluster centroids.</li>
+<li>E.g: K-mean, K-medoids</li>
+</ul></li>
+<li>Hierarchical Method
+
+<ul>
+<li><img loading="lazy" src="assets/Pasted%20image%2020240415015806.png" alt="" /></li>
+<li>The dataset is divided into clusters to create a tree like structure.</li>
+<li>It is also called a dendogram</li>
+<li>There are two Approach
+
+<ul>
+<li>Agglomenative approach</li>
+<li>Divisive approach</li>
+</ul></li>
+</ul></li>
+<li>Density-based method:
+
+<ul>
+<li><img loading="lazy" src="https://lh7-us.googleusercontent.com/P9R2wnUktOss8NCvBBIPOi09_OHQxukHCa2msPCUhgYND1H8ZSI6C6sEmfVLCp8rx2NYfVxEBC0WOz_N19kAnKRvvFqfZXA5FnED8_XB8CiD-F2Exz8MegR87xZ4DF7JSXD56bToZNkE8uJbNHUDMqc" alt="" /></li>
+<li>Connects the highly-dense areas into clusters.</li>
+<li>The arbitrarily shaped distribution are formed as long as the dense region can be connected.</li>
+<li>The algorithm dose it by identifying different clusters in the dataset and connects the are of high densities into clusters.</li>
+<li>May filter out outliers</li>
+</ul></li>
+<li>Grid-based Method
+
+<ul>
+<li><img loading="lazy" src="https://lh7-us.googleusercontent.com/4_l6brdrcTWZtmlHMy3LNWna4UF7mfWBu3VlgVyQ-0MhG2QUnIkLE9B9d1TlPHlALPNGLcZdj-KU_8mRLxTrvGPlm0h6ZojKXblXGN-ksZ7fRRUiv_8mGEQYeX38OV_UWJFZTAzVqRil_GaF802bKBE" alt="" /></li>
+<li>In the grid-based method a grid is formed using the object together.</li>
+<li>Use a multi resolution grid data structure</li>
+<li>Fast processing time.</li>
+</ul></li>
+<li>Model-Based Method
+
+<ul>
+<li><img loading="lazy" src="assets/Pasted%20image%2020240415020927.png" alt="" /></li>
+<li>A model is formed from each cluster to fine the best fit of data for given models.</li>
+<li>It reflects the spatial distribution of data points.</li>
+</ul></li>
+<li>Constraint-based Method
+
+<ul>
+<li><img loading="lazy" src="https://lh7-us.googleusercontent.com/6vsJFxrFaC_oBF9sU16IYdwXYAg8UTv9vWRwh8oVJwMF9BJ0YVNXt7Jr5Gk7-IZ-pH3hzIPYUamqAoORulPxRGNvSPDg3et0LHsoe85G2AJ6mDz6grB86iUXWDC0ugHYYs53ea1ihYWfHcpaJoyRLWo" alt="" /></li>
+<li>In this method the clustering is performed by incorporation of user or application oriented constraints.</li>
+<li>Constraints provide us with an interactive way to communicate with clustering process.</li>
+</ul></li>
+</ul>
+<h2><a name="divisive-clustering-types-difference-between" class="heading-anchor" href="#divisive-clustering-types-difference-between" rel="nofollow" aria-hidden="true"></a>Divisive clustering types &amp; difference between</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020240415033513.png" alt="" /></p>
+
+<p>Divisive Clustering is a clustering technique that starts with all data points in a single cluster and recursively splits them into smaller clusters based on some distance metric until each data point forms its own cluster.</p>
+
+<p>Thus, they are good at identifying large clusters.</p>
+
+<p>It follows a top-down approach.</p>
+
+<p><a href="https://www.geeksforgeeks.org/hierarchical-clustering/">Hierarchical Clustering in Machine Learning</a></p>
+<h2><a name="market-basket-analysis" class="heading-anchor" href="#market-basket-analysis" rel="nofollow" aria-hidden="true"></a>Market, Basket analysis</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020240415042856.png" alt="" /></p>
+
+<ul>
+<li>To uncover purchase pattern in any retail setting.</li>
+<li>To understand consumer behavior by identifying relationships between items that people buy.</li>
+
+<li><p>Create <code>if-them</code> scenario rules:</p>
+
+<ul>
+<li>It item A is purchased then item B is likely to be purchased</li>
+<li>Example: People who buy green tea are also likely to buy honey</li>
+</ul></li>
+
+<li><p>Association rule has 3 measures that express degree of confidence.</p></li>
+</ul>
+
+<p><strong>Support</strong></p>
+
+<p>$$support(A\rightarrow B) = {\text{No of transactions containing both A &amp; B} \over \text{Total Transactions}}$$</p>
+
+<p><strong>Support</strong></p>
+
+<p>$$support(A\rightarrow B) = {\text{No of transactions containing both A &amp; B} \over \text{Total Transactions}}$$</p>
+
+<p><strong>Left</strong></p>
+
+<p>$$left(A\rightarrow B) = {\text{No of transactions containing both B} \over \text{Total Transactions}}$$</p>
+<h2><a name="apriori-algorithm" class="heading-anchor" href="#apriori-algorithm" rel="nofollow" aria-hidden="true"></a>Apriori algorithm</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020240415034607.png" alt="" /></p>
+
+<p><strong>Advantage</strong></p>
+
+<ul>
+<li>Easy to understand</li>
+<li>Join &amp; Prune steps easy to implement to large item-set in large DBS
+<strong>Disadvantage</strong></li>
+<li>Requires high computation if item-sets are very large &amp; min support is kept very low.</li>
+<li>Entire db needs to be scanned.</li>
+</ul>
+
+<p><strong>Sum</strong></p>
+
+<p>For the following given transaction Data set, generate rules using Apriori algorithm consider the values as $support = 50\%$ &amp; $confidence = 75\%$</p>
+
+<table>
+<thead>
+<tr>
+<th>Transaction ID</th>
+<th>Items Purchased</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>bread, cheese, egg, juice</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>bread, cheese, juice</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>bread, milk, yoghurt</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>bread, juice, milk</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>cheese, juice, milk</td>
+</tr>
+</tbody>
+</table>
+
+<p>$confidence = 75\%$
+$support = 50\%$
+$minsupport = 0.5 \times 5 = 2.5$</p>
+
+<p><strong>Step 1</strong>. Frequency count</p>
+
+<table>
+<thead>
+<tr>
+<th>Item set</th>
+<th>Frequency</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>bread</td>
+<td>4</td>
+</tr>
+
+<tr>
+<td>cheese</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>egg</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>juice</td>
+<td>4</td>
+</tr>
+
+<tr>
+<td>yoghurt</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>milk</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Step 2</strong>. Prune step</p>
+
+<p>Remove items that don't meet $minsupport$ count</p>
+
+<table>
+<thead>
+<tr>
+<th>Item set</th>
+<th>Count</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>bread</td>
+<td>4</td>
+</tr>
+
+<tr>
+<td>cheese</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>juice</td>
+<td>4</td>
+</tr>
+
+<tr>
+<td>milk</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Step 3</strong>. Join step</p>
+
+<table>
+<thead>
+<tr>
+<th>Item set</th>
+<th>Count</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>{ bread, cheese }</td>
+<td>2</td>
+</tr>
+
+<tr>
+<td>{ bread, juice }</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>{ bread, milk }</td>
+<td>2</td>
+</tr>
+
+<tr>
+<td>{ cheese, juice }</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>{ cheese, milk }</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>{ juice, milk }</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Step 4</strong>. Prune</p>
+
+<p>Remove items that don't meet $minsupport$ count</p>
+
+<table>
+<thead>
+<tr>
+<th>Item set</th>
+<th>Count</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>{ bread, juice }</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>{ cheese, juice }</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Step 5</strong>. Generate Association rule</p>
+
+<ul>
+<li>bread-&gt;juice $= 3/4 = 0.75 = 75\%$</li>
+<li>bread-&gt;bread $= 3/4 = 0.75 = 75\%$</li>
+<li>cheese-&gt;juice $= 3/3 = 1 = 100\%$</li>
+<li>juice-&gt;cheese $= 3/4 = 0.75 = 75\%$</li>
+</ul>
+<h2><a name="multilevel-association-rule" class="heading-anchor" href="#multilevel-association-rule" rel="nofollow" aria-hidden="true"></a>Multilevel association rule</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020240415022546.png" alt="" /></p>
+
+<p>Association rule mining is used to discover relationships between items in a dataset. An association rule is a statement of the form &quot;If A, then B,&quot; where A and B are sets of items.</p>
+
+<p>The strength of an association rule is measured using two measures: support and confidence.</p>
+
+<p>Support measures the frequency of the occurrence of the items in the rule, and confidence measures the reliability of the rule.</p>
+
+<p>Approaches of Multilevel association rule:</p>
+
+<ul>
+<li>Using uniform support level for all levels
+
+<ul>
+<li>There is only one minimum support threshold.</li>
+<li><img loading="lazy" src="assets/Pasted%20image%2020240415023008.png" alt="" /></li>
+</ul></li>
+<li>Using reduced minimum support at lower level
+
+<ul>
+<li>At every level of abstraction, there is its own minimum support threshold.</li>
+<li>So minimum support at lower level reduces</li>
+<li><img loading="lazy" src="assets/Pasted%20image%2020240415024228.png" alt="" /></li>
+</ul></li>
+</ul>
+
+<p><a href="https://youtu.be/c9ph3S-bymQ">Mining Various Kinds Of Association Rules</a></p>
+<h2><a name="multi-dimensional-association-rule" class="heading-anchor" href="#multi-dimensional-association-rule" rel="nofollow" aria-hidden="true"></a>Multi-dimensional association rule</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020240415025432.png" alt="" /></p>
+
+<p>It contains more than one predicate. Each predicate occurs only once.</p>
+
+<ul>
+<li><p><strong>Single dimensional rule</strong></p>
+
+<ul>
+<li><p>Contains single distinct predicate like &quot;buys&quot;</p>
+
+<div class="code-block"><html>
+<style type="text/css">
+/* Background */ .bg { color: #282c34 }
+/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
+/* Other */ .chroma .x { color: #c9c9c9 }
+/* Error */ .chroma .err { color: #cf5967 }
+/* CodeLine */ .chroma .cl { color: #c9c9c9 }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
+/* Keyword */ .chroma .k { color: #7fbaf5 }
+/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
+/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
+/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
+/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
+/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
+/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
+/* Name */ .chroma .n { color: #c9c9c9 }
+/* NameAttribute */ .chroma .na { color: #bc74c4 }
+/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
+/* NameClass */ .chroma .nc { color: #ecbe7b }
+/* NameConstant */ .chroma .no { color: #ecbe7b }
+/* NameDecorator */ .chroma .nd { color: #ecbe7b }
+/* NameEntity */ .chroma .ni { color: #c9c9c9 }
+/* NameException */ .chroma .ne { color: #cf5967 }
+/* NameFunction */ .chroma .nf { color: #57c7ff }
+/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
+/* NameLabel */ .chroma .nl { color: #cf5967 }
+/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
+/* NameOther */ .chroma .nx { color: #c9c9c9 }
+/* NameProperty */ .chroma .py { color: #c9c9c9 }
+/* NameTag */ .chroma .nt { color: #bc74c4 }
+/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
+/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
+/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
+/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
+/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
+/* Literal */ .chroma .l { color: #c9c9c9 }
+/* LiteralDate */ .chroma .ld { color: #57c7ff }
+/* LiteralString */ .chroma .s { color: #82cc6a }
+/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
+/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
+/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
+/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
+/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
+/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
+/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
+/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
+/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
+/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
+/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
+/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
+/* LiteralNumber */ .chroma .m { color: #56b6c2 }
+/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
+/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
+/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
+/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
+/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
+/* Operator */ .chroma .o { color: #bc74c4 }
+/* OperatorWord */ .chroma .ow { color: #bc74c4 }
+/* Punctuation */ .chroma .p { color: #56b6c2 }
+/* Comment */ .chroma .c { color: #3e4460 }
+/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #3e4460 }
+/* CommentSingle */ .chroma .c1 { color: #3e4460 }
+/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
+/* Generic */ .chroma .g { color: #c9c9c9 }
+/* GenericDeleted */ .chroma .gd { color: #cf5967 }
+/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
+/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
+/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #ecbe7b }
+/* GenericOutput */ .chroma .go { color: #43454f }
+/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
+/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
+/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
+/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
+/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
+body { color: #282c34; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">buy(x, &#34;milk&#34;) -&gt; buys(x, &#34;bread&#34;)
+</span></span></code></pre>
+</body>
+</html>
+</div></li>
+</ul></li>
+
+<li><p><strong>Multi-dimensional rules</strong></p>
+
+<ul>
+<li>Contains more than one predicate</li>
+
+<li><p><strong>Inter-dimensional association rule</strong></p>
+
+<ul>
+<li><p>Has no repeated predicate</p>
+
+<div class="code-block"><html>
+<style type="text/css">
+/* Background */ .bg { color: #282c34 }
+/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
+/* Other */ .chroma .x { color: #c9c9c9 }
+/* Error */ .chroma .err { color: #cf5967 }
+/* CodeLine */ .chroma .cl { color: #c9c9c9 }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
+/* Keyword */ .chroma .k { color: #7fbaf5 }
+/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
+/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
+/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
+/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
+/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
+/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
+/* Name */ .chroma .n { color: #c9c9c9 }
+/* NameAttribute */ .chroma .na { color: #bc74c4 }
+/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
+/* NameClass */ .chroma .nc { color: #ecbe7b }
+/* NameConstant */ .chroma .no { color: #ecbe7b }
+/* NameDecorator */ .chroma .nd { color: #ecbe7b }
+/* NameEntity */ .chroma .ni { color: #c9c9c9 }
+/* NameException */ .chroma .ne { color: #cf5967 }
+/* NameFunction */ .chroma .nf { color: #57c7ff }
+/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
+/* NameLabel */ .chroma .nl { color: #cf5967 }
+/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
+/* NameOther */ .chroma .nx { color: #c9c9c9 }
+/* NameProperty */ .chroma .py { color: #c9c9c9 }
+/* NameTag */ .chroma .nt { color: #bc74c4 }
+/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
+/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
+/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
+/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
+/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
+/* Literal */ .chroma .l { color: #c9c9c9 }
+/* LiteralDate */ .chroma .ld { color: #57c7ff }
+/* LiteralString */ .chroma .s { color: #82cc6a }
+/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
+/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
+/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
+/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
+/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
+/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
+/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
+/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
+/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
+/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
+/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
+/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
+/* LiteralNumber */ .chroma .m { color: #56b6c2 }
+/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
+/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
+/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
+/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
+/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
+/* Operator */ .chroma .o { color: #bc74c4 }
+/* OperatorWord */ .chroma .ow { color: #bc74c4 }
+/* Punctuation */ .chroma .p { color: #56b6c2 }
+/* Comment */ .chroma .c { color: #3e4460 }
+/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #3e4460 }
+/* CommentSingle */ .chroma .c1 { color: #3e4460 }
+/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
+/* Generic */ .chroma .g { color: #c9c9c9 }
+/* GenericDeleted */ .chroma .gd { color: #cf5967 }
+/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
+/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
+/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #ecbe7b }
+/* GenericOutput */ .chroma .go { color: #43454f }
+/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
+/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
+/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
+/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
+/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
+body { color: #282c34; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">age(x, &#34;19-25)^occupation(x, &#34;student&#34;) -&gt; buys(x, &#34;coke&#34;)
+</span></span></code></pre>
+</body>
+</html>
+</div></li>
+</ul></li>
+
+<li><p><strong>Hybrid dimension association rule</strong></p>
+
+<ul>
+<li><p>Contains the multiple occurrence of same predicate</p>
+
+<div class="code-block"><html>
+<style type="text/css">
+/* Background */ .bg { color: #282c34 }
+/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
+/* Other */ .chroma .x { color: #c9c9c9 }
+/* Error */ .chroma .err { color: #cf5967 }
+/* CodeLine */ .chroma .cl { color: #c9c9c9 }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
+/* Keyword */ .chroma .k { color: #7fbaf5 }
+/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
+/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
+/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
+/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
+/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
+/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
+/* Name */ .chroma .n { color: #c9c9c9 }
+/* NameAttribute */ .chroma .na { color: #bc74c4 }
+/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
+/* NameClass */ .chroma .nc { color: #ecbe7b }
+/* NameConstant */ .chroma .no { color: #ecbe7b }
+/* NameDecorator */ .chroma .nd { color: #ecbe7b }
+/* NameEntity */ .chroma .ni { color: #c9c9c9 }
+/* NameException */ .chroma .ne { color: #cf5967 }
+/* NameFunction */ .chroma .nf { color: #57c7ff }
+/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
+/* NameLabel */ .chroma .nl { color: #cf5967 }
+/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
+/* NameOther */ .chroma .nx { color: #c9c9c9 }
+/* NameProperty */ .chroma .py { color: #c9c9c9 }
+/* NameTag */ .chroma .nt { color: #bc74c4 }
+/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
+/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
+/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
+/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
+/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
+/* Literal */ .chroma .l { color: #c9c9c9 }
+/* LiteralDate */ .chroma .ld { color: #57c7ff }
+/* LiteralString */ .chroma .s { color: #82cc6a }
+/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
+/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
+/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
+/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
+/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
+/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
+/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
+/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
+/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
+/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
+/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
+/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
+/* LiteralNumber */ .chroma .m { color: #56b6c2 }
+/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
+/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
+/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
+/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
+/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
+/* Operator */ .chroma .o { color: #bc74c4 }
+/* OperatorWord */ .chroma .ow { color: #bc74c4 }
+/* Punctuation */ .chroma .p { color: #56b6c2 }
+/* Comment */ .chroma .c { color: #3e4460 }
+/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #3e4460 }
+/* CommentSingle */ .chroma .c1 { color: #3e4460 }
+/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
+/* Generic */ .chroma .g { color: #c9c9c9 }
+/* GenericDeleted */ .chroma .gd { color: #cf5967 }
+/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
+/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
+/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #ecbe7b }
+/* GenericOutput */ .chroma .go { color: #43454f }
+/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
+/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
+/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
+/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
+/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
+body { color: #282c34; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl">age(x, &#34;19-25&#34;) ^ buys(x, &#34;pop corns&#34;) -&gt; (buys(x, &#34;coke)
+</span></span></code></pre>
+</body>
+</html>
+</div></li>
+</ul></li>
+</ul></li>
+
+<li><p><strong>Categorical Attribute</strong></p>
+
+<ul>
+<li>Have finite no. of possible values, no ordering among rules.</li>
+<li>Eg: brand, color</li>
+</ul></li>
+
+<li><p><strong>Quantitative Attribute</strong></p>
+
+<ul>
+<li>These are numeric &amp; implicit ordering among values</li>
+<li>Eg: age, income</li>
+</ul></li>
+</ul>
+
+<p><a href="https://www.youtube.com/@varshasengineeringstuff4621">Multidimensional Association Rules, Single, Multi, Hybrid, Apriori Algorithm, Data Mining</a></p>
+<h2><a name="bi-architecture-components" class="heading-anchor" href="#bi-architecture-components" rel="nofollow" aria-hidden="true"></a>BI architecture &amp; components</h2>
+<p>Business intelligence (BI) are the tools that deploys technologies, applications and practices to collect, integrate, analyze and present business information.</p>
+
+<p><strong>Architecture</strong></p>
+
+<p><img loading="lazy" src="assets/Pasted%20image%2020240415031451.png" alt="" /></p>
+
+<ul>
+<li><strong>Data Collection</strong>: Gathering data from various sources such as CRM, ERP, databases, files, or APIs, depending on the requirements and resources of a company.</li>
+<li><strong>Data Integration</strong>: Extracting data and loading it into a BI data warehouse architecture through ETL (Extract-Transform-Load) process.</li>
+<li><strong>Data Storage</strong>: Data warehousing and business intelligence concepts. Data is loaded into a data depository after ensuring data is clean and prepared for analysis.</li>
+<li><strong>Data Analysis</strong>: Statistical algorithms are deployed to decipher hidden patterns in data.</li>
+<li><strong>Data Visualization</strong>: Analytical tools like dashboards facilitate the way most organizations deal with their data.</li>
+</ul>
+
+<p><strong>Components</strong></p>
+
+<p><img loading="lazy" src="assets/Pasted%20image%2020240415032018.jpg" alt="" /></p>
+
+<ol>
+<li><strong>OLAP (Online Analytical Processing)</strong>: It allows executives to sort and select aggregates of data for strategic monitoring, helping them make adjustments to overall business processes<a href="https://www.villanovau.com/articles/bi/overview-of-business-intelligence-bi-components/">1</a>.</li>
+<li><strong>Corporate Performance Management (CPM) or Advanced Analytics</strong>: This set of tools helps business leaders analyze the statistics of certain products or services, predict performance in the market, and make local, regional, and national modifications to menu board offerings or marketing strategies<a href="https://www.villanovau.com/articles/bi/overview-of-business-intelligence-bi-components/">1</a>.</li>
+<li><strong>Real-time BI</strong>: This component enables businesses to respond to real-time trends in email, messaging systems, or digital displays, allowing for timely announcements of special offers or adjustments to marketing strategies based on current trends<a href="https://www.villanovau.com/articles/bi/overview-of-business-intelligence-bi-components/">1</a>.</li>
+<li><strong>Data Warehousing</strong>: Data warehousing involves storing large amounts of data to the benefit of different divisions within the organization, allowing for the examination of interrelated components that can help drive business decisions and improve product development or tailor seasonal offerings<a href="https://www.villanovau.com/articles/bi/overview-of-business-intelligence-bi-components/">1</a>.</li>
+<li><strong>Data Sources</strong>: This component involves taking raw data and creating systematic data sources with the help of various software BI tools, enabling organizations to put datasets to use in creating pie charts, graphs, or tables for various business purposes<a href="https://www.villanovau.com/articles/bi/overview-of-business-intelligence-bi-components/">1</a>.</li>
+</ol>
+<h2><a name="dss" class="heading-anchor" href="#dss" rel="nofollow" aria-hidden="true"></a>DSS</h2>
+<p><img loading="lazy" src="assets/topic-1-3.webp" alt="" /></p>
+
+<ul>
+<li>A Decision Support System (DSS) is a computerized tool designed to assist individuals and organizations in making well-informed decisions.</li>
+<li>A DSS go through and analyzes massive amounts of data, compiling comprehensive information that can be use to solve problem in decision making.</li>
+<li>A decision support system gathers and analyzes data synthesizing it to produce comprehensive information report.</li>
+<li>The DSS can either be completely computerized or powered by humans.</li>
+</ul>
+
+<p><strong>Types of DSS</strong></p>
+
+<p><img loading="lazy" src="assets/Pasted%20image%2020240415014254.jpg" alt="" /></p>
+
+<ol>
+<li><strong>Communication-driven DSS</strong>:
+
+<ol>
+<li>These systems are targeted at internal teams, including partners, and help conduct meetings or collaborate.</li>
+<li>They are typically deployed via web or client-server technologies.</li>
+</ol></li>
+<li><strong>Data-driven DSS</strong>:
+
+<ol>
+<li>These systems are targeted at managers, staff, and product/service suppliers and use data from internal or external databases to make decisions.</li>
+<li>They are typically deployed via mainframe systems, client/server links, or the web.</li>
+</ol></li>
+<li><strong>Document-driven DSS</strong>:
+
+<ol>
+<li>These systems are used to search web pages and find documents on specific keywords or search terms.</li>
+<li>They are typically deployed via the web or client/server systems.</li>
+</ol></li>
+<li><strong>Knowledge-driven DSS</strong>:
+
+<ol>
+<li>These systems are used to provide management advice or to choose products/services.</li>
+<li>They are typically deployed via client/server systems, the web, or software running on stand-alone PCs.</li>
+</ol></li>
+<li><strong>Model-driven DSS</strong>:
+
+<ol>
+<li>They are used by managers and staff members of a business or people who interact with the organization for a number of purposes depending on how the model is set up.</li>
+<li>They can be deployed via software/hardware in stand-alone PCs, client/server systems, or the web.</li>
+</ol></li>
+</ol>
+<h2><a name="how-data-mining-used-in-bi" class="heading-anchor" href="#how-data-mining-used-in-bi" rel="nofollow" aria-hidden="true"></a>How data mining used in BI</h2>
+<p>Data mining refers to the process of extracting information from large data sets whereas data analysis is the process used to find patterns from the extracted information.</p>
+
+<p><img loading="lazy" src="assets/Pasted%20image%2020240415025609.png" alt="" /></p>
+
+<ul>
+<li>Business Understanding
+
+<ul>
+<li>Define the purpose of data mining for successful business analytics.</li>
+<li>Focus on how to utilize the data effectively.</li>
+<li>Clarify the data mining goal before selecting algorithms.</li>
+</ul></li>
+<li>Data Understanding
+
+<ul>
+<li>Understand the data's purpose after defining the data mining goal.</li>
+<li>Data storage and monetization methods vary across businesses.</li>
+<li>Data management aligns with enterprise IT strategies and practices.</li>
+</ul></li>
+<li>Data Preparation
+
+<ul>
+<li>Data engineers transform and cleanse data for non-IT interpretation.</li>
+<li>Data modeling tailored to specific attributes for analysis.</li>
+</ul></li>
+<li>Data Modeling
+
+<ul>
+<li>Statistical algorithms reveal hidden data patterns.</li>
+<li>Iterative process to identify trends for revenue enhancement.</li>
+</ul></li>
+<li>Data Evaluation
+
+<ul>
+<li>Scrutinize data modeling steps for accuracy.</li>
+<li>Focus on optimizing operations and increasing profits.</li>
+</ul></li>
+<li>Implementation
+
+<ul>
+<li>Act on findings to drive observable results.</li>
+<li>Conduct field trials on a small scale before wider implementation.</li>
+<li>Transition validated recommendations to branch outlets for expansion.</li>
+</ul></li>
+</ul>
+<h2><a name="outlier-detection-methods" class="heading-anchor" href="#outlier-detection-methods" rel="nofollow" aria-hidden="true"></a>Outlier detection methods</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020240415030139.png" alt="" /></p>
+
+<ol>
+<li><strong>Supervised Outliers Detection</strong>: are used to separate data objects into outliers and normal class in a labelled data set.</li>
+<li><strong>Unsupervised Outliers Detection:</strong> are used to find outliers in an unlabeled dataset by giving each object an outlier score which indicates its degree of abnormality.</li>
+<li><strong>Semi-Supervised Outliers Detection:</strong> are used used when labels are available for only a small part of normal objects or outliers.</li>
+<li><strong>Statistical Methods:</strong>
+
+<ul>
+<li>it assumes that normal data objects follow a statistical model and outlier do not.</li>
+<li><img loading="lazy" src="assets/Pasted%20image%2020240415030248.jpg" alt="" /></li>
+</ul></li>
+<li><strong>Proximity Based Method</strong>
+
+<ul>
+<li>It developed on assumption that the distance from a normal data object to its nearest neighbors is very small compared to the distance from an outlier to it nearest neighbor.</li>
+<li><img loading="lazy" src="assets/Pasted%20image%2020240415030332.png" alt="" /></li>
+</ul></li>
+</ol>
+
+		</main>
+		
+		<details id="table-of-content">
+		   <summary>Table of Content</summary>
+		<nav>
+<ul>
+<li><a href="#k-mean-clustering">K-Mean clustering</a></li>
+<li><a href="#k-medoid">
+K-medoid</a></li>
+<li><a href="#birch-algorithm">
+BIRCH algorithm</a>
+<ul>
+<li><a href="#clustering-feature-cf">
+<strong>Clustering feature (CF)</strong></a></li>
+<li><a href="#clustering-feature-tree-cf-tree">
+Clustering Feature Tree (CF Tree)</a></li>
+</ul></li>
+<li><a href="#dbscan-algorithm">
+DBSCAN algorithm</a></li>
+<li><a href="#clustering-methods">
+Clustering methods</a></li>
+<li><a href="#divisive-clustering-types-difference-between">
+Divisive clustering types &amp; difference between</a></li>
+<li><a href="#market-basket-analysis">
+Market, Basket analysis</a></li>
+<li><a href="#apriori-algorithm">
+Apriori algorithm</a></li>
+<li><a href="#multilevel-association-rule">
+Multilevel association rule</a></li>
+<li><a href="#multi-dimensional-association-rule">
+Multi-dimensional association rule</a></li>
+<li><a href="#bi-architecture-components">
+BI architecture &amp; components</a></li>
+<li><a href="#dss">
+DSS</a></li>
+<li><a href="#how-data-mining-used-in-bi">
+How data mining used in BI</a></li>
+<li><a href="#outlier-detection-methods">
+Outlier detection methods</a></li>
+</ul>
+</nav>
+
+		</details>
+		
+		<footer>
+			<p style="text-align: center; font-size: small; margin-top: 5em;">
+				<a href="https://anzenkodo.github.io/license">LICENSE</a>
+			</p>
+		</footer>
+	</body>
+	<script src="https://AnzenKodo.github.io/assets/js/mermaid.js"></script>
+	<script id="MathJax-script" async src="https://AnzenKodo.github.io/assets/js/mathjax.js"></script>
+	<script>
+		/* document.getElementById('video').addEventListener('click', (ele) => {
+			 if (ele.target.paused) {
+				 ele.target.play();
+			 } else {
+				 ele.target.pause();
+			 }
+		}); */
+
+		mermaid.initialize({
+			theme: "neutral",
+			themeVariables: {
+			    lineColor: "#939598",
+			}
+		});
+
+		MathJax = {
+		  tex: {
+			inlineMath: [['$', '$']],
+			displayMath: [['$$', '$$']],
+		  }
+		};
+	</script>
+</html>

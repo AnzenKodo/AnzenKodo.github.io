@@ -1,0 +1,1978 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>STQA - AK#Notes</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="#FF6C22">
+		<meta name="description" content="## Graph metrics  ### Question 1  ```c void main(void) {    int number;	 1.	 clrscr(); 2.  printf("E">
+		<meta property="og:description" content="## Graph metrics  ### Question 1  ```c void main(void) {    int number;	 1.	 clrscr(); 2.  printf("E">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<meta property="og:image:alt" content="AK#Notes logo">
+		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="STQA - AK#Notes">
+		<meta property="og:url" content="https://AnzenKodo.github.io/notes/notes/Collage/Sem7/Notes/STQA.html">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+
+			:root {
+				/* color-scheme: dark light; */
+				color-scheme: dark;
+				--theme: #FF6C22;
+			}
+			body {
+				max-width: 40rem;
+				margin: 0 auto;
+				font-family: system-ui;
+				padding: 0 1em;
+				color: inherit !important;
+				word-break: break-word;
+			}
+			h1, h2, h3, h4, h5, h6 {
+				margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+				font-size: 2rem;
+			}
+			h3 {
+				font-size: 1.8rem;
+			}
+			h4 {
+				font-size: 1.5rem;
+			}
+			h5 {
+				font-size: 1.3rem;
+			}
+			h6 {
+				font-size: 1rem;
+			}
+			p, li, td, code {
+				line-height: 1.5rem;
+			}
+			a {
+				color: var(--theme);
+				text-decoration: none;
+			}
+			a:hover, a:focus {
+				text-decoration: underline;
+			}
+			a:active {
+				background: var(--theme);
+				color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+				margin-top: .5rem;
+			}
+			li {
+				margin-bottom: .5rem;
+			}
+			table {
+				border-collapse: collapse;
+				overflow-x: auto;
+				display: block;
+				word-break: auto-phrase;
+				margin: 1rem 0;
+			}
+			th {
+				font-size: 1.1rem;
+				border: 2px solid;
+				padding: .3rem .3rem;
+			}
+			td {
+				border: 1px solid;
+				padding: .3rem .5rem;
+			}
+			blockquote {
+				margin-left: 0;
+				margin-right: 0;
+				border: 1px solid;
+				border-left: 10px solid;
+				padding: 0 1rem;
+			}
+				.code-block {
+				background: black;
+				overflow-x: auto;
+				padding: 0em 1em;
+				border: 1px solid;
+			}
+			.code-block-language-name {
+				position: sticky;
+				left: 95%;
+				top: .5em;
+				font-weight: bold;
+				color: white;
+			}
+			:not(pre.chroma) > code {
+				border: 1px solid;
+				padding: .3rem .2rem .2rem .2rem;
+			}
+			img {
+				max-width: 100%;
+				display: block;
+				margin: 0 auto;
+			}
+			[href="#skip-top-main"] {
+				padding: 0.3em;
+				position: absolute;
+				transform: translateY(-1000%);
+			}
+			[href="#skip-top-main"]:focus {
+				transform: translateY(0%);
+				background: var(--theme);
+				color: inherit;
+			}
+			#table-of-content {
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+				background: black;
+				padding: 0.5rem 1em;
+				z-index: 1;
+				color: white;
+			}
+			#table-of-content[open] {
+				max-height: 90%;
+				overflow-y: auto;
+				bottom: 50px;
+				margin-left: 1em;
+			}
+			#table-of-content[open] summary {
+				background: black;
+				padding: 0.5em 1em;
+				text-align: center;
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+			}
+			#table-of-content ul:first-child {
+				padding-left: 1em;
+				margin-top: 1.5em;
+			}
+			.heading-anchor::before {
+				margin-right: .5rem;
+			}
+		    h2 .heading-anchor::before {
+    			content: "#";
+    			margin-right: .5rem;
+		    }
+            h3 .heading-anchor::before {
+				content: "##";
+				margin-right: .5rem;
+			}
+            h4 .heading-anchor::before {
+				content: "###";
+				margin-right: .5rem;
+			}
+            h5 .heading-anchor::before {
+				content: "####";
+				margin-right: .5rem;
+			}
+            h6 .heading-anchor::before {
+				content: "#####";
+				margin-right: .5rem;
+			}
+			.mermaid {
+				background: black;
+				border: 1px solid;
+				margin-top: 1rem;
+				padding: 1rem;
+				font-family: monospace;
+			}
+			.mermaid svg {
+				display: block;
+				margin: auto;
+			}
+			.mermaid:has(svg) {
+				background: none;
+				border: none;
+				margin-top: 1rem;
+				padding: 0;
+			}
+			mjx-container {
+				display: math;
+				overflow-y: hidden;
+				overflow-x: auto;
+				max-width: 100%;
+				padding-bottom: .8rem;
+			}
+			iframe {
+				width: 100%;
+				height: 21rem;
+				margin: 1rem 0;
+			}
+			video {
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<a href="#skip-top-main">Skip to main</a>
+		<header>
+<!--		<h1 style="text-align: center;">-->
+			<h1 style="text-align: center;">
+				<a href="https://AnzenKodo.github.io">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+			</h1><nav style="border-top: 1px solid gray;border-bottom: 1px solid gray;padding: .5rem 0;text-align: center;margin: 0 0 2rem 0;color: gray;clear: left;line-height: 1.6rem;">
+				<a href="https://AnzenKodo.github.io/notes">Home</a> | <a href="https://AnzenKodo.github.io">About</a> | <a href="https://AnzenKodo.github.io/blogroll">Blogroll</a> | <a href="https://github.com/AnzenKodo">Github</a> | <a href="https://x.com/AnzenKodo">𝕏</a>
+			</nav>
+			<!-- <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;"> -->
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem; margin-top: 0;">STQA</h1>
+			<h2><a name="graph-metrics" class="heading-anchor" href="#graph-metrics" rel="nofollow" aria-hidden="true"></a>Graph metrics</h2><h3><a name="question-1" class="heading-anchor" href="#question-1" rel="nofollow" aria-hidden="true"></a>Question 1</h3>
+<div class="code-block"><span class="code-block-language-name">.c</span><html>
+<style type="text/css">
+/* Background */ .bg { color: #282c34 }
+/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
+/* Other */ .chroma .x { color: #c9c9c9 }
+/* Error */ .chroma .err { color: #cf5967 }
+/* CodeLine */ .chroma .cl { color: #c9c9c9 }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
+/* Keyword */ .chroma .k { color: #7fbaf5 }
+/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
+/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
+/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
+/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
+/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
+/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
+/* Name */ .chroma .n { color: #c9c9c9 }
+/* NameAttribute */ .chroma .na { color: #bc74c4 }
+/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
+/* NameClass */ .chroma .nc { color: #ecbe7b }
+/* NameConstant */ .chroma .no { color: #ecbe7b }
+/* NameDecorator */ .chroma .nd { color: #ecbe7b }
+/* NameEntity */ .chroma .ni { color: #c9c9c9 }
+/* NameException */ .chroma .ne { color: #cf5967 }
+/* NameFunction */ .chroma .nf { color: #57c7ff }
+/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
+/* NameLabel */ .chroma .nl { color: #cf5967 }
+/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
+/* NameOther */ .chroma .nx { color: #c9c9c9 }
+/* NameProperty */ .chroma .py { color: #c9c9c9 }
+/* NameTag */ .chroma .nt { color: #bc74c4 }
+/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
+/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
+/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
+/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
+/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
+/* Literal */ .chroma .l { color: #c9c9c9 }
+/* LiteralDate */ .chroma .ld { color: #57c7ff }
+/* LiteralString */ .chroma .s { color: #82cc6a }
+/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
+/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
+/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
+/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
+/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
+/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
+/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
+/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
+/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
+/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
+/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
+/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
+/* LiteralNumber */ .chroma .m { color: #56b6c2 }
+/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
+/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
+/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
+/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
+/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
+/* Operator */ .chroma .o { color: #bc74c4 }
+/* OperatorWord */ .chroma .ow { color: #bc74c4 }
+/* Punctuation */ .chroma .p { color: #56b6c2 }
+/* Comment */ .chroma .c { color: #3e4460 }
+/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #3e4460 }
+/* CommentSingle */ .chroma .c1 { color: #3e4460 }
+/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
+/* Generic */ .chroma .g { color: #c9c9c9 }
+/* GenericDeleted */ .chroma .gd { color: #cf5967 }
+/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
+/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
+/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #ecbe7b }
+/* GenericOutput */ .chroma .go { color: #43454f }
+/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
+/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
+/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
+/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
+/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
+body { color: #282c34; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="kt">int</span> <span class="n">number</span><span class="p">;</span>	
+</span></span><span class="line"><span class="cl"><span class="mf">1.</span>	  <span class="n">clrscr</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="mf">2.</span>    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;Enter the number whose factorial is to be found out&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="mf">3.</span>    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">number</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="mf">4.</span>    <span class="k">if</span> <span class="p">(</span><span class="n">number</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="mf">5.</span>	    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;Factorial cannot be defined for this number&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="mf">6.</span>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="mf">7.</span>        <span class="n">printf</span><span class="p">(</span><span class="s">&#34;Factorial is %d&#34;</span><span class="p">,</span> <span class="n">fact</span><span class="p">(</span><span class="n">number</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="mf">8.</span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">fact</span><span class="p">(</span><span class="kt">int</span> <span class="n">number</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">index</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="mf">1.</span>	<span class="kt">int</span> <span class="n">product</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="mf">2.</span>  <span class="k">for</span> <span class="p">(</span><span class="n">index</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;=</span> <span class="n">number</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="mf">3.</span>      <span class="n">product</span> <span class="o">=</span> <span class="n">product</span> <span class="o">*</span> <span class="n">index</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl"><span class="mf">4.</span>   <span class="k">return</span> <span class="p">(</span><span class="n">product</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre>
+</body>
+</html>
+</div>
+<p><strong>DD Graph:</strong></p>
+
+<p><img loading="lazy" src="../Sem/assets/Pasted%20image%2020241101140552.png" alt="" /></p>
+
+<ul>
+<li>e = edges</li>
+<li>n = total number of nodes</li>
+<li>p = componets</li>
+</ul>
+
+<p>For <code>main()</code>:
+$$
+v(main) = e - n + 2(p) = 5 - 5 + 2(1) = 2
+$$</p>
+
+<p>For <code>fact()</code>:
+$$
+v(fact) = e - n + 2(p) = 4 - 4 + 2(1) = 2
+$$</p>
+
+<p>For whole program:
+$$
+v(whole) = e - n + 2(p) = 9 - 9 + 2(2) = 4
+$$</p>
+<h3><a name="question-2" class="heading-anchor" href="#question-2" rel="nofollow" aria-hidden="true"></a>Question 2</h3>
+<div class="code-block"><span class="code-block-language-name">.c</span><html>
+<style type="text/css">
+/* Background */ .bg { color: #282c34 }
+/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
+/* Other */ .chroma .x { color: #c9c9c9 }
+/* Error */ .chroma .err { color: #cf5967 }
+/* CodeLine */ .chroma .cl { color: #c9c9c9 }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
+/* Keyword */ .chroma .k { color: #7fbaf5 }
+/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
+/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
+/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
+/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
+/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
+/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
+/* Name */ .chroma .n { color: #c9c9c9 }
+/* NameAttribute */ .chroma .na { color: #bc74c4 }
+/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
+/* NameClass */ .chroma .nc { color: #ecbe7b }
+/* NameConstant */ .chroma .no { color: #ecbe7b }
+/* NameDecorator */ .chroma .nd { color: #ecbe7b }
+/* NameEntity */ .chroma .ni { color: #c9c9c9 }
+/* NameException */ .chroma .ne { color: #cf5967 }
+/* NameFunction */ .chroma .nf { color: #57c7ff }
+/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
+/* NameLabel */ .chroma .nl { color: #cf5967 }
+/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
+/* NameOther */ .chroma .nx { color: #c9c9c9 }
+/* NameProperty */ .chroma .py { color: #c9c9c9 }
+/* NameTag */ .chroma .nt { color: #bc74c4 }
+/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
+/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
+/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
+/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
+/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
+/* Literal */ .chroma .l { color: #c9c9c9 }
+/* LiteralDate */ .chroma .ld { color: #57c7ff }
+/* LiteralString */ .chroma .s { color: #82cc6a }
+/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
+/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
+/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
+/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
+/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
+/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
+/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
+/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
+/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
+/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
+/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
+/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
+/* LiteralNumber */ .chroma .m { color: #56b6c2 }
+/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
+/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
+/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
+/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
+/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
+/* Operator */ .chroma .o { color: #bc74c4 }
+/* OperatorWord */ .chroma .ow { color: #bc74c4 }
+/* Punctuation */ .chroma .p { color: #56b6c2 }
+/* Comment */ .chroma .c { color: #3e4460 }
+/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #3e4460 }
+/* CommentSingle */ .chroma .c1 { color: #3e4460 }
+/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
+/* Generic */ .chroma .g { color: #c9c9c9 }
+/* GenericDeleted */ .chroma .gd { color: #cf5967 }
+/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
+/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
+/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #ecbe7b }
+/* GenericOutput */ .chroma .go { color: #43454f }
+/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
+/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
+/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
+/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
+/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
+body { color: #282c34; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">number</span><span class="p">,</span> <span class="n">index</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="mf">1.</span>  <span class="n">printf</span><span class="p">(</span><span class="s">&#34;Enter a number:&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="mf">2.</span>  <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">number</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="mf">3.</span>  <span class="n">index</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="mf">4.</span>  <span class="k">while</span> <span class="p">(</span><span class="n">index</span> <span class="o">&lt;=</span> <span class="n">number</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl"><span class="mf">5.</span>  <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="mf">6.</span>      <span class="k">if</span> <span class="p">(</span><span class="n">number</span><span class="o">%</span><span class="n">index</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl"><span class="mf">7.</span>      <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="mf">8.</span>          <span class="n">printf</span><span class="p">(</span><span class="s">&#34;Not a prime number&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="mf">9.</span>          <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="mf">10.</span>     <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="mf">11.</span>     <span class="n">index</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="mf">12.</span>  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="mf">13.</span>  <span class="k">if</span> <span class="p">(</span><span class="n">index</span> <span class="o">==</span> <span class="n">number</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="mf">14.</span>      <span class="n">printf</span><span class="p">(</span><span class="s">&#34;Prime number&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="mf">15.</span><span class="p">}</span>
+</span></span></code></pre>
+</body>
+</html>
+</div>
+<p><strong>DD Graph:</strong></p>
+
+<p><img loading="lazy" src="../Sem/assets/Pasted%20image%2020241129224906.webp" alt="" /></p>
+
+<ul>
+<li><strong>e</strong> = edges</li>
+<li><strong>n</strong> = total number of nodes</li>
+<li><strong>p</strong> = components</li>
+</ul>
+
+<p>$$v(n) = e-n+2(p) = 10 - 8 + 2(1) = 4 $$</p>
+<h2><a name="agile-testing" class="heading-anchor" href="#agile-testing" rel="nofollow" aria-hidden="true"></a>## Agile testing</h2>
+<p><img loading="lazy" src="../Sem/assets/Pasted%20image%2020241129230808.webp" alt="" /></p>
+
+<p>Agile testing is a software testing practice that aligns with the principles of Agile development, emphasizing collaboration, flexibility, and rapid feedback.</p>
+
+<p>Key Characteristics of Agile Testing:</p>
+
+<ul>
+<li>Continuous Testing</li>
+<li>Collaboration</li>
+<li>Quick Feedback Loops</li>
+<li>Adaptability</li>
+</ul>
+
+<p>Challenges in Agile Testing:</p>
+
+<ul>
+<li>Rapidly Changing Requirements</li>
+<li>CI/CD</li>
+<li>Test Automation</li>
+<li>Security</li>
+<li>Environment</li>
+</ul>
+<h2><a name="test-management" class="heading-anchor" href="#test-management" rel="nofollow" aria-hidden="true"></a>Test Management</h2>
+<p>Key Elements of Test Management:</p>
+
+<ul>
+<li>Planning</li>
+<li>Design</li>
+<li>Execution</li>
+<li>Defect Tracking</li>
+<li>Reporting</li>
+<li>Environment Setup</li>
+<li>Automation</li>
+</ul>
+
+<p>Structure of a Testing Group:</p>
+
+<pre class='mermaid'>flowchart TD
+    ql[QA Lead] --> tl[Team Lead]
+    
+    tl --> ut[Usability Testing
+    Engineer]
+    tl --> mt[Manual Testing
+    Engineer]
+    tl --> at[Automated Testing
+    Engineer]
+
+    mt --> nt[Network Test
+    Engineer] -->
+    tc[Test Library &
+    Configuration Specialist]-->
+    Tester
+</pre><h2><a name="automation-testing" class="heading-anchor" href="#automation-testing" rel="nofollow" aria-hidden="true"></a>Automation Testing</h2>
+<p><img loading="lazy" src="../Sem/assets/Pasted%20image%2020241101144714.jpg" alt="" /></p>
+
+<ul>
+<li>Increased Efficiency</li>
+<li>Enhanced Accuracy</li>
+<li>Early Bug Detection</li>
+<li>Reduced Cost</li>
+<li>Reubsabliity</li>
+</ul>
+
+<p>Guidelines for Selecting Testing Tools:</p>
+
+<ul>
+<li>Easy to use</li>
+<li>Integration capabilities</li>
+<li>Cost effectiveness</li>
+<li>Scalability</li>
+<li>Reporting &amp; Analytics</li>
+<li>Maintenance &amp; Support</li>
+</ul>
+<h2><a name="mutation-testing" class="heading-anchor" href="#mutation-testing" rel="nofollow" aria-hidden="true"></a>Mutation Testing</h2>
+<p><img loading="lazy" src="../UT1/assets/Pasted%20image%2020240829051313.jpg" alt="" /></p>
+
+<p>Types:</p>
+
+<ul>
+<li>Statement <code>A=5</code></li>
+<li>Value</li>
+<li>Decision</li>
+</ul>
+<h3><a name="primary-mutant" class="heading-anchor" href="#primary-mutant" rel="nofollow" aria-hidden="true"></a>Primary Mutant</h3>
+<p>A primary mutant is a single, simple change made to the source code. This change can be a simple modification like:</p>
+
+<ul>
+<li>Arithmetic Operator</li>
+<li>Constant Mutation</li>
+<li>Control Flow Mutation</li>
+<li>Statement Deletion Mutation</li>
+</ul>
+
+<p><strong>Example:</strong></p>
+
+<div class="code-block"><span class="code-block-language-name">.js</span><html>
+<style type="text/css">
+/* Background */ .bg { color: #282c34 }
+/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
+/* Other */ .chroma .x { color: #c9c9c9 }
+/* Error */ .chroma .err { color: #cf5967 }
+/* CodeLine */ .chroma .cl { color: #c9c9c9 }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
+/* Keyword */ .chroma .k { color: #7fbaf5 }
+/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
+/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
+/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
+/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
+/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
+/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
+/* Name */ .chroma .n { color: #c9c9c9 }
+/* NameAttribute */ .chroma .na { color: #bc74c4 }
+/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
+/* NameClass */ .chroma .nc { color: #ecbe7b }
+/* NameConstant */ .chroma .no { color: #ecbe7b }
+/* NameDecorator */ .chroma .nd { color: #ecbe7b }
+/* NameEntity */ .chroma .ni { color: #c9c9c9 }
+/* NameException */ .chroma .ne { color: #cf5967 }
+/* NameFunction */ .chroma .nf { color: #57c7ff }
+/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
+/* NameLabel */ .chroma .nl { color: #cf5967 }
+/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
+/* NameOther */ .chroma .nx { color: #c9c9c9 }
+/* NameProperty */ .chroma .py { color: #c9c9c9 }
+/* NameTag */ .chroma .nt { color: #bc74c4 }
+/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
+/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
+/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
+/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
+/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
+/* Literal */ .chroma .l { color: #c9c9c9 }
+/* LiteralDate */ .chroma .ld { color: #57c7ff }
+/* LiteralString */ .chroma .s { color: #82cc6a }
+/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
+/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
+/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
+/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
+/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
+/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
+/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
+/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
+/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
+/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
+/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
+/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
+/* LiteralNumber */ .chroma .m { color: #56b6c2 }
+/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
+/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
+/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
+/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
+/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
+/* Operator */ .chroma .o { color: #bc74c4 }
+/* OperatorWord */ .chroma .ow { color: #bc74c4 }
+/* Punctuation */ .chroma .p { color: #56b6c2 }
+/* Comment */ .chroma .c { color: #3e4460 }
+/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #3e4460 }
+/* CommentSingle */ .chroma .c1 { color: #3e4460 }
+/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
+/* Generic */ .chroma .g { color: #c9c9c9 }
+/* GenericDeleted */ .chroma .gd { color: #cf5967 }
+/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
+/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
+/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #ecbe7b }
+/* GenericOutput */ .chroma .go { color: #43454f }
+/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
+/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
+/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
+/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
+/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
+body { color: #282c34; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Changed to
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span> <span class="p">}</span>
+</span></span></code></pre>
+</body>
+</html>
+</div><h3><a name="secondary-mutants" class="heading-anchor" href="#secondary-mutants" rel="nofollow" aria-hidden="true"></a>Secondary Mutants</h3>
+<ul>
+<li>Created by applying a mutation operator to an already mutated program (i.e., a primary mutant).</li>
+<li>This introduces another layer of change, making the mutant potentially more complex.</li>
+</ul>
+
+<p>Example</p>
+
+<p>Consider the following simple JavaScript code:</p>
+
+<div class="code-block"><span class="code-block-language-name">.js</span><html>
+<style type="text/css">
+/* Background */ .bg { color: #282c34 }
+/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
+/* Other */ .chroma .x { color: #c9c9c9 }
+/* Error */ .chroma .err { color: #cf5967 }
+/* CodeLine */ .chroma .cl { color: #c9c9c9 }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
+/* Keyword */ .chroma .k { color: #7fbaf5 }
+/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
+/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
+/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
+/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
+/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
+/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
+/* Name */ .chroma .n { color: #c9c9c9 }
+/* NameAttribute */ .chroma .na { color: #bc74c4 }
+/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
+/* NameClass */ .chroma .nc { color: #ecbe7b }
+/* NameConstant */ .chroma .no { color: #ecbe7b }
+/* NameDecorator */ .chroma .nd { color: #ecbe7b }
+/* NameEntity */ .chroma .ni { color: #c9c9c9 }
+/* NameException */ .chroma .ne { color: #cf5967 }
+/* NameFunction */ .chroma .nf { color: #57c7ff }
+/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
+/* NameLabel */ .chroma .nl { color: #cf5967 }
+/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
+/* NameOther */ .chroma .nx { color: #c9c9c9 }
+/* NameProperty */ .chroma .py { color: #c9c9c9 }
+/* NameTag */ .chroma .nt { color: #bc74c4 }
+/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
+/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
+/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
+/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
+/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
+/* Literal */ .chroma .l { color: #c9c9c9 }
+/* LiteralDate */ .chroma .ld { color: #57c7ff }
+/* LiteralString */ .chroma .s { color: #82cc6a }
+/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
+/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
+/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
+/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
+/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
+/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
+/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
+/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
+/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
+/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
+/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
+/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
+/* LiteralNumber */ .chroma .m { color: #56b6c2 }
+/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
+/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
+/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
+/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
+/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
+/* Operator */ .chroma .o { color: #bc74c4 }
+/* OperatorWord */ .chroma .ow { color: #bc74c4 }
+/* Punctuation */ .chroma .p { color: #56b6c2 }
+/* Comment */ .chroma .c { color: #3e4460 }
+/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #3e4460 }
+/* CommentSingle */ .chroma .c1 { color: #3e4460 }
+/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
+/* Generic */ .chroma .g { color: #c9c9c9 }
+/* GenericDeleted */ .chroma .gd { color: #cf5967 }
+/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
+/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
+/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #ecbe7b }
+/* GenericOutput */ .chroma .go { color: #43454f }
+/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
+/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
+/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
+/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
+/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
+body { color: #282c34; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nx">x</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;x is greater than 10&#34;</span><span class="p">);</span> <span class="p">}</span>
+</span></span></code></pre>
+</body>
+</html>
+</div>
+<p>Let's introduce a mutant by changing the <code>&gt;</code> operator to <code>&gt;=</code>:</p>
+
+<div class="code-block"><span class="code-block-language-name">.js</span><html>
+<style type="text/css">
+/* Background */ .bg { color: #282c34 }
+/* PreWrapper */ .chroma { color: #c9c9c9color: #282c34; }
+/* Other */ .chroma .x { color: #c9c9c9 }
+/* Error */ .chroma .err { color: #cf5967 }
+/* CodeLine */ .chroma .cl { color: #c9c9c9 }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0;color: #c9c9c9 }
+/* LineHighlight */ .chroma .hl { color: #c9c9c9; background-color: #e5e5e5 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #939599 }
+/* Line */ .chroma .line { display: flex;color: #c9c9c9 }
+/* Keyword */ .chroma .k { color: #7fbaf5 }
+/* KeywordConstant */ .chroma .kc { color: #cf5967; background-color: #43454f }
+/* KeywordDeclaration */ .chroma .kd { color: #7fbaf5 }
+/* KeywordNamespace */ .chroma .kn { color: #bc74c4 }
+/* KeywordPseudo */ .chroma .kp { color: #bc74c4 }
+/* KeywordReserved */ .chroma .kr { color: #7fbaf5 }
+/* KeywordType */ .chroma .kt { color: #57c7ff; font-weight: bold }
+/* Name */ .chroma .n { color: #c9c9c9 }
+/* NameAttribute */ .chroma .na { color: #bc74c4 }
+/* NameBuiltin */ .chroma .nb { color: #7fbaf5 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #7fbaf5 }
+/* NameClass */ .chroma .nc { color: #ecbe7b }
+/* NameConstant */ .chroma .no { color: #ecbe7b }
+/* NameDecorator */ .chroma .nd { color: #ecbe7b }
+/* NameEntity */ .chroma .ni { color: #c9c9c9 }
+/* NameException */ .chroma .ne { color: #cf5967 }
+/* NameFunction */ .chroma .nf { color: #57c7ff }
+/* NameFunctionMagic */ .chroma .fm { color: #c9c9c9 }
+/* NameLabel */ .chroma .nl { color: #cf5967 }
+/* NameNamespace */ .chroma .nn { color: #c9c9c9 }
+/* NameOther */ .chroma .nx { color: #c9c9c9 }
+/* NameProperty */ .chroma .py { color: #c9c9c9 }
+/* NameTag */ .chroma .nt { color: #bc74c4 }
+/* NameVariable */ .chroma .nv { color: #bc74c4; font-style: italic }
+/* NameVariableClass */ .chroma .vc { color: #57c7ff; font-weight: bold }
+/* NameVariableGlobal */ .chroma .vg { color: #ecbe7b }
+/* NameVariableInstance */ .chroma .vi { color: #57c7ff }
+/* NameVariableMagic */ .chroma .vm { color: #c9c9c9 }
+/* Literal */ .chroma .l { color: #c9c9c9 }
+/* LiteralDate */ .chroma .ld { color: #57c7ff }
+/* LiteralString */ .chroma .s { color: #82cc6a }
+/* LiteralStringAffix */ .chroma .sa { color: #82cc6a }
+/* LiteralStringBacktick */ .chroma .sb { color: #57c7ff }
+/* LiteralStringChar */ .chroma .sc { color: #57c7ff }
+/* LiteralStringDelimiter */ .chroma .dl { color: #82cc6a }
+/* LiteralStringDoc */ .chroma .sd { color: #82cc6a }
+/* LiteralStringDouble */ .chroma .s2 { color: #82cc6a }
+/* LiteralStringEscape */ .chroma .se { color: #56b6c2 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #56b6c2 }
+/* LiteralStringInterpol */ .chroma .si { color: #82cc6a }
+/* LiteralStringOther */ .chroma .sx { color: #82cc6a }
+/* LiteralStringRegex */ .chroma .sr { color: #57c7ff }
+/* LiteralStringSingle */ .chroma .s1 { color: #82cc6a }
+/* LiteralStringSymbol */ .chroma .ss { color: #82cc6a }
+/* LiteralNumber */ .chroma .m { color: #56b6c2 }
+/* LiteralNumberBin */ .chroma .mb { color: #57c7ff }
+/* LiteralNumberFloat */ .chroma .mf { color: #56b6c2 }
+/* LiteralNumberHex */ .chroma .mh { color: #57c7ff }
+/* LiteralNumberInteger */ .chroma .mi { color: #56b6c2 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #56b6c2 }
+/* LiteralNumberOct */ .chroma .mo { color: #57c7ff }
+/* Operator */ .chroma .o { color: #bc74c4 }
+/* OperatorWord */ .chroma .ow { color: #bc74c4 }
+/* Punctuation */ .chroma .p { color: #56b6c2 }
+/* Comment */ .chroma .c { color: #3e4460 }
+/* CommentHashbang */ .chroma .ch { color: #3e4460; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #3e4460 }
+/* CommentSingle */ .chroma .c1 { color: #3e4460 }
+/* CommentSpecial */ .chroma .cs { color: #bc74c4; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #7fbaf5 }
+/* CommentPreprocFile */ .chroma .cpf { color: #7fbaf5 }
+/* Generic */ .chroma .g { color: #c9c9c9 }
+/* GenericDeleted */ .chroma .gd { color: #cf5967 }
+/* GenericEmph */ .chroma .ge { color: #c9c9c9; text-decoration: underline }
+/* GenericError */ .chroma .gr { color: #cf5967; font-weight: bold }
+/* GenericHeading */ .chroma .gh { color: #ecbe7b; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #ecbe7b }
+/* GenericOutput */ .chroma .go { color: #43454f }
+/* GenericPrompt */ .chroma .gp { color: #c9c9c9 }
+/* GenericStrong */ .chroma .gs { color: #cf5967; font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #cf5967; font-style: italic }
+/* GenericTraceback */ .chroma .gt { color: #c9c9c9 }
+/* GenericUnderline */ .chroma .gl { color: #c9c9c9; text-decoration: underline }
+/* TextWhitespace */ .chroma .w { color: #c9c9c9 }
+body { color: #282c34; }
+</style><body class="bg">
+<pre tabindex="0" class="chroma"><code><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nx">x</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;x is greater than or equal to 10&#34;</span><span class="p">);</span> <span class="p">}</span>
+</span></span></code></pre>
+</body>
+</html>
+</div><h3><a name="primary-vs-secondary-mutants" class="heading-anchor" href="#primary-vs-secondary-mutants" rel="nofollow" aria-hidden="true"></a><strong>Primary Vs Secondary Mutants</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Primary Mutants</th>
+<th>Secondary Mutants</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>Definition</strong></td>
+<td>Single, simple change</td>
+<td>Multiple combined changes</td>
+</tr>
+
+<tr>
+<td><strong>Complexity</strong></td>
+<td>Less</td>
+<td>More</td>
+</tr>
+
+<tr>
+<td><strong>Detection</strong></td>
+<td>Easy</td>
+<td>More</td>
+</tr>
+
+<tr>
+<td><strong>Effectiveness</strong></td>
+<td>Effective for simple faults</td>
+<td>Effective for complex faults</td>
+</tr>
+
+<tr>
+<td><strong>Example</strong></td>
+<td>Replace operator, modify constant, delete statement</td>
+<td>Combine multiple primary mutations</td>
+</tr>
+
+<tr>
+<td><strong>Mutation Score</strong></td>
+<td>Lower</td>
+<td>Higher</td>
+</tr>
+
+<tr>
+<td><strong>Test Suite Quality</strong></td>
+<td>Identifies weaknesses</td>
+<td>Comprehensive assessment</td>
+</tr>
+
+<tr>
+<td><strong>Cost and Time</strong></td>
+<td>Less</td>
+<td>More</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="software-development-lifecycle-bugs" class="heading-anchor" href="#software-development-lifecycle-bugs" rel="nofollow" aria-hidden="true"></a>Software development lifecycle bugs</h2>
+<pre class='mermaid'>flowchart
+	a[Requirement Phase Bugs]-->
+	b[Design Phase Bugs]-->
+	c[Implementation Phase Bugs]-->
+	d[Testing Phase Bugs]-->
+	e[Deployment Phase Bugs]-->f
+	f[Maintenance Phase Bugs]
+</pre><h2><a name="test-suite-prioritization" class="heading-anchor" href="#test-suite-prioritization" rel="nofollow" aria-hidden="true"></a>Test suite prioritization</h2>
+<p>Test suite prioritization is a crucial strategy in software testing that involves ranking test cases based on their importance and risk.</p>
+
+<p>Process of Test Suite Prioritization</p>
+
+<ul>
+<li>Identify</li>
+<li>Analyze</li>
+<li>Assign</li>
+<li>Create a Prioritized Test</li>
+<li>Execute</li>
+</ul>
+
+<p>Types:</p>
+
+<ul>
+<li>Risk</li>
+<li><strong>Coverage</strong>: Focus on test cases that cover frequently used or recently modified code sections.</li>
+<li>Time</li>
+<li>Business</li>
+<li>Hybrid</li>
+</ul>
+<h2><a name="organization-for-standardization-iso-9000-2000" class="heading-anchor" href="#organization-for-standardization-iso-9000-2000" rel="nofollow" aria-hidden="true"></a>Organization for Standardization (ISO) 9000:2000</h2>
+<ul>
+<li><strong>ISO 9000:2000:</strong> Quality Management Systems - <em>Fundamentals and Vocabulary</em></li>
+<li><strong>ISO 9001:2000:</strong> Quality Management Systems - <em>Requirements</em></li>
+<li><strong>ISO 9004:2000:</strong> Quality Management Systems - <em>Guidelines for Performance Improvement</em></li>
+</ul>
+
+<p>Quality Management Principles:</p>
+
+<ul>
+<li>Customer focus</li>
+<li>Leadership</li>
+<li>Engagement of People</li>
+<li>Process Approach</li>
+<li>Improvement</li>
+<li>Evidence based</li>
+<li>Relationship Management</li>
+</ul>
+<h2><a name="performance-testing" class="heading-anchor" href="#performance-testing" rel="nofollow" aria-hidden="true"></a>Performance Testing</h2>
+<p>Types:</p>
+
+<ul>
+<li>Load</li>
+<li>Stress</li>
+<li>Spike</li>
+<li>Scalability</li>
+</ul>
+
+<p>Importance:</p>
+
+<ul>
+<li>UI</li>
+<li>UX</li>
+<li>Identifies issues</li>
+<li>Validates system capacity</li>
+<li>Reduces Risk of Reputation Damage</li>
+</ul>
+<h2><a name="defect-spoilage" class="heading-anchor" href="#defect-spoilage" rel="nofollow" aria-hidden="true"></a>Defect spoilage</h2>
+<table>
+<thead>
+<tr>
+<th>SDLC Phase</th>
+<th>No. of Defects</th>
+<th>Defect Age</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Requirement Specs.</td>
+<td>34</td>
+<td>2</td>
+</tr>
+
+<tr>
+<td>HLD</td>
+<td>25</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>LLD</td>
+<td>17</td>
+<td>7</td>
+</tr>
+
+<tr>
+<td>Coding</td>
+<td>10</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+
+<p>$$
+\text{Defect Spoilage} = \sum (\text{Defects} \times \text{Defect Age})
+$$</p>
+
+<ol>
+<li><strong>Requirement Specs</strong>:
+
+<ul>
+<li>Defects: 34</li>
+<li>Defect Age: 2</li>
+<li>Contribution to Spoilage: 34×2 = 68</li>
+</ul></li>
+<li><strong>HLD</strong>:
+
+<ul>
+<li>Defects: 25</li>
+<li>Defect Age: 3</li>
+<li>Contribution to Spoilage: 25×3= 75`</li>
+</ul></li>
+<li><strong>LLD</strong>:
+
+<ul>
+<li>Defects: 17</li>
+<li>Defect Age: 7</li>
+<li>Contribution to Spoilage: 17×7 = 119</li>
+</ul></li>
+<li><strong>Coding</strong>:
+
+<ul>
+<li>Defects: 10</li>
+<li>Defect Age: 8</li>
+<li>Contribution to Spoilage: 10×8=80</li>
+</ul></li>
+</ol>
+
+<p>Now, summing all contributions:</p>
+
+<p>$$\text{Total Spoilage} = 68 + 75 + 119 + 80 = 342$$</p>
+<h2><a name="a-program-read-an-integer-number-within-range-1-100-and-determines-whether-it-is-prime-number-or-not-design-test-cases-for-this-program-using-bvc-robust-and-worst-case-testing-method" class="heading-anchor" href="#a-program-read-an-integer-number-within-range-1-100-and-determines-whether-it-is-prime-number-or-not-design-test-cases-for-this-program-using-bvc-robust-and-worst-case-testing-method" rel="nofollow" aria-hidden="true"></a>A Program read an integer number within range [1, 100] and determines whether it is prime number or not. Design test cases for this program using BVC, Robust and Worst-case testing method.</h2>
+<p><strong>Boundary Value Coverage (BVC)</strong></p>
+
+<ol>
+<li>Min = 1</li>
+<li>Min+1 = 2</li>
+<li>Max = 100</li>
+<li>Max - 1 = 99</li>
+<li>Nominal = (52-55)</li>
+</ol>
+
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Integer</th>
+<th>Output</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>Not prime number</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>2</td>
+<td>Prime number</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>100</td>
+<td>Not prime number</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>99</td>
+<td>Not prime number</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>52</td>
+<td>Not prime number</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Robust Testing</strong></p>
+
+<ol>
+<li>Min = 1</li>
+<li>Min - 1 = 0</li>
+<li>Min + 1 = 2</li>
+<li>Max = 100</li>
+<li>Max - 1 = 99</li>
+<li>Max + 1 = 101</li>
+<li>Nominal = (50-55)</li>
+</ol>
+
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Integer</th>
+<th>Output</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>Not prime number</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>0</td>
+<td>Invalid</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>2</td>
+<td>Prime number</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>100</td>
+<td>Not prime number</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>99</td>
+<td>Not prime number</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>101</td>
+<td>Invalid</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>52</td>
+<td>Not prime number</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="a-program-reads-three-numbers-a-b-and-c-within-the-range-1-100-and-prints-the-minimum-number-design-test-cases-for-this-program-using-bvc-and-robust-testing-methods-2022" class="heading-anchor" href="#a-program-reads-three-numbers-a-b-and-c-within-the-range-1-100-and-prints-the-minimum-number-design-test-cases-for-this-program-using-bvc-and-robust-testing-methods-2022" rel="nofollow" aria-hidden="true"></a>A program reads three numbers A, B and C, within the range [1,100] and prints the minimum number. Design test cases for this program using BVC and Robust testing methods.  (2022)</h2>
+<p><strong>Boundary Value Coverage (BVC)</strong></p>
+
+<ol>
+<li>Min = 1</li>
+<li>Min+1 = 2</li>
+<li>Max = 100</li>
+<li>Max - 1 = 99</li>
+<li>Nominal = (52-55)</li>
+</ol>
+
+<ul>
+<li>Formula for number of inputs: 4n+1 = 4(3)+1 = 13</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>Output</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>50</td>
+<td>A is min</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>1</td>
+<td>50</td>
+<td>99</td>
+<td>A is min</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+<td>50</td>
+<td>B is min</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>50</td>
+<td>55</td>
+<td>100</td>
+<td>A is min</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>55</td>
+<td>2</td>
+<td>1</td>
+<td>C is min</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>99</td>
+<td>20</td>
+<td>5</td>
+<td>C is min</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>69</td>
+<td>53</td>
+<td>3</td>
+<td>C is min</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>23</td>
+<td>69</td>
+<td>1</td>
+<td>C is min</td>
+</tr>
+
+<tr>
+<td>9</td>
+<td>5</td>
+<td>2</td>
+<td>69</td>
+<td>B is min</td>
+</tr>
+
+<tr>
+<td>10</td>
+<td>1</td>
+<td>6</td>
+<td>90</td>
+<td>A is min</td>
+</tr>
+
+<tr>
+<td>11</td>
+<td>6</td>
+<td>21</td>
+<td>23</td>
+<td>A is min</td>
+</tr>
+
+<tr>
+<td>12</td>
+<td>10</td>
+<td>53</td>
+<td>23</td>
+<td>A is min</td>
+</tr>
+
+<tr>
+<td>13</td>
+<td>11</td>
+<td>1</td>
+<td>60</td>
+<td>B is min</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Robust Testing</strong></p>
+
+<ol>
+<li>Min = 1</li>
+<li>Min - 1 = 0</li>
+<li>Min + 1 = 2</li>
+<li>Max = 100</li>
+<li>Max - 1 = 99</li>
+<li>Max + 1 = 101</li>
+<li>Nominal = (50-55)</li>
+</ol>
+
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>Output</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>100</td>
+<td>A is min</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>0</td>
+<td>50</td>
+<td>99</td>
+<td>Invalid</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+<td>50</td>
+<td>B is min</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>2</td>
+<td>55</td>
+<td>100</td>
+<td>A is min</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>100</td>
+<td>2</td>
+<td>1</td>
+<td>C is min</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>55</td>
+<td>20</td>
+<td>5</td>
+<td>C is min</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>101</td>
+<td>53</td>
+<td>3</td>
+<td>Invalid</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>23</td>
+<td>69</td>
+<td>1</td>
+<td>C is min</td>
+</tr>
+
+<tr>
+<td>9</td>
+<td>5</td>
+<td>2</td>
+<td>69</td>
+<td>B is min</td>
+</tr>
+
+<tr>
+<td>10</td>
+<td>1</td>
+<td>6</td>
+<td>90</td>
+<td>A is min</td>
+</tr>
+
+<tr>
+<td>11</td>
+<td>6</td>
+<td>21</td>
+<td>0</td>
+<td>Invalid</td>
+</tr>
+
+<tr>
+<td>12</td>
+<td>10</td>
+<td>53</td>
+<td>23</td>
+<td>A is min</td>
+</tr>
+
+<tr>
+<td>13</td>
+<td>11</td>
+<td>1</td>
+<td>60</td>
+<td>B is min</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="software-measurement" class="heading-anchor" href="#software-measurement" rel="nofollow" aria-hidden="true"></a>Software Measurement</h2>
+<p>Software measurement is the process of quantifying software attributes to understand, evaluate, and improve software development processes and products.</p>
+
+<p>Needs:</p>
+
+<ul>
+<li><strong>Quality Assurance</strong></li>
+<li><strong>Process Improvement</strong></li>
+<li><strong>Risk Management</strong></li>
+<li><strong>Decision Making</strong></li>
+<li><strong>Predictive Analytics</strong></li>
+</ul>
+
+<p><strong>Types of Software Metrics</strong></p>
+
+<ul>
+<li>Product
+
+<ul>
+<li>Size
+
+<ul>
+<li>LOC</li>
+<li>Function Point</li>
+<li>Cyclomatic</li>
+</ul></li>
+<li>Qualicty</li>
+<li>Performance
+
+<ul>
+<li>Response Time</li>
+<li>Resource Utilization</li>
+</ul></li>
+</ul></li>
+<li>Process
+
+<ul>
+<li>Productivity
+
+<ul>
+<li>LOC per Person</li>
+<li>Function Points per Person</li>
+</ul></li>
+<li>Quality</li>
+<li>Cost
+
+<ul>
+<li>Cost per Function Point</li>
+<li>Cost per LOC</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2><a name="test-plan-hierarchy" class="heading-anchor" href="#test-plan-hierarchy" rel="nofollow" aria-hidden="true"></a>Test plan hierarchy</h2>
+<p><img loading="lazy" src="../UT2/assets/Pasted%20image%2020241022032624.png" alt="" /></p>
+<h2><a name="mccall-s-quality-factors" class="heading-anchor" href="#mccall-s-quality-factors" rel="nofollow" aria-hidden="true"></a>McCall's Quality factors</h2>
+<p><img loading="lazy" src="../Sem/assets/Pasted%20image%2020241130022500.webp" alt="" /></p>
+<h2><a name="bug-life-cycle" class="heading-anchor" href="#bug-life-cycle" rel="nofollow" aria-hidden="true"></a>Bug life cycle</h2>
+<pre class='mermaid'>flowchart
+    new --> Assigned --> 
+    Open --> a[Duplicate
+    Rejected
+    Deffered
+    Not a Bug]
+    Open --> Fixed --> pr[Pending Retest] --> 
+    Retest --> Reopen --> Open
+    Retest --> Verified --> Closed
+</pre><h2><a name="effective-software-testing-vs-exhaustive-software-testing" class="heading-anchor" href="#effective-software-testing-vs-exhaustive-software-testing" rel="nofollow" aria-hidden="true"></a>Effective Software Testing Vs Exhaustive Software Testing</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Effective Software Testing</th>
+<th>Exhaustive Software Testing</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>Definition</strong></td>
+<td>Practical, focused testing</td>
+<td>Testing all inputs/outputs</td>
+</tr>
+
+<tr>
+<td><strong>Feasibility</strong></td>
+<td>Feasible</td>
+<td>Often impractical</td>
+</tr>
+
+<tr>
+<td><strong>Efficiency</strong></td>
+<td>Efficient</td>
+<td>Inefficient</td>
+</tr>
+
+<tr>
+<td><strong>Effectiveness</strong></td>
+<td>Identifies critical defects</td>
+<td>Can identify all defects</td>
+</tr>
+
+<tr>
+<td><strong>Focus</strong></td>
+<td>Prioritized testing</td>
+<td>Exhaustive testing</td>
+</tr>
+
+<tr>
+<td><strong>Approach</strong></td>
+<td>Risk-based, automated</td>
+<td>Brute-force, manual</td>
+</tr>
+
+<tr>
+<td><strong>Real-world</strong></td>
+<td>Widely used</td>
+<td>Rarely used</td>
+</tr>
+
+<tr>
+<td><strong>Cost</strong></td>
+<td>Lower</td>
+<td>Higher</td>
+</tr>
+
+<tr>
+<td><strong>Time</strong></td>
+<td>Shorter</td>
+<td>Longer</td>
+</tr>
+
+<tr>
+<td><strong>Risk</strong></td>
+<td>Lower risk of missing defects</td>
+<td>Higher risk of missing defects</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="integration-testing" class="heading-anchor" href="#integration-testing" rel="nofollow" aria-hidden="true"></a>Integration testing</h2>
+<pre class='mermaid'>flowchart
+    it[Integration Testing]
+    
+    it --> iit[Incremental Integration Testing]
+    it --> bbt[Big Bang Integration Testing]
+
+    iit --> bua[Bottom-Up Approach]
+    iit --> tda[Top-Down Approach]
+    iit --> sa[Sandwich Approach]
+</pre><h2><a name="test-loop-in-program" class="heading-anchor" href="#test-loop-in-program" rel="nofollow" aria-hidden="true"></a>Test loop in program</h2>
+<ul>
+<li><strong>Identify the Loop Structure</strong></li>
+<li><strong>Design Test Cases</strong></li>
+<li><strong>Execute Tests</strong></li>
+<li><strong>Analyze Results</strong></li>
+</ul>
+<h2><a name="agile-vs-waterfall-testing" class="heading-anchor" href="#agile-vs-waterfall-testing" rel="nofollow" aria-hidden="true"></a>Agile Vs Waterfall testing</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Agile Testing</th>
+<th>Waterfall Testing</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>Approach</strong></td>
+<td>Iterative and incremental</td>
+<td>Sequential and linear</td>
+</tr>
+
+<tr>
+<td><strong>Testing Timing</strong></td>
+<td>Throughout the development lifecycle</td>
+<td>At the end of the development lifecycle</td>
+</tr>
+
+<tr>
+<td><strong>Testing Involvement</strong></td>
+<td>Continuous and collaborative</td>
+<td>Isolated and separate</td>
+</tr>
+
+<tr>
+<td><strong>Documentation</strong></td>
+<td>Minimal and adaptive</td>
+<td>Extensive and upfront</td>
+</tr>
+
+<tr>
+<td><strong>Risk Management</strong></td>
+<td>Proactive and ongoing</td>
+<td>Reactive and limited</td>
+</tr>
+
+<tr>
+<td><strong>Flexibility</strong></td>
+<td>High</td>
+<td>Low</td>
+</tr>
+
+<tr>
+<td><strong>Customer Involvement</strong></td>
+<td>Frequent and active</td>
+<td>Limited and infrequent</td>
+</tr>
+
+<tr>
+<td><strong>Feedback Loop</strong></td>
+<td>Short and frequent</td>
+<td>Long and infrequent</td>
+</tr>
+
+<tr>
+<td><strong>Suitability for Projects</strong></td>
+<td>Small to medium-sized projects with changing requirements</td>
+<td>Large-scale projects with stable requirements</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="selenium-testing-tool" class="heading-anchor" href="#selenium-testing-tool" rel="nofollow" aria-hidden="true"></a>Selenium testing tool</h2>
+<pre class='mermaid'>flowchart TD
+
+    subgraph Selenium Suite
+        ide[Selenium 
+        IDE]
+        rc[Selenium 
+        RC]
+        wd[Web Driver]
+        g[Selenium Grid]
+    end
+    rc --> |Merged| s2[Selenium 2]
+    wd --> s2
+    s2 --> |New & Improved| s3[Selenium 3]
+</pre><h2><a name="regression-testing" class="heading-anchor" href="#regression-testing" rel="nofollow" aria-hidden="true"></a>Regression Testing</h2>
+<p>Regression Testing is a type of testing in the <a href="https://www.browserstack.com/guide/learn-software-development-process">software development cycle</a> that runs after every change to ensure that the change introduces no unintended breaks.</p>
+<h2><a name="jira" class="heading-anchor" href="#jira" rel="nofollow" aria-hidden="true"></a>Jira</h2>
+<p><img loading="lazy" src="../UT2/assets/Pasted%20image%2020241022031935.png" alt="" /></p>
+<h2><a name="cmm-model" class="heading-anchor" href="#cmm-model" rel="nofollow" aria-hidden="true"></a>CMM model</h2>
+<p><img loading="lazy" src="../UT2/assets/Pasted%20image%2020241022031630.jpg" alt="" /></p>
+<h2><a name="testing-techniques" class="heading-anchor" href="#testing-techniques" rel="nofollow" aria-hidden="true"></a>Testing Techniques</h2>
+<p><img loading="lazy" src="../UT1/assets/Pasted%20image%2020240829055801.png" alt="" /></p>
+<h2><a name="acceptance-testing" class="heading-anchor" href="#acceptance-testing" rel="nofollow" aria-hidden="true"></a>Acceptance Testing</h2>
+<pre class='mermaid'>flowchart BT
+    ut[Unit Testing] -->
+    it[Integration Testing] -->
+    st[System Testing] -->
+    at[Acceptance Testing]
+</pre><h2><a name="testing" class="heading-anchor" href="#testing" rel="nofollow" aria-hidden="true"></a>Testing</h2>
+<p><img loading="lazy" src="../UT1/assets/Black_box_testing_01-2.webp" alt="" /></p>
+
+<p><img loading="lazy" src="../UT1/assets/White-Box-Testing-768.webp" alt="" /></p>
+
+<p><img loading="lazy" src="../UT1/assets/Pasted%20image%2020240829061413.jpg" alt="" /></p>
+<h2><a name="software-testing-terminology" class="heading-anchor" href="#software-testing-terminology" rel="nofollow" aria-hidden="true"></a>Software testing terminology</h2>
+<ul>
+<li><strong>Failure</strong>: A <strong>failure</strong> occurs when a software application does not perform its intended function or deliver the expected results during execution.</li>
+<li><strong>Defect</strong>: (often referred to as a bug) is a deviation from the expected behavior of the software.</li>
+<li><strong>Error</strong>: An <strong>error</strong> is a mistake made by a developer during the coding process.</li>
+<li><strong>Testware</strong>:
+
+<ul>
+<li>Refers to all the artifacts produced during the testing process.</li>
+<li>Includes:
+
+<ul>
+<li>Test plans</li>
+<li>Test cases</li>
+<li>Test scripts</li>
+<li>Test data</li>
+<li>any other documentation or tools that support testing activitie</li>
+</ul></li>
+</ul></li>
+<li><strong>Test Oracle</strong>:
+
+<ul>
+<li>A <strong>test oracle</strong> is a mechanism or source that provides the expected outcomes for a given set of inputs during testing.</li>
+<li>It serves as a reference point against which actual results can be compared to determine if the software behaves as intended.</li>
+</ul></li>
+</ul>
+<h2><a name="six-sigma" class="heading-anchor" href="#six-sigma" rel="nofollow" aria-hidden="true"></a>Six Sigma</h2>
+<p><img loading="lazy" src="assets/Green-Belt-3.webp" alt="" /></p>
+
+<p><img loading="lazy" src="../Sem/assets/Pasted%20image%2020241130031113.webp" alt="" /></p>
+<h2><a name="table-based-testing" class="heading-anchor" href="#table-based-testing" rel="nofollow" aria-hidden="true"></a>Table Based Testing</h2>
+<p>State Table Based Testing is a software testing technique used to validate the behavior of a system based on its different states and the transitions between those states.</p>
+
+<p><strong>Example:</strong> ATM System</p>
+
+<p>Let's consider an ATM system with the following states:</p>
+
+<ul>
+<li><strong>S1</strong>: Idle</li>
+<li><strong>S2</strong>: Waiting for PIN</li>
+<li><strong>S3</strong>: Transaction in Progress</li>
+<li><strong>S4</strong>: Dispensing Cash</li>
+<li><strong>S5</strong>: Transaction Complete</li>
+<li><strong>S6</strong>: Card Ejected</li>
+</ul>
+
+<p>Events:</p>
+
+<ol>
+<li>Insert Card</li>
+<li>Enter PIN</li>
+<li>Withdraw Cash</li>
+<li>Cancel Transaction</li>
+<li>Timeout</li>
+</ol>
+
+<p>State Transition Table:</p>
+
+<table>
+<thead>
+<tr>
+<th>Current State</th>
+<th>Event</th>
+<th>Next State</th>
+<th>Action</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>S1</td>
+<td>Insert Card</td>
+<td>S2</td>
+<td>Display &quot;Enter PIN&quot;</td>
+</tr>
+
+<tr>
+<td>S2</td>
+<td>Enter PIN</td>
+<td>S3</td>
+<td>Validate PIN</td>
+</tr>
+
+<tr>
+<td>S3</td>
+<td>Withdraw Cash</td>
+<td>S4</td>
+<td>Dispense Cash</td>
+</tr>
+
+<tr>
+<td>S3</td>
+<td>Cancel Transaction</td>
+<td>S5</td>
+<td>Display &quot;Transaction Canceled&quot;</td>
+</tr>
+
+<tr>
+<td>S2</td>
+<td>Timeout</td>
+<td>S6</td>
+<td>Eject Card</td>
+</tr>
+
+<tr>
+<td>S4</td>
+<td>Cash Dispensed</td>
+<td>S5</td>
+<td>Display &quot;Transaction Complete&quot;</td>
+</tr>
+
+<tr>
+<td>S5</td>
+<td>Eject Card</td>
+<td>S1</td>
+<td>Return to Idle</td>
+</tr>
+</tbody>
+</table>
+
+<p>Test Case Generation</p>
+
+<ol>
+<li><strong>TC001</strong>: Insert Card → Enter PIN → Withdraw Cash → Cash Dispensed → Eject Card (Valid transaction)</li>
+<li><strong>TC002</strong>: Insert Card → Enter PIN → Cancel Transaction → Eject Card (Cancel before withdrawal)</li>
+<li><strong>TC003</strong>: Insert Card → Timeout → Eject Card (Check timeout behavior)</li>
+<li><strong>TC004</strong>: Insert Card → Enter Incorrect PIN (Invalid scenario)</li>
+</ol>
+<h2><a name="logic-coverage-criteria-for-statement-coverage" class="heading-anchor" href="#logic-coverage-criteria-for-statement-coverage" rel="nofollow" aria-hidden="true"></a>## Logic Coverage Criteria for Statement Coverage</h2>
+<p>Logic Coverage Criteria, specifically Statement Coverage, is a testing metric used to determine the effectiveness of test cases in executing the code of a program.</p>
+
+<p><strong>Key Concepts of Statement Coverage</strong></p>
+
+<ol>
+<li><strong>Executable Statements</strong>: These are lines of code that can be executed, such as assignments, condition checks, and method calls.</li>
+<li><strong>Coverage Measurement</strong>: Statement coverage is expressed as a percentage:
+$$Statement Coverage=
+\Bigg({\text{Number of Executed Statements} \over \text{Total Number of Executable Statements}}\Bigg)×100
+$$</li>
+</ol>
+
+<p><strong>How Statement Coverage Works</strong></p>
+
+<ul>
+<li><strong>Testing All Statements</strong>: The primary goal is to write test cases that cover every line of executable code.</li>
+<li><strong>Single Path Testing</strong>: It's essential to ensure that each path through the code is tested at least once, but Statement Coverage does not necessarily require that all logical conditions (like those in if statements) are tested.</li>
+</ul>
+
+		</main>
+		
+		<details id="table-of-content">
+		   <summary>Table of Content</summary>
+		<nav>
+<ul>
+<li><a href="#graph-metrics">Graph metrics</a>
+<ul>
+<li><a href="#question-1">
+Question 1</a></li>
+<li><a href="#question-2">
+Question 2</a></li>
+</ul></li>
+<li><a href="#agile-testing">
+## Agile testing</a></li>
+<li><a href="#test-management">
+Test Management</a></li>
+<li><a href="#automation-testing">
+Automation Testing</a></li>
+<li><a href="#mutation-testing">
+Mutation Testing</a>
+<ul>
+<li><a href="#primary-mutant">
+Primary Mutant</a></li>
+<li><a href="#secondary-mutants">
+Secondary Mutants</a></li>
+<li><a href="#primary-vs-secondary-mutants">
+<strong>Primary Vs Secondary Mutants</strong></a></li>
+</ul></li>
+<li><a href="#software-development-lifecycle-bugs">
+Software development lifecycle bugs</a></li>
+<li><a href="#test-suite-prioritization">
+Test suite prioritization</a></li>
+<li><a href="#organization-for-standardization-iso-9000-2000">
+Organization for Standardization (ISO) 9000:2000</a></li>
+<li><a href="#performance-testing">
+Performance Testing</a></li>
+<li><a href="#defect-spoilage">
+Defect spoilage</a></li>
+<li><a href="#a-program-read-an-integer-number-within-range-1-100-and-determines-whether-it-is-prime-number-or-not-design-test-cases-for-this-program-using-bvc-robust-and-worst-case-testing-method">
+A Program read an integer number within range [1, 100] and determines whether it is prime number or not. Design test cases for this program using BVC, Robust and Worst-case testing method.</a></li>
+<li><a href="#a-program-reads-three-numbers-a-b-and-c-within-the-range-1-100-and-prints-the-minimum-number-design-test-cases-for-this-program-using-bvc-and-robust-testing-methods-2022">
+A program reads three numbers A, B and C, within the range [1,100] and prints the minimum number. Design test cases for this program using BVC and Robust testing methods.  (2022)</a></li>
+<li><a href="#software-measurement">
+Software Measurement</a></li>
+<li><a href="#test-plan-hierarchy">
+Test plan hierarchy</a></li>
+<li><a href="#mccall-s-quality-factors">
+McCall's Quality factors</a></li>
+<li><a href="#bug-life-cycle">
+Bug life cycle</a></li>
+<li><a href="#effective-software-testing-vs-exhaustive-software-testing">
+Effective Software Testing Vs Exhaustive Software Testing</a></li>
+<li><a href="#integration-testing">
+Integration testing</a></li>
+<li><a href="#test-loop-in-program">
+Test loop in program</a></li>
+<li><a href="#agile-vs-waterfall-testing">
+Agile Vs Waterfall testing</a></li>
+<li><a href="#selenium-testing-tool">
+Selenium testing tool</a></li>
+<li><a href="#regression-testing">
+Regression Testing</a></li>
+<li><a href="#jira">
+Jira</a></li>
+<li><a href="#cmm-model">
+CMM model</a></li>
+<li><a href="#testing-techniques">
+Testing Techniques</a></li>
+<li><a href="#acceptance-testing">
+Acceptance Testing</a></li>
+<li><a href="#testing">
+Testing</a></li>
+<li><a href="#software-testing-terminology">
+Software testing terminology</a></li>
+<li><a href="#six-sigma">
+Six Sigma</a></li>
+<li><a href="#table-based-testing">
+Table Based Testing</a></li>
+<li><a href="#logic-coverage-criteria-for-statement-coverage">
+## Logic Coverage Criteria for Statement Coverage</a></li>
+</ul>
+</nav>
+
+		</details>
+		
+		<footer>
+			<p style="text-align: center; font-size: small; margin-top: 5em;">
+				<a href="https://anzenkodo.github.io/license">LICENSE</a>
+			</p>
+		</footer>
+	</body>
+	<script src="https://AnzenKodo.github.io/assets/js/mermaid.js"></script>
+	<script id="MathJax-script" async src="https://AnzenKodo.github.io/assets/js/mathjax.js"></script>
+	<script>
+		/* document.getElementById('video').addEventListener('click', (ele) => {
+			 if (ele.target.paused) {
+				 ele.target.play();
+			 } else {
+				 ele.target.pause();
+			 }
+		}); */
+
+		mermaid.initialize({
+			theme: "neutral",
+			themeVariables: {
+			    lineColor: "#939598",
+			}
+		});
+
+		MathJax = {
+		  tex: {
+			inlineMath: [['$', '$']],
+			displayMath: [['$$', '$$']],
+		  }
+		};
+	</script>
+</html>

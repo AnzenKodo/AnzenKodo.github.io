@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>E&E Notes - AK#Notes</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="#FF6C22">
+		<meta name="description" content="## E-Commerce  ![Type of E-commerce](assets/Pasted%20image%2020231028005629.png)  E-commerce, short ">
+		<meta property="og:description" content="## E-Commerce  ![Type of E-commerce](assets/Pasted%20image%2020231028005629.png)  E-commerce, short ">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<meta property="og:image:alt" content="AK#Notes logo">
+		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="E&E Notes - AK#Notes">
+		<meta property="og:url" content="https://AnzenKodo.github.io/notes/notes/Collage/Sem5/E&E Notes.html">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+
+			:root {
+				/* color-scheme: dark light; */
+				color-scheme: dark;
+				--theme: #FF6C22;
+			}
+			body {
+				max-width: 40rem;
+				margin: 0 auto;
+				font-family: system-ui;
+				padding: 0 1em;
+				color: inherit !important;
+				word-break: break-word;
+			}
+			h1, h2, h3, h4, h5, h6 {
+				margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+				font-size: 2rem;
+			}
+			h3 {
+				font-size: 1.8rem;
+			}
+			h4 {
+				font-size: 1.5rem;
+			}
+			h5 {
+				font-size: 1.3rem;
+			}
+			h6 {
+				font-size: 1rem;
+			}
+			p, li, td, code {
+				line-height: 1.5rem;
+			}
+			a {
+				color: var(--theme);
+				text-decoration: none;
+			}
+			a:hover, a:focus {
+				text-decoration: underline;
+			}
+			a:active {
+				background: var(--theme);
+				color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+				margin-top: .5rem;
+			}
+			li {
+				margin-bottom: .5rem;
+			}
+			table {
+				border-collapse: collapse;
+				overflow-x: auto;
+				display: block;
+				word-break: auto-phrase;
+				margin: 1rem 0;
+			}
+			th {
+				font-size: 1.1rem;
+				border: 2px solid;
+				padding: .3rem .3rem;
+			}
+			td {
+				border: 1px solid;
+				padding: .3rem .5rem;
+			}
+			blockquote {
+				margin-left: 0;
+				margin-right: 0;
+				border: 1px solid;
+				border-left: 10px solid;
+				padding: 0 1rem;
+			}
+				.code-block {
+				background: black;
+				overflow-x: auto;
+				padding: 0em 1em;
+				border: 1px solid;
+			}
+			.code-block-language-name {
+				position: sticky;
+				left: 95%;
+				top: .5em;
+				font-weight: bold;
+				color: white;
+			}
+			:not(pre.chroma) > code {
+				border: 1px solid;
+				padding: .3rem .2rem .2rem .2rem;
+			}
+			img {
+				max-width: 100%;
+				display: block;
+				margin: 0 auto;
+			}
+			[href="#skip-top-main"] {
+				padding: 0.3em;
+				position: absolute;
+				transform: translateY(-1000%);
+			}
+			[href="#skip-top-main"]:focus {
+				transform: translateY(0%);
+				background: var(--theme);
+				color: inherit;
+			}
+			#table-of-content {
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+				background: black;
+				padding: 0.5rem 1em;
+				z-index: 1;
+				color: white;
+			}
+			#table-of-content[open] {
+				max-height: 90%;
+				overflow-y: auto;
+				bottom: 50px;
+				margin-left: 1em;
+			}
+			#table-of-content[open] summary {
+				background: black;
+				padding: 0.5em 1em;
+				text-align: center;
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+			}
+			#table-of-content ul:first-child {
+				padding-left: 1em;
+				margin-top: 1.5em;
+			}
+			.heading-anchor::before {
+				margin-right: .5rem;
+			}
+		    h2 .heading-anchor::before {
+    			content: "#";
+    			margin-right: .5rem;
+		    }
+            h3 .heading-anchor::before {
+				content: "##";
+				margin-right: .5rem;
+			}
+            h4 .heading-anchor::before {
+				content: "###";
+				margin-right: .5rem;
+			}
+            h5 .heading-anchor::before {
+				content: "####";
+				margin-right: .5rem;
+			}
+            h6 .heading-anchor::before {
+				content: "#####";
+				margin-right: .5rem;
+			}
+			.mermaid {
+				background: black;
+				border: 1px solid;
+				margin-top: 1rem;
+				padding: 1rem;
+				font-family: monospace;
+			}
+			.mermaid svg {
+				display: block;
+				margin: auto;
+			}
+			.mermaid:has(svg) {
+				background: none;
+				border: none;
+				margin-top: 1rem;
+				padding: 0;
+			}
+			mjx-container {
+				display: math;
+				overflow-y: hidden;
+				overflow-x: auto;
+				max-width: 100%;
+				padding-bottom: .8rem;
+			}
+			iframe {
+				width: 100%;
+				height: 21rem;
+				margin: 1rem 0;
+			}
+			video {
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<a href="#skip-top-main">Skip to main</a>
+		<header>
+<!--		<h1 style="text-align: center;">-->
+			<h1 style="text-align: center;">
+				<a href="https://AnzenKodo.github.io">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+			</h1><nav style="border-top: 1px solid gray;border-bottom: 1px solid gray;padding: .5rem 0;text-align: center;margin: 0 0 2rem 0;color: gray;clear: left;line-height: 1.6rem;">
+				<a href="https://AnzenKodo.github.io/notes">Home</a> | <a href="https://AnzenKodo.github.io">About</a> | <a href="https://AnzenKodo.github.io/blogroll">Blogroll</a> | <a href="https://github.com/AnzenKodo">Github</a> | <a href="https://x.com/AnzenKodo">𝕏</a>
+			</nav>
+			<!-- <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;"> -->
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem; margin-top: 0;">E&E Notes</h1>
+			<h2><a name="e-commerce" class="heading-anchor" href="#e-commerce" rel="nofollow" aria-hidden="true"></a>E-Commerce</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020231028005629.png" alt="Type of E-commerce" /></p>
+
+<p>E-commerce, short for electronic commerce, refers to the buying and selling of goods and services over the internet. It involves the exchange of data or currency to process a transaction between a buyer and a seller.</p>
+
+<p>E-commerce operates in different forms, and here are the different types of e-commerce:</p>
+
+<ul>
+<li><strong>Business-to-Consumer (B2C)</strong>:
+
+<ul>
+<li>This type of e-commerce involves companies selling their products or services directly to the end-user, the consumer who needs it.</li>
+<li>This is the most common type of e-commerce, and it includes online retailers such as Amazon, Walmart, and Target.</li>
+</ul></li>
+<li><strong>Business-to-Business (B2B)</strong>:
+
+<ul>
+<li>This type of e-commerce involves businesses selling their products or services to other businesses. The buyer often resells the products to the consumer. B2B e-commerce includes companies such as Alibaba, which connects businesses with suppliers.</li>
+</ul></li>
+<li><strong>Consumer-to-Consumer (C2C)</strong>:
+
+<ul>
+<li>This type of e-commerce involves consumers selling products or services to other consumers.</li>
+<li>This type of e-commerce is facilitated by online marketplaces such as eBay, Etsy, and Craigslist.</li>
+</ul></li>
+<li><strong>Consumer-to-Business (C2B)</strong>:
+
+<ul>
+<li>This type of e-commerce involves consumers selling their products or services to businesses.</li>
+<li>This type of e-commerce is common in the freelance industry, where individuals offer their services to businesses that need them.</li>
+</ul></li>
+<li><strong>Business-to-Government (B2G)</strong>:
+
+<ul>
+<li>This type of e-commerce involves businesses selling their products or services to government agencies.</li>
+<li>This type of e-commerce is common in the defense industry, where businesses sell their products to the government.</li>
+</ul></li>
+<li><strong>Consumer-to-Government (C2G)</strong>:
+
+<ul>
+<li>This type of e-commerce involves consumers selling their products or services to government agencies.</li>
+<li>This type of e-commerce is common in the freelance industry, where individuals offer their services to government agencies that need them.</li>
+</ul></li>
+</ul>
+<h2><a name="entrepreneur" class="heading-anchor" href="#entrepreneur" rel="nofollow" aria-hidden="true"></a>Entrepreneur</h2>
+<p><img loading="lazy" src="../assets/Pasted%20image%2020231128064441.png" alt="" /></p>
+
+<ol>
+<li>Entrepreneurship promotes capital formation by mobilizing the idle saving of the public.</li>
+<li>It provides immediate large-scale employment. Thus, it helps reduce the unemployment problem in the country, i.e., the root of all socio-economic problems.</li>
+<li>It promotes balanced regional development.</li>
+<li>It helps reduce the concentration of economic power.</li>
+<li>It stimulates the equitable redistribution of wealth, income and even political power in the interest of the country.</li>
+<li>It encourages effective resource mobilization</li>
+<li>of capital and skill which might otherwise remain unutilized and idle.</li>
+<li>It also induces backward and forward linkages which stimulate the process of economic development in the country.</li>
+<li>Last but no means the least, it also promotes country’s export trade i.e., an important ingredient to economic development. Thus, it is clear that entrepreneurship serves as a catalyst of economic development.
+On the whole, the role of entrepreneurship in economic development of a country can best be put as “an economy is the effect for which entrepreneurship is the cause”.</li>
+</ol>
+<h2><a name="supply-chain-management" class="heading-anchor" href="#supply-chain-management" rel="nofollow" aria-hidden="true"></a>Supply Chain Management</h2>
+<p><img loading="lazy" src="assets/78805a221a988e79ef3f42d7c5bfd418-7-700x709.webp" alt="Supply chain management" /></p>
+
+<p>SRM is a discipline of working collaboratively with those suppliers that are vital to the success of your organization, to maximize the potential value of those relationships.</p>
+
+<p>Supplier relationship management (SRM) is the discipline of strategically planning and managing, all interactions with third party organizations that supply goods or services to an organization in order to maximize the value of those interactions.</p>
+<h3><a name="component-of-srm" class="heading-anchor" href="#component-of-srm" rel="nofollow" aria-hidden="true"></a>Component of SRM</h3>
+<p><img loading="lazy" src="../assets/Pasted%20image%2020231128064839.png" alt="" /></p>
+
+<ul>
+<li>ORGANIZATIONAL STRUCTURE:
+
+<ul>
+<li>A formal SRM team or office at the corporate level.</li>
+<li>The purpose of such a group is to facilitate and coordinate SRM activities across functions and business units</li>
+</ul></li>
+<li>GOVERNANCE:
+
+<ul>
+<li>The SRM office and supply chain function are typically responsible for defining the SRM governance model, which includes a clear and jointly agreed governance framework in place for some top-tier strategic suppliers.</li>
+</ul></li>
+<li>SUPPLIER ENGAGEMENT MODEL:
+
+<ul>
+<li>Effective supplier relationship management requires an enterprise-wide analysis of what activities to engage in with each supplier.</li>
+<li>The common practice of implementing a “one size fits all” approach to managing suppliers can stretch resources and limit the potential value that can be derived from strategic supplier relationships</li>
+</ul></li>
+<li>VALUE MEASUREMENT
+
+<ul>
+<li>SRM delivers a competitive advantage by harnessing talent and ideas from key supply partners and translates this into product and service offerings for end customers.</li>
+</ul></li>
+<li>TECHNOLOGY AND SYSTEMS:
+
+<ul>
+<li>These systems can be used to gather and track supplier performance data across sites, business units or regions.</li>
+<li>The benefit is a more comprehensive and objective picture of supplier performance, which can be used to make better sourcing decisions, as well as identify and address systemic supplier performance problems.</li>
+</ul></li>
+</ul>
+<h2><a name="evaluating-new-venture" class="heading-anchor" href="#evaluating-new-venture" rel="nofollow" aria-hidden="true"></a>Evaluating new venture</h2>
+<p>Venture capitalists use specific criteria to evaluate new venture proposals and decide whether to invest in them.</p>
+
+<ol>
+<li><strong>Management Skill and History</strong>: Venture capitalists look for a strong and experienced management team that can execute the business plan and lead the company to success.</li>
+<li><strong>Market Size/Growth</strong>: Venture capitalists expect business plans to include a detailed market size analysis. Market sizing should be presented from the &quot;top down&quot; and from the &quot;bottom up.&quot;.</li>
+<li><strong>Rate of Return</strong>: Venture capitalists invest in startups with the expectation of a high rate of return.</li>
+<li><strong>Market Niche/Position</strong>: Venture capitalists evaluate the business concept and plan to determine if it is innovative and has a competitive edge..</li>
+<li><strong>Financial History</strong>: Venture capitalists evaluate the financial history of the startup to determine if it has a clear path to profitability and can generate returns.</li>
+<li><strong>Venture Location</strong>: Venture capitalists evaluate the location of the startup to determine if it is in a favorable business environment and has access to resources and talent.</li>
+<li><strong>Growth Potential</strong>: Venture capitalists evaluate the growth potential of the startup to determine if it can scale and generate significant revenue and profits in the future.</li>
+<li><strong>Barriers to Entry</strong>: Venture capitalists evaluate the barriers to entry in the market to determine if the startup has a competitive advantage and can protect its market position.</li>
+<li><strong>Size of Investment</strong>: Venture capitalists evaluate the size of the investment to determine if it is appropriate for the stage of the startup and the potential for returns.</li>
+<li><strong>Stake of Entrepreneur</strong>: Venture capitalists evaluate the stake of the entrepreneur to determine if they have a significant interest in the success of the startup and are committed to its growth.</li>
+</ol>
+<h2><a name="types-of-entrepreneurs" class="heading-anchor" href="#types-of-entrepreneurs" rel="nofollow" aria-hidden="true"></a>Types of Entrepreneurs</h2>
+<ul>
+<li>Business:
+
+<ul>
+<li>Business entrepreneur</li>
+<li>Trading entrepreneur</li>
+<li>Industrial entrepreneur</li>
+<li>Corporate entrepreneur</li>
+<li>Agricultural entrepreneur</li>
+</ul></li>
+<li>Motivation
+
+<ul>
+<li>Pure entrepreneur</li>
+<li><strong>Induced entrepreneur</strong>: is attracted by the various incentives, subsidies and facilities offered by the government.</li>
+</ul></li>
+<li>Technology
+
+<ul>
+<li>Technical entrepreneur</li>
+<li>Non-technical entrepreneur</li>
+<li><strong>Professional entrepreneur</strong>: who interested in floating a business but does not want to manage or operate it.</li>
+</ul></li>
+<li>Development
+
+<ul>
+<li><strong>First generation entrepreneur</strong>: are those entrepreneur who do not possess any entrepreneurial background.</li>
+<li><strong>Second generation entrepreneur</strong>: are those entrepreneurs who inherit the family business firms and pass it from one generation to another.</li>
+<li><strong>Classical entrepreneur</strong>: A classical entrepreneur is a stereotype entrepreneur whose aim is to maximize his economic returns at a level consistent with the survival of the unit but with or without an element of growth.</li>
+</ul></li>
+<li>Capital Ownership:
+
+<ul>
+<li>Private entrepreneur</li>
+<li>State entrepreneur</li>
+<li><strong>Joint entrepreneur</strong>: Joint entrepreneur means the combination of private entrepreneur and state entrepreneur who join hands.</li>
+</ul></li>
+<li>Scale
+
+<ul>
+<li>Large scale industry entrepreneur</li>
+<li>Medium scale industry entrepreneur</li>
+<li>Small scale industry entrepreneur</li>
+<li>Tiny industry entrepreneur</li>
+</ul></li>
+<li>Other
+
+<ul>
+<li>Solo operators</li>
+<li>Active Partners</li>
+<li>Simply partners</li>
+<li>Inventors</li>
+<li>Buyers</li>
+<li>Life timers</li>
+</ul></li>
+</ul>
+<h2><a name="customer-relationship-management" class="heading-anchor" href="#customer-relationship-management" rel="nofollow" aria-hidden="true"></a>Customer Relationship Management</h2>
+<p><img loading="lazy" src="../assets/Pasted%20image%2020231128072307.png" alt="" /></p>
+
+<p>CRM “is a business strategy that aims to understand, anticipate and manage the needs of an organization's current and potential customers.</p>
+
+<p>CRM is concerned with the creation, development and enhancement of individualized customer relationships with carefully targeted customers and customer groups resulting in maximizing their total customer life-time value.</p>
+<h3><a name="types-of-crm" class="heading-anchor" href="#types-of-crm" rel="nofollow" aria-hidden="true"></a>Types of CRM</h3>
+<p>Strategic CRM</p>
+
+<ul>
+<li>Customer-centric, based on acquiring and maintaining profitable customers.
+Operational CRM</li>
+<li>Based on customer-oriented processes such as selling, marketing, and customer service.
+Analytical CRM</li>
+<li>Based on the intelligent mining of the customer data and using it tactically for future strategies.
+Collaborative CRM</li>
+<li>Based on application of technology across organization boundaries with a view to optimize the organization and customers.</li>
+</ul>
+<h3><a name="functional-areas-of-crm" class="heading-anchor" href="#functional-areas-of-crm" rel="nofollow" aria-hidden="true"></a>Functional areas of CRM:</h3>
+<ul>
+<li>Sales Force Automation
+
+<ul>
+<li>Improve Sales Management</li>
+<li>Accurate Forecasting &amp; Reporting</li>
+<li>Contact Management</li>
+<li>Activity Management</li>
+<li>Opportunity Management</li>
+</ul></li>
+<li>Marketing Automation
+
+<ul>
+<li>Customer Journey Automation</li>
+<li>Marketing Funnel Automation</li>
+<li>Automated Email Marketing</li>
+<li>Marketing Campaign Automation</li>
+</ul></li>
+<li>Customer Service Automation
+
+<ul>
+<li>Personalized Customer Experiences</li>
+<li>Customer Contact Management</li>
+<li>Improve Customer Relationships</li>
+</ul></li>
+</ul>
+<h2><a name="various-financing-stage-of-any-organization-or-company" class="heading-anchor" href="#various-financing-stage-of-any-organization-or-company" rel="nofollow" aria-hidden="true"></a>Various financing stage of any organization or company.</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020231027230903.png" alt="Financing stages" /></p>
+
+<ol>
+<li><strong>Pre-Seed Funding</strong>:
+
+<ul>
+<li>This is the earliest stage of financing, where the company is often little more than an idea for a product or service that has the potential to develop into a successful business down the road.</li>
+<li>Entrepreneurs spend most of this stage convincing investors that their ideas represent a viable investment opportunity.</li>
+</ul></li>
+<li><strong>Seed Funding</strong>:
+
+<ul>
+<li>At this stage, the startup will have increased costs as the founder incorporates the business and devotes more time.</li>
+<li>Seed funding is the first official stage of venture capital financing, and it typically involves raising funds from angel investors or venture capitalists.</li>
+</ul></li>
+<li><strong>Series A Funding</strong>
+
+<ul>
+<li>This stage of financing is typically used to fund the company's initial growth and expansion.</li>
+<li>The company has already launched its product or service and has a proven business model.</li>
+</ul></li>
+<li><strong>Series B Funding</strong>
+
+<ul>
+<li>This stage of financing is used to fund the company's expansion into new markets or to develop new products.</li>
+<li>The company has already established itself in the market and has a growing customer base.</li>
+</ul></li>
+<li><strong>Series C Funding</strong>:
+
+<ul>
+<li>This stage of financing is usually the last stage of venture capital financing.</li>
+<li>Businesses in this funding stage are doing well and require additional funding to help develop new products, expand into new markets, or even acquire other companies.</li>
+</ul></li>
+<li><strong>Expansion Stage Financing</strong>:
+
+<ul>
+<li>This financing follows first-stage financing and provides working capital for the initial expansion of a business that is producing and shipping product and has growing accounts receivable and inventories.</li>
+</ul></li>
+<li><strong>Initial Public Offering (IPO)</strong>:
+
+<ul>
+<li>This is the stage where a company goes public and sells shares of its stock to the public for the first time.</li>
+<li>This stage of financing is typically used to raise a significant amount of capital to fund the company's growth and expansion.</li>
+</ul></li>
+</ol>
+<h2><a name="enterprises-based-on-ownership-structure" class="heading-anchor" href="#enterprises-based-on-ownership-structure" rel="nofollow" aria-hidden="true"></a>Enterprises based on Ownership structure.</h2>
+<ul>
+<li>Sole Proprietorship</li>
+<li>Partnership
+
+<ul>
+<li>General partnerships</li>
+<li>Limited partnership</li>
+</ul></li>
+<li>Corporation</li>
+<li>Limited Liability Company</li>
+<li>Private Limited Company</li>
+<li>Public Limited Company</li>
+</ul>
+<h3><a name="sole-proprietorship" class="heading-anchor" href="#sole-proprietorship" rel="nofollow" aria-hidden="true"></a>Sole Proprietorship</h3>
+<p><img loading="lazy" src="../assets/Pasted%20image%2020231128074552.png" alt="" /></p>
+
+<ul>
+<li>A sole proprietorship has only one owner and is an extension of its owner.</li>
+<li>It is not a legal entity and cannot sue or be sued, so creditors/claimants sue the owner</li>
+</ul>
+
+<p><img loading="lazy" src="../assets/Pasted%20image%2020231128074648.png" alt="" /></p>
+<h3><a name="partnership" class="heading-anchor" href="#partnership" rel="nofollow" aria-hidden="true"></a>Partnership</h3>
+<p><img loading="lazy" src="../assets/Pasted%20image%2020231128074957.png" alt="" /></p>
+
+<p><strong>General partnerships</strong> - a business co-owned by
+2 or more general partners</p>
+
+<ul>
+<li>Default arrangement</li>
+<li>Simplest to form</li>
+<li>Made up of General Partners - a person who has full or shared responsibility for running the business</li>
+<li>General partnerships are most common</li>
+<li>General partners have UNLIMITED LIABILITY
+<strong>Limited partnership</strong> - a business co-owned by
+at least one general partner and one limited
+partner</li>
+<li>General partners - unlimited liability</li>
+<li>Limited partners - limited liability (only liable for the amount they invested in business)</li>
+<li>Limited partners do not operate business, they provide the capital.</li>
+</ul>
+
+<p><img loading="lazy" src="../assets/Pasted%20image%2020231128075125.png" alt="" /></p>
+<h3><a name="corporations" class="heading-anchor" href="#corporations" rel="nofollow" aria-hidden="true"></a>Corporations</h3>
+<p><img loading="lazy" src="../assets/Pasted%20image%2020231128075146.png" alt="" /></p>
+
+<p><strong>Stock</strong></p>
+
+<ul>
+<li>The shares of ownership of a corporation</li>
+<li>2 Types:
+1) Common Stock (voting privileges)
+2) Preferred Stock (no voting rights, dividends paid first)
+<strong>Stockholder (aka Shareholder)</strong></li>
+<li>A person who owns a share or shares of a corporation's stock
+<strong>Dividend</strong></li>
+<li>A portion of the corporation's profit (earnings) that is distributed to stockholders
+<strong>Board of Directors</strong></li>
+<li>The governing body of the corporation, elected by stockholders and appoint corporate officers
+<strong>Closed (private) corporation</strong></li>
+<li>A corporation whose stock is owned by relatively few people and is not sold to the general public
+<strong>Open (public) corporation</strong></li>
+<li>A corporation whose stock is bought and sold on security exchanges and can be purchased by any individual</li>
+</ul>
+
+<p><img loading="lazy" src="../assets/Pasted%20image%2020231128075408.png" alt="" /></p>
+
+<p><img loading="lazy" src="../assets/Pasted%20image%2020231128075424.png" alt="" /></p>
+<h3><a name="limited-liability-company-llc" class="heading-anchor" href="#limited-liability-company-llc" rel="nofollow" aria-hidden="true"></a>Limited Liability Company (LLC)</h3>
+<p><img loading="lazy" src="../assets/Pasted%20image%2020231128084555.png" alt="" /></p>
+
+<p>protects its owners from personal responsibility for its debts or liabilities. Limited liability companies are hybrid entities that combine the characteristics of a corporation with those of a partnership or sole proprietorship.</p>
+
+<ul>
+<li>The limited liability company (LLC) is a corporate structure that protects its owners from being personally pursued for repayment of the company's debts or liabilities.</li>
+<li>Regulation of LLCs varies from state to state.</li>
+<li>Any entity or individual can be a member of an LLC with the notable exceptions of banks and insurance companies.</li>
+<li>LLCs do not pay taxes on their profits directly.</li>
+<li>Their profits and losses are passed through to members, who report them on their individual tax returns.</li>
+</ul>
+<h3><a name="private-limited-company" class="heading-anchor" href="#private-limited-company" rel="nofollow" aria-hidden="true"></a>Private Limited Company</h3>
+<p>A private limited company is where between one and ninety nine people come together and form a business</p>
+
+<p>The owners are called shareholders and they invest money in the company</p>
+
+<p>The profit is divided up among the shareholders and distributed in the form of dividends</p>
+
+<p>“Ltd.” is written after the name of the company The annual accounts are sent to the Registrar of Companies.</p>
+
+<p>They are not published</p>
+<h4><a name="advantages-of-a-private-limited-company" class="heading-anchor" href="#advantages-of-a-private-limited-company" rel="nofollow" aria-hidden="true"></a>Advantages of a Private Limited Company</h4>
+<ul>
+<li>Shareholders have limited liability</li>
+<li>Extra capital is available to fund expansion of the business</li>
+
+<li><p>Continuity of existence</p>
+<h4><a name="disadvantages-of-a-private-limited-company" class="heading-anchor" href="#disadvantages-of-a-private-limited-company" rel="nofollow" aria-hidden="true"></a>Disadvantages of a Private Limited Company</h4></li>
+
+<li><p>Costly to set up</p></li>
+
+<li><p>A lot of legal requirements when forming a company</p></li>
+
+<li><p>Shares cannot be transferred to the general public</p></li>
+</ul>
+<h3><a name="public-limited-company" class="heading-anchor" href="#public-limited-company" rel="nofollow" aria-hidden="true"></a>Public Limited Company</h3>
+<ul>
+<li>A PLC designates a company that has offered shares of stock to the general public.</li>
+<li>The buyers of those shares have limited liability, meaning that they cannot be held responsible for any business losses in excess of the amount they paid for the shares.</li>
+<li>A PLC can be either an unlisted or listed company on the stock exchanges.</li>
+
+<li><p>Unlike privately-held companies, public companies must publish certain financial data and disclosures for the public at regular intervals.</p>
+<h4><a name="advantages-and-disadvantages-of-a-plc" class="heading-anchor" href="#advantages-and-disadvantages-of-a-plc" rel="nofollow" aria-hidden="true"></a>Advantages and Disadvantages of a PLC</h4></li>
+
+<li><p>The biggest advantage of forming a public limited company (PLC)is that it grants the ability to raise capital by issuing public shares.</p></li>
+
+<li><p>A listing on a public stock exchange attracts interest from hedge funds, mutual funds, and professional traders as well as individual investors.</p></li>
+
+<li><p>That tends to lead to increased access to capital for investment in the company than a private limited company can amass.</p></li>
+</ul>
+<h2><a name="non-financial-motivational-techniques-that-entrepreneurs-use-to-motivate-their-employees" class="heading-anchor" href="#non-financial-motivational-techniques-that-entrepreneurs-use-to-motivate-their-employees" rel="nofollow" aria-hidden="true"></a>Non-financial motivational techniques that Entrepreneurs use to motivate their employees</h2>
+<p>Entrepreneurs can use various non-financial motivational techniques to inspire and engage their employees. Some of these techniques include:</p>
+
+<ol>
+<li><strong>Delegation</strong>: Delegating tasks and empowering employees to work on their own can increase motivation and contribute to self-actualization.</li>
+<li><strong>Job enrichment</strong>: This involves increasing the range and complexity of tasks employees are assigned to, which can lead to greater motivation and the opportunity to use their abilities to the fullest.</li>
+<li><strong>Recognition and appreciation</strong>: Publicly acknowledging employees' efforts and achievements can boost motivation and satisfaction.</li>
+<li><strong>Mentorship programs</strong>: Providing opportunities for employees to learn from experienced colleagues can help them develop essential skills and advance in their careers.</li>
+<li><strong>Leadership roles</strong>: Assigning employees to leadership positions can motivate them to put in extra effort and demonstrate their commitment to the organization.</li>
+<li><strong>Creating a great working environment</strong>: A conducive work environment, including comfortable chairs, spacious workspaces, and opportunities for relaxation, can positively impact employee motivation.</li>
+<li><strong>Team-building activities</strong>: Engaging employees in group activities can foster a sense of camaraderie and improve team dynamics.</li>
+<li><strong>Experiential rewards</strong>: Offering benefits such as volunteering, personal projects, and educational workshops can help employees unwind, learn new skills, and support their community.</li>
+<li><strong>Flexible work arrangements</strong>: Providing employees with the opportunity to work remotely or adopt flexible schedules can increase motivation and job satisfaction.</li>
+<li><strong>Career development opportunities</strong>: Encouraging employees to pursue new skills and advance in their careers can lead to increased motivation and loyalty.</li>
+</ol>
+<h2><a name="e-procurement" class="heading-anchor" href="#e-procurement" rel="nofollow" aria-hidden="true"></a>E-Procurement</h2>
+<p><img loading="lazy" src="../assets/What-is-eProcurement1-1024x760.png.webp" alt="" /></p>
+
+<p>eProcurement is defined as a digital B2B business process that utilizes internet technology to centralize purchasing workflows and streamlines business transactions like procuring goods and services to reduce costs and improve purchasing processes.</p>
+<h3><a name="key-features-and-benefits-of-e-procurement-include" class="heading-anchor" href="#key-features-and-benefits-of-e-procurement-include" rel="nofollow" aria-hidden="true"></a><strong>Key features and benefits of e-procurement include</strong>:</h3>
+<ul>
+<li><strong>Automation</strong>: E-procurement helps automate the procurement process, streamlining activities, functions, and procedures, and eliminating manual or paper-based operations.</li>
+<li><strong>Transparency and visibility</strong>: It improves transparency and visibility across all procurement processes by enhancing information sharing, tracking spending, and providing real-time budget management.</li>
+<li><strong>Efficiency</strong>: E-procurement streamlines the acquisition of goods and services through digital technologies, promoting information sharing, refining data management, and enhancing decision-making, which significantly improves supply chain efficiency and effectiveness.</li>
+<li><strong>Standardization</strong>: The goal of e-procurement is to make a company’s procurement operations more standardized, reducing the need for time-consuming manual operations and resulting in considerable cost savings.</li>
+</ul>
+<h3><a name="e-procurement-chain" class="heading-anchor" href="#e-procurement-chain" rel="nofollow" aria-hidden="true"></a>E-Procurement chain</h3>
+<p>E-procurement, also known as electronic procurement, is the process of requisitioning, ordering, and purchasing goods and services online.</p>
+
+<p>It is a business-to-business process that utilizes a supplier's closed system and is only available to registered users.</p>
+<h2><a name="e-government" class="heading-anchor" href="#e-government" rel="nofollow" aria-hidden="true"></a>E-Government</h2>
+<p><img loading="lazy" src="../assets/Pasted%20image%2020231128091656.png" alt="" /></p>
+
+<p>Electronic Government' (or in short 'e-Government') essentially refers to ‘The utilization of Information Technology (IT),Information and Communication Technologies (ICTs), and other web-based telecommunication technologies to improve and/or enhance on the efficiency and effectiveness of service delivery in the public sector.</p>
+<h3><a name="aim-of-e-government-project" class="heading-anchor" href="#aim-of-e-government-project" rel="nofollow" aria-hidden="true"></a>AIM OF E-GOVERNMENT PROJECT</h3>
+<ul>
+<li>Citizen-centered service delivery
+
+<ul>
+<li>Citizen can access to government's services according to their needs easily</li>
+</ul></li>
+<li>Saving
+
+<ul>
+<li>Citizen do not need to go to public institutions</li>
+</ul></li>
+<li>Security
+
+<ul>
+<li>Delivering and preserving to related institutions the information that belongs to citizen securely</li>
+</ul></li>
+<li>Standardization
+
+<ul>
+<li>No paper waste</li>
+</ul></li>
+<li>Integration
+
+<ul>
+<li>Citizens to take a single point of elect. public services</li>
+</ul></li>
+</ul>
+<h3><a name="categories-of-e-government" class="heading-anchor" href="#categories-of-e-government" rel="nofollow" aria-hidden="true"></a>Categories Of e-Government</h3>
+<ul>
+<li>The e-government services can be categorized according to the service areas that have the greatest impact and are of the highest value to the consumers.</li>
+<li>In general, these can be organized into following categories
+
+<ul>
+<li>Government-to-Citizen (G2C)</li>
+<li>Government-to-Business (G2B)</li>
+<li>Government-to-Government (G2G)</li>
+<li>Government-to-Employee (G2E)</li>
+</ul></li>
+</ul>
+<h4><a name="1-government-to-citizen-g2c" class="heading-anchor" href="#1-government-to-citizen-g2c" rel="nofollow" aria-hidden="true"></a>1-Government to Citizen (G2C)</h4>
+<ul>
+<li>The citizen has a number of relations to the state.</li>
+<li>These include client, customer, voter, subject (to laws and regulations), claimants, beneficiaries, etc.</li>
+
+<li><p>G2C interactions vary in their level of complexity and in the symmetry of the transaction.</p>
+<h4><a name="2-government-to-employee-g2e" class="heading-anchor" href="#2-government-to-employee-g2e" rel="nofollow" aria-hidden="true"></a>2-Government to Employee (G2E)</h4></li>
+
+<li><p>It is the online interactions through instantaneous communication tools between government units and their employees</p></li>
+</ul>
+<h4><a name="3-government-to-business-g2b" class="heading-anchor" href="#3-government-to-business-g2b" rel="nofollow" aria-hidden="true"></a>3-Government to Business (G2B)</h4>
+<ul>
+<li>Businesses do not vote, but instead, with other relations, they may act as providers to government in instances where government contracts services to businesses or operates in conjunction with them.</li>
+<li>As with G2C, G2B interactions vary in their level of complexity and in the symmetry of the transaction. The same privacy and security concerns shall apply in this area.</li>
+</ul>
+<h4><a name="4-government-to-government-g2g" class="heading-anchor" href="#4-government-to-government-g2g" rel="nofollow" aria-hidden="true"></a>4-Government to Government(G2G)</h4>
+<ul>
+<li>The relationships between different government institutions may occur at different levels or may even cross from one level to another, like supranational, national, regional and municipal levels.</li>
+<li>As with the exchanges between government and citizens, e-government exchanges between government agencies may be a20 two-way process, where user provides information to trigger the flow of information</li>
+</ul>
+<h2><a name="e-commerce" class="heading-anchor" href="#e-commerce" rel="nofollow" aria-hidden="true"></a>E-Commerce</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020231028005629.png" alt="Type of E-commerce" /></p>
+
+<p>E-commerce, short for electronic commerce, refers to the buying and selling of goods and services over the internet. It involves the exchange of data or currency to process a transaction between a buyer and a seller.</p>
+
+<p>E-commerce operates in different forms, and here are the different types of e-commerce:</p>
+
+<ul>
+<li><strong>Business-to-Consumer (B2C)</strong>:
+
+<ul>
+<li>This type of e-commerce involves companies selling their products or services directly to the end-user, the consumer who needs it.</li>
+<li>This is the most common type of e-commerce, and it includes online retailers such as Amazon, Walmart, and Target.</li>
+</ul></li>
+<li><strong>Business-to-Business (B2B)</strong>:
+
+<ul>
+<li>This type of e-commerce involves businesses selling their products or services to other businesses. The buyer often resells the products to the consumer. B2B e-commerce includes companies such as Alibaba, which connects businesses with suppliers.</li>
+</ul></li>
+<li><strong>Consumer-to-Consumer (C2C)</strong>:
+
+<ul>
+<li>This type of e-commerce involves consumers selling products or services to other consumers.</li>
+<li>This type of e-commerce is facilitated by online marketplaces such as eBay, Etsy, and Craigslist.</li>
+</ul></li>
+<li><strong>Consumer-to-Business (C2B)</strong>:
+
+<ul>
+<li>This type of e-commerce involves consumers selling their products or services to businesses.</li>
+<li>This type of e-commerce is common in the freelance industry, where individuals offer their services to businesses that need them.</li>
+</ul></li>
+<li><strong>Business-to-Government (B2G)</strong>:
+
+<ul>
+<li>This type of e-commerce involves businesses selling their products or services to government agencies.</li>
+<li>This type of e-commerce is common in the defense industry, where businesses sell their products to the government.</li>
+</ul></li>
+<li><strong>Consumer-to-Government (C2G)</strong>:
+
+<ul>
+<li>This type of e-commerce involves consumers selling their products or services to government agencies.</li>
+<li>This type of e-commerce is common in the freelance industry, where individuals offer their services to government agencies that need them.</li>
+</ul></li>
+</ul>
+<h2><a name="acquisition" class="heading-anchor" href="#acquisition" rel="nofollow" aria-hidden="true"></a>Acquisition</h2>
+<p><img loading="lazy" src="../assets/Acquisition-3.jpg.webp" alt="" /></p>
+
+<p>An acquisition is a deal where one firm buys a fraction of or all stocks of the other organization to gain operational control over it.</p>
+
+<p>Here, the two parties involved are the acquirer and the target company.</p>
+
+<p>An acquisition example would be Disney acquiring 21st Century Fox.</p>
+<h3><a name="types-of-acquisition" class="heading-anchor" href="#types-of-acquisition" rel="nofollow" aria-hidden="true"></a>Types of Acquisition</h3>
+<p><img loading="lazy" src="../assets/Pasted%20image%2020231128093032.jpg" alt="" /></p>
+<h2><a name="good-business-plan" class="heading-anchor" href="#good-business-plan" rel="nofollow" aria-hidden="true"></a>Good Business Plan</h2>
+<p>A good business plan is a fundamental document that any new business should have in place prior to beginning operations.</p>
+
+<p>It is a roadmap that outlines the company's goals and how it intends to achieve them.</p>
+
+<p>A well-considered and well-written business plan can be of enormous value to a company.</p>
+
+<p>Here are some key components of a good business plan:</p>
+
+<p><img loading="lazy" src="assets/Pasted%20image%2020231028032854.png" alt="Components of Good Business Plan" /></p>
+
+<ul>
+<li>Executive Summary:
+
+<ul>
+<li>The executive summary is the first section of the business plan and should provide a brief overview of the company, its products or services, and its goals.</li>
+</ul></li>
+<li>Products and Services:
+
+<ul>
+<li>This section should provide a detailed description of the company's products or services, including their features, benefits, and unique selling points.</li>
+</ul></li>
+<li>Marketing Strategy and Analysis:
+
+<ul>
+<li>This section should describe the company's target market, competition, and marketing strategy.</li>
+</ul></li>
+<li>Financial Planning:
+
+<ul>
+<li>This section should include financial projections, such as income statements, balance sheets, and cash flow statements.</li>
+</ul></li>
+<li>Operations and Management:
+
+<ul>
+<li>This section should describe the company's organizational structure, management team, and day-to-day operations.</li>
+</ul></li>
+<li>Market Research:
+
+<ul>
+<li>This section should provide a detailed analysis of the industry and market in which the company operates.</li>
+</ul></li>
+<li>Risk Analysis:
+
+<ul>
+<li>This section should identify potential risks and challenges that the company may face and explain how the company plans to mitigate those risks.</li>
+</ul></li>
+</ul>
+<h2><a name="women-entrepreneur" class="heading-anchor" href="#women-entrepreneur" rel="nofollow" aria-hidden="true"></a>Women Entrepreneur</h2>
+<p><img loading="lazy" src="../assets/Pasted%20image%2020231128094017.png" alt="" /></p>
+
+<p>Women Entrepreneur It may be defined as a woman or group of women who initiate, organize and run a business enterprise.</p>
+
+<p>Government of India has defined
+women entrepreneurs as owning and controlling an enterprise with a woman having a minimum financial interest of 51% of the capital and giving
+at least 51% of the employment
+generated in the enterprise to women.</p>
+
+<p><img loading="lazy" src="../assets/Pasted%20image%2020231128094038.png" alt="" /></p>
+
+<p><img loading="lazy" src="../assets/Pasted%20image%2020231128094053.png" alt="" /></p>
+
+<p><img loading="lazy" src="../assets/Pasted%20image%2020231128094120.png" alt="" /></p>
+<h2><a name="scientific-management" class="heading-anchor" href="#scientific-management" rel="nofollow" aria-hidden="true"></a>Scientific Management</h2>
+		</main>
+		
+		<details id="table-of-content">
+		   <summary>Table of Content</summary>
+		<nav>
+<ul>
+<li><a href="#e-commerce">E-Commerce</a></li>
+<li><a href="#entrepreneur">
+Entrepreneur</a></li>
+<li><a href="#supply-chain-management">
+Supply Chain Management</a>
+<ul>
+<li><a href="#component-of-srm">
+Component of SRM</a></li>
+</ul></li>
+<li><a href="#evaluating-new-venture">
+Evaluating new venture</a></li>
+<li><a href="#types-of-entrepreneurs">
+Types of Entrepreneurs</a></li>
+<li><a href="#customer-relationship-management">
+Customer Relationship Management</a>
+<ul>
+<li><a href="#types-of-crm">
+Types of CRM</a></li>
+<li><a href="#functional-areas-of-crm">
+Functional areas of CRM:</a></li>
+</ul></li>
+<li><a href="#various-financing-stage-of-any-organization-or-company">
+Various financing stage of any organization or company.</a></li>
+<li><a href="#enterprises-based-on-ownership-structure">
+Enterprises based on Ownership structure.</a>
+<ul>
+<li><a href="#sole-proprietorship">
+Sole Proprietorship</a></li>
+<li><a href="#partnership">
+Partnership</a></li>
+<li><a href="#corporations">
+Corporations</a></li>
+<li><a href="#limited-liability-company-llc">
+Limited Liability Company (LLC)</a></li>
+<li><a href="#private-limited-company">
+Private Limited Company</a>
+<ul>
+<li><a href="#advantages-of-a-private-limited-company">
+Advantages of a Private Limited Company</a></li>
+<li><a href="#disadvantages-of-a-private-limited-company">
+Disadvantages of a Private Limited Company</a></li>
+</ul></li>
+<li><a href="#public-limited-company">
+Public Limited Company</a>
+<ul>
+<li><a href="#advantages-and-disadvantages-of-a-plc">
+Advantages and Disadvantages of a PLC</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#non-financial-motivational-techniques-that-entrepreneurs-use-to-motivate-their-employees">
+Non-financial motivational techniques that Entrepreneurs use to motivate their employees</a></li>
+<li><a href="#e-procurement">
+E-Procurement</a>
+<ul>
+<li><a href="#key-features-and-benefits-of-e-procurement-include">
+<strong>Key features and benefits of e-procurement include</strong>:</a></li>
+<li><a href="#e-procurement-chain">
+E-Procurement chain</a></li>
+</ul></li>
+<li><a href="#e-government">
+E-Government</a>
+<ul>
+<li><a href="#aim-of-e-government-project">
+AIM OF E-GOVERNMENT PROJECT</a></li>
+<li><a href="#categories-of-e-government">
+Categories Of e-Government</a>
+<ul>
+<li><a href="#1-government-to-citizen-g2c">
+1-Government to Citizen (G2C)</a></li>
+<li><a href="#2-government-to-employee-g2e">
+2-Government to Employee (G2E)</a></li>
+<li><a href="#3-government-to-business-g2b">
+3-Government to Business (G2B)</a></li>
+<li><a href="#4-government-to-government-g2g">
+4-Government to Government(G2G)</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#e-commerce">
+E-Commerce</a></li>
+<li><a href="#acquisition">
+Acquisition</a>
+<ul>
+<li><a href="#types-of-acquisition">
+Types of Acquisition</a></li>
+</ul></li>
+<li><a href="#good-business-plan">
+Good Business Plan</a></li>
+<li><a href="#women-entrepreneur">
+Women Entrepreneur</a></li>
+<li><a href="#scientific-management">
+Scientific Management</a></li>
+</ul>
+</nav>
+
+		</details>
+		
+		<footer>
+			<p style="text-align: center; font-size: small; margin-top: 5em;">
+				<a href="https://anzenkodo.github.io/license">LICENSE</a>
+			</p>
+		</footer>
+	</body>
+	<script src="https://AnzenKodo.github.io/assets/js/mermaid.js"></script>
+	<script id="MathJax-script" async src="https://AnzenKodo.github.io/assets/js/mathjax.js"></script>
+	<script>
+		/* document.getElementById('video').addEventListener('click', (ele) => {
+			 if (ele.target.paused) {
+				 ele.target.play();
+			 } else {
+				 ele.target.pause();
+			 }
+		}); */
+
+		mermaid.initialize({
+			theme: "neutral",
+			themeVariables: {
+			    lineColor: "#939598",
+			}
+		});
+
+		MathJax = {
+		  tex: {
+			inlineMath: [['$', '$']],
+			displayMath: [['$$', '$$']],
+		  }
+		};
+	</script>
+</html>

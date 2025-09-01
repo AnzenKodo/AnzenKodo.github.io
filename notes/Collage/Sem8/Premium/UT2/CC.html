@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>CC - AK#Notes</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="#FF6C22">
+		<meta name="description" content="## 1.A) Solve any two of the following:  ### (i) Compare AWS S3 and Glacier  | Features            |">
+		<meta property="og:description" content="## 1.A) Solve any two of the following:  ### (i) Compare AWS S3 and Glacier  | Features            |">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<meta property="og:image:alt" content="AK#Notes logo">
+		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="CC - AK#Notes">
+		<meta property="og:url" content="https://AnzenKodo.github.io/notes/notes/Collage/Sem8/Premium/UT2/CC.html">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+
+			:root {
+				/* color-scheme: dark light; */
+				color-scheme: dark;
+				--theme: #FF6C22;
+			}
+			body {
+				max-width: 40rem;
+				margin: 0 auto;
+				font-family: system-ui;
+				padding: 0 1em;
+				color: inherit !important;
+				word-break: break-word;
+			}
+			h1, h2, h3, h4, h5, h6 {
+				margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+				font-size: 2rem;
+			}
+			h3 {
+				font-size: 1.8rem;
+			}
+			h4 {
+				font-size: 1.5rem;
+			}
+			h5 {
+				font-size: 1.3rem;
+			}
+			h6 {
+				font-size: 1rem;
+			}
+			p, li, td, code {
+				line-height: 1.5rem;
+			}
+			a {
+				color: var(--theme);
+				text-decoration: none;
+			}
+			a:hover, a:focus {
+				text-decoration: underline;
+			}
+			a:active {
+				background: var(--theme);
+				color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+				margin-top: .5rem;
+			}
+			li {
+				margin-bottom: .5rem;
+			}
+			table {
+				border-collapse: collapse;
+				overflow-x: auto;
+				display: block;
+				word-break: auto-phrase;
+				margin: 1rem 0;
+			}
+			th {
+				font-size: 1.1rem;
+				border: 2px solid;
+				padding: .3rem .3rem;
+			}
+			td {
+				border: 1px solid;
+				padding: .3rem .5rem;
+			}
+			blockquote {
+				margin-left: 0;
+				margin-right: 0;
+				border: 1px solid;
+				border-left: 10px solid;
+				padding: 0 1rem;
+			}
+				.code-block {
+				background: black;
+				overflow-x: auto;
+				padding: 0em 1em;
+				border: 1px solid;
+			}
+			.code-block-language-name {
+				position: sticky;
+				left: 95%;
+				top: .5em;
+				font-weight: bold;
+				color: white;
+			}
+			:not(pre.chroma) > code {
+				border: 1px solid;
+				padding: .3rem .2rem .2rem .2rem;
+			}
+			img {
+				max-width: 100%;
+				display: block;
+				margin: 0 auto;
+			}
+			[href="#skip-top-main"] {
+				padding: 0.3em;
+				position: absolute;
+				transform: translateY(-1000%);
+			}
+			[href="#skip-top-main"]:focus {
+				transform: translateY(0%);
+				background: var(--theme);
+				color: inherit;
+			}
+			#table-of-content {
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+				background: black;
+				padding: 0.5rem 1em;
+				z-index: 1;
+				color: white;
+			}
+			#table-of-content[open] {
+				max-height: 90%;
+				overflow-y: auto;
+				bottom: 50px;
+				margin-left: 1em;
+			}
+			#table-of-content[open] summary {
+				background: black;
+				padding: 0.5em 1em;
+				text-align: center;
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+			}
+			#table-of-content ul:first-child {
+				padding-left: 1em;
+				margin-top: 1.5em;
+			}
+			.heading-anchor::before {
+				margin-right: .5rem;
+			}
+		    h2 .heading-anchor::before {
+    			content: "#";
+    			margin-right: .5rem;
+		    }
+            h3 .heading-anchor::before {
+				content: "##";
+				margin-right: .5rem;
+			}
+            h4 .heading-anchor::before {
+				content: "###";
+				margin-right: .5rem;
+			}
+            h5 .heading-anchor::before {
+				content: "####";
+				margin-right: .5rem;
+			}
+            h6 .heading-anchor::before {
+				content: "#####";
+				margin-right: .5rem;
+			}
+			.mermaid {
+				background: black;
+				border: 1px solid;
+				margin-top: 1rem;
+				padding: 1rem;
+				font-family: monospace;
+			}
+			.mermaid svg {
+				display: block;
+				margin: auto;
+			}
+			.mermaid:has(svg) {
+				background: none;
+				border: none;
+				margin-top: 1rem;
+				padding: 0;
+			}
+			mjx-container {
+				display: math;
+				overflow-y: hidden;
+				overflow-x: auto;
+				max-width: 100%;
+				padding-bottom: .8rem;
+			}
+			iframe {
+				width: 100%;
+				height: 21rem;
+				margin: 1rem 0;
+			}
+			video {
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<a href="#skip-top-main">Skip to main</a>
+		<header>
+<!--		<h1 style="text-align: center;">-->
+			<h1 style="text-align: center;">
+				<a href="https://AnzenKodo.github.io">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+			</h1><nav style="border-top: 1px solid gray;border-bottom: 1px solid gray;padding: .5rem 0;text-align: center;margin: 0 0 2rem 0;color: gray;clear: left;line-height: 1.6rem;">
+				<a href="https://AnzenKodo.github.io/notes">Home</a> | <a href="https://AnzenKodo.github.io">About</a> | <a href="https://AnzenKodo.github.io/blogroll">Blogroll</a> | <a href="https://github.com/AnzenKodo">Github</a> | <a href="https://x.com/AnzenKodo">𝕏</a>
+			</nav>
+			<!-- <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;"> -->
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem; margin-top: 0;">CC</h1>
+			<h2><a name="1-a-solve-any-two-of-the-following" class="heading-anchor" href="#1-a-solve-any-two-of-the-following" rel="nofollow" aria-hidden="true"></a>1.A) Solve any two of the following:</h2><h3><a name="i-compare-aws-s3-and-glacier" class="heading-anchor" href="#i-compare-aws-s3-and-glacier" rel="nofollow" aria-hidden="true"></a>(i) Compare AWS S3 and Glacier</h3>
+<table>
+<thead>
+<tr>
+<th>Features</th>
+<th>Amazon Glacier</th>
+<th>Amazon S3</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>Use Case</strong></td>
+<td>Long-term archival of infrequent accessed data</td>
+<td>Frequently accessed data</td>
+</tr>
+
+<tr>
+<td><strong>Storage Cost</strong></td>
+<td>Low</td>
+<td>High</td>
+</tr>
+
+<tr>
+<td><strong>Durability</strong></td>
+<td>High</td>
+<td>Low</td>
+</tr>
+
+<tr>
+<td><strong>Retrieval Time</strong></td>
+<td>Long</td>
+<td>Fast</td>
+</tr>
+
+<tr>
+<td><strong>Data Transfer Acceleration</strong></td>
+<td>Supports AWS Transfer Acceleration for faster data upload.</td>
+<td>Supports AWS Transfer Acceleration for faster data upload.</td>
+</tr>
+
+<tr>
+<td><strong>Security</strong></td>
+<td>Robust security features</td>
+<td>Robust security features</td>
+</tr>
+</tbody>
+</table>
+<h3><a name="ii-what-is-dynamodb-list-its-features" class="heading-anchor" href="#ii-what-is-dynamodb-list-its-features" rel="nofollow" aria-hidden="true"></a>(ii) What is DynamoDB? List its features.</h3>
+<p><img loading="lazy" src="assets/Pasted%20image%2020250417032259.webp" alt="" /></p>
+
+<ul>
+<li>Amazon DynamoDB is a fully managed NoSQL database service provided by AWS.</li>
+<li>DynamoDB allows users to create databases capable of storing and retrieving any amount of data.</li>
+<li>It dynamically manages each customer's requests and provides high performance by automatically distributing data and traffic over servers.</li>
+</ul>
+
+<p>Features:</p>
+
+<ol>
+<li><strong>Fully managed</strong>: No need to worry about hardware provisioning, setup and configuration.</li>
+<li><strong>High performance &amp; low latency</strong>: Single-digit millisecond latency at any scale.</li>
+<li><strong>Scalable</strong>: Automatically scales up or down based on workload requirement.</li>
+<li><strong>Serverless</strong>: Users don't need to manage servers, it's fully serverless and integrates with AWS Lambda.</li>
+<li><strong>Flexible data model</strong>:
+
+<ul>
+<li>Supports key-value and document data models.</li>
+<li>Allows schema-less design (NoSQL), ideal for unstructured data.</li>
+</ul></li>
+</ol>
+<h3><a name="iii-categorize-and-explain-aws-core-services" class="heading-anchor" href="#iii-categorize-and-explain-aws-core-services" rel="nofollow" aria-hidden="true"></a>(iii) Categorize and explain AWS core services.</h3>
+<ol>
+<li><strong>Compute Services</strong>: These services provide the processing power to run your applications and workloads in the cloud.
+
+<ul>
+<li><strong>Amazon EC2 (Elastic Compute Cloud):</strong> Provides resizable compute capacity in the form of virtual servers (instances).</li>
+<li><strong>Amazon ECS (Elastic Container Service):</strong> A fully managed container orchestration service that makes it easy to deploy, manage, and scale Docker containers.</li>
+</ul></li>
+<li>Storage Services: These services offer scalable, durable, and secure storage options for various types of data.
+
+<ul>
+<li><strong>Amazon S3 (Simple Storage Service):</strong> An object storage service offering high scalability, data availability, security, and performance.</li>
+<li><strong>AWS Glacier and Glacier Deep Archive:</strong> Low-cost archival storage services designed for long-term data retention.</li>
+</ul></li>
+<li>Database Services: AWS offers a variety of fully managed database services designed for different data models and access patterns.
+
+<ul>
+<li><strong>Amazon RDS (Relational Database Service):</strong> A managed relational database service that supports several database engines, including MySQL, PostgreSQL, MariaDB, Oracle, and SQL Server.</li>
+<li><strong>Amazon Redshift:</strong> A fast, fully managed, petabyte-scale data warehouse service for analytics.</li>
+</ul></li>
+<li>Networking Services: These services enable you to create and manage your virtual network in the AWS cloud.
+
+<ul>
+<li><strong>Amazon VPC (Virtual Private Cloud):</strong> Enables you to create a logically isolated section of the AWS cloud where you can launch AWS resources in a virtual network that you define. Y</li>
+<li><strong>Elastic Load Balancing (ELB):</strong> Automatically distributes incoming application traffic across multiple targets.</li>
+</ul></li>
+</ol>
+<h2><a name="1-b-solve-any-two-of-the-following" class="heading-anchor" href="#1-b-solve-any-two-of-the-following" rel="nofollow" aria-hidden="true"></a>1.B) Solve any two of the following:</h2><h3><a name="i-what-is-security-why-is-it-required-in-cloud-computing" class="heading-anchor" href="#i-what-is-security-why-is-it-required-in-cloud-computing" rel="nofollow" aria-hidden="true"></a>(i) What is security? Why is it required in cloud computing?</h3>
+<ul>
+<li>Security for Information Technology (IT) refers to the methods, tools &amp; personnel used to defend an organization's digital assets.</li>
+<li>Security in cloud computing is crucial to any company looking to keep its applications and data protected from bad actors</li>
+<li>High security helps to protect:
+
+<ul>
+<li>Sensitive data</li>
+<li>Prevent unauthorized access</li>
+<li>Data security</li>
+</ul></li>
+<li>Security measures in CC:
+
+<ul>
+<li>Data Encryption</li>
+<li>Access control</li>
+<li>IAM</li>
+<li>Threat detection &amp; prevention.</li>
+</ul></li>
+</ul>
+<h3><a name="ii-compare-different-types-of-security-in-the-cloud" class="heading-anchor" href="#ii-compare-different-types-of-security-in-the-cloud" rel="nofollow" aria-hidden="true"></a>(ii) Compare different types of security in the cloud.</h3>
+<ol>
+<li><strong>Identity and Access Management (IAM):</strong> This process ensures that the correct users have specific access privileges.</li>
+<li><strong>Network and Device Security:</strong> This involves using tools to create barriers that limit access to and visibility of data within contained environments. Techniques include <strong>encryption</strong> and <strong>Virtual Private Networks</strong> (VPNs).</li>
+<li><strong>Security Monitoring and Alerting:</strong> These systems check for and immediately highlight unusual or compromising activity.</li>
+<li><strong>Governance:</strong> This refers to the enforcement of policies designed to prevent, detect, and mitigate threats.</li>
+<li><strong>Disaster Recovery and Business Continuity Planning:</strong> These are recovery measures implemented in the event of a technical disaster.</li>
+<li><strong>Legal Compliance:</strong> This refers to adherence to legislative policies designed to protect user privacy (GDPR), the integrity of financial data (SOX), government assets (ITAR), and more.</li>
+</ol>
+<h3><a name="iii-state-serverless-computing" class="heading-anchor" href="#iii-state-serverless-computing" rel="nofollow" aria-hidden="true"></a>(iii) State serverless computing.</h3>
+<p><img loading="lazy" src="assets/Pasted%20image%2020250417040519.webp" alt="" /></p>
+
+<ul>
+<li>AWS offers technologies for running code, managing data, and integrating applications, all without managing servers.</li>
+<li>Serverless technologies feature automatic scaling, built-in high availability, and a pay-for-use billing model to increase agility and optimize costs.</li>
+<li>These technologies also eliminate infrastructure management tasks, so you can focus on writing code that serves your customers.</li>
+<li><strong>Serverless Computing Tools</strong>:
+
+<ul>
+<li><strong>AWS Lambda</strong> is a serverless computing service that allows you to run code without having to provision or manage servers.</li>
+</ul></li>
+<li>Benefits:
+
+<ul>
+<li>No need to maintain servers</li>
+<li>Continuous scaling</li>
+<li>Pay-for-use billing model</li>
+</ul></li>
+</ul>
+<h2><a name="2-solve-any-one-of-the-following" class="heading-anchor" href="#2-solve-any-one-of-the-following" rel="nofollow" aria-hidden="true"></a>2. Solve any one of the following:</h2><h3><a name="i-explain-iam-architecture" class="heading-anchor" href="#i-explain-iam-architecture" rel="nofollow" aria-hidden="true"></a>(i) Explain IAM architecture.</h3>
+<p><img loading="lazy" src="assets/Pasted%20image%2020250417034813.webp" alt="" /></p>
+
+<ul>
+<li><strong>User and Clients:</strong> This zone represents the end-users and the applications they use to interact with the corporate network's resources.
+
+<ul>
+<li><strong>User:</strong> The individual trying to access resources.</li>
+<li><strong>Browser:</strong> A web browser used by the user.</li>
+<li><strong>Native / Mobile App:</strong> Applications installed directly on a user's device.</li>
+<li><strong>Server App:</strong> Another application (potentially external) trying to access resources on behalf of a user or system.</li>
+</ul></li>
+<li><strong>DMZ:</strong> It hosts services that need to be accessible from the outside but are isolated from the core corporate infrastructure for security reasons.
+
+<ul>
+<li><strong>Web Gateway:</strong> Likely handles web traffic and might perform initial authentication or authorization checks for browser-based access.</li>
+<li><strong>API Gateway:</strong> Manages and secures access to backend APIs for native/mobile apps and server apps.</li>
+<li><strong>SAML / OpenID / OAuth Connect:</strong> Indicates support for these federation protocols for authentication.</li>
+<li><strong>Authentication Service:</strong> A central service responsible for verifying the identity of users and applications.</li>
+</ul></li>
+<li><strong>Corporate Network:</strong> This is the internal, trusted network containing the organization's critical resources and applications. It includes:
+
+<ul>
+<li><strong>Enterprise Apps:</strong> Core business applications.</li>
+<li><strong>API Services:</strong> Backend services that provide data and functionality.</li>
+</ul></li>
+</ul>
+<h3><a name="ii-write-a-short-note-on-aws-lifecycle" class="heading-anchor" href="#ii-write-a-short-note-on-aws-lifecycle" rel="nofollow" aria-hidden="true"></a>(ii) Write a short note on AWS lifecycle.</h3>
+<p><img loading="lazy" src="assets/Pasted%20image%2020250417035408.webp" alt="" /></p>
+
+<ol>
+<li>Pending state:
+
+<ul>
+<li>The instance is preparing to enter the running state.</li>
+<li>An instance enters the pending state when it's launched for the first time or when it is restarted after being in the stopped state.</li>
+<li>Not billed</li>
+</ul></li>
+<li>Running:
+
+<ul>
+<li>The instance is running and ready for your use.</li>
+<li>Billed</li>
+</ul></li>
+<li>Stopping:
+
+<ul>
+<li>The instance is preparing to be stopped or stop-hibernated.</li>
+<li>Not billed if preparing to stop. Billed if preparing to hibernate.</li>
+</ul></li>
+<li>Stopped:
+
+<ul>
+<li>The instance is shut down and cannot be used.</li>
+<li>The instance can be restarted at any time.</li>
+<li>Not billed</li>
+</ul></li>
+<li>Shutting down:
+
+<ul>
+<li>The instance is preparing to be terminated.</li>
+<li>Not billed</li>
+</ul></li>
+<li>Terminated:
+
+<ul>
+<li>The instance has been permanently deleted and cannot be restarted.</li>
+<li>Not billed</li>
+</ul></li>
+</ol>
+<h2><a name="3-solve-any-one-of-the-following" class="heading-anchor" href="#3-solve-any-one-of-the-following" rel="nofollow" aria-hidden="true"></a>3. Solve any one of the following:</h2><h3><a name="i-analyze-various-components-of-the-open-stack" class="heading-anchor" href="#i-analyze-various-components-of-the-open-stack" rel="nofollow" aria-hidden="true"></a>(i) Analyze various components of the open stack.</h3>
+<p><img loading="lazy" src="assets/Pasted%20image%2020250417035859.webp" alt="" /></p>
+
+<p><strong>Core Components:</strong></p>
+
+<ul>
+<li><strong>Nova (Compute):</strong> Provides virtual servers (instances). It manages the lifecycle of virtual machines, including creation, deletion, and live migration.</li>
+<li><strong>Swift (Object Storage):</strong> Offers scalable object storage for unstructured data like backups, archives, and media.</li>
+<li><strong>Cinder (Block Storage):</strong> Provides persistent block-level storage volumes for virtual machines.</li>
+<li><strong>Glance (Image Management):</strong> Manages virtual machine images (templates) that are used to launch Nova instances.</li>
+<li><strong>Keystone (Identity Management):</strong> Provides authentication and authorization services for all OpenStack components.</li>
+<li><strong>Quantum (Network:</strong> It enables connectivity between instances and external networks.</li>
+<li><strong>Horizon (Dashboard):</strong> A web-based graphical user interface that allows users and administrators to interact with and manage various OpenStack services.</li>
+<li><strong>Dashboard:</strong> The actual user interface provided by Horizon.</li>
+</ul>
+
+<p><strong>Roadmap Components (Yellow Box):</strong></p>
+
+<ul>
+<li><strong>Ceilometer (Metering):</strong> Collects and aggregates usage data from various OpenStack services. This data can be used for billing, monitoring, and capacity planning.</li>
+<li><strong>Heat (Orchestration):</strong> Provides a service for orchestrating and managing cloud resources using templates. It allows you to define and deploy complex application stacks.</li>
+</ul>
+<h3><a name="ii-discuss-mobile-cloud-computing" class="heading-anchor" href="#ii-discuss-mobile-cloud-computing" rel="nofollow" aria-hidden="true"></a>(ii) Discuss Mobile cloud computing.</h3>
+<p><img loading="lazy" src="assets/Pasted%20image%2020250417030653.webp" alt="" /></p>
+
+<p>MCC is a combination of Mobile Computing, Could Computing &amp; Wireless Network. The idea behind MCC is to make it possible for reach mobile application to be executed on huge number of number devices.</p>
+
+<p><strong>Architecture of MCC</strong></p>
+
+<ul>
+<li>MCC (Mobile Cloud Computing) at its simplest, refers to an infrastructure where data processing &amp; storage happens outside of mobile devices.</li>
+<li>Mobile devices connect to n/w services to any satellite access point or BTS (Base Transceiver Station) which pass request to servers providing services.</li>
+<li>Server provide services as AAA (Authorization, Authentication, Accounting) based on HA (Home Agent).</li>
+<li>Home Agent works as a router on mobile devices &amp; maintains the info about device's current location.</li>
+<li>After processing in a n/w via internet, mobile devices can be able to connect clouds where data processing &amp; data storage can be done.</li>
+</ul>
+
+<p><strong>Benefits of MCC:</strong></p>
+
+<ul>
+<li>Flexibility</li>
+<li>Multiple platform support</li>
+<li>Real time data availability</li>
+<li>Backup &amp; recovery</li>
+</ul>
+
+<p><strong>Challenges:</strong></p>
+
+<ul>
+<li>Attacks &amp; Hacking</li>
+<li>Low bandwidth problem</li>
+<li>Information security privacy</li>
+</ul>
+
+		</main>
+		
+		<details id="table-of-content">
+		   <summary>Table of Content</summary>
+		<nav>
+<ul>
+<li><a href="#1-a-solve-any-two-of-the-following">1.A) Solve any two of the following:</a>
+<ul>
+<li><a href="#i-compare-aws-s3-and-glacier">
+(i) Compare AWS S3 and Glacier</a></li>
+<li><a href="#ii-what-is-dynamodb-list-its-features">
+(ii) What is DynamoDB? List its features.</a></li>
+<li><a href="#iii-categorize-and-explain-aws-core-services">
+(iii) Categorize and explain AWS core services.</a></li>
+</ul></li>
+<li><a href="#1-b-solve-any-two-of-the-following">
+1.B) Solve any two of the following:</a>
+<ul>
+<li><a href="#i-what-is-security-why-is-it-required-in-cloud-computing">
+(i) What is security? Why is it required in cloud computing?</a></li>
+<li><a href="#ii-compare-different-types-of-security-in-the-cloud">
+(ii) Compare different types of security in the cloud.</a></li>
+<li><a href="#iii-state-serverless-computing">
+(iii) State serverless computing.</a></li>
+</ul></li>
+<li><a href="#2-solve-any-one-of-the-following">
+2. Solve any one of the following:</a>
+<ul>
+<li><a href="#i-explain-iam-architecture">
+(i) Explain IAM architecture.</a></li>
+<li><a href="#ii-write-a-short-note-on-aws-lifecycle">
+(ii) Write a short note on AWS lifecycle.</a></li>
+</ul></li>
+<li><a href="#3-solve-any-one-of-the-following">
+3. Solve any one of the following:</a>
+<ul>
+<li><a href="#i-analyze-various-components-of-the-open-stack">
+(i) Analyze various components of the open stack.</a></li>
+<li><a href="#ii-discuss-mobile-cloud-computing">
+(ii) Discuss Mobile cloud computing.</a></li>
+</ul></li>
+</ul>
+</nav>
+
+		</details>
+		
+		<footer>
+			<p style="text-align: center; font-size: small; margin-top: 5em;">
+				<a href="https://anzenkodo.github.io/license">LICENSE</a>
+			</p>
+		</footer>
+	</body>
+	<script src="https://AnzenKodo.github.io/assets/js/mermaid.js"></script>
+	<script id="MathJax-script" async src="https://AnzenKodo.github.io/assets/js/mathjax.js"></script>
+	<script>
+		/* document.getElementById('video').addEventListener('click', (ele) => {
+			 if (ele.target.paused) {
+				 ele.target.play();
+			 } else {
+				 ele.target.pause();
+			 }
+		}); */
+
+		mermaid.initialize({
+			theme: "neutral",
+			themeVariables: {
+			    lineColor: "#939598",
+			}
+		});
+
+		MathJax = {
+		  tex: {
+			inlineMath: [['$', '$']],
+			displayMath: [['$$', '$$']],
+		  }
+		};
+	</script>
+</html>

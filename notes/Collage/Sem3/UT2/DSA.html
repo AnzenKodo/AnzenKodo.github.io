@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>DSA - AK#Notes</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="#FF6C22">
+		<meta name="description" content="## 1.A. 6 Marks  ### i) Correlate any 3 advantages of DFS  1. **Space efficiency:** One of the main ">
+		<meta property="og:description" content="## 1.A. 6 Marks  ### i) Correlate any 3 advantages of DFS  1. **Space efficiency:** One of the main ">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<meta property="og:image:alt" content="AK#Notes logo">
+		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="DSA - AK#Notes">
+		<meta property="og:url" content="https://AnzenKodo.github.io/notes/notes/Collage/Sem3/UT2/DSA.html">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+
+			:root {
+				/* color-scheme: dark light; */
+				color-scheme: dark;
+				--theme: #FF6C22;
+			}
+			body {
+				max-width: 40rem;
+				margin: 0 auto;
+				font-family: system-ui;
+				padding: 0 1em;
+				color: inherit !important;
+				word-break: break-word;
+			}
+			h1, h2, h3, h4, h5, h6 {
+				margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+				font-size: 2rem;
+			}
+			h3 {
+				font-size: 1.8rem;
+			}
+			h4 {
+				font-size: 1.5rem;
+			}
+			h5 {
+				font-size: 1.3rem;
+			}
+			h6 {
+				font-size: 1rem;
+			}
+			p, li, td, code {
+				line-height: 1.5rem;
+			}
+			a {
+				color: var(--theme);
+				text-decoration: none;
+			}
+			a:hover, a:focus {
+				text-decoration: underline;
+			}
+			a:active {
+				background: var(--theme);
+				color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+				margin-top: .5rem;
+			}
+			li {
+				margin-bottom: .5rem;
+			}
+			table {
+				border-collapse: collapse;
+				overflow-x: auto;
+				display: block;
+				word-break: auto-phrase;
+				margin: 1rem 0;
+			}
+			th {
+				font-size: 1.1rem;
+				border: 2px solid;
+				padding: .3rem .3rem;
+			}
+			td {
+				border: 1px solid;
+				padding: .3rem .5rem;
+			}
+			blockquote {
+				margin-left: 0;
+				margin-right: 0;
+				border: 1px solid;
+				border-left: 10px solid;
+				padding: 0 1rem;
+			}
+				.code-block {
+				background: black;
+				overflow-x: auto;
+				padding: 0em 1em;
+				border: 1px solid;
+			}
+			.code-block-language-name {
+				position: sticky;
+				left: 95%;
+				top: .5em;
+				font-weight: bold;
+				color: white;
+			}
+			:not(pre.chroma) > code {
+				border: 1px solid;
+				padding: .3rem .2rem .2rem .2rem;
+			}
+			img {
+				max-width: 100%;
+				display: block;
+				margin: 0 auto;
+			}
+			[href="#skip-top-main"] {
+				padding: 0.3em;
+				position: absolute;
+				transform: translateY(-1000%);
+			}
+			[href="#skip-top-main"]:focus {
+				transform: translateY(0%);
+				background: var(--theme);
+				color: inherit;
+			}
+			#table-of-content {
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+				background: black;
+				padding: 0.5rem 1em;
+				z-index: 1;
+				color: white;
+			}
+			#table-of-content[open] {
+				max-height: 90%;
+				overflow-y: auto;
+				bottom: 50px;
+				margin-left: 1em;
+			}
+			#table-of-content[open] summary {
+				background: black;
+				padding: 0.5em 1em;
+				text-align: center;
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+			}
+			#table-of-content ul:first-child {
+				padding-left: 1em;
+				margin-top: 1.5em;
+			}
+			.heading-anchor::before {
+				margin-right: .5rem;
+			}
+		    h2 .heading-anchor::before {
+    			content: "#";
+    			margin-right: .5rem;
+		    }
+            h3 .heading-anchor::before {
+				content: "##";
+				margin-right: .5rem;
+			}
+            h4 .heading-anchor::before {
+				content: "###";
+				margin-right: .5rem;
+			}
+            h5 .heading-anchor::before {
+				content: "####";
+				margin-right: .5rem;
+			}
+            h6 .heading-anchor::before {
+				content: "#####";
+				margin-right: .5rem;
+			}
+			.mermaid {
+				background: black;
+				border: 1px solid;
+				margin-top: 1rem;
+				padding: 1rem;
+				font-family: monospace;
+			}
+			.mermaid svg {
+				display: block;
+				margin: auto;
+			}
+			.mermaid:has(svg) {
+				background: none;
+				border: none;
+				margin-top: 1rem;
+				padding: 0;
+			}
+			mjx-container {
+				display: math;
+				overflow-y: hidden;
+				overflow-x: auto;
+				max-width: 100%;
+				padding-bottom: .8rem;
+			}
+			iframe {
+				width: 100%;
+				height: 21rem;
+				margin: 1rem 0;
+			}
+			video {
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<a href="#skip-top-main">Skip to main</a>
+		<header>
+<!--		<h1 style="text-align: center;">-->
+			<h1 style="text-align: center;">
+				<a href="https://AnzenKodo.github.io">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+			</h1><nav style="border-top: 1px solid gray;border-bottom: 1px solid gray;padding: .5rem 0;text-align: center;margin: 0 0 2rem 0;color: gray;clear: left;line-height: 1.6rem;">
+				<a href="https://AnzenKodo.github.io/notes">Home</a> | <a href="https://AnzenKodo.github.io">About</a> | <a href="https://AnzenKodo.github.io/blogroll">Blogroll</a> | <a href="https://github.com/AnzenKodo">Github</a> | <a href="https://x.com/AnzenKodo">𝕏</a>
+			</nav>
+			<!-- <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;"> -->
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem; margin-top: 0;">DSA</h1>
+			<h2><a name="1-a-6-marks" class="heading-anchor" href="#1-a-6-marks" rel="nofollow" aria-hidden="true"></a>1.A. 6 Marks</h2><h3><a name="i-correlate-any-3-advantages-of-dfs" class="heading-anchor" href="#i-correlate-any-3-advantages-of-dfs" rel="nofollow" aria-hidden="true"></a>i) Correlate any 3 advantages of DFS</h3>
+<ol>
+<li><strong>Space efficiency:</strong> One of the main advantages of depth first search (DFS)
+is that it uses a stack data structure to keep track of the nodes to be
+visited, which allows it to use less memory than other search algorithms such
+as breadth first search (BFS) which uses a queue data structure. This makes
+DFS a more space-efficient option for searching large or complex graphs.</li>
+<li><strong>Backtracking:</strong> DFS has the ability to backtrack, which means that it can
+easily retrace its steps and explore alternative paths if the current path
+leads to a dead end. This is an important feature when searching for a
+specific target or solution in a graph, as it allows the algorithm to explore
+multiple paths without having to start the search from the beginning.</li>
+<li><strong>Can be used to find all solutions to a problem:</strong> DFS can also be modified
+to find all solutions to a problem, such as finding all paths through a maze
+or all possible configurations of a puzzle. This makes it useful for solving
+problems where there are multiple solutions.</li>
+<li>More example: <a href="https://www.youtube.com/watch?v=iaBEKo5sM7w">https://www.youtube.com/watch?v=iaBEKo5sM7w</a></li>
+</ol>
+<h3><a name="ii-reframe-the-short-note-on-hash-table" class="heading-anchor" href="#ii-reframe-the-short-note-on-hash-table" rel="nofollow" aria-hidden="true"></a>ii) Reframe the short note on hash table</h3>
+<p>A hash table is a data structure that stores key-value pairs and uses a hash
+function to map keys to indexes in an array. The main advantage of a hash table
+is that it can perform operations, such as insertion, deletion, and search, in
+an average O(1) time complexity. This makes hash tables an efficient data
+structure for searching and indexing large data sets.</p>
+
+<p><img loading="lazy" src="https://i.imgur.com/rsn1E3e.png" alt="Hash Table Diagram" /></p>
+
+<p>Resources:</p>
+
+<ul>
+<li><a href="https://khalilstemmler.com/blogs/data-structures-algorithms/hash-tables/">https://khalilstemmler.com/blogs/data-structures-algorithms/hash-tables/</a></li>
+<li><a href="https://youtu.be/ea8BRGxGmlA">https://youtu.be/ea8BRGxGmlA</a></li>
+</ul>
+<h3><a name="iii-explain-waht-are-the-different-ways-to-represent-the-graph" class="heading-anchor" href="#iii-explain-waht-are-the-different-ways-to-represent-the-graph" rel="nofollow" aria-hidden="true"></a>iii) Explain waht are the different ways to represent the graph.</h3>
+<p><img loading="lazy" src="./Matrix-List.png" alt="Matrix List Diagram" /></p>
+<h4><a name="adjacency-matrix-array-representation" class="heading-anchor" href="#adjacency-matrix-array-representation" rel="nofollow" aria-hidden="true"></a>Adjacency Matrix (Array Representation)</h4>
+<p>An adjacency matrix is a way to represent a graph using a two-dimensional array,
+where the rows and columns represent the vertices of the graph, and the elements
+of the array represent the edges between the vertices.</p>
+
+<p>For example, a simple undirected graph with 4 vertices (A, B, C, D) and 5 edges
+(A-B, B-C, C-D, D-A, A-C) can be represented using an adjacency matrix as
+follows:</p>
+<h4><a name="adjacency-list-linked-list-representation" class="heading-anchor" href="#adjacency-list-linked-list-representation" rel="nofollow" aria-hidden="true"></a>Adjacency List (Linked List Representation)</h4>
+<p>An adjacency list is a way to represent a graph using a linked list, where each
+vertex in the graph is represented by a linked list of its adjacent vertices.</p>
+
+<p>For example, a simple undirected graph with 4 vertices (A, B, C, D) and 5 edges
+(A-B, B-C, C-D, D-A, A-C) can be represented using an adjacency list as follows:</p>
+<h3><a name="i-relate-any-2-applications-of-graph" class="heading-anchor" href="#i-relate-any-2-applications-of-graph" rel="nofollow" aria-hidden="true"></a>i) Relate any 2 applications of Graph.</h3>
+<ol>
+<li><strong>Web Crawlers:</strong> Graphs can be used to represent the structure of the World
+Wide Web, where the vertices represent web pages and the edges represent the
+links between them. Web crawlers use graph traversal algorithms to navigate
+through the web pages, discovering new pages and collecting information.</li>
+<li><strong>Social Network Analysis:</strong> Graphs are widely used in social network
+analysis to represent relationships between individuals or groups. The
+vertices in the graph represent individuals or groups, and the edges
+represent the relationships between them. Social network analysis can be used
+to identify patterns and trends in the data, such as finding communities or
+influencers within the network.</li>
+</ol>
+<h3><a name="ii-write-any-2-disadvantages-of-separate-chaining" class="heading-anchor" href="#ii-write-any-2-disadvantages-of-separate-chaining" rel="nofollow" aria-hidden="true"></a>ii) Write any 2 disadvantages of separate chaining.</h3>
+<ol>
+<li><strong>Increased Space Complexity:</strong> Separate chaining requires additional space
+to store the linked lists, which can lead to increased space complexity. As
+the number of collisions increases, the size of the hash table also
+increases, leading to more memory being used.</li>
+<li><strong>Increased Time Complexity:</strong> With separate chaining, the time complexity
+for searching, inserting, and deleting elements in the hash table is no
+longer constant on average, but instead becomes linear with the length of the
+linked list. This happens because in worst case scenario, when all keys map
+to the same index, the algorithm needs to traverse the whole linked list to
+find the desired key.</li>
+</ol>
+
+<ul>
+<li><a href="https://youtu.be/T9gct6Dx-jo?t=96">Explain Separate Chaining</a></li>
+</ul>
+<h3><a name="iii-compose-the-concept-of-addition-of-two-polynomials" class="heading-anchor" href="#iii-compose-the-concept-of-addition-of-two-polynomials" rel="nofollow" aria-hidden="true"></a>iii) Compose the concept of addition of two polynomials.</h3>
+<p>Explain:
+<a href="https://www.youtube.com/watch?v=cFHZ-a87Vp4">Application of Linked List (Addition of Two Polynomials)</a></p>
+<h2><a name="2-5-marks" class="heading-anchor" href="#2-5-marks" rel="nofollow" aria-hidden="true"></a>2. 5 Marks</h2><h3><a name="i-reframe-the-short-note-on-double-hashing" class="heading-anchor" href="#i-reframe-the-short-note-on-double-hashing" rel="nofollow" aria-hidden="true"></a>i) Reframe the short note on Double Hashing.</h3>
+<p>Double Hashing is a technique used to resolve collisions in a hash table. It is
+a variation of open addressing method, where instead of using a single hash
+function to map a key to an index in the table, it uses two hash functions. The
+first hash function is used to find the initial index for a key and the second
+hash function is used to find the next index in case of a collision. The second
+hash function is chosen such that it guarantees a non-zero value, and also it's
+relatively prime to the size of the table, this way it guarantees to visit all
+the possible indices in the table. In this way, Double Hashing helps to spread
+out the keys that hash to the same value and reduce clustering in the table.
+Double Hashing requires more computation than linear probing, but it has a lower
+chance of clustering which can result in better performance.</p>
+
+<p>Explain: <a href="https://youtu.be/HcWxaVl1TII">Double Hashing</a></p>
+<h2><a name="ii-translate-the-given-infix-to-postfix-expression-using-stack-a-b-d-e-f" class="heading-anchor" href="#ii-translate-the-given-infix-to-postfix-expression-using-stack-a-b-d-e-f" rel="nofollow" aria-hidden="true"></a>ii) Translate the given infix to postfix expression using stack <code>((A+B)*D)^(E-F)</code></h2>
+<table>
+<thead>
+<tr>
+<th>Infix</th>
+<th>Stack</th>
+<th>Postfix</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>(</td>
+<td>(</td>
+<td></td>
+</tr>
+
+<tr>
+<td>(</td>
+<td>((</td>
+<td></td>
+</tr>
+
+<tr>
+<td>A</td>
+<td>((</td>
+<td>A</td>
+</tr>
+
+<tr>
+<td>+</td>
+<td>((+</td>
+<td>A</td>
+</tr>
+
+<tr>
+<td>B</td>
+<td>((+</td>
+<td>AB</td>
+</tr>
+
+<tr>
+<td>)</td>
+<td>(</td>
+<td>AB+</td>
+</tr>
+
+<tr>
+<td>*</td>
+<td>(*</td>
+<td>AB+</td>
+</tr>
+
+<tr>
+<td>D</td>
+<td>(*</td>
+<td>AB+D</td>
+</tr>
+
+<tr>
+<td>)</td>
+<td></td>
+<td>AB+D*</td>
+</tr>
+
+<tr>
+<td>^</td>
+<td>^</td>
+<td>AB+D*</td>
+</tr>
+
+<tr>
+<td>(</td>
+<td>^(</td>
+<td>AB+D*</td>
+</tr>
+
+<tr>
+<td>E</td>
+<td>^(</td>
+<td>AB+D*E</td>
+</tr>
+
+<tr>
+<td>-</td>
+<td>^(-</td>
+<td>AB+D*E</td>
+</tr>
+
+<tr>
+<td>F</td>
+<td>^(-</td>
+<td>AB+D*EF</td>
+</tr>
+
+<tr>
+<td>)</td>
+<td></td>
+<td>AB+D*EF-^</td>
+</tr>
+</tbody>
+</table>
+<h3><a name="3-5-marks" class="heading-anchor" href="#3-5-marks" rel="nofollow" aria-hidden="true"></a>3. 5 Marks</h3><h2><a name="i-reframe-any-5-characteristics-of-good-hashing-function" class="heading-anchor" href="#i-reframe-any-5-characteristics-of-good-hashing-function" rel="nofollow" aria-hidden="true"></a>i) Reframe any 5 characteristics of Good Hashing Function.</h2>
+<ul>
+<li><strong>Efficient:</strong> A good hashing function should be able to quickly and
+efficiently map a key to its corresponding index in the hash table.</li>
+<li><strong>Distributes keys uniformly:</strong> A good hashing function should be able to
+distribute keys uniformly across the entire range of indices in the hash
+table, reducing the likelihood of collisions.</li>
+<li><strong>Deterministic:</strong> A good hashing function should always produce the same
+output for the same input, allowing for easy retrieval of keys.</li>
+<li><strong>One-Way:</strong> A good hashing function should be difficult to reverse, making it
+difficult for attackers to determine the original key.</li>
+<li><strong>Sensitive to the input:</strong> A good hashing function should be sensitive to
+small changes in the input and produce different outputs for similar but not
+identical keys.</li>
+</ul>
+<h2><a name="ii-using-kruskal-s-algorithm-find-minimum-spanning-tree-for-the-following-graph" class="heading-anchor" href="#ii-using-kruskal-s-algorithm-find-minimum-spanning-tree-for-the-following-graph" rel="nofollow" aria-hidden="true"></a>ii) Using Kruskal's algorithm find Minimum Spanning Tree for the following graph.</h2>
+<p><img loading="lazy" src="./Graph.svg" alt="Graph Diagram" /></p>
+
+<p>Minimum Spanning Tree using Kruskal's algorithm:
+<img loading="lazy" src="./Minimum-Spanning-Tree.svg" alt="Minimum Spanning Tree" /></p>
+
+<p>Here how I made it: <a href="https://youtu.be/71UQH7Pr9kU">Kruskal's algorithm</a></p>
+
+		</main>
+		
+		<details id="table-of-content">
+		   <summary>Table of Content</summary>
+		<nav>
+<ul>
+<li><a href="#1-a-6-marks">1.A. 6 Marks</a>
+<ul>
+<li><a href="#i-correlate-any-3-advantages-of-dfs">
+i) Correlate any 3 advantages of DFS</a></li>
+<li><a href="#ii-reframe-the-short-note-on-hash-table">
+ii) Reframe the short note on hash table</a></li>
+<li><a href="#iii-explain-waht-are-the-different-ways-to-represent-the-graph">
+iii) Explain waht are the different ways to represent the graph.</a>
+<ul>
+<li><a href="#adjacency-matrix-array-representation">
+Adjacency Matrix (Array Representation)</a></li>
+<li><a href="#adjacency-list-linked-list-representation">
+Adjacency List (Linked List Representation)</a></li>
+</ul></li>
+<li><a href="#i-relate-any-2-applications-of-graph">
+i) Relate any 2 applications of Graph.</a></li>
+<li><a href="#ii-write-any-2-disadvantages-of-separate-chaining">
+ii) Write any 2 disadvantages of separate chaining.</a></li>
+<li><a href="#iii-compose-the-concept-of-addition-of-two-polynomials">
+iii) Compose the concept of addition of two polynomials.</a></li>
+</ul></li>
+<li><a href="#2-5-marks">
+2. 5 Marks</a>
+<ul>
+<li><a href="#i-reframe-the-short-note-on-double-hashing">
+i) Reframe the short note on Double Hashing.</a></li>
+</ul></li>
+<li><a href="#ii-translate-the-given-infix-to-postfix-expression-using-stack-a-b-d-e-f">
+ii) Translate the given infix to postfix expression using stack <code>((A+B)*D)^(E-F)</code></a>
+<ul>
+<li><a href="#3-5-marks">
+3. 5 Marks</a></li>
+</ul></li>
+<li><a href="#i-reframe-any-5-characteristics-of-good-hashing-function">
+i) Reframe any 5 characteristics of Good Hashing Function.</a></li>
+<li><a href="#ii-using-kruskal-s-algorithm-find-minimum-spanning-tree-for-the-following-graph">
+ii) Using Kruskal's algorithm find Minimum Spanning Tree for the following graph.</a></li>
+</ul>
+</nav>
+
+		</details>
+		
+		<footer>
+			<p style="text-align: center; font-size: small; margin-top: 5em;">
+				<a href="https://anzenkodo.github.io/license">LICENSE</a>
+			</p>
+		</footer>
+	</body>
+	<script src="https://AnzenKodo.github.io/assets/js/mermaid.js"></script>
+	<script id="MathJax-script" async src="https://AnzenKodo.github.io/assets/js/mathjax.js"></script>
+	<script>
+		/* document.getElementById('video').addEventListener('click', (ele) => {
+			 if (ele.target.paused) {
+				 ele.target.play();
+			 } else {
+				 ele.target.pause();
+			 }
+		}); */
+
+		mermaid.initialize({
+			theme: "neutral",
+			themeVariables: {
+			    lineColor: "#939598",
+			}
+		});
+
+		MathJax = {
+		  tex: {
+			inlineMath: [['$', '$']],
+			displayMath: [['$$', '$$']],
+		  }
+		};
+	</script>
+</html>

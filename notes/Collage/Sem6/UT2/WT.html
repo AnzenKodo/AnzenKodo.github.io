@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>WT - AK#Notes</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="#FF6C22">
+		<meta name="description" content="## IEEE 802.11 vs 802.16  | Category  | 802.11              | 802.16               | | ----------- |">
+		<meta property="og:description" content="## IEEE 802.11 vs 802.16  | Category  | 802.11              | 802.16               | | ----------- |">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<meta property="og:image:alt" content="AK#Notes logo">
+		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="WT - AK#Notes">
+		<meta property="og:url" content="https://AnzenKodo.github.io/notes/notes/Collage/Sem6/UT2/WT.html">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+
+			:root {
+				/* color-scheme: dark light; */
+				color-scheme: dark;
+				--theme: #FF6C22;
+			}
+			body {
+				max-width: 40rem;
+				margin: 0 auto;
+				font-family: system-ui;
+				padding: 0 1em;
+				color: inherit !important;
+				word-break: break-word;
+			}
+			h1, h2, h3, h4, h5, h6 {
+				margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+				font-size: 2rem;
+			}
+			h3 {
+				font-size: 1.8rem;
+			}
+			h4 {
+				font-size: 1.5rem;
+			}
+			h5 {
+				font-size: 1.3rem;
+			}
+			h6 {
+				font-size: 1rem;
+			}
+			p, li, td, code {
+				line-height: 1.5rem;
+			}
+			a {
+				color: var(--theme);
+				text-decoration: none;
+			}
+			a:hover, a:focus {
+				text-decoration: underline;
+			}
+			a:active {
+				background: var(--theme);
+				color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+				margin-top: .5rem;
+			}
+			li {
+				margin-bottom: .5rem;
+			}
+			table {
+				border-collapse: collapse;
+				overflow-x: auto;
+				display: block;
+				word-break: auto-phrase;
+				margin: 1rem 0;
+			}
+			th {
+				font-size: 1.1rem;
+				border: 2px solid;
+				padding: .3rem .3rem;
+			}
+			td {
+				border: 1px solid;
+				padding: .3rem .5rem;
+			}
+			blockquote {
+				margin-left: 0;
+				margin-right: 0;
+				border: 1px solid;
+				border-left: 10px solid;
+				padding: 0 1rem;
+			}
+				.code-block {
+				background: black;
+				overflow-x: auto;
+				padding: 0em 1em;
+				border: 1px solid;
+			}
+			.code-block-language-name {
+				position: sticky;
+				left: 95%;
+				top: .5em;
+				font-weight: bold;
+				color: white;
+			}
+			:not(pre.chroma) > code {
+				border: 1px solid;
+				padding: .3rem .2rem .2rem .2rem;
+			}
+			img {
+				max-width: 100%;
+				display: block;
+				margin: 0 auto;
+			}
+			[href="#skip-top-main"] {
+				padding: 0.3em;
+				position: absolute;
+				transform: translateY(-1000%);
+			}
+			[href="#skip-top-main"]:focus {
+				transform: translateY(0%);
+				background: var(--theme);
+				color: inherit;
+			}
+			#table-of-content {
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+				background: black;
+				padding: 0.5rem 1em;
+				z-index: 1;
+				color: white;
+			}
+			#table-of-content[open] {
+				max-height: 90%;
+				overflow-y: auto;
+				bottom: 50px;
+				margin-left: 1em;
+			}
+			#table-of-content[open] summary {
+				background: black;
+				padding: 0.5em 1em;
+				text-align: center;
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+			}
+			#table-of-content ul:first-child {
+				padding-left: 1em;
+				margin-top: 1.5em;
+			}
+			.heading-anchor::before {
+				margin-right: .5rem;
+			}
+		    h2 .heading-anchor::before {
+    			content: "#";
+    			margin-right: .5rem;
+		    }
+            h3 .heading-anchor::before {
+				content: "##";
+				margin-right: .5rem;
+			}
+            h4 .heading-anchor::before {
+				content: "###";
+				margin-right: .5rem;
+			}
+            h5 .heading-anchor::before {
+				content: "####";
+				margin-right: .5rem;
+			}
+            h6 .heading-anchor::before {
+				content: "#####";
+				margin-right: .5rem;
+			}
+			.mermaid {
+				background: black;
+				border: 1px solid;
+				margin-top: 1rem;
+				padding: 1rem;
+				font-family: monospace;
+			}
+			.mermaid svg {
+				display: block;
+				margin: auto;
+			}
+			.mermaid:has(svg) {
+				background: none;
+				border: none;
+				margin-top: 1rem;
+				padding: 0;
+			}
+			mjx-container {
+				display: math;
+				overflow-y: hidden;
+				overflow-x: auto;
+				max-width: 100%;
+				padding-bottom: .8rem;
+			}
+			iframe {
+				width: 100%;
+				height: 21rem;
+				margin: 1rem 0;
+			}
+			video {
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<a href="#skip-top-main">Skip to main</a>
+		<header>
+<!--		<h1 style="text-align: center;">-->
+			<h1 style="text-align: center;">
+				<a href="https://AnzenKodo.github.io">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+			</h1><nav style="border-top: 1px solid gray;border-bottom: 1px solid gray;padding: .5rem 0;text-align: center;margin: 0 0 2rem 0;color: gray;clear: left;line-height: 1.6rem;">
+				<a href="https://AnzenKodo.github.io/notes">Home</a> | <a href="https://AnzenKodo.github.io">About</a> | <a href="https://AnzenKodo.github.io/blogroll">Blogroll</a> | <a href="https://github.com/AnzenKodo">Github</a> | <a href="https://x.com/AnzenKodo">𝕏</a>
+			</nav>
+			<!-- <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;"> -->
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem; margin-top: 0;">WT</h1>
+			<h2><a name="ieee-802-11-vs-802-16" class="heading-anchor" href="#ieee-802-11-vs-802-16" rel="nofollow" aria-hidden="true"></a>IEEE 802.11 vs 802.16</h2>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>802.11</th>
+<th>802.16</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Define</td>
+<td>WLAN</td>
+<td>WiMAX</td>
+</tr>
+
+<tr>
+<td>Designed</td>
+<td>Limited area</td>
+<td>Distance area</td>
+</tr>
+
+<tr>
+<td>Range</td>
+<td>30m to 100m</td>
+<td>7km to 50km</td>
+</tr>
+
+<tr>
+<td>Usage</td>
+<td>Indoor</td>
+<td>Outdoor</td>
+</tr>
+
+<tr>
+<td>Frequencies</td>
+<td>2.5GHz, 3.5GHz &amp; 5.8GHz</td>
+<td>2.4GHz &amp; 5GHz</td>
+</tr>
+
+<tr>
+<td>Channel</td>
+<td>20MHz</td>
+<td>20MHz</td>
+</tr>
+
+<tr>
+<td>Variants</td>
+<td>802.11a, 802.11b, 802.11c &amp; etc</td>
+<td>802.16a, 802.16b, 802.16c &amp; etc</td>
+</tr>
+
+<tr>
+<td>User Size</td>
+<td>Large</td>
+<td>Limited</td>
+</tr>
+
+<tr>
+<td>Encryption</td>
+<td>AES(Advance Encription Standard)</td>
+<td>Rivest Cipher 4</td>
+</tr>
+
+<tr>
+<td>Bandwidth</td>
+<td>1.5 to 28 MHz</td>
+<td>20 MHz, 40 MHz, 80 MHz and 160 MHz</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="bluetooth" class="heading-anchor" href="#bluetooth" rel="nofollow" aria-hidden="true"></a>Bluetooth</h2><h3><a name="architecture" class="heading-anchor" href="#architecture" rel="nofollow" aria-hidden="true"></a>Architecture</h3>
+<p><img loading="lazy" src="assets/Pasted%20image%2020240418004116.png" alt="" /></p>
+
+<ul>
+<li><strong>Piconet</strong>: A piconet is a network formed by one master unit and up to seven active slave units. The master unit controls the communication within the piconet, managing the timing and frequency hopping for synchronized data transfer between devices.</li>
+<li><strong>Master Unit</strong>: The master unit in Bluetooth architecture is the device that initiates connections and controls the communication with one or more slave units. It manages the timing and frequency hopping in the network.</li>
+<li><strong>Slave Unit</strong>: A slave unit is a device that connects to a master unit in a Bluetooth network. Within the slave unit category, there are different types:
+
+<ul>
+<li><strong>Parked Slave</strong>: A parked slave is a device that is synchronized with the piconet but is not actively participating in data transfer. It remains in a low-power state until needed.</li>
+<li><strong>Active Slave</strong>: An active slave is a device actively involved in data transfer within the piconet.</li>
+<li><strong>Bridge Slave</strong>: A bridge slave is a device that can connect two piconets together, acting as a bridge between them.</li>
+</ul></li>
+<li><strong>Standby Unit</strong>: A standby unit is a device that is synchronized with a piconet but is not actively participating in data transfer. It remains in a low-power state, ready to become active when needed.</li>
+<li><strong>Scatternet</strong>: A scatternet is a network where multiple independent piconets are interconnected through shared devices, allowing communication between devices in different piconets.</li>
+</ul>
+<h3><a name="protocol-stack" class="heading-anchor" href="#protocol-stack" rel="nofollow" aria-hidden="true"></a>Protocol stack</h3>
+<p><img loading="lazy" src="assets/Pasted%20image%2020240418020347.png" alt="" /></p>
+
+<p><strong>Radio</strong>: It provides the electrical interface for transfer of packets. It uses modulated carrier for this purpose.</p>
+
+<table>
+<thead>
+<tr>
+<th>Protocol layer</th>
+<th>Protocols in the stack</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Bluetooth Core Protocols</td>
+<td>Baseband, LMP, L2CAP, SDP</td>
+</tr>
+
+<tr>
+<td>Cable Replacement Protocol</td>
+<td>RFCOMM</td>
+</tr>
+
+<tr>
+<td>Telephony Control Protocols</td>
+<td>TCS Binary, AT-commands</td>
+</tr>
+
+<tr>
+<td>Adopted Protocols</td>
+<td>PPP, UDP/TCP/IP, OBEX, WAP, vCard, vCal, IrMC1, WAE</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li><strong>Bluetooth Core Protocols:</strong> The core protocols of Bluetooth form the foundation of the Bluetooth technology, providing essential functions for communication between devices.
+
+<ul>
+<li><strong>Baseband</strong>: This layer is responsible for addressing scheme, packet frame format, timing and power control algorithms required for establishing connection between Bluetooth devices within a piconet.</li>
+<li><strong>Audio:</strong> Audio data can be transferred between one or more Bluetooth devices.</li>
+<li><strong>Link Manager Protocol (LMP)</strong>:
+
+<ul>
+<li><img loading="lazy" src="assets/Pasted%20image%2020240418020729.png" alt="" /></li>
+<li>This layer is responsible for establishing and maintaining links between Bluetooth devices.</li>
+<li>It includes authentication and encryption specifications, and handles negotiation of packet sizes between devices.</li>
+</ul></li>
+<li><strong>Logical Link Control and Adaptation Protocol (L2CAP)</strong>: This layer adapts upper layer frames to baseband layer frame format and vice versa. It provides both <strong>connection-oriented and connectionless services</strong>.</li>
+<li><strong>Service Discovery Protocol (SDP)</strong>: It enables a Bluetooth device to join piconet. Allows devices to discover services offered by other devices, facilitating the establishment of connections.</li>
+</ul></li>
+<li><strong>Cable Replacement Protocol:</strong> providing a means for devices to communicate as if connected by a physical cable.
+
+<ul>
+<li><strong>Radio Frequency Communication (RFCOMM):</strong> It is a serial communication protocol.</li>
+</ul></li>
+<li><strong>Telephony Control Protocols</strong>: are responsible for call control signaling, mobility management, and controlling mobile phones.
+
+<ul>
+<li><strong>Telephony Control – Binary (TCS BIN):</strong> a bit-oriented protocol that defines call control signaling for establishing voice and data calls between Bluetooth devices.</li>
+<li><strong>Telephony Control – AT Commands:</strong>
+
+<ul>
+<li><img loading="lazy" src="assets/Pasted%20image%2020240418020954.png" alt="" /></li>
+<li><img loading="lazy" src="assets/Pasted%20image%2020240418021001.png" alt="" /></li>
+<li>are a set of instructions and control functions used for telephony control between Bluetooth devices.</li>
+</ul></li>
+</ul></li>
+<li><strong>Adopted Protocols</strong>: standard protocols integrated into Bluetooth technology to enhance its functionality
+
+<ul>
+<li><strong>Point to Point Protocol (PPP):</strong>
+
+<ul>
+<li><img loading="lazy" src="assets/Pasted%20image%2020240418021041.png" alt="" /></li>
+<li>a data link layer communication protocol between two routers directly without any host or any other networking in between</li>
+</ul></li>
+<li><strong>Object Exchange Protocol (OBEX Protocol):</strong>
+
+<ul>
+<li>It allows for the seamless transfer of various types of data, such as files, contacts, and messages, between Bluetooth-enabled devices, enhancing the interoperability and usability of Bluetooth technology.</li>
+</ul></li>
+<li><strong>Transmission Control Protocol / User Datagram Protocol / Internet Protocol (TCP/UDP/IP):</strong>
+
+<ul>
+<li><img loading="lazy" src="assets/Pasted%20image%2020240418021307.png" alt="" /></li>
+<li>The implementation of these standards in Bluetooth devices allows for communication with any other device connected to the Internet: The Bluetooth device.</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2><a name="explain-features-of-manet-wanet-e-wanet-wimax" class="heading-anchor" href="#explain-features-of-manet-wanet-e-wanet-wimax" rel="nofollow" aria-hidden="true"></a>Explain features of MANET, WANET, E-WANET, WiMAX</h2><h3><a name="manet" class="heading-anchor" href="#manet" rel="nofollow" aria-hidden="true"></a>MANET</h3>
+<p><img loading="lazy" src="assets/Pasted%20image%2020240418022731.jpg" alt="" /></p>
+
+<p>A wireless ad hoc network or mobile ad hoc network is a decentralized type of wireless network. The network is ad hoc because it does not rely on a pre-existing infrastructure, such as routers or wireless access points. Instead, each node participates in routing by forwarding data for other nodes.</p>
+
+<p>The features of a Mobile Ad-hoc Network (MANET) are:</p>
+
+<ol>
+<li><strong>Peer to Peer connectivity</strong>: have peer to peer connectivity among themselves.</li>
+<li><strong>Decentralized</strong>: There is no centralized infrastructure in a MANET, and each node acts as a router, forwarding traffic to other nodes in the network.</li>
+<li><strong>Self-configuring and self-healing</strong>: MANETs can automatically configure themselves and heal from disruptions without human intervention.</li>
+<li><strong>Multihop</strong>: MANETs typically have a multihop network topology, where data is transmitted through multiple nodes to reach its destination.</li>
+<li><strong>No access point requiered</strong>: Only selected access point are required.</li>
+<li><strong>Diversity:</strong> nodes can be smartphones, computers, laptops etc.</li>
+</ol>
+<h3><a name="wanet" class="heading-anchor" href="#wanet" rel="nofollow" aria-hidden="true"></a>WANET</h3>
+<p><img loading="lazy" src="assets/Pasted%20image%2020240418023718.png" alt="" /></p>
+
+<p>Wireless Ad Hoc Networks (WANETs) are a type of decentralized wireless network that connects several devices wirelessly without the need for a centralized access point or router.</p>
+
+<p>They offer several features, including:</p>
+
+<ol>
+<li><strong>Decentralized</strong>: Each device in a WANET acts as an independent router, establishing connections with other nodes in the network.</li>
+<li><strong>Self-configuring</strong>: WANETs can dynamically change their links with other devices in the network.</li>
+<li><strong>Low power consumption</strong>: WANETs require low power consumption, making them suitable for use in remote areas or in emergency response scenarios.</li>
+<li><strong>No fixed infrastructure</strong>: WANETs do not require fixed infrastructures to work, allowing for rapid deployment and expansion of network operations.</li>
+<li><strong>Direct peer-to-peer wireless connection</strong>: WANETs access resources directly through peer-to-peer wireless connections, eliminating the need for central servers.</li>
+<li><strong>Types of WANETs</strong>:
+
+<ol>
+<li>MANETs (Mobile Ad Hoc Networks)</li>
+<li>IMANETs (Internet-based Mobile Ad Hoc Networks)</li>
+<li>SPANs (Smartphone Ad Hoc Networks)</li>
+<li>VANETs (Vehicular Ad Hoc Networks)</li>
+<li>Army Tactical MANETs.</li>
+</ol></li>
+<li><strong>Applications</strong>:<br>
+
+<ol>
+<li>Emergency response operations</li>
+<li>Military surveillance missions</li>
+<li>Communication</li>
+<li>Entertainment purposes</li>
+<li>Medical applications and etc.</li>
+</ol></li>
+</ol>
+<h3><a name="e-wanet" class="heading-anchor" href="#e-wanet" rel="nofollow" aria-hidden="true"></a>E-WANET</h3>
+<p>E-WANET, or Energy-aware Wireless Ad-Hoc Network, is a type of wireless network that prioritizes energy efficiency and energy awareness. </p>
+
+<p>Here are the features of E-WANET:</p>
+
+<ol>
+<li><strong>Energy efficiency</strong>: E-WANET is designed to minimize energy consumption and prolong the battery life of wireless devices. It achieves this by employing energy-efficient protocols and algorithms that reduce the power consumption of wireless devices<a href="https://www.mdpi.com/1099-4300/25/1/101">5</a>.</li>
+<li><strong>Energy aware</strong>: E-WANET is aware of the energy status of each device in the network. It uses this information to make routing decisions that minimize energy consumption and prolong the battery life of devices<a href="https://www.mdpi.com/1099-4300/25/1/101">5</a>.</li>
+<li><strong>Low power hardware</strong>: E-WANET is designed to work with low power hardware, such as wireless sensors and mobile devices. This allows E-WANET to be used in remote and resource-constrained environments where access to power is limited<a href="https://www.mdpi.com/1099-4300/25/1/101">5</a>.</li>
+<li><strong>Quality of service (QoS) support</strong>: E-WANET supports QoS by providing different levels of service to different applications. This ensures that critical applications, such as emergency response and medical applications, receive the necessary resources and priority in the network<a href="https://www.mdpi.com/1099-4300/25/1/101">5</a>.</li>
+</ol>
+<h3><a name="wimax" class="heading-anchor" href="#wimax" rel="nofollow" aria-hidden="true"></a>WiMAX</h3>
+<p><img loading="lazy" src="assets/Pasted%20image%2020240418030410.png" alt="" /></p>
+
+<p>WiMAX, which stands for Worldwide Interoperability for Microwave Access, is a wireless broadband technology that offers a range of features that make it a versatile and efficient communication solution. Here are the key features of WiMAX based on the provided sources:</p>
+
+<ul>
+<li><strong>Broad Coverage</strong>: WiMAX provides wide area coverage, allowing users to access the Internet wirelessly over long distances, with towers capable of broadcasting signals that can cover up to 50 km.</li>
+<li><strong>High Speed</strong>: WiMAX offers high-speed data transmission, comparable to 802.11/Wi-Fi networks, with the ability to deliver performance similar to cellular networks. It supports very high peak data rates, with peak PHY data rates reaching up to 74Mbps using a 20MHz wide spectrum.</li>
+<li><strong>Scalability</strong>: WiMAX features a scalable physical-layer architecture that allows for the data rate to scale easily with the available channel bandwidth.</li>
+<li><strong>Backwards Compatibility</strong>: WiMAX is designed to be backwards compatible, enabling interoperability with existing wireless technologies. This compatibility allows for a smooth transition to WiMAX technology without the need for a complete overhaul of existing infrastructure.</li>
+</ul>
+<h2><a name="4g-network-architecture" class="heading-anchor" href="#4g-network-architecture" rel="nofollow" aria-hidden="true"></a>4G Network Architecture</h2>
+<p><img loading="lazy" src="../UT1/assets/Pasted%20image%2020240329202340.jpg" alt="" /></p>
+
+<p>The LTE network architecture comprises of following three main components.</p>
+
+<ul>
+<li><strong>User Equipement(UE):</strong> - This represents your mobile phone or any other device that connects to the 4G network. It communicates with the network via radio signals.
+
+<ul>
+<li>The <strong>Mobile Equipment</strong> comprised of the following important modules:
+
+<ul>
+<li><strong>Mobile Termination (MT)</strong> : This handles all the communication functions.</li>
+<li><strong>Terminal Equipment (TE)</strong> : This terminates the data streams.</li>
+</ul></li>
+</ul></li>
+<li><strong>Evolved UMTS Terrestrial Radio Access Network:</strong> This refers to the radio access network part of the 4G system. E-UTRAN consists of cell towers, also known as eNodeB (eNB) in the diagram, that transmit and receive radio signals to and from user devices.
+
+<ul>
+<li><img loading="lazy" src="../UT1/assets/Pasted%20image%2020240329212053.jpg" alt="" /></li>
+</ul></li>
+<li><strong>The Evolved Packet Core (EPC):</strong> This is the heart of the 4G network, and it's responsible for handling all the data traffic that flows between the user equipment and the external networks like the internet.</li>
+<li><strong>PDNs (Packet Data Networks):</strong> These represent external networks that the user equipment can access through the 4G network, such as the internet.</li>
+</ul>
+<h2><a name="manet-vs-wsn" class="heading-anchor" href="#manet-vs-wsn" rel="nofollow" aria-hidden="true"></a>MANET vs WSN</h2>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>MANET</th>
+<th>WSN</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Full Form</td>
+<td>Mobile Ad-hoc Networks</td>
+<td>Wireless Sensor Network</td>
+</tr>
+
+<tr>
+<td>Used for</td>
+<td>Wireless ad-hoc in radio waves</td>
+<td>Wireless sensor network in radio waves, infrared and optical media</td>
+</tr>
+
+<tr>
+<td>Routing</td>
+<td>Hop-to-Hop</td>
+<td>Query-based / Data Centric Routing &amp; Location Based</td>
+</tr>
+
+<tr>
+<td>Type</td>
+<td>Heterogeneous</td>
+<td>Homogeneous</td>
+</tr>
+
+<tr>
+<td>Traffic Pattern</td>
+<td>Point-to-Point</td>
+<td>Any-to-Any, Many-to-One, Many-to-Few and One-to-Many</td>
+</tr>
+
+<tr>
+<td>Data rate</td>
+<td>High</td>
+<td>Low</td>
+</tr>
+
+<tr>
+<td>Support</td>
+<td>Common Services</td>
+<td>Specific Applications</td>
+</tr>
+
+<tr>
+<td>Node devices</td>
+<td>Any</td>
+<td>Limited</td>
+</tr>
+
+<tr>
+<td>Network type</td>
+<td>Peer-to-Peer</td>
+<td>Hierarchical or Mesh</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="layer-architecture-of-wsn" class="heading-anchor" href="#layer-architecture-of-wsn" rel="nofollow" aria-hidden="true"></a>Layer Architecture of WSN</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020240418034613.png" alt="" /></p>
+
+<p>A Wireless Sensor Network (WSN) is a distributed network comprising a large number of spatially dispersed, tiny, low-powered devices called sensor nodes that communicate wirelessly to monitor physical or environmental conditions such as temperature, sound, vibration, pressure, motion, or pollutants.</p>
+
+<p><img loading="lazy" src="assets/Pasted%20image%2020240418032445.jpg" alt="" /></p>
+
+<p><strong>Protocol Layers</strong>:</p>
+
+<ul>
+<li><strong>Physical Layer</strong>
+
+<ul>
+<li>The objective of physical layer is to increase the reliability by reducing path loss effect and shadowing.</li>
+<li>This layer is responsible for established connection, data rate, modulation, data encryption, signal detection, frequency generation and signal detection.</li>
+</ul></li>
+<li><strong>Data Link Layer</strong>
+
+<ul>
+<li>The objective of Data link layer is to insure interoperability among communication between nodes to nodes. This layer is responsible for error detection, multiplexing. Prevention of Collision of packets, repeated transmission etc.</li>
+</ul></li>
+<li><strong>Network Layer</strong>
+
+<ul>
+<li>The objective of Network layer is to find best path for efficient routing mechanism.</li>
+<li>This layer is responsible for routing the data from node to node, node to sink, node to base station, node to cluster.</li>
+</ul></li>
+<li><strong>Transport Layer</strong>
+
+<ul>
+<li>The objective of Transport Layer is to establish communication for external networks i.e. sensor network connected to the internet.</li>
+</ul></li>
+<li><strong>Application Layer</strong>
+
+<ul>
+<li>The objective of Application Layer is to present final output by ensuring smooth information flow to lower layers.</li>
+<li>This layer is responsible for data collection, management and processing of the data through the application software for getting reliable results.</li>
+</ul></li>
+</ul>
+
+<p><strong>Cross Layer</strong>:</p>
+
+<ul>
+<li><strong>Power Management</strong>: WSNs consist of battery-powered sensors, and power management is crucial to ensure the network can function for long periods without frequent battery replacements.</li>
+<li><strong>Mobility Management</strong>: WSNs can include mobile nodes, and mobility management is essential to ensure reliable communication and data transfer between moving nodes.</li>
+<li><strong>Task Management</strong>: WSNs can be used for various applications, and task management is necessary to ensure that the network can perform the required tasks efficiently and reliably.</li>
+</ul>
+<h2><a name="fhss-vs-dsss" class="heading-anchor" href="#fhss-vs-dsss" rel="nofollow" aria-hidden="true"></a>FHSS vs DSSS</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020240418043428.png" alt="" /></p>
+
+<p>These are methods used in wireless communication to spread a signal over a wide range of frequencies.</p>
+
+<p>FHSS involves rapidly changing the frequency of the signal in a pattern known to both sender and receiver, making it resistant to interference and eavesdropping.</p>
+
+<p>On the other hand, DSSS divides the signal into smaller parts and mixes it with redundant data bits, making it more secure and resistant to noise.</p>
+
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>FHSS</th>
+<th>DSSS</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Full Form</td>
+<td>Frequency Hopping Spread Spectrum</td>
+<td>Direct Sequence Spread Spectrum</td>
+</tr>
+
+<tr>
+<td>Transmission rate</td>
+<td>Low</td>
+<td>High</td>
+</tr>
+
+<tr>
+<td>Modulation</td>
+<td>Multilevel Frequency Shift Keying (FSK)</td>
+<td>Binary Phase shift keying</td>
+</tr>
+
+<tr>
+<td>Bandwidth utilization</td>
+<td>More</td>
+<td>Less</td>
+</tr>
+
+<tr>
+<td>Used in</td>
+<td>Bluetooth, Mobile Communication, etc</td>
+<td>GPS, Wifi &amp; etc</td>
+</tr>
+
+<tr>
+<td>Interference</td>
+<td>Resistant</td>
+<td>Vulnerable</td>
+</tr>
+
+<tr>
+<td>Efficiency</td>
+<td>More</td>
+<td>Less</td>
+</tr>
+
+<tr>
+<td>Transmission Speed</td>
+<td>Up to 3Mbps</td>
+<td>up to 11Mbps</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="wep" class="heading-anchor" href="#wep" rel="nofollow" aria-hidden="true"></a>WEP</h2>
+<p><img loading="lazy" src="assets/slide_12.webp" alt="" /></p>
+
+<ul>
+<li>Full form <strong>Wired Equivalent Privacy</strong></li>
+<li>Since data travels through wireless networks on radio waves, it can be easily intercepted by unauthorized users unless security measures are in place.</li>
+<li>WEP was introduced in 1997 as the first attempt at wireless security.</li>
+<li>The aim was to add security to wireless networks by encrypting data transmission.</li>
+<li>If wireless data were intercepted, it would be unrecognizable to unauthorized users since it has been encrypted.</li>
+<li>However, WEP has several vulnerabilities that make it less secure than WPA or WPA-2.</li>
+<li>This is because some of the algorithms used in WEP encryption are weak and can be broken with relatively little effort.</li>
+<li>Additionally, WEP uses a static key system, which means that the same key is used to encrypt all data on the network. This makes it more vulnerable to hacking than WPA or WPA-2, which use dynamic keys.</li>
+</ul>
+<h2><a name="wpa-2" class="heading-anchor" href="#wpa-2" rel="nofollow" aria-hidden="true"></a>WPA-2</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020240418040943.png" alt="" /></p>
+
+<ul>
+<li>Wi-Fi Protected Access 2 (WPA2) is the second generation of the Wi-Fi Protected Access security standard, designed to provide enhanced security for wireless networks.</li>
+<li>It was introduced in 2004 as an improvement over its predecessor, WPA, to address vulnerabilities and enhance data encryption and user authentication.</li>
+<li>Introduced in 2004, this is the Wi-Fi Alliance's protocol replacing WEP.</li>
+<li>It offers more robust security mechanisms.</li>
+<li>WPA-2 uses two modes:
+
+<ul>
+<li><strong>Personal:</strong> relies on a pre-shared key (PSK) for home users or small offices.</li>
+<li><strong>Enterprise:</strong> suited for organizations that require more secure authentication methods.</li>
+</ul></li>
+<li><strong>Both modes use:</strong>
+
+<ul>
+<li><strong>CCMP (Counter Cipher Mode with Block Chaining Message Authentication Code Protocol):</strong> a strong encryption standard.</li>
+</ul></li>
+</ul>
+<h2><a name="cisco-uwn" class="heading-anchor" href="#cisco-uwn" rel="nofollow" aria-hidden="true"></a>Cisco UWN</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020240418042106.png" alt="" /></p>
+
+<ul>
+<li>With thie explosion of wireless technology in the enterprise network designers have to create solution that provide the mobility and security necessary to monitor network security.</li>
+<li>The <strong>Cisco Unified Wireless Network</strong> architecture tackles these issues by delivering a converged, secured and manageable network.</li>
+<li>Cisco UWN provides management centralization with control in the infrastructure.</li>
+<li>Features:
+
+<ul>
+<li>Security</li>
+<li>Scalability</li>
+<li>Performance</li>
+</ul></li>
+</ul>
+<h3><a name="outline-methods-that-support-cisco-uwn" class="heading-anchor" href="#outline-methods-that-support-cisco-uwn" rel="nofollow" aria-hidden="true"></a>Outline methods that Support Cisco UWN</h3>
+<ol>
+<li><strong>Planning phase</strong>
+
+<ul>
+<li>Define the scope of wireless network deployment</li>
+<li>Identify the requirements and goals of the network</li>
+</ul></li>
+<li><strong>Design phase</strong>
+
+<ul>
+<li>Select appropriate Cisco wireless access points, controllers, and management tools</li>
+<li>Ensure compatibility with existing infrastructure</li>
+</ul></li>
+<li><strong>Implementation phase</strong>
+
+<ul>
+<li>Install and configure all wireless access points and controllers according to the design</li>
+</ul></li>
+<li><strong>Testing &amp; optimization phase</strong>
+
+<ul>
+<li>Conduct walk through to ensure security and coverage meet the requirements</li>
+<li>Optimize performance through testing</li>
+</ul></li>
+</ol>
+<h2><a name="ad-hoc-network-infrastructure-network" class="heading-anchor" href="#ad-hoc-network-infrastructure-network" rel="nofollow" aria-hidden="true"></a>AD-HOC network &amp; Infrastructure network</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020240418035401.png" alt="" /></p>
+
+<p><strong>Ad-Hoc Network</strong>:</p>
+
+<ul>
+<li>An ad-hoc network is a decentralized type of wireless network where wireless devices communicate directly with each other without the need for a central access point.</li>
+<li>In an ad-hoc network, nodes are within range of each other and can communicate directly without the requirement of a fixed infrastructure.</li>
+<li>Each node in an ad-hoc network acts as a router, and the network connection is distributed among the nodes.</li>
+<li>Ad-hoc networks are created dynamically by a collaboration of random nodes, making them suitable for quick and temporary network setups.</li>
+<li>This type of network is peer-to-peer, allowing devices to communicate directly with each other without relying on a central access point.</li>
+</ul>
+
+<p><strong>Infrastructure Network</strong>:</p>
+
+<ul>
+<li>An infrastructure network, also known as STA-AP mode, requires all communication to go through an access point (AP) that connects wireless devices (Stations) to a wired network.</li>
+<li>In infrastructure networks, wireless devices communicate with the access point, which then forwards the data to other devices on the network.</li>
+<li>Access points play a key role in connecting wireless devices to the wired network, acting as a bridge between wireless traffic and the wired network.</li>
+<li>Infrastructure networks are more common in companies and organizations, providing a centralized wireless network architecture where devices communicate with the access point rather than directly with each other.</li>
+<li>Wireless routers and access points are commonly used in infrastructure networks to facilitate communication between wireless devices and the wired network infrastructure.</li>
+</ul>
+
+		</main>
+		
+		<details id="table-of-content">
+		   <summary>Table of Content</summary>
+		<nav>
+<ul>
+<li><a href="#ieee-802-11-vs-802-16">IEEE 802.11 vs 802.16</a></li>
+<li><a href="#bluetooth">
+Bluetooth</a>
+<ul>
+<li><a href="#architecture">
+Architecture</a></li>
+<li><a href="#protocol-stack">
+Protocol stack</a></li>
+</ul></li>
+<li><a href="#explain-features-of-manet-wanet-e-wanet-wimax">
+Explain features of MANET, WANET, E-WANET, WiMAX</a>
+<ul>
+<li><a href="#manet">
+MANET</a></li>
+<li><a href="#wanet">
+WANET</a></li>
+<li><a href="#e-wanet">
+E-WANET</a></li>
+<li><a href="#wimax">
+WiMAX</a></li>
+</ul></li>
+<li><a href="#4g-network-architecture">
+4G Network Architecture</a></li>
+<li><a href="#manet-vs-wsn">
+MANET vs WSN</a></li>
+<li><a href="#layer-architecture-of-wsn">
+Layer Architecture of WSN</a></li>
+<li><a href="#fhss-vs-dsss">
+FHSS vs DSSS</a></li>
+<li><a href="#wep">
+WEP</a></li>
+<li><a href="#wpa-2">
+WPA-2</a></li>
+<li><a href="#cisco-uwn">
+Cisco UWN</a>
+<ul>
+<li><a href="#outline-methods-that-support-cisco-uwn">
+Outline methods that Support Cisco UWN</a></li>
+</ul></li>
+<li><a href="#ad-hoc-network-infrastructure-network">
+AD-HOC network &amp; Infrastructure network</a></li>
+</ul>
+</nav>
+
+		</details>
+		
+		<footer>
+			<p style="text-align: center; font-size: small; margin-top: 5em;">
+				<a href="https://anzenkodo.github.io/license">LICENSE</a>
+			</p>
+		</footer>
+	</body>
+	<script src="https://AnzenKodo.github.io/assets/js/mermaid.js"></script>
+	<script id="MathJax-script" async src="https://AnzenKodo.github.io/assets/js/mathjax.js"></script>
+	<script>
+		/* document.getElementById('video').addEventListener('click', (ele) => {
+			 if (ele.target.paused) {
+				 ele.target.play();
+			 } else {
+				 ele.target.pause();
+			 }
+		}); */
+
+		mermaid.initialize({
+			theme: "neutral",
+			themeVariables: {
+			    lineColor: "#939598",
+			}
+		});
+
+		MathJax = {
+		  tex: {
+			inlineMath: [['$', '$']],
+			displayMath: [['$$', '$$']],
+		  }
+		};
+	</script>
+</html>

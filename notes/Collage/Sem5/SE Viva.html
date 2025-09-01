@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>SE Viva - AK#Notes</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="#FF6C22">
+		<meta name="description" content="## Architectural Views & Style   It defines the relationship between major structural elements of th">
+		<meta property="og:description" content="## Architectural Views & Style   It defines the relationship between major structural elements of th">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<meta property="og:image:alt" content="AK#Notes logo">
+		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="SE Viva - AK#Notes">
+		<meta property="og:url" content="https://AnzenKodo.github.io/notes/notes/Collage/Sem5/SE Viva.html">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+
+			:root {
+				/* color-scheme: dark light; */
+				color-scheme: dark;
+				--theme: #FF6C22;
+			}
+			body {
+				max-width: 40rem;
+				margin: 0 auto;
+				font-family: system-ui;
+				padding: 0 1em;
+				color: inherit !important;
+				word-break: break-word;
+			}
+			h1, h2, h3, h4, h5, h6 {
+				margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+				font-size: 2rem;
+			}
+			h3 {
+				font-size: 1.8rem;
+			}
+			h4 {
+				font-size: 1.5rem;
+			}
+			h5 {
+				font-size: 1.3rem;
+			}
+			h6 {
+				font-size: 1rem;
+			}
+			p, li, td, code {
+				line-height: 1.5rem;
+			}
+			a {
+				color: var(--theme);
+				text-decoration: none;
+			}
+			a:hover, a:focus {
+				text-decoration: underline;
+			}
+			a:active {
+				background: var(--theme);
+				color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+				margin-top: .5rem;
+			}
+			li {
+				margin-bottom: .5rem;
+			}
+			table {
+				border-collapse: collapse;
+				overflow-x: auto;
+				display: block;
+				word-break: auto-phrase;
+				margin: 1rem 0;
+			}
+			th {
+				font-size: 1.1rem;
+				border: 2px solid;
+				padding: .3rem .3rem;
+			}
+			td {
+				border: 1px solid;
+				padding: .3rem .5rem;
+			}
+			blockquote {
+				margin-left: 0;
+				margin-right: 0;
+				border: 1px solid;
+				border-left: 10px solid;
+				padding: 0 1rem;
+			}
+				.code-block {
+				background: black;
+				overflow-x: auto;
+				padding: 0em 1em;
+				border: 1px solid;
+			}
+			.code-block-language-name {
+				position: sticky;
+				left: 95%;
+				top: .5em;
+				font-weight: bold;
+				color: white;
+			}
+			:not(pre.chroma) > code {
+				border: 1px solid;
+				padding: .3rem .2rem .2rem .2rem;
+			}
+			img {
+				max-width: 100%;
+				display: block;
+				margin: 0 auto;
+			}
+			[href="#skip-top-main"] {
+				padding: 0.3em;
+				position: absolute;
+				transform: translateY(-1000%);
+			}
+			[href="#skip-top-main"]:focus {
+				transform: translateY(0%);
+				background: var(--theme);
+				color: inherit;
+			}
+			#table-of-content {
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+				background: black;
+				padding: 0.5rem 1em;
+				z-index: 1;
+				color: white;
+			}
+			#table-of-content[open] {
+				max-height: 90%;
+				overflow-y: auto;
+				bottom: 50px;
+				margin-left: 1em;
+			}
+			#table-of-content[open] summary {
+				background: black;
+				padding: 0.5em 1em;
+				text-align: center;
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+			}
+			#table-of-content ul:first-child {
+				padding-left: 1em;
+				margin-top: 1.5em;
+			}
+			.heading-anchor::before {
+				margin-right: .5rem;
+			}
+		    h2 .heading-anchor::before {
+    			content: "#";
+    			margin-right: .5rem;
+		    }
+            h3 .heading-anchor::before {
+				content: "##";
+				margin-right: .5rem;
+			}
+            h4 .heading-anchor::before {
+				content: "###";
+				margin-right: .5rem;
+			}
+            h5 .heading-anchor::before {
+				content: "####";
+				margin-right: .5rem;
+			}
+            h6 .heading-anchor::before {
+				content: "#####";
+				margin-right: .5rem;
+			}
+			.mermaid {
+				background: black;
+				border: 1px solid;
+				margin-top: 1rem;
+				padding: 1rem;
+				font-family: monospace;
+			}
+			.mermaid svg {
+				display: block;
+				margin: auto;
+			}
+			.mermaid:has(svg) {
+				background: none;
+				border: none;
+				margin-top: 1rem;
+				padding: 0;
+			}
+			mjx-container {
+				display: math;
+				overflow-y: hidden;
+				overflow-x: auto;
+				max-width: 100%;
+				padding-bottom: .8rem;
+			}
+			iframe {
+				width: 100%;
+				height: 21rem;
+				margin: 1rem 0;
+			}
+			video {
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<a href="#skip-top-main">Skip to main</a>
+		<header>
+<!--		<h1 style="text-align: center;">-->
+			<h1 style="text-align: center;">
+				<a href="https://AnzenKodo.github.io">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+			</h1><nav style="border-top: 1px solid gray;border-bottom: 1px solid gray;padding: .5rem 0;text-align: center;margin: 0 0 2rem 0;color: gray;clear: left;line-height: 1.6rem;">
+				<a href="https://AnzenKodo.github.io/notes">Home</a> | <a href="https://AnzenKodo.github.io">About</a> | <a href="https://AnzenKodo.github.io/blogroll">Blogroll</a> | <a href="https://github.com/AnzenKodo">Github</a> | <a href="https://x.com/AnzenKodo">𝕏</a>
+			</nav>
+			<!-- <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;"> -->
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem; margin-top: 0;">SE Viva</h1>
+			<h2><a name="architectural-views-style" class="heading-anchor" href="#architectural-views-style" rel="nofollow" aria-hidden="true"></a>Architectural Views &amp; Style</h2>
+<p>It defines the relationship between major structural elements of the software. It is about decomposing the system into interacting components. It is expressed as a block diagram defining an overview of the system structure.</p>
+<h3><a name="views" class="heading-anchor" href="#views" rel="nofollow" aria-hidden="true"></a>Views</h3>
+<p><img loading="lazy" src="assets/Pasted%20image%2020231025014318.png" alt="Architectural Views diagram" /></p>
+
+<ul>
+<li>The views are used to <strong>describe the system</strong> from the viewpoint of different stakeholders, such as end-users, developers, system engineers, and project managers.</li>
+<li>The 4+1 views of model are:
+
+<ul>
+<li><strong>Logical view</strong>
+
+<ul>
+<li>The logical view is concerned with functionality that the system provides to end-users.</li>
+</ul></li>
+<li><strong>Process view</strong>
+
+<ul>
+<li>The process view deals with the dynamic aspects of the system, explains the system processes and how they communicate, and focuses on the run time behavior of the system.</li>
+</ul></li>
+<li><strong>Development view</strong>
+
+<ul>
+<li>The development view (aka the implementation view) illustrates a system from a programmer's perspective and is concerned with software management.</li>
+</ul></li>
+<li><strong>Physical view</strong>
+
+<ul>
+<li>(aka deployment view) depicts the system form system engineer's point of view. It is concerned with the topology of software components on the physical layer as well as the physical connections between these components.</li>
+</ul></li>
+<li><strong>Scenarios</strong>
+
+<ul>
+<li>The description of an architecture is illustrated using a small set of use cases, or scenarios, which become a fifty view.</li>
+<li>This view is also know as the use case view.</li>
+<li>The scenarios describe sequences of interaction between objects and between processes.</li>
+</ul></li>
+</ul></li>
+</ul>
+<h3><a name="style" class="heading-anchor" href="#style" rel="nofollow" aria-hidden="true"></a>Style</h3>
+<p>An architectural styled is a set of design principles and constraints that are used to guide the design of a software system.</p>
+
+<p>Classification of Architectural Styles:</p>
+
+<ul>
+<li><strong>Data-centered styles</strong>
+
+<ul>
+<li>These styles focus on the data that system needs to manage.</li>
+<li>Example include database centric styles and file-based styles.</li>
+</ul></li>
+<li><strong>Control-centered styles</strong>
+
+<ul>
+<li>These style focus on how the system's components interact with each other.</li>
+<li>Example include layered styles and even-driven styles.</li>
+</ul></li>
+
+<li><p><strong>Communication styles</strong></p>
+
+<ul>
+<li><p>Theses styles focus on how the system's communicate with each other.</p>
+<h2><a name="component-level-design" class="heading-anchor" href="#component-level-design" rel="nofollow" aria-hidden="true"></a>Component-Level Design</h2></li>
+</ul></li>
+</ul>
+
+<p><img loading="lazy" src="assets/Pasted%20image%2020231025011500.png" alt="Component-Level Design" /></p>
+
+<ul>
+<li>A software component is modular building blow for computer software.
+
+<ul>
+<li>It is a modular, deployable and replaceable part of a system that encapsulates implementation and exposes a set of interfaces.</li>
+</ul></li>
+<li>A component <em>communicates and collaborates</em> with:
+
+<ul>
+<li>Other components</li>
+<li>Entities outside the boundaries of the system.</li>
+</ul></li>
+</ul>
+<h3><a name="component-level-design-for-job-management-system" class="heading-anchor" href="#component-level-design-for-job-management-system" rel="nofollow" aria-hidden="true"></a>Component level design for Job Management System</h3>
+<p><img loading="lazy" src="assets/Pasted%20image%2020231025011905.png" alt="Job Management System" /></p>
+<h3><a name="conducting-component-level-design" class="heading-anchor" href="#conducting-component-level-design" rel="nofollow" aria-hidden="true"></a>Conducting Component Level Design</h3>
+<p>The components has different views as follows</p>
+
+<ol>
+<li>An object-oriented view:
+
+<ul>
+<li>An object-oriented view is set of collaborating classes.</li>
+<li>The class inside a component is completely elaborated and it consists of the attributes and operation which are applicable to its implementation.</li>
+</ul></li>
+<li>The traditional view:
+
+<ul>
+<li>A traditional component is known as module.</li>
+<li>It resides in the software and servers three important roles which are control component, a problem domain component and an infrastructure component.</li>
+</ul></li>
+<li>The process related view
+
+<ul>
+<li>This view highlights the building system out of existing components.</li>
+<li>The design patterns are selected from a a catalog and used to populate the architecture.</li>
+</ul></li>
+</ol>
+<h3><a name="component-level-design-design-principle-s" class="heading-anchor" href="#component-level-design-design-principle-s" rel="nofollow" aria-hidden="true"></a>Component Level Design Design Principle's</h3>
+<ul>
+<li><strong>Open Closed Principle (OCP)</strong> Any module in OCP should be available for extension and modification.</li>
+<li><strong>The Liskov Substitution Principle (LSP)</strong> The subclass must be substitutable for their base class.</li>
+<li><strong>Dependency Inversion Principle (DIP)</strong> It depends on the abstraction and not on concretion Abstraction is the place where the design is extended without difficulty.</li>
+<li><strong>Interface Segregation Principle (ISP)</strong> Many client specific interfaces is better then the general purpose interface.</li>
+<li><strong>Release Reuse Equivalency Principle (REP)</strong> The class components are designed for reuse which is an indirect contract between the developer and the user.</li>
+<li><strong>Common Closure Principle (CCP)</strong> The classes change and belong together.</li>
+<li><strong>Common Reuse Principle (CRP)</strong> The classes that are not reused together should not be grouped together.</li>
+</ul>
+<h2><a name="user-interface-golden-rules" class="heading-anchor" href="#user-interface-golden-rules" rel="nofollow" aria-hidden="true"></a>User Interface Golden Rules</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020231024193144.png" alt="User Interface Golden Rules" /></p>
+
+<p>There are Two types of User Interface(UI)</p>
+
+<ol>
+<li>Command Line Interface(CLI)
+
+<ul>
+<li>Provides a command prompt, where the user types the command and feeds to the system.</li>
+<li>The user needs to remember the syntax of the command and its use.</li>
+</ul></li>
+<li>Graphical User Interface(GUI)
+
+<ul>
+<li>Provides thee simple interactive interface to interact with the system.</li>
+</ul></li>
+</ol>
+<h3><a name="golden-rules" class="heading-anchor" href="#golden-rules" rel="nofollow" aria-hidden="true"></a>Golden Rules</h3>
+<ol>
+<li>Place the user in control
+
+<ul>
+<li>The interaction should be defined in such a way that the user is not forced to implement unnecessary actions.</li>
+<li>The technical internal details must be hidden for the casual user.</li>
+<li>Design for the direct interaction with objects that appear on the screen.</li>
+</ul></li>
+<li>Reduce the user's memory load
+
+<ul>
+<li>The user interface must be designed in such a way that it reduces the demands on the user's short term memory.</li>
+<li>There must be reset option for obtaining the default values.</li>
+<li>The shortcut should be easily remembered by the users.</li>
+<li>The interface screen should be friendly to users.</li>
+</ul></li>
+<li>Make the interface consistent
+
+<ul>
+<li>The system must allow the user to put task into meaningful context.</li>
+<li>Consistency should be maintained for all the interaction.</li>
+<li>Do not change the past system that is created by the User expectation unless there is a good reason to do that.</li>
+</ul></li>
+</ol>
+<h2><a name="risk-identification-risk-assessment-and-risk-projection" class="heading-anchor" href="#risk-identification-risk-assessment-and-risk-projection" rel="nofollow" aria-hidden="true"></a>Risk Identification, Risk Assessment and Risk Projection</h2><h3><a name="risk-identification" class="heading-anchor" href="#risk-identification" rel="nofollow" aria-hidden="true"></a>Risk Identification</h3>
+<p><img loading="lazy" src="assets/Pasted%20image%2020231025003858.png" alt="Risk identification circle" /></p>
+
+<ul>
+<li>Risk identification is a systematic attempt to specify threats to the project plan.</li>
+<li>There are two distinct types of risks generic risks &amp; product-specific risks.</li>
+<li>Generic risks are potential treat to every software project.</li>
+<li>Product-specific risks can be identified only when the project plan and the software statement of scope are examinied.</li>
+</ul>
+<h3><a name="risk-assessment" class="heading-anchor" href="#risk-assessment" rel="nofollow" aria-hidden="true"></a>Risk Assessment</h3>
+<p><img loading="lazy" src="assets/Pasted%20image%2020231025004652.png" alt="Risk assessment" /></p>
+
+<ul>
+<li>Risk assessment is process of estimating the probability and the impact for each risk.</li>
+<li>The objective of risk assessment is to establish the magnitude of risks, by considering both their eventual impact &amp; their likelihood of occurrences.</li>
+</ul>
+<h3><a name="risk-projection" class="heading-anchor" href="#risk-projection" rel="nofollow" aria-hidden="true"></a>Risk Projection</h3>
+<p><img loading="lazy" src="assets/Pasted%20image%2020231025005216.png" alt="Risk projection" /></p>
+
+<ul>
+<li>Risk projection, also called risk estimation attempts to rate each risk in two ways the likelihood or probability that the risk is real and consequences of the problems associated with the risk.</li>
+<li>There are some risk projection need to be performed:
+
+<ol>
+<li>Established a scale that reflects the perceived likelihood of a risk.</li>
+<li>Declinate the consequences of risk.</li>
+<li>Estimate the impact of risk.</li>
+</ol></li>
+</ul>
+<h2><a name="rmmm-model" class="heading-anchor" href="#rmmm-model" rel="nofollow" aria-hidden="true"></a>RMMM Model</h2>
+<p>The RMMM stands for (Risk Mitigation Monitoring Management)</p>
+<h3><a name="risk-mitigation" class="heading-anchor" href="#risk-mitigation" rel="nofollow" aria-hidden="true"></a>Risk Mitigation</h3>
+<p><img loading="lazy" src="assets/Pasted%20image%2020231025003343.jpg" alt="Risk Mitigation types" /></p>
+
+<ul>
+<li>It is an activity used to avoid problems.</li>
+<li>Steps to avoid risk:
+
+<ol>
+<li>Finding out the risk.</li>
+<li>Removing causes that are responsible for risk creation</li>
+<li>Controlling  the corresponding documents from time to time.</li>
+<li>Conducting timely reviews to speed the work.</li>
+</ol></li>
+</ul>
+<h3><a name="risk-monitoring" class="heading-anchor" href="#risk-monitoring" rel="nofollow" aria-hidden="true"></a>Risk Monitoring</h3>
+<ul>
+<li>It is an activity used for project tracking.</li>
+<li>Steps to risk monitoring:
+
+<ol>
+<li>To check it predicted risks occurs or not.</li>
+<li>To collect data for future risk analysis.</li>
+<li>To allocate which problems are caused by which risks.</li>
+</ol></li>
+</ul>
+<h3><a name="risk-management" class="heading-anchor" href="#risk-management" rel="nofollow" aria-hidden="true"></a>Risk Management</h3>
+<p><img loading="lazy" src="assets/Pasted%20image%2020231025013849.png" alt="Risk Management Circle" /></p>
+
+<ul>
+<li>Risk management task is done by project manager which risk become reality and cause severe problems.</li>
+<li>If the project manager effectively uses project mitigation to remove risk successful turn it easer to manage the risks.</li>
+<li>The main objective of risk management plan is the risk register.</li>
+<li>The risk register describes and focuses on the predicted treats to a software project.</li>
+</ul>
+<h3><a name="drawbacks-of-rmmm" class="heading-anchor" href="#drawbacks-of-rmmm" rel="nofollow" aria-hidden="true"></a>Drawbacks of RMMM</h3>
+<ul>
+<li>It increases project costs.</li>
+<li>It takes additional time.</li>
+<li>For large project, RMMM implementation is very hard.</li>
+</ul>
+<h2><a name="scm-process-and-repositories" class="heading-anchor" href="#scm-process-and-repositories" rel="nofollow" aria-hidden="true"></a>SCM (Process and Repositories)</h2>
+<p>Software Configuration Management (SCM) is the discipline for systematically controlling the changes in software and supporting documents (like Test Cases, Test Plan, Design Document, SRS etc.) during the software development life cycle.</p>
+<h3><a name="process" class="heading-anchor" href="#process" rel="nofollow" aria-hidden="true"></a>Process</h3>
+<p><img loading="lazy" src="assets/Pasted%20image%2020231025023206.png" alt="SCM Process Diagram" /></p>
+
+<p><strong>Concentric layers</strong></p>
+
+<p>The concentric layers of software configuration management (SCM) can be thought of as a set of processes and tools that help teams to identify, control, track, and report on changes to a software system throughout its lifecycle.</p>
+
+<ul>
+<li>Identification
+
+<ul>
+<li>This involves identifying all of the items that make up the software system, such as source code, documentation, test cases, and configuration files.</li>
+</ul></li>
+<li>Change control
+
+<ul>
+<li>This involves establishing and enforcing processes for managing changes to the software system.</li>
+<li>This may include processes for submitting change requests, reviewing changes, and approving changes.</li>
+</ul></li>
+<li>Version control
+
+<ul>
+<li>This involves tracking the different versions of the software system as it evolves over time.</li>
+<li>Version control systems allow teams to create, manage, and track multiple versions of the software system simultaneously.</li>
+</ul></li>
+<li>Configuration auditing
+
+<ul>
+<li>This involves conducting regular audits to ensure that the software system is in compliance with its baselines.</li>
+<li>Baselines are snapshots of the software system that are used to measure progress and ensure that the system is meeting its requirements.</li>
+</ul></li>
+<li>Status reporting
+
+<ul>
+<li>This involves generating and distributing reports on the status of the software system.</li>
+<li>Status reports can provide information on the current state of the system, any recent changes that have been made, and any outstanding issues.</li>
+</ul></li>
+</ul>
+<h3><a name="repositories" class="heading-anchor" href="#repositories" rel="nofollow" aria-hidden="true"></a>Repositories</h3>
+<p><img loading="lazy" src="assets/Pasted%20image%2020231025021755.png" alt="SCM Repositories Diagram" /></p>
+
+<ul>
+<li><strong>Data integrity</strong> Validates entries, ensures consistency, cascades modifications.</li>
+<li><strong>Information sharing</strong> Shares information among developers and tools, manages and controls multi-user access.</li>
+<li><strong>Tool integration</strong> Establishes a data model that can be accessed by many software engineering tools, controls</li>
+<li><strong>Data integration</strong> Allows various SCM tasks to performed on one or more CSCIS.</li>
+<li><strong>Methodology enforcement</strong> Defines an entity-relationship model for the repository that implies a specific process model for software engineering.</li>
+<li><strong>Document standardization</strong> defines object in the repository to guarantee a standard approach for creation of software engineering documents.</li>
+</ul>
+<h2><a name="sqa-task-plans" class="heading-anchor" href="#sqa-task-plans" rel="nofollow" aria-hidden="true"></a>SQA (Task &amp; Plans)</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020231024191151.png" alt="SEM Diagram" /></p>
+
+<p><img loading="lazy" src="assets/Pasted%20image%2020231024191622.png" alt="SEM Process Diagram" /></p>
+
+<ul>
+<li>Software quality assurance (SQA) is a process that ensures that developed software meets and complies with defined or standardized quality specifications.</li>
+<li>SQA is an ongoing process within the software development life cycle (SDLC) that routinely checks the developed software to ensure it meets desired quality meaures.</li>
+<li>Rather then checking for quality after completion, SQA processes tests for quality in each phase of development until the software is complete.</li>
+<li>With SQA, the software development process moves into next phase only once the current/previous phase complies with required quality standards.</li>
+</ul>
+<h3><a name="tasks" class="heading-anchor" href="#tasks" rel="nofollow" aria-hidden="true"></a>Tasks</h3>
+<p><img loading="lazy" src="assets/Pasted%20image%2020231025025536.png" alt="" /></p>
+
+<ol>
+<li>Prepares an SQA plan for a project
+
+<ul>
+<li>The program is developed during project planning and is reviewed by all stakeholders.</li>
+</ul></li>
+<li>Participates in development of the project's software process description.
+
+<ul>
+<li>The software team selects a process for the work to be performed.</li>
+</ul></li>
+<li>Reviews software engineering activities to verify compliance with defined software process.
+
+<ul>
+<li>SQA group identifies, reports, and tracks deviations from the process and verifies the corrections have made.</li>
+</ul></li>
+<li>Audits designated software work products to verify compliance with those defined as a part of the software process.</li>
+<li>Ensures that deviations in software work and work products are documented and handled according to a documented procedure.</li>
+<li>Records any noncompliance and reports to senior management.</li>
+</ol>
+<h3><a name="planning" class="heading-anchor" href="#planning" rel="nofollow" aria-hidden="true"></a>Planning</h3>
+<p><img loading="lazy" src="assets/Pasted%20image%2020231025025825.png" alt="" /></p>
+
+<ul>
+<li>A SQA Plan revolves around making sure that the product or service teaches the market trouble and bug-free.</li>
+<li>It should also meet the requirements defined in the SRS (software requirement specification).</li>
+<li>The purpose of an SQA plan is three-fold. It comprises the following:
+
+<ul>
+<li>Establishing the QA responsibilities of the team in question</li>
+<li>Listing areas of concern that need to be reviewed, audited and looked at</li>
+<li>Identifies the SQA work products</li>
+</ul></li>
+</ul>
+<h2><a name="software-testing-strategies-and-techniques" class="heading-anchor" href="#software-testing-strategies-and-techniques" rel="nofollow" aria-hidden="true"></a>Software Testing Strategies and techniques.</h2><h2><a name="re-engineering-bpr" class="heading-anchor" href="#re-engineering-bpr" rel="nofollow" aria-hidden="true"></a>Re-Engineering (BPR)</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020231024205022.png" alt="Re-engineering flow" /></p>
+
+<ul>
+<li>It is process of analyzing, redesigning, and rebuilding an existing software system to improve its quality, performance, maintainability, and/or flexibility.</li>
+<li>It is a process of re-structuring or re-writing components of old software application without modifying its functionality.</li>
+</ul>
+<h3><a name="process-of-re-engineering" class="heading-anchor" href="#process-of-re-engineering" rel="nofollow" aria-hidden="true"></a>Process of Re-Engineering</h3>
+<ol>
+<li>Decide which components of software we want to re-engineer.</li>
+<li>Do reverse engineering to find out features of existing software.</li>
+<li>Perform re-construction of source-code if needed.</li>
+<li>Use forward-engineering idea to generate re-engineered software.</li>
+</ol>
+<h2><a name="reverse-engineering" class="heading-anchor" href="#reverse-engineering" rel="nofollow" aria-hidden="true"></a>Reverse Engineering</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020231024194254.png" alt="Reverse Engineering flowchart" /></p>
+
+<ul>
+<li>Software reverse engineering is a process of recovering the design, requirement specification and functions of the a existing product from an analysis of its code.</li>
+<li>The purpose of reverse engineering is to facilitate the maintenance work by improving the understandability of a system and producing the necessary document for a system.</li>
+<li>Software reverse engineering is performed to find out the source code of a program since the source code used to study in order to enhance the performance of a program repair a bug, detect unsecure content etc.</li>
+</ul>
+<h2><a name="forward-engineering" class="heading-anchor" href="#forward-engineering" rel="nofollow" aria-hidden="true"></a>Forward Engineering</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020231024203310.png" alt="Forward Engineering flowchart" /></p>
+
+<ul>
+<li>Forward engineering is a method by which we can create an application according to the given requirements.</li>
+<li>Another word for forward engineering is renovation.</li>
+<li>The Time needed to design an application is long, and very high competency skills are required.</li>
+<li>Forward engineering is essentially a strategy that allows us to produce complex high-level designs using complex low-level information.</li>
+</ul>
+
+		</main>
+		
+		<details id="table-of-content">
+		   <summary>Table of Content</summary>
+		<nav>
+<ul>
+<li><a href="#architectural-views-style">Architectural Views &amp; Style</a>
+<ul>
+<li><a href="#views">
+Views</a></li>
+<li><a href="#style">
+Style</a></li>
+</ul></li>
+<li><a href="#component-level-design">
+Component-Level Design</a>
+<ul>
+<li><a href="#component-level-design-for-job-management-system">
+Component level design for Job Management System</a></li>
+<li><a href="#conducting-component-level-design">
+Conducting Component Level Design</a></li>
+<li><a href="#component-level-design-design-principle-s">
+Component Level Design Design Principle's</a></li>
+</ul></li>
+<li><a href="#user-interface-golden-rules">
+User Interface Golden Rules</a>
+<ul>
+<li><a href="#golden-rules">
+Golden Rules</a></li>
+</ul></li>
+<li><a href="#risk-identification-risk-assessment-and-risk-projection">
+Risk Identification, Risk Assessment and Risk Projection</a>
+<ul>
+<li><a href="#risk-identification">
+Risk Identification</a></li>
+<li><a href="#risk-assessment">
+Risk Assessment</a></li>
+<li><a href="#risk-projection">
+Risk Projection</a></li>
+</ul></li>
+<li><a href="#rmmm-model">
+RMMM Model</a>
+<ul>
+<li><a href="#risk-mitigation">
+Risk Mitigation</a></li>
+<li><a href="#risk-monitoring">
+Risk Monitoring</a></li>
+<li><a href="#risk-management">
+Risk Management</a></li>
+<li><a href="#drawbacks-of-rmmm">
+Drawbacks of RMMM</a></li>
+</ul></li>
+<li><a href="#scm-process-and-repositories">
+SCM (Process and Repositories)</a>
+<ul>
+<li><a href="#process">
+Process</a></li>
+<li><a href="#repositories">
+Repositories</a></li>
+</ul></li>
+<li><a href="#sqa-task-plans">
+SQA (Task &amp; Plans)</a>
+<ul>
+<li><a href="#tasks">
+Tasks</a></li>
+<li><a href="#planning">
+Planning</a></li>
+</ul></li>
+<li><a href="#software-testing-strategies-and-techniques">
+Software Testing Strategies and techniques.</a></li>
+<li><a href="#re-engineering-bpr">
+Re-Engineering (BPR)</a>
+<ul>
+<li><a href="#process-of-re-engineering">
+Process of Re-Engineering</a></li>
+</ul></li>
+<li><a href="#reverse-engineering">
+Reverse Engineering</a></li>
+<li><a href="#forward-engineering">
+Forward Engineering</a></li>
+</ul>
+</nav>
+
+		</details>
+		
+		<footer>
+			<p style="text-align: center; font-size: small; margin-top: 5em;">
+				<a href="https://anzenkodo.github.io/license">LICENSE</a>
+			</p>
+		</footer>
+	</body>
+	<script src="https://AnzenKodo.github.io/assets/js/mermaid.js"></script>
+	<script id="MathJax-script" async src="https://AnzenKodo.github.io/assets/js/mathjax.js"></script>
+	<script>
+		/* document.getElementById('video').addEventListener('click', (ele) => {
+			 if (ele.target.paused) {
+				 ele.target.play();
+			 } else {
+				 ele.target.pause();
+			 }
+		}); */
+
+		mermaid.initialize({
+			theme: "neutral",
+			themeVariables: {
+			    lineColor: "#939598",
+			}
+		});
+
+		MathJax = {
+		  tex: {
+			inlineMath: [['$', '$']],
+			displayMath: [['$$', '$$']],
+		  }
+		};
+	</script>
+</html>

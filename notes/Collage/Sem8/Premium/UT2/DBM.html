@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>DBM - AK#Notes</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="#FF6C22">
+		<meta name="description" content="## **1.A Solve any two of the following:** (10 Marks)  ### What are different needs to be considered">
+		<meta property="og:description" content="## **1.A Solve any two of the following:** (10 Marks)  ### What are different needs to be considered">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<meta property="og:image:alt" content="AK#Notes logo">
+		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="DBM - AK#Notes">
+		<meta property="og:url" content="https://AnzenKodo.github.io/notes/notes/Collage/Sem8/Premium/UT2/DBM.html">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+
+			:root {
+				/* color-scheme: dark light; */
+				color-scheme: dark;
+				--theme: #FF6C22;
+			}
+			body {
+				max-width: 40rem;
+				margin: 0 auto;
+				font-family: system-ui;
+				padding: 0 1em;
+				color: inherit !important;
+				word-break: break-word;
+			}
+			h1, h2, h3, h4, h5, h6 {
+				margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+				font-size: 2rem;
+			}
+			h3 {
+				font-size: 1.8rem;
+			}
+			h4 {
+				font-size: 1.5rem;
+			}
+			h5 {
+				font-size: 1.3rem;
+			}
+			h6 {
+				font-size: 1rem;
+			}
+			p, li, td, code {
+				line-height: 1.5rem;
+			}
+			a {
+				color: var(--theme);
+				text-decoration: none;
+			}
+			a:hover, a:focus {
+				text-decoration: underline;
+			}
+			a:active {
+				background: var(--theme);
+				color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+				margin-top: .5rem;
+			}
+			li {
+				margin-bottom: .5rem;
+			}
+			table {
+				border-collapse: collapse;
+				overflow-x: auto;
+				display: block;
+				word-break: auto-phrase;
+				margin: 1rem 0;
+			}
+			th {
+				font-size: 1.1rem;
+				border: 2px solid;
+				padding: .3rem .3rem;
+			}
+			td {
+				border: 1px solid;
+				padding: .3rem .5rem;
+			}
+			blockquote {
+				margin-left: 0;
+				margin-right: 0;
+				border: 1px solid;
+				border-left: 10px solid;
+				padding: 0 1rem;
+			}
+				.code-block {
+				background: black;
+				overflow-x: auto;
+				padding: 0em 1em;
+				border: 1px solid;
+			}
+			.code-block-language-name {
+				position: sticky;
+				left: 95%;
+				top: .5em;
+				font-weight: bold;
+				color: white;
+			}
+			:not(pre.chroma) > code {
+				border: 1px solid;
+				padding: .3rem .2rem .2rem .2rem;
+			}
+			img {
+				max-width: 100%;
+				display: block;
+				margin: 0 auto;
+			}
+			[href="#skip-top-main"] {
+				padding: 0.3em;
+				position: absolute;
+				transform: translateY(-1000%);
+			}
+			[href="#skip-top-main"]:focus {
+				transform: translateY(0%);
+				background: var(--theme);
+				color: inherit;
+			}
+			#table-of-content {
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+				background: black;
+				padding: 0.5rem 1em;
+				z-index: 1;
+				color: white;
+			}
+			#table-of-content[open] {
+				max-height: 90%;
+				overflow-y: auto;
+				bottom: 50px;
+				margin-left: 1em;
+			}
+			#table-of-content[open] summary {
+				background: black;
+				padding: 0.5em 1em;
+				text-align: center;
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+			}
+			#table-of-content ul:first-child {
+				padding-left: 1em;
+				margin-top: 1.5em;
+			}
+			.heading-anchor::before {
+				margin-right: .5rem;
+			}
+		    h2 .heading-anchor::before {
+    			content: "#";
+    			margin-right: .5rem;
+		    }
+            h3 .heading-anchor::before {
+				content: "##";
+				margin-right: .5rem;
+			}
+            h4 .heading-anchor::before {
+				content: "###";
+				margin-right: .5rem;
+			}
+            h5 .heading-anchor::before {
+				content: "####";
+				margin-right: .5rem;
+			}
+            h6 .heading-anchor::before {
+				content: "#####";
+				margin-right: .5rem;
+			}
+			.mermaid {
+				background: black;
+				border: 1px solid;
+				margin-top: 1rem;
+				padding: 1rem;
+				font-family: monospace;
+			}
+			.mermaid svg {
+				display: block;
+				margin: auto;
+			}
+			.mermaid:has(svg) {
+				background: none;
+				border: none;
+				margin-top: 1rem;
+				padding: 0;
+			}
+			mjx-container {
+				display: math;
+				overflow-y: hidden;
+				overflow-x: auto;
+				max-width: 100%;
+				padding-bottom: .8rem;
+			}
+			iframe {
+				width: 100%;
+				height: 21rem;
+				margin: 1rem 0;
+			}
+			video {
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<a href="#skip-top-main">Skip to main</a>
+		<header>
+<!--		<h1 style="text-align: center;">-->
+			<h1 style="text-align: center;">
+				<a href="https://AnzenKodo.github.io">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+			</h1><nav style="border-top: 1px solid gray;border-bottom: 1px solid gray;padding: .5rem 0;text-align: center;margin: 0 0 2rem 0;color: gray;clear: left;line-height: 1.6rem;">
+				<a href="https://AnzenKodo.github.io/notes">Home</a> | <a href="https://AnzenKodo.github.io">About</a> | <a href="https://AnzenKodo.github.io/blogroll">Blogroll</a> | <a href="https://github.com/AnzenKodo">Github</a> | <a href="https://x.com/AnzenKodo">𝕏</a>
+			</nav>
+			<!-- <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;"> -->
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem; margin-top: 0;">DBM</h1>
+			<h2><a name="1-a-solve-any-two-of-the-following-10-marks" class="heading-anchor" href="#1-a-solve-any-two-of-the-following-10-marks" rel="nofollow" aria-hidden="true"></a><strong>1.A Solve any two of the following:</strong> (10 Marks)</h2><h3><a name="what-are-different-needs-to-be-considered-for-the-analysis-of-company-s-internal-and-external-environment" class="heading-anchor" href="#what-are-different-needs-to-be-considered-for-the-analysis-of-company-s-internal-and-external-environment" rel="nofollow" aria-hidden="true"></a>What are different needs to be considered for the analysis of Company's internal and external environment?</h3>
+<p>To succeed, businesses must understand factors impacting their development. Identifying internal strengths and weaknesses, and external opportunities and threats, allows for effective strategic planning. Analyzing these factors is crucial before launching any strategic marketing plan.</p>
+
+<p><strong>Internal Environment Factors</strong></p>
+
+<p>Internal factors are controllable elements within the company, categorized as strengths (positive impact) or weaknesses (hindering development).</p>
+
+<p>Key internal factors include:</p>
+
+<ol>
+<li>Plans &amp; Policies</li>
+<li>Value Proposition</li>
+<li>Human Resources</li>
+<li>Financial and Marketing Resources</li>
+<li>Corporate Image and Brand Equity</li>
+</ol>
+
+<p><strong>External Environmental Factors</strong></p>
+
+<p>External factors are uncontrollable elements outside the company. Understanding the external environment enables businesses to adapt their marketing plans. Key external factors include the current economic situation, laws, surrounding infrastructure, and customer demands.</p>
+
+<p><strong>Micro Factors:</strong></p>
+
+<ol>
+<li>Customers</li>
+<li>Suppliers</li>
+<li>Competitors</li>
+<li>Public</li>
+<li>Marketing &amp; Media</li>
+</ol>
+
+<p><strong>Macro Factors:</strong></p>
+
+<ol>
+<li>Economic</li>
+<li>Political/Legal</li>
+<li>Technology</li>
+<li>Social</li>
+<li>Natural</li>
+</ol>
+<h3><a name="what-are-different-security-threats-to-e-business-03-marks" class="heading-anchor" href="#what-are-different-security-threats-to-e-business-03-marks" rel="nofollow" aria-hidden="true"></a>What are different Security Threats to e-business? (03 Marks)</h3>
+<p>E-commerce involves online buying and selling. Threats arise from using the internet for theft, fraud, and security breaches. These threats can be accidental, intentional, or due to human error.</p>
+
+<ul>
+<li><strong>Electronic Payment System Risks:</strong> Electronic payment systems are crucial for e-commerce, enabling paperless transactions and reducing costs. However, they pose several risks:
+
+<ul>
+<li><strong>Fraud:</strong> Authentication methods like passwords and security questions can be compromised, allowing unauthorized access to funds.</li>
+<li><strong>Tax Evasion:</strong> The digital nature of electronic payments can complicate tax compliance verification for revenue services.</li>
+<li><strong>Payment Conflicts:</strong> Automated systems handling frequent, large-volume transactions with multiple recipients are prone to errors and technical glitches.</li>
+</ul></li>
+<li><strong>E-cash Threats:</strong> E-cash is an anonymous paperless fund transfer system. While convenient, storing financial information digitally makes it vulnerable to hackers. Major threats include:
+
+<ul>
+<li><strong>Backdoor Attacks:</strong> Attackers gain unauthorized system access, bypassing normal authentication and remaining hidden.</li>
+<li><strong>Denial of Service (DoS) Attacks:</strong> Attackers disrupt access for legitimate users by overwhelming network resources.</li>
+<li><strong>Eavesdropping:</strong> Unauthorized interception of private online communications occurs without detection.</li>
+</ul></li>
+<li><strong>Credit/Debit Card Fraud:</strong> Credit cards allow borrowing for purchases, while debit cards use deposited funds. Associated threats include:
+
+<ul>
+<li><strong>ATM Skimming:</strong> Devices attached to card readers steal card details (number, name, CVV, expiry).</li>
+<li><strong>Vishing/Phishing:</strong> Attackers deceive users via phone calls (vishing) or SMS (smishing) posing as legitimate entities to obtain sensitive information like PINs and account details.</li>
+</ul></li>
+</ul>
+<h3><a name="write-short-note-on-digital-certificates-03-marks" class="heading-anchor" href="#write-short-note-on-digital-certificates-03-marks" rel="nofollow" aria-hidden="true"></a>Write short note on: Digital Certificates (03 Marks)</h3>
+<p><img loading="lazy" src="assets/Pasted%20image%2020250419015352.webp" alt="" /></p>
+
+<p>Digital certificates are electronic credentials that establish the identity of websites, individuals, or organizations involved in online transactions.</p>
+
+<p>Acting as digital passports, they bind a public key to the identity of the certificate holder, verifying their legitimacy.</p>
+
+<ul>
+<li><strong>Website Authentication:</strong> Ensuring users are interacting with the genuine website and not a fraudulent imitation.</li>
+<li><strong>Secure Communication (Encryption):</strong> Utilizing protocols like SSL/TLS, digital certificates facilitate encrypted communication between the user's browser and the web server, protecting sensitive data like login credentials, payment information, and personal details from eavesdropping.  </li>
+<li><strong>Digital Signatures:</strong> For individuals and organizations, digital certificates can be used to create digital signatures, providing authenticity and integrity to electronic documents and transactions.</li>
+</ul>
+
+<p>Types of digital certificates:</p>
+
+<ul>
+<li><strong>SSL/TLS Certificates:</strong> Secure communication between a web server and a browser, enabling HTTPS and encrypting data transmitted online.</li>
+<li><strong>Code Signing Certificates:</strong> Verify the identity and integrity of software code, assuring users that the software comes from a trusted source and hasn't been tampered with.</li>
+<li><strong>Email Certificate:</strong> Secure email communication by providing encryption and digital signing of emails, ensuring confidentiality and sender authentication.</li>
+<li><strong>Document Signing Certificates:</strong> Allow individuals and organizations to digitally sign electronic documents, providing proof of authorship and ensuring document integrity.</li>
+</ul>
+<h2><a name="1-b-solve-any-two-of-the-following-05-marks" class="heading-anchor" href="#1-b-solve-any-two-of-the-following-05-marks" rel="nofollow" aria-hidden="true"></a><strong>1.B Solve any two of the following:</strong> (05 Marks)</h2><h2><a name="write-short-note-on-digital-signatures-02-marks" class="heading-anchor" href="#write-short-note-on-digital-signatures-02-marks" rel="nofollow" aria-hidden="true"></a>Write short note on: Digital Signatures (02 Marks)</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020250419015459.webp" alt="" /></p>
+
+<p>Digital signatures are electronic equivalents of handwritten signatures, providing a way to authenticate the origin and ensure the integrity of digital documents or messages.</p>
+
+<p>Here's how they work:</p>
+
+<ol>
+<li><strong>Hashing:</strong> The document or message is processed using a cryptographic hash function, creating a unique and fixed-size &quot;digital fingerprint&quot; or hash value.  </li>
+<li><strong>Encryption:</strong> The sender's private key is used to encrypt this hash value, creating the digital signature.</li>
+<li><strong>Verification:</strong> The recipient uses the sender's corresponding public key to decrypt the digital signature. If the decryption is successful and the resulting hash value matches the hash value independently computed from the received document, it confirms:
+
+<ul>
+<li><strong>Authentication:</strong> The sender is who they claim to be, as only their private key could have created a valid signature verifiable by their public key.  </li>
+<li><strong>Integrity:</strong> The document has not been altered since it was signed, as any change would result in a different hash value and the signature verification would fail.  </li>
+<li><strong>Non-repudiation:</strong> The sender cannot deny having signed the document, as the private key is unique to them.</li>
+</ul></li>
+</ol>
+<h2><a name="write-short-note-on-firewall-as-security-control-02-marks" class="heading-anchor" href="#write-short-note-on-firewall-as-security-control-02-marks" rel="nofollow" aria-hidden="true"></a>Write short note on: Firewall as Security Control (02 Marks)</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020250419015524.webp" alt="" /></p>
+
+<p>A firewall is a network security system that acts as a barrier between a trusted internal network and an untrusted external network, such as the internet. Functioning like a gatekeeper, it monitors incoming and outgoing network traffic based on a predefined set of security rules.  </p>
+
+<p>As a crucial security control, a firewall's primary purpose is to prevent unauthorized access to or from a private network. It achieves this by:  </p>
+
+<ul>
+<li><strong>Filtering Traffic:</strong> Examining network packets based on source and destination IP addresses, port numbers, and protocols.</li>
+<li><strong>Controlling Access:</strong> Defining which applications and services are allowed to communicate across the network boundary.  </li>
+<li><strong>Preventing Intrusions:</strong> Identifying and blocking potentially malicious traffic, such as attempts to exploit vulnerabilities or initiate denial-of-service attacks.  </li>
+<li><strong>Logging Activity:</strong> Recording network traffic and security events, providing valuable information for monitoring, analysis, and incident response.</li>
+</ul>
+<h2><a name="what-are-the-different-skills-required-to-manage-e-business-02-marks" class="heading-anchor" href="#what-are-the-different-skills-required-to-manage-e-business-02-marks" rel="nofollow" aria-hidden="true"></a>What are the different skills required to manage E-Business? (02 Marks)</h2>
+<p>E-commerce platforms require both marketing/sales and IT expertise. Here are key technical skills:</p>
+
+<ol>
+<li><strong>UX Design:</strong> Focusing on front-end design and engineering to create user-friendly and intuitive e-commerce software.</li>
+<li><strong>Search Engine Optimization (SEO):</strong> Optimizing online platforms with strategic keywords to rank higher in search engine results and social media, increasing visibility.</li>
+<li><strong>Digital Marketing:</strong> Utilizing online strategies like email campaigns, mobile marketing, social media, and search engine advertising.</li>
+<li><strong>Data Analytics:</strong> Analyzing cleaned data to identify trends and insights for improving product/service interest, requiring technical skills (data procurement, visualization, machine learning/AI) and soft skills (business understanding, organization, conceptualization).</li>
+<li><strong>Artificial Intelligence (AI):</strong> Implementing AI for purchase recommendations, virtual assistants, anti-counterfeiting, automated analytics, and customer profiling. Requires skills in programming, data collection/curation, data analysis, and software modeling.</li>
+</ol>
+<h2><a name="2-solve-any-one-of-the-following-05-marks" class="heading-anchor" href="#2-solve-any-one-of-the-following-05-marks" rel="nofollow" aria-hidden="true"></a><strong>2. Solve any one of the following:</strong> (05 Marks)</h2><h3><a name="i-how-erp-can-act-as-an-e-business-backbone-explain-in-detail" class="heading-anchor" href="#i-how-erp-can-act-as-an-e-business-backbone-explain-in-detail" rel="nofollow" aria-hidden="true"></a>i. How ERP can act as an e-business backbone. Explain in detail.</h3>
+<p>In <strong>ERP (Enterprise Resource Planning)</strong> is a type of software that organizations use to manage day-to-day business activities such as:</p>
+
+<p>E-commerce is a rapidly growing global business as online shopping increases and sellers establish web stores, often expanding across platforms like eBay and Amazon due to lower costs than traditional stores</p>
+
+<p>Globalization and IT advancements are transforming Indian business, driving ERP system implementation for enhanced efficiency, quality, productivity, and profitability. To succeed in e-commerce, companies need to integrate ERP systems to transform internal processes.</p>
+
+<p><strong>Reasons Why ERP is a Backbone for E-commerce Businesses:</strong></p>
+
+<ul>
+<li><strong>Improved Efficiency:</strong> ERP system integration with your e-commerce store streamlines operations.</li>
+<li><strong>Centralized Management:</strong> Manage all sales and purchases from a single web-based ERP software, eliminating the need to log into multiple systems.</li>
+<li><strong>Unified Inventory Management:</strong> Integrate inventory across various online stores (eBay, Magento, Amazon), phone orders, and physical stores.</li>
+<li><strong>Streamlined Shipping:</strong> Manage the entire shipping process within ERP, including integration with carriers like UPS, USPS, and FedEx.</li>
+<li><strong>Automated Tracking Updates:</strong> Automatically update tracking numbers on respective online stores.</li>
+<li><strong>Eliminated Accounting Duplication:</strong> A complete integrated accounting system prevents redundant effort.</li>
+</ul>
+<h3><a name="ii-what-are-different-risks-associated-with-e-business-and-how-to-manage-the-risks" class="heading-anchor" href="#ii-what-are-different-risks-associated-with-e-business-and-how-to-manage-the-risks" rel="nofollow" aria-hidden="true"></a>ii. What are different risks associated with E-business and how to manage the risks?</h3>
+<p>E-commerce businesses face several challenges and risks, including data security, website uptime, intellectual property infringement, and fraudulent transactions.</p>
+
+<ol>
+<li><strong>Security Breaches:</strong> Online security breaches and cyberattacks are common, with e-commerce sites being frequent targets. Protecting customer data is crucial to avoid reputational damage and legal liabilities. Implement security layers, use SSL certificates, choose secure platforms, and monitor for suspicious activity.</li>
+<li><strong>Intellectual Property Violation:</strong> Copying website content, logos, or images can result in copyright claims and lawsuits. Use unique content, obtain image licenses, and implement procedures to prevent IP violations.</li>
+<li><strong>DDOS Attacks:</strong> Distributed denial-of-service attacks can overwhelm servers, causing website crashes. Implement traffic monitoring, filtration, and utilize cloud providers for increased bandwidth to prevent or mitigate these attacks.</li>
+<li><strong>Stolen Credit Card Information:</strong> Compromised credit card data leads to unauthorized transactions and damages reputation. Employ robust security measures to protect customer payment information.</li>
+<li><strong>Currency Exchange Risks:</strong> Fluctuating exchange rates can impact profitability for global e-commerce businesses. Invoice in your local currency or use payment platforms that handle currency conversion.</li>
+</ol>
+<h2><a name="3-solve-any-one-of-the-following-05-marks" class="heading-anchor" href="#3-solve-any-one-of-the-following-05-marks" rel="nofollow" aria-hidden="true"></a><strong>3. Solve any one of the following:</strong> (05 Marks)</h2><h3><a name="i-explain-e-business-strategic-plan-in-detail" class="heading-anchor" href="#i-explain-e-business-strategic-plan-in-detail" rel="nofollow" aria-hidden="true"></a>i. Explain E-business strategic plan in detail.</h3>
+<p>An E-business strategic plan is a comprehensive roadmap that outlines how an organization will leverage digital technologies, online platforms, and internet-driven processes to achieve its business objectives.</p>
+
+<p>Core Components of an E-Business Strategic Plan</p>
+
+<ol>
+<li><strong>Environmental Analysis</strong>
+
+<ol>
+<li><strong>Internal Assessment</strong>: Evaluates existing digital infrastructure, workforce capabilities, and organizational readiness for e-business adoption.</li>
+<li><strong>External Analysis</strong>: Examines market trends, customer behavior, competitor strategies, and technological advancements. Tools like SWOT analysis help identify opportunities (e.g., untapped digital markets) and threats (e.g., cybersecurity risks).</li>
+</ol></li>
+<li><strong>Goal Setting</strong>:
+
+<ol>
+<li><strong>Cost reduction</strong> through automation and streamlined processes.</li>
+<li><strong>Value addition</strong> via personalized customer experiences and data-driven insights.</li>
+<li><strong>Risk management</strong> to address cybersecurity, fraud, and regulatory compliance.</li>
+<li><strong>Market expansion</strong> by entering new geographic or demographic segments.</li>
+</ol></li>
+<li><strong>Strategy Formulation</strong>
+
+<ol>
+<li><strong>Model Selection</strong>: Choose an e-business model (B2B, B2C, C2C) based on the organization’s nature, product type, and target audience.</li>
+<li><strong>Integration of Objectives</strong>: Align strategies with specific goals, such as using data mining for product innovation or e-procurement systems for supply chain efficiency.</li>
+</ol></li>
+</ol>
+
+<p>Strategic Planning Process</p>
+
+<ul>
+<li><strong>Step 1</strong>: Initiative Identification
+
+<ul>
+<li>Brainstorm potential e-business projects, such as launching an online store, developing a mobile app, or automating customer service.</li>
+</ul></li>
+<li><strong>Step 2</strong>: Scope Analysis
+
+<ul>
+<li>Define the functional scope of each initiative, including affected departments (e.g., marketing, logistics) and required resources.</li>
+</ul></li>
+<li><strong>Step 3</strong>: Sustainability Assessment
+
+<ul>
+<li>Evaluate long-term benefits, such as ROI, customer retention, and scalability. For example, a subscription model might ensure recurring revenue.</li>
+</ul></li>
+<li>Step 4: Prioritization
+
+<ul>
+<li>Rank initiatives based on feasibility, impact, and alignment with core business goals. Use tools like cost-benefit analysis or scoring matrices.</li>
+</ul></li>
+</ul>
+<h3><a name="ii-explain-e-business-strategic-formulation-process-in-detail" class="heading-anchor" href="#ii-explain-e-business-strategic-formulation-process-in-detail" rel="nofollow" aria-hidden="true"></a>ii. Explain E-business Strategic formulation process in detail.</h3>
+<p>The e-business strategic formulation process involves a structured approach to align a company's online activities with its overall business goals. Here are the key steps:</p>
+
+<p><strong>Traditional Model Alignment:</strong></p>
+
+<ol>
+<li><strong>Analyze External and Internal Environments:</strong> Identify the company's strengths, weaknesses, opportunities, and threats in the e-business context, mirroring traditional strategic planning.</li>
+<li><strong>Select an E-business Strategy:</strong> Leverage knowledge of how e-business creates economic value. Define the scope of online activities, target products, clients, and geographic markets, and set clear, measurable goals.</li>
+<li><strong>Implement the E-business Strategy:</strong> Plan the execution of the chosen strategy, deciding on technological solutions and supply chain adoption for new or existing products and target markets.</li>
+<li><strong>Evaluate E-business Success:</strong> Finalize objectives for sales growth, cost reduction, and profitability. Select key indicators (financial, client, internal process, learning, and growth) to assess the e-business solution's success using scorecards.</li>
+</ol>
+
+<p><strong>IT/E-Business Strategy Formulation:</strong></p>
+
+<p>To maintain competitiveness, particularly in international markets or with large clients, SMEs need to continuously improve their IT/e-business capabilities through a structured strategy formulation process.</p>
+
+<ol>
+<li><strong>Review Your Business Strategy:</strong> Ensure your IT and e-business initiatives directly support your overarching business strategy.</li>
+<li><strong>Identify Business Problems for IT Solutions:</strong> Pinpoint business issues (e.g., stockouts, long lead times, reporting inefficiencies) that improved IT usage could address. Also, consider potential competitive advantages from novel IT applications.</li>
+<li><strong>Identify Possible Projects:</strong> Brainstorm potential IT projects to tackle the identified problems and opportunities. This might involve new technology, process changes, or staff training.</li>
+<li><strong>Prioritize:</strong> Make strategic choices, considering both the importance and the necessary order of projects due to technical or practical constraints.</li>
+</ol>
+
+		</main>
+		
+		<details id="table-of-content">
+		   <summary>Table of Content</summary>
+		<nav>
+<ul>
+<li><a href="#1-a-solve-any-two-of-the-following-10-marks"><strong>1.A Solve any two of the following:</strong> (10 Marks)</a>
+<ul>
+<li><a href="#what-are-different-needs-to-be-considered-for-the-analysis-of-company-s-internal-and-external-environment">
+What are different needs to be considered for the analysis of Company's internal and external environment?</a></li>
+<li><a href="#what-are-different-security-threats-to-e-business-03-marks">
+What are different Security Threats to e-business? (03 Marks)</a></li>
+<li><a href="#write-short-note-on-digital-certificates-03-marks">
+Write short note on: Digital Certificates (03 Marks)</a></li>
+</ul></li>
+<li><a href="#1-b-solve-any-two-of-the-following-05-marks">
+<strong>1.B Solve any two of the following:</strong> (05 Marks)</a></li>
+<li><a href="#write-short-note-on-digital-signatures-02-marks">
+Write short note on: Digital Signatures (02 Marks)</a></li>
+<li><a href="#write-short-note-on-firewall-as-security-control-02-marks">
+Write short note on: Firewall as Security Control (02 Marks)</a></li>
+<li><a href="#what-are-the-different-skills-required-to-manage-e-business-02-marks">
+What are the different skills required to manage E-Business? (02 Marks)</a></li>
+<li><a href="#2-solve-any-one-of-the-following-05-marks">
+<strong>2. Solve any one of the following:</strong> (05 Marks)</a>
+<ul>
+<li><a href="#i-how-erp-can-act-as-an-e-business-backbone-explain-in-detail">
+i. How ERP can act as an e-business backbone. Explain in detail.</a></li>
+<li><a href="#ii-what-are-different-risks-associated-with-e-business-and-how-to-manage-the-risks">
+ii. What are different risks associated with E-business and how to manage the risks?</a></li>
+</ul></li>
+<li><a href="#3-solve-any-one-of-the-following-05-marks">
+<strong>3. Solve any one of the following:</strong> (05 Marks)</a>
+<ul>
+<li><a href="#i-explain-e-business-strategic-plan-in-detail">
+i. Explain E-business strategic plan in detail.</a></li>
+<li><a href="#ii-explain-e-business-strategic-formulation-process-in-detail">
+ii. Explain E-business Strategic formulation process in detail.</a></li>
+</ul></li>
+</ul>
+</nav>
+
+		</details>
+		
+		<footer>
+			<p style="text-align: center; font-size: small; margin-top: 5em;">
+				<a href="https://anzenkodo.github.io/license">LICENSE</a>
+			</p>
+		</footer>
+	</body>
+	<script src="https://AnzenKodo.github.io/assets/js/mermaid.js"></script>
+	<script id="MathJax-script" async src="https://AnzenKodo.github.io/assets/js/mathjax.js"></script>
+	<script>
+		/* document.getElementById('video').addEventListener('click', (ele) => {
+			 if (ele.target.paused) {
+				 ele.target.play();
+			 } else {
+				 ele.target.pause();
+			 }
+		}); */
+
+		mermaid.initialize({
+			theme: "neutral",
+			themeVariables: {
+			    lineColor: "#939598",
+			}
+		});
+
+		MathJax = {
+		  tex: {
+			inlineMath: [['$', '$']],
+			displayMath: [['$$', '$$']],
+		  }
+		};
+	</script>
+</html>

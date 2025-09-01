@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>CC - AK#Notes</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="#FF6C22">
+		<meta name="description" content="## Everything/Anything as a Service (XaaS)  - **Storage as a Service(STaaS)** 	- Types 		- Block 		-">
+		<meta property="og:description" content="## Everything/Anything as a Service (XaaS)  - **Storage as a Service(STaaS)** 	- Types 		- Block 		-">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<meta property="og:image:alt" content="AK#Notes logo">
+		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="CC - AK#Notes">
+		<meta property="og:url" content="https://AnzenKodo.github.io/notes/notes/Collage/Sem8/Notes/CC.html">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+
+			:root {
+				/* color-scheme: dark light; */
+				color-scheme: dark;
+				--theme: #FF6C22;
+			}
+			body {
+				max-width: 40rem;
+				margin: 0 auto;
+				font-family: system-ui;
+				padding: 0 1em;
+				color: inherit !important;
+				word-break: break-word;
+			}
+			h1, h2, h3, h4, h5, h6 {
+				margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+				font-size: 2rem;
+			}
+			h3 {
+				font-size: 1.8rem;
+			}
+			h4 {
+				font-size: 1.5rem;
+			}
+			h5 {
+				font-size: 1.3rem;
+			}
+			h6 {
+				font-size: 1rem;
+			}
+			p, li, td, code {
+				line-height: 1.5rem;
+			}
+			a {
+				color: var(--theme);
+				text-decoration: none;
+			}
+			a:hover, a:focus {
+				text-decoration: underline;
+			}
+			a:active {
+				background: var(--theme);
+				color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+				margin-top: .5rem;
+			}
+			li {
+				margin-bottom: .5rem;
+			}
+			table {
+				border-collapse: collapse;
+				overflow-x: auto;
+				display: block;
+				word-break: auto-phrase;
+				margin: 1rem 0;
+			}
+			th {
+				font-size: 1.1rem;
+				border: 2px solid;
+				padding: .3rem .3rem;
+			}
+			td {
+				border: 1px solid;
+				padding: .3rem .5rem;
+			}
+			blockquote {
+				margin-left: 0;
+				margin-right: 0;
+				border: 1px solid;
+				border-left: 10px solid;
+				padding: 0 1rem;
+			}
+				.code-block {
+				background: black;
+				overflow-x: auto;
+				padding: 0em 1em;
+				border: 1px solid;
+			}
+			.code-block-language-name {
+				position: sticky;
+				left: 95%;
+				top: .5em;
+				font-weight: bold;
+				color: white;
+			}
+			:not(pre.chroma) > code {
+				border: 1px solid;
+				padding: .3rem .2rem .2rem .2rem;
+			}
+			img {
+				max-width: 100%;
+				display: block;
+				margin: 0 auto;
+			}
+			[href="#skip-top-main"] {
+				padding: 0.3em;
+				position: absolute;
+				transform: translateY(-1000%);
+			}
+			[href="#skip-top-main"]:focus {
+				transform: translateY(0%);
+				background: var(--theme);
+				color: inherit;
+			}
+			#table-of-content {
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+				background: black;
+				padding: 0.5rem 1em;
+				z-index: 1;
+				color: white;
+			}
+			#table-of-content[open] {
+				max-height: 90%;
+				overflow-y: auto;
+				bottom: 50px;
+				margin-left: 1em;
+			}
+			#table-of-content[open] summary {
+				background: black;
+				padding: 0.5em 1em;
+				text-align: center;
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+			}
+			#table-of-content ul:first-child {
+				padding-left: 1em;
+				margin-top: 1.5em;
+			}
+			.heading-anchor::before {
+				margin-right: .5rem;
+			}
+		    h2 .heading-anchor::before {
+    			content: "#";
+    			margin-right: .5rem;
+		    }
+            h3 .heading-anchor::before {
+				content: "##";
+				margin-right: .5rem;
+			}
+            h4 .heading-anchor::before {
+				content: "###";
+				margin-right: .5rem;
+			}
+            h5 .heading-anchor::before {
+				content: "####";
+				margin-right: .5rem;
+			}
+            h6 .heading-anchor::before {
+				content: "#####";
+				margin-right: .5rem;
+			}
+			.mermaid {
+				background: black;
+				border: 1px solid;
+				margin-top: 1rem;
+				padding: 1rem;
+				font-family: monospace;
+			}
+			.mermaid svg {
+				display: block;
+				margin: auto;
+			}
+			.mermaid:has(svg) {
+				background: none;
+				border: none;
+				margin-top: 1rem;
+				padding: 0;
+			}
+			mjx-container {
+				display: math;
+				overflow-y: hidden;
+				overflow-x: auto;
+				max-width: 100%;
+				padding-bottom: .8rem;
+			}
+			iframe {
+				width: 100%;
+				height: 21rem;
+				margin: 1rem 0;
+			}
+			video {
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<a href="#skip-top-main">Skip to main</a>
+		<header>
+<!--		<h1 style="text-align: center;">-->
+			<h1 style="text-align: center;">
+				<a href="https://AnzenKodo.github.io">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+			</h1><nav style="border-top: 1px solid gray;border-bottom: 1px solid gray;padding: .5rem 0;text-align: center;margin: 0 0 2rem 0;color: gray;clear: left;line-height: 1.6rem;">
+				<a href="https://AnzenKodo.github.io/notes">Home</a> | <a href="https://AnzenKodo.github.io">About</a> | <a href="https://AnzenKodo.github.io/blogroll">Blogroll</a> | <a href="https://github.com/AnzenKodo">Github</a> | <a href="https://x.com/AnzenKodo">𝕏</a>
+			</nav>
+			<!-- <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;"> -->
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem; margin-top: 0;">CC</h1>
+			<h2><a name="everything-anything-as-a-service-xaas" class="heading-anchor" href="#everything-anything-as-a-service-xaas" rel="nofollow" aria-hidden="true"></a>Everything/Anything as a Service (XaaS)</h2>
+<ul>
+<li><p><strong>Storage as a Service(STaaS)</strong></p>
+
+<ul>
+<li><p>Types</p>
+
+<ul>
+<li>Block</li>
+<li>File</li>
+
+<li><p>Object</p>
+
+<pre class='mermaid'>flowchart LR
+DSS[Data Storage Solutions]
+STaaS -->
+CSP --> Scalable --> DSS
+CSP --> Flexible --> DSS
+CSP --> Cost-Effecitve --> DSS
+</pre></li>
+</ul></li>
+</ul></li>
+
+<li><p>**Database as a Service(DBaaS)</p>
+
+<ul>
+<li><p><strong>Examples:</strong> Amazon RDS, Google Cloud SQL</p>
+
+<pre class='mermaid'>flowchart TB
+	Application -->
+	pn([Public Network]) -->
+	DaaS --> d0[(Data)]
+	DaaS --> d1[(Data)]
+	DaaS --> d2[(Data)]
+	DaaS --> d3[(Data)]
+</pre></li>
+</ul></li>
+
+<li><p><strong>Identity Management as a Service(IDaaS)</strong></p>
+
+<ul>
+<li>Core IAM Functions
+
+<ul>
+<li>Single Sign-On (SSO)</li>
+<li>MFA</li>
+<li>Access Management</li>
+<li>Directory Services</li>
+</ul></li>
+
+<li><p>Benefits</p>
+
+<ul>
+<li>Cost Reduction</li>
+<li>Simplified Management</li>
+<li>Improved Security</li>
+
+<li><p>Scalability &amp; Flexibility</p>
+
+<pre class='mermaid'>flowchart LR
+	a[📱 Airport] --> IDaaS
+	b[💻 Hotel] --> IDaaS
+	c[🖥️ Home] --> IDaaS --> cc[Company Cloud]
+	d[🖨️ IOT] --> IDaaS --> ca[Company App]
+</pre></li>
+</ul></li>
+</ul></li>
+
+<li><p><strong>Disaster Recovery as a Service(DRaaS)</strong></p>
+
+<ul>
+<li><p>Provieds</p>
+
+<ul>
+<li>AWS Elastic Disaster Recovery (EDR)</li>
+<li>Azure Site Recovery</li>
+
+<li><p>VMware Live Recovery</p>
+
+<pre class='mermaid'>flowchart LR
+	ci[Customer's
+	Infrastructure 🖥️🔥] --|Failover|--> cr[Cloud 
+	Recovery Site 💽♻️] --|Failback|-->ci
+</pre></li>
+</ul></li>
+</ul></li>
+
+<li><p><strong>Security as a Service (SECaaS)</strong></p>
+
+<pre class='mermaid'>flowchart LR
+	Prevention --> Detection --> Response --> Recovery --> Prevention
+</pre></li>
+</ul>
+<h3><a name="database-as-a-service-vs-storage-as-a-service" class="heading-anchor" href="#database-as-a-service-vs-storage-as-a-service" rel="nofollow" aria-hidden="true"></a>Database as a Service Vs Storage as a Service</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Database as a Service (DBaaS)</th>
+<th>Storage as a Service (STaaS)</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>Definition</strong></td>
+<td>CSP managed database systems</td>
+<td>CSP managed data storage</td>
+</tr>
+
+<tr>
+<td><strong>Primary Function</strong></td>
+<td>Manages, stores, and processes structured data</td>
+<td>Stores, retrieves, and manages files or objects</td>
+</tr>
+
+<tr>
+<td><strong>User Management</strong></td>
+<td>Handles database provisioning, scaling, backups, security</td>
+<td>Handles storage provisioning, scaling, redundancy</td>
+</tr>
+
+<tr>
+<td><strong>Data Type</strong></td>
+<td>Structured data</td>
+<td>Unstructured/structured data</td>
+</tr>
+
+<tr>
+<td><strong>Data</strong></td>
+<td>tables, queries, transactions</td>
+<td>files, objects, backups</td>
+</tr>
+
+<tr>
+<td><strong>Use Cases</strong></td>
+<td>Application data, analytics, transactional processing</td>
+<td>File storage, backup, archiving, disaster recovery</td>
+</tr>
+
+<tr>
+<td><strong>Access Method</strong></td>
+<td>Accessed via database protocols</td>
+<td>Accessed via file/object storage protocols</td>
+</tr>
+
+<tr>
+<td><strong>Applications</strong></td>
+<td>NoSQL, MySQL</td>
+<td>S3, NFS</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="deployment-models" class="heading-anchor" href="#deployment-models" rel="nofollow" aria-hidden="true"></a>Deployment Models</h2>
+<pre class='mermaid'>flowchart TD
+    t[Types of Cloud] 
+    t --> Public
+    t --> Private
+    t --> Hybrid
+    t --> Community  
+
+    Public --> EC2
+    Public --> ibm[IBM 
+    SmartCloud]
+    Public --> gae[Google 
+    AppEngine]
+
+    Private --> ic[On-premise]
+    Private --> cc[Outsourced]
+
+    Hybrid --> AWS
+    Hybrid --> GSuite
+
+    Community --> heccc[HealthCare 
+    Community Cloud]
+</pre>
+<p><img loading="lazy" src="assets/Pasted%20image%2020250518190551.webp" alt="" /></p>
+
+<ul>
+<li><strong>Public</strong>:
+
+<ul>
+<li>Owned &amp; operated by thrid-party provider also called CSP.</li>
+<li><strong>Example</strong>: Amazon EC2, Google App Engine, Azure Services Platform</li>
+</ul></li>
+<li><strong>Private</strong>: Also known as <strong>internal cloud</strong> or <strong>corporate cloud</strong>.
+
+<ul>
+<li><strong>On-premise private cloud</strong>: Infrastructure is located within the organization's physical data center.</li>
+<li><strong>Outsourced Private Cloud</strong>: Infrastructure is hosted by a third-party provider but dedicated to a single organization</li>
+</ul></li>
+<li><strong>Hybrid</strong>:
+
+<ul>
+<li>Hybrid Cloud = Public Cloud + Private Cloud</li>
+<li><strong>Example</strong>: Google Application Sute, AWS</li>
+</ul></li>
+<li><strong>Community Cloud</strong>
+
+<ul>
+<li>Can be access by group of organizations.</li>
+<li><strong>Example</strong>: Health-Care community cloud.</li>
+</ul></li>
+</ul>
+<h3><a name="vpc" class="heading-anchor" href="#vpc" rel="nofollow" aria-hidden="true"></a>VPC</h3>
+<ul>
+<li>It is a logically isolated virtual network in cloud.</li>
+<li><img loading="lazy" src="assets/Pasted%20image%2020250519025314.webp" alt="" /></li>
+</ul>
+<h2><a name="service-models-sip" class="heading-anchor" href="#service-models-sip" rel="nofollow" aria-hidden="true"></a>Service Models / SIP</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020250518193122.webp" alt="" /></p>
+
+<ul>
+<li>Infrastructure as a Service (IaaS)
+
+<ul>
+<li>Also known as <strong>Hardware as a Service (HaaS)</strong></li>
+<li>Computing infrastructure managed over internet.</li>
+<li><strong>Example</strong>: AWS, Azure, Google Cloud</li>
+<li><img loading="lazy" src="assets/Pasted%20image%2020250518194210.webp" alt="" /></li>
+</ul></li>
+
+<li><p>Platform as a Service (PaaS)</p>
+
+<ul>
+<li>Platform is created for the programmer to develop, test, run and manage applications.</li>
+
+<li><p><strong>Example:</strong> Github, VSCode Online, Google App Engine</p>
+
+<pre class='mermaid'>flowchart LR
+	c[🧑‍💻 Code] --> t[🧪 Test] --> d[☁️ Deploy]
+</pre></li>
+</ul></li>
+
+<li><p>Software as a Service (SaaS)</p>
+
+<ul>
+<li><img loading="lazy" src="assets/Pasted%20image%2020250518195229.webp" alt="" /></li>
+<li>Also known as &quot;on-demand software&quot;</li>
+<li>Application that is hosted on CSP.</li>
+<li><strong>Example:</strong> Google Docs, Dropbox, Slack, Discord</li>
+</ul></li>
+</ul>
+<h3><a name="differentiate-between-service-models" class="heading-anchor" href="#differentiate-between-service-models" rel="nofollow" aria-hidden="true"></a>Differentiate between Service Models</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Infrastructure as a Service (IaaS)</th>
+<th>Platform as a Service (PaaS)</th>
+<th>Software as a Service (SaaS)</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>What is provided?</strong></td>
+<td>Virtualized computing resources (servers, storage, networks)</td>
+<td>Platform for developing, running, and managing applications</td>
+<td>Ready-to-use software applications over the internet</td>
+</tr>
+
+<tr>
+<td><strong>User Management</strong></td>
+<td>OS, Application data</td>
+<td>Application &amp; data</td>
+<td>Data Usage</td>
+</tr>
+
+<tr>
+<td><strong>Provides</strong></td>
+<td>Hardware, Virtualization, Networking, Storage</td>
+<td>Hardware, OS</td>
+<td>Software</td>
+</tr>
+
+<tr>
+<td><strong>Control Level</strong></td>
+<td>Highest</td>
+<td>Less</td>
+<td>Minimal</td>
+</tr>
+
+<tr>
+<td><strong>Primary User</strong></td>
+<td>IT Admin</td>
+<td>Developers</td>
+<td>End-Users</td>
+</tr>
+
+<tr>
+<td><strong>Example</strong></td>
+<td>AWS EC2, Azure VM's, Google Compute Engine</td>
+<td>Google App Engine, Heroku</td>
+<td>Gmail, Salesfore, Dropbox, Microsoft 365</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="identity-and-access-management-iam" class="heading-anchor" href="#identity-and-access-management-iam" rel="nofollow" aria-hidden="true"></a>Identity and Access Management (IAM)</h2>
+<ul>
+<li>It is a framework comprising policies, processes and technologies that manages digital identities and control access.</li>
+<li>Key components
+
+<ul>
+<li>Identity Management</li>
+<li>Authentication</li>
+<li>Authorization</li>
+<li>Access Control</li>
+</ul></li>
+
+<li><p>Standards and Protocols</p>
+
+<ul>
+<li><strong>OAuth 2.0</strong>: framework that enables applications to obtain access to accounts through HTTP.</li>
+<li><strong>OpenID Connect (OIDC)</strong>:
+
+<ul>
+<li>An identity layer build on top of OAuth 2.0</li>
+<li>Used for verifying user identity.</li>
+</ul></li>
+
+<li><p><strong>Kerberos</strong></p>
+
+<ul>
+<li><p>Authentication protocol that provides security through secret-key cryptography.</p>
+
+<pre class='mermaid'>flowchart TD
+	User --> Authentication --> a{ Authenticated } --|Yes|--> Authorization --> Access
+	Authorization --|No|-->ad
+	a--|No|-->ad[Access Denied]
+</pre></li>
+</ul></li>
+</ul></li>
+</ul>
+<h2><a name="virtualization" class="heading-anchor" href="#virtualization" rel="nofollow" aria-hidden="true"></a>Virtualization</h2><h3><a name="xen" class="heading-anchor" href="#xen" rel="nofollow" aria-hidden="true"></a>Xen</h3>
+<ul>
+<li>Type-1 or Bare Metal hypervisor</li>
+<li>MMU (Memory Management Unit)</li>
+<li>How it is Helpful in Large Scale Virtualization
+
+<ul>
+<li>Performance</li>
+<li>Scalability</li>
+<li>Security</li>
+<li>Resource Control</li>
+</ul></li>
+<li>Compontes
+
+<ul>
+<li><strong>VM0 (or Dom0)</strong>
+
+<ul>
+<li>First VM.</li>
+<li>Has special privileges</li>
+<li>Directory interact with Xen and Hardware</li>
+<li>Runs System services (TS, DE, XS)</li>
+</ul></li>
+<li><strong>VM1 TO VMn</strong>:
+
+<ul>
+<li>Guest VM runs own Guest OS and Apps.</li>
+<li>Managed by Xen and Dom0</li>
+</ul></li>
+</ul></li>
+<li><img loading="lazy" src="assets/Pasted%20image%2020250518213810.webp" alt="" /></li>
+</ul>
+<h3><a name="xen-vs-kvm" class="heading-anchor" href="#xen-vs-kvm" rel="nofollow" aria-hidden="true"></a>Xen Vs KVM</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Xen Architecture</th>
+<th>KVM Architecture</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Type</td>
+<td>Type 1 (bare-metal)</td>
+<td>Type 2 (hosted, in Linux kernel)</td>
+</tr>
+
+<tr>
+<td>Placement</td>
+<td>Runs below OS, directly on hardware</td>
+<td>Runs as part of Linux kernel</td>
+</tr>
+
+<tr>
+<td>Resources Usage</td>
+<td>Low</td>
+<td>High</td>
+</tr>
+
+<tr>
+<td>Kernal Type</td>
+<td>Micro Kernal</td>
+<td>Linux Kernal</td>
+</tr>
+
+<tr>
+<td>Security Model</td>
+<td>Strong Isolation</td>
+<td>Linux Kernal Securtiy</td>
+</tr>
+
+<tr>
+<td>Guest OS Support</td>
+<td>Paravirtualizatoin &amp; Hardware-assisted</td>
+<td>Full Virtualization (unmodified OS)</td>
+</tr>
+
+<tr>
+<td>Allocation CPU Cores</td>
+<td>Not Supported</td>
+<td>Supported</td>
+</tr>
+
+<tr>
+<td>Memory Management</td>
+<td>Dynamic</td>
+<td>Traditional Mapping per VM</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Paravirtualization</strong>: where the guest OS is aware it's running in a virtual environment.
+<strong>Hardware-assisted:</strong> utilizes hardware features (primarily in the CPU) to improve virtualization performance.</p>
+<h3><a name="virtualization-levels" class="heading-anchor" href="#virtualization-levels" rel="nofollow" aria-hidden="true"></a>Virtualization Levels</h3>
+<pre class='mermaid'>flowchart BT
+    subgraph al[Application Level]
+        direction TB
+        JVM
+        .Net
+    end
+    subgraph ll[Library Level]
+        direction TB
+        WINE
+        WABI
+    end
+    subgraph os[OS Level]
+        direction TB
+		Docker
+		VirtualBox
+    end
+    subgraph hl[Hardware Level]
+        direction TB
+        VMware
+        Hyper-V
+    end
+    subgraph isa[Instruction Set Level]
+        direction TB
+        QEMU
+        Dynamo
+    end
+    al --> ll --> os --> hl --> isa
+</pre><h2><a name="cloud" class="heading-anchor" href="#cloud" rel="nofollow" aria-hidden="true"></a>Cloud</h2><h3><a name="elastic-network-interface-eni" class="heading-anchor" href="#elastic-network-interface-eni" rel="nofollow" aria-hidden="true"></a>Elastic Network Interface (ENI)</h3>
+<ul>
+<li>ENIs provide network connectivity for your instances and offer flexibility in network configuration.</li>
+<li>An instance can have multiple ENIs</li>
+
+<li><p>It has Private IP, MAC Address</p>
+
+<pre class='mermaid'>flowchart TB
+	subgraph i[EC2 instance]
+		ip1[172.12.23.5]
+		ip2[172.32.23.9]
+		ip3[10.65.21.76]
+	end
+	subgraph Primary Interface
+		eth0
+	end
+	subgraph Secondary Interface
+		eth1[eth1
+		Security Group 1]
+		eth2[eth2
+		Security Group2]
+	end
+	eth0 --> ip1
+	eth1 --> ip2
+	eth2 --> ip3
+</pre></li>
+</ul>
+<h3><a name="internet-gateway" class="heading-anchor" href="#internet-gateway" rel="nofollow" aria-hidden="true"></a>Internet Gateway</h3>
+<ul>
+<li>It allows communication between VPC resources and the internet.</li>
+
+<li><p>It is attached to the VPC and enables public internet access.</p>
+
+<pre class='mermaid'>flowchart TB
+	Server --> Gateway --> ln1[Local Netwrok] & ln2[Local Netwrok] & ln3[Local Network]
+</pre></li>
+</ul>
+<h3><a name="route-table" class="heading-anchor" href="#route-table" rel="nofollow" aria-hidden="true"></a>Route Table</h3>
+<ul>
+<li>A set of rules (routes) that determines where network traffic id directed.</li>
+<li>It control traffic flow.</li>
+<li>It contains information about destination networks.</li>
+</ul>
+
+<p><img loading="lazy" src="assets/Pasted%20image%2020250519032812.webp" alt="" /></p>
+<h3><a name="security-group" class="heading-anchor" href="#security-group" rel="nofollow" aria-hidden="true"></a>Security Group</h3>
+<ul>
+<li>A virtual firewall</li>
+<li>Controls inbound and outbound traffic.</li>
+
+<li><p>It uses rules to allow/deny traffic based on protocols, port &amp; ip.</p>
+
+<pre class='mermaid'>flowchart LR
+	uu[Unauthorised User] & co[Corporate Office] --> ip[IP Whitelist]
+	ip -- IP Not on Whitelist --x sg
+	ip -- IP on Whitelist --> sg
+	subgraph sg[Security Group]
+		ec2[Ec2 Instance]
+	end
+</pre></li>
+</ul>
+<h2><a name="aws" class="heading-anchor" href="#aws" rel="nofollow" aria-hidden="true"></a>AWS</h2><h3><a name="ec2" class="heading-anchor" href="#ec2" rel="nofollow" aria-hidden="true"></a>EC2</h3>
+<ul>
+<li>Offers virtual services (instances) with various OS.</li>
+<li>Provides re-sizable compute in cloud.</li>
+
+<li><p>Pay-as-you-go pricing</p>
+
+<pre class='mermaid'>flowchart TB
+	User --Uploads/Downloads--> EC2 -- Raw Data --> EBS1 & EBS2 
+	EC2 -- Object --> S3
+	subgraph Storage Solustions
+		EBS1[EBS]
+		EBS2[EBS]
+		S3
+		S3 --Archive--> Glacier
+	end
+</pre></li>
+</ul>
+<h3><a name="elastic-block-storage-ebs" class="heading-anchor" href="#elastic-block-storage-ebs" rel="nofollow" aria-hidden="true"></a>Elastic Block Storage (EBS)</h3>
+<ul>
+<li>block level storage</li>
+<li>SSD &amp; HDD</li>
+<li>Persistent storage</li>
+<li>Independent of the instance lifecycle</li>
+</ul>
+<h3><a name="simple-storage-service-s3" class="heading-anchor" href="#simple-storage-service-s3" rel="nofollow" aria-hidden="true"></a>Simple Storage Service (S3)</h3>
+<ul>
+<li>Stores data as objects within buckets</li>
+<li>Advantages
+
+<ul>
+<li>Scalability</li>
+<li>Cost Effective</li>
+<li>Security</li>
+</ul></li>
+<li>Disadvantages
+
+<ul>
+<li>Complexity</li>
+<li>Cost Management</li>
+<li>Object Limit</li>
+</ul></li>
+</ul>
+<h3><a name="glacier" class="heading-anchor" href="#glacier" rel="nofollow" aria-hidden="true"></a>Glacier</h3>
+<ul>
+<li>Provides low-cost archival storage for long-term data retention.</li>
+<li>Designed for infrequently accessed data.</li>
+<li>Why it is required?:
+
+<ul>
+<li>Long-term data preservation</li>
+<li>Low-cost</li>
+<li>High durability</li>
+<li>Security</li>
+</ul></li>
+</ul>
+<h3><a name="dynamodb" class="heading-anchor" href="#dynamodb" rel="nofollow" aria-hidden="true"></a>DynamoDB</h3>
+<pre class='mermaid'>flowchart LR
+	API --> DynamoDB --> Table1 & Table2 & Table3
+</pre>
+<ul>
+<li>It a NoSQL database</li>
+<li>Data Structure
+
+<ul>
+<li><strong>Tables:</strong> These are similar to tables in relational databases but don't have a fixed schema.</li>
+<li><strong>Items:</strong> These are analogous to rows or records in relational databases. Each item is uniquely identified by a primary key.</li>
+</ul></li>
+<li>Features
+
+<ul>
+<li>Fully Managed</li>
+<li>High performance</li>
+<li>Scalable</li>
+<li>Serverless</li>
+<li>Flexible data model
+
+<ul>
+<li>Schema-less, ideal for unstructured data</li>
+<li>Supports key-value and document models.</li>
+</ul></li>
+</ul></li>
+</ul>
+<h3><a name="s3-storage-vs-glacier-storage" class="heading-anchor" href="#s3-storage-vs-glacier-storage" rel="nofollow" aria-hidden="true"></a>S3 Storage Vs Glacier Storage</h3>
+<table>
+<thead>
+<tr>
+<th>Features</th>
+<th>Amazon Glacier</th>
+<th>Amazon S3</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>Use Case</strong></td>
+<td>Long-term archival of infrequent accessed data</td>
+<td>Frequently accessed data</td>
+</tr>
+
+<tr>
+<td><strong>Storage Cost</strong></td>
+<td>Low</td>
+<td>High</td>
+</tr>
+
+<tr>
+<td><strong>Durability</strong></td>
+<td>High</td>
+<td>Low</td>
+</tr>
+
+<tr>
+<td><strong>Retrieval Time</strong></td>
+<td>Long</td>
+<td>Fast</td>
+</tr>
+
+<tr>
+<td><strong>Data Transfer Acceleration</strong></td>
+<td>Supports AWS Transfer Acceleration for faster data upload.</td>
+<td>Supports AWS Transfer Acceleration for faster data upload.</td>
+</tr>
+
+<tr>
+<td><strong>Security</strong></td>
+<td>Robust security features</td>
+<td>Robust security features</td>
+</tr>
+</tbody>
+</table>
+<h3><a name="rds-dynamodb" class="heading-anchor" href="#rds-dynamodb" rel="nofollow" aria-hidden="true"></a>RDS &amp; DynamoDB</h3>
+<table>
+<thead>
+<tr>
+<th align="left">Feature</th>
+<th align="left">Amazon RDS</th>
+<th align="left">Amazon DynamoDB</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong>Type of Database</strong></td>
+<td align="left">Relational (SQL)</td>
+<td align="left">NoSQL</td>
+</tr>
+
+<tr>
+<td align="left"><strong>Data Structure</strong></td>
+<td align="left">SQL</td>
+<td align="left">Key-Value, Document</td>
+</tr>
+
+<tr>
+<td align="left"><strong>Data Model</strong></td>
+<td align="left">Structured</td>
+<td align="left">Semi-structured or Unstructured</td>
+</tr>
+
+<tr>
+<td align="left"><strong>Querying</strong></td>
+<td align="left">SQL with complex queries</td>
+<td align="left">Uses simpler API</td>
+</tr>
+
+<tr>
+<td align="left"><strong>Schema</strong></td>
+<td align="left">Fixed schema</td>
+<td align="left">Schema-less</td>
+</tr>
+
+<tr>
+<td align="left"><strong>Storage</strong></td>
+<td align="left">Block storage (EBS).</td>
+<td align="left">Distributed across multiple storage partitions.</td>
+</tr>
+
+<tr>
+<td align="left"><strong>Use Cases</strong></td>
+<td align="left">Traditional applications (ERP, CRM, e-commerce)</td>
+<td align="left">Web-scale applications, mobile backends, IoT</td>
+</tr>
+
+<tr>
+<td align="left"><strong>Scalability</strong></td>
+<td align="left">Primarily vertical scaling (increase instance size)</td>
+<td align="left">Horizontal scaling (automatic partitioning)</td>
+</tr>
+
+<tr>
+<td align="left"><strong>Performance</strong></td>
+<td align="left">Performance depends on instance type and database configuration.</td>
+<td align="left">Consistent</td>
+</tr>
+
+<tr>
+<td align="left"><strong>Management</strong></td>
+<td align="left">AWS manages infrastructure</td>
+<td align="left">Fully managed serverless database</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="object-storage-vs-block-storage" class="heading-anchor" href="#object-storage-vs-block-storage" rel="nofollow" aria-hidden="true"></a>Object Storage Vs Block Storage</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Object Storage</th>
+<th>Block Storage</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Data Unit</td>
+<td>Objects (Data + Metadata + Unique ID)</td>
+<td>Fixed-Size blocks with Unique ID</td>
+</tr>
+
+<tr>
+<td>Metadata</td>
+<td>Extensive</td>
+<td>Less</td>
+</tr>
+
+<tr>
+<td>Organization</td>
+<td>Flat address Space</td>
+<td>Sequentially organized into volumes</td>
+</tr>
+
+<tr>
+<td>Access Method</td>
+<td>HTTP/HTTPS, RESTful API</td>
+<td>Direct access as raw storage</td>
+</tr>
+
+<tr>
+<td>Scalability</td>
+<td>Highly</td>
+<td>Less</td>
+</tr>
+
+<tr>
+<td>Performance</td>
+<td>High</td>
+<td>Low</td>
+</tr>
+
+<tr>
+<td>Cost-effective</td>
+<td>High</td>
+<td>Low</td>
+</tr>
+
+<tr>
+<td>Use Case</td>
+<td>Media, archives, backup, big data</td>
+<td>Database, VM, OS Volumes</td>
+</tr>
+
+<tr>
+<td>Modification</td>
+<td>Entire object need to be rewritten</td>
+<td>Individual blocks can modified</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="mobile-cloud-computing-mcc" class="heading-anchor" href="#mobile-cloud-computing-mcc" rel="nofollow" aria-hidden="true"></a>Mobile Cloud Computing (MCC)</h2>
+<ul>
+<li>MCC is combination of Mobile Computing(MC), Cloud Computing (CC) &amp; Wireless Network (WN).</li>
+<li>It makes it possible for reach mobile application to be executed on huge number of devices.</li>
+<li>Components
+
+<ul>
+<li>BTS (Base Station)</li>
+<li>AAA (Authorization, Authentication, Accounting)</li>
+<li><strong>Home Agent (HA)</strong>: maintains info about devices current location.</li>
+</ul></li>
+<li>Benefits
+
+<ul>
+<li>Flexibility</li>
+<li>Multiple Platform Support</li>
+<li>Backup &amp; Recovery</li>
+</ul></li>
+<li>Challenges
+
+<ul>
+<li>Attacks &amp; Hacking</li>
+<li>Low bandwidth problem</li>
+<li>Information Security Privacy</li>
+</ul></li>
+</ul>
+
+<p><img loading="lazy" src="../UT2/assets/Pasted%20image%2020250417030653.webp" alt="" /></p>
+<h2><a name="serverless" class="heading-anchor" href="#serverless" rel="nofollow" aria-hidden="true"></a>Serverless</h2>
+<pre class='mermaid'>flowchart TB
+	Devloper -- Uploads code --> t[Triggers AWS Services] --> l["AWS Lmbda 
+	(Runs the Code)"] --> Deploy
+</pre>
+<ul>
+<li>It is technology that run, manage, integrate application without managing servers.</li>
+<li>It uses Pay-for-Use billing Model</li>
+<li>Key Characteristics
+
+<ul>
+<li>No servers management</li>
+<li>Pay-as-you-go</li>
+<li>Automatic Scaling</li>
+<li>Event-driven</li>
+</ul></li>
+<li>Benefits
+
+<ul>
+<li>Reduced cost</li>
+<li>Increase developer productivity</li>
+<li>Faster deployment</li>
+<li>Automatic scalability and availabity</li>
+</ul></li>
+<li>Examples:
+
+<ul>
+<li>AWS Lambda</li>
+<li>Google Cloud Functions</li>
+<li>Azure Functions</li>
+</ul></li>
+</ul>
+<h2><a name="instance" class="heading-anchor" href="#instance" rel="nofollow" aria-hidden="true"></a>Instance</h2>
+<ul>
+<li>Instance is virtual server in EC2</li>
+<li>Users can configure OS, application that runs on instance.</li>
+<li>User pay for the compute capacity by the hour.</li>
+</ul>
+
+<p><strong>Lifecycle</strong></p>
+
+<p><img loading="lazy" src="assets/Pasted%20image%2020250519044623.webp" alt="" /></p>
+<h2><a name="cloud-computing" class="heading-anchor" href="#cloud-computing" rel="nofollow" aria-hidden="true"></a>Cloud Computing</h2>
+<p><strong>Components</strong></p>
+
+<p><strong>Architecture</strong></p>
+
+<p><img loading="lazy" src="assets/Pasted%20image%2020250519045438.webp" alt="" /></p>
+<h2><a name="openstack" class="heading-anchor" href="#openstack" rel="nofollow" aria-hidden="true"></a>OpenStack</h2>
+<p><img loading="lazy" src="assets/Pasted%20image%2020250519053721.webp" alt="" /></p>
+<h2><a name="audit-reporting" class="heading-anchor" href="#audit-reporting" rel="nofollow" aria-hidden="true"></a>Audit &amp; Reporting</h2>
+<ul>
+<li><strong>Audit</strong>
+
+<ul>
+<li>Examining and verifying activities, logs and configuration within cloud environment to ensure compliance.</li>
+</ul></li>
+
+<li><p><strong>Reporting</strong>:</p>
+
+<ul>
+<li><p>Generation of summaries and detailed information derived from audit data, providing insights into the state and usage.</p>
+
+<pre class='mermaid'>flowchart LR
+	subgraph do[Data Owner]
+		db[File
+		Key
+		Data Blocks]
+	end
+	subgraph Audit
+		Auditor
+	end
+	do <== Data Flow ==> CSP
+	do <== Data Flow ==> Auditor
+	Auditor -- Challenge -->  CSP
+	CSP -- Proof --> Auditor
+</pre></li>
+</ul></li>
+</ul>
+<h2><a name="governance-risk-and-compliance-grc" class="heading-anchor" href="#governance-risk-and-compliance-grc" rel="nofollow" aria-hidden="true"></a>Governance, Risk, and Compliance (GRC)</h2>
+<p>It's structured approach that integrates an organization's governance, risk management, and compliance activities.</p>
+
+<p>It aims to align IT with business goals, manage risks effectively, and adhere to relevant laws and regulations.</p>
+
+<p><strong>Components</strong></p>
+
+<ul>
+<li><strong>Governance</strong>: Establish the org structure, policies, and processes for decision-making and accountability.<br></li>
+<li><strong>Risk Management</strong></li>
+<li><strong>Compliance</strong></li>
+</ul>
+<h2><a name="cloud-cube-model" class="heading-anchor" href="#cloud-cube-model" rel="nofollow" aria-hidden="true"></a>Cloud Cube Model</h2>
+<p><img loading="lazy" src="../UT1/assets/Pasted%20image%2020250301000843.webp" alt="" /></p>
+
+<ul>
+<li><strong>Internal</strong>: Data inside the org.</li>
+<li><strong>External</strong>: Data stored in outside the org (Exp: AWS &amp; Google Cloud)</li>
+<li><strong>Proprietary</strong>: Owned by CSP with restricted interoperability or locked-in ecosystem.</li>
+<li><strong>Open</strong>: The service use open standard, which allows greater interoperability, data portability and flexibility.</li>
+<li><strong>Permiterized</strong>: Operations occur within traditional security boundaries.</li>
+<li><strong>De-permiterized</strong>: Security is designed for boundary-less enviorment.</li>
+</ul>
+
+		</main>
+		
+		<details id="table-of-content">
+		   <summary>Table of Content</summary>
+		<nav>
+<ul>
+<li><a href="#everything-anything-as-a-service-xaas">Everything/Anything as a Service (XaaS)</a>
+<ul>
+<li><a href="#database-as-a-service-vs-storage-as-a-service">
+Database as a Service Vs Storage as a Service</a></li>
+</ul></li>
+<li><a href="#deployment-models">
+Deployment Models</a>
+<ul>
+<li><a href="#vpc">
+VPC</a></li>
+</ul></li>
+<li><a href="#service-models-sip">
+Service Models / SIP</a>
+<ul>
+<li><a href="#differentiate-between-service-models">
+Differentiate between Service Models</a></li>
+</ul></li>
+<li><a href="#identity-and-access-management-iam">
+Identity and Access Management (IAM)</a></li>
+<li><a href="#virtualization">
+Virtualization</a>
+<ul>
+<li><a href="#xen">
+Xen</a></li>
+<li><a href="#xen-vs-kvm">
+Xen Vs KVM</a></li>
+<li><a href="#virtualization-levels">
+Virtualization Levels</a></li>
+</ul></li>
+<li><a href="#cloud">
+Cloud</a>
+<ul>
+<li><a href="#elastic-network-interface-eni">
+Elastic Network Interface (ENI)</a></li>
+<li><a href="#internet-gateway">
+Internet Gateway</a></li>
+<li><a href="#route-table">
+Route Table</a></li>
+<li><a href="#security-group">
+Security Group</a></li>
+</ul></li>
+<li><a href="#aws">
+AWS</a>
+<ul>
+<li><a href="#ec2">
+EC2</a></li>
+<li><a href="#elastic-block-storage-ebs">
+Elastic Block Storage (EBS)</a></li>
+<li><a href="#simple-storage-service-s3">
+Simple Storage Service (S3)</a></li>
+<li><a href="#glacier">
+Glacier</a></li>
+<li><a href="#dynamodb">
+DynamoDB</a></li>
+<li><a href="#s3-storage-vs-glacier-storage">
+S3 Storage Vs Glacier Storage</a></li>
+<li><a href="#rds-dynamodb">
+RDS &amp; DynamoDB</a></li>
+</ul></li>
+<li><a href="#object-storage-vs-block-storage">
+Object Storage Vs Block Storage</a></li>
+<li><a href="#mobile-cloud-computing-mcc">
+Mobile Cloud Computing (MCC)</a></li>
+<li><a href="#serverless">
+Serverless</a></li>
+<li><a href="#instance">
+Instance</a></li>
+<li><a href="#cloud-computing">
+Cloud Computing</a></li>
+<li><a href="#openstack">
+OpenStack</a></li>
+<li><a href="#audit-reporting">
+Audit &amp; Reporting</a></li>
+<li><a href="#governance-risk-and-compliance-grc">
+Governance, Risk, and Compliance (GRC)</a></li>
+<li><a href="#cloud-cube-model">
+Cloud Cube Model</a></li>
+</ul>
+</nav>
+
+		</details>
+		
+		<footer>
+			<p style="text-align: center; font-size: small; margin-top: 5em;">
+				<a href="https://anzenkodo.github.io/license">LICENSE</a>
+			</p>
+		</footer>
+	</body>
+	<script src="https://AnzenKodo.github.io/assets/js/mermaid.js"></script>
+	<script id="MathJax-script" async src="https://AnzenKodo.github.io/assets/js/mathjax.js"></script>
+	<script>
+		/* document.getElementById('video').addEventListener('click', (ele) => {
+			 if (ele.target.paused) {
+				 ele.target.play();
+			 } else {
+				 ele.target.pause();
+			 }
+		}); */
+
+		mermaid.initialize({
+			theme: "neutral",
+			themeVariables: {
+			    lineColor: "#939598",
+			}
+		});
+
+		MathJax = {
+		  tex: {
+			inlineMath: [['$', '$']],
+			displayMath: [['$$', '$$']],
+		  }
+		};
+	</script>
+</html>

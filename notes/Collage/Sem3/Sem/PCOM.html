@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>PCOM - AK#Notes</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="author" content="AnzenKodo">
+		<meta name="theme-color" content="#FF6C22">
+		<meta name="description" content="## Basics of analog communication and digital communication systems  ![Communication System Diagram]">
+		<meta property="og:description" content="## Basics of analog communication and digital communication systems  ![Communication System Diagram]">
+		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<meta property="og:image:alt" content="AK#Notes logo">
+		<meta property="og:site_name" content="AK#Notes">
+		<meta property="og:title" content="PCOM - AK#Notes">
+		<meta property="og:url" content="https://AnzenKodo.github.io/notes/notes/Collage/Sem3/Sem/PCOM.html">
+		<meta property="og:type" content="article">
+		<meta property="og:article:author" content="AnzenKodo">
+		<link rel="icon" type="image/png" href="https://AnzenKodo.github.io/assets/favicon/notes.png">
+		<style>
+			*,::after,::before{box-sizing:border-box}html{font-family:ui-serif, serif;line-height:1.15;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+
+			:root {
+				/* color-scheme: dark light; */
+				color-scheme: dark;
+				--theme: #FF6C22;
+			}
+			body {
+				max-width: 40rem;
+				margin: 0 auto;
+				font-family: system-ui;
+				padding: 0 1em;
+				color: inherit !important;
+				word-break: break-word;
+			}
+			h1, h2, h3, h4, h5, h6 {
+				margin: 2rem 0 0.5rem 0;
+			}
+			h2 {
+				font-size: 2rem;
+			}
+			h3 {
+				font-size: 1.8rem;
+			}
+			h4 {
+				font-size: 1.5rem;
+			}
+			h5 {
+				font-size: 1.3rem;
+			}
+			h6 {
+				font-size: 1rem;
+			}
+			p, li, td, code {
+				line-height: 1.5rem;
+			}
+			a {
+				color: var(--theme);
+				text-decoration: none;
+			}
+			a:hover, a:focus {
+				text-decoration: underline;
+			}
+			a:active {
+				background: var(--theme);
+				color: inherit;
+			}
+			ul ul, ul ol, ol ol, ol ul {
+				margin-top: .5rem;
+			}
+			li {
+				margin-bottom: .5rem;
+			}
+			table {
+				border-collapse: collapse;
+				overflow-x: auto;
+				display: block;
+				word-break: auto-phrase;
+				margin: 1rem 0;
+			}
+			th {
+				font-size: 1.1rem;
+				border: 2px solid;
+				padding: .3rem .3rem;
+			}
+			td {
+				border: 1px solid;
+				padding: .3rem .5rem;
+			}
+			blockquote {
+				margin-left: 0;
+				margin-right: 0;
+				border: 1px solid;
+				border-left: 10px solid;
+				padding: 0 1rem;
+			}
+				.code-block {
+				background: black;
+				overflow-x: auto;
+				padding: 0em 1em;
+				border: 1px solid;
+			}
+			.code-block-language-name {
+				position: sticky;
+				left: 95%;
+				top: .5em;
+				font-weight: bold;
+				color: white;
+			}
+			:not(pre.chroma) > code {
+				border: 1px solid;
+				padding: .3rem .2rem .2rem .2rem;
+			}
+			img {
+				max-width: 100%;
+				display: block;
+				margin: 0 auto;
+			}
+			[href="#skip-top-main"] {
+				padding: 0.3em;
+				position: absolute;
+				transform: translateY(-1000%);
+			}
+			[href="#skip-top-main"]:focus {
+				transform: translateY(0%);
+				background: var(--theme);
+				color: inherit;
+			}
+			#table-of-content {
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+				background: black;
+				padding: 0.5rem 1em;
+				z-index: 1;
+				color: white;
+			}
+			#table-of-content[open] {
+				max-height: 90%;
+				overflow-y: auto;
+				bottom: 50px;
+				margin-left: 1em;
+			}
+			#table-of-content[open] summary {
+				background: black;
+				padding: 0.5em 1em;
+				text-align: center;
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+			}
+			#table-of-content ul:first-child {
+				padding-left: 1em;
+				margin-top: 1.5em;
+			}
+			.heading-anchor::before {
+				margin-right: .5rem;
+			}
+		    h2 .heading-anchor::before {
+    			content: "#";
+    			margin-right: .5rem;
+		    }
+            h3 .heading-anchor::before {
+				content: "##";
+				margin-right: .5rem;
+			}
+            h4 .heading-anchor::before {
+				content: "###";
+				margin-right: .5rem;
+			}
+            h5 .heading-anchor::before {
+				content: "####";
+				margin-right: .5rem;
+			}
+            h6 .heading-anchor::before {
+				content: "#####";
+				margin-right: .5rem;
+			}
+			.mermaid {
+				background: black;
+				border: 1px solid;
+				margin-top: 1rem;
+				padding: 1rem;
+				font-family: monospace;
+			}
+			.mermaid svg {
+				display: block;
+				margin: auto;
+			}
+			.mermaid:has(svg) {
+				background: none;
+				border: none;
+				margin-top: 1rem;
+				padding: 0;
+			}
+			mjx-container {
+				display: math;
+				overflow-y: hidden;
+				overflow-x: auto;
+				max-width: 100%;
+				padding-bottom: .8rem;
+			}
+			iframe {
+				width: 100%;
+				height: 21rem;
+				margin: 1rem 0;
+			}
+			video {
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<a href="#skip-top-main">Skip to main</a>
+		<header>
+<!--		<h1 style="text-align: center;">-->
+			<h1 style="text-align: center;">
+				<a href="https://AnzenKodo.github.io">AK</a>#<a href="https://AnzenKodo.github.io/notes">Notes</a>
+			</h1><nav style="border-top: 1px solid gray;border-bottom: 1px solid gray;padding: .5rem 0;text-align: center;margin: 0 0 2rem 0;color: gray;clear: left;line-height: 1.6rem;">
+				<a href="https://AnzenKodo.github.io/notes">Home</a> | <a href="https://AnzenKodo.github.io">About</a> | <a href="https://AnzenKodo.github.io/blogroll">Blogroll</a> | <a href="https://github.com/AnzenKodo">Github</a> | <a href="https://x.com/AnzenKodo">𝕏</a>
+			</nav>
+			<!-- <img src="https://AnzenKodo.github.io/assets/driftnet.png" alt="DriftNet Sponsored Image" style="margin: 1rem 0 1.5rem 0;"> -->
+		</header>
+		<main id="skip-top-main">
+			<h1 style="font-size: 2.3rem; margin-top: 0;">PCOM</h1>
+			<h2><a name="basics-of-analog-communication-and-digital-communication-systems" class="heading-anchor" href="#basics-of-analog-communication-and-digital-communication-systems" rel="nofollow" aria-hidden="true"></a>Basics of analog communication and digital communication systems</h2>
+<p><img loading="lazy" src="com-system.png" alt="Communication System Diagram" /></p>
+
+<iframe src="https://www.youtube.com/embed/qhjj6WG7Rgc" title="Introduction to Analog and Digital Communication | The Basic Block Diagram of Communication System" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<h3><a name="analog-communication" class="heading-anchor" href="#analog-communication" rel="nofollow" aria-hidden="true"></a>Analog Communication</h3>
+<p><img loading="lazy" src="trans-rece.png" alt="Analog Diagram" /></p>
+
+<ul>
+<li>Continuous signal repesentaion of information, such as sound, image or video.</li>
+<li>Singnal is transmitted over continuous range of frequencies, usually
+represented by sine wave.</li>
+<li>Example: analog television, analog radio brodcasting, analog telephone
+systems.</li>
+</ul>
+<h4><a name="application" class="heading-anchor" href="#application" rel="nofollow" aria-hidden="true"></a>Application</h4>
+<ul>
+<li><strong>Broadcasting</strong> Analog signals are still used for broadcasting TV and radio
+signals.</li>
+<li><strong>Audio transmission</strong> Analog signals are used for transmitting audio signals
+in analog audio devices, such as analog tape recorders and turntables.</li>
+<li><strong>Telephony</strong> Analog signals are used for transmitting voice signals in
+traditional telephone networks.</li>
+<li><strong>Musical instruments</strong> Some musical instruments, such as analog synthesizers,
+use analog signals to produce sound.</li>
+<li><strong>Control systems</strong> Analog signals are used in control systems, such as analog
+servo systems, to control the position and speed of motors.</li>
+<li><strong>Medical equipment</strong> Analog signals are used in medical equipment, such as
+ECG and EEG machines, to measure and monitor biological signals.</li>
+<li><strong>Weather measurement</strong> Analog signals are used in weather measurement
+instruments, such as barometers, thermometers, and hygrometers, to measure
+various weather parameters.</li>
+</ul>
+<h4><a name="advantages" class="heading-anchor" href="#advantages" rel="nofollow" aria-hidden="true"></a>Advantages</h4>
+<ul>
+<li><strong>Simplicity</strong>- Analog communication systems are simpler in design and
+implementaion compared to digital system. This makes them less expensive and
+easier to build.</li>
+<li><strong>Bandwidth effciency</strong> - Analog communication system can transmit a large
+amount of information over wide frequency range, making them bandwidth
+effcient. This is because analog signals can be modulated over a continuos
+range of frequencies.</li>
+<li><strong>Cost-effective</strong> - Analog communication system are less expensive to
+implement and maintain compared to digital systems. This is due to their
+simple design and lower processing requirements.</li>
+<li><strong>Legacy systems</strong> - Many analog communication system have been in use for
+many years and are well established. This makes them easier to integrate into
+existing infrastructure and easier to maintain.</li>
+<li><strong>High compatibility</strong> - Analog signals are compatible with a wide range of
+equipment and systems, making it easier to interconnect different devices and
+systems.</li>
+</ul>
+<h4><a name="disadvantages" class="heading-anchor" href="#disadvantages" rel="nofollow" aria-hidden="true"></a>Disadvantages</h4>
+<ul>
+<li><strong>Singnal degradation</strong> - Analog signals can degrade over long distances due
+to noise and interference, resulting in reduction in signal quality.</li>
+<li><strong>Vulnerability to interference</strong> - Analog signals are vulnerable to external
+interference such as electrical noise and other signals in the same frequency
+range, which can cause signal distortion and degradation.</li>
+<li><strong>Limited signal processing</strong> - Analog communication system have limited
+signal processing capabilities, making it difficult to coreect for error and
+enhance signal quality.</li>
+<li><strong>No error detection</strong> - Analog communication system do not have built-in
+error detection capabilities, making it difficult to detect and correct
+transmission errors.</li>
+<li><strong>Insecurity</strong> - Analog communication system are less secure compared to
+digital system, as it easier for unauthorized parties to intercept and
+eavesdrop on analog signals.</li>
+<li><strong>Inefficient use of bandwidth</strong> - Analog communication system can be less
+efficient in their use of bandwidth compared to digital systems, as they
+require a continuous range of frequencies to transmit information.</li>
+</ul>
+<h3><a name="digital-communication" class="heading-anchor" href="#digital-communication" rel="nofollow" aria-hidden="true"></a>Digital communication</h3>
+<p><img loading="lazy" src="digital-com.png" alt="Digital Communication Diagram" /></p>
+
+<ul>
+<li>Discrete signal representation of information, usually in binary form (1s and
+0s).</li>
+<li>Signals are transmitted in stepwise manner.</li>
+<li>Examples: digital television, internet, mobile phones, digital radio
+broadcasting.</li>
+</ul>
+<h4><a name="applications" class="heading-anchor" href="#applications" rel="nofollow" aria-hidden="true"></a>Applications</h4>
+<ul>
+<li><strong>Data transmission</strong> Digital communication systems are widely used for data
+transmission over the internet and other communication networks.</li>
+<li><strong>Wireless communication</strong> Digital communication is used in wireless
+communication systems such as mobile phones, Wi-Fi, and satellite
+communication.</li>
+<li><strong>Broadcasting</strong> Digital communication is used for broadcasting digital
+signals such as digital TV and radio.</li>
+<li><strong>Computer networks</strong> Digital communication is used in computer networks to
+transfer data between computers and other devices.</li>
+<li><strong>Remote control</strong> Digital communication is used in remote control systems to
+control various devices remotely.</li>
+<li><strong>Industrial control</strong> Digital communication is used in industrial control
+systems to control and monitor industrial processes.</li>
+<li><strong>Military communication</strong> Digital communication is used in military
+communication systems for secure communication and data transmission.</li>
+<li><strong>Medical equipment</strong> Digital communication is used in medical equipment such
+as digital X-rays and CT scans.</li>
+<li><strong>Navigation</strong> Digital communication is used in navigation systems such as GPS
+and GLONASS.</li>
+<li><strong>Consumer electronics</strong> Digital communication is used in consumer electronics
+such as digital cameras, DVD players, and gaming devices.</li>
+</ul>
+<h4><a name="advantages" class="heading-anchor" href="#advantages" rel="nofollow" aria-hidden="true"></a>Advantages</h4>
+<ul>
+<li><strong>Immunity to noise interference</strong> - Digital signals are less susceptable to
+external noise and interference, as digital signals are transmitted as binary
+data (1s and 0s), which can be accuratily reconstructed even in the presence
+of some noise or interference.</li>
+<li><strong>More secure transmission</strong> - Digital communication system provide a more
+secure transmission of information, as the binary data can be encrypted to
+prevent unauthorized access.</li>
+<li><strong>More flexible signal processing</strong> - Digital communication system provide
+more flexible signal processing capabilities, such as error correction, data
+compraession, and encrypthon.</li>
+<li><strong>Error detection adn correction</strong> - Digital communication systems have
+built-in error detection and correction capabilities, making it easier to
+detect and correct transmission errors.</li>
+<li><strong>Better utilization of bandwidth</strong> - Digital communication system are more
+efficient in their use of bandwidth, as they transmit information as discrete
+signals (1s and 0s), which can be encoded in more compact form.</li>
+<li><strong>Ease of integration with computer systems</strong> - Digital communication system
+are easier to integrate with computer systems, as digital signals can easily
+processed by computers.</li>
+<li><strong>Wide range of applications</strong> - Digital communication has a wide range of
+application, from voice and data transmission over the internet to video
+conferencing and digital television.</li>
+</ul>
+<h4><a name="disadvantages" class="heading-anchor" href="#disadvantages" rel="nofollow" aria-hidden="true"></a>Disadvantages</h4>
+<ul>
+<li><strong>Complex techonology</strong> - Digital communication system require more complex
+techonology compared to analog systems, making them more difficult to design,
+build, and maintain.</li>
+<li><strong>Higher cost</strong> - Digital communication system are more expensive to implement
+and maintain compared to analog ystem, due to the need for more complex
+technology and higher processing requirements.</li>
+<li><strong>Lower bandwidth efficiency</strong> - Digital communication systems can be less
+efficient in their use of bandwidth compared to analog systems, as they
+require more data to represent the same information.</li>
+<li><strong>Latency</strong> - Digital communication systems can introduce latency in data
+transmission, as the binary data must be processed and transmitted in a
+stepwise manner.</li>
+<li><strong>Compatibility issues</strong> - Digital communication systems can have
+compatibility issues with older equipment or systems that are not designed to
+handle digital signals.</li>
+<li><strong>Dependence</strong> - on electronics: Digital communication systems are heavily
+dependent on electronics and digital processing, making them more susceptible
+to technical failures.</li>
+</ul>
+<h2><a name="explain-need-of-modulation-justify-it-with-example" class="heading-anchor" href="#explain-need-of-modulation-justify-it-with-example" rel="nofollow" aria-hidden="true"></a>Explain need of modulation. Justify it with example.</h2>
+<p>Modulation is the process of encoding information onto a carrier signal for the
+purpose of transmitting it over a communication channel. The need for modulation
+arises because the information to be transmitted is usually in the form of a
+low-frequency signal, while the communication channel can only support
+high-frequency signals. By encoding the low-frequency information onto a
+high-frequency carrier signal, the information can be transmitted over the
+communication channel more efficiently.</p>
+
+<p>For example, consider the transmission of audio signals over a radio channel.
+The audio signals to be transmitted have a frequency range of 20 Hz to 20,000
+Hz, which is too low for efficient transmission over a radio channel. To
+transmit the audio signals over the radio channel, the audio signals are
+modulated onto a high-frequency carrier signal, typically in the range of 87.5
+MHz to 108 MHz. The modulated signal can then be transmitted over the radio
+channel, and the original audio signals can be recovered by demodulating the
+received signal.</p>
+
+<p>In summary, modulation is necessary to enable the efficient transmission of
+low-frequency signals over communication channels that only support
+high-frequency signals.</p>
+<h2><a name="define-the-following-terms" class="heading-anchor" href="#define-the-following-terms" rel="nofollow" aria-hidden="true"></a>Define the following terms.</h2><h3><a name="noise-figure" class="heading-anchor" href="#noise-figure" rel="nofollow" aria-hidden="true"></a>Noise Figure</h3>
+<p>The noise figure is a measure of the degradation of the signal-to-noise ration
+(SNR) that occurs in a communication sytem due to thermal noise, amplification
+noise, and other sources of nise. It is expressed in decibels(dB) and represents
+the ratio of the input SNR to the output SNR of a system.</p>
+<h3><a name="noise-temperature" class="heading-anchor" href="#noise-temperature" rel="nofollow" aria-hidden="true"></a>Noise Temperature</h3>
+<p>The noise temperature is a physical quantity that describes the amount of
+thermal noise generated by a system, in terms of the equivalent temperature of a
+resistor generating the same amount of noise power. It is used to characterize
+the performance of communication systems, particularly amplifiers, and is often
+expressed in kelvin (K).</p>
+<h3><a name="noise-bandwidth" class="heading-anchor" href="#noise-bandwidth" rel="nofollow" aria-hidden="true"></a>Noise Bandwidth</h3>
+<p>The noise bandwidth is the bandwidth over which thermal noise is generated in a
+communication system. It is a measure of the frequency range over which the
+noise power is generated and is often used in the calculation of noise figure
+and noise temperature.</p>
+<h3><a name="noise-voltage" class="heading-anchor" href="#noise-voltage" rel="nofollow" aria-hidden="true"></a>Noise Voltage</h3>
+<p>The noise voltage is the electrical voltage that is generated by thermal noise
+in a system. It is a measure of the random fluctuation in the voltage that
+result from thermal noise and can be expressed in terms of a root mean square
+(RMS) value.</p>
+<h3><a name="modulation" class="heading-anchor" href="#modulation" rel="nofollow" aria-hidden="true"></a>Modulation</h3>
+<p>Modulation is the process of encoding information onto a carrier signal for the
+purpose of transmitting it over a communication channel. Modulation is performed
+by modifying the amplitude, frequency, or phase of the carrier signal in a
+manner that is proportional to the information signal, so that the information
+can be transmitted over the communication channel. The process of recovering the
+original information from the modulated signal is known as demodulation.</p>
+<h2><a name="type-of-noise" class="heading-anchor" href="#type-of-noise" rel="nofollow" aria-hidden="true"></a>Type of Noise</h2>
+<p><img loading="lazy" src="type-of-noise.png" alt="Type of Noise Diagram" /></p>
+
+<ul>
+<li><strong>Short Noise</strong> it is a type of electronic noise which generated due to random fluctuations in the flow of electric current in conductor. Short noise is Poisson process, which means that its occurrence is not predictable and its amplitude is proportional to the square root of average current. For example, the short noise in a resistor is proportional to th square root of the current flowing through it.</li>
+<li><strong>Thermal Noise</strong> it is also know as Johnson-Nyquist noise of Johnson noise. It is generated due to random thermal motion of electrons in a conductor. The thermal noise is proportional to the temperature of the conductor and the resistance of the conductor. For example, the thermal noise is resistor is proportional to the temperature of the resistor and its resistance.</li>
+<li><strong>Transit Time Noise</strong> - It is generated due to the random fluctuatons in the transit time of electrons passing through a devic such a bipolar dunction transistor or a field-effect transistor. The transit time noise is proportional to the square root of the frequency of the signal being transmitted.</li>
+<li><strong>Flicker Noise</strong> it is also know as 1/f noise. it is generated due to the random fluctuation in vurrent flow in a conductor and is proportional to the reciprocal of the frequency of the signal. Flicker noise is most pronounced at low frequencies.</li>
+<li><strong>Partition Noise</strong> it is generated due to the random fluctuation in the number of carriers in a particular energy level of a semiconductor device. Partition noise is proportional to the square root of the number of carriers in the energy level.</li>
+</ul>
+<h2><a name="am-and-fm" class="heading-anchor" href="#am-and-fm" rel="nofollow" aria-hidden="true"></a>AM and FM</h2><h3><a name="am" class="heading-anchor" href="#am" rel="nofollow" aria-hidden="true"></a>AM</h3>
+<ul>
+<li><strong>Broadcasting</strong> - One of the main uses of AM is broadcasting, especially in
+the long distance transmission of voice and music</li>
+<li><strong>Shortwave Radio</strong> - AM is widely used in shortwave radio commuication, where
+it can readch over long distances.</li>
+</ul>
+<h3><a name="fm" class="heading-anchor" href="#fm" rel="nofollow" aria-hidden="true"></a>FM</h3>
+<ul>
+<li><strong>Broadcasting</strong> - FM is widely used in radio broadcasting, where it
+prefferred over AM for its higher quality audio transmission.</li>
+</ul>
+<h2><a name="types-of-communication-channel" class="heading-anchor" href="#types-of-communication-channel" rel="nofollow" aria-hidden="true"></a>Types of communication Channel</h2>
+<p><img loading="lazy" src="classification.png" alt="Types Diagram" /></p>
+<h3><a name="guided-communication-channels" class="heading-anchor" href="#guided-communication-channels" rel="nofollow" aria-hidden="true"></a>Guided communication channels</h3>
+<p>Refer to channels that require a physical medium to transmit information.
+Examples of physical media include coaxial cables, fiber optics, and twisted
+pair wires.</p>
+
+<p><strong>Fiber optic</strong> uses light to transmit data, made of glass/plastic core
+surrounded by protective cladding layer. Used for broadband internet, cable TV,
+telephone communication.</p>
+
+<p><strong>Twisted pair</strong> uses tow insulated wires twisted together to reduce
+interference. Commonly used for telephone, Ethernet networks, data
+communication.</p>
+
+<p><strong>Coaxial</strong> conists of central copper core surrounded by insulation and metal
+shield to reduce interference. Used for cable TV, broadband internet,
+high-frequency signal transmission.</p>
+<h3><a name="unguided-commuication-channls" class="heading-anchor" href="#unguided-commuication-channls" rel="nofollow" aria-hidden="true"></a>Unguided commuication channls</h3>
+<p>This are communiccation channels that do not require a physical medium to
+transmit information. Insted they rely on open air or open space to transmit
+information.</p>
+
+<p><strong>Radio waves</strong> are a type of unguided communication channel that use
+electromagnetic waves to transmit information. Examples of devices that use
+radio waves include radio and television broadcasting station, cell phone
+towers, and Wifi routers.</p>
+
+<p><strong>Infrared</strong> is a type of unguided communication channel that uses infrared
+light to transmit inforamtion. Example of devices that use infrared include
+remote controls for television and other electronics.</p>
+
+<p><strong>Microwave</strong> is a type of unguided communication channel that uses microwave
+frequencies to transmit information. Examples of devices that use microwave
+include satellite communication systems, microwave ovens, and Wi-Fi networks.</p>
+
+<p><strong>Satellite</strong> Satellite is a type of unguided communication channel that uses
+satellites to transmit information. Examples of devices that use satellites
+include satellite phones, satellite TV, and GPS systems.</p>
+<h2><a name="fourier-series" class="heading-anchor" href="#fourier-series" rel="nofollow" aria-hidden="true"></a>Fourier Series</h2>
+<iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=PLwjK_iyK4LLA-zCHK98LHTek38HUzbOxn" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<h3><a name="fourier-transform" class="heading-anchor" href="#fourier-transform" rel="nofollow" aria-hidden="true"></a>Fourier Transform</h3>
+<iframe src="https://www.youtube-nocookie.com/embed/D3fjGYzrExk" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<p>The fourier transform is a mathematical tool used to analyze signals and
+transform them into the frequency domain. It is a way of representing signals as
+the of their constituent sinusoidal frequencies, allowing us to understand the
+frequency content of signals and perform operations such as filtering and
+compression.</p>
+
+<p>The fouier transform is widely used in various fields, including signal
+processing, image processing, audio processing, control systems, and more.</p>
+
+<p>It is used to analyze and understand the frequency content of signals, filter
+signals, and perform other operations on signals.</p>
+
+<ul>
+<li><strong>Formula</strong> $f(x) = \int^\infty_{-\infty} F(k)e^{2\pi ikx}dk$</li>
+<li><strong>Lineaity Transform</strong> The fourier transform is linear operation, which means
+that if a function is linear combination of other function, then its Fourier
+Transform is also linear combination of their Fourier Transforms. This
+property allows for a straightforward and mathematical representation of
+signals.</li>
+<li><strong>Duality</strong> The Fourier Transform has a duality property, which means that the
+Fourier Transform of a function and its inverse Fourier Transform are realted.
+This property enables the transformation of signal from the frequency its
+inverse Fourier Transform are realted. This property enables the
+transformation of a signal from the frequency domain back to the time domain,
+providing a complete representaion of the signal.</li>
+<li><strong>Modulation Property</strong> The Fourier Transform also has modulation property,
+which states that multiplying a signal in the time domain by a complex
+exponential results in phase shift in the frequency domain. This property
+enables the representation of signals with phase information, providing a more
+complete description of the signal.</li>
+<li><strong>Time Shifting</strong> The Fourier Transform of a time-shifted signal can be found
+by multiplying the Fourier Transform of the original signal by a complex
+exponential. This results in a phase shift in the frequency domain, which
+corresponds to a time shift in the time domain.</li>
+<li><strong>Frequency Shifting</strong> The Fourier Transform of a frequency-shifted signal can
+be found by multiplying the Fourier Transform of the original signal by a
+complex exponential. This results in a phase shift in the frequency domain,
+which corresponds to a frequency shift in the time domain.</li>
+<li><strong>Fourier Transform of Unit Step Function</strong> The Fourier Transform of the unit
+step function is a sinc function in the frequency domain. The sinc function
+has an infinite range and represents the frequencies present in the signal.
+Fourier Transform of Delta Function: The Fourier Transform of the delta
+function is a constant in the frequency domain. The constant represents the
+amplitude of the frequency present in the signal.</li>
+<li><strong>Fourier Transform of Gate Function</strong> The Fourier Transform of a gate
+function, also known as a rectangular pulse, is a sinc function in the
+frequency domain. The sinc function has an infinite range and represents the
+frequencies present in the signal.</li>
+</ul>
+<h2><a name="explain-electromagnetic-spectrum-and-its-application" class="heading-anchor" href="#explain-electromagnetic-spectrum-and-its-application" rel="nofollow" aria-hidden="true"></a>Explain Electromagnetic Spectrum and its Application</h2>
+<p><img loading="lazy" src="spectrum.png" alt="Electromagnetic Spectrum Diagram" /></p>
+
+<p>The Electromagnetic Spectrum is the range of all frequencies of electromagnetic
+radiation. It includes radio waves, microwaves, infrared radiation, visible
+light, ultraviolet radiation, X-rays, and gamma rays. The Electromagnetic
+Spectrum can be divided into the following parts:</p>
+
+<ul>
+<li><strong>Radio Waves</strong> They have the longest wavelengths and the lowest frequencies
+in the electromagnetic spectrum. They are used in communication technologies
+like television and radio broadcasting, cell phones, and GPS.</li>
+<li><strong>Microwaves</strong> They have a higher frequency than radio waves and are used in
+communication technologies like WiFi, microwave ovens, and radar.</li>
+<li><strong>Infrared Radiation</strong> It has a higher frequency than microwaves and is used
+in heating, remote control, and night vision.</li>
+<li><strong>Visible Light</strong> It is the portion of the electromagnetic spectrum that is
+visible to the human eye and is used for illumination and color recognition.</li>
+<li><strong>Ultraviolet Radiation</strong> It has a higher frequency than visible light and is
+used in sterilization, UV water purification, and sun tanning.</li>
+<li><strong>X-rays</strong> They have a higher frequency than ultraviolet radiation and are
+used in medical imaging and security scanning.</li>
+<li><strong>Gamma Rays</strong> They have the highest frequency and the shortest wavelength in
+the electromagnetic spectrum and are used in medical treatment and scientific
+research.</li>
+</ul>
+
+<p>The Electromagnetic Spectrum is a continuous range of frequencies and each part
+of the spectrum has different properties and uses. Understanding the
+electromagnetic spectrum is important for communication technologies, medicine,
+and many other fields.</p>
+<h2><a name="amplitude-modulation" class="heading-anchor" href="#amplitude-modulation" rel="nofollow" aria-hidden="true"></a>Amplitude Modulation</h2>
+<p><img loading="lazy" src="AM.png" alt="AM Diagram" /></p>
+
+<ul>
+<li>Amplitude modulation is process by which the wave signal is transmitted by modulationg the amplitude of the carrier signal.</li>
+<li>It is often called AM and is commonly used in transmitting a piece of information through a radio carrier wave.</li>
+<li>Amplitude modulation is mostly used in the form of electronic communication.</li>
+<li>AM is used in many types of communication systems, including radio broadcasting television broadcasting, and military communications. AM is also used in some radar and navigation system.</li>
+</ul>
+<h3><a name="application-of-am" class="heading-anchor" href="#application-of-am" rel="nofollow" aria-hidden="true"></a>Application of AM</h3>
+<ul>
+<li><strong>Broadcasting</strong> - AM readio stations are used for commercial and public broadcasting, providing music, news, sports, and other programming.</li>
+<li><strong>Military Communication</strong> - AM signals are used in military communications, especially in aircraft and maritime.</li>
+<li><strong>Emergency Broadcasting</strong> - AM radio can be used as an emergency boadcast system during natural disasters or other critical events.</li>
+<li><strong>Two-way Radio Communication</strong> - AM signals are used in two-way radio comunication for short-range commuication between vahicles, boats, and handheld devices.</li>
+<li><strong>Wireless Medical Devices</strong> - AM signals are used in some wireless medical devices, such as electrocardiogram (ECG) machines, for transmitting signals between patient and physician.</li>
+<li><strong>Remote Control System</strong> - AM signals are used in remote control system for controlling toys, model cars, and other low power devices.</li>
+</ul>
+<h3><a name="am-transmitter" class="heading-anchor" href="#am-transmitter" rel="nofollow" aria-hidden="true"></a>AM Transmitter</h3>
+<p><img loading="lazy" src="am-trans.png" alt="AM Transmitter Diagram" /></p>
+
+<ul>
+<li>An amplitude modulation (AM) tansmitter is a device that generates an amplitude modulated signal from a baseband input signal.</li>
+<li>The main components of an AM transmitter are the modulator, oscillator, and power amplifier.</li>
+<li>The modulator takes  the baseband input signal and modulates it with carrier wave.
+The carrier wave is typically generated by oscillator.</li>
+<li>The moudlated signal is then amplified by a power amplifier and transmitted over the airwaves.</li>
+<li>The modulator of an AM transmitter typically conists of a product modulator circuit, which multiplies the baseband signal by sinusoidal carrier wave. The resulting modulated signal is a combination of the carrier wave and the baseband signal.</li>
+<li>The oscillator of an AM transmitter generates the carrier wave that is used to modulate the baseband signal. The frequency of the carrier wave is typically a fixed value that is chose based on the frequency range of the desired transmission.</li>
+</ul>
+<h4><a name="steps-are-involved-in-the-working-of-an-am-transmitter" class="heading-anchor" href="#steps-are-involved-in-the-working-of-an-am-transmitter" rel="nofollow" aria-hidden="true"></a>Steps are involved in the working of an AM transmitter</h4>
+<ul>
+<li><strong>Modulation</strong> The baseband signal is multiplied with the carrier signal to produce the modulated signal. The modulated signal has the information carried by the baseband signal embedded in its amplitude.</li>
+<li><strong>Amplification</strong> The modulated signal is then amplified to increase its power to a level suitable for transmission.</li>
+<li><strong>Filtering</strong> The amplified signal is then passed through a filter to remove any unwanted frequency components that may have been introduced during the amplification stage.</li>
+<li><strong>Antenna</strong> The filtered signal is then transmitted to the receiver through an antenna. The antenna radiates the signal into the atmosphere, which is then received by the receiver.</li>
+</ul>
+
+<p>The modulated signal produced by the AM transmitter is received by the AM receiver, where it is demodulated to retrieve the original baseband signal.</p>
+<h3><a name="uses-fo-am" class="heading-anchor" href="#uses-fo-am" rel="nofollow" aria-hidden="true"></a>Uses fo AM</h3>
+<ul>
+<li><strong>Broadcasting</strong> One of the main uses of AM is broadcasting, especially in the long-distance transmission of voice
+and music.</li>
+<li><strong>Shortwave Radio</strong> AM is widely used in shortwave radio communication, where it can reach over long distances.</li>
+<li><strong>Two-way Communication</strong> AM is used in two-way communication systems, such as aircraft, marine, and CB (Citizen
+Band) radio.</li>
+<li><strong>Telemetry</strong> AM is used in telemetry systems for transmitting data from remote locations to a central monitoring
+station.</li>
+</ul>
+<h2><a name="frequency-modulation-fm" class="heading-anchor" href="#frequency-modulation-fm" rel="nofollow" aria-hidden="true"></a>Frequency Modulation(FM)</h2>
+<p><img loading="lazy" src="fm.png" alt="FM Modulation" />
+Frequency Modulation (FM) is a type of analog modulation technique used to transmit audio and voice signals over long distances. In this method, the frequency of the carrier signal is varied in proportion to the amplitude of
+the modulating signal. The principles of Frequency Modulation are as follows:</p>
+
+<ul>
+<li><strong>Modulating Signal</strong> The information to be transmitted is carried by the modulating signal, which is in the form of an audio signal.</li>
+<li><strong>Carrier Signal</strong> The modulating signal is then applied to the carrier signal to produce the frequency modulated signal. The carrier signal is usually a high frequency signal.</li>
+<li><strong>Deviation</strong> The amount by which the frequency of the carrier signal is changed is referred to as deviation. The deviation is proportional to the amplitude of the modulating signal.</li>
+<li><strong>Modulated Frequency</strong> The modulated frequency of the carrier signal is given by the sum of the carrier frequency and the deviation. The modulated frequency is a function of the modulating signal amplitude.</li>
+<li><strong>Bandwidth</strong> FM signals have a much wider bandwidth compared to AM signals. The bandwidth is proportional to the deviation and the highest audio frequency present in the modulating signal.</li>
+<li><strong>Noise Immunity</strong> FM signals are less susceptible to noise compared to AM signals, as the frequency deviation is proportional to the modulating signal amplitude and not the carrier amplitude.</li>
+<li><strong>Frequency Stability</strong> The frequency stability of the carrier signal is important for the proper functioning of FM systems. The frequency stability is maintained by using high-stability oscillators.</li>
+</ul>
+<h3><a name="pre-emphasis-de-emphasis-in-fm" class="heading-anchor" href="#pre-emphasis-de-emphasis-in-fm" rel="nofollow" aria-hidden="true"></a>Pre-emphasis &amp; de emphasis in FM</h3>
+<p><img loading="lazy" src="pre-de-fm.png" alt="Pre emphasis &amp; de emphasis Diagram" /></p>
+
+<ul>
+<li><strong>Pre-emphasis</strong> It is a technique used to boost the high frequency components of an FM signal before transmission. The purpose of pre-emphasis is to counteract the effect of atmospheric noise and other forms of interference, which tend to reduce the high frequency components of an FM signal. The pre-emphasis circuit adds a high-pass filter to the audio signal, increasing the amplitude of the higher frequency components.</li>
+<li><strong>De-emphasis</strong> It is the reverse process of pre-emphasis. After the FM signal has been received and demodulated, the de-emphasis circuit is used to restore the original audio signal. The de-emphasis circuit is a low-pass filter that reduces the amplitude of the higher frequency components. This is done to restore the original audio signal and to eliminate any residual noise or interference that may have been introduced during transmission.</li>
+</ul>
+
+<p>In summary, pre-emphasis and de-emphasis are used to enhance the quality of an FM signal by emphasizing the high frequency components before transmission and de-emphasizing them after transmission.</p>
+<h3><a name="indirect-method-armstrong-method-of-fm-generation" class="heading-anchor" href="#indirect-method-armstrong-method-of-fm-generation" rel="nofollow" aria-hidden="true"></a>Indirect method (Armstrong method) of FM generation.</h3>
+<p><img loading="lazy" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8WAEYd_I5PBAvmu0rBiiUwgGt3UqDXKtTTQ&amp;usqp=CAU" alt="Indirect method Diagram" />
+The Indirect method or Armstrong method of FM generation involves generating a modulating signal and using it
+to modulate a high-frequency carrier signal. This method uses the concept of phase modulation where the phase
+of the carrier signal is varied in accordance with the amplitude of the modulating signal. The steps involved in
+generating FM using this method are as follows:</p>
+
+<ul>
+<li><strong>Generation of modulating signal</strong> The modulating signal is a low-frequency signal that is to be used to modulate the carrier signal. This signal could be either audio or message signal.</li>
+<li><strong>Amplitude Limiting</strong> The modulating signal is amplitude limited to ensure that the modulating signal does not exceed a certain amplitude level. This is done to prevent over-modulation.</li>
+<li><strong>Mixing the Modulating and Carrier Signals</strong> The modulated signal is then mixed with a high-frequency
+carrier signal. The carrier signal is generated by an oscillator, and its frequency is much higher than the
+frequency of the modulating signal.</li>
+<li><strong>Phase Modulation</strong> The phase of the carrier signal is varied in accordance with the amplitude of the modulating signal. This process is known as phase modulation and results in the generation of FM signal.</li>
+<li><strong>Detection of FM Signal</strong> The generated FM signal is then passed through a demodulator, which converts it
+back to the original modulating signal.</li>
+</ul>
+
+<p>This method of FM generation is also known as Indirect FM generation as it involves generating FM indirectly by
+modulating a high-frequency carrier signal with the modulating signal. The advantage of this method over Direct
+FM generation is that it is more stable and efficient.</p>
+<h3><a name="uses-of-fm" class="heading-anchor" href="#uses-of-fm" rel="nofollow" aria-hidden="true"></a>Uses of FM</h3>
+<ul>
+<li><strong>Broadcasting</strong> FM is widely used in radio broadcasting, where it is preferred over AM for its higher quality audio
+transmission.</li>
+<li><strong>Mobile Communication</strong> FM is widely used in mobile communication systems, such as cell phones and walkie-
+talkies, due to its better resistance to interference.</li>
+<li><strong>TV Broadcasting</strong> FM is used in TV broadcasting for sound transmission, in place of AM.</li>
+<li><strong>Satellite Communication</strong> FM is used in satellite communication for higher-quality voice and data transmission.</li>
+</ul>
+<h3><a name="amplitude-modulation-techniques" class="heading-anchor" href="#amplitude-modulation-techniques" rel="nofollow" aria-hidden="true"></a>Amplitude Modulation Techniques</h3>
+<iframe src="https://www.youtube.com/embed/qIJGl8RzGMU" title="Amplitude Modulation Techniques (AM, DSB-SC, SSB, VSB)/Double Sideband, Single Sideband, Vestigial" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+		</main>
+		
+		<details id="table-of-content">
+		   <summary>Table of Content</summary>
+		<nav>
+<ul>
+<li><a href="#basics-of-analog-communication-and-digital-communication-systems">Basics of analog communication and digital communication systems</a>
+<ul>
+<li><a href="#analog-communication">
+Analog Communication</a>
+<ul>
+<li><a href="#application">
+Application</a></li>
+<li><a href="#advantages">
+Advantages</a></li>
+<li><a href="#disadvantages">
+Disadvantages</a></li>
+</ul></li>
+<li><a href="#digital-communication">
+Digital communication</a>
+<ul>
+<li><a href="#applications">
+Applications</a></li>
+<li><a href="#advantages">
+Advantages</a></li>
+<li><a href="#disadvantages">
+Disadvantages</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#explain-need-of-modulation-justify-it-with-example">
+Explain need of modulation. Justify it with example.</a></li>
+<li><a href="#define-the-following-terms">
+Define the following terms.</a>
+<ul>
+<li><a href="#noise-figure">
+Noise Figure</a></li>
+<li><a href="#noise-temperature">
+Noise Temperature</a></li>
+<li><a href="#noise-bandwidth">
+Noise Bandwidth</a></li>
+<li><a href="#noise-voltage">
+Noise Voltage</a></li>
+<li><a href="#modulation">
+Modulation</a></li>
+</ul></li>
+<li><a href="#type-of-noise">
+Type of Noise</a></li>
+<li><a href="#am-and-fm">
+AM and FM</a>
+<ul>
+<li><a href="#am">
+AM</a></li>
+<li><a href="#fm">
+FM</a></li>
+</ul></li>
+<li><a href="#types-of-communication-channel">
+Types of communication Channel</a>
+<ul>
+<li><a href="#guided-communication-channels">
+Guided communication channels</a></li>
+<li><a href="#unguided-commuication-channls">
+Unguided commuication channls</a></li>
+</ul></li>
+<li><a href="#fourier-series">
+Fourier Series</a>
+<ul>
+<li><a href="#fourier-transform">
+Fourier Transform</a></li>
+</ul></li>
+<li><a href="#explain-electromagnetic-spectrum-and-its-application">
+Explain Electromagnetic Spectrum and its Application</a></li>
+<li><a href="#amplitude-modulation">
+Amplitude Modulation</a>
+<ul>
+<li><a href="#application-of-am">
+Application of AM</a></li>
+<li><a href="#am-transmitter">
+AM Transmitter</a>
+<ul>
+<li><a href="#steps-are-involved-in-the-working-of-an-am-transmitter">
+Steps are involved in the working of an AM transmitter</a></li>
+</ul></li>
+<li><a href="#uses-fo-am">
+Uses fo AM</a></li>
+</ul></li>
+<li><a href="#frequency-modulation-fm">
+Frequency Modulation(FM)</a>
+<ul>
+<li><a href="#pre-emphasis-de-emphasis-in-fm">
+Pre-emphasis &amp; de emphasis in FM</a></li>
+<li><a href="#indirect-method-armstrong-method-of-fm-generation">
+Indirect method (Armstrong method) of FM generation.</a></li>
+<li><a href="#uses-of-fm">
+Uses of FM</a></li>
+<li><a href="#amplitude-modulation-techniques">
+Amplitude Modulation Techniques</a></li>
+</ul></li>
+</ul>
+</nav>
+
+		</details>
+		
+		<footer>
+			<p style="text-align: center; font-size: small; margin-top: 5em;">
+				<a href="https://anzenkodo.github.io/license">LICENSE</a>
+			</p>
+		</footer>
+	</body>
+	<script src="https://AnzenKodo.github.io/assets/js/mermaid.js"></script>
+	<script id="MathJax-script" async src="https://AnzenKodo.github.io/assets/js/mathjax.js"></script>
+	<script>
+		/* document.getElementById('video').addEventListener('click', (ele) => {
+			 if (ele.target.paused) {
+				 ele.target.play();
+			 } else {
+				 ele.target.pause();
+			 }
+		}); */
+
+		mermaid.initialize({
+			theme: "neutral",
+			themeVariables: {
+			    lineColor: "#939598",
+			}
+		});
+
+		MathJax = {
+		  tex: {
+			inlineMath: [['$', '$']],
+			displayMath: [['$$', '$$']],
+		  }
+		};
+	</script>
+</html>
