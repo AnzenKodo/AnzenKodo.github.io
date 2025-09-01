@@ -497,10 +497,6 @@ License: [MIT](https://spdx.org/licenses/MIT)
 }
 
 func main() {
-    make_br();
-}
-
-func main2() {
     if len(os.Args) < 2 {
         print_help()
     }
