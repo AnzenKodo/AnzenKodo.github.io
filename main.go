@@ -14,7 +14,7 @@ import (
 	"net/http"
     "context"
     "strconv"
-    // "sort"
+    "sort"
 
 	"github.com/mmcdole/gofeed"
 )
@@ -247,6 +247,7 @@ type Feed struct {
     description string
     feed_type string
     items []Feed_Item
+    parsed bool
 }
 type Feeds_List struct {
     title string
@@ -361,6 +362,8 @@ func make_br() {
                 if !is_md_list {
                     feed.title = feed.feed_url
                 }
+                feed.description = fmt.Sprint("Couldn't parse feed: ", err)
+                feed.parsed = false
                 fmt.Fprint(os.Stderr, "Couldn't parse feed: ", feed.feed_url, "\n", err, "\n")
             } else {
                 feed.url = feed_parsed.Link
@@ -375,6 +378,7 @@ func make_br() {
                     item.title = item_parsed.Title
                     item.date = item_parsed.PublishedParsed.Format(date_format)
                     feed.items = append(feed.items, item)
+                    feed.parsed = true
                 }
                 fmt.Println("Parsed feed:", feed.feed_url)
             }
@@ -393,14 +397,21 @@ func make_br() {
         }
         config_opml["content"] += "\t\t" + `<outline title="` + feeds_list.title + `" text="` + feeds_list.title + `">`;
 
-        // sort.Slice(feeds_list.feeds, func(i, j int) bool {
-        //     dateI, _ := time.Parse(date_format, feeds_list.feeds[i].items[0].date)
-        //     dateJ, _ := time.Parse(date_format, feeds_list.feeds[j].items[0].date)
-        //     return dateI.After(dateJ) // ascending order
-        // })
+        sort.Slice(feeds_list.feeds, func(i, j int) bool {
+            if !feeds_list.feeds[i].parsed || !feeds_list.feeds[j].parsed  {
+                return true
+            }
+            dateI, _ := time.Parse(date_format, feeds_list.feeds[i].items[0].date)
+            dateJ, _ := time.Parse(date_format, feeds_list.feeds[j].items[0].date)
+            return dateI.After(dateJ) // ascending order
+        })
         for _, feed := range feeds_list.feeds {
+            url_html := ""
+            if feed.parsed {
+                url_html = `<a href="`+feed.url+`" target="_blank">URL</a> |`
+            }
             config["content"] += `<details>
-	<summary>`+feed.title+` <a href="`+feed.url+`" target="_blank">URL</a> | <a href="`+feed.feed_url+`" target="_blank">Feed</a></summary>
+	<summary>`+feed.title+` `+ url_html +` <a href="`+feed.feed_url+`" target="_blank">Feed</a></summary>
 	<p>`+feed.description+`</p>
 	<ul>`
             for _, item := range feed.items {
