@@ -405,8 +405,9 @@ func make_br() {
             }
             dateI, _ := time.Parse(date_format, feeds_list.feeds[i].items[0].date)
             dateJ, _ := time.Parse(date_format, feeds_list.feeds[j].items[0].date)
-            return dateI.After(dateJ) // ascending order
+            return dateI.Before(dateJ) // ascending order
         })
+
         for _, feed := range feeds_list.feeds {
             url_html := ""
             if feed.parsed {
