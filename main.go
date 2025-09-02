@@ -377,7 +377,9 @@ func make_br() {
                     var item Feed_Item
                     item.url = item_parsed.Link
                     item.title = item_parsed.Title
-                    item.date = item_parsed.PublishedParsed.Format(date_format)
+                    if (item_parsed.PublishedParsed != nil) {
+                        item.date = item_parsed.PublishedParsed.Format(date_format)
+                    }
                     feed.items = append(feed.items, item)
                     feed.parsed = true
                 }
