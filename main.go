@@ -12,6 +12,7 @@ import (
 	"bufio"
 	"time"
 	"net/http"
+    "net/url"
     "context"
     "strconv"
     "sort"
@@ -358,7 +359,12 @@ func make_br() {
             defer cancel()
 		    feed_parsed, err := gofeed.NewParser().ParseURLWithContext(feed.feed_url, ctx)
 		    if err != nil {
-                feed.url = feed.feed_url
+				parsed_url, parse_err := url.Parse(feed.feed_url)
+				if parse_err != nil {
+					feed.url = feed.feed_url
+				} else {
+					feed.url = "https://" + parsed_url.Host
+				}
                 if !is_md_list {
                     feed.title = feed.feed_url
                 }
@@ -409,12 +415,12 @@ func make_br() {
         })
 
         for _, feed := range feeds_list.feeds {
-            url_html := ""
-            if feed.parsed {
-                url_html = `<a href="`+feed.url+`" target="_blank">URL</a> |`
+            error_html := ""
+            if !feed.parsed {
+				error_html = "<strong>(Error)</strong> "
             }
             config["content"] += `<details>
-	<summary>`+feed.title+` `+ url_html +` <a href="`+feed.feed_url+`" target="_blank">Feed</a></summary>
+	<summary>`+feed.title+` `+error_html+`<a href="`+feed.url+`" target="_blank">URL</a> | <a href="`+feed.feed_url+`" target="_blank">Feed</a></summary>
 	<p>`+feed.description+`</p>
 	<ul>`
             for _, item := range feed.items {
