@@ -401,11 +401,11 @@ func make_br() {
 
         sort.Slice(feeds_list.feeds, func(i, j int) bool {
             if !feeds_list.feeds[i].parsed || !feeds_list.feeds[j].parsed  {
-                return true
+                return false
             }
             dateI, _ := time.Parse(date_format, feeds_list.feeds[i].items[0].date)
             dateJ, _ := time.Parse(date_format, feeds_list.feeds[j].items[0].date)
-            return dateI.Before(dateJ) // ascending order
+            return dateI.After(dateJ) // ascending order
         })
 
         for _, feed := range feeds_list.feeds {
