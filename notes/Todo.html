@@ -6,8 +6,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 		<meta name="author" content="AnzenKodo">
 		<meta name="theme-color" content="#FF6C22">
-		<meta name="description" content="## Project  ## Fix  - [ ] cmono   - [ ] convert args to linked list to array  ## Ideas  - [ ] Protoc">
-		<meta property="og:description" content="## Project  ## Fix  - [ ] cmono   - [ ] convert args to linked list to array  ## Ideas  - [ ] Protoc">
+		<meta name="description" content="## Project  - [ ] Linux Menu - [ ] Multitreading - [ ] Multi window  ## Fix  - [ ] Add ASAN support ">
+		<meta property="og:description" content="## Project  - [ ] Linux Menu - [ ] Multitreading - [ ] Multi window  ## Fix  - [ ] Add ASAN support ">
 		<meta property="og:image" content="https://AnzenKodo.github.io/assets/favicon/notes.png">
 		<meta property="og:image:alt" content="AK#Notes logo">
 		<meta property="og:site_name" content="AK#Notes">
@@ -223,16 +223,31 @@
 		</header>
 		<main id="skip-top-main">
 			<h1 style="font-size: 2.3rem; margin-top: 0;">Todo</h1>
-			<h2><a name="project" class="heading-anchor" href="#project" rel="nofollow" aria-hidden="true"></a>Project</h2><h2><a name="fix" class="heading-anchor" href="#fix" rel="nofollow" aria-hidden="true"></a>Fix</h2>
+			<h2><a name="project" class="heading-anchor" href="#project" rel="nofollow" aria-hidden="true"></a>Project</h2>
 <ul>
-<li><input type="checkbox" disabled=""> cmono
+<li><input type="checkbox" disabled=""> Linux Menu</li>
+<li><input type="checkbox" disabled=""> Multitreading</li>
+<li><input type="checkbox" disabled=""> Multi window</li>
+</ul>
+<h2><a name="fix" class="heading-anchor" href="#fix" rel="nofollow" aria-hidden="true"></a>Fix</h2>
+<ul>
+<li><input type="checkbox" disabled=""> Add ASAN support in Arena
 
 <ul>
-<li><input type="checkbox" disabled=""> convert args to linked list to array</li>
+<li><a href="https://gemini.google.com/share/b66bedbce69c">https://gemini.google.com/share/b66bedbce69c</a></li>
+<li><a href="https://grok.com/share/c2hhcmQtMi1jb3B5_2aebf27c-9d5c-4f48-8e23-92e27aefbdf2">https://grok.com/share/c2hhcmQtMi1jb3B5_2aebf27c-9d5c-4f48-8e23-92e27aefbdf2</a></li>
+</ul></li>
+<li><input type="checkbox" disabled=""> Font
+
+<ul>
+<li><input type="checkbox" disabled=""> add unicode support</li>
+<li><input type="checkbox" disabled=""> store font as cpu image</li>
+<li><input type="checkbox" disabled=""> add default font</li>
 </ul></li>
 </ul>
-<h2><a name="ideas" class="heading-anchor" href="#ideas" rel="nofollow" aria-hidden="true"></a>Ideas</h2>
+<h2><a name="maybe" class="heading-anchor" href="#maybe" rel="nofollow" aria-hidden="true"></a>Maybe</h2><h2><a name="ideas" class="heading-anchor" href="#ideas" rel="nofollow" aria-hidden="true"></a>Ideas</h2>
 <ul>
+<li><input type="checkbox" disabled=""> Music Visualizer</li>
 <li><input type="checkbox" disabled=""> Protocols
 
 <ul>
@@ -259,6 +274,7 @@
 </ul>
 <h2><a name="completed" class="heading-anchor" href="#completed" rel="nofollow" aria-hidden="true"></a>Completed</h2>
 <ul>
+<li><input type="checkbox" checked="" disabled=""> Make temp alloc</li>
 <li><input type="checkbox" checked="" disabled=""> AK#Blogroll
 
 <ul>
@@ -267,6 +283,47 @@
 <li><input type="checkbox" checked="" disabled=""> Fix timing</li>
 <li><input type="checkbox" checked="" disabled=""> Custom Name</li>
 </ul></li>
+<li><input type="checkbox" checked="" disabled=""> Update error handling
+
+<ul>
+<li><input type="checkbox" checked="" disabled=""> Make a use of logger</li>
+<li><input type="checkbox" checked="" disabled=""> render</li>
+</ul></li>
+<li><input type="checkbox" checked="" disabled=""> Make build or debug module
+
+<ul>
+<li><input type="checkbox" checked="" disabled=""> Make custom code breakpoint macro or function</li>
+</ul></li>
+<li><input type="checkbox" checked="" disabled=""> Make all private function start with (_)underscore</li>
+<li><input type="checkbox" checked="" disabled=""> Helper function should come first</li>
+<li><input type="checkbox" checked="" disabled=""> make new module for types</li>
+<li><input type="checkbox" checked="" disabled=""> Make CMD module
+
+<ul>
+<li><input type="checkbox" checked="" disabled=""> support fps in cmd args</li>
+<li><input type="checkbox" checked="" disabled=""> add it to build file</li>
+<li><input type="checkbox" checked="" disabled=""> add x, y, width, height window option</li>
+</ul></li>
+<li><input type="checkbox" checked="" disabled=""> Change Str8Array <code>strings</code> option to <code>v</code> like other array struct
+
+<ul>
+<li><input type="checkbox" checked="" disabled=""> use <code>lenght</code> to store specified element. use <code>size</code> for total number of elements</li>
+<li><input type="checkbox" checked="" disabled=""> add Str8 capacity value</li>
+<li><input type="checkbox" checked="" disabled=""> move str8f function to fmt module</li>
+</ul></li>
+<li><input type="checkbox" checked="" disabled=""> Add arrays macro which handles string, int, float, uint
+
+<ul>
+<li><input type="checkbox" checked="" disabled=""> alloc array</li>
+<li><input type="checkbox" checked="" disabled=""> get array safely</li>
+<li><input type="checkbox" checked="" disabled=""> set array safely and should return bool for result</li>
+</ul></li>
+<li><input type="checkbox" checked="" disabled=""> Shaderplay
+
+<ul>
+<li><input type="checkbox" checked="" disabled=""> Added texture support</li>
+</ul></li>
+<li><input type="checkbox" checked="" disabled=""> Add bookmark plugins for code and files</li>
 </ul>
 
 		</main>
@@ -278,6 +335,8 @@
 <li><a href="#project">Project</a></li>
 <li><a href="#fix">
 Fix</a></li>
+<li><a href="#maybe">
+Maybe</a></li>
 <li><a href="#ideas">
 Ideas</a></li>
 <li><a href="#completed">
