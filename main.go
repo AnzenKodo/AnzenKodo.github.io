@@ -456,9 +456,9 @@ func make_br() {
 
 func make_verification_files() {
     config := get_config()
+
     dirname := config["output"] + "/.well-know"
     mkdir(dirname)
-
     filename := dirname + "/brave-rewards-verification.txt"
     content := `This is a Brave Creators publisher verification file.
 
@@ -467,6 +467,8 @@ Token: 71f75ea13a91a0b84f3042f46af322cbf1e01ad87d47c14fecad2fab04eb1f21`
     write_file(filename, []byte(content))
     fmt.Println("Created file '" + filename + "'")
 
+	dirname := config["output"] + "/.well-known"
+    mkdir(dirname)
 	filename = dirname + "/discord"
 	content = "dh=6bff1c09ed519ee2617370e6668a7f2aa5022811"
 	write_file(filename, []byte(content))
