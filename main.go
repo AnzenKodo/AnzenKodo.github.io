@@ -454,18 +454,22 @@ func make_br() {
     parse_file(in, out, config_opml)
 }
 
-func make_brave_reward_verification() {
+func make_verification_files() {
     config := get_config()
-
     dirname := config["output"] + "/.well-know"
+    mkdir(dirname)
+
     filename := dirname + "/brave-rewards-verification.txt"
     content := `This is a Brave Creators publisher verification file.
 
 Domain: anzenkodo.github.io
 Token: 71f75ea13a91a0b84f3042f46af322cbf1e01ad87d47c14fecad2fab04eb1f21`
-
-    mkdir(dirname)
     write_file(filename, []byte(content))
+    fmt.Println("Created file '" + filename + "'")
+
+	filename := dirname + "/discord"
+	content := "dh=6bff1c09ed519ee2617370e6668a7f2aa5022811"
+	write_file(filename, []byte(content))
     fmt.Println("Created file '" + filename + "'")
 }
 
@@ -539,7 +543,7 @@ func main() {
         make_index()
         make_license()
         make_404()
-        make_brave_reward_verification()
+        make_verification_files()
         make_notes()
         copy_assets()
 
@@ -553,7 +557,7 @@ func main() {
         make_index()
         make_license()
         make_404()
-        make_brave_reward_verification()
+        make_verification_files()
 
         make_notes()
         make_br()
@@ -561,7 +565,7 @@ func main() {
         make_index()
         make_license()
         make_404()
-        make_brave_reward_verification()
+        make_verification_files()
 
         make_notes()
     } else if arg == "build-notes" {
